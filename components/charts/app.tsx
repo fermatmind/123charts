@@ -1,4 +1,5 @@
 "use client";
+import { ChartsIndex, CategoryChart } from "./category-charts";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -76,8 +77,11 @@ function Shell({ path }: { path: string[] }) {
   switchDataset.set("dataset", dataset === "demo" ? "real" : "demo");
   const navigation = [
     ["/", t("Overview", "总览"), Compass],
-    ["/charts", t("Monthly charts", "月度榜单"), ChartNoAxesCombined],
-    ["/categories", t("Categories", "分类目录"), Layers3],
+    [
+      "/charts",
+      t("Category traffic charts", "分类流量榜"),
+      ChartNoAxesCombined,
+    ],
     ["/projects", t("All projects", "所有项目"), Globe2],
   ] as const;
   const userLinks = [
@@ -102,18 +106,10 @@ function Shell({ path }: { path: string[] }) {
   else if (!first) view = <Home />;
   else if (first === "projects" && path[1])
     view = <ProjectDetail slug={path[1]} />;
-  else if (
-    first === "projects" ||
-    first === "charts" ||
-    (first === "categories" && path[1])
-  )
-    view = (
-      <ProjectListing
-        category={first === "categories" ? path[1] : undefined}
-        charts={first === "charts"}
-      />
-    );
-  else if (first === "categories") view = <CategoryIndex />;
+  else if (first === "charts" && path[1])
+    view = <CategoryChart key={path[1]} slug={path[1]} />;
+  else if (first === "charts" || first === "categories") view = <ChartsIndex />;
+  else if (first === "projects") view = <ProjectListing />;
   else if (first === "submit") view = <SubmissionWizard />;
   else if (first === "dashboard")
     view = <Dashboard notificationsOnly={path[1] === "notifications"} />;
@@ -152,13 +148,13 @@ function Shell({ path }: { path: string[] }) {
             className={isActive("/charts") ? "active" : ""}
             href={href("/charts")}
           >
-            {t("Charts", "榜单")}
+            {t("Category traffic charts", "分类流量榜")}
           </Link>
           <Link
-            className={isActive("/categories") ? "active" : ""}
-            href={href("/categories")}
+            className={isActive("/submit") ? "active" : ""}
+            href={href("/submit")}
           >
-            {t("Categories", "分类")}
+            {t("Join for free", "免费入驻")}
           </Link>
         </nav>
         <div className="top-actions">
@@ -220,8 +216,8 @@ function Shell({ path }: { path: string[] }) {
               {data.categories.map((c, i) => (
                 <Link
                   key={c.slug}
-                  href={href(`/categories/${c.slug}`)}
-                  className={`side-link ${route === `categories/${c.slug}` ? "active" : ""}`}
+                  href={href(`/charts/${c.slug}`)}
+                  className={`side-link ${route === `charts/${c.slug}` ? "active" : ""}`}
                 >
                   <span
                     className="mono"
@@ -369,7 +365,7 @@ function Shell({ path }: { path: string[] }) {
                 <Link
                   className="search-result"
                   onClick={() => setSearchOpen(false)}
-                  href={href(`/categories/${c.slug}`)}
+                  href={href(`/charts/${c.slug}`)}
                   key={c.slug}
                 >
                   <Layers3 size={18} />

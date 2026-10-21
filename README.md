@@ -1,6 +1,6 @@
 # 123Charts
 
-Free project discovery, source-aware website charts, peer contributions and founder workspaces. This checkout is the **local V1**, built on the historical 88CN repository. Historical 88CN documents describe earlier work; current product authority is [123CHARTS_V1.md](docs/123CHARTS_V1.md).
+Free project discovery, source-aware website charts, peer contributions and founder workspaces. This checkout is the **local V1**, built on the historical 88CN repository. Historical 88CN documents describe earlier work; current product authority is [123CHARTS_V1.md](docs/123CHARTS_V1.md), extended by [CATEGORY_TRAFFIC_CHARTS.md](docs/CATEGORY_TRAFFIC_CHARTS.md).
 
 ## Start locally
 
@@ -41,7 +41,7 @@ The default `dataset=demo` includes 33 independently written official-site resea
 
 Official source retrieval is recorded independently of verification. A failed retrieval is not proof that a website is invalid. Seed prices are not shown as verified unless actually reviewed. The local seed never overwrites existing profiles or user work on subsequent setup runs.
 
-The three starting categories are AI coding, workflow automation, and knowledge search/RAG. Charts use AITDK visits, a single released month and worldwide/all-device/domain scope. The source calendar explicitly records accepted months. GSC clicks and GA4 sessions are not mixed with visits. No GSC/GA4 or TabAPI connection is claimed.
+The three starting categories are AI coding, workflow automation, and knowledge search/RAG. Charts keep AITDK contribution data and the independently checked **Semrush public** sample in separate source selections, with one released month and worldwide/all-device/domain scope. The source calendar explicitly records accepted months. GSC clicks and GA4 sessions are not mixed with visits. No GSC/GA4 or TabAPI connection is claimed.
 
 Published snapshots and traffic values cannot be overwritten. Source corrections create versions; unresolved conflicts suspend usage. Contribution adoption deduplicates information and applies per-project/per-controller caps independently of traffic ranking. A fictional demo outbound destination records an attempt and explains why no actual website exists.
 
@@ -54,6 +54,7 @@ npm run typecheck
 npm run lint
 npm run test:charts       # domain rules + actual database/Auth/Storage/API/OCR workflow; local app required
 npm run test:browser      # Chrome UI flows, desktop/mobile, sharing, PNG and reviewer delivery
+npm run test:db:charts    # disposable empty business schema, all migrations and source corrections
 npm run format:check
 npm run build
 npm run db:types          # generate local Supabase database types
@@ -66,3 +67,11 @@ Architecture: Next.js 16 / React 19 / TypeScript; Tailwind; Radix dialog primiti
 PNG rendering uses the Mac's installed Unicode font copied into ignored `.local/fonts/` during setup. That system font is not redistributed. A later server deployment must install a suitably licensed CJK font rather than copying the Mac font.
 
 GitHub configuration, DNS, hosting and production deployment are outside this local delivery. A later real-data pilot must validate actual screenshot sources, data acquisition/review cost and external source usage rights; local synthetic samples do not establish those results.
+
+## Category traffic charts and actual verification
+
+Start at `/zh/charts` (or `/en/charts`) and choose a category. The real source sample is `/zh/charts/ai-coding?dataset=real&month=2026-09&source=Semrush%20public`: Cursor, 35.49M displayed September visits, with explicit 1/11 initial coverage. The actual private source screenshot, OCR result, public-page response receipt and immutable data/snapshot versions are retained locally. This is not an AITDK-equivalence claim.
+
+In the administrator's **Data workbench**, inspect the continuous verification queue, private original and response hashes; configure selected-domain or published-library checks; retry a fresh read or confirm a source correction. One worker applies per-day limits and weekly next-check dates. Identical checks do not produce new chart versions. `snapshot/{id}` JSON and PNG cards cite the saved publication.
+
+All 33 research profiles still have independent purpose classifications. Broad platforms appear outside specialist ranks. Private **My peer comparison** reports keep delivery-time values while a separate current-data view shows later peer changes.

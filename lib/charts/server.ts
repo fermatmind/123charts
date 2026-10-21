@@ -1,15 +1,10 @@
+import { publishCategory } from "./publishing";
 import WebSocket from "ws";
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import type {
-  Bootstrap,
-  Dataset,
-  SnapshotEntry,
-  Project,
-  Traffic,
-} from "./types";
+import type { Bootstrap, Dataset } from "./types";
 import { emptyBootstrap } from "./types";
 export function adminDb() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -99,10 +94,10 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
       db
         .from("charts_traffic")
         .select(
-          "id,domain,source,month,metric,scope,value,version,state,demo,correction_note,verified_at",
+          "id,domain,source,month,metric,scope,value,version,state,demo,correction_note,verified_at,raw_display,precision_step",
         )
         .eq("demo", demo)
-        .in("state", ["verified", "conflict"])
+        .in("state", ["verified", "conflict", "superseded"])
         .order("month", { ascending: false })
         .limit(1000),
       db
@@ -129,6 +124,25 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
     as_of: new Date().toISOString(),
     configured: !categories.error,
     categories: checked(categories),
+    categoryFollowers: checked(
+      await db
+        .from("charts_follows")
+        .select("target")
+        .eq("kind", "category")
+        .limit(5000),
+    ).reduce((counts: Record<string, number>, f: { target: string }) => {
+      counts[f.target] = (counts[f.target] ?? 0) + 1;
+      return counts;
+    }, {}),
+    memberships: checked(
+      await db
+        .from("charts_memberships")
+        .select("project_id,category,state,placement,basis,reviewed_at")
+        .order("project_id"),
+    ),
+    checks: checked(
+      await db.from("charts_public_checks").select("*").eq("demo", demo),
+    ),
     projects: checked(projects).filter((p) => demo || !p.demo),
     traffic: checked(traffic),
     snapshots: checked(snapshots),
@@ -169,6 +183,32 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
         .order("collected_at", { ascending: false })
         .limit(200),
     );
+  if (isAdmin) {
+    result.verificationTasks = checked(
+      await db
+        .from("charts_verification_tasks")
+        .select("*")
+        .eq("demo", demo)
+        .order("priority", { ascending: false })
+        .limit(200),
+    );
+    result.receipts = checked(
+      await db
+        .from("charts_verification_receipts")
+        .select(
+          "id,task_id,source_url,response_hash,extracted,outcome,detail,actual_calls,cost_usd,attempted_at,success_at,traffic_id",
+        )
+        .order("attempted_at", { ascending: false })
+        .limit(100),
+    );
+    result.verificationSettings = checked(
+      await db
+        .from("charts_settings")
+        .select("value")
+        .eq("key", "verification")
+        .single(),
+    ).value;
+  }
   if (!user) return result;
   const own = (table: string, field = "owner_id") => {
     const q = db
@@ -242,114 +282,7 @@ export async function createSnapshot(
   month: string,
   demo: boolean,
   note: string,
+  source = "AITDK",
 ) {
-  const db = adminDb();
-  const projects: Project[] = checked(
-    await db
-      .from("charts_projects")
-      .select("*")
-      .eq("publication", "published")
-      .eq("category", category),
-  );
-  const candidates = projects.filter((p) => demo || !p.demo);
-  const rows: Traffic[] = checked(
-    await db
-      .from("charts_traffic")
-      .select("*")
-      .eq("source", "AITDK")
-      .eq("metric", "visits")
-      .eq("scope", "worldwide-all-devices-domain")
-      .eq("month", month)
-      .eq("demo", demo)
-      .eq("state", "verified"),
-  );
-  const byDomain = new Map(rows.map((t) => [t.domain, t]));
-  const ranked = candidates
-    .filter((p) => byDomain.has(p.measurement_domain))
-    .sort(
-      (a, b) =>
-        byDomain.get(b.measurement_domain)!.value -
-          byDomain.get(a.measurement_domain)!.value ||
-        a.domain.localeCompare(b.domain),
-    );
-  // One measurement domain is counted once, never copied across multiple products.
-  const seen = new Set<string>();
-  let rank = 0,
-    lastValue: number | null = null;
-  const entries: SnapshotEntry[] = ranked
-    .filter((p) => {
-      if (seen.has(p.measurement_domain)) return false;
-      seen.add(p.measurement_domain);
-      return true;
-    })
-    .map((p, i) => {
-      const t = byDomain.get(p.measurement_domain)!;
-      if (t.value !== lastValue) rank = i + 1;
-      lastValue = t.value;
-      return {
-        project_id: p.id,
-        domain: p.measurement_domain,
-        value: t.value,
-        rank,
-        traffic_id: t.id,
-        data_version: t.version,
-      };
-    });
-  if (!entries.length)
-    throw new Error(
-      "No verified same-scope values are available for this month.",
-    );
-  const previous = checked(
-    await db
-      .from("charts_snapshots")
-      .select("*")
-      .eq("category", category)
-      .eq("month", month)
-      .eq("demo", demo)
-      .eq("source", "AITDK")
-      .eq("metric", "visits")
-      .eq("scope", "worldwide-all-devices-domain")
-      .order("version", { ascending: false })
-      .limit(1),
-  )[0];
-  const fingerprint = (rows: SnapshotEntry[]) =>
-    JSON.stringify(
-      rows.map((e) => [
-        e.project_id,
-        e.domain,
-        e.value,
-        e.rank,
-        e.traffic_id,
-        e.data_version,
-      ]),
-    );
-  if (
-    previous &&
-    previous.total_count === candidates.length &&
-    fingerprint(previous.entries) === fingerprint(entries)
-  )
-    return previous;
-  if (previous && note.trim().length < 10)
-    throw new Error(
-      "Explain the coverage, classification or data correction for this snapshot revision.",
-    );
-  return checked(
-    await db
-      .from("charts_snapshots")
-      .insert({
-        category,
-        source: "AITDK",
-        month,
-        metric: "visits",
-        scope: "worldwide-all-devices-domain",
-        version: (previous?.version ?? 0) + 1,
-        entries,
-        coverage_count: entries.length,
-        total_count: candidates.length,
-        correction_note: note || null,
-        demo,
-      })
-      .select()
-      .single(),
-  );
+  return publishCategory(adminDb(), category, month, demo, note, source);
 }

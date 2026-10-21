@@ -1,3 +1,4 @@
+import { queueVerification, PUBLIC_SOURCE } from "@/lib/charts/verification";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createHash, randomUUID } from "node:crypto";
@@ -66,6 +67,80 @@ async function handle(
       return a;
     };
     if (request.method === "GET") {
+      if (path[0] === "snapshot" && uuid.test(path[1] ?? "")) {
+        const snap = checked(
+          await db
+            .from("charts_snapshots")
+            .select("*")
+            .eq("id", path[1])
+            .eq("demo", request.nextUrl.searchParams.get("dataset") !== "real")
+            .maybeSingle(),
+        );
+        if (!snap) throw new HttpError(404, "Snapshot not found.");
+        const ids = snap.entries.map((e: any) => e.traffic_id);
+        const rows = ids.length
+          ? checked(
+              await db
+                .from("charts_traffic")
+                .select(
+                  "id,verified_at,raw_display,precision_step,state,correction_note",
+                )
+                .in("id", ids),
+            )
+          : [];
+        const receipts = ids.length
+          ? checked(
+              await db
+                .from("charts_verification_receipts")
+                .select("traffic_id,source_url,response_hash,success_at")
+                .in("traffic_id", ids)
+                .not("success_at", "is", null)
+                .order("success_at", { ascending: false }),
+            )
+          : [];
+        return NextResponse.json(
+          {
+            ...snap,
+            description:
+              "Estimated visits; not unique visitors, active users or quality.",
+            entries: snap.entries.map((e: any) => ({
+              ...e,
+              source: snap.source,
+              month: snap.month,
+              metric: snap.metric,
+              scope: snap.scope,
+              snapshot_version: snap.version,
+              verification: rows.find((r: any) => r.id === e.traffic_id),
+              source_receipt:
+                receipts.find((r: any) => r.traffic_id === e.traffic_id) ??
+                null,
+            })),
+          },
+          {
+            headers: { "X-Robots-Tag": "noindex", "Cache-Control": "no-store" },
+          },
+        );
+      }
+      if (path[0] === "source-evidence" && uuid.test(path[1] ?? "")) {
+        admin();
+        const e = checked(
+          await db
+            .from("charts_source_evidence")
+            .select("*")
+            .eq("id", path[1])
+            .maybeSingle(),
+        );
+        if (!e) throw new HttpError(404, "Source evidence not found.");
+        return NextResponse.json({
+          ...e,
+          signed_url: checked(
+            await db.storage
+              .from("charts-evidence")
+              .createSignedUrl(e.storage_path, 120),
+          ).signedUrl,
+        });
+      }
+
       if (path[0] === "evidence" && uuid.test(path[1] ?? "")) {
         required();
         const e = checked(
@@ -114,6 +189,61 @@ async function handle(
       throw new HttpError(403, "Cross-origin writes are not allowed.");
     if (request.headers.get("sec-fetch-site") === "cross-site")
       throw new HttpError(403, "Cross-site writes are not allowed.");
+    if (route === "admin/source-upload") {
+      admin();
+      if (Number(request.headers.get("content-length")) > 11 * 1024 * 1024)
+        throw new HttpError(413, "Image too large.");
+      const form = await request.formData(),
+        file = form.get("file");
+      if (
+        !(file instanceof File) ||
+        file.size > 10 * 1024 * 1024 ||
+        !["image/png", "image/jpeg", "image/webp"].includes(file.type)
+      )
+        throw new HttpError(
+          400,
+          "A PNG, JPEG or WebP up to 10 MB is required.",
+        );
+      const domain = normalizeWebsite(String(form.get("domain"))).domain,
+        month = String(form.get("month"));
+      if (!/^20\d{2}-(0[1-9]|1[0-2])$/.test(month))
+        throw new HttpError(400, "Explicit source month required.");
+      const buffer = Buffer.from(await file.arrayBuffer()),
+        meta = await sharp(buffer, { limitInputPixels: 30000000 }).metadata();
+      if (!["png", "jpeg", "webp"].includes(meta.format ?? ""))
+        throw new HttpError(400, "Invalid image.");
+      const id = randomUUID(),
+        key = `source/${user!.id}/${id}.${meta.format}`;
+      checked(
+        await db.storage
+          .from("charts-evidence")
+          .upload(key, buffer, { contentType: file.type }),
+      );
+      const inserted = await db.from("charts_source_evidence").insert({
+        id,
+        owner_id: user!.id,
+        domain,
+        source: PUBLIC_SOURCE,
+        month,
+        storage_path: key,
+        file_hash: createHash("sha256").update(buffer).digest("hex"),
+      });
+      if (inserted.error) {
+        await db.storage.from("charts-evidence").remove([key]);
+        throw new Error(inserted.error.message);
+      }
+      checked(
+        await db.from("charts_jobs").insert({
+          kind: "ocr",
+          owner_id: user!.id,
+          payload: { source_evidence_id: id },
+        }),
+      );
+      return NextResponse.json(
+        { id, state: "pending_extraction" },
+        { status: 201 },
+      );
+    }
     if (route === "upload") {
       required();
       if (Number(request.headers.get("content-length")) > 11 * 1024 * 1024)
@@ -641,6 +771,127 @@ async function handle(
     }
     if (route.startsWith("admin/")) {
       admin();
+      if (route === "admin/source-correction") {
+        const id = checked(
+          await db.rpc("charts_resolve_observation", {
+            rid: b.id,
+            actor: user!.id,
+            reason: b.reason,
+          }),
+        );
+        const value = checked(
+          await db.from("charts_traffic").select("*").eq("id", id).single(),
+        );
+        const projects = checked(
+          await db
+            .from("charts_projects")
+            .select("id")
+            .eq("measurement_domain", value.domain),
+        );
+        const memberships = projects.length
+          ? checked(
+              await db
+                .from("charts_memberships")
+                .select("category")
+                .in(
+                  "project_id",
+                  projects.map((p) => p.id),
+                )
+                .eq("state", "confirmed"),
+            )
+          : [];
+        for (const category of new Set(memberships.map((m) => m.category)))
+          await createSnapshot(
+            category,
+            value.month,
+            false,
+            b.reason,
+            value.source,
+          );
+        return NextResponse.json({ id });
+      }
+      if (route === "admin/verification-settings") {
+        const old = checked(
+          await db
+            .from("charts_settings")
+            .select("value")
+            .eq("key", "verification")
+            .single(),
+        ).value;
+        const domains = (b.domains ?? old.domains).map(
+          (d: string) => normalizeWebsite(d).domain,
+        );
+        if (domains.length > 40)
+          throw new HttpError(400, "At most 40 approved source domains.");
+        const value = {
+          ...old,
+          enabled: !!b.enabled,
+          source: PUBLIC_SOURCE,
+          mode: b.mode === "library" ? "library" : "selected",
+          domains,
+        };
+        checked(
+          await db
+            .from("charts_settings")
+            .update({ value })
+            .eq("key", "verification"),
+        );
+        return NextResponse.json({ ok: true });
+      }
+      if (route === "admin/verification") {
+        const task = await queueVerification(db, {
+          domain: normalizeWebsite(b.domain).domain,
+          source: PUBLIC_SOURCE,
+          month: b.month,
+          priority: 10,
+        });
+        checked(
+          await db
+            .from("charts_verification_tasks")
+            .update({
+              state: "pending",
+              attempts: 0,
+              force_refresh: !!b.force_refresh,
+              next_check_at: new Date().toISOString(),
+            })
+            .eq("id", task.id),
+        );
+        return NextResponse.json(task);
+      }
+      if (route === "admin/membership") {
+        checked(
+          await db.rpc("charts_review_membership", {
+            pid: b.project_id,
+            cat: b.category,
+            decision: {
+              state: b.state,
+              placement: b.placement,
+              basis: b.basis,
+            },
+            actor: user!.id,
+          }),
+        );
+        const snapshots = checked(
+          await db
+            .from("charts_snapshots")
+            .select("*")
+            .eq("category", b.category),
+        );
+        const handled = new Set<string>();
+        for (const snapshot of snapshots) {
+          const key = `${snapshot.source}:${snapshot.month}:${snapshot.demo}`;
+          if (handled.has(key)) continue;
+          handled.add(key);
+          await createSnapshot(
+            b.category,
+            snapshot.month,
+            snapshot.demo,
+            `Classification review: ${b.basis}`,
+            snapshot.source,
+          );
+        }
+        return NextResponse.json({ ok: true });
+      }
       if (route === "admin/application") {
         const a = await ownedApp(b.id);
         if (a.status === "draft")
@@ -790,7 +1041,13 @@ async function handle(
       }
       if (route === "admin/snapshot")
         return NextResponse.json(
-          await createSnapshot(b.category, b.month, !!b.demo, b.note ?? ""),
+          await createSnapshot(
+            b.category,
+            b.month,
+            !!b.demo,
+            b.note ?? "",
+            b.source ?? "AITDK",
+          ),
         );
       if (route === "admin/month") {
         if (

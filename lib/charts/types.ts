@@ -2,11 +2,56 @@ export type Locale = "en" | "zh";
 export type Dataset = "demo" | "real";
 export type PriceType = "free" | "freemium" | "trial" | "paid";
 export interface Category {
+  parent_en?: string;
+  parent_zh?: string;
+  rules_version?: number;
   slug: string;
   name_en: string;
   name_zh: string;
   description_en: string;
   description_zh: string;
+}
+export interface Membership {
+  project_id: string;
+  category: string;
+  state: string;
+  placement: string;
+  basis: string;
+  reviewed_at: string | null;
+}
+export interface VerificationCheck {
+  domain: string;
+  source: string;
+  month: string;
+  scope: string;
+  demo: boolean;
+  state: string;
+  next_check_at: string;
+  last_attempt_at: string | null;
+  last_success_at: string | null;
+}
+export interface VerificationTask extends VerificationCheck {
+  source_evidence_id?: string | null;
+  id: string;
+  evidence_id: string | null;
+  priority: number;
+  attempts: number;
+  actual_calls: number;
+  error: string | null;
+}
+export interface VerificationReceipt {
+  id: string;
+  task_id: string;
+  source_url: string;
+  response_hash: string | null;
+  extracted: TrafficFields | null;
+  outcome: string;
+  detail: string;
+  actual_calls: number;
+  cost_usd: number;
+  attempted_at: string;
+  success_at: string | null;
+  traffic_id: string | null;
 }
 export interface Project {
   id: string;
@@ -86,8 +131,12 @@ export interface TrafficFields {
   scope: string;
   value: number | null;
   unit?: string;
+  raw_display?: string | null;
+  precision_step?: number;
 }
 export interface Traffic extends TrafficFields {
+  raw_display?: string | null;
+  precision_step?: number;
   id: string;
   value: number;
   version: number;
@@ -97,6 +146,9 @@ export interface Traffic extends TrafficFields {
   verified_at: string;
 }
 export interface Snapshot {
+  rule_version?: string;
+  members?: string[];
+  exclusions?: { project_id: string; reason: string }[];
   id: string;
   category: string;
   source: string;
@@ -112,6 +164,8 @@ export interface Snapshot {
   created_at: string;
 }
 export interface SnapshotEntry {
+  raw_display?: string;
+  precision_step?: number;
   project_id: string;
   domain: string;
   value: number;
@@ -218,6 +272,12 @@ export interface Bootstrap {
   as_of: string;
   configured: boolean;
   categories: Category[];
+  categoryFollowers: Record<string, number>;
+  memberships: Membership[];
+  checks: VerificationCheck[];
+  verificationTasks: VerificationTask[];
+  receipts: VerificationReceipt[];
+  verificationSettings: Record<string, any> | null;
   projects: Project[];
   researchQueue: Project[];
   traffic: Traffic[];
@@ -247,6 +307,12 @@ export const emptyBootstrap: Bootstrap = {
   as_of: "1970-01-01T00:00:00Z",
   configured: false,
   categories: [],
+  categoryFollowers: {},
+  memberships: [],
+  checks: [],
+  verificationTasks: [],
+  receipts: [],
+  verificationSettings: null,
   projects: [],
   researchQueue: [],
   traffic: [],

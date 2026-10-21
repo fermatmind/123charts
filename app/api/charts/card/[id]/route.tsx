@@ -26,12 +26,12 @@ export async function GET(
       { error: "Demo project is not available in real dataset" },
       { status: 404 },
     );
+  const wanted = request.nextUrl.searchParams.get("snapshot");
+  let query = db.from("charts_snapshots").select("*").eq("demo", demo);
+  if (!wanted) query = query.eq("category", p.category);
+  if (wanted) query = query.eq("id", wanted);
   const snapshot = checked(
-    await db
-      .from("charts_snapshots")
-      .select("*")
-      .eq("category", p.category)
-      .eq("demo", demo)
+    await query
       .order("month", { ascending: false })
       .order("version", { ascending: false })
       .limit(1),
@@ -56,7 +56,7 @@ export async function GET(
     await db
       .from("charts_categories")
       .select("*")
-      .eq("slug", p.category)
+      .eq("slug", rank ? snapshot.category : p.category)
       .single(),
   );
   const zh = request.nextUrl.searchParams.get("lang") === "zh";
@@ -136,7 +136,8 @@ export async function GET(
         >
           <span style={{ fontSize: 54 }}>#{rank.rank}</span>
           <span style={{ fontSize: 26, color: "#a9bde5" }}>
-            {Number(rank.value).toLocaleString(zh ? "zh-CN" : "en-US")}{" "}
+            {rank.raw_display ??
+              Number(rank.value).toLocaleString(zh ? "zh-CN" : "en-US")}{" "}
             {label("monthly visits", "月访问量")}
           </span>
         </div>
@@ -168,7 +169,7 @@ export async function GET(
       >
         <span>
           {rank
-            ? `${snapshot.month} · AITDK · worldwide / all devices / domain · snapshot v${snapshot.version}`
+            ? `${snapshot.month} · ${snapshot.source} · worldwide / all devices / domain · snapshot v${snapshot.version} · coverage ${snapshot.coverage_count}/${snapshot.total_count}`
             : label(
                 "Free project discovery · Visit the official site for current details",
                 "免费发现项目 · 最新资料请以官网为准",

@@ -56,14 +56,12 @@ test("discovery, keyboard search, bilingual state and responsive layout", async 
     "/en/charts?dataset=demo&category=knowledge-search&month=2026-08&page=2",
   );
   await page.getByRole("link", { name: "中", exact: true }).click();
-  await expect(page).toHaveURL(/\/zh\/charts/);
-  expect(new URL(page.url()).searchParams.get("category")).toBe(
-    "knowledge-search",
-  );
+  await expect(page).toHaveURL(/\/zh\/charts\/knowledge-search/);
+  expect(new URL(page.url()).pathname).toBe("/zh/charts/knowledge-search");
   expect(new URL(page.url()).searchParams.get("month")).toBe("2026-08");
   expect(new URL(page.url()).searchParams.get("page")).toBe("2");
   await expect(
-    page.getByRole("heading", { name: "网站月度访问量榜" }),
+    page.getByRole("heading", { name: "知识搜索与 RAG网站流量榜" }),
   ).toBeVisible();
   await page.screenshot({
     path: "output/playwright/charts-zh.png",
@@ -84,7 +82,9 @@ test("discovery, keyboard search, bilingual state and responsive layout", async 
   await page.goto("/en?dataset=real");
   await expect(page.getByText(/RESEARCH DATA/)).toBeVisible();
   await expect(
-    page.getByText("No data", { exact: true }).first(),
+    page
+      .getByText("Awaiting comparable verified data.", { exact: true })
+      .first(),
   ).toBeVisible();
   await expect(page.getByText("Demo verified", { exact: true })).toHaveCount(0);
   expect(errors).toEqual([]);
@@ -96,9 +96,11 @@ test("private reports, revocable sharing, bilingual PNG and subscriptions", asyn
   await signIn(page, "founder");
   await page.locator('a[href*="/reports/"]').first().click();
   await expect(
-    page.getByRole("heading", { name: "Your peer observation group." }),
+    page.getByRole("heading", { name: "My peer comparison." }),
   ).toBeVisible();
-  expect(await page.locator("tbody tr").count()).toBe(10);
+  expect(
+    await page.locator('[aria-label="Saved peer report"] tbody tr').count(),
+  ).toBe(10);
   const revoke = page.getByRole("button", { name: "Revoke share link" });
   if (await revoke.count()) await revoke.click();
   await page.getByRole("button", { name: "Enable sharing" }).click();
@@ -325,7 +327,9 @@ test("browser submission, saved draft, OCR, administrator review and delivery", 
   await adminContext.close();
   await page.goto("/en/dashboard?dataset=demo");
   await page.locator('a[href*="/reports/"]').filter({ hasText: name }).click();
-  await expect(page.locator("tbody tr")).toHaveCount(10);
+  await expect(
+    page.locator('[aria-label="Saved peer report"] tbody tr'),
+  ).toHaveCount(10);
   await page.screenshot({
     path: "output/playwright/delivered-report.png",
     fullPage: true,
@@ -370,4 +374,109 @@ test.afterAll(async () => {
       await db.from("charts_projects").delete().eq("id", app.project_id);
     }
   }
+});
+
+test("category directory, stable category ranks, scope exclusions and shared snapshot JSON", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/zh/charts?dataset=demo");
+  await expect(
+    page.getByRole("heading", { name: "分类流量榜", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".category-summary")).toHaveCount(3);
+  await page.getByLabel("搜索分类").fill("编程");
+  await expect(page.locator(".category-summary")).toHaveCount(1);
+  await page.getByRole("link", { name: /查看完整榜单/ }).click();
+  await expect(page).toHaveURL(/\/zh\/charts\/ai-coding/);
+  await expect(
+    page.getByRole("heading", { name: "AI 编程辅助网站流量榜" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "相关综合平台" }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".category-rank-table").getByText(/AWS/),
+  ).toHaveCount(0);
+  const second = page
+    .locator(".category-rank-table tbody tr[data-project]")
+    .nth(1);
+  const name = await second.locator("strong").innerText(),
+    rank = await second.locator("td").first().innerText();
+  await page.getByLabel("筛选网站").fill(name);
+  await expect(
+    page.locator(".category-rank-table tbody tr[data-project]"),
+  ).toHaveCount(1);
+  await expect(
+    page.locator(".category-rank-table tbody tr[data-project] td").first(),
+  ).toHaveText(rank);
+  await page.getByRole("link", { name: "EN", exact: true }).click();
+  await expect(page).toHaveURL(/\/en\/charts\/ai-coding/);
+  expect(new URL(page.url()).searchParams.get("q")).toBe(name);
+  const jsonLink = await page
+    .getByRole("link", { name: "Read this exact snapshot as JSON" })
+    .getAttribute("href");
+  const response = await request.get(jsonLink!);
+  expect(response.ok()).toBe(true);
+  const snapshot = await response.json();
+  expect(snapshot.demo).toBe(true);
+  expect(snapshot.category).toBe("ai-coding");
+  expect(
+    snapshot.entries.every(
+      (e: any) =>
+        e.month === snapshot.month &&
+        e.source === snapshot.source &&
+        e.snapshot_version === snapshot.version,
+    ),
+  ).toBe(true);
+  await page.goto("/en/charts/ai-coding?dataset=demo&month=2026-09&page=2");
+  await page.getByRole("button", { name: "←", exact: true }).click();
+  await expect
+    .poll(() => new URL(page.url()).searchParams.get("page"))
+    .toBe("1");
+  await page.goto(
+    "/zh/charts/ai-coding?dataset=real&month=2026-09&source=Semrush%20public",
+  );
+  await expect(
+    page.locator(".category-rank-table").getByText("35.49M", { exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "详情", exact: true }).click();
+  await expect(page.locator(".rank-evidence")).toContainText("cursor.com");
+  await expect(page.locator(".rank-evidence")).toContainText("Semrush public");
+  await expect(
+    page.getByRole("heading", { name: /本期未参与排名/ }),
+  ).toBeVisible();
+  await page.screenshot({
+    path: "output/playwright/category-real-desktop.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.screenshot({
+    path: "output/playwright/category-real-mobile.png",
+    fullPage: true,
+  });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
+  await page.locator(".category-rank-table a").first().click();
+  await expect(page).toHaveURL(/\/zh\/projects\/cursor/);
+  expect(new URL(page.url()).searchParams.get("source")).toBe("Semrush public");
+  expect(new URL(page.url()).searchParams.get("month")).toBe("2026-09");
+  await expect(
+    page.getByText(/2026-09 · Semrush public/).first(),
+  ).toBeVisible();
+  const pinned = new URL(page.url()).searchParams.get("snapshot");
+  await expect(page.getByRole("link", { name: /分享卡片/ })).toHaveAttribute(
+    "href",
+    new RegExp("snapshot=" + pinned),
+  );
+  await page.goto(
+    "/en/charts/ai-coding?dataset=demo&month=2026-09&version=999999",
+  );
+  await expect(
+    page.getByText(/No published snapshot for this selection/),
+  ).toBeVisible();
+  await expect(page.locator(".category-rank-table")).toHaveCount(0);
 });

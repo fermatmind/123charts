@@ -180,6 +180,10 @@ export function parseTraffic(text: string): TrafficFields {
     scope: /worldwide/i.test(text) && /all\s+devices/i.test(text) ? SCOPE : "",
     value: Number.isFinite(value) ? value : null,
     unit: unit || "visits",
+    raw_display: number ? number[1] + unit : null,
+    precision_step: number
+      ? (multiplier[unit] ?? 1) / 10 ** (number[1].split(".")[1]?.length ?? 0)
+      : 1,
   };
 }
 export function evidenceFieldsComplete(f: TrafficFields, domain: string) {
@@ -228,4 +232,28 @@ export function trafficFingerprint(f: TrafficFields, demo: boolean) {
     f.scope,
     demo ? "demo" : "real",
   ].join(":");
+}
+
+// Suggestions are explicitly confirmed by a person; they never publish a relationship.
+export function suggestCategory(text: string) {
+  const scores = [
+    [
+      "ai-coding",
+      /\b(code editor|code completion|coding assistant|debugging|code generation)\b/gi,
+    ],
+    [
+      "workflow-automation",
+      /\b(workflow automation|automate workflows|app integrations|automation platform)\b/gi,
+    ],
+    [
+      "knowledge-search",
+      /\b(knowledge search|retrieval|enterprise search|RAG|document search)\b/gi,
+    ],
+  ] as const;
+  const ranked = scores
+    .map(([slug, re]) => ({ slug, score: [...text.matchAll(re)].length }))
+    .sort((a, b) => b.score - a.score);
+  return ranked[0].score > 0 && ranked[0].score > ranked[1].score
+    ? ranked[0].slug
+    : null;
 }

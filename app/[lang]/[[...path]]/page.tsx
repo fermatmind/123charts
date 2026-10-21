@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { bootstrap, adminDb, checked } from "@/lib/charts/server";
@@ -8,7 +9,7 @@ type Props = {
   searchParams: Promise<Record<string, string | undefined>>;
 };
 const labels: Record<string, [string, string]> = {
-  charts: ["Monthly website charts", "网站月度访问量榜"],
+  charts: ["Category traffic charts", "分类流量榜"],
   projects: ["Project library", "项目研究库"],
   categories: ["Explore categories", "探索分类"],
   submit: ["Free project enrollment", "免费项目入驻"],
@@ -16,7 +17,7 @@ const labels: Record<string, [string, string]> = {
   following: ["Saved & following", "收藏与关注"],
   login: ["Sign in", "登录"],
   admin: ["Review console", "审核工作台"],
-  reports: ["Your peer observation group", "你的同行观察组"],
+  reports: ["My peer comparison", "我的同行对比"],
   shared: ["Shared peer observation group", "分享的同行观察组"],
   methodology: ["Data & methodology", "数据与方法"],
 };
@@ -51,6 +52,23 @@ export async function generateMetadata({
     } catch {
       /* Local setup page remains available without a database. */
     }
+  }
+  if (path[0] === "charts" && path[1]) {
+    try {
+      const c = checked(
+        await adminDb()
+          .from("charts_categories")
+          .select("*")
+          .eq("slug", path[1])
+          .maybeSingle(),
+      );
+      if (c) {
+        title = zh
+          ? `${c.name_zh}网站流量榜`
+          : `${c.name_en} website traffic chart`;
+        description = zh ? c.description_zh : c.description_en;
+      }
+    } catch {}
   }
   const canonical = `/${lang}${route ? "/" + route : ""}`;
   return {
@@ -92,14 +110,32 @@ export default async function Page({ params, searchParams }: Props) {
     path.length > 2 ||
     (first && !labels[first]) ||
     (path.length === 2 &&
-      !["projects", "categories", "dashboard", "reports", "shared"].includes(
-        first,
-      )) ||
+      ![
+        "projects",
+        "categories",
+        "charts",
+        "dashboard",
+        "reports",
+        "shared",
+      ].includes(first)) ||
     (first === "dashboard" && path[1] && path[1] !== "notifications")
   )
     notFound();
-  const query = await searchParams,
-    dataset = query.dataset === "real" ? "real" : "demo",
+  const query = await searchParams;
+  if (
+    first === "categories" ||
+    (first === "charts" && !path[1] && query.category)
+  ) {
+    const qs = new URLSearchParams(
+      Object.entries(query).filter(
+        ([k, v]) => k !== "category" && typeof v === "string",
+      ) as [string, string][],
+    );
+    redirect(
+      `/${lang}/charts${path[1] || query.category ? "/" + (path[1] || query.category) : ""}?${qs}`,
+    );
+  }
+  const dataset = query.dataset === "real" ? "real" : "demo",
     initial = await bootstrap(dataset);
   if (
     initial.configured &&
@@ -110,7 +146,7 @@ export default async function Page({ params, searchParams }: Props) {
     notFound();
   if (
     initial.configured &&
-    first === "categories" &&
+    first === "charts" &&
     path[1] &&
     !initial.categories.some((p) => p.slug === path[1])
   )

@@ -1,3 +1,9 @@
+import {
+  scheduleVerification,
+  verificationTick,
+  queueVerification,
+  PUBLIC_SOURCE,
+} from "../../lib/charts/verification";
 import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import { createWorker } from "tesseract.js";
@@ -5,7 +11,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import nodemailer from "nodemailer";
 import { loadEnv } from "./env.mjs";
-import { parseTraffic } from "../../lib/charts/rules";
+import { parseTraffic, suggestCategory } from "../../lib/charts/rules";
 import { safeHtml, extractMetadata } from "../../lib/charts/safe-fetch";
 loadEnv();
 const endpoint = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -214,7 +220,7 @@ async function digest(owner?: string) {
               title_zh: `月榜已更新：${snapshot.month}`,
               body_en: `${snapshot.category} · ${snapshot.source} · ${snapshot.coverage_count}/${snapshot.total_count} covered · v${snapshot.version}`,
               body_zh: `${snapshot.category} · ${snapshot.source} · 覆盖 ${snapshot.coverage_count}/${snapshot.total_count} · v${snapshot.version}`,
-              href: `/charts?category=${snapshot.category}&month=${snapshot.month}`,
+              href: `/charts/${snapshot.category}?month=${snapshot.month}&source=${encodeURIComponent(snapshot.source)}&version=${snapshot.version}`,
               dedupe_key: `snapshot:${f.owner_id}:${snapshot.id}`,
             },
             { onConflict: "dedupe_key", ignoreDuplicates: true },
@@ -233,7 +239,6 @@ async function digest(owner?: string) {
       .from("charts_traffic")
       .select("*")
       .eq("state", "verified")
-      .eq("source", "AITDK")
       .eq("metric", "visits")
       .eq("scope", "worldwide-all-devices-domain")
       .order("month", { ascending: false })
@@ -278,6 +283,7 @@ async function digest(owner?: string) {
       const prior = peer.traffic;
       if (
         prior &&
+        current.source === prior.source &&
         (current.month < prior.month ||
           (current.month === prior.month && current.version <= prior.version))
       )
@@ -343,11 +349,10 @@ async function digest(owner?: string) {
             (f.kind === "project" && f.target === p.id) ||
             (f.kind === "category" && f.target === p.category),
         );
-    } else if (location.pathname === "/charts")
+    } else if (location.pathname.startsWith("/charts/"))
       subscribed = follow.some(
         (f: any) =>
-          f.kind === "category" &&
-          f.target === location.searchParams.get("category"),
+          f.kind === "category" && f.target === location.pathname.split("/")[2],
       );
     else if (location.pathname.startsWith("/reports/")) {
       const r = check(
@@ -385,11 +390,13 @@ async function digest(owner?: string) {
 }
 async function processJob(job: any) {
   if (job.kind === "ocr") {
+    const sourceEvidence = !!job.payload.source_evidence_id;
+    const table = sourceEvidence ? "charts_source_evidence" : "charts_evidence";
     const e = check(
       await db
-        .from("charts_evidence")
+        .from(table)
         .select("*")
-        .eq("id", job.payload.evidence_id)
+        .eq("id", job.payload.source_evidence_id ?? job.payload.evidence_id)
         .maybeSingle(),
     );
     if (!e) return { removed: true };
@@ -407,10 +414,41 @@ async function processJob(job: any) {
         Buffer.from(await blob.arrayBuffer()),
       );
       const fields = parseTraffic(result.data.text);
+      if (sourceEvidence) {
+        fields.domain = result.data.text.toLowerCase().includes(e.domain)
+          ? e.domain
+          : fields.domain;
+        fields.source = /SEMRUSH/i.test(result.data.text) ? PUBLIC_SOURCE : "";
+        fields.scope =
+          /All Devices/i.test(result.data.text) &&
+          /Worldwide/i.test(result.data.text)
+            ? "worldwide-all-devices-domain"
+            : "";
+        // Source-layout fallback: a single abbreviated traffic candidate in the
+        // visible overview. This remains a candidate until the actual page agrees.
+        if (fields.value === null && /Traffic Stats/i.test(result.data.text)) {
+          const candidates = Array.from(
+            new Set(result.data.text.match(/\b\d+(?:\.\d+)?[KMB]\b/g) ?? []),
+          );
+          if (candidates.length === 1) {
+            const parsed = parseTraffic(`Monthly Visits ${candidates[0]}`);
+            fields.value = parsed.value;
+            fields.unit = parsed.unit;
+            fields.raw_display = parsed.raw_display;
+            fields.precision_step = parsed.precision_step;
+            fields.metric = "visits";
+          }
+        }
+        const named = result.data.text.match(
+          /(January|February|March|April|May|June|July|August|September|October|November|December) (20\d{2})/i,
+        );
+        if (named)
+          fields.month = `${named[2]}-${String(["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"].indexOf(named[1].toLowerCase()) + 1).padStart(2, "0")}`;
+      }
       // Extraction never grants verification. A reviewer must check scope, source and attribution.
       check(
         await db
-          .from("charts_evidence")
+          .from(table)
           .update({
             raw_text: result.data.text.slice(0, 30000),
             extracted: fields,
@@ -419,6 +457,24 @@ async function processJob(job: any) {
           .eq("id", e.id)
           .eq("state", "pending_extraction"),
       );
+      if (sourceEvidence) {
+        await queueVerification(db, {
+          domain: e.domain,
+          source: e.source,
+          month: e.month,
+          source_evidence_id: e.id,
+          priority: 10,
+        });
+        return { confidence: result.data.confidence, fields };
+      }
+      if (!e.demo && fields.month)
+        await queueVerification(db, {
+          domain: e.peer_domain,
+          source: PUBLIC_SOURCE,
+          month: fields.month,
+          evidence_id: e.id,
+          priority: 5,
+        });
       return { confidence: result.data.confidence, fields };
     } finally {
       await worker.terminate();
@@ -434,7 +490,14 @@ async function processJob(job: any) {
           .eq("id", job.payload.project_id)
           .eq("publication", "draft"),
       );
-    return { ...extractMetadata(fetched.html), website_url: fetched.url };
+    const metadata = extractMetadata(fetched.html);
+    return {
+      ...metadata,
+      suggested_category: suggestCategory(
+        metadata.name + " " + metadata.description,
+      ),
+      website_url: fetched.url,
+    };
   }
   if (job.kind === "digest") {
     await digest(job.owner_id);
@@ -452,6 +515,9 @@ while (!stopping) {
   try {
     if (Date.now() - lastScheduled > 60000) {
       lastScheduled = Date.now();
+      await scheduleVerification(db)
+        .then(() => verificationTick(db))
+        .catch((e) => console.error("Source verification:", e.message));
       await recommendations().catch((e) =>
         console.error("Recommendation scheduling:", e.message),
       );

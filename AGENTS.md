@@ -1,6 +1,6 @@
 # 123Charts Local V1
 
-The current product authority is the user-approved 123Charts V1 plan in docs/123CHARTS_V1.md. Earlier 88CN strategy documents are historical, not current product instructions.
+The current product authority is the user-approved 123Charts V1 plan in docs/123CHARTS_V1.md and the subsequent category-first extension docs/CATEGORY_TRAFFIC_CHARTS.md. Earlier 88CN strategy documents are historical, not current product instructions.
 
 - Work in this repository; preserve Git history and adjacent projects.
 - This delivery is local only: no GitHub writes, push, DNS, deployment, or production database access.

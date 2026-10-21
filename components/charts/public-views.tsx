@@ -1,4 +1,5 @@
 "use client";
+import { CategorySummaries } from "./category-charts";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -84,7 +85,7 @@ export function useEvent(
   }, [projectId, kind, surface]);
   return ref;
 }
-function Change({
+export function Change({
   current,
   previous,
 }: {
@@ -116,7 +117,7 @@ function Change({
         "需要可比较的连续月份",
       )}
     >
-      —
+      {t("No comparable prior month", "暂无可比上期")}
     </span>
   ) : (
     <span
@@ -128,7 +129,7 @@ function Change({
     </span>
   );
 }
-function Sparkline({ rows }: { rows: Traffic[] }) {
+export function Sparkline({ rows }: { rows: Traffic[] }) {
   const values = rows
     .filter((x) => x.state === "verified")
     .sort((a, b) => a.month.localeCompare(b.month));
@@ -163,7 +164,7 @@ function Sparkline({ rows }: { rows: Traffic[] }) {
     </svg>
   );
 }
-function RecommendationCard({
+export function RecommendationCard({
   id,
   reason,
   slot,
@@ -348,7 +349,7 @@ export function Home() {
       )}
       <div className="section-header">
         <div>
-          <h2>{t("Monthly website charts", "网站月度访问量榜")}</h2>
+          <h2>{t("Category traffic charts", "分类流量榜")}</h2>
           <p>
             {t(
               "Same source. Same month. A comparable starting point.",
@@ -361,38 +362,28 @@ export function Home() {
           <ArrowRight size={12} />
         </Link>
       </div>
-      <ProjectTable compactView charts />
+      <CategorySummaries />
       <div className="section-header">
-        <h2>{t("Explore by what you do", "按实际任务探索")}</h2>
-        <Link href={href("/categories")}>
-          {t("All categories", "所有分类")}
-          <ArrowRight size={12} />
-        </Link>
+        <h2>{t("Collected this week", "本周新收录网站")}</h2>
       </div>
-      <div className="category-grid">
-        {data.categories.map((c, i) => {
-          const Icon = [Code2, Workflow, Database][i];
-          return (
-            <Link
-              key={c.slug}
-              className="category-item"
-              href={href(`/categories/${c.slug}`)}
-            >
-              <div className="row between">
-                <Icon size={19} className="blue" />
-                <ArrowUpRight size={14} className="muted" />
-              </div>
-              <h3>{locale === "zh" ? c.name_zh : c.name_en}</h3>
-              <p>{locale === "zh" ? c.description_zh : c.description_en}</p>
-              <span className="mono">
-                {String(
-                  data.projects.filter((p) => p.category === c.slug).length,
-                ).padStart(2, "0")}{" "}
-                {t("PROJECTS", "个项目")}
+      <div className="category-update-list">
+        {data.projects
+          .filter(
+            (p) =>
+              Date.parse(data.as_of) - Date.parse(p.collected_at) <
+              7 * 86400000,
+          )
+          .sort((a, b) => b.collected_at.localeCompare(a.collected_at))
+          .slice(0, 6)
+          .map((p) => (
+            <Link key={p.id} href={href(`/projects/${p.slug}`)}>
+              <span>
+                {p.name}
+                {p.demo ? " · DEMO" : ""}
               </span>
+              <span className="mono muted">{p.collected_at.slice(0, 10)}</span>
             </Link>
-          );
-        })}
+          ))}
       </div>
       <div className="section-header">
         <h2>{t("Recently updated profiles", "最近更新的项目资料")}</h2>
@@ -465,7 +456,7 @@ export function ProjectListing({
               ? c.name_zh
               : c.name_en
             : charts
-              ? t("Monthly website charts", "网站月度访问量榜")
+              ? t("Category traffic charts", "分类流量榜")
               : t("Find your next tool.", "寻找下一个好工具。")}
         </h1>
         <p>
@@ -572,7 +563,7 @@ export function ProjectTable({
     if (k === "month") setMonth(v);
     if (!compactView) {
       const target = category
-        ? `/categories/${k === "category" ? v : category}`
+        ? `/charts/${k === "category" ? v : category}`
         : charts
           ? "/charts"
           : "/projects";
@@ -762,7 +753,7 @@ export function ProjectTable({
                   <td>
                     <Link
                       href={href(
-                        `/projects/${p.slug}?from=${encodeURIComponent(compactView ? "/home/charts/" + cat : charts ? "/charts/" + cat : category ? "/categories/" + category : "/projects")}`,
+                        `/projects/${p.slug}?from=${encodeURIComponent(compactView ? "/home/charts/" + cat : charts ? "/charts/" + cat : category ? "/charts/" + category : "/projects")}`,
                       )}
                       className="project-cell"
                     >
@@ -784,10 +775,7 @@ export function ProjectTable({
                     </Link>
                   </td>
                   <td className="hide-tablet">
-                    <Link
-                      className="tag"
-                      href={href(`/categories/${p.category}`)}
-                    >
+                    <Link className="tag" href={href(`/charts/${p.category}`)}>
                       {locale === "zh"
                         ? categoryName?.name_zh
                         : categoryName?.name_en}
@@ -843,7 +831,7 @@ export function ProjectTable({
                     <Link
                       className="icon-button"
                       href={href(
-                        `/projects/${p.slug}?from=${encodeURIComponent(compactView ? "/home/charts/" + cat : charts ? "/charts/" + cat : category ? "/categories/" + category : "/projects")}`,
+                        `/projects/${p.slug}?from=${encodeURIComponent(compactView ? "/home/charts/" + cat : charts ? "/charts/" + cat : category ? "/charts/" + category : "/projects")}`,
                       )}
                       aria-label={`${t("View", "查看")} ${p.name}`}
                     >
@@ -950,12 +938,12 @@ export function CategoryIndex() {
                 {t("projects", "个项目")}
               </span>
             </div>
-            <Link href={href(`/categories/${c.slug}`)}>
+            <Link href={href(`/charts/${c.slug}`)}>
               <h3>{locale === "zh" ? c.name_zh : c.name_en} ↗</h3>
             </Link>
             <p>{locale === "zh" ? c.description_zh : c.description_en}</p>
             <div className="row">
-              <Link className="button" href={href(`/categories/${c.slug}`)}>
+              <Link className="button" href={href(`/charts/${c.slug}`)}>
                 {t("Explore category", "浏览分类")}
                 <ArrowRight size={12} />
               </Link>
@@ -1008,12 +996,23 @@ export function ProjectDetail({ slug }: { slug: string }) {
         <Link href={href("/projects")}>{t("Browse projects", "浏览项目")}</Link>
       </Empty>
     );
+  const sources = Array.from(
+    new Set(
+      data.traffic
+        .filter(
+          (x) => x.domain === p.measurement_domain && x.state === "verified",
+        )
+        .map((x) => x.source),
+    ),
+  );
+  const selectedSource = detailParams.get("source") ?? sources[0] ?? "AITDK";
   const values = data.traffic
     .filter(
       (x) =>
         x.domain === p.measurement_domain &&
         x.state === "verified" &&
-        x.source === "AITDK" &&
+        (!detailParams.get("month") || x.month <= detailParams.get("month")!) &&
+        x.source === selectedSource &&
         x.scope === "worldwide-all-devices-domain",
     )
     .sort((a, b) => a.month.localeCompare(b.month));
@@ -1118,7 +1117,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
         </a>
       </div>
       <div className="detail-tags">
-        <Link className="tag" href={href(`/categories/${p.category}`)}>
+        <Link className="tag" href={href(`/charts/${p.category}`)}>
           {locale === "zh" ? category?.name_zh : category?.name_en}
         </Link>
         <span className="tag">{t("Research profile", "资料已收录")}</span>
@@ -1139,6 +1138,64 @@ export function ProjectDetail({ slug }: { slug: string }) {
       <p className="long-copy">
         {locale === "zh" ? p.description_zh : p.description_en}
       </p>
+      <section className="panel">
+        <h2>{t("Category positions", "各分类中的位置")}</h2>
+        <p className="small muted">
+          {t(
+            "Classification is reviewed by purpose; broad platforms are contextual and do not rank as individual products.",
+            "分类按用途审核；综合平台仅作相关背景，不代表旗下单独产品排名。",
+          )}
+        </p>
+        {data.memberships
+          .filter((m) => m.project_id === p.id)
+          .map((m) => {
+            const c = data.categories.find((c) => c.slug === m.category);
+            const snap = data.snapshots.find((s) => s.category === m.category);
+            const entry = snap?.entries.find((e) => e.project_id === p.id);
+            return (
+              <div className="category-update-list" key={m.category}>
+                <Link
+                  href={href(
+                    `/charts/${m.category}${snap ? `?month=${snap.month}&source=${encodeURIComponent(snap.source)}&version=${snap.version}` : ""}`,
+                  )}
+                >
+                  <span>
+                    {t(c?.name_en ?? m.category, c?.name_zh ?? m.category)}
+                    <small className="block muted">{m.basis}</small>
+                  </span>
+                  <span>
+                    {m.placement === "general"
+                      ? t("Related broad platform", "相关综合平台")
+                      : m.state !== "confirmed"
+                        ? t("Classification under review", "归类待审核")
+                        : entry
+                          ? `#${entry.rank} · ${snap?.month} · ${snap?.source}`
+                          : t("Not ranked this month", "本期暂未排名")}
+                  </span>
+                </Link>
+              </div>
+            );
+          })}
+      </section>
+      {sources.length > 1 && (
+        <div className="filters">
+          <label>
+            {t("Traffic source", "访问量来源")}{" "}
+            <select
+              value={selectedSource}
+              onChange={(e) => {
+                const qs = new URLSearchParams(detailParams);
+                qs.set("source", e.target.value);
+                window.location.href = href(`/projects/${p.slug}?${qs}`);
+              }}
+            >
+              {sources.map((source) => (
+                <option key={source}>{source}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+      )}
       <div className="panel-grid" style={{ marginTop: 25 }}>
         <section className="panel">
           <h2>
@@ -1157,10 +1214,10 @@ export function ProjectDetail({ slug }: { slug: string }) {
                     className="numeric"
                     style={{ fontSize: 30, fontWeight: 400 }}
                   >
-                    {numberFormat(latest.value, locale)}
+                    {latest.raw_display ?? numberFormat(latest.value, locale)}
                   </strong>
                   <div className="muted small">
-                    {latest.month} · AITDK · {t("visits", "访问量")}
+                    {latest.month} · {latest.source} · {t("visits", "访问次数")}
                   </div>
                 </div>
                 <Change current={latest} previous={values.at(-2)} />
@@ -1316,7 +1373,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
             </button>
             <a
               className="button ghost"
-              href={`/api/charts/card/${p.id}?lang=${locale}&dataset=${dataset}`}
+              href={`/api/charts/card/${p.id}?lang=${locale}&dataset=${dataset}&snapshot=${encodeURIComponent(detailParams.get("snapshot") ?? "")}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -1473,7 +1530,7 @@ export function SharedReport({ token }: { token: string }) {
         <div className="eyebrow">
           {t("Shared observation group", "分享的同行观察组")}
         </div>
-        <h1>{t("Your peer observation group", "你的同行观察组")}</h1>
+        <h1>{t("My peer comparison", "我的同行对比")}</h1>
         <p>
           {t(
             "A selected group, not the entire industry. Shared voluntarily by the applicant.",

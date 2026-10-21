@@ -93,7 +93,8 @@ export function SubmissionWizard() {
     ),
     [uploading, setUploading] = useState(false),
     [saved, setSaved] = useState(false),
-    [metadataJob, setMetadataJob] = useState("");
+    [metadataJob, setMetadataJob] = useState(""),
+    [suggestedCategory, setSuggestedCategory] = useState("");
   const saving = useRef<Promise<Application> | null>(null),
     lastSaved = useRef(existing ? JSON.stringify(existing.draft) : ""),
     latest = useRef(draft);
@@ -163,6 +164,7 @@ export function SubmissionWizard() {
         description_en:
           d.description_en || String(job.result?.description ?? ""),
       }));
+      setSuggestedCategory(String(job.result?.suggested_category ?? ""));
       setMetadataJob("");
     }
     if (job?.state === "failed") setMetadataJob("");
@@ -405,7 +407,15 @@ export function SubmissionWizard() {
                 placeholder={t("Your project name", "你的项目名称")}
               />
             </Field>
-            <Field label={t("Primary category", "主分类")}>
+            <Field
+              label={t("Primary category", "主分类")}
+              hint={t(
+                data.categories.find((c) => c.slug === draft.category)
+                  ?.description_en ?? "",
+                data.categories.find((c) => c.slug === draft.category)
+                  ?.description_zh ?? "",
+              )}
+            >
               <select
                 value={draft.category}
                 onChange={(e) => change("category", e.target.value)}
@@ -417,6 +427,32 @@ export function SubmissionWizard() {
                 ))}
               </select>
             </Field>
+            {suggestedCategory && (
+              <div className="field">
+                <span className="small muted">
+                  {t(
+                    "Suggested from website purpose; confirm before applying.",
+                    "根据官网用途提出的分类建议，请确认后采用。",
+                  )}
+                </span>
+                <button
+                  type="button"
+                  className="button"
+                  onClick={() => {
+                    change("category", suggestedCategory);
+                    setSuggestedCategory("");
+                  }}
+                >
+                  {t("Use suggestion", "采用建议")} ·{" "}
+                  {t(
+                    data.categories.find((c) => c.slug === suggestedCategory)
+                      ?.name_en ?? suggestedCategory,
+                    data.categories.find((c) => c.slug === suggestedCategory)
+                      ?.name_zh ?? suggestedCategory,
+                  )}
+                </button>
+              </div>
+            )}
             <Field
               label={t("Pricing type", "产品价格类型")}
               hint={t(

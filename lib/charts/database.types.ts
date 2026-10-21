@@ -238,25 +238,37 @@ export type Database = {
       };
       charts_categories: {
         Row: {
+          check_days: number;
           description_en: string;
           description_zh: string;
           name_en: string;
           name_zh: string;
+          parent_en: string;
+          parent_zh: string;
+          rules_version: number;
           slug: string;
         };
         ComputedFields: never;
         Insert: {
+          check_days?: number;
           description_en: string;
           description_zh: string;
           name_en: string;
           name_zh: string;
+          parent_en?: string;
+          parent_zh?: string;
+          rules_version?: number;
           slug: string;
         };
         Update: {
+          check_days?: number;
           description_en?: string;
           description_zh?: string;
           name_en?: string;
           name_zh?: string;
+          parent_en?: string;
+          parent_zh?: string;
+          rules_version?: number;
           slug?: string;
         };
         Relationships: [];
@@ -306,6 +318,49 @@ export type Database = {
           },
           {
             foreignKeyName: "charts_claims_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      charts_classification_log: {
+        Row: {
+          actor: string | null;
+          category: string;
+          created_at: string;
+          decision: NonNullable<Json>;
+          id: string;
+          project_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          actor?: string | null;
+          category: string;
+          created_at?: string;
+          decision: NonNullable<Json>;
+          id?: string;
+          project_id: string;
+        };
+        Update: {
+          actor?: string | null;
+          category?: string;
+          created_at?: string;
+          decision?: NonNullable<Json>;
+          id?: string;
+          project_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_classification_log_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_classification_log_project_id_fkey";
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
@@ -614,6 +669,59 @@ export type Database = {
         };
         Relationships: [];
       };
+      charts_memberships: {
+        Row: {
+          basis: string;
+          category: string;
+          placement: string;
+          project_id: string;
+          reviewed_at: string | null;
+          reviewed_by: string | null;
+          state: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          basis: string;
+          category: string;
+          placement?: string;
+          project_id: string;
+          reviewed_at?: string | null;
+          reviewed_by?: string | null;
+          state?: string;
+        };
+        Update: {
+          basis?: string;
+          category?: string;
+          placement?: string;
+          project_id?: string;
+          reviewed_at?: string | null;
+          reviewed_by?: string | null;
+          state?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_memberships_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
+            referencedRelation: "charts_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       charts_notifications: {
         Row: {
           body_en: string;
@@ -917,9 +1025,12 @@ export type Database = {
           created_at: string;
           demo: boolean;
           entries: NonNullable<Json>;
+          exclusions: NonNullable<Json>;
           id: string;
+          members: NonNullable<Json>;
           metric: string;
           month: string;
+          rule_version: string;
           scope: string;
           source: string;
           total_count: number;
@@ -933,9 +1044,12 @@ export type Database = {
           created_at?: string;
           demo?: boolean;
           entries: NonNullable<Json>;
+          exclusions?: NonNullable<Json>;
           id?: string;
+          members?: NonNullable<Json>;
           metric: string;
           month: string;
+          rule_version?: string;
           scope: string;
           source: string;
           total_count: number;
@@ -948,9 +1062,12 @@ export type Database = {
           created_at?: string;
           demo?: boolean;
           entries?: NonNullable<Json>;
+          exclusions?: NonNullable<Json>;
           id?: string;
+          members?: NonNullable<Json>;
           metric?: string;
           month?: string;
+          rule_version?: string;
           scope?: string;
           source?: string;
           total_count?: number;
@@ -965,6 +1082,49 @@ export type Database = {
             referencedColumns: ["slug"];
           },
         ];
+      };
+      charts_source_evidence: {
+        Row: {
+          created_at: string;
+          domain: string;
+          extracted: Json | null;
+          file_hash: string;
+          id: string;
+          month: string;
+          owner_id: string;
+          raw_text: string | null;
+          source: string;
+          state: string;
+          storage_path: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string;
+          domain: string;
+          extracted?: Json | null;
+          file_hash: string;
+          id?: string;
+          month: string;
+          owner_id: string;
+          raw_text?: string | null;
+          source: string;
+          state?: string;
+          storage_path: string;
+        };
+        Update: {
+          created_at?: string;
+          domain?: string;
+          extracted?: Json | null;
+          file_hash?: string;
+          id?: string;
+          month?: string;
+          owner_id?: string;
+          raw_text?: string | null;
+          source?: string;
+          state?: string;
+          storage_path?: string;
+        };
+        Relationships: [];
       };
       charts_source_months: {
         Row: {
@@ -1003,6 +1163,8 @@ export type Database = {
           id: string;
           metric: string;
           month: string;
+          precision_step: number;
+          raw_display: string | null;
           review_reference: string;
           scope: string;
           source: string;
@@ -1020,6 +1182,8 @@ export type Database = {
           id?: string;
           metric?: string;
           month: string;
+          precision_step?: number;
+          raw_display?: string | null;
           review_reference: string;
           scope?: string;
           source: string;
@@ -1036,6 +1200,8 @@ export type Database = {
           id?: string;
           metric?: string;
           month?: string;
+          precision_step?: number;
+          raw_display?: string | null;
           review_reference?: string;
           scope?: string;
           source?: string;
@@ -1050,6 +1216,165 @@ export type Database = {
             columns: ["evidence_id"];
             isOneToOne: false;
             referencedRelation: "charts_evidence";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      charts_verification_receipts: {
+        Row: {
+          actual_calls: number;
+          attempted_at: string;
+          cost_usd: number;
+          detail: string;
+          extracted: Json | null;
+          id: string;
+          outcome: string;
+          response_body: string | null;
+          response_hash: string | null;
+          review_reason: string | null;
+          reviewed_at: string | null;
+          reviewed_by: string | null;
+          source_url: string;
+          success_at: string | null;
+          task_id: string;
+          traffic_id: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          actual_calls?: number;
+          attempted_at?: string;
+          cost_usd?: number;
+          detail: string;
+          extracted?: Json | null;
+          id?: string;
+          outcome: string;
+          response_body?: string | null;
+          response_hash?: string | null;
+          review_reason?: string | null;
+          reviewed_at?: string | null;
+          reviewed_by?: string | null;
+          source_url: string;
+          success_at?: string | null;
+          task_id: string;
+          traffic_id?: string | null;
+        };
+        Update: {
+          actual_calls?: number;
+          attempted_at?: string;
+          cost_usd?: number;
+          detail?: string;
+          extracted?: Json | null;
+          id?: string;
+          outcome?: string;
+          response_body?: string | null;
+          response_hash?: string | null;
+          review_reason?: string | null;
+          reviewed_at?: string | null;
+          reviewed_by?: string | null;
+          source_url?: string;
+          success_at?: string | null;
+          task_id?: string;
+          traffic_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_verification_receipts_task_id_fkey";
+            columns: ["task_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_verification_tasks";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_verification_receipts_traffic_id_fkey";
+            columns: ["traffic_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_traffic";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_verification_receipts_traffic_id_fkey";
+            columns: ["traffic_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_traffic";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      charts_verification_tasks: {
+        Row: {
+          actual_calls: number;
+          attempts: number;
+          demo: boolean;
+          domain: string;
+          error: string | null;
+          evidence_id: string | null;
+          force_refresh: boolean;
+          id: string;
+          last_attempt_at: string | null;
+          last_success_at: string | null;
+          locked_at: string | null;
+          month: string;
+          next_check_at: string;
+          priority: number;
+          scope: string;
+          source: string;
+          source_evidence_id: string | null;
+          state: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          actual_calls?: number;
+          attempts?: number;
+          demo?: boolean;
+          domain: string;
+          error?: string | null;
+          evidence_id?: string | null;
+          force_refresh?: boolean;
+          id?: string;
+          last_attempt_at?: string | null;
+          last_success_at?: string | null;
+          locked_at?: string | null;
+          month: string;
+          next_check_at?: string;
+          priority?: number;
+          scope: string;
+          source: string;
+          source_evidence_id?: string | null;
+          state?: string;
+        };
+        Update: {
+          actual_calls?: number;
+          attempts?: number;
+          demo?: boolean;
+          domain?: string;
+          error?: string | null;
+          evidence_id?: string | null;
+          force_refresh?: boolean;
+          id?: string;
+          last_attempt_at?: string | null;
+          last_success_at?: string | null;
+          locked_at?: string | null;
+          month?: string;
+          next_check_at?: string;
+          priority?: number;
+          scope?: string;
+          source?: string;
+          source_evidence_id?: string | null;
+          state?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_verification_tasks_evidence_id_fkey";
+            columns: ["evidence_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_evidence";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_verification_tasks_source_evidence_id_fkey";
+            columns: ["source_evidence_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_source_evidence";
             referencedColumns: ["id"];
           },
         ];
@@ -2849,6 +3174,77 @@ export type Database = {
       };
     };
     Views: {
+      charts_public_checks: {
+        Row: {
+          demo: boolean | null;
+          domain: string | null;
+          last_attempt_at: string | null;
+          last_success_at: string | null;
+          month: string | null;
+          next_check_at: string | null;
+          scope: string | null;
+          source: string | null;
+          state: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          demo?: boolean | null;
+          domain?: string | null;
+          last_attempt_at?: string | null;
+          last_success_at?: string | null;
+          month?: string | null;
+          next_check_at?: string | null;
+          scope?: string | null;
+          source?: string | null;
+          state?: string | null;
+        };
+        Update: {
+          demo?: boolean | null;
+          domain?: string | null;
+          last_attempt_at?: string | null;
+          last_success_at?: string | null;
+          month?: string | null;
+          next_check_at?: string | null;
+          scope?: string | null;
+          source?: string | null;
+          state?: string | null;
+        };
+        Relationships: [];
+      };
+      charts_public_memberships: {
+        Row: {
+          basis: string | null;
+          category: string | null;
+          placement: string | null;
+          project_id: string | null;
+          reviewed_at: string | null;
+          state: string | null;
+        };
+        ComputedFields: never;
+        Relationships: [
+          {
+            foreignKeyName: "charts_memberships_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
+            referencedRelation: "charts_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       charts_public_projects: {
         Row: {
           category: string | null;
@@ -2929,6 +3325,8 @@ export type Database = {
           id: string | null;
           metric: string | null;
           month: string | null;
+          precision_step: number | null;
+          raw_display: string | null;
           scope: string | null;
           source: string | null;
           state: string | null;
@@ -2944,6 +3342,8 @@ export type Database = {
           id?: string | null;
           metric?: string | null;
           month?: string | null;
+          precision_step?: number | null;
+          raw_display?: string | null;
           scope?: string | null;
           source?: string | null;
           state?: string | null;
@@ -2958,6 +3358,8 @@ export type Database = {
           id?: string | null;
           metric?: string | null;
           month?: string | null;
+          precision_step?: number | null;
+          raw_display?: string | null;
           scope?: string | null;
           source?: string | null;
           state?: string | null;
@@ -3000,6 +3402,70 @@ export type Database = {
           isSetofReturn: true;
         };
       };
+      charts_claim_verification: {
+        Args: Record<PropertyKey, never>;
+        Returns: {
+          actual_calls: number;
+          attempts: number;
+          demo: boolean;
+          domain: string;
+          error: string | null;
+          evidence_id: string | null;
+          force_refresh: boolean;
+          id: string;
+          last_attempt_at: string | null;
+          last_success_at: string | null;
+          locked_at: string | null;
+          month: string;
+          next_check_at: string;
+          priority: number;
+          scope: string;
+          source: string;
+          source_evidence_id: string | null;
+          state: string;
+        }[];
+        SetofOptions: {
+          from: "*";
+          to: "charts_verification_tasks";
+          isOneToOne: false;
+          isSetofReturn: true;
+        };
+      };
+      charts_publish_category: {
+        Args: { payload: Json };
+        Returns: {
+          category: string;
+          correction_note: string | null;
+          coverage_count: number;
+          created_at: string;
+          demo: boolean;
+          entries: NonNullable<Json>;
+          exclusions: NonNullable<Json>;
+          id: string;
+          members: NonNullable<Json>;
+          metric: string;
+          month: string;
+          rule_version: string;
+          scope: string;
+          source: string;
+          total_count: number;
+          version: number;
+        };
+        SetofOptions: {
+          from: "*";
+          to: "charts_snapshots";
+          isOneToOne: true;
+          isSetofReturn: false;
+        };
+      };
+      charts_record_observation: {
+        Args: { fields: Json; receipt: string };
+        Returns: Json;
+      };
+      charts_resolve_observation: {
+        Args: { actor: string; reason: string; rid: string };
+        Returns: string;
+      };
       charts_review_decision: {
         Args: {
           decision: string;
@@ -3008,6 +3474,10 @@ export type Database = {
           kind: string;
           patch?: Json;
         };
+        Returns: undefined;
+      };
+      charts_review_membership: {
+        Args: { actor: string; cat: string; decision: Json; pid: string };
         Returns: undefined;
       };
       charts_save_draft: {

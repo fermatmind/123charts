@@ -1,3 +1,4 @@
+import { publishCategory } from "../../lib/charts/publishing";
 import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import { randomBytes, createHash } from "node:crypto";
@@ -713,6 +714,24 @@ if (
       href: "/dashboard",
       dedupe_key: "local-welcome",
     }),
+  );
+}
+// Publish changed category rules once; immutable older versions remain available.
+const published = ck(
+  await db.from("charts_snapshots").select("category,month,demo,source"),
+);
+const publishedKeys = new Set<string>();
+for (const snapshot of published) {
+  const key = `${snapshot.category}:${snapshot.month}:${snapshot.source}:${snapshot.demo}`;
+  if (publishedKeys.has(key)) continue;
+  publishedKeys.add(key);
+  await publishCategory(
+    db,
+    snapshot.category,
+    snapshot.month,
+    snapshot.demo,
+    "Category scope review: specialist ranking and broad-platform context separated.",
+    snapshot.source,
   );
 }
 console.log(

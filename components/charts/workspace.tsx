@@ -17,7 +17,7 @@ import {
   Eye,
   MousePointer2,
 } from "lucide-react";
-import type { ReportPeer } from "@/lib/charts/types";
+import type { ReportPeer, Report } from "@/lib/charts/types";
 import {
   useCharts,
   Status,
@@ -308,7 +308,7 @@ export function Dashboard({
             )}
           </section>
           <section className="panel">
-            <h2>{t("Your peer observation groups", "你的同行观察组")}</h2>
+            <h2>{t("My peer comparisons", "我的同行对比")}</h2>
             <p>
               {t(
                 "Each group contains the ten peers selected for that application. It is separate from the category-wide public chart.",
@@ -542,6 +542,24 @@ export function Following() {
           )}
         </p>
       </div>
+      {data.reports.filter((r) => r.owner_id === data.user?.id).length > 0 && (
+        <section className="panel">
+          <h2>{t("My peer comparisons", "我的同行对比")}</h2>
+          {data.reports
+            .filter((r) => r.owner_id === data.user?.id)
+            .map((r) => (
+              <Link
+                className="button"
+                key={r.id}
+                href={href(`/reports/${r.id}`)}
+              >
+                {data.projects.find((p) => p.id === r.project_id)?.name ??
+                  t("Ten-peer group", "十同行观察组")}{" "}
+                →
+              </Link>
+            ))}
+        </section>
+      )}
       <section className="panel">
         {data.follows.length ? (
           data.follows.map((f) => {
@@ -557,7 +575,7 @@ export function Following() {
                   <Link
                     className="row"
                     href={href(
-                      p ? `/projects/${p.slug}` : `/categories/${c?.slug}`,
+                      p ? `/projects/${p.slug}` : `/charts/${c?.slug}`,
                     )}
                   >
                     {p ? (
@@ -641,7 +659,10 @@ export function PeerReportTable({ peers }: { peers: ReportPeer[] }) {
     : "/peer-report";
   return (
     <div className="table-scroll">
-      <table className="data-table">
+      <table
+        className="data-table"
+        aria-label={t("Saved peer report", "已交付同行报告")}
+      >
         <thead>
           <tr>
             <th>{t("Peer website", "同行网站")}</th>
@@ -708,6 +729,118 @@ export function PeerReportTable({ peers }: { peers: ReportPeer[] }) {
     </div>
   );
 }
+function LivePeerComparison({ report }: { report: Report }) {
+  const { data, t, href, dataset } = useCharts();
+  return (
+    <section className="panel">
+      <h2>{t("Peer changes since delivery", "交付后的同行变化")}</h2>
+      <p className="small muted">
+        {t(
+          "Current source records are shown separately from the saved report. Different sources and months are not combined into a ranking.",
+          "当前来源记录与已交付报告分别展示，不将不同来源或月份混合排名。",
+        )}
+      </p>
+      <div className="table-scroll">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>{t("Peer website", "同行网站")}</th>
+              <th>{t("Latest source record", "最新来源记录")}</th>
+              <th>{t("Category position", "分类位置")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {report.peers.map((peer) => {
+              const project = data.projects.find(
+                (p) => p.domain === peer.domain,
+              );
+              const current = data.traffic
+                .filter(
+                  (x) =>
+                    x.domain === peer.domain &&
+                    x.state === "verified" &&
+                    x.demo === report.demo,
+                )
+                .sort(
+                  (a, b) =>
+                    b.month.localeCompare(a.month) ||
+                    b.verified_at.localeCompare(a.verified_at),
+                )[0];
+              const memberships = data.memberships.filter(
+                (m) => m.project_id === project?.id && m.state === "confirmed",
+              );
+              return (
+                <tr key={peer.domain}>
+                  <td>
+                    {project ? (
+                      <Link href={href(`/projects/${project.slug}`)}>
+                        {peer.name}
+                      </Link>
+                    ) : (
+                      peer.name
+                    )}
+                    <small className="block muted mono">{peer.domain}</small>
+                  </td>
+                  <td>
+                    {current ? (
+                      <>
+                        <strong className="mono">
+                          {current.raw_display ?? numberFormat(current.value)}
+                        </strong>
+                        <small className="block muted">
+                          {current.source} · {current.month} · v
+                          {current.version}
+                          {dataset === "demo" ? " · DEMO" : ""}
+                        </small>
+                      </>
+                    ) : (
+                      t("Still missing comparable data", "仍缺少可比数据")
+                    )}
+                  </td>
+                  <td>
+                    {memberships.map((m) => {
+                      const snapshot = data.snapshots.find(
+                        (s) =>
+                          s.category === m.category &&
+                          s.month === current?.month &&
+                          s.source === current?.source,
+                      );
+                      const e = snapshot?.entries.find(
+                        (e) => e.project_id === project?.id,
+                      );
+                      return (
+                        <Link
+                          key={m.category}
+                          className="block small blue"
+                          href={href(
+                            `/charts/${m.category}${snapshot ? `?month=${snapshot.month}&source=${encodeURIComponent(snapshot.source)}` : ""}`,
+                          )}
+                        >
+                          {t(
+                            data.categories.find((c) => c.slug === m.category)
+                              ?.name_en ?? m.category,
+                            data.categories.find((c) => c.slug === m.category)
+                              ?.name_zh ?? m.category,
+                          )}{" "}
+                          ·{" "}
+                          {e
+                            ? `#${e.rank}`
+                            : m.placement === "general"
+                              ? t("Broad platform", "综合平台")
+                              : t("Not ranked", "未排名")}
+                        </Link>
+                      );
+                    })}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
 export function ReportView({ id }: { id: string }) {
   const { data, t, href, api, busy, notify, locale, dataset } = useCharts();
   const r = data.reports.find((r) => r.id === id),
@@ -732,7 +865,7 @@ export function ReportView({ id }: { id: string }) {
         <div className="eyebrow">
           {p?.name} / {t("Enrollment deliverable", "入驻交付成果")}
         </div>
-        <h1>{t("Your peer observation group.", "你的同行观察组。")}</h1>
+        <h1>{t("My peer comparison.", "我的同行对比。")}</h1>
         <p>
           {t(
             "All ten peers, with verified values and explicit gaps. Your selected observation group is not the whole industry.",
@@ -748,6 +881,7 @@ export function ReportView({ id }: { id: string }) {
           )}
         </div>
       )}
+      <LivePeerComparison report={r} />
       <div className="row" style={{ marginBottom: 20 }}>
         <button
           className="button"

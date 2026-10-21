@@ -1,4 +1,5 @@
 "use client";
+import { DataWorkbench } from "./data-workbench";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -50,6 +51,7 @@ export function Admin() {
     ) ??
     applications[0];
   const tabs = [
+    ["verification", t("Data workbench", "数据核验工作台")],
     ["applications", t("Applications", "申请审核")],
     ["research", t("Research profiles", "项目资料")],
     ["evidence", t("Evidence & data", "证据与数据")],
@@ -147,6 +149,7 @@ export function Admin() {
           )}
         </>
       )}
+      {tab === "verification" && <DataWorkbench />}
       {tab === "research" && <ResearchConsole />}
       {tab === "evidence" && (
         <>
@@ -573,7 +576,11 @@ function EvidenceReview({ evidence: e }: { evidence: Evidence }) {
     else notify(x.error);
   }
   function update<K extends keyof TrafficFields>(k: K, v: TrafficFields[K]) {
-    setFields((x) => ({ ...x, [k]: v }));
+    setFields((x) => ({
+      ...x,
+      [k]: v,
+      ...(k === "value" ? { raw_display: null } : {}),
+    }));
   }
   return (
     <section className="panel">
