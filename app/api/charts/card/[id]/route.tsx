@@ -3,7 +3,11 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { NextRequest, NextResponse } from "next/server";
 import { adminDb, checked } from "@/lib/charts/server";
-import { priceLabel, sustainedFree } from "@/lib/charts/discovery";
+import {
+  priceLabel,
+  sustainedFree,
+  profileReady,
+} from "@/lib/charts/discovery";
 export const runtime = "nodejs";
 export async function GET(
   request: NextRequest,
@@ -14,14 +18,14 @@ export async function GET(
   const demo = request.nextUrl.searchParams.get("dataset") === "demo";
   const p = checked(
     await db
-      .from("charts_projects")
+      .from("products")
       .select("*")
       .eq("id", id)
       .eq("publication", "published")
       .eq("demo", demo)
       .maybeSingle(),
   );
-  if (!p)
+  if (!p || !profileReady(p))
     return NextResponse.json(
       { error: "Published project not found" },
       { status: 404 },
@@ -46,34 +50,14 @@ export async function GET(
   if (kind === "alternative") {
     const edges = checked(
       await db
-        .from("charts_relations")
-        .select("task,peer_domain,project_id,charts_applications!inner(status)")
-        .eq("charts_applications.status", "approved")
-        .eq("status", "approved")
-        .is("withdrawn_at", null)
-        .or(`project_id.eq.${p.id},peer_domain.eq.${p.domain}`),
+        .from("competitor_relations")
+        .select("task")
+        .eq("candidate_id", p.id)
+        .eq("demo", demo)
+        .limit(1),
     );
-    let found = false;
-    for (const e of edges) {
-      const other = checked(
-        await db
-          .from("charts_projects")
-          .select("id")
-          .eq("publication", "published")
-          .eq("demo", demo)
-          .neq("id", p.id)
-          .eq(
-            e.project_id === p.id ? "domain" : "id",
-            e.project_id === p.id ? e.peer_domain : e.project_id,
-          )
-          .maybeSingle(),
-      );
-      if (other) {
-        task = e.task;
-        found = true;
-        break;
-      }
-    }
+    const found = edges.length > 0;
+    if (found) task = edges[0].task;
     if (!found)
       return NextResponse.json(
         { error: "A confirmed public alternative relationship is required" },
@@ -179,7 +163,7 @@ export async function GET(
           color: "#9badca",
         }}
       >
-        <span>{`123charts.com/${zh ? "zh" : "en"}/projects/${p.slug}`}</span>
+        <span>{`123charts.com/${zh ? "zh" : "en"}/products/${p.slug}`}</span>
         <span>
           {label("Profile updated ", "资料更新 ") + p.updated_at.slice(0, 10)}
         </span>

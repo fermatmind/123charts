@@ -58,6 +58,17 @@ export function AuthPage() {
         );
         return;
       }
+      const returnTo = params.get("returnTo");
+      if (
+        returnTo &&
+        /^\/(en|zh)(\/|\?)/.test(returnTo) &&
+        new URL(returnTo, window.location.origin).origin ===
+          window.location.origin
+      ) {
+        router.push(returnTo);
+        router.refresh();
+        return;
+      }
       const next = params.get("next");
       router.push(
         href(

@@ -48,12 +48,12 @@ test("task-first discovery, keyboard search, alternatives, free conditions and m
   await expect(
     page.getByRole("heading", { name: "Cursor", exact: true }),
   ).toBeVisible();
-  await page.goto("/en/alternatives/n8n?dataset=real");
+  await page.goto("/en/alternatives/zapier?dataset=real");
   await expect(
-    page.getByRole("heading", { name: "Alternatives to n8n" }),
+    page.getByRole("heading", { name: "Alternatives to Zapier" }),
   ).toBeVisible();
   await expect(
-    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
+    page.locator(".discovery-identity").filter({ hasText: "n8n" }),
   ).toBeVisible();
   await page.screenshot({
     path: "output/playwright/alternatives-desktop.png",
@@ -101,6 +101,26 @@ test("task-first discovery, keyboard search, alternatives, free conditions and m
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
+  await expect(page.locator(".zone-sidebar")).toHaveCount(0);
+  const views = page.getByRole("navigation", { name: "分类视图" });
+  for (const label of ["发现推荐", "新收录", "免费可用", "找替代方案"]) {
+    await views.getByRole("link", { name: label, exact: true }).click();
+    await expect(
+      views.getByRole("link", { name: label, exact: true }),
+    ).toHaveClass(/active/);
+  }
+  await page.screenshot({
+    path: "output/playwright/category-mobile.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/zh/categories/workflow-automation?dataset=real");
+  await page.screenshot({
+    path: "output/playwright/category-desktop.png",
+    fullPage: true,
+  });
+  await page.goto("/en/dashboard/projects?dataset=demo");
+  await expect(page).toHaveURL(/\/en\/login\?returnTo=/);
   expect(errors).toEqual([]);
 });
 test("browser draft recovery, three peers, review, shared comparison and factual card", async ({

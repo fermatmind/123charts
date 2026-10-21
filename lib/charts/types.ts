@@ -54,6 +54,9 @@ export interface VerificationReceipt {
   traffic_id: string | null;
 }
 export interface Project {
+  first_indexed_at?: string | null;
+  review_state?: "pending" | "approved" | "reference";
+  content_version?: number;
   task?: string;
   supported_languages?: string[];
   differentiator?: string;
@@ -217,6 +220,8 @@ export interface Report {
 }
 export interface Relation extends Peer {
   public?: boolean;
+  anchor_id?: string;
+  candidate_id?: string;
   withdrawn_at?: string | null;
   id: string;
   application_id: string;
@@ -292,6 +297,7 @@ export interface Event {
   created_at: string;
 }
 export interface Bootstrap {
+  managedProjects: Project[];
   discoveryCycle: import("./discovery").CycleEntry[];
   as_of: string;
   configured: boolean;
@@ -328,6 +334,7 @@ export interface Bootstrap {
   events: Event[];
 }
 export const emptyBootstrap: Bootstrap = {
+  managedProjects: [],
   discoveryCycle: [],
   as_of: "1970-01-01T00:00:00Z",
   configured: false,

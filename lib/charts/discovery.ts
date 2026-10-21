@@ -15,6 +15,8 @@ export function priceLabel(
 export function profileReady(p: Project) {
   return (
     p.publication === "published" &&
+    p.review_state !== "pending" &&
+    p.review_state !== "reference" &&
     !!p.task?.trim() &&
     !!p.differentiator?.trim() &&
     !!p.supported_languages?.length &&
@@ -88,8 +90,7 @@ export function alternatives(
     const source = projects.find((p) => p.id === r.project_id);
     const peer = projects.find((p) => p.domain === r.peer_domain);
     if (!source || !peer || source.demo !== peer.demo) continue;
-    const candidate =
-      peer.id === target.id ? source : source.id === target.id ? peer : null;
+    const candidate = peer.id === target.id ? source : null;
     if (
       candidate &&
       profileReady(candidate) &&
@@ -106,7 +107,7 @@ export function indexableAlternative(
 ) {
   return (
     !target.demo &&
-    profileReady(target) &&
+    (profileReady(target) || target.review_state === "reference") &&
     alternatives(target, projects, relations).length > 0
   );
 }
@@ -120,7 +121,7 @@ export function discoveryPageEligible(
   const ready = projects.filter((p) => !p.demo && profileReady(p));
   const [route, slug] = path;
   if (!route) return true;
-  if (route === "projects")
+  if (route === "projects" || route === "products")
     return slug ? ready.some((p) => p.slug === slug) : ready.length > 0;
   if (route === "categories")
     return (
@@ -128,11 +129,16 @@ export function discoveryPageEligible(
       (slug ? ready.some((p) => p.category === slug) : ready.length > 0)
     );
   if (route === "alternatives")
-    return ready.some(
-      (p) =>
-        (!slug || p.slug === slug) && indexableAlternative(p, ready, relations),
-    );
+    return projects
+      .filter((p) => !p.demo)
+      .some(
+        (p) =>
+          (!slug || p.slug === slug) &&
+          indexableAlternative(p, projects, relations),
+      );
   if (route === "free") return ready.some(sustainedFree);
+  if (route === "open-source") return ready.some((p) => p.is_open_source);
+  if (route === "search") return false;
   if (route === "new") return ready.length > 0;
   return ["methodology", "how-it-works"].includes(route);
 }

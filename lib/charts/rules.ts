@@ -137,12 +137,9 @@ export function validatePeers(
 export function validateSubmission(draft: Draft, demo = false) {
   if (
     !draft.name.trim() ||
-    !draft.description_en.trim() ||
-    !draft.description_zh.trim()
+    (!draft.description_en.trim() && !draft.description_zh.trim())
   )
-    throw new Error(
-      "Project name and both language descriptions are required.",
-    );
+    throw new Error("Project name and a factual description are required.");
   if (
     draft.peers.some(
       (p) => p.task.trim().length < 3 || p.rationale.trim().length < 5,

@@ -1,15 +1,9 @@
+import { flushCatalog } from "@/lib/charts/catalog";
 import { eventExclusion } from "@/lib/charts/events";
-import { queueVerification, PUBLIC_SOURCE } from "@/lib/charts/verification";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createHash, randomUUID } from "node:crypto";
-import sharp from "sharp";
-import {
-  bootstrap,
-  context,
-  checked,
-  createSnapshot,
-} from "@/lib/charts/server";
+import { bootstrap, context, checked } from "@/lib/charts/server";
 import {
   draftSchema,
   normalizeWebsite,
@@ -40,6 +34,9 @@ async function handle(
           request.nextUrl.searchParams.get("dataset") === "real"
             ? "real"
             : "demo",
+          request.nextUrl.searchParams.get("zone") === "public"
+            ? "public"
+            : "dashboard",
         ),
         { headers: { "Cache-Control": "no-store" } },
       );
@@ -53,6 +50,8 @@ async function handle(
         "admin/snapshot",
         "admin/month",
         "admin/source-correction",
+        "delete-evidence",
+        "admin/membership",
       ].includes(route)
     )
       return NextResponse.json(
@@ -209,220 +208,6 @@ async function handle(
       throw new HttpError(403, "Cross-origin writes are not allowed.");
     if (request.headers.get("sec-fetch-site") === "cross-site")
       throw new HttpError(403, "Cross-site writes are not allowed.");
-    if (route === "admin/source-upload") {
-      admin();
-      if (Number(request.headers.get("content-length")) > 11 * 1024 * 1024)
-        throw new HttpError(413, "Image too large.");
-      const form = await request.formData(),
-        file = form.get("file");
-      if (
-        !(file instanceof File) ||
-        file.size > 10 * 1024 * 1024 ||
-        !["image/png", "image/jpeg", "image/webp"].includes(file.type)
-      )
-        throw new HttpError(
-          400,
-          "A PNG, JPEG or WebP up to 10 MB is required.",
-        );
-      const domain = normalizeWebsite(String(form.get("domain"))).domain,
-        month = String(form.get("month"));
-      if (!/^20\d{2}-(0[1-9]|1[0-2])$/.test(month))
-        throw new HttpError(400, "Explicit source month required.");
-      const buffer = Buffer.from(await file.arrayBuffer()),
-        meta = await sharp(buffer, { limitInputPixels: 30000000 }).metadata();
-      if (!["png", "jpeg", "webp"].includes(meta.format ?? ""))
-        throw new HttpError(400, "Invalid image.");
-      const id = randomUUID(),
-        key = `source/${user!.id}/${id}.${meta.format}`;
-      checked(
-        await db.storage
-          .from("charts-evidence")
-          .upload(key, buffer, { contentType: file.type }),
-      );
-      const inserted = await db.from("charts_source_evidence").insert({
-        id,
-        owner_id: user!.id,
-        domain,
-        source: PUBLIC_SOURCE,
-        month,
-        storage_path: key,
-        file_hash: createHash("sha256").update(buffer).digest("hex"),
-      });
-      if (inserted.error) {
-        await db.storage.from("charts-evidence").remove([key]);
-        throw new Error(inserted.error.message);
-      }
-      checked(
-        await db.from("charts_jobs").insert({
-          kind: "ocr",
-          owner_id: user!.id,
-          payload: { source_evidence_id: id },
-        }),
-      );
-      return NextResponse.json(
-        { id, state: "pending_extraction" },
-        { status: 201 },
-      );
-    }
-    if (route === "upload") {
-      required();
-      if (Number(request.headers.get("content-length")) > 11 * 1024 * 1024)
-        throw new HttpError(413, "Maximum image size is 10 MB.");
-      const form = await request.formData(),
-        file = form.get("file");
-      if (
-        !(file instanceof File) ||
-        file.size > 10 * 1024 * 1024 ||
-        !["image/png", "image/jpeg", "image/webp"].includes(file.type)
-      )
-        throw new HttpError(
-          400,
-          "Upload a PNG, JPEG or WebP image up to 10 MB.",
-        );
-      const app = await ownedApp(String(form.get("application_id")));
-      if (
-        app.owner_id !== user!.id ||
-        !["draft", "needs_info"].includes(app.status)
-      )
-        throw new HttpError(
-          409,
-          "Evidence uploads require an editable application.",
-        );
-      const peer = normalizeWebsite(
-        String(form.get("peer_domain")),
-        app.demo,
-      ).domain;
-      if (
-        !(app.draft.peers ?? []).some(
-          (p: { domain: string }) => p.domain === peer,
-        )
-      )
-        throw new HttpError(
-          400,
-          "Choose one of the peers in this application.",
-        );
-      const existing = checked(
-        await db
-          .from("charts_evidence")
-          .select("id")
-          .eq("application_id", app.id),
-      );
-      if (existing.length >= 30)
-        throw new HttpError(
-          400,
-          "At most 30 images per application; each peer is counted once.",
-        );
-      const buffer = Buffer.from(await file.arrayBuffer()),
-        meta = await sharp(buffer, { limitInputPixels: 30000000 }).metadata();
-      if (!["png", "jpeg", "webp"].includes(meta.format ?? ""))
-        throw new HttpError(400, "The file is not a supported image.");
-      const hash = createHash("sha256").update(buffer).digest("hex");
-      const duplicate = checked(
-        await db
-          .from("charts_evidence")
-          .select("id,peer_domain")
-          .eq("application_id", app.id)
-          .eq("file_hash", hash)
-          .maybeSingle(),
-      );
-      if (duplicate) {
-        if (duplicate.peer_domain !== peer)
-          throw new HttpError(
-            409,
-            "This image is already associated with another peer.",
-          );
-        return NextResponse.json(duplicate);
-      }
-      const prior = checked(
-        await db
-          .from("charts_evidence")
-          .select("traffic_id,raw_text,extracted,reviewed_at")
-          .eq("file_hash", hash)
-          .eq("peer_domain", peer)
-          .eq("demo", app.demo)
-          .eq("state", "verified")
-          .order("reviewed_at", { ascending: false })
-          .limit(1),
-      )[0];
-      let reusable: any = null;
-      if (prior?.traffic_id) {
-        const traffic = checked(
-          await db
-            .from("charts_traffic")
-            .select("id,source,month,metric,scope,state")
-            .eq("id", prior.traffic_id)
-            .eq("state", "verified")
-            .maybeSingle(),
-        );
-        if (
-          traffic &&
-          traffic.source === "AITDK" &&
-          traffic.metric === "visits" &&
-          traffic.scope === "worldwide-all-devices-domain"
-        ) {
-          const released = checked(
-            await db
-              .from("charts_source_months")
-              .select("month")
-              .eq("source", traffic.source)
-              .eq("month", traffic.month)
-              .eq("demo", app.demo)
-              .eq("accepted", true)
-              .maybeSingle(),
-          );
-          if (released)
-            reusable = {
-              state: "verified",
-              traffic_id: traffic.id,
-              raw_text: prior.raw_text,
-              extracted: prior.extracted,
-              reviewed_at: prior.reviewed_at,
-              review_channel: "Reused same-source reviewed record",
-              review_reference: `traffic-version:${traffic.id}`,
-              review_note:
-                "An exact image and peer match reuses an already reviewed, currently usable record. This is not an independent measurement.",
-            };
-        }
-      }
-      const id = randomUUID(),
-        key = `${user!.id}/${app.id}/${id}.${meta.format}`;
-      checked(
-        await db.storage
-          .from("charts-evidence")
-          .upload(key, buffer, { contentType: file.type, upsert: false }),
-      );
-      const inserted = await db
-        .from("charts_evidence")
-        .insert({
-          id,
-          application_id: app.id,
-          owner_id: user!.id,
-          peer_domain: peer,
-          storage_path: key,
-          file_hash: hash,
-          original_name: file.name.slice(0, 200),
-          demo: app.demo,
-          ...(reusable ?? {}),
-        })
-        .select()
-        .single();
-      if (inserted.error) {
-        await db.storage.from("charts-evidence").remove([key]);
-        throw new Error(inserted.error.message);
-      }
-      if (!reusable)
-        checked(
-          await db.from("charts_jobs").insert({
-            kind: "ocr",
-            owner_id: user!.id,
-            payload: { evidence_id: id },
-          }),
-        );
-      return NextResponse.json(
-        { id, state: reusable ? "verified" : "pending_extraction" },
-        { status: 201 },
-      );
-    }
     if (Number(request.headers.get("content-length")) > 65536)
       throw new HttpError(413, "Request body too large.");
     const raw = await request.text();
@@ -465,6 +250,8 @@ async function handle(
     if (route === "draft") {
       const u = required(),
         d = draftSchema.parse(b.draft);
+      d.description_en = d.description_en || d.description_zh;
+      d.description_zh = d.description_zh || d.description_en;
       if (d.is_open_source && !d.open_source_url)
         throw new HttpError(
           400,
@@ -529,51 +316,9 @@ async function handle(
       )
         throw new HttpError(400, "Complete the project descriptions.");
       const data = checked(
-        await db
-          .from("charts_applications")
-          .update({
-            status: "submitted",
-            submitted_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-          })
-          .eq("id", a.id)
-          .in("status", ["draft", "needs_info"])
-          .select()
-          .single(),
+        await db.rpc("charts_submit_public", { aid: a.id, actor: user!.id }),
       );
       return NextResponse.json(data);
-    }
-    if (route === "delete-evidence") {
-      required();
-      const e = checked(
-        await db
-          .from("charts_evidence")
-          .select("*")
-          .eq("id", b.id)
-          .maybeSingle(),
-      );
-      if (!e || e.owner_id !== user!.id)
-        throw new HttpError(404, "Evidence not found.");
-      const a = await ownedApp(e.application_id);
-      if (!["draft", "needs_info"].includes(a.status))
-        throw new HttpError(409, "This application is not editable.");
-      if (e.state === "verified")
-        throw new HttpError(
-          409,
-          "Verified evidence is retained for provenance. Ask for a correction.",
-        );
-      checked(
-        await db
-          .from("charts_jobs")
-          .delete()
-          .eq("kind", "ocr")
-          .contains("payload", { evidence_id: e.id }),
-      );
-      checked(await db.from("charts_evidence").delete().eq("id", e.id));
-      checked(
-        await db.storage.from("charts-evidence").remove([e.storage_path]),
-      );
-      return NextResponse.json({ ok: true });
     }
     if (route === "metadata") {
       const u = required(),
@@ -769,153 +514,38 @@ async function handle(
           ? b.session_id
           : visitor;
       const since = new Date(Date.now() - 30 * 60000).toISOString();
-      const recent = checked(
-        await db
-          .from("charts_events")
-          .select("id")
-          .eq("project_id", p.id)
-          .eq("kind", b.kind)
-          .eq("visitor_id", visitor)
-          .gte("created_at", since)
-          .limit(1),
-      );
-      if (b.kind === "outbound" || !recent.length)
-        checked(
-          await db.from("charts_events").insert({
-            kind: b.kind,
-            project_id: p.id,
-            visitor_id: visitor,
-            surface: b.surface,
-            session_id: session,
-            excluded: !!reason,
-            exclusion_reason: reason,
-          }),
-        );
+      let recentQuery = db
+        .from("charts_events")
+        .select("id")
+        .eq("project_id", p.id)
+        .eq("kind", b.kind);
+      recentQuery =
+        b.kind === "impression"
+          ? recentQuery.eq("session_id", session).eq("surface", b.surface)
+          : recentQuery.eq("visitor_id", visitor).gte("created_at", since);
+      const recent = checked(await recentQuery.limit(1));
+      if (!recent.length) {
+        const saved = await db.from("charts_events").insert({
+          kind: b.kind,
+          project_id: p.id,
+          visitor_id: visitor,
+          surface: b.surface,
+          session_id: session,
+          excluded: !!reason,
+          exclusion_reason: reason,
+          dedupe_key:
+            b.kind === "impression"
+              ? createHash("sha256")
+                  .update(`${session}:${p.id}:${b.surface}`)
+                  .digest("hex")
+              : null,
+        });
+        if (saved.error && saved.error.code !== "23505") checked(saved);
+      }
       return NextResponse.json({ ok: true });
     }
     if (route.startsWith("admin/")) {
       admin();
-      if (route === "admin/source-correction") {
-        const id = checked(
-          await db.rpc("charts_resolve_observation", {
-            rid: b.id,
-            actor: user!.id,
-            reason: b.reason,
-          }),
-        );
-        const value = checked(
-          await db.from("charts_traffic").select("*").eq("id", id).single(),
-        );
-        const projects = checked(
-          await db
-            .from("charts_projects")
-            .select("id")
-            .eq("measurement_domain", value.domain),
-        );
-        const memberships = projects.length
-          ? checked(
-              await db
-                .from("charts_memberships")
-                .select("category")
-                .in(
-                  "project_id",
-                  projects.map((p) => p.id),
-                )
-                .eq("state", "confirmed"),
-            )
-          : [];
-        for (const category of new Set(memberships.map((m) => m.category)))
-          await createSnapshot(
-            category,
-            value.month,
-            false,
-            b.reason,
-            value.source,
-          );
-        return NextResponse.json({ id });
-      }
-      if (route === "admin/verification-settings") {
-        const old = checked(
-          await db
-            .from("charts_settings")
-            .select("value")
-            .eq("key", "verification")
-            .single(),
-        ).value;
-        const domains = (b.domains ?? old.domains).map(
-          (d: string) => normalizeWebsite(d).domain,
-        );
-        if (domains.length > 40)
-          throw new HttpError(400, "At most 40 approved source domains.");
-        const value = {
-          ...old,
-          enabled: !!b.enabled,
-          source: PUBLIC_SOURCE,
-          mode: b.mode === "library" ? "library" : "selected",
-          domains,
-        };
-        checked(
-          await db
-            .from("charts_settings")
-            .update({ value })
-            .eq("key", "verification"),
-        );
-        return NextResponse.json({ ok: true });
-      }
-      if (route === "admin/verification") {
-        const task = await queueVerification(db, {
-          domain: normalizeWebsite(b.domain).domain,
-          source: PUBLIC_SOURCE,
-          month: b.month,
-          priority: 10,
-        });
-        checked(
-          await db
-            .from("charts_verification_tasks")
-            .update({
-              state: "pending",
-              attempts: 0,
-              force_refresh: !!b.force_refresh,
-              next_check_at: new Date().toISOString(),
-            })
-            .eq("id", task.id),
-        );
-        return NextResponse.json(task);
-      }
-      if (route === "admin/membership") {
-        checked(
-          await db.rpc("charts_review_membership", {
-            pid: b.project_id,
-            cat: b.category,
-            decision: {
-              state: b.state,
-              placement: b.placement,
-              basis: b.basis,
-            },
-            actor: user!.id,
-          }),
-        );
-        const snapshots = checked(
-          await db
-            .from("charts_snapshots")
-            .select("*")
-            .eq("category", b.category),
-        );
-        const handled = new Set<string>();
-        for (const snapshot of snapshots) {
-          const key = `${snapshot.source}:${snapshot.month}:${snapshot.demo}`;
-          if (handled.has(key)) continue;
-          handled.add(key);
-          await createSnapshot(
-            b.category,
-            snapshot.month,
-            snapshot.demo,
-            `Classification review: ${b.basis}`,
-            snapshot.source,
-          );
-        }
-        return NextResponse.json({ ok: true });
-      }
       if (route === "admin/application") {
         const a = await ownedApp(b.id);
         if (a.status === "draft")
@@ -926,11 +556,12 @@ async function handle(
         if (b.action === "approve")
           return NextResponse.json({
             project_id: checked(
-              await db.rpc("charts_approve_discovery", {
+              await db.rpc("charts_review_version", {
                 aid: a.id,
                 actor: user!.id,
                 reference: b.reference ?? "",
                 pricing_confirmed: !!b.pricing_confirmed,
+                expected_updated_at: b.expected_updated_at ?? null,
               }),
             ),
           });
@@ -957,71 +588,37 @@ async function handle(
         return NextResponse.json({ ok: true });
       }
       if (route === "admin/relation") {
-        const relation = checked(
-          await db
-            .from("charts_relations")
-            .select("application_id")
-            .eq("id", b.id)
-            .single(),
-        );
-        const app = await ownedApp(relation.application_id);
-        if (app.status === "approved")
-          throw new HttpError(
-            409,
-            "Reviewed relationships are retained; submit an update instead.",
-          );
-        if (!["approved", "rejected"].includes(b.state))
-          throw new HttpError(400, "Invalid relationship decision.");
         checked(
-          await db
-            .from("charts_relations")
-            .update({ status: b.state, feedback: b.feedback ?? null })
-            .eq("id", b.id),
+          await db.rpc("charts_relation_decision", {
+            rid: b.id,
+            actor: user!.id,
+            decision: b.state,
+            basis: b.feedback || "",
+          }),
         );
         return NextResponse.json({ ok: true });
       }
-      if (route === "admin/evidence") {
-        if (b.action === "invalid") {
-          const existing = checked(
-            await db
-              .from("charts_evidence")
-              .select("state")
-              .eq("id", b.id)
-              .single(),
-          );
-          if (existing.state === "verified")
+      if (route === "admin/category") {
+        if (!/^[a-z0-9-]{3,70}$/.test(b.slug || ""))
+          throw new HttpError(400, "Valid category required");
+        const fields: any = {};
+        for (const key of [
+          "name_en",
+          "name_zh",
+          "description_en",
+          "description_zh",
+        ]) {
+          if (typeof b[key] !== "string" || b[key].trim().length < 2)
             throw new HttpError(
-              409,
-              "Verified evidence requires a versioned correction, not removal.",
+              400,
+              "Complete category names and purpose definitions",
             );
-          if (!b.note || b.note.length < 5)
-            throw new HttpError(400, "Explain why the evidence is invalid.");
-          checked(
-            await db
-              .from("charts_evidence")
-              .update({
-                state: "invalid",
-                review_note: b.note,
-                reviewed_by: user!.id,
-                reviewed_at: new Date().toISOString(),
-              })
-              .eq("id", b.id),
-          );
-          return NextResponse.json({ ok: true });
+          fields[key] = b[key].trim().slice(0, 1000);
         }
-        return NextResponse.json(
-          checked(
-            await db.rpc("charts_verify_evidence", {
-              eid: b.id,
-              actor: user!.id,
-              fields: b.fields,
-              channel: b.channel ?? "",
-              reference: b.reference ?? "",
-              note: b.note ?? "",
-              revision: !!b.revision,
-            }),
-          ),
+        checked(
+          await db.from("charts_categories").update(fields).eq("slug", b.slug),
         );
+        return NextResponse.json({ ok: true });
       }
       if (route === "admin/project") {
         const project = checked(
@@ -1068,70 +665,16 @@ async function handle(
               ...info,
               website_url: site.website_url,
               publication: b.publication,
+              review_state:
+                b.publication === "published"
+                  ? "approved"
+                  : project.review_state,
               official_source: b.reference || project.official_source,
               price_verified: !!b.price_verified,
               updated_at: new Date().toISOString(),
             })
             .eq("id", b.id),
         );
-        return NextResponse.json({ ok: true });
-      }
-      if (route === "admin/snapshot")
-        return NextResponse.json(
-          await createSnapshot(
-            b.category,
-            b.month,
-            !!b.demo,
-            b.note ?? "",
-            b.source ?? "AITDK",
-          ),
-        );
-      if (route === "admin/month") {
-        if (
-          !/^20\d{2}-(0[1-9]|1[0-2])$/.test(b.month) ||
-          typeof b.reference !== "string" ||
-          b.reference.length < 8
-        )
-          throw new HttpError(
-            400,
-            "A valid month and publication reference are required.",
-          );
-        if (!b.demo && b.reference.startsWith("demo:"))
-          throw new HttpError(
-            400,
-            "A demo publication reference cannot authorize real months.",
-          );
-        checked(
-          await db.from("charts_source_months").upsert({
-            source: "AITDK",
-            month: b.month,
-            published_at: new Date().toISOString(),
-            accepted: !!b.accepted,
-            reference: b.reference,
-            demo: !!b.demo,
-          }),
-        );
-        const accepted = checked(
-          await db
-            .from("charts_source_months")
-            .select("month")
-            .eq("source", "AITDK")
-            .eq("demo", !!b.demo)
-            .eq("accepted", true)
-            .order("month", { ascending: false }),
-        );
-        if (accepted.length > 3)
-          checked(
-            await db
-              .from("charts_source_months")
-              .update({ accepted: false })
-              .eq("source", "AITDK")
-              .eq("demo", !!b.demo)
-              .in(
-                "month",
-                accepted.slice(3).map((m) => m.month),
-              ),
-          );
         return NextResponse.json({ ok: true });
       }
       if (route === "admin/claim" || route === "admin/correction") {
@@ -1223,4 +766,26 @@ async function handle(
     );
   }
 }
-export { handle as GET, handle as POST, handle as DELETE };
+export { handle as GET };
+export async function POST(
+  request: NextRequest,
+  ctx: { params: Promise<{ path: string[] }> },
+) {
+  const response = await handle(request, ctx);
+  const { path } = await ctx.params;
+  if (
+    response.ok &&
+    [
+      "submit",
+      "admin/application",
+      "admin/relation",
+      "admin/project",
+      "admin/claim",
+      "admin/correction",
+      "admin/category",
+    ].includes(path.join("/"))
+  )
+    await flushCatalog();
+  return response;
+}
+export { POST as DELETE };

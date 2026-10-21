@@ -1,19 +1,12 @@
+import { workerSignature } from "../../lib/charts/worker-auth";
 import { ensureDiscoveryCycle } from "./discovery-cycle";
 import { discover } from "../../lib/charts/discovery";
-import {
-  scheduleVerification,
-  verificationTick,
-  queueVerification,
-  PUBLIC_SOURCE,
-} from "../../lib/charts/verification";
 import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
-import { createWorker } from "tesseract.js";
 import { createHash } from "node:crypto";
-import path from "node:path";
 import nodemailer from "nodemailer";
 import { loadEnv } from "./env.mjs";
-import { parseTraffic, suggestCategory } from "../../lib/charts/rules";
+import { suggestCategory } from "../../lib/charts/rules";
 import { safeHtml, extractMetadata } from "../../lib/charts/safe-fetch";
 loadEnv();
 const endpoint = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -216,97 +209,6 @@ async function digest(owner?: string) {
   }
 }
 async function processJob(job: any) {
-  if (job.kind === "ocr") {
-    const sourceEvidence = !!job.payload.source_evidence_id;
-    const table = sourceEvidence ? "charts_source_evidence" : "charts_evidence";
-    const e = check(
-      await db
-        .from(table)
-        .select("*")
-        .eq("id", job.payload.source_evidence_id ?? job.payload.evidence_id)
-        .maybeSingle(),
-    );
-    if (!e) return { removed: true };
-    const blob = check(
-      await db.storage.from("charts-evidence").download(e.storage_path),
-    );
-    const worker = await createWorker(["eng", "chi_sim"], 1, {
-      langPath: path.resolve("public/ocr"),
-      cachePath: path.resolve(".local/ocr"),
-      corePath: path.resolve("node_modules/tesseract.js-core"),
-      logger: () => {},
-    });
-    try {
-      const result = await worker.recognize(
-        Buffer.from(await blob.arrayBuffer()),
-      );
-      const fields = parseTraffic(result.data.text);
-      if (sourceEvidence) {
-        fields.domain = result.data.text.toLowerCase().includes(e.domain)
-          ? e.domain
-          : fields.domain;
-        fields.source = /SEMRUSH/i.test(result.data.text) ? PUBLIC_SOURCE : "";
-        fields.scope =
-          /All Devices/i.test(result.data.text) &&
-          /Worldwide/i.test(result.data.text)
-            ? "worldwide-all-devices-domain"
-            : "";
-        // Source-layout fallback: a single abbreviated traffic candidate in the
-        // visible overview. This remains a candidate until the actual page agrees.
-        if (fields.value === null && /Traffic Stats/i.test(result.data.text)) {
-          const candidates = Array.from(
-            new Set(result.data.text.match(/\b\d+(?:\.\d+)?[KMB]\b/g) ?? []),
-          );
-          if (candidates.length === 1) {
-            const parsed = parseTraffic(`Monthly Visits ${candidates[0]}`);
-            fields.value = parsed.value;
-            fields.unit = parsed.unit;
-            fields.raw_display = parsed.raw_display;
-            fields.precision_step = parsed.precision_step;
-            fields.metric = "visits";
-          }
-        }
-        const named = result.data.text.match(
-          /(January|February|March|April|May|June|July|August|September|October|November|December) (20\d{2})/i,
-        );
-        if (named)
-          fields.month = `${named[2]}-${String(["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"].indexOf(named[1].toLowerCase()) + 1).padStart(2, "0")}`;
-      }
-      // Extraction never grants verification. A reviewer must check scope, source and attribution.
-      check(
-        await db
-          .from(table)
-          .update({
-            raw_text: result.data.text.slice(0, 30000),
-            extracted: fields,
-            state: "pending_review",
-          })
-          .eq("id", e.id)
-          .eq("state", "pending_extraction"),
-      );
-      if (sourceEvidence) {
-        await queueVerification(db, {
-          domain: e.domain,
-          source: e.source,
-          month: e.month,
-          source_evidence_id: e.id,
-          priority: 10,
-        });
-        return { confidence: result.data.confidence, fields };
-      }
-      if (!e.demo && fields.month)
-        await queueVerification(db, {
-          domain: e.peer_domain,
-          source: PUBLIC_SOURCE,
-          month: fields.month,
-          evidence_id: e.id,
-          priority: 5,
-        });
-      return { confidence: result.data.confidence, fields };
-    } finally {
-      await worker.terminate();
-    }
-  }
   if (job.kind === "metadata") {
     const fetched = await safeHtml(job.payload.url);
     if (job.payload.project_id)
@@ -343,6 +245,28 @@ while (!stopping) {
     if (Date.now() - lastScheduled > 60000) {
       lastScheduled = Date.now();
       // External traffic and OCR are intentionally outside the discovery MVP.
+      const cachePending = check(
+        await db
+          .from("charts_cache_invalidations")
+          .select("id")
+          .is("processed_at", null)
+          .limit(1),
+      );
+      if (cachePending.length) {
+        const time = String(Date.now());
+        await fetch(
+          (process.env.APP_URL || "http://127.0.0.1:3100") +
+            "/api/v1/cache/flush",
+          {
+            method: "POST",
+            headers: {
+              "x-charts-time": time,
+              "x-charts-signature": workerSignature(time),
+            },
+            signal: AbortSignal.timeout(6000),
+          },
+        ).catch(() => {});
+      }
       await recommendations().catch((e) =>
         console.error("Recommendation scheduling:", e.message),
       );
@@ -389,18 +313,6 @@ while (!stopping) {
           })
           .eq("id", job.id),
       );
-      if (final && job.kind === "ocr")
-        check(
-          await db
-            .from("charts_evidence")
-            .update({
-              state: "pending_review",
-              review_note:
-                "OCR failed. Review the original or request a clearer image.",
-            })
-            .eq("id", job.payload.evidence_id)
-            .eq("state", "pending_extraction"),
-        );
       console.error(`${job.kind}: ${message}`);
     }
   } catch (e) {

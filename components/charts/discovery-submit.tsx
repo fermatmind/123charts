@@ -15,7 +15,7 @@ const blank: Draft = {
   description_en: "",
   description_zh: "",
   task: "",
-  supported_languages: [],
+  supported_languages: ["English"],
   differentiator: "",
   conditions: "",
   is_open_source: false,
@@ -28,7 +28,9 @@ export function DiscoverySubmit() {
   const { data, t, api, href, locale, dataset, busy, notify } = useCharts();
   const params = useSearchParams();
   const existing = data.applications.find((a) => a.id === params.get("id"));
-  const project = data.projects.find((p) => p.id === params.get("project"));
+  const project = [...data.projects, ...data.managedProjects].find(
+    (p) => p.id === params.get("project"),
+  );
   const activeRelations = [
     ...new Map(
       data.relations
@@ -130,6 +132,24 @@ export function DiscoverySubmit() {
       );
     }
   }, [data.jobs, job]);
+  const metadataURL = useRef("");
+  useEffect(() => {
+    const value = draft.website_url.trim();
+    if (
+      !data.user ||
+      !/^(?:https?:\/\/)?[^/\s]+\.[^/\s]+/.test(value) ||
+      metadataURL.current === value ||
+      /\.example(?:\/|$)/.test(value)
+    )
+      return;
+    const timer = setTimeout(() => {
+      metadataURL.current = value;
+      void api<{ id: string }>("metadata", { url: value })
+        .then((j) => setJob(j.id))
+        .catch(() => {});
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [draft.website_url, data.user]);
   const update = (key: keyof Draft, value: any) =>
     setDraft((d) => ({ ...d, [key]: value }));
   const add = (peer: Peer) => {
@@ -150,7 +170,8 @@ export function DiscoverySubmit() {
             ...peer,
             domain,
             task: peer.task || draft.task || "",
-            rationale: peer.rationale || "",
+            rationale:
+              peer.rationale || "Proposed shared task: " + (draft.task || ""),
           },
         ],
       }));
@@ -452,7 +473,8 @@ export function DiscoverySubmit() {
                         domain: p.domain,
                         name: p.name,
                         task: draft.task || "",
-                        rationale: "",
+                        rationale:
+                          "Proposed shared task: " + (draft.task || ""),
                       });
                       setQuery("");
                     }}
@@ -488,7 +510,7 @@ export function DiscoverySubmit() {
                     domain,
                     name: domain,
                     task: draft.task || "",
-                    rationale: "",
+                    rationale: "Proposed shared task: " + (draft.task || ""),
                   };
                 });
                 if (

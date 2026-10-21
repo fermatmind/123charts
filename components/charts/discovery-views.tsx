@@ -1,7 +1,8 @@
 "use client";
+import { OfficialLink } from "./official-link";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import {
   ArrowUpRight,
   Search,
@@ -14,7 +15,7 @@ import {
   Shuffle,
 } from "lucide-react";
 import { useCharts, Avatar, Empty, Status } from "./context";
-import { useEvent } from "./public-views";
+import { useEvent } from "./use-event";
 import {
   alternatives,
   discover,
@@ -32,6 +33,8 @@ export function SaveButton({
   kind?: string;
 }) {
   const { data, api, t, href } = useCharts();
+  const pathname = usePathname(),
+    query = useSearchParams();
   const active = data.follows.some((f) => f.kind === kind && f.target === p.id);
   return data.user ? (
     <button
@@ -52,7 +55,12 @@ export function SaveButton({
         : t(active ? "Saved" : "Save", active ? "已收藏" : "收藏")}
     </button>
   ) : (
-    <Link className="button ghost" href={href("/login")}>
+    <Link
+      className="button ghost"
+      href={href(
+        "/login?returnTo=" + encodeURIComponent(pathname + "?" + query),
+      )}
+    >
       <Bookmark size={14} />
       {t("Save", "收藏")}
     </Link>
@@ -73,7 +81,7 @@ export function WebsiteRow({
   const ref = useEvent(p.id, "impression", surface);
   return (
     <div className="discovery-row" ref={ref}>
-      <Link href={href("/projects/" + p.slug)} className="discovery-identity">
+      <Link href={href("/products/" + p.slug)} className="discovery-identity">
         <Avatar name={p.name} />
         <div>
           <strong>{p.name}</strong>
@@ -102,10 +110,17 @@ export function WebsiteRow({
         </small>
       </div>
       <div className="row">
+        <OfficialLink
+          productId={p.id}
+          surface={surface}
+          className="button official-link"
+        >
+          {t("Website", "官网")} ↗
+        </OfficialLink>
         <SaveButton p={p} />
         <Link
           className="button"
-          href={href("/projects/" + p.slug)}
+          href={href("/products/" + p.slug)}
           aria-label={t("View " + p.name, "查看 " + p.name)}
         >
           <ArrowUpRight size={15} />
@@ -296,7 +311,7 @@ export function DiscoveryListing({
   mode = "discover",
 }: {
   category?: string;
-  mode?: "discover" | "new" | "free";
+  mode?: "discover" | "new" | "free" | "open-source";
 }) {
   const { data, t, href, locale, api } = useCharts();
   const params = useSearchParams(),
@@ -308,7 +323,9 @@ export function DiscoveryListing({
     price = filters.get("price") || "",
     language = filters.get("language") || "",
     oss = filters.get("oss") === "1";
-  const sort = filters.get("sort") || mode;
+  const view = filters.get("view") || mode;
+  const sort = view === "new" ? "new" : filters.get("sort") || "discover";
+  const selectedCategory = category || filters.get("category") || "";
   const set = (key: string, value: string) => {
     const next = new URLSearchParams(window.location.search);
     value ? next.set(key, value) : next.delete(key);
@@ -321,7 +338,7 @@ export function DiscoveryListing({
     .filter(profileReady)
     .filter(
       (p) =>
-        (!category || p.category === category) &&
+        (!selectedCategory || p.category === selectedCategory) &&
         (!q ||
           [
             p.name,
@@ -337,7 +354,8 @@ export function DiscoveryListing({
         (!price || (p.price_verified ? p.price_type : "unknown") === price) &&
         (!language || p.supported_languages?.includes(language)) &&
         (!oss || p.is_open_source) &&
-        (mode !== "free" || sustainedFree(p)),
+        (view !== "free" || sustainedFree(p)) &&
+        (mode !== "open-source" || p.is_open_source),
     );
   const cycle = new Map(
     discover(filtered, data.discoveryCycle, filtered.length).map((x, i) => [
@@ -362,7 +380,7 @@ export function DiscoveryListing({
     rows = ordered.slice((page - 1) * 12, page * 12);
   return (
     <div className="discovery-page">
-      <div className="page-heading">
+      <div className={category ? "compact-category-heading" : "page-heading"}>
         <div className="eyebrow">123CHARTS / {mode.toUpperCase()}</div>
         <h1>
           {c
@@ -371,9 +389,11 @@ export function DiscoveryListing({
               : c.name_en
             : mode === "free"
               ? t("Free to use", "免费可用榜")
-              : mode === "new"
-                ? t("Newly listed", "新收录榜")
-                : t("Discover websites", "发现网站")}
+              : mode === "open-source"
+                ? t("Open source websites", "开源发现")
+                : mode === "new"
+                  ? t("Newly listed", "新收录榜")
+                  : t("Discover websites", "发现网站")}
         </h1>
         <p>
           {c
@@ -390,7 +410,16 @@ export function DiscoveryListing({
         <button
           className="button"
           onClick={() =>
-            data.user ? void apiFollow() : router.push(href("/login"))
+            data.user
+              ? void apiFollow()
+              : router.push(
+                  href(
+                    "/login?returnTo=" +
+                      encodeURIComponent(
+                        `/${locale}/categories/${category}?${params}`,
+                      ),
+                  ),
+                )
           }
         >
           {data.follows.some(
@@ -400,124 +429,197 @@ export function DiscoveryListing({
             : t("Follow category", "关注分类")}
         </button>
       )}
-      <div className="discovery-filters">
-        <label>
-          <Search size={14} />
-          <input
-            aria-label={t("Search websites", "搜索网站")}
-            value={q}
-            onChange={(e) => set("q", e.target.value)}
-            placeholder={t("Task, website, domain…", "任务、网站、域名…")}
-          />
-        </label>
-        <select
-          aria-label={t("Price type", "价格类型")}
-          value={price}
-          onChange={(e) => set("price", e.target.value)}
-        >
-          <option value="">{t("All prices", "全部价格")}</option>
-          {Object.entries(prices).map(([v, labels]) => (
-            <option key={v} value={v}>
-              {labels[locale === "zh" ? 1 : 0]}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label={t("Supported language", "支持语言")}
-          value={language}
-          onChange={(e) => set("language", e.target.value)}
-        >
-          <option value="">{t("All languages", "全部语言")}</option>
+      {category && (
+        <nav className="view-tabs" aria-label={t("Category views", "分类视图")}>
           {[
-            ...new Set(
-              data.projects.flatMap((p) => p.supported_languages || []),
-            ),
-          ]
-            .sort()
-            .map((l) => (
-              <option key={l}>{l}</option>
-            ))}
-        </select>
-        <label>
-          <input
-            type="checkbox"
-            checked={oss}
-            onChange={(e) => set("oss", e.target.checked ? "1" : "")}
-          />
-          {t("Open source", "开源")}
-        </label>
-        <select
-          aria-label={t("Order", "排序")}
-          value={sort === "free" ? "discover" : sort}
-          onChange={(e) => set("sort", e.target.value)}
-        >
-          <option value="discover">
-            {t("Discovery rotation", "发现轮换")}
-          </option>
-          <option value="new">
-            {t("First public listing", "首次公开收录")}
-          </option>
-        </select>
-      </div>
-      <p className="muted">
-        {filtered.length}{" "}
-        {t(
-          "matching websites · stable daily rotation, with a newcomer and contribution slot. New approvals enter the next cycle.",
-          "个匹配网站 · 每日稳定轮换，保留新人及贡献位置。新通过项目参与下个周期。",
-        )}{" "}
-        {mode === "free" &&
-          t(
-            "Trials excluded. Open source is a separate condition.",
-            "不含限时试用；开源与免费分开判断。",
-          )}
-      </p>
-      {rows.length ? (
-        rows.map((p) => (
-          <div key={p.id}>
-            <WebsiteRow
-              p={p}
-              surface={
-                category
-                  ? "/categories/" + category
-                  : mode === "free"
-                    ? "/free"
-                    : "/discover"
-              }
-              reason={sort === "new" ? undefined : cycle.get(p.id)?.reason}
-            />
-            {sort === "new" && (
-              <small className="muted">
-                {t("First listed", "首次收录")}{" "}
-                {p.first_published_at?.slice(0, 10)}
-                {p.first_publication_inferred &&
-                  t(" · historical date estimated", " · 历史日期为估计")}
-              </small>
-            )}
-          </div>
-        ))
-      ) : (
-        <Empty title={t("No matches yet", "暂无匹配网站")}>
-          {t(
-            "Clear a filter or explore another task.",
-            "调整筛选，或探索其他用途。",
-          )}
-        </Empty>
+            ["discover", t("Discover", "发现推荐")],
+            ["new", t("Newly listed", "新收录")],
+            ["free", t("Free to use", "免费可用")],
+            ["alternatives", t("Alternatives", "找替代方案")],
+          ].map(([v, label]) => (
+            <Link
+              className={view === v ? "active" : ""}
+              key={v}
+              href={href(
+                `/categories/${category}?` +
+                  new URLSearchParams({
+                    ...Object.fromEntries(filters),
+                    view: v,
+                  }).toString(),
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
       )}
-      <div className="row" style={{ marginTop: 20 }}>
-        {[...Array(Math.ceil(filtered.length / 12))].map((_, i) => (
-          <button
-            className={"button " + (page === i + 1 ? "primary" : "")}
-            key={i}
-            onClick={() => {
-              const next = new URLSearchParams(params.toString());
-              next.set("page", String(i + 1));
-              router.push("?" + next);
-            }}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+      {view === "alternatives" && category ? (
+        <div className="alternative-targets">
+          {data.projects
+            .filter((p) => p.category === category)
+            .map((p) => (
+              <Link key={p.id} href={href("/alternatives/" + p.slug)}>
+                <Avatar name={p.name} />
+                <span>
+                  {p.name}
+                  <small>{t("Choose this target", "选择此目标网站")}</small>
+                </span>
+              </Link>
+            ))}
+        </div>
+      ) : (
+        <>
+          <div className="discovery-filters">
+            {!category && (
+              <select
+                aria-label={t("Category", "分类")}
+                value={selectedCategory}
+                onChange={(e) => set("category", e.target.value)}
+              >
+                <option value="">{t("All categories", "全部分类")}</option>
+                {data.categories.map((c) => (
+                  <option value={c.slug} key={c.slug}>
+                    {locale === "zh" ? c.name_zh : c.name_en}
+                  </option>
+                ))}
+              </select>
+            )}
+            <label>
+              <Search size={14} />
+              <input
+                aria-label={t("Search websites", "搜索网站")}
+                value={q}
+                onChange={(e) => set("q", e.target.value)}
+                placeholder={t("Task, website, domain…", "任务、网站、域名…")}
+              />
+            </label>
+            <select
+              aria-label={t("Price type", "价格类型")}
+              value={price}
+              onChange={(e) => set("price", e.target.value)}
+            >
+              <option value="">{t("All prices", "全部价格")}</option>
+              {Object.entries(prices).map(([v, labels]) => (
+                <option key={v} value={v}>
+                  {labels[locale === "zh" ? 1 : 0]}
+                </option>
+              ))}
+            </select>
+            <select
+              aria-label={t("Supported language", "支持语言")}
+              value={language}
+              onChange={(e) => set("language", e.target.value)}
+            >
+              <option value="">{t("All languages", "全部语言")}</option>
+              {[
+                ...new Set(
+                  data.projects.flatMap((p) => p.supported_languages || []),
+                ),
+              ]
+                .sort()
+                .map((l) => (
+                  <option key={l}>{l}</option>
+                ))}
+            </select>
+            <label>
+              <input
+                type="checkbox"
+                checked={oss}
+                onChange={(e) => set("oss", e.target.checked ? "1" : "")}
+              />
+              {t("Open source", "开源")}
+            </label>
+            <select
+              aria-label={t("Order", "排序")}
+              value={sort === "free" ? "discover" : sort}
+              onChange={(e) => set("sort", e.target.value)}
+            >
+              <option value="discover">
+                {t("Discovery rotation", "发现轮换")}
+              </option>
+              <option value="new">
+                {t("First public listing", "首次公开收录")}
+              </option>
+            </select>
+          </div>
+          <p className="muted">
+            {filtered.length}{" "}
+            {t(
+              "matching websites · stable daily rotation, with a newcomer and contribution slot. New approvals enter the next cycle.",
+              "个匹配网站 · 每日稳定轮换，保留新人及贡献位置。新通过项目参与下个周期。",
+            )}{" "}
+            {mode === "free" &&
+              t(
+                "Trials excluded. Open source is a separate condition.",
+                "不含限时试用；开源与免费分开判断。",
+              )}
+          </p>
+          {rows.length ? (
+            rows.map((p) => (
+              <div key={p.id}>
+                <WebsiteRow
+                  p={p}
+                  surface={
+                    category
+                      ? "/categories/" + category
+                      : mode === "free"
+                        ? "/free"
+                        : "/discover"
+                  }
+                  reason={sort === "new" ? undefined : cycle.get(p.id)?.reason}
+                />
+                {sort === "new" && (
+                  <small className="muted">
+                    {t("First listed", "首次收录")}{" "}
+                    {p.first_published_at?.slice(0, 10)}
+                    {p.first_publication_inferred &&
+                      t(" · historical date estimated", " · 历史日期为估计")}
+                  </small>
+                )}
+              </div>
+            ))
+          ) : (
+            <Empty title={t("No matches yet", "暂无匹配网站")}>
+              {t(
+                "Clear a filter or explore another task.",
+                "调整筛选，或探索其他用途。",
+              )}
+              <Link
+                className="button"
+                href={href(
+                  category
+                    ? "/categories/" + category
+                    : mode === "free"
+                      ? "/free"
+                      : mode === "open-source"
+                        ? "/open-source"
+                        : "/projects",
+                )}
+              >
+                {t("Clear filters", "清除筛选")}
+              </Link>
+              <Link className="button ghost" href={href("/categories")}>
+                {t("Explore categories", "探索相近分类")}
+              </Link>
+            </Empty>
+          )}
+          <div className="row" style={{ marginTop: 20 }}>
+            {[...Array(Math.ceil(filtered.length / 12))].map((_, i) => (
+              <button
+                className={"button " + (page === i + 1 ? "primary" : "")}
+                key={i}
+                onClick={() => {
+                  const next = new URLSearchParams(params.toString());
+                  next.set("page", String(i + 1));
+                  router.push("?" + next);
+                }}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
   async function apiFollow() {
@@ -642,16 +744,12 @@ export function AlternativesPage({ slug }: { slug?: string }) {
               </p>
               <small>
                 {t("Updated", "资料更新")} {x.project.updated_at.slice(0, 10)} ·{" "}
-                <a
-                  href={
-                    "/out/" +
-                    x.project.id +
-                    "?surface=/alternatives/" +
-                    target.slug
-                  }
+                <OfficialLink
+                  productId={x.project.id}
+                  surface={"/alternatives/" + target.slug}
                 >
                   {t("Visit website", "前往官网")} ↗
-                </a>
+                </OfficialLink>
               </small>
             </div>
           </div>
@@ -664,7 +762,40 @@ export function AlternativesPage({ slug }: { slug?: string }) {
           )}
         />
       )}
-      <Link className="button" href={href("/projects/" + target.slug)}>
+      {data.relations.some(
+        (r) => r.peer_domain === target.domain && r.status === "pending",
+      ) && (
+        <section className="source-pending">
+          <h2>
+            {t(
+              "Submitted comparison leads · pending review",
+              "新提交的比较线索 · 待审核",
+            )}
+          </h2>
+          <p>
+            {t(
+              "These projects proposed a shared task. The relationship has not been confirmed.",
+              "以下项目提出了共同用途线索，关系尚未确认。",
+            )}
+          </p>
+          {data.relations
+            .filter(
+              (r) => r.peer_domain === target.domain && r.status === "pending",
+            )
+            .map((r) => {
+              const p = data.projects.find((p) => p.id === r.project_id);
+              return p ? (
+                <WebsiteRow
+                  key={r.id}
+                  p={p}
+                  task={r.task}
+                  surface={"/alternatives/" + target.slug}
+                />
+              ) : null;
+            })}
+        </section>
+      )}
+      <Link className="button" href={href("/products/" + target.slug)}>
         {t("About " + target.name, "了解 " + target.name)}
       </Link>
     </div>
@@ -673,6 +804,8 @@ export function AlternativesPage({ slug }: { slug?: string }) {
 export function DiscoveryDetail({ slug }: { slug: string }) {
   const { data, t, href, locale, api, dataset, busy } = useCharts();
   const p = data.projects.find((p) => p.slug === slug);
+  const pathname = usePathname(),
+    query = useSearchParams();
   const ref = useEvent(p?.id);
   const [message, setMessage] = useState("");
   const [action, setAction] = useState<"claim" | "correction">("correction");
@@ -680,6 +813,14 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
   const related = alternatives(p, data.projects, data.relations);
   return (
     <div className="discovery-page" ref={ref}>
+      {p.review_state === "pending" && (
+        <p className="source-pending">
+          {t(
+            "Public submission · pending review. Profile details and proposed alternatives are not independently confirmed.",
+            "公开投稿 · 待审核。资料与提议的替代关系尚未独立核实。",
+          )}
+        </p>
+      )}
       <div className="page-heading">
         <div className="row">
           <Avatar name={p.name} />
@@ -704,13 +845,14 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
         </div>
       </div>
       <div className="row">
-        <a
+        <OfficialLink
           className="button primary"
-          href={"/out/" + p.id + "?surface=/projects/" + p.slug}
+          productId={p.id}
+          surface={"/products/" + p.slug}
         >
           {t("Visit website", "前往官网")}
           <ArrowUpRight size={15} />
-        </a>
+        </OfficialLink>
         <SaveButton p={p} />
         <SaveButton p={p} kind="alternatives" />
         <Link className="button" href={href("/alternatives/" + p.slug)}>
@@ -771,7 +913,7 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
                 key={x.project.id + x.task}
                 p={x.project}
                 task={x.task}
-                surface={"/projects/" + p.slug}
+                surface={"/products/" + p.slug}
               />
             ))
         ) : (
@@ -795,7 +937,14 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           {[
             "listing",
             ...(sustainedFree(p) ? ["free"] : []),
-            ...(related.length ? ["alternative"] : []),
+            ...(data.relations.some(
+              (r) =>
+                r.project_id === p.id &&
+                r.status === "approved" &&
+                !r.withdrawn_at,
+            )
+              ? ["alternative"]
+              : []),
           ].map((kind) => (
             <a
               key={kind}
@@ -860,7 +1009,12 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
             </button>
           </form>
         ) : (
-          <Link className="button" href={href("/login")}>
+          <Link
+            className="button"
+            href={href(
+              "/login?returnTo=" + encodeURIComponent(pathname + "?" + query),
+            )}
+          >
             {t("Sign in to correct or claim", "登录后纠错或认领")}
           </Link>
         )}
@@ -909,7 +1063,7 @@ export function ComparisonTable({ report }: { report: Report }) {
           <div className="comparison-detail" key={peer.domain}>
             <strong>
               {p ? (
-                <Link href={href("/projects/" + p.slug)}>{p.name}</Link>
+                <Link href={href("/products/" + p.slug)}>{p.name}</Link>
               ) : (
                 peer.name
               )}
@@ -931,9 +1085,9 @@ export function ComparisonTable({ report }: { report: Report }) {
                 t("Conditions to be supplemented", "使用条件待补充")}
             </p>
             {p ? (
-              <a href={"/out/" + p.id + "?surface=/reports"}>
+              <OfficialLink productId={p.id} surface="/reports">
                 {t("Official website", "官网")} ↗
-              </a>
+              </OfficialLink>
             ) : (
               <span className="muted">
                 {peer.domain} ·{" "}

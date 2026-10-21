@@ -1,3 +1,4 @@
+import { publicCatalog } from "./catalog";
 import { ensureDiscoveryCycle } from "../../scripts/local/discovery-cycle";
 import { publishCategory } from "./publishing";
 import WebSocket from "ws";
@@ -74,7 +75,10 @@ export function checked<T>(r: {
   if (r.error) throw new Error(r.error.message);
   return r.data as NonNullable<T>;
 }
-export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
+export async function bootstrap(
+  dataset: Dataset,
+  zone: "public" | "dashboard" | "admin" = "dashboard",
+): Promise<Bootstrap> {
   let c: Awaited<ReturnType<typeof context>>;
   try {
     c = await context();
@@ -83,22 +87,13 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
   }
   const { db, user, isAdmin } = c,
     demo = dataset === "demo";
-  const [categories, projects] = await Promise.all([
-    db.from("charts_categories").select("*").order("slug"),
-    db
-      .from("charts_projects")
-      .select("*")
-      .eq("publication", "published")
-      .eq("demo", demo)
-      .order("name")
-      .limit(300),
-  ]);
+  const catalog = await publicCatalog(dataset);
   const result: Bootstrap = {
     ...emptyBootstrap,
     discoveryCycle: await ensureDiscoveryCycle(db, demo),
     as_of: new Date().toISOString(),
-    configured: !categories.error,
-    categories: checked(categories),
+    configured: true,
+    categories: catalog.categories,
     categoryFollowers: checked(
       await db
         .from("charts_follows")
@@ -115,7 +110,8 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
         .select("project_id,category,state,placement,basis,reviewed_at")
         .order("project_id"),
     ),
-    projects: checked(projects),
+    projects: catalog.projects,
+    relations: catalog.relations,
     user: user ? { id: user.id, email: user.email ?? "" } : null,
     isAdmin,
   };
@@ -131,21 +127,13 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
     owner_verified: publicClaims.some((c) => c.project_id === p.id),
     controller_id: null,
   }));
-  const publicProjects = result.projects.map((p) => p.id);
-  if (publicProjects.length)
-    result.relations = checked(
-      await db
-        .from("charts_relations")
-        .select(
-          "id,project_id,peer_domain,peer_name,task,rationale,status,charts_applications!inner(status)",
-        )
-        .eq("charts_applications.status", "approved")
-        .is("withdrawn_at", null)
-        .eq("status", "approved")
-        .in("project_id", publicProjects)
-        .order("peer_domain")
-        .limit(1000),
-    ) as any;
+  if (zone === "public") {
+    if (user)
+      result.follows = checked(
+        await db.from("charts_follows").select("*").eq("owner_id", user.id),
+      );
+    return result;
+  }
   if (isAdmin)
     result.researchQueue = checked(
       await db
@@ -215,16 +203,21 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
       .limit(40),
   );
   const owned = isAdmin
-    ? result.projects.map((p) => p.id)
+    ? [...result.projects, ...result.researchQueue].map((p) => p.id)
     : result.claims
         .filter((x) => x.state === "approved" && x.owner_id === user.id)
         .map((x) => x.project_id);
-  const ownAppProjects = a
-    .filter((x) => x.owner_id === user.id && x.status === "approved")
-    .map((x) => x.project_id)
-    .filter(Boolean); // Effect records also belong to the original approved applicant.
-  const allowed = [...new Set([...owned, ...ownAppProjects])].filter((id) =>
-    result.projects.some((p) => p.id === id),
+  result.managedProjects = owned.length
+    ? checked(
+        await db
+          .from("charts_projects")
+          .select("*")
+          .in("id", owned)
+          .eq("demo", demo),
+      )
+    : [];
+  const allowed = [...new Set(owned)].filter((id) =>
+    result.managedProjects.some((p) => p.id === id),
   );
   if (allowed.length)
     result.events = checked(

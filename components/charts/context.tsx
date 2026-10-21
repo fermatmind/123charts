@@ -25,7 +25,9 @@ export function ChartsProvider({
   locale,
   dataset,
   children,
+  zone = "dashboard",
 }: {
+  zone?: "public" | "dashboard" | "admin";
   initial: Bootstrap;
   locale: Locale;
   dataset: Dataset;
@@ -46,11 +48,14 @@ export function ChartsProvider({
     return () => clearTimeout(timer);
   }, [message]);
   const refresh = useCallback(async () => {
-    const r = await fetch(`/api/charts/bootstrap?dataset=${dataset}`, {
-      cache: "no-store",
-    });
+    const r = await fetch(
+      `/api/charts/bootstrap?dataset=${dataset}&zone=${zone}`,
+      {
+        cache: "no-store",
+      },
+    );
     if (r.ok) setData(await r.json());
-  }, [dataset]);
+  }, [dataset, zone]);
   const href = useCallback(
     (target: string) => {
       const [pathname, qs] = target.split("?");
@@ -64,10 +69,21 @@ export function ChartsProvider({
     async <T,>(route: string, body?: unknown): Promise<T> => {
       setPending((x) => x + 1);
       try {
-        const r = await fetch(`/api/charts/${route}`, {
+        const input = (body ?? {}) as Record<string, unknown>;
+        const url =
+          route === "draft" || route === "submit"
+            ? "/api/v1/submissions"
+            : route === "admin/application"
+              ? `/api/v1/reviews/${input.id}/decision`
+              : `/api/charts/${route}`;
+        const payload =
+          route === "draft" || route === "submit"
+            ? { ...input, action: route }
+            : input;
+        const r = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body ?? {}),
+          body: JSON.stringify(payload),
           keepalive: true,
         });
         const result = await r.json();

@@ -1,6 +1,6 @@
 # 123Charts
 
-**Discover Websites, Explore Alternatives.** 免费分类发现与替代方案平台。当前产品权威：[DISCOVERY_MVP.md](docs/DISCOVERY_MVP.md)。旧流量榜方案保留为历史；本轮仅本地开发。
+**Discover Websites, Explore Alternatives.** 免费分类发现与替代方案平台。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；本轮仅本地开发。
 
 ## 本地启动
 
@@ -27,7 +27,7 @@ Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历�
 1. 搜索用途、网站或分类，按价格、语言、开源筛选；`Cmd/Ctrl + K` 搜索。
 2. 浏览分类发现、新收录、持续免费和用途替代页。发现顺序使用每日稳定轮换，不宣称流量或人气排名。
 3. 注册或登录，三步提交官网、用途条件和 3–5 个同行；自动存草稿，小众例外可以说明原因和相关替代方式。无需截图。
-4. 审核员逐条确认关系、记录资料依据与价格核验结果，通过后交付公开档案、同类对照、相关替代入口与收录卡。
+4. 审核员记录资料依据与价格核验结果，通过后交付公开档案、同类对照与收录卡；部分关系待审不阻塞项目公开，仅确认的定向关系进入替代入口。
 5. 独立认领管理身份后维护资料；后续更新不重复首次同行数量要求。项目页、筛选、替代比较和新卡片同步读取当前资料。
 6. 收藏网站、关注分类或替代页，查看展示和官网外跳记录。分享自愿，对照清单分享可撤销。
 
@@ -51,3 +51,13 @@ npm run format:check
 ```
 
 `tests/charts/legacy/` 保存旧流量投稿与浏览器验收，已退出当前 MVP 验收入口。仍运行的历史纯函数及 SQL 回归仅保护原有不可变数据与权限，不表示相关功能属于当前 MVP。
+
+## 本轮架构实现
+
+公共发现、个人空间、运营管理分别使用 `(public)`、`(dashboard)`、`(admin)` 路由组与权限布局。公共首屏不包含管理面板。
+
+Supabase SQL 是唯一 schema，继续使用 SDK，不引入第二套 ORM。`products`、`competitor_relations`、`outbound_clicks`、`impressions` 是现有 `charts_projects`、`charts_relations`、`charts_events` 的规范只读投影，非重复数据表；分类使用 `charts_categories` / `catalog_categories`，避免覆盖旧业务的 `categories`。
+
+提交只创建私有预览；审核通过才公开。资料修订审核中保留旧版，隐藏项目审核后仍隐藏。首次公开时间由数据库保护。关系始终是 anchor ← candidate，不自动反向成立。
+
+规范接口：`/api/v1/submissions`、`/api/v1/reviews/[id]/decision`、`/api/v1/events/outbound`。官网 GET 只做 302 跳转，真实点击由客户端异步 POST 记录；链接预取不计数。审核事务完成后刷新实际使用的缓存 tag；私有 outbox 支持失败重试和提交版本隔离。

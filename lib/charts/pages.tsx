@@ -1,7 +1,9 @@
 import { redirect, notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { bootstrap } from "@/lib/charts/server";
-import ChartsApp from "@/components/charts/app";
+import PublicApp from "@/components/charts/public-app";
+import PersonalApp from "@/components/charts/personal-app";
+import AdminApp from "@/components/charts/admin-app";
 import {
   discoveryPageEligible,
   indexableAlternative,
@@ -29,16 +31,21 @@ const labels: Record<string, [string, string]> = {
   shared: ["Shared comparison", "分享的对照清单"],
   methodology: ["How discovery works", "收录与发现规则"],
   "how-it-works": ["How discovery works", "收录与发现规则"],
+  "open-source": ["Open source websites", "开源发现"],
+  search: ["Search websites", "站内搜索"],
   charts: ["Historical traffic charts", "历史流量榜"],
 };
-export async function generateMetadata({
+async function generateMetadata({
   params,
   searchParams,
 }: Props): Promise<Metadata> {
   const { lang, path = [] } = await params,
     query = await searchParams,
     zh = lang === "zh";
-  const data = await bootstrap(query.dataset === "demo" ? "demo" : "real");
+  const data = await bootstrap(
+    query.dataset === "demo" ? "demo" : "real",
+    "public",
+  );
   const project = data.projects.find((p) => p.slug === path[1]),
     category = data.categories.find((c) => c.slug === path[1]);
   let title =
@@ -73,6 +80,8 @@ export async function generateMetadata({
     !path[0] ||
     [
       "projects",
+      "products",
+      "open-source",
       "categories",
       "alternatives",
       "free",
@@ -113,29 +122,12 @@ export async function generateMetadata({
     },
   };
 }
-export default async function Page({ params, searchParams }: Props) {
+async function Page({ params, searchParams }: Props) {
   const { lang, path = [] } = await params,
     query = await searchParams;
   if (!["en", "zh"].includes(lang)) notFound();
   const first = path[0];
-  if (
-    path.length > 2 ||
-    (first && !labels[first]) ||
-    (path.length === 2 &&
-      ![
-        "projects",
-        "products",
-        "categories",
-        "alternatives",
-        "charts",
-        "dashboard",
-        "reports",
-        "shared",
-      ].includes(first)) ||
-    (first === "dashboard" && path[1] && path[1] !== "notifications")
-  )
-    notFound();
-  if (first === "charts" || first === "products") {
+  if (first === "charts" || (first === "projects" && path[1])) {
     const qs = new URLSearchParams(
       Object.entries(query).filter(([, v]) => typeof v === "string") as [
         string,
@@ -143,23 +135,38 @@ export default async function Page({ params, searchParams }: Props) {
       ][],
     );
     redirect(
-      `/${lang}/${first === "charts" ? "categories" : "projects"}${path[1] ? "/" + path[1] : query.category && first === "charts" ? "/" + query.category : ""}?${qs}`,
+      `/${lang}/${first === "charts" ? "categories" : "products"}${path[1] ? "/" + path[1] : query.category && first === "charts" ? "/" + query.category : ""}?${qs}`,
     );
   }
   const dataset = query.dataset === "demo" ? "demo" : "real",
-    initial = await bootstrap(dataset);
+    initial = await bootstrap(
+      dataset,
+      ["admin"].includes(first)
+        ? "admin"
+        : ["submit", "dashboard", "login", "following", "reports"].includes(
+              first,
+            )
+          ? "dashboard"
+          : "public",
+    );
   const project = initial.projects.find((p) => p.slug === path[1]);
   if (
     initial.configured &&
-    ((["projects", "alternatives"].includes(first) && path[1] && !project) ||
+    ((["products", "alternatives"].includes(first) && path[1] && !project) ||
       (first === "categories" &&
         path[1] &&
         !initial.categories.some((c) => c.slug === path[1])))
   )
     notFound();
+  const ChartsApp =
+    first === "admin"
+      ? AdminApp
+      : ["dashboard", "submit", "login", "following", "reports"].includes(first)
+        ? PersonalApp
+        : PublicApp;
   const url = "https://123charts.com/" + lang + "/" + path.join("/");
   const schema =
-    project && ["projects", "alternatives"].includes(first)
+    project && ["products", "alternatives"].includes(first)
       ? path[0] === "alternatives"
         ? {
             "@context": "https://schema.org",
@@ -174,12 +181,14 @@ export default async function Page({ params, searchParams }: Props) {
               "@type": "ListItem",
               position: i + 1,
               name: x.project.name,
-              url: `https://123charts.com/${lang}/projects/${x.project.slug}`,
+              url: `https://123charts.com/${lang}/products/${x.project.slug}`,
             })),
           }
         : {
             "@context": "https://schema.org",
-            "@type": "WebSite",
+            "@type": "SoftwareApplication",
+            applicationCategory: project.category,
+            operatingSystem: "Web",
             name: project.name,
             url: project.website_url,
             description:
@@ -205,4 +214,35 @@ export default async function Page({ params, searchParams }: Props) {
       />
     </>
   );
+}
+
+export function frameworkPage(template: string[]) {
+  return async function RoutePage(props: {
+    params: Promise<Record<string, string>>;
+    searchParams: Props["searchParams"];
+  }) {
+    const params = await props.params;
+    return Page({
+      params: Promise.resolve({
+        lang: params.lang,
+        path: template.map((s) => (s.startsWith(":") ? params[s.slice(1)] : s)),
+      }),
+      searchParams: props.searchParams,
+    });
+  };
+}
+export function frameworkMetadata(template: string[]) {
+  return async function RouteMetadata(props: {
+    params: Promise<Record<string, string>>;
+    searchParams: Props["searchParams"];
+  }) {
+    const params = await props.params;
+    return generateMetadata({
+      params: Promise.resolve({
+        lang: params.lang,
+        path: template.map((s) => (s.startsWith(":") ? params[s.slice(1)] : s)),
+      }),
+      searchParams: props.searchParams,
+    });
+  };
 }

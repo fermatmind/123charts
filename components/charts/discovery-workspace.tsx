@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useCharts, Empty, Status } from "./context";
 export function DiscoveryDashboard({
   notificationsOnly = false,
+  projectId,
 }: {
   notificationsOnly?: boolean;
+  projectId?: string;
 }) {
   const { data, t, href, api } = useCharts();
   if (!data.user)
@@ -18,7 +20,9 @@ export function DiscoveryDashboard({
         </Empty>
       </div>
     );
-  const events = data.events.filter((e) => !e.excluded);
+  const events = data.events.filter(
+    (e) => !e.excluded && (!projectId || e.project_id === projectId),
+  );
   const outbound = events.filter((e) => e.kind === "outbound");
   const unique = new Set(
     outbound.map(
@@ -100,7 +104,11 @@ export function DiscoveryDashboard({
             </Link>
           </div>
           {data.applications
-            .filter((a) => a.owner_id === data.user?.id)
+            .filter(
+              (a) =>
+                a.owner_id === data.user?.id &&
+                (!projectId || a.project_id === projectId),
+            )
             .map((a) => (
               <div className="review-card" key={a.id}>
                 <div className="row">
@@ -121,7 +129,7 @@ export function DiscoveryDashboard({
                     <Link
                       className="button"
                       href={href(
-                        "/projects/" +
+                        "/products/" +
                           data.projects.find((p) => p.id === a.project_id)
                             ?.slug,
                       )}
@@ -146,10 +154,15 @@ export function DiscoveryDashboard({
           <h2>{t("Claimed projects", "已认领项目")}</h2>
           {data.claims
             .filter(
-              (c) => c.owner_id === data.user?.id && c.state === "approved",
+              (c) =>
+                c.owner_id === data.user?.id &&
+                c.state === "approved" &&
+                (!projectId || c.project_id === projectId),
             )
             .map((c) => {
-              const p = data.projects.find((p) => p.id === c.project_id);
+              const p = [...data.projects, ...data.managedProjects].find(
+                (p) => p.id === c.project_id,
+              );
               return p ? (
                 <div className="review-card" key={c.id}>
                   <strong>{p.name}</strong>
@@ -212,7 +225,11 @@ export function DiscoveryDashboard({
     </div>
   );
 }
-export function DiscoveryFollowing() {
+export function DiscoveryFollowing({
+  kind,
+}: {
+  kind?: "bookmark" | "following";
+}) {
   const { data, t, href, api, locale } = useCharts();
   if (!data.user)
     return (
@@ -235,66 +252,74 @@ export function DiscoveryFollowing() {
           )}
         </p>
       </div>
-      {data.follows.map((f) => {
-        const p = data.projects.find((p) => p.id === f.target);
-        const c = data.categories.find((c) => c.slug === f.target);
-        return (
-          <div className="review-card" key={f.kind + f.target}>
-            <div className="row">
-              <Link
-                href={href(
-                  f.kind === "category"
-                    ? "/categories/" + f.target
-                    : f.kind === "alternatives"
-                      ? "/alternatives/" + p?.slug
-                      : "/projects/" + p?.slug,
-                )}
-              >
-                <strong>
-                  {p?.name ||
-                    (locale === "zh" ? c?.name_zh : c?.name_en) ||
-                    t("Unavailable profile", "资料不可用")}
-                </strong>
-              </Link>
-              <span className="tag">
-                {f.kind === "alternatives"
-                  ? t("Alternatives", "替代方案")
-                  : f.kind === "category"
-                    ? t("Category", "分类")
-                    : f.kind === "bookmark"
-                      ? t("Bookmark", "收藏")
-                      : t("Project updates", "项目更新")}
-              </span>
-              <button
-                className="button ghost"
-                onClick={() =>
-                  void api("follow", { ...f, remove: true }).catch(() => {})
-                }
-              >
-                {t("Remove / unsubscribe", "移除／取消关注")}
-              </button>
-            </div>
-            {f.kind !== "bookmark" && (
-              <label>
-                <input
-                  type="checkbox"
-                  checked={f.email_enabled}
-                  onChange={(e) =>
-                    void api("follow", {
-                      ...f,
-                      email_enabled: e.target.checked,
-                    }).catch(() => {})
+      {data.follows
+        .filter(
+          (f) =>
+            !kind ||
+            (kind === "bookmark"
+              ? f.kind === "bookmark"
+              : f.kind !== "bookmark"),
+        )
+        .map((f) => {
+          const p = data.projects.find((p) => p.id === f.target);
+          const c = data.categories.find((c) => c.slug === f.target);
+          return (
+            <div className="review-card" key={f.kind + f.target}>
+              <div className="row">
+                <Link
+                  href={href(
+                    f.kind === "category"
+                      ? "/categories/" + f.target
+                      : f.kind === "alternatives"
+                        ? "/alternatives/" + p?.slug
+                        : "/products/" + p?.slug,
+                  )}
+                >
+                  <strong>
+                    {p?.name ||
+                      (locale === "zh" ? c?.name_zh : c?.name_en) ||
+                      t("Unavailable profile", "资料不可用")}
+                  </strong>
+                </Link>
+                <span className="tag">
+                  {f.kind === "alternatives"
+                    ? t("Alternatives", "替代方案")
+                    : f.kind === "category"
+                      ? t("Category", "分类")
+                      : f.kind === "bookmark"
+                        ? t("Bookmark", "收藏")
+                        : t("Project updates", "项目更新")}
+                </span>
+                <button
+                  className="button ghost"
+                  onClick={() =>
+                    void api("follow", { ...f, remove: true }).catch(() => {})
                   }
-                />
-                {t(
-                  "Optional email digest to local inbox",
-                  "可选邮件摘要，送至本地收件箱",
-                )}
-              </label>
-            )}
-          </div>
-        );
-      })}
+                >
+                  {t("Remove / unsubscribe", "移除／取消关注")}
+                </button>
+              </div>
+              {f.kind !== "bookmark" && (
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={f.email_enabled}
+                    onChange={(e) =>
+                      void api("follow", {
+                        ...f,
+                        email_enabled: e.target.checked,
+                      }).catch(() => {})
+                    }
+                  />
+                  {t(
+                    "Optional email digest to local inbox",
+                    "可选邮件摘要，送至本地收件箱",
+                  )}
+                </label>
+              )}
+            </div>
+          );
+        })}
       {!data.follows.length && (
         <p className="notice">
           {t(

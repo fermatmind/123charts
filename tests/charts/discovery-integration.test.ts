@@ -143,10 +143,10 @@ test(
         data: {
           id: app.id,
           action: "approve",
-          reference: "Local fictional test review.",
+          reference: "",
         },
       });
-      assert.equal(r.status(), 400, "relationships require review");
+      assert.equal(r.status(), 400, "a factual decision basis is required");
       assert.equal(
         (
           await admin.post("/api/charts/admin/application", {

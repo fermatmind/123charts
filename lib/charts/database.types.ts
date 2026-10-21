@@ -237,7 +237,49 @@ export type Database = {
             referencedRelation: "charts_public_projects";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "charts_applications_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_applications_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
+      };
+      charts_cache_invalidations: {
+        Row: {
+          attempts: number;
+          created_at: string;
+          error: string | null;
+          id: number;
+          processed_at: string | null;
+          tags: string[];
+        };
+        ComputedFields: never;
+        Insert: {
+          attempts?: number;
+          created_at?: string;
+          error?: string | null;
+          id?: never;
+          processed_at?: string | null;
+          tags?: string[];
+        };
+        Update: {
+          attempts?: number;
+          created_at?: string;
+          error?: string | null;
+          id?: never;
+          processed_at?: string | null;
+          tags?: string[];
+        };
+        Relationships: [];
       };
       charts_categories: {
         Row: {
@@ -326,6 +368,20 @@ export type Database = {
             referencedRelation: "charts_public_projects";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "charts_claims_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_claims_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
       };
       charts_classification_log: {
@@ -367,6 +423,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_classification_log_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_classification_log_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -415,6 +485,20 @@ export type Database = {
             referencedRelation: "charts_public_projects";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "charts_contributions_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_contributions_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
       };
       charts_corrections: {
@@ -461,6 +545,20 @@ export type Database = {
             referencedRelation: "charts_public_projects";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "charts_corrections_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_corrections_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
       };
       charts_discovery_cycles: {
@@ -488,6 +586,8 @@ export type Database = {
       charts_events: {
         Row: {
           created_at: string;
+          dedupe_key: string | null;
+          event_id: string | null;
           excluded: boolean;
           exclusion_reason: string | null;
           id: string;
@@ -500,6 +600,8 @@ export type Database = {
         ComputedFields: never;
         Insert: {
           created_at?: string;
+          dedupe_key?: string | null;
+          event_id?: string | null;
           excluded?: boolean;
           exclusion_reason?: string | null;
           id?: string;
@@ -511,6 +613,8 @@ export type Database = {
         };
         Update: {
           created_at?: string;
+          dedupe_key?: string | null;
+          event_id?: string | null;
           excluded?: boolean;
           exclusion_reason?: string | null;
           id?: string;
@@ -533,6 +637,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -728,6 +846,13 @@ export type Database = {
             foreignKeyName: "charts_memberships_category_fkey";
             columns: ["category"];
             isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_memberships_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
             referencedRelation: "charts_categories";
             referencedColumns: ["slug"];
           },
@@ -743,6 +868,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -793,8 +932,10 @@ export type Database = {
       charts_projects: {
         Row: {
           category: string | null;
+          category_id: string | null;
           collected_at: string;
           conditions: string;
+          content_version: number;
           controller_id: string | null;
           demo: boolean;
           description_en: string;
@@ -802,6 +943,7 @@ export type Database = {
           differentiator: string;
           domain: string;
           enrolled_at: string | null;
+          first_indexed_at: string | null;
           first_publication_inferred: boolean;
           first_published_at: string | null;
           id: string;
@@ -810,9 +952,11 @@ export type Database = {
           name: string;
           official_source: string | null;
           open_source_url: string;
+          origin_application_id: string | null;
           price_type: string;
           price_verified: boolean;
           publication: string;
+          review_state: string;
           slug: string;
           source_checked_at: string | null;
           supported_languages: string[];
@@ -823,8 +967,10 @@ export type Database = {
         ComputedFields: never;
         Insert: {
           category?: string | null;
+          category_id?: never;
           collected_at?: string;
           conditions?: string;
+          content_version?: number;
           controller_id?: string | null;
           demo?: boolean;
           description_en?: string;
@@ -832,6 +978,7 @@ export type Database = {
           differentiator?: string;
           domain: string;
           enrolled_at?: string | null;
+          first_indexed_at?: never;
           first_publication_inferred?: boolean;
           first_published_at?: string | null;
           id?: string;
@@ -840,9 +987,11 @@ export type Database = {
           name: string;
           official_source?: string | null;
           open_source_url?: string;
+          origin_application_id?: string | null;
           price_type?: string;
           price_verified?: boolean;
           publication?: string;
+          review_state?: string;
           slug: string;
           source_checked_at?: string | null;
           supported_languages?: string[];
@@ -852,8 +1001,10 @@ export type Database = {
         };
         Update: {
           category?: string | null;
+          category_id?: never;
           collected_at?: string;
           conditions?: string;
+          content_version?: number;
           controller_id?: string | null;
           demo?: boolean;
           description_en?: string;
@@ -861,6 +1012,7 @@ export type Database = {
           differentiator?: string;
           domain?: string;
           enrolled_at?: string | null;
+          first_indexed_at?: never;
           first_publication_inferred?: boolean;
           first_published_at?: string | null;
           id?: string;
@@ -869,9 +1021,11 @@ export type Database = {
           name?: string;
           official_source?: string | null;
           open_source_url?: string;
+          origin_application_id?: string | null;
           price_type?: string;
           price_verified?: boolean;
           publication?: string;
+          review_state?: string;
           slug?: string;
           source_checked_at?: string | null;
           supported_languages?: string[];
@@ -884,8 +1038,22 @@ export type Database = {
             foreignKeyName: "charts_projects_category_fkey";
             columns: ["category"];
             isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_projects_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
             referencedRelation: "charts_categories";
             referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_projects_origin_application_id_fkey";
+            columns: ["origin_application_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_applications";
+            referencedColumns: ["id"];
           },
         ];
       };
@@ -931,6 +1099,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_recommendations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_recommendations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -995,6 +1177,20 @@ export type Database = {
             referencedRelation: "charts_public_projects";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
         ];
       };
       charts_reports: {
@@ -1049,6 +1245,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_reports_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_reports_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -1126,6 +1336,13 @@ export type Database = {
           version?: number;
         };
         Relationships: [
+          {
+            foreignKeyName: "charts_snapshots_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
           {
             foreignKeyName: "charts_snapshots_category_fkey";
             columns: ["category"];
@@ -3226,6 +3443,43 @@ export type Database = {
       };
     };
     Views: {
+      catalog_categories: {
+        Row: {
+          check_days: number | null;
+          description_en: string | null;
+          description_zh: string | null;
+          name_en: string | null;
+          name_zh: string | null;
+          parent_en: string | null;
+          parent_zh: string | null;
+          rules_version: number | null;
+          slug: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          check_days?: number | null;
+          description_en?: string | null;
+          description_zh?: string | null;
+          name_en?: string | null;
+          name_zh?: string | null;
+          parent_en?: string | null;
+          parent_zh?: string | null;
+          rules_version?: number | null;
+          slug?: string | null;
+        };
+        Update: {
+          check_days?: number | null;
+          description_en?: string | null;
+          description_zh?: string | null;
+          name_en?: string | null;
+          name_zh?: string | null;
+          parent_en?: string | null;
+          parent_zh?: string | null;
+          rules_version?: number | null;
+          slug?: string | null;
+        };
+        Relationships: [];
+      };
       charts_public_checks: {
         Row: {
           demo: boolean | null;
@@ -3278,6 +3532,13 @@ export type Database = {
             foreignKeyName: "charts_memberships_category_fkey";
             columns: ["category"];
             isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_memberships_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
             referencedRelation: "charts_categories";
             referencedColumns: ["slug"];
           },
@@ -3293,6 +3554,20 @@ export type Database = {
             columns: ["project_id"];
             isOneToOne: false;
             referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_memberships_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
             referencedColumns: ["id"];
           },
         ];
@@ -3388,6 +3663,13 @@ export type Database = {
             foreignKeyName: "charts_projects_category_fkey";
             columns: ["category"];
             isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_projects_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
             referencedRelation: "charts_categories";
             referencedColumns: ["slug"];
           },
@@ -3444,6 +3726,331 @@ export type Database = {
           version?: number | null;
         };
         Relationships: [];
+      };
+      competitor_relations: {
+        Row: {
+          anchor_id: string | null;
+          candidate_id: string | null;
+          demo: boolean | null;
+          id: string | null;
+          peer_domain: string | null;
+          peer_name: string | null;
+          project_id: string | null;
+          rationale: string | null;
+          status: string | null;
+          task: string | null;
+          use_case: string | null;
+          withdrawn_at: string | null;
+        };
+        ComputedFields: never;
+        Relationships: [
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["candidate_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["candidate_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["candidate_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["candidate_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_relations_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      impressions: {
+        Row: {
+          created_at: string | null;
+          event_id: string | null;
+          excluded: boolean | null;
+          exclusion_reason: string | null;
+          id: string | null;
+          product_id: string | null;
+          session_id: string | null;
+          surface: string | null;
+          visitor_id: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string | null;
+          event_id?: string | null;
+          excluded?: boolean | null;
+          exclusion_reason?: string | null;
+          id?: string | null;
+          product_id?: string | null;
+          session_id?: string | null;
+          surface?: string | null;
+          visitor_id?: string | null;
+        };
+        Update: {
+          created_at?: string | null;
+          event_id?: string | null;
+          excluded?: boolean | null;
+          exclusion_reason?: string | null;
+          id?: string | null;
+          product_id?: string | null;
+          session_id?: string | null;
+          surface?: string | null;
+          visitor_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      outbound_clicks: {
+        Row: {
+          created_at: string | null;
+          event_id: string | null;
+          excluded: boolean | null;
+          exclusion_reason: string | null;
+          id: string | null;
+          product_id: string | null;
+          session_id: string | null;
+          surface: string | null;
+          visitor_id: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string | null;
+          event_id?: string | null;
+          excluded?: boolean | null;
+          exclusion_reason?: string | null;
+          id?: string | null;
+          product_id?: string | null;
+          session_id?: string | null;
+          surface?: string | null;
+          visitor_id?: string | null;
+        };
+        Update: {
+          created_at?: string | null;
+          event_id?: string | null;
+          excluded?: boolean | null;
+          exclusion_reason?: string | null;
+          id?: string | null;
+          product_id?: string | null;
+          session_id?: string | null;
+          surface?: string | null;
+          visitor_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "charts_public_projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "competitor_relations";
+            referencedColumns: ["anchor_id"];
+          },
+          {
+            foreignKeyName: "charts_events_project_id_fkey";
+            columns: ["product_id"];
+            isOneToOne: false;
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      products: {
+        Row: {
+          category: string | null;
+          category_id: string | null;
+          collected_at: string | null;
+          conditions: string | null;
+          content_version: number | null;
+          demo: boolean | null;
+          description_en: string | null;
+          description_zh: string | null;
+          differentiator: string | null;
+          domain: string | null;
+          enrolled_at: string | null;
+          first_indexed_at: string | null;
+          first_publication_inferred: boolean | null;
+          first_published_at: string | null;
+          id: string | null;
+          is_open_source: boolean | null;
+          measurement_domain: string | null;
+          name: string | null;
+          official_source: string | null;
+          official_url: string | null;
+          open_source_url: string | null;
+          price_type: string | null;
+          price_verified: boolean | null;
+          publication: string | null;
+          review_state: string | null;
+          slug: string | null;
+          source_checked_at: string | null;
+          supported_languages: string[] | null;
+          task: string | null;
+          updated_at: string | null;
+          website_url: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          category?: string | null;
+          category_id?: string | null;
+          collected_at?: string | null;
+          conditions?: string | null;
+          content_version?: number | null;
+          demo?: boolean | null;
+          description_en?: string | null;
+          description_zh?: string | null;
+          differentiator?: string | null;
+          domain?: string | null;
+          enrolled_at?: string | null;
+          first_indexed_at?: string | null;
+          first_publication_inferred?: boolean | null;
+          first_published_at?: string | null;
+          id?: string | null;
+          is_open_source?: boolean | null;
+          measurement_domain?: string | null;
+          name?: string | null;
+          official_source?: string | null;
+          official_url?: string | null;
+          open_source_url?: string | null;
+          price_type?: string | null;
+          price_verified?: boolean | null;
+          publication?: string | null;
+          review_state?: string | null;
+          slug?: string | null;
+          source_checked_at?: string | null;
+          supported_languages?: string[] | null;
+          task?: string | null;
+          updated_at?: string | null;
+          website_url?: string | null;
+        };
+        Update: {
+          category?: string | null;
+          category_id?: string | null;
+          collected_at?: string | null;
+          conditions?: string | null;
+          content_version?: number | null;
+          demo?: boolean | null;
+          description_en?: string | null;
+          description_zh?: string | null;
+          differentiator?: string | null;
+          domain?: string | null;
+          enrolled_at?: string | null;
+          first_indexed_at?: string | null;
+          first_publication_inferred?: boolean | null;
+          first_published_at?: string | null;
+          id?: string | null;
+          is_open_source?: boolean | null;
+          measurement_domain?: string | null;
+          name?: string | null;
+          official_source?: string | null;
+          official_url?: string | null;
+          open_source_url?: string | null;
+          price_type?: string | null;
+          price_verified?: boolean | null;
+          publication?: string | null;
+          review_state?: string | null;
+          slug?: string | null;
+          source_checked_at?: string | null;
+          supported_languages?: string[] | null;
+          task?: string | null;
+          updated_at?: string | null;
+          website_url?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "charts_projects_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
+            referencedRelation: "catalog_categories";
+            referencedColumns: ["slug"];
+          },
+          {
+            foreignKeyName: "charts_projects_category_fkey";
+            columns: ["category"];
+            isOneToOne: false;
+            referencedRelation: "charts_categories";
+            referencedColumns: ["slug"];
+          },
+        ];
       };
     };
     Functions: {
@@ -3547,6 +4154,10 @@ export type Database = {
         Args: { fields: Json; receipt: string };
         Returns: Json;
       };
+      charts_relation_decision: {
+        Args: { actor: string; basis: string; decision: string; rid: string };
+        Returns: undefined;
+      };
       charts_resolve_observation: {
         Args: { actor: string; reason: string; rid: string };
         Returns: string;
@@ -3565,6 +4176,16 @@ export type Database = {
         Args: { actor: string; cat: string; decision: Json; pid: string };
         Returns: undefined;
       };
+      charts_review_version: {
+        Args: {
+          actor: string;
+          aid: string;
+          expected_updated_at?: string;
+          pricing_confirmed: boolean;
+          reference: string;
+        };
+        Returns: string;
+      };
       charts_save_draft: {
         Args: {
           actor: string;
@@ -3573,6 +4194,30 @@ export type Database = {
           is_demo: boolean;
           update_project?: string;
         };
+        Returns: {
+          created_at: string;
+          demo: boolean;
+          draft: NonNullable<Json>;
+          feedback: string | null;
+          id: string;
+          kind: string;
+          owner_id: string;
+          project_id: string | null;
+          reviewed_at: string | null;
+          status: string;
+          submitted_at: string | null;
+          updated_at: string;
+          workflow_version: string;
+        };
+        SetofOptions: {
+          from: "*";
+          to: "charts_applications";
+          isOneToOne: true;
+          isSetofReturn: false;
+        };
+      };
+      charts_submit_public: {
+        Args: { actor: string; aid: string };
         Returns: {
           created_at: string;
           demo: boolean;

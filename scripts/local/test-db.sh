@@ -18,4 +18,5 @@ done
 docker exec "$container" psql -U postgres -d "$checkdb" -Atc "select count(*) from public.charts_projects; select count(*) from public.charts_snapshots;"
 docker exec -i "$container" psql -U postgres -d "$checkdb" -v ON_ERROR_STOP=1 < tests/charts/source-corrections.sql
 docker exec -i "$container" psql -U postgres -d "$checkdb" -v ON_ERROR_STOP=1 < tests/charts/discovery.sql
+docker exec -i "$container" psql -U postgres -d "$checkdb" -v ON_ERROR_STOP=1 < tests/charts/framework.sql
 echo 'PASS: empty-schema migrations and isolated source correction tests; runtime database untouched.'

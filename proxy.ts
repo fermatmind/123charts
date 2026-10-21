@@ -4,6 +4,7 @@ export function proxy(request: NextRequest) {
   if (
     pathname.startsWith("/api/") &&
     !pathname.startsWith("/api/charts/") &&
+    !pathname.startsWith("/api/v1/") &&
     pathname !== "/api/healthz"
   )
     return NextResponse.json(
@@ -27,6 +28,8 @@ export function proxy(request: NextRequest) {
     "following",
     "login",
     "how-it-works",
+    "open-source",
+    "search",
     "products",
     "projects",
     "categories",
@@ -54,7 +57,7 @@ export function proxy(request: NextRequest) {
     else if (/^\/(claim)\//.test(target))
       target = target.replace("/claim/", "/projects/");
     else if (
-      !/^\/(products|alternatives|free|new|dashboard|following|login|how-it-works|projects|categories|submit|methodology)/.test(
+      !/^\/(open-source|search|products|alternatives|free|new|dashboard|following|login|how-it-works|projects|categories|submit|methodology)/.test(
         target,
       )
     )
@@ -62,6 +65,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(`/en${target}${search}`, request.url));
   }
   const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-charts-path", pathname + search);
   requestHeaders.set(
     "x-charts-locale",
     pathname.split("/")[1] === "zh" ? "zh" : "en",

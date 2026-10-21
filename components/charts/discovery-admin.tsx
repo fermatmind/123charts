@@ -16,6 +16,7 @@ function ApplicationReview({ a }: { a: Application }) {
       reference,
       feedback: reference,
       pricing_confirmed: price,
+      expected_updated_at: a.updated_at,
     }).catch(() => {});
   return (
     <div className="review-card">
@@ -63,7 +64,7 @@ function ApplicationReview({ a }: { a: Application }) {
             <Status value={r.status} />
             {["approved", "rejected"].map((state) => (
               <button
-                disabled={busy || a.status === "approved"}
+                disabled={busy}
                 className="button"
                 key={state}
                 onClick={() =>
@@ -82,6 +83,17 @@ function ApplicationReview({ a }: { a: Application }) {
           </div>
         </div>
       ))}
+      {a.status === "approved" &&
+        relations.some((r) => r.status === "pending") && (
+          <label>
+            {t("Relationship decision basis", "关系处理依据")}
+            <textarea
+              aria-label={"Review basis " + a.draft.name}
+              value={reference}
+              onChange={(e) => setReference(e.target.value)}
+            />
+          </label>
+        )}
       {a.status !== "approved" && a.status !== "draft" && (
         <>
           <label>
@@ -327,9 +339,19 @@ function Decision({ item, kind }: { item: any; kind: "claim" | "correction" }) {
     </div>
   );
 }
-export function DiscoveryAdmin() {
+export function DiscoveryAdmin({ section }: { section?: string }) {
   const { data, t, dataset } = useCharts();
-  const [tab, setTab] = useState("applications");
+  const [tab, setTab] = useState(
+    section === "products"
+      ? "profiles"
+      : section === "discovery"
+        ? "rotation"
+        : section === "relations"
+          ? "relations"
+          : section === "categories"
+            ? "categories"
+            : "applications",
+  );
   if (!data.isAdmin)
     return (
       <Empty title={t("Administrator access required", "需要管理员权限")} />
@@ -352,30 +374,46 @@ export function DiscoveryAdmin() {
         </p>
       </div>
       <div className="row">
-        {["applications", "profiles", "claims", "corrections", "rotation"].map(
-          (v, i) => (
-            <button
-              className={"button " + (tab === v ? "primary" : "")}
-              key={v}
-              onClick={() => setTab(v)}
-            >
-              {
-                [
-                  t("Applications", "申请"),
-                  t("Shared profiles", "统一资料库"),
-                  t("Claims", "认领"),
-                  t("Corrections", "纠错"),
-                  t("Discovery cycle", "发现周期"),
-                ][i]
-              }
-            </button>
-          ),
-        )}
+        {[
+          "applications",
+          "profiles",
+          "claims",
+          "corrections",
+          "rotation",
+          "categories",
+          "relations",
+        ].map((v, i) => (
+          <button
+            className={"button " + (tab === v ? "primary" : "")}
+            key={v}
+            onClick={() => setTab(v)}
+          >
+            {
+              [
+                t("Applications", "申请"),
+                t("Shared profiles", "统一资料库"),
+                t("Claims", "认领"),
+                t("Corrections", "纠错"),
+                t("Discovery cycle", "发现周期"),
+                t("Categories", "分类与用途"),
+                t("Relations", "关系维护"),
+              ][i]
+            }
+          </button>
+        ))}
       </div>
       {tab === "applications" &&
         data.applications
           .filter((a) => a.demo === (dataset === "demo"))
           .map((a) => <ApplicationReview key={a.id} a={a} />)}
+      {tab === "categories" &&
+        data.categories.map((c) => (
+          <CategoryEditor key={c.slug} category={c} />
+        ))}
+      {tab === "relations" &&
+        data.relations.map((r) => (
+          <RelationshipEditor key={r.id} relation={r} />
+        ))}
       {tab === "profiles" &&
         [...data.researchQueue, ...data.projects].map((p) => (
           <ProfileEditor key={p.id} p={p} />
@@ -407,6 +445,83 @@ export function DiscoveryAdmin() {
           ))}
         </>
       )}
+    </div>
+  );
+}
+
+function CategoryEditor({
+  category,
+}: {
+  category: import("@/lib/charts/types").Category;
+}) {
+  const { api, t } = useCharts();
+  const [value, setValue] = useState(category);
+  return (
+    <div className="review-card discovery-form">
+      <h2>{category.slug}</h2>
+      {(
+        ["name_en", "name_zh", "description_en", "description_zh"] as const
+      ).map((key) => (
+        <label key={key}>
+          {key}
+          <textarea
+            value={value[key]}
+            onChange={(e) => setValue((v) => ({ ...v, [key]: e.target.value }))}
+          />
+        </label>
+      ))}
+      <button
+        className="button"
+        onClick={() => void api("admin/category", value).catch(() => {})}
+      >
+        {t("Save category definition", "保存分类定义")}
+      </button>
+    </div>
+  );
+}
+function RelationshipEditor({
+  relation: r,
+}: {
+  relation: import("@/lib/charts/types").Relation;
+}) {
+  const { data, api, t } = useCharts();
+  const [basis, setBasis] = useState(r.feedback || "");
+  return (
+    <div className="review-card">
+      <h3>
+        {r.peer_name} → {data.projects.find((p) => p.id === r.project_id)?.name}
+      </h3>
+      <p>
+        {r.task} · {r.rationale}
+      </p>
+      <Status value={r.status} />
+      {r.withdrawn_at && <span className="tag">{t("Revoked", "已撤销")}</span>}
+      <textarea
+        aria-label={t("Relationship review basis", "关系复核依据")}
+        value={basis}
+        onChange={(e) => setBasis(e.target.value)}
+      />
+      <div className="row">
+        {["approved", "rejected", "revoked"].map((state) => (
+          <button
+            key={state}
+            className="button"
+            onClick={() =>
+              void api("admin/relation", {
+                id: r.id,
+                state,
+                feedback: basis,
+              }).catch(() => {})
+            }
+          >
+            {state === "approved"
+              ? t("Accept", "接受")
+              : state === "rejected"
+                ? t("Reject", "拒绝")
+                : t("Revoke", "撤销")}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
