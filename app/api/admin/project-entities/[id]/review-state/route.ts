@@ -11,7 +11,8 @@ import { getOrCreateRequestId } from "@/lib/api/request-id";
 import { getAdminClient } from "@/lib/supabase/admin-server";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const requestId = getOrCreateRequestId();
   const instance = `/api/admin/project-entities/${params.id}/review-state`;
   const guard = await checkAdminGuard();

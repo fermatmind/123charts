@@ -215,3 +215,9 @@ Human team
 ### Risk notes
 
 Research snapshot only; semantic search remains future phase only.
+
+## 123Charts local V1 dependencies
+
+The new 123Charts UI is original implementation, using installed packages rather than a copied site/template or competitor dataset. Radix Dialog supplies accessible dialog primitives (MIT); Recharts supplies chart rendering (MIT); Tesseract.js supplies local OCR (Apache-2.0); Next.js `ImageResponse` supplies PNG rendering (MIT). Package versions and resolved artifacts are recorded in `package-lock.json`; upstream notices remain in installed packages. No third-party component source was vendored. Existing project profiles were used as research candidates; new concise descriptions are original and official URLs/source-check outcomes are recorded locally.
+
+The user's installed Mac Unicode font is used only in ignored local runtime assets. It is not included in the repository or licensed for redistribution by this project. Server deployment requires a separately licensed CJK font.

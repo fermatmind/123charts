@@ -5,10 +5,8 @@ import {
   nextChangelogStatus,
 } from "@/lib/changelog/engine";
 
-export async function PATCH(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const body = (await request.json().catch(() => ({}))) as {
     action?: unknown;
   };

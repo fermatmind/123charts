@@ -11,7 +11,7 @@ import { CalendarCheck, ClipboardList, Filter, ShieldCheck } from "lucide-react"
 import type { Metadata } from "next";
 
 interface TaskDiscoveryPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export const dynamicParams = false;
@@ -22,9 +22,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: TaskDiscoveryPageProps): Promise<Metadata> {
+export async function generateMetadata(props: TaskDiscoveryPageProps): Promise<Metadata> {
+  const params = await props.params;
   const entry = getTaskDiscoveryEntryBySlug(params.slug);
   const projects = entry ? getProjectsForTaskDiscoveryEntry(entry) : [];
 
@@ -50,9 +49,8 @@ export async function generateMetadata({
   };
 }
 
-export default function TaskDiscoveryPage({
-  params,
-}: TaskDiscoveryPageProps) {
+export default async function TaskDiscoveryPage(props: TaskDiscoveryPageProps) {
+  const params = await props.params;
   const entry = getTaskDiscoveryEntryBySlug(params.slug);
 
   if (!entry || entry.status !== "published" || !entry.sitemapEligible) {

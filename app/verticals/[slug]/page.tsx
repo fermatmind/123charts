@@ -11,7 +11,7 @@ import { Compass, Filter, ShieldCheck, CalendarCheck } from "lucide-react";
 import type { Metadata } from "next";
 
 interface VerticalAssetGridPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,9 +20,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: VerticalAssetGridPageProps): Promise<Metadata> {
+export async function generateMetadata(props: VerticalAssetGridPageProps): Promise<Metadata> {
+  const params = await props.params;
   const grid = getVerticalAssetGridBySlug(params.slug);
   const projects = grid ? getProjectsForVerticalAssetGrid(grid) : [];
 
@@ -45,9 +44,8 @@ export async function generateMetadata({
   };
 }
 
-export default function VerticalAssetGridPage({
-  params,
-}: VerticalAssetGridPageProps) {
+export default async function VerticalAssetGridPage(props: VerticalAssetGridPageProps) {
+  const params = await props.params;
   const grid = getVerticalAssetGridBySlug(params.slug);
 
   if (!grid || grid.status !== "published" || !grid.sitemapEligible) {

@@ -1,293 +1,68 @@
-# 88CN
+# 123Charts
 
-88CN is an open structured signal index for AI projects.
+Free project discovery, source-aware website charts, peer contributions and founder workspaces. This checkout is the **local V1**, built on the historical 88CN repository. Historical 88CN documents describe earlier work; current product authority is [123CHARTS_V1.md](docs/123CHARTS_V1.md).
 
-It helps early AI builders, researchers, and future agent systems understand public AI projects through reviewed project profiles, machine-readability checks, public source links, and structured metadata.
-
-88CN is not a generic AI tools directory, a paid machine-ranking system, an automated content farm, an investment platform, or a private-data collection product.
-
----
-
-## Name and positioning
-
-88CN is used as a compact infrastructure mark for the 88CN project.
-
-The name does not imply a regional gate, financial product, search ranking promise, or commercial placement guarantee. In this repository, 88CN refers to the open project index, review workflow, and structured signal system used to describe public AI projects.
-
-The meaning of the brand is built through code, reviewed data, public reports, and repeatable machine-readability checks.
-
----
-
-## What 88CN does
-
-88CN tracks public signals that make an AI project easier to verify, understand, and index:
-
-- official website
-- public documentation
-- GitHub repository
-- launch page
-- project category
-- technology stack
-- machine-readable metadata
-- founder-submitted corrections or claims
-- admin review status
-
-The first version of 88CN focuses on one practical problem:
-
-> Many early AI projects launch with weak machine-readable structure. Their websites may lack clean HTML, canonical metadata, JSON-LD, sitemap visibility, or clear public source links.
-
-88CN provides a structured workflow to detect, review, and improve those public project profiles.
-
----
-
-## Current project status
-
-88CN currently includes:
-
-- Next.js App Router web application
-- public project index pages
-- submit and claim workflows
-- admin review workflow
-- public-surface hardening
-- intake firewall and validation guards
-- AI Search Readiness Checker
-- external import integration for the open data repository
-- production deployment on 88cn.com
-- companion open data repository for public project metadata
-- initial Seed 100 project corpus in the open data repository
-
-The project is still in early alpha. Public data, project review rules, operational tooling, and machine-readability reports are being developed through small pull requests with strict review boundaries.
-
----
-
-## Repository ecosystem
-
-88CN is split into two repositories.
-
-### Main web repository
-
-`fermatmind/88CN`
-
-This repository contains:
-
-- the 88CN web application
-- project pages
-- submit and claim flows
-- admin review screens
-- API route contracts
-- public-surface checks
-- deployment and QA reports
-- machine-readability tooling
-- external import integration
-
-### Open data repository
-
-`fermatmind/88cn-index-data`
-
-This repository contains public cold data for AI projects:
-
-- project JSON files
-- taxonomy
-- schema validation
-- privacy checks
-- seed project manifest
-- contribution rules
-
-The open data repository does not contain private founder data, revenue data, API keys, analytics screenshots, payment data, or investor data.
-
----
-
-## Data model and review policy
-
-88CN separates public data from reviewed publication.
-
-A project may pass through several states:
-
-- submitted
-- pending review
-- quarantined
-- scouted
-- published
-- founder claimed
-- archived
-
-Only reviewed public project profiles may be published.
-
-Submitted, pending, quarantined, or unreviewed data must not be added to the public sitemap, public API, or future machine-readable agent payloads.
-
-Runtime failures from imported public data, such as DNS failure, timeout, redirect loops, or unreachable websites, should be recorded as quarantine signals rather than silently promoted into public project records.
-
----
-
-## Machine-readable profiles
-
-88CN project profiles are designed to be clear for both humans and machines.
-
-A published project profile may include:
-
-- normalized project name
-- canonical website URL
-- project category
-- public source links
-- technology tags
-- structured description
-- public metadata checks
-- review status
-
-88CN does not promise search placement, traffic, third-party indexing outcomes, AI citations, or inclusion in any external system.
-
----
-
-## AI Search Readiness Checker
-
-The AI Search Readiness Checker inspects public website structure and reports basic machine-readability signals such as:
-
-- title
-- meta description
-- canonical URL
-- readable HTML
-- JSON-LD presence
-- schema type detection
-- robots.txt availability
-- sitemap.xml availability
-- public source links
-
-The checker does not call LLM APIs, does not use private website credentials, does not execute browser JavaScript, and does not store private data.
-
----
-
-## Commercial boundary
-
-88CN may later support human-visible featured placements for reviewed projects.
-
-Any future featured placement must remain separate from the machine signal layer.
-
-Featured placement must not change:
-
-- project review status
-- Signal Score
-- Source Confidence
-- sitemap inclusion
-- public API ordering
-- future MCP payloads
-- organic ordering
-- editorial review result
-
-Paid visibility, if enabled, is a user-interface placement only.
-
----
-
-## What 88CN is not
-
-88CN is not:
-
-- an AI tools directory clone
-- a link-selling marketplace
-- a search-placement service
-- an automated pSEO content farm
-- an investment product
-- a fundraising platform
-- a crypto asset project
-- a private-data broker
-- a promise of traffic, ranking, AI citation, or external discovery outcomes
-
----
-
-## Local development
-
-Install dependencies:
+## Start locally
 
 ```bash
 npm install
+npm run local:setup
+npm run dev:local
 ```
 
-Run local checks:
+- English: http://127.0.0.1:3100/en
+- 中文：http://127.0.0.1:3100/zh
+- Founder workspace: `/en/dashboard`
+- Review console: `/en/admin`
+- Local mail inbox: http://127.0.0.1:54324
+- Local database studio: http://127.0.0.1:54323
+
+Local founder/admin test credentials are generated in `.local/accounts.json` with private file permissions. They are not production credentials. Normal users may also register through the app. Supabase Auth, database, Storage and mail capture run locally; no external SMTP or cloud account is used.
+
+Setup is idempotent: it preserves users, drafts, uploads and reviewed data. `npm run local:stop` stops the app, worker and local Supabase while retaining volumes. Normal setup/start never resets the database. Initial setup downloads containers and English/Chinese OCR resources; subsequent core demo use works offline. Metadata extraction from a new public website naturally requires connectivity.
+
+Docker Desktop must run. Local services bind explicitly to `127.0.0.1`. The startup helper preserves the CLI-created container configuration, Kong runtime files and volume mounts when correcting Docker Desktop port bindings. It only touches containers named for `123charts-local`.
+
+## Explore the complete workflow
+
+1. Browse projects, categories and published chart snapshots. `Cmd/Ctrl + K` opens search.
+2. Sign in as the local founder, create/save a draft, select ten relevant peers and upload PNG/JPG/WebP evidence for five to ten distinct peers.
+3. The worker performs real local OCR. Extraction stops at **awaiting review**, never automatic verification.
+4. Sign in as the local administrator. Review relationships, inspect private originals, confirm numeric fields and record a review channel/reference. Approve the complete application.
+5. The applicant receives a profile, a private ten-peer report and free recommendation eligibility. Enable/revoke report sharing and preview/download a PNG card.
+6. Claim management identity separately to submit later information updates. Updates keep the observation group and do not repeat initial admission requirements.
+7. Save/follow projects or categories; opt into local email summaries. View recorded impressions, project views and outbound clicks in the founder workspace.
+
+Unknown peers adopted during review enter the **unpublished research queue**. An administrator completes factual bilingual descriptions and a source reference before publishing them. Nomination does not publish a page or create an automatic placement on a peer's page.
+
+## Data integrity
+
+The default `dataset=demo` includes 33 independently written official-site research profiles and four fictional projects. **Every traffic value, ranking, enrollment/claim example and sample approval in this dataset is synthetic.** Demo and real traffic/versions/snapshots are isolated. `dataset=real` keeps real research profiles while showing missing traffic honestly.
+
+Official source retrieval is recorded independently of verification. A failed retrieval is not proof that a website is invalid. Seed prices are not shown as verified unless actually reviewed. The local seed never overwrites existing profiles or user work on subsequent setup runs.
+
+The three starting categories are AI coding, workflow automation, and knowledge search/RAG. Charts use AITDK visits, a single released month and worldwide/all-device/domain scope. The source calendar explicitly records accepted months. GSC clicks and GA4 sessions are not mixed with visits. No GSC/GA4 or TabAPI connection is claimed.
+
+Published snapshots and traffic values cannot be overwritten. Source corrections create versions; unresolved conflicts suspend usage. Contribution adoption deduplicates information and applies per-project/per-controller caps independently of traffic ranking. A fictional demo outbound destination records an attempt and explains why no actual website exists.
+
+All local HTML is `noindex`; robots permits reading that instruction, and the local sitemap is empty. Private reports, screenshots, drafts, review references and internal control identities do not enter anonymous projections. Ordinary publication eligibility, canonical/hreflang metadata and consistent JSON-LD are implemented separately from local indexing.
+
+## Development and verification
 
 ```bash
-npm run verify:day0
-npm run policy:scan
-npm run third-party:check
-npm run db:schema:check
-npm run public-surface:check
-npm run intake:check
-npm run external-import:check
-npm run geo-checker:check
-npm run lint
 npm run typecheck
+npm run lint
+npm run test:charts       # domain rules + actual database/Auth/Storage/API/OCR workflow; local app required
+npm run test:browser      # Chrome UI flows, desktop/mobile, sharing, PNG and reviewer delivery
+npm run format:check
 npm run build
+npm run db:types          # generate local Supabase database types
 ```
 
-Start the development server:
+Browser evidence is saved under `output/playwright/`; credentials, raw seed screenshots and source retrieval results stay under ignored `.local/`. `.env.local` is generated locally and never committed.
 
-```bash
-npm run dev
-```
+Architecture: Next.js 16 / React 19 / TypeScript; Tailwind; Radix dialog primitives; Recharts; Supabase SDK with SQL migrations; Tesseract.js OCR; one durable database-backed worker. There is no additional ORM, payment path, remote LLM or external data API dependency.
 
----
+PNG rendering uses the Mac's installed Unicode font copied into ignored `.local/fonts/` during setup. That system font is not redistributed. A later server deployment must install a suitably licensed CJK font rather than copying the Mac font.
 
-## Current execution focus
-
-The current near-term roadmap is:
-
-1. validate that the Seed 100 open data corpus can be consumed safely by the web application
-2. ensure seed projects do not auto-publish or leak into the sitemap
-3. quarantine runtime failures such as unreachable websites, DNS failures, timeouts, or redirect loops
-4. run a machine-readability audit over the seed corpus
-5. publish the first data-backed founder intent signal report
-6. connect the report to the AI Search Readiness Checker, submit flow, and claim flow
-
-The near-term goal is to produce a public, data-backed report that helps early AI founders understand how machine-readable their project websites are.
-
----
-
-## Contribution policy
-
-Contributions should be narrow, reviewable, and aligned with the project boundary.
-
-For project data contributions, use the companion data repository:
-
-```text
-fermatmind/88cn-index-data
-```
-
-For application code changes, keep pull requests small and scoped.
-
-Do not submit:
-
-- private founder data
-- emails or phone numbers
-- API keys
-- revenue or payment data
-- analytics screenshots
-- investment claims
-- traffic promises
-- copied descriptions from third-party directories
-
----
-
-## Security and privacy
-
-Do not commit secrets.
-
-Do not commit:
-
-- `.env.local`
-- `.env.production`
-- API keys
-- SSH keys
-- Supabase service role keys
-- Stripe secrets
-- OpenAI or Anthropic keys
-- server IPs
-- SSL certificates
-- temporary GitHub archive URLs
-
-Security-sensitive findings should be reported privately to the maintainer.
-
----
-
-## Maintainer
-
-88CN is currently maintained by FermatMind as a solo-founder, AI-native infrastructure project.
-
-The project is built through small, auditable pull requests with strict separation between build tasks, QA tasks, public data, admin review, deployment operations, and future commercial surfaces.
+GitHub configuration, DNS, hosting and production deployment are outside this local delivery. A later real-data pilot must validate actual screenshot sources, data acquisition/review cost and external source usage rights; local synthetic samples do not establish those results.

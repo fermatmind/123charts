@@ -19,15 +19,16 @@ export const metadata: Metadata = {
 };
 
 interface ProjectsPageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     q?: string;
     category?: string;
     tag?: string;
     page?: string;
-  };
+  }>;
 }
 
-export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
+export default async function ProjectsPage(props: ProjectsPageProps) {
+  const searchParams = await props.searchParams;
   const result = searchPublishedProjectProjections({
     query: searchParams?.q,
     category: searchParams?.category,
@@ -195,7 +196,7 @@ export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
 }
 
 function paginationHref(
-  searchParams: ProjectsPageProps["searchParams"],
+  searchParams: Awaited<ProjectsPageProps["searchParams"]>,
   page: number
 ) {
   const params = new URLSearchParams();

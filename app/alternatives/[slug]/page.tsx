@@ -11,7 +11,7 @@ import { ArrowLeftRight, CalendarCheck, FileText, ShieldCheck } from "lucide-rea
 import type { Metadata } from "next";
 
 interface CuratedAlternativesPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,9 +20,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: CuratedAlternativesPageProps): Promise<Metadata> {
+export async function generateMetadata(props: CuratedAlternativesPageProps): Promise<Metadata> {
+  const params = await props.params;
   const entry = getCuratedAlternativesBySlug(params.slug);
   const projects = entry ? getProjectsForCuratedAlternatives(entry) : [];
 
@@ -48,9 +47,8 @@ export async function generateMetadata({
   };
 }
 
-export default function CuratedAlternativesPage({
-  params,
-}: CuratedAlternativesPageProps) {
+export default async function CuratedAlternativesPage(props: CuratedAlternativesPageProps) {
+  const params = await props.params;
   const entry = getCuratedAlternativesBySlug(params.slug);
 
   if (!entry || entry.status !== "published" || !entry.sitemapEligible) {

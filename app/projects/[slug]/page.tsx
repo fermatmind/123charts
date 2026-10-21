@@ -22,7 +22,7 @@ import { ArrowRight, BookOpen, GitBranch, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -31,9 +31,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata(props: ProjectPageProps): Promise<Metadata> {
+  const params = await props.params;
   const project = getPublishedProjectBySlug(params.slug);
   if (!project) return { title: "Not Found" };
 
@@ -49,7 +48,8 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage(props: ProjectPageProps) {
+  const params = await props.params;
   const project = getPublishedProjectBySlug(params.slug);
   if (!project) notFound();
 

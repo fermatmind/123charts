@@ -6,10 +6,8 @@ import { isPublicApiEnabled } from "@/lib/public-api/feature-flags";
 import { publicApiDisabledProblem } from "@/lib/public-api/problem";
 import { serializePublicApiProject } from "@/lib/public-api/serializer";
 
-export async function GET(
-  _request: Request,
-  { params }: { params: { slug: string } }
-) {
+export async function GET(_request: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const requestId = getOrCreateRequestId();
   const instance = `/api/public/v0/projects/${params.slug}`;
 

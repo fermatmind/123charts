@@ -17,7 +17,7 @@ export type SsrfGuardResult = {
 };
 
 export function ssrfGuard(rawUrl: string): SsrfGuardResult {
-  let urlStr = rawUrl.trim();
+  const urlStr = rawUrl.trim();
 
   let parsed: URL;
   try {

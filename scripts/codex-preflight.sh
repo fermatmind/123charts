@@ -4,7 +4,7 @@ set -u
 if [ -n "${APP_URL:-}" ]; then
   BASE_URL="$APP_URL"
 else
-  BASE_URL="http://localhost:${PORT:-3000}"
+  BASE_URL="http://localhost:${PORT:-3100}"
 fi
 APP_URL="$BASE_URL"
 HEALTH_URL="${APP_URL%/}/api/healthz"

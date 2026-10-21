@@ -12,7 +12,7 @@ import { isCollectionSitemapEligible } from "@/lib/projects/search-index";
 import type { Metadata } from "next";
 
 interface CollectionPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export const dynamicParams = false;
@@ -23,9 +23,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: CollectionPageProps): Promise<Metadata> {
+export async function generateMetadata(props: CollectionPageProps): Promise<Metadata> {
+  const params = await props.params;
   const collection = getCuratedCollectionBySlug(params.slug);
   const projects = collection ? getProjectsForCuratedCollection(collection) : [];
 
@@ -51,7 +50,8 @@ export async function generateMetadata({
   };
 }
 
-export default function CollectionPage({ params }: CollectionPageProps) {
+export default async function CollectionPage(props: CollectionPageProps) {
+  const params = await props.params;
   const collection = getCuratedCollectionBySlug(params.slug);
   if (!collection || collection.status !== "published") {
     notFound();

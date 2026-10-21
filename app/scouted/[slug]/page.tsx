@@ -2,7 +2,8 @@ import { getPublicScoutedProfilePlaceholder } from "@/lib/scouted/public-profile
 import { noIndex, siteTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const params = await props.params;
   return {
     title: siteTitle(`Scouted profile - ${params.slug}`),
     ...noIndex(),
@@ -13,7 +14,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function ScoutedProfilePage({ params }: { params: { slug: string } }) {
+export default async function ScoutedProfilePage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const profile = getPublicScoutedProfilePlaceholder(params.slug);
 
   return (

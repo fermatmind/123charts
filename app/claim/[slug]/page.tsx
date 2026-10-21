@@ -7,12 +7,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 interface ClaimPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ClaimPageProps): Promise<Metadata> {
+export async function generateMetadata(props: ClaimPageProps): Promise<Metadata> {
+  const params = await props.params;
   const project = getProjectBySlug(params.slug);
   const name = project?.name ?? params.slug;
 
@@ -25,7 +24,8 @@ export async function generateMetadata({
   };
 }
 
-export default function ClaimPage({ params }: ClaimPageProps) {
+export default async function ClaimPage(props: ClaimPageProps) {
+  const params = await props.params;
   const project = getProjectBySlug(params.slug);
   const name = project?.name ?? params.slug;
 

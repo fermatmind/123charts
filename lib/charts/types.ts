@@ -1,0 +1,268 @@
+export type Locale = "en" | "zh";
+export type Dataset = "demo" | "real";
+export type PriceType = "free" | "freemium" | "trial" | "paid";
+export interface Category {
+  slug: string;
+  name_en: string;
+  name_zh: string;
+  description_en: string;
+  description_zh: string;
+}
+export interface Project {
+  id: string;
+  slug: string;
+  name: string;
+  website_url: string;
+  domain: string;
+  measurement_domain: string;
+  category: string;
+  description_en: string;
+  description_zh: string;
+  price_type: PriceType;
+  price_verified?: boolean;
+  owner_verified?: boolean;
+  publication: string;
+  collected_at: string;
+  enrolled_at: string | null;
+  controller_id: string | null;
+  official_source: string | null;
+  source_checked_at: string | null;
+  demo: boolean;
+  updated_at: string;
+}
+export interface Peer {
+  domain: string;
+  name: string;
+  task: string;
+  rationale: string;
+}
+export interface Draft {
+  name: string;
+  slug: string;
+  website_url: string;
+  domain: string;
+  category: string;
+  price_type: PriceType;
+  description_en: string;
+  description_zh: string;
+  peers: Peer[];
+}
+export interface Application {
+  id: string;
+  owner_id: string;
+  project_id: string | null;
+  kind: "initial" | "update";
+  draft: Draft;
+  status: string;
+  feedback: string | null;
+  demo: boolean;
+  submitted_at: string | null;
+  reviewed_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+export interface Evidence {
+  id: string;
+  application_id: string;
+  owner_id: string;
+  peer_domain: string;
+  original_name: string;
+  storage_path: string;
+  state: string;
+  raw_text: string | null;
+  extracted: TrafficFields | null;
+  review_channel: string | null;
+  review_reference: string | null;
+  review_note: string | null;
+  traffic_id: string | null;
+  demo: boolean;
+  created_at: string;
+}
+export interface TrafficFields {
+  domain: string;
+  source: string;
+  month: string;
+  metric: string;
+  scope: string;
+  value: number | null;
+  unit?: string;
+}
+export interface Traffic extends TrafficFields {
+  id: string;
+  value: number;
+  version: number;
+  state: string;
+  demo: boolean;
+  correction_note: string | null;
+  verified_at: string;
+}
+export interface Snapshot {
+  id: string;
+  category: string;
+  source: string;
+  month: string;
+  metric: string;
+  scope: string;
+  version: number;
+  entries: SnapshotEntry[];
+  coverage_count: number;
+  total_count: number;
+  correction_note: string | null;
+  demo: boolean;
+  created_at: string;
+}
+export interface SnapshotEntry {
+  project_id: string;
+  domain: string;
+  value: number;
+  rank: number;
+  traffic_id: string;
+  data_version: number;
+}
+export interface ReportPeer extends Peer {
+  relationship_state: string;
+  traffic: {
+    value: number;
+    month: string;
+    source: string;
+    scope: string;
+    version: number;
+    state: string;
+  } | null;
+}
+export interface Report {
+  id: string;
+  application_id: string;
+  owner_id: string;
+  project_id: string;
+  peers: ReportPeer[];
+  share_token: string | null;
+  demo: boolean;
+  created_at: string;
+}
+export interface Relation extends Peer {
+  id: string;
+  application_id: string;
+  project_id: string | null;
+  peer_domain: string;
+  peer_name: string;
+  status: string;
+  feedback: string | null;
+}
+export interface Claim {
+  id: string;
+  owner_id: string;
+  project_id: string;
+  evidence: string;
+  method: string;
+  state: string;
+  feedback: string | null;
+  created_at: string;
+}
+export interface Correction {
+  id: string;
+  owner_id: string;
+  project_id: string;
+  message: string;
+  state: string;
+  feedback: string | null;
+  created_at: string;
+}
+export interface Follow {
+  owner_id: string;
+  target: string;
+  kind: string;
+  email_enabled: boolean;
+}
+export interface Notification {
+  id: string;
+  title_en: string;
+  title_zh: string;
+  body_en: string;
+  body_zh: string;
+  href: string;
+  seen: boolean;
+  created_at: string;
+  email_sent_at: string | null;
+}
+export interface Recommendation {
+  id: string;
+  day: string;
+  context: string;
+  slot: number;
+  reason: string;
+  project_id: string;
+  demo: boolean;
+}
+export interface Job {
+  id: string;
+  kind: string;
+  owner_id: string | null;
+  state: string;
+  payload: Record<string, string>;
+  result: Record<string, unknown> | null;
+  error: string | null;
+  attempts: number;
+  created_at: string;
+}
+export interface Event {
+  project_id: string;
+  kind: string;
+  excluded: boolean;
+  exclusion_reason: string | null;
+  visitor_id: string;
+  surface: string;
+  created_at: string;
+}
+export interface Bootstrap {
+  as_of: string;
+  configured: boolean;
+  categories: Category[];
+  projects: Project[];
+  researchQueue: Project[];
+  traffic: Traffic[];
+  snapshots: Snapshot[];
+  months: {
+    source: string;
+    month: string;
+    demo: boolean;
+    accepted: boolean;
+    reference: string;
+  }[];
+  recommendations: Recommendation[];
+  user: { id: string; email: string } | null;
+  isAdmin: boolean;
+  applications: Application[];
+  evidence: Evidence[];
+  relations: Relation[];
+  reports: Report[];
+  claims: Claim[];
+  corrections: Correction[];
+  follows: Follow[];
+  notifications: Notification[];
+  jobs: Job[];
+  events: Event[];
+}
+export const emptyBootstrap: Bootstrap = {
+  as_of: "1970-01-01T00:00:00Z",
+  configured: false,
+  categories: [],
+  projects: [],
+  researchQueue: [],
+  traffic: [],
+  snapshots: [],
+  months: [],
+  recommendations: [],
+  user: null,
+  isAdmin: false,
+  applications: [],
+  evidence: [],
+  relations: [],
+  reports: [],
+  claims: [],
+  corrections: [],
+  follows: [],
+  notifications: [],
+  jobs: [],
+  events: [],
+};

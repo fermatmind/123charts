@@ -1,225 +1,27 @@
-# 88CN Agent Constitution
+# 123Charts Local V1
 
-88CN is the Free AI Project Growth Index. Phase 1 is a public growth-signal index, founder claim system, editorial discovery layer, and data foundation for later Growth / Backer / Capital products.
+The current product authority is the user-approved 123Charts V1 plan in docs/123CHARTS_V1.md. Earlier 88CN strategy documents are historical, not current product instructions.
 
-This repository starts as a policy-first project. Do not create an app framework, install dependencies, add production config, or create secret files during Day 0 bootstrap.
+- Work in this repository; preserve Git history and adjacent projects.
+- This delivery is local only: no GitHub writes, push, DNS, deployment, or production database access.
+- Codex is authorized to implement and verify the complete local application. Former role restrictions reserving code edits to OpenCode/DeepSeek no longer apply.
+- Never fabricate real traffic, verification, ranking, customers, or performance claims. Demo records are explicitly marked and isolated.
+- Listing, owner claim, enrollment, evidence verification, publication, and recommendation eligibility are independent.
+- Ten distinct relevant peer websites; evidence for five to ten distinct peers. OCR is extraction, not verification.
+- Compare only the same month, source, metric, measurement domain and scope. Missing values stay missing; contribution never changes ranking.
+- Screenshots are private. All writes require authorization; free corrections remain available independently of contribution.
+- Use local Supabase, additive migrations and a bounded restartable worker. Do not erase existing local data during normal setup/start.
+- Local preview is noindex. Public pages use reviewed database records, not external scans during requests.
+- Preserve unknowns, provenance, versions, correction history and demo labels in all exports.
+- Check docs/14_OPEN_SOURCE_REUSE_POLICY.md before copying external source. Package installs retain upstream licensing; document any vendored components.
+- Verify focused business tests, RLS, browser flows, lint, typecheck, build and git diff --check. Use screenshots for UI acceptance.
 
-## Agent Roles
+<!-- BEGIN:nextjs-agent-rules -->
 
-### Codex Computer Use
+## This is NOT the Next.js you know
 
-Codex Computer Use is the read-only QA and visual acceptance agent.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 
-Allowed writes:
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
-- `docs/QA_REPORT.md`
-- `docs/VISUAL_BUGS.md`
-- `docs/FLOW_BUGS.md`
-- `docs/BUILD_ERRORS.md`
-- `screenshots/qa/**`
-
-Forbidden writes:
-
-- `.tsx`
-- `.ts`
-- `.css`
-- `.sql`
-- `package.json`
-- schemas
-- migrations
-- API routes
-
-Codex Computer Use must run `scripts/codex-preflight.sh` before opening a browser. If preflight fails, Codex must not open the browser, refresh blindly, or edit code. It may only record the failure.
-
-### OpenCode / DeepSeek
-
-OpenCode / DeepSeek is the only code implementation agent.
-
-It owns:
-
-- app code
-- components
-- libraries
-- Supabase work
-- scripts
-- schemas
-- tests
-- GitHub workflow files
-- `package.json`
-- Next.js configuration
-- database migrations
-- API routes
-- scoring systems
-- queue systems
-- AI editorial pipelines
-
-It must fix issues recorded by Codex instead of asking Codex to change implementation files.
-
-### Human Team
-
-The human team owns production secrets, DNS, Vercel, Supabase, GitHub tokens, final merges, project release, Editorial Note approval, and production launch.
-
-No model may automatically move a project from `pending_review` to `published`.
-
-## Public Language Ban
-
-Phase 1 public UI, metadata, page copy, seed data, and marketing pages must not contain or imply:
-
-- dofollow backlink
-- 301 permanent backlink
-- SEO juice
-- guaranteed ranking
-- invest now
-- guaranteed return
-- guaranteed yield
-- guaranteed profit
-- principal protection
-- 保本
-- 稳赚
-- 固定收益
-- 回购保障
-- SPV
-- fund
-- AI fund
-- equity
-- token
-- ICO
-- IDO
-- securities
-- buy equity
-- deposit funds
-- real-money commitment
-
-Allowed alternatives:
-
-- Free AI project profile
-- Public project page
-- Editorial listing
-- Search-indexed profile
-- Founder claim
-- Public growth signals
-- Signal Score
-- Watchlist
-- Backer interest
-- Capital signal
-- Growth readiness
-- Subscribe to updates
-- Express interest
-- Join waitlist
-
-## Lifecycle States
-
-- `submitted`
-- `pending_review`
-- `approved`
-- `published`
-- `claimed`
-- `owner_verified`
-- `archived`
-
-Indexing policy:
-
-- `submitted`: noindex, no sitemap
-- `pending_review`: noindex, no sitemap
-- `approved`: previewable, no sitemap unless later published
-- `published`: indexable, included in sitemap
-- `claimed`: indexable, included in sitemap
-- `owner_verified`: indexable, included in sitemap
-- `archived`: noindex by default unless a human approves historical archive indexing
-
-## Data Integrity
-
-Never fabricate investor count, Backer count, Watchlist count, intended amount, revenue, MRR, ARR, users, retention, ROAS, CAC, LTV, GitHub stars, Product Hunt votes, Hacker News points, traffic, customer logos, testimonials, partnerships, or verification status.
-
-Unknown data must display one of:
-
-- Not verified
-- Public signals only
-- Not enough data
-- Founder not claimed
-- Source unavailable
-
-## Competitor Boundary
-
-Do not pixel-copy competitor UI, copy competitor project descriptions, reuse competitor screenshots, reuse competitor logos, use competitor databases as production content sources, or disguise competitor descriptions as 88CN editorial content.
-
-Allowed work:
-
-- internal information architecture analysis
-- official project websites
-- public GitHub profiles
-- official docs
-- official launch pages
-- founder-submitted information
-- original 88CN Editorial Notes
-- original Signal Score model
-
-## Dual Repository Boundary
-
-Future repositories:
-
-- `88cn-web`
-- `88cn-index-data`
-
-Public repositories may collect public information only. Public JSON may contain project name, official site, category slug, one-line description, public GitHub, public docs, public pricing, public launch URL, and public founder social links.
-
-Public repositories must not collect emails, revenue screenshots, Stripe screenshots, API keys, analytics, bank data, investor identity files, customer lists, or login credentials.
-
-External JSON must not write directly to the `projects` table. It must first enter `external_project_imports` staging, then wait for Admin review.
-
-## Batch Pipeline
-
-Never scan the full database in one cron run.
-
-External scans must be queued and sharded:
-
-- default maximum 20 jobs per run
-- maximum concurrency 3
-- request timeout 8 seconds
-- maximum retries 3
-- failed scans must not zero out scores
-- keep the last successful snapshot
-- mark the source as stale
-
-Public routes must not crawl external sources or recalculate scores at request time. External refreshes belong in bounded queues, and public pages must render from reviewed local snapshots.
-
-Scale and cost rules live in:
-
-- `docs/11_SCALABILITY_GUARDS.md`
-- `docs/12_CACHE_AND_SITEMAP_STRATEGY.md`
-- `docs/13_COST_GUARDS.md`
-
-## AI Editorial Pipeline
-
-AI may generate drafts only. AI editorial drafts must not publish directly. Public Editorial Notes require human review.
-
-AI must not invent revenue, users, financing, customers, investor interest, retention, ROAS, MRR, rankings, customer logos, or partnerships.
-
-## Signal Score
-
-Signal Score must be explainable.
-
-Allowed dimensions:
-
-- Product Readiness
-- Dev Momentum
-- Market Presence
-- Commercial Readiness
-- SEO Foundation
-- Trust Confidence
-
-Forbidden inputs:
-
-- fake backer interest
-- unverified revenue
-- unauthorized private data
-- competitor ranking
-- paid sponsorship as hidden score boost
-
-Paid exposure and Signal Score must remain separate.
-
-## Open Source Reuse
-
-Do not copy, fork, adapt, or bulk import third-party code, templates, schemas, screenshots, descriptions, logos, or datasets without checking `docs/14_OPEN_SOURCE_REUSE_POLICY.md`.
-
-Any direct fork or module extraction must be from a permissive upstream license and must be recorded in `third_party/NOTICE.md` with upstream URL, license, commit SHA, copied files, adapted files, usage, review owner, date, and risk notes.
+<!-- END:nextjs-agent-rules -->

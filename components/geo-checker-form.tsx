@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState, type FormEvent } from "react";
 import { cn } from "@/lib/utils";
@@ -175,12 +176,12 @@ export default function GeoCheckerForm() {
             <p className="mb-2 text-xs text-terminal-dim">
               Create a free structured AI project profile on 88CN.
             </p>
-            <a
+            <Link
               href="/submit"
               className="inline-flex items-center gap-1 rounded-md border border-terminal-border px-4 py-1.5 text-[10px] font-semibold text-terminal-fg hover:bg-terminal-elevated transition-colors"
             >
               Submit Project
-            </a>
+            </Link>
           </div>
 
           {/* Disclaimer */}

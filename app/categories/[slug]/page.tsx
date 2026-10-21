@@ -8,16 +8,15 @@ import { siteTitle, siteDescription } from "@/lib/seo";
 import type { Metadata } from "next";
 
 interface CategoryPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
   return demoCategories.map((c) => ({ slug: c.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: CategoryPageProps): Promise<Metadata> {
+export async function generateMetadata(props: CategoryPageProps): Promise<Metadata> {
+  const params = await props.params;
   const category = getCategoryBySlug(params.slug);
   if (!category) return { title: "Not Found" };
 
@@ -30,7 +29,8 @@ export async function generateMetadata({
   };
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage(props: CategoryPageProps) {
+  const params = await props.params;
   const category = getCategoryBySlug(params.slug);
   if (!category) notFound();
 
