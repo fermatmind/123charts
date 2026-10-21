@@ -189,6 +189,7 @@ export type Database = {
           status: string;
           submitted_at: string | null;
           updated_at: string;
+          workflow_version: string;
         };
         ComputedFields: never;
         Insert: {
@@ -204,6 +205,7 @@ export type Database = {
           status?: string;
           submitted_at?: string | null;
           updated_at?: string;
+          workflow_version?: string;
         };
         Update: {
           created_at?: string;
@@ -218,6 +220,7 @@ export type Database = {
           status?: string;
           submitted_at?: string | null;
           updated_at?: string;
+          workflow_version?: string;
         };
         Relationships: [
           {
@@ -459,6 +462,28 @@ export type Database = {
             referencedColumns: ["id"];
           },
         ];
+      };
+      charts_discovery_cycles: {
+        Row: {
+          created_at: string;
+          day: string;
+          demo: boolean;
+          pool: NonNullable<Json>;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string;
+          day: string;
+          demo: boolean;
+          pool: NonNullable<Json>;
+        };
+        Update: {
+          created_at?: string;
+          day?: string;
+          demo?: boolean;
+          pool?: NonNullable<Json>;
+        };
+        Relationships: [];
       };
       charts_events: {
         Row: {
@@ -769,21 +794,29 @@ export type Database = {
         Row: {
           category: string | null;
           collected_at: string;
+          conditions: string;
           controller_id: string | null;
           demo: boolean;
           description_en: string;
           description_zh: string;
+          differentiator: string;
           domain: string;
           enrolled_at: string | null;
+          first_publication_inferred: boolean;
+          first_published_at: string | null;
           id: string;
+          is_open_source: boolean;
           measurement_domain: string;
           name: string;
           official_source: string | null;
+          open_source_url: string;
           price_type: string;
           price_verified: boolean;
           publication: string;
           slug: string;
           source_checked_at: string | null;
+          supported_languages: string[];
+          task: string;
           updated_at: string;
           website_url: string;
         };
@@ -791,42 +824,58 @@ export type Database = {
         Insert: {
           category?: string | null;
           collected_at?: string;
+          conditions?: string;
           controller_id?: string | null;
           demo?: boolean;
           description_en?: string;
           description_zh?: string;
+          differentiator?: string;
           domain: string;
           enrolled_at?: string | null;
+          first_publication_inferred?: boolean;
+          first_published_at?: string | null;
           id?: string;
+          is_open_source?: boolean;
           measurement_domain: string;
           name: string;
           official_source?: string | null;
+          open_source_url?: string;
           price_type?: string;
           price_verified?: boolean;
           publication?: string;
           slug: string;
           source_checked_at?: string | null;
+          supported_languages?: string[];
+          task?: string;
           updated_at?: string;
           website_url: string;
         };
         Update: {
           category?: string | null;
           collected_at?: string;
+          conditions?: string;
           controller_id?: string | null;
           demo?: boolean;
           description_en?: string;
           description_zh?: string;
+          differentiator?: string;
           domain?: string;
           enrolled_at?: string | null;
+          first_publication_inferred?: boolean;
+          first_published_at?: string | null;
           id?: string;
+          is_open_source?: boolean;
           measurement_domain?: string;
           name?: string;
           official_source?: string | null;
+          open_source_url?: string;
           price_type?: string;
           price_verified?: boolean;
           publication?: string;
           slug?: string;
           source_checked_at?: string | null;
+          supported_languages?: string[];
+          task?: string;
           updated_at?: string;
           website_url?: string;
         };
@@ -897,6 +946,7 @@ export type Database = {
           rationale: string;
           status: string;
           task: string;
+          withdrawn_at: string | null;
         };
         ComputedFields: never;
         Insert: {
@@ -909,6 +959,7 @@ export type Database = {
           rationale: string;
           status?: string;
           task: string;
+          withdrawn_at?: string | null;
         };
         Update: {
           application_id?: string;
@@ -920,6 +971,7 @@ export type Database = {
           rationale?: string;
           status?: string;
           task?: string;
+          withdrawn_at?: string | null;
         };
         Relationships: [
           {
@@ -3249,20 +3301,28 @@ export type Database = {
         Row: {
           category: string | null;
           collected_at: string | null;
+          conditions: string | null;
           demo: boolean | null;
           description_en: string | null;
           description_zh: string | null;
+          differentiator: string | null;
           domain: string | null;
           enrolled_at: string | null;
+          first_publication_inferred: boolean | null;
+          first_published_at: string | null;
           id: string | null;
+          is_open_source: boolean | null;
           measurement_domain: string | null;
           name: string | null;
           official_source: string | null;
+          open_source_url: string | null;
           price_type: string | null;
           price_verified: boolean | null;
           publication: string | null;
           slug: string | null;
           source_checked_at: string | null;
+          supported_languages: string[] | null;
+          task: string | null;
           updated_at: string | null;
           website_url: string | null;
         };
@@ -3270,40 +3330,56 @@ export type Database = {
         Insert: {
           category?: string | null;
           collected_at?: string | null;
+          conditions?: string | null;
           demo?: boolean | null;
           description_en?: string | null;
           description_zh?: string | null;
+          differentiator?: string | null;
           domain?: string | null;
           enrolled_at?: string | null;
+          first_publication_inferred?: boolean | null;
+          first_published_at?: string | null;
           id?: string | null;
+          is_open_source?: boolean | null;
           measurement_domain?: string | null;
           name?: string | null;
           official_source?: string | null;
+          open_source_url?: string | null;
           price_type?: string | null;
           price_verified?: boolean | null;
           publication?: string | null;
           slug?: string | null;
           source_checked_at?: string | null;
+          supported_languages?: string[] | null;
+          task?: string | null;
           updated_at?: string | null;
           website_url?: string | null;
         };
         Update: {
           category?: string | null;
           collected_at?: string | null;
+          conditions?: string | null;
           demo?: boolean | null;
           description_en?: string | null;
           description_zh?: string | null;
+          differentiator?: string | null;
           domain?: string | null;
           enrolled_at?: string | null;
+          first_publication_inferred?: boolean | null;
+          first_published_at?: string | null;
           id?: string | null;
+          is_open_source?: boolean | null;
           measurement_domain?: string | null;
           name?: string | null;
           official_source?: string | null;
+          open_source_url?: string | null;
           price_type?: string | null;
           price_verified?: boolean | null;
           publication?: string | null;
           slug?: string | null;
           source_checked_at?: string | null;
+          supported_languages?: string[] | null;
+          task?: string | null;
           updated_at?: string | null;
           website_url?: string | null;
         };
@@ -3377,6 +3453,15 @@ export type Database = {
       };
       charts_approve_application: {
         Args: { actor: string; aid: string };
+        Returns: string;
+      };
+      charts_approve_discovery: {
+        Args: {
+          actor: string;
+          aid: string;
+          pricing_confirmed?: boolean;
+          reference: string;
+        };
         Returns: string;
       };
       charts_claim_job: {
@@ -3501,6 +3586,7 @@ export type Database = {
           status: string;
           submitted_at: string | null;
           updated_at: string;
+          workflow_version: string;
         };
         SetofOptions: {
           from: "*";

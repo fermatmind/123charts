@@ -3,6 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { NextRequest, NextResponse } from "next/server";
 import { adminDb, checked } from "@/lib/charts/server";
+import { priceLabel, sustainedFree } from "@/lib/charts/discovery";
 export const runtime = "nodejs";
 export async function GET(
   request: NextRequest,
@@ -10,61 +11,85 @@ export async function GET(
 ) {
   const { id } = await params,
     db = adminDb();
+  const demo = request.nextUrl.searchParams.get("dataset") === "demo";
   const p = checked(
     await db
       .from("charts_projects")
       .select("*")
       .eq("id", id)
       .eq("publication", "published")
+      .eq("demo", demo)
       .maybeSingle(),
   );
   if (!p)
-    return NextResponse.json({ error: "Project not found" }, { status: 404 });
-  const demo = request.nextUrl.searchParams.get("dataset") !== "real";
-  if (!demo && p.demo)
     return NextResponse.json(
-      { error: "Demo project is not available in real dataset" },
+      { error: "Published project not found" },
       { status: 404 },
     );
-  const wanted = request.nextUrl.searchParams.get("snapshot");
-  let query = db.from("charts_snapshots").select("*").eq("demo", demo);
-  if (!wanted) query = query.eq("category", p.category);
-  if (wanted) query = query.eq("id", wanted);
-  const snapshot = checked(
-    await query
-      .order("month", { ascending: false })
-      .order("version", { ascending: false })
-      .limit(1),
-  )[0];
-  const entry = snapshot?.entries.find(
-    (x: { project_id: string }) => x.project_id === p.id,
-  );
-  const t = entry
-    ? checked(
+  const zh = request.nextUrl.searchParams.get("lang") === "zh",
+    kind = request.nextUrl.searchParams.get("kind") || "listing";
+  const label = (en: string, cn: string) => (zh ? cn : en);
+  if (!["listing", "free", "alternative"].includes(kind))
+    return NextResponse.json(
+      {
+        error:
+          "Only factual listing, free condition and reviewed alternative cards are available in this MVP.",
+      },
+      { status: 400 },
+    );
+  if (kind === "free" && !sustainedFree(p))
+    return NextResponse.json(
+      { error: "Confirmed sustained free conditions required" },
+      { status: 409 },
+    );
+  let task = p.task;
+  if (kind === "alternative") {
+    const edges = checked(
+      await db
+        .from("charts_relations")
+        .select("task,peer_domain,project_id,charts_applications!inner(status)")
+        .eq("charts_applications.status", "approved")
+        .eq("status", "approved")
+        .is("withdrawn_at", null)
+        .or(`project_id.eq.${p.id},peer_domain.eq.${p.domain}`),
+    );
+    let found = false;
+    for (const e of edges) {
+      const other = checked(
         await db
-          .from("charts_traffic")
-          .select("state")
-          .eq("id", entry.traffic_id)
+          .from("charts_projects")
+          .select("id")
+          .eq("publication", "published")
+          .eq("demo", demo)
+          .neq("id", p.id)
+          .eq(
+            e.project_id === p.id ? "domain" : "id",
+            e.project_id === p.id ? e.peer_domain : e.project_id,
+          )
           .maybeSingle(),
-      )
-    : null;
-  const rank =
-    entry && entry.domain === p.measurement_domain && t?.state === "verified"
-      ? entry
-      : null;
-  const category = checked(
+      );
+      if (other) {
+        task = e.task;
+        found = true;
+        break;
+      }
+    }
+    if (!found)
+      return NextResponse.json(
+        { error: "A confirmed public alternative relationship is required" },
+        { status: 409 },
+      );
+  }
+  const c = checked(
     await db
       .from("charts_categories")
       .select("*")
-      .eq("slug", rank ? snapshot.category : p.category)
+      .eq("slug", p.category)
       .single(),
   );
-  const zh = request.nextUrl.searchParams.get("lang") === "zh";
   const font = await fs.readFile(
     path.join(process.cwd(), ".local/fonts/preview-unicode.ttf"),
   );
-  // System font is copied locally by setup; it is never redistributed in Git.
-  const label = (en: string, cn: string) => (zh ? cn : en);
   return new ImageResponse(
     <div
       style={{
@@ -73,7 +98,7 @@ export async function GET(
         height: "100%",
         background: "#0b0e15",
         color: "#eef2ff",
-        padding: "60px",
+        padding: 58,
         flexDirection: "column",
         fontFamily: "PreviewUnicode",
       }}
@@ -82,114 +107,92 @@ export async function GET(
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          fontSize: 25,
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, fontWeight: 700 }}>
-          123Charts
-        </div>
-        <div style={{ display: "flex", fontSize: 18, color: "#9cb6ef" }}>
+        <strong>123Charts</strong>
+        <span style={{ color: "#9badca", fontSize: 19 }}>
           {demo
-            ? label("DEMONSTRATION — SYNTHETIC DATA", "演示样本 · 模拟数据")
-            : label("RESEARCH PROFILE", "项目研究资料")}
-        </div>
+            ? label("FICTIONAL DEMONSTRATION", "虚构演示样本")
+            : label("PUBLIC WEBSITE LISTING", "公开网站收录")}
+        </span>
       </div>
       <div
         style={{
           display: "flex",
-          marginTop: 70,
-          fontSize: 70,
-          letterSpacing: -2,
-          fontWeight: 700,
+          marginTop: 66,
+          color: "#86aaf2",
+          fontSize: 22,
         }}
       >
+        {kind === "alternative"
+          ? label("Another way to " + task, "完成「" + task + "」的另一种选择")
+          : kind === "free"
+            ? label(
+                "A choice with confirmed free conditions",
+                "具备已确认免费条件的选择",
+              )
+            : label(
+                "We’re on 123Charts. See where we fit.",
+                "已加入 123Charts，看看适合哪些用途。",
+              )}
+      </div>
+      <div style={{ display: "flex", fontSize: 68, marginTop: 22 }}>
         {p.name}
       </div>
       <div
         style={{
           display: "flex",
-          fontSize: 24,
-          color: "#909eb9",
-          marginTop: 12,
+          fontSize: 27,
+          color: "#b5c1d6",
+          marginTop: 16,
         }}
       >
-        {p.domain}
+        {task || label("Purpose being maintained", "用途资料待完善")}
+      </div>
+      <div style={{ display: "flex", fontSize: 21, marginTop: 26, gap: 25 }}>
+        <span>{zh ? c.name_zh : c.name_en}</span>
+        <span>{priceLabel(p, zh)}</span>
       </div>
       <div
         style={{
           display: "flex",
-          fontSize: 24,
-          marginTop: 38,
-          color: "#c5d2ef",
+          fontSize: 18,
+          color: "#8f9db4",
+          marginTop: 18,
         }}
       >
-        {zh ? category.name_zh : category.name_en}
+        {(
+          p.conditions ||
+          label(
+            "Check current conditions on the official website.",
+            "请前往官网确认当前使用条件。",
+          )
+        ).slice(0, 150)}
       </div>
-      {rank ? (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            marginTop: 16,
-            gap: 18,
-          }}
-        >
-          <span style={{ fontSize: 54 }}>#{rank.rank}</span>
-          <span style={{ fontSize: 26, color: "#a9bde5" }}>
-            {rank.raw_display ??
-              Number(rank.value).toLocaleString(zh ? "zh-CN" : "en-US")}{" "}
-            {label("monthly visits", "月访问量")}
-          </span>
-        </div>
-      ) : (
-        <div
-          style={{
-            display: "flex",
-            fontSize: 26,
-            color: "#a4b4d3",
-            marginTop: 18,
-          }}
-        >
-          {label(
-            "Discover this project · No verified ranking",
-            "发现这个项目 · 暂无核验排名",
-          )}
-        </div>
-      )}
       <div
         style={{
           display: "flex",
           marginTop: "auto",
-          borderTop: "1px solid #2d374b",
-          paddingTop: 20,
-          fontSize: 16,
-          color: "#8796b4",
           justifyContent: "space-between",
+          fontSize: 19,
+          color: "#9badca",
         }}
       >
+        <span>{`123charts.com/${zh ? "zh" : "en"}/projects/${p.slug}`}</span>
         <span>
-          {rank
-            ? `${snapshot.month} · ${snapshot.source} · worldwide / all devices / domain · snapshot v${snapshot.version} · coverage ${snapshot.coverage_count}/${snapshot.total_count}`
-            : label(
-                "Free project discovery · Visit the official site for current details",
-                "免费发现项目 · 最新资料请以官网为准",
-              )}
+          {label("Profile updated ", "资料更新 ") + p.updated_at.slice(0, 10)}
         </span>
-        <span>123charts.com</span>
       </div>
     </div>,
     {
       width: 1200,
       height: 630,
-      fonts: [
-        { name: "PreviewUnicode", data: font, weight: 400, style: "normal" },
-      ],
+      fonts: [{ name: "PreviewUnicode", data: font, weight: 400 }],
       headers: {
-        "Cache-Control": "no-store",
         "X-Robots-Tag": "noindex",
-        ...(request.nextUrl.searchParams.has("download")
-          ? { "Content-Disposition": `attachment; filename="${p.slug}.png"` }
-          : {}),
+        "Cache-Control": "no-store",
+        "Content-Disposition": `inline; filename="123charts-${p.slug}-${kind}.png"`,
       },
     },
   );

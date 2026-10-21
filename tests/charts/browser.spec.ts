@@ -3,7 +3,6 @@ import fs from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import WebSocket from "ws";
-import sharp from "sharp";
 import { loadEnv } from "../../scripts/local/env.mjs";
 loadEnv();
 const accounts = JSON.parse(await fs.readFile(".local/accounts.json", "utf8"));
@@ -15,7 +14,6 @@ const db = createClient(
     auth: { persistSession: false },
   },
 );
-const created: string[] = [];
 async function signIn(page: any, role: string) {
   await page.goto("/en/login?dataset=demo");
   await page.getByLabel("Email address").fill(accounts[role].email);
@@ -24,21 +22,20 @@ async function signIn(page: any, role: string) {
     .fill(accounts[role].password);
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Your project, in perspective." }),
+    page.getByRole("heading", { name: "Your project, discovered." }),
   ).toBeVisible();
 }
-test("discovery, keyboard search, bilingual state and responsive layout", async ({
+test("task-first discovery, keyboard search, alternatives, free conditions and mobile bilingual filters", async ({
   page,
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/en?dataset=demo");
+  await page.goto("/en?dataset=real");
   await expect(
-    page.getByRole("heading", { name: /A clearer view/ }),
+    page.getByRole("heading", { name: /Find a website that fits/ }),
   ).toBeVisible();
-  await expect(page.locator("tbody tr").first()).toBeVisible();
   await page.screenshot({
-    path: "output/playwright/home-desktop.png",
+    path: "output/playwright/discovery-desktop.png",
     fullPage: true,
   });
   await page.keyboard.press("Meta+k");
@@ -48,435 +45,219 @@ test("discovery, keyboard search, bilingual state and responsive layout", async 
     .getByRole("dialog")
     .getByRole("link", { name: /Cursor/ })
     .click();
-  await expect(page).toHaveURL(/\/en\/projects\/cursor/);
   await expect(
     page.getByRole("heading", { name: "Cursor", exact: true }),
   ).toBeVisible();
-  await page.goto(
-    "/en/charts?dataset=demo&category=knowledge-search&month=2026-08&page=2",
-  );
-  await page.getByRole("link", { name: "中", exact: true }).click();
-  await expect(page).toHaveURL(/\/zh\/charts\/knowledge-search/);
-  expect(new URL(page.url()).pathname).toBe("/zh/charts/knowledge-search");
-  expect(new URL(page.url()).searchParams.get("month")).toBe("2026-08");
-  expect(new URL(page.url()).searchParams.get("page")).toBe("2");
+  await page.goto("/en/alternatives/n8n?dataset=real");
   await expect(
-    page.getByRole("heading", { name: "知识搜索与 RAG网站流量榜" }),
+    page.getByRole("heading", { name: "Alternatives to n8n" }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
   ).toBeVisible();
   await page.screenshot({
-    path: "output/playwright/charts-zh.png",
+    path: "output/playwright/alternatives-desktop.png",
     fullPage: true,
   });
+  await page.goto("/en/free?dataset=real");
+  await expect(
+    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".discovery-identity").filter({ hasText: "n8n" }),
+  ).toHaveCount(0);
+  await page
+    .getByRole("checkbox", { name: "Open source", exact: true })
+    .check();
+  await expect(
+    page.locator(".discovery-identity").filter({ hasText: "Node-RED" }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
+  ).toHaveCount(0);
+  await page.getByRole("link", { name: "中", exact: true }).click();
+  await expect(page).toHaveURL(/\/zh\/free/);
+  expect(new URL(page.url()).searchParams.get("oss")).toBe("1");
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/zh?dataset=demo");
-  await expect(page.getByRole("heading", { name: /看清网站/ })).toBeVisible();
+  await page.goto("/zh?dataset=real");
+  await expect(page.getByRole("heading", { name: /发现好网站/ })).toBeVisible();
   expect(
     await page.evaluate(
-      () => document.documentElement.scrollWidth <= window.innerWidth,
+      () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
   await page.screenshot({
-    path: "output/playwright/home-mobile-zh.png",
+    path: "output/playwright/discovery-mobile.png",
     fullPage: true,
   });
-  await page.goto("/en?dataset=real");
-  await expect(page.getByText(/RESEARCH DATA/)).toBeVisible();
+  await page.goto(
+    "/zh/categories/workflow-automation?dataset=real&price=freemium",
+  );
   await expect(
-    page
-      .getByText("Awaiting comparable verified data.", { exact: true })
-      .first(),
+    page.getByRole("heading", { name: "工作流自动化", exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("Demo verified", { exact: true })).toHaveCount(0);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
   expect(errors).toEqual([]);
 });
-test("private reports, revocable sharing, bilingual PNG and subscriptions", async ({
+test("browser draft recovery, three peers, review, shared comparison and factual card", async ({
   page,
   browser,
 }) => {
-  await signIn(page, "founder");
-  await page.locator('a[href*="/reports/"]').first().click();
-  await expect(
-    page.getByRole("heading", { name: "My peer comparison." }),
-  ).toBeVisible();
-  expect(
-    await page.locator('[aria-label="Saved peer report"] tbody tr').count(),
-  ).toBe(10);
-  const revoke = page.getByRole("button", { name: "Revoke share link" });
-  if (await revoke.count()) await revoke.click();
-  await page.getByRole("button", { name: "Enable sharing" }).click();
-  const href = await page
-    .getByRole("link", { name: "Open shared report" })
-    .getAttribute("href");
-  const guest = await browser.newContext();
-  const shared = await guest.newPage();
-  await shared.goto(`http://127.0.0.1:3100${href}`);
-  await expect(shared.locator("tbody tr")).toHaveCount(10);
-  await page.getByRole("button", { name: "Revoke share link" }).click();
-  await shared.reload();
-  await expect(
-    shared.getByRole("heading", { name: "Shared report unavailable" }),
-  ).toBeVisible();
-  await guest.close();
-  await page.getByRole("button", { name: "Preview share card" }).click();
-  const image = page.getByAltText("Project share card");
-  await expect(image).toBeVisible();
-  await expect
-    .poll(() => image.evaluate((e: HTMLImageElement) => e.naturalWidth))
-    .toBe(1200);
-  const src = await image.getAttribute("src");
-  for (const lang of ["en", "zh"]) {
-    const r = await page.request.get(src!.replace("lang=en", `lang=${lang}`));
-    expect(r.status()).toBe(200);
-    expect(r.headers()["content-type"]).toContain("image/png");
-    const bytes = await r.body();
-    expect((await sharp(bytes).metadata()).width).toBe(1200);
-    await fs.writeFile(`output/playwright/card-${lang}.png`, bytes);
-  }
-  await page.goto("/en/projects/cursor?dataset=demo");
-  const save = page.getByRole("button", { name: "Save", exact: true });
-  if (await save.count()) await save.click();
-  await page.goto("/en/following?dataset=demo");
-  await expect(page.getByRole("link", { name: /Cursor/ })).toBeVisible();
-  await page.goto("/en/categories?dataset=demo");
-  const category = page.locator(".category-item").first();
-  const follow = category.getByRole("button", { name: "Follow", exact: true });
-  if (await follow.count()) await follow.click();
-  await page.goto("/en/following?dataset=demo");
-  const checkbox = page.getByRole("checkbox").first();
-  await checkbox.check();
-  await expect(checkbox).toBeChecked();
-  await page.screenshot({
-    path: "output/playwright/following.png",
-    fullPage: true,
-  });
-});
-test("browser submission, saved draft, OCR, administrator review and delivery", async ({
-  page,
-  browser,
-}) => {
-  test.setTimeout(180000);
-  await signIn(page, "founder");
-  const suffix = randomUUID().slice(0, 8),
-    name = `Browser demonstration ${suffix}`;
-  const peers = (
-    await db
-      .from("charts_projects")
-      .select("*")
-      .eq("category", "knowledge-search")
-      .eq("demo", false)
-      .order("domain")
-      .limit(10)
-  ).data!;
-  await page.goto("/en/submit?dataset=demo");
-  await page
-    .getByLabel("Official website URL")
-    .fill(`https://browser-${suffix}.example`);
-  await page.getByLabel("Project name", { exact: true }).fill(name);
-  await page.getByLabel("Primary category").selectOption("knowledge-search");
-  await page
-    .getByLabel("English description")
-    .fill("A fictional browser acceptance test project.");
-  await page.getByLabel("中文介绍").fill("用于浏览器验收的虚构项目。");
-  await page.getByRole("button", { name: "Save draft", exact: true }).click();
-  await expect(page.getByText("Saved to your account")).toBeVisible();
-  const id = new URL(page.url()).searchParams.get("id");
-  expect(id).toBeTruthy();
-  created.push(id!);
-  await page
-    .locator(".wizard-actions")
-    .getByRole("button", { name: "Continue", exact: true })
-    .click();
-  await page
-    .getByLabel("Paste website URLs in bulk")
-    .fill(peers.map((p) => p.domain).join("\n"));
-  await page.getByRole("button", { name: "Add websites", exact: true }).click();
-  await expect(page.getByLabel("Shared task", { exact: true })).toHaveCount(10);
-  for (let i = 0; i < 10; i++) {
+  test.setTimeout(120000);
+  const name = "Browser Discovery " + randomUUID().slice(0, 6);
+  const adminCtx = await browser.newContext();
+  const staff = await adminCtx.newPage();
+  let appId: string | undefined, pid: string | undefined;
+  try {
+    await signIn(page, "founder");
+    await page.goto("/en/submit?dataset=demo");
     await page
-      .getByLabel("Shared task", { exact: true })
-      .nth(i)
-      .fill("Document retrieval");
+      .getByLabel("Official website URL", { exact: true })
+      .fill("https://browser-" + randomUUID().slice(0, 8) + ".example");
+    await page.getByLabel("Website name", { exact: true }).fill(name);
     await page
-      .getByLabel("Why can these products be compared?", { exact: true })
-      .nth(i)
+      .getByLabel("English description")
+      .fill("A fictional document search project for browser acceptance.");
+    await page
+      .getByLabel("Chinese description")
+      .fill("用于浏览器验收的虚构文档搜索项目。");
+    await page.getByRole("button", { name: "Save draft", exact: true }).click();
+    await expect(page.getByRole("link", { name: "Resume link" })).toBeVisible();
+    const resume = await page
+      .getByRole("link", { name: "Resume link" })
+      .getAttribute("href");
+    appId = new URL(resume!, "http://localhost").searchParams.get("id")!;
+    await page.goto("/en/dashboard?dataset=demo");
+    await page.goto(resume!);
+    await expect(page.getByLabel("Website name")).toHaveValue(name);
+    await page.getByRole("button", { name: "Continue", exact: true }).click();
+    await page.getByLabel("Primary category").selectOption("knowledge-search");
+    await page
+      .getByLabel("Main task", { exact: true })
+      .fill("Find team documents");
+    await page
+      .getByLabel("Distinguishing focus")
+      .fill("A fictional self-managed workspace for small teams.");
+    await page
+      .getByLabel("Price type", { exact: true })
+      .selectOption("freemium");
+    await page
+      .getByLabel("Conditions and limits")
+      .fill("DEMO: sustained free search allowance with paid hosting options.");
+    await page
+      .getByLabel("Supported languages", { exact: true })
+      .fill("English, 中文");
+    await page.getByRole("button", { name: "Continue", exact: true }).click();
+    await page
+      .getByLabel("Peer URLs")
       .fill(
-        "Shared retrieval task; compare different product layers and usage constraints.",
+        "https://discovery-1.example\nhttps://discovery-2.example\nhttps://discovery-3.example",
       );
-  }
-  await page.getByRole("button", { name: "Save draft", exact: true }).click();
-  await expect(page.getByText("Saved to your account")).toBeVisible();
-  await page.reload();
-  await expect(page.getByLabel("Project name", { exact: true })).toHaveValue(
-    name,
-  );
-  await page
-    .locator(".wizard-actions")
-    .getByRole("button", { name: "Continue", exact: true })
-    .click();
-  await expect(
-    page.getByLabel("Shared task", { exact: true }).first(),
-  ).toHaveValue("Document retrieval");
-  await page
-    .locator(".wizard-actions")
-    .getByRole("button", { name: "Continue", exact: true })
-    .click();
-  for (const p of peers.slice(0, 5)) {
-    await page.getByLabel("This batch belongs to").selectOption(p.domain);
+    await page.getByRole("button", { name: "Add URLs", exact: true }).click();
+    for (let i = 1; i <= 3; i++)
+      await page
+        .getByLabel(`Peer ${i} rationale`)
+        .fill(
+          "DEMO comparison: document search with different deployment and pricing conditions.",
+        );
     await page
-      .getByLabel("Upload screenshots", { exact: true })
-      .setInputFiles(`.local/fixtures/${p.domain}.png`);
+      .getByRole("button", { name: "Submit for free review", exact: true })
+      .click();
     await expect(
-      page.getByText(`${p.domain}.png`, { exact: true }),
+      page.getByRole("heading", { name: "Your profile preview is ready" }),
+    ).toBeVisible();
+    await signIn(staff, "admin");
+    await staff.goto("/en/admin?dataset=demo");
+    const card = staff
+      .locator(".review-card")
+      .filter({ has: staff.getByRole("heading", { name, exact: true }) });
+    await expect(card).toBeVisible();
+    await card
+      .getByLabel("Review basis " + name)
+      .fill(
+        "DEMO factual task comparison and fictional plan reviewed; no real traffic claims.",
+      );
+    for (const button of await card
+      .getByRole("button", { name: "Confirm relation", exact: true })
+      .all())
+      await button.click();
+    await card
+      .getByRole("checkbox", {
+        name: "Pricing conditions independently checked",
+      })
+      .check();
+    await card
+      .getByRole("button", { name: "Approve listing", exact: true })
+      .click();
+    await expect(card.locator(".status").filter({ hasText: "Approved" }))
+      .toBeVisible()
+      .catch(async () => {
+        await expect(
+          card.getByRole("button", { name: "Approve listing", exact: true }),
+        ).toHaveCount(0);
+      });
+    const { data: app } = await db
+      .from("charts_applications")
+      .select("project_id")
+      .eq("id", appId)
+      .single();
+    pid = app!.project_id;
+    await page.goto("/en/dashboard?dataset=demo");
+    const own = page
+      .locator(".review-card")
+      .filter({ has: page.getByRole("heading", { name, exact: true }) });
+    await own.getByRole("link", { name: "Comparison shortlist" }).click();
+    await expect(
+      page.getByRole("heading", { name: "Your comparison shortlist" }),
     ).toBeVisible();
     await expect(
-      page.getByLabel("Upload screenshots", { exact: true }),
-    ).toBeEnabled();
-  }
-  await expect
-    .poll(
-      async () => {
-        const rows = await db
-          .from("charts_evidence")
-          .select("state")
-          .eq("application_id", id);
-        return rows.data?.filter((e) => e.state === "pending_review").length;
-      },
-      { timeout: 90000 },
-    )
-    .toBe(5);
-  await page.reload();
-  await page
-    .locator(".wizard-actions")
-    .getByRole("button", { name: "Continue", exact: true })
-    .click();
-  await page
-    .locator(".wizard-actions")
-    .getByRole("button", { name: "Continue", exact: true })
-    .click();
-  await page.screenshot({
-    path: "output/playwright/submission-ocr.png",
-    fullPage: true,
-  });
-  await page
-    .getByRole("button", { name: "Submit for review", exact: true })
-    .click();
-  await expect(
-    page.getByText("Your application is being reviewed.", { exact: false }),
-  ).toBeVisible();
-  const adminContext = await browser.newContext({
-      viewport: { width: 1440, height: 1000 },
-    }),
-    review = await adminContext.newPage();
-  await signIn(review, "admin");
-  await review.goto(`/en/admin?dataset=demo&application=${id}`);
-  for (const p of peers) {
-    const relation = review
-      .locator(".review-block")
-      .filter({ has: review.getByText(p.domain, { exact: true }) });
-    await relation
-      .getByRole("button", { name: "Relevant", exact: true })
+      page.getByText("Current shared profile data is shown", { exact: false }),
+    ).toBeVisible();
+    await page
+      .getByRole("button", { name: "Enable sharing", exact: true })
       .click();
-    await expect(relation.getByText("Approved", { exact: true })).toBeVisible();
-  }
-  for (const p of peers.slice(0, 5)) {
-    const block = review.locator("section.panel").filter({
-      has: review.getByRole("heading", { name: p.domain, exact: true }),
+    await expect(
+      page.getByRole("link", { name: "Open shared comparison" }),
+    ).toBeVisible();
+    await page.getByRole("link", { name: "Open shared comparison" }).click();
+    await expect(
+      page.getByRole("heading", { name: "Shared comparison shortlist" }),
+    ).toBeVisible();
+    await expect(
+      page.getByText("DEMO / 虚构演示案例", { exact: true }),
+    ).toBeVisible();
+    const image = await page.request.get(
+      "/api/charts/card/" + pid + "?dataset=demo&kind=listing",
+    );
+    expect(image.status()).toBe(200);
+    expect(image.headers()["content-type"]).toContain("image/png");
+    await fs.writeFile(
+      "output/playwright/listing-card.png",
+      await image.body(),
+    );
+    await page.screenshot({
+      path: "output/playwright/shared-comparison.png",
+      fullPage: true,
     });
-    await block
-      .getByRole("button", { name: "Load private original", exact: true })
-      .click();
-    await expect(
-      block.getByAltText("Original submitted screenshot"),
-    ).toBeVisible();
-    await block
-      .getByLabel("Review channel", { exact: true })
-      .fill("Synthetic screenshot review");
-    await block
-      .getByLabel("Review reference", { exact: true })
-      .fill("demo://synthetic-traffic-never-real");
-    await block
-      .getByLabel("Review note / correction explanation")
-      .fill("Fixed synthetic screenshot only; no real traffic claim.");
-    await block
-      .getByRole("button", { name: "Verify evidence", exact: true })
-      .click();
-    await expect(
-      block.getByText("Evidence verified", { exact: true }),
-    ).toBeVisible();
-  }
-  await expect(review.getByText("10/10", { exact: true })).toBeVisible();
-  await review
-    .getByRole("button", { name: "Approve & deliver", exact: true })
-    .click();
-  await expect
-    .poll(
-      async () =>
-        (
-          await db
-            .from("charts_applications")
-            .select("status")
-            .eq("id", id)
-            .single()
-        ).data?.status,
-    )
-    .toBe("approved");
-  await review.screenshot({
-    path: "output/playwright/admin-approved.png",
-    fullPage: true,
-  });
-  await adminContext.close();
-  await page.goto("/en/dashboard?dataset=demo");
-  await page.locator('a[href*="/reports/"]').filter({ hasText: name }).click();
-  await expect(
-    page.locator('[aria-label="Saved peer report"] tbody tr'),
-  ).toHaveCount(10);
-  await page.screenshot({
-    path: "output/playwright/delivered-report.png",
-    fullPage: true,
-  });
-});
-test.afterAll(async () => {
-  for (const id of created) {
-    const app = (
-      await db
-        .from("charts_applications")
-        .select("project_id")
-        .eq("id", id)
-        .single()
-    ).data;
-    const ev =
-      (await db.from("charts_evidence").select("*").eq("application_id", id))
-        .data ?? [];
-    for (const e of ev)
-      await db
-        .from("charts_jobs")
-        .delete()
-        .contains("payload", { evidence_id: e.id });
-    if (ev.length) {
-      await db.storage
-        .from("charts-evidence")
-        .remove(ev.map((e) => e.storage_path));
-      await db.from("charts_evidence").delete().eq("application_id", id);
+  } finally {
+    await adminCtx.close();
+    if (appId) {
+      for (const table of ["charts_reports", "charts_relations"])
+        await db.from(table).delete().eq("application_id", appId);
+      await db.from("charts_applications").delete().eq("id", appId);
     }
-    await db.from("charts_reports").delete().eq("application_id", id);
-    await db.from("charts_relations").delete().eq("application_id", id);
-    await db
-      .from("charts_notifications")
-      .delete()
-      .eq("dedupe_key", `approved:${id}`);
-    await db.from("charts_applications").delete().eq("id", id);
-    if (app?.project_id) {
-      await db.from("charts_events").delete().eq("project_id", app.project_id);
-      await db
-        .from("charts_contributions")
-        .delete()
-        .eq("project_id", app.project_id);
-      await db.from("charts_projects").delete().eq("id", app.project_id);
+    if (pid) {
+      for (const table of [
+        "charts_events",
+        "charts_contributions",
+        "charts_memberships",
+      ])
+        await db.from(table).delete().eq("project_id", pid);
+      await db.from("charts_projects").delete().eq("id", pid);
     }
   }
-});
-
-test("category directory, stable category ranks, scope exclusions and shared snapshot JSON", async ({
-  page,
-  request,
-}) => {
-  await page.goto("/zh/charts?dataset=demo");
-  await expect(
-    page.getByRole("heading", { name: "分类流量榜", exact: true }),
-  ).toBeVisible();
-  await expect(page.locator(".category-summary")).toHaveCount(3);
-  await page.getByLabel("搜索分类").fill("编程");
-  await expect(page.locator(".category-summary")).toHaveCount(1);
-  await page.getByRole("link", { name: /查看完整榜单/ }).click();
-  await expect(page).toHaveURL(/\/zh\/charts\/ai-coding/);
-  await expect(
-    page.getByRole("heading", { name: "AI 编程辅助网站流量榜" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "相关综合平台" }),
-  ).toBeVisible();
-  await expect(
-    page.locator(".category-rank-table").getByText(/AWS/),
-  ).toHaveCount(0);
-  const second = page
-    .locator(".category-rank-table tbody tr[data-project]")
-    .nth(1);
-  const name = await second.locator("strong").innerText(),
-    rank = await second.locator("td").first().innerText();
-  await page.getByLabel("筛选网站").fill(name);
-  await expect(
-    page.locator(".category-rank-table tbody tr[data-project]"),
-  ).toHaveCount(1);
-  await expect(
-    page.locator(".category-rank-table tbody tr[data-project] td").first(),
-  ).toHaveText(rank);
-  await page.getByRole("link", { name: "EN", exact: true }).click();
-  await expect(page).toHaveURL(/\/en\/charts\/ai-coding/);
-  expect(new URL(page.url()).searchParams.get("q")).toBe(name);
-  const jsonLink = await page
-    .getByRole("link", { name: "Read this exact snapshot as JSON" })
-    .getAttribute("href");
-  const response = await request.get(jsonLink!);
-  expect(response.ok()).toBe(true);
-  const snapshot = await response.json();
-  expect(snapshot.demo).toBe(true);
-  expect(snapshot.category).toBe("ai-coding");
-  expect(
-    snapshot.entries.every(
-      (e: any) =>
-        e.month === snapshot.month &&
-        e.source === snapshot.source &&
-        e.snapshot_version === snapshot.version,
-    ),
-  ).toBe(true);
-  await page.goto("/en/charts/ai-coding?dataset=demo&month=2026-09&page=2");
-  await page.getByRole("button", { name: "←", exact: true }).click();
-  await expect
-    .poll(() => new URL(page.url()).searchParams.get("page"))
-    .toBe("1");
-  await page.goto(
-    "/zh/charts/ai-coding?dataset=real&month=2026-09&source=Semrush%20public",
-  );
-  await expect(
-    page.locator(".category-rank-table").getByText("35.49M", { exact: true }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "详情", exact: true }).click();
-  await expect(page.locator(".rank-evidence")).toContainText("cursor.com");
-  await expect(page.locator(".rank-evidence")).toContainText("Semrush public");
-  await expect(
-    page.getByRole("heading", { name: /本期未参与排名/ }),
-  ).toBeVisible();
-  await page.screenshot({
-    path: "output/playwright/category-real-desktop.png",
-    fullPage: true,
-  });
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.screenshot({
-    path: "output/playwright/category-real-mobile.png",
-    fullPage: true,
-  });
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= window.innerWidth,
-    ),
-  ).toBe(true);
-  await page.locator(".category-rank-table a").first().click();
-  await expect(page).toHaveURL(/\/zh\/projects\/cursor/);
-  expect(new URL(page.url()).searchParams.get("source")).toBe("Semrush public");
-  expect(new URL(page.url()).searchParams.get("month")).toBe("2026-09");
-  await expect(
-    page.getByText(/2026-09 · Semrush public/).first(),
-  ).toBeVisible();
-  const pinned = new URL(page.url()).searchParams.get("snapshot");
-  await expect(page.getByRole("link", { name: /分享卡片/ })).toHaveAttribute(
-    "href",
-    new RegExp("snapshot=" + pinned),
-  );
-  await page.goto(
-    "/en/charts/ai-coding?dataset=demo&month=2026-09&version=999999",
-  );
-  await expect(
-    page.getByText(/No published snapshot for this selection/),
-  ).toBeVisible();
-  await expect(page.locator(".category-rank-table")).toHaveCount(0);
 });

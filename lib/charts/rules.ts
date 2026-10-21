@@ -9,7 +9,13 @@ export const categories = [
   "workflow-automation",
   "knowledge-search",
 ] as const;
-export const priceTypes = ["free", "freemium", "trial", "paid"] as const;
+export const priceTypes = [
+  "free",
+  "freemium",
+  "trial",
+  "paid",
+  "unknown",
+] as const;
 export function normalizeWebsite(input: string, allowDemo = false) {
   const raw = input.trim();
   const url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
@@ -73,7 +79,30 @@ export const draftSchema = z.object({
   price_type: z.enum(priceTypes),
   description_en: z.string().max(2000),
   description_zh: z.string().max(2000),
-  peers: z.array(peerSchema).max(10),
+  task: z.string().max(300).default(""),
+  supported_languages: z.array(z.string().min(2).max(50)).max(30).default([]),
+  differentiator: z.string().max(700).default(""),
+  conditions: z.string().max(1200).default(""),
+  is_open_source: z.boolean().default(false),
+  open_source_url: z
+    .string()
+    .max(500)
+    .refine(
+      (value) => {
+        if (!value) return true;
+        try {
+          return ["https:", "http:"].includes(new URL(value).protocol);
+        } catch {
+          return false;
+        }
+      },
+      { message: "Use an HTTP(S) license source URL" },
+    )
+    .default(""),
+  peer_exception_reason: z.string().max(2000).default(""),
+  supplementary_alternatives: z.string().max(2000).default(""),
+  replace_peer_group: z.boolean().default(false),
+  peers: z.array(peerSchema).max(5),
 });
 export function validatePeers(
   peers: Peer[],
@@ -85,8 +114,8 @@ export function validatePeers(
     ...p,
     domain: normalizeWebsite(p.domain, demo).domain,
   }));
-  if (complete && normalized.length !== 10)
-    throw new Error("Exactly ten relevant peer websites are required.");
+  if (complete && (normalized.length < 3 || normalized.length > 5))
+    throw new Error("Provide three to five relevant peer websites.");
   if (
     new Set(normalized.map((p) => normalizeWebsite(p.domain, demo).identity))
       .size !== normalized.length
@@ -120,12 +149,24 @@ export function validateSubmission(draft: Draft, demo = false) {
     )
   )
     throw new Error("Explain the common task and relevance for each peer.");
+  if (
+    !draft.task?.trim() ||
+    !draft.differentiator?.trim() ||
+    !draft.supported_languages?.length
+  )
+    throw new Error(
+      "Confirm the task, supported languages and distinguishing conditions.",
+    );
+  const exception =
+    draft.peers.length < 3 &&
+    (draft.peer_exception_reason?.trim().length ?? 0) >= 20 &&
+    (draft.supplementary_alternatives?.trim().length ?? 0) >= 10;
   const site = normalizeWebsite(draft.website_url, demo);
   return {
     ...draft,
     ...site,
     slug: slugify(draft.name),
-    peers: validatePeers(draft.peers, site.domain, true, demo),
+    peers: validatePeers(draft.peers, site.domain, !exception, demo),
   };
 }
 export function parseTraffic(text: string): TrafficFields {

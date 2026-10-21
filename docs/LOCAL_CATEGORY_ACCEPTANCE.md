@@ -1,3 +1,5 @@
+> Historical delivery record. Active product requirements are superseded by [DISCOVERY_MVP.md](DISCOVERY_MVP.md). Do not reinstate ten-peer/screenshot or traffic-first onboarding.
+
 # Category traffic charts — local acceptance, 2026-10-21
 
 The current specification is `CATEGORY_TRAFFIC_CHARTS.md`. This delivery builds on local commit `f4f2222`; it does not push or deploy anything.

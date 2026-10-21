@@ -1,3 +1,4 @@
+import { ensureDiscoveryCycle } from "../../scripts/local/discovery-cycle";
 import { publishCategory } from "./publishing";
 import WebSocket from "ws";
 import "server-only";
@@ -82,45 +83,19 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
   }
   const { db, user, isAdmin } = c,
     demo = dataset === "demo";
-  const [categories, projects, traffic, snapshots, months, recommendations] =
-    await Promise.all([
-      db.from("charts_categories").select("*").order("slug"),
-      db
-        .from("charts_projects")
-        .select("*")
-        .eq("publication", "published")
-        .order("name")
-        .limit(300),
-      db
-        .from("charts_traffic")
-        .select(
-          "id,domain,source,month,metric,scope,value,version,state,demo,correction_note,verified_at,raw_display,precision_step",
-        )
-        .eq("demo", demo)
-        .in("state", ["verified", "conflict", "superseded"])
-        .order("month", { ascending: false })
-        .limit(1000),
-      db
-        .from("charts_snapshots")
-        .select("*")
-        .eq("demo", demo)
-        .order("created_at", { ascending: false })
-        .limit(50),
-      db
-        .from("charts_source_months")
-        .select("*")
-        .eq("demo", demo)
-        .order("month", { ascending: false }),
-      db
-        .from("charts_recommendations")
-        .select("*")
-        .eq("demo", demo)
-        .eq("day", new Date().toISOString().slice(0, 10))
-        .order("slot")
-        .limit(20),
-    ]);
+  const [categories, projects] = await Promise.all([
+    db.from("charts_categories").select("*").order("slug"),
+    db
+      .from("charts_projects")
+      .select("*")
+      .eq("publication", "published")
+      .eq("demo", demo)
+      .order("name")
+      .limit(300),
+  ]);
   const result: Bootstrap = {
     ...emptyBootstrap,
+    discoveryCycle: await ensureDiscoveryCycle(db, demo),
     as_of: new Date().toISOString(),
     configured: !categories.error,
     categories: checked(categories),
@@ -140,14 +115,7 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
         .select("project_id,category,state,placement,basis,reviewed_at")
         .order("project_id"),
     ),
-    checks: checked(
-      await db.from("charts_public_checks").select("*").eq("demo", demo),
-    ),
-    projects: checked(projects).filter((p) => demo || !p.demo),
-    traffic: checked(traffic),
-    snapshots: checked(snapshots),
-    months: checked(months),
-    recommendations: checked(recommendations),
+    projects: checked(projects),
     user: user ? { id: user.id, email: user.email ?? "" } : null,
     isAdmin,
   };
@@ -168,7 +136,11 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
     result.relations = checked(
       await db
         .from("charts_relations")
-        .select("id,project_id,peer_domain,peer_name,task,rationale,status")
+        .select(
+          "id,project_id,peer_domain,peer_name,task,rationale,status,charts_applications!inner(status)",
+        )
+        .eq("charts_applications.status", "approved")
+        .is("withdrawn_at", null)
         .eq("status", "approved")
         .in("project_id", publicProjects)
         .order("peer_domain")
@@ -180,35 +152,10 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
         .from("charts_projects")
         .select("*")
         .neq("publication", "published")
+        .eq("demo", demo)
         .order("collected_at", { ascending: false })
         .limit(200),
     );
-  if (isAdmin) {
-    result.verificationTasks = checked(
-      await db
-        .from("charts_verification_tasks")
-        .select("*")
-        .eq("demo", demo)
-        .order("priority", { ascending: false })
-        .limit(200),
-    );
-    result.receipts = checked(
-      await db
-        .from("charts_verification_receipts")
-        .select(
-          "id,task_id,source_url,response_hash,extracted,outcome,detail,actual_calls,cost_usd,attempted_at,success_at,traffic_id",
-        )
-        .order("attempted_at", { ascending: false })
-        .limit(100),
-    );
-    result.verificationSettings = checked(
-      await db
-        .from("charts_settings")
-        .select("value")
-        .eq("key", "verification")
-        .single(),
-    ).value;
-  }
   if (!user) return result;
   const own = (table: string, field = "owner_id") => {
     const q = db
@@ -218,10 +165,16 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
       .limit(100);
     return isAdmin ? q : q.eq(field, user.id);
   };
-  const a = checked(await own("charts_applications"));
+  const a = checked(await own("charts_applications")).filter(
+    (x: any) => x.demo === demo,
+  );
   result.applications = a;
-  result.evidence = checked(await own("charts_evidence"));
-  result.reports = checked(await own("charts_reports"));
+  result.evidence = checked(await own("charts_evidence")).filter(
+    (x: any) => x.demo === demo,
+  );
+  result.reports = checked(await own("charts_reports")).filter(
+    (x: any) => x.demo === demo,
+  );
   result.claims = checked(await own("charts_claims"));
   result.corrections = checked(await own("charts_corrections"));
   result.jobs = checked(await own("charts_jobs"));
@@ -238,7 +191,15 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
     );
     result.relations = [
       ...new Map(
-        [...result.relations, ...ownRelations].map((r) => [r.id, r]),
+        [
+          ...result.relations,
+          ...ownRelations.map((r: any) => ({
+            ...r,
+            public:
+              a.find((x: any) => x.id === r.application_id)?.status ===
+              "approved",
+          })),
+        ].map((r) => [r.id, r]),
       ).values(),
     ];
   }
@@ -262,7 +223,9 @@ export async function bootstrap(dataset: Dataset): Promise<Bootstrap> {
     .filter((x) => x.owner_id === user.id && x.status === "approved")
     .map((x) => x.project_id)
     .filter(Boolean); // Effect records also belong to the original approved applicant.
-  const allowed = [...new Set([...owned, ...ownAppProjects])];
+  const allowed = [...new Set([...owned, ...ownAppProjects])].filter((id) =>
+    result.projects.some((p) => p.id === id),
+  );
   if (allowed.length)
     result.events = checked(
       await db

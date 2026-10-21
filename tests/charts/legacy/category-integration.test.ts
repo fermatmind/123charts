@@ -3,12 +3,12 @@ import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import WebSocket from "ws";
-import { loadEnv } from "../../scripts/local/env.mjs";
+import { loadEnv } from "../../../scripts/local/env.mjs";
 import {
   verificationTick,
   queueVerification,
-} from "../../lib/charts/verification";
-import { publishCategory, check } from "../../lib/charts/publishing";
+} from "../../../lib/charts/verification";
+import { publishCategory, check } from "../../../lib/charts/publishing";
 loadEnv();
 const db = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,

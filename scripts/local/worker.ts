@@ -1,3 +1,5 @@
+import { ensureDiscoveryCycle } from "./discovery-cycle";
+import { discover } from "../../lib/charts/discovery";
 import {
   scheduleVerification,
   verificationTick,
@@ -37,126 +39,7 @@ function check(r: any) {
 }
 const snooze = (ms: number) => new Promise((r) => setTimeout(r, ms));
 async function recommendations() {
-  const today = new Date().toISOString().slice(0, 10);
-  const settings = check(
-    await db
-      .from("charts_settings")
-      .select("value")
-      .eq("key", "recommendations")
-      .single(),
-  ).value;
-  const all = check(
-    await db
-      .from("charts_projects")
-      .select("*")
-      .eq("publication", "published")
-      .not("enrolled_at", "is", null),
-  );
-  for (const demo of [true, false])
-    for (const category of [
-      "all",
-      "ai-coding",
-      "workflow-automation",
-      "knowledge-search",
-    ]) {
-      if (
-        check(
-          await db
-            .from("charts_recommendations")
-            .select("id")
-            .eq("day", today)
-            .eq("context", category)
-            .eq("demo", demo)
-            .limit(1),
-        ).length
-      )
-        continue;
-      const projects = all.filter(
-        (p: any) =>
-          p.demo === demo && (category === "all" || p.category === category),
-      );
-      const recent = Date.now() - settings.recentDays * 86400000;
-      const used = new Set<string>();
-      const selected: { p: any; reason: string; slot: number }[] = [];
-      const pick = (pool: any[], reason: string, slot: number) => {
-        const candidate = pool
-          .filter((p) => !used.has(p.controller_id ?? p.id))
-          .sort((a, b) =>
-            createHash("sha256")
-              .update(today + category + a.id)
-              .digest("hex")
-              .localeCompare(
-                createHash("sha256")
-                  .update(today + category + b.id)
-                  .digest("hex"),
-              ),
-          )[0];
-        if (candidate) {
-          used.add(candidate.controller_id ?? candidate.id);
-          selected.push({ p: candidate, reason, slot });
-        }
-      };
-      const latest = projects.filter(
-        (p: any) => new Date(p.enrolled_at).getTime() >= recent,
-      );
-      pick(latest, "newly_enrolled", 1);
-      pick(latest, "newly_enrolled", 2);
-      const contributions = check(
-        await db
-          .from("charts_contributions")
-          .select("project_id")
-          .eq("eligible", true)
-          .eq("demo", demo)
-          .gte("adopted_at", new Date(recent).toISOString()),
-      );
-      pick(
-        projects.filter((p: any) =>
-          contributions.some((c: any) => c.project_id === p.id),
-        ),
-        "adopted_contribution",
-        3,
-      );
-      const impressions = check(
-        await db
-          .from("charts_events")
-          .select("project_id")
-          .eq("kind", "impression")
-          .eq("excluded", false)
-          .gte(
-            "created_at",
-            new Date(
-              Date.now() - settings.lowExposureDays * 86400000,
-            ).toISOString(),
-          )
-          .limit(20000),
-      );
-      const counts = new Map<string, number>();
-      for (const e of impressions)
-        counts.set(e.project_id, (counts.get(e.project_id) ?? 0) + 1);
-      const remaining = projects.filter(
-        (p: any) => !used.has(p.controller_id ?? p.id),
-      );
-      const min = Math.min(...remaining.map((p: any) => counts.get(p.id) ?? 0));
-      pick(
-        remaining.filter((p: any) => (counts.get(p.id) ?? 0) === min),
-        "low_exposure",
-        4,
-      );
-      if (selected.length)
-        check(
-          await db.from("charts_recommendations").upsert(
-            selected.map(({ p, reason, slot }) => ({
-              day: today,
-              context: category,
-              slot,
-              reason,
-              project_id: p.id,
-              demo,
-            })),
-            { onConflict: "day,context,slot,demo", ignoreDuplicates: true },
-          ),
-        );
-    }
+  for (const demo of [true, false]) await ensureDiscoveryCycle(db, demo);
 }
 async function digest(owner?: string) {
   let follows = db
@@ -174,6 +57,7 @@ async function digest(owner?: string) {
     for (const p of check(
       await q.order("updated_at", { ascending: false }).limit(10),
     )) {
+      if (p.updated_at < f.created_at) continue;
       const key = `follow:${f.owner_id}:${f.kind}:${f.target}:${p.id}:${p.updated_at}`;
       check(
         await db.from("charts_notifications").upsert(
@@ -191,124 +75,56 @@ async function digest(owner?: string) {
       );
     }
   }
-  const watched = check(
-    await (
-      owner
-        ? db.from("charts_follows").select("*").eq("owner_id", owner)
-        : db.from("charts_follows").select("*")
-    )
-      .in("kind", ["project", "category"])
-      .limit(300),
-  );
-  for (const f of watched) {
-    if (f.kind === "category") {
-      const snapshots = check(
-        await db
-          .from("charts_snapshots")
-          .select("*")
-          .eq("category", f.target)
-          .eq("demo", false)
-          .order("created_at", { ascending: false })
-          .limit(1),
-      );
-      for (const snapshot of snapshots)
-        check(
-          await db.from("charts_notifications").upsert(
-            {
-              owner_id: f.owner_id,
-              title_en: `New monthly chart: ${snapshot.month}`,
-              title_zh: `月榜已更新：${snapshot.month}`,
-              body_en: `${snapshot.category} · ${snapshot.source} · ${snapshot.coverage_count}/${snapshot.total_count} covered · v${snapshot.version}`,
-              body_zh: `${snapshot.category} · ${snapshot.source} · 覆盖 ${snapshot.coverage_count}/${snapshot.total_count} · v${snapshot.version}`,
-              href: `/charts/${snapshot.category}?month=${snapshot.month}&source=${encodeURIComponent(snapshot.source)}&version=${snapshot.version}`,
-              dedupe_key: `snapshot:${f.owner_id}:${snapshot.id}`,
-            },
-            { onConflict: "dedupe_key", ignoreDuplicates: true },
-          ),
-        );
-    }
-  }
-  // Observation groups are a bounded batch; emit changes only after the report's saved versions.
-  let reportQuery = db.from("charts_reports").select("*");
-  if (owner) reportQuery = reportQuery.eq("owner_id", owner);
-  const reports = check(
-    await reportQuery.order("created_at", { ascending: false }).limit(100),
-  );
-  const traffic = check(
+  // Alternatives follows track only published, reviewed relationship changes.
+  for (const f of check(
     await db
-      .from("charts_traffic")
+      .from("charts_follows")
       .select("*")
-      .eq("state", "verified")
-      .eq("metric", "visits")
-      .eq("scope", "worldwide-all-devices-domain")
-      .order("month", { ascending: false })
-      .order("version", { ascending: false })
-      .limit(1000),
-  );
-  for (const f of watched.filter((f: any) => f.kind === "project")) {
-    const p = check(
+      .eq("kind", "alternatives")
+      .limit(300),
+  )) {
+    if (owner && f.owner_id !== owner) continue;
+    const target = check(
       await db
         .from("charts_projects")
-        .select("id,slug,measurement_domain,demo,name")
+        .select("*")
         .eq("id", f.target)
+        .eq("publication", "published")
         .maybeSingle(),
     );
-    if (!p) continue;
-    const current = traffic.find(
-      (x: any) => x.domain === p.measurement_domain && x.demo === p.demo,
+    if (!target) continue;
+    const edges = check(
+      await db
+        .from("charts_relations")
+        .select("id,application_id,project_id,peer_domain")
+        .eq("status", "approved")
+        .or(`project_id.eq.${target.id},peer_domain.eq.${target.domain}`),
     );
-    if (!current) continue;
-    const prefix = current.demo ? "DEMO · " : "";
-    check(
-      await db.from("charts_notifications").upsert(
-        {
-          owner_id: f.owner_id,
-          title_en: `${prefix}Monthly data: ${p.name}`,
-          title_zh: `${prefix}月度数据：${p.name}`,
-          body_en: `${current.month} · ${current.source} · ${current.value} visits · v${current.version}`,
-          body_zh: `${current.month} · ${current.source} · ${current.value} 访问量 · v${current.version}`,
-          href: `/projects/${p.slug}`,
-          dedupe_key: `project-data:${f.owner_id}:${current.id}`,
-        },
-        { onConflict: "dedupe_key", ignoreDuplicates: true },
-      ),
-    );
-  }
-  for (const report of reports)
-    for (const peer of report.peers) {
-      const current = traffic.find(
-        (t: any) => t.domain === peer.domain && t.demo === report.demo,
+    for (const edge of edges) {
+      const app = check(
+        await db
+          .from("charts_applications")
+          .select("status,reviewed_at")
+          .eq("id", edge.application_id)
+          .single(),
       );
-      if (!current) continue;
-      const prior = peer.traffic;
-      if (
-        prior &&
-        current.source === prior.source &&
-        (current.month < prior.month ||
-          (current.month === prior.month && current.version <= prior.version))
-      )
-        continue;
-      if (
-        !prior &&
-        new Date(current.verified_at) <= new Date(report.created_at)
-      )
-        continue;
-      const prefix = report.demo ? "DEMO · " : "";
+      if (app.status !== "approved" || app.reviewed_at < f.created_at) continue;
       check(
         await db.from("charts_notifications").upsert(
           {
-            owner_id: report.owner_id,
-            title_en: `${prefix}Peer data updated: ${peer.name}`,
-            title_zh: `${prefix}同行数据更新：${peer.name}`,
-            body_en: `${current.month} · ${current.source} · ${current.value} visits · v${current.version}. The saved report retains its original snapshot.`,
-            body_zh: `${current.month} · ${current.source} · ${current.value} 访问量 · v${current.version}。原报告保留审核时的快照。`,
-            href: `/reports/${report.id}`,
-            dedupe_key: `peer-data:${report.owner_id}:${report.project_id}:${current.id}`,
+            owner_id: f.owner_id,
+            title_en: `Alternative update: ${target.name}`,
+            title_zh: `替代方案更新：${target.name}`,
+            body_en: "A reviewed task relationship is available.",
+            body_zh: "新增一条已确认的用途关系。",
+            href: `/alternatives/${target.slug}`,
+            dedupe_key: `alternative:${f.owner_id}:${edge.id}`,
           },
           { onConflict: "dedupe_key", ignoreDuplicates: true },
         ),
       );
     }
+  }
   const notifications = check(
     await db
       .from("charts_notifications")
@@ -349,6 +165,17 @@ async function digest(owner?: string) {
             (f.kind === "project" && f.target === p.id) ||
             (f.kind === "category" && f.target === p.category),
         );
+    } else if (location.pathname.startsWith("/alternatives/")) {
+      const p = check(
+        await db
+          .from("charts_projects")
+          .select("id")
+          .eq("slug", location.pathname.split("/")[2])
+          .maybeSingle(),
+      );
+      subscribed =
+        !!p &&
+        follow.some((f: any) => f.kind === "alternatives" && f.target === p.id);
     } else if (location.pathname.startsWith("/charts/"))
       subscribed = follow.some(
         (f: any) =>
@@ -515,9 +342,7 @@ while (!stopping) {
   try {
     if (Date.now() - lastScheduled > 60000) {
       lastScheduled = Date.now();
-      await scheduleVerification(db)
-        .then(() => verificationTick(db))
-        .catch((e) => console.error("Source verification:", e.message));
+      // External traffic and OCR are intentionally outside the discovery MVP.
       await recommendations().catch((e) =>
         console.error("Recommendation scheduling:", e.message),
       );

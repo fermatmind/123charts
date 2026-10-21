@@ -1,20 +1,21 @@
 # 123Charts Local V1
 
-The current product authority is the user-approved 123Charts V1 plan in docs/123CHARTS_V1.md and the subsequent category-first extension docs/CATEGORY_TRAFFIC_CHARTS.md. Earlier 88CN strategy documents are historical, not current product instructions.
+The current authority is the user-approved discovery and alternatives MVP, documented in docs/DISCOVERY_MVP.md. The earlier traffic-first 123CHARTS_V1.md and CATEGORY_TRAFFIC_CHARTS.md are historical and superseded for active product work.
 
-- Work in this repository; preserve Git history and adjacent projects.
-- This delivery is local only: no GitHub writes, push, DNS, deployment, or production database access.
-- Codex is authorized to implement and verify the complete local application. Former role restrictions reserving code edits to OpenCode/DeepSeek no longer apply.
-- Never fabricate real traffic, verification, ranking, customers, or performance claims. Demo records are explicitly marked and isolated.
-- Listing, owner claim, enrollment, evidence verification, publication, and recommendation eligibility are independent.
-- Ten distinct relevant peer websites; evidence for five to ten distinct peers. OCR is extraction, not verification.
-- Compare only the same month, source, metric, measurement domain and scope. Missing values stay missing; contribution never changes ranking.
-- Screenshots are private. All writes require authorization; free corrections remain available independently of contribution.
-- Use local Supabase, additive migrations and a bounded restartable worker. Do not erase existing local data during normal setup/start.
-- Local preview is noindex. Public pages use reviewed database records, not external scans during requests.
-- Preserve unknowns, provenance, versions, correction history and demo labels in all exports.
-- Check docs/14_OPEN_SOURCE_REUSE_POLICY.md before copying external source. Package installs retain upstream licensing; document any vendored components.
-- Verify focused business tests, RLS, browser flows, lint, typecheck, build and git diff --check. Use screenshots for UI acceptance.
+- Local only: preserve this repository and Git history. No GitHub writes, push, DNS, deployment or production database access in this delivery.
+- Website facts, tasks, conditions and reviewed alternatives drive discovery. Use one canonical project record across pages, comparison lists and cards.
+- Submit 3–5 distinct relevant peer websites. A documented niche exception with supplementary methods can be reviewed. Screenshot/OCR/third-party traffic tasks are outside this MVP.
+- Separate publication, identity claims, price confirmation and recommendation eligibility. Contribution does not grant management permissions or quality certification. Free corrections are independent.
+- Discovery order is not popularity or external traffic rank. Stable daily rotation: one newcomer, one adopted contribution, four ordinary slots; fallback to ordinary. Filter relevance first and deduplicate controlling parties.
+- First public listing is immutable across edits/republishing. Unknowns remain unknown. Open source and sustained free use are separate conditions; trials do not qualify for sustained-free filters.
+- Confirmed task relationships automatically produce useful alternatives pages, including a single useful candidate. No separate per-page editorial gate. Empty/unrelated pages are ineligible for indexing.
+- Never fabricate real pricing confirmation, relationships, traffic, ranking, customers or commercial validation. Demo projects, decisions and exports are explicitly labeled and isolated.
+- Keep historical evidence/storage, numeric provenance and immutable snapshots. Do not run external traffic scheduling or consume OCR jobs in the current worker.
+- All writes require authorization. Public projections must not include private applications, report tokens, original screenshots or management IDs.
+- Use local Supabase, additive migrations and restartable metadata jobs. Setup/start preserves accounts, drafts and data; never reset the runtime database.
+- Local preview remains noindex; its sitemap is empty. Future sitemap/metadata eligibility is separate. Public requests read reviewed local records without remote scans.
+- Check docs/14_OPEN_SOURCE_REUSE_POLICY.md before copying external source. Current original UI reuses no competitor code or database.
+- Verify changed business rules, SQL/RLS, browser flows, lint, typecheck, build and git diff --check. Use browser screenshots for UI acceptance.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

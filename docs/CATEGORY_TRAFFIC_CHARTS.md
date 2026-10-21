@@ -1,3 +1,5 @@
+> Historical delivery record. Active product requirements are superseded by [DISCOVERY_MVP.md](DISCOVERY_MVP.md). Do not reinstate ten-peer/screenshot or traffic-first onboarding.
+
 # Category traffic charts — current local specification
 
 This specification extends 123Charts V1 with the user-approved category-first traffic design. The original V1 remains the authority for free enrollment, private evidence, identity claims and contribution rewards. This delivery stays local; no GitHub push, DNS or server deployment.

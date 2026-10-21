@@ -20,6 +20,14 @@ export function proxy(request: NextRequest) {
       { status: 410 },
     );
   const legacy = [
+    "alternatives",
+    "free",
+    "new",
+    "dashboard",
+    "following",
+    "login",
+    "how-it-works",
+    "products",
     "projects",
     "categories",
     "submit",
@@ -45,7 +53,11 @@ export function proxy(request: NextRequest) {
     if (/^\/(admin)/.test(target)) target = "/admin";
     else if (/^\/(claim)\//.test(target))
       target = target.replace("/claim/", "/projects/");
-    else if (!/^\/(projects|categories|submit|methodology)/.test(target))
+    else if (
+      !/^\/(products|alternatives|free|new|dashboard|following|login|how-it-works|projects|categories|submit|methodology)/.test(
+        target,
+      )
+    )
       target = "/methodology";
     return NextResponse.redirect(new URL(`/en${target}${search}`, request.url));
   }
@@ -55,7 +67,8 @@ export function proxy(request: NextRequest) {
     pathname.split("/")[1] === "zh" ? "zh" : "en",
   );
   const response = NextResponse.next({ request: { headers: requestHeaders } });
-  response.headers.set("X-Robots-Tag", "noindex, follow");
+  if (process.env.CHARTS_LOCAL_PREVIEW !== "false")
+    response.headers.set("X-Robots-Tag", "noindex, follow");
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set("X-Frame-Options", "DENY");

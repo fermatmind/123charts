@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.APP_URL ?? "http://127.0.0.1:3100"),
   title: {
-    default: "123Charts — Discover. Compare. Decide.",
+    default: "123Charts — Discover Websites, Explore Alternatives.",
     template: "%s | 123Charts",
   },
   description:
-    "Discover projects, compare website data and build your peer observation group. Free to browse and join.",
+    "Discover websites by task, compare alternatives and conditions. Free to explore. Free to submit.",
   robots: { index: false, follow: true },
 };
 export default async function RootLayout({

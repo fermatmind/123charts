@@ -6,7 +6,7 @@ import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import { request } from "@playwright/test";
 import sharp from "sharp";
-import { loadEnv } from "../../scripts/local/env.mjs";
+import { loadEnv } from "../../../scripts/local/env.mjs";
 loadEnv();
 const db = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,

@@ -1,6 +1,6 @@
 export type Locale = "en" | "zh";
 export type Dataset = "demo" | "real";
-export type PriceType = "free" | "freemium" | "trial" | "paid";
+export type PriceType = "free" | "freemium" | "trial" | "paid" | "unknown";
 export interface Category {
   parent_en?: string;
   parent_zh?: string;
@@ -54,6 +54,15 @@ export interface VerificationReceipt {
   traffic_id: string | null;
 }
 export interface Project {
+  task?: string;
+  supported_languages?: string[];
+  differentiator?: string;
+  conditions?: string;
+  is_open_source?: boolean;
+  open_source_url?: string;
+  first_published_at?: string | null;
+  first_publication_inferred?: boolean;
+
   id: string;
   slug: string;
   name: string;
@@ -82,6 +91,18 @@ export interface Peer {
   rationale: string;
 }
 export interface Draft {
+  replace_peer_group?: boolean;
+  task?: string;
+  supported_languages?: string[];
+  differentiator?: string;
+  conditions?: string;
+  is_open_source?: boolean;
+  open_source_url?: string;
+  first_published_at?: string | null;
+  first_publication_inferred?: boolean;
+  peer_exception_reason?: string;
+  supplementary_alternatives?: string;
+
   name: string;
   slug: string;
   website_url: string;
@@ -195,6 +216,8 @@ export interface Report {
   created_at: string;
 }
 export interface Relation extends Peer {
+  public?: boolean;
+  withdrawn_at?: string | null;
   id: string;
   application_id: string;
   project_id: string | null;
@@ -269,6 +292,7 @@ export interface Event {
   created_at: string;
 }
 export interface Bootstrap {
+  discoveryCycle: import("./discovery").CycleEntry[];
   as_of: string;
   configured: boolean;
   categories: Category[];
@@ -304,6 +328,7 @@ export interface Bootstrap {
   events: Event[];
 }
 export const emptyBootstrap: Bootstrap = {
+  discoveryCycle: [],
   as_of: "1970-01-01T00:00:00Z",
   configured: false,
   categories: [],

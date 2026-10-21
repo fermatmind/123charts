@@ -87,12 +87,10 @@ export function ChartsProvider({
     },
     [refresh, router, locale],
   );
-  const poll =
-    data.jobs.some((j) => j.state === "pending" || j.state === "running") ||
-    (data.isAdmin &&
-      data.verificationTasks.some(
-        (j) => j.state === "pending" || j.state === "running",
-      ));
+  const poll = data.jobs.some(
+    (j) =>
+      j.kind === "metadata" && (j.state === "pending" || j.state === "running"),
+  );
   useEffect(() => {
     if (!poll) return;
     const timer = setInterval(() => {

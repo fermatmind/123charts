@@ -1,8 +1,8 @@
 # 123Charts
 
-Free project discovery, source-aware website charts, peer contributions and founder workspaces. This checkout is the **local V1**, built on the historical 88CN repository. Historical 88CN documents describe earlier work; current product authority is [123CHARTS_V1.md](docs/123CHARTS_V1.md), extended by [CATEGORY_TRAFFIC_CHARTS.md](docs/CATEGORY_TRAFFIC_CHARTS.md).
+**Discover Websites, Explore Alternatives.** 免费分类发现与替代方案平台。当前产品权威：[DISCOVERY_MVP.md](docs/DISCOVERY_MVP.md)。旧流量榜方案保留为历史；本轮仅本地开发。
 
-## Start locally
+## 本地启动
 
 ```bash
 npm install
@@ -10,68 +10,44 @@ npm run local:setup
 npm run dev:local
 ```
 
+Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历史文件存储和邮件收件箱。重复 setup/start 保留现有账户和资料；无数据库重置。核心演示无需 OCR 或远程流量接口。新官网资料提取需要联网，失败允许手填。
+
 - English: http://127.0.0.1:3100/en
 - 中文：http://127.0.0.1:3100/zh
-- Founder workspace: `/en/dashboard`
-- Review console: `/en/admin`
-- Local mail inbox: http://127.0.0.1:54324
-- Local database studio: http://127.0.0.1:54323
+- 演示：http://127.0.0.1:3100/en?dataset=demo
+- 工作台：`/en/dashboard`；审核后台：`/en/admin`
+- 本地邮件：http://127.0.0.1:54324；数据库 Studio：http://127.0.0.1:54323
+- 普通用户、管理员测试凭据：[.local/accounts.json](.local/accounts.json)，仅本机生成，勿提交。
+- `npm run local:stop` 停止本地应用、worker 和 Supabase，保留数据卷。
 
-Local founder/admin test credentials are generated in `.local/accounts.json` with private file permissions. They are not production credentials. Normal users may also register through the app. Supabase Auth, database, Storage and mail capture run locally; no external SMTP or cloud account is used.
+所有服务绑定本机；所有本地页面 noindex。GitHub 与生产部署未操作。
 
-Setup is idempotent: it preserves users, drafts, uploads and reviewed data. `npm run local:stop` stops the app, worker and local Supabase while retaining volumes. Normal setup/start never resets the database. Initial setup downloads containers and English/Chinese OCR resources; subsequent core demo use works offline. Metadata extraction from a new public website naturally requires connectivity.
+## 当前体验
 
-Docker Desktop must run. Local services bind explicitly to `127.0.0.1`. The startup helper preserves the CLI-created container configuration, Kong runtime files and volume mounts when correcting Docker Desktop port bindings. It only touches containers named for `123charts-local`.
+1. 搜索用途、网站或分类，按价格、语言、开源筛选；`Cmd/Ctrl + K` 搜索。
+2. 浏览分类发现、新收录、持续免费和用途替代页。发现顺序使用每日稳定轮换，不宣称流量或人气排名。
+3. 注册或登录，三步提交官网、用途条件和 3–5 个同行；自动存草稿，小众例外可以说明原因和相关替代方式。无需截图。
+4. 审核员逐条确认关系、记录资料依据与价格核验结果，通过后交付公开档案、同类对照、相关替代入口与收录卡。
+5. 独立认领管理身份后维护资料；后续更新不重复首次同行数量要求。项目页、筛选、替代比较和新卡片同步读取当前资料。
+6. 收藏网站、关注分类或替代页，查看展示和官网外跳记录。分享自愿，对照清单分享可撤销。
 
-## Explore the complete workflow
+## 数据说明
 
-1. Browse projects, categories and published chart snapshots. `Cmd/Ctrl + K` opens search.
-2. Sign in as the local founder, create/save a draft, select ten relevant peers and upload PNG/JPG/WebP evidence for five to ten distinct peers.
-3. The worker performs real local OCR. Extraction stops at **awaiting review**, never automatic verification.
-4. Sign in as the local administrator. Review relationships, inspect private originals, confirm numeric fields and record a review channel/reference. Approve the complete application.
-5. The applicant receives a profile, a private ten-peer report and free recommendation eligibility. Enable/revoke report sharing and preview/download a PNG card.
-6. Claim management identity separately to submit later information updates. Updates keep the observation group and do not repeat initial admission requirements.
-7. Save/follow projects or categories; opt into local email summaries. View recorded impressions, project views and outbound clicks in the founder workspace.
+默认 real 只显示真实研究条目，价格未复核则待确认。demo 只显示虚构案例，卡片与清单注明 DEMO。历史流量及截图留存，退出当前导航、投稿、审核和自动调度。初始化不重新制造流量数据。
 
-Unknown peers adopted during review enter the **unpublished research queue**. An administrator completes factual bilingual descriptions and a source reference before publishing them. Nomination does not publish a page or create an automatic placement on a peer's page.
+官网来源与逐项核对见 [DISCOVERY_MVP.md](docs/DISCOVERY_MVP.md)。历史收录日期未曾独立记录的条目明确标记为估计；新记录从首次公开时间开始保存，编辑不重置。
 
-## Data integrity
-
-The default `dataset=demo` includes 33 independently written official-site research profiles and four fictional projects. **Every traffic value, ranking, enrollment/claim example and sample approval in this dataset is synthetic.** Demo and real traffic/versions/snapshots are isolated. `dataset=real` keeps real research profiles while showing missing traffic honestly.
-
-Official source retrieval is recorded independently of verification. A failed retrieval is not proof that a website is invalid. Seed prices are not shown as verified unless actually reviewed. The local seed never overwrites existing profiles or user work on subsequent setup runs.
-
-The three starting categories are AI coding, workflow automation, and knowledge search/RAG. Charts keep AITDK contribution data and the independently checked **Semrush public** sample in separate source selections, with one released month and worldwide/all-device/domain scope. The source calendar explicitly records accepted months. GSC clicks and GA4 sessions are not mixed with visits. No GSC/GA4 or TabAPI connection is claimed.
-
-Published snapshots and traffic values cannot be overwritten. Source corrections create versions; unresolved conflicts suspend usage. Contribution adoption deduplicates information and applies per-project/per-controller caps independently of traffic ranking. A fictional demo outbound destination records an attempt and explains why no actual website exists.
-
-All local HTML is `noindex`; robots permits reading that instruction, and the local sitemap is empty. Private reports, screenshots, drafts, review references and internal control identities do not enter anonymous projections. Ordinary publication eligibility, canonical/hreflang metadata and consistent JSON-LD are implemented separately from local indexing.
-
-## Development and verification
+## 验证
 
 ```bash
-npm run typecheck
+npm run test:charts
+npm run test:browser
+npm run test:db:charts
 npm run lint
-npm run test:charts       # domain rules + actual database/Auth/Storage/API/OCR workflow; local app required
-npm run test:browser      # Chrome UI flows, desktop/mobile, sharing, PNG and reviewer delivery
-npm run test:db:charts    # disposable empty business schema, all migrations and source corrections
-npm run format:check
+npm run typecheck
 npm run build
-npm run db:types          # generate local Supabase database types
+npm run db:types
+npm run format:check
 ```
 
-Browser evidence is saved under `output/playwright/`; credentials, raw seed screenshots and source retrieval results stay under ignored `.local/`. `.env.local` is generated locally and never committed.
-
-Architecture: Next.js 16 / React 19 / TypeScript; Tailwind; Radix dialog primitives; Recharts; Supabase SDK with SQL migrations; Tesseract.js OCR; one durable database-backed worker. There is no additional ORM, payment path, remote LLM or external data API dependency.
-
-PNG rendering uses the Mac's installed Unicode font copied into ignored `.local/fonts/` during setup. That system font is not redistributed. A later server deployment must install a suitably licensed CJK font rather than copying the Mac font.
-
-GitHub configuration, DNS, hosting and production deployment are outside this local delivery. A later real-data pilot must validate actual screenshot sources, data acquisition/review cost and external source usage rights; local synthetic samples do not establish those results.
-
-## Category traffic charts and actual verification
-
-Start at `/zh/charts` (or `/en/charts`) and choose a category. The real source sample is `/zh/charts/ai-coding?dataset=real&month=2026-09&source=Semrush%20public`: Cursor, 35.49M displayed September visits, with explicit 1/11 initial coverage. The actual private source screenshot, OCR result, public-page response receipt and immutable data/snapshot versions are retained locally. This is not an AITDK-equivalence claim.
-
-In the administrator's **Data workbench**, inspect the continuous verification queue, private original and response hashes; configure selected-domain or published-library checks; retry a fresh read or confirm a source correction. One worker applies per-day limits and weekly next-check dates. Identical checks do not produce new chart versions. `snapshot/{id}` JSON and PNG cards cite the saved publication.
-
-All 33 research profiles still have independent purpose classifications. Broad platforms appear outside specialist ranks. Private **My peer comparison** reports keep delivery-time values while a separate current-data view shows later peer changes.
+`tests/charts/legacy/` 保存旧流量投稿与浏览器验收，已退出当前 MVP 验收入口。仍运行的历史纯函数及 SQL 回归仅保护原有不可变数据与权限，不表示相关功能属于当前 MVP。

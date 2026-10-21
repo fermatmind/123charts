@@ -1,3 +1,4 @@
+import { eventExclusion } from "@/lib/charts/events";
 import { queueVerification, PUBLIC_SOURCE } from "@/lib/charts/verification";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
@@ -41,6 +42,25 @@ async function handle(
             : "demo",
         ),
         { headers: { "Cache-Control": "no-store" } },
+      );
+    if (
+      [
+        "upload",
+        "admin/source-upload",
+        "admin/verification",
+        "admin/verification-settings",
+        "admin/evidence",
+        "admin/snapshot",
+        "admin/month",
+        "admin/source-correction",
+      ].includes(route)
+    )
+      return NextResponse.json(
+        {
+          error:
+            "External traffic and screenshot processing are deferred beyond the discovery MVP.",
+        },
+        { status: 410 },
       );
     const c = await context(),
       { db, auth, user, isAdmin } = c;
@@ -445,10 +465,31 @@ async function handle(
     if (route === "draft") {
       const u = required(),
         d = draftSchema.parse(b.draft);
+      if (d.is_open_source && !d.open_source_url)
+        throw new HttpError(
+          400,
+          "Provide the open source license reference, or leave it unconfirmed.",
+        );
       if (d.website_url) {
         const site = normalizeWebsite(d.website_url, !!b.demo);
         d.domain = site.domain;
         d.website_url = site.website_url;
+      }
+      const targetProject =
+        b.project_id || (b.id ? (await ownedApp(b.id)).project_id : null);
+      if (targetProject) {
+        const target = checked(
+          await db
+            .from("charts_projects")
+            .select("domain")
+            .eq("id", targetProject)
+            .single(),
+        );
+        if (target.domain !== d.domain)
+          throw new HttpError(
+            400,
+            "Project updates must keep the saved official domain. Use the correction workflow for a domain change.",
+          );
       }
       d.slug = slugify(d.name || d.domain);
       d.peers = validatePeers(d.peers, d.domain, false, !!b.demo);
@@ -487,22 +528,6 @@ async function handle(
         !a.draft.description_zh
       )
         throw new HttpError(400, "Complete the project descriptions.");
-      const ev = checked(
-        await db
-          .from("charts_evidence")
-          .select("peer_domain,state")
-          .eq("application_id", a.id),
-      );
-      if (
-        a.kind === "initial" &&
-        new Set(
-          ev.filter((x) => x.state !== "invalid").map((x) => x.peer_domain),
-        ).size < 5
-      )
-        throw new HttpError(
-          400,
-          "Upload evidence for at least five different peers.",
-        );
       const data = checked(
         await db
           .from("charts_applications")
@@ -569,7 +594,7 @@ async function handle(
     if (route === "follow") {
       const u = required();
       if (
-        !["bookmark", "project", "category"].includes(b.kind) ||
+        !["bookmark", "project", "category", "alternatives"].includes(b.kind) ||
         typeof b.target !== "string"
       )
         throw new HttpError(400, "Invalid follow target.");
@@ -731,15 +756,14 @@ async function handle(
               .limit(1),
           )
         : [];
-      const reason =
-        b.automated === true ||
-        /bot|crawler|spider|headless|playwright|curl|python|test/i.test(
-          request.headers.get("user-agent") ?? "",
-        )
-          ? "bot_or_test"
-          : user && (p.controller_id === user.id || isAdmin || claim.length > 0)
-            ? "self_or_internal"
-            : null;
+      const reason = eventExclusion(
+        request.headers.get("user-agent") ?? "",
+        b.automated === true,
+        !!(
+          user &&
+          (p.controller_id === user.id || isAdmin || claim.length > 0)
+        ),
+      );
       const session =
         typeof b.session_id === "string" && uuid.test(b.session_id)
           ? b.session_id
@@ -902,9 +926,11 @@ async function handle(
         if (b.action === "approve")
           return NextResponse.json({
             project_id: checked(
-              await db.rpc("charts_approve_application", {
+              await db.rpc("charts_approve_discovery", {
                 aid: a.id,
                 actor: user!.id,
+                reference: b.reference ?? "",
+                pricing_confirmed: !!b.pricing_confirmed,
               }),
             ),
           });
@@ -1004,11 +1030,22 @@ async function handle(
         if (!["draft", "published", "archived"].includes(b.publication))
           throw new HttpError(400, "Invalid publication state.");
         const info = draftSchema
-          .omit({ peers: true, slug: true, domain: true })
+          .omit({
+            peers: true,
+            slug: true,
+            domain: true,
+            peer_exception_reason: true,
+            supplementary_alternatives: true,
+            replace_peer_group: true,
+          })
           .parse(b.project);
         if (
           b.publication === "published" &&
-          (!info.name.trim() ||
+          (!info.task?.trim() ||
+            !info.differentiator?.trim() ||
+            !info.supported_languages?.length ||
+            (info.is_open_source && !info.open_source_url) ||
+            !info.name.trim() ||
             info.description_en.trim().length < 20 ||
             info.description_zh.trim().length < 10 ||
             typeof b.reference !== "string" ||
@@ -1143,6 +1180,8 @@ async function handle(
         const j = checked(
           await db.from("charts_jobs").select("*").eq("id", b.id).single(),
         );
+        if (j.kind === "ocr")
+          throw new HttpError(410, "OCR is deferred beyond this MVP.");
         if (j.state !== "failed")
           throw new HttpError(409, "Only failed jobs can be retried.");
         checked(

@@ -59,7 +59,7 @@ test("peer aliases share an identity; own site and incomplete group are rejected
   );
   assert.throws(
     () => validatePeers([make("peer.example")], "own.example", true, true),
-    /ten/,
+    /three to five/,
   );
 });
 test("OCR extracts units, released month and scope, without inventing missing numbers", () => {

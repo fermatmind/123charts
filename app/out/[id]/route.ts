@@ -1,3 +1,4 @@
+import { eventExclusion } from "@/lib/charts/events";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { randomUUID } from "node:crypto";
@@ -40,14 +41,11 @@ export async function GET(
           .limit(1),
       )
     : [];
-  const reason =
-    /bot|crawler|spider|headless|playwright|curl|python|test/i.test(
-      request.headers.get("user-agent") ?? "",
-    )
-      ? "bot_or_test"
-      : user && (isAdmin || p.controller_id === user.id || claim.length)
-        ? "self_or_internal"
-        : null;
+  const reason = eventExclusion(
+    request.headers.get("user-agent") ?? "",
+    false,
+    !!(user && (isAdmin || p.controller_id === user.id || claim.length)),
+  );
   const rawSurface = request.nextUrl.searchParams.get("surface") ?? "/projects";
   const surface = /^\/[a-z0-9/_-]{0,120}$/i.test(rawSurface)
     ? rawSurface

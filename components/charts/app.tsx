@@ -1,5 +1,17 @@
 "use client";
-import { ChartsIndex, CategoryChart } from "./category-charts";
+import {
+  DiscoveryHome,
+  DiscoveryListing,
+  DiscoveryCategories,
+  AlternativesPage,
+  DiscoveryDetail,
+  DiscoveryReport,
+  DiscoveryShared,
+  DiscoveryMethod,
+} from "./discovery-views";
+import { DiscoverySubmit } from "./discovery-submit";
+import { DiscoveryDashboard, DiscoveryFollowing } from "./discovery-workspace";
+import { DiscoveryAdmin } from "./discovery-admin";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -26,17 +38,7 @@ import {
 } from "lucide-react";
 import type { Bootstrap, Dataset, Locale } from "@/lib/charts/types";
 import { ChartsProvider, useCharts, Avatar, Empty } from "./context";
-import {
-  Home,
-  ProjectListing,
-  CategoryIndex,
-  ProjectDetail,
-  Methodology,
-  SharedReport,
-} from "./public-views";
-import { SubmissionWizard } from "./submission";
-import { Dashboard, AuthPage, Following, ReportView } from "./workspace";
-import { Admin } from "./admin";
+import { AuthPage } from "./workspace";
 export default function ChartsApp({
   initial,
   locale,
@@ -77,12 +79,11 @@ function Shell({ path }: { path: string[] }) {
   switchDataset.set("dataset", dataset === "demo" ? "real" : "demo");
   const navigation = [
     ["/", t("Overview", "总览"), Compass],
-    [
-      "/charts",
-      t("Category traffic charts", "分类流量榜"),
-      ChartNoAxesCombined,
-    ],
-    ["/projects", t("All projects", "所有项目"), Globe2],
+    ["/categories", t("Category charts", "分类榜单"), ChartNoAxesCombined],
+    ["/alternatives", t("Alternatives", "找替代方案"), Layers3],
+    ["/free", t("Free / open source", "免费 / 开源"), Globe2],
+    ["/new", t("Newly listed", "新收录"), Plus],
+    ["/projects", t("All websites", "所有网站"), Globe2],
   ] as const;
   const userLinks = [
     ["/following", t("Saved & following", "收藏与关注"), Bookmark],
@@ -103,23 +104,30 @@ function Shell({ path }: { path: string[] }) {
         </p>
       </Empty>
     );
-  else if (!first) view = <Home />;
-  else if (first === "projects" && path[1])
-    view = <ProjectDetail slug={path[1]} />;
-  else if (first === "charts" && path[1])
-    view = <CategoryChart key={path[1]} slug={path[1]} />;
-  else if (first === "charts" || first === "categories") view = <ChartsIndex />;
-  else if (first === "projects") view = <ProjectListing />;
-  else if (first === "submit") view = <SubmissionWizard />;
+  else if (!first) view = <DiscoveryHome />;
+  else if ((first === "projects" || first === "products") && path[1])
+    view = <DiscoveryDetail slug={path[1]} />;
+  else if (first === "categories" && path[1])
+    view = <DiscoveryListing key={path[1]} category={path[1]} />;
+  else if (first === "categories") view = <DiscoveryCategories />;
+  else if (first === "alternatives") view = <AlternativesPage slug={path[1]} />;
+  else if (first === "free") view = <DiscoveryListing mode="free" />;
+  else if (first === "new") view = <DiscoveryListing mode="new" />;
+  else if (first === "projects") view = <DiscoveryListing />;
+  else if (first === "submit") view = <DiscoverySubmit />;
   else if (first === "dashboard")
-    view = <Dashboard notificationsOnly={path[1] === "notifications"} />;
-  else if (first === "following") view = <Following />;
+    view = (
+      <DiscoveryDashboard notificationsOnly={path[1] === "notifications"} />
+    );
+  else if (first === "following") view = <DiscoveryFollowing />;
   else if (first === "login") view = <AuthPage />;
-  else if (first === "reports" && path[1]) view = <ReportView id={path[1]} />;
+  else if (first === "reports" && path[1])
+    view = <DiscoveryReport id={path[1]} />;
   else if (first === "shared" && path[1])
-    view = <SharedReport token={path[1]} />;
-  else if (first === "admin") view = <Admin />;
-  else if (first === "methodology") view = <Methodology />;
+    view = <DiscoveryShared token={path[1]} />;
+  else if (first === "admin") view = <DiscoveryAdmin />;
+  else if (first === "methodology" || first === "how-it-works")
+    view = <DiscoveryMethod />;
   else
     view = (
       <Empty title={t("Page not found", "页面不存在")}>
@@ -145,16 +153,22 @@ function Shell({ path }: { path: string[] }) {
             {t("Discover", "发现")}
           </Link>
           <Link
-            className={isActive("/charts") ? "active" : ""}
-            href={href("/charts")}
+            className={isActive("/categories") ? "active" : ""}
+            href={href("/categories")}
           >
-            {t("Category traffic charts", "分类流量榜")}
+            {t("Category charts", "分类榜单")}
+          </Link>
+          <Link href={href("/alternatives")}>
+            {t("Alternatives", "找替代方案")}
+          </Link>
+          <Link href={href("/free")}>
+            {t("Free / open source", "免费 / 开源")}
           </Link>
           <Link
             className={isActive("/submit") ? "active" : ""}
             href={href("/submit")}
           >
-            {t("Join for free", "免费入驻")}
+            {t("Submit for free", "免费提交")}
           </Link>
         </nav>
         <div className="top-actions">
@@ -216,8 +230,8 @@ function Shell({ path }: { path: string[] }) {
               {data.categories.map((c, i) => (
                 <Link
                   key={c.slug}
-                  href={href(`/charts/${c.slug}`)}
-                  className={`side-link ${route === `charts/${c.slug}` ? "active" : ""}`}
+                  href={href(`/categories/${c.slug}`)}
+                  className={`side-link ${route === `categories/${c.slug}` ? "active" : ""}`}
                 >
                   <span
                     className="mono"
@@ -260,7 +274,7 @@ function Shell({ path }: { path: string[] }) {
           <div className="side-bottom">
             <Link href={href("/methodology")}>
               <FileText size={13} />
-              {t("Data & methodology", "数据与方法")}
+              {t("How it works", "发现规则")}
             </Link>
             <Link href={href("/submit")}>
               <ArrowUpRight size={13} />
@@ -290,12 +304,12 @@ function Shell({ path }: { path: string[] }) {
             <span>
               {dataset === "demo"
                 ? t(
-                    "DEMO DATA · Traffic, rankings and enrollment examples are synthetic. Project research is sourced separately.",
-                    "演示数据 · 访问量、排名及入驻案例均为模拟，项目研究资料单独注明来源。",
+                    "DEMO · Fictional websites and review examples. Isolated from real project research.",
+                    "演示 · 虚构网站与审核案例，与真实项目研究隔离。",
                   )
                 : t(
-                    "RESEARCH DATA · Only actual evidence can produce verified traffic and rankings. Missing data stays unknown.",
-                    "真实研究 · 仅实际证据可产生已核验流量和排名，缺失资料保持未知。",
+                    "LOCAL RESEARCH · Reviewed website facts and task relationships. Unknown conditions remain unconfirmed.",
+                    "本地研究 · 项目资料与用途关系按依据审核，未知条件保持待确认。",
                   )}
             </span>
             <Link href={`${pathname}?${switchDataset}`}>
@@ -309,11 +323,14 @@ function Shell({ path }: { path: string[] }) {
             <Link className="wordmark" href={href("/")}>
               123Charts<span style={{ color: "#54617a" }}> / </span>
               <span style={{ fontSize: 10, fontWeight: 400 }}>
-                {t("A clearer view of the web.", "看清网站，发现项目。")}
+                {t(
+                  "Discover Websites, Explore Alternatives.",
+                  "发现好网站，探索替代方案。",
+                )}
               </span>
             </Link>
             <Link href={href("/methodology")}>
-              {t("Methodology", "数据方法")}
+              {t("How it works", "发现规则")}
             </Link>
             <Link href={href("/submit")}>{t("Free to join", "免费入驻")}</Link>
             <span>© 2026 123Charts</span>
@@ -365,7 +382,7 @@ function Shell({ path }: { path: string[] }) {
                 <Link
                   className="search-result"
                   onClick={() => setSearchOpen(false)}
-                  href={href(`/charts/${c.slug}`)}
+                  href={href(`/categories/${c.slug}`)}
                   key={c.slug}
                 >
                   <Layers3 size={18} />
@@ -377,7 +394,13 @@ function Shell({ path }: { path: string[] }) {
               ))}
             {data.projects
               .filter((p) =>
-                (p.name + p.domain + p.description_en + p.description_zh)
+                (
+                  p.name +
+                  p.domain +
+                  p.task +
+                  p.description_en +
+                  p.description_zh
+                )
                   .toLowerCase()
                   .includes(search.toLowerCase()),
               )
@@ -399,7 +422,13 @@ function Shell({ path }: { path: string[] }) {
               ))}
             {search &&
               !data.projects.some((p) =>
-                (p.name + p.domain + p.description_en + p.description_zh)
+                (
+                  p.name +
+                  p.domain +
+                  p.task +
+                  p.description_en +
+                  p.description_zh
+                )
                   .toLowerCase()
                   .includes(search.toLowerCase()),
               ) && (

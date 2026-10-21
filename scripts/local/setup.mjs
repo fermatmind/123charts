@@ -91,18 +91,6 @@ fs.writeFileSync(
 
   { mode: 0o600 },
 );
-fs.mkdirSync(".local/ocr", { recursive: true });
-fs.mkdirSync("public/ocr", { recursive: true });
-for (const lang of ["eng", "chi_sim"]) {
-  const dest = `public/ocr/${lang}.traineddata.gz`;
-  if (fs.existsSync(dest)) continue;
-  console.log(`Downloading local OCR language resource: ${lang}`);
-  const r = await fetch(
-    `https://tessdata.projectnaptha.com/4.0.0/${lang}.traineddata.gz`,
-  );
-  if (!r.ok) throw new Error(`OCR resource download failed: HTTP ${r.status}`);
-  fs.writeFileSync(dest, Buffer.from(await r.arrayBuffer()));
-}
 fs.mkdirSync(".local/fonts", { recursive: true });
 const systemFont = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf";
 if (fs.existsSync(systemFont))
@@ -132,7 +120,7 @@ if (!upstreamsReady)
   throw new Error(
     "Local Auth upstream is not ready; no seed data was changed.",
   );
-const seed = spawnSync("npx", ["tsx", "scripts/local/seed.ts"], {
+const seed = spawnSync("npx", ["tsx", "scripts/local/seed-discovery.ts"], {
   stdio: "inherit",
 });
 if (seed.status) process.exit(seed.status);

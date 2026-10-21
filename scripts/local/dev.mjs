@@ -2,10 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawn, spawnSync } from "node:child_process";
 process.chdir(path.resolve(import.meta.dirname, "../.."));
-if (
-  !fs.existsSync(".env.local") ||
-  !fs.existsSync("public/ocr/eng.traineddata.gz")
-) {
+if (!fs.existsSync(".env.local")) {
   const r = spawnSync("npm", ["run", "local:setup"], { stdio: "inherit" });
   if (r.status) process.exit(r.status);
 } else {
@@ -32,6 +29,11 @@ const bound = spawnSync("node", ["scripts/local/bind-local.mjs"], {
   stdio: "inherit",
 });
 if (bound.status) process.exit(bound.status);
+const migration = spawnSync("npx", ["supabase", "migration", "up", "--local"], {
+  stdio: "inherit",
+});
+if (migration.status) process.exit(migration.status);
+
 fs.mkdirSync(".local", { recursive: true });
 const children = [
   spawn(

@@ -1,3 +1,5 @@
+> Historical delivery record. Active product requirements are superseded by [DISCOVERY_MVP.md](DISCOVERY_MVP.md). Do not reinstate ten-peer/screenshot or traffic-first onboarding.
+
 # 123Charts V1 — local product authority
 
 The user-approved local plan replaces the earlier 88CN product positioning and implementation-agent role restrictions. The repository's existing Git history and adjacent projects are preserved.
