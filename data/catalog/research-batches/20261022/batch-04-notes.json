@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T15:26:30.192344+00:00",
+  "updated_at": "2026-10-22T15:30:30.669781+00:00",
   "assigned": 132,
-  "completed_count": 69,
+  "completed_count": 70,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -75,9 +75,10 @@
     "projects/call-center/evoice-0d22010e.json",
     "projects/call-center/exotel-7fbfe1a1.json",
     "projects/call-center/hoducc-b652208b.json",
-    "projects/call-center/hyperdial-6cbb4b97.json"
+    "projects/call-center/hyperdial-6cbb4b97.json",
+    "projects/call-center/icallify-b203b120.json"
   ],
-  "incomplete_count": 63,
+  "incomplete_count": 62,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -99,7 +100,6 @@
     "projects/live-chat/theliveforce-d65e765e.json",
     "projects/call-center/ameyo-engage-9ab35131.json",
     "projects/call-center/calltools-0d43ce02.json",
-    "projects/call-center/icallify-b203b120.json",
     "projects/call-center/intalk-io-5f112943.json",
     "projects/call-center/knowlarity-0c719323.json",
     "projects/call-center/krispcall-358c5c55.json",
@@ -1113,6 +1113,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch69 completed,63 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch70 completed,62 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1402,8 +1412,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "df6c0e5",
       "completed": ["projects/call-center/hyperdial-6cbb4b97.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/icallify-b203b120.json"],
       "status": "ready_to_commit"
     }
   ],
