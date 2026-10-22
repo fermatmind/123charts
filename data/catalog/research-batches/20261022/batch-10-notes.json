@@ -1,6 +1,6 @@
 {
   "batch_id": "batch-10",
-  "updated_at": "2026-10-22T15:01:33.145013+00:00",
+  "updated_at": "2026-10-22T15:16:10.710862+00:00",
   "assignment_authority": "/Users/rainie/Desktop/123charts.com/123charts-catalog-1000/data/catalog/research-batches/20261022/assignments-v2.json",
   "baseline_commit": "244559f47bb30bf49878753150c4b10e8c260586",
   "assigned_count": 41,
@@ -52,10 +52,11 @@
     "overlapping_in_progress_paths": [],
     "ack_file": "/Users/rainie/Desktop/123charts.com/123charts-research-05/.scratch/handoff-to-batch-10-ack.json"
   },
-  "completed_count": 24,
+  "completed_count": 37,
   "completed_paths": [
     "projects/ux-design/userbob-747c9119.json",
     "projects/ux-design/userlytics-06e7f8eb.json",
+    "projects/ux-design/userology-0686a6e1.json",
     "projects/ux-design/usertesting-d9cb6ac8.json",
     "projects/ux-design/uxarmy-2d536cee.json",
     "projects/ux-design/uxpin-7db8e0b0.json",
@@ -74,19 +75,27 @@
     "projects/learning-management/moodle-a10ee3b4.json",
     "projects/learning-management/sakai-705a5c3c.json",
     "projects/learning-management/scholarlms-d5b57bd8.json",
+    "projects/learning-management/schoology-eb80cd47.json",
     "projects/learning-management/talentlms-1772428f.json",
     "projects/learning-management/teachable-6259f440.json",
     "projects/learning-management/thinking-cap-lms-43d6a756.json",
-    "projects/learning-management/tovuti-00043212.json"
+    "projects/learning-management/tovuti-00043212.json",
+    "projects/ai-meetings/askverdict-ai-5052d84d.json",
+    "projects/ai-meetings/fellow-67bacdc4.json",
+    "projects/ai-meetings/fireflies-ai-e44a5261.json",
+    "projects/ai-meetings/flowspark-c9d9f0aa.json",
+    "projects/ai-meetings/granola-5f3c7d11.json",
+    "projects/ai-meetings/imind-c0e34109.json",
+    "projects/mind-mapping/conceptviz-840d0ebb.json",
+    "projects/mind-mapping/mind-map-maker-for-excel-eb430b76.json",
+    "projects/mind-mapping/mindomo-2b826d41.json",
+    "projects/mind-mapping/simplemind-6d9793d2.json",
+    "projects/mind-mapping/xmind-a367a3a4.json"
   ],
   "blocked": [
     {
       "path": "projects/ux-design/userexperior-438cef80.json",
       "reason": "Official domain redirected to unrelated gambling content at advocate-ie.com; identity and current product sources unresolved. No current claims adopted."
-    },
-    {
-      "path": "projects/ux-design/userology-0686a6e1.json",
-      "reason": "Product pages read; pricing returns only navigation/footer, no usable terms. Current pricing and core feature restrictions unresolved."
     },
     {
       "path": "projects/ux-design/userzoom-2b8e3317.json",
@@ -101,27 +110,28 @@
       "reason": "Official homepage returned HTTP 403. No bypass or retry; primary sources unavailable."
     }
   ],
-  "remaining_paths": [
-    "projects/learning-management/schoology-eb80cd47.json",
-    "projects/ai-meetings/askverdict-ai-5052d84d.json",
-    "projects/ai-meetings/fellow-67bacdc4.json",
-    "projects/ai-meetings/fireflies-ai-e44a5261.json",
-    "projects/ai-meetings/flowspark-c9d9f0aa.json",
-    "projects/ai-meetings/granola-5f3c7d11.json",
-    "projects/ai-meetings/imind-c0e34109.json",
-    "projects/mind-mapping/conceptviz-840d0ebb.json",
-    "projects/mind-mapping/mind-map-maker-for-excel-eb430b76.json",
-    "projects/mind-mapping/mindomo-2b826d41.json",
-    "projects/mind-mapping/simplemind-6d9793d2.json",
-    "projects/mind-mapping/xmind-a367a3a4.json"
-  ],
+  "remaining_paths": [],
   "evidence_directory": "/Users/rainie/Desktop/123charts.com/123charts-research-10/.scratch/deep-research",
   "inherited_completed_not_counted": 114,
   "validations": {
-    "baseline": "7 Python unit tests passed; records-only validator passed: 117 researched baseline records.",
-    "current": "See commit validation notes; structure validation is not content acceptance."
+    "baseline": "7 Python tests passed; unchanged records-only validator passed at 117 researched records.",
+    "first_commit_5729517": "7 Python tests passed; records-only validator passed at 124 researched records; changed JSON Prettier and git diff --check passed.",
+    "second_commit_653533d": "7 Python tests passed; records-only validator passed at 141 researched records; changed JSON Prettier and git diff --check passed.",
+    "final_python": "python3 -m unittest discover -s scripts/catalog -p test_*.py: 7 tests passed.",
+    "final_repository_validator": "node scripts/catalog/validate.mjs --records-only fails at scripts/catalog/validate.mjs:166: powerschool.com !== schoology.com. This is a new, documented authentic-source cross-domain incompatibility, not a baseline failure. Other real cross-domain cases are Granola and iMind. Shared validator untouched.",
+    "final_owned_record_diagnostic": {
+      "assigned": 41,
+      "researched": 37,
+      "incomplete": 4,
+      "official_source_text_hashes_verified": 84,
+      "result": "Passed source-reference existence, draft/AI/no-review/no-test flags, bilingual section presence, official evidence URL/status/date/title/hash and 41-path ownership. This diagnostic does not replace repository validation or prove factual/editorial acceptance.",
+      "evidence_file": "/Users/rainie/Desktop/123charts.com/123charts-research-10/.scratch/owned-validation.json"
+    },
+    "format": "Prettier applied to all 41 owned JSON plus notes; git diff --check passed.",
+    "scope": "42 changed paths versus baseline: 41 assigned project JSON plus own notes; no shared index/README/category/validator/application changes."
   },
   "commits": [
+    "653533d1cc09454459aad492d75af589b92bdc8b data: research seventeen learning platforms with licensing and pricing conditions",
     "57295177345d4776196cc35cfdde2063da0d246c data: research seven UX products with billing and evidence boundaries"
   ],
   "deployment": "Not requested; branch-only research delivery, no PR/main/site/database mutations.",
@@ -129,5 +139,106 @@
     "author": "Codex AI",
     "independent_review": false,
     "hands_on_test": false
-  }
+  },
+  "batch_status": "all_41_investigated_37_researched_4_incomplete",
+  "counts_by_category": {
+    "ux-design": {
+      "assigned": 10,
+      "researched": 8,
+      "incomplete": 2
+    },
+    "learning-management": {
+      "assigned": 18,
+      "researched": 18,
+      "incomplete": 0
+    },
+    "ai-meetings": {
+      "assigned": 7,
+      "researched": 6,
+      "incomplete": 1
+    },
+    "mind-mapping": {
+      "assigned": 6,
+      "researched": 5,
+      "incomplete": 1
+    }
+  },
+  "cross_domain_source_exceptions": [
+    {
+      "path": "projects/learning-management/schoology-eb80cd47.json",
+      "source_id": "product",
+      "url": "https://www.powerschool.com/products/classroom/learning-management/",
+      "legacy_domain": "schoology.com",
+      "current_official_domain": "powerschool.com"
+    },
+    {
+      "path": "projects/learning-management/schoology-eb80cd47.json",
+      "source_id": "pricing",
+      "url": "https://www.powerschool.com/contact/",
+      "legacy_domain": "schoology.com",
+      "current_official_domain": "powerschool.com"
+    },
+    {
+      "path": "projects/ai-meetings/granola-5f3c7d11.json",
+      "source_id": "product",
+      "url": "https://www.granola.ai/",
+      "legacy_domain": "granola.so",
+      "current_official_domain": "granola.ai"
+    },
+    {
+      "path": "projects/ai-meetings/granola-5f3c7d11.json",
+      "source_id": "pricing",
+      "url": "https://www.granola.ai/pricing",
+      "legacy_domain": "granola.so",
+      "current_official_domain": "granola.ai"
+    },
+    {
+      "path": "projects/ai-meetings/imind-c0e34109.json",
+      "source_id": "product",
+      "url": "https://intermind.com/",
+      "legacy_domain": "imind.com",
+      "current_official_domain": "intermind.com"
+    },
+    {
+      "path": "projects/ai-meetings/imind-c0e34109.json",
+      "source_id": "guide",
+      "url": "https://intermind.com/features/meetings",
+      "legacy_domain": "imind.com",
+      "current_official_domain": "intermind.com"
+    },
+    {
+      "path": "projects/ai-meetings/imind-c0e34109.json",
+      "source_id": "pricing",
+      "url": "https://intermind.com/pricing",
+      "legacy_domain": "imind.com",
+      "current_official_domain": "intermind.com"
+    }
+  ],
+  "cross_domain_ownership_basis": {
+    "schoology": "Current PowerSchool product page explicitly names PowerSchool Learning Management (Schoology); old schoology.com yields no readable text.",
+    "granola": "HTTP redirect from www.granola.so to www.granola.ai recorded in product.json evidence.",
+    "imind": "HTTP redirect from imind.com to intermind.com recorded in product.json evidence; service/account continuity not independently established."
+  },
+  "resolved_initial_gap": {
+    "project": "projects/ux-design/userology-0686a6e1.json",
+    "resolution": "Outer pricing page embeds the public pricing.userology.co iframe. Read actual iframe and retained $20/session plus undisclosed one-time access fee. No hidden API or bypass used."
+  },
+  "known_content_conflicts": [
+    "Userlytics public session/subscription figures disagree.",
+    "UXArmy some unrecorded-method credit rates do not reconcile with response counts.",
+    "AlphaLearn enrolled-learner annual and active-user monthly descriptions need contract clarification.",
+    "ClassTrack annual headline conflicts with monthly cards; currency unresolved.",
+    "Edly static calculator shows two zero-learner amounts.",
+    "ScholarLMS Advanced course caps differ between card and table.",
+    "AskVerdict BYOK rates and Enterprise availability conflict.",
+    "Fireflies Free transcription and storage units conflict across official pages.",
+    "JoomLMS GPL statement and instance/term restrictions require clarification.",
+    "Userology undisclosed one-time platform access fee prevents full first-purchase total."
+  ],
+  "coordinator_follow_up": [
+    "Resolve shared validator official-source domain lineage handling for Schoology, Granola and iMind without changing authentic source URLs.",
+    "Review legacy category fit for AskVerdict AI (decision support), FlowSpark (broad platform with meeting subtool) and ConceptViz (general visual generation).",
+    "Do not count four explicitly incomplete records as primary-source researched.",
+    "Independent review, hands-on tests and publication remain unperformed and unauthorized in this research branch."
+  ]
 }
