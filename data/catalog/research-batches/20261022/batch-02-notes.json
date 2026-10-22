@@ -2,14 +2,14 @@
   "batch_id": "batch-02",
   "branch": "data/catalog-deep-batch-02",
   "assigned_count": 196,
-  "completed_count": 1,
-  "remaining_count": 195,
+  "completed_count": 3,
+  "remaining_count": 193,
   "completed_project_paths": [
-    "projects/project-management/adobe-workfront-fc4d9f64.json"
+    "projects/project-management/adobe-workfront-fc4d9f64.json",
+    "projects/project-management/aha-3a86a6eb.json",
+    "projects/project-management/asana-6cdd16e9.json"
   ],
   "remaining_project_paths": [
-    "projects/project-management/aha-3a86a6eb.json",
-    "projects/project-management/asana-6cdd16e9.json",
     "projects/project-management/axosoft-a491b5fd.json",
     "projects/project-management/basecamp-67313466.json",
     "projects/project-management/campr-96e6cd3e.json",
@@ -205,8 +205,8 @@
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
   "status": "in_progress",
-  "updated_at": "2026-10-22T09:59:45.448281+00:00",
-  "last_content_commit": null,
+  "updated_at": "2026-10-22T10:06:01.741152+00:00",
+  "last_content_commit": "70c2a73c0cf14b68e1f3ad308dfc84c34fc8fdcc",
   "checkpoints": [
     {
       "projects": ["projects/project-management/adobe-workfront-fc4d9f64.json"],
@@ -218,6 +218,22 @@
       },
       "notes": [
         "Adobe official landing page used directly. Original slug retained; adobe.com identity has no duplicate in baseline per coordinator. Old workfront.com was not accepted as successful migration evidence."
+      ]
+    },
+    {
+      "projects": [
+        "projects/project-management/aha-3a86a6eb.json",
+        "projects/project-management/asana-6cdd16e9.json"
+      ],
+      "validations": {
+        "python_catalog_tests": "7 passed earlier; no code changes",
+        "records_only": "passed: 1000 records, 6 primary-source researched including 3 baseline",
+        "prettier": "passed",
+        "git_diff_check": "passed"
+      },
+      "notes": [
+        "Aha record scopes Roadmaps separately from suite products. Some linked detailed integrations required login or failed; exact mappings remain unverified.",
+        "Asana current body labels rules as Automations. Personal allows two users; multi-homing permission and separate AI request limits checked."
       ]
     }
   ],
