@@ -10,195 +10,154 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "MySQL is a product in the Database management category. Its directory profile covers Relational Interface, Queries, Performance Analysis, Monitoring, Data Search, Data Replication, Data Migration, Creation (Development).\n\nAdditional listed capabilities include Backup. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $2140.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: move supported records between systems; create additional copies of selected data. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "MySQL 属于数据库管理软件。第三方资料列出的功能包括关系型数据界面、查询、性能分析、监控、数据搜索、数据复制、数据迁移、创建与开发。\n\n资料还列出数据备份。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $2140.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在系统之间迁移受支持的记录；为选定数据创建额外副本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "MySQL is a relational database server with a freely downloadable GPL Community Edition and separate commercial software, support and cloud offerings. The current official site also lists HeatWave, MySQL AI and NDB Cluster products; their capabilities and fees should not be silently attributed to every Community server.\n\nThis profile uses the9.7 reference manual to examine database selection, InnoDB transactions, concurrent updates and logical backups. Its version guide distinguishes9.7 LTS from26.10 Innovation, so the manual scope is explicit rather than a claim that all deployments share one version. No server, SQL, account, backup or upgrade was executed.",
+  "description_zh": "MySQL 是关系数据库服务器，提供可免费下载的 GPL Community Edition，商业软件、支持及云服务另行提供。当前官网还列 HeatWave、MySQL AI、NDB Cluster，不能将这些产品能力及费用自动归于每台 Community 服务器。\n\n本文以9.7参考手册检查数据库选择、InnoDB 事务、并发更新及逻辑备份。版本指南区分9.7 LTS 和26.10 Innovation，因此明确手册范围，不认为所有部署版本相同。本次未执行服务器、SQL、账户、备份或升级。",
   "core_features": [
     {
-      "name_en": "Relational Interface",
-      "name_zh": "关系型数据界面",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Relational SQL server",
+      "name_zh": "关系 SQL 服务器",
+      "explanation_en": "Create/select databases and use a server account with the required privileges.",
+      "explanation_zh": "用具备所需权限的服务器账户创建／选择数据库。",
+      "explanation_scope": "product_specific",
+      "source_ref": "database",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Queries",
-      "name_zh": "查询",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "InnoDB transactions",
+      "name_zh": "InnoDB 事务",
+      "explanation_en": "Group supported changes with explicit commit and rollback semantics.",
+      "explanation_zh": "按明确提交及回滚语义组织受支持变更。",
+      "explanation_scope": "product_specific",
+      "source_ref": "commit",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Performance Analysis",
-      "name_zh": "性能分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Concurrent transaction handling",
+      "name_zh": "并发事务处理",
+      "explanation_en": "Use locks and handle a rolled-back deadlock victim at the application level.",
+      "explanation_zh": "使用锁，并由应用处理因死锁回滚的事务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deadlocks",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Monitoring",
-      "name_zh": "监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Search",
-      "name_zh": "数据搜索",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Replication",
-      "name_zh": "数据复制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Migration",
-      "name_zh": "数据迁移",
-      "explanation_en": "Move supported records between systems.",
-      "explanation_zh": "在系统之间迁移受支持的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Creation (Development)",
-      "name_zh": "创建与开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup",
-      "name_zh": "数据备份",
-      "explanation_en": "Create additional copies of selected data.",
-      "explanation_zh": "为选定数据创建额外副本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Logical backup tooling",
+      "name_zh": "逻辑备份工具",
+      "explanation_en": "Dump definitions/data with consistency conditions tied to engines and concurrent operations.",
+      "explanation_zh": "按引擎及并发操作的条件导出定义／数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Move supported records between systems",
-      "Create additional copies of selected data"
+      "Evaluate a multi-statement InnoDB order operation and its retry path",
+      "Review schema migration commit behavior separately from DML",
+      "Rehearse logical backup and restore for the selected storage engines"
     ],
-    "zh": ["在系统之间迁移受支持的记录", "为选定数据创建额外副本"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "评估多语句 InnoDB 订单操作及重试路径",
+      "独立于 DML 审查模式迁移提交行为",
+      "按所选引擎演练逻辑备份及恢复"
+    ],
+    "source_refs": ["commit", "deadlocks", "implicit", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $2140.0.",
-      "zh": "提供免费试用 起价为 $2140.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Backend developers",
+      "Database administrators",
+      "Teams operating relational applications"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose edition/release/OS package and inspect exact database/account privileges.",
+        "zh": "选择版本类别／发布轨道／系统包，检查具体库／账户权限。",
+        "source_refs": ["versions", "database"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test transaction, error and deadlock behavior on disposable data.",
+        "zh": "用可丢弃数据测试事务、错误及死锁行为。",
+        "source_refs": ["commit", "implicit", "deadlocks"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify restore coverage and software/connector licensing before deployment.",
+        "zh": "部署前验证恢复覆盖及软件／连接器许可。",
+        "source_refs": ["backup", "license"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Default autocommit separates statements unless a multi-statement transaction is explicit.",
+        "zh": "默认 autocommit 分开提交语句，多语句需明确事务。",
+        "source_refs": ["commit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "DDL/account changes can implicitly commit and are not generally covered by user rollback.",
+        "zh": "DDL／账户变更可隐式提交，通常不受用户回滚覆盖。",
+        "source_refs": ["implicit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Logical-dump consistency depends on storage engines and concurrent DDL.",
+        "zh": "逻辑导出一致性依赖存储引擎及并发 DDL。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_vendor_license_identification",
+    "is_open_source": true,
+    "name": "GPL (Community Edition)",
+    "scope_en": "Community database distribution; full GPL text, exact connector licenses and paid-product contracts not read.",
+    "scope_zh": "Community 数据库发行版；未读完整 GPL、各连接器许可及付费产品合同。",
+    "url": "https://www.mysql.com/products/community/index.html",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $2140.0.",
-    "source_snapshot_zh": "提供免费试用 起价为 $2140.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "free_community_software_paid_products_separate",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:18:29.997711Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Community freely downloadable underGPL; hosting/operations/support and commercial editions/cloud separate. Paid amount not verified.",
+    "summary_zh": "Community 采用 GPL 可免费下载，托管／运维／支持及商业版本／云另计，付费金额未核。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does MySQL do?",
-      "question_zh": "MySQL 用来做什么？",
-      "answer_en": "MySQL is a product in the Database management category. Its directory profile covers Relational Interface, Queries, Performance Analysis, Monitoring, Data Search, Data Replication, Data Migration, Creation (Development).",
-      "answer_zh": "MySQL 属于数据库管理软件。第三方资料列出的功能包括关系型数据界面、查询、性能分析、监控、数据搜索、数据复制、数据迁移、创建与开发。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Relational Interface, Queries, Performance Analysis, Monitoring, Data Search, Data Replication, Data Migration, Creation (Development), Backup",
-      "answer_zh": "关系型数据界面、查询、性能分析、监控、数据搜索、数据复制、数据迁移、创建与开发、数据备份"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -208,25 +167,237 @@
       "read_at": "2026-10-22T08:47:24.667Z",
       "excerpt_sha256": "6113de7a935995966457ba03670ee41c98a3b4cf4365572e69fd0f7e39236783",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL",
+      "url": "https://www.mysql.com/",
+      "read_at": "2026-10-22T13:18:29.997711Z",
+      "excerpt_sha256": "18dbca256e1fd83dad33b6f827a911191d40b845712c8e072a6dab55cfdff0ef",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ProductfamilyCommunity/Enterprise/HeatWave/AI/Cluster distinctions read; superiorityclaims notbenchmarked."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL Community Edition",
+      "url": "https://www.mysql.com/products/community/index.html",
+      "read_at": "2026-10-22T13:19:52.240261Z",
+      "excerpt_sha256": "eee4396a4eb9a8b876f7e9604e72e9d70eec6f0d38325f73e808ecb98a8c9eca",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ExplicitfreelydownloadableCommunityEdition,notcloudhostingorEnterprisequote."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL Community Edition",
+      "url": "https://www.mysql.com/products/community/index.html",
+      "read_at": "2026-10-22T13:19:52.240261Z",
+      "excerpt_sha256": "eee4396a4eb9a8b876f7e9604e72e9d70eec6f0d38325f73e808ecb98a8c9eca",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Sameactualpage alsoexplicitlyidentifiesGPLCommunitylicense; legitimatepricingandlicenseauthority,separatepurpose notinventedURL. FullGPLtextnotread."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 2.1.2 Which MySQL Version and Distribution to Install",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/which-version.html",
+      "read_at": "2026-10-22T13:31:35.444590Z",
+      "excerpt_sha256": "c70e9be2c04b9a1af858e448c7d53f063a93337bb11bf4f801b04fed7c86a1f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "9.7LTSversus26.10Innovation examples/packageformats read; notclaiming9.7onlycurrentversion."
+    },
+    {
+      "id": "database",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 5.3.1 Creating and Selecting a Database",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/creating-database.html",
+      "read_at": "2026-10-22T13:31:39.716979Z",
+      "excerpt_sha256": "e66d5bd4cde238e77321d1e0843f0e37f245485a4b6fdb689a9f833923b6e8b5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CREATEDATABASEdoesnotUSE, per-sessionselection, privileges/case/passwordCLIrisks read; noSQLexecuted."
+    },
+    {
+      "id": "commit",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 17.7.2.2 autocommit, Commit, and Rollback",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/innodb-autocommit-commit-rollback.html",
+      "read_at": "2026-10-22T13:30:23.516518Z",
+      "excerpt_sha256": "dfc496f1564f4342b8c1202b2594f65a48867e9c18f1188ba36857b4ffa5ddd7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Defaultpernewconnectionautocommit,explicitmulti-statementSTART/COMMIT/ROLLBACK,errordependentrollback read."
+    },
+    {
+      "id": "implicit",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 15.3.3 Statements That Cause an Implicit Commit",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/implicit-commit.html",
+      "read_at": "2026-10-22T13:31:43.253756Z",
+      "excerpt_sha256": "973e717060090826340c92e9f895316d65c02e1c86d8093e3fa24720d82a7fe1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "DDL/accountstatementsimplicitcommit,temporarycreationnocommitbutnonrollbackable,nonnestedtransactions read."
+    },
+    {
+      "id": "deadlocks",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 17.7.5 Deadlocks in InnoDB",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/innodb-deadlocks.html",
+      "read_at": "2026-10-22T13:28:48.673336Z",
+      "excerpt_sha256": "6c8488219aeea2f45536e45ed1eb1f0b2dcb762d1794ca8fa92c440d5e3ac173",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Oppositelockordering,indexranges/defaultvictimrollback/retry,lastdeadlocklog read."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "MySQL",
+      "title": "MySQL :: MySQL 9.7 Reference Manual :: 6.5.4 mysqldump — A Database Backup Program",
+      "url": "https://dev.mysql.com/doc/refman/9.7/en/mysqldump.html",
+      "read_at": "2026-10-22T13:30:27.215506Z",
+      "excerpt_sha256": "058decc52f3c2a41ba09cb6b7d2d47470d7922e04a32bafd330bdd71fbecc509",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualmysqldumporiginalsectionsreadviafind; logicalbackupnotlargescalefast,privileges,singletransactionInnoDBonly/noDDLduringdump/lockoptionconflict read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:31:43.253756Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "versions", "commit"],
+  "profile": {
+    "sections": [
+      {
+        "id": "edition",
+        "title_en": "Select an edition and release track first",
+        "title_zh": "先选择版本类别及发布轨道",
+        "en": "Community is a software distribution, while Enterprise and hosted products have separate entitlements and operating costs. The installation guide describes LTS and Innovation tracks, using9.7 and26.10 as examples, and recommends choosing an OS-appropriate binary package for most uses. Record the server version, storage engines, connector requirements and upgrade path before evaluating a workload. A familiar MySQL name does not establish that an extension or administration tool is included.",
+        "zh": "Community 是软件发行版，Enterprise 及托管产品另有权益及运行费用。安装指南说明 LTS／Innovation 轨道，以9.7／26.10为例，多数场景选择适合系统的二进制包。评估负载前应记录服务器版本、存储引擎、连接器需求及升级路线。熟悉的 MySQL 名称不证明包含某扩展或管理工具。",
+        "source_refs": ["home", "versions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "connect",
+        "title_en": "Creating a database does not select it",
+        "title_zh": "创建数据库不等于选择数据库",
+        "en": "The tutorial requires CREATE DATABASE privileges and then a separate USE or connection-time database selection. Confirm the selected database for every session and use consistent name casing across environments. Its instructions also warn against putting a password on the command line. A proposed orders test should verify host, account and current database before creating disposable tables, and distinguish connection authentication from permission to create or modify objects. No account or schema was created.",
+        "zh": "教程要求 CREATE DATABASE 权限，之后另用 USE 或连接时指定数据库。每个会话都需确认所选库，跨环境名称大小写保持一致；文档也警告不要将密码放在命令行。建议订单测试在建可丢弃表前确认主机、账户及当前库，区分连接认证与创建／修改对象权限，本次未建账户或模式。",
+        "source_refs": ["database"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "transaction",
+        "title_en": "A two-statement business action needs a transaction boundary",
+        "title_zh": "两条语句的业务动作需要事务边界",
+        "en": "New MySQL connections enable autocommit by default: each successful InnoDB statement normally commits independently. For a proposed order header plus line-item write, use an explicit START TRANSACTION and commit only after both succeed, with application error handling. Disabling autocommit leaves a transaction open until ended; commit/rollback releases its InnoDB locks. Do not assume every error rolls back the entire business operation, or that a pooled connection retained the settings expected by the next borrower.",
+        "zh": "新连接默认启用 autocommit，每条成功 InnoDB 语句通常独立提交。建议订单头及明细写入明确 START TRANSACTION，两者成功才提交，并由应用处理错误。关闭 autocommit 会保持事务直到结束；提交／回滚释放 InnoDB 锁。不能推定每种错误都回滚整个业务动作，也不能假定连接池下一使用者得到预期设置。",
+        "source_refs": ["commit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ddl",
+        "title_en": "DDL is not generally undone by a surrounding rollback",
+        "title_zh": "外层回滚通常不能撤销 DDL",
+        "en": "The implicit-commit guide lists many schema and account-management statements that commit an active transaction. CREATE/DROP TEMPORARY TABLE are special: they avoid that commit, yet the table operation itself is still not rolled back. Starting another transaction also does not create a nested one. Review migration semantics separately from business-data transactions and keep schema changes out of a proposed rollback demonstration unless their behavior is explicitly understood. Atomic DDL is not a blanket user-level undo promise.",
+        "zh": "隐式提交指南列出许多模式及账户管理语句会提交当前事务。CREATE／DROP TEMPORARY TABLE 是特例：不触发该提交，但表操作本身仍不能回滚；再次开始事务也不是嵌套事务。迁移语义需与业务数据事务分开审查，未明确理解时不将模式修改放进回滚演示。Atomic DDL 不等于用户可撤销全部操作。",
+        "source_refs": ["implicit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "concurrency",
+        "title_en": "Deadlock recovery belongs in normal application behavior",
+        "title_zh": "死锁恢复属于正常应用行为",
+        "en": "Opposite lock order and overlapping index ranges can deadlock even correct application logic. With default detection, InnoDB rolls back a victim transaction, so the app must handle retry. Keep transactions short, access shared objects in a consistent order and inspect the last deadlock or configured error logs when failures recur. A proposed stock decrement test should verify that retries preserve the business invariant and do not duplicate external effects; no contention or retry benchmark was run.",
+        "zh": "锁顺序相反或索引范围重叠可让逻辑正确的应用死锁。默认检测下 InnoDB 回滚其中一个事务，应用需处理重试。应缩短事务、按一致顺序访问共享对象，反复失败时查最后死锁及配置后的错误日志。建议库存扣减测试验证重试保持业务不变量且不重复外部副作用，本次未运行竞争或重试基准。",
+        "source_refs": ["deadlocks"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backup",
+        "title_en": "A successful dump file still needs a restore test",
+        "title_zh": "成功生成导出文件仍需测试恢复",
+        "en": "mysqldump produces logical definitions and data, and its guide says it is not intended as a fast, scalable backup for substantial datasets. The single-transaction option provides a consistent view for InnoDB, not concurrently changing MyISAM/MEMORY tables. Concurrent ALTER/CREATE/DROP/RENAME/TRUNCATE can invalidate or fail that dump. Check required privileges, engine mix and object coverage, restore into a separate environment and verify application results. A file’s existence does not establish recovery time or restoration of external side effects.",
+        "zh": "mysqldump 生成逻辑定义及数据，指南说明它不适合大型数据的快速可扩展备份。single-transaction 对 InnoDB 提供一致视图，不覆盖同时变化的 MyISAM／MEMORY；并发 ALTER／CREATE／DROP／RENAME／TRUNCATE 可使导出无效或失败。需检查权限、引擎组合及对象覆盖，在独立环境恢复并核对应用。文件存在不证明恢复时间或外部副作用恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "A free download does not include hosting or every commercial feature",
+        "title_zh": "免费下载不含托管及全部商业功能",
+        "en": "The official Community page explicitly offers a free download under GPL. That identifies the Community distribution’s license and software-fee model, not a managed hosting allowance, support contract or universal right to redistribute a proprietary combined product. Inspect the exact server/connector license and distribution obligations for the intended use. Paid Enterprise/HeatWave/AI amounts and contracts were not verified here, so no family-wide monthly price is normalized.",
+        "zh": "官方 Community 页明确提供 GPL 免费下载，这识别 Community 发行版的许可及软件费用，不提供托管额度、支持合同或任意分发闭源组合产品的权利。应按用途检查具体服务器／连接器许可及分发义务。付费 Enterprise／HeatWave／AI 金额及合同未核，因此不归一化家族统一月价。",
+        "source_refs": ["pricing", "license", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "MySQL: InnoDB transactions, implicit commits and logical backups",
+    "title_zh": "MySQL：InnoDB 事务、隐式提交及逻辑备份",
+    "description_en": "Review edition/release choices, per-session database selection, deadlock retries and dump consistency conditions.",
+    "description_zh": "了解版本／发布选择、会话数据库选择、死锁重试及导出一致性条件。",
+    "search_intent_en": "Evaluate MySQL transaction and recovery behavior.",
+    "search_intent_zh": "评估 MySQL 事务及恢复行为。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No server, SQL, account, transaction, deadlock, backup, restore or upgrade was executed.",
+      "zh": "未执行服务器、SQL、账户、事务、死锁、备份、恢复或升级。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "This profile uses9.7 documentation; selected26.10/otherrelease, storage-engine, extension, replication and connector behavior require separate verification.",
+      "zh": "本文使用9.7文档，所选26.10／其他版本、存储引擎、扩展、复制及连接行为需另核。",
+      "source_refs": ["versions"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "FullGPL/connector/license obligations, commercial prices, HA/recovery objectives, security and UI languages not independently verified.",
+      "zh": "完整 GPL／连接器／许可义务、商业价格、高可用／恢复目标、安全及界面语言未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
