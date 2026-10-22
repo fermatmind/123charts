@@ -16,6 +16,8 @@
 
 `research_status: primary_source_researched` 表示已实读主要官方资料并逐篇编写，不表示独立审稿通过或实际使用测评。`official_check: documentation_reviewed` 只表示文档核对。所有项目仍为 `draft`。没有给未知的定价、许可证、地区、界面语言或替代关系补造答案。
 
+官网跨域迁移保留原 `website_url` / `identity_domain` 和真实来源 URL，通过项目内 `official_domain_migrations` 记录 `from_domain`、`to_domain`、观察时间、双语说明及 `evidence_source_refs`。至少一条已读官方证据必须同时保存旧域 `requested_url` 与新域最终 `url`；相关产品延续证据也需引用。校验只接受该记录中明确列出的目标注册域，不接受缺失证据、未知引用或第三方目录作为迁移依据。声明及哈希是可复核的研究记录，不表示系统已独立验证所有权或授予公开资格。 文档实读与价格核实独立：`price_type: unknown` 可保留 `status: not_verified`、`officially_checked: false`，不因正文已研究而推定价格已核实。无法取得可靠资料的候选在 `community_follow_up` 记录具体缺口与已尝试地址；单独的 `lifecycle_correction` 可保存官方生命周期证据，不计为完整深研。
+
 每篇的 `description_en/zh` 是产品概述；**完整长文在同一 JSON 的 `profile.sections`**，按问题组织英文及对应中文正文。`source_refs` 连接到同文件的 `sources`，每项含实际 URL、读取时间、读取片段摘要哈希及原创研究笔记。`evidence_type` 区分文档事实、建议、假设算例；`research_gaps` 明列未核项。旧的竞品来源只作为发现记录保留，已被官方正文替代。没有另建一份正文权威。
 
 本轮具体修正：Zapier 旧稿的“无试用”与官网当前试用说明冲突；原先的通用“API 管理、版本控制”标签不足以描述实际 Zap 工作流。n8n 不能笼统写成仅浏览器云服务，也不能把 fair-code 误当宽松开源；Make 不能把成功状态当作所有输入都处理成功。这些问题需要逐项实读，无法靠扩写模板修复。

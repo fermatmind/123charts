@@ -3,7 +3,7 @@
   "batch_id": "batch-09",
   "branch": "data/catalog-deep-batch-09",
   "baseline": "bd42969277b018e67c2acff09376a79745904e69",
-  "updated_at": "2026-10-22T15:48:35.105278+00:00",
+  "updated_at": "2026-10-22T16:11:38.131561+00:00",
   "assigned": 72,
   "assigned_project_paths": [
     "projects/contracts/contract-insight-f736ebe9.json",
@@ -85,7 +85,7 @@
     "overlapping_in_progress_paths": [],
     "ack": "/Users/rainie/Desktop/123charts.com/123charts-research-04/.scratch/handoff-to-batch-09-ack.json"
   },
-  "completed_count": 59,
+  "completed_count": 62,
   "completed_projects": [
     "projects/contracts/contract-insight-f736ebe9.json",
     "projects/contracts/contract-logix-c22d6003.json",
@@ -115,7 +115,9 @@
     "projects/ecommerce/fastspring-d3af5387.json",
     "projects/ecommerce/futurism-dimensions-638eba08.json",
     "projects/ecommerce/iseller-4089db24.json",
+    "projects/ecommerce/miva-2a6ef79e.json",
     "projects/ecommerce/paypro-global-b25f38f5.json",
+    "projects/ecommerce/pinnaclecart-86c3b3e0.json",
     "projects/ecommerce/quick-eselling-a04e0f9c.json",
     "projects/ecommerce/saleor-ec30a51c.json",
     "projects/ecommerce/sellbrite-b5b28bbd.json",
@@ -134,6 +136,7 @@
     "projects/inventory/dear-inventory-287c6092.json",
     "projects/inventory/easyecom-41eec0e7.json",
     "projects/inventory/eazystock-32e79a8b.json",
+    "projects/inventory/ecomdash-5f4e5812.json",
     "projects/inventory/eturns-a7209989.json",
     "projects/inventory/ezatlas-5d7d7c74.json",
     "projects/inventory/finale-inventory-41bc4764.json",
@@ -153,11 +156,8 @@
     "projects/contracts/revnue-db35b5c9.json",
     "projects/ecommerce/1shoppingcart-ace179e5.json",
     "projects/ecommerce/elliot-c638bd67.json",
-    "projects/ecommerce/miva-2a6ef79e.json",
-    "projects/ecommerce/pinnaclecart-86c3b3e0.json",
     "projects/ecommerce/purchase-commerce-87fc1c52.json",
     "projects/ecommerce/sellbery-39301e04.json",
-    "projects/inventory/ecomdash-5f4e5812.json",
     "projects/inventory/inventory365-befc7735.json",
     "projects/inventory/o4s-f830b452.json",
     "projects/inventory/orderhive-b134913d.json"
@@ -166,75 +166,147 @@
     {
       "path": "projects/contracts/legitt-ai-93e548f7.json",
       "reason": "Official homepage returned HTTP 403; not retried or bypassed; remains structured_candidate pending accessible essential official evidence.",
-      "evidence": ".scratch/deep-research/legitt-ai-93e548f7/product.json"
+      "evidence": ".scratch/deep-research/legitt-ai-93e548f7/product.json",
+      "followup_result": "Official discovered pricing and CLM paths also returned 403; stopped without retry, proxy, session or alternate rendering. Search snippets were not used as read primary evidence.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://www.legittai.com/pricing/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:45.351718+00:00",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "excerpt_sha256": null
+        },
+        {
+          "requested_url": "https://legittai.com/legitt-ai/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:45.352216+00:00",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "excerpt_sha256": null
+        }
+      ]
     },
     {
       "path": "projects/contracts/outlaw-462cef08.json",
       "reason": "Official homepage HTTP 522 and public web reader timeout; essential current official product/pricing evidence unavailable.",
       "evidence": ".scratch/deep-research/outlaw-462cef08/product.json",
-      "status": "structured_candidate_unchanged"
+      "status": "structured_candidate_unchanged",
+      "followup_result": "Official help article returned 403 and legal solution page returned 522. No blocked endpoint retry; current product/commercial evidence remains inaccessible.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://help.getoutlaw.com/hc/en-us/articles/17204665803675-What-is-Outlaw",
+          "url": null,
+          "read_at": "2026-10-22T15:51:45.352723+00:00",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "excerpt_sha256": null
+        },
+        {
+          "requested_url": "https://getoutlaw.com/solutions/legal/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:46.722873+00:00",
+          "status": 522,
+          "error": "HTTP Error 522: <none>",
+          "excerpt_sha256": null
+        }
+      ]
     },
     {
       "path": "projects/contracts/revnue-db35b5c9.json",
       "reason": "Official homepage closed connection and public web reader timeout; essential official evidence unavailable.",
       "evidence": ".scratch/deep-research/revnue-db35b5c9/product.json",
-      "status": "structured_candidate_unchanged"
+      "status": "structured_candidate_unchanged",
+      "followup_result": "One new check of the previously closed (not 403/429) official homepage still closed connection. Vendor-branded AWS listing and managed-service search results do not establish a complete current standalone product contract; not substituted.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://revnue.com/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:46.804062+00:00",
+          "status": null,
+          "error": "<urlopen error Remote end closed connection without response>",
+          "excerpt_sha256": null
+        }
+      ]
     },
     {
       "path": "projects/ecommerce/1shoppingcart-ace179e5.json",
-      "reason": "Official homepage HTTP 403; no retry or bypass, essential current official evidence unavailable."
+      "reason": "Official homepage HTTP 403; no retry or bypass, essential current official evidence unavailable.",
+      "followup_result": "Discovery found historical official PDF package tables but no accessible current product/commercial documentation. Blocked homepage not retried; historical package labels cannot establish current service.",
+      "followup_evidence": []
     },
     {
       "path": "projects/ecommerce/elliot-c638bd67.json",
       "reason": "Original official URL redirects to unrelated Bayar77 gaming portal at bayar77idaman.co. No verified continuity with Elliot; identity unresolved, not treated as ecommerce documentation.",
-      "evidence": ".scratch/deep-research/elliot-c638bd67/product.json"
-    },
-    {
-      "path": "projects/ecommerce/miva-2a6ef79e.json",
-      "reason": "Official homepage HTTP 403; not retried.",
-      "evidence": ".scratch/deep-research/miva-2a6ef79e/product.json",
-      "status": "structured_candidate_unchanged"
-    },
-    {
-      "path": "projects/ecommerce/pinnaclecart-86c3b3e0.json",
-      "reason": "Official homepage HTTP 403; not retried.",
-      "evidence": ".scratch/deep-research/pinnaclecart-86c3b3e0/product.json",
-      "status": "structured_candidate_unchanged"
+      "evidence": ".scratch/deep-research/elliot-c638bd67/product.json",
+      "followup_result": "Discovery found historical vendor-issued commerce announcement and conflicting current identities, but no verified official continuity from old commerce product to a current service. Unrelated redirect not followed again.",
+      "followup_evidence": []
     },
     {
       "path": "projects/ecommerce/purchase-commerce-87fc1c52.json",
       "reason": "Official URL serves unrelated KOITOTO gambling material; product identity not established. No gambling links followed.",
       "evidence": ".scratch/deep-research/purchase-commerce-87fc1c52/product.json",
-      "status": "structured_candidate_unchanged"
+      "status": "structured_candidate_unchanged",
+      "followup_result": "Discovery found an old official-domain brochure address only. The domain previously served unrelated gambling content; no current software identity/availability evidence established and no gambling links followed.",
+      "followup_evidence": []
     },
     {
       "path": "projects/ecommerce/sellbery-39301e04.json",
       "reason": "Current homepage identifies an editorial/insights publisher while legacy SaaS product/pricing pages persist; help endpoint TLS EOF. Current software availability/identity unresolved, original candidate unchanged.",
-      "evidence": ".scratch/deep-research/sellbery-39301e04/"
-    },
-    {
-      "path": "projects/inventory/ecomdash-5f4e5812.json",
-      "reason": "Official site redirects to app login and states transition to Network Solutions; support archive exists but current new-customer inventory product/pricing scope cannot be established. Do not substitute unrelated Network Solutions builder pricing.",
-      "evidence": ".scratch/deep-research/ecomdash-5f4e5812/product.json; support.json",
-      "status": "structured_candidate_unchanged"
+      "evidence": ".scratch/deep-research/sellbery-39301e04/",
+      "followup_result": "Actually read official editorial policy dated January 2026, which explicitly calls Sellbery an independent insights publisher. Legacy software navigation/pricing persists; no explicit software availability/retirement statement established.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://sellbery.com/legal-docs/editorial-policy/",
+          "url": "https://sellbery.com/legal-docs/editorial-policy/",
+          "read_at": "2026-10-22T15:51:51.861644+00:00",
+          "status": 200,
+          "error": null,
+          "excerpt_sha256": "f29df812a8d46f1fecfa9ddd7ceb40367dcd7ba81ca4d471554fd107bea7e592"
+        }
+      ]
     },
     {
       "path": "projects/inventory/inventory365-befc7735.json",
       "reason": "Official homepage returned HTTP 403; no retry or bypass; essential product evidence unavailable.",
       "evidence": ".scratch/deep-research/inventory365-befc7735/product.json",
-      "status": "structured_candidate_unchanged"
+      "status": "structured_candidate_unchanged",
+      "followup_result": "Official discovered pricing and features paths also returned 403; no retry or bypass. Search snippets were not promoted to actual official-page research.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://inventory365.co/pricing/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:50.333317+00:00",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "excerpt_sha256": null
+        },
+        {
+          "requested_url": "https://inventory365.co/features/",
+          "url": null,
+          "read_at": "2026-10-22T15:51:50.444052+00:00",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "excerpt_sha256": null
+        }
+      ]
     },
     {
       "path": "projects/inventory/o4s-f830b452.json",
       "reason": "Original official domain now serves unrelated adult AI-chat comparison content. No links followed and no identity continuity inferred.",
       "evidence": ".scratch/deep-research/o4s-f830b452/product.json",
-      "status": "structured_candidate_unchanged"
-    },
-    {
-      "path": "projects/inventory/orderhive-b134913d.json",
-      "reason": "Official site redirects to Cin7. Official comparison explicitly states Cin7 no longer sells Orderhive; historical feature table cannot establish current software availability, terms or standalone price. Core/Omni not substituted.",
-      "evidence": ".scratch/deep-research/orderhive-b134913d/comparison.json",
-      "status": "structured_candidate_unchanged"
+      "status": "structured_candidate_unchanged",
+      "followup_result": "Company LinkedIn search discovery points to original4sure.com; that former corporate domain redirects to an archive on lovable.app whose direct response contains only a shell. Archive authority and closure claims remain unresolved; old o4s.io unrelated content not followed.",
+      "followup_evidence": [
+        {
+          "requested_url": "https://original4sure.com/",
+          "url": "https://o4s-archive-chronicle.lovable.app/",
+          "read_at": "2026-10-22T15:55:31.859280+00:00",
+          "status": 200,
+          "error": null,
+          "excerpt_sha256": "682451076f4f06790f79e146700949e7f22b78105f172e75f9954ff5cc43707b"
+        }
+      ]
     }
   ],
   "evidence_directory": "/Users/rainie/Desktop/123charts.com/123charts-research-09/.scratch/deep-research",
@@ -339,6 +411,17 @@
         "handifox-online-7938022d"
       ],
       "quality_boundary": "AI-authored public-documentation drafts; no independent review, account execution or publication acceptance."
+    },
+    {
+      "scope": "Only owned project records, batch-09 notes and explicitly requested validator/helper/tests/documentation changed. Existing completed prose and canonical identities preserved.",
+      "status": "passed",
+      "node_migration_tests": "4 test groups passed, including rejection of absent/nonofficial/unrelated/duplicate/malformed migration evidence.",
+      "python_catalog_tests": "7 passed",
+      "records_only": "Passed 1000 records / 50 categories; 125 researched including inherited records. Shared collection/index not rewritten.",
+      "source_audit": "192 official source URL/hash matches across 62 completed drafts; lifecycle/community evidence checked separately.",
+      "syntax": "node --check passed for validator and source-domain helper.",
+      "formatting": "Prettier on changed JSON/JS/README and git diff --check passed.",
+      "limitations": "Structure and source provenance checks are not independent editorial review, account execution, pricing approval or publication acceptance."
     }
   ],
   "commits": [
@@ -368,7 +451,8 @@
     },
     "b06a6f4",
     "f6d7d45",
-    "5267eef"
+    "5267eef",
+    "540cc4d3bee279d92d4f61350b32f8a66d6325ac"
   ],
   "content_method": {
     "author": "Codex AI",
@@ -379,20 +463,116 @@
   "inherited_completed_count_excluded": 60,
   "deployment": "Not requested for this research-only branch.",
   "attempted_count": 72,
-  "blocked_count": 13,
+  "blocked_count": 9,
   "unattempted_projects": [],
   "counts_by_category": {
     "contracts": {
       "completed": 18,
-      "blocked": 3
+      "lifecycle_correction": 0,
+      "community_follow_up": 3
     },
     "ecommerce": {
-      "completed": 19,
-      "blocked": 6
+      "completed": 21,
+      "lifecycle_correction": 0,
+      "community_follow_up": 4
     },
     "inventory": {
-      "completed": 22,
-      "blocked": 4
+      "completed": 23,
+      "lifecycle_correction": 1,
+      "community_follow_up": 2
     }
-  }
+  },
+  "followup_20261023": {
+    "base_commit": "540cc4d3bee279d92d4f61350b32f8a66d6325ac",
+    "reviewed_blockers": 13,
+    "resolved_documentation_drafts": [
+      "projects/ecommerce/miva-2a6ef79e.json",
+      "projects/ecommerce/pinnaclecart-86c3b3e0.json",
+      "projects/inventory/ecomdash-5f4e5812.json"
+    ],
+    "still_blocked": [
+      "projects/contracts/legitt-ai-93e548f7.json",
+      "projects/contracts/outlaw-462cef08.json",
+      "projects/contracts/revnue-db35b5c9.json",
+      "projects/ecommerce/1shoppingcart-ace179e5.json",
+      "projects/ecommerce/elliot-c638bd67.json",
+      "projects/ecommerce/purchase-commerce-87fc1c52.json",
+      "projects/ecommerce/sellbery-39301e04.json",
+      "projects/inventory/inventory365-befc7735.json",
+      "projects/inventory/o4s-f830b452.json"
+    ],
+    "resolution_boundaries": {
+      "miva": "Read public support documentation including July 2026 MivaPay prerequisites/rates. Base platform subscription remains unknown.",
+      "pinnaclecart": "Read official 3.9.x workflows and archived hosting/source-access docs. Historical $79.95 footer is not current pricing.",
+      "ecomdash": "Existing-service transition and documented workflows researched; new-sale pricing and access unverified. Archived feed guide clearly labeled.",
+      "orderhive": "Official no-longer-sold statement resolves new-sale status; historical feature comparison is not current functionality or Core pricing."
+    },
+    "access_policy": "Only discovered public official pages were fetched with the existing client. No 403/429 URL was retried, no proxy/login/TLS bypass or alternate renderer used; search results not used as read-page evidence.",
+    "migration_fix": {
+      "mechanism": "Per-record evidenced migration with exact registered target domain, official evidence refs and captured original requested_url/final URL; no canonical identity replacement.",
+      "projects": [
+        "contractzen-0272f8be",
+        "buildabazaar-9804917a",
+        "futurism-dimensions-638eba08",
+        "dear-inventory-287c6092",
+        "handifox-online-7938022d"
+      ],
+      "authority_boundary": "Structure validation does not independently establish ownership or publication approval."
+    },
+    "validation": {
+      "status": "passed",
+      "node_migration_tests": "4 test groups passed, including rejection of absent/nonofficial/unrelated/duplicate/malformed migration evidence.",
+      "python_catalog_tests": "7 passed",
+      "records_only": "Passed 1000 records / 50 categories; 125 researched including inherited records. Shared collection/index not rewritten.",
+      "source_audit": "192 official source URL/hash matches across 62 completed drafts; lifecycle/community evidence checked separately.",
+      "syntax": "node --check passed for validator and source-domain helper.",
+      "formatting": "Prettier on changed JSON/JS/README and git diff --check passed.",
+      "scope": "Only owned project records, batch-09 notes and explicitly requested validator/helper/tests/documentation changed. Existing completed prose and canonical identities preserved.",
+      "limitations": "Structure and source provenance checks are not independent editorial review, account execution, pricing approval or publication acceptance."
+    },
+    "deployment": "Not published or deployed; research branch only.",
+    "source_audit": {
+      "completed_drafts": 62,
+      "official_source_snapshots": 192,
+      "hashes_and_real_urls": "passed",
+      "existing_prose": "unchanged",
+      "canonical_identities": "preserved",
+      "incomplete_candidate_research_and_price_states": "preserved for all 10",
+      "community_markers": 10,
+      "lifecycle_evidence_hash": "passed"
+    },
+    "lifecycle_corrections": ["projects/inventory/orderhive-b134913d.json"],
+    "remaining_not_complete": [
+      "projects/contracts/legitt-ai-93e548f7.json",
+      "projects/contracts/outlaw-462cef08.json",
+      "projects/contracts/revnue-db35b5c9.json",
+      "projects/ecommerce/1shoppingcart-ace179e5.json",
+      "projects/ecommerce/elliot-c638bd67.json",
+      "projects/ecommerce/purchase-commerce-87fc1c52.json",
+      "projects/ecommerce/sellbery-39301e04.json",
+      "projects/inventory/inventory365-befc7735.json",
+      "projects/inventory/o4s-f830b452.json",
+      "projects/inventory/orderhive-b134913d.json"
+    ],
+    "community_annotation": "9 unresolved products plus the lifecycle-only Orderhive record have needs_community_input markers. Original candidate research/unknown states retained. No shutdown reason inferred.",
+    "pricing_unknown_correction": "Owned researched records with price_type unknown now have status not_verified and officially_checked false; original prose retained. Validator permits this independently of documentation review.",
+    "cross_domain_handoff": "/Users/rainie/Desktop/123charts.com/123charts-research-09/.scratch/cross-domain-handoff.json",
+    "delivery_scope": "Current human request explicitly authorizes migration validator repair on this research branch. Shared totals/index untouched; no publication."
+  },
+  "lifecycle_correction_count": 1,
+  "lifecycle_correction_projects": [
+    "projects/inventory/orderhive-b134913d.json"
+  ],
+  "community_follow_up_count": 9,
+  "community_follow_up_projects": [
+    "projects/contracts/legitt-ai-93e548f7.json",
+    "projects/contracts/outlaw-462cef08.json",
+    "projects/contracts/revnue-db35b5c9.json",
+    "projects/ecommerce/1shoppingcart-ace179e5.json",
+    "projects/ecommerce/elliot-c638bd67.json",
+    "projects/ecommerce/purchase-commerce-87fc1c52.json",
+    "projects/ecommerce/sellbery-39301e04.json",
+    "projects/inventory/inventory365-befc7735.json",
+    "projects/inventory/o4s-f830b452.json"
+  ]
 }

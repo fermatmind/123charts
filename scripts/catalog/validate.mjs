@@ -3,6 +3,7 @@ import path from "node:path";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { getDomain } from "tldts";
+import { officialSourceDomains } from "./source-domains.mjs";
 
 const root = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -62,6 +63,7 @@ for (const category of taxonomy) {
       `${row.name}: missing actual features`,
     );
     const sourceIds = new Set(row.sources.map((s) => s.id));
+    const sourceDomains = officialSourceDomains(row, officialTypes);
     assert.ok(
       ["structured_candidate", "primary_source_researched"].includes(
         row.research_status,
@@ -99,7 +101,13 @@ for (const category of taxonomy) {
       researchedProjects.push(relative);
       assert.equal(row.official_check.status, "documentation_reviewed");
       assert.ok(Number.isFinite(Date.parse(row.official_check.checked_at)));
-      assert.equal(row.pricing.officially_checked, true);
+      if (row.pricing.officially_checked === false) {
+        // Product documentation can be researched while commercial terms remain unknown.
+        assert.equal(row.pricing.price_type, "unknown");
+        assert.equal(row.pricing.status, "not_verified");
+      } else {
+        assert.equal(row.pricing.officially_checked, true);
+      }
       assert.equal(
         documentedSource(row.pricing.source_ref)?.type,
         "official_pricing",
@@ -163,9 +171,11 @@ for (const category of taxonomy) {
         assert.ok(researched);
         const sourceUrl = new URL(source.url);
         assert.equal(sourceUrl.protocol, "https:");
-        assert.equal(
-          getDomain(sourceUrl.hostname, { allowPrivateDomains: true }),
-          identity,
+        assert.ok(
+          sourceDomains.has(
+            getDomain(sourceUrl.hostname, { allowPrivateDomains: true }),
+          ),
+          `${row.name}: official source domain requires evidenced migration`,
         );
         assert.equal(source.verification, "official_documentation_read");
         assert.ok(source.research_notes_en && source.title);
