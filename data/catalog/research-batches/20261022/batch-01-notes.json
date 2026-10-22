@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T14:24:43.856233+00:00",
+  "updated_at": "2026-10-22T14:34:01.428900+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 77,
+  "completed_count": 80,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -82,9 +82,12 @@
     "projects/software-testing/mabl-862d84c3.json",
     "projects/software-testing/maxim-fc490bdd.json",
     "projects/software-testing/ranorex-2d42ee7a.json",
-    "projects/software-testing/sauce-labs-3c05b615.json"
+    "projects/software-testing/sauce-labs-3c05b615.json",
+    "projects/software-testing/testmu-ai-formerly-lambdatest-a4cc807d.json",
+    "projects/software-testing/testomat-io-6272fe63.json",
+    "projects/software-testing/testsigma-2ad21eef.json"
   ],
-  "remaining_count": 122,
+  "remaining_count": 119,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -111,9 +114,6 @@
     "projects/software-testing/perfecto-8aeabe24.json",
     "projects/software-testing/rainforest-qa-369dc230.json",
     "projects/software-testing/testim-5d3d2647.json",
-    "projects/software-testing/testmu-ai-formerly-lambdatest-a4cc807d.json",
-    "projects/software-testing/testomat-io-6272fe63.json",
-    "projects/software-testing/testsigma-2ad21eef.json",
     "projects/software-testing/zaptest-4360971f.json",
     "projects/no-code/adalo-471bff37.json",
     "projects/no-code/airslate-workflow-5369295c.json",
@@ -449,6 +449,18 @@
     {
       "project": "Sauce Labs",
       "detail": "Assertion result reporting and quit are explicit; data-center availability differs, unlimited minutes not unlimited concurrency, named AI agents enterprise-only."
+    },
+    {
+      "project": "TestMu AI",
+      "detail": "Shared family credits/product allowances, remote HyperExecute upload and narrower tunnel noAI statement kept scoped. Legacy KaneAI duplicate identity candidate unchanged."
+    },
+    {
+      "project": "Testomat.io",
+      "detail": "Automated label not execution, unmatched default versus explicit CREATE/JUnit exceptions, owned S3 artifact access and paid project-seat/per-user wording retained."
+    },
+    {
+      "project": "Testsigma",
+      "detail": "Pending locator versus primary approval/all linked cases, local Agent data flow, plan delete removes history and Upcoming Autonomous pricing distinction retained."
     }
   ],
   "verification": [
@@ -458,7 +470,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/80 global researched (3 baseline +77 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/83 global researched (3 baseline +80 assigned)/0 untranslated labels; structure/references only"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -585,19 +597,24 @@
       "commit": "3f10c24",
       "completed_count": 75,
       "scope": "Katalon, mabl and Maxim detailed research; Opkey/pCloudy gaps; pushed assigned branch"
+    },
+    {
+      "commit": "411b4fd",
+      "completed_count": 77,
+      "scope": "Ranorex and Sauce Labs; Perfecto/Rainforest/Testim actual source/fee gaps; pushed assigned branch"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "TestMu AI, Testomat.io, Testsigma, ZAPTEST",
+    "next": "no-code assigned records",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
-    "software-testing": "8 of19 complete;15 investigated;7 incomplete with actual access/fee/identity/authority gaps"
+    "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps"
   },
   "identity_changes": [
     {
@@ -768,6 +785,10 @@
     {
       "project_path": "projects/software-testing/testim-5d3d2647.json",
       "reason": "Current help.testim.io explicitly redirects to docs.tricentis.com/testim while home/pricing remain on testim.io. Pricing and the actual cross-domain run guide were read; the shared same-domain official-source model cannot encode this authority chain. No false legacy doc URLs or shared validator changes were used; the record remains incomplete."
+    },
+    {
+      "project_path": "projects/software-testing/zaptest-4360971f.json",
+      "reason": "The official zaptest.com homepage explicitly redirects to zaptest.ai, now a Human-AI orchestration/ZADS corporate presentation. The old-domain pricing page was actually read and describes three/six-month POC programs embedded in a twelve-month paid subscription, explicitly not a free trial. Official /docs/ returned403; no retry or bypass. The current deep technical/fee/identity chain cannot be completed from marketing and cross-domain presentation alone. No old Free-edition claim, unlimited capability or current live test result is adopted."
     }
   ],
   "availability_updates": [
@@ -1134,6 +1155,20 @@
       "excerpt_sha256": "5ada0666e4c2d18bcf9ab18f108eac9be38a2573f352511d3602437461ca7bd6",
       "read_at": "2026-10-22T14:18:32.569572+00:00",
       "use": "Actual official original read for incomplete Testim authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "zaptest-entry-0",
+      "actual_url": "https://zaptest.ai/",
+      "excerpt_sha256": "2e1b5bc147390cad8c9ba4af29860d1d136b5c39a88935c12c979973a9fe1519",
+      "read_at": "2026-10-22T14:25:29.876176+00:00",
+      "use": "Actual official original read for incomplete ZAPTEST identity/docs access; no completion or test claim."
+    },
+    {
+      "capture": "zaptest-entry-1",
+      "actual_url": "https://www.zaptest.com/pricing",
+      "excerpt_sha256": "eb4d95522b648f0d26af2b6a87ade4f0919b8365eee1df63071cc193b7846e69",
+      "read_at": "2026-10-22T14:25:29.876332+00:00",
+      "use": "Actual official original read for incomplete ZAPTEST identity/docs access; no completion or test claim."
     }
   ]
 }
