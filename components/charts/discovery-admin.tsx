@@ -149,7 +149,9 @@ function ApplicationReview({ a }: { a: Application }) {
               className="button primary"
               onClick={() => act("approve")}
             >
-              {t("Approve listing", "通过收录")}
+              {a.kind === "update"
+                ? t("Approve profile update", "通过资料更新")
+                : t("Approve listing", "通过收录")}
             </button>
             <button
               disabled={busy}
@@ -307,7 +309,12 @@ function ProfileEditor({ p }: { p: Project }) {
   );
 }
 function Decision({ item, kind }: { item: any; kind: "claim" | "correction" }) {
-  const { api, t } = useCharts();
+  const { api, t, data, busy } = useCharts();
+  const project = [
+    ...data.projects,
+    ...data.managedProjects,
+    ...data.researchQueue,
+  ].find((p) => p.id === item.project_id);
   const [feedback, setFeedback] = useState(""),
     [patch, setPatch] = useState("");
   return (
@@ -317,8 +324,23 @@ function Decision({ item, kind }: { item: any; kind: "claim" | "correction" }) {
           ? t("Management claim", "管理身份认领")
           : t("Free correction", "免费纠错")}
       </h3>
+      <strong>{project?.name || item.project_id}</strong>
+      {project && (
+        <p className="muted">
+          {project.website_url} · {project.demo ? "DEMO" : "REAL"}
+        </p>
+      )}
       <p>{item.evidence || item.message}</p>
       <Status value={item.state} />
+      {item.feedback && <p>{item.feedback}</p>}
+      {item.state === "pending" && (
+        <p className="muted">
+          {t(
+            "Record a specific decision basis (at least 10 characters) to enable the action.",
+            "请填写具体处理依据（至少 10 个字）后再操作。",
+          )}
+        </p>
+      )}
       <textarea
         aria-label={t("Decision basis", "处理依据")}
         value={feedback}
@@ -338,6 +360,9 @@ function Decision({ item, kind }: { item: any; kind: "claim" | "correction" }) {
           (state) => (
             <button
               className="button"
+              disabled={
+                busy || item.state !== "pending" || feedback.trim().length < 10
+              }
               key={state}
               onClick={() => {
                 try {
@@ -352,7 +377,9 @@ function Decision({ item, kind }: { item: any; kind: "claim" | "correction" }) {
             >
               {state === "rejected"
                 ? t("Reject", "否决")
-                : t("Adopt / confirm", "采纳／确认")}
+                : kind === "claim"
+                  ? t("Confirm management identity", "确认管理身份")
+                  : t("Adopt correction", "采纳纠错")}
             </button>
           ),
         )}

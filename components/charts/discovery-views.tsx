@@ -686,6 +686,7 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
     query = useSearchParams();
   const ref = useEvent(p?.id);
   const [message, setMessage] = useState("");
+  const [sent, setSent] = useState<"claim" | "correction" | null>(null);
   const [action, setAction] = useState<"claim" | "correction">(
     query.get("claim") === "1" ? "claim" : "correction",
   );
@@ -901,9 +902,46 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
               try {
                 await api(action, { project_id: p.id, message });
                 setMessage("");
+                setSent(action);
               } catch {}
             }}
           >
+            {sent && (
+              <div className="notice" role="status">
+                <strong>
+                  {sent === "claim"
+                    ? t(
+                        "Claim submitted — awaiting identity review",
+                        "认领申请已提交，等待管理身份审核",
+                      )
+                    : t(
+                        "Correction submitted — awaiting review",
+                        "纠错已提交，等待审核",
+                      )}
+                </strong>
+                <p>
+                  {sent === "claim" &&
+                    t(
+                      "After approval, open your workspace to upload profile details. Your public listing stays online.",
+                      "审核通过后，从工作台进入资料补充。原公开档案继续展示。",
+                    )}
+                </p>
+                <Link className="button" href={href("/dashboard")}>
+                  {t(
+                    "Track this request in your workspace",
+                    "到工作台查看认领与处理状态",
+                  )}
+                </Link>
+              </div>
+            )}
+            {action === "claim" && (
+              <p className="muted">
+                {t(
+                  "Provide a verifiable connection to this project, such as an official-domain email or a public team/profile page. Do not submit passwords or API keys. This step requests management access; project facts are reviewed later.",
+                  "请提供可核验的项目管理关系，如官网域名邮箱、公开团队页或身份关联页面。不要填写密码或 API key。此步仅申请管理权限，项目资料另行审核。",
+                )}
+              </p>
+            )}
             <select
               aria-label={t("Request type", "请求类型")}
               value={action}

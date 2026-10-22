@@ -3091,3 +3091,71 @@ textarea {
     scroll-margin-top: 140px;
   }
 }
+
+/* Owner completion stays usable at phone widths and avoids input zoom. */
+.owner-guide {
+  padding-left: 22px;
+  color: #abb7cd;
+  line-height: 1.8;
+}
+.owner-guide li {
+  margin: 7px 0;
+}
+.owner-import input[type="file"] {
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
+#corrections textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  margin: 12px 0;
+}
+#corrections,
+.review-card {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .owner-assist textarea,
+  .discovery-form input:not([type="checkbox"]),
+  .discovery-form textarea,
+  .discovery-form select,
+  #corrections textarea,
+  #corrections select {
+    font-size: 16px;
+  }
+  .owner-assist summary,
+  .owner-listing-note .button,
+  #corrections .button,
+  .discovery-form .button {
+    min-height: 44px;
+  }
+  .discovery-steps {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .discovery-steps .button {
+    flex-basis: 90px;
+    white-space: normal;
+  }
+  .owner-import label:has(input[type="checkbox"]) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+}
+
+.discovery-form input:not([type="checkbox"]):not([type="file"]),
+#corrections textarea {
+  background: #0f1219;
+  color: #e6eaf2;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  min-height: 42px;
+}
+@media (max-width: 850px) {
+  .work-zone { grid-template-rows: auto 1fr; }
+  .zone-sidebar { align-items: center; }
+}

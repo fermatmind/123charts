@@ -184,12 +184,42 @@ export function DiscoveryDashboard({
           <h2>{t("Claims & free corrections", "认领与免费纠错")}</h2>
           {[...data.claims, ...data.corrections]
             .filter((c) => c.owner_id === data.user?.id)
-            .map((c) => (
-              <p key={c.id}>
-                <Status value={c.state} />{" "}
-                {c.feedback || t("Awaiting review", "等待审核")}
-              </p>
-            ))}
+            .map((c) => {
+              const project = [...data.projects, ...data.managedProjects].find(
+                (p) => p.id === c.project_id,
+              );
+              const claim = data.claims.some((item) => item.id === c.id);
+              return (
+                <div className="review-card" key={c.id}>
+                  <div className="row">
+                    <strong>
+                      {project?.name || c.project_id} ·{" "}
+                      {claim
+                        ? t("Management claim", "管理身份认领")
+                        : t("Free correction", "免费纠错")}
+                    </strong>
+                    <Status value={c.state} />
+                  </div>
+                  <p>
+                    {c.feedback ||
+                      (claim
+                        ? t(
+                            "Waiting for identity review. Profile uploads unlock after approval.",
+                            "等待管理身份审核；通过后即可上传并补充项目资料。",
+                          )
+                        : t("Awaiting review", "等待审核"))}
+                  </p>
+                  {project && (
+                    <Link
+                      className="button"
+                      href={href("/products/" + project.slug)}
+                    >
+                      {t("View public profile", "查看公开档案")}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
         </>
       )}
       <section>

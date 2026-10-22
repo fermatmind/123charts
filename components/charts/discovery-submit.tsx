@@ -99,6 +99,7 @@ export function DiscoverySubmit() {
       return saved;
     }
     const value = current.current;
+    const saveURL = new URL(window.location.href);
     const promise = api<Application>("draft", {
       id: idRef.current,
       draft: value,
@@ -109,6 +110,18 @@ export function DiscoverySubmit() {
       setId(a.id);
       savedJSON.current = JSON.stringify(value);
       setSaved(new Date().toLocaleTimeString());
+      // Keep the saved revision on refresh without discarding in-progress edits.
+      if (
+        window.location.pathname === saveURL.pathname &&
+        window.location.search === saveURL.search
+      ) {
+        saveURL.searchParams.set("id", a.id);
+        window.history.replaceState(
+          null,
+          "",
+          saveURL.pathname + saveURL.search + saveURL.hash,
+        );
+      }
       return a;
     });
     saveLock.current = promise;
@@ -249,7 +262,27 @@ export function DiscoverySubmit() {
   if (submitted || (!editable && existing))
     return (
       <div className="discovery-page">
-        <h1>{t("Your profile preview is ready", "档案预览已准备好")}</h1>
+        <h1>
+          {project
+            ? existing?.status === "approved"
+              ? t("Your profile update is approved", "资料更新已审核通过")
+              : existing?.status === "rejected"
+                ? t("Your profile update was declined", "资料更新未通过审核")
+                : t("Your profile update is in review", "资料更新已提交审核")
+            : t("Your profile preview is ready", "档案预览已准备好")}
+        </h1>
+        {project && (
+          <p className="notice">
+            {t(
+              existing?.status === "approved"
+                ? "Your changes are now on the public profile. Your first listing date stays unchanged."
+                : "The current public profile remains online. Approved changes replace it after review; your first listing date stays unchanged.",
+              existing?.status === "approved"
+                ? "资料已更新至公开档案，首次收录时间保持不变。"
+                : "现有公开资料继续在线；审核通过后才更新公开页面，首次收录时间保持不变。",
+            )}
+          </p>
+        )}
         <h2>{draft.name}</h2>
         <Status value={existing?.status || "submitted"} />
         <p>{locale === "zh" ? draft.description_zh : draft.description_en}</p>
@@ -267,6 +300,11 @@ export function DiscoverySubmit() {
         <Link className="button" href={href("/dashboard")}>
           {t("View status in workspace", "在工作台查看处理状态")}
         </Link>
+        {project && (
+          <Link className="button" href={href("/products/" + project.slug)}>
+            {t("View current public profile", "查看当前公开档案")}
+          </Link>
+        )}
       </div>
     );
   return (
@@ -281,6 +319,14 @@ export function DiscoverySubmit() {
         </h1>
         <p>{brand[locale].freeListing}</p>
       </div>
+      {project && (
+        <p className="notice">
+          {t(
+            "Your management claim is approved. Copy the AI prompt, upload its JSON, check the imported facts and submit for review. No new peer task is required for a profile update.",
+            "管理身份已通过认领。复制 AI 提示词、上传生成的 JSON，核对表单后提交审核。仅更新资料无需重新提交同行任务。",
+          )}
+        </p>
+      )}
       <p className="platform-free-note">{brand[locale].platformFree}</p>
       <p className="submission-benefits">{brand[locale].benefits}</p>
       <p className="muted">
@@ -329,7 +375,9 @@ export function DiscoverySubmit() {
         {[
           t("1 · Website", "1 · 官网"),
           t("2 · Purpose & conditions", "2 · 用途与条件"),
-          t("3 · Related peers", "3 · 相关同行"),
+          project
+            ? t("3 · Peers (optional)", "3 · 同行维护（可选）")
+            : t("3 · Related peers", "3 · 相关同行"),
         ].map((text, i) => (
           <button
             className={"button " + (step === i + 1 ? "primary" : "")}
@@ -340,7 +388,17 @@ export function DiscoverySubmit() {
           </button>
         ))}
       </div>
-      {existing?.feedback && <p className="notice">{existing.feedback}</p>}
+      {existing && (
+        <div className="row">
+          <Status value={existing.status} />
+        </div>
+      )}
+      {existing?.feedback && (
+        <div className="notice" role="status">
+          <strong>{t("Review feedback", "审核反馈")}</strong>
+          <p>{existing.feedback}</p>
+        </div>
+      )}
       {step === 1 && (
         <>
           <label>
@@ -663,7 +721,7 @@ export function DiscoverySubmit() {
               ))}
             </div>
           ))}
-          {draft.peers.length < 3 && (
+          {!project && draft.peers.length < 3 && (
             <details>
               <summary>
                 {t(
@@ -723,7 +781,7 @@ export function DiscoverySubmit() {
             {t("Previous", "上一步")}
           </button>
         )}
-        {step < 3 ? (
+        {step < 3 && !(project && step === 2) ? (
           <button className="button primary" onClick={() => setStep(step + 1)}>
             {t("Continue", "继续")}
           </button>
@@ -741,17 +799,24 @@ export function DiscoverySubmit() {
               } catch {}
             }}
           >
-            {t("Submit for free review", "提交免费审核")}
+            {project
+              ? t("Submit profile update for review", "提交资料更新审核")
+              : t("Submit for free review", "提交免费审核")}
           </button>
         )}
       </div>
       <p className="muted" aria-live="polite">
         {saved
           ? t("Saved at ", "已保存于 ") + saved
-          : t(
-              "Drafts save automatically after edits.",
-              "修改后自动保存草稿。",
-            )}{" "}
+          : existing
+            ? t(
+                "Saved draft restored. Further edits save automatically.",
+                "已恢复保存的草稿；后续修改自动保存。",
+              )
+            : t(
+                "Drafts save automatically after edits.",
+                "修改后自动保存草稿。",
+              )}{" "}
         {id && (
           <Link href={href("/submit?id=" + id)}>
             {t("Resume link", "继续编辑链接")}
