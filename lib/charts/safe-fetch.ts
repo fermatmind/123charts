@@ -1,4 +1,4 @@
-import { lookup } from "node:dns/promises";
+import dns from "node:dns/promises";
 import http from "node:http";
 import https from "node:https";
 import { BlockList, isIP } from "node:net";
@@ -26,6 +26,120 @@ export function publicAddress(ip: string) {
   const x = ip.toLowerCase();
   return /^[23]/.test(x) && !/^(2001:(?:0:|0000:|0?db8:)|2002:)/.test(x);
 }
+type Address = { address: string; family: number };
+function checkedAddresses(addresses: Address[]): Address[] {
+  if (!addresses.length || addresses.some((a) => !publicAddress(a.address)))
+    throw new Error("Private or reserved network destinations are blocked.");
+  return addresses;
+}
+const proxyDNS = new BlockList();
+proxyDNS.addSubnet("198.18.0.0", 15, "ipv4");
+
+// The resolver itself has a fixed public IP and retains hostname/SNI TLS checks.
+// Never connect to the proxy's synthetic benchmark addresses or delegate target
+// resolution to an HTTP proxy: the final website socket stays IP-pinned below.
+async function publicDNS(hostname: string, type: 1 | 28): Promise<Address[]> {
+  const url = new URL("https://dns.google/resolve");
+  url.search = new URLSearchParams({
+    name: hostname,
+    type: String(type),
+    edns_client_subnet: "0.0.0.0/0",
+  }).toString();
+  const answer = await new Promise<any>((resolve, reject) => {
+    const req = https.get(
+      url,
+      {
+        headers: { Accept: "application/dns-json" },
+        lookup: ((_host: unknown, options: any, cb: any) =>
+          options?.all
+            ? cb(null, [{ address: "8.8.8.8", family: 4 }])
+            : cb(null, "8.8.8.8", 4)) as any,
+      },
+      (response) => {
+        // Resolver redirects are never followed, even if they appear public.
+        if (
+          response.statusCode !== 200 ||
+          !response.headers["content-type"]?.includes("json")
+        ) {
+          response.resume();
+          return reject(new Error("Public DNS did not return a JSON answer."));
+        }
+        const chunks: Buffer[] = [];
+        let bytes = 0;
+        response.on("data", (chunk: Buffer) => {
+          bytes += chunk.length;
+          if (bytes > 65536) {
+            const error = new Error("Public DNS response exceeds 64 KB.");
+            reject(error);
+            req.destroy(error);
+          } else chunks.push(chunk);
+        });
+        response.on("error", reject);
+        response.on("aborted", () =>
+          reject(new Error("Public DNS response was interrupted.")),
+        );
+        response.on("end", () => {
+          try {
+            resolve(JSON.parse(Buffer.concat(chunks).toString("utf8")));
+          } catch {
+            reject(new Error("Invalid public DNS response."));
+          }
+        });
+      },
+    );
+    req.setTimeout(8000, () =>
+      req.destroy(new Error("Public DNS lookup timed out.")),
+    );
+    req.on("error", reject);
+  });
+  const question = answer?.Question?.[0];
+  if (
+    answer?.Status !== 0 ||
+    answer.TC ||
+    question?.type !== type ||
+    question?.name?.replace(/\.$/, "").toLowerCase() !==
+      hostname.replace(/\.$/, "").toLowerCase() ||
+    (answer.Answer !== undefined && !Array.isArray(answer.Answer))
+  )
+    throw new Error("Public DNS could not resolve this website.");
+  return (answer.Answer || [])
+    .filter((a: any) => a.type === type)
+    .map((a: any) => {
+      const family = type === 1 ? 4 : 6;
+      if (typeof a.data !== "string" || isIP(a.data) !== family)
+        throw new Error("Invalid public DNS address.");
+      return { address: a.data, family };
+    });
+}
+export async function metadataAddresses(hostname: string): Promise<Address[]> {
+  if (isIP(hostname))
+    return checkedAddresses([{ address: hostname, family: isIP(hostname) }]);
+  let dnsTimer: ReturnType<typeof setTimeout> | undefined;
+  const addresses = await Promise.race([
+    dns.lookup(hostname, { all: true }),
+    new Promise<Address[]>((_, reject) => {
+      dnsTimer = setTimeout(
+        () => reject(new Error("Website DNS lookup timed out.")),
+        8000,
+      );
+    }),
+  ]).finally(() => {
+    if (dnsTimer) clearTimeout(dnsTimer);
+  });
+  // Only the benchmark-only proxy result gets a second resolution. Private,
+  // mixed public/private and mapped IPv6 answers still fail closed immediately.
+  if (
+    addresses.length &&
+    addresses.every((a) => a.family === 4 && proxyDNS.check(a.address, "ipv4"))
+  ) {
+    const resolved = await Promise.all([
+      publicDNS(hostname, 1),
+      publicDNS(hostname, 28),
+    ]);
+    return checkedAddresses(resolved.flat());
+  }
+  return checkedAddresses(addresses);
+}
 export async function safeHtml(
   raw: string,
   redirects = 0,
@@ -40,20 +154,8 @@ export async function safeHtml(
     url.hostname === "localhost"
   )
     throw new Error("Unsupported website URL.");
-  let dnsTimer: ReturnType<typeof setTimeout> | undefined;
-  const addresses = (await Promise.race([
-    lookup(url.hostname, { all: true }),
-    new Promise<Awaited<ReturnType<typeof lookup>>>((_, reject) => {
-      dnsTimer = setTimeout(
-        () => reject(new Error("Website DNS lookup timed out.")),
-        8000,
-      );
-    }),
-  ]).finally(() => {
-    if (dnsTimer) clearTimeout(dnsTimer);
-  })) as { address: string; family: number }[];
-  if (!addresses.length || addresses.some((a) => !publicAddress(a.address)))
-    throw new Error("Private or reserved network destinations are blocked.");
+  const hostname = url.hostname.replace(/^\[|\]$/g, "");
+  const addresses = await metadataAddresses(hostname);
   const address = addresses[0];
   return new Promise((resolve, reject) => {
     const req = (url.protocol === "https:" ? https : http).get(
@@ -99,7 +201,9 @@ export async function safeHtml(
         response.on("data", (chunk) => {
           bytes += chunk.length;
           if (bytes > 524288) {
-            req.destroy(new Error("Website response exceeds 512 KB."));
+            const error = new Error("Website response exceeds 512 KB.");
+            reject(error);
+            req.destroy(error);
           } else chunks.push(chunk);
         });
         response.on("end", () =>
@@ -109,6 +213,9 @@ export async function safeHtml(
           }),
         );
         response.on("error", reject);
+        response.on("aborted", () =>
+          reject(new Error("Website response was interrupted.")),
+        );
       },
     );
     req.setTimeout(8000, () =>
@@ -128,10 +235,14 @@ export function extractMetadata(html: string) {
       .replace(/&#39;/g, "'")
       .replace(/\s+/g, " ")
       .trim();
+  const readable = html.replace(
+    /<!--[\s\S]*?-->|<(script|style|noscript|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,
+    "",
+  );
   const title = clean(
-    html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "",
+    readable.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "",
   ).slice(0, 200);
-  const tags = html.match(/<meta\b[^>]*>/gi) ?? [];
+  const tags = readable.match(/<meta\b[^>]*>/gi) ?? [];
   let description = "";
   for (const tag of tags)
     if (
@@ -144,8 +255,22 @@ export function extractMetadata(html: string) {
       );
       if (description) break;
     }
+  const fromMeta = !!description;
+  if (!description) {
+    // Some sites (including Aider) omit description meta tags. Use only an
+    // actual introductory paragraph after H1; never invent missing content.
+    const intro = readable
+      .split(/<\/h1\s*>/i)[1]
+      ?.split(/<(?:h[1-6]|footer|nav)\b/i)[0];
+    description = clean(intro?.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || "");
+  }
   return {
-    name: title.split(/\s[|—–]\s/)[0],
+    name: title.split(/\s[|—–-]\s/)[0],
     description: description.slice(0, 1000),
+    description_source: fromMeta
+      ? "meta"
+      : description
+        ? "page_intro"
+        : "missing",
   };
 }
