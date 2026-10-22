@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T14:04:10.652593+00:00",
+  "updated_at": "2026-10-22T14:16:09.995184+00:00",
   "status": "in_progress",
-  "completed_count": 60,
+  "completed_count": 62,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -64,9 +64,11 @@
     "projects/social-media/pinops-8a2a575d.json",
     "projects/social-media/post-bridge-89f7a06c.json",
     "projects/social-media/postiz-0b4fe948.json",
-    "projects/social-media/socialpilot-226b757a.json"
+    "projects/social-media/socialpilot-226b757a.json",
+    "projects/social-media/socioh-53be70e8.json",
+    "projects/social-media/swonkie-41671cfb.json"
   ],
-  "remaining_count": 141,
+  "remaining_count": 139,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -81,8 +83,6 @@
     "projects/social-media/lifast-eca10eb6.json",
     "projects/social-media/metigy-7b57b733.json",
     "projects/social-media/quuu-9fd2a3e5.json",
-    "projects/social-media/socioh-53be70e8.json",
-    "projects/social-media/swonkie-41671cfb.json",
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/socioh-53be70e8.json",
+  "next_project": "projects/social-media/thread-creator-191779ac.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -420,6 +420,14 @@
     {
       "project": "postiz-0b4fe948",
       "reason": "Authentic linked repository LICENSE is github.com rather than postiz.com; retained actual official licence URL."
+    },
+    {
+      "project": "socioh-53be70e8",
+      "reason": "Assigned Socioh homepage explicitly announces goodAds.ai rebrand; authentic new-domain originals retained. Legacy identity/category and website preserved; shared same-domain validator unchanged."
+    },
+    {
+      "project": "swonkie-41671cfb",
+      "reason": "Authentic vendor-linked developer docs use docs.swonkie.dev rather than swonkie.com. Actual URLs retained; shared validator unchanged."
     }
   ],
   "validation": [
@@ -798,6 +806,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-08",
+      "completed_projects": 62,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 62 completed drafts"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark Help Scout domain mismatch at scripts/catalog/validate.mjs:166"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -885,6 +915,11 @@
       "commit": "4c098c0",
       "completed_count": 59,
       "scope": "Post Bridge, Postiz; publishing and hosting semantics"
+    },
+    {
+      "commit": "e65f8c2",
+      "completed_count": 60,
+      "scope": "SocialPilot; client approval discretion, CSV schemas and report live-data boundary"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -909,7 +944,7 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 13,
+      "completed": 16,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 5
     }
@@ -1182,6 +1217,14 @@
     {
       "project": "socialpilot-226b757a",
       "note": "Actual new help articles read after obsolete help URLs returned 404. Client approval optional at manager discretion; composer autosave not saved draft; distinct bulk/library CSV; report editor dummy data. Current HTML mixed price numerals versus July regional Markdown retained without normalized quote. No account operations performed."
+    },
+    {
+      "project": "socioh-53be70e8",
+      "note": "Assigned site explicitly announces goodAds.ai. Current root/pricing/FAQ/SLA/terms/retention and available dated Socioh create/mapping/recovery originals read. Legacy edit/testing pages return 530; not substituted with search extracts. Distinguishes current managed production cadence and legacy Meta propagation, waitlisted self-serve, new/old pricing/support/refund differences. No store/ad operations."
+    },
+    {
+      "project": "swonkie-41671cfb",
+      "note": "Current public developer and help originals read. Public-reader pricing stayed Loading prices; background browser monthly/yearly selectors revealed Friendly/Lover/Pro rates and plan caps, selected visible text snapshot hashed. No login/signup/API action. Dated DRAFT not queued; partial per-profile success; media requires confirm; REST/MCP update semantics conflict; analytics retries distinct from publication. Static Starter/Master/unlimited users/six-month claims differ from hydrated table."
     }
   ]
 }
