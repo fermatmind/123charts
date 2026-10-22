@@ -3,12 +3,21 @@ import path from "node:path";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { getDomain } from "tldts";
+import {
+  validateRelationshipEvidence,
+  validateOfficialSourceDomain,
+  validateResearchPricing,
+} from "./research-validation.mjs";
 
 const root = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "../../data/catalog",
 );
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
+const relationshipPath = "evidence/official-source-relationships.json";
+const relationships = fs.existsSync(path.join(root, relationshipPath))
+  ? validateRelationshipEvidence(read(relationshipPath))
+  : [];
 // Parallel researchers validate records without rewriting coordinator-owned summaries.
 const recordsOnly = process.argv.includes("--records-only");
 const collection = read("collection.json");
@@ -99,11 +108,7 @@ for (const category of taxonomy) {
       researchedProjects.push(relative);
       assert.equal(row.official_check.status, "documentation_reviewed");
       assert.ok(Number.isFinite(Date.parse(row.official_check.checked_at)));
-      assert.equal(row.pricing.officially_checked, true);
-      assert.equal(
-        documentedSource(row.pricing.source_ref)?.type,
-        "official_pricing",
-      );
+      validateResearchPricing(row, documentedSource);
       if (row.license.is_open_source !== null) {
         assert.equal(
           documentedSource(row.license.source_ref)?.type,
@@ -161,12 +166,7 @@ for (const category of taxonomy) {
     for (const source of row.sources) {
       if (officialTypes.has(source.type)) {
         assert.ok(researched);
-        const sourceUrl = new URL(source.url);
-        assert.equal(sourceUrl.protocol, "https:");
-        assert.equal(
-          getDomain(sourceUrl.hostname, { allowPrivateDomains: true }),
-          identity,
-        );
+        validateOfficialSourceDomain(identity, source, relationships);
         assert.equal(source.verification, "official_documentation_read");
         assert.ok(source.research_notes_en && source.title);
       } else {
