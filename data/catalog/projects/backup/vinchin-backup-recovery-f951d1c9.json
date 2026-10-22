@@ -10,162 +10,85 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Vinchin Backup & Recovery is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Mobile Compatibility, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage.\n\nAdditional listed capabilities include Encryption, Backup Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Vinchin Backup & Recovery 属于备份与恢复软件。第三方资料列出的功能包括增量备份、移动设备兼容、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储。\n\n资料还列出加密、备份排程。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Vinchin Backup & Recovery is infrastructure backup software for supported virtual, physical, cloud and application workloads. Its current product family also includes replication, continuous protection, migration and verification modules. A platform logo does not establish every feature or license for that platform.\n\nThis profile uses VMware image backup and verification as a concrete selection path. It distinguishes a booted recovery copy from a validated business application and separates permanent free coverage from the Enterprise evaluation. No server was installed or restored.",
+  "description_zh": "Vinchin Backup & Recovery 是保护受支持虚拟、物理、云及应用工作负载的基础设施备份软件，当前家族另有复制、持续保护、迁移和验证模块。出现平台 Logo 不代表该平台全部功能或许可均包含。\n\n本文以 VMware 镜像备份及验证说明选型，区分副本已启动和业务应用已验证，并区分持续免费范围与 Enterprise 试用，未安装或恢复服务器。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "VM image recovery",
+      "name_zh": "VM 镜像恢复",
+      "explanation_en": "Back up supported VMware VMs and recover VM/file scope.",
+      "explanation_zh": "备份受支持 VMware VM，按 VM／文件范围恢复。",
+      "source_ref": "vmware",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Mobile Compatibility",
-      "name_zh": "移动设备兼容",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compression Tools",
-      "name_zh": "压缩工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Isolated verification",
+      "name_zh": "隔离验证",
+      "explanation_en": "Boot a recovered VM in a lab and inspect the boot screenshot.",
+      "explanation_zh": "在实验室启动恢复 VM 并检查启动截图。",
+      "source_ref": "verification",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Inventory supported workload versions and allocate repository and source access.",
+      "Restore one representative VM to an isolated lab and verify both boot and application data."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "清点受支持工作负载版本，分配仓库及来源访问。",
+      "在隔离实验室恢复代表性VM，同时验证启动和应用数据。"
+    ],
+    "source_refs": ["product", "vmware", "verification"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available",
-      "zh": "提供免费试用",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Infrastructure backup administrator",
+      "Virtualization operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory supported workload versions and allocate repository and source access.",
+        "zh": "清点受支持工作负载版本，分配仓库及来源访问。",
+        "source_refs": ["product", "vmware"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Restore one representative VM to an isolated lab and verify both boot and application data.",
+        "zh": "在隔离实验室恢复代表性VM，同时验证启动和应用数据。",
+        "source_refs": ["vmware", "verification"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Verification screenshots are not a complete application recovery test; modules have different license units.",
+        "zh": "验证截图不等于完整应用恢复测试，各模块许可单位不同。",
+        "source_refs": ["verification", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -177,37 +100,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available",
-    "source_snapshot_zh": "提供免费试用",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:26:26.732620+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "custom",
+    "billing_basis": "Module-specific quantities, minimum purchase and perpetual/subscription term; cross-platform restoration metered.",
+    "source_snapshot_en": "Quote-led; permanent limited Free for 3 VMs and 60-day Enterprise trial documented.",
+    "source_snapshot_zh": "需询价；文档列三VM永久有限免费版及60天Enterprise试用。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Vinchin Backup & Recovery do?",
-      "question_zh": "Vinchin Backup & Recovery 用来做什么？",
-      "answer_en": "Vinchin Backup & Recovery is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Mobile Compatibility, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage.",
-      "answer_zh": "Vinchin Backup & Recovery 属于备份与恢复软件。第三方资料列出的功能包括增量备份、移动设备兼容、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Mobile Compatibility, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、移动设备兼容、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -217,25 +125,144 @@
       "read_at": "2026-10-22T09:03:08.581Z",
       "excerpt_sha256": "1669d1bd139e8c551a5bbfe6621b5246baa030655e4ea50f93d03a24c7ee693c",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Vinchin Backup & Recovery",
+      "title": "Vinchin Backup & Recovery overview",
+      "url": "https://www.vinchin.com/",
+      "read_at": "2026-10-22T15:15:42.444784+00:00",
+      "excerpt_sha256": "3e5ec9cd2ca09ee672010ee78fd05988591a57523a59ff178afc0e6952c19411",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Workload family versus separate replication/migration/verification modules."
+    },
+    {
+      "id": "vmware",
+      "type": "official_documentation",
+      "site": "Vinchin Backup & Recovery",
+      "title": "Vinchin VMware Protection",
+      "url": "https://www.vinchin.com/vmware-backup.html",
+      "read_at": "2026-10-22T15:25:29.805226+00:00",
+      "excerpt_sha256": "643688d4c73fcf8d96145ab5f0b7d5cc7ff14ee9d809c74645e7e707d094275f",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Image backup, repository, transfer and restore workflow."
+    },
+    {
+      "id": "verification",
+      "type": "official_documentation",
+      "site": "Vinchin Backup & Recovery",
+      "title": "VM Backup Verification",
+      "url": "https://www.vinchin.com/feature/vm-backup-verification.html",
+      "read_at": "2026-10-22T15:25:29.734422+00:00",
+      "excerpt_sha256": "999e4815e0b99639adba65df6f27b79dd00df1f833508114ace79b3643ef8985",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Lab boot screenshot verifies narrower outcome than application correctness."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Vinchin Backup & Recovery",
+      "title": "Vinchin Licensing Policy",
+      "url": "https://www.vinchin.com/licensing-policy.html",
+      "read_at": "2026-10-22T15:15:41.725992+00:00",
+      "excerpt_sha256": "022735a01cb886f963199bcf2e44900f4e0541c4aa97799ee5333d80744996e2",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Module units, trial/free distinction, term and maintenance conditions."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:26:26.732620+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "vmware",
+        "title_en": "Follow a backup through storage and recovery",
+        "title_zh": "跟踪备份到存储及恢复",
+        "en": "The VMware page describes agentless image backups, changed-block tracking, repositories, offsite copies and recovery of a VM or individual files. Source access, transfer path, repository capacity and a compatible target remain deployment requirements.\n\nFor a pilot, protect one nonproduction VM, confirm a completed recovery point and restore it to an isolated target with deliberate network settings. Then inspect a file and perform an application read. A configured schedule or host discovery is insufficient evidence that this recovery path works.",
+        "zh": "VMware 页面说明无代理镜像备份、变化块跟踪、仓库、异地副本，以及 VM 或单文件恢复。来源访问、传输路径、仓库容量和兼容目标仍是部署要求。\n\n试点可保护一台非生产 VM，确认完整恢复点，再按明确网络设置恢复到隔离目标，检查文件并执行应用读取。配置调度或发现主机不足以证明这条恢复路径可用。",
+        "source_refs": ["vmware"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "verification",
+        "title_en": "A boot screenshot answers a narrower question",
+        "title_zh": "启动截图只能回答较窄问题",
+        "en": "The verification page describes powering on a recovered VM in an isolated lab and assessing a boot screenshot. Jobs can be manual or orchestrated after backup. The lab may use the built-in environment or an integrated virtualization environment.\n\nThis can reveal an unbootable recovery point, but a screenshot does not prove database consistency, dependencies or user workflows. Agree additional checks for the application. The homepage’s guaranteed-recovery and universal-migration language is not adopted as an independently verified result; exact source and target versions still need a compatibility check.",
+        "zh": "验证页面说明在隔离实验室启动恢复 VM，并检查启动截图，可手工执行或编排在备份之后运行；实验室可使用内置环境或集成虚拟化环境。\n\n这有助发现无法启动的恢复点，但截图不能证明数据库一致性、依赖或用户流程正确。需为应用补充检查。本文不把首页“保证恢复”或通用迁移宣传当作独立验证结果，准确来源和目标版本仍需核对兼容性。",
+        "source_refs": ["verification", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Modules have different license units",
+        "title_zh": "模块采用不同许可单位",
+        "en": "The licensing policy describes perpetual and one-to-three-year subscription terms. Units differ by module: VM/socket, physical server, protected TB, user or cloud instance; cross-platform recovery is metered per restoration. Minimum purchases apply. Obtain a scope-specific quote; no numeric product amount was verified.\n\nThe policy separately grants a permanent limited Free edition for three VMs and a 60-day Enterprise evaluation. Perpetual use is not perpetual included support: first-year upgrade/maintenance is included, later renewal has separate conditions. Confirm reinstall/reissue and downgrade restrictions before hardware changes.",
+        "zh": "许可政策说明永久和一至三年订阅，模块单位分别为 VM／插槽、物理服务器、受保护 TB、用户或云实例，跨平台恢复按恢复次数计量，并有最低购买量。需按范围询价，本次未确认产品数字金额。\n\n政策另有保护三台 VM 的永久有限免费版，以及 60 天 Enterprise 试用。永久使用不等于永久附送支持，首年升级维护包含，后续续费另有条件。硬件变更前应确认重装／重发许可及降级限制。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Select the workload and recovery objective first",
+        "title_zh": "先明确工作负载与恢复目标",
+        "en": "Shortlist Vinchin when centralized infrastructure protection and compatible recovery targets match the environment. A desktop file-sync requirement may not justify a backup-server deployment. Inventory actual platforms and versions, allocate storage and privileges, then test restoration and verification before increasing scope.\n\nDetailed failure runbooks, license EULA, application-consistency prerequisites, resource sizing and final support commitments were not verified. No speed, ransomware resistance or migration benchmark was run. Documentation research cannot establish a recovery-time guarantee.",
+        "zh": "集中基础设施保护及兼容恢复目标符合环境时，可考虑 Vinchin。桌面文件同步需求未必值得部署备份服务器。应清点实际平台和版本、分配存储与权限，再验证恢复及检查后扩大范围。\n\n本次未确认详细失败手册、EULA、应用一致性前提、资源规格及最终支持承诺，未测试速度、勒索抵抗或迁移性能。文档研究不能证明恢复时限保证。",
+        "source_refs": ["product", "vmware", "pricing"],
+        "evidence_type": "editorial_fit_judgment_based_on_documentation"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "No recovery, verification, migration or performance/security test performed.",
+      "zh": "未执行恢复、验证、迁移或性能／安全测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exact versions, EULA, sizing, application prerequisites, failure procedures and quote unverified.",
+      "zh": "准确版本、EULA、规格、应用前提、失败流程及报价未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Vinchin Backup & Recovery: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Vinchin Backup & Recovery：用途、流程、价格与限制",
+    "description_en": "Vinchin Backup & Recovery is infrastructure backup software for supported virtual, physical, cloud and application workloads. Its current product family also includes replication, continuous protection, migration and verification modules. A platform logo does not establish every ",
+    "description_zh": "Vinchin Backup & Recovery 是保护受支持虚拟、物理、云及应用工作负载的基础设施备份软件，当前家族另有复制、持续保护、迁移和验证模块。出现平台 Logo 不代表该平台全部功能或许可均包含。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

@@ -83,17 +83,17 @@
     "projects/backup/elephantdrive-6166f73f.json",
     "projects/backup/goodsync-e5492fae.json",
     "projects/backup/idrive-online-1895e72f.json",
-    "projects/backup/opendrive-c4a0c29b.json"
+    "projects/backup/opendrive-c4a0c29b.json",
+    "projects/backup/updraftplus-5f729fa4.json",
+    "projects/backup/vinchin-backup-recovery-f951d1c9.json",
+    "projects/backup/zoolz-8ddfc333.json",
+    "projects/password-management/bitwarden-226bb392.json"
   ],
   "remaining_paths": [
     "projects/backup/handy-backup-0d57049c.json",
     "projects/backup/netapp-fe6f4345.json",
     "projects/backup/rubrik-8da9315b.json",
-    "projects/backup/updraftplus-5f729fa4.json",
-    "projects/backup/vinchin-backup-recovery-f951d1c9.json",
-    "projects/backup/zoolz-8ddfc333.json",
     "projects/password-management/1password-203dd412.json",
-    "projects/password-management/bitwarden-226bb392.json",
     "projects/password-management/cloaked-78e7b37a.json",
     "projects/password-management/drive-password-da5e669f.json",
     "projects/password-management/enpass-a3bba9f9.json",
@@ -140,6 +140,60 @@
       "path": "projects/backup/netapp-fe6f4345.json",
       "reason": "NetApp backup product and sales pages return HTTP 403 in direct reader; brand-versus-specific backup scope needs operational documentation. No bypass/retry; record remains structured_candidate.",
       "evidence": ".scratch/deep-research/netapp/"
+    },
+    {
+      "path": "projects/backup/rubrik-8da9315b.json",
+      "reason": "product-error.txt: HTTP Error 403: Forbidden",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/rubrik-8da9315b"
+    },
+    {
+      "path": "projects/password-management/1password-203dd412.json",
+      "reason": "recovery-error.txt: HTTP Error 403: Forbidden",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/1password-203dd412"
+    },
+    {
+      "path": "projects/password-management/enpass-a3bba9f9.json",
+      "reason": "product-error.txt: HTTP Error 403: Forbidden",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/enpass-a3bba9f9"
+    },
+    {
+      "path": "projects/password-management/myki-13ee7875.json",
+      "reason": "product-error.txt: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/myki-13ee7875"
+    },
+    {
+      "path": "projects/password-management/nordpass-96ecfb59.json",
+      "reason": "product-error.txt: HTTP Error 403: Forbidden",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/nordpass-96ecfb59"
+    },
+    {
+      "path": "projects/ai-coding/codableai-5cce6840.json",
+      "reason": "Official homepage returned no readable text; no primary factual body available from that read.",
+      "evidence_directory": ".scratch/deep-research/codableai-5cce6840",
+      "status": "Incomplete, not counted as research completion."
+    },
+    {
+      "path": "projects/ai-coding/codalogy-20aeff8c.json",
+      "reason": "product-error.txt: <urlopen error Remote end closed connection without response>",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/codalogy-20aeff8c"
+    },
+    {
+      "path": "projects/ai-coding/kluster-ai-fbe57a06.json",
+      "reason": "product-error.txt: <urlopen error Remote end closed connection without response>",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/kluster-ai-fbe57a06"
+    },
+    {
+      "path": "projects/ai-video/hour-one-e310d904.json",
+      "reason": "product-error.txt: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+      "status": "Primary evidence incomplete; record remains structured_candidate. No 403/429 bypass or retry.",
+      "evidence_directory": ".scratch/deep-research/hour-one-e310d904"
     }
   ],
   "evidence_directory": ".scratch/deep-research/",
@@ -164,9 +218,18 @@
       "records_only": "Known Broadcom domain assertion; temporary uncommitted diagnostic reports exactly the two known URLs, all other checks passed.",
       "content_check": "Each completed English/Chinese record reviewed against saved official reading; not hands-on or independent review.",
       "diff_check": "passed"
+    },
+    {
+      "scope": "20 completed batch-06 records",
+      "python_unittest": "7 passed",
+      "records_only": "Fails real-domain assertion on TeamUpdraft/UpdraftPlus and Broadcom/VMware; source identity rationale recorded.",
+      "diagnostic": "Temporary uncommitted diagnostic enumerates these 9 cross-domain source entries; all remaining record checks passed.",
+      "prettier": "Changed records and notes formatted",
+      "diff_check": "passed",
+      "content_check": "Original English and corresponding Chinese checked against actual official reading; not independent review or hands-on."
     }
   ],
-  "commits": ["6e5db08", "5fb7b21", "8ae280f"],
+  "commits": ["6e5db08", "5fb7b21", "8ae280f", "bde6827"],
   "scope": "Only new batch-06 research; inherited 80 records are excluded from our completion count.",
   "compatibility_issues": [
     {
@@ -174,6 +237,13 @@
       "official_cross_domain_sources": ["knowledge.broadcom.com"],
       "ownership_basis": "Broadcom KB names VMware VCF Operations for Networks and records the vRealize/Aria/VCF naming sequence. Current VMware datasheet carries Broadcom copyright.",
       "expected_validator_error": "broadcom.com versus vmware.com same-register-domain assertion; real source kept unchanged."
+    },
+    {
+      "path": "projects/backup/updraftplus-5f729fa4.json",
+      "official_cross_domain_sources": ["teamupdraft.com"],
+      "ownership_basis": "Original updraftplus.com redirects to the TeamUpdraft product, which names UpdraftPlus and its related services.",
+      "expected_validator_error": "teamupdraft.com versus updraftplus.com same-register-domain assertion; canonical real URLs retained."
     }
-  ]
+  ],
+  "research_in_progress": "All assigned homepages attempted except earlier restricted sources; discovery alone is not counted. Continue remaining entries and verify pricing/setup/licensing individually."
 }
