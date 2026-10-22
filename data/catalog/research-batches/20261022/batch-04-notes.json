@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T16:08:42.561434+00:00",
+  "updated_at": "2026-10-22T16:18:30.535349+00:00",
   "assigned": 101,
-  "completed_count": 78,
+  "completed_count": 80,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -84,18 +84,18 @@
     "projects/call-center/talkdesk-1183b903.json",
     "projects/call-center/tcn-operator-76910f6f.json",
     "projects/call-center/tryvium-desk-664aaf8e.json",
-    "projects/call-center/ucontact-a323f2ce.json"
+    "projects/call-center/ucontact-a323f2ce.json",
+    "projects/help-desk/freshdesk-2ae83506.json",
+    "projects/crm/oncontact-crm-b4c091ba.json"
   ],
-  "incomplete_count": 23,
+  "incomplete_count": 21,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
     "projects/crm/mr-milkman-a1895a2a.json",
-    "projects/crm/oncontact-crm-b4c091ba.json",
     "projects/crm/quickdesk-6b00414e.json",
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/due-work-6947a910.json",
-    "projects/help-desk/freshdesk-2ae83506.json",
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
     "projects/live-chat/bold360-d1b9e7c2.json",
@@ -703,6 +703,16 @@
         }
       ],
       "checked_at": "2026-10-22T16:02:32.319333+00:00"
+    },
+    {
+      "project": "projects/help-desk/freshdesk-2ae83506.json",
+      "status": "research_completed_after_validator_policy_update",
+      "observed": "Previously held for cross-domain official documentation. Authored from five saved primary pages; exact authority snapshots proposed in these notes. Legacy local validator remains incompatible; coordinator-compatible validation recorded separately."
+    },
+    {
+      "project": "projects/crm/oncontact-crm-b4c091ba.json",
+      "status": "research_completed_price_still_unknown",
+      "observed": "Previously held for cross-domain documentation and mandatory-price check. Authored from six saved primary pages; pricing remains not_verified/unknown/officially_checked=false. Exact authority snapshots proposed in these notes."
     }
   ],
   "verification": [
@@ -1228,6 +1238,17 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch78 completed,23 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "node .scratch/deep-research/batch-04/compat/validate.mjs --records-only",
+        "SHA256 comparison against saved sources for the two added records",
+        "Prettier on changed JSONs",
+        "git diff --check"
+      ],
+      "result": "7 tests passed. Legacy validator fails at its mandatory officially_checked=true assertion, incompatible with coordinator-approved unknown-pricing policy. Read-only scratch copy of coordinator validator plus record-validation.mjs passed: 1000 projects,50 categories,83 total researched (80 this batch plus3 baseline),0 untranslated feature labels. Scratch runner uses this batch notes exact source_authority_proposals in place of shared registry, pending coordinator integration; shared scripts/registry unchanged. Source hashes for these two records reproduced; this is not a claim all historical hashes reproduced."
     }
   ],
   "checkpoints": [
@@ -1562,8 +1583,16 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "070b119",
       "completed": ["projects/call-center/ucontact-a323f2ce.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/freshdesk-2ae83506.json",
+        "projects/crm/oncontact-crm-b4c091ba.json"
+      ],
       "status": "ready_to_commit"
     }
   ],
@@ -1806,5 +1835,87 @@
       "retained_remaining_count": 28,
       "transferred_not_counted_completed": true
     }
-  ]
+  ],
+  "source_authority_proposals": {
+    "schema_version": "123charts-source-authorities-v1",
+    "status": "pending_coordinator_integration",
+    "projects": {
+      "projects/help-desk/freshdesk-2ae83506.json": {
+        "identity_domain": "freshworks.com",
+        "source_domain": "freshdesk.com",
+        "checked_at": "2026-10-22T11:26:29.866639+00:00",
+        "scope_en": "The support.freshdesk.com guide explicitly names Freshdesk and its automation rules; current product and pricing are on Freshworks. Scope only the exact saved Freshdesk support snapshots.",
+        "scope_zh": "support.freshdesk.com 指南明确标识 Freshdesk 自动化规则，当前产品及定价位于 Freshworks；仅登记已保存的确切支持文档快照。",
+        "sources": [
+          {
+            "id": "creation",
+            "url": "https://support.freshdesk.com/support/solutions/articles/37614-managing-tickets-using-the-dispatch-r",
+            "excerpt_sha256": "66a453f81f43353ffb519c6347295c5f9d1bccfe04403fe08365df50627fb469"
+          },
+          {
+            "id": "hourly",
+            "url": "https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers",
+            "excerpt_sha256": "8cd0c1e93c153b680424a7ec886ce14a65e4b5f8ce2686ecb5b7902554b8d5a3"
+          },
+          {
+            "id": "rule-model",
+            "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+            "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1"
+          }
+        ],
+        "basis": {
+          "kind": "named_product_on_vendor_domain",
+          "source_ref": "rule-model",
+          "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+          "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1",
+          "summary_en": "The support.freshdesk.com guide explicitly names Freshdesk and its automation rules; current product and pricing are on Freshworks. Scope only the exact saved Freshdesk support snapshots.",
+          "summary_zh": "support.freshdesk.com 指南明确标识 Freshdesk 自动化规则，当前产品及定价位于 Freshworks；仅登记已保存的确切支持文档快照。"
+        }
+      },
+      "projects/crm/oncontact-crm-b4c091ba.json": {
+        "identity_domain": "aptean.com",
+        "source_domain": "apteancloud.dev",
+        "checked_at": "2026-10-22T11:03:06.315518+00:00",
+        "scope_en": "Aptean CRM10 documentation identifies the product and explicitly retains OnContact-tagged Outlook synchronization; the Aptean acquisition announcement names WorkWise OnContact. Scope only these exact CRM/AppCentral snapshots, not all Aptean products.",
+        "scope_zh": "Aptean CRM 10 文档具名产品并保留 OnContact 标签同步；Aptean 收购公告具名 WorkWise OnContact。仅适用这些确切 CRM／AppCentral 快照，不覆盖全部 Aptean 产品。",
+        "sources": [
+          {
+            "id": "opportunity",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/main-entities/opportunity/",
+            "excerpt_sha256": "eafbe7483f5be047aaaa79cf3520839702adb9ccd168dd5f0c181278600cc332"
+          },
+          {
+            "id": "process",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/setup/business-processes/create-a-new-business-process/",
+            "excerpt_sha256": "e430c86a2f8516b084f4f0fba473dbc225b4535cb851c287def8f5a6eaa17f36"
+          },
+          {
+            "id": "outlook-sync",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/outlook-addin/synchronization/automatic-sync/",
+            "excerpt_sha256": "19818628f0c53245b8f9651192a329e6893f7daf61d61febd0f58be76579be69"
+          },
+          {
+            "id": "activation",
+            "url": "https://appcentral-docs.apteancloud.dev/AppCentral/aptean-crm-setup/",
+            "excerpt_sha256": "5d1be8ecbbde3370fd6923ff1f473c711d3f49626e6821889a97a7c9ae45c32b"
+          }
+        ],
+        "basis": {
+          "kind": "named_product_on_vendor_domain",
+          "source_ref": "outlook-sync",
+          "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/outlook-addin/synchronization/automatic-sync/",
+          "excerpt_sha256": "19818628f0c53245b8f9651192a329e6893f7daf61d61febd0f58be76579be69",
+          "summary_en": "Aptean CRM10 documentation identifies the product and explicitly retains OnContact-tagged Outlook synchronization; the Aptean acquisition announcement names WorkWise OnContact. Scope only these exact CRM/AppCentral snapshots, not all Aptean products.",
+          "summary_zh": "Aptean CRM 10 文档具名产品并保留 OnContact 标签同步；Aptean 收购公告具名 WorkWise OnContact。仅适用这些确切 CRM／AppCentral 快照，不覆盖全部 Aptean 产品。"
+        }
+      }
+    }
+  },
+  "source_hash_reproduction_follow_up": {
+    "project": "projects/live-chat/hippo-b19ae80d.json",
+    "source_ids": ["pricing", "terms"],
+    "status": "not_reproduced",
+    "handoff_file": "/Users/rainie/Desktop/123charts.com/123charts-research-04/.scratch/source-hash-handoff.json",
+    "effect": "Historical source snapshots unavailable; do not report full provenance verification. Coordinator to mark missing evidence. No original hash changed, no external retry."
+  }
 }
