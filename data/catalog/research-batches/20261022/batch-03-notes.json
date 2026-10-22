@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T12:06:37.208906+00:00",
+  "updated_at": "2026-10-22T12:18:04.351861+00:00",
   "status": "in_progress",
-  "completed_count": 39,
+  "completed_count": 42,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -43,9 +43,12 @@
     "projects/marketing-automation/listrak-ea8b16f2.json",
     "projects/marketing-automation/mapp-cloud-d1b89f6d.json",
     "projects/marketing-automation/marketing-360-9ff6dc56.json",
-    "projects/marketing-automation/moengage-503b6470.json"
+    "projects/marketing-automation/moengage-503b6470.json",
+    "projects/marketing-automation/netcore-8723c7ab.json",
+    "projects/marketing-automation/omnisend-c5c1ed4f.json",
+    "projects/marketing-automation/ontraport-f023b750.json"
   ],
-  "remaining_count": 162,
+  "remaining_count": 159,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -55,9 +58,6 @@
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
-    "projects/marketing-automation/netcore-8723c7ab.json",
-    "projects/marketing-automation/omnisend-c5c1ed4f.json",
-    "projects/marketing-automation/ontraport-f023b750.json",
     "projects/marketing-automation/ortto-4c06a567.json",
     "projects/marketing-automation/outboundengine-24d98884.json",
     "projects/marketing-automation/salesforce-marketing-cloud-account-engagement-formerly--386e3a8c.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/netcore-8723c7ab.json",
+  "next_project": "projects/marketing-automation/ortto-4c06a567.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -343,6 +343,15 @@
       ],
       "validator_error": "scripts/catalog/validate.mjs:166 expects benchmarkemail.com, actual helpscoutdocs.com",
       "resolution": "Preserved genuine official documentation URLs; shared validator unchanged for coordinator review."
+    },
+    {
+      "project": "netcore-8723c7ab",
+      "actual_official_documentation_domain": "netcore.ai",
+      "vendor_links_read": [
+        "https://netcore.ai/",
+        "https://cedocs.netcorecloud.com/"
+      ],
+      "resolution": "Original website and documentation redirect to netcore.ai; genuine official URLs preserved. Full validator still stops at the earlier Benchmark mismatch. No broader PASS claim."
     }
   ],
   "validation": [
@@ -549,6 +558,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-07",
+      "completed_projects": 42,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 42 drafts; scope, unapproved states, accepted official/pricing source types, excerpt hashes, references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark official helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; authentic URLs retained, shared validator unchanged"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -596,6 +627,11 @@
       "commit": "f212df8",
       "completed_count": 37,
       "scope": "Listrak, Mapp Cloud; authentic source conflicts and entitlements preserved"
+    },
+    {
+      "commit": "9484f8d",
+      "completed_count": 39,
+      "scope": "Marketing 360, MoEngage; current migrated documentation and prospective/version constraints"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -614,7 +650,7 @@
     },
     "marketing-automation": {
       "assigned": 27,
-      "completed": 18,
+      "completed": 21,
       "uncompleted_with_source_gaps": 2,
       "status": "in_progress"
     }
@@ -693,6 +729,18 @@
     {
       "project": "moengage-503b6470",
       "note": "Old help article originals returned 404. Official current llms index publishes new Markdown endpoints; ordinary HTTPS with TLS verification returned 200. Current editing guide explicitly carries entry count across versions and offers migration, unlike older cached search. No stale reset rule adopted. General status page old-version wording differs from the specific edit page; preserved as granularity conflict. MAU FUP base not silently equated with MTU pricing wording."
+    },
+    {
+      "project": "netcore-8723c7ab",
+      "note": "Official root netcorecloud.com redirects to netcore.ai; official documentation link redirects to cedocs.netcore.ai. Authentic current URLs retained rather than adapting them to shared validator assumptions. Current pricing includes capability-pack trials and custom MTU quote; old directory no-trial wording not adopted. FAQ warns DND/waiting communications can outlive Completed label."
+    },
+    {
+      "project": "omnisend-c5c1ed4f",
+      "note": "Current original guides distinguish historical segment admission, non-retroactive exits, custom-event all-status default and block-stat resets. Setup describes about 15-second segment check while trigger guide recommends delayed split; no measured SLA or admission repair inferred. Current USD calculator is three-month-upfront promotional state; no permanent normalized amount. Generic free feature FAQ conflicts with detailed paid reporting/branding cards; no universal free feature entitlement inferred."
+    },
+    {
+      "project": "ontraport-f023b750",
+      "note": "Actual trigger/goal scopes, multi-position contacts, End/Exit and occupied-node edit effects read. Public pricing body gives trial/term rules but no numerical amounts; ordinary verified HTTPS returned 200 and extracted body also lacks amounts. No search-snippet plan prices adopted. Page Last updated dates varied across reads; no author/date/cause inference based on those labels."
     }
   ]
 }
