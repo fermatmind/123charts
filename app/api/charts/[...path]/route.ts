@@ -1,6 +1,7 @@
 import { flushCatalog } from "@/lib/charts/catalog";
 import { eventExclusion } from "@/lib/charts/events";
 import { NextRequest, NextResponse } from "next/server";
+import { completeDraftDescriptions } from "@/lib/charts/metadata-prefill";
 import { cookies } from "next/headers";
 import { createHash, randomUUID } from "node:crypto";
 import { bootstrap, context, checked } from "@/lib/charts/server";
@@ -249,9 +250,7 @@ async function handle(
     }
     if (route === "draft") {
       const u = required(),
-        d = draftSchema.parse(b.draft);
-      d.description_en = d.description_en || d.description_zh;
-      d.description_zh = d.description_zh || d.description_en;
+        d = completeDraftDescriptions(draftSchema.parse(b.draft));
       if (d.is_open_source && !d.open_source_url)
         throw new HttpError(
           400,
@@ -632,6 +631,7 @@ async function handle(
           throw new HttpError(400, "Invalid publication state.");
         const info = draftSchema
           .omit({
+            metadata_prefill: true,
             owner_sources: true,
             peers: true,
             slug: true,

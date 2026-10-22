@@ -94,6 +94,7 @@ export interface Peer {
   rationale: string;
 }
 export interface Draft {
+  metadata_prefill?: import("./metadata-prefill").MetadataPrefillState;
   owner_sources?: import("./owner-profile").OwnerSource[];
   replace_peer_group?: boolean;
   task?: string;

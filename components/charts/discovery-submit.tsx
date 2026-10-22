@@ -99,7 +99,12 @@ export function DiscoverySubmit() {
   const current = useRef(draft);
   current.current = draft;
   const [prefill] = useState(
-    () => new MetadataPrefill(draft.website_url, !!existing || !!project),
+    () =>
+      new MetadataPrefill(
+        draft.website_url,
+        !!existing || !!project,
+        draft.metadata_prefill,
+      ),
   );
   const metadataURL = useRef("");
   const activeMetadata = useRef<PrefillRequest | null>(null);
@@ -116,7 +121,9 @@ export function DiscoverySubmit() {
       if (JSON.stringify(current.current) !== savedJSON.current) return save();
       return saved;
     }
-    const value = current.current;
+    const value = { ...current.current, metadata_prefill: prefill.snapshot() };
+    current.current = value;
+    setDraft(value);
     const saveURL = new URL(window.location.href);
     const promise = api<Application>("draft", {
       id: idRef.current,
@@ -181,8 +188,14 @@ export function DiscoverySubmit() {
       prefill.accepts(request, current.current.website_url)
     ) {
       const patch = prefill.apply(request, j.result, current.current);
-      current.current = { ...current.current, ...patch };
-      setDraft(current.current);
+      if (Object.keys(patch).length) {
+        current.current = {
+          ...current.current,
+          ...patch,
+          metadata_prefill: prefill.snapshot(),
+        };
+        setDraft(current.current);
+      }
       activeMetadata.current = null;
       setJob("");
       notify(
@@ -242,7 +255,12 @@ export function DiscoverySubmit() {
         if (current.current.website_url) setWebsiteChanged(true);
       }
     } else prefill.edit(key);
-    current.current = { ...current.current, ...patch, [key]: value };
+    current.current = {
+      ...current.current,
+      ...patch,
+      [key]: value,
+      metadata_prefill: prefill.snapshot(),
+    };
     setDraft(current.current);
   };
   const add = (peer: Peer) => {
@@ -395,7 +413,11 @@ export function DiscoverySubmit() {
           onImport={(patch) => {
             for (const key of Object.keys(patch))
               prefill.edit(key as keyof Draft);
-            current.current = { ...current.current, ...patch };
+            current.current = {
+              ...current.current,
+              ...patch,
+              metadata_prefill: prefill.snapshot(),
+            };
             setDraft(current.current);
             if (patch.supported_languages)
               setLanguageInput(patch.supported_languages.join(", "));
@@ -480,8 +502,8 @@ export function DiscoverySubmit() {
           {websiteChanged && (
             <p className="notice" role="status">
               {t(
-                "Website changed. Previous automatic details were cleared; your own entries are kept. Check that they match the new website.",
-                "官网已切换：旧的自动资料已清除，手填或导入内容保留，请核对是否适用于新官网。",
+                "Website changed. Tracked automatic details were cleared. Your entries and older fields without source history are kept; check them against the new website.",
+                "官网已切换：已记录的旧自动资料已清除；手填、导入及来源未记录的内容保留，请核对是否适用于新官网。",
               )}
             </p>
           )}
