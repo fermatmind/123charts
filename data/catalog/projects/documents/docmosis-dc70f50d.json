@@ -10,177 +10,116 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Docmosis is a product in the Document management category. Its directory profile covers File Type Conversion, File Recovery, Document Retention, Document Assembly, Compliance Tracking, Collaboration Tools, Version Control.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $50.00.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: support shared work and communication between participants; track changes to files and support revision workflows. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Docmosis 属于文档管理软件。第三方资料列出的功能包括文件格式转换、文件恢复、文档保留、文档组装、合规事项跟踪、协作工具、版本控制。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $50.00.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：支持多人共同工作和沟通；跟踪文件变更并支持版本修订流程。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Docmosis generates documents by merging application data with templates authored in Word or LibreOffice Writer. It is a rendering engine rather than a records repository or electronic-signature service. Cloud exposes a hosted API, Tornado runs a self-hosted REST service, and Docmosis-Java embeds a library in a Java application. Those choices change deployment, integration and licensing responsibilities even though they share template-generation capabilities.",
+  "description_zh": "Docmosis 将应用数据与 Word 或 LibreOffice Writer 编写的模板合并，生成文档。它是渲染引擎，并非记录资料库或电子签名服务。Cloud 提供托管 API，Tornado 运行自托管 REST 服务，Docmosis-Java 则把库嵌入 Java 应用。这些方式共享模板生成能力，但部署、集成与许可责任不同。",
   "core_features": [
     {
-      "name_en": "File Type Conversion",
-      "name_zh": "文件格式转换",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Data-driven template rendering",
+      "name_zh": "数据驱动模板渲染",
+      "explanation_en": "Typed placeholders, conditions and repeated data determine generated content.",
+      "explanation_zh": "键入占位符、条件和重复数据决定生成内容。",
+      "explanation_scope": "product_specific",
+      "source_ref": "template-syntax",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "File Recovery",
-      "name_zh": "文件恢复",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Region-specific Cloud requests",
+      "name_zh": "按地区发送 Cloud 请求",
+      "explanation_en": "The base URL selects processing and the template location; connectivity is separate from readiness.",
+      "explanation_zh": "基础 URL 选择处理及模板地区，连通性与就绪状态不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cloud-start",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Document Retention",
-      "name_zh": "文档保留",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Assembly",
-      "name_zh": "文档组装",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compliance Tracking",
-      "name_zh": "合规事项跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collaboration Tools",
-      "name_zh": "协作工具",
-      "explanation_en": "Support shared work and communication between participants.",
-      "explanation_zh": "支持多人共同工作和沟通。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Self-hosted rendering workers",
+      "name_zh": "自托管渲染工作进程",
+      "explanation_en": "Tornado queues synchronous requests across the configured converters.",
+      "explanation_zh": "Tornado 将同步请求排队分配给配置的转换器。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tornado",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Support shared work and communication between participants",
-      "Track changes to files and support revision workflows"
+      "Evaluate synthetic order confirmations with optional clauses and repeating items."
     ],
-    "zh": ["支持多人共同工作和沟通", "跟踪文件变更并支持版本修订流程"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": ["评估带可选条款及重复明细的虚构订单确认单。"],
+    "source_refs": ["template-syntax"],
+    "basis": "Proposed evaluation; no customer use or performance observed."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $50.00.",
-      "zh": "提供免费试用 起价为 $50.00.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Deployment": {
+      "en": "Hosted Cloud API, self-hosted Tornado REST service or embedded Java library.",
+      "zh": "托管 Cloud API、自托管 Tornado REST 服务或嵌入式 Java 库。",
+      "source_ref": "api-overview",
+      "status": "documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Application developer", "Document template owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the renderer and region, define a synthetic data/template pair, and compare successful and invalid-template behavior before connecting delivery.",
+        "zh": "选定渲染器及地区，定义虚构数据模板对，连接交付前比较成功及无效模板行为。",
+        "source_refs": ["cloud-start", "tornado"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "documented_not_connected",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "api-overview",
+    "scope": "REST and Java patterns read; no application, email, webhook, S3 or third-party connector connected."
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Generated output may contain highlighted errors in Tornado Dev Mode; cancellation/return wording differs between FAQ and Cloud agreement.",
+        "zh": "Tornado Dev Mode 输出可能包含高亮错误；FAQ 与 Cloud 协议的取消返还说明不同。",
+        "source_refs": ["tornado", "pricing", "cloud-contract"],
+        "evidence_type": "documented_scope_limit"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "proprietary_software_and_cloud_terms_read",
+    "is_open_source": false,
+    "url": "https://www.docmosis.com/download/SoftwareLicenseAgreement.pdf",
+    "source_ref": "software-license",
+    "scope": "Restricted engine license; separate Client Resources rights and Cloud service agreement. Self-hosted does not mean open source."
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $50.00.",
-    "source_snapshot_zh": "提供免费试用 起价为 $50.00.",
-    "source_ref": "directory-detail"
+    "status": "official_usage_and_license_pricing_read",
+    "price_type": "monthly_output_page_quota_or_perpetual_software_license",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Cloud 4,000-page initial tier: Professional USD49/month, Business USD64, Enterprise USD78. Software entry USD3,795; different usage scope, optional support renewal and hosting costs. No checkout.",
+    "source_snapshot_zh": "Cloud 初始 4,000 页档：Professional 每月 49 美元、Business 64、Enterprise 78。软件入门价 3,795 美元；使用范围不同，支持续期可选，另需托管费用。未结账。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Docmosis do?",
-      "question_zh": "Docmosis 用来做什么？",
-      "answer_en": "Docmosis is a product in the Document management category. Its directory profile covers File Type Conversion, File Recovery, Document Retention, Document Assembly, Compliance Tracking, Collaboration Tools, Version Control.",
-      "answer_zh": "Docmosis 属于文档管理软件。第三方资料列出的功能包括文件格式转换、文件恢复、文档保留、文档组装、合规事项跟踪、协作工具、版本控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "File Type Conversion, File Recovery, Document Retention, Document Assembly, Compliance Tracking, Collaboration Tools, Version Control",
-      "answer_zh": "文件格式转换、文件恢复、文档保留、文档组装、合规事项跟踪、协作工具、版本控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -190,25 +129,295 @@
       "read_at": "2026-10-22T08:50:06.879Z",
       "excerpt_sha256": "00033e3ddede8c476fee34a9062360c4eb6f4c92c9c54cdc888314db46c94e39",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Document Generation - Docmosis",
+      "url": "https://www.docmosis.com/",
+      "read_at": "2026-10-22T15:19:16.961236Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1f6cb362c50c71a11d220c92c8e07b5a5ddcb8d9abbc1b18936faea3f32fe6a8",
+      "research_notes_en": "Read template-driven generation identity, three product forms and output types; customer testimonials not adopted as measured outcomes."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.docmosis.com",
+      "title": "Document Generation Software Pricing | Document Generator Pricing",
+      "url": "https://www.docmosis.com/pricing/",
+      "read_at": "2026-10-22T15:19:16.962026Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a7e1dd15a22be3845b4818b8c0dbf1cf659d41166af0d9cc7fa6f74067d7199c",
+      "research_notes_en": "Read output-page quota, plan accounts/environments, perpetual editions, optional support/updates and cancellation FAQ. Old upgrade example prices are not current list prices."
+    },
+    {
+      "id": "api-overview",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Docmosis - An API First Approach to PDF Generation",
+      "url": "https://www.docmosis.com/how-it-works/pdf-generation-api/",
+      "read_at": "2026-10-22T15:19:16.962439Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b8a0ed5f75bf7d559923be166e84f093285c7fd7a7f67bfb1f44b0678ea65f68",
+      "research_notes_en": "Read Cloud/Tornado REST versus Java library and different document delivery destinations; no request sent."
+    },
+    {
+      "id": "cloud-start",
+      "type": "official_documentation",
+      "site": "resources.docmosis.com",
+      "title": "Getting started with Cloud API",
+      "url": "https://resources.docmosis.com/getting-started/cloud-api",
+      "read_at": "2026-10-22T15:19:16.962909Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5932436dc41d58498ea025ccd21c3895ee2664d8bedd6c3cde1a78b56270c887",
+      "research_notes_en": "Read region base URL, ping/readiness/template listing/render parameters and error-body interpretation."
+    },
+    {
+      "id": "software-license",
+      "type": "official_license",
+      "site": "www.docmosis.com",
+      "title": "Software License Agreement",
+      "url": "https://www.docmosis.com/download/SoftwareLicenseAgreement.pdf",
+      "read_at": "2026-10-22T15:19:16.962982Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "676836bee179b6e2e9151e134c95638c194444ff413dba8068db99c921abd43d",
+      "research_notes_en": "Read restricted software/Client Resources license, evaluation/support conditions; scope schedule read separately."
+    },
+    {
+      "id": "fair-use",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Docmosis Cloud Fair Use Policy",
+      "url": "https://www.docmosis.com/download/FairUsePolicy.pdf",
+      "read_at": "2026-10-22T15:19:16.963305Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e855219c54f68161055b2879a646c4b454d2fff1b4d29bb3d34632c94b16357d",
+      "research_notes_en": "Read temporary overruns versus possible hard generation/storage limits, including immediate action for rapidly growing usage."
+    },
+    {
+      "id": "software-scope",
+      "type": "official_license",
+      "site": "www.docmosis.com",
+      "title": "Software License Agreement",
+      "url": "https://www.docmosis.com/download/SoftwareLicenseAgreement.pdf",
+      "read_at": "2026-10-22T15:19:16.963368Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f32c59e77a03d8045a8e023c5c491c7a86644b18d1e59237ee6b99b61d23750b",
+      "research_notes_en": "Read one production environment, converter ceiling and unlimited nonproduction environments/documents. Same license document, complementary excerpt."
+    },
+    {
+      "id": "template-syntax",
+      "type": "official_documentation",
+      "site": "resources.docmosis.com",
+      "title": "Introduction to template syntax",
+      "url": "https://resources.docmosis.com/template-tutorials/introduction-to-template-syntax",
+      "read_at": "2026-10-22T15:19:16.963731Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d996479ea5432ad7bf60e032d802984c57989ae0c226804da8c575152b95e8f5",
+      "research_notes_en": "Read plain-text fields, optional/conditional content, formatting and image insertion; signature image explicitly not e-signing."
+    },
+    {
+      "id": "cloud-contract",
+      "type": "official_license",
+      "site": "www.docmosis.com",
+      "title": "Cloud Services Agreement",
+      "url": "https://www.docmosis.com/download/CloudServicesAgreement.pdf",
+      "read_at": "2026-10-22T15:19:16.963793Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7e83fc3947501a160fdbebf3ea49a98ae02ce5635d27a76ebe3a7a6958c58e27",
+      "research_notes_en": "Read January 2026 Cloud agreement: renewal notice, cancellation access/refunds, material-return request and sensitive-support restrictions. Pricing FAQ differs."
+    },
+    {
+      "id": "cloud-data",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Cloud Services Agreement",
+      "url": "https://www.docmosis.com/download/CloudServicesAgreement.pdf",
+      "read_at": "2026-10-22T15:19:16.964119Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "63eb090ae34bff0c41daebf13e04c37b877ef2e4c7827aa96c94aa79273ef3b1",
+      "research_notes_en": "Read Cloud customer-material ownership, processing-region responsibility and return/download provisions; no tenant data or recovery tested."
+    },
+    {
+      "id": "cloud",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Cloud - Document Generation Software as a Service",
+      "url": "https://www.docmosis.com/document-generation-software/cloud/",
+      "read_at": "2026-10-22T15:19:16.964469Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0376f7f22cc48c8447a4a1668a1d625c02101bac778d5e2634fb11260c513a3d",
+      "research_notes_en": "Read processing-region selection and immediate input/output deletion claim, distinct from persistent templates and externally delivered copies."
+    },
+    {
+      "id": "tornado",
+      "type": "official_documentation",
+      "site": "www.docmosis.com",
+      "title": "Tornado - Self-Hosted Document Generation Software",
+      "url": "https://www.docmosis.com/document-generation-software/tornado/",
+      "read_at": "2026-10-22T15:19:16.964535Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f5748f26bdc0df3c660a0c7f1dbf41e556293323866e4d3706a4306fa032eb80",
+      "research_notes_en": "Read synchronous rendering, converters/queue, Dev Mode, self-hosting responsibility and temporary versus persistent template storage. Unsafe vendor sample TLS bypass not copied or executed."
+    },
+    {
+      "id": "price-display",
+      "type": "official_pricing",
+      "site": "www.docmosis.com",
+      "title": "Document Generation Software Pricing | Document Generator Pricing",
+      "url": "https://www.docmosis.com/pricing/",
+      "read_at": "2026-10-22T15:19:16.964598Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_selected_observation",
+      "excerpt_sha256": "84a2aeb699cd85d18b2dfb4d13a5f08b569cc6d3fe7ce4ce430297f94dccabe4",
+      "research_notes_en": "Actual initial 4,000 pages/month Cloud plan cards and USD units read; no other slider tier assumed."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:19:16.964598Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["overview", "api-overview", "template-syntax"],
+  "profile": {
+    "sections": [
+      {
+        "id": "template-data-output",
+        "title_en": "Treat the template and data as a joint document contract",
+        "title_zh": "将模板与数据共同视为文档契约",
+        "en": "Docmosis replaces plain-text fields in a Word or Writer template with supplied values and can output PDF, DOCX, ODT or text. Template logic can remove optional content, repeat rows and format values. A field replacement is not business validation: a correctly rendered identifier can still refer to the wrong order.\n\nFor an editorial pilot, use a synthetic order confirmation with an order number, recipient and two line items. Keep the input schema and a known-good template together. Specify whether absent values should leave a blank, remove a paragraph or reject generation in the surrounding application. Compare totals with source data and retain the accepted output with the template revision. A generated file alone is not evidence of approval, delivery or retention. No template was uploaded or rendered.",
+        "zh": "Docmosis 用所供值替换 Word 或 Writer 模板中的纯文本字段，可输出 PDF、DOCX、ODT 或文本。模板逻辑可移除可选内容、重复行及格式化数值。字段替换不等于业务验证：即使标识渲染正确，也可能对应错误订单。\n\n编辑建议的试点可采用虚构订单确认单，含订单号、收件人及两项明细。将输入契约与已认可模板一同保留，明确缺失值应留空、移除段落，还是由外围应用拒绝生成。需对照来源核对总额，并将接受的输出与模板修订关联。生成文件本身不证明已审批、送达或按要求保留。本研究未上传模板或渲染。",
+        "source_refs": ["overview", "template-syntax"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "layout-and-logic",
+        "title_en": "Exercise the branches that change pagination",
+        "title_zh": "检查会改变分页的内容分支",
+        "en": "The syntax tutorial explains optional paragraphs, conditional sections and date/number formatting. Template paragraph structure matters: removing optional content can remove an entire paragraph rather than only the field. Word layout controls also affect whether a closing block splits across pages. An inserted signature image is explicitly an image, not an electronic-signature process.\n\nFor the synthetic order, evaluate no optional note, a long note, zero line items and enough rows to cross a page. Inspect the final rendition rather than judging only the editor template. Check wrapping, image proportions, page breaks and locale-specific dates. A condition that hides a clause should be reviewed against the input rule that controls it. Keep business rules that must reject invalid orders in an explicit validation step. No branch coverage, format-fidelity or signing test was performed.",
+        "zh": "语法教程解释可选段落、条件节及日期数值格式。模板段落结构很重要：移除可选内容可能移除整段，而非仅字段。Word 的版式控制还会影响落款块是否跨页。插入签名图片明确只是图像，不是电子签名流程。\n\n虚构订单应评估无备注、长备注、零明细及足够跨页的明细行。应检查最终输出，不能只看编辑器模板。需核对换行、图像比例、分页和地区日期；隐藏条款的条件应与控制它的输入规则对应。必须拒绝无效订单的业务规则应放在明确验证步骤中。本研究未执行分支覆盖、格式保真或签署测试。",
+        "source_refs": ["template-syntax"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "cloud-call-chain",
+        "title_en": "A reachable endpoint is not a ready document workflow",
+        "title_zh": "端点可达不等于文档流程已就绪",
+        "en": "The Cloud guide separates /ping, /environment/ready, /listTemplates and rendering. The access key identifies the account and environment; the base URL selects the processing location. A successful template-list response can be empty when the selected region has no templates. Rendering needs an access key, output name, template name and data, and errors should be interpreted through the response body as well as its status.\n\nBefore evaluating the synthetic order, confirm the key’s intended environment and that the template exists at the same location. Keep credentials out of templates and ordinary logs. Record the template name and a non-sensitive business correlation identifier around each request. On an invalid-template error, correct the reference before retrying. Delivery destinations differ by product; receiving generated bytes is separate from saving or emailing them. Duplicate-delivery protection, retry timing and idempotency were not established. No key or endpoint was used.",
+        "zh": "Cloud 指南区分 /ping、/environment/ready、/listTemplates 和渲染。访问密钥识别账户及环境，基础 URL 选择处理地区；当所选地区没有模板时，成功的模板列表响应也可能为空。渲染需要访问密钥、输出名、模板名及数据，错误应同时结合状态与响应体判断。\n\n评估虚构订单前，应确认密钥目标环境，以及模板存在于相同地区。密钥不应进入模板或普通日志。每次请求可记录模板名及非敏感业务关联标识。模板名无效时应先纠正引用再重试。不同产品的交付目的地不同，收到生成字节与保存或发送邮件是分开的步骤。防重复交付、重试间隔与幂等未确立。本研究未使用密钥或调用端点。",
+        "source_refs": ["cloud-start", "api-overview"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "hosted-or-local",
+        "title_en": "Choose who operates the renderer and its failure path",
+        "title_zh": "确定谁运行渲染器及其失败路径",
+        "en": "Cloud operates the hosted service; Tornado requires the customer to run and protect its servers. Tornado uses synchronous requests, an internal queue and one or more converters for parallel work. Dev Mode can produce a document containing highlighted errors, while the production-oriented alternative returns an error instead of a document. A returned file therefore needs its configured error behavior understood.\n\nFor a self-hosted pilot, separate a template defect from an unavailable process or a caller timeout. Test the chosen production error mode before allowing output into an order-delivery workflow. Tornado describes persistent template caching and temporary rendering files, with the latter deleted after delivery or error. Do not put private customer values into reusable templates merely because request data is temporary. Updating the engine may affect layout, so compare representative outputs after a change. No server, converter, container, timeout or update was exercised.",
+        "zh": "Cloud 运行托管服务，Tornado 则要求客户运行并保护服务器。Tornado 使用同步请求、内部队列和一个或多个转换器并行处理。Dev Mode 可生成标有错误的文档，面向生产的另一行为是返回错误而不生成文件，因此必须了解返回文件所对应的错误配置。\n\n自托管试点应区分模板缺陷、进程不可用与调用超时。允许输出进入订单交付流程前，需检查所选生产错误模式。Tornado 描述持久模板缓存及临时渲染文件，后者在交付完成或错误后删除。不能因请求数据短暂存在，就把客户隐私值写入复用模板。引擎更新可能影响版式，应比较代表性输出。本研究未测试服务器、转换器、容器、超时或更新。",
+        "source_refs": ["cloud", "tornado"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "pages-and-limits",
+        "title_en": "Count generated pages and plan for conditional limits",
+        "title_zh": "按生成页数估量，并考虑附条件上限",
+        "en": "Cloud usage counts pages in successfully generated documents, rather than the template’s starting length. The actual 4,000-page display shows USD49/month Professional, USD64 Business and USD78 Enterprise, with different console-user and environment allowances. No other slider tier was checked. Perpetual software editions instead vary by converter and template limits; their first year of support and updates is included. Current entry editions are listed at USD3,795, with optional support renewal.\n\nA hypothetical 600 confirmations of six output pages need 3,600 pages; two-page templates expanding to six pages still count as six. This is arithmetic, not a measured workload. The fair-use policy allows controls after repeated overruns and immediate limits for rapid growth threatening the service. Reaching an applied page limit stops generation; a storage limit can prevent new templates or images. Budget for seasonal peaks and monitor failures rather than assuming the no-overage slogan means unlimited service.",
+        "zh": "Cloud 用量按成功生成文档的输出页数统计，而非模板起始长度。实际 4,000 页档位显示 Professional 每月 49 美元、Business 64 美元、Enterprise 78 美元，控制台用户及环境额度不同；未检查其他滑块档位。永久软件版本则按转换器和模板上限区分，首年含支持更新。当前入门版列价 3,795 美元，支持续期可选。\n\n假设 600 份确认单各输出六页，则需 3,600 页；两页模板展开为六页仍按六页计。这是算例，不是实测负载。公平使用政策允许对持续超额施加控制，对威胁服务的快速增长可立即限额。达到已施加页数上限会停止生成，存储上限则可能阻止新增模板或图像。应为季节峰值预留预算并监测失败，不能将无超额费用口号等同无限服务。",
+        "source_refs": ["pricing", "price-display", "fair-use"],
+        "evidence_type": "documented_with_hypothetical_cost_example"
+      },
+      {
+        "id": "renewal-and-license",
+        "title_en": "Confirm the order before relying on cancellation wording",
+        "title_zh": "依赖取消文案前先核对订单",
+        "en": "The pricing FAQ permits Cloud cancellation at any time and describes seven further days to download templates. The January 2026 Cloud agreement also describes paid access through the current term, no refund for paid fees, automatic renewal and notice of non-renewal at least 30 business days before expiry. These statements need reconciliation for the intended order; they should not become an unconditional instant-cancellation promise.\n\nThe software license is a proprietary, perpetual grant subject to termination and usage scope. One production environment may span servers within its converter ceiling, while non-production environments and generated-document volume are unrestricted by that schedule. Client Resources have specific permitted uses; this does not open-source the engine or allow a general competing API service. Evaluate the application/project scope and distribution arrangement before embedding. A trial permits evaluation rather than sustained free production. No agreement was accepted or purchase made.",
+        "zh": "价格 FAQ 允许随时取消 Cloud，并说明之后可再用七天下载模板。2026 年 1 月 Cloud 合同另述付费访问至当前周期末、已付费用不退款、自动续期，以及至少在到期前 30 个工作日通知不续期。这些说明需按目标订单协调，不能变成无条件即时取消承诺。\n\n软件许可属于可依约终止、受使用范围约束的专有永久授权。一个生产环境可在转换器上限内跨服务器，相关附表不限制非生产环境数量及生成文档量。Client Resources 有特定允许用途，不代表引擎开源，也不允许提供通用竞品 API 服务。嵌入前需核对应用项目范围及分发安排。试用供评估，不是持续免费生产。本研究未接受协议或购买。",
+        "source_refs": [
+          "pricing",
+          "cloud-contract",
+          "software-license",
+          "software-scope"
+        ],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      },
+      {
+        "id": "data-and-exit",
+        "title_en": "Separate transient render data from stored materials",
+        "title_zh": "区分临时渲染数据与存储材料",
+        "en": "The Cloud product page says input data and generated output are deleted immediately after processing; templates and images are managed separately, and copies sent to external destinations have their own lifecycle. Region selection remains the customer’s responsibility under the Cloud agreement. These are documented statements, not independently verified deletion or residency tests.\n\nThe agreement provides reasonable efforts to make customer material available on request after expiry or termination, with download within 30 days if made available; this is not a guaranteed full tenant restore. Keep owned template sources, input contracts and accepted outputs in the organization’s chosen system before cancelling. Support submissions require synthetic or robustly anonymized examples; the support channel is not equivalent to sending sensitive data through the contracted API. Exact backup erasure, recovery completeness and customer-specific data-processing terms remain unverified. No export, support submission, deletion or restore occurred.",
+        "zh": "Cloud 产品页声明输入数据及生成输出在处理后立即删除；模板和图像另行管理，发送到外部目的地的副本有自己的生命周期。Cloud 合同仍由客户负责地区选择。这些是文档陈述，并非独立删除或驻留测试。\n\n协议规定到期或终止后可请求厂商以合理努力提供客户材料；如提供，需在 30 天内下载，这不是完整租户恢复保证。取消前应在组织选定系统保存自有模板来源、输入契约和接受输出。支持材料要求使用虚构或充分匿名化样例；支持渠道与通过合同约定 API 发送敏感数据不同。备份擦除、恢复完整性及客户特定数据处理条款未核实。本研究未执行导出、支持提交、删除或恢复。",
+        "source_refs": ["cloud", "cloud-data", "cloud-contract"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Docmosis: Template Rendering, Cloud Quotas and Self-Hosted Scope",
+    "title_zh": "Docmosis：模板渲染、Cloud 额度与自托管范围",
+    "description_en": "Evaluate Docmosis using template/data examples, region-specific API checks, conditional usage limits and separate Cloud/software license responsibilities.",
+    "description_zh": "通过模板数据样例、按地区 API 检查、附条件用量上限及不同 Cloud 软件许可责任评估 Docmosis。",
+    "primary_intent": "Evaluate Docmosis for application-driven document generation.",
+    "secondary_questions": [
+      "How are output pages counted?",
+      "What changes when moving from Cloud to Tornado?"
+    ],
+    "query_basis": "Editorial intent; no keyword or ranking measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, trial, license acceptance, installation, API call, key handling, template upload, render, email, webhook, storage write, performance test, payment, cancellation, export or recovery operation.",
+      "zh": "未执行账户、试用、许可接受、安装、API、密钥操作、模板上传、渲染、邮件、webhook、存储写入、性能测试、支付、取消、导出或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Full OpenAPI page body did not render in the reader; retry/idempotency semantics, exact current runtime dependencies, fonts, layout fidelity, region compliance, tenant recovery and custom order conditions remain unverified.",
+      "zh": "完整 OpenAPI 正文未在读取器中呈现；重试幂等、当前精确运行依赖、字体、版式保真、地区合规、租户恢复及定制订单条件未核实。",
+      "source_refs": ["cloud-start", "tornado"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Product comparison body later timed out; only previously read product distinctions used. Vendor throughput, availability, certification and deletion claims not independently tested. Vendor Cloud Ruby example disables TLS verification; no code copied or executed and no such bypass recommended.",
+      "zh": "产品比较正文后续超时，仅采用此前已读的产品区别。厂商吞吐、可用性、认证及删除主张未独立测试。厂商 Cloud Ruby 示例关闭 TLS 校验；未复制执行代码，也不建议该绕过。",
+      "source_refs": ["overview", "cloud"],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
