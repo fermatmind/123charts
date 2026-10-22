@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T11:33:13.641202+00:00",
+  "updated_at": "2026-10-22T11:41:24.340536+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 29,
+  "completed_count": 32,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -34,9 +34,12 @@
     "projects/api-management/postman-668fe961.json",
     "projects/api-management/readme-4e02e656.json",
     "projects/api-management/sparrow-e52d1a04.json",
-    "projects/api-management/stoplight-00629820.json"
+    "projects/api-management/stoplight-00629820.json",
+    "projects/api-management/treblle-f7dbda02.json",
+    "projects/api-management/tyk-api-management-platform-a2eb5232.json",
+    "projects/api-management/wso2-api-manager-aef076cc.json"
   ],
-  "remaining_count": 170,
+  "remaining_count": 167,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -48,9 +51,6 @@
     "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
-    "projects/api-management/treblle-f7dbda02.json",
-    "projects/api-management/tyk-api-management-platform-a2eb5232.json",
-    "projects/api-management/wso2-api-manager-aef076cc.json",
     "projects/application-development/3pillar-global-f439406e.json",
     "projects/application-development/8base-6c4e6a63.json",
     "projects/application-development/appwrite-dc893cb3.json",
@@ -257,6 +257,18 @@
     {
       "project": "Stoplight",
       "detail": "Rendered official browser guides read after JavaScript-only static result. Actual selected AX text hashed and browser transport retained. Slash pricing redirects Webflow; separately read non-slash official URL without redirect. Legacy mock article link empty."
+    },
+    {
+      "project": "Treblle",
+      "detail": "Express v3 custom maskedKeywords replaces defaults, empty array disables masking and metadata is unmasked. Generic never-raw-data statement is not adopted unconditionally. Pricing CTA does not establish sustained free entitlement."
+    },
+    {
+      "project": "Tyk API Management Platform",
+      "detail": "Mixed OSS/proprietary stack; DRL equal-share assumption and custom key empty-string credential fallback retained. Deployment no-usage-limits prose not applied over current Core consumption pricing."
+    },
+    {
+      "project": "WSO2 API Manager",
+      "detail": "4.7 API-bound key behavior differs from older key model; subscription token cache can delay blocking/unblocking, distinct from described immediate API-key revocation. Self-hosted enterprise quote separated from platform cloud Growth starting119."
     }
   ],
   "verification": [
@@ -266,7 +278,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 32 primary-source researched globally (3 baseline + 29 assigned), 1000 records checked"
+      "result": "passed: 35 primary-source researched globally (3 baseline + 32 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -313,15 +325,20 @@
       "commit": "1684f23",
       "completed_count": 27,
       "scope": "Postman and ReadMe; Sentinet pricing authority gap; pushed"
+    },
+    {
+      "commit": "6d9ab3e",
+      "completed_count": 29,
+      "scope": "Sparrow and Stoplight; RestCase access/availability gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Treblle, Tyk API Management Platform, WSO2 API Manager",
+    "next": "application-development: first assigned records",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "9 of 17 complete; 5 investigated but incomplete with explicit gaps; 3 not yet finalized"
+    "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps"
   },
   "identity_changes": [
     {
@@ -356,6 +373,13 @@
       "old_url": "https://www.ibm.com/cloud/api-connect",
       "current_url": "https://www.ibm.com/products/api-connect",
       "evidence": "Old URL explicitly redirected to IBM generic solutions page; current official API Connect product and linked guides independently read."
+    },
+    {
+      "project": "WSO2 API Manager",
+      "slug_preserved": "wso2-api-manager-aef076cc",
+      "old_url": "https://wso2.com/api-management/",
+      "current_url": "https://wso2.com/api-platform/api-manager/",
+      "evidence": "Former page redirects to broader API Platform; linked dedicated API Manager Server page read separately. Server scope retained, not merged into managed cloud family."
     }
   ],
   "content_corrections": [
