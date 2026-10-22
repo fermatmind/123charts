@@ -10,160 +10,97 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Softr is a product in the No-code applications category. Its directory profile covers Application Templates, Integrations Management, App Integrations, Drag and drop Builder, Workflow Management, Web Development, Version Control, Testing Management.\n\nAdditional listed capabilities include Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Individuals. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $49.0. Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: define steps and route work through a process; track changes to files and support revision workflows; organize test cases, execution and results; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Softr 属于无代码应用软件。第三方资料列出的功能包括应用模板、集成管理、应用集成、拖放构建器、工作流管理、网站开发、版本控制、测试管理。\n\n资料还列出访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 个人用户。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $49.0. 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：定义处理步骤并组织工作流转；跟踪文件变更并支持版本修订流程；组织测试用例、执行过程与结果；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Softr assembles portals and internal tools from connected data, user groups, pages and actions. It includes native database and workflow capabilities alongside external data sources, so evaluation should start with the chosen source and the user’s allowed operations.\n\nIts permissions and automation layers require explicit configuration. Global restrictions default to unrestricted behavior, conditional group membership behaves differently from manual assignment, and workflow preview does not cover every control step. Test a small portal under real role combinations before relying on a visual preview.",
+  "description_zh": "Softr 基于连接数据、用户组、页面及动作搭建门户和内部工具，同时提供原生数据库、工作流及外部数据源。评估应从所选来源和用户允许的操作开始。\n\n权限与自动化层需要明确配置。全局限制默认不加限制，条件入组与手动分配的行为不同，工作流预览也不覆盖所有控制步骤。应按真实角色组合测试小型门户，再判断可视化预览是否足够。",
   "core_features": [
     {
-      "name_en": "Application Templates",
-      "name_zh": "应用模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Group-based data restrictions",
+      "name_zh": "基于用户组的数据限制",
+      "explanation_en": "Apply table-level view/create/edit/delete restrictions to selected groups, with deny precedence.",
+      "explanation_zh": "对所选组施加表级查看／创建／编辑／删除限制，禁止规则优先。",
+      "explanation_scope": "product_specific",
+      "source_ref": "restrictions",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Integrations Management",
-      "name_zh": "集成管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Native event workflows",
+      "name_zh": "原生事件工作流",
+      "explanation_en": "App actions, database events, webhooks and schedules can trigger mapped actions.",
+      "explanation_zh": "应用动作、数据库事件、webhook 及计划可触发数据映射后的动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "workflow",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "App Integrations",
-      "name_zh": "应用集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Drag and drop Builder",
-      "name_zh": "拖放构建器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Workflow Management",
-      "name_zh": "工作流管理",
-      "explanation_en": "Define steps and route work through a process.",
-      "explanation_zh": "定义处理步骤并组织工作流转。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Web Development",
-      "name_zh": "网站开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Role preview and publication",
+      "name_zh": "角色预览与发布",
+      "explanation_en": "Preview user roles and device sizes, then republish changes to the live application.",
+      "explanation_zh": "预览用户角色和设备尺寸，再重新发布以更新正式应用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "publish",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Define steps and route work through a process",
-      "Track changes to files and support revision workflows",
-      "Organize test cases, execution and results",
-      "Restrict information and actions according to permissions"
+      "Evaluate a client portal that limits each client to its records.",
+      "Pilot an approval workflow with a rejected branch and bounded loop."
     ],
     "zh": [
-      "定义处理步骤并组织工作流转",
-      "跟踪文件变更并支持版本修订流程",
-      "组织测试用例、执行过程与结果",
-      "根据权限限制信息访问和操作"
+      "评估仅允许客户访问自身记录的门户。",
+      "试点带拒绝分支及有限循环的审批流程。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["restrictions", "advanced"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $49.0. Offers Free-forever and Custom plan.",
-      "zh": "提供免费试用 起价为 $49.0. 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Individuals",
-      "zh": "小型、中型与大型组织 个人用户",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Individuals",
-    "organization_sizes_zh": "小型、中型与大型组织 个人用户",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Portal administrators", "Internal-tool builders"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Use synthetic source records and overlapping test groups to verify deny behavior, including Comments separately.",
+        "zh": "使用模拟来源记录和重叠测试组验证禁止规则，单独核对 Comments。",
+        "source_refs": ["restrictions", "groups"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Generate a sample event, inspect each workflow path, publish and retest the live URL under two roles.",
+        "zh": "生成样例事件，检查各工作流路径，发布后用两个角色复测正式 URL。",
+        "source_refs": ["workflow", "publish"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Global restrictions do not currently cover the Comments block.",
+        "zh": "全局限制目前不覆盖 Comments 模块。",
+        "source_refs": ["restrictions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Nested loops increase action usage for every item combination.",
+        "zh": "嵌套循环按每种项目组合增加动作消耗。",
+        "source_refs": ["advanced"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -175,37 +112,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $49.0. Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $49.0. 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:05:40.531665Z",
+    "normalized_monthly_price": null,
+    "summary_en": "The actual homepage FAQ gives annual-billed monthly equivalents of Free $0, Basic $19, Pro $99 and Business $329, plus custom Enterprise. The formal /pricing read returned only a footer. Usage quotas, connector tiers and write-restriction entitlements require plan-specific confirmation; no checkout total was established.",
+    "summary_zh": "实际首页 FAQ 给出年付折算月价：Free $0、Basic $19、Pro $99、Business $329，Enterprise 定制。正式 /pricing 读取仅有页脚。用量、连接器层级及写入限制需按方案核对，未确认结账总额。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Softr do?",
-      "question_zh": "Softr 用来做什么？",
-      "answer_en": "Softr is a product in the No-code applications category. Its directory profile covers Application Templates, Integrations Management, App Integrations, Drag and drop Builder, Workflow Management, Web Development, Version Control, Testing Management.",
-      "answer_zh": "Softr 属于无代码应用软件。第三方资料列出的功能包括应用模板、集成管理、应用集成、拖放构建器、工作流管理、网站开发、版本控制、测试管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Application Templates, Integrations Management, App Integrations, Drag and drop Builder, Workflow Management, Web Development, Version Control, Testing Management, Access Control",
-      "answer_zh": "应用模板、集成管理、应用集成、拖放构建器、工作流管理、网站开发、版本控制、测试管理、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -215,25 +136,198 @@
       "read_at": "2026-10-22T09:00:13.758Z",
       "excerpt_sha256": "4d99deea9db354e321baeeb79d24255fb4c58ca5ad76a42d04981ab7d38150f1",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "Softr Help Docs",
+      "url": "https://docs.softr.io/",
+      "read_at": "2026-10-22T15:05:40.531665Z",
+      "excerpt_sha256": "5fedac76f5417d230d601c86b76ce859ddd048039aea395516edad03602f6500",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read official documentation overview for portals, data and permissions."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Softr",
+      "title": "Softr homepage: product and pricing FAQ",
+      "url": "https://www.softr.io/",
+      "read_at": "2026-10-22T15:01:50.255132Z",
+      "excerpt_sha256": "b580414667b24c7222074eaae6677259a660a1a54a94c0d31942bf8958d06e14",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual current homepage pricing FAQ and plan/data-source entitlement paragraphs; /pricing returned footer only."
+    },
+    {
+      "id": "restrictions",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "Global data restrictions – Softr Help Docs",
+      "url": "https://docs.softr.io/user-groups-and-permissions/global-data-restrictions",
+      "read_at": "2026-10-22T15:06:36.385815Z",
+      "excerpt_sha256": "8cf3b1c36f3b77a1eb52b621676074af8f283947007f1888c6768c22ee484927",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read default-unrestricted rules, group deny precedence, CRUD entitlements and Comments exception."
+    },
+    {
+      "id": "groups",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "User Groups – Softr Help Docs",
+      "url": "https://docs.softr.io/user-groups-and-permissions/user-groups",
+      "read_at": "2026-10-22T15:06:36.386211Z",
+      "excerpt_sha256": "3b7e1dfd016ffaba647c9dafbd4575662077036f0e56e864ba8765f3f61e0797",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read manual/conditional membership and publication requirements."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "Workflows – Softr Help Docs",
+      "url": "https://docs.softr.io/workflows/workflows",
+      "read_at": "2026-10-22T15:06:36.386024Z",
+      "excerpt_sha256": "ce508029179e49f3b1c00d557034805f4935aaf5b6902eb504b2c2b24111ede9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read triggers, sample events, action test limitations and activation."
+    },
+    {
+      "id": "advanced",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "Workflows Advanced Concepts - Softr Help Docs",
+      "url": "https://docs.softr.io/workflows/advanced-concepts",
+      "read_at": "2026-10-22T15:06:54.478945Z",
+      "excerpt_sha256": "02847eff69c07d20b09fe707def34f3d024d4d72917e6a96d5d0f5ef5500d6c2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read branch/filter/loop semantics, data mapping and action usage."
+    },
+    {
+      "id": "publish",
+      "type": "official_documentation",
+      "site": "Softr",
+      "title": "Publish your application – Softr Help Docs",
+      "url": "https://docs.softr.io/core-concepts-overview/publish-your-application",
+      "read_at": "2026-10-22T15:06:54.478295Z",
+      "excerpt_sha256": "4fdacfcc340a01addcacdc940e0a95bb35835437e6493ce29bdfb8870b07285f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read role/device preview and republish requirement."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:06:54.478945Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "restrictions"],
+  "profile": {
+    "sections": [
+      {
+        "id": "restriction-defaults",
+        "title_en": "Configure data rules before adding users",
+        "title_zh": "添加用户前先配置数据规则",
+        "en": "Without global restrictions, users can perform available operations unless local controls restrict them. Rules target a source table and one or more groups, with Can’t taking precedence when groups conflict. Comments is explicitly excluded from global restrictions. Include that block separately in the access review.",
+        "zh": "未配置全局限制时，用户可执行可用操作，除非局部控制另有限制。规则针对来源表及一个或多个组，冲突时 Can’t 优先。Comments 明确不在全局限制覆盖内，应单独检查该模块访问。",
+        "source_refs": ["restrictions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permission-tier",
+        "title_en": "View and write restrictions have different tiers",
+        "title_zh": "查看与写入限制对应不同层级",
+        "en": "The restriction guide makes View available on all plans, including Free, but places Create/Edit/Delete restrictions on Business and above. Match the required operation to its entitlement rather than assuming that a visible form or working list proves the intended write restriction is available.",
+        "zh": "限制指南说明 View 在包括 Free 的全部方案可用，Create／Edit／Delete 限制则要求 Business 或更高。应逐项匹配所需操作及权益，不能通过可见表单或正常列表推定目标写入限制可用。",
+        "source_refs": ["restrictions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "membership",
+        "title_en": "Conditional groups follow their conditions",
+        "title_zh": "条件用户组由规则决定",
+        "en": "Membership can be assigned manually or by user attributes. A user added through a condition cannot simply be removed manually; adjust the condition instead. Group changes require publishing to take effect. Review overlapping memberships and retest the live app after publishing.",
+        "zh": "成员可手动分配，也可按用户属性入组。通过条件加入的用户不能直接手动移除，需要修改条件。用户组变更需发布后生效，应检查重叠成员并在发布后复测正式应用。",
+        "source_refs": ["groups"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow-test",
+        "title_en": "Supply real sample events in a disposable setup",
+        "title_zh": "在可丢弃环境提供真实样例事件",
+        "en": "Event-based workflow testing needs an actual sample event, such as a form submission or record update. Some flow controls, including branching and filtering, do not support test preview. Test both resulting paths and inspect later action outputs before turning the workflow on; preview support alone is not full-flow validation.",
+        "zh": "事件工作流测试需要真实样例事件，如表单提交或记录更新。分支、过滤等部分流程控制不支持测试预览。启用前应测试各条结果路径并检查后续动作输出，具备预览不等于全流程已验证。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "logic-and-cost",
+        "title_en": "Keep branches, filters and loops distinct",
+        "title_zh": "区分分支、过滤和循环",
+        "en": "Branch provides yes/no paths; Filter stops an unwanted case without a second path. Loops execute contained actions once per item, so nested loops multiply work and action usage. Restrict input records early and use named prior-step outputs for subsequent actions to make failures and consumption easier to diagnose.",
+        "zh": "Branch 提供是／否两条路径，Filter 在不满足条件时直接停止。循环对每个项目执行内部动作，嵌套循环会放大工作量及动作消耗。应尽早限制输入记录，用明确的前序输出映射后续动作，便于诊断失败和用量。",
+        "source_refs": ["advanced"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "publication",
+        "title_en": "Recheck access after publishing",
+        "title_zh": "发布后复查访问",
+        "en": "Studio supports live preview, role simulation and device sizing. Publishing exposes the app on the web, and later app changes require republishing. Verify anonymous and authenticated access on the published URL, then repeat the critical role tests whenever membership or data rules change.",
+        "zh": "Studio 支持实时预览、角色模拟和设备尺寸测试。发布使应用可通过网页访问，后续应用改动需要重新发布。应在正式 URL 检查匿名及登录访问，成员或数据规则变化后重新测试关键角色。",
+        "source_refs": ["publish", "groups"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Softr: setup, operating limits and pricing",
+    "title_zh": "Softr：设置、运行边界及费用",
+    "description_en": "Softr assembles portals and internal tools from connected data, user groups, pages and actions. It includes native database and workflow capabilities alongside external d",
+    "description_zh": "Softr 基于连接数据、用户组、页面及动作搭建门户和内部工具，同时提供原生数据库、工作流及外部数据源。评估应从所选来源和用户允许的操作开始。",
+    "search_intent_en": "Evaluate Softr for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Softr。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, user invitation, data change, workflow, message, publication or purchase was executed.",
+      "zh": "未执行应用、用户邀请、数据变更、工作流、消息、发布或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full pricing matrix, license, backup/restore, exact action/AI quotas and actual permission enforcement remain unverified.",
+      "zh": "完整价格矩阵、许可、备份／恢复、具体动作／AI 额度及权限实际执行待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
