@@ -54,19 +54,19 @@
     "projects/notes/astrahealth-8dfbf4c5.json",
     "projects/notes/bear-96b73391.json",
     "projects/notes/evernote-7b600aa7.json",
-    "projects/notes/goodnotes-1327fffa.json"
+    "projects/notes/goodnotes-1327fffa.json",
+    "projects/notes/heptabase-52c6e8ff.json",
+    "projects/notes/hynote-7d7d300c.json",
+    "projects/notes/jamworks-e80a26fc.json",
+    "projects/notes/meetingking-0e4f06d5.json",
+    "projects/notes/meetminutes-6bf0ef4d.json"
   ],
-  "completed_count": 4,
+  "completed_count": 9,
   "remaining_paths": [
     "projects/notes/chamu-ed83cf63.json",
     "projects/notes/collato-e33770e1.json",
-    "projects/notes/heptabase-52c6e8ff.json",
     "projects/notes/hugo-574a433d.json",
-    "projects/notes/hynote-7d7d300c.json",
-    "projects/notes/jamworks-e80a26fc.json",
     "projects/notes/knote-81144a00.json",
-    "projects/notes/meetingking-0e4f06d5.json",
-    "projects/notes/meetminutes-6bf0ef4d.json",
     "projects/notes/milanote-7c738fe4.json",
     "projects/notes/noteey-10f9623e.json",
     "projects/notes/notejoy-5ce03399.json",
@@ -84,18 +84,25 @@
     "projects/scheduling/book-like-a-boss-e7e411a9.json",
     "projects/scheduling/bookingkoala-da09b358.json"
   ],
-  "remaining_count": 25,
+  "remaining_count": 20,
   "evidence_root": "/Users/rainie/Desktop/123charts.com/123charts-research-11/.scratch/deep-research/batch-11",
-  "updated_at": "2026-10-22T15:57:26.583270+00:00",
+  "updated_at": "2026-10-22T16:02:38.073846+00:00",
   "independent_review": false,
   "hands_on_test": false,
   "validation_runs": [
     {
       "scope": "first four owned records",
       "python_unittest": "7 passed",
-      "records_only": "passed after temporary node_modules symlink",
+      "records_only": "failed: inherited Basecamp official help domain basecamp-help.com differs from basecamp.com at validate.mjs:166",
       "git_diff_check": "passed",
-      "note": "Initial Node attempt failed because tldts was not installed in this worktree; dependency link removed before commit."
+      "note": "Initial attempt lacked tldts; with temporary dependency link, validator reached inherited Basecamp domain assertion. Link removed before commit. Earlier passed label was a recording error and is corrected here."
+    },
+    {
+      "scope": "five added records; all nine owned researched records reference/hash check",
+      "python_unittest": "7 passed",
+      "records_only": "failed on unchanged inherited Basecamp domain at validate.mjs:166; log .scratch/deep-research/batch-11/validation-second.log",
+      "owned_json_references_hashes": "passed",
+      "git_diff_check": "passed"
     }
   ]
 }
