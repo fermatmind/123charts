@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T15:19:47.735352+00:00",
+  "updated_at": "2026-10-22T15:30:40.849966+00:00",
   "status": "in_progress",
   "assigned": 140,
-  "completed_count": 96,
+  "completed_count": 99,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
@@ -71,6 +71,9 @@
     "projects/monitoring/auvik-b64b0099.json",
     "projects/monitoring/azure-network-watcher-24299f39.json",
     "projects/monitoring/mackerel-c90a8e8c.json",
+    "projects/monitoring/manageengine-oputils-072c08c2.json",
+    "projects/monitoring/netify-3befc7dc.json",
+    "projects/monitoring/pandora-fms-d5ecb72a.json",
     "projects/no-code/adalo-471bff37.json",
     "projects/no-code/airslate-workflow-5369295c.json",
     "projects/no-code/anything-09e116dc.json",
@@ -103,7 +106,7 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 44,
+  "remaining_count": 41,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -125,9 +128,6 @@
     "projects/ide/eclipse-che-06fa6676.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
-    "projects/monitoring/manageengine-oputils-072c08c2.json",
-    "projects/monitoring/netify-3befc7dc.json",
-    "projects/monitoring/pandora-fms-d5ecb72a.json",
     "projects/monitoring/panopta-5788d04c.json",
     "projects/monitoring/pingplotter-13108945.json",
     "projects/monitoring/plixer-flowpro-75c97df2.json",
@@ -411,7 +411,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/99 global researched (3 baseline +96 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/102 global researched (3 baseline +99 assigned)/0 untranslated labels; structure/references only"
     }
   ],
   "checkpoints": [
@@ -569,6 +569,11 @@
       "commit": "a7d6a7b",
       "completed_count": 93,
       "scope": "Softr, Thunkable, Twixl; no-code retained scope fully investigated; pushed"
+    },
+    {
+      "commit": "5d6a5e5",
+      "completed_count": 96,
+      "scope": "Auvik, Azure Network Watcher, Mackerel; IntelliMagic/LiveNX gaps; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
@@ -583,7 +588,7 @@
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
     "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
     "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps.",
-    "monitoring": "3 of16 retained complete; IntelliMagic/LiveNX incomplete;11 remaining under investigation."
+    "monitoring": "6 of16 retained complete; IntelliMagic, LiveNX and Panopta incomplete;7 remaining under investigation."
   },
   "identity_changes": [
     {
@@ -804,6 +809,10 @@
     {
       "project_path": "projects/monitoring/livenx-0f555bbe.json",
       "reason": "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete."
+    },
+    {
+      "project_path": "projects/monitoring/panopta-5788d04c.json",
+      "reason": "The assigned Panopta homepage redirects to Fortinet FortiMonitor. Actual FortiMonitor product body was read, but its official FortiCloud purchase/licensing documentation returned403; no retry or bypass. Public demo marketing and search excerpts do not establish current fees, complete technical operation or a sustained-free entitlement. The legacy candidate remains incomplete; no shutdown inference or new-domain approval was fabricated."
     }
   ],
   "availability_updates": [
@@ -1275,10 +1284,17 @@
       "excerpt_sha256": "cef26e9baafefa8f49d044637369ab4b2fd057c0c55bf41d71d79dc1b3ec2429",
       "read_at": "2026-10-22T15:19:09.138238+00:00",
       "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
+    },
+    {
+      "capture": "panopta-current-body-0",
+      "actual_url": "https://www.fortinet.com/products/fortimonitor",
+      "excerpt_sha256": "f66a98441642ac5cbb737e7166711f1b5bb52701ae382827cb6bad8f2288a8e2",
+      "read_at": "2026-10-22T15:20:44.889220+00:00",
+      "use": "Actual official destination body read for incomplete Panopta identity/fees/docs record; no product test."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 44,
+  "retained_remaining_count": 41,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -1300,9 +1316,6 @@
     "projects/ide/eclipse-che-06fa6676.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
-    "projects/monitoring/manageengine-oputils-072c08c2.json",
-    "projects/monitoring/netify-3befc7dc.json",
-    "projects/monitoring/pandora-fms-d5ecb72a.json",
     "projects/monitoring/panopta-5788d04c.json",
     "projects/monitoring/pingplotter-13108945.json",
     "projects/monitoring/plixer-flowpro-75c97df2.json",

@@ -10,126 +10,97 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "ManageEngine OpUtils is a product in the Network monitoring category. Its directory profile covers Uptime Monitoring, Server Monitoring, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools, Bandwidth Monitoring.\n\nDeployment is listed as Mobile App (Android, iOS) Desktop App (Windows). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $345.00. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: check whether selected services respond as expected; track selected server status and resource signals. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "ManageEngine OpUtils 属于网络监控软件。第三方资料列出的功能包括可用性监测、服务器监控、IP 地址监测、互联网使用监测、诊断工具、带宽监测。\n\n资料所列运行方式为移动应用 (Android, iOS) 桌面应用 (Windows)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $345.00. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：检查指定服务是否按预期响应；跟踪服务器状态及资源使用信号。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "ManageEngine OpUtils manages IP addresses and switch ports, with current editions extending into DNS and DHCP management. Its documented workflows include subnet discovery, scheduled scanning, role-scoped access and database backup/migration.\n\nA pilot should establish both observation and control boundaries. Adding a subnet may initiate scanning, operators have different rights from administrators, and a migration depends on build compatibility and separate license files. Use an authorized small test range before trusting inventory or planning a production move.",
+  "description_zh": "ManageEngine OpUtils 管理 IP 地址和交换机端口，当前方案还扩展到 DNS、DHCP。文档流程涵盖子网发现、计划扫描、按角色限制范围及数据库备份／迁移。\n\n试点应同时明确观察和控制边界：添加子网可能启动扫描，Operator 与 Administrator 权限不同，迁移则依赖 build 兼容及独立许可文件。应先使用获准的小型测试地址段，再判断清单或规划生产迁移。",
   "core_features": [
     {
-      "name_en": "Uptime Monitoring",
-      "name_zh": "可用性监测",
-      "explanation_en": "Check whether selected services respond as expected.",
-      "explanation_zh": "检查指定服务是否按预期响应。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Scoped operator access",
+      "name_zh": "限制范围的运行访问",
+      "explanation_en": "Operator is read-only; module and tree-group scopes can narrow user access.",
+      "explanation_zh": "Operator 为只读，可按模块及树分组缩小用户访问范围。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Server Monitoring",
-      "name_zh": "服务器监控",
-      "explanation_en": "Track selected server status and resource signals.",
-      "explanation_zh": "跟踪服务器状态及资源使用信号。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Subnet scan configuration",
+      "name_zh": "子网扫描配置",
+      "explanation_en": "Choose ICMP, SNMP, DNS and WMI collection options and configure scheduled scans.",
+      "explanation_zh": "选择 ICMP、SNMP、DNS 和 WMI 采集选项，并配置计划扫描。",
+      "explanation_scope": "product_specific",
+      "source_ref": "subnets",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "IP Address Monitoring",
-      "name_zh": "IP 地址监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Internet Usage Monitoring",
-      "name_zh": "互联网使用监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Diagnostic Tools",
-      "name_zh": "诊断工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Bandwidth Monitoring",
-      "name_zh": "带宽监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Password-protected database recovery",
+      "name_zh": "密码保护的数据库恢复",
+      "explanation_en": "BackupDB/RestoreDB workflows require the retained backup password and version-appropriate files.",
+      "explanation_zh": "BackupDB／RestoreDB 流程需要保留备份密码及版本匹配文件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Check whether selected services respond as expected",
-      "Track selected server status and resource signals"
+      "Evaluate a small authorized subnet and compare discovery results with known devices.",
+      "Rehearse a same-build migration using disposable database content."
     ],
-    "zh": ["检查指定服务是否按预期响应", "跟踪服务器状态及资源使用信号"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "评估获准小子网，将发现结果与已知设备比较。",
+      "使用可丢弃数据库内容演练相同 build 迁移。"
+    ],
+    "source_refs": ["subnets", "migration"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $345.00. Offers Free-forever plan.",
-      "zh": "提供免费试用 起价为 $345.00. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Mobile App (Android, iOS) Desktop App (Windows)",
-      "zh": "移动应用 (Android, iOS) 桌面应用 (Windows)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Network administrators", "IP address management teams"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a test range and probe types, confirm device prerequisites and restrict operator scope.",
+        "zh": "选择测试地址段及探测类型，核对设备前提并限制 Operator 范围。",
+        "source_refs": ["subnets", "prerequisites", "home"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Create a separate recovery backup, retain its password and verify build/format compatibility before migration.",
+        "zh": "建立独立恢复备份、保留密码，迁移前核对 build／格式兼容。",
+        "source_refs": ["backup", "migration"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Upgrade-generated backups are explicitly excluded from restoration.",
+        "zh": "升级生成备份明确不支持恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A scan and a network-changing action require different access decisions.",
+        "zh": "扫描与改变网络的动作需要分别决定授权。",
+        "source_refs": ["home", "subnets"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -141,37 +112,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $345.00. Offers Free-forever plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $345.00. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:24:18.073859Z",
+    "normalized_monthly_price": null,
+    "summary_en": "The homepage documents Free plus Professional/Management paid editions, licensed by managed IP/port counts with subscription/perpetual options. Displayed $138/$159 starting figures lack a reliable term mapping in the read output, so no monthly rate is normalized. User packs, add-ons and final quote remain separate.",
+    "summary_zh": "首页记录 Free 及 Professional／Management 付费版，按托管 IP／端口数量许可，并有订阅／永久选项。展示的 $138／$159 起价无法可靠对应期限，因此未标准化月价。用户包、附加项及最终报价另行核对。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does ManageEngine OpUtils do?",
-      "question_zh": "ManageEngine OpUtils 用来做什么？",
-      "answer_en": "ManageEngine OpUtils is a product in the Network monitoring category. Its directory profile covers Uptime Monitoring, Server Monitoring, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools, Bandwidth Monitoring.",
-      "answer_zh": "ManageEngine OpUtils 属于网络监控软件。第三方资料列出的功能包括可用性监测、服务器监控、IP 地址监测、互联网使用监测、诊断工具、带宽监测。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Uptime Monitoring, Server Monitoring, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools, Bandwidth Monitoring",
-      "answer_zh": "可用性监测、服务器监控、IP 地址监测、互联网使用监测、诊断工具、带宽监测"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -181,25 +136,186 @@
       "read_at": "2026-10-22T08:42:34.808Z",
       "excerpt_sha256": "db11f405b6acda964ac3cb160f790d0dfba9991a48b9220faff5cf91ac640a55",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "ManageEngine OpUtils",
+      "title": "User Management Add Modify Delete User | ManageEngine OpUtils | Help Guide",
+      "url": "https://www.manageengine.com/products/oputils/help/user-management-add-modify-delete-user.html",
+      "read_at": "2026-10-22T15:24:18.073859Z",
+      "excerpt_sha256": "bd2e0c751b21b1e90c83963b74cfe2bbb145888565676b88555c29f931db1e1c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read documented operations, admin/operator/custom roles and scope controls."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ManageEngine OpUtils",
+      "title": "IP Address & Switch Port Management Software | OpUtils",
+      "url": "https://www.manageengine.com/products/oputils/",
+      "read_at": "2026-10-22T15:19:12.838246Z",
+      "excerpt_sha256": "f8bb15b5c777825a453a1c47e6444b9f199bbea0d06343dcb9932278a48e1b9e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual homepage edition prices/free scope and subscription/perpetual choices; billing-toggle amount mapping unresolved."
+    },
+    {
+      "id": "prerequisites",
+      "type": "official_documentation",
+      "site": "ManageEngine OpUtils",
+      "title": "ManageEngine OpUtils Prerequisites | Getting started with monitoring",
+      "url": "https://www.manageengine.com/products/oputils/help/getting_started/prequisites.html",
+      "read_at": "2026-10-22T15:21:22.901346Z",
+      "excerpt_sha256": "1be448381f769a757c8dcf76f27ce7f618f9c60b505a8d30e01c993a942a7e28",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read tool-specific SNMP and required MIB prerequisites."
+    },
+    {
+      "id": "subnets",
+      "type": "official_documentation",
+      "site": "ManageEngine OpUtils",
+      "title": "Address Monitoring Utilities| DNS Resolver Tool|MAC Address Resolver Tool|Mac Address Scan |IP Address Manager| ManageEngine OpUtils |Help Guide",
+      "url": "https://www.manageengine.com/products/oputils/help/adding-subnets.html",
+      "read_at": "2026-10-22T15:24:47.852605Z",
+      "excerpt_sha256": "771305a4994cef843405604a34c27428fa71b2301438f29f9d2e4d3d0d0eba43",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read discovered-subnet approval, manual add scanning and import scan options."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "ManageEngine OpUtils",
+      "title": "Database Backup and Restore | ManageEngine OpUtils | Help Guide",
+      "url": "https://www.manageengine.com/products/oputils/help/database-backup-and-restore.html",
+      "read_at": "2026-10-22T15:24:47.852265Z",
+      "excerpt_sha256": "9c329dbaba20aba5a2f3d7df5a770f8fc6be4ab61491c02276541225feb6589f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read password-managed database backups, version12.8.510 format change and upgrade-backup exclusion."
+    },
+    {
+      "id": "migration",
+      "type": "official_documentation",
+      "site": "ManageEngine OpUtils",
+      "title": "Server migration | OpUtils help",
+      "url": "https://www.manageengine.com/products/oputils/help/server-migration.html",
+      "read_at": "2026-10-22T15:24:47.852739Z",
+      "excerpt_sha256": "39cb9734f243f165c7fba4827ccffba2302d79feb9cafe98d83cb33647975e5d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read matching-build target requirement and license-file migration."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:24:47.852739Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "prerequisites"],
+  "profile": {
+    "sections": [
+      {
+        "id": "discovery",
+        "title_en": "Adding a range can start active scanning",
+        "title_zh": "添加地址段可能开始主动扫描",
+        "en": "Router-discovered subnets need review and approval before scanning, while manually adding a subnet initiates a scan. CSV import has a separate scan option. Review the exact input path and selected ICMP/SNMP/DNS/WMI probes before adding a real range; importing inventory is not always a passive operation.",
+        "zh": "路由器发现的子网需审核批准后扫描，手动添加则会启动扫描，CSV 导入另有扫描选项。添加真实地址段前，应检查具体输入路径和 ICMP／SNMP／DNS／WMI 选择，导入清单并非始终被动操作。",
+        "source_refs": ["subnets"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "requirements",
+        "title_en": "Map prerequisites to each tool",
+        "title_zh": "逐工具核对前提",
+        "en": "The prerequisite matrix distinguishes tools that need SNMP/MIB support from ping or DNS utilities that do not. Switch Port Mapper lists bridge-related MIB requirements. Validate the target device and credentials for the chosen tool rather than assuming a successful ping proves port mapping or device detail collection will work.",
+        "zh": "前提矩阵区分需要 SNMP／MIB 的工具与不需要的 ping、DNS 工具。Switch Port Mapper 列有桥接相关 MIB 要求，应核对目标设备及凭据。ping 成功不能证明端口映射或设备详情采集可用。",
+        "source_refs": ["prerequisites"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "roles",
+        "title_en": "Separate viewing from network-changing actions",
+        "title_zh": "区分查看与改变网络的动作",
+        "en": "Administrators can configure devices, alerts and scans; Operators cannot initiate scans or add/delete devices. Port enable/disable and rogue-device blocking are administrative actions. The user guide also offers module/tree-group scope. Test a limited operator’s visible ranges and denied actions before granting a broader role.",
+        "zh": "Administrator 可配置设备、告警及扫描，Operator 不能发起扫描或增删设备。端口启停、可疑设备阻断属于管理动作。用户指南也提供模块／树分组范围，应先测试受限 Operator 可见地址段及被拒操作，再授予更广角色。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backup",
+        "title_en": "Keep a restorable backup and its password",
+        "title_zh": "保留可恢复备份及密码",
+        "en": "The database backup guide says backup passwords are not stored by the utility. From12.8.510 the supported archive changes from ZIP to7z; restore requires the password. It explicitly excludes backups taken during upgrade from restoration. Maintain an independent recovery backup and verify it on a disposable installation.",
+        "zh": "数据库备份指南说明工具不存储备份密码。从 12.8.510 起支持格式由 ZIP 改为 7z，恢复需密码；指南明确升级过程产生的备份不可恢复。应另保留独立恢复备份，并在可丢弃安装中验证。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migration",
+        "title_en": "Match the target build and preserve licensing",
+        "title_zh": "匹配目标 build 并保留许可",
+        "en": "The server migration guide requires installing the same build on the destination, confirming startup and stopping it before restoration. License-related files are copied separately. Its older ZIP examples must be read alongside the newer backup-format guide; do not assume arbitrary newer builds can restore an older archive without a documented path.",
+        "zh": "服务器迁移指南要求目标端安装相同 build，确认启动后在恢复前停止服务，许可相关文件另行复制。旧 ZIP 示例需结合较新备份格式指南理解，不能假定任意新版均可直接恢复旧存档。",
+        "source_refs": ["migration", "backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editions",
+        "title_en": "Keep edition, counts and license term together",
+        "title_zh": "同时核对版本、数量及许可期限",
+        "en": "The homepage lists Free for one class-C subnet and switch, Professional at $138 for250 IPs/ports, and Management at $159 for250 IPs/ports. It exposes subscription/perpetual selection, but the read output does not reliably bind each displayed amount to a term. Obtain the selected edition’s actual quote and user/add-on scope.",
+        "zh": "首页列 Free 用于一个 C 类子网及交换机，Professional 为 250 IP／端口 $138，Management 为 250 IP／端口 $159。页面有订阅／永久许可选择，但读取结果无法可靠将金额绑定到期限。需取得所选版本真实报价，核对用户及附加项。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ManageEngine OpUtils: setup, operating limits and pricing",
+    "title_zh": "ManageEngine OpUtils：设置、运行边界及费用",
+    "description_en": "ManageEngine OpUtils manages IP addresses and switch ports, with current editions extending into DNS and DHCP management. Its documented workflows include subnet discover",
+    "description_zh": "ManageEngine OpUtils 管理 IP 地址和交换机端口，当前方案还扩展到 DNS、DHCP。文档流程涵盖子网发现、计划扫描、按角色限制范围及数据库备份／迁移。",
+    "search_intent_en": "Evaluate ManageEngine OpUtils for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 ManageEngine OpUtils。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, scan, device control, credentials, backup/restore, migration or purchase was executed.",
+      "zh": "未执行安装、扫描、设备控制、凭据、备份／恢复、迁移或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full license, selected billing period, current custom-role behavior, DDI write paths and tested recovery remain unverified.",
+      "zh": "完整许可、所选计费周期、当前自定义角色行为、DDI 写入路径及实际恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
