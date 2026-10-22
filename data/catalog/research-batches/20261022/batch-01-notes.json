@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T13:57:16.487077+00:00",
+  "updated_at": "2026-10-22T14:08:50.911598+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 69,
+  "completed_count": 72,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -74,9 +74,12 @@
     "projects/databases/quintadb-97c5a126.json",
     "projects/databases/scalegrid-ad20379c.json",
     "projects/databases/tadabase-a072eead.json",
-    "projects/databases/teable-bc129efc.json"
+    "projects/databases/teable-bc129efc.json",
+    "projects/software-testing/blazemeter-68e03014.json",
+    "projects/software-testing/cloudqa-813805b6.json",
+    "projects/software-testing/cypress-io-8ab7255e.json"
   ],
-  "remaining_count": 130,
+  "remaining_count": 127,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -96,10 +99,7 @@
     "projects/ide/eclipse-che-06fa6676.json",
     "projects/databases/faunadb-10fce5b0.json",
     "projects/databases/harperdb-cloud-7836805e.json",
-    "projects/software-testing/blazemeter-68e03014.json",
     "projects/software-testing/browserstack-1cef6efc.json",
-    "projects/software-testing/cloudqa-813805b6.json",
-    "projects/software-testing/cypress-io-8ab7255e.json",
     "projects/software-testing/kaneai-9a395c49.json",
     "projects/software-testing/katalon-studio-936c5275.json",
     "projects/software-testing/mabl-862d84c3.json",
@@ -417,6 +417,18 @@
     {
       "project": "Teable",
       "detail": "Viewer export/invite rights and Manager exemption preserved; Cloud annual display separate from self-host instance seats. Actual open-source license not read."
+    },
+    {
+      "project": "BlazeMeter",
+      "detail": "Debug mode omits pass/fail; criteria limited to first100. Secrets guide contains contradictory production wording; no production credential advice adopted."
+    },
+    {
+      "project": "CloudQA",
+      "detail": "Current plan browser table conflicts with IE-era FAQ/guide. Free local versus cloud fair use/concurrency/separate licenses kept distinct."
+    },
+    {
+      "project": "Cypress",
+      "detail": "Query retry versus test rerun, IndexedDB persistence, origin boundaries and Modified baseline context distinguished; actual license unread."
     }
   ],
   "verification": [
@@ -426,11 +438,11 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/72 global researched (3 baseline +69 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/75 global researched (3 baseline +72 assigned)/0 untranslated labels; structure/references only"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
-      "result": "passed; ownership checked; temporary node_modules symlink removed before commit; no services/database/deployment"
+      "result": "passed; ownership checked; node_modules symlink removed before commit; no services/database/deployment"
     }
   ],
   "checkpoints": [
@@ -538,18 +550,24 @@
       "commit": "225eb90",
       "completed_count": 64,
       "scope": "IRIS, MySQL and Oracle edition, migration and recovery boundaries; pushed"
+    },
+    {
+      "commit": "b60ed98",
+      "completed_count": 69,
+      "scope": "Remaining available database platform/access/recovery profiles; pushed assigned branch"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "software-testing assigned records",
+    "next": "Katalon Studio, mabl, Maxim, Opkey, pCloudy",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
-    "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved"
+    "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
+    "software-testing": "3 of 19 complete; 5 investigated; BrowserStack pricing inaccessible, KaneAI subproduct identity conflicts with existing TestMu AI platform record"
   },
   "identity_changes": [
     {
@@ -688,6 +706,14 @@
     {
       "project_path": "projects/databases/harperdb-cloud-7836805e.json",
       "reason": "Official harperdb.io homepage redirects to harper.fast, now Harper application/data runtime and Fabric. Current pricing on harper.fast and actual installation documentation on docs.harperdb.io were read. The current home/pricing and essential docs cross registered domains, which the same-domain source rule cannot encode without changing shared authority/schema. No false URLs or validator edits. The installation docs distinguish harper from Elastic2.0 pro/Fabric, and development samples/default credentials are not production acceptance. Current complete profile remains pending authority support."
+    },
+    {
+      "project_path": "projects/software-testing/browserstack-1cef6efc.json",
+      "reason": "Official home, documentation index and the Local Testing architecture page were read. The pricing root timed out twice; a discovered official product/annual pricing URL exceeded the web reader size limit, and a normal public HTTP read also timed out. No usable actual pricing body or free-use grant was established; snippets are discovery only, and no price is adopted."
+    },
+    {
+      "project_path": "projects/software-testing/kaneai-9a395c49.json",
+      "reason": "The legacy lambdatest.com/kane-ai and pricing routes explicitly redirect to testmuai.com. This batch already contains a TestMu AI platform record with identity_domain testmuai.com; the shared schema requires unique registered domains and same-domain official sources. Completing this KaneAI subproduct record would either duplicate identity or require false legacy URLs. Neither was done; the coordinator must resolve product-versus-platform identity support."
     }
   ],
   "availability_updates": [
@@ -872,6 +898,76 @@
       "excerpt_sha256": "7ced4bc3e30ab0a8384828f65d5a35cbc15d397bb1c3bf040ad442e1ab062a6f",
       "read_at": "2026-10-22T13:09:15.242729+00:00",
       "use": "Actual official read; current home/pricing and necessary documentation cross registered-domain authority boundary. Record incomplete, no URL rewriting."
+    },
+    {
+      "capture": "browserstack-entry-0",
+      "actual_url": "https://www.browserstack.com/",
+      "excerpt_sha256": "67e92b70dad99317dbf300c1047c470dff8d5c85528361ae605a019874a28fba",
+      "read_at": "2026-10-22T13:58:18.156243+00:00",
+      "use": "Actual public original read for incomplete BrowserStack record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "browserstack-entry-2",
+      "actual_url": "https://www.browserstack.com/docs/",
+      "excerpt_sha256": "452e4a49ab823e10d4a5e460f1dd05f3ed3c72a1f0a8f3fa2ef30c0f7aff0b2f",
+      "read_at": "2026-10-22T13:58:18.156914+00:00",
+      "use": "Actual public original read for incomplete BrowserStack record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "browserstack-guides-0",
+      "actual_url": "https://www.browserstack.com/docs/local-testing/how-local-testing-works",
+      "excerpt_sha256": "a316833dd00812165fa2a66bcc8de547853f0c23055d99bff441559478f3ab50",
+      "read_at": "2026-10-22T14:00:42.268561+00:00",
+      "use": "Actual public original read for incomplete BrowserStack record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-entry-0",
+      "actual_url": "https://www.testmuai.com/kane-ai/",
+      "excerpt_sha256": "c24cbabb925a2a0bc0941398a5dd83617288ac97d7847273160b30b9baed4851",
+      "read_at": "2026-10-22T13:58:16.395211+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-entry-1",
+      "actual_url": "https://www.testmuai.com/pricing/",
+      "excerpt_sha256": "3f2a6df68eae7cd5c3a344089a63e08a7947f9b880eed7a1c1be7179356a57ba",
+      "read_at": "2026-10-22T13:58:16.395465+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-core-0",
+      "actual_url": "https://www.testmuai.com/support/docs/kaneai-authoring-session/",
+      "excerpt_sha256": "7115627491fe6ca96556ec3bf06b865699d073ac706ba7bf93cdde172f0957fb",
+      "read_at": "2026-10-22T13:59:25.597295+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-core-1",
+      "actual_url": "https://www.testmuai.com/support/docs/credits-management/",
+      "excerpt_sha256": "7fa106d5fd6346ef47c1b37ce23ff17d438de90a8dbe6fb54fa3977b548ed63e",
+      "read_at": "2026-10-22T13:59:25.597566+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-core-2",
+      "actual_url": "https://www.testmuai.com/support/docs/kaneai-faqs/",
+      "excerpt_sha256": "673d77e399c56c6a9f17dfb5d25999f079fde4f56a039c4fdb31e8b0c7b83982",
+      "read_at": "2026-10-22T13:59:25.597709+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-run-code-0",
+      "actual_url": "https://www.testmuai.com/support/docs/kane-ai-automation-code-generation/",
+      "excerpt_sha256": "b59e42a53ff6a9abefb61b2a7fe687a54d3f5da865423c001c397fa75b5253d8",
+      "read_at": "2026-10-22T14:00:41.148710+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "kane-run-code-1",
+      "actual_url": "https://www.testmuai.com/support/docs/kaneai-test-run-instance-view/",
+      "excerpt_sha256": "9acd9b619c414544fd1fab50e6bf55a3474eec8e7d48fcd8c74df27045b98f2c",
+      "read_at": "2026-10-22T14:00:41.148845+00:00",
+      "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
     }
   ]
 }
