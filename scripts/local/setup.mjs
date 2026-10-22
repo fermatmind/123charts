@@ -124,6 +124,12 @@ const seed = spawnSync("npx", ["tsx", "scripts/local/seed-discovery.ts"], {
   stdio: "inherit",
 });
 if (seed.status) process.exit(seed.status);
+const navigationFacts = spawnSync(
+  "npx",
+  ["tsx", "scripts/local/refine-navigation-data.ts"],
+  { stdio: "inherit" },
+);
+if (navigationFacts.status) process.exit(navigationFacts.status);
 console.log(
   "Ready. Run npm run dev:local. Test credentials: .local/accounts.json. Mail inbox: http://127.0.0.1:54324",
 );

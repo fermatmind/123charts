@@ -1,5 +1,6 @@
 "use client";
 import { ChartsProvider, Empty } from "./context";
+import { FavoritesArea } from "./navigation-ui";
 import { ZoneFrame } from "./site-shell";
 import type { Bootstrap, Dataset, Locale } from "@/lib/charts/types";
 import {
@@ -21,6 +22,10 @@ export default function PublicApp(props: ZoneProps) {
   const [first, slug] = props.path;
   let view: React.ReactNode = !first ? (
     <DiscoveryHome />
+  ) : first === "following" ? (
+    <div className="navigation-home">
+      <FavoritesArea manage />
+    </div>
   ) : first === "products" ? (
     <DiscoveryDetail slug={slug} />
   ) : first === "categories" ? (

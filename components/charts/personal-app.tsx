@@ -1,5 +1,6 @@
 "use client";
 import { ChartsProvider, useCharts } from "./context";
+import { FavoritesArea } from "./navigation-ui";
 import { ZoneFrame } from "./site-shell";
 import type { ZoneProps } from "./public-app";
 import { DiscoveryDashboard, DiscoveryFollowing } from "./discovery-workspace";
@@ -38,6 +39,10 @@ export default function PersonalApp(props: ZoneProps) {
       <DiscoverySubmit />
     ) : first === "reports" || section === "reports" ? (
       <DiscoveryReport id={id || section} />
+    ) : section === "bookmarks" ? (
+      <div className="navigation-home">
+        <FavoritesArea manage />
+      </div>
     ) : first === "following" ||
       ["bookmarks", "following"].includes(section) ? (
       <DiscoveryFollowing

@@ -7,8 +7,16 @@ import {
   useState,
 } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useBrowserFavorites } from "./browser-favorites";
 import type { Bootstrap, Dataset, Locale } from "@/lib/charts/types";
 interface ChartsContext {
+  favoriteIds: string[];
+  favoritesReady: boolean;
+  toggleFavorite: (id: string) => Promise<void>;
+  moveFavorite: (id: string, direction: -1 | 1) => void;
+  favoriteSync: string;
+  favoriteStorageError: boolean;
+  retryFavoriteSync: () => void;
   data: Bootstrap;
   locale: Locale;
   dataset: Dataset;
@@ -103,6 +111,13 @@ export function ChartsProvider({
     },
     [refresh, router, locale],
   );
+  const favorites = useBrowserFavorites(
+    data,
+    dataset,
+    api,
+    setMessage,
+    locale === "zh",
+  );
   const poll = data.jobs.some(
     (j) =>
       j.kind === "metadata" && (j.state === "pending" || j.state === "running"),
@@ -119,6 +134,7 @@ export function ChartsProvider({
   return (
     <Context.Provider
       value={{
+        ...favorites,
         data,
         locale,
         dataset,

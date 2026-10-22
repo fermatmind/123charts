@@ -1,6 +1,6 @@
 # 123Charts Local V1
 
-The sole product and architecture authority is `123Charts_Website_Framework_V1_20261021.md` in this repository root. Other plans and operating documents are historical implementation references and cannot override it.
+The sole product and architecture authority is `123Charts_Website_Framework_V1_20261021.md` in this repository root. Public navigation and interaction are updated by the user-authorized `docs/123Charts_Navigation_Interaction_Spec_20261022.md`; the root document remains the business-state authority. Other historical plans cannot override these.
 
 - Local only: preserve this repository and Git history. No GitHub writes, push, DNS, deployment or production database access in this delivery.
 - Website facts, tasks, conditions and reviewed alternatives drive discovery. Use one canonical project record across pages, comparison lists and cards.

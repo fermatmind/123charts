@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Search, X, UserRound, ArrowRight } from "lucide-react";
+import { UnifiedSearch } from "./navigation-ui";
 import { useCharts, Avatar } from "./context";
 export type Zone = "public" | "dashboard" | "admin";
 export function ZoneFrame({
@@ -16,8 +17,7 @@ export function ZoneFrame({
   const { data, t, href, locale, dataset } = useCharts(),
     pathname = usePathname(),
     params = useSearchParams();
-  const [open, setOpen] = useState(false),
-    [q, setQ] = useState("");
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -52,15 +52,12 @@ export function ZoneFrame({
           <span className="brand-mark">123</span>123Charts
         </Link>
         <nav className="topnav">
-          <Link href={href("/categories")}>
-            {t("Category charts", "分类榜单")}
-          </Link>
+          <Link href={href("/categories")}>{t("Categories", "全部分类")}</Link>
           <Link href={href("/alternatives")}>
-            {t("Alternatives", "找替代方案")}
+            {t("Alternatives", "找替代")}
           </Link>
-          <Link href={href("/free")}>{t("Free", "免费可用")}</Link>
-          <Link href={href("/open-source")}>
-            {t("Open source", "开源发现")}
+          <Link href={href(data.user ? "/dashboard/bookmarks" : "/following")}>
+            {t("My favorites", "我的常用")}
           </Link>
         </nav>
         <div className="top-actions">
@@ -201,61 +198,7 @@ export function ZoneFrame({
                 "名称、域名、用途与分类。",
               )}
             </Dialog.Description>
-            <input
-              aria-label={t("Search query", "搜索关键词")}
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              autoFocus
-            />
-            {data.categories
-              .filter((c) =>
-                (c.name_en + c.name_zh).toLowerCase().includes(q.toLowerCase()),
-              )
-              .map((c) => (
-                <Link
-                  className="search-result"
-                  key={c.slug}
-                  href={href("/categories/" + c.slug)}
-                  onClick={() => setOpen(false)}
-                >
-                  {locale === "zh" ? c.name_zh : c.name_en}
-                  <ArrowRight size={14} />
-                </Link>
-              ))}
-            {data.projects
-              .filter((p) =>
-                (
-                  p.name +
-                  p.domain +
-                  p.task +
-                  p.description_en +
-                  p.description_zh
-                )
-                  .toLowerCase()
-                  .includes(q.toLowerCase()),
-              )
-              .slice(0, 8)
-              .map((p) => (
-                <Link
-                  className="search-result"
-                  key={p.id}
-                  href={href("/products/" + p.slug)}
-                  onClick={() => setOpen(false)}
-                >
-                  <Avatar name={p.name} />
-                  <span>
-                    {p.name}
-                    <small className="muted"> {p.domain}</small>
-                  </span>
-                </Link>
-              ))}
-            <Link
-              className="button"
-              href={href("/search?q=" + encodeURIComponent(q))}
-              onClick={() => setOpen(false)}
-            >
-              {t("All search results", "查看全部搜索结果")} →
-            </Link>
+            <UnifiedSearch dialog onChoose={() => setOpen(false)} />
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>

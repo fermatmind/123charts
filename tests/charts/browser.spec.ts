@@ -25,104 +25,6 @@ async function signIn(page: any, role: string) {
     page.getByRole("heading", { name: "Your project, discovered." }),
   ).toBeVisible();
 }
-test("task-first discovery, keyboard search, alternatives, free conditions and mobile bilingual filters", async ({
-  page,
-}) => {
-  const errors: string[] = [];
-  page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/en?dataset=real");
-  await expect(
-    page.getByRole("heading", { name: /Find a website that fits/ }),
-  ).toBeVisible();
-  await page.screenshot({
-    path: "output/playwright/discovery-desktop.png",
-    fullPage: true,
-  });
-  await page.keyboard.press("Meta+k");
-  await expect(page.getByRole("dialog")).toBeVisible();
-  await page.getByLabel("Search query").fill("Cursor");
-  await page
-    .getByRole("dialog")
-    .getByRole("link", { name: /Cursor/ })
-    .click();
-  await expect(
-    page.getByRole("heading", { name: "Cursor", exact: true }),
-  ).toBeVisible();
-  await page.goto("/en/alternatives/zapier?dataset=real");
-  await expect(
-    page.getByRole("heading", { name: "Alternatives to Zapier" }),
-  ).toBeVisible();
-  await expect(
-    page.locator(".discovery-identity").filter({ hasText: "n8n" }),
-  ).toBeVisible();
-  await page.screenshot({
-    path: "output/playwright/alternatives-desktop.png",
-    fullPage: true,
-  });
-  await page.goto("/en/free?dataset=real");
-  await expect(
-    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
-  ).toBeVisible();
-  await expect(
-    page.locator(".discovery-identity").filter({ hasText: "n8n" }),
-  ).toHaveCount(0);
-  await page
-    .getByRole("checkbox", { name: "Open source", exact: true })
-    .check();
-  await expect(
-    page.locator(".discovery-identity").filter({ hasText: "Node-RED" }),
-  ).toBeVisible();
-  await expect(
-    page.locator(".discovery-identity").filter({ hasText: "Zapier" }),
-  ).toHaveCount(0);
-  await page.getByRole("link", { name: "中", exact: true }).click();
-  await expect(page).toHaveURL(/\/zh\/free/);
-  expect(new URL(page.url()).searchParams.get("oss")).toBe("1");
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/zh?dataset=real");
-  await expect(page.getByRole("heading", { name: /发现好网站/ })).toBeVisible();
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await page.screenshot({
-    path: "output/playwright/discovery-mobile.png",
-    fullPage: true,
-  });
-  await page.goto(
-    "/zh/categories/workflow-automation?dataset=real&price=freemium",
-  );
-  await expect(
-    page.getByRole("heading", { name: "工作流自动化", exact: true }),
-  ).toBeVisible();
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await expect(page.locator(".zone-sidebar")).toHaveCount(0);
-  const views = page.getByRole("navigation", { name: "分类视图" });
-  for (const label of ["发现推荐", "新收录", "免费可用", "找替代方案"]) {
-    await views.getByRole("link", { name: label, exact: true }).click();
-    await expect(
-      views.getByRole("link", { name: label, exact: true }),
-    ).toHaveClass(/active/);
-  }
-  await page.screenshot({
-    path: "output/playwright/category-mobile.png",
-    fullPage: true,
-  });
-  await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto("/zh/categories/workflow-automation?dataset=real");
-  await page.screenshot({
-    path: "output/playwright/category-desktop.png",
-    fullPage: true,
-  });
-  await page.goto("/en/dashboard/projects?dataset=demo");
-  await expect(page).toHaveURL(/\/en\/login\?returnTo=/);
-  expect(errors).toEqual([]);
-});
 test("browser draft recovery, three peers, review, shared comparison and factual card", async ({
   page,
   browser,
@@ -210,16 +112,28 @@ test("browser draft recovery, three peers, review, shared comparison and factual
         name: "Pricing conditions independently checked",
       })
       .check();
+    const decision = staff.waitForResponse((r) =>
+      r.url().includes(`/api/v1/reviews/${appId}/decision`),
+    );
     await card
       .getByRole("button", { name: "Approve listing", exact: true })
       .click();
-    await expect(card.locator(".status").filter({ hasText: "Approved" }))
-      .toBeVisible()
-      .catch(async () => {
-        await expect(
-          card.getByRole("button", { name: "Approve listing", exact: true }),
-        ).toHaveCount(0);
-      });
+    expect((await decision).status()).toBe(200);
+    await expect
+      .poll(async () => {
+        const { data } = await db
+          .from("charts_applications")
+          .select("status")
+          .eq("id", appId!)
+          .single();
+        return data?.status;
+      })
+      .toBe("approved");
+    await expect(
+      card
+        .locator(":scope > .row > .tag.verified")
+        .filter({ hasText: "Approved" }),
+    ).toBeVisible();
     const { data: app } = await db
       .from("charts_applications")
       .select("project_id")
@@ -266,6 +180,18 @@ test("browser draft recovery, three peers, review, shared comparison and factual
   } finally {
     await adminCtx.close();
     if (appId) {
+      await db
+        .from("charts_notifications")
+        .delete()
+        .eq("dedupe_key", "approved:" + appId);
+      if (!pid) {
+        const { data: saved } = await db
+          .from("charts_applications")
+          .select("project_id")
+          .eq("id", appId)
+          .maybeSingle();
+        pid = saved?.project_id;
+      }
       for (const table of ["charts_reports", "charts_relations"])
         await db.from(table).delete().eq("application_id", appId);
       await db.from("charts_applications").delete().eq("id", appId);

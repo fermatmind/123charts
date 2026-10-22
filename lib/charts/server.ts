@@ -130,7 +130,11 @@ export async function bootstrap(
   if (zone === "public") {
     if (user)
       result.follows = checked(
-        await db.from("charts_follows").select("*").eq("owner_id", user.id),
+        await db
+          .from("charts_follows")
+          .select("*")
+          .eq("owner_id", user.id)
+          .order("created_at", { ascending: true }),
       );
     return result;
   }
@@ -192,7 +196,11 @@ export async function bootstrap(
     ];
   }
   result.follows = checked(
-    await db.from("charts_follows").select("*").eq("owner_id", user.id),
+    await db
+      .from("charts_follows")
+      .select("*")
+      .eq("owner_id", user.id)
+      .order("created_at", { ascending: true }),
   );
   result.notifications = checked(
     await db

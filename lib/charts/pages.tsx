@@ -73,6 +73,10 @@ async function generateMetadata({
       : category.name_en + " discovery chart";
     description = zh ? category.description_zh : category.description_en;
   }
+  if (["projects", "search"].includes(path[0]) && query.q)
+    title = zh
+      ? `“${query.q.slice(0, 150)}”的${query.intent === "alternatives" ? "替代入口" : "搜索结果"}`
+      : `${query.intent === "alternatives" ? "Alternatives" : "Results"} for “${query.q.slice(0, 150)}”`;
   const route = path.join("/");
   const canonical = `/${lang}${route ? "/" + route : ""}`;
   const local = process.env.CHARTS_LOCAL_PREVIEW !== "false";
@@ -143,9 +147,7 @@ async function Page({ params, searchParams }: Props) {
       dataset,
       ["admin"].includes(first)
         ? "admin"
-        : ["submit", "dashboard", "login", "following", "reports"].includes(
-              first,
-            )
+        : ["submit", "dashboard", "login", "reports"].includes(first)
           ? "dashboard"
           : "public",
     );
@@ -161,7 +163,7 @@ async function Page({ params, searchParams }: Props) {
   const ChartsApp =
     first === "admin"
       ? AdminApp
-      : ["dashboard", "submit", "login", "following", "reports"].includes(first)
+      : ["dashboard", "submit", "login", "reports"].includes(first)
         ? PersonalApp
         : PublicApp;
   const url = "https://123charts.com/" + lang + "/" + path.join("/");

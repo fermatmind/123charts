@@ -71,7 +71,7 @@
     "local:stop": "node scripts/local/stop.mjs",
     "worker:local": "tsx scripts/local/worker.ts",
     "test:charts": "tsx --test tests/charts/*.test.ts",
-    "test:browser": "playwright test tests/charts/browser.spec.ts",
+    "test:browser": "playwright test tests/charts/browser.spec.ts tests/charts/navigation.spec.ts",
     "db:types": "supabase gen types typescript --local > lib/charts/database.types.ts",
     "format:check": "prettier --check components/charts lib/charts scripts/local tests/charts proxy.ts",
     "test:db:charts": "bash scripts/local/test-db.sh"

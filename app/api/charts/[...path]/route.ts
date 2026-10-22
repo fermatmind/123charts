@@ -343,6 +343,18 @@ async function handle(
         typeof b.target !== "string"
       )
         throw new HttpError(400, "Invalid follow target.");
+      // Removing a personal bookmark must also work when the public project is unavailable.
+      if (b.remove) {
+        checked(
+          await db
+            .from("charts_follows")
+            .delete()
+            .eq("owner_id", u.id)
+            .eq("target", b.target)
+            .eq("kind", b.kind),
+        );
+        return NextResponse.json({ ok: true });
+      }
       if (b.kind === "category") {
         if (
           !checked(
@@ -365,30 +377,22 @@ async function handle(
         )
       )
         throw new HttpError(404, "Project not found.");
-      if (b.remove)
-        checked(
-          await db
-            .from("charts_follows")
-            .delete()
-            .eq("owner_id", u.id)
-            .eq("target", b.target)
-            .eq("kind", b.kind),
-        );
-      else {
-        checked(
-          await db.from("charts_follows").upsert({
+      checked(
+        await db
+          .from("charts_follows")
+          .upsert({
             owner_id: u.id,
             target: b.target,
             kind: b.kind,
             email_enabled: !!b.email_enabled,
           }),
-        );
+      );
+      if (b.kind !== "bookmark")
         checked(
           await db
             .from("charts_jobs")
             .insert({ kind: "digest", owner_id: u.id, payload: {} }),
         );
-      }
       return NextResponse.json({ ok: true });
     }
     if (route === "share") {
