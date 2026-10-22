@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 79,
+  "completed_count": 83,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -84,9 +84,13 @@
     "projects/website-builders/webflow-1130fb3c.json",
     "projects/website-builders/weblium-8e1fcd63.json",
     "projects/website-builders/webnode-8a8ffc8e.json",
-    "projects/website-builders/wix-53e17910.json"
+    "projects/website-builders/wix-53e17910.json",
+    "projects/content-management/blocks-edit-37c0bd0a.json",
+    "projects/content-management/blokblok-cms-pricing-reviews-and-0dd91efc.json",
+    "projects/content-management/craft-cms-d316bcbd.json",
+    "projects/content-management/quicksilk-a963a91f.json"
   ],
-  "remaining_count": 118,
+  "remaining_count": 114,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
@@ -98,12 +102,9 @@
     "projects/payroll/onpay-f1f2e940.json",
     "projects/payroll/saarhr-00234398.json",
     "projects/website-builders/web-com-3a7adaa3.json",
-    "projects/content-management/blocks-edit-37c0bd0a.json",
-    "projects/content-management/blokblok-cms-pricing-reviews-and-0dd91efc.json",
     "projects/content-management/brightspot-944edbc1.json",
     "projects/content-management/concrete5-pricing-reviews-and-d65be693.json",
     "projects/content-management/contentful-235f953c.json",
-    "projects/content-management/craft-cms-d316bcbd.json",
     "projects/content-management/django-cms-29a41b8d.json",
     "projects/content-management/drupal-8d946493.json",
     "projects/content-management/ez-platform-enterprise-edition-15a204f7.json",
@@ -113,7 +114,6 @@
     "projects/content-management/kentico-cms-bd3731b0.json",
     "projects/content-management/pangram-labs-7dd77b99.json",
     "projects/content-management/paperflite-fa3491b6.json",
-    "projects/content-management/quicksilk-a963a91f.json",
     "projects/content-management/statamic-0ff9fb1e.json",
     "projects/content-management/storychief-07ca2835.json",
     "projects/content-management/uberflip-92496ee3.json",
@@ -281,6 +281,18 @@
       "status": "profile_completed_followup_gap",
       "url": "https://www.webnode.com/support/paid-and-unpaid-services/",
       "finding_en": "Follow-up support request returned429 after successful homepage/support-index/rendered-price+FAQ reads. Origin stopped. Existing sources support the draft; detailed export/retention remain explicit gaps. Not counted as a fully blocked/uncompleted project."
+    },
+    {
+      "slug": "contentful-235f953c",
+      "status": "not_counted_complete",
+      "url": "https://www.contentful.com/",
+      "finding_en": "Official homepage read returnedHTTP429; stopped origin without bypass. Original structured record unchanged."
+    },
+    {
+      "slug": "umbraco-cms-e9bee9f1",
+      "status": "not_counted_complete",
+      "url": "https://umbraco.com/products/umbraco-cms/",
+      "finding_en": "Official homepage read returnedHTTP403; stopped origin without bypass. Original structured record unchanged."
     }
   ],
   "notable_findings": [
@@ -487,6 +499,22 @@
     {
       "slug": "wix-53e17910",
       "finding": "No reliable numeric price after inconsistent raw text and no-number browser. Standard vs Studio quotas, free-bandwidth conflict, domain voucher60days, refund exclusions and hosted dependency retained."
+    },
+    {
+      "slug": "blocks-edit-37c0bd0a",
+      "finding": "HTML theme preparation50MB/root-files/fonts, JS-disabled editing, site auto-update versus email opt-in, annual bundle rounding and per-user/per-integration costs documented."
+    },
+    {
+      "slug": "craft-cms-d316bcbd",
+      "finding": "Craft5 runtime/local install/fields, paid perpetual installed-version licensing versus update-window deployment, $99renewal and Solo client/commercial wording conflict preserved; custom source-available license not classified open source."
+    },
+    {
+      "slug": "blokblok-cms-pricing-reviews-and-0dd91efc",
+      "finding": "Clean product name BlokBlokCMS retained original slug. Custom agency-led implementation distinguished from self-service; flat pages/Menu hierarchy and scoped case evidence. Provider-domain sources preserved externally with section links."
+    },
+    {
+      "slug": "quicksilk-a963a91f",
+      "finding": "Tailored annual subscription without public numeric amount; managed/no source-code offering. Form/member/editor scopes distinct; marketing standard/security names not accepted as current audit evidence."
     }
   ],
   "validation": [
@@ -608,6 +636,16 @@
       "diff_check": "passed",
       "source_text_hashes": "277 actual read-text SHA256 matches including external primary evidence",
       "scope": "Structure/reference/provenance only; no independent editorial review or hands-on product tests."
+    },
+    {
+      "at": "2026-10-22T12:44:27.051243+00:00",
+      "completed_count": 83,
+      "python_unittest": "7 passed",
+      "records_only": "passed:1000records,86researched including3baseline",
+      "prettier": "four CMS profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "296 actual read-text SHA256 matches including vendor-linked external evidence",
+      "scope": "Structure/reference/provenance only; no independent review or hands-on product tests."
     }
   ],
   "checkpoints": [
@@ -676,6 +714,12 @@
       "completed_count": 68,
       "branch_push": "succeeded",
       "scope": "Eight website builders with pricing/portability limits. Ten vendor-linked external official sources retained with actual URL/hash and inline links."
+    },
+    {
+      "commit": "23a2763",
+      "completed_count": 79,
+      "branch_push": "succeeded",
+      "scope": "Website builders:all20attempted,19researched,Web.com403 unchanged/uncompleted."
     }
   ],
   "independent_review": false,
@@ -733,6 +777,15 @@
       "unresolved_slugs": ["web-com-3a7adaa3"],
       "status": "all_20_attempted_19_rewritten_1_access_blocker",
       "note": "Web.com403 left unchanged/uncomplete. Webnode follow-up support429 stopped after homepage/support index and rendered plan+FAQ evidence; gaps retained in completed draft."
+    },
+    {
+      "category": "content-management",
+      "assigned": 20,
+      "completed": 4,
+      "unresolved": 2,
+      "unresolved_slugs": ["contentful-235f953c", "umbraco-cms-e9bee9f1"],
+      "status": "in_progress_4_rewritten_14_pending_2_access_blockers",
+      "note": "All20primaryhomepages attempted;18returned usable text,2accessblockers. Other homepage reads remain discovery-only until deep profiles written."
     }
   ]
 }
