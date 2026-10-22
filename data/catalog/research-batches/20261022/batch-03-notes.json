@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T11:43:51.181063+00:00",
+  "updated_at": "2026-10-22T11:51:21.108802+00:00",
   "status": "in_progress",
-  "completed_count": 35,
+  "completed_count": 37,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -39,9 +39,11 @@
     "projects/marketing-automation/hey-oliver-f1f82d76.json",
     "projects/marketing-automation/influencersoft-1fcf1eb1.json",
     "projects/marketing-automation/iterable-f69b5922.json",
-    "projects/marketing-automation/klaviyo-2f8370a2.json"
+    "projects/marketing-automation/klaviyo-2f8370a2.json",
+    "projects/marketing-automation/listrak-ea8b16f2.json",
+    "projects/marketing-automation/mapp-cloud-d1b89f6d.json"
   ],
-  "remaining_count": 166,
+  "remaining_count": 164,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -50,8 +52,6 @@
     "projects/email-marketing/mailify-7607e263.json",
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
-    "projects/marketing-automation/listrak-ea8b16f2.json",
-    "projects/marketing-automation/mapp-cloud-d1b89f6d.json",
     "projects/marketing-automation/marketing-360-9ff6dc56.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
     "projects/marketing-automation/moengage-503b6470.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/listrak-ea8b16f2.json",
+  "next_project": "projects/marketing-automation/marketing-360-9ff6dc56.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -478,6 +478,50 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-04",
+      "completed_projects": 35,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: validator line 166 rejects authentic Benchmark help domain helpscoutdocs.com versus benchmarkemail.com; shared validator unchanged"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 35 drafts; own-file scope, unapproved states, accepted source/pricing types, actual excerpt hashes, references and bilingual sections. Scratch check corrected for actual local-read Delivra pricing filename."
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "checkpoint": "marketing-automation-05",
+      "completed_projects": 37,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: validator line 166 rejects authentic Benchmark help domain helpscoutdocs.com versus benchmarkemail.com; shared validator unchanged"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 37 drafts; own-file scope, unapproved states, accepted source/pricing types, actual excerpt hashes, references and bilingual sections"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -515,6 +559,11 @@
       "commit": "48a0ac0",
       "completed_count": 32,
       "scope": "EngageBay, eTrigue, GlideCampaign, Hey Oliver; corrected accepted official source types in Encharge"
+    },
+    {
+      "commit": "26f6492",
+      "completed_count": 35,
+      "scope": "InfluencerSoft, Iterable, Klaviyo; preserves legacy-offer, real-test and re-entry rollout caveats"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -533,7 +582,7 @@
     },
     "marketing-automation": {
       "assigned": 27,
-      "completed": 14,
+      "completed": 16,
       "uncompleted_with_source_gaps": 1,
       "status": "in_progress"
     }
@@ -570,6 +619,14 @@
     {
       "project": "klaviyo-2f8370a2",
       "note": "October 2026 re-entry interface and rollout caveat read. Current pricing free allowance differs from older 150-credit descriptions; unexplained extracted Total $1 not adopted."
+    },
+    {
+      "project": "listrak-ea8b16f2",
+      "note": "Current Journey Hub/NextGen separated from older Conductor. Actual review-request article conflicts on Shopify completed/delivered; webhook example encodings differ hex/base64. Gaps retained; no execution."
+    },
+    {
+      "project": "mapp-cloud-d1b89f6d",
+      "note": "English pricing actual USD cards read. Current versioned edit page differs from linked v1 creation page. Later Whiteboard details repeatedly timed out; no search-extract-only quiet-hour claims. Mapp Connect event examples use different field spellings."
     }
   ]
 }
