@@ -1,0 +1,448 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "linkbox-f7ec2179",
+  "name": "LinkBox",
+  "website_url": "https://linkbox.pro/",
+  "domain": "linkbox.pro",
+  "identity_domain": "linkbox.pro",
+  "category": "seo",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "LinkBox organizes known referring-page URLs into backlink campaigns, checks whether links and their attributes remain present, and compares imported backlink lists from other tools. It also offers separate index-status checks, a promoted indexing action and an asynchronous API. Its crawler comparison view depends on supplied source exports rather than demonstrating an automatic connection to those services.\n\nA practical evaluation starts with a small set of known referring pages and keeps three questions separate: membership in an imported list, the observed link on the page, and the product’s index-status result. The public material documents task launches and result fields, but leaves current access roles, some billing behavior and failure recovery unclear. Several tutorial entries are dated 2020. No account, crawl, indexing submission or API task was run for this original draft; vendor ranking and indexing-success claims are not independently verified.",
+  "description_zh": "LinkBox 把已知来源页面 URL 组织为外链 Campaign，检查链接及属性是否仍存在，并比较其他工具导入的外链列表。另有独立索引状态检查、宣传的提交收录动作及异步 API。其 crawler 比较视图依赖提供的来源导出，不证明自动连接这些服务。\n\n实际评估宜从少量已知来源页开始，分清导入列表成员、页面观察到的链接及产品索引状态结果。公开材料记录任务启动及结果字段，当前角色、部分计费及失败恢复仍不清楚，数个教程条目日期为 2020。此原创稿未开账户、抓取、提交收录或运行 API；未独立核厂商排名及收录成功主张。",
+  "core_features": [
+    {
+      "name_en": "Backlink attribute checks",
+      "name_zh": "外链属性检查",
+      "explanation_en": "Review referring-page response, final URL, destination, anchor and link attributes.",
+      "explanation_zh": "审来源响应、最终 URL、目标、锚文本及属性。",
+      "source_ref": "checker",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Imported-source comparison",
+      "name_zh": "导入来源比较",
+      "explanation_en": "Compare supplied GSC, Ahrefs and other exported lists.",
+      "explanation_zh": "比较提供的 GSC、Ahrefs 及其他导出表。",
+      "source_ref": "crawler-imports",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Index-status task",
+      "name_zh": "索引状态任务",
+      "explanation_en": "Select known referring URLs and launch a separate indexing-status check.",
+      "explanation_zh": "选已知来源 URL，另启索引状态检查。",
+      "source_ref": "index-check",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Asynchronous API jobs",
+      "name_zh": "异步 API 作业",
+      "explanation_en": "Create a task, retain its identifier, then retrieve paginated results after completion.",
+      "explanation_zh": "建任务、留标识，完成后取分页结果。",
+      "source_ref": "api",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Reconcile successive backlink exports against a known campaign list.",
+      "Investigate changed referring-page responses, anchors or destinations.",
+      "Budget a small recurring link/index-check batch before scaling."
+    ],
+    "zh": [
+      "将连续外链导出与已知 Campaign 表核对。",
+      "调查来源响应、锚或目标变化。",
+      "扩量前预算少量定期链接／索引检查。"
+    ],
+    "source_refs": [
+      "overview",
+      "checker",
+      "crawler-imports",
+      "api",
+      "tutorial-index"
+    ],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "Backlink operations analyst",
+        "zh": "外链运营分析人员"
+      },
+      {
+        "en": "Agency SEO specialist",
+        "zh": "机构 SEO 人员"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Keep a dated source export and import it into the matching source tab.",
+        "zh": "保定日期来源导出并放匹配标签。",
+        "source_refs": ["crawler-imports"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Run a small Check links task and inspect My Tasks and returned fields.",
+        "zh": "小量运行 Check links，审 My Tasks 及返回字段。",
+        "source_refs": ["checker"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Treat index checking as a separate action with its own observation time.",
+        "zh": "将索引检查作独立动作并留观察时刻。",
+        "source_refs": ["index-check"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Estimate recurring actions before activating schedule checkboxes.",
+        "zh": "启定时复选框前估重复动作。",
+        "source_refs": ["checker", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify unresolved API operation contracts and actual billing/exit rules.",
+        "zh": "核未解 API 动作契约及真实账单／退出规则。",
+        "source_refs": ["api", "terms"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Crawler Live/Historical reflect successive uploads, not confirmed page removals.",
+        "zh": "Crawler Live／Historical 反映连续上传，不确认页面删链。",
+        "source_refs": ["crawler-imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "API indexing examples duplicate link-check instructions; exact contract unverified.",
+        "zh": "API 索引示例重复链接检查，准确契约未核。",
+        "source_refs": ["api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The forty-eight-hour refund request is subject to refusal.",
+        "zh": "四十八小时退款申请可被拒。",
+        "source_refs": ["terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Current roles, cancellation, retention and failure recovery remain unverified.",
+        "zh": "当前角色、取消、保留及失败恢复未核。",
+        "source_refs": ["terms", "tutorial-index"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Homepage operation cards: $1 buys 100 credits; Add URL Google 1 credit, index check 0.3, link check 0.1, trust check 0.5. Registration grants 100 test credits; replenishment/expiry not established, not a verified sustained-free tier. Separate API page lists monthly $20/$55/$110, 100 credits per dollar and plan-dependent action rates; unused credits roll over upon plan activation. Web-app/API balance sharing, minimum web top-up, automatic renewal, currency code, taxes and checkout not verified. No normalized subscription price.",
+    "source_snapshot_zh": "首页动作卡：$1 为百积分，Add URL Google 一、索引检查 0.3、链接检查 0.1、信任检查 0.5。注册送百测试积分，补充／过期未确定，不是已核持续免费层。独立 API 页列月 $20／$55／$110、每美元百积分及依套餐动作费，未用积分在启套餐时结转。网页／API 余额共用、网页最低充值、自动续费、币种代码、税及结账未核，不设标准化订阅价。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "api", "terms"]
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/linkbox-pro",
+      "read_at": "2026-10-22T08:48:52.760Z",
+      "excerpt_sha256": "a6c5e0c62590000cc16d284a9c19556233eff3770529916117e30283acb6b826",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Powerful Backlink Tool for SEO Analysis | LinkBox",
+      "url": "https://linkbox.pro/",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "1b3fdddeb407c6e5d87f226294366ef0c350ae2f17eac4cf1886e4fbb4afd609",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current backlink campaign identity and distinct per-action credit prices; marketing outcomes not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "LinkBox",
+      "title": "Powerful Backlink Tool for SEO Analysis | LinkBox",
+      "url": "https://linkbox.pro/",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "1b3fdddeb407c6e5d87f226294366ef0c350ae2f17eac4cf1886e4fbb4afd609",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Prices navigation resolves to homepage operation cards, not a fixed monthly web-app plan."
+    },
+    {
+      "id": "tutorial-index",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Tutorials and Guides | LinkBox",
+      "url": "https://linkbox.pro/tutorials",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "e04be3c5a676404eaf69a02968fb1ab729ef486c3c8071490960e475da0ecdb8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual public reader index lists 2020 tutorials but not their linked bodies; ordinary HTTPS later returned403, no bypass."
+    },
+    {
+      "id": "checker",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Bulk Backlink Checker | LinkBox",
+      "url": "https://linkbox.pro/bulk-backlink-checker-tool",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "730bad54a966cbd5195f18178801217d808c893831c6686b29c98b012db02451",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual file imports, task launch/progress, response/link attributes and scheduling instructions."
+    },
+    {
+      "id": "crawler-imports",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Backlink Monitor Tool | LinkBox",
+      "url": "https://linkbox.pro/backlinks-monitoring-and-management-tool",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "b730d623d5e6478f2b1dcd825af5b5ed4a65e427ed6aecc4e6ea85f96ba22454",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Crawler means imported GSC/Ahrefs/Temporary snapshots; New/Live/Historical reflect upload membership."
+    },
+    {
+      "id": "api",
+      "type": "official_integration",
+      "site": "LinkBox",
+      "title": "Backlink Checker API | LinkBox",
+      "url": "https://linkbox.pro/backlink-checker-api",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "48f3e565ef870ba44cfed2df130e57e2eb7753ef93001e8a68d7c1d9c3231a6a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monthly API tariffs, rollover condition, asynchronous task/result pagination and duplicated indexing endpoint instructions."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Terms and Conditions | LinkBox",
+      "url": "https://linkbox.pro/terms-and-conditions",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "ee6854eb97c38a8f21e6b080feb49d1e3d31f45dc89975d52864acdfe43f02c3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Published data redistribution restrictions and conditional48h refund request; no legal enforceability opinion."
+    },
+    {
+      "id": "index-check",
+      "type": "official_documentation",
+      "site": "LinkBox",
+      "title": "Bulk Backlink Index Checker | LinkBox",
+      "url": "https://linkbox.pro/google-indexing-checking-tool",
+      "read_at": "2026-10-22T15:27:36.515149Z",
+      "excerpt_sha256": "247abd3de95e482141cce401597e5a3b277c550103b7781e10ba5ff02ae1c8fa",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual index-check creation/selection/start steps read through line80, no unseen implementation adopted."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:27:36.515149Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "overview",
+    "checker",
+    "crawler-imports",
+    "api",
+    "tutorial-index"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "first-campaign",
+        "title_en": "Import known pages before treating the table as a backlink inventory",
+        "title_zh": "先导入已知页面，再将表作外链库存",
+        "en": "The checker page distinguishes manually supplied campaign links from files imported into GSC, Ahrefs or Temporary crawler tabs. The latter tab accepts exports from other services; the monitor guide specifically describes an Ahrefs UTF-16 export. Editorial first campaign: select a small, attributable source list and keep its export date with the import. These instructions support file-based reconciliation, not a verified live OAuth/API synchronization. A sparse LinkBox table does not establish that a domain has few backlinks, and uploading someone else’s list does not establish access to the originating account.",
+        "zh": "检查页区分手加 Campaign 链及导入 GSC／Ahrefs／Temporary 标签的文件。Temporary 收其他服务导出，监控指南明确描述 Ahrefs UTF-16 导出。编辑首个 Campaign：选小型可归来源表，保留导出日期。说明支持文件核对，不是已验证实时 OAuth／API 同步。LinkBox 表稀疏不确定域外链少，上传别人的表也不确定访问原账户。",
+        "source_refs": ["checker", "crawler-imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "check-link",
+        "title_en": "Starting a check and reading a result are different steps",
+        "title_zh": "启动检查与读结果是不同步骤",
+        "en": "Select the referring links, choose Check links and Start, then inspect progress in My Tasks. The result exposes donor-page HTTP response, redirected final URL, acceptor, anchors, link type and attributes; the index-state field requires a separate check. Editorial result review: match a returned donor/destination pair to the intended link and inspect the observed response before labeling it lost. An HTTP failure and a successful page without the target link are different failures. No actual rendering behavior, timeout/retry policy or ability to inspect authenticated pages was established in this research.",
+        "zh": "选来源链、Check links 及 Start，再在 My Tasks 审进度。结果提供来源 HTTP 响应、重定向最终 URL、目标、锚文本、类型及属性，索引字段需独立检查。编辑结果核查：将来源／目标对匹配预期链接，标丢失前审响应。HTTP 失败与页面成功但无目标链接是不同失败。未确定真实渲染、超时重试或认证页面检查能力。",
+        "source_refs": ["checker"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "import-states",
+        "title_en": "Live means present in the latest uploaded source list",
+        "title_zh": "Live 表示在最近上传来源表中",
+        "en": "The crawler module defines New as appearing in the latest upload but not the previous one, Live as present in the latest upload, and Historical as present earlier but absent now. It can filter by source, detection dates and campaign intersections, including No matches in campaigns. Editorial change review: first compare the scope and completeness of successive exports, then investigate a missing URL with a direct link check. An upload omission alone does not establish that the publisher removed the link or that a search engine dropped it. Source detection dates are observations within this imported history, not independently established publication dates.",
+        "zh": "Crawler 定义 New 为最近上传有、前次无，Live 为最近表有，Historical 为以前有本次无。可按来源、发现日期及 Campaign 交集筛，含 No matches in campaigns。编辑变化核查：先比较两次导出的范围及完整性，再用直接链接检查调查缺 URL。上传遗漏本身不证明发布者删链或搜索引擎移除。来源发现日是这份导入历史的观察，不是独立确定的发布日期。",
+        "source_refs": ["crawler-imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "index-status",
+        "title_en": "Index status, page accessibility and indexing submission are separate operations",
+        "title_zh": "索引状态、可访问及提交收录是独立动作",
+        "en": "The index-check guide starts with known referring URLs, then selects Check backlinks indexing and Start. Homepage cards separately price link checking, index checking and Add URL Google. The product promotes rapid indexing and ranking benefits, but this research did not verify its submission method, accuracy, success rate or causal impact. Editorial investigation: retain the checked URL, action and observation time; compare a status change with the page response and intended destination before choosing any paid follow-up. Paying for a submission does not itself document a successful index result, and a successful job is not evidence of an improved business outcome.",
+        "zh": "索引检查指南从已知来源 URL 起，选 Check backlinks indexing 及 Start。首页分别定链接检查、索引检查及 Add URL Google 价。产品宣传快速收录及排名收益，本研究未核其提交方法、准确性、成功率或因果效果。编辑调查：留 URL、动作及观察时刻，付费后续前将状态变化与页面响应及目标比较。付提交费本身不记录收录成功，作业成功也不证明业务效果提升。",
+        "source_refs": ["index-check", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "automation",
+        "title_en": "A recurring schedule multiplies actions, not just stored URLs",
+        "title_zh": "定期计划增加动作次数，不只存储 URL",
+        "en": "The scheduling instructions select a nesting level, project and campaign, then set intervals/times separately for Check link and Check indexing link and activate their checkboxes. The homepage prices individual operations rather than a single monitored-URL subscription. Editorial budget: estimate how many actions recur for the selected campaigns before enabling them, and inspect task history and credit use after a small interval. The published material did not establish insufficient-credit behavior, time zone, overlap handling or automatic recovery after a failed run. Continuous-monitoring marketing therefore should not be presented as a measured delivery SLA.",
+        "zh": "定时说明选层级、项目及 Campaign，分别设 Check link／Check indexing link 间隔时刻并启复选框。首页按单动作定价，不是统一监控 URL 订阅。编辑预算：启用前估选中 Campaign 的重复动作数，少量周期后审任务历史及积分。材料未确定余额不足、时区、重叠运行或失败自动恢复行为，持续监控宣传不能写成实测 SLA。",
+        "source_refs": ["checker", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api-lifecycle",
+        "title_en": "Poll the task identifier and page through completed results",
+        "title_zh": "按任务标识查进度并遍历完成结果",
+        "en": "The API guide accepts up to 5,000 referring URLs for a link-check task, with destination domains and a service key. Creation returns a UUID used for status and result retrieval; results become available after successful completion and use twenty links per page. The public indexing example repeats the link-check endpoint and parameters, so the correct dedicated index-task contract remains unresolved. Editorial integration: verify the intended operation with current provider documentation before building a client, preserve the job identifier and paginate all results. A result’s first page is not the complete batch; retry, idempotency, rate limits and partial-failure billing were not documented sufficiently here.",
+        "zh": "API 指南单链接检查任务接受最多五千来源 URL、目标域及服务 key。创建回 UUID，用于查状态及结果；成功后可取，每页二十链。公开索引示例重复链接检查端点及参数，准确独立索引任务契约未解。编辑集成：开发前向当前提供者文档核动作，留任务标识并遍历结果。第一页不是全批，重试、幂等、速率及部分失败收费未充分确定。",
+        "source_refs": ["api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "An exported observation needs its source and check date",
+        "title_zh": "导出观察需保来源及检查日期",
+        "en": "The API task menu documents source input as TXT and checked results as Excel; the web checker also describes CSV/Excel exports. Editorial handoff: retain the original input list, export date, last check date and the specific failure category beside the output. Separate imported-source membership from direct link and index checks in the explanation. A spreadsheet can support a repair conversation with the site owner, but it does not certify link quality, transferable ranking value or permission to republish the provider’s entire dataset. This profile did not perform an export or verify the current column schema.",
+        "zh": "API 任务菜单记输入 TXT、检查结果 Excel，网页检查还描述 CSV／Excel 导出。编辑交付：输出旁留原输入表、导出日、最后检查日及具体失败类别；解释中分导入来源成员、直接链及索引检查。表格可供与站点所有者讨论修复，不认证链接质量、可传递排名价值或整库重发权限。本条未实际导出或核当前列契约。",
+        "source_refs": ["api", "checker", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "source-age",
+        "title_en": "Public guides are usable evidence with an explicit version boundary",
+        "title_zh": "公开指南需明确版本边界",
+        "en": "The tutorials index lists campaign, import, task-history and crawler guides dated January/April 2020. Their full linked bodies were not established from the index. A later ordinary HTTPS request to that index returned HTTP 403, so no alternative transport was used to bypass it. Other official pages had already supplied the workflow evidence summarized here. Editorial evaluation: confirm the actual app’s import format, team permissions and visible controls before a large paid operation. The old tutorial dates do not by themselves establish that the product is inactive; a current copyright year also does not establish that every documented control is current.",
+        "zh": "教程索引列 2020 年一／四月 Campaign、导入、任务及 crawler 指南，索引未提供完整链接正文。之后普通 HTTPS 请求索引返 HTTP 403，未换传输绕过；其他已读官方页提供此处流程证据。编辑评估：大额操作前核真实应用导入格式、团队权限及可见控件。旧教程日期本身不确定产品停运，当前版权年份也不确定每控件最新。",
+        "source_refs": ["tutorial-index"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "A refund request window is conditional",
+        "title_zh": "退款请求窗口有条件",
+        "en": "Published terms permit requesting a refund within forty-eight hours of payment but reserve refusal where account activity is high; they do not promise an unconditional refund. The terms also restrict service redistribution and claim rights over obtained data, with an attribution requirement that names LinkBox.top. This is a report of published text, not an assessment of legal enforceability. Editorial purchase/exit: confirm the intended use and refund decision with the actual account agreement, export needed observations while access is available, and obtain the documented cancellation method. This research did not establish renewal controls, balance expiry, team access, retention or deletion/recovery behavior.",
+        "zh": "公开条款允许付款四十八小时内申请退款，但账户活动高可拒，不承诺无条件退。还限制转售服务并主张所得数据权利，署名要求写 LinkBox.top。此为公开文本记录，不评法律效力。编辑购买／退出：按实际账户协议确认用途及退款决定，有访问时导所需观察并取得文档取消方法。未确定续费控制、余额过期、团队访问、保留或删除／恢复行为。",
+        "source_refs": ["terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "LinkBox: imported backlinks, task results and credit costs",
+    "title_zh": "LinkBox：导入外链、任务结果及积分成本",
+    "description_en": "Review LinkBox source-file comparison, link/index checks, recurring costs, asynchronous API and refund/documentation limits.",
+    "description_zh": "核 LinkBox 来源表比较、链接／索引检查、重复成本、异步 API 及退款／文档限制。",
+    "primary_intent": "Evaluate LinkBox backlink checking and imported-source monitoring",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Tutorial index ordinary HTTPS returned403; full tutorial bodies not acquired and no bypass attempted. Other actual official page bodies support this limited profile.",
+      "zh": "教程索引普通 HTTPS 返 403，未取完整教程正文、未绕过；其他已读官方正文支持此有限条目。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Current UI languages, roles, native integrations, rendering, failure/retry handling, schema, rate limits and dedicated index-API endpoint unknown.",
+      "zh": "当前界面语言、角色、原生集成、渲染、失败／重试、列契约、速率及独立索引 API 端点未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Credit sharing/expiry, exact renewal/cancel/retention and account-specific payment conditions unverified; published terms do not establish source-code licensing.",
+      "zh": "积分共用／过期、准确续费／取消／保留及账户付款条件未核，公开条款不确定源码许可。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No signup, file upload, link crawl, index check/submission, API request, purchase, schedule, export or refund performed; indexing success, ranking impact and accuracy not measured.",
+      "zh": "未注册、上传、抓链、索引检查／提交、API 请求、购买、定时、导出或退款，未测收录成功、排名效果或准确性。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

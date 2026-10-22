@@ -1,0 +1,387 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "jdoodle-2d99703c",
+  "name": "JDoodle",
+  "website_url": "https://www.jdoodle.com/",
+  "domain": "www.jdoodle.com",
+  "identity_domain": "jdoodle.com",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "JDoodle provides browser-based code editing and execution, with separate compiler API, embeddable IDE and teaching/assessment workflows. The current IDE supports both snippets and multi-file projects for supported languages; framework/database workspaces have a different terminal and preview experience. A large language count does not make every runtime feature available in every language.\n\nA useful evaluation starts with a small program, its exact language/version and input method. Then check whether collaboration should change one shared project, give learners individual copies or distribute a frozen example. Platform subscriptions and API credits are separate purchasing and usage decisions. No code or account operation was executed for this profile.",
+  "description_zh": "JDoodle 提供浏览器代码编辑和执行，另有编译 API、嵌入 IDE 及教学／测评流程。当前 IDE 同时支持片段和部分语言的多文件项目，框架／数据库工作区则采用不同终端与预览体验。支持语言数量多不代表每种语言都有全部运行功能。\n\n建议从小程序、具体语言／版本及输入方式开始评估，再决定协作是修改同一项目、给学生独立副本，还是分发固定示例。平台订阅与 API 额度分别购买、分别计量。本次未运行代码或操作账户。",
+  "core_features": [
+    {
+      "name_en": "Browser code execution",
+      "name_zh": "浏览器代码执行",
+      "explanation_en": "Select a language/runtime and inspect its output within published execution limits.",
+      "explanation_zh": "选择语言／运行时，在公布的执行限制内检查输出。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ide",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multi-file projects",
+      "name_zh": "多文件项目",
+      "explanation_en": "Supported Advanced language editors provide a real file tree and one entry point.",
+      "explanation_zh": "受支持语言的 Advanced 编辑器提供真实文件树和一个入口。",
+      "explanation_scope": "product_specific",
+      "source_ref": "multifile",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Interactive and GUI input",
+      "name_zh": "交互及图形输入",
+      "explanation_en": "Choose predefined stdin, live prompts, GUI or command-line arguments as appropriate.",
+      "explanation_zh": "按需选择预设 stdin、实时提示、GUI 或命令行参数。",
+      "explanation_scope": "product_specific",
+      "source_ref": "input",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Project links, copies and snapshots",
+      "name_zh": "项目链接、副本及快照",
+      "explanation_en": "Control collaborative access separately from a frozen public example.",
+      "explanation_zh": "分别控制协作访问和固定公开示例。",
+      "explanation_scope": "product_specific",
+      "source_ref": "share",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Compiler API",
+      "name_zh": "编译 API",
+      "explanation_en": "REST returns a final result; WebSocket supports streaming and live input.",
+      "explanation_zh": "REST 返回最终结果，WebSocket 支持流式输出及实时输入。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a multi-file coding exercise with the intended input mode",
+      "Compare shared classroom projects, personal copies and a public snapshot",
+      "Estimate an embedded compiler interaction separately from editor usage"
+    ],
+    "zh": [
+      "评估采用预期输入方式的多文件编程练习",
+      "比较课堂共享项目、个人副本及公开快照",
+      "独立于编辑器使用估计嵌入编译交互"
+    ],
+    "source_refs": ["multifile", "input", "share", "api"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Programming learners",
+      "Teachers",
+      "Developers embedding code execution"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the exact runtime/version and multi-file variant; use disposable input.",
+        "zh": "选择具体运行时／版本及多文件类型，使用可丢弃输入。",
+        "source_refs": ["ide", "multifile"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check stdin, interactive/debugger and sharing behavior as separate cases.",
+        "zh": "分别检查 stdin、交互／调试及分享行为。",
+        "source_refs": ["input", "share"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect participant entitlements, runtime limits and separate API credits.",
+        "zh": "检查参与者权益、运行限制及独立 API 额度。",
+        "source_refs": ["limits", "api"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Only supported languages have a multi-file editor; every run has time/memory limits.",
+        "zh": "只有部分语言有多文件编辑器，每次运行有时间／内存限制。",
+        "source_refs": ["ide", "multifile"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "View can run code, and project privacy changes cannot revoke an existing snapshot.",
+        "zh": "View 可运行代码，改变项目私有性不能撤销已有快照。",
+        "source_refs": ["share"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Platform paid subscriptions do not include an assumed API tier or class-wide owner-only permissions.",
+        "zh": "付费平台订阅不能推定包含 API 档位，拥有者专属权限也不自动覆盖课堂。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_platform_separate_api_credits",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:49:40.487487Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free; annual platform StudentUS$48/ProUS$144/TeacherUS$240; API credits/plans separate. Exact monthly checkout and AI daily/monthly interaction unverified.",
+    "summary_zh": "Free；平台年付 Student48／Pro144／Teacher240美元，API 计划／额度另计。具体月付结账及 AI 日／月额度关系未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/jdoodle",
+      "read_at": "2026-10-22T08:56:01.317Z",
+      "excerpt_sha256": "c7cdad11d31c5f7a157a4bcda425bad00f4f3b0fb2204ad55137bad61734770c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "JDoodle - Free AI powered Online Coding Platform",
+      "url": "https://www.jdoodle.com/",
+      "read_at": "2026-10-22T12:49:40.487487Z",
+      "excerpt_sha256": "95657d7d3a91f6ed575c2eba9e4de0925e0a272a59ead9de40f501c82943e04f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current compiler/IDE/AI/education/API product entry points read; language counts are vendor claims, not compatibility test."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "JDoodle",
+      "title": "JDoodle Pricing",
+      "url": "https://www.jdoodle.com/pricing",
+      "read_at": "2026-10-22T12:50:53.810818Z",
+      "excerpt_sha256": "c70cbdf94d6d393b4d69156420ae104d03329284d506d36e1caf6397f356cb70",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "USD annual-billing platform cards Free0/Student4/Pro12/Teacher20 permonth; flattened excluded-feature lists interpreted using separate limits table. API is separate."
+    },
+    {
+      "id": "ide",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "The IDE | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/ide",
+      "read_at": "2026-10-22T12:51:34.160320Z",
+      "excerpt_sha256": "7e51fc60113bcd7e88b3c4b3955130b856583208ad447167e4fdb54c84ca91d1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Single/multifile/runtime/framework differences, time/memory limits and paid soft cap read."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "Limits | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/reference/limits",
+      "read_at": "2026-10-22T12:57:13.480235Z",
+      "excerpt_sha256": "4d49fc44c91621e663523f973ba0f65c1152967749200239256f11feeb528c40",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current platform allowance matrix, owner versus class scope, daily/monthly AI ambiguity, API separate read."
+    },
+    {
+      "id": "multifile",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "Multi-file projects | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/ide/multi-file-projects",
+      "read_at": "2026-10-22T12:57:13.587406Z",
+      "excerpt_sha256": "36b0e04668a3b782192c069506a39067107fe5517cb69490a43622e505a60365",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "41supported multifile languages; Advanced page/filetree/entrypoint distinction read."
+    },
+    {
+      "id": "input",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "Giving a program input | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/ide/input-and-output",
+      "read_at": "2026-10-22T12:57:13.781146Z",
+      "excerpt_sha256": "f657fd97d92a85dd79f1891f0113176d91d99f5321fa56bdbf7bd8cf470d9e6a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "stdin versus interactive/debugger/GUI/argv/files read."
+    },
+    {
+      "id": "share",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "Share a project | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/ide/share-a-project",
+      "read_at": "2026-10-22T12:57:13.885784Z",
+      "excerpt_sha256": "f6cbcc56a1b3d3b9676c695b36d8e2636ff1ae0b8ffb25ea8c9d0557ef6182b4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Defaultinvited,team,linkpublic; View canrun; personalcopies; snapshotbypassesprojectprivacy and cannotrevokeviaaccess change; embeds isolated read."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "JDoodle",
+      "title": "The Compiler API | JDoodle docs",
+      "url": "https://www.jdoodle.com/docs/api",
+      "read_at": "2026-10-22T12:51:34.192455Z",
+      "excerpt_sha256": "a4427373c2df2fea28f8433c304ced623421b536d584c11578cc983924df4a21",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "REST versusWebSocket, runcredit and extra socket/upload/internet credits, dailyreset and separate free API plan read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:57:13.885784Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "ide", "multifile", "api"],
+  "profile": {
+    "sections": [
+      {
+        "id": "project",
+        "title_en": "A second source file needs a multi-file runtime",
+        "title_zh": "第二个源码文件需要多文件运行环境",
+        "en": "The Advanced editor is available for41 languages and provides folders, real import paths and an entry-point file that reaches other code through imports/includes. Other languages remain single-file. Pasting several modules into one editor is not equivalent to a project with those files. For a proposed Python module exercise, choose its multi-file variant, preserve file paths and check the entry point. Confirm libraries and version compatibility before treating an imported example as reproducible.",
+        "zh": "Advanced 编辑器面向41种语言，提供目录、真实导入路径及一个通过 import／include 调用其他代码的入口文件；其他语言仍为单文件。把多个模块贴进同一编辑器不等于多文件项目。建议 Python 模块练习选多文件版本，保留路径并检查入口；还需核对库及版本兼容性，不能认为导入示例必然可复现。",
+        "source_refs": ["multifile"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "input",
+        "title_en": "Preloaded stdin and a live prompt are different tests",
+        "title_zh": "预载 stdin 与实时提示是不同测试",
+        "en": "Standard input is supplied before a run; Interactive answers prompts while a process is running. Debug sessions are always interactive, so stepping through a program will not use the prefilled stdin box in the same way. GUI enables the live connection needed for a window and may make a run wait for it. Command-line arguments instead arrive through argv. Test the mode the learner or consumer will actually use, rather than assuming one successful input path covers all four.",
+        "zh": "Standard input 在运行前提供，Interactive 则在程序运行中回答提示。调试会话始终交互，因此单步运行不按相同方式使用预填 stdin。GUI 会启用窗口所需实时连接，并可能让运行等待；命令行参数通过 argv 输入。应测试学生或消费方真正使用的方式，不能认为一种输入成功就覆盖全部四种。",
+        "source_refs": ["input"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "share",
+        "title_en": "A snapshot remains public even after project access changes",
+        "title_zh": "项目访问改变后，快照仍可公开",
+        "en": "Project access defaults to invited people and can be widened to a team or anyone with its link. View permission includes running, while View and edit changes the shared project; individual-copy mode separates each person’s work. A snapshot is a frozen copy available to anyone with its link, even when the original is private. Tightening original access does not revoke that copy. Use sanitized examples and inspect the selected sharing mode before distributing a link.",
+        "zh": "项目默认仅受邀者可访问，可扩大到团队或持链接者。View 包含运行权，View and edit 可改共享项目；独立副本模式将每人工作隔开。快照是持链接者可开的固定副本，即便原项目私有；收紧原项目访问也不撤销该副本。分发前应使用脱敏示例并检查所选分享方式。",
+        "source_refs": ["share"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Unlimited runs still have runtime and abuse controls",
+        "title_zh": "无限运行仍有运行时和滥用控制",
+        "en": "The IDE guide states every run has time and memory limits, and paid unlimited execution still has a soft abuse cap. Free accounts receive1,000 runs daily and100 saved projects. The limits table gives3 collaborators on Free,10 on Student/Pro and unlimited on Teacher. Paid Student/Pro upgrades apply to the subscriber; Teacher shares workspace/version allowances with the class, but code internet access is restricted to the account owner. Check exact capability scope for each participant.",
+        "zh": "IDE 指南说明每次运行都有时间及内存限制，付费无限执行仍有防滥用软上限。Free 每天1,000次、保存100项目；限制表列 Free3名协作者、Student／Pro10名、Teacher 无限。Student／Pro 权益通常只给订阅者，Teacher 将工作区／版本额度覆盖课堂，但代码联网仅账户拥有者可用，需逐人核对能力范围。",
+        "source_refs": ["ide", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "Compiler API credits are separate from editor plans",
+        "title_zh": "编译 API 额度独立于编辑器计划",
+        "en": "The API runs submitted code on JDoodle infrastructure. REST suits fixed input and a final result; WebSocket streams output and accepts input while running. One execution consumes a credit, while opening a socket, uploading a multi-file project and enabling internet each add a credit. Credits reset daily, and the platform limits page explicitly says API plans are purchased separately. Estimate the whole interaction, including uploads and reconnections, before comparing a classroom subscription with embedded execution costs.",
+        "zh": "API 在 JDoodle 设施上运行提交代码。REST 适合固定输入和最终结果，WebSocket 可流式输出并在运行中接收输入。一次执行消耗一个额度，开连接、上传多文件项目及启用联网各另加一个；额度每日重置。平台限制页明确 API 计划独立购买。比较课堂订阅与嵌入执行成本前，应估计上传和重连等完整交互。",
+        "source_refs": ["api", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Use the billing period and entitlement matrix together",
+        "title_zh": "结合计费周期和权益表阅读价格",
+        "en": "The annual-billing platform display shows StudentUS$4/month billed48/year, ProUS$12 billed144/year and TeacherUS$20 billed240/year, alongside FreeUS$0. These are annual commitments expressed monthly, not verified month-to-month checkout amounts. AI allowances are separate: the published Free row says15 daily with30 monthly, while another student row says15 daily. Confirm that interaction and account scope before promising a daily classroom budget. Paid backups are listed, but restoration was not tested.",
+        "zh": "平台年付展示为 Student 每月4美元、年收48；Pro 每月12、年收144；Teacher 每月20、年收240，另有 Free0。这是年付折算，不是已核月付结账金额。AI 另计额度：Free 行写每日15、每月30，另一学生行写每日15，承诺课堂日预算前需确认相互关系及账户范围。付费含备份，但未测试恢复。",
+        "source_refs": ["pricing", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "JDoodle: runtime input, multi-file projects and snapshot sharing",
+    "title_zh": "JDoodle：运行输入、多文件项目及快照分享",
+    "description_en": "Review language-specific projects, interactive input, public snapshot persistence and separate compiler API credits.",
+    "description_zh": "了解语言特定项目、交互输入、公开快照保留及独立编译 API 额度。",
+    "search_intent_en": "Evaluate JDoodle learning workflows and API billing boundaries.",
+    "search_intent_zh": "评估 JDoodle 学习流程及 API 计费边界。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No code, account, snapshot, class, embed, API request or restoration was executed.",
+      "zh": "未执行代码、账户、快照、课堂、嵌入、API 请求或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "AI Free daily/monthly and student allowance rows need clarification; actual runtime time/memory values and soft cap not measured.",
+      "zh": "AI Free 日／月及学生额度行需澄清，未测实际运行时间／内存值及软上限。",
+      "source_refs": ["pricing", "limits", "ide"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "API tier prices, checkout/tax, license/source-code rights, isolation/security, language coverage and backup recovery not independently verified.",
+      "zh": "API 档位金额、结账／税、许可／源码权、安全隔离、语言覆盖及备份恢复未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

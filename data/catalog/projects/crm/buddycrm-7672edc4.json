@@ -1,0 +1,459 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "buddycrm-7672edc4",
+  "name": "BuddyCRM",
+  "website_url": "http://buddycrm.com/",
+  "domain": "buddycrm.com",
+  "identity_domain": "buddycrm.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "BuddyCRM is an online CRM for sales, support and marketing teams, with a current emphasis on construction, engineering, manufacturing and wholesale businesses. It brings customer history, pending work and opportunities into account records, and offers workflow rules and connections to accounting or ERP data. Its onboarding approach is consultative: a requirements discussion and tailored demonstration precede implementation.\n\nThe important distinction is the service commitment around the software. The public plans describe configuration and training alongside subscriptions, minimum seats and a multi-year standard agreement. That makes a scoped demonstration and data-mapping exercise more useful than judging it as a disposable contact-list app. The following assessment uses vendor documentation; it does not validate the advertised savings or report actual use.",
+  "description_zh": "BuddyCRM 是面向销售、支持和营销团队的在线 CRM，目前重点服务建筑、工程、制造及批发行业。它把客户历史、待办工作和销售机会集中到账户记录中，并提供工作流规则以及与财务或 ERP 数据的连接。其入门方式偏重咨询：先讨论需求和定制演示，再进入实施。\n\n选型时需关注软件之外的服务承诺。公开套餐同时列出配置、培训、最低席位和标准多年协议。因此，明确范围的演示与数据映射核对，比把它当作随时试完就弃用的联系人列表更有参考价值。以下依据厂商文档整理，没有验证宣传的节时效果，也没有实际使用测评。",
+  "core_features": [
+    {
+      "name_en": "Account-centered customer history",
+      "name_zh": "围绕账户的客户历史",
+      "explanation_en": "View interaction history, pending activity, opportunities, documents and quoted prices from the account context.",
+      "explanation_zh": "从账户视角查看沟通历史、待办活动、机会、文档和报价。",
+      "explanation_scope": "product_specific",
+      "source_ref": "contacts",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional CRM workflows",
+      "name_zh": "条件 CRM 工作流",
+      "explanation_en": "Combine IF, AND and OR conditions to schedule work and update CRM data.",
+      "explanation_zh": "组合 IF、AND、OR 条件来安排工作及更新 CRM 数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "workflows",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Event webhooks",
+      "name_zh": "事件 webhook",
+      "explanation_en": "CRM events can request actions in external applications through configured webhooks.",
+      "explanation_zh": "CRM 事件可通过已配置 webhook 请求外部应用执行动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "webhooks",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scheduled CRM reports",
+      "name_zh": "定时报表",
+      "explanation_en": "Build CRM reports and schedule delivery; the report page also describes Excel export.",
+      "explanation_zh": "建立 CRM 报表并安排发送；报表页还说明导出至 Excel。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reports",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate a bid follow-up around an account and its pending activities.",
+      "Send a won-opportunity event toward an accounting invoice workflow."
+    ],
+    "zh": [
+      "围绕账户及其待办活动协调投标跟进。",
+      "把成交机会事件交给财务发票流程。"
+    ],
+    "source_refs": ["product", "contacts", "webhooks"],
+    "basis": "Illustrative selection tasks, not implemented customer workflows."
+  },
+  "technical_details": {
+    "Access model": {
+      "en": "Online browser access with an iOS client described by the vendor; external data can use imports or an API integration.",
+      "zh": "厂商说明可通过浏览器在线访问，并有 iOS 客户端；外部数据可通过导入或 API 集成接入。",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "B2B sales manager",
+      "Bid coordinator",
+      "CRM implementation owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Bring one actual sales process and representative fields to the personalized demo.",
+        "zh": "在定制演示中提供一条真实销售流程和代表性字段。",
+        "source_refs": ["demo"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Agree the configuration scope, import template and record volume before uploading source data.",
+        "zh": "上传数据前确认配置范围、导入模板和记录量。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Inspect an account, its follow-up action and one downstream integration before accepting the configured workflow.",
+        "zh": "验收配置流程前核对账户、后续动作和一项下游集成。",
+        "source_refs": ["contacts", "workflows", "integrations"],
+        "evidence_type": "editorial_test_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Accounting / ERP data",
+        "source_ref": "integrations",
+        "scope": "Vendor describes import and API paths; exact data objects and sync direction are project-specific."
+      },
+      {
+        "name": "Outbound webhook actions",
+        "source_ref": "webhooks",
+        "scope": "Requires destination configuration; not evidence of atomic external execution."
+      }
+    ],
+    "source_ref": "integrations"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Standard commercial conditions include at least five users, annual payment and a 36-month agreement; scope these before selection.",
+        "zh": "标准商业条件包括至少5用户、按年付款及36个月协议，选型前应核对适用范围。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The free-trial URL now describes personalized demos rather than a self-service free trial.",
+        "zh": "名为 free-trial 的页面现在说明定制演示，而非自助免费试用。",
+        "source_refs": ["demo"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_monthly_price": null,
+    "currency": "GBP",
+    "billing_basis": "Per user/month advertised, paid annually, minimum five users, standard 36-month agreement.",
+    "source_snapshot_en": "Professional £75, Elite £95, Elite+ £150 per user/month, with contractual and fair-use conditions.",
+    "source_snapshot_zh": "Professional 每用户每月75英镑、Elite 95英镑、Elite+ 150英镑，另有合同和合理使用条件。",
+    "checked_at": "2026-10-22T10:03:26.941065Z"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Can I open a self-service free trial?",
+      "question_zh": "可以自行注册免费试用吗？",
+      "answer_en": "The current trial page says the vendor replaced that route with a personalized demonstration. Do not infer trial access from the URL.",
+      "answer_zh": "当前试用页说明厂商已用定制演示替代该方式，不能由 URL 推断仍可自行试用。",
+      "source_refs": ["demo"]
+    },
+    {
+      "question_en": "Does a won opportunity prove an invoice was created?",
+      "question_zh": "机会成交是否证明发票已经创建？",
+      "answer_en": "No. The webhook page describes triggering the external action. The receiving accounting record must be checked separately.",
+      "answer_zh": "不能。webhook 页描述触发外部动作，仍需另外核对财务系统中的记录。",
+      "source_refs": ["webhooks"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/buddycrm",
+      "read_at": "2026-10-22T08:42:49.492Z",
+      "excerpt_sha256": "bd1549781d0a19a93a446b9966723eff83276280d4358418df210e82d2708171",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "CRM software for construction, engineering, manufacturing, and wholesalers - BuddyCRM",
+      "title": "CRM software for construction, engineering, manufacturing, and wholesalers - BuddyCRM",
+      "url": "https://buddycrm.com/",
+      "read_at": "2026-10-22T09:56:38.041606Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "204491e8735e13219cd222bd2a391e59e338bae3154e81110ba6843ec7fa12de",
+      "research_notes_en": "Online sales/support/marketing CRM with an implementation-led focus on construction, engineering, manufacturing and wholesale. Savings claims not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Plans - BuddyCRM",
+      "title": "Plans - BuddyCRM",
+      "url": "https://buddycrm.com/plans/",
+      "read_at": "2026-10-22T09:56:38.048500Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "87891cdfff0a0b6a8ba81dcf0dcc5d91b2b27896b6fbe7ae439ba4bc4cdde66a",
+      "research_notes_en": "Professional/Elite/Elite+ at GBP75/95/150 per user/month; annual payment, minimum five users and standard 36-month agreement. Onboarding has scope and fair-use limits. Flattened feature table does not securely map every checkmark to a tier."
+    },
+    {
+      "id": "contacts",
+      "type": "official_documentation",
+      "site": "Contacts - BuddyCRM",
+      "title": "Contacts - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/contacts/",
+      "read_at": "2026-10-22T10:00:34.781452Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "de0d71a4a5f37c7690148d918efb6909ecdd5efc4ff644b3fe66b2b0c71de934",
+      "research_notes_en": "Account screen combines contact history, pending activities, opportunities, documents and quoted prices; external sales/inventory feeds need integration."
+    },
+    {
+      "id": "workflows",
+      "type": "official_documentation",
+      "site": "Workflows - BuddyCRM",
+      "title": "Workflows - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/workflows/",
+      "read_at": "2026-10-22T10:00:34.781452Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "bd8003195e524c698ce276ffb58766cd220b83484169fefd23688a757cc5eca0",
+      "research_notes_en": "Conditional IF/AND/OR rules for tasks, emails, calls, field changes and lead-to-account work; no retry or transaction guarantee established."
+    },
+    {
+      "id": "webhooks",
+      "type": "official_integration",
+      "site": "Webhooks - BuddyCRM",
+      "title": "Webhooks - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/webhooks/",
+      "read_at": "2026-10-22T10:00:34.781452Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4e7e0f8b6ddec825e1db2650705ac4849ae59f7c04daaca5d38c6d9a3ce76b8f",
+      "research_notes_en": "Outbound event-triggered actions, including won opportunity to accounting invoice; implementation and receiving systems required."
+    },
+    {
+      "id": "integrations",
+      "type": "official_integration",
+      "site": "Integration - BuddyCRM",
+      "title": "Integration - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/integration/",
+      "read_at": "2026-10-22T10:00:34.781452Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ad9d45fbb4ea29885fc364c39084609c8d0f82a24b35b2720f63ae0ecb7c3909",
+      "research_notes_en": "Import tool and API routes; accounting/ERP/marketing data can feed a customer view. Logos do not establish every supported entity or bidirectional semantics."
+    },
+    {
+      "id": "demo",
+      "type": "official_documentation",
+      "site": "Free CRM Trial - BuddyCRM",
+      "title": "Free CRM Trial - BuddyCRM",
+      "url": "https://buddycrm.com/free-crm-trial/",
+      "read_at": "2026-10-22T10:01:03.063909Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8f8ba74a033ee98e2cc566e0e1ad434ada86f8e160e09f83fdc6588d81357bb",
+      "research_notes_en": "Despite page URL, vendor explicitly replaced self-service free trials with personalized demonstrations."
+    },
+    {
+      "id": "reports",
+      "type": "official_documentation",
+      "site": "Reports - BuddyCRM",
+      "title": "Reports - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/reports/",
+      "read_at": "2026-10-22T10:01:03.063909Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "16b30bc61ee447c538e83f50124be8206f17a5a9223f335c114d5e6d84be4183",
+      "research_notes_en": "CRM reports, scheduled delivery and Excel export; exact tier needs confirmation."
+    },
+    {
+      "id": "bi",
+      "type": "official_documentation",
+      "site": "Buddy Business Intelligence - BuddyCRM",
+      "title": "Buddy Business Intelligence - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/buddy-business-intelligence/",
+      "read_at": "2026-10-22T10:01:03.063909Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8df31cb2592ef715b05aed4c0788f02bbaee0cfdf1d45fd41567e5a3b8a5ddf4",
+      "research_notes_en": "Buddy BI is described separately with SQL, external dataset combination and dashboards; no measured return assumed."
+    },
+    {
+      "id": "marketing",
+      "type": "official_documentation",
+      "site": "Marketing - BuddyCRM",
+      "title": "Marketing - BuddyCRM",
+      "url": "https://buddycrm.com/crm-features/marketing/",
+      "read_at": "2026-10-22T10:03:26.941065Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7da4ee90762a4c6f94fa9b9fad98710f0e693690ee16808707609ad6f796784d",
+      "research_notes_en": "Native campaign builder and third-party marketing integrations are distinct paths; campaigns link leads/opportunities, open/click data can feed follow-up."
+    },
+    {
+      "id": "legal-entry",
+      "type": "official_documentation",
+      "site": "Legal - BuddyCRM",
+      "title": "Legal - BuddyCRM",
+      "url": "https://buddycrm.com/legal/",
+      "read_at": "2026-10-22T10:03:26.941065Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a004c522951865d0a053456def3d74750ee2f9c4e82418f9901ce99cd1c17cf2",
+      "research_notes_en": "Legal page links terms hosted on Dropbox; full contract not read, no open-source or hosting-license inference."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:03:26.941065Z",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "contacts", "demo", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "account-work",
+        "title_en": "From account context to the next action",
+        "title_zh": "从账户背景到下一动作",
+        "en": "The contact page describes an account view containing communication history, pending tasks, opportunities, linked documents and quoted prices. A useful evaluation is whether a colleague can take over a customer without reconstructing context from private email. Inspect the account owner, lead origin and next appointment as well as the name and phone fields.\n\nFor a hypothetical engineering supplier, associate a quotation and follow-up call with the correct buying organization. Confirm that a new contact at that organization does not accidentally become a separate unrelated account. This is an evaluation example; deduplication rules and migration matching were not executed.",
+        "zh": "联系人页描述账户视图中包含沟通历史、待办任务、机会、关联文档和报价。评估时可检查同事接手客户后，是否仍需从私人邮件重建背景。除了姓名和电话，还应核对账户负责人、线索来源及下一次预约。\n\n以假设的工程供应商为例，把报价和跟进电话关联到正确采购组织，并确认该组织新增联系人不会意外变成无关账户。这是评估示例；本文未运行去重规则或迁移匹配。",
+        "source_refs": ["contacts"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Make follow-ups conditional, then check repeat edits",
+        "title_zh": "设置条件跟进，并检查重复编辑",
+        "en": "The workflow page lists calls, tasks, emails, appointments, account/lead creation and field population, with IF, AND and OR logic. One documented pattern is scheduling a later call after a marketing interaction. Model the event, qualifying conditions and resulting action separately.\n\nWhen piloting an equivalent process, include a second edit to the same record and an incomplete email address. Check who receives the task and whether repeated qualification produces repeated work. The public page does not specify a complete retry or rollback contract; a configured rule should not be described as error-proof or fully autonomous merely because the marketing page uses broad language.",
+        "zh": "工作流页列出电话、任务、邮件、预约、账户／线索创建和字段填充，并支持 IF、AND、OR 逻辑。文档中的一种方式是在营销互动之后安排后续电话。应分别定义事件、满足条件及产生动作。\n\n试点同类流程时，加入同一记录被二次编辑及邮箱地址不完整的情况，核对任务接收人和重复满足条件是否带来重复工作。公开页面没有说明完整的重试与回滚契约，不能因为营销措辞宽泛，就把配置规则称为不会出错或完全自治。",
+        "source_refs": ["workflows"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "external-handoff",
+        "title_en": "Worked example: won deal to accounting",
+        "title_zh": "示例：把成交交给财务系统",
+        "en": "BuddyCRM describes using an opportunity-won event to trigger an invoice action in accounting software. In an illustrative implementation, the webhook payload would need the agreed customer identifier, quoted items and amount required by the receiving workflow. Agree which system owns each value and what constitutes a completed invoice.\n\nThe integration page describes both importing external data and using an API to connect systems. Those are implementation routes, not a guarantee that every accounting field has a ready-made mapping. Before replaying a failed handoff, look for an existing invoice using the agreed business reference. No endpoint, payload, retry schedule or duplicate handling was tested here.",
+        "zh": "BuddyCRM 说明可用机会成交事件触发财务软件中的开票动作。以假设实现为例，webhook 载荷需包含接收流程所需的客户标识、报价项目及金额。应先约定各字段以哪个系统为准，以及什么状态才算开票完成。\n\n集成页同时描述导入外部数据和用 API 连接系统。这些是实现路径，不保证每个财务字段都有现成映射。失败交接重放前，应按约定业务编号检查是否已有发票。本文未测试端点、载荷、重试计划或重复处理。",
+        "source_refs": ["webhooks", "integrations"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "campaign-boundary",
+        "title_en": "Native marketing and connected marketing are different paths",
+        "title_zh": "原生营销与外接营销是不同路径",
+        "en": "The marketing page describes building campaigns and HTML email inside BuddyCRM, and connecting separate marketing services such as Mailchimp. It links campaigns to leads and opportunities and describes follow-ups based on opens or clicks. Decide where audience selection, suppression and sending should occur before connecting two campaign systems.\n\nFor a pilot, compare a recipient who should receive a message with one who must be excluded. An open event is an interaction signal, not proof of purchase intent. The reviewed feature page does not establish deliverability, consent handling or an all-inclusive sending allowance; do not turn its promotional performance claims into measured outcomes.",
+        "zh": "营销页描述在 BuddyCRM 内建立活动和 HTML 邮件，也说明可连接 Mailchimp 等独立营销服务。它将活动关联到线索和机会，并描述按打开或点击触发跟进。连接两个营销系统前，应先确定受众筛选、排除和发送分别在哪里完成。\n\n试点时对照应接收邮件和必须排除的收件人。打开事件只是互动信号，不能证明购买意愿。已读功能页没有确立送达率、同意处理或无限发送额度，不能把推广效果宣传改写成实测结果。",
+        "source_refs": ["marketing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "CRM reports versus Buddy BI",
+        "title_zh": "CRM 报表与 Buddy BI 的边界",
+        "en": "The reports page describes sales/contact/lead reports, scheduled email delivery and Excel export. These are useful starting points for questions tied to CRM records and activities. Buddy BI is described separately as a SQL-capable analytics tool that can combine CRM data with external datasets and build interactive dashboards.\n\nA sales total can change when the date basis, status filter or external-data join changes. Define those choices before comparing dashboards. The plan page lists business intelligence, but the exact bespoke dataset, refresh schedule and service scope need confirmation in the configuration agreement. No report accuracy or refresh-latency benchmark was performed.",
+        "zh": "报表页描述销售、联系人和线索报表、定时邮件发送及 Excel 导出，适合先处理围绕 CRM 记录和活动的问题。Buddy BI 则另外描述为可使用 SQL 的分析工具，能够结合 CRM 与外部数据集，并建立交互看板。\n\n销售总额可能因日期口径、状态筛选或外部数据连接方式改变。比较看板前先定义这些选择。套餐页列有商业智能，但具体定制数据集、刷新计划和服务范围仍需在配置协议中确认。本文未测试报表准确性或刷新延迟。",
+        "source_refs": ["reports", "bi"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercials",
+        "title_en": "Budget the agreement, not a single seat",
+        "title_zh": "按协议预算，而非只看一个席位",
+        "en": "The public plans advertise £75, £95 and £150 per user/month for Professional, Elite and Elite+. Conditions state annual payment, at least five users and a standard 36-month agreement. Five Professional seats therefore illustrate £375 monthly-equivalent, or £4,500 for a year, before any unconfirmed tax or extras. This calculation is not a negotiated quote.\n\nConfiguration and training are included within described scope; data upload has fair usage to 10,000 records in the supplied template. Messaging and map use also have fair-use limits. The extracted comparison table loses some column alignment, so this profile does not assign every checkmark to a tier. Obtain the intended package, term, overage treatment and change scope together.",
+        "zh": "公开套餐列出 Professional、Elite 和 Elite+ 每用户每月分别75、95和150英镑。条件说明按年付款、至少5用户，以及标准36个月协议。以5个 Professional 席位计算，月度折算375英镑，一年4,500英镑，尚未包含未确认的税费或附加项。这不是协商报价。\n\n配置和培训包含在所述范围内；数据上传按指定模板，合理使用范围为最多10,000条记录。消息发送和地图使用也有合理使用限制。抽取后的对比表部分列对齐丢失，因此本文不将每个勾选强行归入套餐。应一起确认目标套餐、期限、超额处理和配置变更范围。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "onboarding",
+        "title_en": "Prepare for a demonstration and configuration project",
+        "title_zh": "准备演示与配置实施",
+        "en": "The free-trial page explicitly says self-service trials were replaced by personalized demonstrations. Prepare a real handoff, sample fields and an exception case so the demonstration tests your requirements rather than just the navigation. The homepage describes an initial discussion followed by a tailored solution demonstration.\n\nFor acceptance, check an imported account, the next activity, a report and one connected system. Agree who maintains changes after onboarding. This process suits buyers willing to define a workflow and work with a supplier; someone needing anonymous immediate trial access or one temporary seat should investigate the documented entry and contract conditions first.",
+        "zh": "免费试用页明确说明自助试用已被定制演示取代。建议准备一条真实交接、样例字段和异常案例，使演示能核对需求，而不只是浏览界面。首页说明先进行初步讨论，再展示定制方案。\n\n验收建议包含一个导入账户、下一项活动、一张报表和一个连接系统，并约定入门之后由谁维护变化。这种方式适合愿意定义流程并与供应商配合的采购者；需要匿名立即试用或单个临时席位的人，应先核对入门及合同条件。",
+        "source_refs": ["demo", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-gaps",
+        "title_en": "Deployment and evidence boundaries",
+        "title_zh": "部署与证据边界",
+        "en": "The vendor describes browser access and an iOS app; neither establishes a self-hosted distribution. Its legal entry links to terms on Dropbox, but those full terms were not reviewed here, so license, termination, data export obligations and contractual service protections remain unconfirmed. No open-source status is asserted.\n\nThe detailed sales-pipeline page returned a request-verification screen to the reader. The homepage supports the broad pipeline description, while finer stage behavior remains a gap. API quotas, webhook signing/retry policy, data residency, UI languages and regional availability also need targeted confirmation. Documentation review is not a substitute for those checks or a live implementation test.",
+        "zh": "厂商说明浏览器访问和 iOS 应用，但两者均不能证明提供自行托管的发行版。法律入口链接到 Dropbox 上的条款，本文未读完整条款，因此许可、终止、数据导出义务及合同服务保障仍未确认，也不宣称开源。\n\n销售管线详细页向阅读器返回请求验证页面。首页支持基本管线描述，更细的阶段行为仍属缺口。API 额度、webhook 签名／重试政策、数据驻留、界面语言和地区可用性也需专项核对。文档研究不能替代这些检查或实际实施测试。",
+        "source_refs": ["product", "legal-entry", "integrations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "BuddyCRM: Account Workflows, Integrations and Contract Costs",
+    "title_zh": "BuddyCRM：账户工作流、集成与合同费用",
+    "description_en": "Review BuddyCRM account records, workflow rules, accounting handoffs, personalized demos and minimum-seat contract conditions using official sources.",
+    "description_zh": "依据官方资料了解 BuddyCRM 账户记录、工作流、财务交接、定制演示及最低席位合同条件。",
+    "primary_intent": "Evaluate BuddyCRM for an implementation-led B2B sales process.",
+    "secondary_questions": [
+      "Is a free trial offered?",
+      "What is the minimum subscription commitment?",
+      "How do webhooks and Buddy BI fit?"
+    ],
+    "query_basis": "Editorial questions; no measured keyword demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Detailed deals page returned a request-verification screen; exact pipeline mechanics, API limits, webhook security/retry policy and full contract terms not established.",
+      "zh": "详细 deals 页面返回请求验证界面；准确管线机制、API 限制、webhook 安全／重试政策及完整合同条款尚未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, import, campaign, report or integration was executed. Tier checkmark alignment, taxes, data residency, UI languages and regional availability remain unconfirmed.",
+      "zh": "未实际运行账户、导入、活动、报表或集成；套餐表勾选列对齐、税费、数据驻留、界面语言及地区可用性仍待确认。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

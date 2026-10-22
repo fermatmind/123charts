@@ -1,0 +1,394 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "crmtravel-26932e3d",
+  "name": "CRMtravel",
+  "website_url": "https://crmtravel.in/",
+  "domain": "crmtravel.in",
+  "identity_domain": "crmtravel.in",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CRMtravel is cloud-based software for travel agencies, tour operators and destination management companies. Its CRM workflow covers an inquiry, follow-up, a proposed itinerary or quotation, and booking-related invoices and vouchers. It is more specific than a general sales contact database because travel services, destinations, suppliers and agent relationships form part of the documented data model.\n\nThe site separates B2B CRM, B2C CRM and booking engines, along with other travel products. Start by deciding whether you sell through agents or directly to travelers, and whether you need operational record keeping, a live booking storefront, or both. This profile describes that boundary and the preparation needed for a demonstration. It does not establish live supplier availability, tested tax compliance or the vendor's advertised business growth.",
+  "description_zh": "CRMtravel 是面向旅行社、旅游运营商和目的地管理公司的云端软件。其 CRM 流程覆盖咨询、跟进、行程或报价，以及与预订关联的发票和服务凭证。文档的数据模型包含旅游服务、目的地、供应商和代理关系，比通用销售联系人数据库更贴近旅游业务。\n\n网站分别列出 B2B CRM、B2C CRM、预订引擎及其他旅游产品。应先确定通过代理销售还是直接面向旅客，以及需要运营记录、实时预订前台还是两者。本文说明这些边界和演示前准备，没有验证供应商实时库存、税务合规或厂商宣传的业务增长。",
+  "core_features": [
+    {
+      "name_en": "Travel inquiry follow-up",
+      "name_zh": "旅游咨询跟进",
+      "explanation_en": "Capture and assign inquiries, retain communication and schedule follow-up around travel requests.",
+      "explanation_zh": "采集及分配咨询，保存沟通，并围绕旅游需求安排跟进。",
+      "explanation_scope": "product_specific",
+      "source_ref": "b2b",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Itinerary and quotation building",
+      "name_zh": "行程与报价制作",
+      "explanation_en": "Prepare service-based itineraries and quotations, with pricing/markup and sharing options described for B2C.",
+      "explanation_zh": "按服务准备行程及报价；B2C 文档说明价格／加价和分享方式。",
+      "explanation_scope": "product_specific",
+      "source_ref": "b2c",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Booking invoices and service vouchers",
+      "name_zh": "预订发票与服务凭证",
+      "explanation_en": "Generate booking-related billing documents and service-wise or combined vouchers.",
+      "explanation_zh": "生成与预订关联的账单，以及按服务或合并的凭证。",
+      "explanation_scope": "product_specific",
+      "source_ref": "b2c",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Agent and supplier records",
+      "name_zh": "代理与供应商记录",
+      "explanation_en": "Maintain travel master data and communication for agents, suppliers and service components.",
+      "explanation_zh": "维护代理、供应商及服务组成的旅游主数据和沟通。",
+      "explanation_scope": "product_specific",
+      "source_ref": "b2b",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Prepare and follow up a custom holiday quotation for a direct traveler.",
+      "Coordinate an agent request with supplier confirmations and vouchers."
+    ],
+    "zh": [
+      "为直接旅客制作并跟进定制假期报价。",
+      "协调代理咨询、供应商确认及服务凭证。"
+    ],
+    "source_refs": ["b2c", "b2b"],
+    "basis": "Editorial examples, not executed trips or customer deployments."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor describes a cloud application without local installation; separate booking-engine connections need their own scope.",
+      "zh": "厂商描述无需本地安装的云应用；独立预订引擎连接需另行确认范围。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Travel-agency sales owner",
+      "Tour operations coordinator",
+      "DMC agent-relations team"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Specify B2B or B2C responsibilities and which separate booking products are required for the demo.",
+        "zh": "为演示明确 B2B 或 B2C 职责，以及需要哪些独立预订产品。",
+        "source_refs": ["b2b", "b2c", "booking-engine"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Prepare representative destination, supplier rate, dates, traveler count and quotation rules.",
+        "zh": "准备代表性的目的地、供应商价格、日期、旅客人数及报价规则。",
+        "source_refs": ["b2b", "b2c"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Inspect a quotation revision, invoice, voucher and supplier-payment state before accepting the implementation.",
+        "zh": "接受实施结果前核对报价修订、发票、凭证及供应商付款状态。",
+        "source_refs": ["b2b", "b2c"],
+        "evidence_type": "editorial_test_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Google Sheets lead intake",
+        "source_ref": "b2c",
+        "scope": "B2C page describes importing/synchronizing campaign leads through Sheets; exact authentication, deduplication and update semantics not tested."
+      },
+      {
+        "name": "Booking-engine APIs/GDS",
+        "source_ref": "booking-engine",
+        "scope": "Separate offering; supplier accounts, included connectors and fees remain to be scoped."
+      }
+    ],
+    "source_ref": "b2c"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A generated quote or voucher does not independently establish that a supplier has confirmed inventory.",
+        "zh": "生成报价或凭证本身不能独立证明供应商已确认库存。",
+        "source_refs": ["b2b", "booking-engine"],
+        "evidence_type": "editorial_boundary_based_on_documentation"
+      },
+      {
+        "en": "Public terms describe annual upfront payment and no routine mid-term refund. Numerical fees remain unknown.",
+        "zh": "公开条款说明按年预付，通常不提供期中退款；具体金额仍未知。",
+        "source_refs": ["subscription", "refunds"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "custom",
+    "officially_checked": true,
+    "source_ref": "subscription",
+    "source_refs": ["subscription", "contact", "refunds"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Annual subscription with payment at term start according to public terms; obtain an actual product/module quote from sales.",
+    "source_snapshot_en": "No numerical amount found in reviewed sales/terms pages. Annual upfront conditions and cancellation notice described; selected module pricing needs quotation.",
+    "source_snapshot_zh": "所读销售／条款页未列具体金额，说明按年预付及取消通知条件；所选模块价格需询价。",
+    "checked_at": "2026-10-22T10:13:09.065361Z"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does the CRM subscription automatically include a live booking engine?",
+      "question_zh": "CRM 订阅是否自动包含实时预订引擎？",
+      "answer_en": "The site presents them as separate products. Confirm the contracted bundle and supplier connections rather than assuming inclusion.",
+      "answer_zh": "网站将它们列为独立产品，应确认合同组合及供应商连接，不能假定自动包含。",
+      "source_refs": ["product", "booking-engine"]
+    },
+    {
+      "question_en": "Is the advertised unlimited-user statement a complete price?",
+      "question_zh": "宣传的不限用户是否构成完整报价？",
+      "answer_en": "No. It does not specify all modules, external services or contractual fees. The actual quote remains unverified.",
+      "answer_zh": "不能。它未确定全部模块、外部服务或合同费用，实际报价仍未核实。",
+      "source_refs": ["product", "subscription"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/crmtravel",
+      "read_at": "2026-10-22T08:49:50.123Z",
+      "excerpt_sha256": "506ae96eb34d8b7b79bdf816f6fb8ffa90b1f8ed6120ecd5f08a89415d7ff840",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "CRMtravel™ | Best Travel CRM Software for Tour & Travel Agency",
+      "title": "CRMtravel™ | Best Travel CRM Software for Tour & Travel Agency",
+      "url": "https://crmtravel.in/",
+      "read_at": "2026-10-22T10:12:05.486337Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e0b5cff582765866e67d98bc7c92ea3528b2b04a56bda664de70821e4a9b285e",
+      "research_notes_en": "Hosted travel CRM positioning, leads/quotes/invoices/vouchers and separate booking, cab and visa products. Growth and conversion claims excluded."
+    },
+    {
+      "id": "b2b",
+      "type": "official_documentation",
+      "site": "Powerful B2B Travel CRM Software for Agencies - CRMtravel™",
+      "title": "Powerful B2B Travel CRM Software for Agencies - CRMtravel™",
+      "url": "https://crmtravel.in/b2b-travel-crm-software.html",
+      "read_at": "2026-10-22T10:12:48.457511Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d7e06253520b675df413b35c7d8dd43aad29fcd11df0249f4c65a8b001d6f637",
+      "research_notes_en": "Email-to-query, agent/supplier communication, quotations, invoice/voucher generation and master records; feature page does not establish all integrations or guaranteed inventory."
+    },
+    {
+      "id": "b2c",
+      "type": "official_documentation",
+      "site": "B2C Travel Management CRM Software | CRMtravel™",
+      "title": "B2C Travel Management CRM Software | CRMtravel™",
+      "url": "https://crmtravel.in/b2c-travel-crm-software.html",
+      "read_at": "2026-10-22T10:12:48.450444Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d39b01e9d293774867f8c3221609d97a1bf967fbd3eda8a5c193d9786a94d9c4",
+      "research_notes_en": "Direct-customer inquiry/follow-up, Excel/Sheets intake, itinerary sharing and markup, invoices/vouchers and team permissions. Timing and compliance marketing not independently verified."
+    },
+    {
+      "id": "booking-engine",
+      "type": "official_documentation",
+      "site": "Premium & Powerful B2B Travel Booking Engine - CRMtravel™",
+      "title": "Premium & Powerful B2B Travel Booking Engine - CRMtravel™",
+      "url": "https://crmtravel.in/b2b-booking-engine.html",
+      "read_at": "2026-10-22T10:12:48.464129Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8a3b0273fca3d776a2b6d7d90dc98eafc7e187ce3b4f5b9c1f6c2402e6f0b92b",
+      "research_notes_en": "Separate booking-engine offering describes live inventory/API/GDS connections and partner pricing. Not automatically included in CRM subscription."
+    },
+    {
+      "id": "contact",
+      "type": "official_documentation",
+      "site": "Travel Software Development Company - CRMtravel™ Contact & Support",
+      "title": "Travel Software Development Company - CRMtravel™ Contact & Support",
+      "url": "https://crmtravel.in/contact.html",
+      "read_at": "2026-10-22T10:12:48.475555Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "00428d6d5df7945cc168f90558c5eba4579674629c537bac2781dce8bff2a30d",
+      "research_notes_en": "Sales enquiry form read without submitting. No numerical subscription amount present; pre-rendered success text is not evidence of an enquiry."
+    },
+    {
+      "id": "subscription",
+      "type": "official_pricing",
+      "site": "Terms & Condition",
+      "title": "Terms & Condition",
+      "url": "https://crmtravel.in/terms&condition.html",
+      "read_at": "2026-10-22T10:12:48.470620Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e9de52806a63570e52b1e19356fea175fc7dbfd363034e975cd2bf0847f719c5",
+      "research_notes_en": "Annual subscription/payment upfront and renewal cancellation terms; no published numerical plan quote. Source page retains an old effective date and placeholder contact number."
+    },
+    {
+      "id": "refunds",
+      "type": "official_documentation",
+      "site": "Refunds and Cancellation",
+      "title": "Refunds and Cancellation",
+      "url": "https://crmtravel.in/refundandcancellation.html",
+      "read_at": "2026-10-22T10:13:09.065361Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "852a4d968856f7b57e9a8cde3e8f9c1fefacdeaad0c85b6be79985ed6742e090",
+      "research_notes_en": "Annual-plan cancellation notice, no routine mid-term prorating and discretionary service-failure review. Current page read; no legal advice or paid contract entered."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:13:09.065361Z",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "b2b", "b2c", "booking-engine"],
+  "profile": {
+    "sections": [
+      {
+        "id": "identity",
+        "title_en": "Choose agent operations or direct-customer operations",
+        "title_zh": "先选代理业务还是直接客户业务",
+        "en": "The B2B page centers agencies, tour operators, agents and suppliers; the B2C page centers direct traveler inquiries and their customer journey. Both describe quotes and follow-up, but the counterparties differ. Record who requests the trip, who receives the quote and who owes payment before choosing a configuration.\n\nDo not let a shared vendor name blur product scope. The separate booking engine describes inventory, online booking, markups and partner access. A CRM record about a requested hotel and an actual booking against live supplier inventory are different business objects. Ask for the intended connection in the demonstration.",
+        "zh": "B2B 页以旅行社、运营商、代理和供应商为中心；B2C 页围绕直接旅客咨询及其客户旅程。两者都描述报价与跟进，但交易对手不同。选择配置前，应记录谁提出行程、谁接收报价、谁承担付款。\n\n不能由相同厂商品牌混淆产品范围。独立预订引擎描述库存、在线预订、加价及合作方访问。CRM 中记录酒店需求，与实际占用供应商实时库存的预订，是不同业务对象。应在演示中要求展示所需连接。",
+        "source_refs": ["b2b", "b2c", "booking-engine"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "travel-example",
+        "title_en": "Worked example: an inquiry becomes a proposed trip",
+        "title_zh": "示例：从咨询到候选行程",
+        "en": "Suppose a traveler asks an agency for three nights, airport transfers and one guided activity. As an editorial example, record dates, party size and preferences, assign an owner, and prepare a service-based itinerary. The B2C page describes service-cost calculation, markup and sharing by email, PDF or link.\n\nReview the quote as the traveler will see it: currency, included services, exclusions and validity. Then change one date or traveler count and inspect the revised total. The example is not an executed booking or a promise that all supplier prices update automatically. The source's rapid-generation claims were not benchmarked.",
+        "zh": "假设旅客向旅行社咨询3晚住宿、机场接送及一项导览活动。作为编辑示例，可先记录日期、人数和偏好，分配负责人，再制作按服务组成的行程。B2C 页说明服务成本计算、加价，以及通过邮件、PDF 或链接分享。\n\n应从旅客视角核对币种、包含服务、排除项及有效期，再修改一个日期或人数，检查修订总价。本例并非实际预订，也不承诺供应商价格都会自动更新；本文未测试来源宣传的制作速度。",
+        "source_refs": ["b2c"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "operations",
+        "title_en": "Keep supplier cost, invoice and voucher distinct",
+        "title_zh": "区分供应商成本、发票与凭证",
+        "en": "The B2B documentation describes master records for agents, suppliers, hotels, activities and transfers, alongside booking-derived invoices and payment history. Use those records to distinguish the selling price from the supplier's cost. A customer payment and a supplier payment must not become the same status merely because they concern one trip.\n\nB2C documents describe service-wise vouchers and combined vouchers. Check a package with an unconfirmed component before generating final documents. A voucher communicates service details; it is not independent proof of supplier confirmation or a guarantee of travel fulfillment. Tax/profit reporting descriptions also do not establish that every jurisdiction's accounting rules are supported.",
+        "zh": "B2B 文档描述代理、供应商、酒店、活动和接送等主记录，以及由预订信息生成的发票和付款历史。应利用这些记录区分销售价与供应商成本。同一行程的客户收款和供应商付款，不应因此混为一个状态。\n\nB2C 文档说明按服务或合并生成凭证。建议用含未确认组成项的套餐核对最终文档流程。凭证传达服务信息，不是供应商确认或旅行履约的独立证明。税务／利润报表的功能描述，也不能证明覆盖所有司法辖区的会计规则。",
+        "source_refs": ["b2b", "b2c"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup-exceptions",
+        "title_en": "Prepare master data and exception scenarios",
+        "title_zh": "准备主数据与异常场景",
+        "en": "The documented lead paths include forms, email and spreadsheet-related intake, with assignment and follow-up. Establish one accountable owner and clean travel master data before importing a large inquiry list. Ask the supplier to show a missing hotel rate, a repeated inquiry and an overdue response rather than only a complete sample.\n\nThese are evaluation recommendations. Public product pages do not specify exact import rollback, duplicate matching, integration retry, cancellation propagation or payment reconciliation rules. A failure in a live inventory connection may require different recovery from a missing field in a CRM quote. No such failure or recovery was tested here.",
+        "zh": "文档中的线索路径包括表单、邮件和表格相关入口，并支持分配及跟进。大量导入咨询前，应明确负责人并整理旅游主数据。建议演示酒店价格缺失、重复咨询和逾期未回复，而不只展示完整样例。\n\n这些是评估建议。公开产品页未具体说明导入回退、重复匹配、集成重试、取消传播或支付对账规则。实时库存连接失败，与 CRM 报价缺少字段可能需要不同恢复方式；本文未测试这类失败或恢复。",
+        "source_refs": ["b2b", "b2c", "booking-engine"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-model",
+        "title_en": "Quote the annual scope before comparing monthly equivalents",
+        "title_zh": "比较月度折算前先确认年度范围",
+        "en": "The public terms describe an annual subscription, paid in full at the start of the term. No numerical software price was found in the reviewed sales route. Obtain a quote that separates CRM modules, booking engine, setup/migration and any external supplier or gateway charges. The homepage's unlimited-user statement alone does not establish that complete package.\n\nThe cancellation/refund page requires written notice at least 30 days before renewal and generally excludes prorated mid-term refunds; it describes discretionary review for certain vendor technical failures. The terms retain an old effective date and a placeholder contact number, so confirm the applicable signed agreement rather than treating the public page as a complete purchase quote. No price or refund eligibility was tested.",
+        "zh": "公开条款说明按年订阅，在期限开始时一次付清。所读销售入口没有具体软件金额。应取得分列 CRM 模块、预订引擎、实施／迁移及外部供应商或网关费用的报价。首页的不限用户宣传不能单独确定完整组合。\n\n取消／退款页要求至少在续订前30天书面通知，通常不提供期中按比例退款；部分厂商技术故障可酌情审查。条款保留较早生效日期及占位联系电话，因此应确认适用的签署协议，不能把公开页当完整购买报价。本文未测试价格或退款资格。",
+        "source_refs": ["product", "subscription", "contact", "refunds"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit-deployment",
+        "title_en": "Fit for travel operations, with deployment questions still open",
+        "title_zh": "旅游运营适配与待核部署问题",
+        "en": "CRMtravel is a relevant candidate when travel quotations, agents/suppliers, follow-ups and trip documents must share a record. A generic contact list or a pure consumer booking storefront may have a narrower requirement. Evaluate the actual workflow instead of treating the vendor's wider travel product family as a single included feature list.\n\nThe homepage describes cloud access without local installation. It does not establish a self-hosted release or an open-source license, so those remain unverified. Exact APIs, module/seat entitlements, backup/export arrangements, data location, UI languages and regional gateway eligibility also need confirmation. The demo/contact form was read but not submitted; any success text in its page is not evidence that this research contacted sales.",
+        "zh": "当旅游报价、代理／供应商、跟进和出行文档需要共享记录时，CRMtravel 可列入候选。单纯联系人列表或纯消费者预订前台可能有更窄需求。应按真实流程评估，不能把厂商整套旅游产品都写成一个订阅包含的功能表。\n\n首页说明无需本地安装的云访问，但未确立自行托管发行版或开源许可，相关事项仍未核实。准确 API、模块／席位权益、备份／导出、数据位置、界面语言及地区网关资格也需确认。本文读取了演示／联系表单但未提交，其中预置的成功文字不表示研究已联系销售。",
+        "source_refs": ["product", "contact"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CRMtravel: Travel Quotes, B2B/B2C Workflows and Annual Costs",
+    "title_zh": "CRMtravel：旅游报价、B2B／B2C 流程与年度费用",
+    "description_en": "Review CRMtravel inquiry-to-itinerary workflows, supplier records, invoices, booking-engine boundaries and annual subscription conditions.",
+    "description_zh": "了解 CRMtravel 从咨询到行程的流程、供应商记录、发票、预订引擎边界和年度订阅条件。",
+    "primary_intent": "Evaluate a travel-specific CRM and distinguish it from booking-engine products.",
+    "secondary_questions": [
+      "How do B2B and B2C scopes differ?",
+      "Does a voucher confirm supplier inventory?",
+      "What annual terms are public?"
+    ],
+    "query_basis": "Editorial intent only; no measured keyword demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Numerical prices, signed product/module entitlements, APIs, integration recovery, exports/backups and exact import/cancellation behavior are unconfirmed.",
+      "zh": "具体金额、签署的产品／模块权益、API、集成恢复、导出／备份以及准确导入／取消行为尚未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, booking, quote, voucher or payment was executed. License, data location, UI languages and regional gateway availability remain unverified.",
+      "zh": "未实际执行账户、预订、报价、凭证或付款；许可、数据位置、界面语言和地区网关可用性仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

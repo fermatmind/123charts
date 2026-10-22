@@ -1,0 +1,244 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "checkmarket-d22da3cd",
+  "name": "CheckMarket",
+  "website_url": "https://www.checkmarket.com/",
+  "domain": "www.checkmarket.com",
+  "identity_domain": "checkmarket.com",
+  "category": "surveys",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CheckMarket now leads to Medallia Agile Research in the official discovery path. Current Medallia product and API documentation retain the CheckMarket name in examples, connecting the historical record to a DIY survey and research service. This profile keeps that identity trail rather than assigning the whole Medallia suite to the old name.\n\nAgile Research describes questionnaire building, statistical research, reporting, panels and an API. The API has account-level and individual keys with permission scopes, and explicit opt-out behavior. These operational details matter more than assuming a legacy survey link is a complete standalone product offering today.",
+  "description_zh": "CheckMarket 的官方发现路径现指向 Medallia Agile Research。当前 Medallia 产品和 API 文档仍在示例使用 CheckMarket 名称，将历史记录连接到自助问卷与研究服务。本文保留这条身份线索，不把整套 Medallia 能力归入旧名称。\n\nAgile Research 描述问卷构建、统计研究、报告、样本库和 API。API 使用账户级和单独密钥并限定权限，且明确处理退订。这些操作细节比假定旧问卷链接仍代表完整独立产品更重要。",
+  "core_features": [
+    {
+      "name_en": "DIY survey research and reporting",
+      "name_zh": "自助问卷研究与报告",
+      "explanation_en": "Current Agile Research page describes templates, statistical methods and shared reports.",
+      "explanation_zh": "当前 Agile Research 页描述模板、统计方法和共享报告。",
+      "source_ref": "current",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
+    },
+    {
+      "name_en": "Scoped API keys",
+      "name_zh": "限定权限的 API 密钥",
+      "explanation_en": "Uses X-Master-Key and X-Key; per-purpose keys can have limited rights.",
+      "explanation_zh": "使用 X-Master-Key 与 X-Key，可按用途限定密钥权限。",
+      "source_ref": "keys",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
+    },
+    {
+      "name_en": "Global opt-outs",
+      "name_zh": "全局退订",
+      "explanation_en": "Opted-out contacts cannot be imported or sent email/SMS through the documented account workflow.",
+      "explanation_zh": "文档账户流程禁止导入已退订联系人或向其发送邮件／短信。",
+      "source_ref": "optouts",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_inference",
+    "en": ["Connect approved contacts without re-inviting opt-outs"],
+    "zh": ["连接获准联系人并避免重新邀请退订者"],
+    "basis": "Editorial task and fit judgments grounded in the attached primary sources; no observed deployment."
+  },
+  "technical_details": {
+    "Research scope": {
+      "en": "Public documentation and commercial access reviewed; examples are proposed evaluation workflows.",
+      "zh": "核对公开文档与商业入口；示例是建议的评估流程。",
+      "source_ref": "current",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_inference",
+    "organization_sizes_en": "Select by workflow, volume and governance needs; no universal size claim.",
+    "organization_sizes_zh": "按流程、用量与治理需求选择，不宣称适合所有规模。",
+    "specific_roles": [],
+    "roles_status": "not_verified",
+    "source_ref": "current"
+  },
+  "getting_started": {
+    "status": "editorial_guidance",
+    "steps": [
+      {
+        "en": "Confirm the existing account, regional endpoint and desired access rights with its administrator. The MasterKey is shared for the account; rotating it affects all related API requests and notifications, whereas separate Keys support different purposes. Pilot a read-only call and a permitted test contact before production integration. The product is a hosted service; no self-hosted edition or open-source license was established.",
+        "zh": "向管理员确认现有账户、地区端点与所需访问权限。MasterKey 是账户共享的，轮换会影响所有相关 API 请求和通知；单独 Key 可服务不同用途。生产集成前先试点只读调用和允许的测试联系人。产品是托管服务，未建立自托管版或开源许可。",
+        "source_refs": ["keys"]
+      }
+    ]
+  },
+  "integrations": {
+    "status": "see_profile_for_documented_scope",
+    "items": [],
+    "source_ref": "current"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "This may fit a research team needing DIY surveys plus integrations and panel access. A simple email form is narrower; the broader Medallia experience suite is a separate purchase scope. A targeted panel does not automatically establish representativeness, and an analytical method does not fix biased questions. Validate import failures, opt-out propagation and response identity before recurring automation. Exact retry behavior, rate limits and old-account migration obligations were not established.",
+        "zh": "需要自助问卷、集成及样本访问的研究团队可评估。简单邮件表单任务更窄，完整 Medallia 体验套件则是另一采购范围。定向样本不能自动证明代表性，分析方法也不能修复有偏题目。周期自动化前需验证导入失败、退订传播和回答身份。确切重试、速率限制及旧账户迁移义务未建立。",
+        "source_refs": ["current", "keys", "optouts"]
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "not_verified",
+    "price_type": "unknown",
+    "officially_checked": false,
+    "source_snapshot_en": "The current product page is sales-led and does not establish an Agile Research subscription amount, lasting free tier, trial duration or respondent-panel cost. The old CheckMarket directory price is not a verified current quote. Ask separately about creator access, survey capacity, panel recruitment, API use and report sharing. Pricing remains not verified in this profile.",
+    "source_snapshot_zh": "当前产品页以销售联系为主，未建立 Agile Research 订阅金额、持续免费档、试用时长或受访者样本费用。旧 CheckMarket 目录价格不是已核实当前报价。应分别询问创建权限、问卷容量、样本招募、API 和报表分享。本文价格保持未核实。",
+    "source_ref": "current",
+    "normalized_monthly_price": null,
+    "currency": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "current",
+      "type": "official_documentation",
+      "site": "CheckMarket",
+      "title": "Medallia Agile Research – Medallia",
+      "url": "https://www.medallia.com/products/agile-research/",
+      "read_at": "2026-10-22T16:07:13.880600+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7ca3ac44e4c4d7c81a7599d05dfd4156aa53d9b549c3edfded2cb0fc2cdb8eb7",
+      "research_notes_en": "Read current Medallia Agile Research positioning; broader Medallia suite not imported."
+    },
+    {
+      "id": "keys",
+      "type": "official_documentation",
+      "site": "CheckMarket",
+      "title": "API Example : Getting started | Medallia Agile Research",
+      "url": "https://api-us.agileresearch.medallia.com/Examples/Example/1-getting-started",
+      "read_at": "2026-10-22T16:06:32.371775+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_http_html_text",
+      "excerpt_sha256": "e6a0118e3ddda9707dde2dcd8f2455522f77c17f48a417c33b152befb294b350",
+      "research_notes_en": "Read current API example retaining CheckMarket identity, header authentication and MasterKey rotation impact."
+    },
+    {
+      "id": "optouts",
+      "type": "official_documentation",
+      "site": "CheckMarket",
+      "title": "API Example : Retrieving and adding opt-outs | Medallia Agile Research",
+      "url": "https://api-ap.agileresearch.medallia.com/Examples/Example/47-retrieving-and-adding-opt-outs",
+      "read_at": "2026-10-22T16:06:36.417757+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_http_html_text",
+      "excerpt_sha256": "0d9e5e4eee23a639984b9e198f0c8554ad6e91f4f988e2305325c5433338e4bd",
+      "research_notes_en": "Read retrieval and addition of global opt-outs and exclusion from import/email/SMS."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:14:12.146135+00:00",
+    "scope": "Public primary-source documentation only. No account execution, purchase, identity claim, price approval, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English synthesis with section-aligned Chinese translation. Vendor documentation is not an independent performance test.",
+    "Hypothetical workflows and suitability judgments are editorial guidance. No directional alternative relationship has been approved.",
+    "Evidence text and SHA-256 metadata retained in .scratch/deep-research/batch-12/checkmarket-d22da3cd/; no source text copied into public descriptions."
+  ],
+  "description_source_refs": ["current", "keys", "optouts"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Connect approved contacts without re-inviting opt-outs",
+        "title_zh": "连接获准联系人并避免重新邀请退订者",
+        "en": "For a proposed customer study, define the audience and questionnaire, then use a narrowly scoped integration key for contact operations. Inspect the global opt-out list before an import or invitation run and reconcile it with your own suppression records. The official example supports retrieving opt-outs after a date and adding email addresses or phone numbers. Do not treat a successful import as consent or a delivered invitation. These are documented operations, not requests executed in this research.",
+        "zh": "以客户研究为例，先定义受众和问卷，再用限定权限集成密钥操作联系人。导入或邀请前检查全局退订列表，并与自己的抑制记录核对。官方示例支持按日期读取退订，以及添加邮件地址或电话号码。导入成功不能视为同意或投递成功。本研究只读文档，未执行这些请求。",
+        "source_refs": ["keys", "optouts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup",
+        "title_en": "Use the current service and regional API endpoint",
+        "title_zh": "使用当前服务与地区 API 端点",
+        "en": "Confirm the existing account, regional endpoint and desired access rights with its administrator. The MasterKey is shared for the account; rotating it affects all related API requests and notifications, whereas separate Keys support different purposes. Pilot a read-only call and a permitted test contact before production integration. The product is a hosted service; no self-hosted edition or open-source license was established.",
+        "zh": "向管理员确认现有账户、地区端点与所需访问权限。MasterKey 是账户共享的，轮换会影响所有相关 API 请求和通知；单独 Key 可服务不同用途。生产集成前先试点只读调用和允许的测试联系人。产品是托管服务，未建立自托管版或开源许可。",
+        "source_refs": ["keys"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Current amount and panel charges remain unknown",
+        "title_zh": "当前金额与样本费用仍未知",
+        "en": "The current product page is sales-led and does not establish an Agile Research subscription amount, lasting free tier, trial duration or respondent-panel cost. The old CheckMarket directory price is not a verified current quote. Ask separately about creator access, survey capacity, panel recruitment, API use and report sharing. Pricing remains not verified in this profile.",
+        "zh": "当前产品页以销售联系为主，未建立 Agile Research 订阅金额、持续免费档、试用时长或受访者样本费用。旧 CheckMarket 目录价格不是已核实当前报价。应分别询问创建权限、问卷容量、样本招募、API 和报表分享。本文价格保持未核实。",
+        "source_refs": ["current"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Match methods and audience to the question",
+        "title_zh": "让方法与受众匹配研究问题",
+        "en": "This may fit a research team needing DIY surveys plus integrations and panel access. A simple email form is narrower; the broader Medallia experience suite is a separate purchase scope. A targeted panel does not automatically establish representativeness, and an analytical method does not fix biased questions. Validate import failures, opt-out propagation and response identity before recurring automation. Exact retry behavior, rate limits and old-account migration obligations were not established.",
+        "zh": "需要自助问卷、集成及样本访问的研究团队可评估。简单邮件表单任务更窄，完整 Medallia 体验套件则是另一采购范围。定向样本不能自动证明代表性，分析方法也不能修复有偏题目。周期自动化前需验证导入失败、退订传播和回答身份。确切重试、速率限制及旧账户迁移义务未建立。",
+        "source_refs": ["current", "keys", "optouts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "No hands-on account test, current UI-language inventory, contractual data residency or recovery SLA was verified.",
+      "zh": "未实测账户、核实当前界面语言清单、合同数据驻留或恢复 SLA。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Current commercial price, legacy-account migration, rate limits and failure-retry semantics remain unverified.",
+      "zh": "当前商业价格、旧账户迁移、速率限制和失败重试语义未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and Chinese translation; examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "CheckMarket: workflows, access, costs and limits",
+    "title_zh": "CheckMarket：流程、使用条件、费用与限制",
+    "description_en": "CheckMarket now leads to Medallia Agile Research in the official discovery path. Current Medallia product and API documentation retain the CheckMarket name",
+    "description_zh": "CheckMarket 的官方发现路径现指向 Medallia Agile Research。当前 Medallia 产品和 API 文档仍在示例使用 CheckMarket 名称",
+    "primary_intent": "Understand the documented product and evaluate a concrete task.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or GEO outcome measured.",
+    "canonical_url": null
+  }
+}

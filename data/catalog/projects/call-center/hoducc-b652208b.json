@@ -1,0 +1,400 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "hoducc-b652208b",
+  "name": "HoduCC",
+  "website_url": "https://hodusoft.com/contact-center-software/",
+  "domain": "hodusoft.com",
+  "identity_domain": "hodusoft.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "HoduCC is HoduSoft’s configurable contact-centre platform for inbound,outbound and blended work across voice and digital channels. It offers cloud,on-premise and hybrid deployment,plus single-tenant or shared multi-tenant operation. Built-in CRM and ticketing sit beside the agent’s conversation;external CRM and telephony integrations require deployment-specific setup.\n\nAn illustrative billing case could begin in WhatsApp,reach a skilled agent by voice,and finish with a disposition and follow-up ticket in the customer timeline. That workflow depends on identity matching,channel access,routing and write-back being configured. It is not proof that the website’s sample refund,AI score or queue figures came from a real customer. No installation,call,campaign,tenant isolation,AI assessment or export was executed.",
+  "description_zh": "HoduCC是HoduSoft可配置联络中心平台，处理语音及数字渠道的呼入、外呼和混合作业。支持云、本地及混合部署，也提供独立单租户或共享多租户运行。内置CRM和工单位于客服会话旁，外部CRM及电话集成需按部署配置。\n\n假设账单案例可从WhatsApp开始，经语音转到具备技能的客服，最后将处置结果和跟进工单写入客户时间线。这依赖身份匹配、渠道权限、路由和回写配置，不证明网页示例退款、AI分数或队列数字来自真实客户。未执行安装、电话、活动、租户隔离、AI评估或导出。",
+  "core_features": [
+    {
+      "name_en": "Shared omnichannel agent context",
+      "name_zh": "共享全渠道客服上下文",
+      "explanation_en": "Place customer history,conversation controls,notes and tickets in one workspace across configured channels.",
+      "explanation_zh": "在一个工作区显示已配置渠道的客户历史、会话控制、备注及工单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cx-suite",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Built-in customer records",
+      "name_zh": "内置客户记录",
+      "explanation_en": "Use profiles,custom fields,screen pops and recording links,or retain a separate CRM as the system of record.",
+      "explanation_zh": "使用客户档案、自定义字段、来电弹屏及录音链接，或保留独立CRM作权威记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "crm",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Campaign-specific dialing",
+      "name_zh": "按活动选择拨号",
+      "explanation_en": "Choose preview/progressive pacing or predictive dialing ahead,with different preparation and abandonment tradeoffs.",
+      "explanation_zh": "选择预览／渐进节奏或提前预测拨号，准备时间与弃接风险不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dialers",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Per-client tenant controls",
+      "name_zh": "按客户管理租户",
+      "explanation_en": "Separate tenant users,campaigns and reports while capping agents,channels and concurrent calls on shared infrastructure.",
+      "explanation_zh": "在共享基础设施上分开租户用户、活动和报表，并限制客服、渠道及并发通话。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tenancy",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A support operation joining voice and digital conversations with customer history and follow-up tickets.",
+      "A BPO or service provider configuring separate client tenants,capacity limits and usage-based downstream billing."
+    ],
+    "zh": [
+      "将语音、数字会话、客户历史及跟进工单衔接的支持团队。",
+      "配置客户独立租户、容量上限及下游用量计费的BPO或服务商。"
+    ],
+    "source_refs": ["cx-suite", "tenancy"],
+    "basis": "Editorial fit,not verified customer outcomes or operating savings."
+  },
+  "technical_details": {
+    "Deployment and tenant boundary": {
+      "en": "Cloud,on-premise or hybrid;single-tenant has a dedicated instance,multi-tenant shares a platform with access-controlled tenant spaces. Selected connectors and AI processing paths still require review.",
+      "zh": "云、本地或混合；单租户独立实例，多租户共享平台并按权限隔离租户空间。所选连接器及AI处理路径仍需核对。",
+      "source_ref": "tenancy",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Contact-centre implementation owner",
+      "BPO platform administrator",
+      "Outbound campaign manager",
+      "CRM and telephony integration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "cx-suite"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define channels,traffic,client separation,CRM authority,SIP trunks and data-location requirements before requesting a license scope.",
+        "zh": "询价前明确渠道、流量、客户隔离、CRM权威、SIP线路及资料位置要求。",
+        "source_refs": ["platform", "tenancy"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure one tenant,roles,skills,queue,IVR and campaign;connect the chosen CRM and channels with explicit field ownership.",
+        "zh": "配置一个租户、角色、技能、队列、IVR及活动，以明确字段权威连接所选CRM和渠道。",
+        "source_refs": ["cx-suite", "crm", "tenancy"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot routing,failed handoff,recording,AI review and capacity before rolling out additional queues or tenants. Verify usage and exit exports separately.",
+        "zh": "扩展队列或租户前试跑路由、失败转接、录音、AI复核及容量；分别核对用量和退出导出。",
+        "source_refs": ["cx-suite", "tenancy"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "External CRM platforms",
+        "source_ref": "crm",
+        "scope": "Named Salesforce,Zoho,HubSpot,Zendesk and Freshdesk;can coexist with built-in CRM. Permissions,mapping,sync conflicts and connector entitlements untested."
+      },
+      {
+        "name": "SIP trunks and custom systems",
+        "source_ref": "cx-suite",
+        "scope": "Telephony,WhatsApp and custom systems are explicitly part of implementation,not proof of every provider compatibility."
+      },
+      {
+        "name": "External provider billing",
+        "source_ref": "tenancy",
+        "scope": "Per-tenant usage export or APIs feed the operator billing system;not proof of a complete tax invoice/payment or reconciliation system."
+      }
+    ],
+    "source_ref": "cx-suite"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Commercial pages disagree on the unit:concurrent users,concurrent calls and seat count. No fixed amount,term or minimum was established.",
+        "zh": "商业页单位不一致，分别写并发用户、并发通话及席位数；未建立固定金额、周期或最低量。",
+        "source_refs": ["platform", "crm", "cx-suite"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Predictive dialing ahead needs abandonment and opt-out controls;AMD descriptions do not prove perfect live-answer detection or legal compliance.",
+        "zh": "提前预测拨号需控制弃接和退订；AMD说明不证明真人识别完美或法律合规。",
+        "source_refs": ["dialers"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Multi-tenant access isolation and capacity caps are vendor-described controls,not independently tested security or performance guarantees.",
+        "zh": "多租户访问隔离及容量上限为厂商描述，未经独立安全或性能验证。",
+        "source_refs": ["tenancy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "On-premise deployment does not establish that every optional AI or channel connector processes all data locally.",
+        "zh": "本地部署不证明每种可选AI或渠道连接器都在本地处理全部资料。",
+        "source_refs": ["cx-suite"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Website terms defer the actual product contract;license grant,renewal,refund,termination and complete data export remain unverified.",
+        "zh": "网站条款转交真实产品合同；许可授予、续费、退款、终止及完整资料导出未核。",
+        "source_refs": ["website-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "platform",
+    "source_refs": ["platform", "crm", "cx-suite"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Quoted licensed deployment;public pages conflict on concurrent users versus concurrent calls versus seats. No normalized monthly amount.",
+    "source_snapshot_en": "Contact-centre page scopes license by deployment,concurrent users,channels and integrations;CX Suite says deployment,seats,channels and integrations. Built-in CRM FAQ says included without a separate module charge and priced by concurrent calls rather than per agent. Amount,currency,term,minimum,maintenance/telecom/AI charges and actual trial conditions unknown. Requesting a demo does not establish a sustained free plan.",
+    "source_snapshot_zh": "联络中心页按部署、并发用户、渠道及集成报价，CX Suite写部署、席位、渠道及集成；内置CRM FAQ称不单独收费，并按并发通话而非每客服计价。金额、币种、周期、最低量、维护／电话／AI费用及真实试用条件未知，预约演示不建立持续免费方案。",
+    "checked_at": "2026-10-22T15:13:03.117690+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does built-in CRM replace every external CRM?",
+      "question_zh": "内置CRM能替代所有外部CRM吗？",
+      "answer_en": "The vendor describes it as lightweight customer records and allows an external CRM to remain the system of record. Required sales,finance and synchronization behavior must be evaluated separately.",
+      "answer_zh": "厂商将其描述为轻量客户记录，并允许外部CRM继续作权威系统；所需销售、财务及同步行为须另评估。",
+      "source_refs": ["crm"]
+    },
+    {
+      "question_en": "Is pricing definitely per concurrent call?",
+      "question_zh": "价格确定按并发通话吗？",
+      "answer_en": "That is what the CRM FAQ says,but the platform page says concurrent users and the CX Suite page says seats. The reviewed pages do not resolve the difference;the actual quote must define capacity and license units.",
+      "answer_zh": "CRM FAQ如此写，但平台页写并发用户，CX Suite写席位。已读页面未解决差异，真实报价需定义容量和许可单位。",
+      "source_refs": ["platform", "crm", "cx-suite"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/hoducc",
+      "read_at": "2026-10-22T08:57:28.492Z",
+      "excerpt_sha256": "ecf2e90d74b091860b79ba77cdf724899af1da2398833d3f8710aba8f97d54d4",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_pricing",
+      "site": "Omnichannel Contact Center Software | Hybrid, Cloud & On-Premise",
+      "title": "Omnichannel Contact Center Software | Hybrid, Cloud & On-Premise",
+      "url": "https://hodusoft.com/contact-center-software/",
+      "read_at": "2026-10-22T15:11:52.352693+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ffdc728c7a32020a6b7801c77b9075fb7673721ae9398ef69bdcfcb77830e9e4",
+      "research_notes_en": "Current HoduCC channel/deployment/CRM implementation overview;licensed deployment quoted by concurrent users/channels/integrations,not fixed public amounts. Illustrative dashboard not adopted as customer evidence."
+    },
+    {
+      "id": "crm",
+      "type": "official_pricing",
+      "site": "Built-In CRM for Contact Center Software | HoduCC",
+      "title": "Built-In CRM for Contact Center Software | HoduCC",
+      "url": "https://hodusoft.com/built-in-crm/",
+      "read_at": "2026-10-22T15:12:39.308324+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c639b9d8036aba983a0db4e5811c5267ff2a7324340a7c0a910ed19f2442c6ae",
+      "research_notes_en": "Built-in lightweight CRM included no separate module fee;FAQ says concurrent calls not per agent,conflicting with platform concurrent users and suite seats. Preserve commercial ambiguity."
+    },
+    {
+      "id": "cx-suite",
+      "type": "official_pricing",
+      "site": "Omnichannel CX Suite | Customer Experience Platform",
+      "title": "Omnichannel CX Suite | Customer Experience Platform",
+      "url": "https://hodusoft.com/omnichannel-cx-suite/",
+      "read_at": "2026-10-22T15:12:39.609173+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c90b57945842a315de68e3c3b1574746ae397e7daa47ce82fa9f6f27ac547a3f",
+      "research_notes_en": "Omnichannel CX Suite workspace,bots,transcription/quality reasoning,staged rollout;commercial section scopes seats/deployment/channels/integrations;examples not measured operations."
+    },
+    {
+      "id": "dialers",
+      "type": "official_documentation",
+      "site": "HoduCC Advanced Dialers | 6 AI-Powered Outbound Dialing Modes",
+      "title": "HoduCC Advanced Dialers | 6 AI-Powered Outbound Dialing Modes",
+      "url": "https://hodusoft.com/advanced-dialers/",
+      "read_at": "2026-10-22T15:13:01.821808+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2803b8b51ed6debf509c241d0d69607fac732911d24bf0c07c1849b9ca783cef",
+      "research_notes_en": "Advanced dialer modes;progressive waits for available agent,preview shows context,predictive dials ahead with abandonment risk;DNC/optout controls not legal certification."
+    },
+    {
+      "id": "tenancy",
+      "type": "official_documentation",
+      "site": "Single & Multi-Tenant | HoduSoft",
+      "title": "Single & Multi-Tenant | HoduSoft",
+      "url": "https://hodusoft.com/single-tenant-multi-tenant/",
+      "read_at": "2026-10-22T15:13:03.117690+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "58aa240cd1000bea25341eaee3b46a10ebef0829b7815c488a967d37b2a664c1",
+      "research_notes_en": "Shared multi-tenant versus dedicated single-tenant infrastructure,per-tenant roles/channels/agent/concurrent-call caps,usage export to external billing;claims not isolation/load tested."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms of Use | HoduSoft",
+      "title": "Terms of Use | HoduSoft",
+      "url": "https://hodusoft.com/terms-of-use/",
+      "read_at": "2026-10-22T15:12:37.586721+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b3e8040167c2c796ea189e8e83e251e77e5aa01d11e82c6374d9ae0f50205d3c",
+      "research_notes_en": "July25 2026 website terms explicitly refer actual product features/pricing/availability to separate order form or service agreement. No actual product license/exit terms established."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:13:03.117690+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["platform", "cx-suite", "crm", "tenancy"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workspace",
+        "title_en": "Join the conversation to a configured customer record",
+        "title_zh": "将会话衔接已配置客户记录",
+        "en": "HoduCC combines inbound,outbound and blended operations with voice,WhatsApp,web chat,email,SMS and other supported digital channels. The CX Suite describes an agent workspace with customer history,call controls,notes,dispositions,scripts and tickets. A case can therefore continue across channels rather than being represented only as one telephone attempt. That is a configured workflow,not proof that every channel is licensed or that customer identities will match automatically.\n\nFor an illustrative duplicate-payment inquiry,a bot could capture context and hand the customer to a billing-skilled agent,who reviews the history and creates a follow-up ticket. Verify wrong-customer matching,a failed bot handoff and an unsuccessful CRM write-back. The page’s named mock workspaces,queue figures and refund conversation are not adopted here as verified customer deployments or measured results.",
+        "zh": "HoduCC结合呼入、外呼及混合作业，覆盖语音、WhatsApp、网页聊天、邮件、短信等支持渠道。CX Suite描述客服工作区内有客户历史、电话控制、备注、处置、脚本及工单，因此案例可跨渠道继续，而非只记录一次电话尝试。这是已配置工作流，不证明每渠道均获许可或客户身份自动匹配。\n\n以假设重复付款咨询为例，机器人可采集上下文，再转账单技能客服，由客服查历史并创建跟进工单。需验证认错客户、机器人转接失败及CRM回写失败。网页具名示例工作区、队列数字和退款会话未当作已核客户部署或实测结果。",
+        "source_refs": ["cx-suite", "platform"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "crm-authority",
+        "title_en": "Built-in CRM and external CRM have different ownership duties",
+        "title_zh": "内置及外部CRM需明确不同记录责任",
+        "en": "The built-in CRM is described as a lightweight customer store with profiles,interaction history,notes,custom fields,screen pops and click-to-call. Recordings and transcripts can be linked to the profile,and CX Suite can enrich it with AI summaries and quality scores. Administrators can group fields and reuse them across lists and campaigns. This is more specific than a generic CRM label,but it does not establish a full sales pipeline,finance ledger or transactional refund system.\n\nTeams can use it alone or retain Salesforce,Zoho,HubSpot,Zendesk or Freshdesk as the system of record while HoduCC handles interaction data. Before connecting an existing CRM,decide which system owns identity,contact changes,dispositions and deletion. Connector permissions,conflict handling,retry behavior and historical backfill were not documented in sufficient detail or tested. A screen pop with a customer name is not identity verification.",
+        "zh": "内置CRM被描述为轻量客户资料库，提供档案、互动历史、备注、自定义字段、来电弹屏及点击拨号。档案可链接录音和转录，CX Suite可补充AI摘要及质检分数；管理员可分组字段，在名单和活动间复用。这比泛泛CRM标签具体，但不建立完整销售管道、财务账本或事务退款系统。\n\n团队可独立使用，也可保留Salesforce、Zoho、HubSpot、Zendesk或Freshdesk作权威记录，让HoduCC处理互动资料。连接前需决定身份、联系人修改、处置和删除由谁负责。连接器权限、冲突处理、重试及历史回填未获得充分详细文档或实测；弹出客户姓名不是身份认证。",
+        "source_refs": ["crm", "cx-suite"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dialing",
+        "title_en": "Choose preparation time and dialing intensity deliberately",
+        "title_zh": "明确选择准备时间及拨号强度",
+        "en": "The Advanced Dialers page distinguishes progressive dialing after an agent becomes available,preview dialing with customer context before the call,and predictive dialing ahead using expected agent availability. It also lists auto,promotional and power dialing. Its FAQ describes power as one call per available agent,whereas predictive can dial multiple numbers ahead. The broader CX Suite list includes manual instead of power,so package-specific mode availability should be confirmed rather than reconciled by assumption.\n\nPreview or progressive operation is an editorial fit for complex cases requiring preparation;predictive operation needs closer capacity and abandonment management. The vendor describes answering-machine detection,DNC handling and opt-out controls,but those are controls to configure,not proof of perfect classification,lawful contact permission or zero abandoned calls. Retry limits,time-zone rules,callback ownership and behavior when no agent is ready still need a deployment-specific pilot.",
+        "zh": "Advanced Dialers页区分客服可用后才发起的渐进拨号、电话前显示客户上下文的预览拨号，以及按预计客服可用情况提前拨出的预测拨号，还列自动、推广及Power拨号。FAQ称Power为每个可用客服一通，而预测可提前拨多个号码；更广CX Suite名单写手动而非Power，因此需确认套餐具体模式，不能自行合并解释。\n\n从编辑判断看，预览或渐进适合需准备的复杂案例，预测需更严管容量和弃接。厂商描述真人／答录机识别、DNC及退订控制，但这些需配置，不证明分类完美、获合法联系许可或零弃接。重试上限、时区规则、回拨责任及无可用客服行为仍需按部署试跑。",
+        "source_refs": ["dialers", "cx-suite"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "tenants",
+        "title_en": "Separate a client account from a dedicated infrastructure instance",
+        "title_zh": "区分客户租户与独立基础设施实例",
+        "en": "HoduCC describes single-tenant as a dedicated platform instance and multi-tenant as one shared deployment with separate client users,settings,contacts,recordings,campaigns and reports. Operator administrators provision tenants while each client gets its own administration and branding. Per-tenant caps cover agents,channels and concurrent calls;usage can be exported or sent through APIs to the operator’s billing system. Usage export alone does not establish tax invoices,payment settlement or a reconciled billing ledger.\n\nA BPO can place ordinary clients on shared infrastructure and selected clients on dedicated instances. Shared-platform isolation remains an access-control and capacity claim,not physical infrastructure separation. Test cross-tenant search,recording links,exports,administrator roles and a traffic spike before relying on the boundaries. The website’s promises that a spike cannot affect others and that all conversations stay private were not independently validated.",
+        "zh": "HoduCC将单租户描述为独立平台实例，多租户为共享部署，同时分开客户用户、设置、联系人、录音、活动及报表。平台管理员创建租户，各客户获独立管理及品牌；按租户限制客服、渠道及并发通话，用量可导出或经API传入运营方计费系统。用量导出本身不建立税务发票、付款结算或已对账账本。\n\nBPO可将一般客户放共享基础设施，部分客户用独立实例。共享平台隔离仍是访问控制和容量主张，不是物理基础设施隔离。依赖前应测试跨租户查询、录音链接、导出、管理员角色及流量峰值。网页声称流量峰值不影响其他客户、会话始终私密，未经独立验证。",
+        "source_refs": ["tenancy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "implementation-ai",
+        "title_en": "Deployment control does not settle every AI data path",
+        "title_zh": "部署控制不能直接确定全部AI资料路径",
+        "en": "Cloud,on-premise and hybrid options are paired with a staged implementation:assess channels and systems,configure tenants/queues/skills,integrate CRM and telephony,test,deploy by site or tenant,and optimize. Browser WebRTC support is relevant to remote agents,but it does not remove network,carrier,device or channel setup. The vendor describes24×7engineering support;response and restoration commitments in an actual SLA were not reviewed.\n\nCX Suite describes live transcription,suggested next steps,intent categorization,sentiment and quality scoring with AI reasoning. Those outputs need human review before they determine refunds,compliance judgments or agent performance. Claims of scoring every interaction and keeping records in customer infrastructure do not establish AI accuracy,complete recording capture or the processing location of every optional model/connector. Confirm processors,retention and failure behavior for the selected deployment. No certificate,load test or AI evaluation was independently checked.",
+        "zh": "云、本地及混合选项配分阶段实施：评估渠道和系统，配置租户／队列／技能，集成CRM及电话，测试，按站点或租户上线，再优化。浏览器WebRTC有利远程客服，但不消除网络、运营商、设备或渠道配置。厂商描述24小时工程支持，但未读真实SLA响应及恢复承诺。\n\nCX Suite描述实时转录、建议下一步、意图分类、情绪及附AI理由质检。在据此退款、判断合规或考核客服前需人工复核。全量评分及记录留在客户基础设施的主张，不建立AI准确率、完整录音捕获或每种可选模型／连接器处理地点。需确认所选部署的处理方、留存及失败行为；未独立核验证书、负载或AI效果。",
+        "source_refs": ["platform", "cx-suite"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Quote the deployment and resolve inconsistent license units",
+        "title_zh": "按部署询价，并解决许可单位不一致",
+        "en": "The contact-centre page describes licensed software scoped to deployment,concurrent users,channels and integrations. The CX Suite page instead lists deployment,seat count,channels and integrations. The built-in CRM FAQ says that CRM is included without a separate module charge and that HoduCC prices by concurrent calls rather than per agent. These public statements do not establish a single consistent billing unit. None supplies a usable fixed amount,currency,term,minimum or complete carrier/AI/maintenance cost.\n\nObtain a quote defining licensed seats versus active calls,tenant limits,channels,connectors,renewals and support. A demo request is not evidence of a free plan or a specified trial. The July2026website Terms of Use explicitly defer product features,pricing and availability to a separate order form or service agreement. Consequently the actual license grant,cancellation,refunds,number portability,data export and deletion rights remain unknown. HoduCC is an editorial fit for teams able to configure telephony and client boundaries;self-service instant pricing and a guaranteed complete exit archive are not established.",
+        "zh": "联络中心页称按部署、并发用户、渠道及集成许可；CX Suite改写部署、席位、渠道及集成；内置CRM FAQ又称CRM不额外按模块收费，HoduCC按并发通话而非每客服计价。这些公开表述未建立一致计费单位，也没有可用固定金额、币种、周期、最低量或完整运营商／AI／维护成本。\n\n需取得定义许可席位与活跃通话、租户上限、渠道、连接器、续费及支持的报价。预约演示不是免费方案或具体试用证据。2026年七月网站使用条款明确将产品功能、定价及可用性交由独立订单或服务协议，因此实际许可授予、取消、退款、号码迁出、资料导出及删除权仍未知。编辑判断适合能配置电话及客户边界的团队；即时自助价格和保证完整退出档案未建立。",
+        "source_refs": ["platform", "crm", "cx-suite", "website-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "HoduCC: Omnichannel Workflows, Tenant Limits and License Pricing Gaps",
+    "title_zh": "HoduCC：全渠道工作流、租户限制及许可价格缺口",
+    "description_en": "Review HoduCC built-in CRM,dialing modes,single/multi-tenant deployment,AI boundaries and inconsistent concurrent-call/seat pricing language.",
+    "description_zh": "核对HoduCC内置CRM、拨号模式、单／多租户部署、AI边界及并发通话／席位定价表述差异。",
+    "primary_intent": "Evaluate HoduCC workflow,deployment and commercial fit.",
+    "secondary_questions": [
+      "Is built-in CRM included?",
+      "Does shared tenancy mean dedicated infrastructure?",
+      "What is the actual license unit?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,call,campaign,API,connector,AI,export orloadexecution. Actualquoteterms,conflictinglicenseunits,trial,carrier/AI/supportcosts,licensegrant,exitrights,numberportability,retention/deletion,completeexport,UIlanguages,AIprocessors/regions,connectorretries andtenantsecurityunverified. Websiteillustrationsnotcustomers;differentdialermodelistsnotmergedintoguaranteedentitlement.",
+      "zh": "未执行租户、电话、活动、API、连接器、AI、导出或负载。真实报价条款、许可单位冲突、试用、运营商／AI／支持费用、许可授予、退出权、号码迁出、留存／删除、完整导出、界面语言、AI处理方／地区、连接器重试及租户安全未核。网页示例不是客户证据，不把不同拨号名单合并为保证权益。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

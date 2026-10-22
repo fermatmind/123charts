@@ -1,0 +1,472 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "supportbee-aecb6054",
+  "name": "SupportBee",
+  "website_url": "https://supportbee.com/",
+  "domain": "supportbee.com",
+  "identity_domain": "supportbee.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "SupportBee is an email-first shared helpdesk with ticket assignment, private collaboration, a knowledge base and an optional customer portal. Its inbox uses Answered/Unanswered and Assigned/Unassigned as separate dimensions, with snooze and archive for follow-up. Customers can continue using email, while Enterprise adds portal and organization-wide group access.\n\nAn illustrative billing request can enter a connected mailbox, receive a finance-team assignment, collect an internal specialist comment and return to Unanswered when the customer follows up. Filters operate on new imports, not as a general event-driven workflow engine. Evaluate provider authentication, customer visibility and state behavior before migrating. This profile is based on public documentation; no mailbox, portal, API, purchase or ticket exchange was executed.",
+  "description_zh": "SupportBee是以邮件为主的共享服务台，提供工单分配、内部协作、知识库及可选客户门户。收件箱将已答／未答与已分配／未分配作为独立维度，以延后和归档管理跟进。客户可继续使用邮件，Enterprise另含门户和组织客户组共享访问。\n\n以假设账务请求为例：它进入已连接邮箱、分给财务组、收集内部专家评论，并在客户追问时恢复未答。筛选器作用于新导入工单，不是通用事件工作流引擎。迁移前应评估邮件认证、客户可见性及状态行为。本档案基于公开文档，未执行邮箱、门户、API、购买或工单往来。",
+  "core_features": [
+    {
+      "name_en": "Email-connected team inbox",
+      "name_zh": "连接邮件的团队收件箱",
+      "explanation_en": "Native Gmail and Outlook connections use OAuth; other providers need forwarding and SMTP.",
+      "explanation_zh": "Gmail与Outlook原生连接使用OAuth，其他提供商需转发和SMTP。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mail",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Independent response and ownership states",
+      "name_zh": "独立的回复及归属状态",
+      "explanation_en": "A ticket can be answered yet still need an owner or follow-up.",
+      "explanation_zh": "工单可已回复但仍需负责人或后续跟进。",
+      "explanation_scope": "product_specific",
+      "source_ref": "states",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "New-ticket routing filters",
+      "name_zh": "新工单路由筛选器",
+      "explanation_en": "Match sender, recipient, subject and body before assigning or labeling new tickets.",
+      "explanation_zh": "按发件人、收件人、主题及正文匹配新工单后分配或标记。",
+      "explanation_scope": "product_specific",
+      "source_ref": "filters",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Customer-group portal access",
+      "name_zh": "客户组门户访问",
+      "explanation_en": "Enterprise can let group members view and reply to each other’s tickets.",
+      "explanation_zh": "Enterprise可让组成员查看并回复其他成员工单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "portal",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Replace a shared support mailbox with named ownership and private specialist input.",
+      "Offer B2B account contacts a controlled shared ticket portal."
+    ],
+    "zh": [
+      "用明确归属及内部专家意见替换共享支持邮箱。",
+      "向B2B客户联系人提供受控共享工单门户。"
+    ],
+    "source_refs": ["product", "roles", "portal"],
+    "basis": "Editorial evaluation scenarios, not observed deployment or measured improvement."
+  },
+  "technical_details": {
+    "API entry": {
+      "en": "Authenticated JSON API uses a profile API token in Authorization: Bearer and an HTTPS company subdomain. Complete export coverage, pagination, rate limits and recovery are unverified.",
+      "zh": "认证JSON API使用个人资料API令牌、Authorization: Bearer及HTTPS公司子域名。完整导出范围、分页、限流及恢复未核实。",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Email support lead",
+      "Customer operations administrator",
+      "B2B account service manager"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose native OAuth or forwarding plus SMTP, and verify inbound and outbound paths separately.",
+        "zh": "选择原生OAuth或转发加SMTP，分别验证收信与发信。",
+        "source_refs": ["mail"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Add a narrow department filter, preview matches and send a new test ticket.",
+        "zh": "添加范围较窄的部门筛选器，预览匹配并发送新测试工单。",
+        "source_refs": ["filters"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Check agent/collaborator actions, follow-up states and customer-group visibility using distinct identities.",
+        "zh": "以不同身份核对客服／协作者动作、跟进状态及客户组可见性。",
+        "source_refs": ["roles", "states", "portal"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Export representative records before cancellation or desk deletion.",
+        "zh": "取消或删除服务台前导出有代表性的记录。",
+        "source_refs": ["terms", "deletion", "api"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Gmail / Google Workspace",
+        "source_ref": "mail",
+        "scope": "Native OAuth; Google Groups must first be a collaborative inbox according to the guide."
+      },
+      {
+        "name": "Microsoft Outlook / Office 365",
+        "source_ref": "mail",
+        "scope": "Native OAuth may require tenant administrator consent and compatible conditional-access policy."
+      },
+      {
+        "name": "Other email providers",
+        "source_ref": "mail",
+        "scope": "Forwarding receives mail; separate SMTP sends replies. Both must be configured."
+      },
+      {
+        "name": "JSON API",
+        "source_ref": "api",
+        "scope": "Tickets, replies, comments, customers and reports; no tested export completeness or write behavior."
+      }
+    ],
+    "source_ref": "mail"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Filters run only on newly imported tickets. Multiple filters can add labels, but conflicting assignments perform only one action without a documented winner here.",
+        "zh": "筛选器只在新工单导入时运行；多规则可累加标签，但冲突分配只执行一个，所读页面未说明谁优先。",
+        "source_refs": ["filters"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Collaborators can comment but cannot reply, archive, trash or assign; their activity is excluded from reports.",
+        "zh": "协作者可评论但不能回复、归档、丢入垃圾或分配，其活动不计入报表。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A group portal intentionally permits members to view and reply to each other’s tickets; confirm customer expectations before enabling.",
+        "zh": "客户组门户有意允许成员互看及回复工单，启用前应确认客户预期。",
+        "source_refs": ["portal"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Deleting the desk makes it inaccessible immediately; a30-day removal schedule is not a30-day export window.",
+        "zh": "删除服务台后立即无法访问，30天移除周期不是30天导出窗口。",
+        "source_refs": ["deletion"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://supportbee.com/terms",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "terms"],
+    "normalized_monthly_price": 20,
+    "currency": null,
+    "billing_basis": "Dollar-denominated per-seat monthly or annual advance subscription; currency code and whether collaborators have a distinct charge not established.",
+    "source_snapshot_en": "Monthly Startup$20/seat,Enterprise$25. Annual Startup$204/seat/year($17/month equivalent),Enterprise$252($21/month). Startup1KB+1team;Enterpriseaddsportal,groups,businesshours. Unlimitedinboxes/ticketsboth.14daytrialnocard;nopermanentfreeplanestablished;unusedtimeisnotrefunded.",
+    "source_snapshot_zh": "月付Startup每席$20、Enterprise$25；年付每席Startup$204／年（折月$17）、Enterprise$252（折月$21）。Startup含1知识库加1团队，Enterprise增加门户、客户组及工作时间；两档邮箱／工单不限。14天试用无需卡，未确定永久免费档，未使用时段不退款。",
+    "checked_at": "2026-10-22T12:24:59.990987+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Will changing a filter update existing tickets?",
+      "question_zh": "修改筛选器会更新现有工单吗？",
+      "answer_en": "No. Preview can show existing matches, but documented actions run on new imports, not retroactively.",
+      "answer_zh": "不会。预览可展示现有匹配记录，但文档动作在新导入时运行，不追溯现有工单。",
+      "source_refs": ["filters"]
+    },
+    {
+      "question_en": "Does Answered mean the case is resolved?",
+      "question_zh": "Answered表示问题已解决吗？",
+      "answer_en": "It records a response state. Follow-up can remain necessary, a customer reply returns it to Unanswered, and archive is a separate action.",
+      "answer_zh": "它记录回复状态，仍可能需要跟进；客户回复会恢复Unanswered，归档是另一个动作。",
+      "source_refs": ["states"]
+    },
+    {
+      "question_en": "Can collaborators send customer replies?",
+      "question_zh": "协作者能向客户回复吗？",
+      "answer_en": "No. The documented collaborator role can read and add comments but cannot reply or manage assignment and closure actions.",
+      "answer_zh": "不能。文档中的协作者可阅读及评论，但不能回复或管理分配、归档等动作。",
+      "source_refs": ["roles"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/supportbee",
+      "read_at": "2026-10-22T09:08:24.030Z",
+      "excerpt_sha256": "6d0ad81fe8ea5511d4b54988423f8f2e68d71dfe089c065565c798b5cfa1221c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Email Ticketing System for Customer Service | SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "title": "Email Ticketing System for Customer Service | SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/",
+      "read_at": "2026-10-22T12:19:40.367662+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c7ea9fbd17ea48286b059d087f72f61e9a5f1f405a6a428de371eddedeb23cee",
+      "research_notes_en": "Current email-first ticketing, shared inbox, knowledge base and customer portal scope."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Helpdesk Pricing - SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "title": "Helpdesk Pricing - SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/pricing",
+      "read_at": "2026-10-22T12:19:39.352168+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b5b7df29c39100d775e1619b40176c83b70f93929b84fcde3e57ecee02e49c31",
+      "research_notes_en": "Actual monthly20/25 and annual-equivalent17/21 per seat, plan entitlements and14daytrial. Generic20%banner not adopted as exact discount."
+    },
+    {
+      "id": "mail",
+      "type": "official_documentation",
+      "site": "Connecting your email inbox - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Connecting your email inbox - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/email-setup/connecting-your-email-inbox-with-supportbee",
+      "read_at": "2026-10-22T12:24:16.957081+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2de77cb190fcc84fddebf0dcb4a0f3c121eb5e8ef0dcbe18eb72251d7e2227fb",
+      "research_notes_en": "Native Gmail/Outlook OAuth, other providers forwarding+SMTP, reconnect/missingmail/personalforward prerequisites."
+    },
+    {
+      "id": "filters",
+      "type": "official_documentation",
+      "site": "Working with filters - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Working with filters - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/email-setup/working-with-filters",
+      "read_at": "2026-10-22T12:24:16.369009+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "446152e12f9c965b4bca17b255e495c1b97f29f053ff6733d0c2fd0f559a1ee2",
+      "research_notes_en": "New-ticket-only filters, AND across fields/ANY comma keywords, broad substrings, conflicts and import delay."
+    },
+    {
+      "id": "states",
+      "type": "official_documentation",
+      "site": "Ticket States - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Ticket States - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/handling-tickets/ticket-states",
+      "read_at": "2026-10-22T12:24:16.126380+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "444cea92f732f933f9ec4e035a8645a8a24d32a1d8784ec19e076217634c777b",
+      "research_notes_en": "Answered/assigned independent states, customer reply reopening, shared snooze and unarchive semantics."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Understanding User Permissions - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Understanding User Permissions - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/users/understanding-user-permissions",
+      "read_at": "2026-10-22T12:24:16.399645+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3e7e2c03cf0ce9e3bf5c5191fb9b8aab6f258fbd14d9fe7fab495bd7508b7e81",
+      "research_notes_en": "Admin/agent/collaborator capabilities; collaborator comments only and activity excluded from reports."
+    },
+    {
+      "id": "portal",
+      "type": "official_documentation",
+      "site": "Ticket tracking with customer portal - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Ticket tracking with customer portal - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/customer-portal-software/ticket-tracking-with-customer-portal-software",
+      "read_at": "2026-10-22T12:24:19.749220+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "20fbf2dae985765b7830793e8efb4da91d783cefcb04612241661dcc6ff0ec19",
+      "research_notes_en": "Enterprise portal private links and group ticket view/reply access, optional disable and customer-view test."
+    },
+    {
+      "id": "kb",
+      "type": "official_documentation",
+      "site": "Visibility - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Visibility - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/knowledge-base-software/visibility",
+      "read_at": "2026-10-22T12:24:59.313004+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "62e4cbfb920e66d4cde715d4af8df27fda39b5789b4305bd7fbac3a2c49ab4c9",
+      "research_notes_en": "Unpublished KB visible to desk users; password protection is distinct customer access."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "API - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "API - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/api/api",
+      "read_at": "2026-10-22T12:24:59.990987+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a7af1e53fd43ece077a48bd92aa313ddea86f316771442045d08bb9e2325fb38",
+      "research_notes_en": "Per-user API token, Bearer authorization, company HTTPS base and JSON; no endpoint execution/rate limit review."
+    },
+    {
+      "id": "deletion",
+      "type": "official_documentation",
+      "site": "Deleting your support desk - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "title": "Deleting your support desk - SupportBee Docs Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/docs/account-settings/deleting-your-support-desk",
+      "read_at": "2026-10-22T12:24:59.476214+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "06aaad6f5ad2be4507b5a79c06ac02f47549991bd59138f3d7a07d707c6b32e2",
+      "research_notes_en": "Immediate loss of access after deletion,30dayremoval/90daybackup, inactive account notice."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service - SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "title": "Terms of Service - SupportBee Menu Open Menu Close Reddit LinkedIn",
+      "url": "https://supportbee.com/terms",
+      "read_at": "2026-10-22T12:24:16.689624+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ca3dde67e27cc2f9b0e0565ba15d679772b7d2fe5ee587b44babd24c860f9b94",
+      "research_notes_en": "Hosted proprietary limited license, advance billing/no unused-time refunds, API export; limited selected terms review."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:24:59.990987+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "mail", "states", "filters", "portal"],
+  "profile": {
+    "sections": [
+      {
+        "id": "email-work",
+        "title_en": "Make ownership explicit without changing the customer’s email habit",
+        "title_zh": "保持客户邮件习惯并明确工单归属",
+        "en": "SupportBee turns support email into a team queue, adding assignments, labels, private discussion and draft collaboration. A knowledge base can reduce repeated explanations; the optional Enterprise portal gives customers a separate way to create, reply to and track tickets. Its current public scope is centered on email ticketing rather than a demonstrated voice/contact-center platform.\n\nFor a hypothetical invoice dispute, a finance agent owns the conversation and asks a product specialist for an internal comment before replying. The collaborator role suits that specialist: it can read and comment but cannot reply, archive, trash or assign. Administrators additionally manage settings, people, labels, teams, integrations and reports. Collaborator activity is excluded from reporting, so do not interpret agent metrics as the complete effort of all contributors. Seat billing for that role must be confirmed separately.",
+        "zh": "SupportBee将支持邮件变为团队队列，增加分配、标签、内部讨论和草稿协作。知识库可减少重复解释，Enterprise可选门户为客户提供创建、回复及跟踪工单的另一入口。当前公开范围以邮件工单为主，未证明语音联络中心能力。\n\n以假设发票争议为例：财务客服负责沟通，回复前请产品专家内部评论。协作者角色适合该专家：可读及评论，不能回复、归档、丢入垃圾或分配。管理员另管理设置、人员、标签、团队、集成及报表。协作者活动不计入报表，因此客服指标不代表全部参与者投入；该角色席位费用还需单独确认。",
+        "source_refs": ["product", "roles", "pricing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "connectivity",
+        "title_en": "Receiving a ticket and delivering a reply are separate checks",
+        "title_zh": "收到工单与送达回复需分别检查",
+        "en": "The current guide recommends native OAuth connections for Gmail/Google Workspace and Outlook/Office365. Outlook may need administrator consent and compatible conditional-access rules. Other providers require forwarding for incoming mail and a separate SMTP configuration for sending. Moving between Google and Microsoft is a fresh connection, not an automated provider migration.\n\nIf incoming tickets work but replies do not arrive, check the sending account and SPF/DKIM/DMARC rather than treating import as proof of end-to-end service. For missing tickets inspect connection state, both providers’ spam/filtering and forwarding configuration. Personal-agent forwarding has specific parsing prerequisites: English Fwd subject, a From address in the body and a sender registered as a SupportBee user. Some mobile clients omit the required header; the guide describes an error comment and manual requester correction. Test sender identity and thread continuity with your actual clients.",
+        "zh": "当前指南推荐Gmail／Google Workspace与Outlook／Office365使用原生OAuth。Outlook可能需要管理员同意及兼容的条件访问策略。其他邮件提供商需转发收信，另配置SMTP发信。Google与Microsoft之间切换需要新连接，不是自动提供商迁移。\n\n若能收到工单却无法送达回复，应检查发信账户及SPF／DKIM／DMARC，不能以导入成功证明端到端可用。缺工单时应查连接状态、两端垃圾／筛选及转发配置。客服私人邮件转发有特定解析前提：英语Fwd主题、正文含From地址，且发件人已登记为SupportBee用户；部分手机客户端缺所需头部。指南描述会生成错误评论，可手动更正请求人。应以真实客户端测试发件身份及会话连续性。",
+        "source_refs": ["mail"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing",
+        "title_en": "Preview broad matches and avoid assuming filter precedence",
+        "title_zh": "预览宽泛匹配，避免臆定筛选优先级",
+        "en": "SupportBee filters run when a new ticket is imported. They can match To, From, subject and body, then label or assign it. Different populated fields are AND conditions; comma-separated subject/body phrases match ANY phrase and are case-insensitive. Quotes can cause errors, wildcards are supported, and the troubleshooting guide warns that a short keyword can match longer words.\n\nPreview Matches is useful for finding a rule that accidentally catches unrelated mail, but previewing existing tickets does not apply the rule retroactively. Multiple matching filters may add both labels; conflicting assignments result in only one being performed, with no winner specified in this page. More filters also delay importing. Pilot a department mailbox plus a narrow condition, verify a conflicting-match case and retain manual ownership checks. These filters do not establish a general update-triggered automation engine or deterministic multi-step transaction.",
+        "zh": "SupportBee筛选器在新工单导入时运行，可匹配To、From、主题及正文后标记或分配。不同已填写字段为AND，主题／正文逗号分隔词组为任一匹配且不区分大小写。引号可能导致错误，支持通配符，故障指南提醒短关键词也可能命中长单词。\n\nPreview Matches可发现误收无关邮件的规则，但预览现有记录不代表追溯执行。多个匹配筛选器可都加标签；冲突分配只执行一个，页面未明确优先者。筛选器越多，导入延迟也会增加。应以部门邮箱加较窄条件试点，核对冲突样本，并保留人工归属检查。这些筛选器不能证明通用更新触发自动化或确定性多步事务。",
+        "source_refs": ["filters"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "state-model",
+        "title_en": "A reply, an owner, snooze and archive describe different work",
+        "title_zh": "回复、负责人、延后及归档描述不同工作",
+        "en": "New tickets start Unanswered and normally Unassigned. Sending a reply changes the response state to Answered; a later customer response returns it to Unanswered, even after a manual state change. Assignment is independent, so a reply does not itself establish the next responsible person or resolution. The documentation permits manually marking a replied ticket Unanswered when it still requires attention.\n\nSnooze holds follow-up until a chosen time, then moves the ticket to Unanswered. It is global, not personal: another agent changing the date replaces it, and archive cancels snooze. Archive is the separate action for finished work and contributes time-to-archive reporting. Unarchiving marks the ticket Unanswered regardless of the last author. Include these cases in handover training; otherwise a dashboard may look clear while an unresolved follow-up has merely been answered or archived.",
+        "zh": "新工单初始为Unanswered，通常也未分配。发出回复后变为Answered，客户后续回复会恢复Unanswered，即使之前手动改过状态。分配是独立维度，因此回复本身不确定下一负责人或已解决。文档允许将已回复但仍需关注的工单手动标未答。\n\n延后将跟进留至指定时间，随后移回Unanswered；它是全局设置而非个人设置，其他客服修改日期会覆盖，归档则取消延后。归档是完成工作的独立动作，并用于归档耗时报表。取消归档会标Unanswered，无论最后作者是谁。交接培训应包含这些情况，否则未解决事项可能只是已答或已归档，仪表盘却显得清空。",
+        "source_refs": ["states"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "visibility",
+        "title_en": "Review customer-group exposure separately from agent access",
+        "title_zh": "将客户组暴露范围与客服权限分开核对",
+        "en": "The Enterprise customer portal can be enabled with its own branding. Replies then include a private portal link. Direct visitors provide an email address and receive a private access link instead of needing a SupportBee account. Customer groups can allow each member to view and reply to other members’ tickets; administrators can disable that group access option. This is intentional organization-wide sharing, not merely a list of each person’s own cases.\n\nUse a separate customer identity and the guide’s incognito-link test to verify both permitted and denied views before enabling a sensitive account group. The knowledge base uses another access model: unpublished sites are private to desk users, while a password-protected KB can be shared with customers using its password. Neither label proves that portal group permissions automatically carry into article access. No private-link expiry, revocation or full customer authentication model was established in the pages read.",
+        "zh": "Enterprise客户门户可启用独立品牌设置，随后回复带私有门户链接。直接访客提供邮箱后接收私有访问链接，无需SupportBee账户。客户组可允许成员查看及回复其他成员工单，管理员可关闭该组共享选项。这是有意的组织范围共享，并非仅列个人工单。\n\n启用敏感客户组前，应以独立客户身份及指南中的无痕链接测试验证允许和拒绝的视图。知识库采用另一访问模型：未发布站点只供服务台用户，密码保护知识库则可将密码分享给客户。这些名称都不能证明门户客户组权限自动适用于文章。所读页面未确定私有链接过期、撤销或完整客户认证模型。",
+        "source_refs": ["portal", "kb"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "subscription-exit",
+        "title_en": "Budget seats and retrieve records while the desk remains accessible",
+        "title_zh": "计算席位费用并在仍可访问时取回记录",
+        "en": "Startup is listed at$20/seat/month on monthly billing or$204/year, equivalent to$17/month. Enterprise is$25 monthly or$252/year, equivalent to$21/month. Do not apply the generic20% banner as an exact discount: the displayed pairs produce different percentages. Both tiers list unlimited inboxes/tickets; Startup includes one KB and one team, while Enterprise adds business hours, portal and customer-group access. The trial lasts fourteen days without payment details; it is not a permanent free tier. Currency code and collaborator-specific billing remain unverified.\n\nThe hosted service terms grant a limited proprietary license, take payment in advance and exclude refunds for unused subscription time. They describe API export; the entry guide uses a personal Bearer token and HTTPS company subdomain, without proving a complete restorable backup. Export before desk deletion: access ends immediately, records are removed in thirty days and backups may take ninety days. Inactive accounts over three months can receive a four-week deletion notice. Test representative messages, attachments and relationships while access remains, rather than treating removal delays as retrieval rights.",
+        "zh": "Startup月付每席$20，年付$204，折月$17；Enterprise月付$25，年付$252，折月$21。不能把统一20%宣传当准确折扣，所列价格组合比例不同。两档列不限邮箱／工单；Startup含1知识库、1团队，Enterprise增加工作时间、门户及客户组访问。试用14天无需支付资料，并非永久免费档。币种代码及协作者独立计费仍未核实。\n\n托管服务条款授予有限专有许可，预先收费且未用订阅时段不退款。条款描述API导出，入口指南使用个人Bearer令牌及HTTPS公司子域名，但不证明完整可恢复备份。应在删除服务台前导出：访问立即终止，30天移除记录，备份可能需90天。不活跃超过3个月的账户可能收到提前4周删除通知。应在仍可访问时测试消息、附件及关系等代表性记录，不把移除延迟当取回权利。",
+        "source_refs": ["pricing", "terms", "api", "deletion"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "SupportBee: Email Routing, Ticket States, Portal Access and Seat Costs",
+    "title_zh": "SupportBee：邮件路由、工单状态、门户权限及席位费用",
+    "description_en": "Evaluate SupportBee email setup, new-ticket filter limits, collaborator roles, customer-group exposure, subscription pricing and export before deletion.",
+    "description_zh": "评估SupportBee邮件接入、新工单筛选限制、协作者角色、客户组暴露、订阅价格及删除前导出。",
+    "primary_intent": "Evaluate SupportBee collaborative email ticketing.",
+    "secondary_questions": [
+      "Do filters update existing tickets?",
+      "Does Answered mean resolved?",
+      "Who can see customer-group tickets?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No email OAuth, SMTP, ticket, portal, API, export, deletion or purchase executed. Full export/restore coverage, attachment portability, rate limits, private-link expiry, language coverage, currency code, collaborator billing and contractual recovery remain unverified.",
+      "zh": "未执行邮件OAuth、SMTP、工单、门户、API、导出、删除或购买。完整导出／恢复范围、附件可迁移性、限流、私有链接过期、语言范围、币种代码、协作者计费及合同恢复未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

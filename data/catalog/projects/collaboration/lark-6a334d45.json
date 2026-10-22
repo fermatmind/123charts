@@ -1,0 +1,378 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "lark-6a334d45",
+  "name": "Lark",
+  "website_url": "https://www.larksuite.com/",
+  "domain": "www.larksuite.com",
+  "identity_domain": "larksuite.com",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Lark combines workplace messaging, documents, calendar, meetings and structured business workflows. A collaboration can move from a group conversation to a document or Base record, but membership in the chat does not automatically settle access to the underlying data.\n\nThis profile uses a group-chat Running List as a concrete entry point: collecting contributions creates a Base with its own owner, permissions, storage and automation usage. It then follows the consequences for external participants, failed automation, export and subscription cost. Neighboring products and AI add-ons remain separate entitlements, and Lark is not assumed to have identical availability or account conditions to Feishu.",
+  "description_zh": "Lark 把工作消息、文档、日历、会议及结构化业务流程结合。协作可从群聊转到文档或 Base 记录，但加入聊天不会自动解决底层数据的访问资格。\n\n本稿以群聊 Running List 为具体入口：收集贡献会建立具有独立负责人、权限、存储及自动化用量的 Base，再追踪外部参与者、自动化失败、导出及订阅费用的影响。相邻产品和 AI 附加项保留独立资格，不假定 Lark 与飞书有相同地区或账户条件。",
+  "core_features": [
+    {
+      "name_en": "Conversation-to-record collection",
+      "name_zh": "从对话收集记录",
+      "explanation_en": "Running Lists place submitted group entries in a Base rather than leaving only chat messages.",
+      "explanation_zh": "Running List 把群内提交项放入 Base，而非仅留下聊天消息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "running-list",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Layered collaboration permissions",
+      "name_zh": "分层协作权限",
+      "explanation_en": "Organization sharing policies and data permissions still apply to connected workflows.",
+      "explanation_zh": "组织共享策略及数据权限仍适用于相连流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "external-sharing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Quota-aware workflow operations",
+      "name_zh": "考虑配额的流程运行",
+      "explanation_en": "Distinguish a monthly pause from an administrator-triggered deactivation.",
+      "explanation_zh": "区分月度配额暂停与管理员策略触发的停用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deactivation",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate one group collection through linked Base access, automation limits and a usable exit copy."
+    ],
+    "zh": ["沿一项群内收集，评估关联 Base 访问、自动化限额及可用退出副本。"],
+    "source_refs": ["running-list", "automation", "base-export"],
+    "basis": "Original proposed evaluation; no actual collection or customer outcome."
+  },
+  "technical_details": {
+    "Platform boundary": {
+      "en": "Hosted suite; selected running-list feature supports version7.18+ including mobile, while Base export steps are desktop/web.",
+      "zh": "托管套件；所选 Running List 支持7.18及以上版本，包括移动端，Base 导出步骤限桌面／网页。",
+      "status": "documentation_read",
+      "source_refs": ["running-list", "base-export"]
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Team coordinator collecting structured input",
+      "Workspace administrator",
+      "Base owner maintaining workflow access"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "suite"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm regional plan, client version, external sharing and Base quota before preparing a non-sensitive group collection.",
+        "zh": "准备非敏感群内收集前，确认地区套餐、客户端版本、外部共享及 Base 额度。",
+        "source_refs": ["pricing", "running-list", "external-sharing"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check submitted-entry correction limits, linked-data visibility and export completeness before live use.",
+        "zh": "真实使用前核对提交项纠正限制、关联数据可见性及导出完整性。",
+        "source_refs": ["running-list", "base-export"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_executed",
+    "items": [],
+    "source_ref": "suite",
+    "scope": "Suite modules and separately priced add-ons are not proof of an installed third-party connector; no API/integration configured."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Running List has no early close or self-edit of submitted entries; .base does not restore all collaboration and operational settings.",
+        "zh": "Running List 无提前关闭或自行编辑已提交条目的功能，`.base` 不恢复全部协作及运行设置。",
+        "source_refs": ["running-list", "base-export"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "English documentation read; translation claims and Help Center languages do not verify full product UI coverage."
+  },
+  "license": {
+    "status": "proprietary_service_terms_read",
+    "is_open_source": false,
+    "url": "https://www.larksuite.com/en_us/customer-terms-of-service?from=footer",
+    "source_ref": "terms",
+    "scope": "Limited revocable service access; vendor/software rights reserved. Region and purchase route affect agreement."
+  },
+  "pricing": {
+    "status": "official_browser_display_checked",
+    "price_type": "limited_free_starter_and_per_user_paid_plans_with_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "USD excluding tax, per user/month: Basic $6 annual equivalent or $7.20 monthly; Pro $12 annual equivalent or $14.40 monthly; limited Starter $0. Regional availability, checkout, seat commitment and add-on billing require confirmation.",
+    "source_snapshot_zh": "美元不含税，按每用户每月：Basic 年结等值6／月付7.20，Pro 年结等值12／月付14.40，Starter0有限。地区可用性、结账、席位承诺及附加项计费需确认。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/lark",
+      "read_at": "2026-10-22T08:51:08.545Z",
+      "excerpt_sha256": "0187bc82c85a7eab95e850e2b2de602daf05188a91e1a1e962dc57307b8849fd",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "suite",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Lark | Productivity Superapp for Chat, Meetings, Docs & Projects",
+      "url": "https://www.larksuite.com/en_sg/",
+      "read_at": "2026-10-22T13:12:06.009274Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "efc6115bd8a97c08978e431aef81345188a6bf7a36a05711a649e451b8c8a483",
+      "research_notes_en": "Originalroot actually redirects en_sg publichome. Read firstparty productnavigation/suitepositioning; no marketingefficiency/reviews/customerfigures adopted or Feishuentitlement assumed."
+    },
+    {
+      "id": "running-list",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Use running lists",
+      "url": "https://www.larksuite.com/hc/en-US/articles/879196135136-use-running-lists",
+      "read_at": "2026-10-22T13:12:06.009691Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "5c374b20e3635eb1cb58986a7bf2fb6a333cc6d1bb9e19c12ab9c4b6c2ad758c",
+      "research_notes_en": "Actualbrowserarticle and eightFAQs read: chat→BaseAssistantownedbase,quota,version,500entry/nomodify/nomanualclose,externalsharing andexportboundary."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Base Workflow and Automations FAQs",
+      "url": "https://www.larksuite.com/hc/en-US/articles/126710842099-base-workflow-and-automations-faqs",
+      "read_at": "2026-10-22T13:12:06.009707Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "4238d4a3ba60768e66184fe01fbba7f1b093a74415614409995838a4b235ec66",
+      "research_notes_en": "ActualbrowserexpandedFAQsread:newrecordnonempty/concurrentconditions,7daylog,owner/edit/manage/advanced/externalactivationrestrictions,successfulrununit andmonthlypause/reset."
+    },
+    {
+      "id": "deactivation",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Admin | Configure alert and auto-deactivation policies for Base automated workflows",
+      "url": "https://www.larksuite.com/hc/en-US/articles/920254036516-admin-configure-alert-and-auto-deactivation-policies-for-base-automated-workflows",
+      "read_at": "2026-10-22T13:12:06.009716Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "76e18bea1409f1aebe24014420599e71fadbf06df66a0c2df5ef1775dbc1ec7e",
+      "research_notes_en": "ActualbrowserarticleandexpandedFAQread:UsageDetailsadmin,85percentnotify,hourlydeactivation,fix/retry vsrulesadjustthenmanuallysave/reactivate."
+    },
+    {
+      "id": "external-sharing",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Admin | Configure Docs settings",
+      "url": "https://www.larksuite.com/hc/en-US/articles/360048488012-admin-configure-docs-settings",
+      "read_at": "2026-10-22T13:12:06.009723Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "84b56e01b70a990d067dd6f45b44bb99d38fcde4e8ad87397d9a108a789acbb9",
+      "research_notes_en": "ActualbrowserarticleandthreeFAQsread:organizationpolicy/trustedparties/documentlevelsettings,existingdocupdates andfileoperationRestrictallcanstillblock."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.larksuite.com",
+      "title": "Lark pricing — annual and monthly browser states",
+      "url": "https://www.larksuite.com/en_sg/plans?from=apac_plansModule",
+      "read_at": "2026-10-22T13:12:06.009733Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "419512a0009e027541f506d70c408cc730165448e78fd264249b7ce0f7639d6a",
+      "research_notes_en": "ActuallytoggledYearlytoMonthly:USDexcludetax,Basic6→7.20,Pro12→14.40 peruser/month,limits andregionFAQ. MeeglePremium labelverifiedseparately; no BaseAI12dollar claim."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "www.larksuite.com",
+      "title": "Customer Terms of Service",
+      "url": "https://www.larksuite.com/en_us/customer-terms-of-service?from=footer",
+      "read_at": "2026-10-22T13:12:06.009741Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "0d7b0323cd59ea5eb55a5cd4c5f7779e5cf582425aff81e6385466cc750e001a",
+      "research_notes_en": "ActualcustomertermspageJanuary22,2026read;subscriptioncommitment vsperiodicpayments,optionalautorenew/cancelnotice,nonrefundexceptions,proprietarylicense,terminationdata andUS/Koreascope."
+    },
+    {
+      "id": "base-export",
+      "type": "official_documentation",
+      "site": "www.larksuite.com",
+      "title": "Import or export a base",
+      "url": "https://www.larksuite.com/hc/en-US/articles/981789591541",
+      "read_at": "2026-10-22T13:12:06.009748Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "3dfb4c1e7b7acabe59cd87c29cf95d4cd4fc47286c266970cb2e4a1f99eced43",
+      "research_notes_en": "ActualbrowserpublicarticleJuly16read:permission-scopedxlsx/csv/base exports,config-only/data options,missingmembers/credentials/history/sharing/attachmentsreimport andchangedmetadata."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:12:06.009748Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["suite", "running-list", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "connected-suite",
+        "title_en": "One workspace still contains different data objects",
+        "title_zh": "一个工作区仍包含不同数据对象",
+        "en": "Messenger, Docs, Wiki, Approval, Base and Meetings are parts of the Lark suite rather than evidence that every action is a chat operation. An employee may discuss a request, collect structured entries, review a document and schedule a meeting, with distinct permissions and lifecycle at each step. A proposed evaluation should follow one small item across those boundaries instead of counting every product icon as a completed integration. Public claims about customer savings or efficiency were not adopted as measured outcomes.",
+        "zh": "Messenger、Docs、Wiki、Approval、Base 和 Meetings 属于 Lark 套件，不证明每个动作都是聊天操作。员工可能讨论请求、收集结构化条目、复核文档并安排会议，每步都有不同权限和生命周期。拟议评估应沿一个小项跨越这些边界，而非把产品图标数当作已完成集成。公开客户节省及效率主张未作为测得结果采用。",
+        "source_refs": ["suite"],
+        "evidence_type": "editorial_selection_guidance"
+      },
+      {
+        "id": "running-list-cycle",
+        "title_en": "A chat collection has a Base owner and a fixed submission model",
+        "title_zh": "群聊收集有 Base 负责人及固定提交模型",
+        "en": "For a proposed team equipment list, open the group’s More menu, choose Running List and publish a title/description. Lark creates a Base owned by Base Assistant; members submit through the message card and view results in that Base. The guide requires version 7.18 or later and excludes topic groups.\n\nMembers cannot edit their own submitted information. The documented list closes at 500 entries and does not support stopping new entries earlier. Copying the Base can support later editing only if copying is permitted; it does not establish a way to rewrite the live collection’s submission rules. Check those constraints before using the list for changing orders or a deadline-sensitive sign-up. It also consumes Base storage and automation allowance.",
+        "zh": "假设收集团队设备清单，可在群聊 More 菜单选择 Running List，发布标题／说明。Lark 会创建由 Base Assistant 拥有的 Base，成员通过消息卡提交，并在该 Base 查看结果。指南要求7.18或更新版本，不支持话题群。\n\n成员不能修改自己的已提交信息。文档规定清单满500项关闭，不支持提前停止接收。只有允许复制时，复制 Base 才可用于后续编辑；这不确立能改写原实时收集的提交规则。用于变化中的订单或有截止日的报名之前，应核对这些限制，它还消耗 Base 存储及自动化额度。",
+        "source_refs": ["running-list"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "external-members",
+        "title_en": "A participant in an external group may still lack the data",
+        "title_zh": "外部群参与者仍可能无权访问数据",
+        "en": "Running List results follow Base view permissions and the organization’s default internal-document rules. To use one in an external group, administrators must permit external communication and external document sharing. Joining the group alone is insufficient.\n\nThe Docs policy can allow or block external sharing and selectively permit trusted organizations; existing documents follow updated organization settings. Even a selected trusted party can remain blocked by a separate file-operation Restrict all rule. Diagnose the actual policy, document setting and user access together before widening sharing. A visible message card is not proof its linked Base is readable, editable or exportable.",
+        "zh": "Running List 结果遵循 Base 查看权限及组织内部文档默认规则。在外部群使用时，管理员须允许外部沟通及外部文档共享，单纯加入群聊不够。\n\nDocs 策略可允许／禁止外部共享，并选择性允许可信组织；既有文档会遵循更新后的组织设置。即使选中了可信方，独立文件操作 Restrict all 规则仍可能阻止共享。扩大共享前应一并诊断策略、文档设置和用户访问。看到消息卡不证明能读取、编辑或导出其关联 Base。",
+        "source_refs": ["running-list", "external-sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "automation-failure",
+        "title_en": "An unchanged record is not always a failed automation",
+        "title_zh": "记录未变不一定是自动化执行失败",
+        "en": "A new-record trigger waits for configured required fields and concurrent conditions. If they are not satisfied, the workflow does not run. The FAQ counts a successfully triggered workflow as one run regardless of node count and exposes only seven days of activity history, so inspect evidence promptly.\n\nAutomation authority also differs from ordinary record editing. Without advanced permissions, the owner and users with manage/edit permissions can manage workflows; with advanced permissions, owner/manage rights are required. External users cannot activate workflows, and loss of the activating user’s rights may transfer ownership or stop execution. Do not promise an external collaborator the same operational control as an internal editor. No trigger or recovery was executed.",
+        "zh": "新记录触发器会等待配置的必填字段及同时条件；未满足时，流程不会运行。FAQ 把成功触发执行的流程计为一次，不按节点数计，并只提供七天活动历史，因此应及时检查证据。\n\n自动化管理权也不同于普通记录编辑。未启用高级权限时，Owner／Manage／Edit 用户可管理流程；启用后需 Owner／Manage。外部用户不能启用流程，启用者失去权限还可能导致转移负责人或停止执行。不能向外部协作者承诺与内部编辑者相同的运行控制。本研究未执行触发或恢复。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "two-stop-reasons",
+        "title_en": "Monthly exhaustion and automatic deactivation recover differently",
+        "title_zh": "月度耗尽与自动停用恢复方式不同",
+        "en": "Monthly allowance exhaustion pauses workflows until the next month starts at 00:00 GMT+0. The FAQ lists 1,000 runs for Starter/Basic,50,000 for Pro and 500,000 for Enterprise. A separately configured hourly auto-deactivation policy can stop a workflow earlier; its documented warning occurs at 85% of the set threshold.\n\nThe updater should inspect the activity log, fix genuine errors and then retry as appropriate. A policy stop instead requires the administrator to adjust the relevant policy or exemption, followed by saving and reactivating the workflow; interrupted runs may need an explicit retry. Buying capacity, waiting for a month reset and correcting a runaway trigger are therefore different responses. Retrying without diagnosis can consume more quota or repeat a data-changing action.",
+        "zh": "月度额度耗尽会暂停流程，直到下月首日00:00 GMT+0。FAQ 列出 Starter／Basic 每月1,000次、Pro 50,000次、Enterprise 500,000次。独立配置的每小时自动停用策略可能更早停止流程，其文档预警点为设定阈值的85%。\n\n更新者应检查活动日志，修复真实错误后再按需重试。策略停用则需管理员调整相关策略或豁免，之后保存并重新启用；中断运行可能仍需明确重试。因此购买额度、等月度重置、修正失控触发器是不同处理。未经诊断重试可能再耗额度或重复更改数据的动作。",
+        "source_refs": ["automation", "deactivation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "portable-base",
+        "title_en": "A .base file is more than CSV and less than a complete restore",
+        "title_zh": "`.base` 比 CSV 丰富，但不等于完整恢复",
+        "en": "Export from the Base on desktop/web rather than directly from the chat. Excel/CSV can capture selected views/tables; .base can include configurations alone or configurations plus records. Export remains scoped to the user’s data and duplicate/download permissions.\n\nThe richer format still excludes comments, basic permissions, edit history and link/record/view sharing settings. Advanced roles omit member assignments, third-party workflows omit credentials, and attachments are separate ZIP exports that are not imported with the file. Formulas recalculate and creator/timestamp metadata changes on import. A duplicated Base also leaves copied workflows off and permission roles without members. Check the intended exit copy and rebuild these operational connections deliberately. No import, export or restoration was tested.",
+        "zh": "应在桌面／网页 Base 导出，而非直接从聊天导出。Excel／CSV 可保存选定视图／表，`.base` 可只含配置，或配置加记录；导出仍受用户可访问数据及复制／下载权限限制。\n\n更丰富的格式仍排除评论、基础权限、编辑历史及链接／记录／视图共享设置。高级角色不含成员分配，第三方流程不含凭据，附件单独导出为 ZIP，不随文件导入。导入会重新计算公式，并更改创建者／时间元数据。复制 Base 也会让复制的流程关闭、权限角色无人。应检查目标退出副本，并有意识地重建这些运行连接。本研究未测试导入、导出或恢复。",
+        "source_refs": ["base-export", "running-list"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plan-economics",
+        "title_en": "Pay for the collaboration limits you actually need",
+        "title_zh": "按真实需要的协作限额付费",
+        "en": "The inspected plan page states USD excluding tax. Basic is $6/user/month billed yearly or $7.20 monthly; Pro is $12 yearly-equivalent or $14.40 monthly. Starter displays $0 for up to 20 users,100 GB storage, eighteen-month message history and 1-on-1 meetings. Basic still lists 1-on-1 meetings despite a 500-user organization limit; Pro lists 500-participant meetings. User count, meeting participants, rows and automation runs are different capacities.\n\nBasic is unavailable in the Chinese Mainland, Hong Kong, Macao, Japan and South Korea according to its FAQ. Base AI is labeled a trial, and AI Meeting Notes, Meegle Premium and automation/AnyCross expansions appear as add-ons; do not infer unlimited AI or bundled premium project management. Confirm add-on unit, period, regional offer and contract before calculating a whole-company total.",
+        "zh": "所读套餐页明确为美元、不含税。Basic 按年结算的月度等值为每用户 $6，月付 $7.20；Pro 按年月度等值 $12，月付 $14.40。Starter 显示 $0、最多20用户、100GB、十八个月消息历史及一对一会议。Basic 即使允许500用户组织，会议仍列为一对一；Pro 列出500人会议。用户数、会议参与者、行数及自动化次数是不同容量。\n\nFAQ 称 Basic 不在中国大陆、香港、澳门、日本及韩国提供。Base AI 标为试用，AI Meeting Notes、Meegle Premium、自动化／AnyCross 扩容作为附加项出现，不能推断无限 AI 或包含高级项目管理。计算全公司总价前应确认附加项单位、周期、地区方案及合同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "account-and-exit",
+        "title_en": "Billing intervals do not erase the subscription commitment",
+        "title_zh": "付款间隔不取消订阅承诺",
+        "en": "The January 2026 customer terms distinguish payment intervals from the committed subscription term: monthly installments can still pay for an annual commitment. Auto-renewal is an option where offered, with notice requirements governed by the selected route. General cancellation/refund terms have legal, app-store and regional exceptions; US customers use separate terms and South Korea has overriding provisions.\n\nThe workplace customer can control users, integrations, content access, retention and export settings, so an employee’s personal view is not the full administrative boundary. Service technology is proprietary. On termination the general terms do not promise continued data storage; export before access ends and confirm the applicable agreement. Complete tenant backup, AI processing/retention, self-hosting and parity across offline/mobile use were not established. No account, group, automation, sharing change, payment or cancellation was performed.",
+        "zh": "2026年一月客户条款区分付款间隔与承诺订阅期限，按月分期仍可能支付年度承诺。自动续订在提供时为可选项，通知要求按所选渠道确定。一般取消／退款条款有法律、应用商店及地区例外：美国客户使用独立条款，韩国有优先条款。\n\n工作区客户可控制用户、集成、内容访问、保留及导出设置，因此员工个人视图不是完整管理边界。服务技术保持专有，一般条款在终止后不承诺继续保存数据，应在访问结束前导出并确认适用协议。完整租户备份、AI 处理／保留、自托管及离线／移动一致性未确立。本研究未执行账户、群聊、自动化、共享更改、付款或取消。",
+        "source_refs": ["terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Lark: Chat-to-Base Collaboration, Sharing, Limits and Export",
+    "title_zh": "Lark：从聊天到 Base 的协作、共享、限额及导出",
+    "description_en": "Evaluate Running Lists, external sharing, automation pause versus deactivation, .base restore gaps and regional subscription conditions.",
+    "description_zh": "评估 Running List、外部共享、自动化暂停与停用、`.base` 恢复缺口及地区订阅条件。",
+    "primary_intent": "Evaluate connected workplace collaboration through a concrete group collection.",
+    "secondary_questions": [
+      "Can a Running List be closed or edited after submission?",
+      "What does .base export preserve and omit?"
+    ],
+    "query_basis": "Editorial questions; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account/group/list creation, record submission, role/sharing edit, automation execution/recovery, import/export, AI request, purchase or cancellation tested.",
+      "zh": "未测试账户／群／清单创建、记录提交、角色／共享编辑、自动化执行／恢复、导入／导出、AI 请求、购买或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Actual add-on period/seat unit, regional contract/checkout, sustained free entitlement, quota expansion reset semantics and imported permission/workflow reconnection unverified.",
+      "zh": "实际附加项周期／席位单位、地区合同／结账、持续免费资格、扩容量重置语义及导入权限／流程重连未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Full-tenant export/restore, deletion recovery, AI providers/training/retention, meeting consent/recording scope, full UI locale set and Feishu account/product parity not established.",
+      "zh": "完整租户导出／恢复、删除恢复、AI 供应商／训练／保留、会议同意／录制范围、完整界面语言及飞书账户／产品一致性未确立。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

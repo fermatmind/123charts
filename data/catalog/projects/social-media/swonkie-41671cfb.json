@@ -1,0 +1,599 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "swonkie-41671cfb",
+  "name": "Swonkie",
+  "website_url": "https://swonkie.com/",
+  "domain": "swonkie.com",
+  "identity_domain": "swonkie.com",
+  "category": "social-media",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Swonkie is a social media workspace with publishing, team/client review, analytics, competitor monitoring and an AI assistant named Andie. Its current public publishing offer names Facebook, Instagram, X, LinkedIn, TikTok, YouTube, Threads and Google Business. A REST API and MCP server expose workspace data and publishing actions for automation; Brinfer is presented separately for influencer marketing.\n\nIt is a candidate for a team coordinating several brands while keeping drafts, revisions and reporting together, or a developer connecting that workflow to another tool. The important boundary is between preparing a post and actually delivering it: a dated draft is not scheduled, approval is a separate stage, uploads require confirmation, and a multi-profile post can partly fail. This research read public documentation and live pricing selectors without connecting accounts, executing API calls or measuring AI quality or publishing results.",
+  "description_zh": "Swonkie 是结合发布、团队／客户审核、分析、竞品监控及 Andie AI 助手的社交媒体工作区。当前公开发布服务列 Facebook、Instagram、X、LinkedIn、TikTok、YouTube、Threads、Google Business。REST API 与 MCP 暴露工作区数据及发布动作，Brinfer 作为独立达人营销服务展示。\n\n它可供集中草稿、修订与报告的多品牌团队，或连接其他工具的开发者评估。关键边界是准备帖子与真实投递：有日期草稿不等于已排程，批准是独立阶段，上传需确认，多账户帖子可能部分失败。本研究读取公开文档及动态价格选择器，未连账户、执行 API 或测 AI 质量／发布结果。",
+  "core_features": [
+    {
+      "name_en": "Network-specific composition",
+      "name_zh": "逐网络编辑",
+      "explanation_en": "Share common text/media or specify a network override.",
+      "explanation_zh": "共享通用文字／媒体或指定网络覆盖。",
+      "source_ref": "create",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Explicit review stages",
+      "name_zh": "明确审核阶段",
+      "explanation_en": "Ideas, drafts, team/client review and scheduling have distinct states.",
+      "explanation_zh": "想法、草稿、团队／客户审核及排程有独立状态。",
+      "source_ref": "lifecycle",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI content preparation",
+      "name_zh": "AI 内容准备",
+      "explanation_en": "Andie combines brand context, content drafting and source-based research.",
+      "explanation_zh": "Andie 结合品牌上下文、内容起草及有来源研究。",
+      "source_ref": "andie",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable reporting",
+      "name_zh": "可配置报告",
+      "explanation_en": "Share a dashboard link or export the supported report data.",
+      "explanation_zh": "分享仪表盘链接或导出支持的报告数据。",
+      "source_ref": "sharing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate brand drafts through team and client review.",
+      "Build an API-driven media-to-scheduling workflow with explicit status checks.",
+      "Share metric-specific client reports while maintaining changed widgets."
+    ],
+    "zh": [
+      "让品牌草稿经过团队及客户审核。",
+      "建立明确状态检查的 API 媒体到排程流程。",
+      "维护变更 widget 并分享指定指标客户报告。"
+    ],
+    "source_refs": ["overview", "lifecycle", "quickstart"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "Agency content manager",
+        "zh": "机构内容经理"
+      },
+      {
+        "en": "Social analytics specialist",
+        "zh": "社交分析人员"
+      },
+      {
+        "en": "Publishing automation developer",
+        "zh": "发布自动化开发者"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory exact profiles and the current live plan allowances.",
+        "zh": "清点准确 profile 及当前动态档位额度。",
+        "source_refs": ["pricing", "overview"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Prepare channel variants and confirmed SUCCESS media in a draft.",
+        "zh": "在草稿准备渠道版本及已确认 SUCCESS 的媒体。",
+        "source_refs": ["create", "quickstart"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review the content and deliberately perform a scheduling transition.",
+        "zh": "审内容并明确执行排程转换。",
+        "source_refs": ["stage"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect both overall and per-profile delivery before recovery.",
+        "zh": "恢复前查整体及逐 profile 投递。",
+        "source_refs": ["lifecycle"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check metric definitions, collection state and the shared report scope.",
+        "zh": "核指标定义、采集状态及共享报告范围。",
+        "source_refs": ["metrics", "tracking", "sharing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A dated DRAFT is not automatically SCHEDULED.",
+        "zh": "有日期 DRAFT 不自动成为 SCHEDULED。",
+        "source_refs": ["create"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "REST partial-update and MCP full-replacement documentation conflict.",
+        "zh": "REST 局部更新与 MCP 完整替换文档冲突。",
+        "source_refs": ["update", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Successful siblings may already be published when the overall post fails.",
+        "zh": "整体帖子失败时，成功同组项可能已发。",
+        "source_refs": ["lifecycle"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Workspace deletion does not remove native published posts.",
+        "zh": "工作区删除不移除原生已发帖。",
+        "source_refs": ["delete"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Live public Monthly view: Friendly EUR 59.99, Lover 99.99, Pro 169.99 per month, excluding VAT; profiles 15/30/50, team members 3/5/10, competitors 2/5/10 and Andie credits 500/1000/1500. Yearly view shows monthly equivalents 50.99/84.99/144.49, charged annually, not monthly. Fourteen-day no-card trial. Static FAQ still names Starter/Master; collaboration says unlimited users, while the hydrated table shows seat caps. Current API/MCP request allowances and packs are mentioned without verified quantities/prices. No sustained free tier or normalized quote; confirm current checkout.",
+    "source_snapshot_zh": "公开动态 Monthly：Friendly EUR 59.99、Lover 99.99、Pro 169.99／月，未含 VAT；profile 15／30／50、成员 3／5／10、竞品 2／5／10、Andie 点 500／1000／1500。Yearly 显示月均 50.99／84.99／144.49，按年扣而非按月。十四天免卡试用。静态 FAQ 仍列 Starter／Master，协作称不限用户，动态表则有席位上限。API／MCP 请求额度及点包被提及，但准确量／价未核。未确定持续免费档，不分配标准化报价，应核当前结算。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "terms", "overview"]
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/swonkie",
+      "read_at": "2026-10-22T09:07:23.027Z",
+      "excerpt_sha256": "c823a962e7eea30428ca5ff764c8d3a7a4ee6248f82b12fe10bf1bcbbd31f557",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Swonkie - Your AI social media studio with superpowers",
+      "url": "https://swonkie.com/en/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "dff0098ad67481f58939278bd61238815dca69911cc97cb8ce3bcaa244f3a8d3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current homepage and static FAQ; plan names/caps differ from hydrated live pricing, no outcome claims adopted."
+    },
+    {
+      "id": "publishing",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Plan & Publish - Swonkie",
+      "url": "https://swonkie.com/en/features/plan-publish/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "21c2766dbe982cf348bd04c1ad2d7538347ca26d84c1846800102fc67a2c52fb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual Plan & Publish feature overview, not universal format support."
+    },
+    {
+      "id": "andie",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Andie AI - Swonkie",
+      "url": "https://swonkie.com/en/features/andie/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "1ece2c1005b9490237fd0f48a1cbdb59a37a7b43f95dfba85c443ff490ba3d2e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual AI brand/context/research and draft-review examples; savings claims not independently measured."
+    },
+    {
+      "id": "collaboration",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Collaboration - Swonkie",
+      "url": "https://swonkie.com/en/features/collaboration/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "89747b683a4170565164c633770f3c93a07c6e887f39c124b729b6ffd122a8ec",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual approval and role marketing; unlimited-user claim conflicts with live plan caps, no role enforcement verified."
+    },
+    {
+      "id": "lifecycle",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Getting Started - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/getting-started-359597m0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "c9c943bcc09a09b2411a87c6062aa1dd95b551ed9df3e8dcff704779167b8fde",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual IDEA/DRAFT/review/scheduled stages, per-profile partial failure and asynchronous publication."
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Quick Start - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/quick-start",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "f15e7948096b197e641f45a6069aac89238b47763470f3cd6c4b4ef75276938b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual three-step upload confirmation and queued-not-published distinction."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "Swonkie",
+      "title": "🆕 MCP Server - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/mcp-server",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "35e73734fa8007bb004996f8e6b2cb78a0260de6be642ec1451812127e1529e2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual server/key slots, workflow tools and full-replacement update statement, contradictory to older REST update reference."
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Create a Post - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/create-a-post-4106580e0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "739b278ac799d1acb5e723b2919167639cebec1e4e1a45e79d528cb88ce1a5f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual network-specific/null overrides, type requirements and platform-specific fields."
+    },
+    {
+      "id": "update",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Update a Post - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/update-a-post-4106581e0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "2b11c63dbedf6ce4a884cec7676e8d209d713d3e5b78f4020d807fcf00675569",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual March 2026 partial field update versus array replacement; conflicts with current MCP full replacement retained."
+    },
+    {
+      "id": "validation",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Validate a Post - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/validate-a-post-4106582e0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "228e3bb81e7acb26f1c187190ac2812ceecc12b25fe16876cbf065874c0e05a1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual no-mutation validation and no guarantee when connections/network conditions change."
+    },
+    {
+      "id": "stage",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Change Post Stage - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/change-post-stage-4106584e0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "717eb07c5ade35288f0505ec04344fda1fc514dc17b348982e75ef1ad6a499b0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual stage-action conditions; approve does not itself schedule; published/failed stage changes restricted."
+    },
+    {
+      "id": "formats",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Limits by Social Network - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/limits-by-social-network-363587m0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "48046667790908040a96986d38c2c11a02bd46b6667d9ee30c273179f3ecadfe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual per-network matrix including media mixing and vendor-specific caps; not treated as universal native rules."
+    },
+    {
+      "id": "metrics",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Getting Started - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/getting-started-359596m0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "ee022d970883b9cd7307cb6c60181f1abb61ffee30fec8098e539febdfcd6d18",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual daily vs cumulative post metrics and explicit API-supported/deprecated metric metadata."
+    },
+    {
+      "id": "changelog",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Changelog | swonkie",
+      "url": "https://help.swonkie.com/en/article/changelog-1fi74jn/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "141e030b02febdda2deb5fe7855b479b8d9dd45e9217afeaca6ba42439045b7f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual existing widgets not auto-upgraded after metric changes; incomplete June change entry not presented as fully shipped."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "How to Share Your Swonkie Insights Dashboards | swonkie",
+      "url": "https://help.swonkie.com/en/article/how-to-share-your-swonkie-insights-dashboards-g3udwc/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "93b5bd63787a967f191fee7fc5250cd43139bd31ff27b4c6f13c46c917024f05",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual dashboard links auto-deactivate every 30 days, PDF three-email cap and CSV-supported flags."
+    },
+    {
+      "id": "tracking",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Data Tracking for Insights – Timings, Specifics, and Process | swonkie",
+      "url": "https://help.swonkie.com/en/article/data-tracking-for-insights-timings-specifics-and-process-1u3og9h/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "df16658b418dd338bee88468936521c6fb4f24637d0dd95ad32657170f2382e5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual authentication/public fallback and up-to-five data collection retries; not publishing retry contract."
+    },
+    {
+      "id": "delete",
+      "type": "official_documentation",
+      "site": "Swonkie",
+      "title": "Delete a Post - Swonkie Dev",
+      "url": "https://docs.swonkie.dev/delete-a-post-4106583e0",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "72118a012d3553361284659f4b8920d1415efa57ccd6ee2799cf666ce5d703da",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual permanent workspace post deletion leaves native posts and underlying media/resources intact."
+    },
+    {
+      "id": "terms",
+      "type": "official_pricing",
+      "site": "Swonkie",
+      "title": "Terms & Conditions - Swonkie",
+      "url": "https://swonkie.com/en/legal/terms-conditions/",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "dc0658d7a63fec1f3757aeed0664bf0e1b2f3652436948d79522d9da636f7b81",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual public July 2023 terms trial/payment/refund/cancellation provisions; no current checkout inspected."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Swonkie",
+      "title": "Swonkie live pricing, Monthly and Yearly views",
+      "url": "https://swonkie.com/en/#pricing",
+      "read_at": "2026-10-22T14:15:46.247140Z",
+      "excerpt_sha256": "5a9412e7c21d57d145f563959989f68059697b0c2693ce09c5056fcf9e684c18",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "research_notes_en": "Public browser accessibility text read after dynamic prices hydrated; selected Monthly then Yearly. Saved selected visible pricing/capacity text, no checkout or account interaction."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:15:46.247140Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "lifecycle", "quickstart"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "prepare",
+        "title_en": "A publish date creates a draft, not a publishing job",
+        "title_zh": "发布时间创建草稿，不创建发布任务",
+        "en": "Create without publishAt yields IDEA; adding a date yields DRAFT. Captions, media and links can target one network or apply generally with a null network selector. Type-specific fields still matter: a link post and a media post do not have the same required payload. Editorial campaign preparation: map actual workspace profile IDs to each intended destination, inspect every network override and save the result for review. A successful create response is not evidence that the content is queued, approved or publicly visible.",
+        "zh": "创建无 publishAt 为 IDEA，附日期为 DRAFT。文案、媒体及链接可指单网络，或用空网络选择器共用。类型字段仍重要，链接帖与媒体帖所需载荷不同。编辑活动准备：将真实工作区 profile ID 映射到准确目的地，检查逐网络覆盖并保存送审。创建成功不能证明已入队、批准或公开可见。",
+        "source_refs": ["create"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "media",
+        "title_en": "Uploading bytes is only the middle of the media workflow",
+        "title_zh": "发送文件只是媒体流程中间步骤",
+        "en": "Quick Start initiates a temporary upload URL, sends the raw file, then confirms the upload. Without confirmation, media remains UPLOADING and is deleted; processing must reach SUCCESS before use. The guide gives roughly fifteen minutes for the signed upload URL, not a retention period for completed media. Editorial automation check: retain the returned media identifier, confirm after transfer and inspect processing before referring to it in a post. A successful transfer cannot be treated as successful publication or as proof that every destination accepts the format.",
+        "zh": "Quick Start 先生成临时上传 URL，再发送原始文件，之后确认；不确认则媒体停在 UPLOADING 并被删除，处理达 SUCCESS 才使用。指南给签名上传 URL 约十五分钟，不是已完成媒体保留期。编辑自动化检查：保留返回媒体标识，传完确认，帖子引用前检查处理。传输成功不能当发布成功，也不能证明全部目的地接受格式。",
+        "source_refs": ["quickstart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "review",
+        "title_en": "Approve and schedule are different transitions",
+        "title_zh": "批准与排程是不同转换",
+        "en": "The stage endpoint separates teamReview, approve/reject, schedule, publishNow and unschedule. Approval from a review state produces a team/client approved state; schedule requires a date and validation. Publish Now ignores that date and targets all assigned networks. Unschedule applies only to SCHEDULED posts, while most stage changes are unavailable after PUBLISHED or PUBLISHED_FAILED. Collaboration marketing describes role-based access, but a detailed enforced role matrix was not established. Editorial team handoff: inspect the post state, intended reviewer and final action rather than treating an approval label as proof of a queued job or a universal anti-bypass control.",
+        "zh": "阶段接口区分 teamReview、approve／reject、schedule、publishNow、unschedule。审核态批准形成团队／客户已批状态，schedule 需日期并校验；Publish Now 忽略日期，作用全部已分配网络。Unschedule 仅适用 SCHEDULED，PUBLISHED 或 PUBLISHED_FAILED 后多数转换不可用。协作宣传描述角色访问，但未确定详细强制权限矩阵。编辑交接：检查帖子状态、审核人及最终动作，不能把已批标签当入队证明或普遍防绕过控制。",
+        "source_refs": ["stage", "collaboration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editing",
+        "title_en": "REST and MCP describe update semantics differently",
+        "title_zh": "REST 与 MCP 对更新语义描述不同",
+        "en": "The March REST reference says omitted fields remain unchanged, but supplied captions/media/links/labels arrays replace the complete array. The MCP guide instead calls update a full replacement requiring type and profile IDs. This is an unresolved interface/version difference. Editorial integration change: load the existing post, retain every intended array item and verify the exact client/endpoint contract in a nonpublishing draft before automation. Do not issue a guessed partial update to live scheduled work. No request was executed here to resolve the conflict.",
+        "zh": "3 月 REST 文档说未传字段不变，但传入文案／媒体／链接／标签数组会整组替换。MCP 指南却称 update 是完整替换，需 type 及 profile ID；属未解决接口／版本差异。编辑集成修改：先读已有帖，保留准确数组项，在不发布草稿核所用客户端／接口契约后再自动化。不能向在线排程工作发送猜测的局部更新，本研究未执行请求验证冲突。",
+        "source_refs": ["update", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "delivery",
+        "title_en": "Overall failure can include successful native posts",
+        "title_zh": "整体失败可能包含已成功原生帖",
+        "en": "Publishing is asynchronous: an accepted schedule/publish action begins processing. The lifecycle guide says all profiles succeeding produces PUBLISHED, but any profile error produces PUBLISHED_FAILED. Each profile independently exposes pending, published, failed or cancelled status. Native post URLs are not returned directly in that guide. Editorial recovery: inspect per-profile status and native accounts before repeating a campaign-wide action; a successful destination may already be live. No exactly-once guarantee, blanket retry or automatic rollback of successful siblings was verified. Validation catches configured problems but cannot guarantee later network/authentication conditions remain unchanged.",
+        "zh": "发布异步，接受排程／发布动作仅开始处理。生命周期指南说全部 profile 成功为 PUBLISHED，任一错误为 PUBLISHED_FAILED；各 profile 独立呈待发、已发、失败或取消。该指南不直接返回原生帖 URL。编辑恢复：重复全活动动作前查逐 profile 状态及原生账户，成功目的地可能已上线。未核精确一次、普遍重试或成功同组项自动回滚保证。校验能查配置问题，不能保证之后网络／授权不变。",
+        "source_refs": ["lifecycle", "validation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "formats",
+        "title_en": "A supported network does not support every post type",
+        "title_zh": "支持一个网络不代表支持所有帖子类型",
+        "en": "The limits matrix distinguishes Instagram media/story/reel from LinkedIn status/media/link and YouTube video-only formats. It also permits mixed images/videos for some networks while forbidding the mix for Facebook, LinkedIn and TikTok media. TikTok duration depends on account permissions. These are Swonkie validation rules, not independently verified universal native specifications. Editorial multi-network asset pack: choose each destination’s type and inspect its current media rules, captions and account access. Live pricing also has plan-level upload limits that differ from the developer format table; a provider maximum does not establish your subscription’s usable upload size.",
+        "zh": "限制矩阵区分 Instagram 媒体／story／reel、LinkedIn 状态／媒体／链接及 YouTube 仅视频格式。部分网络可混图片视频，Facebook、LinkedIn、TikTok 媒体则禁止混用，TikTok 时长受账户权限影响。这是 Swonkie 校验规则，并非独立验证的通用原生规范。编辑跨网络素材包：按各目的地类型核现行媒体规则、文案及访问。动态价格另有套餐上传限制，与开发者格式表不同；提供方上限不能确定订阅可用大小。",
+        "source_refs": ["formats", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "andie",
+        "title_en": "Use an AI plan as reviewable work",
+        "title_zh": "把 AI 计划作为可审核工作",
+        "en": "Andie’s public examples combine brand voice, goals, captions, images and source-based web research, with draft-first campaign examples. The homepage offers guided and autonomous modes; these imply different opportunities to inspect an action, not proven quality or an invariant approval boundary. Editorial evaluation: ask for one brand’s bounded plan left in drafts, check sources and every account-specific claim, then decide what to schedule. No measured time saving, generated-image correctness or downstream conversion was established. Brand context and live research do not remove the need to verify factual claims before publication.",
+        "zh": "Andie 公开示例结合品牌语调、目标、文案、图片及有来源网页研究，并含先留草稿的活动。主页提供引导／自主模式，意味着检查动作机会不同，不证明质量或不变审批边界。编辑评估：要求一个品牌范围明确的计划留草稿，核来源及每个账户专属主张，再决定排程。未确定实测省时、生成图正确性或下游转化；品牌上下文与即时研究不免除发布前事实核验。",
+        "source_refs": ["andie", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "metrics",
+        "title_en": "Lifetime post totals are not daily history",
+        "title_zh": "帖子生命周期总量不等于逐日历史",
+        "en": "The Insights API separates daily metrics from cumulative post metrics; a daily refresh of a post total does not create a historical daily breakdown. Only metric codes explicitly marked API-supported are available, with metadata for deprecated and future-deprecated metrics. The help changelog says existing dashboard widgets do not update automatically after replacements; re-add the relevant widget. Editorial reporting maintenance: preserve the metric definition and version when comparing periods, and inspect replacements rather than silently relabeling an old impression series as views. Empty or deprecated values are not established zero performance.",
+        "zh": "Insights API 区分逐日指标与帖子累计指标，每日刷新帖子总量不形成历史逐日分解。仅明确标 API-supported 的代码可用，另有已弃用及将弃用元数据。帮助更新日志说替换后已有仪表盘 widget 不自动升级，需重加。编辑报告维护：跨期比较保留指标定义及版本，检查替代项，不能默默将旧展示序列改名为观看；空值或弃用不能确定表现为零。",
+        "source_refs": ["metrics", "changelog"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "collection",
+        "title_en": "Public fallback may finish collection without private metrics",
+        "title_zh": "公开回退可结束采集，却未补全私有指标",
+        "en": "The collection guide describes source-specific daily schedules and differing history. Valid authentication and recent access govern private collection; unsupported public collection can leave a day uncollected. Temporary collection errors retry up to five times, but deleted profiles and Instagram accounts without usernames are excluded. A private failure followed by successful public collection is not retried again that day. These are analytics retries, not publishing retries. Editorial data check: inspect authentication and collection scope before comparing a connected account with a competitor; public fallback does not establish access to every private metric or real-time refresh.",
+        "zh": "采集指南描述各来源每日计划及不同历史。有效授权与近期访问决定私有采集，不支持公开采集可导致当天无数据。临时采集错误最多重试五次，但删除 profile 及无用户名 Instagram 排除。私有失败后公开成功，当天不再重试。这是分析采集重试，不是发布重试。编辑数据检查：比较已连账户与竞品前核授权及采集范围，公开回退不确定全部私有指标或实时刷新。",
+        "source_refs": ["tracking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sharing",
+        "title_en": "A client link expires independently of a PDF",
+        "title_zh": "客户链接到期独立于 PDF",
+        "en": "Shared dashboards retain layout, filters and interactive widgets without a Swonkie login. Their link can be disabled and automatically deactivates every thirty days. Scheduled PDF delivery supports up to three email addresses; CSV exports only metrics marked csv: SUPPORTED. Editorial client report: verify the exact filters and metric export support, set the intended recipients and plan link renewal before the meeting. A working public-view link is not equivalent to account membership, a permanent archive or a complete machine-readable export. Password and revision-lock controls were not established.",
+        "zh": "共享仪表盘保留布局、筛选及交互 widget，无需 Swonkie 登录。链接可关闭，每三十天自动停用。定时 PDF 最多三个邮箱，CSV 仅含标 csv: SUPPORTED 的指标。编辑客户报告：核准确筛选及指标导出支持，设准确收件人，会前安排链接续期。可用浏览链接不等于账户成员、永久档案或完整机器可读导出，未确定密码及版本锁定控制。",
+        "source_refs": ["sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cleanup",
+        "title_en": "Workspace deletion leaves published social content in place",
+        "title_zh": "工作区删除保留原生已发内容",
+        "en": "The delete endpoint permanently removes a workspace post and its associations. Underlying profiles, labels and media remain reusable, and content already published to social networks is unaffected; remove that through native tools. Active publishing may be protected from deletion. Editorial offboarding: export needed records, distinguish stopping a future job from deleting a record, and check live destinations separately. A deleted local record cannot serve as proof that the native advertisement or social post disappeared. No destructive operation was executed.",
+        "zh": "删除接口永久移除工作区帖子及关联，底层 profile、标签与媒体仍可复用，不影响已发社交内容，需用原生工具删除；活动发布可受保护不能删。编辑退出：导出所需记录，区分停止未来任务与删除记录，单独检查在线目的地。删除本地记录不能证明原生广告或社交帖消失，未执行破坏性操作。",
+        "source_refs": ["delete"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "A trial and cancel-anytime label do not promise a refund",
+        "title_zh": "试用及随时取消标签不保证退款",
+        "en": "The current pricing view advertises fourteen days without a card, then paid plans. Public terms dated July 2023 describe suspension after a no-card trial until a payment method activates the account; supplied-payment trials may autocharge. They describe prepaid subscriptions as generally non-refundable, with a stated exception after certain terms changes, and cancellation through settings or email. Editorial plan choice: confirm the actual checkout interval, renewal/end date and add-on/request allowance. The exact cancellation effective time, refund handling and remaining scheduled-work access were not operated; static unlimited-user marketing conflicts with live seat caps.",
+        "zh": "当前价格视图宣传十四天免卡，之后付费。标 2023 年 7 月的公开条款描述免卡试用后暂停，付款方式激活后继续；已供付款方式可自动扣。预付订阅通常不退，特定条款变更有例外，通过设置或邮件取消。编辑选档：核实际结算周期、续费／结束日期及附加／请求额度。未操作准确取消生效、退款及剩余排程访问，静态不限用户宣传与动态席位上限不一致。",
+        "source_refs": ["terms", "pricing", "collaboration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Swonkie: draft stages, partial failures and analytics scope",
+    "title_zh": "Swonkie：草稿阶段、部分失败及分析范围",
+    "description_en": "Review Swonkie publishing states, media confirmation, update conflicts, AI drafts, report sharing and live plan limits.",
+    "description_zh": "核 Swonkie 发布状态、媒体确认、更新冲突、AI 草稿、报告分享及动态套餐限制。",
+    "primary_intent": "Evaluate Swonkie content operations and publishing automation",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Detailed enforced team/client roles, authorization refresh, timezone changes and publishing retry/idempotency behavior were not tested.",
+      "zh": "详细强制团队／客户角色、授权刷新、时区变更及发布重试／幂等行为未测。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Static six-month scheduling and unlimited-user claims differ from live plan-specific horizons/caps; endpoint media limits also differ from plan upload limits.",
+      "zh": "静态六个月排程及不限用户不同于动态逐档期限／容量，接口媒体限制也不同于套餐上传限制。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "REST update versus MCP replacement behavior, full current request-pack pricing, data retention/deletion and UI-language availability remain unverified.",
+      "zh": "REST 更新与 MCP 替换行为、完整当前请求包定价、数据保留／删除及界面语言未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No signup, payment, account connection, API/MCP action, AI generation, email report or native publication executed. Pricing selectors alone were inspected.",
+      "zh": "未注册、付款、连账户、执行 API／MCP、AI 生成、邮件报告或原生发布，仅检查价格选择器。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

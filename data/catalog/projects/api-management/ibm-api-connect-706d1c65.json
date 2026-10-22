@@ -1,0 +1,338 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "ibm-api-connect-706d1c65",
+  "name": "IBM API Connect",
+  "website_url": "https://www.ibm.com/products/api-connect",
+  "domain": "www.ibm.com",
+  "identity_domain": "ibm.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "IBM API Connect manages APIs as published products with consumer plans, access policies and lifecycle controls. Its API Manager, gateway and Developer Portal address different parts of the workflow: preparing and governing an offering, enforcing traffic policies, and helping developers discover and subscribe.\n\nIt is available through several SaaS arrangements and self-managed software. The current family also promotes newer gateway and AI tools; their appearance on the product page does not establish inclusion in every subscription. This profile uses readable official product guides and keeps blocked detailed documentation as an explicit limitation.",
+  "description_zh": "IBM API Connect 将 API 作为产品发布，配合消费者方案、访问策略及生命周期管理。API Manager、网关与 Developer Portal 分别负责准备及治理产品、执行流量策略，以及帮助开发者发现和订阅。\n\n它提供多种 SaaS 方案及自运维软件。当前产品家族也推广新网关与 AI 工具；出现在产品页不代表每种订阅均包含。本文依据可读官方产品指南，详细文档受阻这一限制保持明确。",
+  "core_features": [
+    {
+      "name_en": "Products, Plans and Catalogs",
+      "name_zh": "产品、方案与目录",
+      "explanation_en": "Package APIs, stage a version and choose who can discover and subscribe.",
+      "explanation_zh": "将 API 打包、暂存版本，并选择发现及订阅范围。",
+      "explanation_scope": "product_specific",
+      "source_ref": "manage",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Developer Portal",
+      "name_zh": "开发者门户",
+      "explanation_en": "Let consumer organizations explore, test and subscribe to published API products.",
+      "explanation_zh": "让消费者组织探索、测试及订阅已发布 API 产品。",
+      "explanation_scope": "product_specific",
+      "source_ref": "portal",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Gateway security policies",
+      "name_zh": "网关安全策略",
+      "explanation_en": "Configure authentication and policy enforcement; advanced security is an add-on.",
+      "explanation_zh": "配置认证及策略执行；高级安全能力另购。",
+      "explanation_scope": "product_specific",
+      "source_ref": "secure",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate partner API subscription and version retirement",
+      "Compare SaaS isolation with self-managed operation"
+    ],
+    "zh": ["评估伙伴 API 订阅及版本退役", "比较 SaaS 隔离与自运维"],
+    "source_refs": ["manage", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API product owners",
+      "API platform engineers",
+      "Developer relations and portal administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the hosting tier, gateway and contract before provisioning a trial.",
+        "zh": "创建试用前选择托管层级、网关及合同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a disposable read API, Product, Plan and consumer organization.",
+        "zh": "使用可丢弃只读 API、Product、Plan 及消费者组织。",
+        "source_refs": ["manage", "portal"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check authorization and lifecycle transitions including subscription removal.",
+        "zh": "核查授权及生命周期转换，包括订阅删除。",
+        "source_refs": ["manage", "secure"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Retirement takes associated APIs offline and deletes subscriptions.",
+        "zh": "退役将关联 API 下线并删除订阅。",
+        "source_refs": ["manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Advanced API Security is an add-on; family features are not universal tier entitlements.",
+        "zh": "高级 API 安全为附加产品，产品家族功能不代表每层级均授予。",
+        "source_refs": ["secure", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Detailed version-specific documentation was blocked; runtime failure behavior and platform prerequisites remain unverified.",
+        "zh": "版本详细文档受阻，运行失败行为及平台前提仍未核实。",
+        "source_refs": [],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "usage_and_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:06:33.528147Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Usage-based AWS SaaS, annual SaaS tiers/reserved instance and annual self-managed support subscription. Numeric quote not readable; 30-day trial has identity-dependent upgrade migration.",
+    "summary_zh": "AWS 按用量 SaaS、年度 SaaS／预留实例及自运维年度支持订阅。未读到金额，30 天试用升级迁移取决于身份。",
+    "trial_days": 30
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/ibm-api-connect",
+      "read_at": "2026-10-22T08:45:11.539Z",
+      "excerpt_sha256": "225cf4b3b3eb929b73ee6d31c2b3825459869ef4c31de3b7e4356b8f990683ff",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "IBM API Connect",
+      "title": "IBM API Connect - API Lifecycle Management",
+      "url": "https://www.ibm.com/products/api-connect",
+      "read_at": "2026-10-22T11:06:33.528147Z",
+      "excerpt_sha256": "f8681e16b41caa9c03ac2167658f8b63f407a381e1d4eda10413206138ca3697",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current API Connect product identity, API lifecycle scope and separate gateway/studio/agent capabilities read; no benchmark or inclusion claims inferred."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "IBM API Connect",
+      "title": "Pricing - IBM API Connect",
+      "url": "https://www.ibm.com/products/api-connect/pricing",
+      "read_at": "2026-10-22T11:06:36.947773Z",
+      "excerpt_sha256": "dad5893a5610067d86844db0e3a80d6a676b52d2c3089ce75e89123aa08b0a20",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AWS SaaS, IBM Cloud reserved instance, self-managed subscription and 30-day trial upgrade conditions read. Numerical estimator amounts absent and flattened table columns not assigned speculatively."
+    },
+    {
+      "id": "manage",
+      "type": "official_documentation",
+      "site": "IBM API Connect",
+      "title": "API Management on IBM API Connect",
+      "url": "https://www.ibm.com/products/api-connect/manage",
+      "read_at": "2026-10-22T11:08:58.447481Z",
+      "excerpt_sha256": "e7276fd3fb537537f6ced49c8e47affdd6337fbb3c6514ac8f00308bc232b50b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official product guidance for Products, Catalog staging, publication, deprecation and retirement/subscription deletion read; exact version-specific implementation docs unavailable."
+    },
+    {
+      "id": "portal",
+      "type": "official_documentation",
+      "site": "IBM API Connect",
+      "title": "Developer Portal - IBM API Connect",
+      "url": "https://www.ibm.com/products/api-connect/developer-portal",
+      "read_at": "2026-10-22T11:09:01.628690Z",
+      "excerpt_sha256": "929f107c01d2f0d819f5b1583fa2166a61be95f5453ce53d1c31a1a9fd0ca319",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Product guide describes discovery, test/subscription, Drupal customization, consumer organizations and app/org analytics."
+    },
+    {
+      "id": "secure",
+      "type": "official_documentation",
+      "site": "IBM API Connect",
+      "title": "IBM API Connect - Help Secure Your APIs",
+      "url": "https://www.ibm.com/products/api-connect/secure",
+      "read_at": "2026-10-22T11:16:46.796139Z",
+      "excerpt_sha256": "ddbc2b76cd8d488b550513b476627049a7e5a361607f812623a684e548b05515",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Product guide distinguishes gateway auth/policy capabilities from Noname Advanced API Security add-on; saved hash covers selected verbatim lines of the actual earlier public-reader result. Later fetches timed out. No security certification or measured protection inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:16:46.796139Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "manage", "portal", "secure", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "A published API product is more than an endpoint",
+        "title_zh": "发布的 API 产品不只是端点",
+        "en": "Consider a proposed partner order-status service. Group its API into a Product, define a Plan for the intended consumers, stage a version in a Catalog, then publish to a selected developer community. The portal provides the discovery and subscription step. The manager guide distinguishes staging from publication: staged Products are not yet visible to developers. This is a documented evaluation sequence, not a claim that an API backend, partner agreement or payment arrangement is created automatically.",
+        "zh": "以拟建的合作伙伴订单状态服务为例：将 API 归入 Product，为目标消费者定义 Plan，在 Catalog 暂存版本，再向指定开发者群体发布，门户承接发现和订阅。管理指南区分暂存与发布：暂存 Product 尚不向开发者可见。这是依据文档提出的评估步骤，不代表自动创建 API 后端、合作协议或支付安排。",
+        "source_refs": ["manage", "portal"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "lifecycle",
+        "title_en": "Deprecation and retirement have different consumer effects",
+        "title_zh": "弃用与退役对消费者影响不同",
+        "en": "Deprecation keeps existing subscribers using a Product while preventing new subscriptions. Retirement takes associated APIs offline and removes subscriptions. Test these transitions with disposable consumer accounts before applying them to a live offering. This publication lifecycle is not an automatic backend rollback or data-recovery mechanism. Replacement versions, migration communications and application compatibility need their own plan; a version label alone does not show that consumers can move without changes.",
+        "zh": "弃用允许已有订阅者继续使用，但不再接受新订阅；退役会将关联 API 下线并删除订阅。应先用可丢弃消费者账号测试状态转换，再用于正式产品。发布生命周期不是自动后端回滚或数据恢复机制。替换版本、迁移沟通及应用兼容仍需安排，版本标签本身不能证明消费者可以无修改迁移。",
+        "source_refs": ["manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "consumers",
+        "title_en": "A portal organizes consumption; it does not replace runtime checks",
+        "title_zh": "门户组织消费，不替代运行时核查",
+        "en": "The Developer Portal supports browsing, exploring, testing and subscribing, with developer grouping into consumer organizations. Its documented Drupal-based interface can be themed; application- and organization-level usage dashboards help inspect consumption. A proposed trial should compare an authorized consumer with an unsubscribed one and check actual gateway enforcement. Portal discoverability alone is insufficient evidence of access isolation, and a customizable interface does not establish Chinese UI support or zero maintenance effort.",
+        "zh": "Developer Portal 支持浏览、探索、测试及订阅，并将开发者归为消费者组织。文档说明其 Drupal 界面可定制主题，并提供应用／组织级用量面板。建议试验比较有权限与未订阅消费者，核对网关实际执行。门户可发现性本身不足以证明访问隔离，可定制界面也不能证明支持中文或无需维护。",
+        "source_refs": ["portal", "secure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "policy",
+        "title_en": "Separate included gateway policy from the security add-on",
+        "title_zh": "区分网关策略与安全附加产品",
+        "en": "The security guide describes API keys, OAuth/OpenID Connect, TLS profiles and a visual policy editor. It explicitly positions Noname Advanced API Security for IBM as an add-on for discovery, posture, runtime protection and testing. Define which authentication and authorization checks the chosen gateway must enforce, then test missing credentials, wrong access and upstream errors. Neither a marketing security claim nor a performance figure establishes protection for a particular deployment; gateway-specific retry and timeout semantics were not verified here.",
+        "zh": "安全指南介绍 API key、OAuth／OpenID Connect、TLS 配置及可视策略编辑器，并明确把 Noname Advanced API Security for IBM 的发现、态势、运行时保护及测试定位为附加产品。需定义所选网关执行哪些认证／授权检查，再测试缺失凭据、错误权限及上游失败。安全营销描述或性能数字都不能证明特定部署已受保护；本次未核实各网关重试及超时语义。",
+        "source_refs": ["secure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Choose the operating model before comparing subscriptions",
+        "title_zh": "先选运行模式，再比较订阅",
+        "en": "The pricing page distinguishes AWS-hosted pay-as-you-go, annual Standard/Premium SaaS, a single-tenant IBM Cloud reserved instance and self-managed software with annually renewed Subscription & Support. Premium specifies a single-tenant gateway. The page lists webMethods, DataPower Nano and DataPower gateway choices for Software; this does not mean all gateway choices are available in every SaaS tier. For self-management, budget environment administration and confirm supported deployment/version combinations rather than relying on the broad hybrid-cloud description.",
+        "zh": "定价页区分 AWS 按用量、年度 Standard／Premium SaaS、IBM Cloud 单租户预留实例，以及按年续订 Subscription & Support 的自运维软件。Premium 指明单租户网关。页面将 webMethods、DataPower Nano 与 DataPower 网关列为 Software 选项，不代表每种 SaaS 层级都有所有网关。自运维应预算环境管理，并确认支持的部署／版本组合，不只依据泛化混合云描述。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Meter and contract details are needed for a real estimate",
+        "title_zh": "估价需要用量与合同细节",
+        "en": "A numeric estimator amount was not present in the readable pricing page, so no monthly starting price is supplied. Obtain a quote for call volume, isolation, gateway choice, retention, support and region; do not treat the table’s unlimited volume wording as unlimited free consumption. The page offers a 30-day trial. Upgrading an active trial with the same IBMid/email automatically migrates its instance/assets; using another identity starts fresh. That is a trial transition condition, not a sustained free tier or a verified production migration.",
+        "zh": "可读定价页未显示估算器金额，因此不提供月起价。应按调用量、隔离、网关、保留期、支持及地区取得报价，不能把表中的不限调用量当作无限免费。页面提供 30 天试用；活跃试用期使用相同 IBMid／邮箱升级，会自动迁移实例及资产，另一身份则新建。这是试用转付费条件，不是持续免费层或已验证生产迁移。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Start with one consumer journey and its removal path",
+        "title_zh": "从一个消费者流程及退出路径开始",
+        "en": "Evaluate API Connect for an organization that needs governed API products and developer consumption across environments. It may be excessive for a single internal endpoint whose team needs only a lightweight reverse proxy. A useful trial covers staging visibility, subscription, permitted and rejected calls, consumer analytics, deprecation and retirement. No instance was created, no live request was sent, and license grants, exact infrastructure prerequisites and production recovery remain unverified.",
+        "zh": "若组织需要跨环境治理 API 产品及开发者消费流程，可评估 API Connect。若单个内部端点只需要轻量反向代理，它可能过重。有效试用可覆盖暂存可见性、订阅、允许／拒绝调用、消费者分析、弃用及退役。本次未创建实例、未发送实际请求；许可授权、具体基础设施前提及生产恢复仍未核实。",
+        "source_refs": ["manage", "portal", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "IBM API Connect: Products, subscriptions and retirement",
+    "title_zh": "IBM API Connect：产品、订阅及退役",
+    "description_en": "Review API product lifecycle, developer subscriptions, security add-ons and SaaS versus self-managed pricing conditions.",
+    "description_zh": "了解 API 产品生命周期、开发者订阅、安全附加产品及 SaaS／自运维计费条件。",
+    "search_intent_en": "Evaluate API Connect lifecycle and consumer governance with deployment constraints.",
+    "search_intent_zh": "结合部署条件评估 API Connect 生命周期及消费者治理。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Detailed IBM documentation returned 403; it was not bypassed. This research uses readable official product guides, not an executed administration tutorial.",
+      "zh": "IBM 详细文档返回 403，未绕过。研究依据可读官方产品指南，未执行管理教程。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Numerical price, country availability, support contract, exact license and chosen gateway entitlements require confirmation.",
+      "zh": "金额、地区可用性、支持合同、具体许可及网关权限需确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Timeout/retry semantics, failover, deployment prerequisites, UI languages and actual consumer migration were not tested or verified.",
+      "zh": "未实测或核实超时／重试、故障切换、部署前提、界面语言及实际消费者迁移。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

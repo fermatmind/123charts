@@ -1,0 +1,577 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "n8n-io-88ed6a00",
+  "name": "n8n",
+  "website_url": "https://n8n.io/",
+  "domain": "n8n.io",
+  "identity_domain": "n8n.io",
+  "category": "workflow-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "n8n is a workflow automation platform built around a visual canvas of connected nodes. A workflow can receive an event, obtain data, transform it, and send a result to another system. It combines visual configuration with expressions and code, making it worth investigating when a process needs more data manipulation than a fixed app-to-app handoff.\n\nThe deployment choice is central: n8n Cloud is managed by the vendor, while self-hosting puts the instance under your operation. That choice is separate from the edition you use and the features it includes.\n\nFor evaluation, follow one record through the complete workflow: what starts it, how many data items it produces, what each branch does, and how a failed run is diagnosed. This is a documentation-based profile; no instance was installed or workload benchmarked.",
+  "description_zh": "n8n 是一个以可视化节点画布为核心的工作流自动化平台。流程可以接收事件、获取数据、转换内容，再把结果发送到其他系统。它把可视化配置、表达式和代码结合起来，适合在普通应用交接之外，还需要较多数据处理的场景中评估。\n\n部署方式是选型重点：n8n Cloud 由厂商托管，自托管则由使用者运营实例。部署方式与所选版本是两项不同决定，各版本包含的功能也不同。\n\n评估时可以沿着一条记录检查完整流程：由什么事件启动、会生成多少个数据项、每个分支做什么，以及失败后如何定位问题。本文依据文档整理，未安装实例，也未测试负载表现。",
+  "core_features": [
+    {
+      "name_en": "Node-based workflows",
+      "name_zh": "节点式工作流",
+      "explanation_en": "Connect a trigger to processing and destination nodes on a visual canvas.",
+      "explanation_zh": "在可视化画布中连接触发器、处理节点与目标节点。",
+      "explanation_scope": "product_specific",
+      "source_ref": "quickstart",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Expressions and Code nodes",
+      "name_zh": "表达式与 Code 节点",
+      "explanation_en": "Use parameter expressions for small calculations and a Code node for more involved transformations.",
+      "explanation_zh": "用参数表达式完成简单计算，用 Code 节点处理较复杂的转换。",
+      "explanation_scope": "product_specific",
+      "source_ref": "transforms",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "HTTP Request node",
+      "name_zh": "HTTP 请求节点",
+      "explanation_en": "Configure REST requests where a predefined app operation does not cover the requirement.",
+      "explanation_zh": "当预置应用操作无法满足需求时，可以配置 REST 请求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "http",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Development data pinning",
+      "name_zh": "开发数据固定",
+      "explanation_en": "Reuse a node output during development; production executions ignore pinned data.",
+      "explanation_zh": "开发时复用节点输出；正式执行不会使用固定样例。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pinning",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Build a scheduled API report with explicit transformations.",
+      "Coordinate a custom backend workflow whose input and output can be inspected."
+    ],
+    "zh": [
+      "通过明确的数据转换生成定时 API 报告。",
+      "组织能够检查输入与输出的自定义后台流程。"
+    ],
+    "source_refs": ["http", "data-model"],
+    "basis": "Illustrative uses, not customer results."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor-managed Cloud or self-hosted; edition features differ.",
+      "zh": "厂商托管 Cloud 或自行托管；各版本功能不同。",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Technical operations",
+      "Developer maintaining integrations",
+      "Administrator operating self-hosted workflows"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "deployment"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Cloud trial or an appropriate self-hosted edition before building.",
+        "zh": "搭建前先选择 Cloud 试用或合适的自托管版本。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Use the official first-workflow tutorial to learn node inputs and outputs; its sample-data service is not proof of a live business integration.",
+        "zh": "通过官方首条工作流教程理解节点输入输出；教程的样例服务不能证明真实业务集成已经完成。",
+        "source_refs": ["quickstart"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Add one real integration, test representative records, and assign failure handling before relying on the workflow.",
+        "zh": "接入一个真实系统，测试代表性记录，并在正式依赖前安排异常处理。",
+        "source_refs": ["errors", "pinning"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "generic_api_capability_documented",
+    "items": [
+      {
+        "name": "HTTP Request",
+        "source_ref": "http",
+        "scope": "REST capability documented; authentication and each endpoint still require configuration and testing."
+      }
+    ],
+    "source_ref": "http"
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Community does not include the complete paid collaboration and governance feature set.",
+        "zh": "Community 不包含完整的付费协作及治理功能。",
+        "source_refs": ["editions"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Free self-hosting carries operating costs and licensing conditions.",
+        "zh": "免费自托管仍有运营成本与许可条件。",
+        "source_refs": ["maintenance", "license-faq"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "classification": "source_available_fair_code",
+    "name": "Sustainable Use License; separate Enterprise terms",
+    "url": "https://docs.n8n.io/n8n-community-license/community-license.md",
+    "source_ref": "license"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_self_hosted_and_paid_cloud",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "editions", "trial"],
+    "checked_at": "2026-10-22T09:37:35Z",
+    "normalized_monthly_price": null,
+    "currency": "EUR",
+    "billing_basis": "Paid-plan production executions; annual-billing examples are in the profile. Community is a distinct edition.",
+    "source_snapshot_en": "Free self-hosted Community and paid plans are distinct. Cloud trial is not an ongoing free hosted plan.",
+    "source_snapshot_zh": "免费自托管 Community 与付费套餐不同；Cloud 试用不是持续免费托管套餐。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does the Cloud trial become a permanent free Cloud plan?",
+      "question_zh": "Cloud 试用会变成永久免费云套餐吗？",
+      "answer_en": "No. The trial documentation describes 14 days and an execution cap, then a paid-plan decision. Export needed workflows before the trial expires.",
+      "answer_zh": "不会。文档说明试用为 14 天并有执行上限，之后需选择付费套餐。应在试用到期前导出需要保留的流程。",
+      "source_refs": ["trial"]
+    },
+    {
+      "question_en": "Is using an AI model mandatory?",
+      "question_zh": "必须接入 AI 模型才能使用吗？",
+      "answer_en": "No. The first-workflow tutorial demonstrates a scheduled data-processing workflow without an AI step.",
+      "answer_zh": "不必。首条工作流教程展示了无需 AI 步骤的定时数据处理流程。",
+      "source_refs": ["quickstart"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/n8n-io",
+      "read_at": "2026-10-22T08:57:17.925Z",
+      "excerpt_sha256": "00b9ec7c838e0fa527d292c14bfd7b991ca171e41749124a7aba80dee088e6f2",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Build your first workflow",
+      "url": "https://docs.n8n.io/build-your-first-workflow.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7b5e43998db8e81e8b3dfb5bb3982ba0dc0ab1c0815cd9421ae333713400f870",
+      "research_notes_en": "Canvas tutorial demonstrates scheduled data retrieval, transformation and storage using a sample-data service."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Choose how to use n8n",
+      "url": "https://docs.n8n.io/choose-how-to-use-n8n",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b72c2220b63f6a53811124f727aa5291b2595ce2e05e1e5a23109388926c982d",
+      "research_notes_en": "Cloud versus self-hosting is distinct from plan/edition choice; operational responsibilities differ."
+    },
+    {
+      "id": "hosting",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Host n8n",
+      "url": "https://docs.n8n.io/deploy/host-n8n.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "63d33dbaef88e66411a3786fd40930b16f98bb376055c68ac9b8f24e7775806b",
+      "research_notes_en": "Docker Compose and other deployment methods; installation does not imply all paid features."
+    },
+    {
+      "id": "data-model",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Understand the data structure",
+      "url": "https://docs.n8n.io/build/work-with-data/understand-n8ns-data-structure.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7238e08f6a4b0b80b7e69a03adc396137c757dc4fafd69dd7b76a8fabb785737",
+      "research_notes_en": "Items flow as arrays; many nodes process each input item."
+    },
+    {
+      "id": "transforms",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Expressions versus data nodes",
+      "url": "https://docs.n8n.io/build/work-with-data/expressions-versus-data-nodes.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1b40805746f743687ea7a6e7ad0cfbebd4a157c43b2b73225a9367d38ad1dd8c",
+      "research_notes_en": "Expressions, Code and visual transformation nodes serve different scopes."
+    },
+    {
+      "id": "http",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "HTTP Request node",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b628acb7c62c9fc7b1256b22e3ea23622a87bdbfad2d478c745ceeab69a5a9be",
+      "research_notes_en": "REST requests require API configuration and suitable authentication."
+    },
+    {
+      "id": "pinning",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Pin and mock data",
+      "url": "https://docs.n8n.io/build/work-with-data/pin-and-mock-data.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0508ad8470fc82b83e551974a5d4f8380d5fcc3d14e4a2c6dda0e8fb760d05eb",
+      "research_notes_en": "Development can reuse pinned data; production ignores it."
+    },
+    {
+      "id": "errors",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Handle errors gracefully",
+      "url": "https://docs.n8n.io/build/flow-logic/handle-errors-gracefully.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "acbbf81d5a882f1d18fe3de2cfc0000c6400257af6e8377e11606f7f534f10bd",
+      "research_notes_en": "Assign an Error Trigger workflow; trigger failure payload differs from later-node failure."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Debug executions",
+      "url": "https://docs.n8n.io/build/understand-workflows/understand-executions/debug-executions.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3b6946742abfd15b8c905c59c9bbc6b0b82d6e7e8a63c790d6e70e637dca4827",
+      "research_notes_en": "Saved execution data can be copied into the editor; availability depends on edition/plan."
+    },
+    {
+      "id": "editions",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Compare self-hosted editions",
+      "url": "https://docs.n8n.io/deploy/host-n8n/community-edition-features.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9d77df5e51c46f2f30a676aef9b498b908658b3487a9cf549ca8e559d82b899f",
+      "research_notes_en": "Community, registration extras and paid collaboration/governance features are separate."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "n8n",
+      "title": "Plans and pricing",
+      "url": "https://n8n.io/pricing/",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "99e678d33ef6fed1979e3dda72d81ea44d7802ba699347234604f81f194ce7ba",
+      "research_notes_en": "Annual-billing EUR prices and execution allowances checked; no claim of universal lowest cost."
+    },
+    {
+      "id": "executions",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Understand executions",
+      "url": "https://docs.n8n.io/build/understand-workflows/understand-executions.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "11220ea276b90bce36d2dc845442728281dab31154bdfeab76acfb4cbab36656",
+      "research_notes_en": "Production counting depends on trigger type; manual runs and empty polls are treated differently."
+    },
+    {
+      "id": "trial",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Try free then choose a plan",
+      "url": "https://docs.n8n.io/deploy/use-n8n-cloud/start-your-free-trial.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0664eabbe7bee23182e2b09409a0a6aa003036f3743ee626711ac54f9eddfa7a",
+      "research_notes_en": "Cloud trial has time/usage limits and expiration behavior; not perpetual hosted free use."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "n8n",
+      "title": "Community license",
+      "url": "https://docs.n8n.io/n8n-community-license/community-license.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "45a99376b5dbe9c06dde013e7e323ba706b28fc21f9a649bd22faec7e67c09cb",
+      "research_notes_en": "Fair-code SUL and separate Enterprise license; source availability is not unrestricted open source."
+    },
+    {
+      "id": "license-faq",
+      "type": "official_license",
+      "site": "n8n",
+      "title": "License FAQ",
+      "url": "https://docs.n8n.io/n8n-community-license/community-license/license-faq.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "53391640c3da1479f27386753c4e7f169fff11ba9b8b535435baf1314ec38eea",
+      "research_notes_en": "Internal creation and external user workflow configuration differ under the current vendor examples."
+    },
+    {
+      "id": "maintenance",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "Keep n8n running",
+      "url": "https://docs.n8n.io/deploy/host-n8n/keep-n8n-running.md",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "829795723746cf7320ad4b0aa514cb750bc28d3c11a93b1ab155db2c65e5e959",
+      "research_notes_en": "Self-hosted operation includes monitoring, upgrades and backup/restore."
+    },
+    {
+      "id": "ai-agent",
+      "type": "official_documentation",
+      "site": "n8n",
+      "title": "AI Agent node",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent.md",
+      "read_at": "2026-10-22T09:45:21Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0a937d1287a5532db3c635c014ea80994aff919185932a20f115e047edae745f",
+      "research_notes_en": "Connect a chat model and tool; model-driven tool choice differs from fixed logic. Older node versions have migration notes."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:37:35Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity, or publication approval tested."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English original and Chinese translation were rewritten project by project from the sources attached to each substantive section.",
+    "Documented means the vendor describes the behavior. It is not evidence of independent testing, reliability, ease of use, or customer outcomes.",
+    "Examples, fit judgments, and evaluation steps are editorial guidance, not observed customer deployments.",
+    "Source retrieval can use cached public-web text. Prices and product limits are a dated documentation snapshot, not a purchase quote.",
+    "This remains a private research draft. Identity, publishing approval, and directional alternative relationships are separate."
+  ],
+  "description_source_refs": ["quickstart", "transforms", "deployment"],
+  "profile": {
+    "sections": [
+      {
+        "id": "example",
+        "title_en": "An example: a scheduled API report",
+        "title_zh": "示例：定时获取 API 数据并生成报告",
+        "en": "Consider a daily operations report that reads a REST endpoint, selects relevant fields, calculates a summary, and stores a result. The HTTP Request node provides the API call; subsequent transformations prepare the destination data. This is an illustrative design, not a tested template or evidence that an arbitrary endpoint will work without configuration.\n\nConfirm the endpoint’s authentication, pagination, response shape, and rate limits before deciding the integration is complete. A successful request returning the first page is not evidence that all source records were processed. Keep the business record identifier in the output so a reviewer can trace a result back to its input.",
+        "zh": "例如，每天从 REST 接口读取运营数据，提取所需字段，计算摘要，再保存结果。HTTP Request 节点负责调用接口，后续转换负责准备目标数据。这是说明性设计，既不是已经测试的模板，也不表示任意接口都能直接使用。\n\n确认集成完成前，应核对认证方式、分页、响应结构和接口限流。请求成功并返回第一页，并不证明所有来源记录都已处理。建议在输出中保留业务记录标识，以便从结果追溯输入。",
+        "source_refs": ["http"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "items",
+        "title_en": "Understand items before building loops",
+        "title_zh": "搭建循环前，先理解数据项",
+        "en": "n8n passes arrays of items between nodes, with structured values under a json key and binary data represented separately. Many nodes process incoming items individually. If a preceding step produces ten items, a downstream create operation can therefore create ten records, not one combined record.\n\nFor selection and testing, distinguish an array inside one item from multiple n8n items. Check how aggregation, splitting, and branches change the number of destination writes. This data model is useful for understanding both correct processing and accidental duplication; the presence of a visual loop is not the only sign that work repeats.",
+        "zh": "n8n 在节点间传递由多个数据项组成的数组；结构化值放在 json 键中，二进制数据另行表示。许多节点会逐项处理输入。因此，前一步产生十个数据项时，后面的创建操作可能生成十条记录，而不是一条合并记录。\n\n评估和测试时，要区分“一个数据项里的数组”与“多个 n8n 数据项”，并检查聚合、拆分和分支如何改变写入数量。理解这个模型有助于判断处理是否正确，也能发现意外重复；流程图中没有显式循环，不代表操作只会执行一次。",
+        "source_refs": ["data-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "transformation",
+        "title_en": "Choose the smallest transformation that explains the logic",
+        "title_zh": "选择能清楚表达逻辑的转换方式",
+        "en": "An expression can fill one parameter from previous data or perform a small calculation. Dedicated transformation nodes cover common operations; a Code node is available for more complex JavaScript or Python logic. This creates a useful progression from a simple mapping to custom processing.\n\nOur advice is to keep an understandable transformation close to the field it affects, and isolate complex transformations with representative input and output examples. Code capability does not remove the need to understand the node’s data contract or the runtime restrictions of your deployment. The documentation describes AI-generated transformations too, but this profile does not depend on AI-generated logic or claim its correctness.",
+        "zh": "表达式可以从前面的数据填写一个参数，或完成简单计算；专用转换节点处理常见操作；较复杂的 JavaScript 或 Python 逻辑可以放入 Code 节点。这样能从简单映射逐步过渡到自定义处理。\n\n建议把易于理解的转换放在相关字段附近，把复杂转换单独列出代表性输入和预期输出。支持代码，不代表无需理解节点数据契约或部署环境的运行限制。文档也介绍了 AI 生成转换，但本文不依赖 AI 自动编写逻辑，也不声称这类代码天然正确。",
+        "source_refs": ["transforms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-agent",
+        "title_en": "An AI Agent is a different decision mechanism",
+        "title_zh": "AI Agent 使用不同的决策机制",
+        "en": "The AI Agent node connects a chat model with at least one tool, and the model chooses which available tool to call. That differs from an explicitly configured mapping or conditional branch. Use it only where variable requests need that flexibility, rather than adding an agent to a fixed calculation merely because the feature exists.\n\nFor evaluation, inspect the tool permissions, inputs, outputs and handling of an unsuitable tool choice. This is an editorial test recommendation, not evidence of agent accuracy. Current documentation also flags older AI Agent node versions for migration; verify the node version when importing a template.",
+        "zh": "AI Agent 节点需要连接聊天模型和至少一个工具，由模型决定调用哪个工具。它与明确配置的字段映射或条件分支不同。应在不固定的请求确实需要这种灵活性时使用，而不是为了采用新功能，把固定计算也改成 Agent。\n\n评估时应检查工具权限、输入输出，以及工具选择不合适时如何处理。这是测试建议，不是 Agent 准确率证据。当前文档也提示旧版 AI Agent 节点需要迁移，导入模板时要核对节点版本。",
+        "source_refs": ["ai-agent"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Cloud and self-hosting solve different operating needs",
+        "title_zh": "Cloud 与自托管对应不同运营责任",
+        "en": "Cloud delegates infrastructure management to n8n. Self-hosting allows deployment on your own infrastructure, including private environments, with installation options such as Docker Compose. Installing the software and choosing a paid edition are separate decisions.\n\nChoose based on the operating responsibility you can sustain: where credentials and execution data must live, who can upgrade the instance, and who responds when it stops. Self-hosting offers configuration control; it does not, by itself, establish regulatory compliance or better uptime. This review did not verify a regional data-residency commitment or a production architecture.",
+        "zh": "Cloud 把基础设施管理交给 n8n；自托管允许在自己的基础设施或私有环境中部署，可以采用 Docker Compose 等方式。安装软件与是否使用付费版本，是两项不同决定。\n\n应根据能够长期承担的运营责任选择：凭据与执行数据需要保存在哪里、由谁升级实例、故障时谁处理。自托管提供配置控制权，但不会因此自动符合某项监管要求或获得更高可用性。本文未核实地区数据驻留承诺，也未验证生产架构。",
+        "source_refs": ["deployment", "hosting"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editions",
+        "title_en": "Free Community is not the full paid collaboration package",
+        "title_zh": "免费 Community 不等于完整付费协作版本",
+        "en": "The self-hosted Community edition can be used without a subscription within its license terms. Registering it for free unlocks additional features, including debug-in-editor functionality. The edition comparison lists exclusions such as projects, workflow/credential sharing, SSO, external secrets, and Git-based version control.\n\nBefore adopting it for a team, identify the permissions and collaboration you actually need and compare those with the current edition matrix. Do not infer that a feature shown in a Cloud trial also exists in an unregistered Community installation.",
+        "zh": "自托管 Community 可在许可范围内无需订阅使用；免费注册还可解锁包括编辑器内调试在内的部分功能。版本对照页列出了 Community 不包含的项目空间、工作流／凭据共享、SSO、外部密钥和 Git 版本控制等能力。\n\n团队采用前，应先列出实际所需权限与协作方式，再对照当前版本表。不能因为 Cloud 试用中看到了某个功能，就推定未注册的 Community 安装也具备它。",
+        "source_refs": ["editions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Execution billing and total operating cost",
+        "title_zh": "按执行计费与总体运营成本",
+        "en": "The pricing page checked on 22 October 2026 lists Starter at €20 per month billed annually for 2,500 executions, and Pro at €50 per month billed annually for 10,000. An execution covers a whole workflow run, not a charge for each node. Those annual-billing equivalents are not month-to-month quotes. Self-hosted Community avoids a software subscription within its terms, but server resources and external services still have costs. Concurrency, retained history, features, and provider charges also affect a comparison.",
+        "zh": "2026 年 10 月 22 日核对的定价页列出：Starter 按年付款折合每月 20 欧元，含 2,500 次执行；Pro 按年付款折合每月 50 欧元，含 10,000 次执行。一次执行对应整条工作流运行，不是每个节点分别计费。这些年付折算金额不能当作按月付款报价。Community 在许可内可免软件订阅费，但服务器和外部服务仍有成本。并发、历史保留、版本功能与服务商费用也影响比较。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "execution-estimate",
+        "title_en": "Estimate the trigger pattern, not the number of canvas nodes",
+        "title_zh": "按触发方式估算，不按画布节点数估算",
+        "en": "The execution guide distinguishes production runs from manual tests and describes different trigger rules. A scheduled production workflow counts when its schedule fires; a polling node with no new data does not. A daily scheduled report would therefore have roughly 30 or 31 scheduled starts per month. A separate webhook workflow starts according to incoming events, not the number of transformation nodes you draw.\n\nThis is a planning example, not a measured bill. Validate the trigger type and execution counters on the deployment and plan you will keep. Moving work into more steps does not by itself explain the billable execution count.",
+        "zh": "执行说明区分正式运行与手工测试，也说明不同触发器的计数方式：定时生产流程在计划触发时计数；轮询节点未发现新数据时不计。因此，每日定时报告每月大致会有 30 或 31 次计划启动。另一条 webhook 流程则取决于传入事件，而不是画布里画了多少个转换节点。\n\n这只是规划算例，不是实际账单。应在准备长期使用的部署和套餐中核对触发器类型及执行计数。单纯增加或减少步骤，不能完整解释计费执行次数。",
+        "source_refs": ["executions"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "testing",
+        "title_en": "Pinned data helps development, not production validation",
+        "title_zh": "固定样例有助开发，但不能代替正式运行验证",
+        "en": "Pinning saves a node output so downstream logic can be developed against consistent data without fetching again. Production workflows ignore pinned data. A workflow that works with a pinned sample can still fail on a live record whose shape or optional values differ.\n\nOur suggested evaluation uses a normal record, a missing optional field, and more than one item; then checks a fresh production-style event after development tests. Treat that as a proposed test set, not a test completed for this profile. Keep test destinations separate when a node performs a real external write.",
+        "zh": "固定数据会保存某个节点的输出，便于后续逻辑使用一致的样例反复开发，无需再次获取。生产工作流会忽略这些固定样例。因此，固定样例能运行，并不证明结构不同或可选值缺失的真实记录也能正常运行。\n\n建议至少使用正常记录、可选字段缺失、多数据项三种输入，再检查一条新发生的真实事件。这是建议的测试集，本文没有实际执行。涉及外部写入的节点，应使用合适的测试目标。",
+        "source_refs": ["pinning"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Error notification and debugging are separate capabilities",
+        "title_zh": "错误通知与调试是不同能力",
+        "en": "An error workflow starts with Error Trigger and can notify an operator when another workflow fails. It must be assigned in that workflow’s settings. Failure in the main trigger can produce a different payload from failure in a later node, so an alert should not assume every execution field exists.\n\nDebug-in-editor can load saved execution data for investigation, subject to plan/edition availability and saved history. Neither an alert nor a rerun proves that downstream records are complete. Our recommendation is to retain a business identifier and confirm destination state before repeating a write.",
+        "zh": "错误工作流以 Error Trigger 开始，需要在主流程设置中关联，之后可在主流程失败时通知负责人。主触发器失败与后续节点失败产生的数据可能不同，告警不能假定所有执行字段都存在。\n\n编辑器内调试可加载已保存的执行数据，但受版本、套餐及实际保留历史影响。收到告警或重新运行，都不能直接证明目标记录完整。建议保留业务标识，在重复写入前核对目标状态。",
+        "source_refs": ["errors", "debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Source access does not mean an unrestricted open-source license",
+        "title_zh": "能查看源码，不等于无限制开源许可",
+        "en": "n8n calls its licensing model fair-code and uses the Sustainable Use License plus a separate Enterprise license. It is source-available, and should not be classified here as permissively licensed open-source software. This distinction is separate from whether Community can be used without a subscription.",
+        "zh": "n8n 将其模式称为 fair-code，采用 Sustainable Use License，另有 Enterprise 许可。它允许查看源码，本文不会把它标成采用宽松开源许可的软件。许可类型与 Community 是否能无需订阅使用，是两项不同事实。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "embedding",
+        "title_en": "Check who can create and configure workflows",
+        "title_zh": "检查谁能够创建和配置工作流",
+        "en": "The current license FAQ permits certain internal or behind-the-scenes uses, but distinguishes those from allowing external users to build or configure their own workflows. That distinction also applies through a custom interface or API. Before embedding n8n as a customer-facing automation feature, match the precise architecture against the vendor’s current examples and seek an applicable commercial agreement when required. This profile does not approve a specific commercial use case.",
+        "zh": "当前许可 FAQ 允许某些内部及后台用途，同时区分“由内部人员搭建”与“允许外部用户自行创建或配置流程”；即使使用自定义界面或 API，这一区别仍然存在。把 n8n 嵌入面向客户的自动化功能前，应按实际架构核对厂商现行示例，必要时取得适用商业协议。本文不替任何具体商业用法作许可批准。",
+        "source_refs": ["license-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Fit depends on workflow ownership as well as node coverage",
+        "title_zh": "是否适用，取决于节点覆盖与维护责任",
+        "en": "n8n deserves investigation when the team needs explicit data transformations and can explain the logic it builds. It may be a poor operational fit if nobody can maintain expressions, inspect execution data, or own an installation. Self-hosted maintenance includes monitoring, updating, and backup/restore responsibilities documented by n8n.\n\nFor a simple fixed handoff, compare the app’s native integration first. For a custom workflow, compare the exact connector operations, deployment obligations, and billable execution pattern. No connector-count ranking, cost advantage, uptime improvement, or time-saving percentage was measured here.",
+        "zh": "当团队需要明确的数据转换，而且能够理解并维护流程逻辑时，n8n 值得评估。如果无人维护表达式、检查执行数据或负责实例，则可能不适合日常运营。n8n 文档列出的自托管责任包括监控、升级、备份和恢复。\n\n单一固定交接可以先比较应用自带集成；自定义流程则应比较具体连接器操作、部署责任及执行计费方式。本文没有测出连接器排名、成本优势、可用性提升或节时百分比。",
+        "source_refs": ["maintenance"],
+        "evidence_type": "editorial_fit_judgment_based_on_operational_requirements"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "n8n: Workflows, Cloud vs Self-Hosting, Costs and License",
+    "title_zh": "n8n：工作流、云服务与自托管、费用及许可",
+    "description_en": "Evaluate n8n using its item model, execution billing, Community limits, debugging and license conditions, with dated primary sources.",
+    "description_zh": "依据官方来源理解 n8n 的数据项、执行计费、Community 限制、调试和许可条件，帮助评估是否适用。",
+    "primary_intent": "Evaluate n8n workflow design and the operating consequences of Cloud versus self-hosting.",
+    "secondary_questions": [
+      "What does one execution mean?",
+      "Which Community features are excluded?",
+      "Is source-available n8n unrestricted open source?"
+    ],
+    "query_basis": "Editorial intent hypotheses based on primary-source research; no search volume or ranking measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Specific connector credentials, deployed-version behavior, performance, restore reliability, regional payment availability and UI localization were not tested.",
+      "zh": "未测试具体连接器凭据、部署版本表现、性能、恢复可靠性、地区付款可用性及界面本地化。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "The Cloud trial guide summarizes Pro features, while the pricing FAQ lists trial exclusions. Use the detailed current limits and account entitlement when deciding.",
+      "zh": "Cloud 试用指南概括介绍 Pro 功能，而定价 FAQ 列出了试用排除项；决策时需以详细现行限制及账户实际权限为准。",
+      "source_refs": ["trial", "pricing"],
+      "evidence_type": "source_scope_difference"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

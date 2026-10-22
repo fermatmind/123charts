@@ -1,0 +1,268 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "bitwarden-226bb392",
+  "name": "Bitwarden",
+  "website_url": "https://bitwarden.com/",
+  "domain": "bitwarden.com",
+  "identity_domain": "bitwarden.com",
+  "category": "password-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Bitwarden Password Manager stores logins, passkeys, notes and other vault items, then makes them available through browser, desktop and mobile clients. Its personal and organization plans have different sharing and administration boundaries. Secrets Manager and the standalone Authenticator are separate product scopes.\n\nThe central evaluation is not just whether a password can be saved: test a real login, another device, the intended sharing boundary and a recovery plan. This is documentation research, not a penetration test or a guarantee against account compromise.",
+  "description_zh": "Bitwarden Password Manager 保存登录资料、passkey、笔记等保险库项目，并通过浏览器、桌面和移动客户端使用。个人和组织套餐的共享与管理边界不同，Secrets Manager 及独立 Authenticator 另有产品范围。\n\n评估不应只看能否保存密码，还需测试真实登录、另一设备、所需共享边界及恢复方案。本文是文档研究，不是渗透测试或防止账户被攻陷的保证。",
+  "core_features": [
+    {
+      "name_en": "Vault and autofill",
+      "name_zh": "保险库及自动填充",
+      "explanation_en": "Manage credentials across supported signed-in clients.",
+      "explanation_zh": "在受支持登录客户端间管理凭据。",
+      "source_ref": "setup",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional recovery",
+      "name_zh": "有条件账户恢复",
+      "explanation_en": "Use previously configured recovery methods; master password cannot simply be reset by support.",
+      "explanation_zh": "依赖事先配置的恢复方式，支持不能简单重置主密码。",
+      "source_ref": "recovery",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Create a test vault item and verify autofill plus another client.",
+      "Validate shared-item permissions and the preconfigured account recovery path."
+    ],
+    "zh": [
+      "创建测试项目，验证填充及另一客户端访问。",
+      "验证共享项目权限及预配置账户恢复路径。"
+    ],
+    "source_refs": ["setup", "pricing", "recovery"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Individual credential owner",
+      "Organization vault administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a test vault item and verify autofill plus another client.",
+        "zh": "创建测试项目，验证填充及另一客户端访问。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate shared-item permissions and the preconfigured account recovery path.",
+        "zh": "验证共享项目权限及预配置账户恢复路径。",
+        "source_refs": ["pricing", "recovery"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "No provider reset of the master password; recovery depends on previously available methods.",
+        "zh": "厂商不能重置主密码，恢复取决于事先可用方式。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:30:58.162022+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "freemium",
+    "billing_basis": "Personal annual account or organization seats billed annually; tax and extras separate.",
+    "source_snapshot_en": "Premium USD19.80/year; Families USD47.88/year up to6; Teams USD4/user/month annual; Enterprise USD6/user/month annual; taxes excluded.",
+    "source_snapshot_zh": "Premium年付19.80美元；Families年付47.88最多6人；Teams按年付每用户月4美元；Enterprise6美元；未含税。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/bitwarden",
+      "read_at": "2026-10-22T08:37:19.983Z",
+      "excerpt_sha256": "b8f63adc81cca3ed7acebe332d1b3ae9c08de03c63001d729390edea55d493c3",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Bitwarden",
+      "title": "Bitwarden Password Manager overview",
+      "url": "https://bitwarden.com/",
+      "read_at": "2026-10-22T15:14:19.039900+00:00",
+      "excerpt_sha256": "ce706955450ab8a96ba1ff161781c8759f410e02748773a2cbd9e58a64a2a777",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Personal/org vault family versus separate developer/authenticator products."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "Bitwarden",
+      "title": "Bitwarden Individual Course",
+      "url": "https://bitwarden.com/help/get-started-individual-user/",
+      "read_at": "2026-10-22T15:29:43.952496+00:00",
+      "excerpt_sha256": "bdd0000eaf67a511b7fe64bdd7fac73e3f2096f43898c75c7936449685ec5f45",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Account, import, autofill and 2FA recovery-code distinction; requested old URL redirects to current course."
+    },
+    {
+      "id": "recovery",
+      "type": "official_documentation",
+      "site": "Bitwarden",
+      "title": "Forgot My Master Password",
+      "url": "https://bitwarden.com/help/forgot-master-password/",
+      "read_at": "2026-10-22T15:28:55.426606+00:00",
+      "excerpt_sha256": "4fa1fa2df80b1c956e3cac9e1d2a8934b6693c0fbbb893e481c643ed5dde8fb8",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Region separation and conditional recovery; no provider master-password reset."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Bitwarden",
+      "title": "Bitwarden Password Manager Pricing",
+      "url": "https://bitwarden.com/pricing/",
+      "read_at": "2026-10-22T15:28:54.804350+00:00",
+      "excerpt_sha256": "c1bc5f2a74303dbcfa80fb63afe8a45c6fba0227d890048ff33c736afaff95be",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Current USD annual totals and seat rates; Free versus Premium/org rights."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:30:58.162022+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "original_editorial_draft"
+    },
+    "zh": {
+      "status": "translated_and_fact_checked_against_english",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "start",
+        "title_en": "Create, import and verify a login",
+        "title_zh": "创建、导入并核对登录",
+        "en": "The personal course describes account creation, a strong memorable master password, two-step login, importing credentials and autofill. Items synchronize across signed-in clients. Its recovery code is specifically a backup for loss of the two-step-login device; it should not be confused with recovery of a forgotten master password.\n\nFor an evaluation, add a disposable site login, verify the matching site and autofill, then confirm access from another supported client. Test the intended organization collection separately from a personal item before migrating shared credentials. Import success does not establish that every field maps correctly.",
+        "zh": "个人教程说明创建账户、设置强且可记住的主密码、两步登录、导入凭据及自动填充，项目在登录客户端间同步。其 recovery code 专门用于丢失两步登录设备，不能混同为忘记主密码后的恢复。\n\n评估可添加可丢弃站点登录，核对站点匹配与填充，再从另一受支持客户端访问。迁移共享凭据前，应将组织集合与个人项目分别测试。导入成功不代表所有字段映射正确。",
+        "source_refs": ["setup", "product"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Prepare recovery before you need it",
+        "title_zh": "需要恢复前先准备",
+        "en": "The forgotten-password guide says Bitwarden cannot retrieve or reset the master password. It lists conditional alternatives: an already unlocked client, previously configured emergency access, applicable organization account recovery, or supported device/passkey access. Server regions are separate, so choosing the wrong one can look like a missing account.\n\nIf none applies, the guide says the encrypted account data cannot be recovered. Design and test a recovery plan before entrusting the only copy of critical credentials. A two-factor reset and vault decryption are different problems.",
+        "zh": "忘记密码指南说明 Bitwarden 不能取回或重置主密码，列出的替代方式均有条件，包括已解锁客户端、事先配置的紧急访问、适用组织恢复或设备／passkey 访问。服务器区域相互独立，选错区域可能看似没有账户。\n\n若均不适用，指南说明无法恢复加密账户数据。保存关键凭据唯一副本前应设计并验证恢复方案，两步验证重置与解密保险库是不同问题。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Match the plan to sharing and administration",
+        "title_zh": "按共享与管理选择套餐",
+        "en": "The current USD page lists Premium at USD 19.80 annually (USD 1.65 monthly equivalent), Families at USD 47.88 annually for up to six people, Teams at USD 4 per user/month billed annually and Enterprise at USD 6 on that basis. Taxes are excluded. Free provides basic password management; the course documents unlimited devices and logins.\n\nFor a hypothetical ten-seat Teams organization, the listed annual-rate components total USD 480/year before tax. Additional storage or other products may alter the bill. A self-hosting option does not imply every enterprise feature is free; edition rights and deployment responsibilities need their own check.",
+        "zh": "当前美元页列 Premium 每年 19.80 美元（月均 1.65）、Families 最多六人每年 47.88、Teams 按年付每用户每月 4 美元、Enterprise 同口径 6 美元，未含税。Free 提供基本密码管理，课程说明不限设备和登录数量。\n\n假设 Teams 十席，按所列年费口径合计税前每年 480 美元，额外存储或其他产品可能改变账单。可自托管不代表所有企业功能免费，版本权益及部署责任需单独核对。",
+        "source_refs": ["pricing", "setup"],
+        "evidence_type": "documented_with_hypothetical_calculation"
+      },
+      {
+        "id": "fit",
+        "title_en": "Choose who owns shared credentials",
+        "title_zh": "明确共享凭据归属",
+        "en": "Shortlist Bitwarden when its clients, organization ownership and recovery model match your use. For a team, test member removal, collection permissions and the accounts that remain available to administrators before rollout. Neither storing a credential nor removing a vault member automatically proves the external application session has been revoked.\n\nCloud service and self-hosted server are different operational choices. This research did not deploy a server, inspect source licenses, execute imports or audit encryption. Exact SSO/recovery configuration, platform autofill compatibility and account-region requirements remain implementation checks.",
+        "zh": "客户端、组织归属及恢复模式符合需求时，可考虑 Bitwarden。团队应先测试移除成员、集合权限，以及管理员还能访问哪些账户。保存凭据或移除保险库成员，都不能证明外部应用会话已自动撤销。\n\n云服务与自托管服务器是不同运维选择。本文未部署服务器、核查源码许可、执行导入或审计加密；具体 SSO／恢复配置、平台填充兼容性及账户区域要求仍需实施核对。",
+        "source_refs": ["product", "pricing", "recovery"],
+        "evidence_type": "editorial_fit_judgment_based_on_documentation"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "No client, import, recovery, SSO or security test; exact configuration and legal source licenses were not verified.",
+      "zh": "未测试客户端、导入、恢复、SSO或安全；具体配置及法律源码许可未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Self-hosting prerequisites, region choice, platform autofill and final invoice need task-specific validation.",
+      "zh": "自托管前提、区域选择、平台填充及最终账单需按任务验证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Bitwarden: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Bitwarden：用途、流程、价格与限制",
+    "description_en": "Bitwarden Password Manager stores logins, passkeys, notes and other vault items, then makes them available through browser, desktop and mobile clients. Its personal and organization plans have different sharing and administration boundaries. Secrets Manager and the standalone Aut",
+    "description_zh": "Bitwarden Password Manager 保存登录资料、passkey、笔记等保险库项目，并通过浏览器、桌面和移动客户端使用。个人和组织套餐的共享与管理边界不同，Secrets Manager 及独立 Authenticator 另有产品范围。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
+}

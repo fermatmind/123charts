@@ -1,0 +1,300 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "dreamfactory-6a420d79",
+  "name": "DreamFactory",
+  "website_url": "https://www.dreamfactory.com/",
+  "domain": "www.dreamfactory.com",
+  "identity_domain": "dreamfactory.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "DreamFactory is a self-hosted data API gateway that places a managed REST interface between applications or AI clients and enterprise data sources. The current site also describes MCP-backed access. API generation, authorization and operating the gateway are separate responsibilities: a generated endpoint does not establish that a particular caller should receive every underlying table or field.\n\nThe official AI Academy supplies readable configuration guidance where the main documentation was inaccessible. Its examples cover role-scoped access and bounded queries. Evaluate them on a small nonproduction dataset before relying on policy, connector availability or throughput in a real deployment.",
+  "description_zh": "DreamFactory 是自托管数据 API 网关，在应用或 AI 客户端与企业数据源之间提供受管理 REST 接口，当前官网也说明 MCP 接入。生成 API、授权和运行网关是分别的责任：生成端点不代表特定调用方应取得底层全部表或字段。\n\n主文档无法访问时，官方 AI Academy 提供了可读配置指导，涵盖按角色访问与受限查询。依赖真实部署中的策略、连接器或吞吐前，应先使用小型非生产数据集评估。",
+  "core_features": [
+    {
+      "name_en": "Role/service/component access",
+      "name_zh": "角色／服务／组件访问",
+      "explanation_en": "Configure allowed HTTP verbs for explicitly selected services and components.",
+      "explanation_zh": "为明确选定的服务及组件配置允许的 HTTP 动词。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Generated table endpoints",
+      "name_zh": "生成表端点",
+      "explanation_en": "The Academy illustrates consistent table endpoint paths and filtered, paginated requests.",
+      "explanation_zh": "Academy 展示一致的表端点路径及过滤、分页请求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "queries",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Self-hosted API gateway",
+      "name_zh": "自托管 API 网关",
+      "explanation_en": "Deploy the governed API layer alongside existing infrastructure and data sources.",
+      "explanation_zh": "将受管理 API 层部署到既有基础设施及数据源旁。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot a read-only API over synthetic records with an intentionally denied table.",
+      "Compare page-size controls and edition/connector costs before adding an AI client."
+    ],
+    "zh": [
+      "用模拟记录试点只读 API，并明确拒绝另一张表。",
+      "接入 AI 客户端前比较分页控制与版本／连接器成本。"
+    ],
+    "source_refs": ["roles", "queries", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["API platform engineers", "Data integration developers"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the edition/connector and a test dataset; define explicit service/component/verb permissions.",
+        "zh": "选择版本／连接器和测试数据集，明确服务／组件／动词权限。",
+        "source_refs": ["pricing", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify query limits and denied operations before adding a client and documenting credential expiry.",
+        "zh": "接入客户端前验证查询上限与被拒操作，并记录凭据期限。",
+        "source_refs": ["queries", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Wildcard components can expose newly added resources.",
+        "zh": "组件通配符可能暴露新增资源。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The Academy’s100-record recommendation is not an installation’s measured hard cap.",
+        "zh": "Academy 建议的一百记录并非某个安装的已测硬上限。",
+        "source_refs": ["queries"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:59:57.594350Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Official pricing distinguishes PostgreSQL Free from annually billed Linux Lite $1,500/month and Professional $4,000/month. Docker/Kubernetes uses CPU-based/custom terms with $6,000/month examples. Support is separately priced. Hosting, exact connector/instance scope, actual contract and final tax-inclusive cost remain unverified.",
+    "summary_zh": "官方价格区分 PostgreSQL Free 与年付 Linux Lite 每月 $1,500、Professional $4,000。Docker／Kubernetes 按 CPU／定制条款并有 $6,000 月价示例，支持另计。托管、确切连接器／实例范围、实际合同及含税总价待核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/dreamfactory",
+      "read_at": "2026-10-22T08:42:21.099Z",
+      "excerpt_sha256": "4090fe48d48b882c3cd06538673b4e7a4aa37ad4fc4f206d58623fd26a73dc7d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "DreamFactory",
+      "title": "Let AI query your data. Not your database. | DreamFactory",
+      "url": "https://www.dreamfactory.com/",
+      "read_at": "2026-10-22T10:59:54.605025Z",
+      "excerpt_sha256": "d9809553071be2dc5d701002f0e7c04be60801049ab2513711921dfb94d68901",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read self-hosted data gateway and REST/MCP positioning; performance/compliance marketing not adopted as measured outcomes."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "DreamFactory",
+      "title": "DreamFactory Pricing | Plans for Teams & Enterprises",
+      "url": "https://www.dreamfactory.com/pricing/",
+      "read_at": "2026-10-22T10:59:57.594350Z",
+      "excerpt_sha256": "0fe89e3d4f4eadb70f9d4cfbeff3c5cfed6b907a75b14daa0a7f60fa431787f3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual PostgreSQL Free, Linux Lite/Professional and CPU-based Docker/Kubernetes amounts; maintenance add-ons separate."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "DreamFactory",
+      "title": "Module 03 Full Documentation: Security Fundamentals - RBAC, Roles & API Keys - DreamFactory AI Academy",
+      "url": "https://academy.dreamfactory.com/modules/docs/module-03-full",
+      "read_at": "2026-10-22T15:59:02.512206Z",
+      "excerpt_sha256": "4939921f3ed436603c1ba552fbeeec7997d3c6d6d67f1ac49007a5b5176145a9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Academy module03 role/service/component/verb controls, key binding and JWT settings. Main docs403 not retried."
+    },
+    {
+      "id": "queries",
+      "type": "official_documentation",
+      "site": "DreamFactory",
+      "title": "Module 06 Full Documentation: Building REST APIs for AI Consumption - DreamFactory AI Academy",
+      "url": "https://academy.dreamfactory.com/modules/docs/module-06-full",
+      "read_at": "2026-10-22T16:03:01.115271Z",
+      "excerpt_sha256": "c73b55354c4423e4ae5bd5bd2333e6a1a2d1ba46a564b73df8e0eef1c5f82ee2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Academy module06 endpoint patterns, pagination settings and explicitly recommended100-record strategy."
+    },
+    {
+      "id": "features",
+      "type": "official_documentation",
+      "site": "DreamFactory",
+      "title": "DreamFactory Features | API Security, Scripting & Governance",
+      "url": "https://www.dreamfactory.com/features/",
+      "read_at": "2026-10-22T15:57:38.451391Z",
+      "excerpt_sha256": "6bda29519735610d7b791de100b695cff271c50ff690116698ac109f0ccbab5d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current feature scope as vendor claims, not tested guarantees."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:03:01.115271Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "research_gaps": [
+    {
+      "en": "Main documentation403 was not retried; readable official Academy pages supply the adopted configuration evidence.",
+      "zh": "主文档的 403 未重试，采用的配置证据来自可读官方 Academy 原页。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No installation, client, database, key, role, request, backup/restore or purchase was operated. Full license, deployed-version alignment, measured enforcement and recovery remain unverified.",
+      "zh": "未操作安装、客户端、数据库、key、角色、请求、备份／恢复或购买。完整许可、部署版本对应、实际执行及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "description_source_refs": ["home", "queries"],
+  "profile": {
+    "sections": [
+      {
+        "id": "path",
+        "title_en": "Inspect the generated contract before connecting a client",
+        "title_zh": "接入客户端前检查生成契约",
+        "en": "DreamFactory presents database and other services through a common API layer and describes REST/MCP use by both application and AI clients. Select the actual connector and deployment edition first. Use the generated contract to identify available operations; the homepage’s speed and safety statements are vendor positioning, not observed performance or a verified security assessment.",
+        "zh": "DreamFactory 通过统一 API 层呈现数据库等服务，并说明应用及 AI 客户端可用 REST／MCP。应先选择实际连接器和部署版本，再用生成契约确认操作；首页的速度与安全说法属于厂商定位，并非实测性能或安全审计。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scope",
+        "title_en": "Do not let wildcard permissions grow unnoticed",
+        "title_zh": "避免通配权限随资源扩大",
+        "en": "The Academy maps roles to service, component and HTTP-verb grants, with field selection and server-side row filters. A wildcard component includes subsequently added resources. API keys created through Apps bind to a role. Test an allowed read, a denied write and an unrelated table using a dedicated role; the documentation’s enforcement claim was not independently tested here.",
+        "zh": "Academy 将角色映射到服务、组件及 HTTP 动词，并说明字段选择与服务器端行过滤。组件通配符会包含后续新增资源；Apps 中创建的 API key 绑定角色。应使用专用角色测试允许读取、拒绝写入及无关表，本次未独立测试文档的执行主张。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bounded-query",
+        "title_en": "Separate an example page size from an enforced ceiling",
+        "title_zh": "区分示例页大小与强制上限",
+        "en": "Module06 illustrates table endpoints with filters, limit and offset. It distinguishes system defaults from per-role maximums and recommends100 records for AI-oriented consumption. That recommendation is not proof of the configured ceiling in an installation. Evaluate a normal page, an empty result and a request above the intended maximum with synthetic records.",
+        "zh": "模块 06 展示表端点的 filter、limit 和 offset，区分系统默认与角色最大值，并建议 AI 使用一百记录分页。该建议不证明某个安装的实际强制上限。应以模拟记录测试正常分页、空结果及超过预期上限的请求。",
+        "source_refs": ["queries"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "credentials",
+        "title_en": "Plan key and session lifetimes separately",
+        "title_zh": "分别规划 key 与会话期限",
+        "en": "The Academy separates application API keys from JWT-based session access. Its table lists a24-hour JWT lifetime and14-day refresh window, while suggesting shorter lifetimes for some interactive sessions. Confirm the deployed configuration and revocation behavior. Reusing a broad role across clients also reuses its data scope; rotating a key does not by itself redesign that scope.",
+        "zh": "Academy 区分应用 API key 与基于 JWT 的会话访问。表中列 JWT 有效期二十四小时、刷新窗口十四天，也建议部分交互会话缩短期限。应确认部署配置与撤销行为。多个客户端复用宽泛角色，也会复用数据范围；轮换 key 本身不改变授权设计。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Connector and deployment editions change the bill",
+        "title_zh": "连接器及部署版本改变费用",
+        "en": "Pricing lists a PostgreSQL-focused Free offering, Linux Lite at $1,500/month and Linux Professional at $4,000/month, paid annually. Lite limits connector selection and excludes Oracle, Snowflake and DB2. Docker/Kubernetes sections use CPU-based/custom pricing and display $6,000/month examples; maintenance/support packages cost extra. Obtain an edition-specific quote rather than treating unlimited API requests as a full operating-cost promise.",
+        "zh": "价格页列 PostgreSQL 范围的 Free、Linux Lite 每月 $1,500、Professional $4,000，按年支付。Lite 限选连接器并排除 Oracle、Snowflake、DB2。Docker／Kubernetes 使用按 CPU／定制报价并展示每月 $6,000 示例，维护／支持包另收费。应取得具体版本报价，不能将 API 请求不限量等同完整运行成本保证。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "DreamFactory: workflows, operating limits and cost",
+    "title_zh": "DreamFactory：流程、运行限制与费用",
+    "description_en": "DreamFactory is a self-hosted data API gateway that places a managed REST interface between applications or AI clients and enterprise data sources. The current site also ",
+    "description_zh": "DreamFactory 是自托管数据 API 网关，在应用或 AI 客户端与企业数据源之间提供受管理 REST 接口，当前官网也说明 MCP 接入。生成 API、授权和运行网关是",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of DreamFactory.",
+    "search_intent_zh": "评估 DreamFactory 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  }
+}

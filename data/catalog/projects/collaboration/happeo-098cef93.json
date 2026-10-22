@@ -1,0 +1,468 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "happeo-098cef93",
+  "name": "Happeo",
+  "website_url": "https://www.happeo.com/",
+  "domain": "www.happeo.com",
+  "identity_domain": "happeo.com",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Happeo is a hosted company intranet for maintaining official knowledge, employee communications and searchable people/content. Pages organize reference material, Channels carry updates, and connected search can retrieve information without treating every external application as a Happeo document store.\n\nIts current AI products cover several distinct jobs: Search AI drafts answers, the paid Knowledge Engine helps content owners resolve missing information, and MCP exposes selected reading and posting actions to supported assistants. A useful evaluation follows one policy from editing and access through employee retrieval, with source review and ownership still explicit.",
+  "description_zh": "Happeo 是托管企业内网，用于维护正式知识、员工沟通及可搜索的人员／内容。Pages 组织参考资料，Channels 承载更新，连接式搜索可检索信息，并不把每个外部应用都变成 Happeo 文档库。\n\n当前 AI 产品处理不同任务：Search AI 草拟答案，付费 Knowledge Engine 协助内容负责人补齐信息，MCP 向支持的助手开放特定读取及发帖操作。适合沿一项政策的编辑、访问到员工检索进行评估，同时明确来源复核及内容责任。",
+  "core_features": [
+    {
+      "name_en": "Governed knowledge pages",
+      "name_zh": "受权限管理的知识页面",
+      "explanation_en": "Publish maintained reference material under group and page access rules.",
+      "explanation_zh": "按页面组及页面权限发布持续维护的参考资料。",
+      "explanation_scope": "product_specific",
+      "source_ref": "publishing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Connected answer retrieval",
+      "name_zh": "连接式答案检索",
+      "explanation_en": "Use the selected source and its actual availability when checking an answer.",
+      "explanation_zh": "核对答案时检查所选来源及实际可访问性。",
+      "explanation_scope": "product_specific",
+      "source_ref": "search-ai",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Assigned content gaps",
+      "name_zh": "分配知识缺口",
+      "explanation_en": "Route missing or inaccessible knowledge to an accountable content owner.",
+      "explanation_zh": "把缺失或不可访问的知识交给明确负责人处理。",
+      "explanation_scope": "product_specific",
+      "source_ref": "gap-detection",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Maintain one onboarding policy and evaluate its publication, inherited access, source-grounded retrieval and gap closure."
+    ],
+    "zh": ["维护一项入职政策，评估其发布、继承访问、有来源检索及缺口关闭。"],
+    "source_refs": ["publishing", "permissions", "gap-detection"],
+    "basis": "Original proposed evaluation, not observed adoption."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Hosted intranet with authenticated integrations; no self-hosting package established.",
+      "zh": "带认证集成的托管内网，未确立自托管包。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Internal knowledge owner",
+      "Intranet administrator",
+      "HR or IT policy editor"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm workplace identity, package, content owner and intended readers; prepare one non-sensitive policy.",
+        "zh": "确认工作身份、套餐、内容负责人及目标读者，准备一项非敏感政策。",
+        "source_refs": ["permissions", "pricing"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Review the published version as a reader and inspect sources on desktop/mobile before broader use.",
+        "zh": "扩大使用前，以读者身份复核已发布版本，并检查桌面／移动端来源。",
+        "source_refs": ["publishing", "search-ai"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documentation_read_not_executed",
+    "items": [],
+    "source_ref": "mcp-limits",
+    "scope": "Search source access, one-way notification claims and MCP writes are distinct; no integration installed or synchronized."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Inherited access can survive direct permission removal; mobile AI scope and MCP actions are narrower than broad platform descriptions.",
+        "zh": "直接撤权后可能仍有继承访问，移动 AI 及 MCP 动作范围比平台概括窄。",
+        "source_refs": ["permissions", "search-ai", "mcp-limits"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "ui_locales_not_verified",
+    "items": [],
+    "scope": "AI query/response translation documented; no complete UI language set verified."
+  },
+  "license": {
+    "status": "proprietary_service_terms_read",
+    "is_open_source": false,
+    "url": "https://www.happeo.com/tos-2026",
+    "source_ref": "rights-trial",
+    "scope": "Vendor retains technology rights; no freely redistributable backend or self-hosting grant."
+  },
+  "pricing": {
+    "status": "official_quote_model_checked",
+    "price_type": "quote_based_subscription_with_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Starter/Growth/Enterprise are quote-based; exact amount, minimum seats, onboarding and add-on costs not established. Trial is not permanent free service.",
+    "source_snapshot_zh": "Starter／Growth／Enterprise 需询价；金额、最低席位、入驻及附加费未确立。试用不等于永久免费服务。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/happeo",
+      "read_at": "2026-10-22T08:46:56.706Z",
+      "excerpt_sha256": "8637cc0f96f3898843defe4eba753e6f08a7178bd976bc20a96836a967338a66",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "www.happeo.com",
+      "title": "The intranet your whole company trusts for small and medium companies | Happeo",
+      "url": "https://www.happeo.com/",
+      "read_at": "2026-10-22T12:55:18.481289Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b701bc50b23b91c50bc1eca55237bbe323bf6c83a360c00b94dd69884186572f",
+      "research_notes_en": "Read current intranet scope: structured knowledge spaces, company communications, connected search and Google/Microsoft workplace integration. No rating, deployment time or customer outcome adopted."
+    },
+    {
+      "id": "mcp-setup",
+      "type": "official_integration",
+      "site": "help.happeo.com",
+      "title": "Set Up the Happeo MCP Server – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/49077665817745-Set-Up-the-Happeo-MCP-Server",
+      "read_at": "2026-10-22T12:55:18.481646Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7c698dd92f23360706a61416e569db0f27791bff76e0758e332a30086188b0d9",
+      "research_notes_en": "Read current package and OAuth/admin/user prerequisites, Claude available and ChatGPT/Gemini forthcoming; individual permissions retained."
+    },
+    {
+      "id": "permissions",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Pages 2.0 | Manage Page-Level Permissions – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/31976204856593-Pages-2-0-Manage-Page-Level-Permissions",
+      "read_at": "2026-10-22T12:55:18.482040Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9d9f423b0740009bf25221238904bc064297e57e3d2bb3b5603d7367b26d57b8",
+      "research_notes_en": "Read inherited group/organization permissions and page-group prerequisite; removing direct access does not revoke inherited access."
+    },
+    {
+      "id": "publishing",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Pages 2.0 | Add, Manage, and Publish Pages – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/31975420653713-Pages-2-0-Add-Manage-and-Publish-Pages",
+      "read_at": "2026-10-22T12:55:18.482068Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d022a5ca3e3ea82f92d65d2e5e1118291b880247acf8d851e2c625902226687c",
+      "research_notes_en": "Read publish/draft visibility, saved co-editor edits included on publication, published version history and changed URL/permissions when moving pages."
+    },
+    {
+      "id": "search-ai",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Search AI – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/22385771769873-Search-AI",
+      "read_at": "2026-10-22T12:55:18.482137Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e7191939f1064c79bb553bed4f87db199c964c2b8f373a609217ee5c9693a253",
+      "research_notes_en": "Read default/native versus one integration source, attachment types/limits, backend Gemini flow, mobile exclusions and feedback. No accuracy or confidentiality validation performed."
+    },
+    {
+      "id": "subscription",
+      "type": "official_documentation",
+      "site": "www.happeo.com",
+      "title": "Terms of Service | Happeo",
+      "url": "https://www.happeo.com/tos-2026",
+      "read_at": "2026-10-22T12:55:18.482191Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6ac4568f2e6b53ed6fd07879caec6d308221ed70ec184f934b31c53e0c8a9e4c",
+      "research_notes_en": "Read current default 12month term,60day nonrenewal,committed seats,8percent renewal uplift,additional seat charges and OrderForm scope."
+    },
+    {
+      "id": "knowledge-closure",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Knowledge Engine: An Introduction – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/47395509765009-Knowledge-Engine-An-Introduction",
+      "read_at": "2026-10-22T12:55:18.482489Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1864dc88fc713e30058f110c840b1a0bf983c282ab6eea6a0db028f99d46911b",
+      "research_notes_en": "Read source gathering, draft review and human publish/markclosed; not autonomous content changes."
+    },
+    {
+      "id": "mcp-limits",
+      "type": "official_integration",
+      "site": "help.happeo.com",
+      "title": "Set Up the Happeo MCP Server – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/49077665817745-Set-Up-the-Happeo-MCP-Server",
+      "read_at": "2026-10-22T12:55:18.482511Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8cae86fa36f0dde5ea7a8b39dbcc6fc4c87a6410a930e9148baa6c5e8ce759ad",
+      "research_notes_en": "Read posts/comments only,onechannel,ownidentity,nopagecreation/edit,externalconnectorssearchonly and support-required whole-org disable."
+    },
+    {
+      "id": "gap-detection",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Automatically Detect Content Gaps Through Search – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/47393033294737-Automatically-Detect-Content-Gaps-Through-Search",
+      "read_at": "2026-10-22T12:55:18.482972Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8a66c05261f364435b4a3f20da08323582d03aa948a514ac85159c3d0e596d6d",
+      "research_notes_en": "Read paidaddon,SearchAIdependency,validsinglequerygap,admin/assignedowner scopes,mobile gap-dashboard exclusion and existing inaccessible content causes."
+    },
+    {
+      "id": "search-delay",
+      "type": "official_documentation",
+      "site": "help.happeo.com",
+      "title": "Search – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/8065076601105-Search",
+      "read_at": "2026-10-22T12:55:18.483027Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f8b1e3a4b48286335cd7d494ec1ec592b39406accff11404034aba66edcb7de1",
+      "research_notes_en": "Read permission/indexing troubleshooting and up-to30minute permission recognition; admin mode visibility not same as explicit sharing."
+    },
+    {
+      "id": "rights-trial",
+      "type": "official_license",
+      "site": "www.happeo.com",
+      "title": "Terms of Service | Happeo",
+      "url": "https://www.happeo.com/tos-2026",
+      "read_at": "2026-10-22T12:55:18.483063Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4ec911da467d9e4aa21803715102e9e2d8e066b6a516114ac2367a40f4485036",
+      "research_notes_en": "Read retained proprietary technology/customercontent rights,restrictedreverseengineering and trial7daysunlessotherwisegranted withlimitedfunctionality."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.happeo.com",
+      "title": "Pricing | Happeo",
+      "url": "https://www.happeo.com/pricing",
+      "read_at": "2026-10-22T12:55:18.483211Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6bf6ca2ad12aff44b37d4510910b47a6cd2509e38b788e6caf8ed72f8b970b79",
+      "research_notes_en": "Read current Starter/Growth/Enterprise, demo-ledpricing,KnowledgeEngine addon and includedAI/MCP wording; no public amount/seatminimum or universal addon inclusion inferred."
+    },
+    {
+      "id": "exit",
+      "type": "official_documentation",
+      "site": "www.happeo.com",
+      "title": "Terms of Service | Happeo",
+      "url": "https://www.happeo.com/tos-2026",
+      "read_at": "2026-10-22T12:55:18.483858Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "96e80d905f00eeb09df3bc95d4bbc1d6022b2b7f6011fe6e04d379dcbdab4fe9",
+      "research_notes_en": "Read 30day retrieval,latest180day deletion afterthat,EUprevailing switching/deletion scope and regularbackup responsibility; no export restore executed."
+    },
+    {
+      "id": "ai-terms",
+      "type": "official_documentation",
+      "site": "www.happeo.com",
+      "title": "AI Terms - Happeo",
+      "url": "https://www.happeo.com/ai-terms",
+      "read_at": "2026-10-22T12:55:18.484341Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "108c20e55246b74ef4ea8d12cac5a61867818c42bb4b4e0f8ba661cc165fc78a",
+      "research_notes_en": "Read GoogleCloudAItechnology,customerInput/Output,thirdparty no-training and owntrainingpermission distinction,UsageData exception and inaccurate/nonunique outputs."
+    },
+    {
+      "id": "mcp-observability",
+      "type": "official_integration",
+      "site": "help.happeo.com",
+      "title": "Set Up the Happeo MCP Server – Happeo",
+      "url": "https://help.happeo.com/hc/en-us/articles/49077665817745-Set-Up-the-Happeo-MCP-Server",
+      "read_at": "2026-10-22T12:56:08.514476Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c15091ffb1b6c49d24840daba5fc41f3b1977821286fb5f0deb4fbcb88bab46d",
+      "research_notes_en": "Read actual FAQ and troubleshooting: MCP queries excluded from Searchanalytics/gapdetection, no question/retrieval auditlog, no adminsingleuserdisconnect; supportwholeorgdisableonly confirmed urgentroute."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:55:18.484341Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "search-ai",
+    "knowledge-closure",
+    "mcp-limits",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "official-policy",
+        "title_en": "Start with a maintained policy rather than an answer alone",
+        "title_zh": "从维护中的政策开始，而非只有答案",
+        "en": "For a proposed onboarding policy hub, keep the reference policy in Pages and use a Channel for the update conversation. A named owner should decide what is authoritative before inviting employees to ask AI questions. This product structure fits internal knowledge and communications; a link to a business application does not prove task execution, records migration or a replacement for that application. No employee rollout or claimed launch-time saving was tested.",
+        "zh": "假设建立入职政策中心，可把政策原文放在 Pages，以 Channel 讨论更新。邀请员工向 AI 提问前，应由具名负责人决定权威内容。该结构适合内部知识和沟通；链接业务应用不证明能执行任务、迁移记录或替代该应用。本研究未测试员工推广或宣称的上线节时。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "publish-boundary",
+        "title_en": "Saved edits and live knowledge have different states",
+        "title_zh": "已保存修改与线上知识状态不同",
+        "en": "In Pages 2.0, viewers see published content. Saving an edit does not update their live policy; publishing is required after changes. A publish action includes changes already saved by other co-editors, so coordinate the intended content before publication. Published versions have history and restoration, but that is not evidence of a full account backup. Moving a page to another group changes its URL and inherited permissions: inspect links and audience after a move.",
+        "zh": "Pages2.0 的查看者看到已发布内容。保存修改不更新其线上政策，变更后仍需发布。发布会包含其他共同编辑者已经保存的修改，因此发布前应协调内容范围。已发布版本提供历史和恢复，但不证明能完整备份账户。页面移入其他组会改变 URL 和继承权限，移动后需检查链接及受众。",
+        "source_refs": ["publishing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access-model",
+        "title_en": "Removing an individual entry may leave group access intact",
+        "title_zh": "移除个人权限项仍可能保留组访问",
+        "en": "Page-group access is a prerequisite for access to its pages; an isolated page override cannot grant entry to someone who lacks group access. Conversely, removing a person’s direct permission does not remove rights inherited through a group or the organization. Platform admins can inspect and edit beyond local ownership. Evaluate with an intended reader’s account, not only an administrator view. The search guide says permission changes may take up to thirty minutes to be recognized; this is a documented delay, not a measured revocation guarantee.",
+        "zh": "页面组访问是访问其页面的前提，单页覆盖不能让缺少组权限的人进入。反过来，移除某人的直接权限，也不会移除其通过群组或组织继承的权利。平台管理员可超出局部所有权范围查看和编辑。应使用目标读者账户评估，而不只看管理员视图。搜索指南称权限变更可能需三十分钟才被识别；这是文档延迟，不是测得的撤权保证。",
+        "source_refs": ["permissions", "search-delay"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "answer-scope",
+        "title_en": "Check the source and device before diagnosing a missing answer",
+        "title_zh": "排查缺失答案前先检查来源和设备",
+        "en": "Search AI defaults to Happeo material and can query one authorized integration filter at a time, including Drive, SharePoint, OneDrive or Slack. Ordinary result lists and AI synthesis have different scope. The AI guide supports text documents, excludes image/audio/video processing, limits folder depth and warns large files can be skipped; attached material may take roughly ten minutes to appear. On mobile, AI search excludes attachments and integrations. The same question therefore need not reach the same evidence on every device.\n\nWhen a summary fails, use the traditional results and inspect the source. A confidence label is a system estimate, not factual acceptance. Avoid promising instant propagation: the guide’s broad near-real-time wording coexists with specific attachment and permission delays.",
+        "zh": "Search AI 默认检索 Happeo 内容，也可一次选择一个已授权集成过滤器，包括 Drive、SharePoint、OneDrive 或 Slack。普通结果列表和 AI 综合的范围不同。AI 指南支持文本类文档，排除图像／音频／视频处理，限制文件夹深度，并提示可能跳过大文件；附件约需十分钟才出现。移动端 AI 搜索排除附件及外部集成，同一问题在不同设备不一定触及相同证据。\n\n摘要失败时可使用传统结果并检查原文。置信标签是系统估计，不等于事实验收。不能承诺即时传播：指南的近实时概括与附件、权限的具体延迟并存。",
+        "source_refs": ["search-ai", "search-delay"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "close-gaps",
+        "title_en": "An unsuccessful search needs diagnosis before new content",
+        "title_zh": "搜索失败须先诊断，再决定补写内容",
+        "en": "Knowledge Engine requires an add-on and Search AI for automatic detection. A valid unsuccessful search can create a gap without a volume threshold; a gap may mean missing writing, an unconnected tool or inaccessible existing content. Admins see all gaps; other users manage assigned gaps. Mobile searches can create signals, but the Gap Dashboard and closure are unavailable there.\n\nThe content owner selects a destination and sources, reviews the generated draft, publishes it and closes the gap. This is a controlled authoring workflow rather than automatic factual repair. Do not resolve an access issue by duplicating restricted policy into a broad-audience page without checking the intended audience.",
+        "zh": "Knowledge Engine 需附加购买，自动检测还需启用 Search AI。有效但失败的搜索可直接建立缺口，无需累计搜索量；缺口可能来自内容缺失、工具未连接，或已有内容不可访问。管理员可见全部缺口，其他用户管理分配给自己的项。移动搜索可产生信号，但移动端不提供 Gap Dashboard 和关闭流程。\n\n内容负责人选择目标位置及来源，复核生成草稿，发布后关闭缺口。这是受控写作流程，不是自动事实修复。处理访问问题时，不应未经受众核对便把受限政策复制到广泛可见页面。",
+        "source_refs": ["gap-detection", "knowledge-closure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp-boundary",
+        "title_en": "Assistant access includes selected writes, not every platform action",
+        "title_zh": "助手访问包含特定写操作，并非全部平台动作",
+        "en": "The current MCP setup guide supports Starter, Growth and Enterprise, excludes legacy packages, and documents Claude availability while ChatGPT/Gemini remain forthcoming. Happeo and assistant organization admins set up the OAuth connection; users then connect their own accounts. MCP can publish posts/comments to one channel per request under that person’s identity. It does not create/edit Pages, publish articles/announcements/polls or act inside searched external tools.\n\nQuestions through MCP do not feed Happeo Search analytics or automatic gap detection; explicit gap reporting needs Knowledge Engine. The guide reports no question/retrieval audit log and no admin self-service single-user disconnect; urgent confirmed revocation goes through support for the whole organization. Keep those conditions separate from broad claims that MCP inherits read/write permissions. No connector was installed or authorized.",
+        "zh": "当前 MCP 设置指南支持 Starter、Growth、Enterprise，排除旧套餐，并描述 Claude 已提供、ChatGPT／Gemini 尚待推出。Happeo 及助手组织管理员设置 OAuth 连接，用户再连接自己的账户。MCP 可用本人身份每次向一个 Channel 发布帖子／评论，不能创建／编辑 Pages、发布文章／公告／投票，也不能操作所搜索的外部工具。\n\nMCP 问题不会进入 Happeo Search 分析或自动缺口检测，主动报告缺口需 Knowledge Engine。指南称没有问题／检索审计日志，也没有管理员自助单用户断开；已确认的紧急撤销路径是联系支持关闭全组织连接。这些条件需与“继承读写权限”的概括分开。本研究未安装或授权连接器。",
+        "source_refs": ["mcp-setup", "mcp-limits", "mcp-observability"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-data",
+        "title_en": "AI processing goes beyond a client-side search call",
+        "title_zh": "AI 处理超出客户端搜索请求",
+        "en": "The Search AI guide says query/results from enabled integrations go to Happeo’s backend and Gemini for generation; a client-side connector call does not mean data stays entirely in the browser. AI terms treat inputs/outputs as customer content, prohibit third-party model training on that content and require permission for Happeo’s own training, while separately permitting service improvement from Usage Data. Those are vendor commitments, not an independent data-flow audit.\n\nAI output can be inaccurate and nonunique. Read the cited policy before applying it, and confirm actual processing location, model configuration and retention against the organization’s agreement. Public translation capability does not establish a particular UI locale or equivalent policy meaning in every language.",
+        "zh": "Search AI 指南称，已启用集成的查询／结果会发送至 Happeo 后端及 Gemini 生成；连接器在客户端调用不代表数据完全留在浏览器。AI 条款把输入／输出视为客户内容，禁止第三方用其训练模型，Happeo 自身训练需许可，同时另准许用 Usage Data 改进服务。这些属于厂商承诺，不是独立数据流审计。\n\nAI 输出可能不准确且不唯一，应用前应阅读引用政策，并按组织协议确认实际处理地点、模型配置及保留。公开翻译能力不证明特定界面语言或每种语言下等义的政策表达。",
+        "source_refs": ["search-ai", "ai-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price-and-exit",
+        "title_en": "A quote needs seats, add-ons and renewal conditions",
+        "title_zh": "询价须包含席位、附加项及续订条件",
+        "en": "The public page offers Starter, Growth and Enterprise via demos without an exact amount. Knowledge Engine remains an add-on despite broad included-AI wording. Confirm minimum seats, add-ons, support, identity integration and developer API access in the quote. A trial is temporary, not sustained free use.\n\nUnless the Order Form differs, the 2026 terms specify twelve-month advance billing, automatic twelve-month renewal, sixty-day nonrenewal notice, no midterm committed-seat reduction and an 8% renewal uplift. Additional seats can increase charges from their addition month. Standard termination provides thirty days to retrieve content, with deletion no later than 180 days afterwards; EU switching terms prevail for eligible entities and alter deletion timing. Arrange an export and check completeness before exit. No contract, purchase, restore or cancellation was tested.",
+        "zh": "公开页面通过演示提供 Starter、Growth、Enterprise，未给出准确金额。虽然概括称包含 AI，Knowledge Engine 仍是附加项。询价应确认最低席位、附加项、支持、身份集成及开发 API 权利。试用有期限，不是可持续免费使用。\n\n除非订单另约，2026条款规定十二个月预付、自动续订十二个月、提前六十天通知不续订、期中不能减少承诺席位，并规定续期上涨8%。额外席位可从加入月份增加费用。一般终止提供三十天取回内容，此后最迟180天删除；具资格主体适用优先的欧盟切换条款，删除时序不同。退出前应安排导出并检查完整性。本研究未测试合同、付款、恢复或取消。",
+        "source_refs": ["pricing", "subscription", "rights-trial", "exit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Happeo: Published Knowledge, AI Search Scope and Content Gaps",
+    "title_zh": "Happeo：已发布知识、AI 搜索范围及内容缺口",
+    "description_en": "Evaluate page publishing, inherited permissions, mobile exclusions, owner-reviewed gap closure and scoped MCP writes.",
+    "description_zh": "评估页面发布、权限继承、移动端排除项、负责人复核缺口及有限 MCP 写操作。",
+    "primary_intent": "Evaluate an internal policy knowledge workflow.",
+    "secondary_questions": [
+      "Does removing direct access revoke inherited page access?",
+      "Which knowledge tasks work through mobile search or MCP?"
+    ],
+    "query_basis": "Editorial questions; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No sign-in, role/sharing, page publication/move/restore, real search/AI, connector/MCP authorization, gap closure, export or purchase tested.",
+      "zh": "未测试登录、角色／共享、页面发布／移动／恢复、真实搜索／AI、连接器／MCP 授权、缺口关闭、导出或购买。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact quote, seat minimums, add-on/support fees, negotiated contract, AI limits/regions/retention and full backup/reimport fidelity not established.",
+      "zh": "准确报价、最低席位、附加／支持费、协商合同、AI 限额／地区／保留及完整备份／再导入保真未确立。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Public wording differs on instant search propagation and forthcoming Knowledge Engine versus current paid guides; account entitlement and release availability require confirmation.",
+      "zh": "公开资料对搜索即时传播、待推出 Knowledge Engine 与当前付费指南的描述有差异，账户资格及发布可用性需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

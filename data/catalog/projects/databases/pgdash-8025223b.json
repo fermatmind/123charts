@@ -1,0 +1,423 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pgdash-8025223b",
+  "name": "pgDash",
+  "website_url": "https://pgdash.io/",
+  "domain": "pgdash.io",
+  "identity_domain": "pgdash.io",
+  "category": "databases",
+  "secondary_categories": ["monitoring"],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "pgDash is a PostgreSQL diagnostic and monitoring product, available as hosted SaaS or a self-hosted service. It collects reports from existing PostgreSQL systems and presents query, replication, lock, table/index and configuration information. It is not a database engine, a replacement for PostgreSQL or evidence that a tuning recommendation was safely applied.\n\nThe documented flow runs pgmetrics to collect a JSON report, uploads it with the pgdash CLI and repeats on a schedule. A proposed evaluation should connect reporting freshness to a known slow query or lock event, then inspect alert delivery and team access. No collector, database query, report upload, alert or AI chat was executed here.",
+  "description_zh": "pgDash 是 PostgreSQL 诊断及监控产品，提供托管 SaaS 或自行部署服务，从已有 PostgreSQL 系统采集报告，展示查询、复制、锁、表／索引及配置。它不是数据库引擎、PostgreSQL 替代品，也不能证明调优建议已安全应用。\n\n文档流程是用 pgmetrics 采集 JSON、用 pgdash CLI 上传并定期重复。建议用已知慢查询或锁事件检查报告新鲜度，再检查告警投递及团队访问。本次未运行采集器、数据库查询、报告上传、告警或 AI 对话。",
+  "core_features": [
+    {
+      "name_en": "PostgreSQL report collection",
+      "name_zh": "PostgreSQL 报告采集",
+      "explanation_en": "Collect metrics into JSON and send them to hosted or local pgDash.",
+      "explanation_zh": "将指标采集为 JSON，发送到托管或本地 pgDash。",
+      "explanation_scope": "product_specific",
+      "source_ref": "start",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Query and plan analysis",
+      "name_zh": "查询及计划分析",
+      "explanation_en": "Use configured PostgreSQL extensions and logs to inspect query statistics and plans.",
+      "explanation_zh": "借助已配置 PostgreSQL 扩展及日志检查查询统计与计划。",
+      "explanation_scope": "product_specific",
+      "source_ref": "queries",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Report-driven alerts",
+      "name_zh": "报告驱动告警",
+      "explanation_en": "Evaluate server/database/table/index rules when reports arrive.",
+      "explanation_zh": "报告到达时评估服务器／数据库／表／索引规则。",
+      "explanation_scope": "product_specific",
+      "source_ref": "alerts",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Server-level team sharing",
+      "name_zh": "服务器级团队分享",
+      "explanation_en": "Share monitoring data and permit team alert-setting changes.",
+      "explanation_zh": "分享监控数据，并允许团队修改告警配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "share",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate query/lock diagnostics with known timestamped events",
+      "Test scheduled report and alert delivery freshness",
+      "Compare SaaS and self-hosted monitoring data/access responsibilities"
+    ],
+    "zh": [
+      "以已知带时间事件评估查询／锁诊断",
+      "测试定期报告及告警投递的新鲜度",
+      "比较 SaaS／自部署监控数据及访问责任"
+    ],
+    "source_refs": ["queries", "automation", "alerts", "selfdocs", "share"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "PostgreSQL administrators",
+      "Database performance engineers",
+      "Operations teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inspect a sanitized collector report and choose required privileges and query/log extensions.",
+        "zh": "检查脱敏采集报告，选择所需权限及查询／日志扩展。",
+        "source_refs": ["start", "queries", "security"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify scheduled authentication, upload timestamp and alert notification path.",
+        "zh": "验证调度认证、上传时间及告警通知路径。",
+        "source_refs": ["automation", "alerts"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check team alert privileges, persistence locations and peak monitored-server billing.",
+        "zh": "检查团队告警权限、持久化位置及监控服务器峰值计费。",
+        "source_refs": ["share", "selfdocs", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Alert evaluation follows incoming reports rather than continuous observation.",
+        "zh": "告警随报告评估，非持续观察。",
+        "source_refs": ["alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Team members can change alert/notification settings.",
+        "zh": "团队成员可改告警／通知设置。",
+        "source_refs": ["share"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Self-hosted persistence instructions conflict and optional AI needs external provider access.",
+        "zh": "自部署持久化说明矛盾，可选 AI 需访问外部提供商。",
+        "source_refs": ["selfdocs", "selfhost", "ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid_peak_monitored_servers_trial_only",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:18:36.563012Z",
+    "normalized_monthly_price": null,
+    "summary_en": "SaaS Basic100/month2servers;Pro200/5plus50additional $display;Enterprisequote.14daytrial;selfhostannualprepaid. Peakconcurrentcount,checkoutcurrencyunverified.",
+    "summary_zh": "SaaS Basic 每月100／2台，Pro200／5台加额外50的$展示，Enterprise询价；14天试用，自部署年预付。按并发峰值，结账币种未核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pgdash-io",
+      "read_at": "2026-10-22T08:49:26.500Z",
+      "excerpt_sha256": "da80e9227f9794921356f30880f7582227ff3e95115bdf1afa6deb08c602c5a6",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "pgDash - Comprehensive PostgreSQL Monitoring",
+      "url": "https://pgdash.io/",
+      "read_at": "2026-10-22T13:18:36.563012Z",
+      "excerpt_sha256": "0bb85a3f5b7ba0602bbfe4a9bf45937da61fdc0e533d0d947912fb27fc8813c9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "PostgreSQLmonitoring/pgmetricsJSON/upload and product boundary read, notDBengine or remediationexecution."
+    },
+    {
+      "id": "start",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Getting Started — pgDash Documentation",
+      "url": "https://docs.pgdash.io/getting-started",
+      "read_at": "2026-10-22T13:21:16.683650Z",
+      "excerpt_sha256": "67aa26c9c5fbf7b2d5fdb1132c51e3acad2def2985f2b9ff89cdd415a1a282d4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CollectionCLI,APIkey/reportname/noninteractiveauth and10minuteexample read; oldexampleversionsnotcurrentrequirements."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Automation | pgDash",
+      "url": "https://docs.pgdash.io/automation",
+      "read_at": "2026-10-22T13:22:02.941330Z",
+      "excerpt_sha256": "d25fa27847f3b2bed971443fb3d094bbe4e8b7c83c0ca32b85a41e22d8591524",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "5minrecommended/60secrateinterval andoverlap429risk read; historicalguide Lastupdated7yearsago retained, noactualrequest."
+    },
+    {
+      "id": "queries",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Working With Queries — pgDash Documentation",
+      "url": "https://docs.pgdash.io/queries",
+      "read_at": "2026-10-22T13:21:58.143610Z",
+      "excerpt_sha256": "9d3c1991886abcf69fb003b3a5363eb14db12f282657cac39c8045cd72d89aff",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "pg_stat_statements/preloadrestart,auto_explain/logpermissions,pgmetrics500char/100slowest/default5minlogspan read; mixedlegacyversiontuningclaimsnotadopted."
+    },
+    {
+      "id": "alerts",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Alerts | pgDash",
+      "url": "https://docs.pgdash.io/alerts",
+      "read_at": "2026-10-22T13:22:46.636721Z",
+      "excerpt_sha256": "eb131e0f51447b64cf2125f5bc8ab46ebab9f389f48d9719235cd00b1b31e0e9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Server/database/table/indexrules evaluated on incomingreport, notcontinuousquerywatch; notifications read."
+    },
+    {
+      "id": "share",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Teams - Now Available in pgDash - pgDash",
+      "url": "https://pgdash.io/blog/pgdash-teams.html",
+      "read_at": "2026-10-22T13:20:49.311480Z",
+      "excerpt_sha256": "2c18f2617d346082998d9dc4b3fb1d567b6f177ed71dff9404121a12723eec36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Serverdata view, alertandnotificationsettings editable, noAPIkey/billingonteamaccount, revoke read."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "pgDash - Comprehensive PostgreSQL Monitoring",
+      "url": "https://pgdash.io/ai",
+      "read_at": "2026-10-22T13:20:49.409999Z",
+      "excerpt_sha256": "e7328f95b5853d16a1c22faaa5aa1ce7258106a7a1530175331dbca4ca9de601",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "OptionalAIproviderOpenAI/Gemini, startsoutboundonlywhenexplicitlychatstarted,vendornotindependentprivacyproof read."
+    },
+    {
+      "id": "selfhost",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "pgDash - Comprehensive PostgreSQL Monitoring",
+      "url": "https://pgdash.io/self-hosted",
+      "read_at": "2026-10-22T13:20:49.507207Z",
+      "excerpt_sha256": "83d91d5d6fd668a76c35284e900c6560b21c557da036b894810bb85c66a90665",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Pro/Enterpriseannuallicense,trialkey, airgapexceptoptionalAIandconfiguredintegrations read."
+    },
+    {
+      "id": "selfdocs",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "Self-hosted — pgDash Documentation",
+      "url": "https://docs.pgdash.io/self-hosted",
+      "read_at": "2026-10-22T13:21:16.789175Z",
+      "excerpt_sha256": "fb08e0b5dfcea07b5227d33269dbb60b7625ae63bb488ddf5cc18e9ea55bc5f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "PostgreSQL13+andlicensefile, persistentdatabase vsvar/lib/pgdashtimeseriescontradiction,SMTP/externalURL/baseURL read."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "pgDash",
+      "title": "pgDash - Comprehensive PostgreSQL Monitoring",
+      "url": "https://pgdash.io/security",
+      "read_at": "2026-10-22T13:21:16.931441Z",
+      "excerpt_sha256": "4a6c7c8f50601382dd1f3fccc72717842192cd8b1fba4c35ff74c68120171573",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Collector metadata/stats nottablevalues,collectiondependsprivileges,MITcollector/CLI licensingnotwholepgDash; externalprovidersvendorclaim read."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "pgDash",
+      "title": "pgDash - Comprehensive PostgreSQL Monitoring",
+      "url": "https://pgdash.io/pricing",
+      "read_at": "2026-10-22T13:19:54.205517Z",
+      "excerpt_sha256": "b9e5ea09e48bdf9c4912a1d1a77a715f5c6c09520d111a25001be6a11b2d3bb5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Basic100/2servers30days,Pro200/5+50extras90days,Enterprisequote; peakconcurrent count/deletewholeentry; selfhostannual10%prepaydiscount,14daytrial read. Currency $notverifiedcheckout."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:22:46.636721Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "start", "queries", "alerts"],
+  "profile": {
+    "sections": [
+      {
+        "id": "collect",
+        "title_en": "Monitoring freshness follows the report pipeline",
+        "title_zh": "监控新鲜度取决于报告管道",
+        "en": "pgmetrics connects to PostgreSQL, emits JSON and pipes it to the pgdash uploader under a chosen server name. Scheduling needs noninteractive authentication; a waiting password prompt can make collection appear hung. The automation guide recommends roughly five-minute reporting and documents a minimum60-second interval, with overlapping runs able to hit rate limits. Its examples are historical, so verify current CLI compatibility. Check collection errors, upload success and last-report time independently of whether a dashboard opens.",
+        "zh": "pgmetrics 连接 PostgreSQL，生成 JSON，再通过管道交给 pgdash 上传并指定服务器名。调度需非交互认证，等待密码提示会表现为采集挂起。自动化指南建议约五分钟上报，记录最少60秒间隔，任务重叠可触发限流。示例较旧，需核当前 CLI 兼容性；应分别检查采集错误、上传成功及最新报告时间，不能只看仪表盘能否打开。",
+        "source_refs": ["start", "automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "queries",
+        "title_en": "Query statistics and plans have additional prerequisites",
+        "title_zh": "查询统计及执行计划有额外前提",
+        "en": "The query guide uses pg_stat_statements and auto_explain. Adding preload libraries requires a server restart according to the guide; collecting plans additionally needs readable PostgreSQL logs, or configured CloudWatch access on RDS/Aurora. Default collection truncates query text and samples a limited set of slow statements, so it is not proof of capturing every query. Inspect extension permissions, log coverage and overhead before interpreting missing data as no performance problem. No configuration or restart was performed.",
+        "zh": "查询指南使用 pg_stat_statements 及 auto_explain，按指南新增预加载库需要重启；执行计划还需可读 PostgreSQL 日志，RDS／Aurora 则需配置 CloudWatch 访问。默认采集截断查询文字并只取有限慢语句，不证明记录了每条查询。需先核扩展权限、日志覆盖及开销，缺数据不能当作没有性能问题。本次未改配置或重启。",
+        "source_refs": ["queries"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "alert",
+        "title_en": "An alert rule needs another report to evaluate",
+        "title_zh": "告警规则需要新报告才评估",
+        "en": "Alerts can target server, database, table and index metrics, with database/table selection conditions. The guide explicitly evaluates rules when a pgmetrics report arrives. A stopped collector can therefore leave an apparently quiet rule without fresh observations. A proposed test should cause a harmless threshold crossing and verify report timestamp, severity, selected database and notification destination. Email or messaging configuration is a separate delivery path; no alert was triggered or sent in this research.",
+        "zh": "告警可针对服务器、数据库、表及索引指标，并限定库／表选择条件。指南明确在 pgmetrics 报告到达时评估规则，因此采集停止可能让规则看似安静却没有新观察。建议用无害阈值变化检查报告时间、严重度、目标库及通知去向；邮件／消息配置是独立投递路径，本次未触发或发送告警。",
+        "source_refs": ["alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sharing",
+        "title_en": "Team viewers can modify alert configuration",
+        "title_zh": "团队查看者可以修改告警配置",
+        "en": "The team guide shares all monitoring information for a server. Members cannot delete its report/metric data, but can change alert rules and notification settings. Dedicated team accounts have no associated upload API key or billing plan; owners can revoke access. Review the whole monitored server’s metadata and operational consequences before sharing, rather than describing the role as completely read-only. The collector’s metadata/statistics scope also does not establish that query text or schema names are nonsensitive.",
+        "zh": "团队指南分享服务器全部监控信息。成员不能删除报告／指标，但可修改告警及通知设置；专属团队账户没有上传 API key 或计费计划，拥有者可撤销。分享前需检查整台服务器元数据及运行影响，不能称完全只读。采集器主要收元数据／统计，也不代表查询文字或模式名不敏感。",
+        "source_refs": ["share", "security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "host",
+        "title_en": "Self-hosting adds a monitoring database and persistence duties",
+        "title_zh": "自行部署增加监控库及持久化责任",
+        "en": "Self-hosted pgDash requires PostgreSQL13 or later and a startup license file; configure its database, external URL, SMTP if needed and uploader base URL. The docs contradict themselves on storage: one paragraph puts all persistent state in PostgreSQL, while other sections require persisting /var/lib/pgdash for time-series data. Inspect the actual version and back up both documented storage locations until resolved. Optional AI and notification integrations need outbound connectivity even when core monitoring runs air-gapped.",
+        "zh": "自行部署需 PostgreSQL13以上及启动许可文件，还需配置数据库、外部 URL、按需 SMTP 和上传器 base URL。存储文档有矛盾：一段称全部持久状态在 PostgreSQL，其他段却要求持久化 /var/lib/pgdash 时序数据。澄清前需检查真实版本并备份两处文档存储。核心监控可隔离运行，但可选 AI／通知集成需要外部连接。",
+        "source_refs": ["selfdocs", "selfhost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai",
+        "title_en": "Starting chat changes the data-flow boundary",
+        "title_zh": "开启对话会改变数据流边界",
+        "en": "The AI page describes OpenAI and Gemini integration and says no data is sent to AI providers until chat is explicitly started. It can suggest SQL and server-specific actions, but the vendor also asks users to verify the information. Evaluate what context leaves the deployment, provider settings and a suggested command’s effects before adopting advice. The open-source licenses identified for pgmetrics and the uploader do not establish an open-source license for the pgDash server.",
+        "zh": "AI 页面介绍 OpenAI／Gemini 集成，并称主动开启对话前不向 AI 提供商发数据。它能建议 SQL 及服务器动作，厂商也要求核实信息。采用建议前需评估外发上下文、提供商设置及命令影响。pgmetrics 和上传器的开源许可不能证明 pgDash 服务端也开源。",
+        "source_refs": ["ai", "security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Server count means monitored processes, not application databases",
+        "title_zh": "服务器数量指被监控进程，不是应用库数量",
+        "en": "The SaaS display lists Basic$100/month for two servers and30-day retention; Pro$200 for five,90-day retention and$50 per additional server; Enterprise is quoted. Billing uses the month’s peak concurrent monitored count. A server is a Postgres process/cluster, with separate RDS primary/replica instances counted. Removing an old server requires deleting its pgDash entry, not merely stopping uploads. Self-hosted Pro/Enterprise is annual prepaid with a stated10% discount. The14-day trial is not a continuing-free plan; checkout currency/tax was not verified.",
+        "zh": "SaaS 展示 Basic 每月$100、两服务器／30天保留；Pro$200、五服务器／90天，额外每台$50，Enterprise 询价。按当月最高并发被监控数量收费；服务器指 Postgres 进程／集群，RDS 主／副本分别计。旧服务器需删除 pgDash 条目，不能只停止上传。自部署 Pro／Enterprise 年度预付、声明九折。14天试用非持续免费计划，结账币种／税未核。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "pgDash: PostgreSQL reporting, query diagnostics and alert access",
+    "title_zh": "pgDash：PostgreSQL 报告、查询诊断及告警权限",
+    "description_en": "Review collector freshness, query extensions, team alert controls, self-hosted persistence and per-server billing.",
+    "description_zh": "了解采集新鲜度、查询扩展、团队告警控制、自部署持久化及按服务器计费。",
+    "search_intent_en": "Evaluate pgDash monitoring coverage and operating requirements.",
+    "search_intent_zh": "评估 pgDash 监控覆盖及运行要求。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No collector, query, extension, restart, upload, schedule, team invitation, notification, AI call or recovery was executed.",
+      "zh": "未执行采集、查询、扩展、重启、上传、调度、团队邀请、通知、AI 调用或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Self-host docs conflict on persistent PostgreSQL versus filesystem time-series storage; deployment-version behavior must be confirmed.",
+      "zh": "自部署文档关于 PostgreSQL 持久化和文件系统时序存储矛盾，需确认部署版本行为。",
+      "source_refs": ["selfdocs"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Historical query/automation examples mix PostgreSQL versions and limits; exact collection coverage/permissions/overhead, account quota, full server license and AI provider handling not independently verified.",
+      "zh": "旧查询／自动化示例混有 PostgreSQL 版本及限制；具体采集覆盖／权限／开销、账户额度、完整服务端许可及 AI 提供商处理未独立核实。",
+      "source_refs": ["queries", "automation", "ai"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

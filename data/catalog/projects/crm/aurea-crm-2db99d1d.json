@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "aurea-crm-2db99d1d",
+  "name": "Aurea CRM",
+  "website_url": "https://aurea.com/library/customer-relationship-management/",
+  "domain": "aurea.com",
+  "identity_domain": "aurea.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Aurea CRM (ACRM) is a configurable customer-management system covering accounts, contacts, activities and opportunities, with web, mobile and installed components documented separately. Its commercial context is Aurea Unlimited, a subscription library that can include additional products such as FirstRain, Infer and Jive. Those adjacent products are bundles to scope, not synonyms for the core CRM.\n\nCurrent official announcements describe stage-based Kanban boards, a Microsoft 365 Graph synchronization service and a read-only MCP gateway for AI queries. The product page also retains future-tense NextGen material. Evaluate a named release and deployment rather than treating every marketing paragraph as an available feature. This is document research; no installation, connector or account was tested.",
+  "description_zh": "Aurea CRM（ACRM）是可配置的客户管理系统，覆盖公司、联系人、活动和销售机会，文档分别说明 Web、移动及安装式组件。其商业背景是 Aurea Unlimited 订阅软件库，可搭配 FirstRain、Infer、Jive 等产品；这些相邻产品属于需要明确范围的组合，不等于核心 CRM。\n\n当前官方公告描述按阶段组织的看板、Microsoft 365 Graph 同步服务，以及供 AI 查询使用的只读 MCP 网关。产品页也保留未来时态的 NextGen 材料。评估应锁定版本和部署方式，不能把每段营销文字都视为已提供功能。本文基于文档，未测试安装、连接器或账户。",
+  "core_features": [
+    {
+      "name_en": "Configurable Kanban boards",
+      "name_zh": "可配置看板",
+      "explanation_en": "Group live CRM records by catalog status and update the underlying status through card moves.",
+      "explanation_zh": "按目录状态组织实时 CRM 记录，移动卡片会更新底层状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "kanban",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Microsoft 365 Graph sync",
+      "name_zh": "Microsoft 365 Graph 同步",
+      "explanation_en": "Synchronize supported mail, calendar, task and contact data on ACRM 15.x+ with Microsoft 365 and administrator setup.",
+      "explanation_zh": "在 ACRM 15.x 及以上配合 Microsoft 365 和管理员配置，同步支持的邮件、日历、任务及联系人数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "graph",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Read-only AI Connector",
+      "name_zh": "只读 AI 连接器",
+      "explanation_en": "Retrieve and summarize CRM entities through MCP under the requesting user’s CRM session; first release cannot write.",
+      "explanation_zh": "通过 MCP 在请求用户的 CRM 会话下检索及总结实体，首版不能写入。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ai",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Review sales opportunities by business stage while preserving record permissions.",
+      "Connect selected Microsoft 365 mailboxes to shared customer history."
+    ],
+    "zh": [
+      "保留记录权限的同时按业务阶段复核销售机会。",
+      "把选定 Microsoft 365 邮箱连接到共享客户历史。"
+    ],
+    "source_refs": ["kanban", "graph"],
+    "basis": "Editorial evaluation tasks based on documented behavior."
+  },
+  "technical_details": {
+    "Deployment and version": {
+      "en": "The product describes hybrid cloud and existing on-premises deployments; the docs separate multiple clients. Graph support is stated for 15.x and newer with Microsoft 365, not arbitrary Exchange installations.",
+      "zh": "产品说明混合云及现有本地部署，文档区分多种客户端。Graph 声明支持15.x及以上配合 Microsoft 365，并非任意 Exchange 安装。",
+      "source_ref": "graph",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "CRM administrator",
+      "Sales operations manager",
+      "Microsoft 365 administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory the current ACRM version, client modules, deployment and enabled business entities.",
+        "zh": "盘点当前 ACRM 版本、客户端模块、部署及业务实体。",
+        "source_refs": ["docs", "product"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Ask the account team to scope library rights, onboarding and version-specific connector setup.",
+        "zh": "向客户团队明确软件库使用权、入门服务及版本相关的连接器配置。",
+        "source_refs": ["commercial", "graph"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot a stage move, selected mailbox and restricted-user query against known records.",
+        "zh": "使用已知记录试点阶段移动、选定邮箱和受限用户查询。",
+        "source_refs": ["kanban", "graph", "ai"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Microsoft 365 via ACRM Graph Connector",
+        "source_ref": "graph",
+        "scope": "15.x+; tenant-level app registration with administrator consent and explicitly enabled CRM users."
+      },
+      {
+        "name": "Claude Desktop / Claude Code via MCP",
+        "source_ref": "ai",
+        "scope": "Read-only first release; Microsoft 365 Copilot described as coming next, despite broad homepage wording."
+      }
+    ],
+    "source_ref": "graph"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A Kanban WIP limit is documented as a visual warning, not a guaranteed block on moving a card.",
+        "zh": "看板 WIP 限额被描述为视觉提示，不能当作必然阻止移动卡片。",
+        "source_refs": ["kanban"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The AI first release cannot create, edit or delete CRM data; permission and logging descriptions remain vendor claims without execution here.",
+        "zh": "AI 首版不能创建、编辑或删除 CRM 数据；权限及日志说明仍属厂商文档，本文未运行验证。",
+        "source_refs": ["ai"],
+        "evidence_type": "documented_not_tested"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "commercial",
+    "source_refs": ["commercial", "product"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Sales/account-team scoped Aurea Unlimited subscription; no numeric CRM amount, seat minimum, term or trial entitlement established.",
+    "source_snapshot_en": "Unlimited describes library access and basic onboarding without extra cost; product page estimates four-phase onboarding in 6–12 weeks depending on complexity. This is a vendor estimate, not a delivery guarantee or a price quote.",
+    "source_snapshot_zh": "Unlimited 说明软件库访问及不另收费的基本入门服务；产品页估计按复杂度开展四阶段入门需6–12周。这是厂商估计，不是交付保证或报价。",
+    "checked_at": "2026-10-22T10:54:36.789377+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Can the AI Connector update a deal?",
+      "question_zh": "AI 连接器能更新交易吗？",
+      "answer_en": "The documented first release is strictly read-only. It retrieves and summarizes records through the current user’s CRM session.",
+      "answer_zh": "文档所述首版严格只读，通过当前用户的 CRM 会话检索和总结记录。",
+      "source_refs": ["ai"]
+    },
+    {
+      "question_en": "Does Graph sync replace every on-premises Exchange connector?",
+      "question_zh": "Graph 同步会替代所有本地 Exchange 连接器吗？",
+      "answer_en": "The announcement targets Microsoft 365/Exchange Online on ACRM 15.x+. It separately says the classic connector remains supported for on-premises Exchange.",
+      "answer_zh": "公告面向 ACRM 15.x及以上配合 Microsoft 365／Exchange Online，并另行说明传统连接器继续支持本地 Exchange。",
+      "source_refs": ["graph"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/aurea-crm",
+      "read_at": "2026-10-22T08:40:48.842Z",
+      "excerpt_sha256": "4fd32de4a10eaa73d7321c301b40f2255237e315e2b7ab52e1e9fa915a76d1ca",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Customer Relationship Management | Aurea Software",
+      "title": "Customer Relationship Management | Aurea Software",
+      "url": "https://aurea.com/library/customer-relationship-management/",
+      "read_at": "2026-10-22T10:54:20.912915+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "716af534ebfb3afc16ae8c2408efc9fe511db54fcb8dab8f6d4e410ce4f67f18",
+      "research_notes_en": "Current page mixes 2026 roadmap cards with older future-tense NextGen promises. Deployment and library bundles are vendor descriptions, not deployment verification."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Documentation - Customer Relationship Management (CRM)",
+      "title": "Documentation - Customer Relationship Management (CRM)",
+      "url": "https://help.aurea.com/crm/",
+      "read_at": "2026-10-22T10:54:22.759683+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4d43311629e43a2a11e7f1d8f61f0dd0e4d6da4e43f7ab58ee6581e14c2fbed9",
+      "research_notes_en": "Official documentation index separates web, mobile, win, connectors and administrator guides; old 2021 footer and version-specific relevance retained."
+    },
+    {
+      "id": "graph",
+      "type": "official_integration",
+      "site": "Microsoft 365 CRM Sync: Keep Emails, Calendar, and Contacts in Sync With the ACRM Graph Connector | Aurea Software",
+      "title": "Microsoft 365 CRM Sync: Keep Emails, Calendar, and Contacts in Sync With the ACRM Graph Connector | Aurea Software",
+      "url": "https://aurea.com/blog/microsoft-365-crm-sync/",
+      "read_at": "2026-10-22T10:54:36.789377+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e9acf955ce72581d13425bb814b295e3e2bb46df995848b76e22035651728d4c",
+      "research_notes_en": "July 21 2026 announcement: available now on 15.x+ Microsoft 365, tenant app registration and enabled-mailbox sync. External Microsoft retirement claims not adopted."
+    },
+    {
+      "id": "kanban",
+      "type": "official_documentation",
+      "site": "CRM Kanban Boards: Visualize Your Pipeline With Drag-and-Drop Stage Management | Aurea Software",
+      "title": "CRM Kanban Boards: Visualize Your Pipeline With Drag-and-Drop Stage Management | Aurea Software",
+      "url": "https://aurea.com/blog/crm-kanban-boards/",
+      "read_at": "2026-10-22T10:54:36.399538+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8296619308dfb26ab63b612cbf67ff8d77a3fb9755c1931abc8b3762fe6be197",
+      "research_notes_en": "July 21 2026 announcement explains catalog-based stage boards, status updates, confirmations, visual WIP flags, paging and inherited rights."
+    },
+    {
+      "id": "ai",
+      "type": "official_integration",
+      "site": "ACRM AI (MCP) Connector: Query Your CRM With Natural Language Using AI | Aurea Software",
+      "title": "ACRM AI (MCP) Connector: Query Your CRM With Natural Language Using AI | Aurea Software",
+      "url": "https://aurea.com/blog/introducing-the-acrm-ai-connector/",
+      "read_at": "2026-10-22T10:54:36.751061+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8578578f75a63487de35dd55320700896b53199c1662ab3451fbf13cb9552a5f",
+      "research_notes_en": "July 21 2026 announcement: read-only MCP queries, existing CRM session, Claude clients now; Microsoft 365 Copilot next. More specific than generic product card."
+    },
+    {
+      "id": "commercial",
+      "type": "official_pricing",
+      "site": "Discover Unlimited | Aurea Software",
+      "title": "Discover Unlimited | Aurea Software",
+      "url": "https://aurea.com/unlimited/",
+      "read_at": "2026-10-22T10:54:36.769426+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "965cfd75639e9fb99d2ffe86aa005677407137b2bfee9295cce5838f643d6f08",
+      "research_notes_en": "Library subscription and basic onboarding, account-team selection; no numerical CRM rate or universal free trial established."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:54:36.789377+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "docs",
+    "graph",
+    "kanban",
+    "ai",
+    "commercial"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Choose the CRM client and release before choosing features",
+        "title_zh": "先选 CRM 客户端及版本，再判断功能",
+        "en": "Aurea CRM spans more than one interface: the documentation index lists CRM.web, mobile, Cockpit, win, client/pad, connectors and service interfaces. A capability in one guide does not establish support in every client or deployment. Start with the installed release and integrations your team actually depends on.\n\nThe main page describes a hybrid route that retains existing on-premises functionality while adding cloud services. Its promised reductions in cost and operational burden were not measured. A migration assessment should identify custom fields, business rules, identity, scheduled interfaces and rollback responsibility before replacing any component.",
+        "zh": "Aurea CRM 包含多种界面：文档目录列出 CRM.web、mobile、Cockpit、win、client／pad、连接器及服务接口。某指南的能力不能证明每个客户端或部署都支持。应从团队实际使用的安装版本及集成开始。\n\n主页面描述保留现有本地功能并增加云服务的混合路径。宣传中的成本及运维负担降低未被测量。迁移评估应先明确自定义字段、业务规则、身份、定时接口及回滚责任，再替换组件。",
+        "source_refs": ["product", "docs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "stage-record",
+        "title_en": "A board move changes a business record",
+        "title_zh": "移动看板卡片会改变业务记录",
+        "en": "Kanban groups records using a catalog-based status field. In a hypothetical sales process, a card moved from qualification to proposal updates the opportunity status; it is more than a personal display preference. Administrators select the grouping field, card fields, column order and menu location in Designer.\n\nThe guide describes optional confirmations for critical moves, read-only cards when the user lacks status update rights, per-column paging and visual WIP warnings. For evaluation, inspect the saved status after a move, a restricted user and a column with unloaded records. A WIP flag alone does not establish an enforced capacity rule.",
+        "zh": "看板按目录型状态字段分组。以假设销售流程为例，把卡片从资格判断移到提案会更新机会状态，超出个人显示偏好。管理员在 Designer 中选择分组字段、卡片字段、列顺序和菜单位置。\n\n指南描述关键移动的可选确认、无状态更新权时的只读卡片、按列分页及 WIP 视觉警告。评估应检查移动后的保存状态、受限用户和仍有未加载记录的列。WIP 提示本身不证明强制执行容量规则。",
+        "source_refs": ["kanban"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "sync",
+        "title_en": "Microsoft 365 sync needs a tenant and mailbox scope",
+        "title_zh": "Microsoft 365 同步需要租户及邮箱范围",
+        "en": "The Graph Connector announcement covers email, appointments, tasks and contacts on ACRM 15.x and newer with Microsoft 365. It uses a tenant application registration and client credentials with administrator consent, while CRM administrators explicitly enable participating users. That is not a blanket promise to synchronize every tenant mailbox.\n\nIntervals are configurable; the article gives ten-minute mail/appointment and daily contact sync as typical examples, not latency guarantees. It says writes pass through CRM interfaces and business logic. Pilot duplicate contacts, a changed appointment, a disabled user and an unavailable connection; actual conflict resolution, backfill, retries and audit retention were not established here.",
+        "zh": "Graph Connector 公告覆盖 ACRM 15.x及以上配合 Microsoft 365 的邮件、约会、任务及联系人。它使用租户应用注册和客户端凭据，经管理员同意，再由 CRM 管理员明确启用参与用户，并非承诺同步租户内所有邮箱。\n\n间隔可配置；文章以邮件／约会10分钟、联系人每天为典型示例，不是延迟保证。其说明写入经过 CRM 接口及业务逻辑。建议试点重复联系人、已变更约会、停用用户和连接不可用情形；本文未核实冲突解决、历史回填、重试及审计保留。",
+        "source_refs": ["graph"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "query-boundary",
+        "title_en": "The current AI gateway retrieves; it does not perform CRM changes",
+        "title_zh": "当前 AI 网关负责检索，不执行 CRM 改动",
+        "en": "The AI Connector uses MCP to answer questions about companies, contacts, activities, opportunities and document details. The first release is explicitly read-only. Its announcement names Claude Desktop and Claude Code as available clients, with Microsoft 365 Copilot coming next; this narrower statement takes precedence over the homepage’s broad list of assistants.\n\nAurea says requests use the asking user’s CRM session, hide restricted data and log queries. These are documented controls, not independently tested guarantees. Compare a generated account summary with known source records and verify a restricted user. Do not infer that a fluent answer proves data freshness, completeness or correct access control.",
+        "zh": "AI Connector 使用 MCP 回答公司、联系人、活动、机会和文档详情相关问题，首版明确只读。公告将 Claude Desktop、Claude Code 列为当前客户端，Microsoft 365 Copilot 列为下一步；应采用该具体说明，而非首页泛化的助手列表。\n\nAurea 表示请求采用提问用户的 CRM 会话，隐藏受限数据并记录查询。这些是文档控制措施，不是经过独立测试的保证。应把账户总结与已知原记录对照，并检查受限用户。回答流畅不能证明数据新鲜、完整或访问控制正确。",
+        "source_refs": ["ai", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Separate library access from the implementation commitment",
+        "title_zh": "区分软件库访问与实施承诺",
+        "en": "Aurea Unlimited describes access to the product library under a subscription, with account-team help selecting products and basic onboarding. The CRM page gives kickoff, deployment, training and pilot phases, estimating 6–12 weeks depending on complexity. Neither statement establishes your implementation scope, a free trial or a public per-seat rate.\n\nConfirm the licensed edition, environments, connector rights, hosting, support, custom integration work and renewal together. Additional library products such as Infer or FirstRain may solve adjacent scoring or intelligence tasks, but should not be silently merged into the CRM feature set. Exact contractual pricing, license text, source availability and hosting regions were not verified.",
+        "zh": "Aurea Unlimited 说明订阅软件库访问、客户团队协助选品及基本入门服务。CRM 页列出启动、部署、培训及试点阶段，并按复杂度估计6–12周。上述内容均不能确定你的实施范围、免费试用或公开每席位价格。\n\n应一起确认许可版本、环境、连接器权限、托管、支持、自定义集成工作及续订。Infer、FirstRain 等库内产品可解决相邻评分或情报任务，但不能直接混入 CRM 功能表。准确合同价格、许可文本、源代码可得性及托管地区未核实。",
+        "source_refs": ["commercial", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Useful when a team can own configuration and version checks",
+        "title_zh": "适合能负责配置及版本核对的团队",
+        "en": "An organization with an established ACRM deployment, configured customer processes and Microsoft 365 administration has concrete reasons to evaluate these updates. A team seeking an immediately priced, self-service contact list should first establish whether the commercial and deployment model fits its needs. This is editorial fit guidance.\n\nThe main page still contains future-tense NextGen voice and predictive promises alongside the 2026 announcements. Those promises are not counted as released behavior. No installation, performance, onboarding duration, recovery, AI correctness or permission boundary was tested. UI language coverage, API quotas, exports and regional purchasing also remain open questions.",
+        "zh": "已有 ACRM 部署、已配置客户流程及 Microsoft 365 管理能力的组织，有具体理由评估这些更新。希望即刻看到价格、自助获得联系人表的团队，应先确认商业及部署方式是否适合。这是编辑适配建议。\n\n主页面在2026年公告旁仍保留未来时态的 NextGen 语音和预测承诺，本文不计作已发布行为。未测试安装、性能、入门时长、恢复、AI 正确性或权限边界；界面语言覆盖、API 额度、导出和地区购买也待确认。",
+        "source_refs": ["product", "graph", "ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Aurea CRM: Kanban, Microsoft 365 Sync and Read-only AI Access",
+    "title_zh": "Aurea CRM：看板、Microsoft 365 同步与只读 AI 访问",
+    "description_en": "Evaluate Aurea CRM by release and deployment, with current Kanban, Graph Connector and read-only MCP details, library subscription boundaries and unresolved roadmap claims.",
+    "description_zh": "按版本及部署评估 Aurea CRM，了解当前看板、Graph Connector、只读 MCP、软件库订阅边界及未确认路线图承诺。",
+    "primary_intent": "Evaluate Aurea CRM deployment and current connector scope.",
+    "secondary_questions": [
+      "Which Microsoft 365 environments are supported?",
+      "Can the AI Connector change records?",
+      "Does a WIP warning block a move?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, installation, sync, board action, AI query, recovery or purchase tested. Pricing, selected release rights, license, region, exports, API quotas and complete UI language support remain unverified.",
+      "zh": "未测试账户、安装、同步、看板动作、AI 查询、恢复或购买；价格、所选版本权限、许可、地区、导出、API 额度及完整界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Homepage roadmap/NextGen language differs from specific 2026 announcements; Copilot compatibility is upcoming in the AI article. Do not treat all promotional capabilities as released.",
+      "zh": "首页路线图／NextGen 措辞与具体2026年公告不同；AI 文章将 Copilot 支持列为后续能力，不能把全部宣传功能当已发布。",
+      "source_refs": ["product", "ai"],
+      "evidence_type": "observed_documentation_inconsistency"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

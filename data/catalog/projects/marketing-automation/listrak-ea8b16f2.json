@@ -1,0 +1,438 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "listrak-ea8b16f2",
+  "name": "Listrak",
+  "website_url": "https://www.listrak.com/",
+  "domain": "www.listrak.com",
+  "identity_domain": "listrak.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Listrak combines customer data and marketing across email, mobile and website experiences, with retail lifecycle programs such as browse abandonment and post-purchase follow-up. Journey Hub provides a visual way to connect those events to messages, decisions and data actions. The useful evaluation starts with the merchant, customer identifiers and messaging channels the account actually has enabled.\n\nPublic documentation also covers an older Conductor engine and distinguishes Classic from NextGen features. Those are material boundaries, not interchangeable names for every workflow. This draft examines Journey Hub procedures and flags where a platform generation, integration or contract determines what can actually be built.",
+  "description_zh": "Listrak 将客户数据与邮件、移动端及网站营销结合，覆盖浏览放弃、购买后跟进等零售生命周期活动。Journey Hub 提供可视化方式，将这些事件连接到消息、判断及数据动作。实际评估应从账户已启用的商家、客户标识和消息渠道开始。\n\n公开文档还覆盖较旧的 Conductor 引擎，并区分 Classic 与 NextGen 功能。这些是实际边界，不能把所有工作流名称互换。本文检查 Journey Hub 程序，并指出哪些能力取决于平台代际、集成或合同。",
+  "core_features": [
+    {
+      "name_en": "Retail journey orchestration",
+      "name_zh": "零售旅程编排",
+      "explanation_en": "Journey Hub connects merchant events to branching messages.",
+      "explanation_zh": "Journey Hub 将商家事件连接到分支消息。",
+      "source_ref": "platform",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Controlled journey tests",
+      "name_zh": "受控旅程测试",
+      "explanation_en": "Named test contacts must still satisfy event and entry rules.",
+      "explanation_zh": "指定测试联系人仍须满足事件及加入规则。",
+      "source_ref": "test",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Custom event data",
+      "name_zh": "自定义事件数据",
+      "explanation_en": "Custom event properties can inform decisions and message personalization.",
+      "explanation_zh": "自定义事件属性可用于判断及消息个性化。",
+      "source_ref": "custom",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Outbound webhooks",
+      "name_zh": "出站 webhook",
+      "explanation_en": "A journey action can POST data to a configured HTTPS endpoint.",
+      "explanation_zh": "旅程动作可向已配置 HTTPS 端点 POST 数据。",
+      "source_ref": "webhook",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: a retail lifecycle team with integrated merchant, product and customer identifiers.",
+      "Editorial fit: a marketing operations team that can coordinate account entitlements, channels and legacy-program migration."
+    ],
+    "zh": [
+      "编辑判断的适用场景：已集成商家、商品及客户标识的零售生命周期团队。",
+      "编辑判断的适用场景：能够协调账户权限、渠道及旧活动迁移的营销运营团队。"
+    ],
+    "source_refs": ["platform", "management", "conductor"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Retail marketer",
+      "Lifecycle marketer",
+      "Marketing operations specialist",
+      "Integration engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "platform"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm platform generation, merchant and channel enablement.",
+        "zh": "确认平台代际、商家及渠道启用范围。",
+        "source_refs": ["management", "elements"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Create separate internal cases for entry and product-routing behavior.",
+        "zh": "为加入及商品路由行为建立不同内部案例。",
+        "source_refs": ["elements", "test"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect message eligibility and controlled-endpoint failure outcomes.",
+        "zh": "检查消息资格及受控端点失败结果。",
+        "source_refs": ["test", "webhook"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check the active version and usage meter before a wider launch.",
+        "zh": "扩大上线前检查活动版本及用量计量。",
+        "source_refs": ["management", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Classic, NextGen and Shopify-specific journey features are not universal entitlements.",
+        "zh": "Classic、NextGen 及 Shopify 特定旅程功能并非通用权限。",
+        "source_refs": ["elements", "management"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Webhook retry timing, in-flight deactivation and message recall remain unverified.",
+        "zh": "webhook 重试计时、在途停用及消息撤回仍未核实。",
+        "source_refs": ["webhook", "management"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The review-request article contains conflicting Shopify status labels, and webhook examples contain signature-encoding differences.",
+        "zh": "评价请求文章的 Shopify 状态标签存在冲突，webhook 示例的签名编码也不同。",
+        "source_refs": ["review", "webhook"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "The official billing guide documents contracted message allowances and portal usage for email, SMS and MMS. All email messages, including automation, count in the email chart; journey tests also consume message allotment. Exact subscription price, minimum term, services, overage rate and any current free/trial offer were not established. No normalized price assigned.",
+    "source_snapshot_zh": "官方计费指南说明合同消息额度，以及后台邮件、SMS 和 MMS 用量。全部邮件（含自动化）计入邮件图表；旅程测试也消耗消息额度。未确认确切订阅价、最短期限、服务、超额费率或当前免费／试用优惠。不生成标准化价格。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/listrak",
+      "read_at": "2026-10-22T09:00:55.421Z",
+      "excerpt_sha256": "b9f0a8817454e3044affc10f28ee3a3ad422c32648582c414a14c1ed299d5a83",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Listrak | Marketing Automation Platform for Email, SMS & Web",
+      "url": "https://www.listrak.com/",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "c439ab6c5fb145c350cde7d3c58f52d5410f8821acd5c4ebe61cd412edf5a085",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current platform positioning across customer signals, email, mobile, web and retail lifecycle. Revenue and identity-performance marketing claims not adopted as measured outcomes."
+    },
+    {
+      "id": "test",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Testing Journeys in Journey Hub | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/5195951-testing-journeys-in-journey-hub",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "41932d10e57d4e4dd5b7065519b769c20b0b1dd122b47781b228b3e8c1292639",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read December 2025 restricted test contacts, event/subscription/re-entry prerequisites, wait override, Winback exclusion and allotment/analytics distinction."
+    },
+    {
+      "id": "management",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Managing Journeys | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/6413605-managing-journeys",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "6bc0d0cbf78161ce440bb9f9441e0ae3ee73287300936bd064f0501ee5b1e51e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read August 2025 channel/advanced-journey enablement, duplication without creative and Edits Pending activation state."
+    },
+    {
+      "id": "elements",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Journey Hub Elements | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/3543095-journey-hub-elements",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "b0eef460150510d66d6b68bef40916bad5ff921774ece7a0b2ef1ee8b05e9181",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read September 2026 Classic versus NextGen entry types, repetition and product-first-item split rules. Not every platform capability is available in each account."
+    },
+    {
+      "id": "exit",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Journey Hub Elements | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/3543095-journey-hub-elements",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "b798ca5e196fdfda2ff0e70e16dfa92bef7073317ab477032c8a9dbdba15c8e1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read unsubscribe retained-in-journey behavior and global exit-event precedence. Same original elements article as elements excerpt; not independent corroboration."
+    },
+    {
+      "id": "custom",
+      "type": "official_integration",
+      "site": "Listrak",
+      "title": "Custom Events in Journey Hub | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/5472394-custom-events-in-journey-hub",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "1841a7fff2c96b5d19b5b0ad21a35dc185676b4eb8106952ab6bd907e02a809b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read custom event setup, accessible checkbox, 50 properties, stringified JSON, one-megabyte request and dynamic-data limitations."
+    },
+    {
+      "id": "review",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Review Request Journeys in the NextGen Platform | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/9823446-review-request-journeys-in-the-nextgen-platform",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "6e149341d2ba34ba01d0ebb721a0018babcefadd58815afdee918c76ba60d0e5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read NextGen review request entry, 1–60 day backfill, hourly processing and conflicting Shopify completed/delivered labels. Exact integration mapping unresolved."
+    },
+    {
+      "id": "review-migration",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Review Request Journeys in the NextGen Platform | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/9823446-review-request-journeys-in-the-nextgen-platform",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "eb6653a6aa8558f13b3575d1532bc67bca60fcca4f3b2d0344b0864ba031a07c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read explicit Conductor termination warning when replacing with a journey. Same review article as review excerpt; no automatic migration or hands-on outcome claimed."
+    },
+    {
+      "id": "conductor",
+      "type": "official_documentation",
+      "site": "Listrak",
+      "title": "Listrak Conductor Glossary: Understanding Listrak Conductor | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/2507798-listrak-conductor-glossary-understanding-listrak-conductor",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "8b129bcabd3bcf49a3e31f5580019d54bcefedca681eb4ca752b7f9da81f127d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read older Conductor working/published versions, Run Tester, History Replay and Visual Analytics as separate engine terminology."
+    },
+    {
+      "id": "webhook",
+      "type": "official_integration",
+      "site": "Listrak",
+      "title": "Using Webhooks in Journey Hub | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/5469852-using-webhooks-in-journey-hub",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "06c34145d8a6f7eca0e17d22f8529362098e8f7b70b310932bc73b65c98cca6d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read HTTPS POST, appended identifiers, default remove-versus-continue failure policy, no re-initiation and Shopify transactional exclusion. Actual signature examples differ in hex/base64 encoding; no implementation selected or executed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Listrak",
+      "title": "Using Listrak's Financial Portal | Listrak Help Center",
+      "url": "https://help.listrak.com/en/articles/6622815-using-listrak-s-financial-portal",
+      "read_at": "2026-10-22T11:47:51.091884Z",
+      "excerpt_sha256": "449b645c8a791cef535a7f078bd81aa55e70671c38bcaf867138aa5f4f416d8f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read contracted message allotment, all automated emails counted, SMS/MMS usage and billing permissions. No public exact price or trial/free entitlement established."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:47:51.091884Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["platform", "management", "conductor"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Check the engine and enabled journey types first",
+        "title_zh": "先检查引擎与已启用旅程类型",
+        "en": "Conductor’s documentation uses conversations, threads and working/published versions, with its own tester and history view. Journey Hub has a different management model. Its templates require the relevant channels, and abandonment journeys need advanced journeys enabled. Duplicating a journey copies properties but not message creative. Before adapting a sister brand’s program, check the engine, merchant, lists, sender and missing creative rather than assuming a duplicated canvas is launch-ready.",
+        "zh": "Conductor 文档使用对话、线程及工作／发布版本，并有自己的测试器和历史视图。Journey Hub 的管理模型不同。其模板要求相关渠道已启用，放弃类旅程还要求启用 advanced journeys。复制旅程会复制属性，但不复制消息正文。借鉴关联品牌活动前，应检查引擎、商家、列表、发件身份及缺少的正文，不能假设复制后的画布已可上线。",
+        "source_refs": ["conductor", "management"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entry",
+        "title_en": "Repetition and order-item evaluation need deliberate choices",
+        "title_zh": "重复加入与订单商品判断需明确选择",
+        "en": "Entry repetition is based on the initial entry day; No Limit permits each qualifying action. Entry prevention can also prioritize another journey. Classic and NextGen expose different subscription and segment capabilities. For cart and post-purchase order-detail decisions, the elements table says the first payload item is used for evaluation. As an editorial test, use a two-item basket with different categories and reverse item order. This checks whether the intended route depends on basket contents or only the item the split examines.",
+        "zh": "重复加入以首次加入日期为基点；No Limit 允许每次合格动作加入。加入预防也可优先保留另一旅程。Classic 与 NextGen 提供不同订阅及分群能力。对购物车与购买后的订单详情判断，元素表说明使用载荷首件商品评估。编辑建议测试一个含不同类别的双商品购物篮，并反转商品顺序，检查预期路径依赖整篮内容，还是只依赖分支检查的商品。",
+        "source_refs": ["elements"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "test",
+        "title_en": "A named test contact still has to qualify",
+        "title_zh": "指定测试联系人仍需符合资格",
+        "en": "Testing is available for draft or inactive journeys and requires a fully integrated site plus an identifier linked to the entry event. Test contacts must meet subscription, path and re-entry conditions. Waits can be shortened, but messages count toward the allotment while staying out of Visual Insights; Winback journeys are excluded from this test function. Use separate internal profiles for different branches, perform the actual entry action and inspect delivered messages. Ending the test removes unfinished participants.",
+        "zh": "测试适用于草稿或未启用旅程，要求网站完整集成，并有与入口事件关联的身份标识。测试联系人须满足订阅、路径和重入条件。可缩短等待，但消息消耗额度且不进入 Visual Insights；Winback 不适用该测试功能。应为不同分支使用独立内部档案，执行真实入口动作，并检查实际送达消息。结束测试会移除尚未完成的参与者。",
+        "source_refs": ["test"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "custom-event",
+        "title_en": "Define the event contract before personalizing a message",
+        "title_zh": "个性化消息前先定义事件契约",
+        "en": "Custom events can arrive through an import, JavaScript integration or Cross Channel API. The event must be made accessible to Journey Hub, with up to 50 properties and a one-megabyte request limit including headers. Nested JSON is passed as a string rather than an arbitrary native object. A hypothetical wishlist event should carry only the product data needed for its decision and rendering. Dynamic event tags cannot simply be persisted to profile fields using NextGen data management, so design that persistence separately if required.",
+        "zh": "自定义事件可由导入、JavaScript 集成或 Cross Channel API 提交。需将事件设为 Journey Hub 可访问，最多 50 个属性，含请求头的请求上限为一兆字节。嵌套 JSON 作为字符串传入，而非任意原生对象。假设愿望清单事件应只带判断与渲染所需商品数据。动态事件标签不能直接通过 NextGen 数据管理写入档案字段，如需持久化应单独设计。",
+        "source_refs": ["custom"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "review-request",
+        "title_en": "Past orders and shipment status are integration-specific",
+        "title_zh": "历史订单与发货状态取决于集成",
+        "en": "NextGen review requests offer a one-to-60-day past-order lookback and process order changes every 60 minutes. The article distinguishes item-level non-Shopify requests from Shopify, but calls the Shopify status completed in one section and delivered in another. Do not flatten that discrepancy into a guaranteed trigger. Verify one split-shipment example against the actual feed and account mapping. When replacing a Conductor conversation, the guide explicitly warns to terminate the older program to avoid two series reaching purchasers.",
+        "zh": "NextGen 评价请求提供一至 60 天历史订单回看，每 60 分钟处理订单变化。文章区分非 Shopify 的商品级请求与 Shopify，但一处将 Shopify 状态称为 completed，另一处称为 delivered。不能把此差异概括成有保证的入口。应对照真实数据源及账户映射验证一个分批发货案例。替换 Conductor 对话时，指南明确提醒终止旧活动，避免购买者收到两套系列。",
+        "source_refs": ["review", "review-migration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "Unsubscribing can suppress messages without ending the journey",
+        "title_zh": "退订可能抑制消息但不结束旅程",
+        "en": "The elements guide says contacts who unsubscribe from the associated channel/list messaging remain in the journey while message steps are skipped. Global exit-event rules take precedence over a path’s Exit action. That distinction matters when interpreting an active participant count or designing a post-purchase stop. The newer management guide also separates saved Edits Pending from activated changes. Before a broad edit, inspect the active version and the intended exit criteria; current in-flight deactivation and message-recall semantics were not established here.",
+        "zh": "元素指南说明，退订关联渠道／列表消息的联系人仍留在旅程中，但消息步骤会跳过。全局退出事件规则优先于路径 Exit 动作。这会影响活动参与者数量的解读，或购买后停止策略的设计。较新的管理指南也区分已保存的 Edits Pending 与已启用修改。大范围修改前，应检查活动版本及预期退出条件；本次未确认在途停用与消息撤回语义。",
+        "source_refs": ["exit", "management"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "external-failure",
+        "title_en": "A failed webhook needs an explicit continuation policy",
+        "title_zh": "webhook 失败需明确继续策略",
+        "en": "Webhook failure removes the contact by default, with an option to continue instead; the article says a failed action cannot be re-initiated. Contact email and phone identifiers are appended when available, and Shopify Transactional journeys exclude the action. For an evaluation, inspect the actual outbound body and chosen failure behavior using a controlled endpoint. Signature examples in the same article differ between base64 and hex output, so the precise accepted encoding needs verification rather than copying one snippet as proven implementation.",
+        "zh": "webhook 失败默认移除联系人，也可选择继续；文章说失败动作不能重新发起。有值时会附加联系人邮箱和电话标识，Shopify Transactional 旅程不提供该动作。评估应使用受控端点检查真实出站正文及所选失败处理。同文签名示例的输出在 base64 与 hex 间存在差异，因此需核实准确接受的编码，不能将某段代码直接视为已验证实现。",
+        "source_refs": ["webhook"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Track automation usage against the contract",
+        "title_zh": "对照合同跟踪自动化用量",
+        "en": "The Financial Portal exposes email and SMS/MMS consumption against the contracted allowance, including automated emails, reset dates and remaining contract days. Invoice access requires the documented billing permissions. Those operational meters are more useful than an unsupported generic starting price. An editorial budgeting exercise should separate production sends, test sends, enabled channels and any services stated in the actual contract, then compare portal usage with its reset date.",
+        "zh": "Financial Portal 展示对照合同额度的邮件与 SMS／MMS 用量，包含自动邮件、重置日期和剩余合同天数。查看发票需要文档规定的计费权限。这些运营计量比无依据的通用起价更有用。编辑建议预算时分别列出正式发送、测试发送、已启用渠道及合同所列服务，再将后台用量与重置日期对应。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Listrak: Journey Hub events, testing and contract usage",
+    "title_zh": "Listrak：Journey Hub 事件、测试与合同用量",
+    "description_en": "Research Listrak Journey Hub entry rules, product routing, custom events, test messages, webhook failures and Classic/NextGen boundaries.",
+    "description_zh": "研究 Listrak Journey Hub 加入规则、商品路由、自定义事件、测试消息、webhook 失败及 Classic／NextGen 边界。",
+    "primary_intent": "Evaluate Listrak retail lifecycle automation and Journey Hub implementation",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, site integration, message, test journey, webhook endpoint or billing transaction was operated.",
+      "zh": "未操作账户、网站集成、消息、测试旅程、webhook 端点或计费交易。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exact contract, channel-region eligibility, UI languages, license and self-hosting rights remain unverified.",
+      "zh": "确切合同、渠道地区资格、界面语言、许可证及自托管权利仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Shopify status mapping, HMAC encoding and current runtime behavior require account/integration verification.",
+      "zh": "Shopify 状态映射、HMAC 编码及当前运行行为需在账户／集成中验证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

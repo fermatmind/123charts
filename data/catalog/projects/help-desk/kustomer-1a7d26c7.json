@@ -1,0 +1,396 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "kustomer-1a7d26c7",
+  "name": "Kustomer",
+  "website_url": "https://www.kustomer.com/",
+  "domain": "www.kustomer.com",
+  "identity_domain": "kustomer.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Kustomer combines customer-service CRM context, omnichannel conversations, routing, automation and AI. Its current site names Concierge for customer-facing AI, Envoy for human representatives and Architect for building and improving experiences. A shared customer record can connect conversations with order or other custom data, but integrations and identity mapping still need configuration.\n\nThe current price entry is a tailored quote with a directional ROI assessment, not a public fixed seat price. Operational evaluation should trace asynchronous workflows and routing, customer-visible responses and a complete export. This profile is public-documentation research; no account, AI, API, routing, purchase or migration was executed.",
+  "description_zh": "Kustomer结合客服CRM上下文、全渠道会话、路由、自动化和AI。当前网站将Concierge用于面向客户AI、Envoy用于人工代表、Architect用于构建及改善体验。共享客户记录可连接会话与订单等自定义资料，但集成及身份映射仍需配置。\n\n当前价格入口为定制报价及方向性ROI评估，并非公开固定席位价。运营评估应追踪异步工作流与路由、客户可见回答及完整导出。本文为公开文档研究，未执行账户、AI、API、路由、购买或迁移。",
+  "core_features": [
+    {
+      "name_en": "Customer context across conversations",
+      "name_zh": "跨会话客户上下文",
+      "explanation_en": "Use the shared customer data foundation for human and AI support.",
+      "explanation_zh": "以共享客户数据基础支持人工及AI服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multiple automation layers",
+      "name_zh": "多层自动化",
+      "explanation_en": "Workflows, Business Rules, SLAs and queue routing have different timing and responsibilities.",
+      "explanation_zh": "工作流、业务规则、SLA和队列路由各有时机与责任。",
+      "explanation_scope": "product_specific",
+      "source_ref": "order",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scoped export methods",
+      "name_zh": "限定范围的导出方法",
+      "explanation_en": "Export Buddy, reports, saved searches and APIs export different content.",
+      "explanation_zh": "Export Buddy、报表、保存搜索和API导出不同内容。",
+      "explanation_scope": "product_specific",
+      "source_ref": "export",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate support requiring order/account context across channels.",
+      "Trace an asynchronous enrichment result into the correct support queue."
+    ],
+    "zh": [
+      "评估跨渠道需要订单／账户上下文的支持。",
+      "追踪异步补全结果是否进入正确支持队列。"
+    ],
+    "source_refs": ["product", "order"],
+    "basis": "Editorial use cases; no measured outcome or executed workflow."
+  },
+  "technical_details": {
+    "Automation state": {
+      "en": "Automations update shared conversation state and may emit follow-up events; the documented initial order is not a global synchronous completion guarantee.",
+      "zh": "自动化更新共享会话状态并可发出后续事件；文档的初始顺序不是全局同步完成保证。",
+      "source_ref": "order",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "CX operations manager",
+      "Kustomer administrator",
+      "Integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the actual package/order and map customer identities, channels and required integrations.",
+        "zh": "选择实际套餐／订单，映射客户身份、渠道及所需集成。",
+        "source_refs": ["product", "pricing", "legal"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot one enrichment and routing case, including a late API response and a second inbound message.",
+        "zh": "试点一个资料补全及路由案例，包含迟到API结果及第二条入站消息。",
+        "source_refs": ["order", "rules"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Verify transcripts, attachments and configuration reconstruction before ending a subscription.",
+        "zh": "结束订阅前验证完整会话、附件及配置重建。",
+        "source_refs": ["export"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "External REST API workflow calls",
+        "source_ref": "details",
+        "scope": "Listed in current Enterprise/Ultimate matrix; provider auth, mapping and errors need implementation."
+      },
+      {
+        "name": "Voice, SMS and WhatsApp",
+        "source_ref": "pricing",
+        "scope": "Current channels may have separate usage and implementation fees; inclusion does not mean free provider traffic."
+      }
+    ],
+    "source_ref": "details"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "All Updates business rules support Update Data, not sending messages.",
+        "zh": "All Updates业务规则支持Update Data，不支持发送消息。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "CSV previews are not complete transcripts; workflows, business rules and schema definitions need separate reconstruction.",
+        "zh": "CSV预览不等于完整会话；工作流、业务规则和结构定义需另行重建。",
+        "source_refs": ["export"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Main and detailed pricing tables differ on some quotas and AI packaging; a quote must settle the selected package.",
+        "zh": "主价格表与详细表在部分额度及AI组合上不同，需报价明确所选套餐。",
+        "source_refs": ["pricing", "details"],
+        "evidence_type": "observed_documentation_difference"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.kustomer.com/legal/seat-based-terms/",
+    "source_ref": "terms",
+    "scope": "Current seat-based agreement reserves service intellectual property; usage-based and older orders have distinct applicable agreements."
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid_quote_required",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "details", "legal"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Current platform quote required; seat/usage orders and add-on/telephony charges require scope confirmation. Published dollar rates not normalized as a full platform price.",
+    "source_snapshot_en": "Current main page publishes no standard platformamount. October12detailstable alsoTalktoSales; lists Concierge0.75/engagedconversation, Envoy50/user/month,AIQA0.05/execution,ConversationIntelligence0.02/execution,storage50/GB/month,voicefrom0.02/minute,WhatsAppMeta+20%fee. Packageinclusiondiffersfrommainpage; confirmorder.",
+    "source_snapshot_zh": "当前主页不公开标准平台金额。10月12日详细表同样询价；列Concierge每参与会话0.75、Envoy每人每月50、AI QA每执行0.05、会话智能0.02、存储每GB每月50、语音每分钟0.02起、WhatsApp为Meta费加20%。套餐包含范围与主表不同，需订单确认。",
+    "checked_at": "2026-10-22T11:52:01.230851+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is the ROI assessment a binding price?",
+      "question_zh": "ROI评估是有约束力的价格吗？",
+      "answer_en": "No. The page describes directional estimates and says exact pricing is tailored with the team.",
+      "answer_zh": "不是，页面称其为方向性估计，准确报价需与团队按实际情况确定。",
+      "source_refs": ["pricing"]
+    },
+    {
+      "question_en": "Does triggering a Workflow mean its data is ready for routing?",
+      "question_zh": "工作流已触发就代表路由所需数据已准备好吗？",
+      "answer_en": "No. Workflows run asynchronously and can finish after other rules evaluate. Design the downstream event explicitly.",
+      "answer_zh": "不是，工作流异步运行，可能在其他规则评估后才完成，应明确设计后续事件。",
+      "source_refs": ["order"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/kustomer",
+      "read_at": "2026-10-22T08:58:32.575Z",
+      "excerpt_sha256": "6c3ab67d07854c1ddc9d95e414820d7171a2f0f7c920941e75aed9aaed99dea4",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI Customer Service Platform & CRM | Kustomer",
+      "title": "AI Customer Service Platform & CRM | Kustomer",
+      "url": "https://www.kustomer.com/",
+      "read_at": "2026-10-22T11:49:28.473337+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4cc78b6889dc6243f09c6c12f71a5792717d44c1c8069e27c7951d9797c1870a",
+      "research_notes_en": "Current Concierge, Envoy, Architect and shared customer context. Vendor outcomes not independently verified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing & ROI Calculator | Kustomer",
+      "title": "Pricing & ROI Calculator | Kustomer",
+      "url": "https://www.kustomer.com/pricing/",
+      "read_at": "2026-10-22T11:49:28.632423+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "eb2a96e5f1868cadb928e274764d6dc648b99c55041198a80a15c5846b12587a",
+      "research_notes_en": "Current quote-only pricing, nonbindingROI calculator, currentfeaturematrix and voice/WhatsApp usagecharges."
+    },
+    {
+      "id": "details",
+      "type": "official_pricing",
+      "site": "Pricing Details | Kustomer",
+      "title": "Pricing Details | Kustomer",
+      "url": "https://www.kustomer.com/comprehensive-pricing-details/",
+      "read_at": "2026-10-22T11:49:38.165944+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3b98311a16a42795f9278750ab6a06d06c15c49a173816ed06116eac50ff3abc",
+      "research_notes_en": "October12 2026 current Enterprise/Ultimate and explicitlylegacytables; add-ons, usage rates, main-table differences read."
+    },
+    {
+      "id": "order",
+      "type": "official_documentation",
+      "site": "Understanding the order and interaction of automations in Kustomer",
+      "title": "Understanding the order and interaction of automations in Kustomer",
+      "url": "https://help.kustomer.com/en_us/understanding-the-order-and-interaction-of-automations-in-kustomer-HygfAukWzg",
+      "read_at": "2026-10-22T11:51:59.869917+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "a3d1a35588a77988404eb30503df660bef65a31c2b04bdc815a7f669e378c104",
+      "research_notes_en": "Full renderedJuly2026 article read in browser after title-onlyHTTP/web. Selected exactAX text saved; initial/async cycles, assistant excludedphase, queueassignment caveats."
+    },
+    {
+      "id": "rules",
+      "type": "official_documentation",
+      "site": "Troubleshoot business rules",
+      "title": "Troubleshoot business rules",
+      "url": "https://help.kustomer.com/en_us/troubleshoot-business-rules-HJtgJge0g",
+      "read_at": "2026-10-22T11:51:59.878007+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "8bb3610fca3ba7390f5cfe3a2627d3f5e837993a6e9a2ca6695c3ef1c30df6db",
+      "research_notes_en": "Full renderedJuly2026 guide read: FirstInboundscope, AllUpdatescannotSend, message/conversationrace, unsupportedtemplates and auditdiagnosis."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "Methods to export data | Kustomer Help Center",
+      "title": "Methods to export data | Kustomer Help Center",
+      "url": "https://help.kustomer.com/en_us/methods-to-export-data-HyRj3jUSi",
+      "read_at": "2026-10-22T11:51:59.883379+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "fb4ff9ac23f1cd1e264f62edb3e31dd345bc6802d3e82f3149b1aba000bb240a",
+      "research_notes_en": "Full renderedAugust2026 guide read: report/search limits, previewsversustranscripts, API, nonexportableconfiguration and no postsubscriptionreadonly."
+    },
+    {
+      "id": "legal",
+      "type": "official_documentation",
+      "site": "Legal | Kustomer",
+      "title": "Legal | Kustomer",
+      "url": "https://www.kustomer.com/legal/",
+      "read_at": "2026-10-22T11:49:37.907837+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f997e19baa3a8f62eb11cdbfd53daa50dae78afab2ef319d0371034ccafdd76f",
+      "research_notes_en": "Seat-versususageagreement dates and service-specific supplements distinguished."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Master Subscription Agreement (Seat Based) | Kustomer Legal",
+      "title": "Master Subscription Agreement (Seat Based) | Kustomer Legal",
+      "url": "https://www.kustomer.com/legal/seat-based-terms/",
+      "read_at": "2026-10-22T11:52:01.230851+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "47a45fb17a776913ca48347e326698913c248978c7b23f25665e08d939b91c9e",
+      "research_notes_en": "Selected currentseatagreement clauses: reservedIP, orderprecedence, restrictedtrialcustomerdata and end-of-trialloss; no blanket application tousageorolderorders."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:52:01.230851+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "pricing", "order", "export"],
+  "profile": {
+    "sections": [
+      {
+        "id": "context",
+        "title_en": "Map identity and context before deploying AI",
+        "title_zh": "部署AI前先映射身份与上下文",
+        "en": "Kustomer presents a customer-centered service workspace rather than a single isolated ticket list. Human representatives and AI can use a common history and custom objects, while channels, permissions and integrations determine the actual context available. Current product names Concierge, Envoy and Architect describe different parts of that experience.\n\nFor an illustrative delivery problem, establish which customer identity owns the order, who may view it and which system is authoritative for address or payment changes. A unified timeline does not resolve identity collisions or grant write authority by itself. Customer stories, productivity percentages and goal-oriented AI claims remain vendor evidence rather than independently measured benefits in this profile.",
+        "zh": "Kustomer展示以客户为中心的服务工作区，而非孤立工单列表。人工代表及AI可使用共同历史和自定义对象，但真实可用上下文由渠道、权限和集成决定。当前Concierge、Envoy及Architect名称描述该体验的不同部分。\n\n以假设配送问题为例，应确定哪个客户身份拥有订单、谁可查看、哪个系统是地址或支付变更权威。统一时间线本身不能解决身份冲突或授予写入权。客户案例、生产率比例及目标导向AI主张仍为厂商证据，本文未独立测量收益。",
+        "source_refs": ["product", "details"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "async",
+        "title_en": "The initial automation order is not completion order",
+        "title_zh": "初始自动化顺序不等于完成顺序",
+        "en": "The current guide describes an initial sequence from Customer Assist through Workflows, Business Rules, SLAs and queue rules, with follow-up events and asynchronous re-entry. Workflows do not block later rules, so a language or customer-tier enrichment may arrive after routing has already evaluated.\n\nPrepare the attribute, then design a deliberate downstream event instead of relying on same-pass timing. Assistant handling can exclude a conversation from Business Rule evaluation, and changing skills does not automatically move an already assigned conversation. The guide also says earlier Business Rule assignment can skip queue assignment. Test a slow enrichment, an existing assignment and assistant-to-human transition against the actual queue result; no path was run here.",
+        "zh": "当前指南描述从Customer Assist到工作流、业务规则、SLA及队列规则的初始顺序，同时有后续事件及异步再次进入。工作流不会阻塞后续规则，因此语言或客户等级补全可能在路由已经评估后才到达。\n\n应先准备属性，再明确设计后续事件，不能依赖同轮时序。助手处理时会话可能被排除业务规则评估，修改技能也不会自动移动已分配会话。指南还称，较早业务规则分配可能跳过队列分配。应以迟到补全、既有分配及助手转人工，核对真实队列结果；此次未运行任何路径。",
+        "source_refs": ["order"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "rule-failure",
+        "title_en": "Check event scope and values when a rule appears inactive",
+        "title_zh": "规则看似无效时检查事件范围和值",
+        "en": "The business-rule guide distinguishes First Inbound Interaction from subsequent Inbound Interaction. All Updates supports updating data but cannot send messages. On message creation, Conversation Channel may not exist yet; the guide recommends Message Channel for that event. Earlier rules may also change state before later conditions run.\n\nA broad substring condition can match unintended words, while unsupported dynamic text can produce an empty email value. Compare a working and failing conversation using the values available at evaluation time, then inspect the audit log rather than attributing the result to the last visible setting. Keep customer sends out of an initial data-only pilot; no configuration or messages were changed here.",
+        "zh": "业务规则指南区分首次入站与后续入站交互。All Updates支持更新数据，但不能发送消息。消息创建时Conversation Channel可能尚不存在，指南建议该事件使用Message Channel；较早规则也可能在后续条件运行前改变状态。\n\n宽泛子串条件可能误匹配其他词，不支持的动态文字则可能让邮件值为空。应按评估当时可用值比较成功和失败会话，再检查审计日志，不能仅归因于最后看到的设置。初始仅数据试点应避免客户发送；此次未修改配置或消息。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Use a current quote and reconcile the two public tables",
+        "title_zh": "使用当前报价并核对两张公开表",
+        "en": "The current price page sends buyers to a tailored quote and explicitly calls its ROI output directional and nonbinding. It shows a broad package matrix, while the October12 detailed page separates Enterprise/Ultimate from legacy seat and usage plans. Old numeric base prices should not be carried forward as current offers.\n\nThe detail page lists Concierge$0.75 per engaged conversation, Envoy$50/user/month, AI QA$0.05/execution, Conversation Intelligence$0.02/execution and additional storage$50/GB/month. Voice starts at$0.02/minute; WhatsApp adds a Kustomer fee equal to twenty percent of Meta’s message fee. However, the main page marks AI components included and lists500 custom attributes, whereas the detailed Ultimate table lists300. Resolve the package, quotas, credits, implementation and usage terms in the order; these observations are not one normalized monthly bill.",
+        "zh": "当前价格页引导定制报价，并明确ROI结果为方向性、无约束力。它显示宽泛套餐矩阵，10月12日详细页则区分Enterprise／Ultimate与旧席位及用量方案。不能将旧数字基础价直接沿用为现行方案。\n\n详细页列Concierge每参与会话$0.75，Envoy每人每月$50，AI QA每执行$0.05，会话智能每执行$0.02，额外存储每GB每月$50。语音每分钟$0.02起，WhatsApp加收相当于Meta消息费20%的Kustomer费。但主表将AI组件标为包含，并列500自定义属性，详细Ultimate表则列300。应在订单澄清套餐、额度、积分、实施及用量条款；这些观察不能合成单一标准月账单。",
+        "source_refs": ["pricing", "details", "legal"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "export",
+        "title_en": "A CSV is not a complete operational exit",
+        "title_zh": "CSV并不构成完整运营退出",
+        "en": "The export guide gives different paths: Export Buddy handles selected configuration/content lists; reporting exports use thirty-day windows and up to twenty-five attributes; saved searches exclude data not updated in two years and have a stated50,000-row limit calculated with selected attributes. CSV output contains previews, not full transcripts, which require the Messages API.\n\nBusiness Rules, Workflows, Saved Searches and custom schema definitions are not exported by those methods. Document how to recreate them and verify message/attachment coverage separately. The guide says access ends at subscription end with no read-only period. The current seat agreement separately restricts trial customer data and warns of trial data/configuration loss without purchase/export. Confirm the applicable order before a pilot or closure. No export or reconstruction was tested.",
+        "zh": "导出指南给出不同路径：Export Buddy处理选定配置／内容列表；报表每次30天窗口、最多25属性；保存搜索排除两年未更新数据，并列按所选属性计算的50,000行限制。CSV包含预览，不是完整会话，完整文字需Messages API。\n\n业务规则、工作流、保存搜索及自定义结构定义不通过这些方法导出。应记录重建方式，并分别验证消息／附件覆盖。指南称订阅结束即失去访问，没有只读期。当前席位协议还单独限制试用客户数据，并警告未购买／导出会丢失试用数据及配置。试点或关停前应确认适用订单。此次未测试导出或重建。",
+        "source_refs": ["export", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Kustomer: Customer Context, Async Routing, Pricing and Exports",
+    "title_zh": "Kustomer：客户上下文、异步路由、价格及导出",
+    "description_en": "Evaluate current Kustomer packages, shared customer context, asynchronous automation, rule failures, usage fees and transcript/configuration export limits.",
+    "description_zh": "评估当前Kustomer套餐、共享客户上下文、异步自动化、规则失败、用量费及完整会话／配置导出限制。",
+    "primary_intent": "Evaluate Kustomer operations, packaging and data portability.",
+    "secondary_questions": [
+      "Is current pricing quote-only?",
+      "Can async enrichment miss routing?",
+      "Does CSV contain full transcripts?"
+    ],
+    "query_basis": "Editorial questions; no measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, AI, API, rule, routing, price assessment, export or purchase executed. Final package inclusion/quotas, currency, minimums, complete UI languages, region, attachment restore and signed-order terms need confirmation.",
+      "zh": "未执行账户、AI、API、规则、路由、价格评估、导出或购买。最终套餐包含／额度、币种、最低量、完整界面语言、地区、附件恢复及签署订单条款需确认。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Help articles returned only titles through HTML and public reader. Actual browser-rendered articles were read; selected exact accessibility excerpts were saved and hashed. Empty-title-only fetches are not used as evidence.",
+      "zh": "帮助文章经HTML及网页读取器仅返回标题，已实际阅读浏览器渲染文章，并保存选定原始可访问性文字及哈希。仅标题抓取不作依据。",
+      "source_refs": ["order", "rules", "export"],
+      "evidence_type": "observed_retrieval_conditions"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

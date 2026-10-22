@@ -1,0 +1,472 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "liveblocks-2439ec33",
+  "name": "Liveblocks",
+  "website_url": "https://liveblocks.io/",
+  "domain": "liveblocks.io",
+  "identity_domain": "liveblocks.io",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Liveblocks provides developer infrastructure for adding synchronized application state, presence, comments and notifications to a product. It is a building block for collaborative applications rather than a ready-made team workspace: the developer still owns the application, user identity, authorization decisions and integration.\n\nA useful evaluation follows one shared object through concurrent editing, restricted access, connection loss and usage billing. SDK availability and an open server repository do not by themselves settle production hosting, complete local testing or total cost.",
+  "description_zh": "Liveblocks 为产品提供同步应用状态、在线状态、评论及通知的开发基础设施。它是协作应用的构件，开发者仍负责应用、用户身份、授权判断及集成。\n\n有效评估应沿一个共享对象检查并发编辑、受限访问、连接中断及用量计费。提供 SDK 和开放服务端仓库，并不足以确定生产托管方式、本地测试完整性或总费用。",
+  "core_features": [
+    {
+      "name_en": "Embedded realtime collaboration",
+      "name_zh": "嵌入式实时协作",
+      "explanation_en": "Sync supplies shared state and presence for an application the developer builds.",
+      "explanation_zh": "Sync 为开发者构建的应用提供共享状态和在线状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "platform",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Resource-scoped room access",
+      "name_zh": "按资源控制房间访问",
+      "explanation_en": "Storage and comments can have different access within the same room.",
+      "explanation_zh": "同一房间内的 Storage 和评论可具有不同访问权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "permissions",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Synchronization lifecycle signals",
+      "name_zh": "同步生命周期信号",
+      "explanation_en": "Client APIs distinguish pending server acknowledgement, persisted changes and terminal connection errors.",
+      "explanation_zh": "客户端 API 区分等待服务端确认、已持久化更改及终止连接错误。",
+      "explanation_scope": "product_specific",
+      "source_ref": "client-state",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a shared diagram through room authorization, reconnect, activity billing and an application-owned recovery path."
+    ],
+    "zh": ["沿共享图示评估房间授权、重连、活动计费及由应用负责的恢复路径。"],
+    "source_refs": ["platform", "authentication", "client-state"],
+    "basis": "Proposed evaluation only; no customer result or executed app."
+  },
+  "technical_details": {
+    "Architecture": {
+      "en": "Developer SDK/API integration with hosted service or scoped local dev tooling; local placeholder APIs do not validate production features.",
+      "zh": "通过开发 SDK／API 接入托管服务或限定范围的本地工具；本地占位 API 不能验证生产功能。",
+      "source_ref": "dev-server",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Application engineer",
+      "Technical product owner adding collaboration"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "platform"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose one non-sensitive shared object and define trusted app identity, organization and room access.",
+        "zh": "选择一个非敏感共享对象，定义可信应用身份、组织及房间访问。",
+        "source_refs": ["authentication", "organizations"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Evaluate synchronization and permission failure against the intended hosted environment, then estimate session overlap and other usage.",
+        "zh": "在目标托管环境评估同步及权限失败，再估算会话重叠和其他用量。",
+        "source_refs": ["client-state", "dev-server", "billing-details"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documentation_read_not_executed",
+    "items": [],
+    "source_ref": "platform",
+    "scope": "SDK/framework and editor integrations require developer setup; no connector or complete app integration executed."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Local comments/notifications and room permissions have documented placeholder behavior; plan and documentation conflicts remain explicit.",
+        "zh": "本地评论／通知及房间权限具有文档列明的占位行为；套餐及文档冲突保留。",
+        "source_refs": ["dev-server", "pricing", "free-plan", "limits"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "English public docs read; no full dashboard/UI locale set established."
+  },
+  "license": {
+    "status": "mixed_open_source_components_and_commercial_service",
+    "is_open_source": null,
+    "url": "https://github.com/liveblocks/liveblocks/blob/main/LICENSE",
+    "source_ref": "repository-license",
+    "scope": "Most repository code Apache-2.0; server and CLI AGPL-3.0-or-later; package-specific license controls. Hosted service and supported Enterprise hosting have separate terms; whole-service classification left unset."
+  },
+  "pricing": {
+    "status": "official_display_and_documentation_checked_with_conflicts",
+    "price_type": "limited_free_and_subscription_credits_plus_metered_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Displayed $: Pro 30 monthly or 25 annual equivalent, with 30 monthly credits; selected Team 600 or 500, with 600 credits. No rollover; paid overage and technical caps. Reset date, hard spend cap and Free room count require clarification.",
+    "source_snapshot_zh": "页面显示 $：Pro 月付30／年付月度等值25，含每月30额度；所选 Team600／500，含600额度。不结转；付费超额计费且保留技术限额。重置日、支出硬上限及 Free 房间数有待澄清。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/liveblocks-io",
+      "read_at": "2026-10-22T08:55:32.989Z",
+      "excerpt_sha256": "8e8840a3a8a50364ae977222de037b9e122ea652c51ce8715cc7631664f591b0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Liveblocks | Realtime and sync for the agentic web",
+      "url": "https://liveblocks.io/",
+      "read_at": "2026-10-22T13:23:37.371863Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8c5e7b09bbaa0d6aad6a516fdbf33d49cbc26e07de5314e9dd7254f8c8affb98",
+      "research_notes_en": "Read current Sync, Comments and Notifications positioning and developer entry points; no customer/latency/SLA outcome adopted."
+    },
+    {
+      "id": "authentication",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Authentication | Liveblocks",
+      "url": "https://liveblocks.io/docs/api-reference/authentication",
+      "read_at": "2026-10-22T13:23:37.372452Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8b0dafdd73c3ba776ac87b72d79d6769e6f7aa3496d686a6a9c0723eec2521ed",
+      "research_notes_en": "Read ID-token identification, private defaults and group/user access; public keys described for prototyping, not assumed private production security."
+    },
+    {
+      "id": "billing-details",
+      "type": "official_pricing",
+      "site": "liveblocks.io",
+      "title": "Pricing FAQs | Pricing | Liveblocks",
+      "url": "https://liveblocks.io/docs/pricing/faqs",
+      "read_at": "2026-10-22T13:23:37.372508Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a34fa23cb739fe48a200de47994cf3994c9a52bf49b3ac865615f2285daf53bc",
+      "research_notes_en": "Read connected user-minute definition, tabs, inactivity and background behavior, dashboard granularity, credit reset and overage."
+    },
+    {
+      "id": "pro-plan",
+      "type": "official_pricing",
+      "site": "liveblocks.io",
+      "title": "Liveblocks Pro plan | Plans | Liveblocks",
+      "url": "https://liveblocks.io/docs/pricing/plans/pro",
+      "read_at": "2026-10-22T13:23:37.372542Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e9a36fa4841cf4c8dfe93b0bb5acd7ccffc66641c361450820596fdd5b78754e",
+      "research_notes_en": "Read current monthly/annual subscription, recurring credits, per-feature rates and continuing technical limits."
+    },
+    {
+      "id": "permissions",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Permissions | Authentication | Liveblocks",
+      "url": "https://liveblocks.io/docs/api-reference/authentication/permissions",
+      "read_at": "2026-10-22T13:23:37.372919Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5d7d3eef770b2cec8ecdf70561a3fe3eef8b9882cbf2c04a61f7a1cd0c7d7598",
+      "research_notes_en": "Read resource permissions, wildcard overrides, private-thread visibility and Team/Enterprise availability."
+    },
+    {
+      "id": "organizations",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Organizations | Authentication | Liveblocks",
+      "url": "https://liveblocks.io/docs/api-reference/authentication/organizations",
+      "read_at": "2026-10-22T13:23:37.372942Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fd6f89d0006e89ac9205228b84e4d90cac2792f6f44b28716ffd59f13bd55949",
+      "research_notes_en": "Read organization-scoped ID/access tokens; cross-organization room permission does not expand token organization scope."
+    },
+    {
+      "id": "client-state",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Liveblocks client API selected public HTML text",
+      "url": "https://liveblocks.io/docs/api-reference/liveblocks-client",
+      "read_at": "2026-10-22T13:23:37.373256Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text_selected_sections",
+      "excerpt_sha256": "da42ef53609ca5ed06f9bd70650e91fe3c9b650cc4813e71928a4eed0fee4ab5",
+      "research_notes_en": "Actual public HTTPS text selected for unsaved changes, sync acknowledgement, terminal errors and current-client in-memory history; no SDK executed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "liveblocks.io",
+      "title": "Liveblocks pricing — Monthly/Annual and expanded FAQ states",
+      "url": "https://liveblocks.io/pricing",
+      "read_at": "2026-10-22T13:23:37.373536Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpts",
+      "excerpt_sha256": "740933d3477456a5a8d48918cfe3006472ee460b86e0fb4dc1ab8a10cc2d3c88",
+      "research_notes_en": "Actually toggled annual/monthly and expanded FAQs separately; selected Team credit tier, technical caps and conflicting spend-ceiling wording preserved."
+    },
+    {
+      "id": "free-plan",
+      "type": "official_pricing",
+      "site": "liveblocks.io",
+      "title": "Liveblocks Free plan | Plans | Liveblocks",
+      "url": "https://liveblocks.io/docs/pricing/plans/free",
+      "read_at": "2026-10-22T13:23:37.373814Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6d16ff387e109f4441465b8bf63b61bb0ed4788cef26f562030265b96eacdad5",
+      "research_notes_en": "Read free hard per-feature allowances and 500 monthly-room statement, which conflicts with Unlimited in limits/pricing."
+    },
+    {
+      "id": "limits",
+      "type": "official_pricing",
+      "site": "liveblocks.io",
+      "title": "Limits | Pricing | Liveblocks",
+      "url": "https://liveblocks.io/docs/pricing/limits",
+      "read_at": "2026-10-22T13:23:37.373848Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "630073930226db6b67e3b30c02c555b1007e3bae213e1cee0ebab8a5c4e9b25e",
+      "research_notes_en": "Read Unlimited monthly rooms, plan-specific concurrent room connections and retained technical limits despite paid metered overage."
+    },
+    {
+      "id": "dev-server",
+      "type": "official_documentation",
+      "site": "liveblocks.io",
+      "title": "Dev server | Tools | Liveblocks",
+      "url": "https://liveblocks.io/docs/tools/dev-server",
+      "read_at": "2026-10-22T13:23:37.373918Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "de865d22b118cbeb30ebbc523100d8eea2c9bd3e7a861ba69c58245051d45f4b",
+      "research_notes_en": "Read Bun/local server, supported Sync versus dummy/no-op APIs, ignored room metadata/permissions, persistence modes and conflicting ID-token descriptions."
+    },
+    {
+      "id": "repository-license",
+      "type": "official_license",
+      "site": "github.com",
+      "title": "Liveblocks repository LICENSE",
+      "url": "https://github.com/liveblocks/liveblocks/blob/main/LICENSE",
+      "read_at": "2026-10-22T13:23:37.374209Z",
+      "verification": "official_documentation_read",
+      "transport": "official_github_connector_file_read",
+      "excerpt_sha256": "2105d3b8ba6c2c2a3365eabf82e61e29e357f9d463b5248e40e81e731bf2e7ea",
+      "research_notes_en": "Actual repository LICENSE read via official GitHub connector: most Apache-2.0, server/CLI AGPL-3.0-or-later, package-specific license applies."
+    },
+    {
+      "id": "server-readme",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "Liveblocks server README",
+      "url": "https://github.com/liveblocks/liveblocks/blob/main/packages/liveblocks-server/README.md",
+      "read_at": "2026-10-22T13:23:37.374528Z",
+      "verification": "official_documentation_read",
+      "transport": "official_github_connector_file_read",
+      "excerpt_sha256": "532593891e99ebd8c615b200dec7b4def2c25d5466d6eff6235069a00c6e4a6d",
+      "research_notes_en": "Actual server README read; core server source is not described as turnkey recommended production self-hosting. Preserve conflict with Enterprise paid self-hosting offer."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "liveblocks.io",
+      "title": "Terms of service | Liveblocks",
+      "url": "https://liveblocks.io/terms",
+      "read_at": "2026-10-22T13:23:37.375010Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4eceecf20eaecba02331b8c27a68f680a036c2e7b35e260af584ede9d9d3318b",
+      "research_notes_en": "Actual fee, unpurchased-product usage and termination paragraphs read; no guaranteed post-termination data retrieval assumed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:23:37.375010Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["platform", "authentication", "server-readme"],
+  "profile": {
+    "sections": [
+      {
+        "id": "build-one-object",
+        "title_en": "Start with one application object, not a catalog of widgets",
+        "title_zh": "从一个应用对象开始",
+        "en": "Consider a proposed shared diagram: one room holds its collaborative state, presence represents the connected participants, and comments provide discussion. Sync, Comments and Notifications can be embedded in the developer’s own interface. The app must still decide what a diagram means, who can access it and what actions its users can take. A gallery example is a starting point rather than evidence that project management, contact management or a complete document system is included. The old generic directory labels have therefore been replaced. No example app was installed or run.",
+        "zh": "假设开发共享图示：一个房间承载协作状态，Presence 表示连接的参与者，评论承载讨论。Sync、Comments 和 Notifications 可嵌入开发者自己的界面。应用仍须决定图示的业务含义、谁能访问及用户可执行的动作。示例库是开发起点，不能证明包含项目管理、联系人管理或完整文档系统，因此原有泛化目录标签已被替换。本研究未安装或运行示例应用。",
+        "source_refs": ["platform"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "identity-tenant",
+        "title_en": "Identity and tenant scope must precede room access",
+        "title_zh": "先确定身份及租户范围，再授予房间访问",
+        "en": "The authentication guide recommends ID tokens: identify the user and let room defaults, groups and individual grants determine access. An empty default-access array makes the room private; public-key prototyping is a different access model. Access tokens instead put selected room permissions into the authorized session.\n\nFor a proposed multi-organization app, issue credentials only after validating the app user and selected organization. An organization-scoped token cannot access another organization’s resources even when that user or token otherwise has permission to its rooms. Test a denied tenant switch as well as a successful collaboration; room-name conventions alone are not the documented organization boundary.",
+        "zh": "身份指南推荐 ID token：识别用户，再由房间默认权限、群组和个人授权决定访问。默认访问数组为空会使房间私有；用于原型的公钥是另一种访问模型。Access token 则在已授权会话中携带选定房间权限。\n\n假设开发多组织应用，应先验证应用用户及所选组织，再发凭据。组织范围 token 无法访问其他组织的资源，即使该用户或 token 原本拥有其房间权限。除成功协作外，还应测试被拒绝的租户切换；单靠房间命名约定不等于文档规定的组织边界。",
+        "source_refs": ["authentication", "organizations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "comment-scope",
+        "title_en": "Read-only content can coexist with comment access",
+        "title_zh": "只读内容可以同时允许评论",
+        "en": "Permissions distinguish Storage, comments and feeds. A room can permit reading its state while allowing comments, or exclude private comments from a broader grant. General comments permissions cover both public and private threads unless visibility-specific permissions override them. Threads are visible to room readers by default; private visibility must be set when creating the thread, with suitable permissions for its readers. Private threads are limited to Team and Enterprise.\n\nFor an external reviewer, check the actual object and thread permissions instead of assuming that a hidden button or a read-only canvas makes all discussion private. This is a proposed access test, not an audited security result.",
+        "zh": "权限区分 Storage、评论及 Feed。房间可允许读取状态并发表评论，也可从较宽授权中排除私有评论。一般评论权限覆盖公开和私有讨论串，除非被特定可见性权限覆盖。讨论串默认对房间读者可见；创建时须明确设为私有，并向读者配置适当权限。私有讨论串仅限 Team 和 Enterprise。\n\n对外部审阅者，应检查实际对象及讨论串权限，不能假定隐藏按钮或只读画布会使全部讨论保密。这是拟议访问测试，不是安全审计结果。",
+        "source_refs": ["permissions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "save-and-recover",
+        "title_en": "Connected, synchronized and undoable are different states",
+        "title_zh": "已连接、已同步和可撤销是不同状态",
+        "en": "The client reports synchronizing while local changes await server acknowledgement and synchronized once they are persisted. The optional preventUnsavedChanges setting uses a browser unload warning for pending edits, including offline changes and unsubmitted comments; it is not a complete offline-recovery promise. Terminal room errors distinguish authentication failure, denied access, a full room and a changed room ID, so an app should not present every failure as a temporary network retry.\n\nRoom history affects the current client’s Storage operations, optionally Presence; it is in memory and resets on reload. Yjs uses a separate undo manager. Per-user undo is therefore different from a durable version archive or complete tenant backup. A proposed acceptance run should check reconnect, final state and denied access separately.",
+        "zh": "本地更改等待服务端确认时，客户端报告 synchronizing；持久化后报告 synchronized。可选 preventUnsavedChanges 通过浏览器离开警告保护待同步编辑，包括离线更改及未提交评论，但这不承诺完整离线恢复。房间终止错误区分身份失败、拒绝访问、房间已满及房间 ID 改变，应用不应把所有失败都提示为临时网络重试。\n\n房间历史影响当前客户端的 Storage 操作，也可纳入 Presence；它保存在内存中，刷新即重置。Yjs 使用独立撤销管理器。因此个人撤销不同于持久版本档案或完整租户备份。拟议验收应分别检查重连、最终状态及拒绝访问。",
+        "source_refs": ["client-state"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bill-active-overlap",
+        "title_en": "Estimate overlapping activity, then add other meters",
+        "title_zh": "先估算重叠活动，再加入其他用量",
+        "en": "Realtime collaboration minutes count each connected user-minute while at least two people or agents share a room. Two users active together for five minutes produce ten minutes: at the displayed $0.002 rate, that component is $0.02. This editorial calculation excludes data updates, transfer, comments, notifications and other charges; a solo session’s zero collaboration-minute charge does not establish zero total cost.\n\nEach browser tab is a connection. Background tabs stay connected by default; a client timeout can disconnect them. The FAQ says minutes pause after ten seconds of room inactivity and resume on interaction. Dashboard reporting is at workspace/project level, without per-user or per-room breakdowns in the inspected guide. Model expected session overlap rather than equating registered users with billable minutes.",
+        "zh": "至少两个人或代理在同一房间时，实时协作分钟按每个连接者的分钟数计算。两人共同活跃五分钟产生十分钟，按显示的每分钟 $0.002，该部分为 $0.02。这是编辑算例，不含数据更新、传输、评论、通知等费用；单人会话不计协作分钟，不代表总成本为零。\n\n每个浏览器标签算一个连接。后台标签默认保持连接，可由客户端超时设置断开。FAQ 称房间无活动十秒后暂停分钟累积，交互后恢复。所读指南的仪表盘只提供工作区／项目粒度，没有按用户或房间拆分。应估算实际会话重叠，而非把注册人数等同于计费分钟。",
+        "source_refs": ["billing-details"],
+        "evidence_type": "documented_with_editorial_calculation"
+      },
+      {
+        "id": "credits-and-caps",
+        "title_en": "Subscription credits do not remove technical limits",
+        "title_zh": "订阅额度不会取消技术限额",
+        "en": "The inspected pricing page displays Pro at $30 monthly or $25/month billed annually, with $30 recurring monthly credits. The selected Team package is $600 monthly or $500/month billed annually with $600 monthly credits; larger packages and Enterprise differ. Credits do not roll over. Pro documentation describes calendar-month allowances, whereas the general FAQ describes billing-cycle resets; confirm the account’s actual reset date.\n\nFree has hard per-feature allowances; paid Pro/Team documentation describes continued service with metered overage. Another spending FAQ implies a fixed ceiling unless overage is allowed, so a configurable hard spend cap was not established. Room concurrency remains 10 on Free/Pro, 50 on Team and 100 on Enterprise. Free documentation lists 500 monthly rooms while the comparison/limits pages say Unlimited. Preserve that conflict before capacity planning; unlimited monthly rooms would still not mean unlimited simultaneous collaborators.",
+        "zh": "所读定价页显示 Pro 月付 $30，按年结算月度等值 $25，均含每月 $30 额度。所选 Team 档月付 $600，按年月度等值 $500，含每月 $600 额度；更高档及 Enterprise 条件不同。额度不结转。Pro 文档按自然月描述额度，一般 FAQ 则称计费周期重置，应确认账户真实重置日。\n\nFree 对各功能设硬额度；Pro／Team 文档称服务继续、超额按用量收费。另一支出 FAQ 暗示未允许超额时存在固定上限，因此尚未确立可配置的支出硬上限。房间并发仍为 Free／Pro 10、Team 50、Enterprise 100。Free 文档列每月500房间，对比／限额页则列 Unlimited；容量规划前需保留该冲突。即使月度房间无限，也不代表同时协作者无限。",
+        "source_refs": [
+          "pricing",
+          "pro-plan",
+          "billing-details",
+          "free-plan",
+          "limits"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "local-test-boundary",
+        "title_en": "A successful local test may exercise a placeholder",
+        "title_zh": "本地测试成功可能只经过占位实现",
+        "en": "The dev server supports Sync and Yjs, but Comments and Notifications have dummy responses or no-op writes; AI Agents are unsupported. Examples also show room metadata and permissions being ignored. It cannot establish production tenant isolation or successful comment delivery merely because a local screen loads. Its feature table marks ID tokens supported while setup text says support is future work: verify the installed version and behavior before relying on either statement.\n\nThe documented server uses Bun. Ordinary local runs retain data in .liveblocks; command-driven test runs default to throwaway data, with explicit persistence flags available. These are different test fixtures, not evidence of hosted backup or production equivalence. Nothing was installed, started or tested in this research.",
+        "zh": "开发服务器支持 Sync 和 Yjs，但 Comments／Notifications 使用占位响应或无实际效果的写入，AI Agents 不受支持。示例还显示房间元数据及权限被忽略。因此本地页面能打开，并不能确立生产租户隔离或评论已成功送达。功能表把 ID token 标为支持，设置正文却称未来支持；依赖前应核对安装版本及实际行为。\n\n文档服务器使用 Bun。普通本地运行在 .liveblocks 保留数据，命令驱动的测试运行默认使用临时数据，可用明确参数调整持久化。这是不同测试夹具，不证明托管备份或生产一致性。本研究未安装、启动或测试。",
+        "source_refs": ["dev-server"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "source-and-hosting",
+        "title_en": "Open components and managed hosting have separate conditions",
+        "title_zh": "开放组件与托管服务具有不同条件",
+        "en": "The repository license assigns most code to Apache 2.0, with the server package and CLI under AGPL-3.0-or-later; each package’s license remains applicable. Do not describe the whole repository as Apache-only.\n\nThe server README says production self-hosting is not yet offered or recommended as an easy packaged deployment and requires additional infrastructure and expertise. The pricing page separately advertises self-hosting as an Enterprise paid add-on. These statements do not establish a turnkey independent production deployment; obtain the exact supported offering and applicable licenses. Open source also does not provide free access to the managed service or transfer operation of the developer’s application to Liveblocks.",
+        "zh": "仓库许可证把大部分代码归为 Apache 2.0，服务端包和 CLI 则采用 AGPL-3.0-or-later，各包自身许可证仍适用，不能把整个仓库描述为仅 Apache。\n\n服务端 README 称尚未将生产自托管作为易于打包的方案提供或推荐，仍需额外基础设施及专业能力。定价页则单独宣传 Enterprise 付费自托管附加项。这些说法不足以确立即用的独立生产部署，应取得具体支持方案及适用许可。开源也不意味着免费使用托管服务，或由 Liveblocks 接管开发者应用的运营。",
+        "source_refs": ["repository-license", "server-readme", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit-and-fit",
+        "title_en": "Preserve an exit path before depending on hosted state",
+        "title_zh": "依赖托管状态前，先保留退出路径",
+        "en": "Service terms allow subscription charging where renewal applies and reserve the right to bill unpurchased products used beyond free thresholds. They also permit account termination and immediate loss or deletion of related data, without establishing a guaranteed retrieval window. Confirm applicable plan and agreement before live use.\n\nLiveblocks fits an engineering team adding collaboration to an application. A team seeking an immediately usable office suite would still need someone to build and operate that application. Full export/import, attachment and comment restoration, data residency, deletion recovery, AI-provider charges and contractual service guarantees remain unverified here. A production adoption decision should include an application-specific recovery test rather than relying on local undo history.",
+        "zh": "服务条款允许在适用续订时收费，并保留对超过免费阈值、但未购买的产品用量计费的权利。条款也允许终止账户并立即失去或删除相关数据，未确立有保证的取回窗口。真实使用前应确认适用套餐和协议。\n\nLiveblocks 适合向应用加入协作的工程团队。需要即用办公套件的团队，仍需有人构建和运营该应用。完整导入／导出、附件及评论恢复、数据驻留、删除恢复、AI 供应商费用及合同服务保证在此仍未核实。生产采用决策应包含应用专属恢复测试，而非依赖本地撤销历史。",
+        "source_refs": ["terms", "platform"],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Liveblocks: Embedded Collaboration, Room Access, Usage and Local Tests",
+    "title_zh": "Liveblocks：嵌入式协作、房间访问、用量及本地测试",
+    "description_en": "Evaluate Liveblocks through scoped room permissions, persisted state, overlapping activity costs, local API placeholders and mixed component licenses.",
+    "description_zh": "从房间权限、状态持久化、重叠活动费用、本地 API 占位行为及混合组件许可评估 Liveblocks。",
+    "primary_intent": "Evaluate developer infrastructure for adding collaboration to an application.",
+    "secondary_questions": [
+      "What does a local Liveblocks test actually validate?",
+      "How do connected users and overlapping activity affect cost?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, SDK installation, room, authentication flow, app, reconnect, permission test, billing action or local server executed.",
+      "zh": "未执行账户、SDK 安装、房间、身份流程、应用、重连、权限测试、计费动作或本地服务器。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Free monthly rooms, dev-server ID-token support, supported production self-hosting, allowance reset dates and configurable spend ceilings have conflicting official descriptions; actual account/version/contract behavior not established.",
+      "zh": "Free 月度房间、开发服务器 ID token 支持、受支持生产自托管、额度重置日及可配置支出上限存在官方描述冲突；实际账户／版本／合同行为未确立。",
+      "source_refs": [
+        "pricing",
+        "free-plan",
+        "limits",
+        "dev-server",
+        "server-readme",
+        "pro-plan",
+        "billing-details"
+      ],
+      "evidence_type": "official_documentation_conflict"
+    },
+    {
+      "en": "Complete export/restore, retention and recovery, region selection, AI-provider costs and processing, UI locales, service guarantees and legal compliance not verified.",
+      "zh": "完整导出／恢复、保留及恢复能力、地区选择、AI 供应商成本及处理、界面语言、服务保证及法律合规未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

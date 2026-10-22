@@ -1,0 +1,412 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "sugester-52e4a6d2",
+  "name": "Sugester",
+  "website_url": "https://sugester.com/",
+  "domain": "sugester.com",
+  "identity_domain": "sugester.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Sugester combines a shared helpdesk inbox with CRM, live chat, tasks, projects, a knowledge base, marketing and VoIP. Its helpdesk links incoming communication to client history and supports assignment, internal notes, reply templates, time tracking and customer ratings. A team considering several modules together has a different decision from one seeking only email ticketing.\n\nFor an illustrative invoice query, connect the receiving address, identify the client, assign an owner, discuss privately, send a personalized reply and track the work. The public site describes that workflow but does not establish delivery, recall, automation precedence or migration success. Current 2.0 positioning and older API examples need account-specific reconciliation. This is documentation research without account execution or purchase.",
+  "description_zh": "Sugester 将共享服务台收件箱与CRM、在线聊天、任务、项目、知识库、营销及VoIP结合。服务台将沟通关联至客户历史，支持分配、内部备注、回复模板、工时和客户评价。同时选择多个模块的团队，与只需邮件工单的团队，评估重点不同。\n\n以假设发票咨询为例：连接收信地址、识别客户、指定负责人、内部讨论、发送个性化回复并记录工作。公开网站描述了这些流程，但不证明投递、撤回、自动化优先级或迁移成功。当前2.0定位与旧API示例需按实际账户核对。本稿属于文档研究，未操作账户或购买。",
+  "core_features": [
+    {
+      "name_en": "Client-linked shared inbox",
+      "name_zh": "关联客户的共享收件箱",
+      "explanation_en": "Bring mailboxes and conversation history into a workspace with assignment and internal comments.",
+      "explanation_zh": "将邮箱与沟通历史汇入工作区，支持分配和内部评论。",
+      "explanation_scope": "product_specific",
+      "source_ref": "inbox",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Personalized response templates",
+      "name_zh": "个性化回复模板",
+      "explanation_en": "Use canned responses with documented name and ticket-number variables.",
+      "explanation_zh": "使用带姓名和工单号变量的预设回复。",
+      "explanation_scope": "product_specific",
+      "source_ref": "helpdesk",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Combined macro actions",
+      "name_zh": "组合宏动作",
+      "explanation_en": "Combine a status change, assignee and tag into one action; plan limits apply.",
+      "explanation_zh": "一次组合修改状态、负责人及标签，受套餐限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automation",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Time and feedback reporting",
+      "name_zh": "工时与反馈报表",
+      "explanation_en": "Track ticket work and collect ratings; illustrative scores are not measured outcomes.",
+      "explanation_zh": "记录工单工时及评价，页面示例评分不是实测结果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "helpdesk",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate support and client follow-up where CRM context matters.",
+      "Evaluate one combined support/task suite against separate email and project tools."
+    ],
+    "zh": [
+      "在需要CRM上下文的场景协调支持与客户跟进。",
+      "将组合支持／任务套件与独立邮件及项目工具比较。"
+    ],
+    "source_refs": ["product", "inbox", "helpdesk"],
+    "basis": "Editorial fit judgments from documented capabilities, not observed customer adoption."
+  },
+  "technical_details": {
+    "API generation": {
+      "en": "The API page uses account-prefix sugester.pl REST/JSON examples and an API authorization code; the security page describes expiring JWT tokens. Current login points at sugester2.pl. Compatibility between these descriptions is not established.",
+      "zh": "API页使用账户前缀sugester.pl的REST／JSON示例及API授权码，安全页描述带有效期JWT；当前登录指向sugester2.pl。尚未确定这些描述的兼容关系。",
+      "source_ref": "api",
+      "source_refs": ["api", "security", "product"],
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support team lead",
+      "Customer operations manager",
+      "CRM administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "helpdesk"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm account generation, plan and mailbox allowances before importing a support address.",
+        "zh": "导入支持地址前，确认账户版本、套餐及邮箱额度。",
+        "source_refs": ["pricing", "api"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot one client-linked email, explicit assignee, private comment and reply template.",
+        "zh": "试点一封关联客户的邮件，指定负责人、内部评论及回复模板。",
+        "source_refs": ["inbox", "helpdesk"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test overlapping macros, failed delivery, permissions and a representative archive export.",
+        "zh": "测试重叠宏、投递失败、权限及有代表性的归档导出。",
+        "source_refs": ["automation", "helpdesk", "security"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Gmail / SMTP",
+        "source_ref": "product",
+        "scope": "Advertised email connections; mailbox-specific authentication and migration not executed."
+      },
+      {
+        "name": "Fakturownia / InvoiceOcean",
+        "source_ref": "product",
+        "scope": "Vendor describes customer and invoice synchronization; field mapping/conflicts unverified."
+      },
+      {
+        "name": "REST JSON API",
+        "source_ref": "api",
+        "scope": "Client, post/task and deal examples; verify target account endpoint/authentication and use HTTPS."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The Helpdesk page advertises unlimited mailboxes, while pricing limits Pro to 10 and Max to 30; Enterprise lists unlimited. Use the selected plan limits.",
+        "zh": "Helpdesk页宣传不限邮箱，但价格页Pro限10、Max限30，Enterprise列不限，应按所选套餐额度核对。",
+        "source_refs": ["helpdesk", "pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Published macro actions do not specify conflicting-rule precedence, retry behavior or partial failure.",
+        "zh": "已公布宏动作未说明冲突规则优先级、重试或部分失败。",
+        "source_refs": ["automation"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Only the Polish terms are stated to be binding; the English page is a notice, not a translated contract.",
+        "zh": "网站称仅波兰语条款有约束力，英语页只是提示，并非合同译文。",
+        "source_refs": ["terms"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "normalized_monthly_price": 6,
+    "currency": "EUR",
+    "billing_basis": "Per user per month; Pro up to 5 users, Max/Enterprise no stated user cap but every user is billed. Net example; tax and annual commitment not established.",
+    "source_snapshot_en": "Pro EUR6/user/month, Max EUR8, Enterprise EUR15. Pro/Max/Enterprise mailbox limits10/30/unlimited; sent emails1000/5000/10000 per user/month. Free:3 users,100 clients,100 sent emails/month,1 online chat. Full trial30days,no card.",
+    "source_snapshot_zh": "Pro每用户每月6欧元、Max8、Enterprise15。邮箱额度10／30／不限；每用户每月发信1000／5000／10000。Free含3用户、100客户、每月100封发送邮件及1在线聊天。全功能试用30天，无需卡。",
+    "checked_at": "2026-10-22T12:24:18.792319+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does unlimited users mean a flat team price?",
+      "question_zh": "不限用户表示团队固定价吗？",
+      "answer_en": "No. Max and Enterprise remove the stated user cap but charge each user monthly. The pricing FAQ gives Pro with five users as EUR30 net/month.",
+      "answer_zh": "不是。Max与Enterprise取消所列人数上限，但仍按每用户每月收费。价格FAQ以5用户Pro为每月净价30欧元举例。",
+      "source_refs": ["pricing"]
+    },
+    {
+      "question_en": "Can the documented API be used unchanged with Sugester 2.0?",
+      "question_zh": "所列API可原样用于Sugester 2.0吗？",
+      "answer_en": "Not established. Login, API examples and authentication descriptions reference different generations. Obtain the actual account examples and validate in a safe test before migration.",
+      "answer_zh": "尚未确定。登录、API示例及认证描述涉及不同版本，迁移前应获取真实账户示例并安全测试。",
+      "source_refs": ["api", "security", "product"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/sugester",
+      "read_at": "2026-10-22T09:07:58.800Z",
+      "excerpt_sha256": "0fbbb486b8506a3a1565d9c707fee267a210a8e5861234ade7875c8130a26162",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Sugester - CRM, helpdesk, live chat, tasks, email and VoIP | Your entire business in one app",
+      "title": "Sugester - CRM, helpdesk, live chat, tasks, email and VoIP | Your entire business in one app",
+      "url": "https://sugester.com/",
+      "read_at": "2026-10-22T12:19:42.932589+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6cf8a2a1484df30d60f7fbe0703dfd0c399aa52c0c7d6444399a815748868aa2",
+      "research_notes_en": "Current broad suite and Sugester 2.0 positioning; illustrated metrics and customer quotations are not verified outcomes."
+    },
+    {
+      "id": "helpdesk",
+      "type": "official_documentation",
+      "site": "Helpdesk | Sugester CRM",
+      "title": "Helpdesk | Sugester CRM",
+      "url": "https://sugester.com/helpdesk",
+      "read_at": "2026-10-22T12:23:26.690441+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b2c5adcc6c353349ee71ecd7d7c06d7903f315641bb5330b3e191689f6da00cd",
+      "research_notes_en": "Email handling, CRM linkage, time, ratings and recall claims; no tested recall window or delivery guarantee."
+    },
+    {
+      "id": "inbox",
+      "type": "official_documentation",
+      "site": "Unified inbox | Sugester CRM",
+      "title": "Unified inbox | Sugester CRM",
+      "url": "https://sugester.com/helpdesk/unified-inbox",
+      "read_at": "2026-10-22T12:24:18.792319+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5d964e82a36c7f31c46054749e479c74fee597d3c7a94343806ad16f7d451bbe",
+      "research_notes_en": "Shared email/call/chat history, automatic/manual assignment and private internal comments."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Filters and macros | Sugester CRM",
+      "title": "Filters and macros | Sugester CRM",
+      "url": "https://sugester.com/helpdesk/filters-macros",
+      "read_at": "2026-10-22T12:24:17.519181+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9f25705dee915c9a24dbd15bcac033651a802dd088bf58902b600980187ab5e3",
+      "research_notes_en": "Macros combine status/assignment/tag actions; filters combine fields. No execution ordering or conflict policy established."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "Sugester API Documentation - REST API JSON",
+      "title": "Sugester API Documentation - REST API JSON",
+      "url": "https://sugester.com/api",
+      "read_at": "2026-10-22T12:23:26.797393+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "26d114af364c9ff899adf35eb6118795b5888ac83d0806cbb77a8812461232bc",
+      "research_notes_en": "Actual REST JSON examples for clients/posts/deals; legacy sugester.pl host and token examples differ from current JWT security description. No calls executed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing | Sugester CRM",
+      "title": "Pricing | Sugester CRM",
+      "url": "https://sugester.com/pricing",
+      "read_at": "2026-10-22T12:19:41.234309+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5916fdaa4b3247ecaa79a89ea2387cf6e051d885c50afa494af771292d1785bf",
+      "research_notes_en": "Current EUR per-user prices, mailbox and usage caps, Free limits, immediate plan changes and 30-day trial."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "Security | Sugester CRM",
+      "title": "Security | Sugester CRM",
+      "url": "https://sugester.com/security",
+      "read_at": "2026-10-22T12:24:16.485056+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ac496e13b978abcf2684ae0ad8778a0bd1849ee6e243a53b2f46e88630596207",
+      "research_notes_en": "Vendor AWS Ireland, TLS, backups, roles, JWT and SLA claims only; no certificate/audit/restore independently verified."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Terms of Service | Sugester CRM",
+      "title": "Terms of Service | Sugester CRM",
+      "url": "https://sugester.com/terms-privacy",
+      "read_at": "2026-10-22T12:23:25.827334+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "04263dcb1649753dad1b00aec6d1027e63b2a7d036f5adc5c4b4dc2b460dd9a7",
+      "research_notes_en": "English page explicitly defers to Polish binding text and says English translation pending. Binding Polish document not adopted as reviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:24:18.792319+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "helpdesk", "inbox", "api"],
+  "profile": {
+    "sections": [
+      {
+        "id": "suite",
+        "title_en": "Choose the helpdesk within a broader operating suite",
+        "title_zh": "在更广运营套件中选择服务台",
+        "en": "Sugester is a collection of connected business modules, rather than just a ticket queue. The Helpdesk page describes email, chat and call context in one panel; CRM links the discussion to a client, while tasks and projects organize the work. Templates, time records and feedback can support the same service process. Homepage sample inboxes, named customers and illustrated scores are vendor presentation, not evidence of measured service improvement.\n\nA reasonable evaluation is a support group that also owns client follow-up and project work. A team committed to a separate CRM should investigate synchronization and duplicate ownership before assuming the combined suite replaces that system. Current 2.0 AI positioning does not by itself establish autonomous case resolution, included AI usage or a migration path from an existing account.",
+        "zh": "Sugester是一组相连业务模块，不只是工单队列。Helpdesk页描述在同一面板处理邮件、聊天和通话上下文，CRM将讨论关联客户，任务与项目安排工作。模板、工时与反馈可支持同一服务流程。首页示例收件箱、具名客户及示例评分属于厂商展示，不能证明服务改善。\n\n可合理评估的是同时负责支持、客户跟进及项目工作的团队。已有独立CRM的团队，应先检查同步及重复归属，再判断套件是否可替换原系统。当前2.0的AI定位本身不能证明自主解决工单、包含AI额度或旧账户迁移路径。",
+        "source_refs": ["product", "helpdesk", "inbox"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Trace a reply through ownership and client context",
+        "title_zh": "沿负责人及客户上下文追踪回复",
+        "en": "Consider an illustrative correction request received at billing@. The shared inbox can bring that email into the team panel, link it to a CRM client and assign an owner manually or automatically. An internal comment is intended for colleagues; a canned response can interpolate a name and ticket number. Time recorded against the case can contribute to a timesheet, and the published product describes collecting ratings after communication.\n\nBefore importing all mailboxes, verify that the correct client record, receiving address, sender identity, attachment and private comment survive a real sample exchange. Do not mistake the marketing example promising a response within 24 hours for Sugester’s service commitment. Its undo-send statement only says seconds: the actual delay, supported send route and behavior after external delivery are not specified in the read pages.",
+        "zh": "以billing@收到更正请求为假设例子。共享收件箱可将邮件汇入团队面板、关联CRM客户，并手动或自动指定负责人。内部评论面向同事，预设回复可替换姓名及工单号。工单工时可形成工时表，公开产品也描述沟通后的评价收集。\n\n全面导入邮箱前，应以真实样本核对客户记录、收信地址、发信身份、附件及内部评论。营销示例中的24小时回复承诺不能当作Sugester服务承诺。撤回发送只说明数秒内，已读页面未明确真实延迟、支持的发信路线或外部投递后的行为。",
+        "source_refs": ["helpdesk", "inbox"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "automation",
+        "title_en": "Distinguish filtering, a macro and successful execution",
+        "title_zh": "区分筛选、宏与成功执行",
+        "en": "The filters/macros page describes compound field conditions and a one-click combination such as changing status, assigning a person and adding a tag. The pricing table lists five programmable macros for Max and fifty for Enterprise, while Pro does not include them. It also describes event-triggered actions after creating a task, client, deal or phone call. These are different from simply inserting a reply template.\n\nFor a routing pilot, use a narrow subject/tag condition, an explicit destination and a sample that matches two rules. Check final ownership and whether all intended actions succeeded. The public summaries do not document ordering, multiple-match conflict resolution, atomic execution, retries or an error queue. A team requiring audit-grade deterministic orchestration should resolve those gaps with its selected account before putting writes into production.",
+        "zh": "筛选／宏页描述组合字段条件，以及一键修改状态、分配人员、加标签等动作。价格表Max列5个可编程宏、Enterprise列50个，Pro未包含；也描述任务、客户、商机或通话创建后的事件动作。这与单纯插入回复模板不同。\n\n试点路由时，应采用较窄主题／标签条件、明确目标及同时匹配两规则的样本，检查最终归属与全部预期动作是否成功。公开摘要未说明顺序、多匹配冲突、原子执行、重试或错误队列。需要可审计确定性编排的团队，应先用所选账户解决这些缺口，再上线写入。",
+        "source_refs": ["automation", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "Resolve the account generation before copying API examples",
+        "title_zh": "复制API示例前核对账户版本",
+        "en": "The public API describes JSON resources for clients, posts/tasks, comments and deals, with account-specific working examples under Settings > API. Its task example sets a responsible_id; comment creation references a parent post_id. External identifiers appear in client/deal examples, but that alone does not promise idempotent creation, deduplication or retry safety.\n\nThe page still shows many HTTP account-prefix sugester.pl URLs and an api_token authorization code, whereas the security page claims HTTPS and expiring JWT tokens and current login points at sugester2.pl. This research cannot reconcile the generations. Use the actual account’s HTTPS endpoint and supported authentication, protect credentials, and check pagination, limits, permissions and error responses. No API operation, deletion or account creation was executed.",
+        "zh": "公开API描述客户、post／任务、评论及商机等JSON资源，称Settings > API中有账户专用可运行示例。任务示例设置responsible_id，评论创建引用父post_id。客户／商机示例出现外部标识，但不因此保证幂等创建、去重或重试安全。\n\n页面仍有大量HTTP账户前缀sugester.pl地址及api_token授权码，而安全页称HTTPS和带期限JWT，当前登录指向sugester2.pl。本研究无法统一这些版本。应使用真实账户支持的HTTPS端点和认证，保护凭据，检查分页、限流、权限及错误响应。此次未执行API、删除或账户创建。",
+        "source_refs": ["api", "security", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Model users, mailboxes and outgoing volume separately",
+        "title_zh": "分别计算用户、邮箱与发信量",
+        "en": "Current public pricing is EUR6/8/15 per user/month for Pro/Max/Enterprise. Pro supports up to five users; higher tiers list unlimited users but still charge per user. The FAQ illustrates five Pro users at EUR30 net/month. Mailboxes are limited to10/30/unlimited, with outgoing mail allowances1000/5000/10000 per user/month. Thus an unlimited-mailbox headline on the Helpdesk page is not a universal entitlement.\n\nThe same table distinguishes client/list capacity, chat widgets, chat conversations, tasks and storage. Max adds configurable permissions and templates; Enterprise adds custom-domain SSL. Confirm exact generation and domain setup, since the homepage separately associates white-label with Enterprise. A five-person Pro team may fit headcount but still exceed an email or client allowance. VoIP availability is not evidence that carrier usage is free; no verified overage or carrier schedule was established.",
+        "zh": "当前公开价格Pro／Max／Enterprise为每用户每月6／8／15欧元。Pro最多5用户，高档列不限人数，但仍按用户收费。FAQ举5位Pro用户每月净价30欧元。邮箱额度10／30／不限，每用户每月发信1000／5000／10000。因此Helpdesk页不限邮箱的宣传不是所有套餐权益。\n\n表格另区分客户／列表容量、聊天组件、会话、任务及存储。Max增加可配置权限和模板，Enterprise增加自定义域名SSL。首页另将白标关联Enterprise，须确认具体版本及域名设置。5人Pro团队可能人数合适，但超出发信或客户额度。提供VoIP不等于运营商用量免费，此次未核实超额或运营商费表。",
+        "source_refs": ["pricing", "product", "helpdesk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Separate a free tier from trial and recovery assurances",
+        "title_zh": "区分免费档、试用及恢复保证",
+        "en": "The current Free plan lists three users,100 clients,100 sent emails/month and one online chat. The thirty-day full-function trial requires no card. Pricing says hosting, updates and backups are included and that plan changes take effect immediately. These limits replace the imported directory’s unverified dollar starting price.\n\nThe security page claims AWS Ireland hosting, daily encrypted backups retained thirty days, role controls,2FA,SSO and99.9% uptime. Those are vendor statements, not independent certification or a tested restore; infrastructure certification does not certify Sugester itself. The English terms page says only the linked Polish text is binding and its translation is pending. License rights, termination retrieval, restore timing and contractual SLA remedies remain unresolved. Keep a tested export plan rather than relying on a general archive-export claim.",
+        "zh": "当前Free列3用户、100客户、每月100封发送邮件及1在线聊天。30天全功能试用无需卡；价格页称托管、更新及备份包含在内，套餐调整即时生效。这些额度取代导入目录未经核实的美元起价。\n\n安全页主张AWS爱尔兰托管、每日加密备份保留30天、角色控制、2FA、SSO及99.9%可用性。这些是厂商陈述，不是独立认证或已测试恢复；基础设施认证也不等于Sugester自身获证。英语条款页称仅链接波兰语正文有约束力，译文仍在准备。许可、终止后取回、恢复时间及SLA合同救济仍不明确。应保留测试过的导出方案，不能只依赖笼统归档导出宣传。",
+        "source_refs": ["pricing", "security", "terms", "helpdesk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Sugester: Shared Inbox, CRM Context, API Generations and EUR Pricing",
+    "title_zh": "Sugester：共享收件箱、CRM上下文、API版本与欧元价格",
+    "description_en": "Research Sugester helpdesk workflows, macros, client linkage, account-generation uncertainty, mailbox caps, free tier and recovery questions.",
+    "description_zh": "研究Sugester服务台流程、宏、客户关联、账户版本疑点、邮箱额度、免费档及恢复问题。",
+    "primary_intent": "Evaluate Sugester helpdesk within its business suite.",
+    "secondary_questions": [
+      "Are mailboxes unlimited on every plan?",
+      "Which API applies to Sugester 2.0?",
+      "Does unlimited users mean a flat price?"
+    ],
+    "query_basis": "Editorial questions, not measured search demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, mailbox, AI, macro, API, migration, delivery, recall, export or restore executed. Binding Polish terms, version compatibility, API limits, AI billing, overages, carrier costs, exact domain entitlements and full UI languages unverified.",
+      "zh": "未操作账户、邮箱、AI、宏、API、迁移、投递、撤回、导出或恢复。波兰语有约束力条款、版本兼容、API限制、AI计费、超额、运营商成本、准确域名权益及完整界面语言未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

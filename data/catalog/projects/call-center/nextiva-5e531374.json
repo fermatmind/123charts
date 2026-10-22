@@ -1,0 +1,452 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "nextiva-5e531374",
+  "name": "Nextiva",
+  "website_url": "https://www.nextiva.com/",
+  "domain": "www.nextiva.com",
+  "identity_domain": "nextiva.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Nextiva provides business communications and customer-experience products spanning NEXT,enterprise Contact Center and XBert AI. Its public login menu also separates NextivaONE,NEXT and classic workspaces. These names should be matched to the actual account and order rather than treated as one interchangeable feature entitlement.\n\nFor an illustrative outbound contact-centre campaign,prepare a correctly mapped lead file,assign valid skills to users and records,then verify who can receive the workitem and what happens when nobody qualifies. The enterprise plans and NCC documentation support that evaluation;the lower small-business price does not automatically include predictive campaigns. No tenant,lead import,call,AI conversation,CRM integration,payment or export was executed.",
+  "description_zh": "Nextiva提供商务通信及客户体验产品，覆盖NEXT、企业Contact Center和XBert AI。公开登录菜单还区分NextivaONE、NEXT及经典工作区，需按真实账户和订单匹配，不能视为同一可互换权益。\n\n假设企业外呼活动需准备正确映射的线索文件，为用户和记录分配有效技能，再核对谁可接工作项及无人符合时行为。企业方案及NCC文档可支持评估，较低小企业价格不自动包含预测活动。未执行租户、线索导入、电话、AI会话、CRM集成、付款或导出。",
+  "core_features": [
+    {
+      "name_en": "Product-specific communications plans",
+      "name_zh": "按产品区分通信方案",
+      "explanation_en": "Choose NEXT business communications,enterprise contact-centre capabilities and separately priced XBert usage.",
+      "explanation_zh": "选择NEXT商务通信、企业联络中心能力及另计XBert用量。",
+      "explanation_scope": "product_specific",
+      "source_ref": "enterprise-ui",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reusable lead field mappings",
+      "name_zh": "可复用线索字段映射",
+      "explanation_en": "Map CSV headers into native JSON objects and assign the mapping to a campaign or Load Objects.",
+      "explanation_zh": "将CSV表头映射原生JSON对象，再分配给活动或Load Objects。",
+      "explanation_scope": "product_specific",
+      "source_ref": "field-mapping",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "First-party and third-party skills",
+      "name_zh": "第一方及第三方技能",
+      "explanation_en": "Progressive agent selection and pre-dial checks for skilled non-dialer agents use distinct settings.",
+      "explanation_zh": "渐进客服选择与拨号前对具备技能非拨号客服的检查使用不同设置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "skills",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI employee with metered conversations",
+      "name_zh": "按会话计量AI员工",
+      "explanation_en": "XBert describes configured scheduling,answers and handoff;actual action permissions and accuracy need validation.",
+      "explanation_zh": "XBert描述已配置预约、回答及转接，真实动作权限和准确率需验证。",
+      "explanation_scope": "product_specific",
+      "source_ref": "xbert",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "An enterprise operations team managing mapped campaign leads and skill-based agent assignment.",
+      "A business comparing NEXT communications with a separately scoped AI employee or contact-centre upgrade."
+    ],
+    "zh": [
+      "管理已映射活动线索及按技能客服分配的企业运营团队。",
+      "比较NEXT通信与单独AI员工或联络中心升级的企业。"
+    ],
+    "source_refs": ["field-mapping", "skills", "small-business-ui", "xbert"],
+    "basis": "Editorial fit,not verified customer outcomes,call quality or return on investment."
+  },
+  "technical_details": {
+    "Lead-import preconditions": {
+      "en": "CSV format must match the reusable mapping schema. Progressive first-party skill names must be created and valid;missing lead skill falls back to longest-available agent regardless of skill.",
+      "zh": "CSV格式需匹配复用映射schema，渐进第一方技能名需已创建且有效；线索缺技能时落到等待最久可用客服，不论技能。",
+      "source_ref": "skills",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Contact-centre campaign administrator",
+      "Routing and skills owner",
+      "Customer-experience supervisor",
+      "Communications billing administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "enterprise-ui"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify the actual Nextiva product,workspace,license model and order;separate seats,telecom,AI and implementation fees.",
+        "zh": "确定真实Nextiva产品、工作区、许可模式及订单，分开席位、电话、AI及实施费用。",
+        "source_refs": [
+          "enterprise-ui",
+          "small-business-ui",
+          "master-and-cc-terms"
+        ],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Create a lead schema/CSV mapping,valid skills,user assignment and a campaign-specific mapping before importing a small permitted sample.",
+        "zh": "先创建线索schema／CSV映射、有效技能、用户分配及活动映射，再导入小份获准样例。",
+        "source_refs": ["field-mapping", "skills"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test missing skills,no eligible agents,active reservations and saved outcomes;verify recording/export access before cancellation.",
+        "zh": "测试缺技能、无合资格客服、活跃预约及保存结果，取消前核对录音／导出访问。",
+        "source_refs": ["skills", "reservation-fix", "master-and-cc-terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "CSV field mapping and Load Objects",
+        "source_ref": "field-mapping",
+        "scope": "Lead/contact/consent/DNCimportintoNextivaJSONschemas;notcontinuousbidirectionalCRMconnector."
+      },
+      {
+        "name": "Enterprise CRM/API options",
+        "source_ref": "enterprise-ui",
+        "scope": "Marketplace/CRM/APIavailabilitydependsproduct/planandmayinvolvefees;endpointpermissions,retryandfieldwrite-backnotverified."
+      },
+      {
+        "name": "XBert calendars and CRM",
+        "source_ref": "xbert",
+        "scope": "Schedulingandrecordactionsadvertised;actualcalendarpermissions,transactionalbookingandrefundapprovalnotexecuted."
+      }
+    ],
+    "source_ref": "field-mapping"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A lead with no first-party skill can reach the longest-available agent regardless of skill;missing data is not fail-closed eligibility.",
+        "zh": "缺第一方技能的线索可分配等待最久客服，不论技能，缺资料不是默认拒绝分配。",
+        "source_refs": ["skills"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Existing ACD reservations caused a progressive assignment issue reported resolved in August2026;the tenant build still needs verification.",
+        "zh": "已有ACD预约曾造成渐进分配问题，2026年八月称已解决，仍需核对租户版本。",
+        "source_refs": ["reservation-fix"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Enterprise AI transcription/summarization is labelled usage-based;NEXT Core UI advertises unlimited AI features,so scopes must stay separate.",
+        "zh": "企业AI转录／摘要标按用量，NEXT Core界面宣传无限AI功能，必须保留产品范围。",
+        "source_refs": ["enterprise-ui", "small-business-ui"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Master terms end customer-data access on termination and promise no continued forwarding;homepage persistent-memory language is not an exit archive.",
+        "zh": "主条款称终止即结束客户资料访问且不保证继续转交，主页永久记忆宣传不是退出档案。",
+        "source_refs": ["master-and-cc-terms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "CCaaS-specific terms exclude911/emergency calls;UCaaS provisions and third-party product agreements cannot be substituted.",
+        "zh": "CCaaS专属条款排除911／紧急呼叫，不能替换成UCaaS规定或第三方产品协议。",
+        "source_refs": ["master-and-cc-terms"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.nextiva.com/legal.html",
+    "source_ref": "master-and-cc-terms",
+    "notes_en": "MasterdefinesproprietarysoftwareandretainsIP;CCaaSoffersnamedorconcurrentlicensedaccess,nosourceownership. Opensourceattributiondocumentsnotwholeplatformopensourcegrant.",
+    "notes_zh": "主条款定义专有软件且保留知识产权，CCaaS提供具名或并发许可访问，不转源码所有权；开源归属文件不是整个平台开源许可。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "enterprise-ui",
+    "source_refs": [
+      "enterprise-ui",
+      "small-business-ui",
+      "pricing-context",
+      "xbert",
+      "master-and-cc-terms"
+    ],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Separatebusinessuser,enterpriseagentandAIconversationunits;displayeddollarsnotall-inquote,ISOcurrency/completeenterprisecommitmentunverified.",
+    "source_snapshot_en": "ActualrenderedNEXTCore15/Engage25/Scale75dollars/user/mo;annualSMBeligibilitynew1–100employeecustomers12mo+paidterm. EnterpriseEssentialfrom75/agent/mo,Professional/Premiumquote,AItranscription/summarizationUsageBased. XBertseparate99/month100interactions,then1.50/conversation,notillustrativechat99/userprice. NamedvsconcurrentCClicensesandwholemonthoveragebillingunderCCterms. Master30dnonrenewnoticeanddataterminationconditionsapplysubjectactualorder. Nocardsdemoisnotfreeplan;taxes/carrier/setup/AI/connectorfeesunknown.",
+    "source_snapshot_zh": "真实NEXT界面Core15／Engage25／Scale75，美元符号／用户／月；小企业年价限新客户1–100员工且付费12月以上。企业Essential起75／客服／月，Professional／Premium询价，AI转录／摘要按用量。XBert独立99／月100互动，之后每会话1.50，不采用示例聊天99／用户价格。CC条款区分具名／并发及超额按整月计。主条款提前30天不续约及终止资料条件按真实订单适用。免卡演示不是免费方案，税／运营商／实施／AI／连接器完整费未知。",
+    "checked_at": "2026-10-22T15:43:49.718063+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does a missing lead skill stop it from reaching an agent?",
+      "question_zh": "线索缺技能就不会分配客服吗？",
+      "answer_en": "The first-party progressive guide says a lead without an associated skill goes to the longest-available agent regardless of skill. Third-party skill availability checks are a different mechanism.",
+      "answer_zh": "第一方渐进指南称没有关联技能会分配等待最久可用客服，不论技能。第三方技能可用性检查是另一机制。",
+      "source_refs": ["skills"]
+    },
+    {
+      "question_en": "Can I apply the lowest business price to enterprise predictive dialing?",
+      "question_zh": "最低商务价能套到企业预测拨号吗？",
+      "answer_en": "No verified entitlement mapping supports that. Enterprise Professional lists progressive/predictive dialing and requests a quote;NEXT plans and XBert have different units and scopes.",
+      "answer_zh": "未有已核权益映射支持。企业Professional列渐进／预测并询价，NEXT方案及XBert使用不同单位和范围。",
+      "source_refs": ["small-business-ui", "enterprise-ui", "xbert"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/nextiva",
+      "read_at": "2026-10-22T09:05:45.635Z",
+      "excerpt_sha256": "43cfdaacca37a60959c22421d5d889426258a822840cec29f13af7df6f02ddc6",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "small-business-ui",
+      "type": "official_pricing",
+      "site": "Nextiva pricing",
+      "title": "Nextiva displayed small-business-ui",
+      "url": "https://www.nextiva.com/nextiva-pricing",
+      "read_at": "2026-10-22T15:43:32.713267+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_text",
+      "excerpt_sha256": "bc6158e28acca9d360e7ca64a5c717c97fbbf3e3c488d745bc59e5cd105c4f24",
+      "research_notes_en": "ActualNEXTCore15/Engage25/Scale75user/mo;annualnew1–100employee12mo+eligibility. UICoreunlimitedAItranscripts/summaries differsolderstaticHTML. Notmonthlyselectedquote."
+    },
+    {
+      "id": "enterprise-ui",
+      "type": "official_pricing",
+      "site": "Nextiva pricing",
+      "title": "Nextiva displayed enterprise-ui",
+      "url": "https://www.nextiva.com/nextiva-pricing",
+      "read_at": "2026-10-22T15:43:49.718063+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_text",
+      "excerpt_sha256": "ef786838960b713f2a58707448a46eb307708ec9d06829c7ebc39672095aa3ee",
+      "research_notes_en": "ActualEssentialfrom75agent/mo,Professional/Premiumquote. SmartRouting5/10/unlimited;AItranscription/summarizationUsageBasedallthree. DialersProfessional+notCoreuniversal."
+    },
+    {
+      "id": "pricing-context",
+      "type": "official_pricing",
+      "site": "Plans & Pricing - Compare Plan Features & Costs - Nextiva",
+      "title": "Plans & Pricing - Compare Plan Features & Costs - Nextiva",
+      "url": "https://www.nextiva.com/nextiva-pricing",
+      "read_at": "2026-10-22T15:41:25.826170+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "259b7a384ecd611ae556b71ef6f9cf3775e0b36b167e7a0e8b2cef7b9f01d6fe",
+      "research_notes_en": "ActualsavedHTMLcontainsstalerSMBfeaturelistthanrenderedUI;notadoptedoverUI. Maintainseligibilityandproduct-specificpricing,nofreeplaninferredfromnocarddemo."
+    },
+    {
+      "id": "field-mapping",
+      "type": "official_documentation",
+      "site": "Nextiva Contact Center: Field Mappings · Nextiva Customer Hub",
+      "title": "Nextiva Contact Center: Field Mappings · Nextiva Customer Hub",
+      "url": "https://help.nextiva.com/article/nextiva-contact-center-field-mappings",
+      "read_at": "2026-10-22T15:42:03.783458+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cce39fb44153c883a76b49dabb5b137e0fa6eb79ed4ee9e5be8730e95dc1982a",
+      "research_notes_en": "2024guideCSVheaders->nativeJSONschema,assignmappingcampaignorLoadObjects,canreuseonlysameCSVformat. Redirectactualhelp.nextiva.comsameidentitydomain."
+    },
+    {
+      "id": "skills",
+      "type": "official_documentation",
+      "site": "Nextiva Contact Center: Skills · Nextiva Customer Hub",
+      "title": "Nextiva Contact Center: Skills · Nextiva Customer Hub",
+      "url": "https://help.nextiva.com/article/nextiva-contact-center-skills",
+      "read_at": "2026-10-22T15:42:02.783486+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8ba2a8cd74d3da73de0b86881db3f5be7e647e72a9ceca0c1e0154d5d0787f1d",
+      "research_notes_en": "2024guidefirstpartyprogressiveskillvalidcreated+fieldmapping;unskilledleadsgoLONGESTAVAILABLEregardlessskill. Thirdpartyavailableskillednondialeragentscheckbeforedial,otherwisewaitconfigurabletime."
+    },
+    {
+      "id": "reservation-fix",
+      "type": "official_documentation",
+      "site": "Nextiva Contact Center - Release Notes - August 21, 2026 · Nextiva Customer Hub",
+      "title": "Nextiva Contact Center - Release Notes - August 21, 2026 · Nextiva Customer Hub",
+      "url": "https://help.nextiva.com/article/nextiva-contact-center-release-notes-august-21-2026",
+      "read_at": "2026-10-22T15:42:03.717332+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3b3145fde4fe3980335fb06651c78ed38e1ca11c0eb2290b7a0d4516ca97ae80",
+      "research_notes_en": "Aug21 2026releaseupdatedSep9reportsRESOLVEDprogressiveACDreservationblockingavailableagent;historicalfixnotclaimcurrentoutage."
+    },
+    {
+      "id": "xbert",
+      "type": "official_pricing",
+      "site": "XBert AI Assistant for Sales & Service Teams - Nextiva",
+      "title": "XBert AI Assistant for Sales & Service Teams - Nextiva",
+      "url": "https://www.nextiva.com/products/xbert",
+      "read_at": "2026-10-22T15:42:00.734876+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a3e764780fa81e0828dacd017d29a9f0e6bc49ea25e82c80e802ca7a18971d9a",
+      "research_notes_en": "SeparateAIemployee99/month100interactions,then1.50/conversation;illustrativeAIroles/CSAT/refundthresholdsnotpriceorverifiedaccuracy. No-contract30dayguaranteescopedoffer,pagecontradictsnonuniversalmastercancellation."
+    },
+    {
+      "id": "master-and-cc-terms",
+      "type": "official_license",
+      "site": "Nextiva Terms and Conditions - Important Info and Policies",
+      "title": "Nextiva Terms and Conditions - Important Info and Policies",
+      "url": "https://www.nextiva.com/legal.html",
+      "read_at": "2026-10-22T15:42:00.162192+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1d44b902e8d87b697daa8adea699e86b5eec952d8913c782eaa7509ff68f1086",
+      "research_notes_en": "Actual360ktextcontainsmultipleclearlyheadedagreements;readMASTERrenew/cancel/data/IPandCCaaSnamed/concurrent/excessmonthcharges/NO911only. DoNOTapplyFive9/CWFMotherproviders. MasterJuly23 2024exportaccessendsimmediately;noobligationmaintain/forward. Currentorderformnotread."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:43:49.718063+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "small-business-ui",
+    "enterprise-ui",
+    "field-mapping",
+    "skills"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-scope",
+        "title_en": "Choose the actual workspace and license family",
+        "title_zh": "选择真实工作区及许可系列",
+        "en": "Nextiva’s public navigation separates NEXT,business phone,Contact Center and XBert,and its login menu additionally distinguishes NextivaONE and classic products. The rendered small-business page shows NEXT Core,Engage and Scale. Enterprise instead shows Essential,Professional and Premium,with progressive/predictive dialing specifically listed for Professional. Documentation labelled NCC describes detailed contact-centre objects,not proof that the lowest NEXT business plan includes every campaign feature.\n\nAn enterprise should map the order,workspace and administrator permissions before configuring lead imports or skills. A vendor illustration of a booked appointment,updated CRM or successful refund is not an executed transaction. This research uses actual product/support text and observed plan displays,not the sample dashboards as customer evidence.",
+        "zh": "Nextiva公开导航区分NEXT、商务电话、Contact Center及XBert，登录菜单还区分NextivaONE及经典产品。实际小企业页显示NEXT Core、Engage、Scale；企业页是Essential、Professional、Premium，Professional才明确列渐进／预测拨号。NCC文档详细对象不证明最低NEXT商务方案包含全部活动功能。\n\n企业配置导入或技能前应映射订单、工作区及管理员权限。厂商示例预约、CRM更新或退款成功不是已执行事务；本研究使用实际产品／支持文本和方案展示，不把样例仪表盘当客户证据。",
+        "source_refs": [
+          "small-business-ui",
+          "enterprise-ui",
+          "pricing-context",
+          "xbert"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mapped-data",
+        "title_en": "A reusable import depends on an unchanged file schema",
+        "title_zh": "复用导入依赖文件schema不变",
+        "en": "The Field Mappings guide describes converting CSV columns into native Nextiva JSON fields. An administrator chooses a target mapping schema,maps headers and assigns the result to the campaign. The same machinery can load contacts,consent numbers and local DNC lists through Load Objects. It can be reused only while the incoming CSV format remains consistent.\n\nFor an illustrative campaign,retain a stable phone/customer identifier,skill field and contact-permission source. A renamed header or a different object schema can break the intended mapping even when the file uploads. Importing a consent number is not proof that consent is lawful or current. Test missing columns,duplicates and an incorrect skill value before loading a full list. No file was imported,and the guide’s2024update date is retained as a freshness limitation.",
+        "zh": "Field Mappings指南描述将CSV列转原生Nextiva JSON字段，管理员选目标schema、映射表头，再分配活动。相同机制可通过Load Objects导入联系人、联系许可号码及本地DNC名单，只有CSV格式保持一致才可复用。\n\n假设活动需稳定电话／客户标识、技能字段及联系许可来源。改表头或对象schema可能使映射失效，即使文件上传成功；导入许可号码不证明许可合法或当前有效。全量前应测缺列、重复及错误技能值。未导入文件，保留指南2024年更新作为新鲜度限制。",
+        "source_refs": ["field-mapping"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "skills",
+        "title_en": "Missing skills and no available agents are different cases",
+        "title_zh": "缺技能与无可用客服是不同情况",
+        "en": "The Skills guide distinguishes first-party skills for progressive agents from third-party skills that route dialer calls to skilled non-dialer agents. First-party lead skills come through the campaign field mapping and must already exist as valid skills. A lead with a skill goes only to an agent possessing it,but a lead with no associated skill goes to the longest-available agent regardless of skill. Missing data therefore does not automatically stop assignment.\n\nFor third-party skills,the dialer checks available matching agents before dialing;without them it waits a configurable interval rather than calling blindly. The documentation also has a minimum-available-users setting. Test the intended queue,an invalid skill,an unskilled lead and no eligible user separately. An August2026release note reports a resolved issue where an existing ACD reservation made an available agent temporarily ineligible. That is historical release evidence,not a claim that every current tenant still has the defect or already received the fix.",
+        "zh": "Skills指南区分渐进客服的第一方技能，与将拨号电话路由给具备技能非拨号客服的第三方技能。第一方线索技能由活动字段映射传入，需先创建且有效。有技能线索只给具该技能客服，但无关联技能线索给等待最久可用客服，不论技能。因此缺资料不会自动停止分配。\n\n第三方技能则拨号前查匹配可用客服，无人时等可配置间隔，不盲拨，并有最低可用用户设置。应分别测目标队列、无效技能、无技能线索及无合资格用户。2026年八月发布说明称已解决已有ACD预约使可用客服暂不合资格的问题。这是历史版本证据，不代表全部当前租户仍有问题或均已获修复。",
+        "source_refs": ["skills", "reservation-fix"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Seats,agents and AI conversations are different price units",
+        "title_zh": "用户、客服及AI会话使用不同价格单位",
+        "en": "The observed NEXT interface displayed Core15,Engage25and Scale75per user/month with dollar symbols. Its annual small-business eligibility requires a new customer with1–100employees and a paid minimum term of12months or more. These observations do not establish a universal month-to-month price. Enterprise Essential instead starts at75per agent/month;Professional and Premium require sales quotes. The enterprise comparison labels transcription/summarization usage-based,while the NEXT Core display advertises unlimited AI transcripts,summaries and answer suggestions. Preserve those product scopes.\n\nXBert’s own pricing section lists99per month for100interactions and1.50per conversation afterward. Its sample conversation’s99/user wording is illustrative and is not adopted as the price. The review did not establish exactly when an interaction becomes a billable conversation. Demo-without-card language does not create a free plan,and the12months-free switching promotion was not treated as a universal trial. Actual currency ISO,taxes,telephony,connectors,implementation and AI overages require the selected order.",
+        "zh": "实际NEXT界面显示美元符号Core15、Engage25、Scale75，每用户每月；小企业年价资格要求新客户1–100员工，且至少付费承诺12个月。这不建立通用逐月无承诺价格。企业Essential另起75／客服／月，Professional及Premium询价。企业对照将转录／摘要列按量，而NEXT Core展示无限AI转录、摘要及建议，需保留产品范围。\n\nXBert自身价格节写每月99含100互动，之后每会话1.50；样例会话中的99／用户是示意，不当价格。未建立互动何时成为可计费会话。免卡演示不建立免费方案，转网免费12个月促销也未当通用试用。ISO币种、税、电话、连接器、实施及AI超额需按所选订单。",
+        "source_refs": [
+          "small-business-ui",
+          "enterprise-ui",
+          "pricing-context",
+          "xbert"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing-license",
+        "title_en": "Named/concurrent access does not make burst use prorated",
+        "title_zh": "具名／并发访问不使突增用量自动按天折算",
+        "en": "The CCaaS-specific terms distinguish Named User licenses for identified individuals from Concurrent User licenses for a contracted simultaneous capacity. Shared named logins are prohibited,and reassignment requires written approval in the published text. Exceeding licensed users or enabling extra features can trigger the full retail charge for the entire billing month,regardless of the number of days used,or a co-terminous add-on order. Storage,telecom,messaging and other overages can add charges.\n\nThe Master Terms describe equal-term automatic renewal unless notice is given at least30days before expiry. A general cancel-anytime statement is not proof of waived committed fees. XBert advertises no contracts and a30day guarantee for its own offer,while the broader cancellation policy has exclusions for minimum commitments and used Contact Center/Digital Engagement services. Those commercial scopes should be checked against the actual order,not merged into one refund promise. Vendor software IP remains proprietary;attribution to open-source components does not transfer the platform’s source or ownership.",
+        "zh": "CCaaS专属条款区分指定个人的具名许可，与限制同时容量的并发许可。公开文字禁止共享具名登录，改分配需书面同意。超过许可用户或开启额外功能，可按整计费月零售全价收费，不论使用几天，或加到期日相同订单；存储、电话、消息及其他超额另计。\n\n主条款写等长期限自动续约，至少到期前30天通知不续。笼统随时取消不证明豁免承诺费用。XBert对自身方案宣传无合同及30天保证，而更广取消政策对最低承诺、已用联络中心／数字互动有排除。应按真实订单核范围，不能合并成统一退款承诺。厂商软件知识产权仍专有，开源组件归属不转平台源码或所有权。",
+        "source_refs": ["master-and-cc-terms", "xbert"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "Persistent-memory marketing is not a post-termination archive",
+        "title_zh": "永久记忆宣传不是终止后档案",
+        "en": "Master Terms say customer-data access immediately ceases on termination,and Nextiva has no obligation to maintain or forward that data. Export recordings,transcripts,contacts,campaign outcomes and mappings before leaving;no complete archive or restore was tested. Enabling an integration can share customer data with the third party,so connector permissions and separate safeguards matter. The CCaaS terms also explicitly prohibit911/emergency calling from the contact-centre platform;the UCaaS emergency-service provisions are a different scope.\n\nNextiva is an editorial candidate for a team able to manage product-specific entitlements,data mapping,skills and commitments. AI actions need verified permissions,human fallback and result checks rather than reliance on sample accuracy or satisfaction figures. Current tenant build,complete recording retention/export,actual AI rates,regional processing,UI languages and contractual uptime remain unverified.",
+        "zh": "主条款称终止后立即结束客户资料访问，Nextiva没有继续保存或转交义务。退出前应导出录音、转录、联系人、活动结果及映射，未测试完整档案或恢复。开启集成可把资料共享第三方，连接器权限及独立保障很重要。CCaaS还明确禁止联络中心平台内911／紧急呼叫，UCaaS紧急服务规定属于另一范围。\n\n编辑判断Nextiva可供能管理产品权益、资料映射、技能及承诺期限的团队评估。AI动作需已核权限、转人工及结果检查，不能依赖样例准确率或满意度。当前租户版本、完整录音留存／导出、真实AI费率、地区处理、界面语言及合同可用性仍未核。",
+        "source_refs": ["master-and-cc-terms", "xbert"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Nextiva: NCC Skills, Campaign Mapping and Separate NEXT/XBert Pricing",
+    "title_zh": "Nextiva：NCC技能、活动映射及独立NEXT／XBert价格",
+    "description_en": "Review Nextiva lead mappings,missing-skill fallback,reservation handling,named/concurrent licenses,AI charges and data access at termination.",
+    "description_zh": "核对Nextiva线索映射、缺技能兜底、预约分配、具名／并发许可、AI收费及终止资料访问。",
+    "primary_intent": "Evaluate Nextiva contact-centre setup and product-specific obligations.",
+    "secondary_questions": [
+      "Where does an unskilled lead go?",
+      "Are AI summaries included or usage based?",
+      "Can data be retrieved after termination?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Noaccount/leadimport/skills/call/CRM/API/AI/purchase/exporttest. CurrentNCCbuildand2024guidesapplicability,exactNEXTvsclassicentitlement,actualorder/currencyISO/minimum/AIconversationdefinition,telecom/tax/implementation/connectorrates,retention/completeexport,regions,UIlanguagesandSLAunknown. RenderedNEXTfeaturesdifferstaticHTML;actualUIscopepreferredwithoutmergingenterprise. Master/CCaaSclausesonlyapplied,nototherFive9/CWFMtermsinthecombinedlegalpage.",
+      "zh": "未测试账户／线索导入／技能／电话／CRM／API／AI／购买／导出。当前NCC版本及2024指南适用、NEXT与经典权益、真实订单／ISO币种／最低量／AI会话定义、电话／税／实施／连接器费、留存／完整导出、地区、界面语言及SLA未知。实际NEXT展示与静态HTML不同，优先真实界面范围但不合并企业方案；仅采用主条款／CCaaS相关条款，未套同页其他Five9／CWFM协议。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

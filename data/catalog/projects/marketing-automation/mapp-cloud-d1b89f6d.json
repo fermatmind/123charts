@@ -1,0 +1,417 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mapp-cloud-d1b89f6d",
+  "name": "Mapp Cloud",
+  "website_url": "https://mapp.com/",
+  "domain": "mapp.com",
+  "identity_domain": "mapp.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Mapp Cloud is presented today as Mapp Marketing Cloud, an enterprise suite joining customer-data unification, digital analytics and cross-channel marketing automation. Its public product scope spans websites, email, SMS and mobile experiences; those broad capabilities must still be matched to the purchased package and integration.\n\nFor campaign operations, this research focuses on Mapp Engage Whiteboards, where an event, audience, message and goal become an executable journey. This is one part of the suite, not evidence that every Mapp analytics or fashion feature is included in an Engage workflow. Current documentation and linked legacy v1 tutorials also differ on editing active plans, so their version boundaries remain explicit.",
+  "description_zh": "Mapp Cloud 当前以 Mapp Marketing Cloud 呈现，是结合客户数据统一、数字分析及跨渠道营销自动化的企业套件。公开产品范围覆盖网站、邮件、SMS 和移动体验，但具体能力仍需对应购买套餐及集成。\n\n针对活动运营，本文重点研究 Mapp Engage Whiteboard，事件、受众、消息与目标在其中组成可执行旅程。它只是套件的一部分，不能据此认为每项 Mapp 分析或时尚功能都包含在 Engage 工作流中。当前文档与关联的旧版 v1 教程对活动计划编辑也有差异，因此保留明确版本边界。",
+  "core_features": [
+    {
+      "name_en": "Whiteboard campaign journeys",
+      "name_zh": "Whiteboard 活动旅程",
+      "explanation_en": "Event-based, scheduled and recurring plans serve different execution needs.",
+      "explanation_zh": "事件、定时及重复计划服务不同执行需求。",
+      "source_ref": "whiteboard",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Versioned active edits",
+      "name_zh": "活动编辑版本化",
+      "explanation_en": "Current Event-based and Recurring edits create a new version.",
+      "explanation_zh": "当前事件型与重复型编辑创建新版本。",
+      "source_ref": "versioning",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "External-event admission",
+      "name_zh": "外部事件加入",
+      "explanation_en": "Mapp Connect links registered external events to a Whiteboard.",
+      "explanation_zh": "Mapp Connect 将登记的外部事件连接到 Whiteboard。",
+      "source_ref": "connect",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Programmatic publication",
+      "name_zh": "程序化发布",
+      "explanation_en": "The Engage API separates saving a draft from publishing it.",
+      "explanation_zh": "Engage API 区分保存草稿与发布。",
+      "source_ref": "api",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: a lifecycle team combining analytics and customer data with cross-channel campaigns.",
+      "Editorial fit: an enterprise marketing operations team able to maintain data mappings, plan versions and contract scope."
+    ],
+    "zh": [
+      "编辑判断的适用场景：将分析及客户数据与跨渠道活动结合的生命周期团队。",
+      "编辑判断的适用场景：能够维护数据映射、计划版本及合同范围的企业营销运营团队。"
+    ],
+    "source_refs": ["overview", "versioning", "event-plan"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle marketer",
+      "Marketing operations specialist",
+      "Analytics lead",
+      "Integration engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm required suite modules and prepared campaign resources.",
+        "zh": "确认所需套件模块及已准备活动资源。",
+        "source_refs": ["overview", "event-plan"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build one controlled event/goal path and verify actual admission.",
+        "zh": "建立一条受控事件／目标路径，验证实际加入。",
+        "source_refs": ["event-plan", "connect"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect old-version occupants before publishing an edit or ending a program.",
+        "zh": "发布修改或结束活动前检查旧版本在途人员。",
+        "source_refs": ["versioning", "activation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare database, monthly visitors and channel costs with a written quote.",
+        "zh": "将数据库、月访客及渠道成本与书面报价比较。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Current editing instructions differ from the linked v1 creation tutorial; tenant-specific behavior remains untested.",
+        "zh": "当前编辑说明与关联 v1 创建教程不同，未测试租户特定行为。",
+        "source_refs": ["versioning", "event-plan"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The Mapp Connect guide mixes external_event and externalEvent in examples; an exact working request was not verified.",
+        "zh": "Mapp Connect 指南示例混用 external_event 和 externalEvent，未验证确切可用请求。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Later Whiteboard window detail requests timed out; quiet-hour timing and repeated-entry settings were not inferred from search extracts.",
+        "zh": "Whiteboard 窗口后半详情请求超时，未依据搜索摘录推断静默时段及重复加入设置。",
+        "source_refs": ["whiteboard"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "English public cards: Essential starts at $3,050/month and Professional at $3,600/month, billed annually; Custom requires a quote. FAQ gives a 12-month minimum. Pricing is driven by contactable database records and unique monthly visitors; active/inactive records are not separated, and message volume is an upper limit. The page explicitly adds SMS setup/sending costs. Professional adds analytics; Custom lists push/in-app and tailored capabilities. Actual volumes, onboarding, taxes and contract total remain unverified; no normalized quote assigned.",
+    "source_snapshot_zh": "英文公开卡片：Essential 每月 3,050 美元起，Professional 每月 3,600 美元起，按年计费；Custom 需报价。FAQ 给出最短 12 个月合同。价格由可联系数据库记录和月独立访客驱动，不区分活跃／不活跃记录；消息量是上限。页面明确 SMS 另有设置／发送费用。Professional 增加分析，Custom 列推送／应用内及定制能力。实际额度、入门服务、税费及合同总价未确认，不生成标准化报价。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mapp-cloud",
+      "read_at": "2026-10-22T09:03:58.866Z",
+      "excerpt_sha256": "139efba57f32ce994b35fe12bbddc6c2eb546f068f0f274c33ed3947d110c566",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Mapp Marketing Cloud - Mapp",
+      "url": "https://mapp.com/mapp-marketing-cloud-overview/",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "788572ccaf5bf326e832327644c8db1c3d381a91688afb59a76cdb6a84e7260c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current Mapp Marketing Cloud enterprise-suite scope: analytics, customer-data unification and automation. No universal entitlement or measured AI quality inferred."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Mapp Cloud",
+      "title": "Mapp Marketing Cloud Pricing - Mapp",
+      "url": "https://mapp.com/mapp-marketing-cloud-pricing/",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "d7a2fbc3439fa7a71460a05d3e1bd4c8a3427ca19a2bb6f53dff1ef25e8212ec",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual English USD cards, annual billing, twelve-month minimum, database/UMV drivers and explicit additional SMS setup/sending costs. Did not adopt Spanish/Italian prices from search extracts."
+    },
+    {
+      "id": "whiteboard",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Whiteboard",
+      "url": "https://docs.mapp.com/docs/whiteboard-windows",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "b930f58c8a2db0676829a52c9fdc8069a68e6616974ef88cf4587b7f9be56034",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual management body through line 105: plan types, inactive copies, archive versus irreversible deletion and phase-out states. Later body requests timed out and are not marked read."
+    },
+    {
+      "id": "versioning",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Edit and Copy Whiteboards",
+      "url": "https://docs.mapp.com/docs/edit-and-copy-whiteboards",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "161eb8ef5edabf7ce91c1e19ffd64b01eaf737a95476fecbea9f80c039de9b28",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current Event-based/Recurring version edits, old-version phase-out and separate statistics; active Scheduled requires deactivation. Different from linked legacy v1 tutorial."
+    },
+    {
+      "id": "event-plan",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Create an Event-Based Whiteboard",
+      "url": "https://docs.mapp.com/v1/docs/create-an-event-based-whiteboard",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "f922afa3b50912d5f79936bfe1f875fefd11252dc20f4049a36fb63d62e833fb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual legacy v1 page: feature/permission prerequisites, prepared resources, goal priority and deactivation exits. Its obsolete no-active-edit instruction is explicitly bounded by current versioning page."
+    },
+    {
+      "id": "connect",
+      "type": "official_integration",
+      "site": "Mapp Cloud",
+      "title": "Set Up a Mapp Connect Automation Event",
+      "url": "https://docs.mapp.com/docs/set-up-a-mapp-connect-automation-event",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "d5fd0c04cb3b77c44af30f6dd79121cbc0793d9584056611408c756b20c43ae5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read external-event registration, mapping and entry configuration; actual examples differ between external_event and externalEvent. No request snippet copied as tested implementation."
+    },
+    {
+      "id": "cart",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Increase Revenue by Responding Quickly to Cart Abandonment",
+      "url": "https://docs.mapp.com/v1/docs/increase-revenue-by-responding-quickly-to-cart-abandonment",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "4d74d39b3b583c54317bdbbf9104d55e9998e73732ec2a1d3a8d9c29fa26f4f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual v1 abandonment example, tracking prerequisites, product-add start rather than inferred inactivity, non-resetting additions, transaction goal and re-entry after send."
+    },
+    {
+      "id": "activation",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Activate and End a Whiteboard",
+      "url": "https://docs.mapp.com/docs/activate-and-end-a-whiteboard",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "97342e58ef57d67bfbada984bfd38b5eaa507a0dbf86b7a4decfc6222c6371f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read activation validation and End immediately stopping automation; not a guarantee of provider-level recall."
+    },
+    {
+      "id": "time",
+      "type": "official_documentation",
+      "site": "Mapp Cloud",
+      "title": "Time",
+      "url": "https://docs.mapp.com/docs/time",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "b23b99254646ab2879960bb2e6d0f87e6ba8549b114791610bd0a920e2a3165e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Wait/Schedule relationship and downstream blocking until import/export completes. No end-to-end latency measured."
+    },
+    {
+      "id": "api",
+      "type": "official_integration",
+      "site": "Mapp Cloud",
+      "title": "Creating and Publishing a Whiteboard",
+      "url": "https://docs.mapp.com/apidocs/engage-api-creating-and-publishing-a-whiteboard",
+      "read_at": "2026-10-22T11:51:01.901049Z",
+      "excerpt_sha256": "c8a733a0ec923e475a8a571d7cfeda1f0fed988f2a0fb8308df934bf336f881a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read draft save, validation and publishing endpoints, escaped diagram JSON and 400 for invalid diagram. Credentials and API requests not used."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:51:01.901049Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "versioning", "event-plan"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Start with the required suite components",
+        "title_zh": "先确定需要哪些套件组件",
+        "en": "The current overview combines analytics, cross-channel messaging and integration with CRM, commerce or loyalty systems. For an editorial onboarding project, first identify where the customer record and triggering activity originate, where analysis is performed, and which system sends the message. That prevents an analytics promise from being mistaken for a ready-to-run campaign. Check the actual feature enablement and contract before assuming a channel named on the suite page is usable in the account.",
+        "zh": "当前概览结合分析、跨渠道消息，以及 CRM、商业或忠诚度系统集成。编辑示例：客户入门项目应先确定客户记录及入口活动从何处产生、在哪分析，以及由哪个系统发送消息，避免把分析能力承诺当作已可执行活动。不能因套件页列出某渠道，就假设账户已可用；应检查实际功能启用及合同。",
+        "source_refs": ["overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entry-and-goal",
+        "title_en": "Prepare resources and give the goal a distinct event",
+        "title_zh": "先准备资源，并让目标使用独立事件",
+        "en": "The linked event-plan tutorial requires Whiteboard enablement, appropriate permissions and previously prepared messages or segments. Its goal event removes qualifying contacts even when that event also appears on the canvas; using the same goal and start event prevents onward progress. For an editorial internal pilot, prepare a small audience and separate start from completion, then observe both a non-completer and a completer. These are documented setup principles, not a verified account configuration.",
+        "zh": "关联事件计划教程要求启用 Whiteboard、具备适当权限，并事先准备消息或分群。其目标事件会移除符合条件的联系人，即使画布也放了同一事件；将目标与起始设为同一事件会阻止继续前进。编辑建议内部试点先准备小受众，分开起始与完成事件，再观察未完成及已完成两种案例。这些是文档设置原则，未验证实际账户配置。",
+        "source_refs": ["event-plan"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cart-example",
+        "title_en": "The documented cart clock starts on a product addition",
+        "title_zh": "文档中的购物车时钟从加入商品开始",
+        "en": "The v1 abandonment example starts when a product enters the Abandoned Cart table, waits one hour, and uses a registered transaction as the goal. Another addition during the wait does not restart progress; an addition after the reminder can re-enter the configured Multiple Times journey. Tracking must come from a shop connection or Mapp Intelligence tracking. Treat that as the documented example’s behavior, not a generic inactivity timer. In a pilot, add two products at different times and test an order before the planned reminder.",
+        "zh": "v1 放弃购物车示例从商品进入 Abandoned Cart 表开始，等待一小时，并将已登记交易设为目标。等待期间再加入商品不会重置进度；提醒后再加入则可重入配置为 Multiple Times 的旅程。跟踪需由商店连接或 Mapp Intelligence 跟踪提供。这是该文档示例的行为，不能概括为通用不活跃计时器。试点可在不同时间加入两件商品，并在预定提醒前测试下单。",
+        "source_refs": ["cart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "versioning",
+        "title_en": "Publish a new version without treating the old one as erased",
+        "title_zh": "发布新版本不等于抹去旧版本",
+        "en": "Current editing instructions create a draft for an active Event-based or Recurring Whiteboard, then publish a new version. The previous version stops accepting entrants while existing contacts continue, and versions have separate statistics. Scheduled plans require deactivation before editing. A still-linked v1 creation guide instead tells readers to deactivate active event plans first. Use the current edit procedure for the documented supported types and verify the tenant interface; do not silently blend the old and new instructions.",
+        "zh": "当前编辑说明为活动中的事件型或重复型 Whiteboard 创建草稿，再发布新版本。旧版本不再接受新加入者，但现有联系人继续执行，各版本统计独立。定时计划修改前需停用。仍被链接的 v1 创建指南却要求先停用活动事件计划。对当前文档支持的类型，应采用当前编辑程序并检查租户界面，不能默默混合新旧说明。",
+        "source_refs": ["versioning", "event-plan"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "stopping",
+        "title_en": "Phase-out, End and deletion have different consequences",
+        "title_zh": "逐步退出、结束及删除的后果不同",
+        "en": "The management page distinguishes phase-out from immediate inactivity: existing entrants can continue until the chosen deactivation date while new admission is closed. The activation guide says End immediately stops Whiteboard automation. Copying creates an inactive plan; deleting a plan is described as unrecoverable, while archiving retains it for later activation. Before retiring a program, inspect current participants and select the intended lifecycle action. None of these pages establishes recall of a message already handed to a delivery provider.",
+        "zh": "管理页区分逐步退出与立即停止：关闭新加入后，现有加入者可继续到指定停用日期。启用指南说明 End 会立即停止 Whiteboard 自动化。复制得到未启用计划；删除计划被描述为无法恢复，归档则保留供以后启用。结束活动前，应检查在途参与者并选择预期生命周期动作。这些页面均不能确认已交给投递提供商消息的撤回。",
+        "source_refs": ["whiteboard", "activation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "integration",
+        "title_en": "Register and map an event before expecting entry",
+        "title_zh": "预期加入前先登记并映射事件",
+        "en": "Mapp Connect setup registers the external event, configures automation mapping, then selects the integration, audience and event on the Whiteboard. A successful inbound HTTP status alone is not evidence of enrollment. The same guide’s examples use different external-event field spellings, so confirm the exact schema for the chosen route before implementing. An editorial test should use one controlled contact and verify the intended message, plus a deliberately unmatched event; this research did not execute those requests.",
+        "zh": "Mapp Connect 设置先登记外部事件并配置自动化映射，再在 Whiteboard 选择集成、受众及事件。仅有入站 HTTP 成功状态不能证明已加入。同一指南示例使用不同外部事件字段拼法，因此实施前应确认所选路径的确切 schema。编辑建议用一个受控联系人验证预期消息，并发送一个故意不匹配的事件；本次未执行这些请求。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "execution",
+        "title_en": "Validation and scheduling answer different questions",
+        "title_zh": "验证与排程回答不同问题",
+        "en": "The API saves a draft with an escaped diagram document, validates it, then publishes; invalid diagrams are rejected with HTTP 400. That checks configuration, not business data or inbox delivery. Separately, the timing guide says downstream execution waits for unfinished import/export jobs. In an evaluation, inspect the actual job result and recipient event history rather than treating a correct diagram or elapsed timer as proof of completion. The API and UI activation operations were not used here.",
+        "zh": "API 以转义图表文档保存草稿，验证后再发布；无效图表返回 HTTP 400。这检查配置，不能证明业务数据或收件箱投递。另据计时指南，导入／导出未完成时后续步骤不会启动。评估应检查真实作业结果和收件人事件历史，不能把图表正确或计时到期当作完成证据。本次未使用 API 或界面启用操作。",
+        "source_refs": ["api", "time"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Mapp Cloud: Engage Whiteboards, versions and pricing drivers",
+    "title_zh": "Mapp Cloud：Engage Whiteboard、版本与计价因素",
+    "description_en": "Evaluate Mapp Marketing Cloud suite scope, Engage event journeys, version edits, cart timing, Mapp Connect mapping and annual pricing.",
+    "description_zh": "评估 Mapp Marketing Cloud 套件范围、Engage 事件旅程、版本编辑、购物车计时、Mapp Connect 映射及年费机制。",
+    "primary_intent": "Evaluate Mapp Marketing Cloud and Engage Whiteboard automation",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant access, API requests, message sends, tracking installation or commercial inquiry was performed.",
+      "zh": "未访问租户、调用 API、发信、安装跟踪或咨询商务。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exact package entitlement, current integration schema, retry/replay behavior, interface languages and self-hosting rights remain unverified.",
+      "zh": "确切套餐权限、当前集成 schema、重试／重播行为、界面语言及自托管权利仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Quiet-hour delivery boundaries, enrollment defaults and any recall of queued/provider messages remain unresolved.",
+      "zh": "静默时段投递边界、加入默认值及排队／提供商消息的撤回仍未解决。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

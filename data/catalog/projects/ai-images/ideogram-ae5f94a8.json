@@ -1,0 +1,208 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "ideogram-ae5f94a8",
+  "name": "Ideogram",
+  "website_url": "https://ideogram.ai/",
+  "domain": "ideogram.ai",
+  "identity_domain": "ideogram.ai",
+  "category": "ai-images",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Ideogram combines image-generation models with editing and production apps. This research directly read its current pricing page and Ad Resizer documentation; the homepage returned 403 and was not retried. The documented resizing app rebuilds a creative for selected placements instead of simply stretching the original.\n\nModel, rendering quality, privacy entitlement and queue affect both result and cost. A subscription’s unlimited slow credits do not cover every editing operation, and generated branding still needs comparison with the source.",
+  "description_zh": "Ideogram 结合图片生成模型、编辑和生产应用。本文直接读现行价格及 Ad Resizer 文档，首页403未重试。重设尺寸应用称按投放位重建构图，而非直接拉伸。\n\n模型、质量、隐私权益及队列共同影响结果/费用，不限慢额不覆盖全部编辑，品牌生成仍须对照原图。",
+  "core_features": [
+    {
+      "name_en": "Ad creative reframing",
+      "name_zh": "广告素材重构",
+      "explanation_en": "Upload one authorized creative and export supported placement variants.",
+      "explanation_zh": "上传授权素材并导出支持投放位版本。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Priority and slow queues",
+      "name_zh": "优先及慢队列",
+      "explanation_en": "Paid priority credits and eligible slow generation have different capabilities.",
+      "explanation_zh": "付费优先额度和合格慢生成能力不同。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Reframe an approved campaign creative and compare copy and branding across placements."
+    ],
+    "zh": ["重排已审活动素材并跨投放位核文案及品牌。"],
+    "source_refs": ["product"],
+    "basis": "Editorial task suggestions based on official documentation; no observed deployment."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Prospective workflow owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm private/public state and task cost, resize one authorized source and compare every placement before batch rendering.",
+        "zh": "核公开/私密及任务费，改一张授权图，批量前逐投放位比。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documentation_based_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Selection judgments and examples are documentation-based; no live workflow was tested.",
+        "zh": "选型判断与例子依据文档，未实测真实流程。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:43:42.729458+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Subscription priority credits and task-specific app/API usage; credit definitions require clarification.",
+    "source_snapshot_en": "Annual Plus $180/2,400 priority credits monthly, Pro $504/7,500, Team $240/user/3,600. Slow editing exclusions, expiring subscription credits/topup carryover. General one-cent vs Ad Resizer two-cent credit valuation unresolved; tax extra.",
+    "source_snapshot_zh": "年Plus$180/月2400优先额、Pro$504/7500、Team每人$240/3600。慢额不含部分编辑，订阅额到期/充值结转。通用一美分和重排两美分估值未对齐，税另计。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Ideogram",
+      "title": "Ad Resizer — Ideogram",
+      "url": "https://ideogram.ai/tools/ad-resizer/",
+      "read_at": "2026-10-22T15:40:14.221290+00:00",
+      "excerpt_sha256": "074d172075b1bc84c497fd1d6d5fe0c2e5076e6e6eccbf49a6831915269da92c",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Official Ad Resizer page read successfully via pricing navigation despite homepage 403: semantic layout rebuilding, placements and variable-token pricing."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Ideogram",
+      "title": "Pricing — Ideogram",
+      "url": "https://ideogram.ai/pricing/",
+      "read_at": "2026-10-22T14:50:19.470273+00:00",
+      "excerpt_sha256": "a90a079bddedcb2dc47ca608734bc867cdb7714130587a06beac4082656417c3",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Current annual subscriptions, priority versus slow-credit limitations, public-image defaults, variable eligible free credits and API separate pricing."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:43:42.729458+00:00",
+    "scope": "Public official documents read; no purchase, account setup, independent review, hands-on test, identity verification or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Official documentation describes vendor functionality, not independent evidence of reliability, adoption or outcomes.",
+    "Original English synthesis and corresponding Chinese draft; examples and fit judgments are editorial guidance.",
+    "Current public pricing is a dated snapshot; purchase conditions remain subject to vendor confirmation."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "placements",
+        "title_en": "Inspect rewritten layouts at their real size",
+        "title_zh": "按真实尺寸核重排版式",
+        "en": "For an illustrative campaign, resize a square source into a narrow banner and vertical story. Check the logo, exact copy, disclaimer and focal subject at actual display size. The app says it extends backgrounds and rebuilds layout, so it can introduce differences beyond cropping. Brand-consistency claims are not a measured guarantee; preserve the approved source and compare every placement.",
+        "zh": "例如活动，把方图改窄横幅及竖故事，按真实显示核标志、准确文案、说明和主体。应用称扩背景重排版，变化超裁切；一致性不是测得保证，应保原稿逐投放位比。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "subscription",
+        "title_en": "Count credits and know which queue supports the task",
+        "title_zh": "计额度并核任务适用队列",
+        "en": "Annual Plus is $180 ($15/month) for 2,400 priority credits/month, Pro $504 ($42) for 7,500, and Team $240/user ($20) for 3,600/user. Slow generation has variable waiting; AI editing and image-reference features require priority credits. Subscription priority credits expire each cycle; topups carry over and are consumed after subscription balance. Tax is extra.",
+        "zh": "年Plus$180/折月15、月优先2400；Pro$504/42、7500；Team每人$240/20、3600。慢生成等待不定，AI编辑/参考需优先额。订阅优先额周期到期，充值结转且后用，税另加。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "rates",
+        "title_en": "Resolve the two displayed credit valuations",
+        "title_zh": "澄清两种显示额度估值",
+        "en": "The general pricing page advertises pay-as-you-go at one cent/credit, while Ad Resizer says each in-app credit equals two cents and estimates cost from text/image tokens and output quality. Do not merge those units into one universal rate. The model consumption table was still loading. Obtain a task-specific cost before batch use and distinguish app subscriptions from separately billed API volume.",
+        "zh": "通用价格页按量一美分/额，Ad Resizer却称应用内每额两美分，按文本/图token及输出质量估费，不能合成统一费率。模型消耗表仍加载，批量前需具体任务报价并区分应用订阅/另计API。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "privacy",
+        "title_en": "Check publication defaults before reference uploads",
+        "title_zh": "参考上传前核公开默认",
+        "en": "Pricing says images are public by default, with private generation/unpublishing and deletion described for eligible paid plans. Confirm the exact account state before sensitive uploads. Eligible free accounts may receive variable weekly credits, not a fixed universal trial. The page allows commercial use subject to terms, but no license text or upstream open-source release was independently reviewed. No generation, privacy setting, API or export was tested.",
+        "zh": "价格称默认公开，符合付费层可私密/撤公开及删除；敏感上传前核真实状态。合格免费账户可获不定周额，不是统一固定试用。页面允许按条款商用，但未独立读许可正文或上游开源发布，未测生成、隐私、API或导出。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    "Homepage 403 not retried; product research uses successfully read official linked Ad Resizer page.",
+    "No generation, provider/model release, private control, API or export tested; credit-value discrepancy, exact consumption, rights, retention, license and self-hosting unresolved."
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Ideogram: workflow, pricing and limits",
+    "title_zh": "Ideogram：工作流程、定价与边界",
+    "description_en": "Ideogram combines image-generation models with editing and production apps. This research directly read its current pricing page and Ad Resizer documentation; the homepage returned 403 and was not retried. The documented",
+    "description_zh": "Ideogram 结合图片生成模型、编辑和生产应用。本文直接读现行价格及 Ad Resizer 文档，首页403未重试。重设尺寸应用称按投放位重建构图，而非直接拉伸。"
+  }
+}

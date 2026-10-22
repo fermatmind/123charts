@@ -1,0 +1,350 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "brevo-93ab009c",
+  "name": "Brevo",
+  "website_url": "https://www.brevo.com/",
+  "domain": "www.brevo.com",
+  "identity_domain": "brevo.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Brevo manages customer communication through email campaigns and other channels, with contact storage, automation and separate sales features. An email campaign selects recipients and a sender, combines a subject with a design, then enters a scheduled or immediate send. Automation instead uses entry criteria or events to start a contact journey.\n\nIts allowances distinguish stored contacts, contacts entering automations and email sends. A large stored audience does not imply that it can receive a campaign on one day. This profile concentrates on those operational distinctions and on documented continuation behavior; it does not measure delivery, engagement or commercial results.",
+  "description_zh": "Brevo 用于管理邮件活动及其他渠道的客户沟通，提供联系人存储、自动化及独立的销售功能。邮件活动先选择收件人和发件人，再组合主题与设计，最后立即或排程发送；自动化则由进入条件或事件启动联系人的沟通路径。\n\n其额度分别约束已存储联系人、进入自动化的联系人和邮件发送次数。能存储大量受众，不代表能在一天内给他们全部发信。本文聚焦这些运营区别和文档中的续发行为，未测量投递、互动或商业效果。",
+  "core_features": [
+    {
+      "name_en": "Recipient-based email campaigns",
+      "name_zh": "按收件人发送邮件活动",
+      "explanation_en": "Choose lists, segments or registered individual contacts and review exclusions.",
+      "explanation_zh": "选择名单、分组或已登记的单个联系人，并检查排除条件。",
+      "source_ref": "campaign",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Behavior-triggered automation",
+      "name_zh": "行为触发自动化",
+      "explanation_en": "Entry criteria and correctly named tracking events determine whether contacts enter.",
+      "explanation_zh": "进入条件及名称正确的跟踪事件决定联系人是否进入。",
+      "source_ref": "automation-entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Campaign continuation",
+      "name_zh": "活动续发",
+      "explanation_en": "Resume a suspended campaign to recipients who have not yet received it.",
+      "explanation_zh": "恢复暂停活动，继续向尚未收到的联系人发送。",
+      "source_ref": "resume",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-based multichannel tools",
+      "name_zh": "按套餐提供多渠道工具",
+      "explanation_en": "Channel credits, seats and sales packages have their own plan and add-on conditions.",
+      "explanation_zh": "渠道额度、席位和销售套件分别有套餐及附加购买条件。",
+      "source_ref": "plans",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Send a workshop announcement to a defined opted-in segment.",
+      "Investigate why a recognized commerce event did not enroll a contact."
+    ],
+    "zh": [
+      "向明确且已订阅的分组发送工作坊通知。",
+      "调查已识别的电商事件为何未使联系人进入流程。"
+    ],
+    "source_refs": ["plans", "campaign", "quotas"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Email campaign operator",
+      "Lifecycle marketer",
+      "Developer integrating customer events"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "plans"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Prepare sender and permissioned contacts, then preview a small representative campaign.",
+        "zh": "准备发件人与已许可接收的联系人，预览小范围代表性活动。",
+        "source_refs": ["campaign"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check daily sends, contact storage and automation entrants separately.",
+        "zh": "分别检查日发送量、联系人存储和自动化进入人数。",
+        "source_refs": ["free-limits", "quotas"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Plan resume behavior before sending a campaign larger than the allowance.",
+        "zh": "发送超过额度的活动前明确如何续发。",
+        "source_refs": ["resume"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Pausing entry does not stop existing automation contacts from continuing.",
+        "zh": "暂停进入不会阻止流程中的现有联系人继续。",
+        "source_refs": ["automation-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Duplicating a campaign can resend to previous recipients.",
+        "zh": "复制活动可能再次发送给原收件人。",
+        "source_refs": ["resume"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "plans",
+    "source_snapshot_en": "Ongoing Free plan; paid sending/contact tiers with separate add-ons. Starter from $9/month before taxes; exact checkout total not verified.",
+    "source_snapshot_zh": "持续 Free 套餐；付费发送／联系人档位与附加项分别计费。Starter 税前每月 $9 起，未核实具体结算总额。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/brevo",
+      "read_at": "2026-10-22T08:39:59.036Z",
+      "excerpt_sha256": "40d98d7eb9b6591a661926b24329520f42c1cef6e7302e08266d6698c2012a79",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "plans",
+      "type": "official_pricing",
+      "site": "Brevo",
+      "title": "About Brevo's pricing plans – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "286851951fc0a622c9b978d9d6c01d4412c5315c672109c22885b065a2af39c7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official help article supplies readable current plan pricing and tier/add-on conditions; main pricing page rendered only a tracking iframe."
+    },
+    {
+      "id": "free-limits",
+      "type": "official_documentation",
+      "site": "Brevo",
+      "title": "FAQs - What are the limits of the Free plan? – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "3b753884f3629a5a4af02a188573595842a734091e15eb32fb10e8fd31964ad5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "300 daily sends, no rollover, transaction retry queue, automation limit and free-plan exclusions."
+    },
+    {
+      "id": "campaign",
+      "type": "official_documentation",
+      "site": "Brevo",
+      "title": "Create and send an email campaign – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/4413566705298-Create-and-send-an-email-campaign",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "7d3a5fa56c82869dae8f10cb5ee66792f00c5df56422468f5dd89326ab9d32b2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Create sender/recipient/subject/design; blocklist exclusions, test, schedule and batch limitations."
+    },
+    {
+      "id": "automation-entry",
+      "type": "official_documentation",
+      "site": "Brevo",
+      "title": "Why have my contacts not been added to an automation? – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/209465385-Why-have-my-contacts-not-been-added-to-an-automation",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "d0591ad6094a864b65adbcb99411d22f55dd087a301a73ece67e10859cd4d361",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Entry criteria, tracking identification, event names, pause behavior and contacts blocked by quota."
+    },
+    {
+      "id": "quotas",
+      "type": "official_documentation",
+      "site": "Brevo",
+      "title": "What are the different quotas applied in Brevo? – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/9168632514066-What-are-the-different-quotas-applied-in-Brevo",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "6bb5f76eac2ef19f3a57f3f066a068d8227e96d4a36f2ffed5073a5cbb4b0780",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Separate campaign, contact, automation event and step quotas; new automation editor scope."
+    },
+    {
+      "id": "resume",
+      "type": "official_documentation",
+      "site": "Brevo",
+      "title": "Send to new contacts, resume, duplicate, and archive email campaigns – Home",
+      "url": "https://help.brevo.com/hc/en-us/articles/4411394977810-Send-to-new-contacts-resume-duplicate-and-archive-email-campaigns",
+      "read_at": "2026-10-22T10:04:21.032435Z",
+      "excerpt_sha256": "6849116fc5d3d8e9601773ae986c74246fb265c81c43ce7b86285b9d093a63b2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Resume suspended campaigns versus send to new contacts versus duplicate; manual continuation after daily limits."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:04:21.032435Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["plans", "campaign", "quotas"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "campaign",
+        "title_en": "Follow one campaign from contact selection to sending",
+        "title_zh": "从选择联系人到完成一场发送",
+        "en": "Brevo’s campaign editor separates sender, recipients, subject and design. Lists and segments define the audience; blocklisted contacts are excluded and do not use email credits. Existing email designs do not carry every campaign setting, so choosing a template does not finish sender or recipient setup.\n\nFor an illustrative workshop announcement, select the opted-in workshop segment, exclude an irrelevant audience, inspect the registration link and preview the message before scheduling. Keep that editorial audience decision distinct from whether the software accepted the campaign.",
+        "zh": "Brevo 活动编辑器分别配置发件人、收件人、主题和设计。名单与分组定义受众，黑名单联系人会排除且不消耗邮件额度。复用设计不会继承所有活动参数，因此选择模板不等于完成发件人或受众配置。\n\n例如工作坊通知，可选择已订阅的工作坊分组，排除无关受众，检查报名链接，再预览和排程。受众选择是否恰当，与软件是否接受活动，是两项不同的判断。",
+        "source_refs": ["campaign"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "free-volume",
+        "title_en": "300 daily sends are not a monthly pool",
+        "title_zh": "每天 300 次不能积攒成月度池",
+        "en": "The Free plan has no time limit and includes 300 sends per day, with no rollover. The free-limit guide says a larger campaign only reaches the daily allowance and must be continued manually. Once the allowance is used, scheduling a campaign for the next day is also blocked until reset.\n\nFor a hypothetical 1,000-recipient newsletter, four daily allowances are needed even with no other sends: 300 + 300 + 300 + 100. That is unsuitable for a same-day announcement unless another eligible sending arrangement supplies enough capacity. Stored-contact capacity is a separate question.",
+        "zh": "Free 没有使用期限，每天含 300 次发送，未用额度不结转。免费限制指南说明，大活动当天只发送到日额度，其余需手动续发。日额度用完后，在重置前也无法提前安排次日活动。\n\n假设简报有 1,000 位收件人且没有其他发送，仍需四天额度：300 + 300 + 300 + 100。因此需要当天全员收到的通知，应另行确认足够的可用发送容量。联系人存储容量是另一项限制。",
+        "source_refs": ["free-limits", "resume"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "continuation",
+        "title_en": "Choose resume, new contacts or duplicate deliberately",
+        "title_zh": "明确选择恢复、新联系人发送或复制",
+        "en": "The operational guide now calls the old Requeue action Resume campaign for suspended campaigns and Send to new contacts for sent campaigns. Resume targets remaining recipients; Send to new contacts reaches people added after the original send. Duplication creates a new campaign and can resend to people already reached.\n\nAfter a quota pause, inspect campaign status and choose the matching continuation action. Rebuilding a copy merely to reach the remainder risks duplicate communication. This is a documented distinction, not a claim that all external delivery failures can be repaired from the campaign menu.",
+        "zh": "操作指南把旧 Requeue 在暂停活动中改称 Resume campaign，在已发送活动中改称 Send to new contacts。恢复面向剩余收件人，给新联系人发送面向原活动之后加入的人。复制则建立新活动，可能再次向已收到的人发信。\n\n额度导致暂停后，应检查活动状态并选择对应续发动作。为了覆盖剩余受众而重新复制活动，可能造成重复沟通。这是文档中的区别，不代表活动菜单能修复所有外部投递失败。",
+        "source_refs": ["resume"],
+        "evidence_type": "documented_with_editorial_recovery_guidance"
+      },
+      {
+        "id": "automation",
+        "title_en": "A stored contact is not necessarily an automation entrant",
+        "title_zh": "已存联系人不一定进入自动化",
+        "en": "The entry troubleshooting guide distinguishes matching an attribute from performing an event such as clicking a link. It also explains website identification and exact matching of custom event names. Installing tracking alone is not proof that a particular contact and event have been recognized.\n\nFor an abandoned-cart design, verify the contact identity and event payload before judging the email sequence. Pausing an automation prevents new entry but, according to the guide, contacts already inside continue through the remaining steps. Plan a deliberate stop procedure rather than assuming pause recalls work already in flight.",
+        "zh": "进入问题指南区分属性匹配与实际发生事件，例如点击链接；还说明网站身份识别及自定义事件名必须准确对应。安装跟踪不代表某位联系人及其事件已被识别。\n\n设计弃购流程时，应先核对联系人身份和事件内容，再判断邮件序列。指南说明暂停会阻止新联系人进入，但已在流程中的联系人仍继续后续步骤。因此应明确停止方式，不能假定暂停会撤回已经进行的工作。",
+        "source_refs": ["automation-entry"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "quota",
+        "title_en": "Watch several independent capacity limits",
+        "title_zh": "分别检查多项容量",
+        "en": "The quota page limits Free and Starter to 2,000 unique contacts entering active automations; a contact in two automations counts once. Standard removes that contact cap, but new-editor event and step processing quotas still exist. The same page also limits stored or scheduled campaigns, so “unlimited automation contacts” is not unlimited platform throughput.\n\nThe entry guide warns that quota-blocked contacts do not all automatically backfill after upgrade: a list-addition entry needs separate handling. Verify that specific entry path before promising that an upgrade will recover every missed journey.",
+        "zh": "额度页面将 Free 和 Starter 限为 2,000 位唯一联系人进入活跃自动化，同一人进入两个流程只计一次。Standard 取消这项联系人限制，但新版编辑器仍有事件和步骤处理限额。同页还限制已存和已排程活动，所以自动化联系人不限不代表平台吞吐无限。\n\n进入指南提醒，升级后受额度阻挡的联系人并非都会自动补进；“加入名单”进入条件需要单独处理。不能直接承诺升级会恢复所有错过的沟通路径。",
+        "source_refs": ["quotas", "automation-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Evaluate sending tiers and add-ons together",
+        "title_zh": "一起评估发送档位与附加项",
+        "en": "The official plan guide lists starting prices of $9/month for Starter, $18 for Standard, $499 for Professional and custom Enterprise pricing, excluding taxes. Starter and Standard tiers set both monthly sends and stored-contact limits. Exceeding a lower contact tier can automatically upgrade the subscription after warnings.\n\nMarketing seats, sales packages, message credits and some security or branding features are separate add-ons. Annual payment does not turn the allowance into an annual credit pool: included email credits renew monthly and unused credits expire. Request the exact tier and add-on total rather than budgeting from the lowest card alone.",
+        "zh": "官方套餐指南列出 Starter 起价每月 $9、Standard $18、Professional $499，Enterprise 询价，均未含税。Starter 和 Standard 档位同时决定月发送量与可存联系人上限；低档位联系人超限后，系统可能在提醒后自动升级订阅。\n\n营销席位、销售套件、消息额度及部分安全或去品牌功能需另购。年付也不会把额度变成年池：包含的邮件额度按月更新，未用部分过期。预算应采用具体档位及附加项总额，不能只看最低价卡片。",
+        "source_refs": ["plans"],
+        "evidence_type": "documented_pricing_snapshot"
+      },
+      {
+        "id": "boundaries",
+        "title_en": "Separate campaigns, transactional queues and sales work",
+        "title_zh": "区分活动、事务队列和销售工作",
+        "en": "The free-limit guide says excess transactional emails can wait in a retry queue of up to 1,000 additional messages, with messages beyond that queue not delivered. This differs from manually resuming a marketing campaign. An account can also expose sales tools whose limits and purchased packages differ from marketing allowances.\n\nBrevo is worth evaluating when one operator needs contact-based campaigns and event-driven communication with explicit volume planning. For time-critical operational messages, test queue and quota behavior separately. Main marketing pages rendered only a tracking iframe in this research, so readable official help articles supply the facts here; no checkout or sending test was performed.",
+        "zh": "免费限制指南说明，超额事务邮件可进入最多额外 1,000 封的重试队列，超过队列的邮件不会投递；这不同于手动恢复营销活动。账户也可能提供销售工具，其额度和购买套件与营销额度不同。\n\n需要基于联系人的邮件活动及事件沟通，且能明确规划用量时，可评估 Brevo。对时效敏感的业务邮件，应单独测试队列与额度行为。本次主营销页只呈现跟踪 iframe，因此采用可读的官方帮助文档作为依据，未进行结算或发送测试。",
+        "source_refs": ["free-limits", "plans"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Brevo: Email Campaigns, Daily Limits, Automation and Pricing",
+    "title_zh": "Brevo：邮件活动、日额度、自动化与价格",
+    "description_en": "Understand Brevo contact storage, automation entrants, daily sends, campaign continuation and paid add-ons using official documentation.",
+    "description_zh": "通过官方文档理解 Brevo 的联系人存储、自动化进入、日发送额度、活动续发和付费附加项。",
+    "primary_intent": "Plan a Brevo campaign and understand quota-dependent failure behavior.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Main pricing and marketing pages returned only a tracking iframe; official help pricing was readable. Actual account offer, checkout totals and contractual terms remain unverified.",
+      "zh": "主定价和营销页面仅返回跟踪 iframe；官方帮助价格可读。实际账户报价、结算总额及合同条款仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No actual campaign, tracking event, transactional retry, purchase or integration was executed; UI languages, source license, regional availability and data location remain unverified.",
+      "zh": "未实际执行活动、跟踪事件、事务重试、购买或集成；界面语言、源码许可、地区可用性和数据位置仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

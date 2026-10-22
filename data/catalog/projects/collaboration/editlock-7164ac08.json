@@ -1,0 +1,404 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "editlock-7164ac08",
+  "name": "EDITLOCK",
+  "website_url": "https://editlock.io/",
+  "domain": "editlock.io",
+  "identity_domain": "editlock.io",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "EDITLOCK is a hosted video-review and approval workspace. Editors upload a cut or add a supported video link, reviewers leave time-linked comments and annotations, and each version can carry its own review status. Picture lock marks the approved reference while newer cuts can be stacked.\n\nThe cost model uses storage tiers with different internal member limits, while clients and reviewers are unlimited. That distinction matters as much as retention: the free plan’s files and links expire after five days, paid cancellation has a separate retrieval window, and a linked YouTube/Vimeo video is not an archived copy.",
+  "description_zh": "EDITLOCK 是托管的视频审阅与批准工作区。剪辑者上传样片或添加受支持视频链接，审阅者留下关联时间点的评论和标注，各版本可保留自己的审阅状态。Picture lock 用于标记获批参照，新样片仍可堆叠。\n\n费用采用存储分档，内部成员上限随套餐变化，客户和审阅者则不限量。这一区别与数据保留同样重要：免费文件和链接五天后到期，付费取消另有取回窗口，YouTube／Vimeo 外链也不是归档副本。",
+  "core_features": [
+    {
+      "name_en": "Time-linked review",
+      "name_zh": "时间点关联审阅",
+      "explanation_en": "Leave timestamped feedback and drawings against a video moment.",
+      "explanation_zh": "针对视频时间点留下评论及绘图。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Version-specific approval",
+      "name_zh": "按版本批准",
+      "explanation_en": "Each cut retains its status and comments; lock identifies the approved reference.",
+      "explanation_zh": "各样片保留状态及评论，锁定标记获批参照。",
+      "explanation_scope": "product_specific",
+      "source_ref": "approval",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reviewer links and paid controls",
+      "name_zh": "审阅链接及付费控制",
+      "explanation_en": "Share a review without buying reviewer seats; paid tiers add link controls.",
+      "explanation_zh": "共享审阅无需购买审阅者席位，付费档增加链接控制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Run one client review on a clearly identified cut, then compare feedback against the revised export before approval."
+    ],
+    "zh": ["对明确版本做一次客户审阅，再把反馈与修订导出比较后批准。"],
+    "source_refs": ["product", "approval"],
+    "basis": "Proposed workflow, not executed or a customer case."
+  },
+  "technical_details": {
+    "Media model": {
+      "en": "Browser-hosted reviews accept uploads or supported external video links; external pointers are not stored copies. Resume/playback/codec behavior not tested.",
+      "zh": "浏览器托管审阅使用上传或受支持外部视频链接，外部指针不是已存副本；续传／播放／编码行为未测试。",
+      "source_ref": "linked-video",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Freelance video editor",
+      "Studio coordinating client review"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Keep a local original, choose an upload or external link, and test one reviewer share with the intended controls.",
+        "zh": "保留本地原件，选择上传或外链，按预期控制测试一个审阅共享。",
+        "source_refs": ["linked-video", "sharing", "terms"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check comments, version status, member authority, storage and an exit copy before adopting live delivery.",
+        "zh": "真实交付前核对评论、版本状态、成员权限、存储及退出副本。",
+        "source_refs": ["approval", "roles", "pricing", "refund"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "linked-video",
+    "scope": "YouTube/Vimeo pointerreview and paidGoogleDriveimport advertised. Resolve workflowisexport/upload; no nativeeditor/APIintegration tested."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Free content expires afterfive days; link videos have no downloadable stored copy and cannot enter side-by-sideCompare.",
+        "zh": "免费内容五天后到期；外链视频无可下载存储副本，也不能进入并排 Compare。",
+        "source_refs": ["pricing", "linked-video"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Member caps differ from unlimitedreviewers; storage hardcap pausesuploads. ExactTrashwindow and cancellationwindowstart unverified.",
+        "zh": "成员上限不同于无限审阅者；存储硬上限会暂停上传。准确回收站窗口及取消窗口起算未核实。",
+        "source_refs": ["pricing", "trash", "refund"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "English publicsite/help read; signed-in localization not verified."
+  },
+  "license": {
+    "status": "service_terms_read_source_rights_not_established",
+    "is_open_source": null,
+    "url": "https://editlock.io/legal/terms/",
+    "source_ref": "terms",
+    "scope": "HostedserviceIP and usercontentownership terms read; no application source or selfhosting grant established."
+  },
+  "pricing": {
+    "status": "official_browser_monthly_annual_checkout_unverified",
+    "price_type": "free_and_storage_tiers_with_member_caps",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "INR monthly599/1699/2999/4699; annualtotal6469/18349/32389/50749. Free0/2GB/2members/2projects,5dayexpiry. Unlimitedreviewers; paidmembers5/15/25/unlimited; no meteredoverage.",
+    "source_snapshot_zh": "INR月付599／1699／2999／4699；年费总额6469／18349／32389／50749。Free0／2GB／2成员／2项目，5天到期。审阅者不限，付费成员5／15／25／不限，无按量超额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/editlock",
+      "read_at": "2026-10-22T08:42:01.606Z",
+      "excerpt_sha256": "9b5e0566db49772ed2e2c34b884896ebb0e9ca865e1f927aad94f9ab5785c9b3",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "Video Review & Approval Software | Editlock",
+      "url": "https://editlock.io/",
+      "read_at": "2026-10-22T12:39:17.932335Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "15d7db23b61e1009a1adeb7ad99f03537e9f1459dab2defd0b1ffb9b15c3bc99",
+      "research_notes_en": "Public browser homepage read current video-review/version-locking scope. Webreader failed; normal existing browser accessible. No account or upload."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "editlock.io",
+      "title": "Pricing — pay for storage, not seats | Editlock",
+      "url": "https://editlock.io/pricing/",
+      "read_at": "2026-10-22T12:39:17.932712Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "a1e385c188db6f4756c06c8a1e4c8b52014571ccdc5d786e4b2dd8ee82e826d1",
+      "research_notes_en": "Read monthly and annual selectors, storage/memberlimits, free5dayretention, paidtiercontrols and lock/ResolveFAQ. Exact INR annual totals retained; no checkout."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "What are the workspace roles? — Editlock Help",
+      "url": "https://editlock.io/help/workspace-and-roles-explained/",
+      "read_at": "2026-10-22T12:39:17.932730Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "0adcc61d053c8d034257864b7d8474e5543c40246eda535147ad2774b7204c3e",
+      "research_notes_en": "Read fourworkspace roles;Editcanapprove but cannotexternallyshare,FullAccessnearowner. Reviewer and member billing scope separate."
+    },
+    {
+      "id": "approval",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "How do I approve a video or request changes? — Editlock Help",
+      "url": "https://editlock.io/help/approve-or-request-changes/",
+      "read_at": "2026-10-22T12:39:17.932738Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "17dab010aa6966b4dcad848683174b19d058a502e644ace807be4e8eaf2bcc58",
+      "research_notes_en": "Read asset statuses and version-specific status/comments; not legal signature or tamperproof certification."
+    },
+    {
+      "id": "trash",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "How does Trash work, and how do I recover something?",
+      "url": "https://editlock.io/help/trash-and-deletion/",
+      "read_at": "2026-10-22T12:39:17.932748Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "b47c63087035b1b851cc4e8936283d5a9f66dc1c35b93b67acbdec433de1fb5e",
+      "research_notes_en": "Read limitedTrash recovery,permanentdelete and deleteauthority. Exactwindow notspecified; not equatedwithcancel15days."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "What do the share options mean? — Editlock Help",
+      "url": "https://editlock.io/help/share-options-explained/",
+      "read_at": "2026-10-22T12:39:17.932755Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "1192b12a5def5745fff2156f2dea5b06e64f380deb54a12f4b4d4a98d08ae1fb",
+      "research_notes_en": "Read downloadsoffdefault,passphrase,expiry and externalvideoexceptions; paideligibilityfrompricing."
+    },
+    {
+      "id": "linked-video",
+      "type": "official_integration",
+      "site": "editlock.io",
+      "title": "Can I download or compare a YouTube or Vimeo link?",
+      "url": "https://editlock.io/help/youtube-vimeo-links/",
+      "read_at": "2026-10-22T12:39:17.932763Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "ccb0b7b6332fb938503adaaa0fc3c286eaad322a3954dd35760bc61f9b16813e",
+      "research_notes_en": "Read externalpointer/nohostedcopy, nodownload/noCompare,reviewandversionworkflowstillavailable."
+    },
+    {
+      "id": "refund",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "Refunds & Cancellation — Editlock",
+      "url": "https://editlock.io/legal/refund/",
+      "read_at": "2026-10-22T12:39:17.932773Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "3df4394a5e0ebef9d7c4c18aba8c3dd01937334a0c545538e12b28d457ea42a7",
+      "research_notes_en": "Read annualunusedwholemonthsrefund,monthlynonrefund,hardcap,failedpayment7daygrace and15daydownloadaccess. Cancellation-periodendversuswindowstart remains ambiguous."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "Terms of Service — Editlock",
+      "url": "https://editlock.io/legal/terms/",
+      "read_at": "2026-10-22T12:39:17.932782Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "52eebee709bd9ef3a32bc687ee657945016398bf77bf182e02a5d8e2287f42b9",
+      "research_notes_en": "Read INRallinclusive/noGSTcurrent, monthlyautorenew versus annualonepayment, annualdowngraderestriction, contentownership andownbackups. Noappsourcegrant."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "editlock.io",
+      "title": "Privacy Policy — Editlock",
+      "url": "https://editlock.io/legal/privacy/",
+      "read_at": "2026-10-22T12:39:17.932790Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "0fbf88d3aa73b86dae176aeaa0aef669d578d0a9e863320dca31087461004853",
+      "research_notes_en": "Read serviceprovidersandpossibleprocessingoutsideIndia; no-training isvendorpolicy not independentaudit."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:39:17.932790Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "approval",
+    "pricing",
+    "refund",
+    "linked-video"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "review-loop",
+        "title_en": "Attach approval to the cut being reviewed",
+        "title_zh": "把批准对应到当前审阅版本",
+        "en": "For a proposed client review, upload a clearly named cut, send its review link, ask for comments at the relevant moments and resolve the requested changes before marking that version Approved. Keep the next revision in the version stack rather than letting “final” in a filename carry the entire sign-off process.\n\nOfficial material describes In review, Changes requested and Approved states and a picture-lock reference. It does not establish a regulated signature, immutable archive or automatic verification that the requested edit actually happened. Compare the actual exported cut with the feedback before treating the status as acceptance. This walkthrough was not executed.",
+        "zh": "假设给客户审片，可上传命名明确的样片，发送审阅链接，请对方在相关时刻评论，完成修改后再把该版本标为 Approved。下一稿保留在版本堆栈中，不应只靠文件名的“final”承载验收流程。\n\n官方资料描述 In review、Changes requested 和 Approved 状态及 picture-lock 参照，但未确立受监管签名、不可改归档或自动核实修改已完成。把状态当作验收前，应比较真实导出样片与反馈。本流程未执行。",
+        "source_refs": ["product", "approval"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "members-reviewers",
+        "title_en": "Unlimited reviewers do not mean unlimited workspace members",
+        "title_zh": "无限审阅者不等于无限工作区成员",
+        "en": "Pricing separates free reviewers/clients from plan-limited members. Roles also change authority: Edit can upload, comment and approve but cannot make external share links; Edit & Share can. Full Access can manage members and other people’s work, while Admin controls settings and billing.\n\nChoose a reviewer link for the intended client review and a workspace role for a person who should operate the library. A user’s ability to approve is not the same as their authority to share or administer. Restricted projects, internal comments and domain controls have separate paid-tier placement; test a restricted participant before distributing confidential work.",
+        "zh": "价格页区分免费审阅者／客户与受套餐人数限制的成员。角色也改变权限：Edit 可上传、评论和批准，但不能建立外部共享链接；Edit & Share 可以。Full Access 可管理成员及他人工作，Admin 控制设置及账单。\n\n面向客户审阅可选择目标审阅链接，需操作媒体库的人则分配工作区角色。批准能力不等于共享或管理权限。受限项目、内部评论及域名控制另有付费档要求，分发保密工作前应测试受限参与者。",
+        "source_refs": ["roles", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "external-video",
+        "title_en": "A YouTube or Vimeo link saves storage by keeping the file elsewhere",
+        "title_zh": "YouTube／Vimeo 外链通过保留外部文件节省存储",
+        "en": "The linked-video guide says these assets stream from the originating platform and use no EDITLOCK storage. Timestamped comments, annotations, approval status and version browsing remain available, but EDITLOCK holds no downloadable copy. Side-by-side Compare is currently unavailable when either selected asset is such a link.\n\nThat tradeoff suits reviewing an already hosted cut when source access remains suitable. It does not create a backup or override the source owner’s settings. For a final delivery or an independently retained archive, keep the original export under your own control. A folder share can permit downloads of uploaded files while its linked videos remain non-downloadable.",
+        "zh": "外链视频指南称，这些资产从原平台串流，不占 EDITLOCK 存储；仍可做时间点评论、标注、审批状态及版本浏览，但 EDITLOCK 不保存可下载副本。两项中有外链视频时，当前不可用并排 Compare。\n\n源访问条件合适时，这适用于审阅已托管样片，但不会建立备份或覆盖源所有者设置。最终交付或独立保留归档应自行掌握原始导出。文件夹共享可允许下载已上传文件，其中外链视频仍不可下载。",
+        "source_refs": ["linked-video"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "links",
+        "title_en": "Link controls govern access, not previously obtained copies",
+        "title_zh": "链接控制管理访问，不会取回已有副本",
+        "en": "The share-options guide describes expiry, passphrases and original-file downloads, which default to off. Pricing places adjustable controls on paid plans. A link that stops working is different from an original file already downloaded by a recipient.\n\nFor a proposed time-boxed review, confirm the specific version, audience, download choice and expiry before sending. Check the link as the intended reviewer rather than assuming a workspace restriction applies identically to external sharing. Passphrases and role controls are documented features; their implementation, conflict handling and resistance to misuse were not tested.",
+        "zh": "共享选项指南描述到期时间、口令及原文件下载，下载默认关闭；价格页把可调整控制放在付费套餐。链接停止工作与接收者已下载的原文件是不同情况。\n\n假设做限时审阅，应先确认具体版本、受众、下载选择及到期，再发送。应从目标审阅者角度检查链接，不假定工作区限制完全同样适用于外部共享。口令与角色控制是文档功能，实现、冲突处理及防误用能力未测试。",
+        "source_refs": ["sharing", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-model",
+        "title_en": "Budget storage and internal members together",
+        "title_zh": "同时预算存储及内部成员",
+        "en": "Monthly INR prices shown publicly are Starter ₹599 for150GB/five members, Studio ₹1,699 for500GB/fifteen, Pro ₹2,999 for1TB/twenty-five and Agency ₹4,699 for1.75TB/unlimited. Free has2GB, two members and two projects, with five-day file/link expiry.\n\nThe annual selector shows total bills of ₹6,469/₹18,349/₹32,389/₹50,749 for those paid tiers. The terms distinguish monthly automatic renewal from annual one-time payment with reminders; annual mid-term downgrades are restricted. Storage is a hard cap, so new uploads pause instead of creating metered overage. Current terms state INR all-inclusive pricing without separately collected GST. These are public terms, not a completed checkout or a future tax guarantee.",
+        "zh": "公开月付 INR 价格为：Starter ₹599，150GB／五成员；Studio ₹1,699，500GB／十五成员；Pro ₹2,999，1TB／二十五成员；Agency ₹4,699，1.75TB／不限成员。Free 为2GB、两成员、两项目，文件／链接五天到期。\n\n年付选择器显示这四档总账单分别为 ₹6,469／₹18,349／₹32,389／₹50,749。条款区分月付自动续订与年付一次付款加提醒，年付期内降档受限。存储为硬上限，达到后暂停新上传，不产生按量超额账单。当前条款称 INR 全包且不另收 GST。这些是公开条件，不是已完成结账或未来税务保证。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retention",
+        "title_en": "Expiry, Trash and cancellation are separate recovery paths",
+        "title_zh": "到期、回收站与取消是不同恢复路径",
+        "en": "Trash offers a limited restore window for deleted assets/projects, but the read article does not specify its duration. Permanent deletion cannot be undone. This should not be equated with the free plan’s automatic expiry or the fifteen-day cancellation retrieval window.\n\nThe cancellation policy gives read/download time before files are removed while the account remains Free. Failed renewals have a documented seven-day full-access grace before the restricted retrieval phase. Preserve a local original and inspect a complete exit copy of media and feedback; later resubscription does not prove deleted files return. The relationship between paid-period end and the start of the cancellation window needs confirmation.",
+        "zh": "回收站为已删资产／项目提供有限恢复期，但所读文章未注明时长；永久删除不可撤销。不能把它等同于免费方案自动到期或取消后的十五天取回窗口。\n\n取消政策提供文件移除前的读取／下载时间，账户则保留在 Free。续费失败有文档化七天完整访问宽限，之后进入受限取回阶段。应保留本地原件，并检查包含媒体和反馈的完整退出副本；以后重订不证明已删文件会返回。已付款账期结束与取消窗口起算的关系需确认。",
+        "source_refs": ["trash", "refund", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract-fit",
+        "title_en": "Use the refund rule and data scope that apply to this service",
+        "title_zh": "采用本服务适用的退款及数据范围",
+        "en": "The refund policy makes monthly plans non-refundable and annual cancellation refundable for unused whole calendar months, excluding the current month; a plan switch/upgrade has its own pro-rata treatment. It gives a processing estimate rather than a guaranteed bank-credit date.\n\nThe privacy page identifies hosting/storage, payments and email providers and allows processing outside India. Its no-training statement is a vendor policy, not independent assurance. The service terms retain EDITLOCK software rights while users retain their uploaded content; no source redistribution or self-hosted backend right was established. Evaluate it for a client-review loop when these storage, access and exit conditions fit. Resolve compatibility is described as exporting and uploading a cut, not an independently verified native editing integration.",
+        "zh": "退款政策规定月付不退款，年付取消退还未用完整自然月，当前月不退；套餐切换／升级有独立按比例处理。处理时间是估计，不是银行到账保证。\n\n隐私页列出托管／存储、付款及邮件服务商，并允许在印度境外处理。不用于训练属于厂商政策，不是独立保证。服务条款保留 EDITLOCK 软件权利，用户保有上传内容，未确立源码再分发或自托管后端权利。存储、访问及退出条件适合时，可评估其客户审阅闭环。Resolve 兼容描述是导出并上传样片，不是经独立验证的原生编辑集成。",
+        "source_refs": ["refund", "privacy", "terms", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "EDITLOCK: Video Approval, Reviewer Access and File Retention",
+    "title_zh": "EDITLOCK：视频批准、审阅访问及文件保留",
+    "description_en": "Evaluate version-specific feedback, stored versus linked videos, member limits, hard storage caps and cancellation retrieval.",
+    "description_zh": "评估按版本反馈、存储与外链视频、成员上限、存储硬限制及取消后取回。",
+    "primary_intent": "Evaluate video review and approval operating conditions.",
+    "secondary_questions": [
+      "Do unlimited reviewers include unlimited members?",
+      "Does a video link create an archived copy?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,upload/playback,annotation,approval/lock,share/role,Driveconnection,Trashrestore,download/export,checkout/refund or cancellation tested.",
+      "zh": "未测试账户、上传／播放、标注、批准／锁定、共享／角色、Drive连接、回收站恢复、下载／导出、结账／退款或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "ExactTrashduration, freeexpiry recovery, cancellationwindowstart versusperiodend, annualupgrade/refund/access timing, fullfeedback export and accountresubscription recovery unverified.",
+      "zh": "准确回收站时长、免费到期恢复、取消窗口与账期结束关系、年付升级／退款／访问时点、完整反馈导出及重订恢复未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Upload/codec/perframe accuracy, conflict semantics, security implementation, source license/selfhosting and completeclient/localization coverage not established. PublicHTTP attempts returned403; stoppedthat route; already accessible normalpublicbrowser supplied actualread excerpts.",
+      "zh": "上传／编码／逐帧精度、冲突语义、安全实现、源码许可／自托管及完整客户端／语言覆盖未确立。公开HTTP请求返回403，已停止该读取路径；实际片段来自此前已正常可访问的公开浏览器。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

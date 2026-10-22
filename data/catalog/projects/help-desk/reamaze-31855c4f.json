@@ -1,0 +1,413 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "reamaze-31855c4f",
+  "name": "Re:amaze",
+  "website_url": "https://www.reamaze.com/",
+  "domain": "www.reamaze.com",
+  "identity_domain": "reamaze.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Re:amaze combines a shared support inbox, website chat, knowledge, workflow automation and ecommerce context. Its AI Agent can answer chat, email and SMS from selected content and connected store data; classic chatbots, Cue Bots and Workflow Bots have different interactions when AI is enabled. The current website still labels AI features beta.\n\nFor a store-support evaluation, connect the correct brand, distinguish reply status from completed work and test the live order path separately from the knowledge-only AI test tool. Subscription seats, AI-only resolution use and the fixed-price Starter conversation limit are different cost measures. This is documentation research, with no account, store installation, customer message, model call or purchase tested.",
+  "description_zh": "Re:amaze结合共享支持收件箱、网站聊天、知识、工作流自动化及电商上下文。AI Agent可按选定内容及已连店铺数据回答聊天、邮件和SMS；启用AI时，传统机器人、Cue Bots及Workflow Bots的行为不同。当前网站仍将AI功能标为beta。\n\n店铺支持评估应连接正确品牌，区分已回复状态与完成工作，并将真实订单链路与仅知识的AI测试工具分开。订阅席位、纯AI解决用量及固定价Starter会话限制是不同成本口径。本文为文档研究，未测试账户、店铺安装、客户消息、模型调用或购买。",
+  "core_features": [
+    {
+      "name_en": "Brand-aware shared support",
+      "name_zh": "区分品牌的共享支持",
+      "explanation_en": "Route email/chat/social conversations with ownership, notes and store context.",
+      "explanation_zh": "以负责人、备注及店铺上下文路由邮件／聊天／社交会话。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI knowledge and store answers",
+      "name_zh": "AI知识及店铺回答",
+      "explanation_en": "Choose FAQ, response templates, custom context and supported store data.",
+      "explanation_zh": "选择FAQ、回复模板、自定义上下文及支持的店铺数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ai",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pre-filters before Workflows",
+      "name_zh": "工作流前置预过滤",
+      "explanation_en": "A matching AI Pre-Filter prevents AI Agent handling and skips the Workflow.",
+      "explanation_zh": "匹配AI预过滤后，AI Agent不处理，工作流跳过。",
+      "explanation_scope": "product_specific",
+      "source_ref": "prefilter",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate multibrand order-status support while keeping policies and stores correctly mapped.",
+      "Send sensitive topics to a human process before enabling autonomous answers."
+    ],
+    "zh": [
+      "在政策和店铺正确映射下评估多品牌订单状态支持。",
+      "启用自主回答前，将敏感主题交给人工流程。"
+    ],
+    "source_refs": ["shopify", "ai", "prefilter"],
+    "basis": "Editorial evaluation guidance, not executed tests or measured savings."
+  },
+  "technical_details": {
+    "Test versus live context": {
+      "en": "TheTestAI AgenttoolusestheconfiguredknowledgebutnotrealShopify/ecommerceproductororderdata.Testmessagesdonotreachcustomers.",
+      "zh": "Test AI Agent工具使用配置知识，但不使用真实Shopify／电商商品或订单数据，测试消息不发给客户。",
+      "source_ref": "test",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Ecommerce support manager",
+      "Multibrand support administrator",
+      "Store operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Connect a store to the intended brand and prepare current FAQ/templates.",
+        "zh": "将店铺连接至预期品牌，准备现行FAQ／模板。",
+        "source_refs": ["shopify", "ai"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test knowledge answers, then separately verify actual customer/order mapping through a controlled live path.",
+        "zh": "测试知识回答，再通过受控真实链路单独验证客户／订单映射。",
+        "source_refs": ["test", "shopify"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Review pre-filter/workflow interactions, human ownership and AI overage settings.",
+        "zh": "审查预过滤／工作流交互、人工归属及AI超额设置。",
+        "source_refs": ["prefilter", "workflow", "billing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Shopify",
+        "source_ref": "shopify",
+        "scope": "Install/confirmappthenchooseRe:amazebrand;widgetinstallationseparate."
+      },
+      {
+        "name": "WooCommerce knowledge/orderdata",
+        "source_ref": "ai",
+        "scope": "AIoverviewlistsconnectedproducts/orders;testtoolhasnoactualstorelookup."
+      },
+      {
+        "name": "SMS and email AI channels",
+        "source_ref": "ai",
+        "scope": "Enableoneormorebrandchannelsseparately;providerconnection/deliveryfeesnotfullyverified."
+      }
+    ],
+    "source_ref": "shopify"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A matching Pre-Filter can mark done/spam/archive; Tag Only does not establish a human owner or response.",
+        "zh": "匹配预过滤可标完成／垃圾／归档，仅加标签不代表有人工负责人或回应。",
+        "source_refs": ["prefilter"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Enabling AI suppresses classic bots, while Cue Bots and Workflow Bots continue.",
+        "zh": "启用AI会停止传统机器人，但Cue Bots和Workflow Bots继续。",
+        "source_refs": ["ai"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "An AI reply sets Responded, not automatically Done, On-Hold or Archived.",
+        "zh": "AI回复设置Responded，不会自动等于Done、On-Hold或Archived。",
+        "source_refs": ["ai"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.reamaze.com/tos",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "billing"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Basic/Pro/Plusperteammember,optionalannualbilling;Starterfixedrespondedconversationcap;AIresolutionallowancesandoveragearedistinct.Dollarcodeunverified.",
+    "source_snapshot_en": "Basic/Pro/Plus29/49/69permember/month or26.10/44.10/62.10annualequivalents;AI5/10/20perseat/month,extra0.85each. Starter59/monthunlimitedstaffbut500respondedconversations;noStarterAIallowanceinferred. VolumeAIall0.85each.14dayPlusfeaturetrialnocard.",
+    "source_snapshot_zh": "Basic／Pro／Plus每成员月29／49／69，年付折月26.10／44.10／62.10；AI每席每月5／10／20次，额外0.85。Starter每月59不限员工但500已回复会话，未推定其AI额度。Volume AI全部每次0.85。14天Plus功能免卡试用。",
+    "checked_at": "2026-10-22T12:06:54.106718+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Can the AI test tool verify my order lookup?",
+      "question_zh": "AI测试工具能验证订单查询吗？",
+      "answer_en": "No. It has no real ecommerce connection or customer behind it and does not pull product/order data, even if those switches are enabled.",
+      "answer_zh": "不能，它没有真实电商连接或客户，即使开关启用也不拉取商品／订单数据。",
+      "source_refs": ["test"]
+    },
+    {
+      "question_en": "Is each AI message a charged resolution?",
+      "question_zh": "每条AI消息都算收费解决吗？",
+      "answer_en": "No. Billing counts an entirely AI-handled conversation thread once, excluding human escalations. This is a billing definition, not independent outcome verification.",
+      "answer_zh": "不是，计费按完全由AI处理的会话线程计一次，排除人工升级。这是计费定义，不是独立结果验证。",
+      "source_refs": ["billing"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/reamaze",
+      "read_at": "2026-10-22T09:06:16.070Z",
+      "excerpt_sha256": "c207bd477ca6434331e5b9b1a1421192d576d68add68e4de8644d92011f1b8e1",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Re:amaze - AI-Powered Customer Service and AI Agent Platform Designed for eCommerce and Online Businesses",
+      "title": "Re:amaze - AI-Powered Customer Service and AI Agent Platform Designed for eCommerce and Online Businesses",
+      "url": "https://www.reamaze.com/",
+      "read_at": "2026-10-22T12:06:15.380674+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b2a5f759f5bd0003ff5c20630fe57ac590136ec0b9104ca854123fc01cb55a5c",
+      "research_notes_en": "Sharedcustomerinbox,ecommerce/livechat/bots/FAQandAI(beta) positioning; outcomeclaimsunverified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Re:amaze Pricing",
+      "title": "Re:amaze Pricing",
+      "url": "https://www.reamaze.com/pricing",
+      "read_at": "2026-10-22T12:06:15.846071+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "aebb9c20417bf473beb5015e80c62dfc3744db587a0b0d16d950fdfb23a13578",
+      "research_notes_en": "Current29/49/69monthly versus26.10/44.10/62.10annualequivalent,Starter59/500responded,seatAIallowancesand14daytrial."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "AI Agent: Overview and Setup - Re:amaze",
+      "title": "AI Agent: Overview and Setup - Re:amaze",
+      "url": "https://support.reamaze.com/kb/using-the-ai-agent/how-to-use-the-re-amaze-ai-agent",
+      "read_at": "2026-10-22T12:06:43.003609+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b0f69990d85e931a0b24ad8056ee62b6274c9fe97b3d14ae5464092b1e1775c4",
+      "research_notes_en": "Chat/email/SMSscope,selectedknowledgesources,brandchannels,Respondedstateandclassicbotinteractions."
+    },
+    {
+      "id": "test",
+      "type": "official_documentation",
+      "site": "How to Test the AI Agent - Re:amaze",
+      "title": "How to Test the AI Agent - Re:amaze",
+      "url": "https://support.reamaze.com/kb/using-the-ai-agent/how-to-test-the-ai-agent",
+      "read_at": "2026-10-22T12:06:41.429924+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7a44f331192076a55a52aca6fc284e3d9dc5ee97ff645bd7b875521f47e41688",
+      "research_notes_en": "No realcustomersends,brandtest,source/outcomes,andexplicitnorealproduct/orderlookup;onedaytesthistory."
+    },
+    {
+      "id": "shopify",
+      "type": "official_documentation",
+      "site": "Shopify: Getting Your Store Connected - Re:amaze",
+      "title": "Shopify: Getting Your Store Connected - Re:amaze",
+      "url": "https://support.reamaze.com/kb/re-amaze-and-shopify/shopify-visual-integration-walkthrough",
+      "read_at": "2026-10-22T12:06:41.238519+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1f327b38fdeefb557fd4ffc5f6b65bd2eb2cf4651a75b8768d104aa3aa57dd7c",
+      "research_notes_en": "Appstoreconnectionrequiresconfirmationandbrandselection; widgetsubsequentsetup, no actualinstall."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "Workflows - Re:amaze",
+      "title": "Workflows - Re:amaze",
+      "url": "https://support.reamaze.com/kb/internal-team-productivity/setting-up-automation-workflows",
+      "read_at": "2026-10-22T12:06:40.936929+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "665a53759a673cf99a04c8d32da9934e60ef261feca363473b3faf7ec0ad879a",
+      "research_notes_en": "Automatedversusmanual,RunWorkflowAsstaffresponsibility,brandconditionsandmultipleactions."
+    },
+    {
+      "id": "prefilter",
+      "type": "official_documentation",
+      "site": "AI Pre-Filter: Overview and Setup - Re:amaze",
+      "title": "AI Pre-Filter: Overview and Setup - Re:amaze",
+      "url": "https://support.reamaze.com/kb/automation/ai-pre-filter-overview-and-setup",
+      "read_at": "2026-10-22T12:06:41.761579+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "654c26e815981947c1112060424021aa963d922d73bd3a32abd44aca8946fca9",
+      "research_notes_en": "RequiresAIallowance/overage;matchingexcludesagentandoutranksworkflow,actionsincludeTagOnlynotautomaticassignment."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "How AI Agent Resolutions Are Counted and Billed - Re:amaze",
+      "title": "How AI Agent Resolutions Are Counted and Billed - Re:amaze",
+      "url": "https://support.reamaze.com/kb/using-the-ai-agent/how-ai-agent-resolutions-are-counted-and-billed",
+      "read_at": "2026-10-22T12:06:54.106718+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2eb4c6cd73131407f3327f4b2315bd21ec53eb5ea7d475fd4760fddcc8b21b66",
+      "research_notes_en": "OneAI-onlythreadresolution,5/10/20perseat,0.85overage,classicfallbackwithoverageoff,Volumeplansnoseatallowance."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Reamaze | Terms of Service",
+      "title": "Reamaze | Terms of Service",
+      "url": "https://www.reamaze.com/tos",
+      "read_at": "2026-10-22T12:06:53.875183+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "508c7fa8d9807570ed1c7f13e6d905de3a59f02258c5a046a1193a494603ec3b",
+      "research_notes_en": "Selected2025terms:proprietaryrestrictions,AIadditionaltermsandbackupresponsibility;fulllegal/retentionnotreviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:06:54.106718+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "ai",
+    "test",
+    "shopify",
+    "pricing",
+    "billing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "brand-store",
+        "title_en": "Verify the brand and source data before automating replies",
+        "title_zh": "自动回复前确认品牌及来源资料",
+        "en": "Re:amaze combines shared conversations with store context, knowledge and automated engagement. The Shopify guide connects the installed app to a selected Re:amaze brand; widget and Cue setup follow. In a multibrand account, attaching the wrong brand can make an otherwise plausible support answer inappropriate.\n\nFor an illustrative delivery question, verify the customer, store, order and governing policy together. The AI overview lists FAQ, response templates, custom context/URLs and Shopify or WooCommerce product/order sources. Review selected sources for stale policies and unintended disclosure before activation. Published speed and satisfaction benefits remain vendor statements, not independent evidence.",
+        "zh": "Re:amaze将共享会话与店铺上下文、知识及自动互动结合。Shopify指南将安装的应用连接至选定Re:amaze品牌，随后才配置组件及Cue。多品牌账户若连错品牌，看似合理的支持回答也可能不适用。\n\n以假设配送问题为例，应共同确认客户、店铺、订单及适用政策。AI概览列FAQ、回复模板、自定义上下文／URL及Shopify或WooCommerce商品／订单来源。启用前应审查所选来源有无旧政策及意外披露。公开速度、满意度收益仍属厂商陈述，未独立验证。",
+        "source_refs": ["product", "shopify", "ai"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "ai-state",
+        "title_en": "Distinguish an AI response from a completed case",
+        "title_zh": "区分AI回复与完成案例",
+        "en": "The AI Agent can be enabled on chat and selected email/SMS channels. A sent reply moves a conversation to Responded, which the guide distinguishes from Done, On-Hold and Archived. Enabling the Agent suppresses classic Hello, Order, Shopping and FAQ bots, while Cue Bots and Workflow Bots continue.\n\nThat interaction matters when migrating an existing bot setup: do not assume every old rule disappears or every case is now finished. Check an unanswered question, repeat customer message and a human escalation against the actual inbox state and owner. Beta labels remain visible on the current website. No AI answer or handoff was executed in this research.",
+        "zh": "AI Agent可在聊天及选定邮件／SMS渠道启用。发送回复将会话转为Responded，指南将其与Done、On-Hold、Archived区分。启用Agent会停止传统Hello、Order、Shopping及FAQ机器人，Cue Bots及Workflow Bots则继续。\n\n迁移既有机器人时这一交互很重要，不能假定所有旧规则消失或每个案例已完成。应对照真实收件箱状态及负责人检查无法回答、客户再次消息及人工升级。当前网站仍显示beta标签。本研究未执行AI回答或交接。",
+        "source_refs": ["ai", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "priority",
+        "title_en": "A pre-filter can bypass both AI and your Workflow",
+        "title_zh": "预过滤可同时绕过AI与工作流",
+        "en": "AI Pre-Filter requires an enabled AI Agent with remaining allowance or overage enabled. A matching filter adds a tag and can leave open, mark done, mark spam or archive. Regardless of the chosen action, the AI Agent does not handle a matching conversation. The guide also says the pre-filter takes priority over a matching Workflow, which is skipped.\n\nUse a sensitive-topic filter cautiously: Tag Only keeps the conversation open but does not by itself prove assignment or a human reply. Automated and manual Workflows have separate configuration, brand scope and Run Workflow As identity; reply actions need responsible staff. Test overlapping conditions, a false positive and unavailable ownership before enabling public sends. Exact retries and global execution ordering remain unverified.",
+        "zh": "AI预过滤需要启用AI Agent，并有剩余额度或开启超额。匹配后加标签，可保持打开、标完成、垃圾或归档；无论选哪个动作，AI Agent都不处理该会话。指南还称预过滤优先于匹配工作流，后者跳过。\n\n敏感主题过滤需谨慎：仅加标签保留打开，但本身不能证明已分配或有人回复。自动和手动工作流分别配置，包含品牌范围及Run Workflow As身份，回复动作需负责员工。启用公开发送前应测试重叠条件、误判及负责人不可用。准确重试及全局执行顺序未核实。",
+        "source_refs": ["prefilter", "workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "test-boundary",
+        "title_en": "Knowledge-only tests cannot prove live commerce behavior",
+        "title_zh": "仅知识测试不能证明真实电商行为",
+        "en": "Test AI Agent supports brand selection, follow-up messages and an outcome/source panel. It explicitly sends no real customer messages, has no real Shopify/ecommerce connection and does not retrieve product or order data even when those knowledge switches are on. Test history is retained for one day and is not treated as a real backend conversation.\n\nUse it to inspect the source behind an answer, including Answered, Escalated, Resolved and Failed outcomes. Separately verify a controlled real order/customer path before deployment. A successful FAQ answer cannot demonstrate authenticated order lookup, refund authority or cross-brand isolation. The profile performed neither test mode nor real-customer operation.",
+        "zh": "Test AI Agent支持品牌选择、后续消息及结果／来源面板，明确不发送真实客户消息、没有真实Shopify／电商连接，即使相关知识开关打开也不取商品或订单数据。测试历史保留1天，不作为真实后台会话。\n\n可用它检查回答背后来源及Answered、Escalated、Resolved、Failed结果。部署前还需单独验证受控真实订单／客户链路。FAQ答对不能演示认证订单查询、退款权限或跨品牌隔离。本文既未执行测试模式，也未执行真实客户操作。",
+        "source_refs": ["test"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bill",
+        "title_en": "Separate paid people, responded conversations and AI threads",
+        "title_zh": "分开计算付费人员、已回复会话及AI线程",
+        "en": "Basic/Pro/Plus cost$29/$49/$69 per team member/month, or$26.10/$44.10/$62.10 annual equivalents. Their included monthly AI resolutions are five/ten/twenty per seat, with$0.85 additional resolutions. An entirely AI-handled thread counts once; multiple messages do not multiply the count, and human escalation is excluded. With overage off, classic bots can provide the documented fallback. Volume plans instead bill all AI resolutions at$0.85.\n\nStarter is a different$59/month flat offer with unlimited staff but five hundred responded conversations. Do not infer unlimited work or seat-based AI allowances for it. The fourteen-day trial includes Plus features without a card; it is not a permanent free plan. Confirm provider traffic, exact currency, overage, exports and restore before buying. Published terms require customer backups and incorporate additional AI terms, whose full scope was not reviewed here.",
+        "zh": "Basic／Pro／Plus每成员每月$29／$49／$69，年付折月$26.10／$44.10／$62.10，含每席每月5／10／20次AI解决，额外每次$0.85。纯AI处理线程计一次，多条消息不重复计，人工升级排除。关闭超额后可用文档所述传统机器人回退，Volume方案则全部AI解决每次$0.85。\n\nStarter另为每月$59固定方案，不限员工但限500已回复会话，不能推定无限工作或按席AI额度。14天免卡试用含Plus功能，并非永久免费。购买前应确认服务商流量、准确币种、超额、导出和恢复。公开条款要求客户备份并纳入额外AI条款，其完整范围此次未核查。",
+        "source_refs": ["pricing", "billing", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Re:amaze: Store Context, AI Pre-Filters, Testing and Resolution Costs",
+    "title_zh": "Re:amaze：店铺上下文、AI预过滤、测试及解决成本",
+    "description_en": "Evaluate Re:amaze brand mapping, live versus test order context, AI/Workflow precedence, responded states, seats, Starter limits and resolution overage.",
+    "description_zh": "评估Re:amaze品牌映射、真实与测试订单上下文、AI／工作流优先级、已回复状态、席位、Starter限制及解决超额。",
+    "primary_intent": "Evaluate Re:amaze ecommerce support and AI workflow costs.",
+    "secondary_questions": [
+      "Does test AI see real orders?",
+      "Do pre-filters skip Workflows?",
+      "What counts as a paid AI resolution?"
+    ],
+    "query_basis": "Editorial questions; no measured keyword demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, store, widget, AI, pre-filter, Workflow, customer message, billing or purchase executed. Providerfees,currency,StarterAIallowance,export/restore,fullAIlegalterms,UIlanguages andregionalaccessremainunverified.",
+      "zh": "未执行账户、店铺、组件、AI、预过滤、工作流、客户消息、账单或购买。服务商费、币种、Starter AI额度、导出／恢复、完整AI法律条款、界面语言及地区访问未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

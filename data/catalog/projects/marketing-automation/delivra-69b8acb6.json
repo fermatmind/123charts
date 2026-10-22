@@ -1,0 +1,428 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "delivra-69b8acb6",
+  "name": "Delivra",
+  "website_url": "https://www.delivra.com/",
+  "domain": "www.delivra.com",
+  "identity_domain": "delivra.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Delivra combines email and SMS campaigns with a visual automation builder and contact-data tools. A workflow can start from a qualifying event, a campaign audience or a scheduled triggered segment. Its distinctive evaluation questions concern how contacts enter, how they wait for data, and how structured records feed the next message.\n\nIt is worth considering for a marketing operations team that needs a repeatable nurture or event-follow-up process and can maintain its source data. A small one-off newsletter does not by itself establish a need for custom tables or chained automations. The workflow examples here are editorial evaluation designs, not executed tests or evidence of customer results.",
+  "description_zh": "Delivra 将邮件、短信活动与可视化自动化构建器及联系人数据工具结合。流程可从符合条件的事件、营销活动受众或定时检查的触发分群开始。评估时尤其需要关注联系人如何进入、如何等待数据，以及结构化记录如何参与下一条消息。\n\n需要重复执行线索培育或活动后跟进，并能够维护源数据的营销运营团队，可以评估它。只发一次小型简报，本身不足以证明需要自定义表或串联自动化。以下流程示例是编辑提出的评估设计，未经实际执行，也不是客户效果证据。",
+  "core_features": [
+    {
+      "name_en": "Current or historical entry",
+      "name_zh": "当前或历史匹配入场",
+      "explanation_en": "Entry evaluation can include current matches or a limited historical match window.",
+      "explanation_zh": "入场评估可选择当前匹配，或有限窗口内的历史匹配。",
+      "source_ref": "evaluate",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Indefinite Stop block",
+      "name_zh": "无限期 Stop 块",
+      "explanation_en": "Hold a contact inside the workflow, preventing that contact from re-entering.",
+      "explanation_zh": "把联系人留在流程内部，从而阻止其重新进入。",
+      "source_ref": "stop",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Related custom records",
+      "name_zh": "关联自定义记录",
+      "explanation_en": "Choose global or per-contact keys when modeling repeated records.",
+      "explanation_zh": "为重复记录建模时，选择全局或按联系人唯一的键。",
+      "source_ref": "tables",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Channel-specific sending",
+      "name_zh": "按渠道发送",
+      "explanation_en": "Existing emails used inside a workflow must be API-type campaigns.",
+      "explanation_zh": "流程内部选用的已有邮件需要采用 API 类型活动。",
+      "source_ref": "campaign-block",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: event follow-up where attendance data can be maintained and missing records need a timed fallback.",
+      "Editorial fit: a nurture program using repeat transaction records and a deliberately scoped key."
+    ],
+    "zh": [
+      "编辑判断的适用场景：可维护出席数据，并需要对缺失记录设置超时后备路径的活动跟进。",
+      "编辑判断的适用场景：使用重复交易记录，并能明确键作用域的线索培育。"
+    ],
+    "source_refs": ["overview", "tables"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Marketing operations specialist",
+      "Email marketer",
+      "CRM administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define entry, re-entry and the timeout response in a recipient decision table.",
+        "zh": "用受众决策表定义入场、重入及超时处理。",
+        "source_refs": ["overview", "evaluate"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify keys and populate a small synthetic table before selecting merge tags.",
+        "zh": "选择合并标签前，验证键并填入小型合成表。",
+        "source_refs": ["tables"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test an administrator contact with appropriate data across both branch outcomes.",
+        "zh": "用具备适当数据的管理员联系人测试两种分支结果。",
+        "source_refs": ["testing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm channel approval and current commercial terms before a real launch.",
+        "zh": "正式启动前确认渠道批准与当前商业条款。",
+        "source_refs": ["sms", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A Stop block prevents re-entry while contacts remain held; deleting it can release a stale audience.",
+        "zh": "联系人留在 Stop 块时无法重入；删除该块可能放行过时受众。",
+        "source_refs": ["stop"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Self-service custom-table record deletion is not documented as available; the guide directs users to support and notes possible fees.",
+        "zh": "指南未提供自助删除自定义表记录的能力，而是要求联系支持，并说明可能收费。",
+        "source_refs": ["tables"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "UI languages, self-hosting rights, delivery retries and whole-automation recovery behavior were not verified.",
+        "zh": "界面语言、自托管权利、投递重试和整个自动化的恢复行为未核实。",
+        "source_refs": ["overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Ordinary HTTPS read of the 500-contact annual pricing body shows Starter $33/month and Professional $75/month, with Enterprise custom pricing. Embedded FAQ JSON-LD on the same page instead states $29/$69; no single confirmed starting price is assigned. Body lists 3/10/unlimited multi-step automations and 6 months/15 months/3 years data retention across Starter/Professional/Enterprise. SMS and professional services are add-ons; SMS usage needs a quote. Matrix icon-only inclusions were not inferred from flattened text.",
+    "source_snapshot_zh": "正常 HTTPS 实读的 500 联系人年付定价正文显示 Starter 每月 33 美元、Professional 每月 75 美元、Enterprise 定制报价。同页嵌入 FAQ JSON-LD 却写 29／69 美元，因此不指定单一已确认起价。正文按 Starter／Professional／Enterprise 分别列出 3／10／不限量的多步自动化，以及六个月／15 个月／三年的数据保留期。短信及专业服务为附加项，短信用量需询价。没有根据扁平文本猜测矩阵中仅以图标表示的权限。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/delivra",
+      "read_at": "2026-10-22T08:43:13.081Z",
+      "excerpt_sha256": "7c8a2725ec301bcaf5f94a0508396dffc2d138003c974ff4ce23dba373f82e7a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Automations Overview",
+      "url": "https://help.delivra.com/portal/en/kb/articles/automations-overview",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "e82bbeac00a4aed31de7a21fc4556ecff0c9bca95db80da5b55fbaf7b484508b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual entry modes, scheduling and re-entry setting. Overview recommends a five-minute testing override, conflicting with the dedicated testing article."
+    },
+    {
+      "id": "evaluate",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Using the Evaluate Email Contact and Evaluate SMS Contact blocks",
+      "url": "https://help.delivra.com/portal/en/kb/articles/using-the-evaluate-email-contact-and-evaluate-sms-contact-blocks",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "505567100ee9ee61f74e5ad642ae9a7e31971fa4deb0d87d7cf65b62895c4676",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read finite versus indefinite re-evaluation, field-update scope and current versus historical match. Historical lookback is up to 30 days and can include contacts whose data has since changed."
+    },
+    {
+      "id": "stop",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Using the Stop block",
+      "url": "https://help.delivra.com/portal/en/kb/articles/using-the-stop-block",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "36e754cc843090eeefe2f101778cd5af821470ae2633ce932281195a30f7c71f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Stop retaining contacts indefinitely and preventing re-entry. Deleting the block immediately releases held contacts, so current eligibility needs re-evaluation."
+    },
+    {
+      "id": "transfer",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Using the Next Automation block",
+      "url": "https://help.delivra.com/portal/en/kb/articles/using-the-next-automation-block",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "5b3c9e4dd418788e78edab70c371fe47fea902e191328778762bea3b7072a586",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Next Automation bypassing the destination entry point and its first campaign block; not equivalent to a new qualifying trigger."
+    },
+    {
+      "id": "tables",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Understanding & Creating Custom Tables",
+      "url": "https://help.delivra.com/portal/en/kb/articles/understanding-creating-custom-tables",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "fa097c71019576d4bda9b4dbcd461c85837eb68ede8d06ad291d4a5f53283793",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read global versus per-contact keys, engineering-created many-to-many tables, preview first-row limitation and support-only deletion. Specific field-type restrictions used rather than treating all field edits as impossible."
+    },
+    {
+      "id": "scoring",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Lead Scoring and Advanced Engagement Scoring",
+      "url": "https://help.delivra.com/portal/en/kb/articles/what-is-the-difference-between-lead-scoring-and-advanced-engagement-scoring",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "3c0d151062281e80876b2996ab3269c42685efe6ef838907ec34f4c2d42c0f83",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read B2B Lead Scoring versus B2C Advanced Engagement Scoring and license distinction; vendor model, not measured prediction accuracy."
+    },
+    {
+      "id": "testing",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Testing your automation",
+      "url": "https://help.delivra.com/portal/en/kb/articles/how-do-i-test-my-automation-12-12-2024",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "931da49643d93615b35e25b9a03109bdf58c4df0b917c0606cd661f05508d9bc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read administrator-as-active-contact requirement, at-least-15-minute override recommendation, custom-table caveat and no-open-path-first testing."
+    },
+    {
+      "id": "sms",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "How to Get Started With Delivra SMS",
+      "url": "https://help.delivra.com/portal/en/kb/articles/how-to-get-started-with-sms",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "730f2dc131a360f297ad88277e3b37e95ecdd699a65ff0442d7e493bf4f86db2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read carrier approval, configuration, U.S.-only documented SMS scope, no traditional two-way chat and usage-dependent pricing. No legal claims adopted."
+    },
+    {
+      "id": "campaign-block",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Using the Send Email and Send SMS Blocks in Automations",
+      "url": "https://help.delivra.com/portal/en/kb/articles/using-the-send-email-and-send-sms-blocks-in-automations",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "17f450caec3b9217dbd1474922aa1522f376b5b3c0edce3b62ead3df188316b7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read entry campaign versus in-workflow API-type requirement; no account execution performed."
+    },
+    {
+      "id": "clickstream",
+      "type": "official_documentation",
+      "site": "Delivra",
+      "title": "Using Page-View Data in Segments",
+      "url": "https://help.delivra.com/portal/en/kb/articles/using-page-view-data-in-segments",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "805c4cedbd6da362c1d0befad82269d534da7b5a6923f5f946995cbbe75374a6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read tracking implementation prerequisite and native integration requirement for Purchased clauses; not all external purchase data qualifies."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Delivra",
+      "title": "Pricing | Delivra",
+      "url": "https://www.delivra.com/pricing",
+      "read_at": "2026-10-22T11:14:34.635251Z",
+      "excerpt_sha256": "30f3199550dbe45577874196b66128ead0d58f579c78c9464d777d79397c9c56",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Web reader returned only a tag-manager iframe. Ordinary HTTPS curl with normal TLS verification retrieved the public page. Read extracted body and embedded JSON-LD separately: plan-card body shows $33/$75 per month billed annually at 500 contacts, while embedded FAQ says $29/$69. No normalized price; no restriction was bypassed. Raw HTML retained locally."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:14:34.635251Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "tables"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry",
+        "title_en": "Choose what an entry actually means",
+        "title_zh": "先定义入场含义",
+        "en": "The builder distinguishes an event, a campaign starting audience and a triggered segment checked on a schedule. Evaluate used at entry can react to updates to its criteria fields, or optionally any profile field. Current Match includes current qualifiers; Historical Match can include records that matched within up to 30 days even if their data later changed. For an event reminder, a past registration should not silently be treated as a current registration. Record that distinction before choosing a lookback.",
+        "zh": "构建器区分事件、作为起点的活动受众，以及按计划检查的触发分群。入口 Evaluate 可响应条件涉及字段的更新，也可选择响应任何档案字段更新。Current Match 纳入当前符合条件者；Historical Match 最多回看 30 天，即使记录后来不再匹配也可能纳入。活动提醒中，曾经报名不应被默认为当前仍已报名。选择回看范围前应先明确这个区别。",
+        "source_refs": ["overview", "evaluate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "nurture-example",
+        "title_en": "Wait for a condition with a useful No path",
+        "title_zh": "为等待条件设计有用的 No 路径",
+        "en": "A hypothetical event follow-up can wait for an attendance field, then branch into attendee resources or an absence follow-up. Re-evaluation for a specific period eventually takes the No path when the condition remains unmet. Indefinite re-evaluation never takes that No path. Choose a finite window when missing data needs an operational response; otherwise a broken attendance sync can look like an intentionally waiting audience. This example requires the event system to supply reliable attendance data.",
+        "zh": "假设活动后跟进需要等待出席字段，再分为向出席者发送资料、向缺席者发送后续信息。限定时间的重新评估会在超时仍未满足条件时走 No 路径；无限期重新评估永远不会走这条 No 路径。如果缺失数据需要运营处理，就应设有限窗口，否则损坏的出席同步可能看起来只是受众仍在正常等待。本例依赖活动系统提供可靠的出席数据。",
+        "source_refs": ["evaluate"],
+        "evidence_type": "editorial_workflow_example"
+      },
+      {
+        "id": "flow-boundaries",
+        "title_en": "Stop and transfer change who can move",
+        "title_zh": "Stop 与转移会改变人员流动",
+        "en": "Stop keeps people inside the workflow indefinitely, so they cannot re-enter it. Deleting Stop releases held contacts immediately; an eligibility check before the next send can prevent outdated follow-up. Next Automation enters after the destination entry point, including skipping an entry email in the documented example. Treat a transferred contact as a separate path requiring its own qualification checks. Neither behavior proves that a global stopped automation can recall messages already handed off for delivery.",
+        "zh": "Stop 会把人员无限期留在流程内，因此他们无法重入。删除 Stop 会立即放行被留住的联系人；下一次发送前检查资格，可避免过时跟进。Next Automation 从目标流程入口之后进入，文档示例中会跳过入口邮件。转入联系人应视为需要单独检查资格的路径。这两种行为都不能证明全局停止自动化可以撤回已交付发送的消息。",
+        "source_refs": ["stop", "transfer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-shape",
+        "title_en": "A custom table needs a deliberate key",
+        "title_zh": "自定义表需要认真选择键",
+        "en": "Global one-to-many keys must be unique across contacts; a collision can update or reassign a record. Contact-scoped keys can repeat for different contacts. Many-to-many setup requires Delivra engineering rather than a visible self-service option. Forms support one-to-one tables, while campaign merge tags require the table to be represented in the segment. Preview uses the first custom-table record, so it is insufficient to prove the correct repeated record will be selected in a live message.",
+        "zh": "全局一对多键必须跨联系人唯一；冲突可能更新记录或将其重新关联。按联系人限定的键则可在不同联系人间重复。多对多需要 Delivra 工程团队配置，没有直接可见的自助入口。表单支持一对一表，活动中的表合并标签则要求分群包含相应表。预览使用自定义表的第一条记录，因此不能据此证明真实消息一定会选中正确的重复记录。",
+        "source_refs": ["tables"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scores-tracking",
+        "title_en": "Scores and purchase conditions have different prerequisites",
+        "title_zh": "评分与购买条件各有前提",
+        "en": "Delivra distinguishes a B2B lead-stage model from B2C engagement scoring. Its scoring guide places Lead Scoring in Enterprise and Advanced Engagement Scoring in Professional and Enterprise; these are vendor entitlements, not evidence of predictive accuracy. Viewed and Purchased clauses also need tracking implementation, and Purchased is limited to native clickstream integrations. An order imported elsewhere should not automatically be assumed to satisfy that condition. Validate one known purchase and one missing-data case against the intended branch.",
+        "zh": "Delivra 区分 B2B 线索阶段模型与 B2C 互动评分。评分指南将 Lead Scoring 列为 Enterprise 功能，将 Advanced Engagement Scoring 列为 Professional 和 Enterprise 功能；这属于厂商权限说明，不代表预测准确性已验证。Viewed 与 Purchased 条件也需要实施跟踪，其中 Purchased 限于原生点击流集成。不能默认从其他系统导入的订单也会满足该条件。应以一笔已知购买和一例缺失数据核对预期分支。",
+        "source_refs": ["scoring", "clickstream"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "testing",
+        "title_en": "Test the data path as well as the email",
+        "title_zh": "同时测试数据路径与邮件",
+        "en": "The built-in test requires an administrator address that is also an active contact. The dedicated testing article recommends a Pause/Wait override of at least 15 minutes; the overview recommends five, so the guidance conflicts. Custom-table workflows may need a populated administrator record or an explicitly isolated internal live cohort. For open-based branching, test the did-not-open path first to avoid prior opens contaminating the next result. These procedures were read but not executed.",
+        "zh": "内置测试要求管理员地址同时是活动联系人。专门测试文章建议 Pause/Wait 覆盖值至少 15 分钟，而概览建议五分钟，两者存在冲突。自定义表流程可能需要填有表数据的管理员记录，或明确隔离的内部真实流程测试群。测试按打开情况分支时，应先测未打开路径，避免此前打开记录干扰后一次结果。这些程序已实读，但未执行。",
+        "source_refs": ["testing", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "channel-cost",
+        "title_en": "Check channel scope before comparing prices",
+        "title_zh": "比较价格前先核对渠道范围",
+        "en": "SMS requires number provisioning and carrier approval. The SMS guide documents U.S. numbers only and distinguishes automated responses from traditional two-way conversations. SMS is priced by needs and volume. The public pricing body and embedded FAQ currently disagree on email plan starting amounts; preserve that disagreement instead of presenting a confirmed quote. Procurement should specify contact tier, annual commitment, automation allowance, channel charges and any data setup assistance.",
+        "zh": "短信需要配置号码并取得运营商批准。短信指南仅说明支持美国号码，并区分自动回复与传统双向会话。短信按需求和用量定价。公开定价正文与嵌入 FAQ 目前对邮件套餐起价说法不同，应保留差异，而不是给出已确认报价。采购时需明确联系人数档位、年付承诺、自动化额度、渠道费用，以及是否需要数据配置协助。",
+        "source_refs": ["sms", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Delivra: email and SMS automation, custom data and flow boundaries",
+    "title_zh": "Delivra：邮件短信自动化、自定义数据与流程边界",
+    "description_en": "Understand Delivra entry evaluation, Stop blocks, chained workflows, custom-table keys, testing limits and pricing uncertainty.",
+    "description_zh": "了解 Delivra 入场评估、Stop 块、流程串联、自定义表键、测试限制与价格不确定性。",
+    "primary_intent": "Evaluate Delivra automation behavior and structured contact data",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Current purchase quote is unresolved because page body and embedded FAQ differ.",
+      "zh": "定价正文与嵌入 FAQ 不同，当前采购报价仍未解决。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account execution, carrier registration, data import or end-to-end delivery test was performed.",
+      "zh": "未操作账户、登记运营商、导入数据或测试端到端投递。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Whole-automation stop/restart semantics and webhook retry/idempotency require further operational evidence.",
+      "zh": "整个自动化的停止／重启语义，以及 Webhook 重试与幂等性仍需进一步操作证据。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

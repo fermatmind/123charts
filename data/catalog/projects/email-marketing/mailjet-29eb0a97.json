@@ -1,0 +1,386 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mailjet-29eb0a97",
+  "name": "Mailjet",
+  "website_url": "https://www.mailjet.com/",
+  "domain": "www.mailjet.com",
+  "identity_domain": "mailjet.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Sinch Mailjet supports newsletter campaigns and developer sending through APIs and SMTP. Its marketer-facing editor, contact lists and statistics coexist with an automation builder, while actual automation access depends on the subscription.\n\nA useful evaluation separates three outcomes: a request was accepted, a contact advanced through a journey, and a recipient server accepted the message. This profile follows those boundaries and examines free-account holds, suppression and the current price cards. No account or delivery test was performed.",
+  "description_zh": "Sinch Mailjet 支持新闻简报活动，以及 API 和 SMTP 开发者发送。营销编辑器、联系人列表及统计与自动化构建器并存，但实际自动化权限取决于套餐。\n\n评估时需区分三个结果：请求被接受、联系人推进路径，以及收件服务器接受邮件。本文围绕这些边界，检查免费账户阻发、抑制与现行价格卡片。未操作账户或进行投递测试。",
+  "core_features": [
+    {
+      "name_en": "Campaign editor",
+      "name_zh": "活动编辑器",
+      "explanation_en": "Design campaigns alongside contact and form management.",
+      "explanation_zh": "在联系人及表单管理之外设计活动。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "External-event automation",
+      "name_zh": "外部事件自动化",
+      "explanation_en": "Match an application event to an existing contact and configured qualifier.",
+      "explanation_zh": "将应用事件匹配到已有联系人及配置的事件名。",
+      "source_ref": "automation-events",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "API and SMTP sending",
+      "name_zh": "API 及 SMTP 发送",
+      "explanation_en": "Integrate application mail after configuring an account and verified domain.",
+      "explanation_zh": "配置账户及验证域名后集成应用邮件。",
+      "source_ref": "api-setup",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Non-delivery investigation",
+      "name_zh": "未投递调查",
+      "explanation_en": "Inspect blocked, bounced and retrying states rather than only totals.",
+      "explanation_zh": "检查被阻止、退信及重试状态，而非仅看总数。",
+      "source_ref": "statistics",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Connect a trial lifecycle event to a monitored email follow-up.",
+      "Run newsletters with deliberate list exclusions and non-delivery investigation."
+    ],
+    "zh": [
+      "将试用生命周期事件连接到可监控的邮件跟进。",
+      "运行简报并明确管理列表排除及未投递调查。"
+    ],
+    "source_refs": ["pricing", "api-setup", "statistics"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Email campaign operator",
+      "Application developer",
+      "Messaging operations owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify the sender domain and configure API credentials.",
+        "zh": "验证发送域名并配置 API 凭据。",
+        "source_refs": ["api-setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check purchased send/contact capacity and suppression records.",
+        "zh": "核对购买的发送／联系人容量及抑制记录。",
+        "source_refs": ["pricing", "exclusion"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect message history and non-delivery reasons after a representative send.",
+        "zh": "代表性发送后检查消息历史及未投递原因。",
+        "source_refs": ["api-setup", "statistics"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Free daily queue retention and stored-contact holds are different mechanisms.",
+        "zh": "免费每日队列保留与已存联系人阻发是不同机制。",
+        "source_refs": ["free-pt"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "HTTP 204 does not prove that the intended workflow advanced.",
+        "zh": "HTTP 204 不能证明预期流程已推进。",
+        "source_refs": ["automation-events"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Free 6,000/month, 200/day, 1,000 contacts. Current monthly cards: Starter $9/8,000 emails/2,000 contacts; Essential $19 and Premium $29 at 15,000 emails. Premium includes automation. VAT and selected tier require confirmation.",
+    "source_snapshot_zh": "Free 每月 6,000 封、每天 200 封、1,000 人。当前月付卡片：Starter $9／8,000 封／2,000 人；Essential $19、Premium $29，均为 15,000 封。Premium 含自动化。VAT 及所选档位需确认。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mailjet",
+      "read_at": "2026-10-22T09:05:25.952Z",
+      "excerpt_sha256": "bbb9fe033525f26c5a6c0ec4a1367944063b6c571924ed95395ff0132bf3be11",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Mailjet",
+      "title": "Pricing | Sinch Mailjet",
+      "url": "https://www.mailjet.com/pricing/",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "ecbaf7b36fde89f167262cb090f091ea9b0ba6efffd583c3caaeb1d35c720660",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free/Starter/Essential/Premium cards with contact and volume limits; automation Premium, dedicated IP conditional."
+    },
+    {
+      "id": "automation-events",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Email Automation – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/35021196504219-Email-Automation",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "265edfc82ce5962509eb7c2469c4b79c4079f855a70324634c970b3ad5442b9c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "External-event qualifier/contact/API-key checks and HTTP 204 accepted without guaranteed workflow action."
+    },
+    {
+      "id": "automation-intro",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Email Automation – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/35021196504219-Email-Automation",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "542d93a22f43b471a2416994b4bbf122b5d05f56aae501090925810ffcb5e844",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "New builder has marketing/transactional email choices; legacy active flows continue and non-automation downgrades pause flows."
+    },
+    {
+      "id": "automation-lifecycle",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Email Automation – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/35021196504219-Email-Automation",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "9c4de03b0ccee04c5a65a6f38c2deb5f699abb235e25b4159027dd1ab5a8dd7c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Lock versus Stop and permanent per-workflow force exit; same official automation article as events, later excerpt."
+    },
+    {
+      "id": "free-en",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Changes to Our Free Plan – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/19154256993051-Changes-to-Our-Free-Plan",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "f701137552772449314c7dd97b14ca316deacc6c6af7e49b4c5e48c09071acd8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "English Free-plan contact hold article; excludes template downloads and states per-account/subaccount wording."
+    },
+    {
+      "id": "free-pt",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Entenda os limites do plano Gratuito da Mailjet – Central de Ajuda do Mailjet",
+      "url": "https://documentation.mailjet.com/hc/pt-br/articles/19154256993051-Entenda-os-limites-do-plano-Gratuito-da-Mailjet",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "250c06a79073e7f19cf0562c8990255c157b128b84b1f5e486c99052a8f06766",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Portuguese updated Free guide: three-day daily-cap queue, editor campaign limit, combined account/subaccount contact total, irreversible deletion."
+    },
+    {
+      "id": "exclusion",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Campaign Exclusion List – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/360042455934-Campaign-Exclusion-List",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "6dae52907cbff23374c09fbf9e9870bb5ff464a11f977ecccf50466061a7755b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Campaign exclusion preserves transactional mail but blocks automation emails according to this guide."
+    },
+    {
+      "id": "statistics",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Campaign Stats & Dashboard – Mailjet Help Center",
+      "url": "https://documentation.mailjet.com/hc/en-us/articles/360042505174-Campaign-Stats-Dashboard",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "4c12e9e68d33a965548e1eb38e2d3903b1fd222460a192fce8e2a99015884b16",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Delivered means server accepted; retrying up to 24 hours; Activity counters seven-day update scope versus CSV."
+    },
+    {
+      "id": "api-setup",
+      "type": "official_documentation",
+      "site": "Mailjet",
+      "title": "Getting Started - Mailjet Email API Prerequisites | Mailjet Developer Documentation",
+      "url": "https://dev.mailjet.com/docs/email-api/getting-started/prerequisites",
+      "read_at": "2026-10-22T10:39:10.539771Z",
+      "excerpt_sha256": "30751ffa69401bb0d19932cef0a41f57376bf89c33d5e1c7452615db24135936",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API prerequisites: account, domain verification, key/secret and SDK; message history separate from first-send response."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:39:10.539771Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["pricing", "api-setup", "statistics"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "application-event",
+        "title_en": "An accepted event is not a completed journey",
+        "title_zh": "事件被接受不等于路径完成",
+        "en": "For an illustrative trial follow-up, an application can send an external event with the configured qualifier and existing contact identifier. The automation guide says HTTP 204 confirms receipt, not that a workflow action occurred. A wrong qualifier, account key, filter or contact position can leave the journey unchanged.\n\nRecord the response and then inspect the contact’s progression and resulting message. Keep this incoming event distinct from Mailjet’s outbound event callbacks.",
+        "zh": "例如试用跟进，应用可发送含已配置事件名和已有联系人标识的外部事件。自动化指南说明 HTTP 204 确认收到请求，不代表流程动作已执行。事件名、账户密钥、筛选条件或联系人所在位置不符，都可能让路径不变。\n\n记录响应后，还需检查联系人推进和产生的邮件。此入站事件应与 Mailjet 向外发送的事件回调区分。",
+        "source_refs": ["automation-events"],
+        "evidence_type": "documented_with_editorial_integration_example"
+      },
+      {
+        "id": "workflow-stop",
+        "title_en": "Choose the scope of stopping deliberately",
+        "title_zh": "明确选择停止范围",
+        "en": "The automation article distinguishes Lock, which prevents new entry while current contacts finish, from Stop, which stops processing. Force exit removes a selected contact immediately and permanently prevents that contact from entering the same workflow again; other workflows are unaffected.\n\nUse those documented differences to decide whether a course is closing enrollment or must stop for existing participants. A force exit is not a temporary pause.",
+        "zh": "自动化文章区分 Lock 与 Stop：Lock 阻止新人进入但让现有人完成，Stop 停止处理。Force exit 立即移除选定联系人，并永久阻止其再次进入同一流程，其他流程不受影响。\n\n据此决定课程是关闭报名，还是必须停止现有参与者。强制退出不能当作临时暂停。",
+        "source_refs": ["automation-lifecycle"],
+        "evidence_type": "documented_with_editorial_lifecycle_guidance"
+      },
+      {
+        "id": "free-sends",
+        "title_en": "Monthly capacity does not remove the daily bottleneck",
+        "title_zh": "月额度不能消除每日瓶颈",
+        "en": "Free lists 6,000 monthly emails and 200 per day. The Portuguese help article says excess daily messages queue for at most three days before being removed without delivery. It separately limits a campaign sent through the editor to 200 recipients.\n\nA 1,000-recipient deadline announcement therefore cannot be assumed to complete from a single Free send simply because it fits the monthly allowance. Evaluate the actual route and deadline rather than treating all quota excess as an indefinitely retained queue.",
+        "zh": "Free 列出每月 6,000 封、每天 200 封。葡文帮助说明超过每日额度的邮件最多排队三天，之后移除且不投递；另将编辑器活动限制为 200 位收件人。\n\n因此，给 1,000 人的限时通知即使没有超过月额度，也不能假定一次免费发送便能完成。需核对实际发送途径与截止时间，不能把所有超额视为无限期保留的队列。",
+        "source_refs": ["free-pt", "pricing"],
+        "evidence_type": "documented_with_editorial_deadline_example"
+      },
+      {
+        "id": "contact-hold",
+        "title_en": "Suppression does not reduce stored-contact usage",
+        "title_zh": "抑制不减少已存联系人数",
+        "en": "Free permits 1,000 stored contacts, including campaign-excluded addresses. Above the cap, scheduled campaigns can remain unsent although forms still collect contacts. Removing someone from a list does not necessarily remove them from All Contacts; permanent account deletion is a separate irreversible action.\n\nThe English guide describes main and subaccount limits individually, while the Portuguese guide states a combined total and illustrates 600 plus 400. Both warn of holds affecting both accounts. Confirm the actual account rule before planning multiple subaccounts; this language-version conflict is unresolved here.",
+        "zh": "Free 允许存储 1,000 位联系人，包括被排除出活动的地址。超限后，表单仍可收集，但排定活动可能不发送。从列表移除不一定从 All Contacts 移除；永久删除账户内联系人是另一项不可恢复操作。\n\n英文指南分别描述主账户及子账户上限，葡文则明确合计，并用 600 加 400 举例。两者都提示可能同时阻发。规划多个子账户前需确认实际规则，此语言版本冲突尚未解决。",
+        "source_refs": ["free-en", "free-pt"],
+        "evidence_type": "documented_conflict_and_capacity_guidance"
+      },
+      {
+        "id": "suppression",
+        "title_en": "Marketing opt-out and necessary application mail have different scopes",
+        "title_zh": "营销退出与必要应用邮件范围不同",
+        "en": "The Campaign Exclusion List blocks marketing campaigns while preserving transactional flow. Its guide also says excluded contacts do not receive automation emails even when workflow conditions match. Do not treat an otherwise eligible event as permission to ignore suppression.\n\nThe newer builder offers marketing/transactional choices, so the interaction between those choices and the broad exclusion wording needs an account-specific check. A password reset and a promotional reminder should have their purposes and suppression behavior checked separately.",
+        "zh": "Campaign Exclusion List 阻止营销活动，同时保留事务邮件。其指南还称，被排除的人即使符合流程条件也不接收自动化邮件。不能因事件符合条件就忽略抑制。\n\n新版构建器提供营销／事务选择，因此这些选择与排除指南宽泛表述之间的关系需针对账户核查。密码重置与推广提醒应分别核对用途及抑制行为。",
+        "source_refs": ["exclusion", "automation-intro"],
+        "evidence_type": "documented_with_unresolved_product_boundary"
+      },
+      {
+        "id": "operations",
+        "title_en": "Investigate server acceptance, retrying and stale counters",
+        "title_zh": "区分服务器接受、重试及停止更新的计数",
+        "en": "The statistics guide defines Delivered as accepted by the destination server. It does not establish inbox placement. Retrying can remain pending up to 24 hours before becoming a soft bounce. A non-delivery report provides a reason and event time for investigation.\n\nThe guide says campaign Activity-tab metrics update during the first seven days; detailed reports and CSV continue updating afterward. For a long-running announcement, export the later report before deciding that late activity stopped. Compare like-for-like statuses and observation windows, not just two screenshots.",
+        "zh": "统计指南将 Delivered 定义为目标服务器接受，不能据此确认进入收件箱。Retrying 最长可等待 24 小时，再转软退信；未投递报告提供原因及事件时间。\n\n指南称活动 Activity 页签的指标在前七天更新，详细报告和 CSV 之后仍更新。对长期通知，判断后续互动停止前应导出较晚报告。应比较相同状态及观察窗口，不能仅比较两张截图。",
+        "source_refs": ["statistics"],
+        "evidence_type": "documented_with_editorial_reporting_guidance"
+      },
+      {
+        "id": "cost-setup-fit",
+        "title_en": "Price the sending tier and the operational work",
+        "title_zh": "同时评估发送档位及运行工作",
+        "en": "The current monthly cards show Starter $9 for 8,000 emails and 2,000 contacts, Essential $19 for 15,000 emails and unlimited contacts, and Premium $29 for 15,000 emails with automation and team controls. Paid cards remove the daily cap. A dedicated IP is conditional on a 100,000-plus plan and request, not every Premium account. VAT is separate unless stated.\n\nDeveloper setup requires an account, verified domain and API credentials, followed by a first send and message-history inspection. Mailjet merits evaluation when campaign operators and developers can share responsibility for content, events and failures. Exact checkout, UI languages, regional eligibility, source license and self-hosting rights were not verified.",
+        "zh": "当前月付卡片显示 Starter $9，8,000 封及 2,000 人；Essential $19，15,000 封及不限联系人；Premium $29，15,000 封并含自动化及团队控制。付费卡片取消每日上限。专用 IP 需 100,000 封以上套餐并申请，并非每个 Premium 都有。除非另述，VAT 另计。\n\n开发者需配置账户、验证域名及 API 凭据，再首次发送并检查消息历史。活动运营与开发者能共同负责内容、事件及失败处理时，可评估 Mailjet。未核实实际结算、界面语言、地区资格、源码许可或自托管权利。",
+        "source_refs": ["pricing", "api-setup"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Mailjet: Campaigns, External Events, Free Holds and Sending Costs",
+    "title_zh": "Mailjet：活动、外部事件、免费阻发及发送费用",
+    "description_en": "Evaluate Mailjet API and campaign workflows with suppression scope, queue limits, message statuses and current plan conditions.",
+    "description_zh": "按抑制范围、队列限制、消息状态及现行套餐条件评估 Mailjet API 与活动流程。",
+    "primary_intent": "Evaluate combined marketer/developer sending and documented failure boundaries in Mailjet.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "English and Portuguese Free guides disagree on whether contact usage is combined across main/subaccounts. Automation exclusion wording versus transactional workflow mode also needs confirmation.",
+      "zh": "英文及葡文免费指南对主／子账户联系人是否合计存在分歧；自动化排除表述与事务流程模式的关系也需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No API, workflow, campaign or inbox test was executed. Checkout, UI languages, regions, licensing and self-hosting remain unverified.",
+      "zh": "未执行 API、流程、活动或收件箱测试。结算、界面语言、地区、许可及自托管仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

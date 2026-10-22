@@ -1,0 +1,412 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "trello-2545d6f0",
+  "name": "Trello",
+  "website_url": "https://trello.com/",
+  "domain": "trello.com",
+  "identity_domain": "trello.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Trello organizes work as cards in lists on boards, with Workspaces grouping boards and their subscription. A team can use lists to express its own delivery stages; an individual can capture incoming work in Inbox and reserve calendar time with Planner. Those are related views of work, rather than an automatic accounting or staffing model.\n\nIts practical evaluation questions are who can see the source card, whether work is copied or mirrored, what a calendar block changes, and how Workspace limits affect the team. This documentation-based profile follows those decisions without claiming a live test, measured productivity gain or independent customer result.",
+  "description_zh": "Trello 将工作组织为看板列表中的卡片，由 Workspace 汇集看板并承载订阅。团队可用列表表达交付阶段，个人可在 Inbox 收集新工作，再用 Planner 预留日历时间。这些是相关工作视图，不会自动形成会计或人员配置模型。\n\n实际评估应关注谁能查看源卡片、工作是复制还是镜像、日历时间块改变什么，以及 Workspace 限制怎样影响团队。以下基于文档梳理这些决策，没有声称真实试用、实测生产力提升或独立客户结果。",
+  "core_features": [
+    {
+      "name_en": "Shared cards and mirrors",
+      "name_zh": "共享卡片与镜像",
+      "explanation_en": "Paid mirrors edit the source and retain its access requirements.",
+      "explanation_zh": "付费镜像编辑源卡片，保留原访问要求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mirroring",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Focus-time planning",
+      "name_zh": "专注时间规划",
+      "explanation_en": "Reserve calendar time without changing a card due date.",
+      "explanation_zh": "预留日历时间而不改变卡片到期日。",
+      "explanation_scope": "product_specific",
+      "source_ref": "planner",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Workspace automation",
+      "name_zh": "Workspace 自动化",
+      "explanation_en": "Runs and operations have distinct shared quotas.",
+      "explanation_zh": "运行次数和操作数采用不同共享额度。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automation",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate a small launch board and inspect source-card visibility and calendar allocation."
+    ],
+    "zh": ["协调小型发布看板，检查源卡片可见性与日历时间分配。"],
+    "source_refs": ["overview", "mirroring", "planner"],
+    "basis": "Proposed evaluation, not observed customer adoption."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Cloud service; no Trello self-host installation entitlement established.",
+      "zh": "云服务；未确立 Trello 自托管安装权益。",
+      "source_ref": "terms",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Team coordinator", "Individual planner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a small board with explicit ownership and acceptance criteria.",
+        "zh": "建立包含明确责任及验收条件的小型看板。",
+        "source_refs": ["overview"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check one mirrored card’s original permissions and compare focus time with its deadline.",
+        "zh": "检查一张镜像卡片的原访问权限，并比较专注时间与截止日。",
+        "source_refs": ["mirroring", "planner"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "mcp",
+    "scope": "Google/Outlook Planner, Power-Ups and official MCP documented; no connection, field mapping or recovery tested."
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Unlimited automation runs do not mean unlimited operations.",
+        "zh": "不限自动化运行次数不代表不限操作数。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "JSON/CSV exports do not directly re-create a board by import.",
+        "zh": "JSON／CSV 导出不能直接通过导入重建看板。",
+        "source_refs": ["export"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_agreement_read",
+    "is_open_source": false,
+    "url": "https://www.atlassian.com/legal/atlassian-customer-agreement",
+    "source_ref": "terms",
+    "scope": "Subscription/scope-based internal use; no platform source or self-hosting grant."
+  },
+  "pricing": {
+    "status": "official_public_pricing_read",
+    "price_type": "free_and_per_workspace_billable_user",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Free with limits; paid Workspace subscriptions vary by plan, billing cycle and billable users. Third-party Power-Ups may cost extra.",
+    "source_snapshot_zh": "免费版有限制；付费 Workspace 按方案、周期和收费用户数订阅。第三方 Power-Up 可能另收费。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/trello",
+      "read_at": "2026-10-22T09:08:44.144Z",
+      "excerpt_sha256": "4209b1c4026e9dd16363bb7b9ca9754153b89f8a612c3b67e86bb9d4fcc098a1",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "trello.com",
+      "title": "Capture, organize, and tackle your to-dos from anywhere",
+      "url": "https://trello.com/",
+      "read_at": "2026-10-22T11:05:07.619926Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3475e6b1931170b6f894caca84f51301e612a045b5aa3ff2a51c2f4c3ca61a31",
+      "research_notes_en": "Board/card organization with Inbox and Planner; official page links Atlassian support and legal domains."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "trello.com",
+      "title": "Which Trello Plan Is Best for You? Our Pricing Guide Can Help",
+      "url": "https://trello.com/pricing",
+      "read_at": "2026-10-22T11:05:07.620245Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c62ff363e5b5ac2e5c1321da5a794b467e77a324aadef3be60d3d30f1ba76a1e",
+      "research_notes_en": "USD Workspace plans, free limits and partner Power-Up costs read; annual equivalents differ from monthly billing."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "trello.com",
+      "title": "Connect Trello to your AI tools",
+      "url": "https://trello.com/mcp",
+      "read_at": "2026-10-22T11:05:07.620746Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f4e88f295842a1ebf477880af678051e49439ff212c278b745374d9a352ef675",
+      "research_notes_en": "Official OAuth MCP has account-access scope, reversible access and excludes permanent deletes; not tested."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "support.atlassian.com",
+      "title": "How billing works with Trello Premium and Standard | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/how-billing-works-with-trello-premium-and-standard/",
+      "read_at": "2026-10-22T11:05:07.620834Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4e4599526b3cd243fa73991dcc47c37561d431b381a710c667d4395f611032cb",
+      "research_notes_en": "Legacy billing guide distinguishes Workspace subscriptions, billable members/multi-board guests and non-billable single-board guests; centralized billing has separate instructions."
+    },
+    {
+      "id": "mirroring",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Card mirroring | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/mirroring-cards/",
+      "read_at": "2026-10-22T11:05:07.621400Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9739ddec7472ada678d3fe125a226ed93170578d7cee534a8c9732aabfcc718a",
+      "research_notes_en": "Paid mirror edits source card, requires original board access and has distinct remove versus archive semantics."
+    },
+    {
+      "id": "visibility",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Change the visibility of a board | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/changing-the-visibility-of-a-board/",
+      "read_at": "2026-10-22T11:05:07.621436Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "503a456247f2d6894c8f17f5aa9efe220d582994e8089d3d4f2149ebd9a67355",
+      "research_notes_en": "Private/Workspace/Enterprise/public scopes read; non-indexed public boards remain accessible to anyone with link."
+    },
+    {
+      "id": "planner",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Trello Planner | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/trello-planner/",
+      "read_at": "2026-10-22T11:05:07.621467Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "63f8debcc9ca984077e36c70b14e1eac8cf0311e0302ae876c27d506361f4784",
+      "research_notes_en": "Calendar connections, due-date card selection and focus scheduling read; focus allocation does not change due date."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Export data from Trello | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/exporting-data-from-trello/",
+      "read_at": "2026-10-22T11:05:07.621499Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "65debc0ff9a1b8bf530d999c128ff7307e6f11fc2d72aa0e042a21656a41f8d2",
+      "research_notes_en": "JSON/CSV scope, comment/attachment conditions and inability to re-create board by import read; Inbox requires moving cards before export."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Automation quotas and limits | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/butler-quotas-and-limits/",
+      "read_at": "2026-10-22T11:05:07.621986Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4d79aec527888895ff9143f957db253727ad62618f4212a089759e23bd3a95a6",
+      "research_notes_en": "Shared runs and operations quotas differ, including capped operations for unlimited-run paid plans."
+    },
+    {
+      "id": "archive",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Archive or delete a card | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/archiving-and-deleting-cards/",
+      "read_at": "2026-10-22T11:05:07.622114Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "cdf131a04dbdae1c8d18649edb0c80acd19130552a132090d59c2d860de4ffdd",
+      "research_notes_en": "Archive can be restored; permanent card deletion is unrecoverable."
+    },
+    {
+      "id": "planner-ai",
+      "type": "official_documentation",
+      "site": "support.atlassian.com",
+      "title": "Trello Planner | Trello | Atlassian Support",
+      "url": "https://support.atlassian.com/trello/docs/trello-planner/",
+      "read_at": "2026-10-22T11:05:07.622144Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "afcb0ed11a9a8daef5c0082231596de33e3bee9c051816fd2d9959aea6b27ba7",
+      "research_notes_en": "Smart Schedule requires calendar and enabled AI, Standard+ and web/desktop; suggestions accepted before calendar changes."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "www.atlassian.com",
+      "title": "Atlassian Customer Agreement | Atlassian",
+      "url": "https://www.atlassian.com/legal/atlassian-customer-agreement",
+      "read_at": "2026-10-22T11:05:07.622168Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9aa41465433d15efaea462395ebdbb4485f6ddfed44630748f324a41f01ad2fb",
+      "research_notes_en": "Order/term/scope-based internal use and restrictions read; no open-source/self-host grant."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:05:07.622168Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["overview", "billing", "planner"],
+  "profile": {
+    "sections": [
+      {
+        "id": "delivery-board",
+        "title_en": "Start with one shared definition of done",
+        "title_zh": "先统一完成的含义",
+        "en": "For a hypothetical launch checklist, create a board with Ready, Doing and Review lists. Give each deliverable a card with an owner, due date, checklist and the evidence needed for acceptance. Moving a card is a team-defined state change; it does not by itself prove that a release passed review. Inbox can collect incoming work before it is placed on a team board.\n\nKeep the pilot small enough to inspect one accepted item and one item returned for correction. Decide whether reviewers need edit access or a paid observer role. Premium adds Timeline, Table, Dashboard and other views, but a view should answer a specific coordination question rather than replace clear card ownership. This sample was not created in an account.",
+        "zh": "假设整理发布清单，可以建立 Ready、Doing 和 Review 列表，为每个交付项创建包含负责人、到期日、清单和验收证据的卡片。移动卡片是团队定义的状态变化，本身不证明发布已通过复核。Inbox 可在工作进入团队看板前收集输入。\n\n试点应小到能够检查一项验收通过的工作及一项退回修正的工作，并决定复核者需要编辑权限还是付费观察者角色。Premium 增加 Timeline、Table、Dashboard 等视图，但每种视图应回答具体协调问题，不能替代卡片责任。本次未在账户创建样例。",
+        "source_refs": ["overview", "pricing", "billing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "mirror-source",
+        "title_en": "A mirror still depends on the original board",
+        "title_zh": "镜像仍依赖原看板",
+        "en": "Paid Workspaces can mirror a card across boards; a free Workspace creates a Link card instead. Opening a mirror edits the source, and the viewer must have access to the original board. A client-facing board therefore does not make an internal source card visible to the client automatically.\n\nRemoving a mirror from its board leaves the source intact. Opening the mirror and choosing Archive instead acts on the source. Some actions require visiting the original location. Check these distinctions before using mirrors for a client status board. Board visibility also matters: private boards include paid Workspace-admin access, while public boards are accessible to anyone with the link even though Trello says search engines do not index them. Non-indexing is not an access restriction.",
+        "zh": "付费 Workspace 可以跨看板镜像卡片；免费 Workspace 创建的是 Link 卡片。打开镜像是在编辑源卡片，查看者必须能访问原看板。因此，客户看板不会自动把内部源卡片开放给客户。\n\n从看板移除镜像不会影响源卡片；但打开镜像后选择 Archive，操作的是源卡片。部分操作需要回到原位置。在客户状态看板使用前应检查这些区别。看板可见性也很重要：付费 Workspace 管理员能访问其私密看板；公开看板即使按 Trello 说明不被搜索引擎索引，仍可由任何持链接者访问。不索引不是访问限制。",
+        "source_refs": ["mirroring", "visibility"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "calendar-meaning",
+        "title_en": "Scheduling time does not move the deadline",
+        "title_zh": "安排时间不会移动截止日期",
+        "en": "Planner can connect Google and Microsoft Outlook calendars. Due-date cards appear according to board/assignment rules, while a card dragged into a time slot creates focus time. That scheduling does not change its due date. A card can remain in Inbox or its board while linked to focus time, and the card link is not shown in the external calendar.\n\nSmart Schedule suggests focus periods for review before acceptance adds them to the calendar. It requires an enabled AI Workspace and a connected calendar, is available on Standard/Premium/Enterprise, and uses web or desktop rather than mobile. In a pilot, compare the deadline, card location and calendar event separately after accepting and declining a suggestion. No calendar was connected here.",
+        "zh": "Planner 可连接 Google 和 Microsoft Outlook 日历。到期卡片按看板／分派规则出现；把卡片拖入时间段则安排专注时间，不改变到期日。卡片关联专注时间后仍可保留在 Inbox 或原看板，外部日历也不会显示该卡片链接。\n\nSmart Schedule 先建议专注时段供复核，接受后才加入日历。它要求 Workspace 启用 AI 并连接日历，适用于 Standard／Premium／Enterprise，需使用网页或桌面端，移动端不支持。试点应在接受及拒绝建议后，分别比较截止日、卡片位置和日历事件。本次未连接日历。",
+        "source_refs": ["planner", "planner-ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "automation-budget",
+        "title_en": "Unlimited runs still have an operations budget",
+        "title_zh": "不限运行次数仍有操作额度",
+        "en": "Automation counts a trigger or button invocation as one run, while each action consumes operations. Quotas are shared by boards in a Workspace. Free has 250 runs and 2,500 operations per month; Standard has 1,000 and 20,000. Premium/Enterprise advertise unlimited runs, but the operations table starts at 150,000 plus 10,000 per user, capped at 250,000 per Workspace.\n\nFor example, a rule that labels a card and sets its due date consumes one run and two operations, before any other actions. This is arithmetic from the documented model, not measured traffic. The guide also lists per-minute and per-run limits. Inspect usage and execution logs before assuming a missed change succeeded or repeating a rule. Exact retry and recovery behavior was not tested.",
+        "zh": "自动化每次触发或按钮调用计为一次运行，每个动作还消耗操作数，Workspace 内看板共享额度。免费版每月 250 次运行及 2,500 次操作，Standard 为 1,000 次及 20,000 次。Premium／Enterprise 宣传不限运行次数，但操作表从 150,000 次加每用户 10,000 次开始，封顶每 Workspace 250,000 次。\n\n例如，只给卡片加标签并设置到期日的规则，在没有其他动作时消耗一次运行及两次操作。这是依据文档模型计算，不是实测流量。指南还列出每分钟和单次运行限制。认定修改成功或重复规则前，应检查用量及执行日志。本次未验证具体重试与恢复行为。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "subscription-unit",
+        "title_en": "Count people within each paid Workspace",
+        "title_zh": "在每个付费 Workspace 内计算人数",
+        "en": "The pricing page lists Standard at USD 5/user/month billed annually or USD 6 monthly, and Premium at USD 10 annually or USD 12.50 monthly. Enterprise starts at USD 17.50/user/month billed annually, with user-count conditions. Free permits up to ten collaborators and ten boards per Workspace; attachment size is 10 MB per file versus 250 MB on paid plans. Partner Power-Ups can add separate fees.\n\nA Workspace upgrade does not upgrade the same person’s other Workspaces. The linked billing guide counts Workspace members and guests on two or more boards as billable; single-board guests are free. Observer permission alone does not make someone non-billable. Review actual Workspace billing, particularly if it uses the separate centralized-billing system, before estimating a client/contractor roster. These are public rates, not a purchased quote or regional tax confirmation.",
+        "zh": "定价页列出 Standard 年付折合每用户每月 5 美元、月付 6 美元；Premium 年付折合 10 美元、月付 12.50 美元。Enterprise 年付折合每用户每月从 17.50 美元起，并有用户数条件。免费版每 Workspace 最多十位协作者和十块看板，附件每文件 10 MB，付费版为 250 MB。合作方 Power-Up 可能另外收费。\n\n升级某个 Workspace 不会升级同一人的其他 Workspace。链接的计费指南把成员及加入两块以上看板的访客计为收费用户，单看板访客免费；观察者权限本身不免除计费。估算客户／承包商人数前应检查实际账单，使用独立集中计费系统时尤其如此。这是公开费率，不是已购买报价或地区税费确认。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit-copy",
+        "title_en": "An export is not a restorable board backup",
+        "title_zh": "导出不等于可还原的看板备份",
+        "en": "Board members can export JSON; Premium adds CSV and Workspace-wide exports. Board JSON includes the most recent 1,000 actions; CSV omits comments. Workspace exports can include raw attachments if selected, otherwise they link to hosted files. Inbox cards must first move to a board for export. The guide explicitly says JSON/CSV cannot currently be imported to re-create a Trello board.\n\nCheck the needed records, comments and actual attachment files before relying on an exit copy. Archiving a card can be reversed; permanently deleting it cannot. For routine cleanup, distinguish those operations and retain a known sample to check the export. No export, restore or deletion was performed.",
+        "zh": "看板成员可以导出 JSON；Premium 增加 CSV 及整个 Workspace 导出。看板 JSON 包含最近 1,000 个动作，CSV 不含评论。Workspace 导出可选择包含原始附件，否则仅链接托管文件。Inbox 卡片需先移入看板才能导出。指南明确说明，当前不能导入 JSON／CSV 来重建 Trello 看板。\n\n依赖退出副本前，应检查所需记录、评论及真实附件文件。卡片归档可以恢复，永久删除则不能。日常清理应区分两种操作，并保留已知样本检查导出。本次未执行导出、恢复或删除。",
+        "source_refs": ["export", "archive"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-fit",
+        "title_en": "Connecting an assistant expands where data is read",
+        "title_zh": "连接助手会扩大数据读取位置",
+        "en": "Trello’s official MCP uses OAuth and the connected user’s existing permissions. The assistant can access all Trello content available to that user, rather than only a single prompted card. Permanent deletes are excluded, but archiving cards/lists is supported. Access can be revoked; Enterprise admins have additional connection/read/write controls. Client token/message limits still apply.\n\nUse a deliberately scoped account and inspect the destination board and result before extending an agent workflow. The public agreement grants subscription- and scope-limited internal use, not source-code or self-hosting rights. Trello is a plausible shortlist for visual card coordination and personal time planning; financial accounting, regulated audit completeness and resource-capacity accuracy require separate evaluation. No assistant was connected and no compliance or productivity claim was validated.",
+        "zh": "Trello 官方 MCP 使用 OAuth，继承已连接用户的现有权限。助手可访问该用户有权查看的全部 Trello 内容，不仅是提示中的某张卡片。它不支持永久删除，但支持归档卡片／列表；访问可撤销，Enterprise 管理员还有连接及读写控制。客户端自身的 token／消息限制仍适用。\n\n扩展代理流程前，应使用范围明确的账户并检查目标看板及结果。公开协议按订阅期和使用范围授予内部使用权，不授予源码或自托管权。Trello 可作为可视化卡片协作与个人时间规划候选；财务会计、受监管审计完整性和资源产能准确性需另外评估。本次未连接助手，也未验证合规或生产力主张。",
+        "source_refs": ["mcp", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Trello: Cards, Mirrors, Planner, Automation Quotas and Workspace Billing",
+    "title_zh": "Trello：卡片、镜像、Planner、自动化额度与 Workspace 计费",
+    "description_en": "Evaluate source-card access, focus time versus due dates, runs versus operations, guest charges and export limits.",
+    "description_zh": "评估源卡片访问、专注时间与到期日、运行与操作数、访客计费及导出限制。",
+    "primary_intent": "Evaluate card coordination and planning conditions.",
+    "secondary_questions": [
+      "Does unlimited automation include operations?",
+      "Can a mirror reveal a private source card?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured search volume or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No board, mirror, guest billing, automation failure/retry, calendar event, AI suggestion, MCP operation or export tested. Actual regional charges, account rollout and centralized billing must be checked in the intended account.",
+      "zh": "未测试看板、镜像、访客计费、自动化失败／重试、日历事件、AI 建议、MCP 操作或导出。实际地区收费、账户功能发布和集中计费需在目标账户核查。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact data residency/retention/recovery commitments, full API limits, complete app-specific permissions, current interface-language coverage and regulatory suitability remain unverified.",
+      "zh": "具体数据驻留／保留／恢复承诺、完整 API 限制、各应用权限、当前界面语言覆盖及监管适用性仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

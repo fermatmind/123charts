@@ -1,0 +1,368 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "vinsolutions-connect-crm-06bac125",
+  "name": "VinSolutions Connect CRM",
+  "website_url": "https://www.vinsolutions.com/dealership-software/connect-crm/",
+  "domain": "www.vinsolutions.com",
+  "identity_domain": "vinsolutions.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "VinSolutions Connect CRM is dealership-focused customer relationship software within Cox Automotive. The official product page uses both Connect CRM and VinSolutions CRM. It ties customer information, vehicle interest, sales activity and follow-up together so a dealership can coordinate work across sales and service. The product includes a performance-management relationship rather than presenting implementation as only a blank contact database.\n\nThe selection problem is how the CRM joins the dealership's actual systems and staff responsibilities. Dealertrack, Xtime, vAuto and other integrations have specific documented jobs; they are not interchangeable with every feature in the Cox product family. This profile explains a representative lead workflow, add-on boundaries and data-export options, without adopting the vendor's sales-uplift figures or claiming a dealership deployment was tested.",
+  "description_zh": "VinSolutions Connect CRM 是 Cox Automotive 旗下针对汽车经销商的客户关系软件。官方产品页同时使用 Connect CRM 和 VinSolutions CRM 名称，将客户信息、车辆意向、销售活动及跟进连接起来，方便门店协调销售和售后工作。产品还包含绩效管理服务关系，而不是仅提供空白联系人库。\n\n选型关键是 CRM 如何连接门店实际系统和员工职责。Dealertrack、Xtime、vAuto 等集成分别有具体任务，不能与 Cox 产品家族的全部功能互换。本文说明代表性线索流程、附加项边界及数据导出方式，没有采用销售提升宣传数字，也未实际测试经销商部署。",
+  "core_features": [
+    {
+      "name_en": "Dealership lead and follow-up work",
+      "name_zh": "经销商线索及跟进工作",
+      "explanation_en": "Assign staff tasks and use email/text templates around customer and vehicle-related follow-up.",
+      "explanation_zh": "围绕客户及车辆相关跟进分配员工任务，并使用邮件／短信模板。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Connected customer context",
+      "name_zh": "关联客户背景",
+      "explanation_en": "Vendor describes matching and merging sales/service customer data into a single customer view.",
+      "explanation_zh": "厂商说明匹配及合并销售／售后客户数据，形成单一客户视图。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Automotive system connections",
+      "name_zh": "汽车业务系统连接",
+      "explanation_en": "Specific integrations connect customer records, ICO leads, service appointments and inventory workflows.",
+      "explanation_zh": "具体集成连接客户记录、ICO 线索、售后预约及库存流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "integrations",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Optional bulk data extraction",
+      "name_zh": "可选批量数据提取",
+      "explanation_en": "Cloudstore add-on provides defined datasets through SFTP with full and incremental delivery.",
+      "explanation_zh": "Cloudstore 附加项通过 SFTP 提供定义的数据集，包含完整和增量交付。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cloudstore",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Assign and follow up a vehicle inquiry while retaining customer and service history.",
+      "Reconcile customer/vehicle data across CRM and a supported dealership system."
+    ],
+    "zh": [
+      "分配并跟进车辆咨询，同时保留客户及售后历史。",
+      "对照 CRM 与支持的门店系统核对客户／车辆数据。"
+    ],
+    "source_refs": ["product", "integrations"],
+    "basis": "Editorial scenarios, not tested dealership adoption or measured sales results."
+  },
+  "technical_details": {
+    "Application context": {
+      "en": "Managed dealership CRM with mobile access; optional Cloudstore exports are SFTP data delivery, not a self-hosted copy of the CRM.",
+      "zh": "托管经销商 CRM，提供移动访问；可选 Cloudstore 是 SFTP 数据交付，不是自行托管的 CRM 副本。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Dealership sales manager",
+      "Business development center lead",
+      "Dealer CRM/data administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Bring actual lead sources, inventory feeds, DMS and team responsibilities to the vendor demonstration.",
+        "zh": "在厂商演示中提供真实线索来源、库存源、DMS 及团队职责。",
+        "source_refs": ["product", "integrations"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Request the selected CRM, messaging, call-tracking, AI and export scope with its commercial quote.",
+        "zh": "取得包含所选 CRM、消息、通话跟踪、AI 和导出范围的商业报价。",
+        "source_refs": ["product", "sales"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Inspect one lead, its owner/task, customer history and downstream system state before accepting the configuration.",
+        "zh": "接受配置前核对一条线索、负责人／任务、客户历史及下游系统状态。",
+        "source_refs": ["product", "integrations"],
+        "evidence_type": "editorial_test_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "specific_vendor_documentation_read",
+    "items": [
+      {
+        "name": "Dealertrack DMS",
+        "source_ref": "integrations",
+        "scope": "Vendor describes customer-record sync/merge; matching, conflicts and specific entitlement not tested."
+      },
+      {
+        "name": "Kelley Blue Book Instant Cash Offer",
+        "source_ref": "integrations",
+        "scope": "ICO lead management and dedicated follow-up processes."
+      },
+      {
+        "name": "Xtime",
+        "source_ref": "integrations",
+        "scope": "Service-appointment access from CRM; not proof every Xtime feature is included."
+      },
+      {
+        "name": "vAuto",
+        "source_ref": "integrations",
+        "scope": "Documented appraisal/inventory/customer-interest workflows; selected products need scoping."
+      }
+    ],
+    "source_ref": "integrations"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Cloudstore is an add-on with defined datasets, including limited tasks, and its overview excludes third-party availability.",
+        "zh": "Cloudstore 属于附加项，数据集有明确范围，包括受限任务数据；概览说明不向第三方提供。",
+        "source_refs": ["cloudstore"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Messaging, call tracking, video and document scanning are marked as add-ons; do not assume every module is in the base quote.",
+        "zh": "消息、通话跟踪、视频及文档扫描标为附加项，不应假定基础报价全含。",
+        "source_refs": ["product"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_sales_route_read_amounts_not_disclosed",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "sales",
+    "source_refs": ["sales", "product"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Numerical price, commitment term and charging unit not disclosed on the reviewed official sales/demo page; obtain the scoped offer.",
+    "source_snapshot_en": "Contact sales for a product-specific demonstration/offer. No verified free plan, trial entitlement, base amount, unit price or contract duration in reviewed sources.",
+    "source_snapshot_zh": "需联系销售取得具体产品演示／方案。所读来源未核实免费套餐、试用权益、基础金额、单价或合同期限。",
+    "checked_at": "2026-10-22T10:36:59.682025+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Are all Cox Automotive tools included with Connect CRM?",
+      "question_zh": "Connect CRM 是否包含全部 Cox Automotive 工具？",
+      "answer_en": "The site describes separate products and specific integrations. The contracted modules and access must be checked individually.",
+      "answer_zh": "网站描述独立产品及具体集成，合同模块和访问权限需逐项核对。",
+      "source_refs": ["sales", "integrations"]
+    },
+    {
+      "question_en": "Is Cloudstore a complete CRM restore service?",
+      "question_zh": "Cloudstore 是否是完整 CRM 恢复服务？",
+      "answer_en": "The overview describes selected bulk exports and updates. It does not establish a tested full application restore or include every data type without limits.",
+      "answer_zh": "概览描述选定批量导出和更新，不能证明经过测试的完整应用恢复，也不表示每类数据均无限制包含。",
+      "source_refs": ["cloudstore"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/vinsolutions-connect-crm",
+      "read_at": "2026-10-22T09:08:40.774Z",
+      "excerpt_sha256": "3b12ef853d7548293eef70618f10f157a7c5595c501a526965418c086d9724a0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Automotive CRM for Dealers | VinSolutions",
+      "title": "Automotive CRM for Dealers | VinSolutions",
+      "url": "https://www.vinsolutions.com/dealership-software/connect-crm/",
+      "read_at": "2026-10-22T10:36:11.456139+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "20aaf167161bf0200fb875c2cdd48cfd8864125eb1178ea841947437eb1e6d26",
+      "research_notes_en": "Official page uses both Connect CRM and VinSolutions CRM; dealership follow-up, customer match/merge, inventory context and named add-ons. Sales/trade-in/prediction uplift marketing excluded."
+    },
+    {
+      "id": "integrations",
+      "type": "official_integration",
+      "site": "VinSolutions - CRM Integration - Better Together with Cox Automotive",
+      "title": "VinSolutions - CRM Integration - Better Together with Cox Automotive",
+      "url": "https://www.vinsolutions.com/dealership-software/integrations/",
+      "read_at": "2026-10-22T10:36:57.923689+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "edb28331c59629774b9fc61d56d1f19cd168db476c517a7dcee3abb6af341602",
+      "research_notes_en": "Specific Cox links include Dealertrack customer sync/merge, KBB ICO leads, Xtime service appointment access and vAuto inventory context. Product-specific subscriptions and exact field rules unverified."
+    },
+    {
+      "id": "cloudstore",
+      "type": "official_documentation",
+      "site": "VinSolutions",
+      "title": "Cloudstore Overview — VinSolutions CRM",
+      "url": "https://www.vinsolutions.com/wp-content/uploads/sites/2/2026/07/Cloudstore-Overview.pdf",
+      "read_at": "2026-10-22T10:36:56.248132Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c5a0c36063127524d8c6290fcd914e6223a3190e9be11f206a87401d784917aa",
+      "research_notes_en": "One-page official overview: SFTP bulk extracts, nightly full datasets and hourly changes/deletes; majority/key datasets, limited tasks and no third-party availability. Not a full restore guarantee."
+    },
+    {
+      "id": "sales",
+      "type": "official_pricing",
+      "site": "VinSolutions | Request a Connect Automotive CRM Demo",
+      "title": "VinSolutions | Request a Connect Automotive CRM Demo",
+      "url": "https://www.vinsolutions.com/request-demo/",
+      "read_at": "2026-10-22T10:36:59.682025+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c900781b10f13c337c8ba620e30e95c687747f4257579e0d6efd3b14d54f21d5",
+      "research_notes_en": "Official sales/demo request form distinguishes CRM, AI, Desking and Deal Central; no numerical price, term, billing metric or all-inclusive package disclosed. Form read only, not submitted."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:36:59.682025+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "integrations"],
+  "profile": {
+    "sections": [
+      {
+        "id": "dealer-flow",
+        "title_en": "Worked example: vehicle inquiry to accountable follow-up",
+        "title_zh": "示例：车辆咨询到明确负责的跟进",
+        "en": "Suppose a shopper asks about a used vehicle, has a possible trade-in and previously visited the service department. An illustrative CRM evaluation should find the right customer record, vehicle interest and prior context, assign a salesperson or BDC owner, and create the appropriate next activity. The product describes task assignment and follow-up templates, but this example was not executed.\n\nInspect the lead as both the assigned user and a manager. A completed outreach task does not prove the shopper received a useful answer or that inventory is still available. Define success as the right customer, vehicle and action, rather than treating activity volume as a sales result.",
+        "zh": "假设买家咨询二手车，可能有置换车辆，之前也来过售后部门。示例评估应找到正确客户记录、车辆意向及历史背景，分配销售或 BDC 负责人，并创建适当下一活动。产品描述任务分配及跟进模板，但本文未执行该示例。\n\n应分别以负责人和经理视角检查线索。外联任务完成，不证明买家收到有用回答或车辆仍有库存。成功标准应是正确客户、车辆和动作，而不是把活动数量当作销售结果。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "system-boundary",
+        "title_en": "Connect the actual dealership systems",
+        "title_zh": "连接门店实际使用的系统",
+        "en": "The integration page gives distinct examples: Dealertrack DMS synchronizes/merges customer records; Kelley Blue Book ICO leads enter CRM follow-up; Xtime connects service appointments; vAuto exposes appraisal, inventory and customer-interest context. These documented routes are more useful than a generic integration count.\n\nFor each required connection, agree identifiers, update direction, ownership and conflict treatment. Check a customer who appears in both sales and service and a vehicle whose availability changes. A named integration does not establish every data object's coverage, latency or retry policy. No DMS, inventory feed, appointment or third-party connector was exercised in this research.",
+        "zh": "集成页列出不同示例：Dealertrack DMS 同步／合并客户记录，Kelley Blue Book ICO 线索进入 CRM 跟进，Xtime 连接售后预约，vAuto 提供评估、库存和客户意向背景。这些具体路径比笼统集成数量更有价值。\n\n应逐连接约定标识、更新方向、归属和冲突处理，并检查同时出现在销售与售后的客户，以及可售状态变化的车辆。出现集成名称，不能证明全部对象覆盖、延迟或重试政策。本文未运行 DMS、库存源、预约或第三方连接器。",
+        "source_refs": ["integrations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-quality",
+        "title_en": "Single customer view still needs match review",
+        "title_zh": "单一客户视图仍需核对匹配",
+        "en": "The product describes automated database maintenance and Cox-powered matching/merging across sales and service. A cleaner record can help a colleague understand context, but a vendor feature description is not evidence that a particular dealership's matching is correct. Inspect shared phone numbers, changed addresses and two people in one household during evaluation.\n\nAgree how ambiguous matches and corrections are handled before relying on automated outreach. If a merged record has the wrong owner or communication preference, a well-timed message can still be the wrong action. Exact matching rules, undo behavior, consent propagation and data-retention settings were not established in the public product material.",
+        "zh": "产品描述自动维护数据库，以及通过 Cox 数据能力匹配／合并销售和售后信息。更整洁的记录能帮助同事理解背景，但厂商功能说明不能证明某门店的匹配正确。评估时应检查共用电话、地址变化及同一家庭中不同个人。\n\n依赖自动外联前，应约定模糊匹配和修正方式。合并记录的负责人或沟通偏好错误时，发送时机恰当也可能是错误动作。公开产品资料未确立准确匹配规则、撤回行为、同意状态传播及保留设置。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "addon-scope",
+        "title_en": "CRM, communications and deal-making are separate scope choices",
+        "title_zh": "CRM、沟通及交易制作是不同范围选择",
+        "en": "The product marks MMS/texting, call tracking, video and customer-ID scanning as add-ons. Its sales form separately lists CRM, AI, Desking and Cox Automotive Deal Central. A CRM demonstration therefore does not establish that every communication or transaction-building tool is included in one package.\n\nPrepare a list of required roles, lead sources, communication channels, reports and downstream systems for the quote. Confirm whether an advertised workflow needs a separate module or vendor service, and who will maintain it. The product describes dedicated performance-management guidance; this is a vendor service model, not independent evidence of improved staff performance or vehicle sales.",
+        "zh": "产品将 MMS／短信、通话跟踪、视频及客户证件扫描标为附加项。销售表单分别列出 CRM、AI、Desking 和 Cox Automotive Deal Central，因此 CRM 演示不能证明所有沟通或交易制作工具都在同一组合中。\n\n询价应准备所需角色、线索来源、渠道、报表和下游系统清单，确认某流程是否依赖独立模块或厂商服务，以及由谁维护。产品描述专属绩效管理指导；这是厂商服务模型，不是员工表现或汽车销量提升的独立证据。",
+        "source_refs": ["product", "sales"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "export",
+        "title_en": "Cloudstore delivers data, with a defined scope",
+        "title_zh": "Cloudstore 按限定范围交付数据",
+        "en": "The Cloudstore overview describes an optional SFTP export route: nightly full datasets and hourly changes/deletes, with master, schema and updates folders. The defined coverage includes customer/lead data, sales, inventory, service-related records, communication summaries and consent information; tasks are limited. It expressly excludes availability to third parties.\n\nFor evaluation, compare an actual delivered dataset with required records and fields, and check how downstream processing handles updates and deletes. This is data delivery, not a tested full-application restore. The page's bulk-export description should not become a guarantee that every attachment, message or configuration can be recovered. No SFTP account, extract or restore was accessed.",
+        "zh": "Cloudstore 概览说明可选 SFTP 导出路径：每晚完整数据集及每小时变更／删除，分为 master、schema 和 updates 文件夹。定义的范围包括客户／线索、销售、库存、售后相关记录、沟通摘要及同意信息；任务数据有限，并明确不向第三方开放。\n\n评估时应将实际交付数据与必需记录及字段对照，并检查下游如何处理更新和删除。这是数据交付，不是已测试的完整应用恢复。不能将批量导出说明扩写成所有附件、消息或配置均可恢复的保证。本文未访问 SFTP、导出或恢复。",
+        "source_refs": ["cloudstore"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-fit",
+        "title_en": "A sales route is not a published numerical price",
+        "title_zh": "销售入口不等于已公布具体价格",
+        "en": "The official demo/sales page was read without submission. It does not disclose a numerical software fee, billing unit, minimum seats, commitment term or complete add-on allowance. Those remain unknown. Obtain a written package covering CRM, implementation/training, messaging/calls, integrations and any Cloudstore requirements before comparing total costs. A third-party starting amount would not resolve these missing conditions.\n\nVinSolutions is relevant to a dealership that needs customer follow-up tied to automotive systems and can own data quality and process adoption. It needs more proof for exact export fidelity, integration recovery, regional access, data location, UI languages and contractual security requirements. Open-source licensing and self-hosted deployment were not established. No account, commercial offer, customer consent behavior or claimed sales uplift was independently tested.",
+        "zh": "本文读取官方演示／销售页但未提交。页面未披露软件具体费用、计费单位、最低席位、承诺期限或完整附加项额度，相关事项仍未知。比较总成本前，应取得涵盖 CRM、实施／培训、消息／电话、集成及 Cloudstore 需求的书面组合；第三方起价不能弥补这些条件缺失。\n\n需要把客户跟进与汽车业务系统连接，并能负责数据质量和流程采用的经销商，可评估 VinSolutions。准确导出一致性、集成恢复、地区访问、数据位置、界面语言及合同安全要求则需更多证据。本文未确立开源许可或自行托管部署，也未独立测试账户、报价、客户同意行为或宣传销量提升。",
+        "source_refs": ["sales", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "VinSolutions Connect CRM: Dealer Workflows, Integrations and Data Exports",
+    "title_zh": "VinSolutions Connect CRM：经销商流程、集成及数据导出",
+    "description_en": "Review dealership lead follow-up, Cox Automotive integration boundaries, communication add-ons, Cloudstore datasets and sales-led pricing gaps.",
+    "description_zh": "了解经销商线索跟进、Cox Automotive 集成边界、沟通附加项、Cloudstore 数据集及销售询价缺口。",
+    "primary_intent": "Evaluate VinSolutions dealership CRM with actual system and add-on requirements.",
+    "secondary_questions": [
+      "Which Cox system handles which task?",
+      "What does Cloudstore export?",
+      "Which costs need a scoped quote?"
+    ],
+    "query_basis": "Editorial evaluation questions; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Numerical price, billing metric, term, included modules, migration/rollback, precise match/merge, consent propagation, API quotas and integration recovery remain unconfirmed.",
+      "zh": "具体价格、计费指标、期限、包含模块、迁移／回退、准确匹配／合并、同意传播、API 额度和集成恢复仍未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No dealership account, DMS link, message, extract, recovery or sales quote was accessed. Regional access, language, data location and license/self-hosting remain unknown.",
+      "zh": "未访问经销商账户、DMS 连接、消息、数据提取、恢复或销售报价；地区访问、语言、数据位置和许可／自行托管仍未知。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

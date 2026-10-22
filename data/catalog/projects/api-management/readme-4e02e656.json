@@ -1,0 +1,370 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "readme-4e02e656",
+  "name": "ReadMe",
+  "website_url": "https://readme.com/",
+  "domain": "readme.com",
+  "identity_domain": "readme.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "ReadMe creates hosted developer documentation with guides, interactive API reference pages and publishing workflows. Teams can import an OpenAPI definition or describe an API manually, then keep its reference alongside explanations and examples. Readers can make real API calls from the reference.\n\nAlthough listed in API management, ReadMe is primarily the documentation and developer experience layer. Publishing a reference does not create the business API or make ReadMe a production traffic gateway. Documentation versions, Git synchronization and request-history features have their own behavior and plan limits.",
+  "description_zh": "ReadMe 提供托管开发者文档，包括指南、可交互 API 参考及发布流程。团队可导入 OpenAPI 定义或手动描述 API，让接口参考与说明、示例放在一起；读者可在参考中发出真实 API 请求。\n\n虽然目录归入 API 管理，ReadMe 主要负责文档及开发者体验层。发布参考不会创建业务 API，也不能把它视为生产流量网关。文档版本、Git 同步及请求历史各有行为与方案限制。",
+  "core_features": [
+    {
+      "name_en": "Interactive API reference",
+      "name_zh": "可交互 API 参考",
+      "explanation_en": "Generate endpoint pages and test calls from supported specifications or the manual designer.",
+      "explanation_zh": "按支持的规范或手动设计器生成端点页及测试调用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reference",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Git content synchronization",
+      "name_zh": "Git 内容同步",
+      "explanation_en": "Connect documentation to supported Git repositories in both directions.",
+      "explanation_zh": "将文档与支持的 Git 仓库双向连接。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Documentation versions",
+      "name_zh": "文档版本",
+      "explanation_en": "Publish separate guides/reference versions while some site sections remain shared.",
+      "explanation_zh": "分别发布指南／参考版本，部分站点栏目仍共享。",
+      "explanation_scope": "product_specific",
+      "source_ref": "version",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Identity-aware spec updates",
+      "name_zh": "按操作标识更新规范",
+      "explanation_en": "Stable operationId links a re-uploaded operation to its existing page.",
+      "explanation_zh": "稳定 operationId 将重传操作对应至既有页面。",
+      "explanation_scope": "product_specific",
+      "source_ref": "resync",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Publish a task guide beside an OpenAPI reference",
+      "Evaluate spec changes without breaking endpoint page identity"
+    ],
+    "zh": ["在 OpenAPI 参考旁发布任务指南", "评估规范更新能否保留端点页面身份"],
+    "source_refs": ["start", "resync"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Technical writers",
+      "API engineers",
+      "Developer-experience teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a disposable project/version and import a small supported specification.",
+        "zh": "创建可丢弃项目／版本，导入小型支持规范。",
+        "source_refs": ["start", "reference"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Give operations stable IDs, then test an in-place update and deliberate deletion.",
+        "zh": "为操作配置稳定 ID，再测试原地更新及有意删除。",
+        "source_refs": ["resync"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "If using Git sync, choose an empty repository and verify publish/permission behavior before release.",
+        "zh": "若用 Git 同步，选空仓库并在发布前验证上线／权限行为。",
+        "source_refs": ["sync"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Changing or removing operationId can delete reference pages and their custom edits.",
+        "zh": "改变或删除 operationId 可能删除参考页面及自定义编辑。",
+        "source_refs": ["resync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Not all documentation sections are versioned; copied reusable content becomes independent.",
+        "zh": "不是全部栏目随版本区分，复制的复用内容会独立。",
+        "source_refs": ["version"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Git sync requires repository write access and can be rejected by branch protections.",
+        "zh": "Git 同步需要仓库写权限，可能被分支保护拒绝。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_subscription_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:17:51.966418Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Starter free; Pro $250/month billed annually for one project; Enterprise quote. Extra admins and AI/extended log history can add charges.",
+    "summary_zh": "Starter 免费，Pro 单项目按年月均 $250，企业版询价；额外管理员、AI／扩展日志历史可另收费。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/readme",
+      "read_at": "2026-10-22T08:50:26.919Z",
+      "excerpt_sha256": "849dd94f23e04cea5b2f8234af90133927d86a8f0793febcf60022bdaa32296d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "ReadMe · Developer-friendly API documentation",
+      "url": "https://readme.com/",
+      "read_at": "2026-10-22T11:17:51.966418Z",
+      "excerpt_sha256": "77b0d66c88f797aa79290604f13fa85d61f12082423699027ef08a012e407e89",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ReadMe documentation product and adjacent AI tools reviewed; agent setup prompts on the page treated only as page content, not executed instructions."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ReadMe",
+      "title": "Pricing · ReadMe",
+      "url": "https://readme.com/pricing",
+      "read_at": "2026-10-22T11:17:55.038256Z",
+      "excerpt_sha256": "b0e63d930cb0897083be4837596ea08f8d828e5ddd8602cc1c16aeb7ce49106e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Starter/Pro/Enterprise, $250 monthly equivalent annual Pro, project/version/admin counts and Ask AI/history add-ons read; empty feature-check columns not inferred."
+    },
+    {
+      "id": "start",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "Quickstart",
+      "url": "https://docs.readme.com/main/docs/quickstart",
+      "read_at": "2026-10-22T11:18:21.448462Z",
+      "excerpt_sha256": "8cfcd666f681616fd652219223b608dfabab76f692847b22eab4b9771639b8f6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Project creation, OpenAPI upload, guides and preview-to-live workflow reviewed without creating a project."
+    },
+    {
+      "id": "reference",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "API Reference",
+      "url": "https://docs.readme.com/main/docs/api-reference",
+      "read_at": "2026-10-22T11:18:26.536297Z",
+      "excerpt_sha256": "c7dbb59ca2e1c9119a52834ccd4781f48c559f5f78c9798453b44b4ddfe58a3f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Interactive real API calls, OpenAPI 3.0/3.1/Swagger2 support, manual designer and limited GraphQL support reviewed."
+    },
+    {
+      "id": "sync",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "Bi-Directional Sync",
+      "url": "https://docs.readme.com/main/docs/bi-directional-sync",
+      "read_at": "2026-10-22T11:18:29.546402Z",
+      "excerpt_sha256": "40f3f66c04776021c46bd0ef1d8eae9c5e05a623dbb65dc93b984e771425f8c3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Empty repository prerequisite, Git providers, branch-to-published workflow, repo write permissions and protected-branch failure read."
+    },
+    {
+      "id": "version",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "Versioning",
+      "url": "https://docs.readme.com/main/docs/versions",
+      "read_at": "2026-10-22T11:19:02.242272Z",
+      "excerpt_sha256": "735e4cbbc62a9e5f00e5a464d04feb9366e9a697998efc7a1b51841f9cfcf052",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Versioned versus shared sections, hidden/public behavior, independent forked reusable content and plan limits read."
+    },
+    {
+      "id": "resync",
+      "type": "official_documentation",
+      "site": "ReadMe",
+      "title": "Re-syncing Your OpenAPI Document",
+      "url": "https://docs.readme.com/main/docs/openapi-resyncing",
+      "read_at": "2026-10-22T11:19:07.143819Z",
+      "excerpt_sha256": "e8d7d1c3897b78b40c8215b573424ed250cf238786d64dccb3a22c95a355db5f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual redirected canonical page read: stable operationId preserves page identity; omitted IDs delete pages; generated IDs change with paths; upload versus update and current CLI distinctions reviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:19:07.143819Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "start", "reference", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "first",
+        "title_en": "Build a usable reference and a first task guide",
+        "title_zh": "构建可用参考及首个任务指南",
+        "en": "For a proposed order API, create a project, upload a small supported definition, preview generated endpoints and add a guide showing authentication and a safe read request. The reference supports OpenAPI 3.0/3.1 and Swagger 2.0; a manual designer is available without a specification. Test calls return real responses, so use a disposable environment and deliberate credentials. An interactive example is not a mock by definition and does not validate the server’s business rules. This workflow was read, not performed.",
+        "zh": "以拟建订单 API 为例：创建项目、上传小型支持规范、预览端点，再写认证及安全读取指南。参考支持 OpenAPI 3.0／3.1 与 Swagger 2.0，没有规范时可手动设计。测试调用返回真实响应，应使用可丢弃环境及明确凭据。可交互示例不天然是 mock，也不能验证服务器业务规则。本次仅读流程，未执行。",
+        "source_refs": ["start", "reference"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "identity",
+        "title_en": "operationId controls whether an endpoint page survives",
+        "title_zh": "operationId 决定端点页面是否保留",
+        "en": "Re-sync matches each operation to its page by operationId. A matching ID updates in place and preserves the URL; a new ID creates a page; an omitted old ID deletes its page. If no ID is supplied, ReadMe generates one from path and method, so changing a path can remove the old page and its edits. Stable explicit IDs matter during API refactors. Test a renamed path and a removed operation in a disposable version before syncing the production reference.",
+        "zh": "重同步按 operationId 匹配操作与页面：相同 ID 原地更新并保留 URL，新 ID 建页，旧 ID 缺失则删页。未提供 ID 时 ReadMe 按路径及方法生成，因此改路径可能移除旧页面及编辑内容。API 重构时，稳定显式 ID 很重要。生产参考同步前，应在可丢弃版本测试路径改名及操作删除。",
+        "source_refs": ["resync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "updates",
+        "title_en": "Generated panels and handwritten prose have different update rules",
+        "title_zh": "生成面板与手写内容更新规则不同",
+        "en": "For a stable operation ID, handwritten Markdown is retained while definition-derived parameters and response panels update. Tags do not move pages between categories by default; an extension enables that behavior. Update the existing definition rather than adding another. Current upload tooling also distinguishes refactored projects and older rdme versions. Inspect the Updated time, endpoint URL and rendered request panel after a sync; a successful upload alone does not establish that the intended definition or page was matched.",
+        "zh": "操作 ID 稳定时，手写 Markdown 会保留，规范生成的参数及响应面板会更新。标签默认不移动页面分类，可用扩展启用。应更新既有定义，而非新增另一份。当前上传工具还区分重构后项目与旧 rdme 版本。同步后需核对更新时间、端点 URL 及请求面板；上传成功本身不能证明匹配了目标定义或页面。",
+        "source_refs": ["resync", "reference"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "git",
+        "title_en": "Git sync needs an empty repository and an intentional release path",
+        "title_zh": "Git 同步需空仓库及明确发布路径",
+        "en": "The sync guide requires the target repository to have no commits or files at connection time. GitHub, GitLab and Bitbucket are supported; organization setup can require administrator permissions, and GitHub Enterprise Server needs Enterprise. ReadMe editing syncs to Git and Git editing syncs back. A feature branch merged to the published main branch makes changes live. Protected-branch rules can reject direct sync pushes. Evaluate a compatible repository workflow before connecting; do not assume an existing application repository or its approval rules can be adopted unchanged.",
+        "zh": "同步指南要求连接时目标仓库没有提交或文件，支持 GitHub、GitLab、Bitbucket。组织设置可能需管理员权限，GitHub Enterprise Server 需 Enterprise。ReadMe 编辑同步到 Git，Git 编辑反向同步；特性分支并入发布主分支会使内容上线。保护分支规则可能拒绝直接同步推送。连接前应评估兼容流程，不能假设既有应用仓库及审批规则可直接沿用。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "versions",
+        "title_en": "Documentation versions are not complete independent websites",
+        "title_zh": "文档版本不是完全独立站点",
+        "en": "Guides, Recipes and Reference are versioned; Landing Page, Discussions and Changelog persist across versions. Hidden versions are available to project teammates rather than the public. Forking a version copies reusable content, but those copies then become independent; global reusable content across versions/projects is an Enterprise capability. Define which content should change together before a major release. A documentation version switch does not itself move API consumers, deploy a backend or undo their requests.",
+        "zh": "Guides、Recipes、Reference 随版本区分，Landing Page、Discussions、Changelog 跨版本保留。隐藏版本面向项目成员，不向公众开放。分叉版本会复制复用内容，但副本随后独立；跨版本／项目全局复用为 Enterprise 能力。大版本发布前应明确哪些内容需要同步变化。切换文档版本本身不会迁移 API 消费者、部署后端或撤销请求。",
+        "source_refs": ["version"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Separate project subscription from AI and log-history add-ons",
+        "title_zh": "区分项目订阅、AI 及日志历史附加项",
+        "en": "Starter is $0/month with one project, one published version and one admin. Pro is $250/month billed annually for one project, unlimited published versions and five admins; the table lists $20 per additional admin. Enterprise is custom. Ask AI is listed at $150/month and extended request history/logs at $100/month; the basic history row is 24 hours. Confirm actual term, retention and project count before purchase. Blank checkmark columns were not used to infer entitlement, and a free documentation project is not free API backend hosting.",
+        "zh": "Starter 每月 $0，含一项目、一发布版本、一管理员。Pro 按年计费月均 $250，含一项目、不限发布版本、五管理员；表列额外管理员每位 $20。Enterprise 定制。Ask AI 列每月 $150，扩展请求历史／日志列每月 $100，基础历史行为 24 小时。采购前需确认实际周期、保留期及项目数。未按空白勾选栏推断权限，免费文档项目也不是免费 API 后端托管。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Treat documentation correctness as a maintained product",
+        "title_zh": "把文档正确性作为持续维护任务",
+        "en": "ReadMe is worth evaluating for technical writers, API engineers and developer-experience teams that need a hosted reference plus guides. It is a weaker fit when the main need is gateway policy enforcement or arbitrary backend orchestration. Begin with a short user task, stable operation IDs and a test-only publishing branch/version. Check stale prose, missing operations, credential behavior and rollback of documentation changes. GraphQL support is described as limited; real compatibility, accessibility, performance and supported UI languages were not tested.",
+        "zh": "技术写作、API 工程及开发者体验团队需要托管参考与指南时，可评估 ReadMe。若主要需求是网关策略执行或任意后端编排，它的定位不匹配。可从简短用户任务、稳定操作 ID 和测试发布分支／版本开始，核查过时说明、缺失操作、凭据及文档回退。官方称 GraphQL 支持有限；实际兼容、无障碍、性能及界面语言未实测。",
+        "source_refs": ["reference", "sync", "version"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ReadMe: OpenAPI updates, Git sync and documentation versions",
+    "title_zh": "ReadMe：OpenAPI 更新、Git 同步及文档版本",
+    "description_en": "Review interactive API docs, operationId update behavior, publishing constraints and current ReadMe pricing.",
+    "description_zh": "了解可交互 API 文档、operationId 更新行为、发布条件及当前 ReadMe 定价。",
+    "search_intent_en": "Evaluate hosted API documentation workflows and maintenance risks.",
+    "search_intent_zh": "评估托管 API 文档流程与维护风险。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No project, sync, API call, deletion or rollback was executed.",
+      "zh": "未创建项目或执行同步、API 调用、删除及回退。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Whole-platform license, source availability, data residency, detailed log retention and exact contract terms were not verified.",
+      "zh": "未核实完整平台许可、源码可得性、数据驻留、详细日志保留及合同条款。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "GraphQL support is limited in official guidance; actual compatibility and UI languages require evaluation.",
+      "zh": "官方指引称 GraphQL 支持有限，实际兼容及界面语言需评估。",
+      "source_refs": ["reference"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

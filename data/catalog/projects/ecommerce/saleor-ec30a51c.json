@@ -1,0 +1,261 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "saleor-ec30a51c",
+  "name": "Saleor",
+  "website_url": "https://saleor.io/",
+  "domain": "saleor.io",
+  "identity_domain": "saleor.io",
+  "category": "ecommerce",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Saleor is a headless commerce backend built around GraphQL APIs, an extensible administration dashboard and an application/webhook model. It manages commerce data and operations while the storefront and surrounding services can be built separately.\n\nThe project is available as open-source software, and Saleor Cloud is a paid managed-hosting/support offer. A free non-commercial sandbox, self-hosted software and a live Cloud store have different operating and commercial responsibilities.",
+  "description_zh": "Saleor 是以 GraphQL API、可扩展管理后台及应用／webhook 模型构建的无头电商后端，管理电商数据和运营，店面及外围服务可独立开发。\n\n项目提供开源软件，Saleor Cloud 则是付费托管支持方案。免费非商业沙盒、自托管软件和正式 Cloud 商店，各有不同运营及商业责任。",
+  "core_features": [
+    {
+      "name_en": "GraphQL commerce backend",
+      "name_zh": "GraphQL 电商后端",
+      "explanation_en": "Model products and commerce operations through APIs with a separate storefront.",
+      "explanation_zh": "通过 API 建模商品及电商运营，店面独立。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Dashboard and webhook extensions",
+      "name_zh": "后台及 webhook 扩展",
+      "explanation_en": "Extend administrative UI and connect external services through callbacks and events.",
+      "explanation_zh": "扩展管理界面，并通过回调事件连接外部服务。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Cloud or self-hosted operation",
+      "name_zh": "云端或自托管运营",
+      "explanation_en": "The documentation describes source use and migration between Cloud and self-hosting.",
+      "explanation_zh": "文档说明源码使用及 Cloud 与自托管之间的迁移。",
+      "source_ref": "hosting",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Build a storefront around explicit commerce contracts"],
+    "zh": ["围绕明确电商契约构建店面"],
+    "source_refs": ["product"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Commerce engineering team",
+      "Headless frontend developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "source_ref": "licence",
+    "url": "https://docs.saleor.io/overview/why-saleor/open-source",
+    "scope": "Official documentation-level review; no per-component licence/legal audit."
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:18:55.666919+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Open-source self-hosting has operating costs; paid Cloud tiers add GMV overage/fair API usage; free sandbox is non-commercial.",
+    "source_snapshot_en": "Open-source self-hosting has operating costs; paid Cloud tiers add GMV overage/fair API usage; free sandbox is non-commercial.",
+    "source_snapshot_zh": "开源自托管有运营成本；付费 Cloud 分层另有 GMV 超额及 API 公平使用，免费沙盒仅非商业。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/saleor-io",
+      "read_at": "2026-10-22T09:05:35.176Z",
+      "excerpt_sha256": "c43e3e424701051294822483976c80d678f5acc6912d352069c4fda96eabbcd0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Saleor",
+      "url": "https://saleor.io/",
+      "title": "Saleor - Composable, Open Source, Headless Ecommerce Platform",
+      "read_at": "2026-10-22T15:10:58.497790+00:00",
+      "excerpt_sha256": "59cb4c763f020abc42228eeff49407760a0a651e67a647441f0d58b7ad4f46b0",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read GraphQL/headless, dashboard/extensions and builder-oriented fit without performance guarantees."
+    },
+    {
+      "id": "licence",
+      "type": "official_license",
+      "site": "Saleor",
+      "url": "https://docs.saleor.io/overview/why-saleor/open-source",
+      "title": "Open Source | Saleor Commerce Documentation",
+      "read_at": "2026-10-22T15:14:37.474623+00:00",
+      "excerpt_sha256": "fc9f196e36708e7a9a6d3e2fdf8bdfb6da3dc27ea6d68393fc25509804597cc4",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read official open-source/BSD-family explanation, commercial/private modification rights, trademark caveat and hosting/fork responsibilities."
+    },
+    {
+      "id": "hosting",
+      "type": "official_documentation",
+      "site": "Saleor",
+      "url": "https://docs.saleor.io/cloud/saas-self-host",
+      "title": "SaaS vs Self-Hosting | Saleor Commerce Documentation",
+      "read_at": "2026-10-22T15:14:37.475794+00:00",
+      "excerpt_sha256": "3659b1a29980733606b279e39cc904186e5108adb3de2017ea39835a706f60a4",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read Cloud/self-host migration and customer-data ownership; no specific deployment tested."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Saleor",
+      "url": "https://saleor.io/pricing",
+      "title": "Pricing for Cloud Services – Saleor Commerce",
+      "read_at": "2026-10-22T15:13:39.811552+00:00",
+      "excerpt_sha256": "edaf5f3cd3e52415c87bb0d7f703d2a3819ddc318ffff0e79aab96f7f5b874f2",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read non-commercial sandbox, Select/Volume GMV/excess, API fair-use and optional upfront-credit services."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:18:55.666919+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "checkout",
+        "title_en": "Build a storefront around explicit commerce contracts",
+        "title_zh": "围绕明确电商契约构建店面",
+        "en": "A development team could model product types and variants in Saleor, build a separate storefront and connect payment and fulfilment services. The homepage describes dynamic attributes, GraphQL and synchronous webhook extensions. Test checkout, inventory allocation and external-service failure as one business flow. “Headless” means the presentation is decoupled; it does not supply a finished bespoke storefront or eliminate engineering responsibility.",
+        "zh": "开发团队可在 Saleor 建立商品类型和规格，独立开发店面，再连接支付履约。主页介绍动态属性、GraphQL 及同步 webhook 扩展。应把结账、库存分配和外部服务失败作为一条业务流程测试。“无头”表示展示解耦，不会自动提供完成的定制店面，也不会消除工程责任。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "licence",
+        "title_en": "Distinguish source rights from the cost to operate",
+        "title_zh": "区分源码权利与运营成本",
+        "en": "Official documentation describes Saleor as OSI-licensed open source, permits personal/commercial use and private modifications, and references BSD licensing with trademark conditions. It also warns that running servers and maintaining a fork carry costs and upgrade responsibility. This is documentation-level licence research, not a per-component legal audit. Cloud-to-OSS migration is supported in principle but still requires compatible versions and data migration.",
+        "zh": "官方文档将 Saleor 描述为采用 OSI 许可的开源项目，允许个人商业使用及私有修改，并提及 BSD 许可和商标条件，同时提示服务器、分叉维护及升级责任仍有成本。这是文档层许可研究，不是逐组件法律审计。Cloud 转 OSS 原则上可行，仍需处理兼容版本和数据迁移。",
+        "source_refs": ["licence", "hosting", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cloud",
+        "title_en": "Compare a sandbox with commercial Cloud plans",
+        "title_zh": "区分沙盒与商业 Cloud 套餐",
+        "en": "The pricing page marks free Sandboxes for non-commercial use. Select is listed at US$1,599/month with up to US$200,000 monthly GMV and 0.8% on orders exceeding that GMV allowance; Volume is US$3,999 with up to US$1 million and 0.4% excess. Enterprise is negotiated and all plans refer to fair API usage. Confirm billing cadence, GMV definition and applicable overage in a quote; the free sandbox is not a free production-hosting entitlement.",
+        "zh": "定价页把免费 Sandboxes 标为非商业用途。Select 列价每月 1,599 美元，含每月最多 200,000 美元 GMV，超出额度订单比例为 0.8%；Volume 为每月 3,999 美元，含 100 万美元 GMV，超额为 0.4%。Enterprise 协商，均提及 API 公平使用。应在报价中确认付款周期、GMV 定义及超额条件；免费沙盒不等于免费生产托管。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "implementation",
+        "title_en": "Budget the storefront, apps and operating owner",
+        "title_zh": "预算店面、应用和运营负责人",
+        "en": "Cloud includes described delivery/support services, while optional accelerator and engineering offers have separate upfront charges and conditional credits. Self-hosting moves infrastructure work to the customer; a custom frontend and integrations need their own maintenance either way. Start with product schemas, channel/currency requirements and accountable owners for payment and fulfilment apps. No Cloud provisioning, code installation, checkout or recovery benchmark was performed.",
+        "zh": "Cloud 描述包含交付支持，另有需先付费、按条件返抵的加速和工程方案。自托管把基础设施工作交给客户；无论哪种方式，自定义前端和集成都需维护。应先准备商品结构、渠道币种需求，以及支付履约应用负责人。本文未开通 Cloud、安装代码、运行结账或测试恢复。",
+        "source_refs": ["pricing", "hosting", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Choose when an engineering team needs commerce control",
+        "title_zh": "适合工程团队需要电商控制权的场景",
+        "en": "Saleor is relevant to teams building differentiated commerce experiences and willing to own integrations. A merchant expecting a fully finished no-code shop may not want this responsibility; the vendor itself states a builder-oriented fit. Licence freedom is separate from commercial SLA, support, hosting and third-party services, whose exact terms remain unverified.",
+        "zh": "需要差异化电商体验且愿意负责集成的团队可评估 Saleor。期待完整即用无代码网店的商家可能不想承担这些责任，厂商本身也强调面向构建团队。许可自由与商业 SLA、支持、托管及第三方服务分开，具体条款仍未核实。",
+        "source_refs": ["product", "licence", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Saleor: Build a storefront around explicit commerce contracts",
+    "title_zh": "Saleor：围绕明确电商契约构建店面",
+    "description_en": "Saleor is a headless commerce backend built around GraphQL APIs, an extensible administration dashboard and an application/webhook model. It manages commerce data and operations while the storefront and surrounding services can be built separately.",
+    "description_zh": "Saleor 是以 GraphQL API、可扩展管理后台及应用／webhook 模型构建的无头电商后端，管理电商数据和运营，店面及外围服务可独立开发。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Per-component licence texts, chosen Cloud contract/cadence, API fair-use threshold, connector recovery and migration/export completeness remain unverified.",
+      "zh": "逐组件许可正文、所选 Cloud 合同付款周期、API 公平使用阈值、连接器恢复及迁移导出完整性仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ]
+}

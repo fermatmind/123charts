@@ -1,0 +1,300 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pandora-fms-d5ecb72a",
+  "name": "Pandora FMS",
+  "website_url": "https://pandorafms.com/en/versions-comparative/",
+  "domain": "pandorafms.com",
+  "identity_domain": "pandorafms.com",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Pandora FMS monitors infrastructure through agents, remote checks and a management console. Its commercial family includes fuller monitoring editions, network-focused packaging and a managed cloud option, while on-premises operation leaves infrastructure and recovery responsibilities with the operator.\n\nThe important evaluation boundaries concern collected data, permissions on shared reports, transport configuration and recovery artifacts. A support-priced agent count is not simply a count of sensor checks, and the published licensing FAQ uses agent/device terminology in ways that need confirmation for a particular topology.",
+  "description_zh": "Pandora FMS 通过代理、远程检查及管理控制台监控基础设施。商业家族区分完整监控版、网络监控包装及托管云选项；本地部署的基础设施和恢复责任由运行方承担。\n\n评估重点包括采集数据、共享报表权限、传输配置及恢复产物。含支持的许可代理数量不能简单等同于传感器检查数，公开许可 FAQ 对 agent／device 的用法也需按具体拓扑核对。",
+  "core_features": [
+    {
+      "name_en": "Group/profile access control",
+      "name_zh": "组与配置访问控制",
+      "explanation_en": "Classic ACL combines role, action, group and user; advanced ACL further controls pages.",
+      "explanation_zh": "经典 ACL 组合角色、动作、组及用户，高级 ACL 进一步控制页面。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Tentacle transport",
+      "name_zh": "Tentacle 传输",
+      "explanation_en": "Agent/server transfers have configurable authentication and encryption options on a dedicated protocol.",
+      "explanation_zh": "代理／服务端传输使用专用协议，可配置鉴权与加密。",
+      "explanation_scope": "product_specific",
+      "source_ref": "transport",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multi-artifact recovery",
+      "name_zh": "多产物恢复",
+      "explanation_en": "The backup guide covers databases and configuration/files separately.",
+      "explanation_zh": "备份指南分别覆盖数据库与配置／文件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a small monitored group and a deliberately limited report recipient.",
+      "Rehearse a database-plus-configuration recovery using synthetic content."
+    ],
+    "zh": [
+      "评估小型监控组及明确受限的报表接收者。",
+      "使用模拟内容演练数据库加配置恢复。"
+    ],
+    "source_refs": ["home", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Monitoring platform administrators",
+      "Infrastructure operations teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose on-premises/MaaS packaging and confirm agent/device mapping for a small test topology.",
+        "zh": "选择本地／MaaS 包装，为小型测试拓扑核对 agent／device 对应。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test ordinary-user reports and validated transport, then inventory recovery artifacts before broader deployment.",
+        "zh": "测试普通用户报表及经验证传输，再列清恢复产物后扩大部署。",
+        "source_refs": ["home", "transport", "backup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Shared report visibility can exceed access to underlying element groups.",
+        "zh": "共享报表可见范围可能超过底层元素组访问范围。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The current backup route contains dated material; build-specific recovery must be verified.",
+        "zh": "当前备份路径含较旧资料，需核对特定 build 的恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:24:15.983581Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Commercial monitoring licensing is agent/device-based, with a100-agent minimum for the supported paid offer; exact amounts require a quote. Perpetual, subscription and MaaS continuity differ. A separate bounded free offer is advertised, but it does not grant every ONE, NMS, RMM or hosted entitlement.",
+    "summary_zh": "商业监控许可按 agent／device，含支持付费方案至少一百 agent，具体金额需报价。永久、订阅及 MaaS 的延续条件不同。另有有限免费方案宣传，但不授予全部 ONE、NMS、RMM 或托管权益。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pandora-fms",
+      "read_at": "2026-10-22T08:47:33.594Z",
+      "excerpt_sha256": "2f294057410e1982fcbe31e5eab7bee0cfabaf06fc2c30ff8595bda283f9bdec",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Pandora FMS",
+      "title": "Console Management [current]",
+      "url": "https://www.pandorafms.com/manual/%21current/en/documentation/pandorafms/management_and_operation/11_managing_and_administration",
+      "read_at": "2026-10-22T15:24:15.983581Z",
+      "excerpt_sha256": "a2aade33501327bd25bd4654bae159f93ede5ddfdadbae073ba03651f6654605",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual current console-management body, group/profile access and shared-container behavior."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pandora FMS",
+      "title": "Licenses | Pandora FMS",
+      "url": "https://pandorafms.com/en/pricing/",
+      "read_at": "2026-10-22T15:21:23.304675Z",
+      "excerpt_sha256": "e6e252d3bb27c5459692b07a53b7b33aeb9140579a0772f29192b0849ceb0023",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual device/agent licensing FAQ, supported minimum, perpetual/usage differences and MaaS."
+    },
+    {
+      "id": "transport",
+      "type": "official_documentation",
+      "site": "Pandora FMS",
+      "title": "Tentacle protocol specifications [current]",
+      "url": "https://www.pandorafms.com/manual/%21current/en/documentation/pandorafms/technical_reference/09_tentacle",
+      "read_at": "2026-10-22T15:24:17.219046Z",
+      "excerpt_sha256": "11d6351d0715f5c1247ea9e6f64710c6a0439a51256294fac77e02449e658f96",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Tentacle protocol/port and explicit password-versus-encryption distinction."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Pandora FMS",
+      "title": "Backup and Restore Procedures [current]",
+      "url": "https://pandorafms.com/manual/%21current/en/documentation/pandorafms/technical_annexes/07_backup_and_restore_procedures",
+      "read_at": "2026-10-22T15:22:23.820331Z",
+      "excerpt_sha256": "f0061bac2eafd27e26bda318d4d6c755b7ba084077a48f5394d2362c405dbc8c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current-route backup body covering main/history DB and configuration files; dated page is not a tested recovery guarantee."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:24:17.219046Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "transport"],
+  "profile": {
+    "sections": [
+      {
+        "id": "acl",
+        "title_en": "Distinguish Superadmin from an administrator profile",
+        "title_zh": "区分 Superadmin 与管理员配置",
+        "en": "Superadmin is exempt from ACL checks. Ordinary users remain ACL-bound even with a Pandora Administrator profile. Classic ACL is evaluated before the advanced page-access model; secondary groups can extend access to the same agent. Test a non-superadmin account with the intended group combination before interpreting a hidden page as restricted data.",
+        "zh": "Superadmin 不受 ACL 检查，普通用户即使使用 Pandora Administrator 配置仍受约束。经典 ACL 先于高级页面访问模型计算，次级组可扩展同一代理访问。应使用非 Superadmin 账户测试目标组组合，不能通过页面隐藏推定数据已受限。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "shared-reports",
+        "title_en": "A shared report can expose its contents",
+        "title_zh": "共享报表可能开放其内容",
+        "en": "The current management guide describes reports, maps and dashboards as containers: sharing a report to a group can let its users see all included content even without access to each underlying element’s group. Review the resulting artifact under the recipient’s account and keep confidential metrics out of broadly shared containers.",
+        "zh": "当前管理指南将报表、地图及仪表盘视为容器：报表分享到某组后，用户可能看到全部包含内容，即使无权访问底层各元素所属组。应以接收者账户检查产物，避免将保密指标放入广泛共享容器。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "transport-security",
+        "title_en": "Authentication is not automatically encryption",
+        "title_zh": "鉴权不自动等于加密",
+        "en": "Tentacle defaults to its documented port41121 and exposes separate SSL/certificate options. The protocol chapter explicitly says its obfuscated password exchange over an unencrypted connection does not add security. Choose a validated certificate configuration for the actual endpoints; do not infer protected transport from successful file delivery or a configured password.",
+        "zh": "Tentacle 使用文档默认端口 41121，并分别提供 SSL／证书选项。协议章节明确说明，在未加密连接中混淆后的密码交换不会增加安全性。应为实际端点选择经验证的证书配置，不能凭文件送达成功或配置密码推定传输已受保护。",
+        "source_refs": ["transport"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery-scope",
+        "title_en": "Back up databases and configuration together",
+        "title_zh": "同时备份数据库和配置",
+        "en": "The backup guide calls for the main database, a history database if used, and configuration/files for the server, console and agents. Its database-backup task is one artifact, not proof that every external component is covered. Inventory these items and rehearse restore on a separate compatible installation before setting an operational recovery target.",
+        "zh": "备份指南要求主数据库、使用中的历史库，以及服务端、控制台和代理配置／文件。数据库备份任务只是其中一项，不能证明所有外部组件都覆盖。设定运行恢复目标前，应列清产物并在独立兼容安装上演练恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "topology-license",
+        "title_en": "Confirm the topology’s licensing unit",
+        "title_zh": "核对拓扑许可单元",
+        "en": "The fee FAQ says supported paid purchase starts at100agents, distinguishes per-device licensing from individual checks, and describes different treatment for active/passive redundancy versus independent multi-site servers. It also describes an agent as an information container. Obtain an explicit device/agent mapping for the proposed topology instead of using the broadest statement to minimize counts.",
+        "zh": "费用 FAQ 说明含支持的付费购买从一百 agent 起，区分按设备与按检查，并区别主备冗余和独立多站点服务端。它又将 agent 描述为信息容器。应为拟用拓扑取得明确设备／agent 对应，不能选最宽泛措辞来压低数量。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "renewal",
+        "title_en": "Separate perpetual operation from subscription continuity",
+        "title_zh": "区分永久运行与订阅延续",
+        "en": "The license page says perpetual software can continue after non-renewal but loses support, patches and specified libraries; pay-per-use stops if unpaid. MaaS includes hosting/management by the vendor. Select the operating model and ongoing update obligation explicitly, and do not treat source visibility as a complete open-source license grant.",
+        "zh": "许可页说明永久许可不续费后可继续运行，但失去支持、补丁及指定库；按用量方案未付款会停止。MaaS 由厂商托管及管理。应明确运行模型和持续更新要求，源码可见不能作为完整开源许可授权。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Pandora FMS: setup, operating limits and pricing",
+    "title_zh": "Pandora FMS：设置、运行边界及费用",
+    "description_en": "Pandora FMS monitors infrastructure through agents, remote checks and a management console. Its commercial family includes fuller monitoring editions, network-focused pac",
+    "description_zh": "Pandora FMS 通过代理、远程检查及管理控制台监控基础设施。商业家族区分完整监控版、网络监控包装及托管云选项；本地部署的基础设施和恢复责任由运行方承担。",
+    "search_intent_en": "Evaluate Pandora FMS for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Pandora FMS。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No server, agent, database, ACL, report share, transport/TLS change, backup/restore or purchase was operated.",
+      "zh": "未操作服务端、代理、数据库、ACL、报表分享、传输／TLS 修改、备份／恢复或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full software/component licenses, exact device-container billing interpretation, current recovery compatibility, retention and actual alert delivery remain unverified.",
+      "zh": "完整软件／组件许可、设备与容器具体计费解释、当前恢复兼容性、保留及实际告警投递待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

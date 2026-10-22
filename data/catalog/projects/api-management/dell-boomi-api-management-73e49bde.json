@@ -1,0 +1,425 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "dell-boomi-api-management-73e49bde",
+  "name": "Boomi API Management",
+  "website_url": "https://boomi.com/platform/api-management/",
+  "domain": "boomi.com",
+  "identity_domain": "boomi.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Boomi API Management covers API publishing, gateway policies, developer access and API lifecycle operations. A Boomi API Service can expose listener processes, while an API Proxy routes to an external backend through a gateway. Current documentation also includes API Control Plane and Cloud API Management as separately entitled surfaces.\n\nThis record uses the current Boomi product name while retaining the older Dell-prefixed catalog slug. It does not treat every Integration, Data Integration, Cloud APIM or agent-platform feature as an automatic entitlement of one API Management purchase.",
+  "description_zh": "Boomi API Management 覆盖 API 发布、网关策略、开发者访问及生命周期操作。Boomi API Service 可暴露监听流程，API Proxy 则通过网关路由到外部后端。当前文档还包含需分别开通的 API Control Plane 与 Cloud API Management。\n\n档案采用当前 Boomi 产品名，保留旧的 Dell 前缀 slug。不能把 Integration、Data Integration、Cloud APIM 或代理平台的每项能力都视为一次 API Management 采购自动包含。",
+  "core_features": [
+    {
+      "name_en": "API Service and Proxy components",
+      "name_zh": "API Service 与 Proxy 组件",
+      "explanation_en": "Publish runtime-backed endpoints or route to an external host.",
+      "explanation_zh": "发布运行时支撑的端点，或路由至外部主机。",
+      "explanation_scope": "product_specific",
+      "source_ref": "service",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Gateway policy enforcement",
+      "name_zh": "网关策略执行",
+      "explanation_en": "Apply access and traffic policies at the API entry point.",
+      "explanation_zh": "在 API 入口执行访问与流量策略。",
+      "explanation_scope": "product_specific",
+      "source_ref": "gateway",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Shared policy templates",
+      "name_zh": "共享策略模板",
+      "explanation_en": "Reuse versioned rule bundles while retaining shared rule references.",
+      "explanation_zh": "复用有版本规则包，同时保留共享规则引用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "policy",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separated APIM roles",
+      "name_zh": "分工的 APIM 角色",
+      "explanation_en": "Assign API, infrastructure and read-only support responsibilities.",
+      "explanation_zh": "分别配置 API、基础设施及只读支持职责。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Expose one authorized test API through the selected gateway path.",
+      "Evaluate shared policies and a Cloud APIM import with explicit version checks."
+    ],
+    "zh": [
+      "通过选定网关路径暴露一个获准测试 API。",
+      "明确核对版本，评估共享策略及 Cloud APIM 导入。"
+    ],
+    "source_refs": ["service", "proxy", "policy", "import"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineer",
+      "Integration developer",
+      "Gateway operations administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm APIM product, entitlement, runtime and gateway.",
+        "zh": "确认 APIM 产品、权限、运行时及网关。",
+        "source_refs": ["overview", "roles", "gateway"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Package and deploy one test Service or Proxy.",
+        "zh": "打包部署一个测试 Service 或 Proxy。",
+        "source_refs": ["service", "proxy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify consumer access, failed requests, policies and backend completion.",
+        "zh": "核对消费者访问、失败请求、策略及后端完成。",
+        "source_refs": ["service", "policy", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A policy template shares underlying rule definitions.",
+        "zh": "策略模板共享底层规则定义。",
+        "source_refs": ["policy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Platform-to-Cloud APIM import is REST-only and reimport resets configuration.",
+        "zh": "Platform 至 Cloud APIM 导入限 REST，重新导入会重置配置。",
+        "source_refs": ["import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "custom_APIM_edition_capacity_deployment_and_entitlements",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:59:48.157837Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "APIM-specific sales quote by edition, API/transaction capacity, deployment and support; no numeric all-in price confirmed."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/dell-boomi",
+      "read_at": "2026-10-22T08:41:21.181Z",
+      "excerpt_sha256": "89bb85b9825d9923275bd592409721af08c5b8e42f818946e151300d0c358e7e",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Management Platform for B2B Enterprise | Boomi",
+      "url": "https://boomi.com/platform/api-management/",
+      "read_at": "2026-10-22T10:59:48.157837Z",
+      "excerpt_sha256": "f6a92b356dd62a6e345470e026f14aa231fef1399e35cda23e80b8ae989afaa3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Boomi API Management branding and control/gateway/product surfaces read; Dell prefix removed without merging all Enterprise Platform capabilities."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Boomi API Management",
+      "title": "Boomi Enterprise Platform Pricing & Editions | Boomi",
+      "url": "https://boomi.com/pricing/",
+      "read_at": "2026-10-22T10:59:51.197204Z",
+      "excerpt_sha256": "f05a0cc0e3bb8528583c0f2b65d0d9c69c52bddb4dfabe72fd731115f916409f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API Management-specific Professional/Plus/Enterprise/Plus quotes and standard features separated from integration/data product pricing."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Management Overview | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/APIM_overview",
+      "read_at": "2026-10-22T11:02:19.295295Z",
+      "excerpt_sha256": "f44ff5be3c5df98aa47e66e9c5218e8868d8cc33ae929975e7f2653a1ab72aae",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current APIM documentation links API Control Plane, Gateway and Cloud API Management as distinct surfaces."
+    },
+    {
+      "id": "service",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Management | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/c-atm-API_Management_28fb124c-f53f-4da8-bf8e-ca89656a5f39",
+      "read_at": "2026-10-22T11:01:45.265193Z",
+      "excerpt_sha256": "370a81c7fd08537869c44f323ca0f1028c50caaf9c34a3db2d5b522ae413ab60",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API Service vs Proxy, linked listener deployment, retained versions and long-running asynchronous execution guidance read."
+    },
+    {
+      "id": "proxy",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Proxy components | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/int-API_Proxy_components_24a9612a-2e4a-4ae9-ba66-88ba1b3f9c97",
+      "read_at": "2026-10-22T11:01:48.243011Z",
+      "excerpt_sha256": "7b86d447de88dcff2ba7bb0f7749b0d7b510b9c4fc78d5d6134468cdbbbf7168",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Proxy component packages/deploys to a gateway-enabled environment; external backend is not required to run on Boomi."
+    },
+    {
+      "id": "gateway",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Gateway | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/api-API_Gateway_ddddb1bf-f768-4698-b175-2a2ae701d6ae",
+      "read_at": "2026-10-22T11:03:51.576673Z",
+      "excerpt_sha256": "38c6f839248101cf4bab9cb7c0814f989cddfdc8ac2caf6bb64df824b60b7882",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Gateway policy/routing role, single-account tenancy, environment sharing and customer network placement reviewed."
+    },
+    {
+      "id": "cloud",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "Documentation for Boomi Cloud API Management (formerly TIBCO Cloud API Management) | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/cam/cloud/api_cam_intro",
+      "read_at": "2026-10-22T11:03:54.540220Z",
+      "excerpt_sha256": "3911377a2b1981bd05653dc618d38123b232f81eaa1df1cc5cd399fe0c04bc05",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloud API Management previously TIBCO/Mashery; cloud and Local Edition documents not conflated with Boomi runtime-based APIs."
+    },
+    {
+      "id": "import",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "Importing API from Boomi Platform | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/cam/cloud/DesignControls/APIdefinitions/NewAPIDefinitionOptions/ImportAPIfromPlatform/Importing_api_from_boomi_platform",
+      "read_at": "2026-10-22T11:04:00.327093Z",
+      "excerpt_sha256": "8cc493c4cb1b457d3ad8fa77d603b6696ee1dea03d8194a0f4ddbb21feb84da7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "August 2026 Platform -> Cloud API import supports REST only, one API at a time, and reimport resets configuration."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Management Roles and Privileges | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/api_apim_roles_and_privileges",
+      "read_at": "2026-10-22T11:03:57.516744Z",
+      "excerpt_sha256": "ba5b38d67540668e0b6f88ec6506cb61057071df922b0f6d92e0c8c2e9c0f4f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API/infrastructure/admin/support privileges, separate entitlement navigation and no single sign-off caveat reviewed."
+    },
+    {
+      "id": "policy",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "Policy templates | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/api_policy_templates",
+      "read_at": "2026-10-22T11:04:03.023510Z",
+      "excerpt_sha256": "f6a02fa8808939357cc0a6ad6130812e6b99f4619067172a54edcf04935f1c7c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "October 2026 policy templates reference shared rule definitions, so rule edits affect every referencing template."
+    },
+    {
+      "id": "adminapi",
+      "type": "official_documentation",
+      "site": "Boomi API Management",
+      "title": "API Management APIs | Boomi Documentation",
+      "url": "https://help.boomi.com/docs/Atomsphere/API%20Management/Topics/r-api-API_Management_APIs_4307dcc3-1662-4e2a-9a82-d03ca043f340",
+      "read_at": "2026-10-22T11:02:23.673838Z",
+      "excerpt_sha256": "2b641a433bc6c67573d85cbf9d38baab15c09ee0f5fd5a106c48b3f0f8e5faf3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Management RESTish/SOAP API 10 requests/second limit and 503 response distinguished from runtime API throughput."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:04:03.023510Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "overview", "service", "proxy", "roles"],
+  "profile": {
+    "sections": [
+      {
+        "id": "route",
+        "title_en": "Choose a Service or a Proxy according to the backend",
+        "title_zh": "按后端选择 Service 或 Proxy",
+        "en": "An API Service defines REST/SOAP/OData endpoints backed by listener processes. Those processes and the API component must be deployed to the intended runtime. An API Proxy instead packages a gateway route to an external host, without requiring that host to be a Boomi process. For a proposed evaluation, expose a test order lookup and compare the authorized, missing-key and backend-error results. Creating a component is distinct from packaging, deployment and reachable DNS/TLS; this research performed none of those operations.",
+        "zh": "API Service 定义由监听流程支撑的 REST／SOAP／OData 端点，流程及 API 组件都需部署到目标运行时。API Proxy 则把指向外部主机的网关路由打包，无需后端是 Boomi 流程。建议评估一个测试订单查询，对比授权、缺失 key 及后端错误结果。创建组件有别于打包、部署及 DNS／TLS 可访问，本次未执行这些操作。",
+        "source_refs": ["service", "proxy"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "gateway",
+        "title_en": "Gateway placement and account scope are deployment decisions",
+        "title_zh": "网关位置与账号范围属于部署选择",
+        "en": "The gateway handles routing, authentication, traffic controls and monitoring ahead of the backend. The current architecture says gateways are single-tenant within the account where installed; multiple environments can share one gateway, while strict production separation may need different gateways. Cluster support does not itself prove the chosen topology survives a node or network failure. Validate the actual gateway, environment, backend reachability and policy assignment before treating the inventory/control plane as enforcement on live traffic.",
+        "zh": "网关在后端前处理路由、认证、流量控制及监控。当前架构说明网关在安装账号内为单租户，多个环境可共享一个网关；严格生产隔离可能需不同网关。支持集群本身不能证明所选拓扑能承受节点或网络失败。应核对实际网关、环境、后端可达性及策略绑定，不能把资产目录／控制面直接当成实时流量执行。",
+        "source_refs": ["gateway"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "policies",
+        "title_en": "A shared rule edit can affect several APIs",
+        "title_zh": "共享规则编辑可能影响多个 API",
+        "en": "Policy templates are versioned bundles of existing rules. They reference rule definitions rather than cloning them, so editing a reused rule changes every template using it. Each rule retains execution timing. Before updating a common authentication or traffic rule, inspect referencing APIs and test an allowed request, a rejected request and a backend failure. Template versioning alone does not establish an isolated copy of every underlying rule or a verified safe rollback.",
+        "zh": "策略模板是已有规则的有版本组合，以引用而非克隆方式使用规则，因此编辑共享规则会影响所有引用模板；各规则保留执行时机。修改公共认证或流量规则前，应检查引用 API，并测试允许、拒绝及后端失败请求。模板有版本，不代表每条底层规则均有隔离副本，也不代表回滚已验证安全。",
+        "source_refs": ["policy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cloud",
+        "title_en": "Cloud APIM import has explicit limits",
+        "title_zh": "Cloud APIM 导入有明确限制",
+        "en": "Cloud API Management documentation identifies its TIBCO/Mashery lineage and separate deployment types. The current Platform-import wizard accepts one REST API at a time; GraphQL, SOAP and other types are excluded from this particular import, even though other Boomi API surfaces support different protocols. Reimport requires a newer version and resets configuration. Review endpoint/method selection and compare the imported API before and after upgrade. Do not infer automatic cross-product parity from a shared login or brand.",
+        "zh": "Cloud API Management 文档说明其 TIBCO／Mashery 来源及独立部署类型。当前 Platform 导入向导每次接受一个 REST API，GraphQL、SOAP 等不在该导入范围，虽然其他 Boomi API 入口支持不同协议。重新导入要求有新版本，并会重置配置。应检查端点／方法选择，对比升级前后导入 API；共用登录或品牌不能证明产品间自动同等能力。",
+        "source_refs": ["cloud", "import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Long backend work needs a deliberate response contract",
+        "title_zh": "长时间后端操作需明确响应契约",
+        "en": "The API Service guide discourages web-server listeners longer than three minutes and describes an asynchronous return plus webhook or status polling. A 202 response is not the finished backend result. Separately, the management RESTish/SOAP APIs have a documented ten requests/second limit and return 503 on excess; that is not a universal public API gateway throughput limit. Monitor backend completion, gateway rejection and management throttling separately, and test retry effects on any state-changing request.",
+        "zh": "API Service 指南不建议 Web 监听流程超过三分钟，给出异步返回加 webhook 或状态轮询方式。202 响应不是最终后端结果。另有管理 RESTish／SOAP API 每秒十请求、超量返回 503 的限制，不能当成所有公网 API 网关吞吐上限。应分别监控后端完成、网关拒绝及管理限流，并测试修改状态请求的重试影响。",
+        "source_refs": ["service", "adminapi"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permissions",
+        "title_en": "Administrative visibility and deployment access differ",
+        "title_zh": "管理可见性与部署权限不同",
+        "en": "API Manager, Infrastructure Manager, Administrator and Support split responsibility; Support can download gateway logs without configuration writes. Environment permissions still control deployment changes. Control Plane and Cloud APIM navigation require entitlements and distinct roles. The guide also says there is no single sign-off among the three applications. Test access with the intended operator and developer personas, including logout and log contents, rather than assuming one role or logout covers every surface.",
+        "zh": "API Manager、Infrastructure Manager、Administrator 与 Support 分工不同；Support 可下载网关日志而无需配置写权限，部署修改仍受环境权限约束。Control Plane 与 Cloud APIM 访问另需权限及角色。指南也说明三个应用之间没有统一登出。应以实际运维及开发者身份测试访问、登出和日志内容，不能假设一个角色或一次登出涵盖全部入口。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Request an APIM-specific configuration and quote",
+        "title_zh": "要求针对 APIM 配置的报价",
+        "en": "The APIM pricing section lists Professional, Professional Plus, Enterprise and Enterprise Plus, with sales contact rather than public numeric fees. Standard features include gateway policy control, developer portal and basic monitoring. Plus adds SaaS deployment and advanced analytics/governance; higher tiers change capacity options. Confirm API/transaction definitions, gateway deployments, environments, Control Plane/Cloud APIM entitlements and support in the order. “Unlimited” marketing does not establish a tested throughput or infrastructure budget, and general Integration editions are not the APIM quote.",
+        "zh": "APIM 定价部分列 Professional、Professional Plus、Enterprise、Enterprise Plus，通过销售报价，无公开数字费用。标准功能含网关策略、开发者门户及基础监控，Plus 增加 SaaS 部署及高级分析／治理，更高档改变容量选项。订单应明确 API／事务定义、网关部署、环境、Control Plane／Cloud APIM 权限及支持。“无限”营销不能证明实测吞吐或基础设施预算，通用 Integration 版本也不是 APIM 报价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Evaluate the exact gateway and product path",
+        "title_zh": "评估明确网关与产品路径",
+        "en": "Boomi API Management merits evaluation for teams governing several APIs or exposing integration-backed services with an assigned operations owner. It is a weaker fit if an organization expects a discovery catalog alone to repair backend semantics or secure every unmanaged route. Current license terms, exact policy compatibility, failure recovery, regional purchasing, throughput and interface languages were not independently verified. No gateway, API key or production service was deployed.",
+        "zh": "当团队要治理多个 API，或由明确运维负责人暴露集成服务时，可评估 Boomi API Management。若期待仅靠发现目录就修复后端语义、或保护每条未托管路由，适用性较弱。本次未独立确认许可、具体策略兼容、失败恢复、地区购买、吞吐及界面语言，也未部署网关、API key 或生产服务。",
+        "source_refs": ["home", "gateway", "overview"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Boomi API Management: Services, Proxies, Policies and Cloud APIM",
+    "title_zh": "Boomi API Management：Service、Proxy、策略与 Cloud APIM",
+    "description_en": "Evaluate Boomi API Service versus Proxy, gateway scope, shared policy changes, Cloud APIM import limits and quote boundaries.",
+    "description_zh": "评估 Boomi API Service 与 Proxy、网关范围、共享策略变化、Cloud APIM 导入限制及报价边界。",
+    "primary_intent": "Evaluate the exact Boomi API Management product and gateway configuration.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Actual APIM offer, license, trial, transaction meter, capacity and regional support require confirmation; no performance, failure or role-isolation test was run.",
+      "zh": "实际 APIM 报价、许可、试用、事务计量、容量及地区支持需确认，未执行性能、失败或角色隔离测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Boomi branding covers distinct API Management, Cloud APIM, Control Plane and data/integration products; feature parity is not assumed.",
+      "zh": "Boomi 品牌覆盖不同 API Management、Cloud APIM、Control Plane 及数据／集成产品，不能假设功能同等。",
+      "source_refs": ["overview", "cloud", "roles"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "identity_history": [
+    {
+      "former_catalog_name": "Dell Boomi API Management",
+      "current_official_name": "Boomi API Management",
+      "basis": "Current official product heading; original slug retained.",
+      "source_ref": "home"
+    }
+  ]
+}

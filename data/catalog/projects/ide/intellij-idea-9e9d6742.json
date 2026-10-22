@@ -1,0 +1,386 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "intellij-idea-9e9d6742",
+  "name": "IntelliJ IDEA",
+  "website_url": "https://www.jetbrains.com/idea/",
+  "domain": "www.jetbrains.com",
+  "identity_domain": "jetbrains.com",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "IntelliJ IDEA is JetBrains’ Java and Kotlin development environment for desktop and supported remote setups. Its current documentation describes a unified distribution from2025.3: essential features remain free, while an Ultimate subscription unlocks advanced tooling. The former Community/Ultimate installer split is therefore not an accurate default description of current releases.\n\nThe useful evaluation is a project workflow: select a compatible JDK, inspect unfamiliar build configuration, compile and run, review a refactoring and verify the packaged application. The IDE runtime, project runtime and commercial feature entitlement are separate choices. This profile is documentation research; no IDE or sample was installed or executed.",
+  "description_zh": "IntelliJ IDEA 是 JetBrains 的 Java／Kotlin 开发环境，支持桌面及符合条件的远程配置。当前文档说明从2025.3起采用统一发行版：基础功能持续免费，Ultimate 订阅解锁高级工具，因此旧 Community／Ultimate 双安装包并非当前版本的默认描述。\n\n建议按项目流程评估：选择兼容 JDK，检查陌生构建配置，编译运行，审阅重构，再验证打包应用。IDE 运行时、项目运行时及商业功能权益是不同选择。本文仅研究文档，未安装 IDE 或执行示例。",
+  "core_features": [
+    {
+      "name_en": "Java and Kotlin development",
+      "name_zh": "Java 及 Kotlin 开发",
+      "explanation_en": "Current unified distribution retains free core development functionality.",
+      "explanation_zh": "当前统一发行版保留免费核心开发功能。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Build and run configurations",
+      "name_zh": "构建及运行配置",
+      "explanation_en": "Compile source with the selected JDK and inspect execution/output.",
+      "explanation_zh": "用所选 JDK 编译源码并检查执行及输出。",
+      "explanation_scope": "product_specific",
+      "source_ref": "java",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Refactoring preview",
+      "name_zh": "重构预览",
+      "explanation_en": "Inspect affected usages and conflicts before applying a change.",
+      "explanation_zh": "应用修改前检查受影响用法及冲突。",
+      "explanation_scope": "product_specific",
+      "source_ref": "refactor",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Local History",
+      "name_zh": "本地历史",
+      "explanation_en": "Inspect personal local file revisions independently of commits.",
+      "explanation_zh": "独立于提交检查个人本地文件版本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "history",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate Java project setup, compilation and packaged execution",
+      "Review a context-aware refactor and short-term local recovery"
+    ],
+    "zh": [
+      "评估 Java 项目设置、编译及打包执行",
+      "审阅上下文重构及短期本地恢复"
+    ],
+    "source_refs": ["java", "refactor", "history"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Java developers",
+      "Kotlin developers",
+      "JVM development teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Check supported OS/resources and the project JDK separately from the bundled IDE runtime.",
+        "zh": "分别检查系统／资源、项目 JDK 及附带 IDE 运行时。",
+        "source_refs": ["install"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect unfamiliar build scripts in Safe Mode before trusting a repository.",
+        "zh": "信任仓库前用 Safe Mode 检查陌生构建脚本。",
+        "source_refs": ["security"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify run configuration, artifact output, refactoring scope and recovery assumptions.",
+        "zh": "核对运行配置、产物输出、重构范围及恢复假设。",
+        "source_refs": ["java", "refactor", "history"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Safe Mode disables build import and other functionality until the project is trusted.",
+        "zh": "项目受信任前，Safe Mode 禁用构建导入等功能。",
+        "source_refs": ["security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Local History has retention/size limits, is personal and clears on a new IDE version.",
+        "zh": "本地历史有保留／大小限制，仅个人可用，新 IDE 版本会清除。",
+        "source_refs": ["history"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Advanced Ultimate features require a current paid entitlement after trial; exact price unverified.",
+        "zh": "Ultimate 高级功能试用后需有效付费权益，具体价格未核实。",
+        "source_refs": ["pricing", "activation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_core_optional_paid_ultimate",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:49:40.577116Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Continuing-free core; optional Ultimate30-day trial then paid subscription. Numeric paid checkout price not captured.",
+    "summary_zh": "基础功能持续免费；可选 Ultimate30天试用，之后订阅付费。未读取到数字结账价。",
+    "numeric_paid_price_verified": false
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/intellij-idea",
+      "read_at": "2026-10-22T08:54:58.456Z",
+      "excerpt_sha256": "ace9bdd813747aead1a0c59804b8405568081329d9691dd30c8bc9fccec894f5",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "The Java and Kotlin IDE for You and Your Agents",
+      "url": "https://www.jetbrains.com/idea/",
+      "read_at": "2026-10-22T12:49:40.577116Z",
+      "excerpt_sha256": "1b5708666b871c0d503705ec439cee105800e83b42bd358154e5576450a1f416",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Java/Kotlin IDE and unified free/Ultimate positioning; AI completion and agent claims not benchmarked."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "IntelliJ IDEA",
+      "title": "IntelliJ IDEA as a unified product",
+      "url": "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html.md/",
+      "read_at": "2026-10-22T12:56:12.343956Z",
+      "excerpt_sha256": "b6e1d92b9aa4ad8fad4ea650e0e05fa505b4678e92f30477f29115a234fff063",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Actual public HTTP200 Markdown read after web reader rejected content type. Explicit continuing-free core and optional paid Ultimate30day trial conditions; not a numeric Ultimate checkout quote."
+    },
+    {
+      "id": "activation",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Register IntelliJ IDEA",
+      "url": "https://www.jetbrains.com/help/idea/register.html.md/",
+      "read_at": "2026-10-22T12:56:03.953181Z",
+      "excerpt_sha256": "368f47153bdedac608502c42f971ae3e9f860b203abfa3f3626b921c50b88b99",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Free set remains after trial/paid subscription expiration; activation/account/license server and network requirements read."
+    },
+    {
+      "id": "install",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Install IntelliJ IDEA",
+      "url": "https://www.jetbrains.com/help/idea/installation-guide.html.md/",
+      "read_at": "2026-10-22T12:56:10.503992Z",
+      "excerpt_sha256": "f4a3e57ff7831a7e0893f2374c3449df7723dffb1494fd2e0e3b93dabe5063b3",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "2026.2 docs hardware/OS and bundledJBR21 versus standalone projectJDK distinction; install not run."
+    },
+    {
+      "id": "java",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Create your first Java application",
+      "url": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html.md/",
+      "read_at": "2026-10-22T12:56:06.173906Z",
+      "excerpt_sha256": "03168cfe6ec50256b385ee523faf07ffcabf56355e28dec79eb249c4382c9bb0",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Java25 compact-source tutorial, IntelliJ build system, javac/out/JVM/run configuration/artifact/JAR steps read; example not executed."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Project security",
+      "url": "https://www.jetbrains.com/help/idea/project-security.html.md/",
+      "read_at": "2026-10-22T12:57:44.740662Z",
+      "excerpt_sha256": "896202b5d663f2525175e0c047cb7d78c0d839ab796838efbea19c4bd8ecc5f3",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Trust versus SafeMode; build import/dependency resolution/startup/VCS/watchers disabled, headless trusted default read."
+    },
+    {
+      "id": "refactor",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Code refactoring",
+      "url": "https://www.jetbrains.com/help/idea/refactoring-source-code.html.md/",
+      "read_at": "2026-10-22T12:57:48.431475Z",
+      "excerpt_sha256": "b37cdd72a6ae760e5e8f478afcb96f9bf00a5924f070f3b86c86518932e6379d",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Selection/context, preview and conflicts/RefactorAnyway behavior read; not semantic correctness proof."
+    },
+    {
+      "id": "history",
+      "type": "official_documentation",
+      "site": "IntelliJ IDEA",
+      "title": "Local History",
+      "url": "https://www.jetbrains.com/help/idea/local-history.html.md/",
+      "read_at": "2026-10-22T12:57:47.032006Z",
+      "excerpt_sha256": "eff1155222d852c33539c1d421ad48da47d7326c0e85732cb70ec340072ba7c0",
+      "verification": "official_documentation_read",
+      "transport": "public_http_reader",
+      "research_notes_en": "Personal local revisions/default5workingdays/size/versionupgrade clearing; not long-term VCS and no guarantee read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:57:48.431475Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "install", "java"],
+  "profile": {
+    "sections": [
+      {
+        "id": "editions",
+        "title_en": "One distribution, different feature entitlements",
+        "title_zh": "统一发行版，不同功能权益",
+        "en": "Unified IntelliJ IDEA replaced the separate Community and Ultimate distribution model from2025.3. New installations include a30-day Ultimate trial; after expiry the free core remains usable without a separate reinstall. Existing Ultimate users retain advanced features while subscribed. The docs separately offer a buildable open-source edition on GitHub. That distinction does not establish a single open-source license for the complete unified binary, bundled plugins or paid services.",
+        "zh": "从2025.3起统一版替代 Community／Ultimate 分开发行模式。新安装含30天 Ultimate 试用，结束后无需重装即可继续用免费基础功能；Ultimate 用户在订阅有效期内保留高级功能。文档另提供 GitHub 可构建开源版本，但这不能证明统一二进制、附带插件及付费服务均采用同一开源许可。",
+        "source_refs": ["pricing", "activation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Bundled Java runs the IDE, not automatically your project",
+        "title_zh": "附带 Java 运行 IDE，不自动满足项目需求",
+        "en": "The installation guide bundles JetBrains Runtime based on JBR21, so a separate Java installation is unnecessary just to launch the IDE. Developing Java applications still requires a standalone JDK. Its current guide specifies8GB total RAM,3GB available to IDE processes and10GB disk; check the exact supported OS. The starter tutorial chooses Java25 and the IntelliJ build system. Treat that as an example, not a mandate to upgrade every existing application.",
+        "zh": "安装指南附带基于 JBR21 的 JetBrains Runtime，启动 IDE 无需另装 Java，但开发 Java 应用仍需独立 JDK。当前指南要求总内存8GB、IDE 可用3GB及磁盘10GB，具体系统支持也需核对。入门教程选 Java25 和 IntelliJ 构建系统，这是示例，不代表已有应用必须升级。",
+        "source_refs": ["install", "java"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trust",
+        "title_en": "Inspect unfamiliar projects before build import",
+        "title_zh": "构建导入前检查陌生项目",
+        "en": "Safe Mode opens source for inspection while disabling Maven/Gradle/sbt import, dependency resolution, startup tasks, VCS support, GDSL and file watchers. Trusting the project enables initialization and those activities. A broad trusted directory suppresses future prompts; the guide also says headless launch opens projects as trusted by default. Evaluate repository provenance and build scripts before trusting. Safe Mode is a restricted preview, not proof that a dependency or application is safe.",
+        "zh": "Safe Mode 可阅读源码，但禁用 Maven／Gradle／sbt 导入、依赖解析、启动任务、VCS、GDSL 及文件监控脚本；信任后才启用初始化等活动。宽泛的信任目录会取消后续提示，指南还指出无界面启动默认信任。应先检查仓库来源及构建脚本；Safe Mode 是受限预览，不证明依赖或应用安全。",
+        "source_refs": ["security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "run",
+        "title_en": "Confirm the command, output and packaged result",
+        "title_zh": "核对命令、输出及打包结果",
+        "en": "In the Java starter flow, the gutter Run action compiles source with javac, places bytecode under out and runs it on the JVM. The Run window reports command, output and exit status; compilation errors appear there. Automatically generated run configurations are temporary until saved. A proposed small command-line program should be checked both from the editor and as its configured JAR artifact. A successful sample exit is not evidence that business assertions, packaging dependencies or deployment behavior are correct.",
+        "zh": "Java 入门流程的 Run 操作用 javac 编译，将字节码放入 out，再由 JVM 运行；运行窗口显示命令、输出、退出状态及编译错误。自动生成的运行配置保存前是临时的。建议用小型命令行程序分别检查编辑器运行和配置后的 JAR；示例成功退出不证明业务断言、打包依赖及部署行为正确。",
+        "source_refs": ["java"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "refactor",
+        "title_en": "Review affected usages and unresolved conflicts",
+        "title_zh": "审阅受影响用法及未解决冲突",
+        "en": "Refactoring depends on the selected symbol or expression and its context. Preview lets you inspect affected usages before applying; conflicts appear in a dialog, but Refactor Anyway can proceed despite them. For a proposed method rename or extraction, inspect the preview, resolve relevant conflicts and run representative checks afterward. The IDE’s operation does not validate dynamic callers, data migrations or external contracts merely because it completed.",
+        "zh": "重构依赖选中的符号／表达式及上下文。预览可检查受影响用法，冲突会弹窗，但 Refactor Anyway 仍可忽略后继续。建议重命名或提取方法时审阅预览、解决相关冲突并运行代表检查；操作完成本身不验证动态调用方、数据迁移或外部契约。",
+        "source_refs": ["refactor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recover",
+        "title_en": "Local History is personal and finite",
+        "title_zh": "本地历史仅供个人且有限",
+        "en": "Local History tracks meaningful local edits and can restore deleted files or selected fragments without a VCS commit. The guide defaults to five working days, applies a size limit and warns that installing a new IntelliJ IDEA version clears it. Revisions are not guaranteed to persist and history is not shared. Use it for short-term recovery alongside durable version control and independent backups, rather than as evidence that team work or production data is recoverable.",
+        "zh": "Local History 不依赖 VCS 提交即可记录重要本地修改，并恢复删除文件或片段。指南默认保留五个工作日，受大小限制，安装新 IntelliJ IDEA 版本会清除；版本不保证持续保留，历史也不共享。适合配合持久版本控制及独立备份作短期恢复，不能证明团队工作或生产数据可恢复。",
+        "source_refs": ["history"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free core and Ultimate trial have different durations",
+        "title_zh": "免费基础功能与 Ultimate 试用期限不同",
+        "en": "The free feature set continues after a trial or subscription expires; Ultimate functionality needs a paid license after its30-day trial. Registration supports a JetBrains account, activation code or an organization license server, with separate eligible-user programs. The buy page did not expose a readable numeric price in this capture. No paid amount, tax, regional quote, AI quota or plugin entitlement is normalized here. Confirm the exact paid feature requirements and current checkout before purchase.",
+        "zh": "试用或订阅结束后免费功能仍可用，Ultimate 功能则在30天试用后需要付费许可。注册支持 JetBrains 账户、激活码或组织许可服务器，另有符合资格用户计划。本次购买页未提供可读数字价格，因此不归一化付费金额、税、地区报价、AI 额度或插件权益；购买前需确认所需高级功能及当前结账。",
+        "source_refs": ["activation", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "IntelliJ IDEA: unified editions, JDK setup and project trust",
+    "title_zh": "IntelliJ IDEA：统一版本、JDK 设置及项目信任",
+    "description_en": "Review free core versus Ultimate, Safe Mode, Java execution, refactoring preview and Local History limits.",
+    "description_zh": "了解免费基础功能与 Ultimate、Safe Mode、Java 执行、重构预览及本地历史限制。",
+    "search_intent_en": "Evaluate current IntelliJ IDEA setup and feature entitlement.",
+    "search_intent_zh": "评估当前 IntelliJ IDEA 设置及功能权益。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No IDE installation, import, build, execution, refactor, account activation or recovery was performed.",
+      "zh": "未执行 IDE 安装、导入、构建、运行、重构、账户激活或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Buy page was a text shell; exact Ultimate amounts, checkout currency/tax, AI credits, plugin licensing and organization contract not verified. Fee conditions are sourced from the explicit official unified-product and registration documentation, not an invented quote.",
+      "zh": "购买页为文本外壳，未核 Ultimate 金额、结账币种／税、AI 额度、插件许可及组织合同；费用条件来自官方统一产品及注册文档，不虚构报价。",
+      "source_refs": ["pricing", "activation"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Entire unified-distribution license, remote compatibility, security properties and actual UI languages not independently verified.",
+      "zh": "完整统一发行版许可、远程兼容性、安全属性及实际界面语言未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

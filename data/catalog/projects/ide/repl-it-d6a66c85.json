@@ -1,0 +1,408 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "repl-it-d6a66c85",
+  "name": "Replit",
+  "website_url": "https://replit.com/",
+  "domain": "replit.com",
+  "identity_domain": "replit.com",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Replit currently combines AI conversation, app building, design and cloud publishing. The assigned record’s legacy name Repl.it is updated to the current official Replit name, retaining the same product record and registered domain. Its workflow extends beyond editing and running a browser snippet to producing and operating a deployed app.\n\nA proposed evaluation should connect a small app’s main user journey to persistent data, verify it in development and then verify the separate published version. Agent checkpoints, a working preview and included credits each solve different parts of that process; none alone proves production correctness, durable recovery or a fixed operating cost. No app, account, cloud resource or AI request was created.",
+  "description_zh": "Replit 当前结合 AI 对话、应用构建、设计及云发布。将分配记录的旧名 Repl.it 更新为官网现名 Replit，保留同一产品记录及注册域名。其流程已超出浏览器片段编辑运行，覆盖应用生成、部署及运行。\n\n建议用小应用把核心用户路径接到持久数据，先验证开发版，再验证独立发布版。Agent 检查点、可运行预览及附带额度分别处理不同环节，单独都不能证明生产正确、持久恢复或固定运行费用。本次未创建应用、账户、云资源或 AI 请求。",
+  "core_features": [
+    {
+      "name_en": "AI app-building workflow",
+      "name_zh": "AI 应用构建流程",
+      "explanation_en": "Use the documented Chat/Build/Design workflow with plan-specific capabilities.",
+      "explanation_zh": "按计划能力使用文档中的 Chat／Build／Design 流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "intro",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate production publishing",
+      "name_zh": "独立生产发布",
+      "explanation_en": "Package and publish a release independently of the editable preview.",
+      "explanation_zh": "独立于可编辑预览打包及发布版本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "publish",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Development and production data",
+      "name_zh": "开发及生产数据",
+      "explanation_en": "The database tutorial provisions distinct environments and verifies persistence.",
+      "explanation_zh": "数据库教程配置不同环境并验证持久性。",
+      "explanation_scope": "product_specific",
+      "source_ref": "database",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Checkpoints and rollback",
+      "name_zh": "检查点及回滚",
+      "explanation_en": "Restore project state with explicit, separate database recovery choices.",
+      "explanation_zh": "恢复项目状态，数据库恢复需作单独明确选择。",
+      "explanation_scope": "product_specific",
+      "source_ref": "checkpoints",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Usage budget controls",
+      "name_zh": "用量预算控制",
+      "explanation_en": "Inspect credits, extra spend and service shutdown consequences.",
+      "explanation_zh": "检查额度、额外支出及服务暂停后果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "spend",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a persistent app in Preview and its separate production deployment",
+      "Test checkpoint scope without confusing development and production database recovery",
+      "Estimate subscription, AI and cloud costs with service suspension consequences"
+    ],
+    "zh": [
+      "分别评估持久应用的 Preview 与生产部署",
+      "测试检查点范围，区分开发与生产数据库恢复",
+      "估计订阅、AI 及云费用，同时评估服务暂停后果"
+    ],
+    "source_refs": ["publish", "database", "checkpoints", "ai", "spend"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "App prototypers",
+      "Developers using AI-assisted builds",
+      "Small teams operating generated apps"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "intro"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define a disposable app with explicit persistence, access and error requirements.",
+        "zh": "定义具备明确持久性、访问及错误要求的可丢弃应用。",
+        "source_refs": ["intro", "database"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify release/access settings and test the published URL independently of Preview.",
+        "zh": "核对发布／访问设置，独立于 Preview 验证发布 URL。",
+        "source_refs": ["publish"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect rollback scope and credit/limit/auto-reload settings before paid use.",
+        "zh": "付费使用前检查回滚范围、额度／限额／自动补充配置。",
+        "source_refs": ["checkpoints", "spend", "ai"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Starter free published links expire after30 days; connector/Plan Mode/full build access is plan-dependent.",
+        "zh": "Starter 免费发布链接30天到期，连接／Plan Mode／Full build 受计划限制。",
+        "source_refs": ["starter"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Checkpoint rollback leaves databases unchanged by default and does not automatically restore production data.",
+        "zh": "检查点回滚默认不改数据库，也不自动恢复生产数据。",
+        "source_refs": ["checkpoints"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "AI usage reporting may lag and purchased packs/auto-reload affect spend-limit interpretation.",
+        "zh": "AI 用量报告可能延迟，已购包／自动补充会影响限额含义。",
+        "source_refs": ["ai", "spend"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_subscription_shared_ai_cloud_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:49:40.515994Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Starter0 with30-day free published link; homepage annual Core18/Pro90 monthly-equivalent $ display, checkout currency/offer unverified; AI/cloud usage separate.",
+    "summary_zh": "Starter0，免费发布链接30天；首页年付折算 Core18／Pro90 的$展示，结账币种／优惠未核，AI／云按量另计。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/repl-it",
+      "read_at": "2026-10-22T08:59:08.014Z",
+      "excerpt_sha256": "0aaa995404e0b195030ea9256f929fa901d1bdbf49cd0b7ab72cd72f2b4e8de3",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Replit",
+      "title": "AI App and Website Builder | Replit",
+      "url": "https://replit.com/",
+      "read_at": "2026-10-22T12:49:40.515994Z",
+      "excerpt_sha256": "42e560acaa8ec2643edb58765e3293914f271fff4aa9f2cea2c27a6008e01689",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current homepage includes Starter0, annual Core18 struck20, Pro90 struck100; source display $ currency not explicitly verified. It also claims Starter1backgroundtask conflicting billingmatrix0. No checkout."
+    },
+    {
+      "id": "intro",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Welcome to Replit - Replit",
+      "url": "https://docs.replit.com/welcome",
+      "read_at": "2026-10-22T12:50:53.660987Z",
+      "excerpt_sha256": "9d021d10cb9d1d2a4c6676a6030af2fc3c5a5b9360f4a885b4a5e3e39cb9c2b6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Chat/Build/Design product scope read; not limited to legacy Repl.it onlineIDE."
+    },
+    {
+      "id": "publish",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Publish your app - Replit",
+      "url": "https://docs.replit.com/build/publish-your-app",
+      "read_at": "2026-10-22T12:56:45.067360Z",
+      "excerpt_sha256": "081a9a9d8863424fdfb6873a4b085052f8f58206940b70d74a9c530ec5e8f310",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Private temporarypreview versus separate productionrelease, accesslevels, publishstagefailurelogs and republish read."
+    },
+    {
+      "id": "database",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Add a database - Replit",
+      "url": "https://docs.replit.com/build/add-database",
+      "read_at": "2026-10-22T12:57:14.160037Z",
+      "excerpt_sha256": "d8c88af44289b080d114a32c79f0c3af1e247cfb96215864ca063e4289adeba9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official Neon booking tutorial separateDev/Prodcredentials/persistence/concurrencychecks read; no customeroutcome or actually executed setup implied."
+    },
+    {
+      "id": "checkpoints",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Checkpoints and Rollbacks - Replit",
+      "url": "https://docs.replit.com/features/version-control/checkpoints-and-rollbacks",
+      "read_at": "2026-10-22T12:58:59.177420Z",
+      "excerpt_sha256": "edcd0b1702c60186b99ad3c16dc42c5f9df484498a230cb2b250a5924ecb4480",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Broad complete-state claims narrowed by actualrollback defaults: DBunchanged unless selectedDev, productionDBnot automatic. Git/AIcontext effects read."
+    },
+    {
+      "id": "starter",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Starter Plan - Replit",
+      "url": "https://docs.replit.com/billing/plans/starter-plan",
+      "read_at": "2026-10-22T12:56:44.947370Z",
+      "excerpt_sha256": "8d8e848d5c0fedfe1e90e68d809a3a68064125bea0bde41da2b2404705500dd4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "DailyAgentmonthlycap, monthlyCloudcredit, onepublishedlink30dayexpiry, Lite/fullbuild, connectors/PlanMode restrictions read."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Replit AI Billing - Replit",
+      "url": "https://docs.replit.com/billing/ai-billing",
+      "read_at": "2026-10-22T12:57:14.009873Z",
+      "excerpt_sha256": "14d6e8a6b54d9cc1fd05a767092eeb5fc3c50ba4d6b6cc049b8df0e6e5c00e24",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Credits sharedAIcloud, paidPlanMode reasoningbillable withoutcode, providerAPIcharges, upto30minuteusage delay; billingmatrixStarterbackground0 conflicts homepage1."
+    },
+    {
+      "id": "spend",
+      "type": "official_documentation",
+      "site": "Replit",
+      "title": "Managing Your Spend - Replit",
+      "url": "https://docs.replit.com/billing/managing-spend",
+      "read_at": "2026-10-22T12:56:44.817856Z",
+      "excerpt_sha256": "53e743f5cbaf05f1009d2a04303ade28cb702f356fb38eda05a12fcdb3749a40",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monthlyusage limitsbeyondcredits, servicesuspend, creditpacksearliestexpiry/6month/auto-reload; limitappliesafterpacks read."
+    },
+    {
+      "id": "cloud-pricing",
+      "type": "official_pricing",
+      "site": "Replit",
+      "title": "Cloud Aug 2026 Pricing Updates - Replit",
+      "url": "https://docs.replit.com/billing/aug-cloud-billing-updates",
+      "read_at": "2026-10-22T12:57:14.283396Z",
+      "excerpt_sha256": "ac3fe9e4fc67a3f20463dae175e07e6e8040ba8e276d9b253e2256813b8af4f6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "August1,2026changes applyfirstcycleonorafterdate; newautoscale0.60/millioncomputeunits0.40/millionrequests1base,storage/database distinctions read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:58:59.177420Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["intro", "publish", "database", "ai"],
+  "profile": {
+    "sections": [
+      {
+        "id": "build",
+        "title_en": "Evaluate the user journey, not only generated screens",
+        "title_zh": "评估用户路径，不只看生成页面",
+        "en": "Replit’s current docs organize work into Chat, Build and Design. For an app prototype, specify the data model, access rules and failure cases alongside layout. The official booking example tests persistence after refresh/restart and attempts an overlapping booking from another account. Those are suggested checks in a vendor tutorial, not results observed here. Generated code and Agent self-review still need evaluation against the actual business rules.",
+        "zh": "当前文档将工作组织为 Chat、Build 及 Design。应用原型除界面外还应说明数据模型、访问规则及失败情形。官方预约示例检查刷新／重启后的持久性，并用另一个账户尝试重叠预约；这是教程建议，非本次观察结果。生成代码及 Agent 自查仍需对照真实业务规则评估。",
+        "source_refs": ["intro", "database"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release",
+        "title_en": "The temporary preview is not the production address",
+        "title_zh": "临时预览不是生产地址",
+        "en": "Preview is private by default and intended for development; sending its URL does not grant access. Publishing builds a separate stable deployment with its own domain and access policy. The guide lists public, password, workspace and invite access; confirm plan availability. Editor changes do not replace the live release until republishing. Check release stages/logs when publishing fails and test the public URL after success. No preview or production URL was created in this research.",
+        "zh": "Preview 默认私有且用于开发，发出其 URL 不会授予访问。发布会构建独立部署，具备自己的域名及访问策略。指南列公开、密码、工作区及邀请方式，需确认计划权益。编辑变更需重新发布才替换线上版；失败时查阶段／日志，成功后检查公开 URL。本次未创建预览或生产地址。",
+        "source_refs": ["publish"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data",
+        "title_en": "Persistence needs a production-environment check",
+        "title_zh": "持久性需要在生产环境核验",
+        "en": "The Neon tutorial distinguishes Development and Production databases and says production credentials are wired into the published deployment. It specifically directs users whose preview saves correctly but live app does not to check production wiring. A proposed reservation test should inspect refresh, restart, second-user conflict and the published app separately. Browser state or successful development writes do not establish production persistence, authorization or concurrency correctness. The tutorial is not a guarantee for every generated application.",
+        "zh": "Neon 教程区分开发及生产数据库，称发布时接入生产凭据，并专门提示预览可保存、线上不可保存时检查生产连接。建议预约测试分别核对刷新、重启、第二用户冲突及发布版。浏览器状态或开发写入成功不证明生产持久性、授权或并发正确，教程也不保证所有生成应用。",
+        "source_refs": ["database"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recover",
+        "title_en": "Database rollback is optional and production recovery is separate",
+        "title_zh": "数据库回滚可选，生产恢复另行处理",
+        "en": "Checkpoint documentation describes project files, configuration and AI context, but its operative rollback instructions say databases are unchanged by default. Development database restoration requires selecting Database under additional options. Production databases are not automatically restored by this feature and need their own point-in-time process. Before a disposable rollback, inspect the selected scope and recheck app/data consistency afterward. It does not establish reversal of payments, messages or other external side effects.",
+        "zh": "检查点文档介绍项目文件、配置及 AI 上下文，但具体操作明确默认不改数据库；恢复开发库需在附加选项选择 Database。该功能不会自动恢复生产库，后者需独立的时间点恢复流程。建议可丢弃回滚前核对范围，之后重查应用／数据一致性；不能推定付款、消息等外部副作用也会撤销。",
+        "source_refs": ["checkpoints"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "free",
+        "title_en": "Free exploration and an always-live app are different",
+        "title_zh": "免费探索与长期在线应用不同",
+        "en": "Starter includes daily Agent credits subject to a monthly cap and separate monthly cloud credits. Its one free published link automatically goes down after30 days. Full build, Plan Mode, third-party connectors and badge removal require an upgrade according to the Starter guide. The homepage says one background task, whereas the billing matrix lists zero for Starter; retain that conflict rather than promising availability. This supports free exploration, not a sustained-free production-hosting claim.",
+        "zh": "Starter 含受月上限约束的 Agent 日额度及单独的云月额度；唯一免费发布链接30天后自动下线。Starter 指南将 Full build、Plan Mode、第三方连接及去徽标列为升级能力。首页称一个后台任务，计费矩阵却列零，应保留冲突，不承诺可用。这支持免费探索，不支持持续免费生产托管。",
+        "source_refs": ["starter", "pricing", "ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-cost",
+        "title_en": "Planning without edits can still be paid work",
+        "title_zh": "不改代码的规划也可能收费",
+        "en": "AI billing describes effort-based paid work, and paid-path Plan Mode may incur reasoning charges even without a code edit. Credits also cover cloud services, and provider API calls add their own charges. The guide allows up to30 minutes before usage appears. Monthly extra-spend limits block usage-based services when reached; purchased packs are consumed before those limits apply, and auto-reload can buy more. Evaluate both budget and service availability, rather than assuming a subscription or alert is an instantaneous universal cap.",
+        "zh": "AI 计费说明付费工作按投入计价，付费路径的 Plan Mode 即使不改代码也可能收推理费。额度还覆盖云服务，提供商 API 另产生费用；指南允许最多30分钟用量显示延迟。月额外支出限制到达后阻断按量服务，但先消耗已购包，自动补充还可继续购买。应同时评估预算和可用性，不能将订阅或提醒当即时通用上限。",
+        "source_refs": ["ai", "spend"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Read subscription and cloud units separately",
+        "title_zh": "分别阅读订阅费与云计量单位",
+        "en": "The homepage annual view shows Core$18/month with$20 crossed out, and Pro$90 with$100 crossed out; checkout currency, tax and offer duration were not verified. The August2026 cloud update separately lists Autoscale$0.60 per million compute units,$0.40 per million requests and$1 monthly base, applied from the first qualifying billing cycle. Those units are not CPU-hours or an all-in app price. Estimate deployment, database, storage and AI use together before committing.",
+        "zh": "首页年付视图列 Core 每月$18、划线$20，Pro$90、划线$100；结账币种、税及优惠期限未核。2026年8月云更新另列 Autoscale 每百万计算单位$0.60、百万请求$0.40及月基础费$1，从符合条件的首个账期应用。这些单位不是 CPU 小时或应用包干价，订阅前需合计部署、数据库、存储及 AI 用量。",
+        "source_refs": ["pricing", "cloud-pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Replit: publishing, database rollback and AI/cloud costs",
+    "title_zh": "Replit：发布、数据库回滚及 AI／云费用",
+    "description_en": "Review production versus preview, Starter30-day hosting, checkpoint scope and shared usage credits.",
+    "description_zh": "了解生产与预览、Starter30天托管、检查点范围及共享用量额度。",
+    "search_intent_en": "Evaluate Replit app delivery, free-plan duration and operating costs.",
+    "search_intent_zh": "评估 Replit 应用交付、免费计划期限及运行费用。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, account, AI request, database, preview, deployment, rollback, payment or connector was operated.",
+      "zh": "未操作应用、账户、AI 请求、数据库、预览、部署、回滚、付款或连接。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Homepage Starter background-task1 conflicts with billing table0. Checkout currency/tax, discount duration, exact credits and runtime entitlements require account-specific verification.",
+      "zh": "首页 Starter 后台任务1与计费表0冲突。结账币种／税、优惠期限、具体额度及运行权益需按账户核实。",
+      "source_refs": ["pricing", "ai", "starter"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Source code license, generated-code rights, production restore retention, external side-effect recovery, isolation/security and UI languages not independently verified.",
+      "zh": "源码许可、生成代码权利、生产恢复保留期、外部副作用恢复、隔离／安全及界面语言未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

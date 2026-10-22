@@ -1,0 +1,399 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "artie-9c89f5bb",
+  "name": "Artie",
+  "website_url": "https://www.artie.com/",
+  "domain": "www.artie.com",
+  "identity_domain": "artie.com",
+  "category": "databases",
+  "secondary_categories": ["data-integration"],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Artie is a managed change-data-capture replication platform that moves changes from an operational database into a destination. Although its discovery record is filed under databases, the documented product is a pipeline between systems, not a replacement transactional database engine. Its model combines an initial table backfill with ongoing log-based changes.\n\nA proposed evaluation could replicate a disposable orders table, change and delete selected rows during backfill, and compare the destination’s final state and optional history. Evaluate schema handling, log/connector prerequisites and downstream behavior alongside latency. The homepage’s exactly-once and sub-minute statements are vendor claims, not outcomes measured here.",
+  "description_zh": "Artie 是托管的变更数据捕获复制平台，将业务数据库变更送往目标系统。虽然发现记录归在数据库类，文档产品实际是系统间管道，非替代事务数据库引擎，采用初始表回填结合持续日志变更。\n\n建议复制可丢弃订单表，在回填期间修改及删除部分行，再对比目标最终状态和可选历史。除延迟外还需评估模式处理、日志／连接前提及下游行为。首页的恰好一次及亚分钟表述是厂商主张，非本次实测结果。",
+  "core_features": [
+    {
+      "name_en": "Log-based replication",
+      "name_zh": "基于日志复制",
+      "explanation_en": "Capture source changes and merge them into the configured destination.",
+      "explanation_zh": "捕获源变更并合并到配置的目标。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Backfill with concurrent CDC",
+      "name_zh": "回填并行 CDC",
+      "explanation_en": "Scan existing rows while queueing ongoing changes for subsequent application.",
+      "explanation_zh": "扫描存量行，同时缓存持续变更以随后应用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backfill",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Table-specific controls",
+      "name_zh": "表级控制",
+      "explanation_en": "Configure included/excluded columns, delete behavior, aliases and optional history.",
+      "explanation_zh": "配置包含／排除列、删除行为、别名及可选历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "settings",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Threshold-based flushing",
+      "name_zh": "阈值刷写",
+      "explanation_en": "Write buffered changes when time, message count or byte threshold is reached.",
+      "explanation_zh": "在时间、消息数或字节阈值满足时写入缓存变更。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flush",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate orders CDC and delete behavior during backfill",
+      "Check a reporting destination’s schema and optional history contracts",
+      "Compare managed cloud with BYOC data/control-plane responsibilities"
+    ],
+    "zh": [
+      "评估回填期间订单 CDC 及删除行为",
+      "检查报表目标的模式及可选历史契约",
+      "比较托管云及 BYOC 的数据／控制面责任"
+    ],
+    "source_refs": ["backfill", "settings", "architecture"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data engineers",
+      "Analytics platform teams",
+      "Database replication maintainers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Check exact source/destination connector, privileges, network and key semantics.",
+        "zh": "检查具体源／目标连接、权限、网络及主键语义。",
+        "source_refs": ["quickstart", "architecture"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use disposable tables and inspect backfill mode, delete/column/history settings.",
+        "zh": "使用可丢弃表，检查回填模式、删除／列／历史设置。",
+        "source_refs": ["backfill", "settings"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Measure freshness and failure recovery separately from billable rows and plan limits.",
+        "zh": "独立于计费行及计划限制测量新鲜度和失败恢复。",
+        "source_refs": ["flush", "notifications", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A Drop backfill recreates the target table and can break downstream dependencies.",
+        "zh": "Drop 回填重建目标表，可能破坏下游依赖。",
+        "source_refs": ["backfill"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Schema notifications run weekdays6AMPST rather than immediately.",
+        "zh": "模式通知在工作日太平洋标准时间早6点执行，非即时。",
+        "source_refs": ["notifications"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "BYOC retains a vendor control plane and metadata flow; Free excludes paid governance/private networking.",
+        "zh": "BYOC 保留厂商控制面及元数据流，Free 不含付费治理／私网。",
+        "source_refs": ["architecture", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_capped_cdc_rows_paid_usage_commitment",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:07:58.530643Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free1Mbillablerows/month,2activepipelines; Growth500/month annual or600monthly $display plus rowvolume,Enterprisecustom.14-daytrialfromfirstdeploy,backfillsincluded.",
+    "summary_zh": "Free 每月100万计费行、2活跃管道；Growth 年付折算月500或月付600的$展示加行用量，Enterprise 询价；首次部署起14天试用，回填包含。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/artie",
+      "read_at": "2026-10-22T08:37:07.865Z",
+      "excerpt_sha256": "ecb6bc070996ddc6e0e04088dca69143c8d01f3490fabad89e14f02a36164593",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Real-time Data Replication for AI | Artie",
+      "url": "https://www.artie.com/",
+      "read_at": "2026-10-22T13:07:58.530643Z",
+      "excerpt_sha256": "59f93df3016f6a479fe1c027cf27fd37ffc5b57bb34a0ab2c837b0931873b5e5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed CDC replication marketing read; subminute/exactlyonce/setup-time/customerclaims not independentlyverified."
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Quickstart - Artie",
+      "url": "https://www.artie.com/docs/quickstart",
+      "read_at": "2026-10-22T13:08:28.905564Z",
+      "excerpt_sha256": "0a1749609bd9d7c25ad9d659e072143351d8c62f2cbcb70435a77b9cd2e02934",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Account/sourceadmin/destinationcredential prerequisites,table/history/settings,deletedefaults andmonitoring read."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Architecture - Artie",
+      "url": "https://www.artie.com/docs/concepts/architecture",
+      "read_at": "2026-10-22T13:09:52.204363Z",
+      "excerpt_sha256": "9eb2393eaa3270830fd79d365a3522e6a8903ae3de32926f34040c5a4bf4204a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual redirect canonical; datavscontrolplane/Kafka/idempotentwriter/BYOCmetadataexternalcontrolplane read."
+    },
+    {
+      "id": "backfill",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Backfills - Artie",
+      "url": "https://artie.com/docs/pipelines/backfill",
+      "read_at": "2026-10-22T13:09:52.315296Z",
+      "excerpt_sha256": "a7d91fc1a35b8bf384d5b70ba0f943e4a6112ce63b07501f97eb65b4ccd2742a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual redirect canonical; snapshotconcurrentCDCqueue; doNothing/upsert,truncate/dropdownstreamrisks read. No destructive operation."
+    },
+    {
+      "id": "flush",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Overview - Artie",
+      "url": "https://artie.com/docs/concepts/flush-rules/overview",
+      "read_at": "2026-10-22T13:09:16.195756Z",
+      "excerpt_sha256": "6439037ebb3ddfc932caa09e2875a0f73e578c898834c6963be9f20360632052",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualcanonicalredirect; buffersdedupbyPK/uniqueindex andtime/count/bytes ORtrigger,commitoffsetafterwrite read."
+    },
+    {
+      "id": "settings",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Tables - Artie",
+      "url": "https://artie.com/docs/pipelines/tables#table-settings",
+      "read_at": "2026-10-22T13:09:52.426619Z",
+      "excerpt_sha256": "937a0f77bf53e9a17287245c47f3c7aaa6d4db151e380cae7b7f50b26ff20574",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualredirectcanonical; historytable,skipdelete, inclusionvs exclusion,hashvsencrypt,mergepredicates read."
+    },
+    {
+      "id": "notifications",
+      "type": "official_documentation",
+      "site": "Artie",
+      "title": "Schema changes - Artie",
+      "url": "https://artie.com/docs/monitoring/schema-changes",
+      "read_at": "2026-10-22T13:09:52.541011Z",
+      "excerpt_sha256": "b058c6fef5030ab059b76816e2dccc7a021168ceabeab0b46b7de113d6287623",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Weekday6AMPSTschemajob/defaultemail notifications read; not instantaneousschemalarm."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Artie",
+      "title": "Artie Pricing: Compare Free, Growth, and Enterprise Plan Tiers",
+      "url": "https://www.artie.com/pricing",
+      "read_at": "2026-10-22T13:08:28.750181Z",
+      "excerpt_sha256": "1f652b2e75639cc4cdf757218726a534ac959b46fff6048681f75df194f0bdf7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free1Mbillablerows/2activepipelines, Growthannual500/monthvs600monthly,14daytrialfirstdeploy/pauseonovercap,backfillexclusions,PrivateLink500/connection,EnterpriseBYOC read. Currency $ only not checkoutverified."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Artie",
+      "title": "ELv2 License Addendum - Artie",
+      "url": "https://www.artie.com/docs/legal/elv2-license-addendum",
+      "read_at": "2026-10-22T13:09:52.652301Z",
+      "excerpt_sha256": "3607782a170690829759cfdcac112fd3e0015585d9032a988253e739a3e9bbb1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "TransferbyArtieELv2addendum actualread; restrictshostedmanagedservice/license-keycircumvention/notices; notblanketentitlementforwholeplatform."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:09:52.652301Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "quickstart", "architecture", "backfill"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "Start with connector and table semantics",
+        "title_zh": "先检查连接及表语义",
+        "en": "Quickstart requires source-database administration access and destination credentials, then selects source, tables and destination. Review the exact connector’s required privileges and network path before setup. Optional timestamp columns distinguish Artie processing time from source transaction time. For an orders example, define primary keys and the expected insert/update/delete result before comparing destination counts; a green pipeline status alone does not establish business-data correctness. No credentials or databases were connected.",
+        "zh": "Quickstart 要求源数据库管理访问及目标凭据，随后选择源、表和目标。设置前应核具体连接所需权限及网络；可选时间戳列区分 Artie 处理时间与源事务时间。订单示例需先确定主键及插入／更新／删除预期，再比较目标数量；管道绿色状态本身不证明业务数据正确，本次未连接凭据或数据库。",
+        "source_refs": ["quickstart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backfill",
+        "title_en": "A reload can change more than the copied rows",
+        "title_zh": "重新加载可能影响的不只是复制行",
+        "en": "Artie scans the source while CDC changes queue in Kafka, then applies the queued stream. Ad-hoc backfill offers upserting into existing data, truncating rows while retaining schema/indexes/grants, or dropping and recreating the table. The guide warns that Drop breaks dependent views and materialized views. Review downstream objects and the selected destination mode before evaluating a reload. The fact that backfills are included in billing does not mean a reload is harmless or has no source/destination compute cost.",
+        "zh": "Artie 扫源时将 CDC 缓存在 Kafka，之后应用队列。临时回填可选择向已有数据 upsert、保留模式／索引／授权但清空行，或删除重建表。指南警告 Drop 会破坏依赖视图及物化视图。评估重载前需检查下游及目标模式；回填包含在账单里，不等于无害或不消耗源／目标算力。",
+        "source_refs": ["backfill", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "flush",
+        "title_en": "A managed stream still buffers and merges",
+        "title_zh": "托管流仍会缓存及合并",
+        "en": "The architecture uses a reader, Kafka buffer and writer. Flush guidance describes in-memory deduplication by primary key or unique index and combining repeated changes before a batch reaches the destination. Any time, deduplicated-message count or byte threshold can trigger a flush; offsets are committed after writing. Evaluate a burst of updates to one key and a slow destination separately. Current-state replication and a complete event history are different requirements, even with exactly-once marketing.",
+        "zh": "架构包含读取器、Kafka 缓存及写入器。刷写指南说明按主键／唯一索引在内存去重，重复变更可在批次写入目标前合并；时间、去重消息数或字节任一阈值可触发，写后提交偏移。应分别评估同键突发更新及目标变慢；当前状态复制与完整事件历史是不同需求，即便宣传恰好一次也不能混同。",
+        "source_refs": ["architecture", "flush"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "table",
+        "title_en": "Delete and column choices change the analytical dataset",
+        "title_zh": "删除及列选择会改变分析数据集",
+        "en": "Quickstart defaults to hard row deletes while preserving dropped source columns unless enabled otherwise. Current table settings also offer skipping deletes, soft-delete behavior and a separate history table. Column inclusion and exclusion are mutually exclusive; inclusion needs manual additions for new source columns. Hashing and reversible encryption have different downstream uses and key obligations. Specify the intended archive/privacy behavior and test updates/deletes/new columns, rather than assuming schema evolution preserves every reporting contract.",
+        "zh": "Quickstart 默认硬删除行，但默认保留已从源删除的列。当前表设置另提供跳过删除、软删除及独立历史表。列包含与排除互斥，包含名单需手动加入新源列；哈希与可逆加密的下游用途和密钥责任不同。应明确归档／隐私预期，测试更新、删除及新增列，不能推定模式演进保留所有报表契约。",
+        "source_refs": ["quickstart", "settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operate",
+        "title_en": "Schema notifications are scheduled, not immediate",
+        "title_zh": "模式通知按计划执行，并非即时",
+        "en": "The schema-notification page says its job runs weekdays at6AM PST, with email enabled by default and optional messaging integrations. That is distinct from continuous replication and should not be presented as an immediate alert for every schema change. For BYOC, Artie documents a customer-hosted data plane with a vendor-hosted control plane receiving table/schema/status metadata. It is not a wholly offline system. Verify retention, source-log recovery and operator access separately; no outage or security property was tested.",
+        "zh": "模式通知页写明任务在工作日太平洋标准时间早6点执行，默认邮件，可选消息集成。这区别于持续复制，不能介绍为每次模式变更立即告警。BYOC 文档为用户托管数据面、厂商托管控制面，后者接收表／模式／状态元数据，因此非完全离线系统。保留期、源日志恢复及运维访问需另核，本次未测试中断或安全属性。",
+        "source_refs": ["notifications", "architecture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free limits, trial transition and variable rows differ",
+        "title_zh": "免费限额、试用转换及按量行数不同",
+        "en": "Free allows1M billable rows/month and two active pipelines; drafts and fully paused pipelines do not count as active. Backfills and skipped rows are excluded from its row meter. Growth starts at$500/month on annual billing or$600 monthly, with row-based usage; exact currency/tax needs checkout. The14-day trial starts at first deployment. On expiry, an account exceeding Free limits has pipelines paused until scaled down or upgraded. PrivateLink and Enterprise connectors/BYOC have separate plan conditions.",
+        "zh": "Free 每月允许100万计费行、两个活跃管道，草稿和完全暂停不计活跃；回填及跳过行不计该行量。Growth 年付折算每月$500起，月付$600，按行用量，币种／税需核结账。14天试用从首次部署开始，结束时超 Free 限额会暂停管道，直至缩减或升级；PrivateLink、Enterprise 连接及 BYOC 另有计划条件。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "The published component license restricts hosted resale",
+        "title_zh": "公布的组件许可限制托管转售",
+        "en": "The official ELv2 addendum explicitly names Transfer by Artie and permits use/modification subject to restrictions including offering substantial functionality as a hosted or managed service, bypassing license keys and removing notices. This is not an unrestricted grant for every Artie product or a right to run the commercial control plane independently. Confirm which component and contract apply to the proposed deployment. This research did not acquire software, copy code or assess legal compliance.",
+        "zh": "官方 ELv2 附录明确针对 Transfer by Artie，允许在限制下使用／修改，包括不得以托管服务提供重要功能、绕过许可密钥或移除声明。这不是全产品无限授权，也不是独立运行商业控制面的权利。需确认拟部署的组件及适用合同；本次未获取软件、复制代码或评估法律合规。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Artie: CDC backfills, delete semantics and row-based billing",
+    "title_zh": "Artie：CDC 回填、删除语义及按行计费",
+    "description_en": "Review replication data flow, reload risks, column/history settings, BYOC responsibilities and trial limits.",
+    "description_zh": "了解复制数据流、重载风险、列／历史设置、BYOC 责任及试用限制。",
+    "search_intent_en": "Evaluate Artie source-to-destination replication behavior.",
+    "search_intent_zh": "评估 Artie 从源到目标的复制行为。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, connector, SQL, backfill, CDC event, schema notification, deployment or billing action was executed.",
+      "zh": "未执行账户、连接、SQL、回填、CDC 事件、模式通知、部署或计费动作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exactly-once/latency, data-plane retention, log-expiry recovery, security, current perconnector limits and real source impact not independently verified.",
+      "zh": "恰好一次／延迟、数据面保留、日志过期恢复、安全、当前各连接限制及真实源负载未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The pricing FAQ includes Oracle destination on every plan, while connector-table enumeration is narrower; exact connector/direction entitlement needs confirmation. The addendum covers Transfer byArtie, not an inferred complete-platform open-source license.",
+      "zh": "定价 FAQ 将 Oracle 目标列为全计划可用，连接表枚举较窄，需确认具体连接／方向权益；附录覆盖 Transfer by Artie，不推定全平台开源许可。",
+      "source_refs": ["pricing", "license"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pipedrive-crm-4a41bd76",
+  "name": "Pipedrive CRM",
+  "website_url": "https://www.pipedrive.com/",
+  "domain": "www.pipedrive.com",
+  "identity_domain": "pipedrive.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Pipedrive is a hosted sales CRM built around a visual deal pipeline, related people and organizations, and the next activities needed to progress a sale. Its Leads Inbox holds unqualified opportunities separately until a seller converts them into deals. A contact, lead and deal are different record types; a won deal is not automatically outside current usage limits.\n\nCurrent documentation names Lite, Growth, Premium and Ultimate plans. Automation, email connections, reports and add-ons depend on plan and permissions. This profile follows documented conversion, import and failure behavior rather than the broad directory feature list. No account, import, email, automation, purchase or AI feature was executed.",
+  "description_zh": "Pipedrive 是托管销售 CRM，围绕可视化交易管线、关联个人及组织，以及推动销售的下一活动组织工作。Leads Inbox 单独保存尚未完成资格判断的机会，销售人员可将其转换为交易。联系人、线索和交易是不同记录类型；已赢单交易不一定被当前用量限制排除。\n\n当前文档列出 Lite、Growth、Premium、Ultimate 套餐。自动化、邮箱连接、报表及附加项受套餐和权限限制。本文依据转换、导入及失败行为文档，不直接沿用目录泛化功能表；未运行账户、导入、邮件、自动化、购买或 AI 功能。",
+  "core_features": [
+    {
+      "name_en": "Separate lead qualification inbox",
+      "name_zh": "独立线索资格判断收件箱",
+      "explanation_en": "Link each lead to a person or organization before converting qualified work into a pipeline deal.",
+      "explanation_zh": "每条线索关联个人或组织，再把已完成资格判断的工作转换为管线交易。",
+      "explanation_scope": "product_specific",
+      "source_ref": "leads",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Spreadsheet field mapping and recovery",
+      "name_zh": "表格字段映射及恢复",
+      "explanation_en": "Preview linked entities, choose multiple-option append/overwrite and inspect skipped rows; admin revert is time-limited.",
+      "explanation_zh": "预览关联实体、选择多选值追加／覆盖并检查跳过行；管理员撤回有时间限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "import",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional sales automation",
+      "name_zh": "条件销售自动化",
+      "explanation_en": "On Growth+, trigger sequential actions using configured event/date rules, user permissions and connected sender accounts.",
+      "explanation_zh": "Growth及以上按配置的事件／日期规则、用户权限和连接发件账户触发顺序动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automation",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Separate unqualified prospects from active sales opportunities.",
+      "Map a spreadsheet of contacts and deals into linked CRM records before automating follow-ups."
+    ],
+    "zh": [
+      "把未完成资格判断的潜在对象与活跃销售机会分开。",
+      "自动跟进前，将联系人和交易表映射为关联 CRM 记录。"
+    ],
+    "source_refs": ["leads", "import", "automation"],
+    "basis": "Editorial evaluation scenarios, not observed customer results."
+  },
+  "technical_details": {
+    "Record relationships": {
+      "en": "A lead must link to a person or organization. Spreadsheet rows can create and link several entity types; company usage limits differ from per-user report limits.",
+      "zh": "线索必须关联个人或组织。表格行可以创建并关联多种实体；公司级用量限制与每用户报表限制不同。",
+      "source_ref": "import",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Sales representative",
+      "Sales manager",
+      "CRM import administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define qualification and pipeline stages, record owners and who can import or automate.",
+        "zh": "定义资格判断和管线阶段、记录负责人，以及谁能导入或建立自动化。",
+        "source_refs": ["leads", "import", "automation"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Import a small representative file and inspect mapping, relationships and skipped rows.",
+        "zh": "导入有代表性的小文件，检查映射、关联及跳过行。",
+        "source_refs": ["import"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Check actual plan usage and sender identity before activating a follow-up workflow.",
+        "zh": "启用跟进流程前检查实际套餐用量及发件身份。",
+        "source_refs": ["limits", "automation", "billing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Slack, Microsoft Teams, Trello and Asana automation actions",
+        "source_ref": "automation",
+        "scope": "Documented action integrations; selected action, installation and account permissions require setup."
+      },
+      {
+        "name": "Connected email account",
+        "source_ref": "automation",
+        "scope": "Automated email uses the synced account of the automation creator; it does not automatically become the triggering user’s mailbox."
+      }
+    ],
+    "source_ref": "automation"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Over-limit automatic leads are discarded, while excess deals may enter a waitlist or import skip file. Deal waitlist entries expire after one year.",
+        "zh": "超限自动线索被丢弃，而超额交易可进入等待列表或导入跳过文件；交易等待记录一年后过期删除。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "An automation failing to create a deal at its limit does not resume simply because a deal is later created manually.",
+        "zh": "自动化因额度无法创建交易后，不会因随后手动创建交易就恢复执行。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.pipedrive.com/en/terms-of-service",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "billing",
+    "source_refs": ["billing", "product"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Plan price per purchased seat, including unassigned seats; monthly or annual upfront plus selected add-ons/top-ups. Numeric rates unavailable in pages read.",
+    "source_snapshot_en": "Lite, Growth, Premium and Ultimate. LeadBooster, Projects and Smart Docs are included on Premium/Ultimate and add-ons on Lite/Growth; Campaigns and Web Visitors remain add-ons on all four. Homepage offers a 14-day no-card trial, not sustained free service.",
+    "source_snapshot_zh": "Lite、Growth、Premium、Ultimate。Premium／Ultimate 包含 LeadBooster、Projects、Smart Docs，Lite／Growth 需附加购买；Campaigns 和 Web Visitors 在四档均为附加项。首页提供14天免信用卡试用，不是持续免费服务。",
+    "checked_at": "2026-10-22T10:57:21.978258+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does winning a deal free current record capacity?",
+      "question_zh": "赢单会释放当前记录容量吗？",
+      "answer_en": "The new combined limit counts active leads and open, won or lost deals that are neither archived nor deleted. Check your account’s usage model; old plans and transition wording coexist in the guide.",
+      "answer_zh": "新组合限制计入活跃线索及未归档／删除的进行中、已赢或已输交易。应检查账户用量模型，指南同时保留旧套餐及迁移说明。",
+      "source_refs": ["limits"]
+    },
+    {
+      "question_en": "Will importing a spreadsheet trigger every automation?",
+      "question_zh": "导入表格会触发所有自动化吗？",
+      "answer_en": "No. The guide excludes event-triggered automations except imports updating/deleting leads, while date triggers can activate from imported data. Test the selected trigger and account version.",
+      "answer_zh": "不会。指南说明事件触发通常排除导入，但导入更新／删除线索是例外，日期触发也可被导入数据激活；应核对所选触发器及账户版本。",
+      "source_refs": ["automation"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pipedrive",
+      "read_at": "2026-10-22T09:05:06.188Z",
+      "excerpt_sha256": "10994b17fb66640effe4887f99d6714b0876ea64bf795864a3a86776d2e4d6ac",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Sales CRM & Pipeline Management Software | Pipedrive",
+      "title": "Sales CRM & Pipeline Management Software | Pipedrive",
+      "url": "https://www.pipedrive.com/",
+      "read_at": "2026-10-22T10:32:38.946812+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a87bdb388eaf6aefce153c3cb1e771c48c9cf6ae75a9cd90f425eb0d7ad0cf15",
+      "research_notes_en": "Sales pipeline CRM, contacts, activities and trial invitation. Adoption, compliance, AI outcome and time-saving claims not independently verified."
+    },
+    {
+      "id": "leads",
+      "type": "official_documentation",
+      "site": "Leads Inbox - Knowledge Base | Pipedrive",
+      "title": "Leads Inbox - Knowledge Base | Pipedrive",
+      "url": "https://support.pipedrive.com/en/article/leads-inbox",
+      "read_at": "2026-10-22T10:57:03.067511+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "68055c9207db3aab75c4ff021b6d270820911e960fc9322a0be49c868bab52fd",
+      "research_notes_en": "September 23 2026: lead requires linked person/organization; conversion preserves related context and removes lead from inbox; archive and merge differ."
+    },
+    {
+      "id": "import",
+      "type": "official_documentation",
+      "site": "Importing data into Pipedrive with spreadsheets - Knowledge Base | Pipedrive",
+      "title": "Importing data into Pipedrive with spreadsheets - Knowledge Base | Pipedrive",
+      "url": "https://support.pipedrive.com/en/article/importing-data-into-pipedrive-with-spreadsheets",
+      "read_at": "2026-10-22T10:57:02.012349+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "22d9beccd20d2ae4a557256a64034c305e24c0345b02dcde431e336793d93cec",
+      "research_notes_en": "October 19 2026: XLS/XLSX/CSV, linked row entities, preview/mapping, append/overwrite multiselect, skip file and global-admin 48-hour revert."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Usage limits in Pipedrive - Knowledge Base | Pipedrive",
+      "title": "Usage limits in Pipedrive - Knowledge Base | Pipedrive",
+      "url": "https://support.pipedrive.com/en/article/usage-limits-in-pipedrive",
+      "read_at": "2026-10-22T10:57:02.023843+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "71718d01fa31313f837108f462d8c71a7d2e1e90dfb5e051c2f045ba9c9da995",
+      "research_notes_en": "October 12 2026: new and legacy plan tables, active leads plus nonarchived deals, company caps, discarded automatic leads and one-year deal waitlist deletion."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Automations: first steps - Knowledge Base | Pipedrive",
+      "title": "Automations: first steps - Knowledge Base | Pipedrive",
+      "url": "https://support.pipedrive.com/en/article/workflow-automation",
+      "read_at": "2026-10-22T10:57:21.978258+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3b202a7661aa924de48edd90714676689fb7320ef33c93ae961067864cbdd8de",
+      "research_notes_en": "Growth+ and permission requirements; sequential steps, one-time conditions, import/date exceptions, owner email sender and deactivated ownership transfer."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "How does pricing work in Pipedrive? - Knowledge Base | Pipedrive",
+      "title": "How does pricing work in Pipedrive? - Knowledge Base | Pipedrive",
+      "url": "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+      "read_at": "2026-10-22T10:57:01.985765+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5d3a9489bcbd2b225f3802f42490d93eaedda14851ffb6b83cc8ebdcaad77e72",
+      "research_notes_en": "September 3 2026: four plans, per-seat billing including unused seats, annual upfront, add-on inclusion and top-ups. No numerical rates; blocked main pricing endpoint not retried."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service | Pipedrive",
+      "title": "Terms of Service | Pipedrive",
+      "url": "https://www.pipedrive.com/en/terms-of-service",
+      "read_at": "2026-10-22T10:57:21.069230+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "05cba934f944f37747db05844ab5900d8c324f0d097d007fd46754b9a0b0068a",
+      "research_notes_en": "September 16 2026 hosted service terms restrict derivative works and reverse engineering; no open-source/self-host deployment offer. No legal opinion."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:57:21.978258+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "leads", "limits", "billing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "qualification",
+        "title_en": "Qualify a lead before putting it into the active pipeline",
+        "title_zh": "先判断线索资格，再放入活跃管线",
+        "en": "The Leads Inbox is for work not yet ready to progress as a deal. A lead must be linked to a person or organization; other lead fields are optional according to the guide. A useful evaluation example is a conference contact whose budget and buying process are still unknown: keep the context in the inbox, record the next activity and convert after qualification. This is an illustration, not a tested sales method.\n\nConversion asks for the destination pipeline, visibility and value. The person, organization, notes and files remain attached, and the original lead leaves the inbox. Archiving preserves the lead outside the active view; merging chooses which unique data to preserve. These operations have different purposes and should not be treated as interchangeable cleanup.",
+        "zh": "Leads Inbox 保存尚未准备作为交易推进的工作。指南说明线索必须关联个人或组织，其他线索字段可选。评估可使用会议获得、预算及购买流程尚未知的联系人：先在收件箱保存背景、记录下一活动，完成资格判断后再转换。这是示例，不是经过测试的销售方法。\n\n转换时选择目标管线、可见性和值，个人、组织、备注及文件继续关联，原线索离开收件箱。归档把线索保存在活跃视图之外；合并则选择保留哪些独有数据。它们用途不同，不宜当作可互换清理动作。",
+        "source_refs": ["leads"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "import-map",
+        "title_en": "A spreadsheet row can create several linked entities",
+        "title_zh": "一行表格可创建多个关联实体",
+        "en": "Import accepts XLS, XLSX or CSV, with one sheet, headers, at most 200,000 rows and a file under 50 MB. The current guide says a row containing a person, organization and deal value can create and link those entities. Prepare custom fields, review automatic mapping and inspect the preview before starting. Correct import permissions are required.\n\nFor multiple-option updates, choose Append to preserve existing selections or Overwrite to replace them. Inspect the added, updated, merged and skipped counts, then download the skip file to correct failed rows. A global administrator can revert through import history within 48 hours; that is a documented window, not proof of complete disaster recovery. Keep the source export and verify representative relationships and values.",
+        "zh": "导入接受 XLS、XLSX 或 CSV，要求单工作表、标题行、最多200,000行且文件小于50 MB。当前指南说明含个人、组织及交易值的一行可创建并关联这些实体。应先准备自定义字段，复核自动映射并检查预览，且用户需有导入权限。\n\n更新多选字段时，Append 保留现有选择，Overwrite 则替换。应检查新增、更新、合并及跳过数量，下载跳过文件纠正失败行。全局管理员可在48小时内从导入历史撤回；这是文档窗口，不证明完整灾难恢复。应保留原导出并检查有代表性的关联和值。",
+        "source_refs": ["import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "execution",
+        "title_en": "Follow-up actions depend on the trigger, owner and connected sender",
+        "title_zh": "跟进动作取决于触发器、负责人及连接发件人",
+        "en": "Automations require Growth or higher and suitable permissions. Events or dates start a sequence of actions; ordinary conditions are checked once, so an unmet condition stops subsequent steps unless the workflow deliberately waits. Email uses the creator’s synced mailbox, including when another permitted user triggers the workflow.\n\nImports usually do not start event automations, with a stated exception for imported updates/deletions of leads; date-triggered paths can activate. Check the exact trigger rather than assuming import is inert. When transferring ownership, the recipient receives an inactive automation to review, and pending executions require an explicit cancellation choice. A sample should include the intended sender, missing condition, user departure and capacity failure before production use. No such execution was tested here.",
+        "zh": "自动化要求 Growth及以上及适当权限。事件或日期启动顺序动作；普通条件只检查一次，除非明确等待，否则条件不满足会停止后续步骤。邮件使用创建者已同步邮箱，即使由另一获准用户触发也如此。\n\n导入通常不启动事件自动化，但文档明确列出导入更新／删除线索的例外；日期触发路径可激活。应检查具体触发器，不能假定导入不产生动作。转移负责人后，接收者得到待复核的停用自动化，进行中执行需明确选择是否取消。上线前样例应包含预期发件人、未满足条件、用户离职和容量失败；本文未实际运行。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity",
+        "title_en": "Capacity failure handles leads differently from deals",
+        "title_zh": "容量失败对线索和交易采取不同处理",
+        "en": "The current new-plan table counts active leads plus open, won and lost deals unless archived or deleted. It lists per-seat company capacity with a 300,000 combined cap for new plans; legacy Enterprise wording differs elsewhere on the page. Contacts have no Pipedrive usage limit in this guide, though a connected provider can impose its own. Consult the actual Usage screen instead of extrapolating from an old plan name.\n\nAt the limit, manual additions are blocked. Excess automatically created deals can go to a waitlist or import skip file, but automatically created leads are discarded. Waitlisted deals are deleted after a year. The automation article also says a failed deal-creation step will not resume merely because a deal is created later. Monitor usage and the originating form/API process, and reconcile rejected work after adding capacity. These are documented failure paths, not reproduced incidents.",
+        "zh": "当前新套餐表计入活跃线索以及未归档／删除的进行中、已赢及已输交易，按每席位计算公司容量，新套餐组合上限300,000；页内其他位置的旧 Enterprise 措辞不同。指南称 Pipedrive 不限制联系人用量，但连接服务商可有自己的限制。应查看实际 Usage 界面，不能从旧套餐名外推。\n\n达到上限时禁止手动新增。超额自动交易可进入等待列表或导入跳过文件，自动线索则被丢弃。等待交易一年后删除。自动化文章另称，失败的创建交易步骤不会因之后创建交易就恢复。应监测用量及来源表单／API 流程，扩容后对账被拒工作。这些是文档失败路径，不是复现事故。",
+        "source_refs": ["limits", "automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-fit",
+        "title_en": "Budget seats, add-ons and the actual account limits",
+        "title_zh": "预算席位、附加项及实际账户限制",
+        "en": "Billing depends on plan, billing cycle, purchased seats, optional add-ons/top-ups and location. Unassigned seats still count. Annual billing is upfront for the year. Premium and Ultimate include LeadBooster, Projects and Smart Docs; Campaigns and Web Visitors are separate on all four plans. Thus a sales CRM subscription is not automatically a complete email-marketing or delivery-project budget.\n\nThe main pricing URL returned HTTP 403 during this research; it was not bypassed or retried. Official billing documentation establishes the mechanism, not a numerical quote, so the old directory starting price is superseded and no rate is normalized. A 14-day no-card trial is advertised. Pipedrive is a proprietary hosted service under terms restricting source derivation; actual exports, retention, hosting region, UI languages, regional buying and AI behavior remain unverified. Teams with explicit sales stages and an owner for data quality have concrete evaluation tasks; suitability is an editorial judgment.",
+        "zh": "账单取决于套餐、周期、已购买席位、可选附加项／扩容量及地区，未分配席位也计费。年付需预付全年。Premium／Ultimate 包含 LeadBooster、Projects、Smart Docs，Campaigns 和 Web Visitors 在四档均需另选。因此销售 CRM 订阅不能直接当作完整邮件营销或交付项目预算。\n\n本次主定价 URL 返回 HTTP 403，未绕过或重试。官方账单文档能确定机制，不能确定数值报价，因此旧目录起价不再作为当前依据，也未生成归一化价格。官网宣传14天免信用卡试用。Pipedrive 是受源代码推导限制条款约束的专有托管服务；实际导出、保留、托管地区、界面语言、地区购买及 AI 行为仍未核实。有明确销售阶段及数据质量负责人的团队可据此评估，适配判断属编辑意见。",
+        "source_refs": ["billing", "product", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Pipedrive CRM: Lead Conversion, Imports, Automation and Cost Boundaries",
+    "title_zh": "Pipedrive CRM：线索转换、导入、自动化与费用边界",
+    "description_en": "Understand Pipedrive leads versus deals, spreadsheet mapping, automation sender rules, over-limit failures and seat/add-on billing without relying on old directory prices.",
+    "description_zh": "了解 Pipedrive 线索与交易差异、表格映射、自动化发件规则、超限失败及席位／附加项计费，不沿用旧目录价格。",
+    "primary_intent": "Evaluate Pipedrive sales workflow and record/billing limits.",
+    "secondary_questions": [
+      "Does winning a deal free capacity?",
+      "What happens to over-limit automatic leads?",
+      "Which mailbox sends automated email?"
+    ],
+    "query_basis": "Editorial questions; no search demand, ranking or traffic measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, conversion, import, revert, automation, email, AI or billing tested. Main pricing endpoint HTTP 403 was not bypassed; numeric rates remain unknown. Exact exports, retention, regions, UI languages and regional purchase access unverified.",
+      "zh": "未测试账户、转换、导入、撤回、自动化、邮件、AI 或计费。主定价端点 HTTP 403 未绕过，数值价格未知；准确导出、保留、地区、界面语言及地区购买未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Limits documentation retains old-plan transition and legacy Enterprise exceptions beside new-plan caps. Check the actual account Usage view before migration or capacity planning.",
+      "zh": "限制文档在新套餐上限旁保留旧套餐迁移及旧 Enterprise 例外，迁移或容量规划前应检查实际账户 Usage 界面。",
+      "source_refs": ["limits"],
+      "evidence_type": "observed_documentation_qualification"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

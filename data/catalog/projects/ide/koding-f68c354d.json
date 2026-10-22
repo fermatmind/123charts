@@ -1,0 +1,354 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "koding-f68c354d",
+  "name": "Koding",
+  "website_url": "https://www.koding.com/",
+  "domain": "www.koding.com",
+  "identity_domain": "koding.com",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Koding describes development environments as infrastructure configuration that teams can share while using their own editor and terminal. Its current registration page states that the hosted version is no longer available and points users to self-managed installation. It should not be presented as a newly available browser IDE or free hosted virtual-machine account.\n\nThe readable documentation explains a historical stack-and-VM workflow: describe resources, provision an environment, connect local tools and grant collaboration access. These sources help assess that model, but their old runtime examples do not demonstrate a maintained installation on today’s infrastructure. No installation, cloud credential, VM or account was used.",
+  "description_zh": "Koding 将开发环境描述为团队可共享的基础设施配置，开发者使用自己的编辑器及终端。当前注册页明确托管版已不可用，只提供自行部署指引，不能介绍为仍可新开通的浏览器 IDE 或免费托管虚拟机账户。\n\n可读文档说明历史的 stack／VM 流程：描述资源、配置环境、连接本地工具及授予协作访问。这些资料可用于评估模型，但旧运行示例不能证明可在当前基础设施上维护安装。本次未安装、使用云凭据、创建 VM 或操作账户。",
+  "core_features": [
+    {
+      "name_en": "Development environments as stacks",
+      "name_zh": "以 stack 描述开发环境",
+      "explanation_en": "Document infrastructure, packages and network settings in Terraform-derived YAML.",
+      "explanation_zh": "以 Terraform 衍生 YAML 描述设施、软件包及网络配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "stack",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Own-editor remote mounts",
+      "name_zh": "自用编辑器远程挂载",
+      "explanation_en": "The documented kd flow mounts VM files for editing from local tools.",
+      "explanation_zh": "文档中的 kd 流程挂载 VM 文件，供本地工具编辑。",
+      "explanation_scope": "product_specific",
+      "source_ref": "editor",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Shared VM access",
+      "name_zh": "共享 VM 访问",
+      "explanation_en": "The documented share option grants full VM access under the same system user.",
+      "explanation_zh": "文档中的共享选项以同一系统用户授予完整 VM 访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sharing",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Assess legacy stack-based team development against current infrastructure",
+      "Review direct remote editing and full-access VM sharing boundaries"
+    ],
+    "zh": [
+      "针对当前设施评估历史 stack 团队开发模型",
+      "审查直接远程编辑及完整 VM 分享访问边界"
+    ],
+    "source_refs": ["stack", "editor", "sharing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Platform engineers evaluating legacy environments",
+      "Development infrastructure maintainers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm self-managed-only availability and inspect the current release and license before installation.",
+        "zh": "安装前确认仅自行部署，并检查当前发行版及许可。",
+        "source_refs": ["availability", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review provider, root startup scripts and mount/share access using disposable resources.",
+        "zh": "使用可丢弃资源审查提供商、root 启动脚本及挂载／分享访问。",
+        "source_refs": ["stack", "editor", "sharing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Plan backups and verify actual provider resource deletion separately from UI removal.",
+        "zh": "规划备份，独立于界面移除核对云资源真实删除。",
+        "source_refs": ["faq"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Hosted signup is explicitly unavailable; self-managed operability was not tested.",
+        "zh": "官方明确托管注册不可用，自行部署可运行性未经实测。",
+        "source_refs": ["availability"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Legacy docs contain old OS examples and beta client requirements.",
+        "zh": "旧文档包含过时系统示例及 beta 客户端要求。",
+        "source_refs": ["stack", "editor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Shared VM access uses the same system user and destruction deletes VM data.",
+        "zh": "共享 VM 使用相同系统用户，销毁会删除 VM 数据。",
+        "source_refs": ["sharing", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "vendor_declared_free_self_managed_software_infrastructure_extra",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:49:40.455463Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Homepage declares free software; hosted registration closed. Self-managed infrastructure/maintenance and present commercial terms unverified; no hosted plan quoted.",
+    "summary_zh": "首页声明软件免费，托管注册关闭；自部署设施／维护及当前商业条款未核，不提供托管计划报价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/koding",
+      "read_at": "2026-10-22T08:57:04.562Z",
+      "excerpt_sha256": "1bd53968e779af27532e8e11347f5293b9e9e1151f84aa1df099c33157fa4a06",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Koding",
+      "title": "Modern Dev Environment Delivered · Koding",
+      "url": "https://www.koding.com/",
+      "read_at": "2026-10-22T12:49:40.455463Z",
+      "excerpt_sha256": "29ee22d7bbb8a0856a4e247cdaeeaedceeb7655456e47839a5796c8fb1879689",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual homepage explicit Koding is Free and OpenSource statement, ownIDE/IaC scope. Not interpreted as currently available free hostedVMs; registration contradicts hosted marketing. Full code license not read."
+    },
+    {
+      "id": "availability",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "Home",
+      "url": "https://www.koding.com/register/",
+      "read_at": "2026-10-22T12:58:01.641958Z",
+      "excerpt_sha256": "05ec32679519167e5fae9b7b89ebd47e39bb3668ae34408067bee1cc6661b10e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Registrations Disabled; hosted version no longer available; self-managed only; no new hosted signup tested."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "Docs",
+      "url": "https://www.koding.com/docs/home",
+      "read_at": "2026-10-22T12:50:18.165551Z",
+      "excerpt_sha256": "af9156886829740dd316cdba460ab713ae119c62bcc0926368631267b3af241f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Stack-based development environment onboarding read; historical docs kept as model, not current infrastructure compatibility proof."
+    },
+    {
+      "id": "stack",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "What is a Stack?",
+      "url": "https://www.koding.com/docs/what-is-a-stack",
+      "read_at": "2026-10-22T12:58:32.390063Z",
+      "excerpt_sha256": "57f44dc670a1609af42248017c618d0903d7bedae6c1ddddacf1fe8edb124498",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Terraform-derived YAML stack/resources/network/packages; root user_data and oldUbuntu14.04sample read, not executed."
+    },
+    {
+      "id": "editor",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "Use your own IDE",
+      "url": "https://www.koding.com/docs/use-your-own-ide",
+      "read_at": "2026-10-22T12:58:32.230391Z",
+      "excerpt_sha256": "07cae66f99934461897555697ca6c17a091b3a76e3346a2745dfeb628a576e42",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "kd beta OSX/Linux/sudo prerequisites, remote mounts livewriteVMfiles; legacy command not executed."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "How to share your VM with someone",
+      "url": "https://www.koding.com/docs/how-to-share-your-vm-with-someone",
+      "read_at": "2026-10-22T12:58:32.593335Z",
+      "excerpt_sha256": "ecc507cc485664c2b1bcb20fd26ba89c067b11fbe220f5eb791e27e7bcec8554",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ShareVM grants fullVMaccess loggedinasownersameuser, unlike synchronous collaboration; removal read."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Koding",
+      "title": "FAQ",
+      "url": "https://www.koding.com/docs/faq",
+      "read_at": "2026-10-22T12:51:17.717565Z",
+      "excerpt_sha256": "f40c25deb0c7146b860290e84c9a9ac1676ff1b0790b928608c835938690ca77",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Availabilityzone/quota troubleshooting and VMdestructiondata loss/sidebar/template separate operations read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:58:32.593335Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["pricing", "availability", "docs"],
+  "profile": {
+    "sections": [
+      {
+        "id": "availability",
+        "title_en": "Self-managed is the current availability boundary",
+        "title_zh": "当前可用范围为自行部署",
+        "en": "The homepage still talks about cloud-hosted and on-premises usage, but the registration page explicitly disables signups and says hosted Koding is no longer available. Use that specific availability notice when evaluating procurement. Self-managed installation is the remaining vendor-directed route, not a verified working service in this research. Maintenance status, downloadable release integrity and present-day dependency compatibility were not established.",
+        "zh": "首页仍介绍托管及本地使用，但注册页明确停用注册，说明托管 Koding 已不可用。采购评估应采用这一具体可用性公告；自行部署是厂商保留的指引路线，本次未证明其为可运行服务。维护状态、下载发行版完整性及当前依赖兼容性未确定。",
+        "source_refs": ["availability", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "stack",
+        "title_en": "A stack provisions infrastructure rather than just source files",
+        "title_zh": "stack 配置基础设施，不只包含源码",
+        "en": "The stack guide uses YAML to represent Terraform resources, including VM counts, packages and network configuration. Its sample user_data runs as root and references an Ubuntu14.04-era image. Treat it as a description of the product’s model, not an install recipe validated for current clouds. A proposed evaluation would review provider compatibility, credentials, resource lifecycle and estimated infrastructure cost before provisioning a disposable environment. No sample command or cloud change was run.",
+        "zh": "stack 指南用 YAML 表达 Terraform 资源，包含 VM 数量、软件包及网络。示例 user_data 以 root 运行，并使用 Ubuntu14.04 时期镜像。它说明产品模型，不是已验证适用于当前云的安装配方。建议先审查提供商兼容性、凭据、资源生命周期及设施费用，再考虑可丢弃环境；本次未运行示例或改云资源。",
+        "source_refs": ["stack"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editor",
+        "title_en": "A mounted folder edits the remote VM directly",
+        "title_zh": "挂载目录会直接修改远程 VM",
+        "en": "The own-IDE guide documents kd on macOS/OSX and Linux with sudo and calls it beta. After listing VMs, mounting exposes their files in a local folder; the guide says edits happen on the cloud machine. This differs from an isolated local copy or a source-control commit. Evaluate mount behavior, disconnection and recovery on disposable files before relying on local editor conventions, and do not assume Windows support or modern OS compatibility from these legacy instructions.",
+        "zh": "自用 IDE 指南将 kd 限于 macOS／OSX 和 Linux、要求 sudo，并标注 beta。列出 VM 后挂载到本地目录，指南说明修改实际发生在云机器上，不是隔离本地副本或源码提交。应先以可丢弃文件评估挂载、断连及恢复，不能从旧说明推定支持 Windows 或当前系统。",
+        "source_refs": ["editor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "VM sharing grants the same system identity",
+        "title_zh": "VM 分享授予相同系统身份",
+        "en": "Share VM gives another user full access even while the owner is offline, and logs that person in as the owner’s VM user. The guide distinguishes it from live IDE/terminal collaboration. Removing a sharing entry is described, but no session revocation or credential isolation was tested. Use a VM without personal credentials for evaluation; shared access must not be summarized as read-only code review or independent per-user system permissions.",
+        "zh": "Share VM 在拥有者离线时仍给其他用户完整访问，并以拥有者的 VM 用户登录；指南将其区别于实时 IDE／终端协作。文档说明可移除分享条目，但未实测会话撤销或凭据隔离。建议评估时用不含个人凭据的 VM，不能把这种访问概括为只读代码审查或独立系统权限。",
+        "source_refs": ["sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "lifecycle",
+        "title_en": "Destroying a VM and hiding it are different operations",
+        "title_zh": "销毁 VM 与隐藏条目是不同操作",
+        "en": "The FAQ warns that Destroy VMs removes all VM data; removing a sidebar item and deleting a stack template are separate steps. It also lists availability-zone, provider quota and permissions as provisioning failure causes. A failed or hidden entry therefore does not prove that a resource is gone or its costs stopped. Before any real cleanup, identify provider-side resources, preserve required files and verify their lifecycle separately. None were created or destroyed here.",
+        "zh": "FAQ 警告 Destroy VMs 会删除全部 VM 数据；移除侧栏条目和删除 stack 模板则是不同步骤。它还列出可用区、云额度及权限等配置失败原因。因此条目失败或隐藏不能证明资源已销毁或停止计费。真实清理前需识别云端资源、保留必要文件并独立核对生命周期，本次未创建或销毁资源。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free software marketing does not provide free infrastructure",
+        "title_zh": "软件免费宣传不提供免费基础设施",
+        "en": "The official homepage calls Koding free and open source and points to GitHub. That supports a vendor-declared software-fee statement, not a currently purchasable hosted tier, free cloud capacity or verified license permissions. The closed registration route narrows that claim to evaluating self-managed software. Budget compute, storage, network and maintenance independently. The full repository license and current support/commercial terms were not read, so open-source filtering remains unknown.",
+        "zh": "官网称 Koding 免费开源并指向 GitHub。这支持厂商声明的软件费用，不代表现可购买的托管档位、免费云容量或已核许可权。关闭的注册入口将评估限定为自行部署软件，计算、存储、网络及维护需独立预算。本次未读取完整仓库许可或当前支持／商业条款，因此开源筛选仍为未知。",
+        "source_refs": ["pricing", "availability"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Koding: self-managed availability and legacy VM workflows",
+    "title_zh": "Koding：自行部署可用性及历史 VM 流程",
+    "description_en": "Review closed hosted signup, infrastructure stacks, direct remote mounts and same-user VM sharing.",
+    "description_zh": "了解托管注册关闭、基础设施 stack、直接远程挂载及同用户 VM 分享。",
+    "search_intent_en": "Evaluate Koding current availability and historical operating model.",
+    "search_intent_zh": "评估 Koding 当前可用性及历史运行模型。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No repository license/release audit, installation, cloud/account access, mount, sharing, VM creation or destruction was performed.",
+      "zh": "未执行仓库许可／发行版审查、安装、云／账户访问、挂载、分享、VM 创建或销毁。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current maintenance, supported dependency/cloud/OS versions, support fee, security and UI languages remain unverified. Legacy docs are not evidence of current compatibility.",
+      "zh": "当前维护、支持的依赖／云／系统版本、支持费、安全及界面语言未核；旧文档不证明当前兼容。",
+      "source_refs": ["stack", "editor"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Homepage hosted marketing conflicts with the explicit registration closure; the specific self-managed-only notice is retained.",
+      "zh": "首页托管宣传与明确注册关闭冲突，保留具体的仅自行部署公告。",
+      "source_refs": ["availability", "pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

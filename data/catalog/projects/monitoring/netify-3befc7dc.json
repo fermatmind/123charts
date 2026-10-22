@@ -1,0 +1,336 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "netify-3befc7dc",
+  "name": "Netify",
+  "website_url": "https://www.netify.ai/",
+  "domain": "www.netify.ai",
+  "identity_domain": "netify.ai",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Netify combines a local DPI Agent, network-intelligence Data Feeds and hosted Informatics analytics. The agent classifies traffic and produces metadata; downstream products and plugins provide additional analysis or policy integration. These components should be evaluated and budgeted separately.\n\nThe key deployment choice is how packets reach the agent and where telemetry goes afterward. Passive mirrored traffic differs from gateway enforcement, privacy filtering changes the exported metadata, and licensed signatures/plugins are broader than the Community engine. Test an isolated capture before using it to inform operational policy.",
+  "description_zh": "Netify 组合本地 DPI Agent、网络情报 Data Feeds 及托管 Informatics 分析。代理分类流量并产生元数据，下游产品和插件增加分析或策略集成，应分别评估及预算。\n\n关键部署选择是数据包如何进入代理，以及遥测随后送到哪里。被动镜像流量不同于网关执行，隐私过滤会改变导出元数据，授权签名／插件范围也大于 Community 引擎。应用于运行策略前应先测试隔离抓取。",
+  "core_features": [
+    {
+      "name_en": "Flow classification pipeline",
+      "name_zh": "流分类流水线",
+      "explanation_en": "Reconstruct flow state and distribute DPI metadata to processing/export plugins.",
+      "explanation_zh": "重建流状态并将 DPI 元数据分发到处理／导出插件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pipeline",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Gateway or mirror capture",
+      "name_zh": "网关或镜像采集",
+      "explanation_en": "Choose inline/gateway integration or passive mirrored traffic with appropriate drivers.",
+      "explanation_zh": "按合适驱动选择网关集成或被动镜像流量。",
+      "explanation_scope": "product_specific",
+      "source_ref": "interfaces",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pre-plugin privacy filtering",
+      "name_zh": "插件前隐私过滤",
+      "explanation_en": "Mask selected addresses/MACs or replace metadata before plugins receive it.",
+      "explanation_zh": "在插件接收前遮蔽所选地址／MAC 或替换元数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "privacy",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate passive classification using authorized synthetic packet captures.",
+      "Compare redacted telemetry with a receiving HTTP endpoint and a chosen analytics package."
+    ],
+    "zh": [
+      "使用获准模拟抓包评估被动分类。",
+      "比较脱敏遥测、HTTP 接收端及所选分析套餐。"
+    ],
+    "source_refs": ["interfaces", "privacy", "http", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Network platform integrators",
+      "Network telemetry engineers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose passive/gateway placement and required licensed components before preparing a test capture.",
+        "zh": "准备测试抓取前，选择被动／网关位置及所需授权组件。",
+        "source_refs": ["interfaces", "licensing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect classifications and masked output, test endpoint failure and estimate bandwidth/retention costs.",
+        "zh": "检查分类及遮蔽输出，测试接收端失败并估算带宽／保留成本。",
+        "source_refs": ["pipeline", "privacy", "http", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "NFQUEUE needs explicit traffic routing and normally accepts inspected packets.",
+        "zh": "NFQUEUE 需要明确流量路由，通常接受已检查数据包。",
+        "source_refs": ["interfaces"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Metadata masking can reduce identity resolution for analysis.",
+        "zh": "元数据遮蔽可能降低分析中的身份区分能力。",
+        "source_refs": ["privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:20:43.292394Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Informatics Personal/Basic/Standard are listed at $10/$25/$55 per month with different sustained bandwidth, volume and retention. DPI Community and licensed signatures/plugins have separate scope; Data Feeds are another product. No family-wide bundle, full legal license or final deployment cost was established.",
+    "summary_zh": "Informatics Personal／Basic／Standard 标价每月 $10／$25／$55，持续带宽、流量及保留不同。DPI Community 与授权签名／插件范围另定，Data Feeds 又为独立产品。未确认家族全包、完整法律许可或部署总成本。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/netify-ai",
+      "read_at": "2026-10-22T08:45:25.004Z",
+      "excerpt_sha256": "8469de0278727d205f10dbb75d21aa7ff2cfe57b8bf10959e3e691b250e032e0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Netify - Network DPI and Intelligence",
+      "url": "https://www.netify.ai/products",
+      "read_at": "2026-10-22T15:20:43.292394Z",
+      "excerpt_sha256": "87565b265c9bae6de4fe0b19c4519d73f74434bd13cfb1121b4ec39a0bf36eb5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read separate DPI Agent, Data Feeds and Informatics products."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Netify",
+      "title": "Netify Informatics - Pricing",
+      "url": "https://www.netify.ai/products/netify-informatics/pricing",
+      "read_at": "2026-10-22T15:22:23.690547Z",
+      "excerpt_sha256": "961d6d94e393f4eb004811f8d06b915dfc077a3f8d7afa7f661ca17597d08637",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Informatics Personal/Basic/Standard monthly offers; blank inclusion cells not interpreted."
+    },
+    {
+      "id": "licensing",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Netify DPI - Licensing",
+      "url": "https://www.netify.ai/products/netify-dpi/licensing",
+      "read_at": "2026-10-22T15:22:23.689868Z",
+      "excerpt_sha256": "029476958c1758e18d4b0283b4b3cbbd8007206f5f61d9219ed99bda958d47e6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Community versus licensed DPI signature/plugin scope; no complete legal license grant inferred."
+    },
+    {
+      "id": "pipeline",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Packet Flow Architecture - Netify Agent",
+      "url": "https://www.netify.ai/documentation/agent/architecture/packet-flow",
+      "read_at": "2026-10-22T15:24:18.075019Z",
+      "excerpt_sha256": "a8b67357eaffa99590e40f7bf60b35b58c73ea5a5cd472f331c7c01972098907",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Linux acquisition, flow tracking, DPI metadata and separate policy plugins."
+    },
+    {
+      "id": "interfaces",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Network Interface Configuration - Netify Agent v5",
+      "url": "https://www.netify.ai/documentation/agent/v5/configuration/network-interfaces",
+      "read_at": "2026-10-22T15:24:18.075447Z",
+      "excerpt_sha256": "072856e7d531d027f3a25dc874d2546eef37e77a441185191d706233c2bbfbd2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read gateway/mirror modes, promiscuous capture and NFQUEUE routing requirements."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Privacy Settings - Netify Agent v5",
+      "url": "https://www.netify.ai/documentation/agent/v5/configuration/privacy",
+      "read_at": "2026-10-22T15:25:11.728414Z",
+      "excerpt_sha256": "3792d0ffe866936402ec9b196191ef61832a4250bc59b69c231cbcdb0b3e6d9d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read pre-plugin address/MAC masking and regex replacement constraints."
+    },
+    {
+      "id": "http",
+      "type": "official_documentation",
+      "site": "Netify",
+      "title": "Sink HTTP Plugin - Netify Agent v5",
+      "url": "https://www.netify.ai/documentation/agent/v5/sink/http",
+      "read_at": "2026-10-22T15:25:12.461836Z",
+      "excerpt_sha256": "1484d806ed68466b34cdd8b4b906b8d2816e22bfc3179f8dc0a93886ceada7b6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read HTTP output channel URL/headers, timeout and certificate verification defaults."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:25:12.461836Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "licensing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "components",
+        "title_en": "Do not equate the agent with hosted analytics",
+        "title_zh": "不要将代理等同于托管分析",
+        "en": "The product catalog separates local inspection, intelligence datasets/APIs and cloud analytics. Community DPI has a basic signature set, while licensed DPI adds broader signatures and premium plugins. Confirm the required component and feature set; an Informatics subscription is not evidence of every agent plugin or Data Feed entitlement.",
+        "zh": "产品目录区分本地检查、情报数据集／API 和云端分析。Community DPI 提供基础签名，授权版增加更广签名及高级插件。应核对具体组件和功能，Informatics 订阅不能证明所有代理插件或 Data Feed 权益均包含。",
+        "source_refs": ["home", "licensing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capture",
+        "title_en": "Packet visibility depends on placement",
+        "title_zh": "数据包可见性取决于部署位置",
+        "en": "Mirror mode analyzes copied traffic and requires suitable interface permissions/promiscuous capture. Gateway mode can integrate with Flow Actions. NFQUEUE requires explicit firewall routing to its queue; without that, the agent receives no packets. Its normal verdict is accept, so queue inspection alone does not establish blocking.",
+        "zh": "镜像模式分析复制流量，需要合适接口权限／混杂采集；网关模式可集成 Flow Actions。NFQUEUE 要求防火墙明确将流量路由到队列，否则代理收不到包。常规 verdict 为 accept，因此进入队列接受检查本身不等于阻断。",
+        "source_refs": ["interfaces"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "classification",
+        "title_en": "Classification and enforcement are separate",
+        "title_zh": "分类与执行分开",
+        "en": "The pipeline reconstructs flows, performs inspection and shares structured metadata with plugins. Policy plugins can update Linux enforcement structures such as nftables sets or traffic control. Validate classification against known synthetic traffic before enabling an action; the ability to identify a protocol is not a measured guarantee of correct application detection.",
+        "zh": "流水线重建流、执行检查并将结构化元数据交给插件。策略插件可更新 nftables 集合或流控等 Linux 执行结构。启用动作前应使用已知模拟流量验证分类，能识别协议不等于已测得应用识别正确率保证。",
+        "source_refs": ["pipeline"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "privacy-limits",
+        "title_en": "Inspect masking effects on downstream analysis",
+        "title_zh": "检查遮蔽对下游分析的影响",
+        "en": "Privacy configuration applies before any plugin receives metadata. Selected address/MAC masking can collapse distinct identities to shared replacements; regex replacement can preserve more structure but uses additional CPU and may be unavailable on some embedded platforms. Inspect exported examples and required diagnostic fields before selecting a policy.",
+        "zh": "隐私配置在任何插件收到元数据前生效。地址／MAC 遮蔽可能将不同身份合并为共同替代值；正则替换可保留更多结构，但额外消耗 CPU，部分嵌入式平台可能不可用。选择策略前应检查导出样本及诊断所需字段。",
+        "source_refs": ["privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "export",
+        "title_en": "Validate the telemetry destination",
+        "title_zh": "验证遥测目标",
+        "en": "The HTTP sink configures channels with destination URLs, headers and per-channel timeout overrides. Defaults include certificate verification enabled, a30-second connection timeout and300-second transfer timeout. Check a successful and failed receiving endpoint while retaining certificate verification. This documentation does not establish durable delivery, retry guarantees or archive recovery.",
+        "zh": "HTTP sink 按通道配置目标 URL、请求头及超时覆盖，默认启用证书验证、连接超时 30 秒、传输超时 300 秒。应在保留证书验证下测试成功与失败接收端，文档未证明持久送达、重试保证或存档恢复。",
+        "source_refs": ["http"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "analytics-cost",
+        "title_en": "Scope bandwidth and retention to the package",
+        "title_zh": "将带宽及保留范围对应到套餐",
+        "en": "Informatics lists Personal $10/month at10Mbps sustained, Basic $25 at25Mbps and Standard $55 at50Mbps, with additional bandwidth/interface/retention conditions. Basic’s forensic archive is90days and Standard’s six months; live-data windows differ. Blank feature cells in the reader output do not establish commercial-use rights or inclusion.",
+        "zh": "Informatics 列 Personal 每月 $10、持续 10Mbps，Basic $25／25Mbps，Standard $55／50Mbps，另有带宽、接口及保留条件。Basic 取证存档九十天、Standard 六个月，实时数据窗口不同。读取结果的空白功能单元格不能证明商业使用权或包含权益。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Netify: setup, operating limits and pricing",
+    "title_zh": "Netify：设置、运行边界及费用",
+    "description_en": "Netify combines a local DPI Agent, network-intelligence Data Feeds and hosted Informatics analytics. The agent classifies traffic and produces metadata; downstream produc",
+    "description_zh": "Netify 组合本地 DPI Agent、网络情报 Data Feeds 及托管 Informatics 分析。代理分类流量并产生元数据，下游产品和插件增加分析或策略集成，应分别",
+    "search_intent_en": "Evaluate Netify for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Netify。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No agent, packet capture, firewall/queue, telemetry endpoint, TLS setting, API key or purchase was operated.",
+      "zh": "未操作代理、抓包、防火墙／队列、遥测接收端、TLS 设置、API 密钥或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full license, current feed rates, detection accuracy, throughput, delivery durability, account permissions and recovery remain unverified.",
+      "zh": "完整许可、当前 feed 价格、识别准确率、吞吐、投递持久性、账户权限及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

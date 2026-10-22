@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "jitterbit-9362d1e4",
+  "name": "Jitterbit",
+  "website_url": "https://www.jitterbit.com/",
+  "domain": "www.jitterbit.com",
+  "identity_domain": "jitterbit.com",
+  "category": "workflow-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Jitterbit is an enterprise integration and automation vendor whose Harmony platform brings together iPaaS, API management, EDI and application-building products. For workflow integration, its web-based Studio designs operations that connect source and target systems, transform data and coordinate success or failure actions.\n\nStudio is the design interface; agents execute the work. Cloud Agents are operated by Jitterbit, while Private Agents require customer installation and maintenance. This profile focuses on the documented Studio/iPaaS path rather than attributing every Harmony product capability to a single subscription.",
+  "description_zh": "Jitterbit 提供企业集成与自动化，其 Harmony 平台组合 iPaaS、API 管理、EDI 及应用搭建产品。工作流集成可通过网页 Studio 设计操作，连接源与目标系统、转换数据，并按成功或失败执行后续动作。\n\nStudio 是设计界面，实际任务由 Agent 执行。Cloud Agent 由 Jitterbit 运营，Private Agent 需要客户安装维护。本文聚焦文档中的 Studio／iPaaS 路径，不把 Harmony 全家族能力都归入同一订阅。",
+  "core_features": [
+    {
+      "name_en": "Operation-based integration",
+      "name_zh": "基于 Operation 的集成",
+      "explanation_en": "Combine endpoint activities and processing tools in an executable unit.",
+      "explanation_zh": "在可执行单元中组合端点活动与处理工具。",
+      "explanation_scope": "product_specific",
+      "source_ref": "operations",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Schema transformations",
+      "name_zh": "Schema 数据转换",
+      "explanation_en": "Map input to a required target schema, including repeating structures.",
+      "explanation_zh": "把输入映射到必需的目标 schema，可处理重复结构。",
+      "explanation_scope": "product_specific",
+      "source_ref": "transforms",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Cloud and Private Agents",
+      "name_zh": "Cloud 与 Private Agent",
+      "explanation_en": "Choose vendor-operated agents or customer-managed execution hosts.",
+      "explanation_zh": "选择厂商运营的 Agent 或客户维护的执行主机。",
+      "explanation_scope": "product_specific",
+      "source_ref": "agents",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional operation actions",
+      "name_zh": "按条件执行后续操作",
+      "explanation_en": "Configure success, failure and supported SOAP-fault actions.",
+      "explanation_zh": "配置成功、失败及受支持 SOAP fault 条件下的动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "errors",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Map approved order data from a source endpoint to a destination schema.",
+      "Coordinate integration success and compensating operations across environments."
+    ],
+    "zh": [
+      "将已批准订单从源端点映射到目标 schema。",
+      "跨环境安排集成成功动作与补偿操作。"
+    ],
+    "source_refs": ["operations", "transforms", "errors"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise integration engineer",
+      "IT operations team",
+      "Private Agent administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm Harmony role permissions and target environment access.",
+        "zh": "确认 Harmony 角色权限及目标环境访问。",
+        "source_refs": ["studio"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Choose compatible agents and configure source, transformation and target activities.",
+        "zh": "选择兼容 Agent，配置源活动、转换及目标活动。",
+        "source_refs": ["agents", "operations"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Deploy a test operation and verify normal, empty-source and failure paths.",
+        "zh": "部署测试 Operation，核对正常、空源及失败路径。",
+        "source_refs": ["deploy", "errors"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Private execution requires customer operations and appropriate group licensing.",
+        "zh": "私有执行需要客户运营责任及适当的组许可。",
+        "source_refs": ["agents"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Run can execute old deployed logic after designer edits.",
+        "zh": "设计器编辑后，Run 仍可能执行旧部署逻辑。",
+        "source_refs": ["deploy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "quote_based_annual_commercial_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:06:16.376004Z",
+    "normalized_monthly_price": null,
+    "billing_basis": "Annual quote by selected product, connections, environments, agents and add-ons; amount unknown."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/jitterbit",
+      "read_at": "2026-10-22T08:49:45.206Z",
+      "excerpt_sha256": "7f9f3dc6255837a09b03c4e386209c0c551606c1cc4e7f7afdab64293f746093",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "AI-Powered Enterprise Automation & Integration | Jitterbit",
+      "url": "https://www.jitterbit.com/",
+      "read_at": "2026-10-22T10:06:16.376004Z",
+      "excerpt_sha256": "e10af101ebd8b302e488c83a0c8e8e1a1c0eec91c8bba8faed238dd89632890d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Harmony family includes iPaaS, EDI, API Manager and App Builder; no family-wide entitlement inferred."
+    },
+    {
+      "id": "studio",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Jitterbit Studio",
+      "url": "https://docs.jitterbit.com/integration-studio/",
+      "read_at": "2026-10-22T10:06:36.266441Z",
+      "excerpt_sha256": "96c886a9fd9dc013382b460247ff226e9b45a2e981585e821ad5899570e4f044",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Web Studio identity and former Cloud Studio/Integration Studio names; permissions and environment requirements read."
+    },
+    {
+      "id": "operations",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Create and configure an operation in Jitterbit Studio",
+      "url": "https://docs.jitterbit.com/integration-studio/design/operations/creation-and-configuration/",
+      "read_at": "2026-10-22T10:07:36.185677Z",
+      "excerpt_sha256": "499e9f6c8a4c5ac6c773c6516a5c8c32fd9fedb69e2bdb19e9b24f3265c5ad84",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Operation, activity, endpoint and transformation relationships read."
+    },
+    {
+      "id": "transforms",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Key concepts for transformations in Jitterbit Studio",
+      "url": "https://docs.jitterbit.com/integration-studio/design/transformations/key-concepts",
+      "read_at": "2026-10-22T10:08:22.732545Z",
+      "excerpt_sha256": "e3ac00469176bded7b3b972f9fefd272c33c762e65a5cd177bb1065b3f17c36c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Target schema requirement, cardinality, field scripts and repeated-data loop concepts reviewed."
+    },
+    {
+      "id": "agents",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Jitterbit agents",
+      "url": "https://docs.jitterbit.com/agent/",
+      "read_at": "2026-10-22T10:07:42.773277Z",
+      "excerpt_sha256": "4adf43dd7bc56f65051fceb440d4e1f15283668423789c625c546258ae971ff8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloud/private agent differences, customer responsibilities, listening and private-group licensing reviewed."
+    },
+    {
+      "id": "errors",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Configure error handling in operations in Jitterbit Studio",
+      "url": "https://docs.jitterbit.com/integration-studio/how-to/configure-error-handling-in-operations/",
+      "read_at": "2026-10-22T10:08:16.572375Z",
+      "excerpt_sha256": "5b5884fe0cac436449a1659f42656cdbafff1641813f1f4cc71e615510f677ff",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "On Fail, On Success and SOAP Fault action scope plus empty-source success caveat reviewed."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Jitterbit",
+      "title": "Deploy and execute an operation in Jitterbit Studio",
+      "url": "https://docs.jitterbit.com/integration-studio/design/operations/deployment-and-execution",
+      "read_at": "2026-10-22T10:08:45.204444Z",
+      "excerpt_sha256": "f54a478c0dcf94e281a2288035563d9fd1da7d46e303b4fa6d4f3c410cb15821",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Run uses deployed dependencies while Deploy and Run publishes changes first; cancellation not guaranteed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Jitterbit",
+      "title": "Pricing | Subscription Plans & Features | Jitterbit",
+      "url": "https://www.jitterbit.com/harmony/pricing/",
+      "read_at": "2026-10-22T10:06:33.431294Z",
+      "excerpt_sha256": "a0db6bc02698048438f73ae972c86bc57852fb832a4c205819e7006b00f6a76f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Quote-based iPaaS tiers and annual contract requirement read; no public subscription amount inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:08:45.204444Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "studio", "agents"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Resolve product names before comparing capabilities",
+        "title_zh": "比较能力前先明确产品名称",
+        "en": "The current documentation calls the browser designer Jitterbit Studio and lists Integration Studio and Cloud Studio as former names. Harmony is broader: API Manager, App Builder and EDI have separate product roles. The pricing page also separates iPaaS from App Builder and marks API Manager capabilities as add-ons. A team should define whether it needs data integration, a managed API surface, an internal application or trading-partner EDI before requesting a quote. Those are related workloads, not interchangeable feature labels.",
+        "zh": "当前文档把浏览器设计器称为 Jitterbit Studio，并列出旧名 Integration Studio 与 Cloud Studio。Harmony 范围更广，API Manager、App Builder、EDI 各有职责。定价页也将 iPaaS 与 App Builder 分开，并把 API Manager 能力列为附加项。询价前，应明确需求是数据集成、受管理的 API、内部应用还是交易伙伴 EDI；它们相互关联，但不能互换成一组功能标签。",
+        "source_refs": ["studio", "home", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "execution",
+        "title_en": "An operation joins endpoint activities and processing",
+        "title_zh": "Operation 组合端点活动与数据处理",
+        "en": "An operation is the independently executed and recorded unit within a workflow. A configured connection supplies activities for an endpoint; an activity can provide source data or receive target data. Transformations and scripts provide processing between them, subject to valid operation patterns. For a hypothetical order handoff, fetch approved orders, map order_id and line items into the destination schema, then invoke the destination create operation. Decide how the returned destination ID will be retained before adding another downstream action. This design example was not executed.",
+        "zh": "Operation 是工作流中独立执行并记录的单元。配置好的连接提供端点活动，活动可作为数据源或接收数据的目标；转换和脚本在其间处理数据，并需符合有效操作模式。以假设订单交接为例，先获取已批准订单，把 order_id 与明细映射到目标 schema，再调用目标创建操作。增加下游动作前，还应确定如何保留目标返回的 ID。本例未实际执行。",
+        "source_refs": ["operations"],
+        "evidence_type": "documented_model_with_hypothetical_example"
+      },
+      {
+        "id": "schema",
+        "title_en": "Mapping includes cardinality and iteration",
+        "title_zh": "映射也包含出现次数与迭代关系",
+        "en": "The transformation guide requires a target schema, while a source schema can be optional when using variables or custom logic. Fields carry types and cardinality; repeating structures use loop nodes. Visual mappings are represented by scripts on target fields. For the proposed order example, distinguish one order header from several line items, test an empty optional field and inspect whether the loop creates the intended number of output items. A successful field-name match cannot establish the correctness of the parent/child relationship or required values.",
+        "zh": "转换指南要求目标 schema；使用变量或自定义逻辑时，源 schema 可省略。字段包含类型与出现次数要求，重复结构通过 loop node 处理，可视化映射底层表现为目标字段脚本。在订单示例中，应区分一个订单头与多条明细，测试可选字段为空的情况，并检查循环产生的输出明细数量。字段名匹配成功不能证明父子关系或必填值正确。",
+        "source_refs": ["transforms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Select an agent for connectivity, not just hosting preference",
+        "title_zh": "按连接条件选择 Agent",
+        "en": "Cloud Agents do not support every connector, local-file access or listening activity. Private Agents provide a different connectivity scope but require installation, configuration, upgrades and monitoring. Private Agent Groups are a licensable addition; an environment must be assigned to the appropriate group. Multiple agents do not make local storage shared: the documentation warns that any eligible agent may receive the chain. For local-file endpoints, ensure all relevant agents can reach common storage. This research did not install agents or verify network reachability.",
+        "zh": "Cloud Agent 并不支持全部连接器、本地文件访问或监听活动。Private Agent 提供不同的连接范围，但需自行安装、配置、升级及监控；Private Agent Group 还涉及许可，环境需关联到适当组。多个 Agent 不会自动共享本地存储：文档指出操作链可能分配给任一合适 Agent。本地文件端点应确保相关 Agent 都能访问公共存储。本文未安装 Agent，也未核实网络可达性。",
+        "source_refs": ["agents"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Run and Deploy and Run can execute different logic",
+        "title_zh": "Run 与 Deploy and Run 可能执行不同逻辑",
+        "en": "Run uses the latest deployed operation and dependencies; it does not include subsequent designer edits. Deploy and Run deploys valid changes and then executes, including linked downstream operations. Deployment validation can reject invalid operations, but passing it is not evidence that a destination accepted the intended business data. In testing, record the environment and deployed version, send a representative input, and inspect operation logs plus destination state. A cancellation request is also not a guarantee that an already submitted operation stops.",
+        "zh": "Run 使用最近部署的 Operation 及依赖，不包含之后在设计器中的编辑；Deploy and Run 先部署有效变更，再执行并带动关联的下游操作。部署校验可拒绝无效 Operation，但校验通过不证明目标接受了预期业务数据。测试时应记录环境与部署版本，提交代表性输入，并对照操作日志及目标状态。取消请求也不保证已提交操作一定停止。",
+        "source_refs": ["deploy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Model cleanup and empty-source behavior explicitly",
+        "title_zh": "明确补偿操作与空数据源行为",
+        "en": "The Actions tab can invoke another operation or send an email on failure, and chain processing on success. SOAP Fault handling applies only to documented SOAP/Salesforce-related activity types. A source operation with no matching files does not fire its success action by default; the relevant option changes that behavior. At most one Run Operation and one email action are supported per condition in this guide, so more involved handling needs an intentional chain. Design a compensating operation from actual destination state; adding an On Fail link does not create a distributed transaction across SaaS applications.",
+        "zh": "Actions 可在失败时运行另一 Operation 或发送邮件，在成功时串接处理。SOAP Fault 处理仅适用于文档列出的 SOAP／Salesforce 相关活动。源操作未找到匹配文件时，默认不会触发成功动作，需要对应选项才能改变行为。指南中每个条件最多关联一个 Run Operation 与一个邮件动作，更复杂处理需明确串接。补偿操作应依据目标实际状态设计；添加 On Fail 连线不会让多个 SaaS 获得分布式事务。",
+        "source_refs": ["errors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Request a scope-specific annual quote",
+        "title_zh": "按实际范围索取年度报价",
+        "en": "The official pricing page requires a quote and states that all products use an annual contract. Its iPaaS comparison shows Standard, Professional and Enterprise with different connection, environment, agent and support entitlements. It separately lists enterprise connections, extra private agents, additional connections, EDI and premium message queues as optional or add-on scope. No numeric subscription price was established. Supply the systems, environments, execution locations and support requirement when asking for a quote; a connection count alone does not define a production workload or its total cost.",
+        "zh": "官方定价页要求询价，并说明所有产品采用年度合同。iPaaS 对比表列出 Standard、Professional、Enterprise，连接、环境、Agent 与支持范围不同；企业连接、额外 Private Agent、额外连接、EDI 及高级消息队列另有可选或附加范围。本次未确认订阅金额。询价时应提供系统、环境、执行位置及支持要求；仅连接数量不能定义生产负载或总费用。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "The integration lifecycle needs an engineering owner",
+        "title_zh": "集成生命周期需要工程负责人",
+        "en": "Jitterbit merits evaluation for teams joining SaaS and private systems while maintaining explicit schemas, environments and operation chains. It is a weaker fit if the team expects every browser configuration to run without deployment or agent planning. Assign ownership for app credentials, schemas, agent upgrades and failure reconciliation. Official documentation establishes a commercial platform path, but a permissive source-code license or free self-hosted platform was not established; running a Private Agent is not evidence of either entitlement. No throughput, restoration or business savings were measured.",
+        "zh": "当团队需要连接 SaaS 与私有系统，并维护明确 schema、环境及操作链时，Jitterbit 值得评估。如果期望浏览器中的每次配置都无需部署或 Agent 规划即可运行，则适用性较弱。应明确应用凭据、schema、Agent 升级及失败对账的负责人。官方资料说明商业平台路径，本次未确认宽松源码许可或免费自托管平台；运行 Private Agent 不能证明拥有这些权限。本文未测吞吐、恢复或业务节省。",
+        "source_refs": ["studio", "agents", "pricing"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Jitterbit: Harmony iPaaS, Studio Operations, Agents and Pricing",
+    "title_zh": "Jitterbit：Harmony iPaaS、Studio Operation、Agent 与定价",
+    "description_en": "Understand Jitterbit Studio transformations, Cloud versus Private Agents, deployment behavior, error chains and annual quote scope.",
+    "description_zh": "理解 Jitterbit Studio 转换、Cloud 与 Private Agent、部署行为、错误处理链及年度报价范围。",
+    "primary_intent": "Evaluate the Studio/iPaaS integration lifecycle and runtime responsibilities.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Subscription amount, exact contract entitlements, source-code license, selected connector permissions, region-specific purchasing and UI languages remain unverified.",
+      "zh": "订阅金额、具体合同权限、源码许可、所选连接器权限、地区购买条件及界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Agent install, throughput, recovery and cancellation behavior were not tested.",
+      "zh": "未实测 Agent 安装、吞吐、恢复及取消行为。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

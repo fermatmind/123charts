@@ -1,0 +1,424 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "helpshift-e6683d88",
+  "name": "Helpshift",
+  "website_url": "https://www.helpshift.com/",
+  "domain": "www.helpshift.com",
+  "identity_domain": "helpshift.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Helpshift is currently positioned as a gaming-focused player platform. Its Support solution combines in-game help and messaging, a shared agent workspace, workflow automation, Care AI and optional human services. Engagement, Trust & Safety and Community are separately activated solution areas, not automatically entitlements of a chat subscription.\n\nAn illustrative missing-reward request should carry the correct player identity and game context into approved knowledge, controlled actions and a human fallback. Installing a widget, identifying a player and authorizing an account change are separate steps. Current modular pricing requires a quote; the old directory starting price is not retained as current. This is public-documentation research without SDK installation, a player session, AI action, purchase or recovery test.",
+  "description_zh": "Helpshift当前定位为聚焦游戏的玩家平台。Support方案结合游戏内帮助及消息、共享客服工作区、工作流、Care AI及可选人工服务。Engagement、Trust & Safety和Community是分别启用的方案领域，不自动属于聊天订阅权益。\n\n以假设奖励未到账请求为例，应让正确玩家身份及游戏上下文进入获准知识、受控动作及真人回退。安装组件、识别玩家和授权账户变更是不同步骤。当前模块化价格需询价，不保留目录旧起价为当前事实。本稿研究公开文档，未安装SDK、运行玩家会话、AI动作、购买或恢复测试。",
+  "core_features": [
+    {
+      "name_en": "Embedded player support",
+      "name_zh": "嵌入玩家支持",
+      "explanation_en": "Expose help and messaging within the game or website with player context.",
+      "explanation_zh": "在游戏或网站内提供带玩家上下文的帮助及消息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "support",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Authenticated User Hub integration",
+      "name_zh": "认证User Hub集成",
+      "explanation_en": "Use a domain-enabled Identity System and server-signed JWTs with matching configured identifiers.",
+      "explanation_zh": "使用域名已启用的身份系统，以及与配置标识匹配的服务器签名JWT。",
+      "explanation_scope": "product_specific",
+      "source_ref": "identity",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured AI resolution procedures",
+      "name_zh": "配置式AI解决程序",
+      "explanation_en": "Define approved knowledge,operating steps,actions,escalation and failure behavior.",
+      "explanation_zh": "定义获准知识、操作步骤、动作、升级及失败行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "care",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Human escalation with context",
+      "name_zh": "带上下文真人升级",
+      "explanation_en": "Agents can receive the issue summary,attempted steps and prior actions when AI escalates.",
+      "explanation_zh": "AI升级时客服可收到问题摘要、尝试步骤及先前动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "care",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot in-game purchase/reward support with verified identity and bounded action authority.",
+      "Compare self-operated technology/AI with a specifically scoped human-support service."
+    ],
+    "zh": [
+      "以核实身份及限定动作权限试点游戏内购买／奖励支持。",
+      "比较自运技术／AI与明确范围的人工支持服务。"
+    ],
+    "source_refs": ["support", "care", "pricing"],
+    "basis": "Editorial scenarios, not verified resolution rates or player retention."
+  },
+  "technical_details": {
+    "User Hub prerequisites": {
+      "en": "The Identity System must be enabled for the domain. WebChat requests server-issued JWTs;identifier mismatches fail login and reauthentication has a documented five-second response window.",
+      "zh": "域名须启用身份系统。Web Chat请求服务器签发JWT，标识不匹配会登录失败，再认证有文档所列5秒响应窗口。",
+      "source_ref": "identity",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Game player-support lead",
+      "Live-service operations owner",
+      "Game integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "support"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "ChooseSupportandtheactualtechnology/AI/human scope;agreeusageandregionalrequirements.",
+        "zh": "选择Support及真实技术／AI／人工范围，确定用量及地区要求。",
+        "source_refs": ["pricing", "support"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "EnableWebChat,installthecorrectapp/domainembed andconfigureUserHubJWTandlogoutisolation.",
+        "zh": "启用Web Chat，安装正确应用／域名嵌入，配置User Hub JWT及退出隔离。",
+        "source_refs": ["start", "identity"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Previewoneapprovedprocedurewithidentityfailure,missingrewardrecord,deniedactionandhumanfallback.",
+        "zh": "预览一个获准程序，覆盖身份失败、奖励记录缺失、动作拒绝及真人回退。",
+        "source_refs": ["care", "ai-terms"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "VerifyAItransparency,permittedplayerdata,providerprocessingandrepresentativeexportbeforelaunch.",
+        "zh": "上线前验证AI披露、允许玩家资料、提供商处理及代表性导出。",
+        "source_refs": ["ai-terms", "terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website Web Chat",
+        "source_ref": "start",
+        "scope": "App must includeWebChat;domain/platformId and ShowWidgettoggleconfigured;runtimelistenersrecommended."
+      },
+      {
+        "name": "User Hub JWT endpoint",
+        "source_ref": "identity",
+        "scope": "ServergeneratesJWTwithsharedsecret;notanunauthenticatedfrontendidentityassertion."
+      },
+      {
+        "name": "Game procedure/actions",
+        "source_ref": "care",
+        "scope": "Configuredstudioactionsandfallbacks;actualgameAPIpermission,idempotencyandrollbackunverified."
+      }
+    ],
+    "source_ref": "start"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Care AI sales claims do not establish an implemented grant/refund connector or a tested rollback.",
+        "zh": "Care AI销售主张不能证明已实现发奖／退款连接器或已测回滚。",
+        "source_refs": ["care", "support", "ai-terms"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "June2026AIterms require keeping children’s personal data out of the covered AI Products and third-party providers; gaming positioning is not blanket permission.",
+        "zh": "2026年6月AI条款要求儿童个人资料不进入所覆盖AI产品及第三方提供商，游戏定位不等于全面允许。",
+        "source_refs": ["ai-terms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The new User Hub and explicitly legacy user-identification guide are different integration routes.",
+        "zh": "新User Hub与明确标旧的用户识别指南是不同集成路线。",
+        "source_refs": ["identity", "legacy"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.helpshift.com/legal/terms/",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Currentmodularcustomquote:interactionvolume,activatedsolutions,technology/AI/humanmixandgeography/languages. Noverifiedperseat/perresolutionunitrateortrial.",
+    "source_snapshot_en": "No public numeric rate on currentpricingpage. Support,Engagement,Trust&Safety,Communitycanbeactivatedindependentlyortogether. Conversation/messagevolume,capabilitiesandregionalcoverageaffectquote;minimums,overage,AIunitdefinitionandhumanstaffingcostunknown.",
+    "source_snapshot_zh": "当前价格页无公开数字单价。Support、Engagement、Trust & Safety及Community可独立或组合启用。会话／消息量、能力及地区覆盖影响报价；最低量、超额、AI单位定义及人工值守成本未知。",
+    "checked_at": "2026-10-22T12:56:42.194290+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does adding the widget authenticate a player?",
+      "question_zh": "添加组件就认证玩家了吗？",
+      "answer_en": "No. User Hub requires domain enablement and a correctly implemented server JWT flow. Test identifier mismatch,reauthentication and shared-device logout separately.",
+      "answer_zh": "不是。User Hub需域名启用及正确服务器JWT流程，应分别测试标识不匹配、再认证及共享设备退出。",
+      "source_refs": ["start", "identity"]
+    },
+    {
+      "question_en": "Does the gaming platform permit every player’s data in AI?",
+      "question_zh": "游戏平台就允许所有玩家资料进入AI吗？",
+      "answer_en": "No. The current Product Specific Terms impose data/transparency constraints and prohibit children’s personal data in the covered AI processing. Determine the actual user/data flow before enabling it.",
+      "answer_zh": "不是。当前产品专属条款有数据／披露限制，并禁止儿童个人资料进入所覆盖AI处理，启用前需确认真实用户及资料流程。",
+      "source_refs": ["ai-terms"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/helpshift",
+      "read_at": "2026-10-22T08:57:21.727Z",
+      "excerpt_sha256": "9bdca0043782346ac20a3e0e6c22097db33ee96fbcd2960c09b1554ed805b868",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "support",
+      "type": "official_documentation",
+      "site": "Player Support Platform For Gaming | AI-Powered Support",
+      "title": "Player Support Platform For Gaming | AI-Powered Support",
+      "url": "https://www.helpshift.com/solution/support/",
+      "read_at": "2026-10-22T12:55:44.024704+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1eebada838e1d606d5ef1dc1f0eea6059c5fc1063f904e2aea1b40a67bd962dd",
+      "research_notes_en": "Current gaming support scope: embedded help,messaging,agent workspace,automation and optional human expertise; outcomes/translation counts not independently validated."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing | Helpshift",
+      "title": "Pricing | Helpshift",
+      "url": "https://www.helpshift.com/pricing/",
+      "read_at": "2026-10-22T12:55:45.569067+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a211af43299c4a7be6830e01aff8549ddac83ccd014921d51ca3f4b7ab872cec",
+      "research_notes_en": "Current modular quote based on interaction volume,solutions,technology/AI/humans and geography/languages; no numeric universal rate."
+    },
+    {
+      "id": "care",
+      "type": "official_documentation",
+      "site": "Care AI Agent | Helpshift",
+      "title": "Care AI Agent | Helpshift",
+      "url": "https://www.helpshift.com/platform/ai/care-ai-agent/",
+      "read_at": "2026-10-22T12:55:46.816333+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e2fe62c5a302f3a5df969701efbe252b3456d38342511f881f93b9d8c853e773",
+      "research_notes_en": "Configured knowledge/procedures/actions,preview and contextual human escalation; real backend grant/refund semantics not established by marketing."
+    },
+    {
+      "id": "start",
+      "type": "official_documentation",
+      "site": "Getting Started | Helpshift Developer Guide",
+      "title": "Getting Started | Helpshift Developer Guide",
+      "url": "https://developers.helpshift.com/web-chat/getting-started/",
+      "read_at": "2026-10-22T12:56:41.457713+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "66586dadc74258d9d93728e8e258f3eac863c488cb7b5201925ec4789e971328",
+      "research_notes_en": "EnableWebChatplatform,domain/platformId/embed,visibility toggle,runtime error listener and supported latest browsers."
+    },
+    {
+      "id": "identity",
+      "type": "official_documentation",
+      "site": "User Hub | Helpshift Developer Guide",
+      "title": "User Hub | Helpshift Developer Guide",
+      "url": "https://developers.helpshift.com/web-chat/identity-users/",
+      "read_at": "2026-10-22T12:56:42.194290+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "399191358e07509f0af68a24898dba90dcda3a6a3da8e2717dee3f0020ffca60",
+      "research_notes_en": "Newdomain-enabledUserHub,serverJWT,onLoginRequestmatching/reverify5secondtimeout,fullprivacy and logout/anonymous reset."
+    },
+    {
+      "id": "legacy",
+      "type": "official_documentation",
+      "site": "User Identification & Management | Helpshift Developer Guide",
+      "title": "User Identification & Management | Helpshift Developer Guide",
+      "url": "https://developers.helpshift.com/web-chat/users/",
+      "read_at": "2026-10-22T12:56:41.400894+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "874c31e77d64afbcddb6cdb953e929152ce714fbeb161ff03b0415e0d8c639f3",
+      "research_notes_en": "Explicit legacy identification route; not interchangeable with UserHubJWT. Shared-browser isolation and identifier caveats."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms | Helpshift",
+      "title": "Terms | Helpshift",
+      "url": "https://www.helpshift.com/legal/terms/",
+      "read_at": "2026-10-22T12:56:18.468781+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "adfcef3dadb4daa98828b17b9303e2e25beb6a6a94d1029ddfb16207fbff1573",
+      "research_notes_en": "March16 2026enterprise licensedproducts/authorizedusers/orderformscope;selected proprietarylicense,not fullcommercial/DPAreview."
+    },
+    {
+      "id": "ai-terms",
+      "type": "official_documentation",
+      "site": "Product Specific Terms | Helpshift",
+      "title": "Product Specific Terms | Helpshift",
+      "url": "https://www.helpshift.com/legal/product-specific-terms/",
+      "read_at": "2026-10-22T12:56:19.966180+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2737a682db99f127db12caa5ad5712a8a3577a502a4939dbc11f5179dfd5c39a",
+      "research_notes_en": "June2026AIproviders,verification/transparency,childrenpersonaldata prohibition,agent-action responsibility,masking limits and DSR human fallback;material boundaries to marketing."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:56:42.194290+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "support",
+    "pricing",
+    "identity",
+    "care",
+    "ai-terms"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "gaming-scope",
+        "title_en": "Select player support within the wider platform",
+        "title_zh": "在更广平台中选定玩家支持",
+        "en": "Helpshift’s current public site combines four solution areas:Support,Engagement,Trust & Safety and Community. Support brings embedded help,messaging,agent tools,automation and optional human operations together. That is wider than the imported live-chat category,and the category alone should not drive a generic website-widget comparison. Separately activated modules and human services require the chosen commercial scope.\n\nFor a hypothetical missing-reward case,the desired result is an owned,verified support outcome:the right player,correct game/session context,approved policy,a bounded action or human review,and a clear final record. A sales statement about autonomous resolution does not demonstrate that a particular game backend has been connected. Published savings,CSAT,automation percentages and no-hallucination language are vendor claims,not measured outcomes or guarantees in this profile.",
+        "zh": "Helpshift当前公开网站组合Support、Engagement、Trust & Safety及Community四领域。Support汇集嵌入帮助、消息、客服工具、自动化及可选人工运营，范围大于导入的在线聊天分类，不能仅按分类作通用网站组件比较。分别启用模块和人工服务需按所选商业范围。\n\n以假设奖励未到账为例，目标是明确归属且核实的支持结果：正确玩家、游戏／会话上下文、获准策略、限定动作或人工审查，以及清晰最终记录。自主解决销售主张不证明特定游戏后端已连接。公布节约、CSAT、自动化比例及不幻觉措辞属于厂商主张，不是本稿测量或保证。",
+        "source_refs": ["support", "pricing", "care"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "webchat-identity",
+        "title_en": "Build the identity flow before trusting conversation continuity",
+        "title_zh": "信任对话连续性前先实现身份流程",
+        "en": "The Web Chat guide requires adding that platform to the app,using the correct domain/platformId embed and enabling Show Web Chat Widget. It recommends a runtime-error listener; a visible widget alone does not prove correct identity or a working support session. The new User Hub must be enabled for the domain and needs an endpoint that supplies signed JWTs on demand.\n\nThe browser listens for onLoginRequest,obtains a server-generated token and logs in with identifiers matching the configuration. The shared secret belongs on the server. Reverification can occur during suspicious activity or expiry; the guide gives a five-second callback window before showing session-expired state. Tokens must be fresh within the documented24-hour window. Test a slow endpoint,mismatched account and token refresh before assuming cross-device history is reliable. The older identification/HMAC guide is explicitly legacy and should not be mixed into User Hub without a migration plan.",
+        "zh": "Web Chat指南要求应用增加该平台、使用正确域名／platformId嵌入，并开启显示组件。它建议监听运行时错误；组件可见不证明身份正确或支持会话有效。新User Hub须为域名启用，并需要按需供签名JWT的端点。\n\n浏览器监听onLoginRequest，获取服务器令牌，以与配置匹配的标识登录，共享密钥应放服务器。可因可疑活动或过期再认证，指南给5秒回调窗口，超时展示会话过期；令牌须满足所列24小时新鲜度。应测试慢端点、账户不匹配和刷新，再依赖跨设备历史。旧识别／HMAC指南明确标旧，不能无迁移方案混入User Hub。",
+        "source_refs": ["start", "identity", "legacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "privacy-logout",
+        "title_en": "Full privacy and logout have concrete identity effects",
+        "title_zh": "完整隐私及退出有具体身份效果",
+        "en": "In User Hub,full_privacy_enabled with a userId uses that ID,but with no userId it creates an anonymous identity rather than using email as the only identifier. Invalid or omitted privacy values default to false. Reusing an identifier for different players risks incorrect association; privacy mode is not a substitute for correct account mapping.\n\nWhen changing users,the guide says to log out,update configuration and trigger the new login. Logout clears user-specific config and resets to an anonymous user; whether that is the old anonymous identity or a new one depends on clearAnonymousUserOnLogin. Check a shared device with two accounts and an anonymous session. Do not assume the game’s logout automatically isolates Helpshift history. SDK versions and other platforms have their own guides; this Web Chat procedure was not executed or generalized into a tested Unity/mobile integration.",
+        "zh": "User Hub中full_privacy_enabled为真且有userId时使用该ID；若无userId，则创建匿名身份，不会只用邮箱。无效或省略隐私值默认false。不同玩家复用标识会有错误关联风险，隐私模式不能替代正确账户映射。\n\n切用户时，指南要求先退出、更新配置，再触发新登录。退出清除用户专用配置并恢复匿名，旧匿名还是新匿名由clearAnonymousUserOnLogin决定。需用两个账户及匿名会话测试共享设备，不能假设游戏退出自动隔离Helpshift历史。SDK版本和其他平台各有指南，此Web Chat程序未实际执行，也未泛化为已测Unity／移动集成。",
+        "source_refs": ["identity", "legacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-procedure",
+        "title_en": "Specify actions, failure and human ownership",
+        "title_zh": "明确动作、失败及真人归属",
+        "en": "Care AI’s public configuration includes approved knowledge,general instructions,scenario procedures,actions,escalation and fallback. Its preview is intended to check responses,policies,procedure execution and edge cases. The product describes agents observing conversations,taking over and receiving an issue summary with actions already attempted. Those are useful evaluation points,not proof of correct authorization or rollback.\n\nPilot a narrow missing-reward procedure:verify the player and ledger,limit eligible rewards,handle a failed backend call and pass unresolved work to a named human. The current AI terms separately assign the customer responsibility for authorized system access,final testing,rulebook correctness and production supervision. They also require a human fallback for privacy/data-subject requests,and describe masking as not guaranteed fully accurate. A drafted refund answer and an executed monetary or inventory action need different verification.",
+        "zh": "Care AI公开配置包含获准知识、通用说明、场景程序、动作、升级及回退，预览用于检查回答、策略、程序执行和边界。产品描述客服观察、接管并收到已尝试动作摘要。这些是有用评估点，不证明授权正确或可回滚。\n\n应试点窄范围奖励未到账程序：核对玩家及账本、限制可补奖励、处理后端调用失败，并将未解决事项交具名真人。当前AI条款另将系统授权、最终测试、规则正确和生产监督责任交客户，并要求隐私／数据权利请求走真人回退，且不保证遮罩完全准确。起草退款回答与执行资金／物品动作需要不同验证。",
+        "source_refs": ["care", "ai-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-data",
+        "title_en": "Read the product terms behind safety and language claims",
+        "title_zh": "核对安全及语言主张背后的产品条款",
+        "en": "June2026Product Specific Terms identify different providers:Care AI and AI Answers use Google Vertex,while certain Copilot summary/reply/compose features use OpenAI. Selecting one feature does not establish the same data path for all. The terms require evaluating AI content,disclosing AI interaction and not presenting generated output as human. They distinguish an agent’s actions from generated Outputs.\n\nA material gaming boundary is the restriction on children’s personal data:the terms require keeping personal data of children under eighteen or the applicable digital-consent age out of covered AI Products and third-party LLM processing. Marketing compliance labels do not override that condition. The Support page also gives inconsistent70+and150+translation counts; neither is a verified full UI language list. Confirm the actual audience,data routing,provider terms,masking and human escalation for the selected feature. No data was sent to an AI system here.",
+        "zh": "2026年6月产品条款列不同提供商：Care AI和AI Answers用Google Vertex，部分Copilot摘要／回复／润色用OpenAI，选一功能不确定全部数据路径相同。条款要求评估AI内容、披露AI互动，且不将生成输出当真人，并区分代理动作与生成Outputs。\n\n对游戏业务的重要边界是儿童个人资料限制：条款要求18岁以下或当地数字同意年龄儿童的个人资料，不进入所覆盖AI产品及第三方LLM处理。营销合规标签不覆盖该条件。Support页另同时列70多与150多翻译语言，都不是核实过的完整界面语言表。需按所选功能确认受众、数据路由、提供商条款、遮罩及真人升级。此次未向AI系统发送资料。",
+        "source_refs": ["ai-terms", "support"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Budget modular service and integration work",
+        "title_zh": "计算模块服务及集成工作成本",
+        "en": "Current pricing is customized by conversations/messages,activated solutions,the technology/AI/human mix,and geography/language coverage. It publishes no universal cash rate,per-seat fee,AI-resolution definition or permanent-free entitlement. That replaces the directory’s historical starting price. A combined platform sales statement does not eliminate your own SDK,JWT,game-backend,knowledge-maintenance and rollout work.\n\nThe March2026Enterprise Terms license selected products to authorized users for the Order Form scope and period. Orders may override the general terms; existing customers can have different effective dates. The hosted licensed product is proprietary,not made open source by published SDK guides. Before commitment,agree usage units,minimums,overage,human staffing,AI providers,export/attachment coverage and termination retrieval. Complete backup/restore,refund handling,service levels and current regional entitlement were not established or tested in this research.",
+        "zh": "当前定价按会话／消息、启用方案、技术／AI／人工组合及地区／语言定制，没有通用现金单价、每席费、AI解决单位定义或永久免费权益，取代目录历史起价。组合平台销售陈述不会消除自身SDK、JWT、游戏后端、知识维护及上线工作。\n\n2026年3月Enterprise Terms按订单范围和期间向授权用户许可所选产品，订单可优先一般条款，老客户生效日也可能不同。托管许可产品不会因公开SDK指南变开源。承诺前须确定用量单位、最低量、超额、人工值守、AI提供商、导出／附件及终止取回。完整备份／恢复、退款处理、服务等级和当前地区权益，此研究未确定或测试。",
+        "source_refs": ["pricing", "terms", "identity"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Helpshift: Player Support, User Hub Identity, Care AI and Modular Pricing",
+    "title_zh": "Helpshift：玩家支持、User Hub身份、Care AI及模块报价",
+    "description_en": "Evaluate Helpshift gaming support, server-JWT identity, shared-device logout, AI actions and human fallback, child-data restrictions and custom pricing.",
+    "description_zh": "评估Helpshift游戏支持、服务器JWT身份、共享设备退出、AI动作与真人回退、儿童数据限制及定制价格。",
+    "primary_intent": "Evaluate Helpshift player-support integration and operational scope.",
+    "secondary_questions": [
+      "Does the widget authenticate players?",
+      "How are AI actions authorized?",
+      "What determines the current quote?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,SDK,JWT,playerchat,AI,backendaction,quote,purchase,exportorrestoretested. Exactunitprices/minimums,featureentitlement,AIactionidempotency/rollback,region,retention,completebackup,fullUIlanguages,DPAandselectedOrderFormunverified.",
+      "zh": "未测试租户、SDK、JWT、玩家聊天、AI、后端动作、报价、购买、导出或恢复。准确单位价／最低量、功能权益、AI动作幂等／回滚、地区、留存、完整备份、完整界面语言、DPA及所选订单未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

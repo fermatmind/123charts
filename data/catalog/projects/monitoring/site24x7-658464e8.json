@@ -1,0 +1,378 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "site24x7-658464e8",
+  "name": "Site24x7",
+  "website_url": "https://www.site24x7.com/",
+  "domain": "www.site24x7.com",
+  "identity_domain": "site24x7.com",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Site24x7 continues as a standalone cloud platform for website and digital experience monitoring. Its observability offering has been renamed OpManager Nexus, combining the former cloud and on-premises offerings. The official announcement says existing deployments, agreements, APIs and support continue without migration; retained Site24x7 documentation remains relevant to those customers.\n\nFor an existing network-monitoring deployment, the documented workflow uses a local On-Premise Poller and sends measurements to the cloud service. Evaluate poller failure, standby reachability and report access alongside device health. A failed observation point and a failed target device are different conditions.",
+  "description_zh": "Site24x7 继续作为独立云平台提供网站与数字体验监控；其观测产品已更名为 OpManager Nexus，结合原云端与本地方案。官方公告说明现有部署、协议、API 与支持无需迁移而继续，保留的 Site24x7 文档仍适用于这些客户。\n\n现有网络监控的文档流程通过本地 On-Premise Poller 将测量发送至云服务。除设备健康外，还需评估轮询器故障、备用端可达性及报告访问。观察点失败与目标设备失败是不同情况。",
+  "core_features": [
+    {
+      "name_en": "URL and content checks",
+      "name_zh": "URL 与内容检查",
+      "explanation_en": "Check an HTTP/HTTPS URL against configured content and header expectations.",
+      "explanation_zh": "按内容及响应头预期检查 HTTP／HTTPS URL。",
+      "explanation_scope": "product_specific",
+      "source_ref": "website",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Private-network polling",
+      "name_zh": "私网轮询",
+      "explanation_en": "An On-Premise Poller collects internal resource measurements and sends them to Site24x7.",
+      "explanation_zh": "On-Premise Poller 采集内部资源测量并发送至 Site24x7。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Device and interface thresholds",
+      "name_zh": "设备与接口阈值",
+      "explanation_en": "Network thresholds can classify a device and its child attributes independently.",
+      "explanation_zh": "网络阈值可分别对设备及子属性分类。",
+      "explanation_scope": "product_specific",
+      "source_ref": "network",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Licensed standby polling",
+      "name_zh": "按许可提供备用轮询",
+      "explanation_en": "High availability assigns a standby poller under Enterprise/MSP Enterprise editions.",
+      "explanation_zh": "Enterprise／MSP Enterprise 提供备用轮询器高可用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ha",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate website/DEM separately from the observability product transition.",
+      "Rehearse an existing network poller outage, standby path and scoped-report access with test resources."
+    ],
+    "zh": [
+      "将网站／数字体验评估与观测产品过渡分别核对。",
+      "用测试资源演练现有网络轮询器故障、备用路径及受限报告访问。"
+    ],
+    "source_refs": ["home", "poller", "ha", "roles"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Website reliability teams",
+      "Existing Site24x7 network administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "For website monitoring, select a test URL/method and expected content; review optional response logging and monitor-credit effects.",
+        "zh": "网站监控先选择测试 URL／方法及预期内容，检查可选响应记录与监控额度影响。",
+        "source_refs": ["website"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm the intended product and plan, then associate a small authorized resource set with its poller/location profile.",
+        "zh": "确认目标产品及方案，再将获准小型资源集关联轮询器／地点配置。",
+        "source_refs": ["home", "pricing", "poller"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test target and poller failures separately; review standby reachability, saved reports and resource add-ons.",
+        "zh": "分别测试目标及轮询器故障，检查备用可达性、已保存报告及资源附加项。",
+        "source_refs": ["poller", "ha", "roles", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "HA availability depends on edition and standby connectivity; it is not instant proof of continuity.",
+        "zh": "HA 依版本及备用连接而定，不能立即证明连续性。",
+        "source_refs": ["ha"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Report changes by a Super Admin can expand what a group-scoped admin can access.",
+        "zh": "Super Admin 修改报告可能扩大分组管理员可访问内容。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Response/header logging can store sensitive content and consumes AppLogs capacity.",
+        "zh": "响应／头记录可能存储敏感内容，并消耗 AppLogs 容量。",
+        "source_refs": ["website"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:34:39.852681Z",
+    "normalized_monthly_price": null,
+    "summary_en": "The price page advertises limited free uptime monitoring for up to 50 resources and separately priced website, infrastructure, all-in-one and MSP offerings. The All-in-one Professional example is $42/month paid annually ($49 monthly) with stated resource allowances;10 additional network components list $11/month for that plan. The observability rename preserves existing agreements; obtain the intended current offer and HA entitlement.",
+    "summary_zh": "价格页宣传至多五十资源的受限免费 uptime，并分别列网站、基础设施、All-in-one、MSP。All-in-one Professional 示例为年付折月 $42（月付 $49），附指定资源量；该方案额外十网络组件列每月 $11。观测更名保留现有协议，仍需取得目标产品当前报价及 HA 权益。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/site24x7",
+      "read_at": "2026-10-22T08:57:07.999Z",
+      "excerpt_sha256": "7dbc9da7eb0ec8481afbf48e5770c74f2548416788bc8fbe70efd3db8f11ea13",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "Site24x7 Observability is now OpManager Nexus | Site24x7",
+      "url": "https://www.site24x7.com/product-announcement.html?src=head-top",
+      "read_at": "2026-10-22T15:39:53.572452Z",
+      "excerpt_sha256": "d0288fcd7b97ff754ff82dab27dd9c7f13e8d00309f8ee29997c09fb4ac490d5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read original announcement: Site24x7 continues website/DEM; observability becomes OpManager Nexus, existing agreements/APIs unchanged."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Site24x7",
+      "title": "Site24x7 Pricing | Plans Starting From Just $9/Month",
+      "url": "https://www.site24x7.com/site24x7-pricing.html",
+      "read_at": "2026-10-22T15:34:39.852681Z",
+      "excerpt_sha256": "67d19373c5f4dc884f7dc22df17dac55568650028762398e7b3737c94347930a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual annual/monthly plan labels, monitor/component allowances, free uptime offer and add-ons; no blank per-resource amount inferred."
+    },
+    {
+      "id": "network",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "Network performance monitoring | Site24x7 Online Help",
+      "url": "https://www.site24x7.com/help/network-metrics/network-performance.html?src=hlp-lft-nav",
+      "read_at": "2026-10-22T15:38:19.156465Z",
+      "excerpt_sha256": "058010d779e3e24b25ba00a70fcebcfa3de73ee9b92f392a8136a1a8e2a7dda0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read retained network guide: On-Premise Poller/SNMP prerequisites, device/interface thresholds and separately unmonitored devices."
+    },
+    {
+      "id": "poller",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "Adding On-Premise Poller | Online Help Site24x7",
+      "url": "https://www.site24x7.com/help/admin/adding-a-monitor/on-premise-poller.html?src=hlp-lft-nav",
+      "read_at": "2026-10-22T15:36:25.458175Z",
+      "excerpt_sha256": "aeb62862b1ed343e0cb066783556853cc1336989da0bd20d31301eb44ebf4ebc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read poller failure state, location associations and dependent-server alert suppression."
+    },
+    {
+      "id": "ha",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "High Availability On-Premise Poller | Site24x7 Online Help",
+      "url": "https://www.site24x7.com/help/getting-started/high-availability-on-premise-poller.html",
+      "read_at": "2026-10-22T15:38:36.725527Z",
+      "excerpt_sha256": "9ade78c2fb890d89269fe93498ac2e6b0bf4f6dd76b6397a0f5c21e1b94507b1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Enterprise/MSP Enterprise licensing,3-poll confirmation and standby reachability caveats."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "Role Based Access Permissions | Site24x7 Online Help",
+      "url": "https://www.site24x7.com/help/admin/user-management/role-based-access-permissions.html",
+      "read_at": "2026-10-22T15:38:55.375694Z",
+      "excerpt_sha256": "9810ee72d0457b446f9fa54b84252b589bcf91d5a602eb60ec7e5b8ed5107ac8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Zoho Organization versus Site24x7 roles and scheduled/public-report scope caveat."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "What is On-Premise Poller | Site24x7 Online Help",
+      "url": "https://www.site24x7.com/help/getting-started/on-premise-poller.html",
+      "read_at": "2026-10-22T15:37:58.553884Z",
+      "excerpt_sha256": "3e098fb0664096a40acf2497fe7222395b5cb11c9d4b4e1838a9982201d4e7c0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read internal collection to cloud and Linux-only browser/ISP latency restrictions."
+    },
+    {
+      "id": "website",
+      "type": "official_documentation",
+      "site": "Site24x7",
+      "title": "Add an Uptime Check for a Website | Site24x7 Online Help",
+      "url": "https://www.site24x7.com/help/admin/adding-a-monitor/website-monitoring.html",
+      "read_at": "2026-10-22T15:50:25.230255+00:00",
+      "excerpt_sha256": "8fd87825dd63bba592f90d1bffe7f44b9e3063925977ce83685aab105e6d35e6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual URL setup, selected HTTP method, keyword checks, response logging cost and monitor-credit effects."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:39:53.572452Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "architecture"],
+  "profile": {
+    "sections": [
+      {
+        "id": "identity",
+        "title_en": "Keep the product transition explicit",
+        "title_zh": "明确产品过渡范围",
+        "en": "The announcement retains Site24x7 for website/DEM and names OpManager Nexus for observability. It says existing deployment, licensing, APIs and support stay unchanged and branding updates will be communicated. Do not treat the name change as evidence that a customer must reinstall or that a new contract was approved. Confirm the intended product for a new evaluation.",
+        "zh": "公告保留 Site24x7 网站／数字体验产品，并将观测产品命名为 OpManager Nexus；现有部署、许可、API 和支持保持，更名界面另行通知。更名不能证明客户须重装或已批准新合同，新评估需核对目标产品。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "website-check",
+        "title_en": "A URL check has request and billing side effects",
+        "title_zh": "URL 检查有请求及计费影响",
+        "en": "The website monitor chooses a URL, location, frequency and HTTP method, with keyword/header checks for expected content. POST sends submitted parameters, so use an authorized test endpoint. Faster checks and dual-stack requests can consume additional monitor credits. Optional response/header storage sends data to AppLogs and consumes its license by size. Review stored content before enabling it; a successful HTTP response alone need not mean the expected content is present.",
+        "zh": "网站监控选择 URL、地点、频率和 HTTP 方法，并用关键字／响应头检查预期内容。POST 会提交参数，应使用获准测试端点。更快检查及双栈请求可能额外消耗监控额度；可选响应／头存储会发送至 AppLogs 并按体积消耗许可。启用前应检查存储内容，HTTP 响应成功不代表预期内容存在。",
+        "source_refs": ["website"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup",
+        "title_en": "Network monitoring needs a reachable poller",
+        "title_zh": "网络监控需要可达轮询器",
+        "en": "The retained network guide requires an On-Premise Poller and supports SNMP versions 1,2 and3. Custom counters and device/interface thresholds are configured separately. Devices present in NetFlow or configuration management may still be listed as unmonitored for performance. Verify a known device and interface before assuming another module’s inventory establishes full monitoring.",
+        "zh": "保留的网络指南要求 On-Premise Poller，支持 SNMP 1、2、3。自定义计数器及设备／接口阈值分别配置。已有 NetFlow 或配置管理的设备，性能监控中仍可能未监控。应验证已知设备及接口，不能将另一模块的清单等同完整监控。",
+        "source_refs": ["network"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Model failure of the observation point",
+        "title_zh": "建模观察点故障",
+        "en": "Poller settings can leave solely associated monitors unchanged or mark them Trouble by default or Critical when the poller fails. Multi-location and HA associations have different applicability. A dependent server monitor can suppress related alerts. Test the chosen settings against both a poller outage and a target outage so suppression does not hide the incident being investigated.",
+        "zh": "轮询器失败时，可让仅关联其上的监控保持状态，或默认标为 Trouble，也可选 Critical；多地点及 HA 关联的适用不同。依赖服务器监控可抑制相关告警。应分别测试轮询器和目标故障，避免抑制掩盖待查事件。",
+        "source_refs": ["poller"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "availability",
+        "title_en": "Standby reachability must be tested independently",
+        "title_zh": "独立测试备用端可达性",
+        "en": "HA is documented for Enterprise and MSP Enterprise only. After a status change, the next three polls check recovery before moving resources to standby. The HA status view reports communication from the standby, not necessarily actual device health. A primary can reach a device that its standby cannot. Rehearse the intended failover path rather than assuming immediate gap-free continuity.",
+        "zh": "HA 文档仅限 Enterprise、MSP Enterprise。状态变化后再检查连续三次轮询，未恢复才转到备用端。HA 状态反映备用端通信，并非必然的设备健康；主端可达时备用端仍可能不可达。应演练切换路径，不能假定立即且无缺口连续监控。",
+        "source_refs": ["ha"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Report scope needs its own access check",
+        "title_zh": "报告范围需单独核对权限",
+        "en": "Roles distinguish Zoho Organization from Site24x7 permissions. Group-scoped admins normally cannot choose All Monitors for reports. The guide warns that a Super Admin changing a scheduled/public report can make all monitors accessible to that limited admin. Review saved report scope and recipients after privileged edits, in addition to testing device-list visibility.",
+        "zh": "角色区分 Zoho Organization 与 Site24x7 权限。分组管理员通常不能在报告中选 All Monitors，但指南警告 Super Admin 修改计划／公开报告后，可能使受限管理员访问全部监控。除设备列表外，特权编辑后还需检查已保存报告范围及接收者。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Budget each resource class and edition",
+        "title_zh": "逐资源类别及版本预算",
+        "en": "The published All-in-one Professional example is $42/month paid annually or $49 monthly, with five servers, one application,20 websites,4 GB log ingestion and10 network components. More components and other resources have add-on rates. Blank per-resource fields are not zero prices. The limited free uptime offer for up to 50 resources does not grant every observability or HA capability.",
+        "zh": "公开 All-in-one Professional 示例为年付折月 $42、月付 $49，含五台服务器、一个应用、二十网站、4GB 日志及十网络组件；额外组件与其他资源另收费。空白单价并非零价，至多五十资源的受限免费 uptime 也不包含全部观测或 HA 能力。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Site24x7: setup, operating limits and pricing",
+    "title_zh": "Site24x7：设置、运行边界及费用",
+    "description_en": "Site24x7 continues as a standalone cloud platform for website and digital experience monitoring. Its observability offering has been renamed OpManager Nexus, combining th",
+    "description_zh": "Site24x7 继续作为独立云平台提供网站与数字体验监控；其观测产品已更名为 OpManager Nexus，结合原云端与本地方案。官方公告说明现有部署、协议、API 与支持无需",
+    "search_intent_en": "Evaluate Site24x7 for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Site24x7。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant, poller, device, credential, alert, failover, public report or purchase was operated.",
+      "zh": "未操作租户、轮询器、设备、凭据、告警、切换、公开报告或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Account-specific branding, full license, exact selected offer, end-to-end retention/recovery and enforced report isolation remain unverified.",
+      "zh": "账户更名状态、完整许可、选定报价、完整保留／恢复及实际报告隔离待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

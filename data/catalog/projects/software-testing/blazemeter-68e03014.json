@@ -1,0 +1,375 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "blazemeter-68e03014",
+  "name": "BlazeMeter",
+  "website_url": "https://www.blazemeter.com/",
+  "domain": "www.blazemeter.com",
+  "identity_domain": "blazemeter.com",
+  "category": "software-testing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "BlazeMeter provides cloud testing across performance, APIs, functional workflows, monitoring and related test-data services. Its current site also promotes autonomous test creation. This profile focuses on the documented performance-testing path, where scripts, load configuration and pass/fail criteria remain concrete evaluation inputs.\n\nA proposed trial should first establish that a script and its test data behave correctly at low scale, then define the metrics that make a load run meaningful. Debug output, a completed test and an application performance pass are different results. No script, traffic, credential, account or paid test was executed.",
+  "description_zh": "BlazeMeter 提供性能、API、功能流程、监控及相关测试数据云服务，当前网站也推广自主测试创建。本文聚焦有文档依据的性能测试路径，其中脚本、负载配置及通过／失败标准仍是具体评估输入。\n\n拟定试用应先在小规模确认脚本和测试数据行为，再定义令负载结果有意义的指标。调试输出、测试完成和应用性能通过是不同结果。本次未执行脚本、流量、凭据、账户或付费测试。",
+  "core_features": [
+    {
+      "name_en": "Script-based performance tests",
+      "name_zh": "基于脚本的性能测试",
+      "explanation_en": "Configure supported scripts and files for cloud test engines.",
+      "explanation_zh": "为云测试引擎配置受支持脚本及文件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "create",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Metric failure criteria",
+      "name_zh": "指标失败标准",
+      "explanation_en": "Define thresholds and optional early stop behavior.",
+      "explanation_zh": "定义阈值及可选提前停止行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "criteria",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Low-scale debug copy",
+      "name_zh": "小规模调试副本",
+      "explanation_en": "Validate configuration with a restricted debug run.",
+      "explanation_zh": "通过受限调试运行验证配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "debug",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Per-engine data subsets",
+      "name_zh": "各引擎数据子集",
+      "explanation_en": "Split CSV rows to avoid sharing the same test input across engines.",
+      "explanation_zh": "拆分 CSV 行，避免引擎共享相同测试输入。",
+      "explanation_scope": "product_specific",
+      "source_ref": "csv",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Validate an existing script at low scale",
+      "Define a baseline and measurable performance failure",
+      "Allocate unique synthetic input across load engines"
+    ],
+    "zh": [
+      "小规模验证已有脚本",
+      "定义基线及可测性能失败",
+      "为负载引擎分配唯一虚构输入"
+    ],
+    "source_refs": ["create", "debug", "criteria", "csv"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Performance engineers",
+      "Quality engineers",
+      "Application reliability teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Review scripts, dependencies and intended test targets.",
+        "zh": "检查脚本、依赖及预期测试目标。",
+        "source_refs": ["create"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect a low-scale debug copy before defining a pass/fail load run.",
+        "zh": "定义通过／失败负载运行前先检查小规模调试副本。",
+        "source_refs": ["debug", "criteria"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm data allocation, credential masking and selected product charges.",
+        "zh": "核对数据分配、凭据掩码及所选产品费用。",
+        "source_refs": ["csv", "secrets", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Only the first one hundred failure criteria are evaluated.",
+        "zh": "只评估前一百条失败标准。",
+        "source_refs": ["criteria"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Debug runs omit pass/fail status and expire after thirty days.",
+        "zh": "调试运行不显示通过／失败状态，数据三十天到期。",
+        "source_refs": ["debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Split CSV headers need deliberate variable configuration.",
+        "zh": "拆分 CSV 的表头需要主动配置变量。",
+        "source_refs": ["csv"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "separate_performance_and_api_subscriptions",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:58:16.259461Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Performance Basic displayed at $1,188/year or $149/month; API Small separately $79/month. Concurrency, duration, tests/VUH and requests vary by product; no checkout or actual bill verified.",
+    "summary_zh": "Performance Basic 显示年付 $1,188 或月付 $149；API Small 另为每月 $79。并发、时长、测试／VUH 及请求按产品变化，未核结账或真实账单。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/blazemeter",
+      "read_at": "2026-10-22T08:36:11.491Z",
+      "excerpt_sha256": "7cd4a35d95525576e8529d37d9d466535e04ed851e24c6ddda017712cce03c88",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "Performance, API & AI Testing | Perforce BlazeMeter",
+      "url": "https://www.blazemeter.com/",
+      "read_at": "2026-10-22T13:58:16.259461Z",
+      "excerpt_sha256": "4721dade215f8685a998e56f8192cf822fa8107c34772fd34d63f9c2210461a6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Performance/API/functional/monitoring family and autonomous positioning read; advertised outcome percentages not independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "BlazeMeter",
+      "title": "BlazeMeter Pricing: Scalable Plans for Every Testing Need | Perforce BlazeMeter",
+      "url": "https://www.blazemeter.com/pricing",
+      "read_at": "2026-10-22T13:58:16.259806Z",
+      "excerpt_sha256": "cf4d2c6305372a1b8cb944e7d83031706d3f4b1ba07171c1ff1ee2218f0a1135",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Performance annual/monthly and separate API monitoring price dimensions read; no purchase or universal-free inference."
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "Create Performance tests (JMeter)",
+      "url": "https://help.blazemeter.com/docs/guide/performance-create-test.html",
+      "read_at": "2026-10-22T14:00:09.313836Z",
+      "excerpt_sha256": "b7dc73c2eccdbcad9650940b43007aa7eff862768e8a806c6536e78e3de24747",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Taurus engines, JMX/YAML/script recognition and test configuration read."
+    },
+    {
+      "id": "criteria",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "Failure criteria",
+      "url": "https://help.blazemeter.com/docs/guide/performance-failure-criteria.html",
+      "read_at": "2026-10-22T14:00:09.204893Z",
+      "excerpt_sha256": "9b70e81c22480c062b57308cb422c9412439c8290c35ec858b8ccb4193a66af8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "100-rule cap, slide window, stop option and preexisting baseline conditions read."
+    },
+    {
+      "id": "secrets",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "Managing Sensitive Data Securely with Secrets",
+      "url": "https://help.blazemeter.com/docs/guide/performance-advanced-secrets.htm",
+      "read_at": "2026-10-22T14:00:09.205075Z",
+      "excerpt_sha256": "a7278b3cae730bab3b6ca4b79b6d81c1393549b700562bebb3231ba70edb874d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Vault selection, JMeter detection/manual other executors and 50-secret limit read; contradictory production wording retained as gap."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "Debug test: Low-scale test run and enhanced logging",
+      "url": "https://help.blazemeter.com/docs/guide/performance-debug-test.html",
+      "read_at": "2026-10-22T14:02:23.053447Z",
+      "excerpt_sha256": "a83bbd1c8a310e060991500fdfa3d253f0fbf192fadb4472e932bfe0c8a7109b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Debug copy limits/free-credit treatment, 30-day retention and absent pass/fail status read."
+    },
+    {
+      "id": "csv",
+      "type": "official_documentation",
+      "site": "BlazeMeter",
+      "title": "How to split or distribute CSV files in Performance tests",
+      "url": "https://help.blazemeter.com/docs/guide/performance-cvs-split-distribute-engines.html",
+      "read_at": "2026-10-22T14:02:23.053566Z",
+      "excerpt_sha256": "59c979f3643cccff8aa7675d17f572d3666102945ed534206445ff08ca676895",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Unique CSV subsets and dropped header across engines read; no load generated."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:02:23.053566Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "create"],
+  "profile": {
+    "sections": [
+      {
+        "id": "configure",
+        "title_en": "Upload a script together with its execution assumptions",
+        "title_zh": "脚本需连同执行假设一起配置",
+        "en": "The creation guide describes Taurus-backed engines and paths for JMeter JMX, Taurus YAML and other supported scripts. Extra files can be distributed to the engines. If automatic script recognition fails, an explicit YAML configuration can help identify the executor. Confirm dependencies, relative files, target environment and load settings rather than assuming a script that runs locally reproduces the same test in the cloud.",
+        "zh": "创建指南介绍基于 Taurus 的引擎，以及 JMeter JMX、Taurus YAML 和其他脚本路径，附加文件可分发到引擎。自动识别失败时可用明确 YAML 配置识别执行器。应核对依赖、相对文件、目标环境及负载设置，不能假定本地脚本在云端自然复现相同测试。",
+        "source_refs": ["create"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "debug",
+        "title_en": "Debug mode does not produce a performance pass",
+        "title_zh": "调试模式不产生性能通过结论",
+        "en": "Debug creates a logical test copy with ten threads, ending at five minutes or one hundred iterations, whichever comes first. The guide says it does not charge test credits/VUH, retains data for thirty days and does not enforce or display pass/fail status. It is useful for inspecting configuration and trace artifacts before a larger run. A successful debug session therefore does not show that a release met its performance thresholds.",
+        "zh": "调试创建逻辑测试副本，使用十线程，在五分钟或一百次迭代中先到者结束。指南称不收测试信用／VUH，数据保留三十天，且不执行或显示通过／失败状态。它适合大规模运行前检查配置及 trace 产物，因此调试成功不证明发布满足性能阈值。",
+        "source_refs": ["debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "thresholds",
+        "title_en": "Failure rules must be enabled and scoped",
+        "title_zh": "失败规则需要启用并限定范围",
+        "en": "Failure criteria select labels, metrics, comparison operators and thresholds. Only the first one hundred rules count if the limit is exceeded. A sliding window evaluates a sixty-second period every ten seconds; early stop is available with that option. Ramp-up exclusions are another explicit choice. Review rule ordering and evaluation windows against the intended objective instead of treating any completed run as a pass.",
+        "zh": "失败标准选择标签、指标、比较符及阈值。超限时只计算前一百条规则。滑动窗口每十秒评估六十秒区间，提前停止与该选项配合；是否排除爬升期也需明确选择。应按目标检查规则顺序及评估窗口，不能把运行完成当作通过。",
+        "source_refs": ["criteria"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "baseline",
+        "title_en": "A baseline comparison needs an existing reference",
+        "title_zh": "基线比较需要已有参考",
+        "en": "The criteria guide supports relative thresholds and tolerated offsets against a selected baseline. Taurus baseline-based failures require an already defined BlazeMeter test and a baseline established there; it cannot create the reference during that run. Choose a representative environment and version, retain the comparison context and investigate changes in load or test data before attributing a slowdown to application code.",
+        "zh": "标准指南支持相对所选基线的阈值及容许偏移。Taurus 基线失败比较要求已有 BlazeMeter 测试并事先建立基线，不能在该次运行中创建参考。应选择有代表性的环境／版本，保留比较上下文，并在将变慢归因应用代码前检查负载及测试数据变化。",
+        "source_refs": ["criteria"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data",
+        "title_en": "Splitting CSV data changes header handling",
+        "title_zh": "拆分 CSV 会改变表头处理",
+        "en": "The CSV guide offers a unique subset per engine so concurrent engines need not reuse the same user row. It explicitly says the split does not preserve the header across engines and recommends defining variable names in CSV Data Set Config. Separate per-engine files are another path. Validate row allocation with synthetic identifiers first; input uniqueness does not by itself guarantee application cleanup or avoid repeated writes on later runs.",
+        "zh": "CSV 指南可为各引擎分配唯一子集，避免并发引擎复用同一用户行。它明确说明拆分不保留各引擎表头，建议在 CSV Data Set Config 定义变量名，也可使用各引擎独立文件。应先用虚构标识验证分配；输入唯一不自动保证应用清理，也不避免后续运行重复写入。",
+        "source_refs": ["csv"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "secrets",
+        "title_en": "Masking depends on enabled secret selection",
+        "title_zh": "掩码依赖启用的 secret 选择",
+        "en": "The secrets guide supports a default or external vault and masks selected enabled values in logs/reports. JMeter references are detected during upload; other executors need manual enabling. Up to fifty secrets may be used per test, and changing the source clears earlier selections. Review least-privilege test credentials and artifact handling. The page’s conflicting production/non-production advice is not treated as permission to use live credentials; no secret was entered.",
+        "zh": "secret 指南支持默认或外部保险库，并在日志／报告中掩码选定启用的值。JMeter 引用在上传时检测，其他执行器需手动启用。每测试最多五十个 secret，切换来源会清除已有选择。应检查最小权限测试凭据及产物处理；页面矛盾的生产／非生产建议不作为使用线上凭据授权，本次未输入 secret。",
+        "source_refs": ["secrets"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Performance and API monitoring have separate fee dimensions",
+        "title_zh": "性能与 API 监控有不同计费维度",
+        "en": "Displayed Performance Basic costs $1,188 annually or $149 monthly, with one thousand concurrent users and a one-hour maximum duration. Pro uses a different concurrency/VUH allowance. The API section separately lists request-based plans, such as Small at $79/month for 250,000 requests. These are product-specific allowances, not one all-inclusive subscription. Verify selected term, limits, currency, taxes and extra services before making a workload estimate.",
+        "zh": "显示的 Performance Basic 为年付 $1,188 或月付 $149，含一千并发用户及最长一小时，Pro 采用不同并发／VUH 额度。API 部分另列请求方案，如 Small 每月 $79／二十五万请求。这是各产品额度，不是全包套餐。估算负载前需核所选账期、限额、币种、税及额外服务。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "BlazeMeter: setup, operating limits and pricing",
+    "title_zh": "BlazeMeter：设置、运行边界及费用",
+    "description_en": "BlazeMeter provides cloud testing across performance, APIs, functional workflows, monitoring and related test-data services. Its current site also promotes autonomous tes",
+    "description_zh": "BlazeMeter 提供性能、API、功能流程、监控及相关测试数据云服务，当前网站也推广自主测试创建。本文聚焦有文档依据的性能测试路径，其中脚本、负载配置及通过／失败标准仍是具体",
+    "search_intent_en": "Evaluate BlazeMeter for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 BlazeMeter。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, script upload, credential, cloud/private engine, request load, integration or purchase was operated.",
+      "zh": "未操作账户、脚本上传、凭据、云／私有引擎、请求负载、集成或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The secret guidance contains conflicting production wording; no live credential advice is adopted. Actual masking coverage, product entitlement, traffic limits, framework compatibility and measured performance require validation.",
+      "zh": "secret 指南含矛盾生产用词，未采用线上凭据建议。真实掩码覆盖、产品权益、流量限额、框架兼容及性能需验证。",
+      "source_refs": ["secrets"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Open-source tool support does not establish a license for the entire hosted service. Exact currency/taxes, data residency and UI language coverage remain unverified.",
+      "zh": "支持开源工具不等于全部托管服务具有开源许可；具体币种／税、数据驻留及界面语言仍待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

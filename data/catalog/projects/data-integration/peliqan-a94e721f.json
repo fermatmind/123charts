@@ -1,0 +1,366 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "peliqan-a94e721f",
+  "name": "Peliqan",
+  "website_url": "https://peliqan.io/",
+  "domain": "peliqan.io",
+  "identity_domain": "peliqan.io",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Peliqan combines data connections, SQL exploration, a built-in warehouse or customer warehouse, and Python data applications. SaaS connections normally replicate data, while database connections can discover schemas and query the existing source without copying the whole database.\n\nIt also offers reverse ETL and MCP access. Those surfaces have different write behavior and permissions; a readable dataset is not automatically a safe or complete synchronization back to a business application.",
+  "description_zh": "Peliqan 结合数据连接、SQL 探索、内置或客户仓库，以及 Python 数据应用。SaaS 连接通常复制数据，数据库连接则可发现结构并直接查询既有源，无需复制整个数据库。\n\n平台也提供反向 ETL 与 MCP 访问，这些入口的写入行为及权限不同；能读取数据集，不代表已能安全、完整地同步回业务应用。",
+  "core_features": [
+    {
+      "name_en": "Direct and replicated access",
+      "name_zh": "直接与复制访问",
+      "explanation_en": "Database discovery/direct queries and SaaS ELT use different paths.",
+      "explanation_zh": "数据库发现／直接查询与 SaaS ELT 采用不同路径。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connect",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "SQL materialization",
+      "name_zh": "SQL 物化",
+      "explanation_en": "Schedule query results into a warehouse table, including federated Trino queries.",
+      "explanation_zh": "将查询结果定时写成仓库表，包括 Trino 联合查询。",
+      "explanation_scope": "product_specific",
+      "source_ref": "warehouse",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reverse ETL link tables",
+      "name_zh": "反向 ETL 关联表",
+      "explanation_en": "Track source/target identifiers rather than assuming existing targets match automatically.",
+      "explanation_zh": "跟踪源／目标标识，不能假设已有目标自动匹配。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reverse",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "MCP management tools",
+      "name_zh": "MCP 管理工具",
+      "explanation_en": "Build access includes data app, query table and endpoint mutations.",
+      "explanation_zh": "Build 访问包括数据应用、查询表及端点修改。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Materialize a reconciled SaaS analytical dataset.",
+      "Evaluate keyed writeback into a disposable target."
+    ],
+    "zh": ["物化已对账的 SaaS 分析数据集。", "在可丢弃目标评估带键回写。"],
+    "source_refs": ["warehouse", "reverse"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Analytics engineer",
+      "Data integration developer",
+      "BI administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose direct querying versus replicated warehouse access.",
+        "zh": "选择直接查询或仓库复制访问。",
+        "source_refs": ["connect"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect one table/query and verify source identifiers and totals.",
+        "zh": "检查一张表／查询，核对源标识及总数。",
+        "source_refs": ["warehouse"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test writeback and access separately with disposable data.",
+        "zh": "用可丢弃数据分别测试回写与访问。",
+        "source_refs": ["reverse", "permissions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Reverse ETL does not automatically match pre-existing targets or propagate source deletions.",
+        "zh": "Reverse ETL 不自动匹配既有目标，也不自动传播源删除。",
+        "source_refs": ["reverse"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Connect excludes Python data apps and premium sources.",
+        "zh": "Connect 不含 Python 数据应用及高级源。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "contracted_subscription_sources_users_and_fair_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:43:40.251141Z",
+    "normalized_monthly_price": null,
+    "currency": "EUR_or_USD",
+    "billing_basis": "Displayed monthly figures require 12-month contracts; Connect per source plus unpriced user component, Pro bundle, Enterprise custom."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/peliqan-io",
+      "read_at": "2026-10-22T08:57:58.394Z",
+      "excerpt_sha256": "ef60cf1aaae83ce5225f8d337731c335c3863b40393b00fb25d5113234c9b0a9",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "The trust layer for AI & BI | Peliqan",
+      "url": "https://peliqan.io/",
+      "read_at": "2026-10-22T10:43:40.251141Z",
+      "excerpt_sha256": "6d6ab2bea789f5444567f460ec9f6f7c83f1961d1ffa14c3167c756d3e2b6e4d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Data platform identity with BI/AI, SQL, Python and writeback surfaces read; marketing counts/outcomes not independently verified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Peliqan",
+      "title": "Pricing | All-in-One Data Platform | Peliqan",
+      "url": "https://peliqan.io/pricing/",
+      "read_at": "2026-10-22T10:43:43.321927Z",
+      "excerpt_sha256": "9dd06184addacbb454377ee5b7993a94f1be7066b6b50bf47a4752e1bdbaec61",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Connect €75/$85 per source/month, Pro €500/$570 per month with 12-month contract; users, fair usage and plan differences read."
+    },
+    {
+      "id": "connect",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "ELT: Connect to data - Peliqan documentation",
+      "url": "https://help.peliqan.io/connect-to-data",
+      "read_at": "2026-10-22T10:45:41.673678Z",
+      "excerpt_sha256": "b28365f879701031262acaa5b67cb9dc76dd805a529feb42bc6d8834a28a1925",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Database schema discovery/direct querying versus SaaS replication; per-object/child tables and connection status read."
+    },
+    {
+      "id": "warehouse",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "Data warehouse - Peliqan documentation",
+      "url": "https://help.peliqan.io/data-warehouse-materialize-tables",
+      "read_at": "2026-10-22T10:45:44.510420Z",
+      "excerpt_sha256": "b36975452010d27870ab48d2ca5580fe99c08414b6862b09f92c389ac8b4fbed",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Built-in Postgres, existing warehouse targets and scheduled materialization of SQL/Trino results read."
+    },
+    {
+      "id": "reverse",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "Reverse ETL - Peliqan documentation",
+      "url": "https://help.peliqan.io/reverse-etl",
+      "read_at": "2026-10-22T10:44:48.886753Z",
+      "excerpt_sha256": "63fb780f6fa73927951b6842d561e6caff1c96d3d0cf03770c981940b66ea079",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Two-phase sync, link-table identity, pre-existing target duplicates, out-of-scope deletion and bulk timeout ambiguity read."
+    },
+    {
+      "id": "permissions",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "Permissions - Peliqan documentation",
+      "url": "https://help.peliqan.io/permissions",
+      "read_at": "2026-10-22T10:45:47.574217Z",
+      "excerpt_sha256": "e0e4a9d2046f884daac4cec1fbece068f6757ae109a7b882169d83dc3569239d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "UI, warehouse, BI, data apps and API access are separate layers; group role does not automatically secure every published surface."
+    },
+    {
+      "id": "mcp",
+      "type": "official_documentation",
+      "site": "Peliqan",
+      "title": "Peliqan MCP Server - Peliqan documentation",
+      "url": "https://help.peliqan.io/mcp-server",
+      "read_at": "2026-10-22T10:45:50.690406Z",
+      "excerpt_sha256": "5ca25c7e033150746b77974e579dd0a7b81fdb096f3f7fa415e9edb6a8d633d3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current MCP page distinguishes analytics/application access from Build management; Build tools can mutate resources, not just query."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:45:50.690406Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "connect", "warehouse", "reverse", "mcp"],
+  "profile": {
+    "sections": [
+      {
+        "id": "ingestion",
+        "title_en": "Database discovery is not database replication",
+        "title_zh": "数据库发现不等于数据库复制",
+        "en": "After connecting a database, Peliqan inventories databases, schemas, tables and fields and queries through that connection when needed. SaaS connections instead create a pipeline to the built-in or selected warehouse, normally one table per object and child tables for nested data. Incremental sync is used where possible; inspect the connection interval. Start by deciding whether the workload needs a live source query, a replicated analytical copy, or a scheduled materialized result. These have different freshness and source-load implications.",
+        "zh": "连接数据库后，Peliqan 列出数据库、schema、表和字段，需要时通过该连接查询。SaaS 连接则创建流向内置或选定仓库的流程，通常每对象一表，嵌套数据另有子表；可用时采用增量同步，间隔需查看连接。首先应决定负载需要直接查源、分析复制副本还是定时物化结果，这些方式的新鲜度及源负载不同。",
+        "source_refs": ["connect", "warehouse"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "status",
+        "title_en": "A failed SaaS connection can stop scheduled syncs",
+        "title_zh": "失败的 SaaS 连接可能停止计划同步",
+        "en": "The connection guide says a red SaaS source status stops scheduled syncs. A successful manual Sync restores the green status and scheduled operation. For a database connection, Sync refreshes schema discovery instead. Investigate the actual source/target status rather than assuming the same action reloads all data.",
+        "zh": "连接指南说明，SaaS 源状态为红色时会停止计划同步；手动 Sync 成功后恢复绿色及调度。数据库连接的 Sync 则刷新结构发现。应调查实际源／目标状态，不能假设同一操作总是重载全部数据。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "example",
+        "title_en": "Use a query result as an explicit data contract",
+        "title_zh": "以查询结果作为明确数据契约",
+        "en": "The warehouse guide describes built-in Postgres and customer warehouse targets, plus scheduled materialization of SQL and federated Trino results. A proposed analytical trial could join replicated invoices with a customer table, preserve invoice/customer IDs and materialize a daily balance table. Compare record counts and total balances before connecting BI. A join that executes successfully can still duplicate invoices when the customer key is not unique. No query, materialization or financial reconciliation was run for this profile.",
+        "zh": "仓库指南说明内置 Postgres、客户仓库目标，以及 SQL／Trino 联合查询结果的定时物化。建议分析试验：联接复制发票与客户表，保留发票／客户 ID，物化每日余额表；接入 BI 前先对照记录数及余额总额。查询成功执行后，若客户键不唯一，仍可能重复发票。本次未执行查询、物化或财务对账。",
+        "source_refs": ["warehouse"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "id": "reverse",
+        "title_en": "Link tables need preparation when targets already contain records",
+        "title_zh": "目标已有记录时需准备关联表",
+        "en": "The Reverse ETL app first reads warehouse data, then calls the target API. It uses link tables to decide insert versus update and does not automatically look up pre-existing target records. That can create duplicates or uniqueness errors. The guide offers seeding the link table, adding a lookup or excluding known target records. Source deletions are explicitly outside this app’s standard scope. Confirm identity matching and deletion policy before calling it a two-way synchronization.",
+        "zh": "Reverse ETL 应用先读取仓库数据，再调用目标 API，以关联表判断插入或更新，不自动查找目标已有记录，因此可能产生重复或唯一性错误。指南给出预填关联表、增加查询或排除已知目标记录等方法；源删除明确不属于该应用标准范围。把它称为双向同步前，应确认身份匹配及删除策略。",
+        "source_refs": ["reverse"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "A timed-out write may already have changed the target",
+        "title_zh": "超时写入可能已经改变目标",
+        "en": "The reverse-ETL guide says an entire bulk batch can fail on one bad record. Its documented API wait limit is 120 seconds; after a timeout it may be unknown whether inserts happened. Smaller batches can help, but blindly replaying writes can duplicate effects. Reconcile target IDs and link-table state before retrying. Test parent/child ordering with disposable customers and invoices, include one invalid record, and verify alert/log behavior. This is an evaluation proposal, not a tested recovery guarantee.",
+        "zh": "反向 ETL 指南说明：批量中一条坏记录可导致整批失败；文档 API 等待上限为 120 秒，超时后可能无法确定是否已插入。较小批次可能有帮助，但盲目重放写入可能重复生效。重试前应核对目标 ID 与关联表状态。可用可丢弃客户及发票测试父子顺序，加入一条非法记录，检查告警／日志；这是评估建议，不是已测试恢复保证。",
+        "source_refs": ["reverse"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "access",
+        "title_en": "UI groups and published applications have separate controls",
+        "title_zh": "UI 分组与已发布应用有各自权限",
+        "en": "The permissions guide separates UI groups from warehouse, BI, published Data Apps and API controls. A group Viewer has read-only UI resources, but app execution and endpoint access need their own review; published handlers may implement authentication in code. MCP documentation also separates conversational analytics from Build management, whose tools can create/update/delete query tables, apps and endpoints. Evaluate the actual user, tool and credential scope with a test account rather than treating every AI connection as read-only.",
+        "zh": "权限指南将 UI 分组与仓库、BI、已发布 Data App 和 API 控制分别说明。分组 Viewer 可只读 UI 资源，但应用执行和端点访问仍需单独检查，发布处理器可能通过代码实现认证。MCP 文档也区分对话分析与 Build 管理，后者可创建、修改、删除查询表、应用和端点。应以测试账号评估实际用户、工具与凭据范围，不能把所有 AI 连接都当成只读。",
+        "source_refs": ["permissions", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "A monthly display can still require a year-long contract",
+        "title_zh": "月费展示仍可能要求一年合同",
+        "en": "Connect displays €75 or $85 per data source/month under a 12-month contract, standard sources only and 500K-row fair usage. Its list also says pay per user, but does not state that user fee. Pro displays €500/$570 per month on the same term with ten users/sources, 5M-row fair usage and ten Python apps, plus reverse ETL and federation. Enterprise is custom and lists private/on-premise deployment. A 14-day no-card trial is temporary; clarify fair-usage accounting, additional users/sources and deployment costs before estimating a complete bill.",
+        "zh": "Connect 显示每数据源每月 €75 或 $85，要求 12 个月合同，仅标准源及 50 万行公平使用；列表另写按用户付费，却未给该用户单价。Pro 同期限每月 €500／$570，含十用户／源、500 万行公平使用、十个 Python 应用，以及反向 ETL 和联合查询。Enterprise 定制，列私有／本地部署。免信用卡 14 天试用为临时使用；估计完整账单前需确认公平使用计数、额外用户／源及部署费用。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Match the platform breadth to a maintainable workload",
+        "title_zh": "把平台广度落到可维护负载",
+        "en": "Peliqan merits evaluation for a team combining SaaS analytics, SQL and carefully controlled writeback or data apps. Someone must own source access, query correctness, API identifiers and published permissions. It is a weaker fit if the requirement assumes automatic matching of every existing record or source-deletion propagation without custom work. Using Postgres, Trino or Python inside the platform does not establish an open-source license for Peliqan itself. No connector performance, permission isolation, production recovery or security audit was executed.",
+        "zh": "若团队希望结合 SaaS 分析、SQL，以及经过控制的回写或数据应用，可评估 Peliqan。需有人负责源访问、查询正确性、API 标识及发布权限。如果需求假设能自动匹配全部既有记录，或无需定制即可传播源删除，则适用性较弱。平台内部使用 Postgres、Trino 或 Python，不构成 Peliqan 自身开源许可。本次未执行连接器性能、权限隔离、生产恢复或安全审计。",
+        "source_refs": ["connect", "reverse", "permissions"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Peliqan: SQL, Warehouse Access, Reverse ETL and Plan Limits",
+    "title_zh": "Peliqan：SQL、仓库访问、反向 ETL 与套餐限制",
+    "description_en": "Evaluate Peliqan direct queries versus replication, materialization, link-table writeback, MCP permissions and contracted pricing.",
+    "description_zh": "评估 Peliqan 直接查询与复制、物化、关联表回写、MCP 权限及合同定价。",
+    "primary_intent": "Evaluate a Peliqan analytical or writeback workload.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Connect user charges, fair-usage measurement, exact connector operations, deletion scripts, private-deployment quote, license and UI languages require confirmation.",
+      "zh": "Connect 用户费用、公平使用计量、具体连接器操作、删除脚本、私有部署报价、许可及界面语言需确认。",
+      "source_refs": ["pricing", "reverse"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "An older MCP documentation URL returned 404; the current linked /mcp-server page was read instead. No service account or live tool was connected.",
+      "zh": "旧 MCP 文档 URL 返回 404，已改读文档目录实际链接的 /mcp-server 页；未连接服务账号或实际工具。",
+      "source_refs": ["mcp"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

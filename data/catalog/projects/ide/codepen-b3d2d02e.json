@@ -1,0 +1,406 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "codepen-b3d2d02e",
+  "name": "CodePen",
+  "website_url": "https://codepen.io/",
+  "domain": "codepen.io",
+  "identity_domain": "codepen.io",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CodePen is a browser-based development and sharing environment for websites. The current 2.0 editor uses files, folders and processing Blocks for technologies such as Sass and TypeScript, with previews, collaboration and optional hosted deployment. Its Classic Block reproduces aspects of the older three-panel workflow; the two should not be described as identical editors.\n\nA Pen can be a public demo, a private-link draft or a deployed website, with materially different access and licensing conditions. This profile follows file processing, build failure, sharing, deployment and export. No Pen, invitation, domain or subscription was created.",
+  "description_zh": "CodePen 是浏览器内网站开发及分享环境。当前2.0编辑器使用文件、目录及 Sass／TypeScript 等处理 Block，提供预览、协作及可选托管发布；Classic Block 复现旧三面板流程的部分行为，两者不能当作相同编辑器。\n\nPen 可是公开演示、私有链接草稿或已部署网站，访问及许可条件有实质差异。本文研究文件处理、构建失败、分享、部署及导出，本次未创建 Pen、邀请、域名或订阅。",
+  "core_features": [
+    {
+      "name_en": "File-based Pens",
+      "name_zh": "文件式 Pen",
+      "explanation_en": "Organize authored files within the owner’s plan limits.",
+      "explanation_zh": "按所有者方案限额组织自写文件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "files",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Processing Blocks",
+      "name_zh": "处理 Block",
+      "explanation_en": "Compile supported sources with configured processors and imported packages.",
+      "explanation_zh": "通过配置处理器及导入包编译受支持源码。",
+      "explanation_scope": "product_specific",
+      "source_ref": "blocks",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Privacy and collaboration",
+      "name_zh": "隐私及协作",
+      "explanation_en": "Choose link, password or collaborator-based editor access.",
+      "explanation_zh": "选择链接、密码或协作者编辑器访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "access",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Deployment and versions",
+      "name_zh": "部署及版本",
+      "explanation_en": "Publish a chosen build and inspect PRO code history.",
+      "explanation_zh": "发布选定构建并检查 PRO 代码历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deploy",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a processed front-end component demo",
+      "Compare editor privacy, deployed access and exported build identity"
+    ],
+    "zh": [
+      "评估经处理的前端组件演示",
+      "比较编辑器隐私、部署访问及导出构建身份"
+    ],
+    "source_refs": ["blocks", "diagnostics", "access", "export"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Front-end developers",
+      "Web designers",
+      "Programming educators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inspect owner limits, file triggers and processing configuration.",
+        "zh": "检查所有者限制、文件触发及处理配置。",
+        "source_refs": ["files", "blocks"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test failed builds and each sharing surface with harmless content.",
+        "zh": "用无敏感内容测试失败构建及各分享界面。",
+        "source_refs": ["diagnostics", "access"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify deployment state, history and local rebuild before relying on hosting.",
+        "zh": "依赖托管前核对部署状态、历史及本地重建。",
+        "source_refs": ["deploy", "versions", "export"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Password-protected editor does not protect deployed Pen URLs.",
+        "zh": "密码保护编辑器不保护已部署Pen地址。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A failed build can leave the last successful preview/dist visible.",
+        "zh": "失败构建可保留可见的上次成功预览／dist。",
+        "source_refs": ["diagnostics", "export"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Downgrade undeploys sites; older nondeployed versions may be consolidated.",
+        "zh": "降级会取消网站部署，旧未部署版本可能合并。",
+        "source_refs": ["deploy", "versions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_annual_or_monthly_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:39:25.843221Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free3files/publicPen; annual Starter96,Developer144,Super312 equivalent8/12/26monthly; checkout currency unverified. Owner-plan storage/collaboration and hosting conditions apply.",
+    "summary_zh": "Free每公开Pen三文件；Starter年96、Developer144、Super312，月均8／12／26，按所示$计且结账币种未核，适用所有者资源／协作及托管条件。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/codepen-io",
+      "read_at": "2026-10-22T08:42:31.274Z",
+      "excerpt_sha256": "b29d02e20a377c4960979249350780b72270d2f9f1a48bdf747822d91aa4bd6b",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "CodePen – Online Code Editor For Building & Deploying Websites",
+      "url": "https://codepen.io/",
+      "read_at": "2026-10-22T12:39:25.843221Z",
+      "excerpt_sha256": "a8ddf1f5e23b0444711345393fcd946c20af0df901675b3bbe5f9823627074be",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current all-new file/Block editor and website-hosting scope read, not just historic3-panel editor."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CodePen",
+      "title": "CodePen — PRO Pricing",
+      "url": "https://codepen.io/pricing",
+      "read_at": "2026-10-22T12:39:45.737736Z",
+      "excerpt_sha256": "51c1888b58e75287039050599d2971ab5f23567ecd7eaae1e8d12fdcc9d01259",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free public3file Pens, annual-billed Starter8/Developer12/Super26 monthly equivalents, collaborators/API/asset limits and no self-hosted offer read. Empty flattened feature cells not treated as checks."
+    },
+    {
+      "id": "files",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Files – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/files/",
+      "read_at": "2026-10-22T12:40:18.991061Z",
+      "excerpt_sha256": "397e83302da6ea5055f4e9be19e0779adf3128961939155e36cb9a574d25afdf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Files/folders/config/generated outputs counting, owner-plan limit, re-scaffolded config and per-Pen media sizes read; destination-specific limits distinguished from global assets."
+    },
+    {
+      "id": "blocks",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Blocks – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/blocks/",
+      "read_at": "2026-10-22T12:42:39.392962Z",
+      "excerpt_sha256": "abcc148e8c56dfc1c914dba4abde46dbed7e149553e210d8c88c7933de4d276e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Processors vs imported packages, extension/config triggers, retained config after Block removal, Classic .pen.html behavior read."
+    },
+    {
+      "id": "diagnostics",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Diagnostics – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/builds/diagnostics/",
+      "read_at": "2026-10-22T12:42:39.433955Z",
+      "excerpt_sha256": "5953d143489dc49c75121decb76c672ac083f5e801dc59c72913b4716bf50f1b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Build failures show diagnostics while last successful preview remains underneath; warnings can be nonfatal. No build attempted."
+    },
+    {
+      "id": "access",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Privacy & Collaboration – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/privacy-sharing/",
+      "read_at": "2026-10-22T12:40:18.959532Z",
+      "excerpt_sha256": "19fbd6561473a39a088dc1dda8b47a671d1913dd1b0ef6ae91faf9af454e5e82",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Public, obscure-link Private, password editor-only and CollaboratorsOnly modes; editor can deploy/manage collaborators; removed viewer’s open content caveat read."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Deployment / Hosting – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/deployment/",
+      "read_at": "2026-10-22T12:40:18.920873Z",
+      "excerpt_sha256": "f5f8d65936074da48d8ba7ba098887bca1eeebd6a5bab2e4b683f63fa1a2fba6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Save not live unless DeployOnSave, undeploy404/new subdomain on redeploy, PRO-only hosting/1TB perPen possible undeploy on excess, downgrade undeploy read."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Versions – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/versions/",
+      "read_at": "2026-10-22T12:40:19.024880Z",
+      "excerpt_sha256": "a6c46bd8f64acd380c5cd36e7bbcb44f07a75a579dae5fedb7195aa7ea77fd58",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Save-based version, PRO restore entirefiletree, code-only history and logarithmic rollup except deployed versions read."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "CodePen",
+      "title": "Exporting – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/exporting/",
+      "read_at": "2026-10-22T12:40:48.313729Z",
+      "excerpt_sha256": "7dc9109e2b1824d91f62e685db73ab03abaf74841cc0b35726e36610ebfc8b74",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "src plus last successful dist/license; compiler local setup still needs wiring and future-open-source wording not current wholeplatform license read."
+    },
+    {
+      "id": "code_license",
+      "type": "official_license",
+      "site": "CodePen",
+      "title": "Licensing – CodePen",
+      "url": "https://blog.codepen.io/docs/pens/licensing/",
+      "read_at": "2026-10-22T12:40:48.239709Z",
+      "excerpt_sha256": "ceeec97d3a6cf6cd817c9d10f59075171344572a3b53f96b13c6cd078b42d0ab",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Public Pens MIT full notice read; private Pens no implicit license. Scope is user-posted code, not the hosted platform. Copyleft-like summary prose not expanded beyond actual MIT notice."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:42:39.433955Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "blocks", "access", "code_license"],
+  "profile": {
+    "sections": [
+      {
+        "id": "build",
+        "title_en": "Understand which files and processors the Pen contains",
+        "title_zh": "了解 Pen 包含的文件及处理器",
+        "en": "A proposed responsive component demo could begin with a template, HTML, TypeScript and Sass. A new .scss file can trigger the Sass Block; an imported npm library is a package, not necessarily a processing Block. Owner-authored/uploaded files count toward limits, while folders/configuration and generated build output do not. Block configuration can be scaffolded again if deleted while that Block remains active. Inspect the file tree and active Blocks rather than treating every file as raw browser-ready code. No component was built.",
+        "zh": "建议响应式组件演示从模板、HTML、TypeScript及Sass开始。新增.scss可触发Sass Block；导入npm库是包，不一定是处理Block。自写／上传文件计额度，目录／配置及生成输出不计。Block仍启用时删配置可能再次生成。应检查文件树及启用Block，不能将全部文件当原始浏览器即用代码。本次未构建组件。",
+        "source_refs": ["files", "blocks"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "failure",
+        "title_en": "A visible preview may be the last successful build",
+        "title_zh": "可见预览可能是上次成功构建",
+        "en": "The diagnostics guide distinguishes build errors from nonfatal warnings. Errors can appear in the footer, Blocks panel, files/line positions and a preview overlay. Under the failed-build overlay, the old successful build remains visible. When evaluating a broken Sass or TypeScript edit, inspect build status and output identity before concluding the new code works. The export guide similarly says dist contains the last successful build, which may differ from current source after a failure.",
+        "zh": "诊断指南区分构建错误与非致命警告。错误可出现在页脚、Block面板、文件／行位置及预览遮罩；失败遮罩下仍显示旧成功构建。评估错误Sass或TypeScript编辑时，应先查构建状态及输出身份，不能由预览可见认定新代码成功。导出指南同样称dist含最后成功构建，失败后可能不同于当前源码。",
+        "source_refs": ["diagnostics", "export"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "privacy",
+        "title_en": "Editor privacy does not automatically protect a hosted site",
+        "title_zh": "编辑器隐私不会自动保护托管网站",
+        "en": "Public is the default. Private hides discovery but permits anyone holding the obscure URL to view. Password protection covers the editor; the guide explicitly excludes deployed Pens and notes existing preview sessions. CollaboratorsOnly restricts the editor to invited users. Editors can change settings, collaborators and deployment, while an already-open removed viewer may retain visible content until leaving. Evaluate these surfaces separately with harmless data; do not put client secrets in frontend files or equate an unlisted link with authenticated access.",
+        "zh": "默认公开。Private隐藏发现入口，但持隐蔽URL者仍可查看；密码保护针对编辑器，指南明确不覆盖已部署Pen，并提示已有预览会话。CollaboratorsOnly将编辑器限于受邀用户。Editor可改设置、协作者及部署；已打开的被移除Viewer可能离开前仍可见内容。应分别用无敏感数据评估这些界面，不能将客户端密钥放前端文件，或将不公开链接等同认证访问。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "publish",
+        "title_en": "Saving and deploying are separate until configured otherwise",
+        "title_zh": "保存与部署默认分开，除非另行配置",
+        "en": "PRO deployment creates a site URL. Later saves do not publish unless Deploy on Save is enabled; otherwise use Save & Deploy. Undeploy returns404, and later redeployment assigns a new random subdomain rather than restoring the old one. Hosting lists1TB monthly bandwidth per Pen and possible undeployment beyond it, not paid overages. Downgrading to Free undeploys hosted sites. Confirm live content, plan continuity and custom-domain dependencies before using a Pen as a public site. No site or DNS was changed.",
+        "zh": "PRO部署生成网站URL。后续保存仅在启用Deploy on Save时发布，否则需Save & Deploy。取消部署返回404，再部署会分配新随机子域，而非恢复旧子域。托管列每Pen每月1TB带宽，超额可能取消部署，不是收费超额；降至Free也会取消托管。用作公开站前需确认在线内容、方案持续及自定义域依赖。本次未改网站或DNS。",
+        "source_refs": ["deploy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "history",
+        "title_en": "History restores code while export needs a local build plan",
+        "title_zh": "历史恢复代码，导出还需本地构建方案",
+        "en": "Every save creates a version, but accessing/restoring history is PRO. Revert restores the entire file system; comments and social activity are not versioned. Older saves can be rolled up, except deployed versions. ZIP export contains src, last successful dist and the applicable Pen license. The export documentation still describes the compiler’s open-source packaging as future work and says local processing must be wired separately. Test a local rebuild rather than assuming the ZIP is a fully reproducible development environment.",
+        "zh": "每次保存创建版本，但访问／恢复历史需PRO。Revert恢复整棵文件树，评论及社交活动不纳入版本；旧保存可合并，部署版本除外。ZIP含src、最后成功dist及对应Pen许可。导出文档仍将编译器开源打包描述为未来工作，并要求自行接本地处理。应测试本地重建，不能假定ZIP就是完整可复现开发环境。",
+        "source_refs": ["versions", "export"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Budget by owner plan, assets and code-sharing rights",
+        "title_zh": "按所有者方案、资源及代码分享权核算",
+        "en": "The annual view lists Starter $8/month billed$96/year, Developer$12 billed$144 and Super$26 billed$312. Free has unlimited public Pens with three files each. Paid plans expand file/collaborator/asset limits; per-Pen media limits and global asset limits should be checked separately. Public Pen code is automatically MIT-licensed with notice conditions; private code has no implicit license. That is a user-code policy, not proof the hosted platform is open source. Exact checkout, team-seat totals, AI allowances and third-party dependency rights were not verified.",
+        "zh": "年付视图列Starter月均$8、年收$96，Developer月均$12、年收$144，Super月均$26、年收$312。Free含不限公开Pen，每个三文件；付费扩文件／协作者／资源额度，Pen内媒体与全局资源上限需分开检查。公开Pen代码自动MIT授权并需保留通知，私有代码无隐含许可。这是用户代码政策，不能证明托管平台开源。实际结账、团队总席位、AI额度及第三方依赖权利未核。",
+        "source_refs": ["pricing", "files", "code_license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CodePen: build previews, editor privacy and deployed websites",
+    "title_zh": "CodePen：构建预览、编辑器隐私及部署网站",
+    "description_en": "Review file-based Pens, Blocks, failed-build output, PRO deployment, version restore and export rights.",
+    "description_zh": "了解文件式Pen、Block、失败输出、PRO部署、版本恢复及导出权。",
+    "search_intent_en": "Evaluate CodePen2.0 development and publishing boundaries.",
+    "search_intent_zh": "评估 CodePen2.0 开发与发布边界。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No Pen, build, collaboration, password, deployment, DNS, export or recovery was executed.",
+      "zh": "未执行Pen、构建、协作、密码、部署、DNS、导出或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Pricing media figures20/30MB differ from Files per-Pen10/15MB for Developer/Super; destination-specific allowance needs confirmation, not presumed identical.",
+      "zh": "定价媒体20／30MB与Files中Developer／Super每Pen10／15MB不同，需按目标位置确认，不能假定相同。",
+      "source_refs": ["pricing", "files"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full hosted-platform license, live checkout/team pricing, AI quota, history duration, runtime/backend scope, UI languages and local reproducibility unverified.",
+      "zh": "完整托管平台许可、结账／团队价、AI额度、历史时长、运行／后端范围、界面语言及本地复现未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current docs describe2.0; Classic editor features and older Professor Mode must not be assumed available.",
+      "zh": "当前指南描述2.0，不能假定Classic功能及旧Professor Mode仍可用。",
+      "source_refs": ["access", "blocks"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

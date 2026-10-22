@@ -1,0 +1,425 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "moengage-503b6470",
+  "name": "MoEngage",
+  "website_url": "https://www.moengage.com/",
+  "domain": "www.moengage.com",
+  "identity_domain": "moengage.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "MoEngage is a customer engagement platform whose Flows orchestrate messages, waits and conditions across a customer journey. Its marketing automation evaluation depends on a working event and user-data model: a qualifying event, audience eligibility and entry limits determine admission, while channel controls and exit conditions govern later actions.\n\nFlows versioning is operationally significant. The current guide lets a publisher either leave active users in the previous version or move them into the new one, and entry counts persist across versions. This profile examines those rules, usage limits and diagnostic evidence rather than treating a visual journey as a guarantee that every eligible-looking user receives a message.",
+  "description_zh": "MoEngage 是客户互动平台，Flows 在客户旅程中编排消息、等待及条件。评估其营销自动化需要可用的事件及用户数据模型：合格事件、受众资格及加入次数限制决定准入，渠道控制和退出条件约束后续动作。\n\nFlows 版本管理具有实际运营影响。当前指南允许发布者将活动用户留在上一版本，或迁移至新版本；加入次数跨版本保留。本文研究这些规则、用量限制和诊断证据，不把可视化旅程视为每位看似合格的用户必然收到消息的保证。",
+  "core_features": [
+    {
+      "name_en": "Versioned journey editing",
+      "name_zh": "旅程版本编辑",
+      "explanation_en": "Publishing asks how to handle active trips in the immediately previous version.",
+      "explanation_zh": "发布时需选择如何处理紧邻上一版本的活动旅程。",
+      "source_ref": "edit",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Global journey exits",
+      "name_zh": "全局旅程退出",
+      "explanation_en": "Tracked events or properties can remove users regardless of their current stage.",
+      "explanation_zh": "跟踪事件或属性可使用户从任意当前阶段退出。",
+      "source_ref": "create",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Channel-level delivery controls",
+      "name_zh": "渠道级发送控制",
+      "explanation_en": "Flows can apply or ignore channel frequency caps and quiet hours.",
+      "explanation_zh": "Flows 可应用或忽略渠道频率上限及免打扰时段。",
+      "source_ref": "fc",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Individual trip diagnostics",
+      "name_zh": "个人旅程诊断",
+      "explanation_en": "Debug Flows traces entry attempts and stage outcomes in published flows, subject to availability.",
+      "explanation_zh": "Debug Flows 按可用权限追踪已发布流程的加入尝试及阶段结果。",
+      "source_ref": "debug",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: lifecycle marketers with instrumented app/web events and a need to coordinate journeys across channels.",
+      "Editorial fit: operations teams that need to evaluate version migration, message limits and individual trip diagnostics."
+    ],
+    "zh": [
+      "编辑判断的适用场景：已部署应用／网页事件采集、需要协调跨渠道旅程的生命周期营销团队。",
+      "编辑判断的适用场景：需评估版本迁移、消息限制及个人旅程诊断的运营团队。"
+    ],
+    "source_refs": ["create", "edit", "fc", "fup"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle marketer",
+      "Marketing operations engineer",
+      "Customer data analyst"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "create"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm identity/events, audience rules and both user-entry and workspace FUP allowances.",
+        "zh": "确认身份／事件、受众规则及用户加入次数与工作区公平用量额度。",
+        "source_refs": ["create", "fup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build a small internal-cohort flow with explicit FC/DND switches and an exit condition.",
+        "zh": "为内部小群体建立流程，明确 FC／DND 开关及退出条件。",
+        "source_refs": ["fc", "create"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect actual trip/stage/message evidence and distinguish drop-offs from configured exits.",
+        "zh": "检查真实旅程／阶段／消息证据，区分中途掉出与配置退出。",
+        "source_refs": ["debug", "analysis"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Before editing a live flow, map active stages and choose migration or old-version continuation.",
+        "zh": "编辑活动流程前核对活动阶段，选择迁移或留在旧版继续。",
+        "source_refs": ["edit"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "FUP-blocked entries are not queued or recovered automatically; a later entry requires a new qualifying trigger and allowed re-entry.",
+        "zh": "公平用量阻止的加入不会排队或自动恢复；后续加入需要新合格触发且允许重入。",
+        "source_refs": ["fup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Pause/resume can leave users stuck or past waiting windows; stop is irreversible within the same flow.",
+        "zh": "暂停／恢复可能使用户卡住或错过等待窗口；同一流程的停止不可逆。",
+        "source_refs": ["status", "analysis"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The general status page describes existing users staying on old versions, while the specific editing guide now also offers migration; use the specific guide and verify tenant controls.",
+        "zh": "通用状态页描述已有用户留在旧版，专门编辑指南现在还提供迁移；应以具体指南为依据并核实租户控件。",
+        "source_refs": ["status", "edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Current Growth and Enterprise cards both lead to sales contact; no public numerical subscription price established. The comparison table describes Monthly Tracked Users (MTUs); Debug Flows is shown under Enterprise, and several products/features are add-ons. The FUP guide separately uses contracted MAU for its entry-limit base. Obtain the actual user definition, entry allowance, channel/provider charges and add-on scope in the offer. No sustained free entitlement or normalized amount verified.",
+    "source_snapshot_zh": "当前 Growth 与 Enterprise 卡片均指向销售联系，未确认公开数字订阅价。比较表描述 Monthly Tracked Users（MTU）；Debug Flows 列于 Enterprise，多项产品／功能为附加项。公平用量指南另以合同 MAU 为加入额度基础。应在实际方案确认用户定义、加入额度、渠道／服务商费用及附加项范围。未核实持续免费权限或标准化金额。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/moengage",
+      "read_at": "2026-10-22T09:05:55.878Z",
+      "excerpt_sha256": "a22490b1bbc65688bc6dace6c47e311220556229eb08528ffdca5807cef8da90",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "MoEngage",
+      "title": "MoEngage Pricing & Plans | Boost marketing ROI with MoEngage",
+      "url": "https://www.moengage.com/plans-and-pricing/",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "857274764443922110819337b6353df8a53ca09ffaffb66c8dc65f3a207ae867",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Growth/Enterprise cards use sales contact, not a public numerical price. Same page as pricing-table excerpt; not independent corroboration."
+    },
+    {
+      "id": "plans",
+      "type": "official_pricing",
+      "site": "MoEngage",
+      "title": "MoEngage Pricing & Plans | Boost marketing ROI with MoEngage",
+      "url": "https://www.moengage.com/plans-and-pricing/",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "a5046918c6f4f311550a8ecc4f281988b60963cd423dc81a8c1f0e9501553b6f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current plan table including MTU wording and conditional Debug Flows/add-ons. Same pricing page, separate excerpt."
+    },
+    {
+      "id": "edit",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Editing a Flow",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/create/create-flows/editing-a-flow",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "62467e90b5ad901f306bd3b49299540f2ebb41c6c6cd63b69a3cf7a4c92876ef",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "status",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Status of Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/create/create-flows/status-of-flows",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "d13e78c464e93766a74b4132e597642dba9d9300f48e34a2554cae9c8cb437a6",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "fc",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Frequency Capping and Do Not Disturb for Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/create/configure-flows/frequency-capping-fc-and-do-not-disturb-dnd-for-flows",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "ce9b059942fc364cf9ffa49d6076b3c6f55bdfdad9fc29ae829430044f8c93ad",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "nextgen",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Next-Generation Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/create/create-flows/next-generation-flows-unlock-unprecedented-flexibility-and-reliability",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "07642ccb0a8a2872d774d445ac887e4f29c6f6b7fbb722c1c97f2f7851039043",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Create a Flow",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/create/create-flows/create-a-flow",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "e0e5eab90ec8a234ad040ff045226ab2857a9c76aee9513321eed48b0441970f",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Debug Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/analyze-flows/debug-flows",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "1c46cc7b0f01b3129236d28012087825672cf8e5df2e3a547772a21f4da65859",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "analysis",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Analyzing Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/faqs/analyzing-flows",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "3a1d4ebedf7ee0bd36134343a5a637474a51168a90422806659bcc9324fcdd04",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    },
+    {
+      "id": "fup",
+      "type": "official_documentation",
+      "site": "MoEngage",
+      "title": "Fair Usage Policy for Flows",
+      "url": "https://moengage.com/docs/user-guide/flows-cross-channel-messaging/getting-started/fair-usage-policy-for-flows",
+      "read_at": "2026-10-22T12:06:04.897521Z",
+      "excerpt_sha256": "cf97dc05de873650e9616e8692b95137d843fdfa4f6150ed209e2585c98f0228",
+      "verification": "official_documentation_read",
+      "transport": "ordinary_https_with_tls_verification",
+      "research_notes_en": "Current Markdown endpoint published in the official documentation index; ordinary HTTPS returned 200 with TLS verification. Images omitted in text extraction. Evidence covers saved text, not screenshots or account execution."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:06:04.897521Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["create", "edit", "fc", "fup"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry",
+        "title_en": "Admission needs a qualified event and available capacity",
+        "title_zh": "准入需要合格事件与可用容量",
+        "en": "The creation guide offers a maximum number of entries within a configured frequency; Month(s) means 30 days and Year(s) 365, not calendar boundaries. Separately, event-triggered flows have a workspace-level fair-usage limit for successful entries in a rolling 60-minute window. Repeat trips count separately; failed eligibility checks do not. At the limit, new entries are blocked with no queue, retry or automatic recovery. An editorial onboarding pilot should therefore inspect both a user’s entry eligibility and workspace capacity before interpreting a missing trip as a broken event.",
+        "zh": "创建指南提供指定频率内的最大加入次数；Month(s) 为 30 天、Year(s) 为 365 天，并非自然日历边界。另有工作区级公平用量限制，对事件触发流程统计滚动 60 分钟内的成功加入。重复旅程分别计数，资格检查失败不计数。达到上限会阻止新加入，不排队、重试或自动恢复。编辑示例：入职引导试点应同时检查用户加入资格与工作区容量，再将缺失旅程判断为事件故障。",
+        "source_refs": ["create", "fup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reentry",
+        "title_en": "A new version does not reset entry history",
+        "title_zh": "新版本不会重置加入历史",
+        "en": "The current editing guide explicitly carries user entry counts across versions. Someone who has used two annual entries cannot enter again when version 2 retains a limit of two; raising it to three allows one more. This differs from older cached search descriptions that claimed a reset, which were not adopted. Contracted MAU determines the fair-usage base in its own guide, whereas the current pricing table uses MTU terminology. Confirm both contractual definitions rather than equating an audience billing measure with a trip allowance.",
+        "zh": "当前编辑指南明确跨版本保留用户加入次数。已用完两个年度次数的人，在第二版仍限制两次时不能再加入；提高至三次才多一次。这与旧搜索缓存所称的重置不同，本文未采用旧说法。公平用量指南以合同 MAU 决定基础额度，当前价格表则使用 MTU 术语。应分别确认合同定义，不能将受众计费指标等同于旅程额度。",
+        "source_refs": ["edit", "fup", "plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migration",
+        "title_en": "Publishing requires an explicit active-user decision",
+        "title_zh": "发布必须明确选择活动用户去向",
+        "en": "There is no default between letting users continue in the prior version and moving them as soon as possible. The choice affects only the immediately preceding version. Under migration, users waiting in a Wait, Keep Evaluating or applicable DND stage finish pending delay first; a deleted branch or missing matching path can drop users. Existing occupants of an edited stage retain the configuration under which they entered it. For a proposed change, map occupied stages and review the migration choice before publication; simply saving a new canvas does not establish where old trips will land.",
+        "zh": "保留上一版用户继续运行与尽快迁移两项没有默认值，且只影响紧邻上一版本。选择迁移后，处于 Wait、Keep Evaluating 或适用 DND 阶段的用户先完成待处理延迟；删除分支或无匹配路径可能使用户中途退出。已在被编辑阶段的用户保留进入该阶段时的配置。对于拟议改动，应在发布前核对被占用阶段及迁移选择；仅保存新画布不能确认旧旅程将落在哪里。",
+        "source_refs": ["edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "delivery",
+        "title_en": "Flow defaults can bypass channel protection settings",
+        "title_zh": "流程默认可能跳过渠道保护设置",
+        "en": "The FC/DND guide says new flows ignore both controls by default. Applying channel limits therefore requires checking the flow-level Ignore switches, not only configuring the channel. When a restricted message is not sent, the flow can advance the user or remove them. Its DND table describes three retries at 15-minute intervals, then the configured advance/exit outcome; this is not a general delivery-failure retry promise. The page has an ON/OFF copy error in one DND sentence, so confirm the actual control state in an internal test. Facebook/Google audience actions are excluded from these settings.",
+        "zh": "FC／DND 指南说新流程默认忽略这两项控制。因此应用渠道限制需要检查流程级 Ignore 开关，不能只配置渠道。受限消息未发送时，可配置让用户继续或移出。其 DND 表描述每隔 15 分钟重试三次，再执行配置的继续／退出结果，不能推广为一般投递故障重试保证。页面一处 DND 句子有 ON／OFF 复制错误，内部测试应确认真实控件状态。Facebook／Google 受众动作不适用这些设置。",
+        "source_refs": ["fc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "conditions",
+        "title_en": "Historical lookback and forward evaluation have different meanings",
+        "title_zh": "历史回看与向前评估含义不同",
+        "en": "The next-generation engine guide permits Last 30 Days checks to include behavior before entry, but caps Since entering the flow at the most recent 30 days even for a longer trip. The analytics FAQ says a condition’s Yes path can run as soon as it matches, while No waits for the evaluation window to end. In a conditional split, the first branch receives priority throughout that window before alternatives are considered. For a reactivation design, distinguish a historical purchase check from waiting for a future purchase and inspect branch precedence; a displayed 60-day journey is not proof of 60-day retrospective memory.",
+        "zh": "新版引擎指南允许 Last 30 Days 检查包含加入前行为，但即使旅程更长，Since entering the flow 也最多检查最近 30 天。分析 FAQ 说条件匹配即可走 Yes，No 要等评估窗口结束；条件分支则在整个窗口优先考虑第一分支，再考虑其他分支。设计唤回时，应区分检查历史购买与等待未来购买，并检查分支优先级；画布上 60 天旅程不能证明具有 60 天历史回看能力。",
+        "source_refs": ["nextgen", "analysis"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "Global exits need supported data and deliberate logic",
+        "title_zh": "全局退出需要支持的数据与明确逻辑",
+        "en": "Global exit criteria apply across flow types and remove matching users from their last known position. The guide allows up to five OR-connected conditions, each with up to five AND-connected subconditions, and a 30-day satisfaction window for combined subconditions. Only string, integer and Boolean criteria are supported; custom segments, arrays/GeoPoint and several date filters are excluded. An editorial purchase-reminder test should check the exact product-linked exit data and supported filters, rather than assuming any segment can become a global stop condition.",
+        "zh": "全局退出条件适用于各类流程，将匹配用户从最后已知位置移出。指南允许最多五个 OR 条件，每个包含最多五个 AND 子条件，组合子条件需在 30 天内满足。仅支持字符串、整数及布尔条件；自定义分群、数组／GeoPoint 及若干日期筛选不受支持。编辑示例：购买提醒测试应核对准确的产品关联退出数据及支持的筛选，不能假设任何分群都可成为全局终止条件。",
+        "source_refs": ["create"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "lifecycle",
+        "title_en": "Pause, retirement and stop have different consequences",
+        "title_zh": "暂停、退役及停止后果不同",
+        "en": "Pause blocks new entries, messages, condition evaluation and movement; the status guide warns some users may remain stuck even after resume. Retirement blocks new entries while existing users continue, including eligible in-app/on-site delivery until exit or expiry. Stopping the latest version stops all older active versions and cannot be resumed or edited. Restore as draft copies an earlier version into an inactive new draft, and is unavailable when the latest version is stopped. Choose the operation from the intended outcome and inspect waiting trips; none of these controls was executed in this research.",
+        "zh": "暂停会阻止新加入、消息、条件评估及移动；状态指南警告部分用户恢复后仍可能卡住。退役阻止新加入，让已有用户继续，包括符合条件的应用内／站内消息直至退出或过期。停止最新版会停止全部较早活动版本，且不能恢复或编辑。Restore as draft 将旧版复制为新的非活动草稿，最新版已停止时不可用。应按目标选择操作并检查等待旅程；本次研究未执行任何这些控制。",
+        "source_refs": ["status", "edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "diagnostics",
+        "title_en": "Inspect an attempt, a trip and a message separately",
+        "title_zh": "分别检查尝试、旅程与消息",
+        "en": "Debug Flows is a plan-dependent feature for published flows, with up to seven days of attempts/entries and no support for fixed-time one-shot or periodic flows. Publishing to a small internal cohort is a live test, not an offline simulation. The analytics FAQ distinguishes trips from unique people and abrupt drop-offs from configured exits; conversions also require the documented attribution/engagement conditions. For diagnosis, follow one identity from entry attempt to stage result and campaign outcome before comparing aggregates. Migration reasons and version-specific entries can explain an apparent disappearance from the old version.",
+        "zh": "Debug Flows 受套餐权限约束，针对已发布流程提供最多七天尝试／加入记录，不支持固定时间的一次性或周期流程。向小范围内部群体发布是实际测试，并非离线模拟。分析 FAQ 区分旅程与独立人数，也区分中途掉出与配置退出；转化还需满足文档归因／互动条件。诊断应先沿一个身份追踪加入尝试、阶段结果及活动结果，再比较汇总。迁移原因及分版本加入记录可能解释用户为何从旧版看似消失。",
+        "source_refs": ["debug", "analysis", "edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "MoEngage Flows: entry limits, versions and delivery controls",
+    "title_zh": "MoEngage Flows：加入限制、版本与发送控制",
+    "description_en": "Evaluate MoEngage Flows re-entry, version migration, frequency caps, global exits and trip debugging using current official documentation.",
+    "description_zh": "依据当前官方文档评估 MoEngage Flows 重入、版本迁移、频率上限、全局退出及旅程排障。",
+    "primary_intent": "Evaluate MoEngage lifecycle journey execution and operational limits",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant access, SDK instrumentation, publishing, sending, stop, migration or purchase was performed.",
+      "zh": "未访问租户、部署 SDK、发布、发送、停止、迁移或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "The exact account engine rollout, controls, pricing, MAU/MTU reconciliation and add-on entitlements remain unverified.",
+      "zh": "具体账户引擎上线状态、控件、价格、MAU／MTU 定义协调及附加权限未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "General retry/ordering guarantees, regional eligibility, current UI languages, self-hosting rights and data-retention terms are not established.",
+      "zh": "一般重试／排序保证、地区资格、当前界面语言、自托管权利及数据保留条款未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

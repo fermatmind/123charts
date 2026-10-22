@@ -1,0 +1,286 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "restyaboard-412c5dcb",
+  "name": "Restyaboard",
+  "website_url": "https://restya.com/board",
+  "domain": "restya.com",
+  "identity_domain": "restya.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Restyaboard is a self-hostable Kanban application whose published repository describes boards, tasks, to-dos and chat. This profile concerns the accessible RestyaPlatform/board source distribution. The assigned restya.com website and product path could not be read during research; current hosted service, commercial offers and support availability remain unknown.\n\nRunning the published stack requires an application server and database operations. Its OSL 3.0 source license and separately referenced commercial license create different conditions; a royalty-free source grant does not remove hosting, upgrade or compliance work.",
+  "description_zh": "Restyaboard 是可自行托管的看板应用，公开仓库描述了看板、任务、待办与聊天。本档案针对可读取的 RestyaPlatform/board 源码发行内容。研究时无法读取原 restya.com 官网及产品路径；当前托管服务、商业方案和支持可用性仍未知。\n\n运行公开技术栈需要应用服务器及数据库运维。OSL 3.0 源码许可和另行提及的商业许可有不同条件；免版税源码授权并不免除托管、升级或履约工作。",
+  "core_features": [
+    {
+      "name_en": "Self-hosted Kanban",
+      "name_zh": "自行托管看板",
+      "explanation_en": "Board-based task organization on an operator-controlled server.",
+      "explanation_zh": "在运维方控制的服务器组织看板任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "repository",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Email card input configuration",
+      "name_zh": "邮件卡片输入配置",
+      "explanation_en": "README requires IMAP configuration for adding/replying to cards by email.",
+      "explanation_zh": "README 要求配置 IMAP，才能通过邮件添加／回复卡片。",
+      "explanation_scope": "product_specific",
+      "source_ref": "repository",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a small internal board with disposable cards before choosing a maintained runtime and backup strategy."
+    ],
+    "zh": ["先用可丢弃卡片评估小型内部看板，再确定受维护运行环境和备份方案。"],
+    "source_refs": ["repository", "compose"],
+    "basis": "Proposed operator evaluation, not an installation or customer example."
+  },
+  "technical_details": {
+    "Published stack": {
+      "en": "README lists nginx, PHP-FPM/mbstring, PostgreSQL, ElasticSearch and Grunt; container files reflect an older runtime example.",
+      "zh": "README 列出 nginx、PHP-FPM／mbstring、PostgreSQL、ElasticSearch 与 Grunt；容器文件体现较早运行环境示例。",
+      "source_ref": "repository",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Developer evaluating a self-hosted Kanban board",
+      "Operator able to manage application and database backups"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "repository"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Review the source license and supported runtime before provisioning an isolated test instance.",
+        "zh": "部署隔离测试实例前，核对源码许可与受支持运行环境。",
+        "source_refs": ["license", "container"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Define persistent database/file storage and restore checks before testing board/email workflows.",
+        "zh": "测试看板／邮件流程前，定义数据库及文件持久化与恢复检查。",
+        "source_refs": ["compose", "repository"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "repository",
+    "scope": "README names SMTP/IMAP and external image/storage API keys; current provider compatibility and plugin availability unverified."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Published sample Compose has no explicit persistence volumes; durability must be designed and tested.",
+        "zh": "公开 Compose 示例未显式定义持久化卷，需自行设计并测试数据耐久性。",
+        "source_refs": ["compose"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_source_license_read",
+    "is_open_source": true,
+    "url": "https://github.com/RestyaPlatform/board/blob/dev/LICENSE.txt",
+    "source_ref": "license",
+    "scope": "OSL3.0 source distribution; README separately references commercial licensing with unknown current terms."
+  },
+  "pricing": {
+    "status": "source_license_checked_hosted_price_unknown",
+    "price_type": "royalty_free_source_conditional_commercial_unknown",
+    "officially_checked": true,
+    "source_ref": "license-cost",
+    "normalized_price": null,
+    "source_snapshot_en": "OSL3.0 grants royalty-free source rights subject to license conditions. Current commercial license, hosting, support and installation prices unknown; not a free-hosted-service claim.",
+    "source_snapshot_zh": "OSL 3.0 按许可条件授予免版税源码权利。当前商业许可、托管、支持及安装价格未知；不表示免费托管服务。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/restyaboard",
+      "read_at": "2026-10-22T08:55:14.476Z",
+      "excerpt_sha256": "d9efba713d32562d0f8d19b461ab8b47986cae8395c8e3a3e12bffda6e3e172c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "repository",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "README.md",
+      "url": "https://github.com/RestyaPlatform/board/blob/dev/README.md",
+      "read_at": "2026-10-22T11:42:26.501240Z",
+      "verification": "official_documentation_read",
+      "transport": "connected_github_file_reader",
+      "excerpt_sha256": "3b2449870ccfe5c5e6af7d85b0c7242e3388bd74e6661c456e98173a3c952800",
+      "research_notes_en": "Official dev README read: board/task/chat scope, self-hosting prerequisites, upgrade/init and dual-license pointers. Active badge and old links do not establish current maintained hosting."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "github.com",
+      "title": "LICENSE.txt",
+      "url": "https://github.com/RestyaPlatform/board/blob/dev/LICENSE.txt",
+      "read_at": "2026-10-22T11:42:26.502030Z",
+      "verification": "official_documentation_read",
+      "transport": "connected_github_file_reader",
+      "excerpt_sha256": "01fdbf2d0a55081887ec23457aa13bce661cbc3b0e44d192c9b13b4ce83aa2ee",
+      "research_notes_en": "Actual LICENSE.txt is OSL3.0: redistribution/source, external deployment, attribution and disclaimer conditions; not MIT or AGPL. No code copied."
+    },
+    {
+      "id": "license-cost",
+      "type": "official_pricing",
+      "site": "github.com",
+      "title": "LICENSE.txt",
+      "url": "https://github.com/RestyaPlatform/board/blob/dev/LICENSE.txt",
+      "read_at": "2026-10-22T11:42:26.502117Z",
+      "verification": "official_documentation_read",
+      "transport": "connected_github_file_reader",
+      "excerpt_sha256": "01fdbf2d0a55081887ec23457aa13bce661cbc3b0e44d192c9b13b4ce83aa2ee",
+      "research_notes_en": "License grant is royalty-free under its conditions. This is a source-license cost check, not a hosted/commercial price list; official website could not be read and commercial prices remain unknown."
+    },
+    {
+      "id": "container",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "Dockerfile",
+      "url": "https://github.com/RestyaPlatform/board/blob/dev/Dockerfile",
+      "read_at": "2026-10-22T11:42:26.502429Z",
+      "verification": "official_documentation_read",
+      "transport": "connected_github_file_reader",
+      "excerpt_sha256": "827b1e44d5afe8d7f1cda9e75bf4c5f944b3ca699a46c6f98b016243c8823e36",
+      "research_notes_en": "Published Dockerfile read: Alpine3.12/PHP7, nginx and build/runtime dependencies; no build, execution or security audit."
+    },
+    {
+      "id": "compose",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "docker-compose.yml",
+      "url": "https://github.com/RestyaPlatform/board/blob/dev/docker-compose.yml",
+      "read_at": "2026-10-22T11:42:26.502602Z",
+      "verification": "official_documentation_read",
+      "transport": "connected_github_file_reader",
+      "excerpt_sha256": "e2d423cca9c5520cb6f1f52b159334fe60b99c86c70467ad5eed2beb3959cc67",
+      "research_notes_en": "Published sample Compose read: app, PostgreSQL12, SMTP relay and mail catcher; no explicit persistence volumes. It is not an accepted production deployment."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:42:26.502602Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["repository", "license"],
+  "profile": {
+    "sections": [
+      {
+        "id": "board-evaluation",
+        "title_en": "Start with a board the operator can recover",
+        "title_zh": "从运维方能够恢复的看板开始",
+        "en": "A hypothetical internal review board could separate items awaiting work, under review and complete. Test moving a disposable card and finding its discussion before importing important work. Those are evaluation steps based on the repository’s board/task/chat scope, not a verified UI walkthrough.\n\nSelf-hosting changes responsibility: someone must operate the database, mail path and application. A team needing a presently verified hosted signup, vendor service commitment or managed upgrade should resolve the inaccessible official website first. Repository access alone does not establish any of those services.",
+        "zh": "假设内部复核看板分为待处理、复核中和完成，可先测试移动一张可丢弃卡片及查找讨论，再导入重要工作。这是基于仓库看板／任务／聊天范围的评估步骤，未验证具体界面操作。\n\n自行托管需要有人管理数据库、邮件链路及应用。若团队需要当前已核实的托管注册、厂商服务承诺或托管升级，应先解决无法读取官网的问题。能访问仓库并不确立这些服务。",
+        "source_refs": ["repository"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Read the deployment files as a starting point",
+        "title_zh": "把部署文件当作起点",
+        "en": "The Dockerfile names Alpine 3.12 and PHP 7; the Compose example pairs the app with PostgreSQL 12, an SMTP relay and a mail catcher. These files document a supplied stack, not current production compatibility or security support. Do not infer a current release from a package manifest or an Active label in the README.\n\nChoose maintained versions only after checking application compatibility. Before external access, inspect credentials, network exposure, mail delivery and writable file locations. This research did not build an image, start containers, send mail or assess vulnerabilities.",
+        "zh": "Dockerfile 指定 Alpine 3.12 和 PHP 7；Compose 示例组合应用、PostgreSQL 12、SMTP relay 与邮件捕获器。这些文件记录所提供的技术栈，不证明当前生产兼容性或安全支持。不能用包清单或 README 的 Active 标签推断当前版本。\n\n应核对应用兼容性后选择受维护版本。开放外部访问前，应检查凭据、网络暴露、邮件投递及可写文件位置。本次没有构建镜像、启动容器、发送邮件或评估漏洞。",
+        "source_refs": ["container", "compose", "repository"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recover-upgrade",
+        "title_en": "An existing database is not an automatic migration",
+        "title_zh": "已有数据库不等于自动迁移",
+        "en": "README says startup initialization is skipped when the configured database already exists. Its upgrade instructions instead combine replacing application files with version-specific SQL. Therefore, an existing database should not be assumed to receive every schema change automatically.\n\nThe sample Compose does not declare explicit persistence volumes. Before real use, map database and uploaded-file storage, retain matching configuration and rehearse restoration on a separate instance. Pin the tested source revision and review the exact upgrade path; do not execute old shell examples blindly. A successful container start would not prove data survives replacement or a downgrade.",
+        "zh": "README 称配置的数据库已存在时会跳过启动初始化；升级说明另要求替换应用文件并执行对应版本 SQL。因此不能假设已有数据库会自动得到全部结构变更。\n\nCompose 示例没有显式持久化卷。实际使用前，应明确数据库及上传文件存储、保留配套配置，并在独立实例演练恢复。固定已测试源码版本，复核准确升级路径，不要直接照跑旧 shell 示例。容器启动成功也不证明替换或降级后数据仍可恢复。",
+        "source_refs": ["repository", "compose"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-cost",
+        "title_en": "Source rights have network and redistribution conditions",
+        "title_zh": "源码权利有网络使用及再分发条件",
+        "en": "The actual LICENSE.txt contains OSL 3.0. It grants royalty-free rights while conditioning distribution of original/derivative work on that license and source availability. Its external-deployment clause treats making the work available to people other than You, including over a network, as distribution; attribution and modification notices also matter. Read the full text against the intended deployment rather than treating this as an unrestricted permissive grant.\n\nREADME separately offers a commercial license. Current commercial terms and amounts were not verified because the linked site could not be read. Source license cost is therefore distinct from hosting, maintenance and support cost. No hosted free tier, free installation commitment or commercial entitlement is confirmed here.",
+        "zh": "实际 LICENSE.txt 为 OSL 3.0。它授予免版税权利，同时对原作／衍生作品的分发提出沿用许可及提供源码等条件。外部部署条款把向许可所定义的 You 以外人员提供作品（含网络提供）视作分发；署名及修改说明也有要求。应结合目标部署阅读全文，不能当作无条件宽松授权。\n\nREADME 另行提供商业许可。由于无法读取链接网站，当前商业条款与金额未核实。因此源码许可成本应与托管、维护和支持成本区分。本档案没有确认免费托管方案、免费安装承诺或商业权益。",
+        "source_refs": ["license", "license-cost", "repository"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "Current official website/hosting, commercial price and license, support, plugin catalog and maintained release are unknown. Website retrieval failure does not prove closure.",
+      "zh": "当前官网／托管、商业价格与许可、支持、插件目录及维护版本未知。读取失败不证明关闭。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No installation, migration, card operation, email delivery, authentication, persistence, backup or restoration was executed. Current UI languages and external integrations unverified.",
+      "zh": "未执行安装、迁移、卡片操作、邮件投递、身份验证、持久化、备份或恢复。当前界面语言及外部集成未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Restyaboard: Self-Hosted Kanban, Runtime and OSL Conditions",
+    "title_zh": "Restyaboard：自行托管看板、运行环境及 OSL 条件",
+    "description_en": "Evaluate the published Restyaboard repository, persistence, upgrade and source-license responsibilities; hosted pricing remains unknown.",
+    "description_zh": "评估 Restyaboard 公开仓库、持久化、升级及源码许可责任；托管价格仍未知。",
+    "primary_intent": "Evaluate documented workflow conditions and unresolved deployment or entitlement questions.",
+    "secondary_questions": [],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  }
+}

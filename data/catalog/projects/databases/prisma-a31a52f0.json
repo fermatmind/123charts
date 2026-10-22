@@ -1,0 +1,399 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "prisma-a31a52f0",
+  "name": "Prisma",
+  "website_url": "https://www.prisma.io/",
+  "domain": "www.prisma.io",
+  "identity_domain": "prisma.io",
+  "category": "databases",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Prisma now presents a TypeScript application platform spanning Prisma ORM, managed Prisma Postgres and Prisma Compute hosting. These are distinct components: the ORM data layer is not the hosted database, and using Postgres does not require adopting every Prisma service.\n\nThe current documentation makes version selection unusually important. ORM 8 is a release candidate with a TypeScript contract workflow; ORM 7 remains a separate supported route. This profile examines a proposed app’s schema lifecycle, database recovery, preview isolation and operating bill. No dependency, database, account or deployment was created.",
+  "description_zh": "Prisma 当前介绍覆盖 Prisma ORM、托管 Prisma Postgres 及 Prisma Compute 主机的 TypeScript 应用平台。三者是不同组件：ORM 数据层不等于托管数据库，使用 Postgres 也不要求采用全部 Prisma 服务。\n\n当前文档尤其需要明确版本：ORM 8 是采用 TypeScript contract 流程的候选发布版，ORM 7 则保留独立支持路径。本文评估拟建应用的 schema 生命周期、数据库恢复、预览隔离及运行费用；本次未创建依赖、数据库、账户或部署。",
+  "core_features": [
+    {
+      "name_en": "Typed ORM contracts",
+      "name_zh": "类型化 ORM 契约",
+      "explanation_en": "ORM 8 derives typed access from a TypeScript contract.",
+      "explanation_zh": "ORM 8 从 TypeScript contract 生成类型化访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "orm",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Managed PostgreSQL",
+      "name_zh": "托管 PostgreSQL",
+      "explanation_en": "Use Prisma Postgres with supported database clients.",
+      "explanation_zh": "通过受支持数据库客户端使用 Prisma Postgres。",
+      "explanation_scope": "product_specific",
+      "source_ref": "postgres",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Versioned HTTP services",
+      "name_zh": "带版本的 HTTP 服务",
+      "explanation_en": "Inspect service versions and promote or roll back application builds.",
+      "explanation_zh": "检查服务版本，提升或回退应用构建。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deploy",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate an ORM generation against the required engine",
+      "Design a preview with a separate database target",
+      "Plan snapshot recovery and a combined database/HTTP budget"
+    ],
+    "zh": [
+      "按所需引擎评估 ORM 代际",
+      "为预览配置独立数据库目标",
+      "规划快照恢复及数据库／HTTP 综合预算"
+    ],
+    "source_refs": ["orm", "compute", "backup", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "TypeScript application developers",
+      "Database engineers",
+      "Platform operators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Pin the ORM generation and inspect engine support.",
+        "zh": "固定 ORM 代际并检查引擎支持。",
+        "source_refs": ["orm"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review migration output and preview DATABASE_URL before any write.",
+        "zh": "写入前检查迁移输出和预览 DATABASE_URL。",
+        "source_refs": ["migrate", "compute"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Rehearse recovery and inspect both service meters.",
+        "zh": "演练恢复并检查两类服务计量。",
+        "source_refs": ["backup", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "ORM 8 is an RC, with engine-specific support stages.",
+        "zh": "ORM 8 是候选发布版，各引擎支持阶段不同。",
+        "source_refs": ["orm"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Preview resources do not automatically separate database contents or run migrations.",
+        "zh": "预览资源不会自动隔离数据库内容或执行迁移。",
+        "source_refs": ["limits", "compute"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Compute runtime constraints exclude several homepage roadmap items.",
+        "zh": "Compute 运行约束排除了部分首页路线图项目。",
+        "source_refs": ["limits", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_allowances_plus_usage_hosting",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:40:11.234808Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free allowances and paid Postgres/Compute plans are separate from the ORM; displayed Starter $10/month plus applicable usage. Exact currency/taxes and account spend enforcement untested.",
+    "summary_zh": "免费额度及付费 Postgres／Compute 与 ORM 分开；显示 Starter 每月 $10 加适用用量。本次未测试具体币种／税及账户消费控制。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/prisma-io",
+      "read_at": "2026-10-22T08:55:56.581Z",
+      "excerpt_sha256": "1caa84fdba33a4d815ab378e1da5cb37ee30aa587a45c2933ec7abbb7043dcb0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Prisma platform",
+      "url": "https://www.prisma.io/",
+      "read_at": "2026-10-22T13:40:11.234808Z",
+      "excerpt_sha256": "51e8c980979e2757b19a05d569178c5e93eef9354e751d8bf8b7e28c3c026ae5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current ORM/Postgres/Compute family and coming-soon labels read; no cost/latency comparison independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Prisma",
+      "title": "Prisma pricing",
+      "url": "https://www.prisma.io/pricing",
+      "read_at": "2026-10-22T13:40:49.594064Z",
+      "excerpt_sha256": "f62588e8c2a19cdb798492cc48b0fffedcc875e884f3e6f1bd61674ee5cd05f5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual fee table and FAQ read; database operations/storage separated from Compute meters; currency/checkout not verified."
+    },
+    {
+      "id": "orm",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Introduction to Prisma ORM",
+      "url": "https://www.prisma.io/docs/orm",
+      "read_at": "2026-10-22T13:44:01.464868Z",
+      "excerpt_sha256": "c55be96b66d7a4ddb86e6e4ea2c711d8eaf7eda27f7fa3e2d6de5154af06e0c3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ORM 8 release candidate, changed contract/client and engine support read; ORM 7 remains a separate supported path."
+    },
+    {
+      "id": "postgres",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Prisma Postgres",
+      "url": "https://www.prisma.io/docs/postgres",
+      "read_at": "2026-10-22T13:44:01.568766Z",
+      "excerpt_sha256": "1de989e666a642dcb63d90f85e765e5c52f0b9f01bdba82ff099d75c2fbc9a45",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed PostgreSQL, client choices, temporary database claim and connection options read."
+    },
+    {
+      "id": "migrate",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "How migrations work",
+      "url": "https://www.prisma.io/docs/orm/migrations/how-migrations-work",
+      "read_at": "2026-10-22T13:45:11.179856Z",
+      "excerpt_sha256": "81df06eff07a200d5bb3a160857f0c3ac3e67355fa081d474862e8d0948dfada",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Plan/show/execute and generated artifact boundaries read; no migration commands run."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Prisma Postgres backups",
+      "url": "https://www.prisma.io/docs/postgres/database/backups",
+      "read_at": "2026-10-22T13:45:09.590569Z",
+      "excerpt_sha256": "4cdb553c77c5f2d32abdfdd46539a20b3b5a9b237c181cf663a894f1906c418c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Paid activity-day snapshots, direct pg_dump and future PITR read; no backup performed."
+    },
+    {
+      "id": "compute",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Prisma Compute",
+      "url": "https://www.prisma.io/docs/compute",
+      "read_at": "2026-10-22T13:44:01.676169Z",
+      "excerpt_sha256": "7f4143b220dc19962602a06ac5604196c8afa0a22a6d8934a6bf942911389ea2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Project/branch/service model and explicit preview DATABASE_URL responsibility read."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Compute deployments",
+      "url": "https://www.prisma.io/docs/compute/deployments",
+      "read_at": "2026-10-22T13:49:40.419112Z",
+      "excerpt_sha256": "9987df3344b3f88d1e8c9a48e86696698f08e2f4f32ae5eca509f73cb26bede0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Build versions, log targeting, promotion rebuild and existing-build rollback read."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Prisma",
+      "title": "Compute known limitations",
+      "url": "https://www.prisma.io/docs/compute/limitations",
+      "read_at": "2026-10-22T13:49:40.419596Z",
+      "excerpt_sha256": "af7cf0cb29fade6e085abf6a9498c0f9f10ccaf20e4a4e3b8cb553ea87411d6e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Runtime, variables, GitHub setup and no automatic database cloning/migrations read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:49:40.419596Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "orm"],
+  "profile": {
+    "sections": [
+      {
+        "id": "versions",
+        "title_en": "Choose the ORM generation before following examples",
+        "title_zh": "先选 ORM 代际，再采用示例",
+        "en": "ORM 8 replaces the familiar schema/client workflow with contract.prisma, emitted artifacts and a generated db import. Its documented engine coverage is PostgreSQL, early-access MongoDB and experimental SQLite; other listed engines point to ORM 7. Pin a deliberate version and follow that generation’s guide rather than combining commands from old tutorials with the new default. An RC label is not production compatibility evidence.",
+        "zh": "ORM 8 用 contract.prisma、生成产物及 db 导入替代熟悉的 schema／client 流程。文档列出 PostgreSQL、抢先体验 MongoDB 及实验性 SQLite，其他所列引擎指向 ORM 7。应明确固定版本并跟随对应指南，避免混用旧教程命令与新默认版。候选发布标签不证明生产兼容性。",
+        "source_refs": ["orm"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migrations",
+        "title_en": "A migration plan does not execute itself",
+        "title_zh": "迁移计划不会自行执行",
+        "en": "The new migration workflow separates editing/emitting a contract, planning changes, reviewing the result and applying it. A plan alone does not change the database. Execution uses generated operations, so edits to migration source must be recompiled. The first plan without a prior reference assumes an empty starting point; an existing database needs the documented baseline procedure. Review the actual SQL and target before any production application.",
+        "zh": "新迁移流程分开编辑／生成 contract、规划、审查及应用变更，只有计划不会改变数据库。执行使用生成的操作，因此迁移源码修改后需重新编译。没有先前引用的首个计划假定起点为空，已有数据库需按文档建立基线。生产应用前应检查实际 SQL 和目标。",
+        "source_refs": ["migrate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "connection",
+        "title_en": "A temporary database needs an ownership decision",
+        "title_zh": "临时数据库需要明确归属",
+        "en": "Prisma Postgres accepts ordinary PostgreSQL clients as well as Prisma-oriented access. The create-db flow returns a connection string and claim link; an unclaimed temporary database is deleted after 24 hours. Treat that as an evaluation resource, not durable application storage. Select the intended pooled or direct endpoint and protect credentials; a successful local query does not establish backup coverage or production ownership.",
+        "zh": "Prisma Postgres 接受常规 PostgreSQL 客户端及 Prisma 访问方式。create-db 流程返回连接串和认领链接，未认领临时数据库在 24 小时后删除。应将其作为评估资源，而非持久应用存储；需选择合适池化／直接端点并保护凭据。本地查询成功不证明备份覆盖或生产归属。",
+        "source_refs": ["postgres"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "restore",
+        "title_en": "Snapshot recovery has a data-loss window",
+        "title_zh": "快照恢复存在数据丢失窗口",
+        "en": "Paid plans document daily snapshots on days with database activity, retained for seven or thirty days depending on tier. Changes after the latest snapshot may be lost. Point-in-time recovery is described as future functionality. Manual pg_dump uses the direct connection and compatible PostgreSQL tools. Select a recovery objective and inspect a separate restore before depending on snapshots; no backup or restore was run here.",
+        "zh": "付费方案记载在有数据库活动的日期生成每日快照，按层级保留七天或三十天；最后快照之后的变更可能丢失。时间点恢复仍列为未来能力。手动 pg_dump 使用直接连接和兼容 PostgreSQL 工具。依赖快照前应明确恢复目标并在独立环境检查恢复，本次未执行备份或恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "isolation",
+        "title_en": "A preview branch is not automatic data isolation",
+        "title_zh": "预览分支不自动隔离数据",
+        "en": "Compute groups services and versions under projects and branches. Preview-scoped variables must point DATABASE_URL at non-production data when isolation is required. The limitations page explicitly excludes automatic production data cloning and automatic production migrations on deploy. A branch name alone is insufficient: inspect resolved configuration, schema compatibility and the actual target database before a preview accepts writes.",
+        "zh": "Compute 在项目／分支下管理服务及版本。需要隔离时，预览作用域变量必须将 DATABASE_URL 指向非生产数据。限制页明确不自动克隆生产数据，也不在部署时自动执行生产迁移。仅有分支名不足，应在预览接受写入前核对配置、schema 兼容性及真实数据库目标。",
+        "source_refs": ["compute", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release",
+        "title_en": "Promotion and rollback affect application artifacts",
+        "title_zh": "提升及回退作用于应用产物",
+        "en": "The deployment guide says promoting a preview rebuilds with production variables, while rollback reuses an existing build. Version logs and build output help distinguish runtime and build failures. This is not a documented database undo operation: coordinate schema compatibility with the selected application version. Changing a stored environment value also requires a new deploy to affect a version. No build, promotion or rollback was tested.",
+        "zh": "部署指南称预览提升会用生产变量重新构建，回退则复用已有构建。版本日志和构建输出有助区分运行与构建失败。这不是文档中的数据库撤销操作，应协调所选应用版本与 schema 兼容性。已保存环境变量变更也需新部署才能影响版本。本次未测试构建、提升或回退。",
+        "source_refs": ["deploy", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "HTTP hosting has concrete runtime limits",
+        "title_zh": "HTTP 主机有明确运行限制",
+        "en": "Compute currently has no WebSocket servers, persistent filesystem or multi-region service deployment. A request must begin responding within sixty seconds; streaming has a different first-byte boundary. Keep-awake primitives do not guarantee continuity through restarts. A Composer scheduler service or external scheduler is distinct from a built-in platform cron. Confirm the real workload fits these constraints before treating a coming-soon homepage item as available.",
+        "zh": "Compute 当前不支持 WebSocket 服务、持久文件系统或多区域服务部署。请求需在六十秒内开始响应，流式响应适用首字节边界。保持唤醒工具不保证重启期间连续运行。Composer 调度服务或外部调度器也不同于平台内置 cron。应核对实际负载，不能把首页即将推出项目当成可用功能。",
+        "source_refs": ["limits", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Database and application hosting use different meters",
+        "title_zh": "数据库与应用主机采用不同计量",
+        "en": "The displayed Free plan includes 200,000 database operations and 2 GB storage; paid entry starts at $10 per month. The FAQ counts one database action as one operation even for a complex join. Compute instead meters requests, provisioned memory, active CPU and outbound traffic. Database transfer inclusion does not remove Compute bandwidth charges. Paid overage and spend-limit settings need an account-specific review; checkout currency, taxes and actual invoicing were not verified.",
+        "zh": "显示的 Free 包含二十万数据库操作及 2 GB 存储，付费入门为每月 $10。FAQ 将一次数据库动作计为一次操作，即使查询含复杂连接。Compute 则按请求、预置内存、活跃 CPU 及出站流量计量。数据库传输包含在内不代表 Compute 带宽免费。付费超额及消费上限需按账户核对，本次未核结账币种、税及实际账单。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Prisma: setup, operating limits and pricing",
+    "title_zh": "Prisma：设置、运行边界及费用",
+    "description_en": "Prisma now presents a TypeScript application platform spanning Prisma ORM, managed Prisma Postgres and Prisma Compute hosting. These are distinct components: the ORM data",
+    "description_zh": "Prisma 当前介绍覆盖 Prisma ORM、托管 Prisma Postgres 及 Prisma Compute 主机的 TypeScript 应用平台。三者是不同组件：O",
+    "search_intent_en": "Evaluate Prisma for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Prisma。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No install, credentials, database, migration, deployment, restore or billing action was executed.",
+      "zh": "未执行安装、凭据、数据库、迁移、部署、恢复或计费操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "ORM is described as open source, but the actual license grant was not read; full-platform license status remains unverified. Runtime compatibility, limits enforcement and performance require direct testing.",
+      "zh": "官网称 ORM 开源，但本次未读取实际许可授权，全平台许可状态仍待核。运行兼容性、限额执行及性能需实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current pages differ in how roadmap background work is described; use the specific limitations and selected release, not a blanket support claim.",
+      "zh": "当前页面对后台工作路线图表述存在差异，应采用具体限制及所选发布版，不能一概声称支持。",
+      "source_refs": ["home", "limits"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

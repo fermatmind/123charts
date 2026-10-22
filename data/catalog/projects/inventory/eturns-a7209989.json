@@ -1,0 +1,230 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "eturns-a7209989",
+  "name": "eTurns",
+  "website_url": "https://www.eturns.com/",
+  "domain": "www.eturns.com",
+  "identity_domain": "eturns.com",
+  "category": "inventory",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "eTurns TrackStock manages replenishment of consumable stock at the point of use, including customer-owned and consigned inventory. It supports barcode/QR-based work and offers optional electronic labels, RFID and weight-based SensorBins.\n\nThis is a stockroom and service-vehicle workflow rather than primarily an ecommerce storefront. A useful evaluation follows consumption into replenishment and, where relevant, distributor billing.",
+  "description_zh": "eTurns TrackStock 管理使用现场的耗材补货，包括客户自有和寄售库存。它支持条码或二维码作业，并提供电子标签、RFID 及称重式 SensorBins 等选项。\n\n其核心是库房与服务车辆流程，而非电商店铺。评估应从消耗跟踪到补货，并在适用时核对经销商开票。",
+  "core_features": [
+    {
+      "name_en": "Consumption-led replenishment",
+      "name_zh": "按消耗补货",
+      "explanation_en": "TrackStock uses counts or usage with min/max settings to initiate replenishment.",
+      "explanation_zh": "TrackStock 结合盘点或消耗及库存上下限设置发起补货。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Manage work orders and consignment",
+      "name_zh": "管理工单与寄售",
+      "explanation_en": "Manage describes parts/labor work orders, photos/signatures, transfers, returns and shared consignment reconciliation.",
+      "explanation_zh": "Manage 描述含零件与工时的工单、照片签名、转移、退货及寄售共用核对记录。",
+      "source_ref": "manage",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Test a technician’s withdrawal and replenishment"],
+    "zh": ["测试技师领用与补货"],
+    "source_refs": ["manage", "product"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Stockroom manager",
+      "MRO coordinator",
+      "Service fleet manager"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:38:11.613808+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Per stockroom monthly equivalent $40/$100/$249/$399 billed semiannually; vehicle Replenish $40, Manage $70; hardware/support extras.",
+    "source_snapshot_en": "Per stockroom monthly equivalent $40/$100/$249/$399 billed semiannually; vehicle Replenish $40, Manage $70; hardware/support extras.",
+    "source_snapshot_zh": "按库房月均 $40/$100/$249/$399、半年结算；车辆 Replenish $40、Manage $70；硬件及部分支持另计。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/eturns",
+      "read_at": "2026-10-22T08:51:05.145Z",
+      "excerpt_sha256": "df23a85c82ff7e6d75c3ba5704d75780eb87cc55c6a775384ffcf67a7e22ef55",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "eTurns",
+      "url": "https://www.eturns.com/",
+      "title": "Mobile Inventory App for Automated Replenishment | eTurns",
+      "read_at": "2026-10-22T15:26:17.940087+00:00",
+      "excerpt_sha256": "f4f5e2a490e15d6a086ea23dd277a460b0528d76a5b13bad58fb736880f42357",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read point-of-use, ownership models and separately listed stockroom/vehicle plans."
+    },
+    {
+      "id": "manage",
+      "type": "official_documentation",
+      "site": "eTurns",
+      "url": "https://www.eturns.com/products/manage/",
+      "title": "Automated Replenishment with eTurns TrackStock Manage | eTurns",
+      "read_at": "2026-10-22T15:33:27.558437+00:00",
+      "excerpt_sha256": "66ba91649c83fcc208403c858dd21c1e0b4905c75d48cb67f3988afbff43dd41",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read actual work-order, custom field and consignment reconciliation descriptions."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "eTurns",
+      "url": "https://www.eturns.com/products/pricing-page/",
+      "title": "Choose Your TrackStock Demo | eTurns",
+      "read_at": "2026-10-22T15:33:27.450963+00:00",
+      "excerpt_sha256": "fc3d1153b537aeaaa1ab3b6e46829c181047fde15f2394cc9121f2ada2b06a93",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read semiannual stockroom/vehicle units, hardware FAQ and support charges; do not infer blank tier cells."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:38:11.613808+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Test a technician’s withdrawal and replenishment",
+        "title_zh": "测试技师领用与补货",
+        "en": "Set item identifiers, supplier relationships, locations and min/max values, then record a part used on a service job. Compare the replenishment request with remaining stock and the supplier’s expected delivery. Manage can capture work-order parts/labor, photos and signatures; custom fields can tag project phases or locations. Confirm the relevant plan before designing around these fields.",
+        "zh": "设置商品标识、供应商关系、地点和库存上下限，再记录维修任务领用零件。将补货请求与余量和预期到货比较。Manage 可记录工单零件、工时、照片与签名，自定义字段可标记项目阶段或地点；设计流程前应确认所属方案。",
+        "source_refs": ["manage", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ownership",
+        "title_en": "Agree consignment reconciliation and billing triggers",
+        "title_zh": "约定寄售核对及开票触发点",
+        "en": "The Manage page describes a shared record for end user and distributor and invoicing on replenishment or consumption. These are alternative commercial arrangements to establish with the distributor, not automatic ownership rules. Include a returned part and an erroneous withdrawal in the trial to check how both sides reconcile usage.",
+        "zh": "Manage 页面描述终端客户与经销商共享记录，以及按补货或消耗开票。这些是需与经销商约定的不同商务安排，不是自动货权规则。试用应包含退回零件和错误领用，检查双方如何核对消耗。",
+        "source_refs": ["manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Count stockrooms and vehicles, not just users",
+        "title_zh": "按库房和车辆核算费用",
+        "en": "Published stockroom monthly equivalents are $40/$100/$249/$399 for Replenish/Manage Lite/Manage/Optimize, billed semi-annually. Vehicle pricing explicitly shows $40 for Replenish and $70 for Manage; blank vehicle-tier amounts should not be filled by inference. Hardware is additional: the FAQ gives approximately $96 per item for SensorBins and variable RFID costs. Optional phone support and added features are separate charges.",
+        "zh": "Replenish/Manage Lite/Manage/Optimize 的库房月均价为 $40/$100/$249/$399，每半年结算。车辆价格明确显示 Replenish $40、Manage $70，其他空白金额不能推测。硬件另计：FAQ 给出 SensorBins 约每商品 $96，RFID 按场景变化。可选电话支持和附加功能另收费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Choose automation after measuring actual consumption",
+        "title_zh": "测量实际消耗后选择自动化",
+        "en": "The official site offers a 30-day trial with setup, training and phone support. Stockroom, MRO, distributor and service-truck teams can test scan-based use before buying sensor equipment. Confirm labeling, network coverage, replenishment approvals and sensor calibration responsibilities. Hardware reliability, offline behavior and financial reconciliation were not exercised.",
+        "zh": "官网提供含设置、培训和电话支持的 30 天试用。库房、MRO、经销商及服务车团队可在购入传感设备前测试扫码使用。需明确标签、网络覆盖、补货审批和传感器校准责任。硬件可靠性、离线行为与财务核对尚未实际测试。",
+        "source_refs": ["pricing", "manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "eTurns: Test a technician’s withdrawal and replenishment",
+    "title_zh": "eTurns：测试技师领用与补货",
+    "description_en": "eTurns TrackStock manages replenishment of consumable stock at the point of use, including customer-owned and consigned inventory. It supports barcode/QR-based work and offers optional electronic labels, RFID and weight-based SensorBins.",
+    "description_zh": "eTurns TrackStock 管理使用现场的耗材补货，包括客户自有和寄售库存。它支持条码或二维码作业，并提供电子标签、RFID 及称重式 SensorBins 等选项。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Other vehicle-tier amounts, device quotes, offline behavior, sensor calibration and distributor billing terms need confirmation.",
+      "zh": "其他车辆版本金额、设备报价、离线行为、传感器校准及经销商开票条款需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ]
+}

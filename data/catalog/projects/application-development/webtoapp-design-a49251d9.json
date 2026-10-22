@@ -1,0 +1,361 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "webtoapp-design-a49251d9",
+  "name": "webtoapp.design",
+  "website_url": "https://webtoapp.design/",
+  "domain": "webtoapp.design",
+  "identity_domain": "webtoapp.design",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "webtoapp.design converts an existing website into Android and iOS wrapper apps with native presentation and optional features such as push notifications. The website remains the content/application source inside a built-in browser; the service prepares app builds and guides app-store submission. It is not evidence that every browser feature works unchanged in a WebView.\n\nThe owner configures a website URL, branding and app options, tests a preview and completes developer-account/store steps. The current pricing is subscription-based, and the published terms say cancellation deactivates the app. This profile distinguishes web content updates, native binary updates, device-based usage and the unresolved refund wording.",
+  "description_zh": "webtoapp.design 将现有网站转换为 Android／iOS 外壳应用，提供原生外观及推送等可选功能。网站仍是在内置浏览器呈现的内容／应用来源，服务负责准备构建并指导商店提交；不能据此认定所有浏览器功能在 WebView 中原样可用。\n\n所有者配置网站 URL、品牌及应用选项，测试预览，完成开发者账户／商店步骤。当前采用订阅计费，已公布条款称取消会停用应用。本文区分网页内容更新、原生二进制更新、按设备用量及未一致的退款表述。",
+  "core_features": [
+    {
+      "name_en": "Website-based app",
+      "name_zh": "基于网站的应用",
+      "explanation_en": "Display the existing site inside a branded mobile wrapper.",
+      "explanation_zh": "在有品牌外观的移动外壳中显示原网站。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Update classes",
+      "name_zh": "更新类别",
+      "explanation_en": "Separate immediate web/live settings from changes requiring store review.",
+      "explanation_zh": "区分即时网页／在线设置与需商店审核的改动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "updates",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Targeted push integration",
+      "name_zh": "定向推送集成",
+      "explanation_en": "Map website users to current app-instance tokens for notifications.",
+      "explanation_zh": "将网站用户映射至当前应用实例 token 以推送。",
+      "explanation_scope": "product_specific",
+      "source_ref": "push",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Custom-tab handoff",
+      "name_zh": "自定义标签页跳转",
+      "explanation_en": "Handle browser-only flows with a separate browser context and close events.",
+      "explanation_zh": "通过独立浏览器上下文及关闭事件处理仅浏览器可用流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tabs",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate wrapping an existing member portal for Android/iOS",
+      "Test login handoff, update requirements and device-targeted push"
+    ],
+    "zh": [
+      "评估将现有会员门户封装到 Android／iOS",
+      "测试登录返回、更新要求及按设备定向推送"
+    ],
+    "source_refs": ["home", "tabs", "updates", "push"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Website owners",
+      "Web developers",
+      "Agencies managing client websites"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm website rights and test core flows in both mobile wrappers.",
+        "zh": "确认网站权利，在两种移动外壳测试核心流程。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify custom-tab login and notification token lifecycle.",
+        "zh": "核对自定义标签页登录及推送 token 生命周期。",
+        "source_refs": ["tabs", "push"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm device counts, cancellation/refund terms and signing-key exit plan.",
+        "zh": "确认设备计数、取消／退款条款及签名 key 退出方案。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Some login/browser features do not work directly in WebView.",
+        "zh": "部分登录／浏览器功能不能直接在 WebView 使用。",
+        "source_refs": ["tabs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Native changes still require a reviewed store update.",
+        "zh": "原生改动仍需经审核的商店更新。",
+        "source_refs": ["updates"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Cancellation deactivates the app; refund guarantee conflicts with published terms.",
+        "zh": "取消会停用应用，退款保证与已公布条款冲突。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_terms_read_conflicts_retained",
+    "is_open_source": false,
+    "url": "https://webtoapp.design/blog/terms",
+    "source_ref": "terms",
+    "scope_en": "Compiled app usage/publication entitlement; no source transfer right; subscription continuity conditions.",
+    "scope_zh": "编译应用使用／发布权，不含源码转移权，受订阅持续条件约束。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription_device_active_user_bands",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:16:21.136706Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Observed localized annual-billed SGD49/89/129 monthly; Enterprise from519 incltax; device MAU bands and distinct dashboard/API push conditions; stores extra.",
+    "summary_zh": "所读本地化年付月均SGD49／89／129，Enterprise起519含税；按设备月活分档，后台／API推送条件不同，商店另付。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/webtoapp-design",
+      "read_at": "2026-10-22T08:59:53.580Z",
+      "excerpt_sha256": "8ca10b79e3b7f4e5f78ca2372a7462f55921896f2102832e2208109e8ae09ab8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "webtoapp.design",
+      "title": "Turn your Website into an App for Android & iOS",
+      "url": "https://webtoapp.design/",
+      "read_at": "2026-10-22T12:16:21.136706Z",
+      "excerpt_sha256": "384e36e9296de0ff5bbffeedfadaf710e0d6ef5c4eee37017ce67a105a89786d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Website-wrapper Android/iOS scope, design/preview/publish sequence and refund marketing read; no app submitted. Universal compatibility/time/privacy promises not independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "webtoapp.design",
+      "title": "Our Pricing for Website to App Conversions",
+      "url": "https://webtoapp.design/pricing",
+      "read_at": "2026-10-22T12:20:38.703027Z",
+      "excerpt_sha256": "0f1c9f7d8f33bf744b245d1d1a843aded55dc846878713955e60a5a09de6cf5e",
+      "verification": "official_documentation_read",
+      "transport": "browser_accessibility_reader",
+      "research_notes_en": "Actual rendered localized SGD annual-billed monthly amounts and device-based MAU/tooltips read after static amounts missing; no purchase/currency conversion. Dashboard versus developer-API push limits distinguished."
+    },
+    {
+      "id": "updates",
+      "type": "official_documentation",
+      "site": "webtoapp.design",
+      "title": "Updating and Editing Parts of Your App",
+      "url": "https://webtoapp.design/blog/update-policy",
+      "read_at": "2026-10-22T12:17:28.098025Z",
+      "excerpt_sha256": "550b973505395eb48f08a314f0b1cc74f7367bf2f389dea6df709bb86ce2740c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Website/live-config versus store-binary update classes and legacy one-time update fee read; growth/ASO anecdotes excluded."
+    },
+    {
+      "id": "push",
+      "type": "official_documentation",
+      "site": "webtoapp.design",
+      "title": "Sending Individual Customized Push Notifications",
+      "url": "https://webtoapp.design/blog/advanced-push-notifications",
+      "read_at": "2026-10-22T12:17:27.988494Z",
+      "excerpt_sha256": "09424e7e0ed6bcd2be7d53d2f60ab62269bf6e8047d602f48d523ffec082c720",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Website user-to-device-token mapping, ready check, missing-plan/connectivity errors, rotating tokens/multiple devices and API-key reference read."
+    },
+    {
+      "id": "tabs",
+      "type": "official_documentation",
+      "site": "webtoapp.design",
+      "title": "Using Custom Tabs in Your App",
+      "url": "https://webtoapp.design/blog/custom-tabs",
+      "read_at": "2026-10-22T12:17:28.033410Z",
+      "excerpt_sha256": "db6c9075aeadcd7cc6160a9ba05c4cbd1bc31438d989048cf2e4c3137f8029c0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Some login providers reject WebView; custom-tab separate cookies, absolute URL, close/manual-dismiss event and browser-context limitations read. Cookie-weakening suggestion not adopted as a recommended implementation."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "webtoapp.design",
+      "title": "Terms and Conditions for webtoapp.design",
+      "url": "https://webtoapp.design/blog/terms",
+      "read_at": "2026-10-22T12:17:28.011620Z",
+      "excerpt_sha256": "4cab736757adff0a1ea3fc4733d3eb45cf43c24ad04c49cd4fd9ab0210ddca93",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Published Jan2024 terms read: website rights, compiled app/no source transfer, subscription cancellation deactivation, rejection refund condition, server/config dependency and signing-key retention responsibility. Conflicts with homepage guarantee retained."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:20:38.703027Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "tabs", "pricing", "terms"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "Start from a website you can test and publish",
+        "title_zh": "从可测试并有权发布的网站开始",
+        "en": "The homepage flow configures the app, previews it, starts a 14-day paid-plan trial and follows guided store submission. Store employees still review the result. The terms require rights to the website, and pricing says the owner supplies app-store developer accounts. A proposed member portal evaluation should test login, navigation, uploads and payments on both platforms before submission. No app, trial or account was created; published timing and conversion anecdotes are not measured outcomes.",
+        "zh": "首页流程为配置应用、预览、开始付费方案十四天试用，再按指导提交商店；最终仍由商店人员审核。条款要求拥有网站使用权，定价说明所有者需提供商店开发者账户。建议会员门户在提交前于两平台测试登录、导航、上传及支付。本次未创建应用、试用或账户，发布时长及转化故事不是实测结果。",
+        "source_refs": ["home", "terms", "pricing"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "updates",
+        "title_en": "Live website changes are not native binary updates",
+        "title_zh": "网页即时变化不等于原生二进制更新",
+        "en": "The update guide separates three paths. Website content appears without a new binary; selected dashboard changes such as menu items can apply live; changes to app name/icon, startup URL, layout or core code require a store update. Check the installed app and dashboard’s update-required message. Current subscriptions include updates, while legacy lifetime/one-time users may pay per platform/store. Immediate website synchronization therefore does not mean the native wrapper never needs maintenance or another store review.",
+        "zh": "更新指南分三路：网页内容无需新二进制即可显示；菜单等部分后台设置可在线生效；应用名／图标、启动 URL、布局及核心代码需商店更新。应检查已安装应用及后台需更新提示。当前订阅含更新，旧终身／一次付费用户可能按平台／商店另付费。因此网站即时同步不代表原生外壳无需维护或再次审核。",
+        "source_refs": ["updates"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "notifications",
+        "title_en": "A website account can have several changing device tokens",
+        "title_zh": "网站账户可对应多个会变化的设备 token",
+        "en": "The targeted-push guide calls getNotificationToken after the app is ready, stores the app-instance token against the website user, then uses the API to address that token. Reinstallation, cleared data or another device can change it; multi-device users need multiple tokens. The function can fail for connection/native-bridge problems or a plan without notifications, and regular browser visits do not provide the app bridge. Keep tokens secret and test missing/expired-token behavior. No token, notification or API key was generated.",
+        "zh": "定向推送指南在应用就绪后调用 getNotificationToken，将应用实例 token 关联网站用户，再用 API 向该 token 推送。重装、清数据或换设备会改变 token，多设备用户需保存多个。连接／原生桥接问题或方案不含推送会导致函数失败，普通浏览器访问没有应用桥接。需保密 token 并测试缺失／过期情况。本次未生成 token、通知或 API key。",
+        "source_refs": ["push"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "login",
+        "title_en": "Browser-only login needs a deliberate return path",
+        "title_zh": "仅浏览器登录需明确返回路径",
+        "en": "The custom-tab guide explains that some identity-provider flows reject embedded WebViews. It opens an absolute URL in a browser context, then returns data through customTabClosed; manual dismissal produces a distinct reason. Custom tabs have separate cookies and lack ordinary app-specific features, so opening login there does not automatically sign in the embedded website. The article suggests a cookie-transfer approach that requires JavaScript-readable cookies; this profile does not adopt that as a secure default. Evaluate an application-specific authenticated return path with the provider’s current requirements.",
+        "zh": "自定义标签页指南解释部分身份提供方拒绝内嵌 WebView。它在浏览器上下文打开绝对 URL，再经 customTabClosed 返回数据；用户手动关闭有不同原因。标签页 cookie 独立，且无一般应用特定功能，所以打开登录不等于内嵌网站已登录。文章建议的 cookie 转移需 JavaScript 可读 cookie；本文不将其采纳为安全默认方案。需结合提供方当前要求评估应用特定认证返回路径。",
+        "source_refs": ["tabs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Price and usage depend on the localized billing view",
+        "title_zh": "费用及用量取决于本地化计费视图",
+        "en": "The rendered annual-billing view showed SGD49/89/129 per month for Small/Medium/Large and Enterprise from SGD519, tax included. It counted monthly active devices, not unique website accounts, with caps of250/2,500/25,000. Medium/Large listed5/100 monthly dashboard broadcasts, while tooltips separately described unlimited developer-API notifications. Confirm that distinction and current regional checkout. A free design or 14-day trial does not establish sustained free distribution. Store accounts cost extra; exact store fees were not independently checked.",
+        "zh": "渲染后的年付视图列 Small／Medium／Large 月均 SGD49／89／129，Enterprise 起 SGD519，含税。月活按设备而非网站唯一账户计，额度分别250／2,500／25,000。Medium／Large 列每月5／100次后台群发，提示另称开发者 API 通知不限。需确认该区别及当前地区结账。免费设计或十四天试用不能证明持续免费分发。商店账户另付费，具体商店费用未独立核对。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract",
+        "title_en": "Cancellation and refund wording matter to continuity",
+        "title_zh": "取消及退款表述影响持续使用",
+        "en": "The Jan2024 terms provide a compiled app without a source-code transfer entitlement, require vendor-server contact for current configuration, and say subscription cancellation deactivates the app. They deny an automatic rejection refund beyond the stated withdrawal right, while the current homepage promises a refund if publishing cannot succeed. Terms also qualify future OS/store adaptations and signing-key storage. Keep those differences unresolved rather than promising permanent independent operation or guaranteed approval. Confirm applicable terms, retain signing-key backups and plan the exit before subscribing.",
+        "zh": "2024年1月条款交付已编译应用，不赋予源码转移权；需联系提供方服务器获取当前配置，并称取消订阅会停用应用。条款不保证在约定撤回权以外因拒审退款，而当前首页称无法发布则退款。条款还限定未来 OS／商店适配及签名 key 保管。需保留这些差异，不能承诺永久独立运行或保证审核通过。订阅前应确认适用条款、保留签名 key 备份并规划退出。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "webtoapp.design: website wrappers, updates and subscription limits",
+    "title_zh": "webtoapp.design：网站外壳、更新及订阅限制",
+    "description_en": "Review app-store workflow, custom-tab login, device tokens, active-device pricing and cancellation conditions.",
+    "description_zh": "了解商店流程、标签页登录、设备token、活跃设备计费及取消条件。",
+    "search_intent_en": "Evaluate webtoapp.design compatibility, cost and app continuity.",
+    "search_intent_zh": "评估 webtoapp.design 兼容、费用及应用持续使用。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, trial, store submission, account, purchase, notification or authentication flow was tested.",
+      "zh": "未测试应用、试用、商店提交、账户、购买、通知或认证流程。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Homepage refund guarantee differs from Jan2024 terms; applicable current refund/adaptation commitments unconfirmed.",
+      "zh": "首页退款保证与2024年1月条款不同，当前适用退款／适配承诺未确认。",
+      "source_refs": ["home", "terms"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Localized annual SGD view is a snapshot; checkout, tax treatment, device overages and developer-API limits need confirmation.",
+      "zh": "本地化年付SGD仅为读取快照，结账、税、设备超额及开发者API限制需确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Provider security/login requirements, exact store fees, offline behavior, UI languages and real compatibility not independently verified.",
+      "zh": "提供方安全／登录要求、商店具体费用、离线行为、界面语言及实际兼容未经独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

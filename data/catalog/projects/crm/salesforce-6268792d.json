@@ -1,0 +1,358 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "salesforce-6268792d",
+  "name": "Salesforce",
+  "website_url": "https://www.salesforce.com/crm/",
+  "domain": "www.salesforce.com",
+  "identity_domain": "salesforce.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Salesforce is a CRM platform spanning sales, service, marketing and other customer processes, rather than one fixed app containing every advertised module. Its records are organized through objects, fields and relationships. A conventional sales implementation uses leads, accounts, contacts and opportunities, with configuration and automation determining how work moves between them.\n\nThis profile uses that sales path to make the platform concrete. It distinguishes a customer data model, lead qualification, user-context testing and the current Sales pricing choices from the wider Agentforce and product catalog. The exact suite, permissions and contract determine what a team can use. This is documentation-based research, without a Salesforce account trial, migration, Flow execution or independent validation of AI or business results.",
+  "description_zh": "Salesforce 是覆盖销售、服务、营销等客户流程的 CRM 平台，不是把所有宣传模块固定打包在一起的单个应用。它通过对象、字段和关系组织记录。常见销售实施使用线索、账户、联系人和机会，再由配置及自动化决定工作如何推进。\n\n本文用销售路径具体说明平台，区分客户数据模型、线索资格判断、用户上下文测试及当前 Sales 定价选择，与更广的 Agentforce 和产品目录之间的边界。团队实际可用能力取决于套件、权限及合同。本文仅依据文档，没有试用 Salesforce 账户、迁移、执行 Flow，或独立验证 AI 和业务成效。",
+  "core_features": [
+    {
+      "name_en": "Standard and custom data objects",
+      "name_zh": "标准与自定义数据对象",
+      "explanation_en": "Model customer information using standard objects and business-specific custom objects with fields and records.",
+      "explanation_zh": "通过标准对象及业务自定义对象、字段和记录建模客户信息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "objects",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Lead-to-opportunity sales process",
+      "name_zh": "线索到机会的销售流程",
+      "explanation_en": "Qualify prospects and convert them into account/contact and opportunity context, checking ownership and existing records.",
+      "explanation_zh": "判断潜客资格并转换为账户／联系人及机会背景，同时核对归属和既有记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "leads",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable process automation",
+      "name_zh": "可配置流程自动化",
+      "explanation_en": "Use Flow with an explicit execution context; permissions and testing affect what changes are possible.",
+      "explanation_zh": "使用具备明确执行上下文的 Flow；权限与测试影响可执行改动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flow-debug",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Edition-dependent sales capabilities",
+      "name_zh": "按版本开放销售能力",
+      "explanation_en": "Select the Sales suite and edition rather than inferring all platform tools are included.",
+      "explanation_zh": "选择具体 Sales 套件及版本，不能推断包含全部平台工具。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sales-pricing",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Qualify a business inquiry and link it to the correct buying organization and deal.",
+      "Create business-specific record fields and evaluate an automated handoff under the actual user role."
+    ],
+    "zh": [
+      "判断业务咨询资格，并关联到正确采购组织及交易。",
+      "建立业务字段，并按真实用户角色评估自动交接。"
+    ],
+    "source_refs": ["objects", "leads", "flow-debug"],
+    "basis": "Editorial examples based on training documentation, not executed implementations."
+  },
+  "technical_details": {
+    "Configuration model": {
+      "en": "Org-level CRM configuration includes standard/custom objects and context-dependent automation; a custom object is not a separately self-hosted application.",
+      "zh": "组织级 CRM 配置包含标准／自定义对象及依上下文执行的自动化；自定义对象不代表另一个自行托管应用。",
+      "source_ref": "objects",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Sales operations owner",
+      "CRM administrator",
+      "Business process developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "platform"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the sales suite/edition and document the required record model before importing or building automation.",
+        "zh": "导入或构建自动化前，选择销售套件／版本并记录必需数据模型。",
+        "source_refs": ["sales-pricing", "objects"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Check a qualified lead against existing accounts/contacts and confirm the resulting owner and deal.",
+        "zh": "将合格线索与已有账户／联系人对照，确认转换后的负责人和交易。",
+        "source_refs": ["leads"],
+        "evidence_type": "editorial_test_suggestion"
+      },
+      {
+        "en": "Evaluate Flow as the intended user in a sandbox, with appropriate rollback-mode debug settings.",
+        "zh": "在沙箱中按预期用户评估 Flow，并使用适当回滚调试设置。",
+        "source_refs": ["flow-debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_individually_verified",
+    "items": [],
+    "source_ref": "platform"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A Flow debug run can change records; user/system context and permissions materially affect its behavior.",
+        "zh": "Flow 调试可能修改记录；用户／系统上下文和权限会实质影响行为。",
+        "source_refs": ["flow-debug"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Sales pricing and features are edition-specific; an advertised trial or base seat does not establish all Agentforce or platform entitlements.",
+        "zh": "Sales 定价及功能按版本区分；宣传试用或基础席位不能证明拥有所有 Agentforce 或平台权益。",
+        "source_refs": ["platform", "sales-pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "sales-pricing",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Selected Sales suite/edition seats, billing commitment and separately confirmed product/AI usage or add-ons.",
+    "source_snapshot_en": "Sales pricing lists Free Suite $0, Starter $25, Pro $100, Core $195, Advanced $395 and Max $550 per user/month; Starter monthly/annual, higher listed tiers annual.",
+    "source_snapshot_zh": "Sales 定价列出 Free Suite 每用户每月0美元、Starter 25、Pro 100、Core 195、Advanced 395、Max 550；Starter 可月付／年付，上述更高版本按年付款。",
+    "checked_at": "2026-10-22T10:40:37.392524+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does a Salesforce subscription include every cloud and AI agent?",
+      "question_zh": "Salesforce 订阅是否包含所有 Cloud 和 AI 代理？",
+      "answer_en": "No universal entitlement is established by the CRM overview. Check the chosen suite, edition, seats, add-ons and AI allowances in the offer.",
+      "answer_zh": "CRM 总览不能确立统一全部权益。应核对方案中的套件、版本、席位、附加项及 AI 额度。",
+      "source_refs": ["platform", "sales-pricing"]
+    },
+    {
+      "question_en": "Can I safely assume Debug never changes data?",
+      "question_zh": "可以假定 Debug 从不改数据吗？",
+      "answer_en": "No. Trailhead explains that debugging can update records and recommends sandbox testing and suitable rollback-mode use.",
+      "answer_zh": "不能。Trailhead 说明调试可能更新记录，建议在沙箱测试并适当使用回滚模式。",
+      "source_refs": ["flow-debug"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/salesforce",
+      "read_at": "2026-10-22T09:08:12.683Z",
+      "excerpt_sha256": "17df707e1d5cdefe055b24a6a66559668dad677e3167b90bb1c5edb27d669e65",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "Salesforce CRM: Try The World’s #1 AI CRM | Salesforce",
+      "title": "Salesforce CRM: Try The World’s #1 AI CRM | Salesforce",
+      "url": "https://www.salesforce.com/crm/?bc=OTH",
+      "read_at": "2026-10-22T10:39:22.083610+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "62f828731695704525c8a4f9f0c5d448019a57455cbf9da5d417f1c5b9e9b2fd",
+      "research_notes_en": "CRM landing page spans sales, service, marketing, commerce, IT and Agentforce. Starter trial is not the whole platform. No vendor ranking or growth outcomes adopted."
+    },
+    {
+      "id": "sales-pricing",
+      "type": "official_pricing",
+      "site": "Salesforce Sales Pricing | Salesforce",
+      "title": "Salesforce Sales Pricing | Salesforce",
+      "url": "https://www.salesforce.com/sales/pricing/?bc=OTH",
+      "read_at": "2026-10-22T10:39:23.586840+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "77e59101a3a4afaf494b340f72c1153fd96d99889013d02e1628a789dffc7a70",
+      "research_notes_en": "Current Sales pricing USD view: Free Suite 0, Starter25 monthly/annual, Pro100 annual, Core195 annual, Advanced395 annual, Max550 annual per user/month. Edition comparison retains some older naming; selected quote/AI entitlements must be confirmed."
+    },
+    {
+      "id": "objects",
+      "type": "official_documentation",
+      "site": "Optimize Customer Data with Objects",
+      "title": "Optimize Customer Data with Objects",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/data_modeling/objects_intro",
+      "read_at": "2026-10-22T10:39:57.020040+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8bc17d0c1383606535abc6976d12a0dc61d6b96fe0e0dff95ac7e08d64e6d0d6",
+      "research_notes_en": "Official Trailhead standard/custom object, record and field model; Account/Contact/Lead/Opportunity examples and custom-object setup."
+    },
+    {
+      "id": "leads",
+      "type": "official_documentation",
+      "site": "Track Potential Customers with Leads",
+      "title": "Track Potential Customers with Leads",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/leads_opportunities_lightning_experience/create-and-convert-leads-lightning",
+      "read_at": "2026-10-22T10:39:59.506950+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "660482f12a0e2f7ab9313a75c315ab55fb898eaa0c9acaacaac128a584a79862",
+      "research_notes_en": "Lead qualification/conversion, selecting existing account/contact, owner/status and opportunity context. Trailhead business examples are training illustrations."
+    },
+    {
+      "id": "flow-debug",
+      "type": "official_documentation",
+      "site": "Optimize Flow Debugging For User Contexts",
+      "title": "Optimize Flow Debugging For User Contexts",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/flow-implementation-2/debug-flows-as-another-user",
+      "read_at": "2026-10-22T10:40:37.392524+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b0c7a6ba90b72adf155c3401d1fd55c75cfb5e2fe30889b6a30a60d7f57680fe",
+      "research_notes_en": "Flow user context can change data and raise cross-reference permission errors. Sandbox and rollback debug guidance; no permission broadening performed here."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:40:37.392524+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["platform", "objects", "leads", "sales-pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "platform-scope",
+        "title_en": "Choose a process and an edition before a feature list",
+        "title_zh": "先选流程及版本，再看功能表",
+        "en": "The Salesforce CRM landing page spans multiple business functions, while the Sales pricing page presents distinct suites and editions. Start with a process such as qualifying and managing B2B opportunities, then identify required users, objects, automation and reporting. Buying a sales seat is not proof that service, marketing, commerce and every Agentforce feature are included.\n\nThis is also an implementation decision: a team needs someone to maintain fields, access and process changes. The vendor's broad platform narrative does not establish the effort or outcome for your organization. No ranking, implementation duration or revenue uplift is independently supported by this catalog research.",
+        "zh": "Salesforce CRM 入口覆盖多个业务职能，而 Sales 定价页列出不同套件和版本。应先选一条流程，例如判断及管理 B2B 机会，再确定用户、对象、自动化及报表要求。购买销售席位，不证明服务、营销、商业及每项 Agentforce 功能都已包含。\n\n这也是实施决策：团队需要有人维护字段、访问及流程变化。厂商的平台叙事不能确立你的组织所需投入或成果。本文没有独立证据支持排名、实施耗时或收入提升。",
+        "source_refs": ["platform", "sales-pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-model",
+        "title_en": "Objects describe the business, records describe instances",
+        "title_zh": "对象描述业务类型，记录描述具体实例",
+        "en": "Trailhead explains the object/field/record model and distinguishes standard objects from custom ones. Account, Contact, Lead and Opportunity are standard business objects; a custom object holds information specific to an organization. Extra fields and objects should represent actual information needs, not duplicate an existing customer concept under a new name.\n\nFor a hypothetical equipment supplier, define the buying organization, the people involved and a particular equipment opportunity separately. If a business-specific inspection record is needed, decide how it relates to those standard records. Check field types, ownership and visibility before building imports or Flow. This example was not configured in a Salesforce org.",
+        "zh": "Trailhead 说明对象／字段／记录模型，并区分标准与自定义对象。Account、Contact、Lead 和 Opportunity 属于标准业务对象，自定义对象承载组织特有信息。新增字段和对象应对应真实信息需求，避免只是换名称重复客户概念。\n\n以假设的设备供应商为例，应分别定义采购组织、相关人员及一笔具体设备机会。如果需要业务特有的检查记录，应决定它与标准记录如何关联。构建导入或 Flow 前先检查字段类型、归属和可见范围。本文未在 Salesforce 组织中配置该示例。",
+        "source_refs": ["objects"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "lead-conversion",
+        "title_en": "Worked example: qualify before converting",
+        "title_zh": "示例：先判断资格，再转换",
+        "en": "A trade-show inquiry can begin as a lead, with activity history and the next follow-up. Once your own criteria are met, the documented conversion path uses its information for account/contact and opportunity records. Select an existing account or contact where appropriate instead of creating duplicates, and check the record owner and converted status.\n\nThe qualification rule is your business policy, not a guarantee produced by pressing Convert. For example, an equipment request with a contact and budget range may still lack a confirmed buying timeline. Inspect the resulting opportunity's amount, stage and next action. Trailhead's training scenario demonstrates the mechanics; this profile does not claim the example buyer or any actual conversion was observed.",
+        "zh": "展会咨询可以先成为线索，保存活动历史及下次跟进。达到你自己定义的资格条件后，文档中的转换路径使用这些信息形成账户／联系人及机会记录。适当时应选择已有账户或联系人，避免重复，并核对负责人和转换状态。\n\n资格规则属于业务政策，点击 Convert 不会自动提供保证。例如设备需求已有联系人及预算范围，仍可能缺少明确采购时间。应检查最终机会的金额、阶段和下一动作。Trailhead 训练案例说明操作机制，本文不表示观察过示例买家或实际转换。",
+        "source_refs": ["leads"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "flow-context",
+        "title_en": "The user context is part of the automation design",
+        "title_zh": "用户上下文是自动化设计的一部分",
+        "en": "The Flow debugging unit demonstrates that the same automation can behave differently for an ordinary user than for an administrator because of record access. It explains a cross-reference permission failure and the effect of changing the execution context. A wider context should be a deliberate design choice, not the automatic fix for every failed task.\n\nThe unit also warns that successful debug execution can modify actual records. Use a sandbox and appropriate rollback settings for evaluation. Check the intended user, the records they may touch and the resulting task or field update. This research did not change a role, run Flow or broaden permissions; it uses the official example to explain why administrator-only testing is incomplete.",
+        "zh": "Flow 调试单元展示：由于记录访问权限，同一自动化在普通用户和管理员下可能有不同表现。它说明跨引用权限失败及改变执行上下文的影响。更宽上下文应是明确设计选择，不能成为每次任务失败的默认修复。\n\n单元还提醒调试成功可能修改真实记录。评估应使用沙箱及适当回滚设置，检查预期用户、可触及记录，以及最终任务或字段变化。本文没有修改角色、运行 Flow 或扩大权限，仅以官方示例说明只用管理员测试并不完整。",
+        "source_refs": ["flow-debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Read the current Sales price with its commitment",
+        "title_zh": "结合承诺期限读取当前 Sales 价格",
+        "en": "The retrieved USD view lists Free Suite at $0 and Starter Suite at $25 per user/month with monthly or annual billing. Pro Suite is $100; Sales Cloud Core $195, Advanced $395 and Max $550 per user/month, billed annually. These are current page labels, not a claim that historical editions map identically to them. The same page retains older edition wording in some comparisons, so confirm a named offer rather than mixing rows across versions.\n\nAs an illustration, five Core seats at the advertised annual-billed rate imply 5 × 195 × 12 = $11,700 annually before any unconfirmed extras or tax. Product/AI allowances, usage, implementation and support can alter the selected total; no universal payable monthly amount is normalized. A trial, a Free Suite record and a production subscription must be evaluated under their own conditions.",
+        "zh": "读取的美元页面列出 Free Suite 为0美元，Starter Suite 每用户每月25美元，可月付或年付；Pro Suite 为100美元，Sales Cloud Core 195、Advanced 395、Max 550，均按年付款。这些是当前页面标签，不表示旧版产品可直接一一映射；部分对比仍保留旧版本文字，因此应确认具体报价，不能跨版本拼接表格。\n\n以5个 Core 席位为例，按宣传年付费率，一年为5 × 195 × 12 = 11,700美元，未含未确认附加项或税。产品／AI 额度、用量、实施和支持会影响所选总价；本文不填写统一实付月价。试用、Free Suite 和生产订阅需按各自条件评估。",
+        "source_refs": ["sales-pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "fit-gaps",
+        "title_en": "Fit depends on process ownership and the actual org",
+        "title_zh": "适配取决于流程负责人及真实组织配置",
+        "en": "Salesforce merits a closer look when an organization needs a governed customer model, configurable sales processes and a plan for ongoing administration. A very narrow contact list may not justify that implementation work. Compare the required workflow and failure case with the selected edition rather than comparing platform brand names or generic feature counts.\n\nThe reviewed material supports a configurable cloud CRM model. It does not establish an open-source license, self-hosted product, exact API/data/Flow quotas, regional purchase eligibility, chosen data location or UI-language coverage. Integration field mappings, duplicate handling, exports, backup recovery and contract security obligations remain unverified. No live org or customer process was exercised, and documentation examples are not a catalog hands-on test.",
+        "zh": "组织需要受管理的客户模型、可配置销售流程及持续管理安排时，Salesforce 值得进一步考察。仅需很窄的通讯录可能不足以支持相应实施工作。应将必需流程及失败案例与所选版本对照，而非只比较平台品牌或功能数量。\n\n已读资料支持可配置云 CRM 模型，但未确立开源许可、自行托管产品、准确 API／数据／Flow 额度、地区购买资格、所选数据位置或界面语言覆盖。集成字段映射、重复处理、导出、备份恢复及合同安全义务仍待核实。本文未运行真实组织或客户流程，文档示例不构成本目录实测。",
+        "source_refs": ["platform", "objects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Salesforce CRM: Sales Records, Lead Conversion, Flow and Pricing",
+    "title_zh": "Salesforce CRM：销售记录、线索转换、Flow 与定价",
+    "description_en": "Understand Salesforce standard/custom objects, lead conversion, Flow execution context and the current Sales suite pricing and scope boundaries.",
+    "description_zh": "了解 Salesforce 标准／自定义对象、线索转换、Flow 执行上下文及当前 Sales 套件定价和范围边界。",
+    "primary_intent": "Understand Salesforce CRM through a specific sales process and selected edition.",
+    "secondary_questions": [
+      "How do leads become customer/deal records?",
+      "Can Flow debug change records?",
+      "Which current Sales prices are annual?"
+    ],
+    "query_basis": "Editorial intent only; no search-volume, ranking or AI-citation claims.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No org, conversion, Flow, import, connector, price quote or AI action was exercised. Edition-specific quotas, complete migration/export behavior and actual AI usage require further evaluation.",
+      "zh": "未实际使用组织、转换、Flow、导入、连接器、报价或 AI 动作；版本额度、完整迁移／导出行为及真实 AI 用量需进一步评估。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "License/self-hosting, data location, regional payments, UI languages and contractual protections were not established. Some pricing comparison text retains older edition terminology.",
+      "zh": "许可／自行托管、数据位置、地区支付、界面语言及合同保障尚未确认；部分定价对比文字仍保留旧版本用语。",
+      "source_refs": ["sales-pricing"],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "aweber-45387f93",
+  "name": "AWeber",
+  "website_url": "https://www.aweber.com/",
+  "domain": "www.aweber.com",
+  "identity_domain": "aweber.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "AWeber combines subscriber collection, newsletters and automated email sequences. A creator can collect an opt-in through a form or landing page, then use a list subscription or a newly applied tag to start a workflow. Messages, waits and subscriber tags determine what happens next.\n\nIt is useful to evaluate as a managed audience-communication service: the main objects are subscribers, messages and journeys. Its AI landing-page builder is a related acquisition tool; it does not make every generated page or sales claim correct. This profile separates documented workflow behavior from suggested checks and has not tested an account.",
+  "description_zh": "AWeber 把订阅收集、新闻邮件和自动邮件序列结合起来。内容创作者可通过表单或落地页收集主动订阅，再用加入名单或新添加的标签启动工作流；消息、等待步骤及订阅者标签决定后续过程。\n\n可将它作为托管受众沟通服务评估，核心对象是订阅者、邮件和沟通路径。AI 落地页构建器是相关的获客工具，但生成的页面和销售主张仍需核对。本文区分文档行为与建议检查，未操作实际账户。",
+  "core_features": [
+    {
+      "name_en": "Subscriber workflows",
+      "name_zh": "订阅者工作流",
+      "explanation_en": "Arrange messages, waits, tags and feed checks around an entry trigger.",
+      "explanation_zh": "围绕进入条件安排邮件、等待、标签及订阅源检查。",
+      "source_ref": "workflow",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Tag-based enrollment",
+      "name_zh": "按标签进入",
+      "explanation_en": "A newly applied starter tag can enroll an eligible subscriber after publication.",
+      "explanation_zh": "发布后新添加的启动标签可使符合条件的订阅者进入流程。",
+      "source_ref": "tag-entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "RSS campaigns",
+      "name_zh": "RSS 邮件活动",
+      "explanation_en": "A feed check can find new posts and send an associated message.",
+      "explanation_zh": "检查订阅源中的新内容并发送关联邮件。",
+      "source_ref": "workflow",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI landing pages",
+      "name_zh": "AI 落地页",
+      "explanation_en": "Describe a page goal, edit the generated result and publish a collection page.",
+      "explanation_zh": "描述页面目标，编辑生成结果后发布订阅收集页面。",
+      "source_ref": "pages",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Deliver a timed course after a consented signup.",
+      "Notify a permissioned audience when a feed publishes new content."
+    ],
+    "zh": [
+      "主动订阅后按时间发送课程。",
+      "订阅源有新内容时通知已许可接收的受众。"
+    ],
+    "source_refs": ["workflow", "pages"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter editor",
+      "Course creator",
+      "Small-business email operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "workflow"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define entry and exclusion tags before publishing the journey.",
+        "zh": "发布沟通路径前明确进入和排除标签。",
+        "source_refs": ["tag-entry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Prepare messages and waits, publish, then submit a consented test signup.",
+        "zh": "准备邮件和等待步骤，发布后提交已同意接收的测试订阅。",
+        "source_refs": ["workflow"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check the selected subscriber tier and sending allowance.",
+        "zh": "核对所选订阅档位和发送额度。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Pre-existing tags do not backfill a newly published tag workflow.",
+        "zh": "已有标签不会为新发布的标签工作流自动补跑。",
+        "source_refs": ["tag-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A subscriber cannot simply start at an arbitrary message in the sequence.",
+        "zh": "不能直接让订阅者从序列的任意邮件开始。",
+        "source_refs": ["sequence"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Subscriber-tier subscriptions with monthly/annual billing; 14-day trial. Lite and Plus have different send multipliers and automation allowances.",
+    "source_snapshot_zh": "按订阅者档位订阅，可月付或年付；14 天试用。Lite 与 Plus 的发送倍数和自动化额度不同。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/aweber",
+      "read_at": "2026-10-22T08:36:43.034Z",
+      "excerpt_sha256": "6c5c78be2c653835233862b7694b12eebc1cf0d7dd304e062c76e9d6f0aa7a07",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "AWeber",
+      "title": "Affordable Pricing for Email Marketing and More | AWeber",
+      "url": "https://www.aweber.com/pricing.htm",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "e1f67b1fd991ffd79f1358ad1f25b7a4ed4f8ec2719d6e87d6cffdd04888ee01",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Lite/Plus entitlements, subscriber tiers, monthly versus annual billing, trial and separate setup service."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "Email Automations That Adapt to Every Subscriber",
+      "url": "https://www.aweber.com/email-automation.htm",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "26708b40c6a5517bb00a695b13196fef5c8e588e9bc84654eaae0525acca8a0d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Behavioral paths, workflow timezone, RSS and commerce examples; vendor claims, not performance evidence."
+    },
+    {
+      "id": "permission",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "Anti Spam Policy - Help AWeber Prevent Spam",
+      "url": "https://www.aweber.com/antispam.htm",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "8927b174f1479eb470141cb45e73d5d52e63206d7390451539b25e2472fcb8ee",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Permission requirements prohibit purchased lists; spam may cause account termination."
+    },
+    {
+      "id": "pages",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "AWeber AI Landing Page Builder — Describe the result, get the page",
+      "url": "https://www.aweber.com/ai/landing-page-builder.htm",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "a69ddcd0bf8dec9d6fae171dc4c1cb2f27865dc0b56c03b7488fa684683289df",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current landing-page URL redirects to AI page builder; page generation is adjacent to email automation."
+    },
+    {
+      "id": "tag-entry",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "How do I start a Workflow with a tag? | AWeber",
+      "url": "https://docs.aweber.com/workflows/workflows-1/how-do-i-start-a-workflow-with-a-tag",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "f34f8f1566fb6588725a9805912157a19a0d3cc97e5903d564f77b8ddd3a12fe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Tag triggers require tagging after publication; exceptions and re-entry control matter."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "What is a workflow? | AWeber",
+      "url": "https://docs.aweber.com/workflows/workflows-1/what-is-a-workflow",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "d83efe18c82767d9b3976537d2fc566d4f64e30ce54775a1ebb7fbfe4daca6a4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Starter/message/wait/tag/feed components; autosaving does not publish changes."
+    },
+    {
+      "id": "sequence",
+      "type": "official_documentation",
+      "site": "AWeber",
+      "title": "Can I Start Subscribers on a Specific Workflow Message? | AWeber",
+      "url": "https://docs.aweber.com/workflows/workflows-1/can-i-start-subscribers-on-a-specific-workflow-mes",
+      "read_at": "2026-10-22T09:59:30.238210Z",
+      "excerpt_sha256": "0053aea01850d0b0bb5dec18bdc80c779496dc67ba69468d0f892db359ae17e0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "No arbitrary mid-sequence entry; copy and shorten an alternate sequence, or use dated broadcasts."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:59:30.238210Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["workflow", "pages"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "journey",
+        "title_en": "Plan a subscriber journey before choosing an editor",
+        "title_zh": "先设计订阅路径，再选择编辑器",
+        "en": "AWeber workflows begin when a subscriber joins a list or receives a starter tag. The canvas connects messages, waits, tagging and feed checks. For an illustrative course, collect a learner’s email, send the first lesson, wait, and send the next lesson. Decide which action represents enrollment before building the messages.\n\nAn RSS workflow instead reacts to new feed content. A newsletter sent on a fixed date and a course sent relative to each enrollment solve different timing problems; choosing the wrong model can send old lessons or miss a deadline.",
+        "zh": "AWeber 工作流可由加入名单或收到启动标签开始，画布连接邮件、等待、标签和订阅源检查。例如邮件课程可收集学员邮箱、发送第一课、等待，再发送下一课。编写邮件前，先明确什么动作代表报名。\n\nRSS 流程则响应订阅源的新内容。固定日期发送的新闻邮件与按个人报名时间发送的课程，解决的是不同时间问题；模型选错可能发出过时课程或错过截止时间。",
+        "source_refs": ["workflow", "sequence"],
+        "evidence_type": "documented_with_editorial_workflow_example"
+      },
+      {
+        "id": "entry",
+        "title_en": "Existing tags do not automatically backfill enrollment",
+        "title_zh": "已有标签不会自动补跑",
+        "en": "The tag guide requires the triggering tag to be added after the workflow is published. A subscriber tagged beforehand does not automatically receive the sequence. It also describes exception tags and says subscribers enter once unless re-entry is enabled. Removing and reapplying a tag is therefore not a universal restart procedure.\n\nFor migration, separate existing subscribers from new opt-ins and explicitly plan which population should enter. Test with representative consented addresses before applying an enrollment tag to a whole audience.",
+        "zh": "标签指南要求在工作流发布后添加触发标签。事先已有标签的订阅者不会自动收到序列。指南还说明排除标签，以及未启用重新进入时每人只进入一次。因此，移除再添加标签并不是通用重启方式。\n\n迁移时应区分已有订阅者与新订阅者，明确各自是否进入。对整个受众添加报名标签前，建议先用已同意接收的代表性邮箱检查。",
+        "source_refs": ["tag-entry"],
+        "evidence_type": "documented_with_editorial_evaluation_suggestion"
+      },
+      {
+        "id": "publish",
+        "title_en": "Autosave and activation are separate",
+        "title_zh": "自动保存与启用是两步",
+        "en": "The workflow guide says edits autosave, but changes require Publish to become active. A saved draft is not evidence that subscribers are receiving the new version. Message steps can use existing drafts; waits control the next action’s interval and send window.\n\nCheck the published version, entry condition and first scheduled message together. If a message is missing, these are separate places to investigate before changing the audience or recreating the workflow. No delivery or recovery test was performed here.",
+        "zh": "工作流指南说明修改会自动保存，但需要 Publish 才会启用。草稿已保存不能证明订阅者正在接收新版本。邮件步骤可以选用已有草稿，等待步骤控制后续动作的间隔与发送窗口。\n\n应一起核对已发布版本、进入条件和第一封排程邮件。邮件未到时，建议先分别检查这些位置，再考虑更换受众或重建流程。本文未做投递或恢复测试。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_troubleshooting_guidance"
+      },
+      {
+        "id": "late-entry",
+        "title_en": "A late subscriber cannot jump to any lesson",
+        "title_zh": "迟到的订阅者不能随意跳课",
+        "en": "The sequence guide says subscribers begin at the start rather than an arbitrary message. Its workaround is a copied workflow with earlier messages removed and a separate entry tag. It recommends broadcasts when dates matter and late joiners should miss previous sends.\n\nThis matters for a cohort course: a personal onboarding sequence can start at lesson one, while a live event reminder should follow the event calendar. Maintaining two sequences also creates an editorial maintenance task when course content changes.",
+        "zh": "序列指南说明订阅者从开头进入，不能直接指定任意邮件。文档的处理方式是复制流程、删除前面的邮件，并使用独立进入标签。对有固定日期、迟加入者无需收到旧邮件的场景，指南建议使用广播邮件。\n\n例如同期开班的课程：个人入门序列可以从第一课开始，现场活动提醒则应跟随活动日历。维护两套序列还意味着课程内容更新时需要同步编辑。",
+        "source_refs": ["sequence"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "plans",
+        "title_en": "Budget by subscriber tier and sending allowance",
+        "title_zh": "按订阅档位和发送额度预算",
+        "en": "The pricing page’s 0–500-subscriber view shows Lite at $15 month-to-month or $150 annually, and Plus at $30 monthly or $240 annually. The annual cards show approximate monthly equivalents of $12.49 and $19.99. A 14-day trial is advertised; it should not be described as permanent free sending.\n\nLite lists one list, three automations, three landing pages and monthly sends of 10 times the subscriber maximum. Plus lists unlimited automations and lists, but sends remain 12 times the subscriber maximum. “Unlimited automations” therefore does not mean unlimited email volume. Confirm billing cadence and the selected audience tier before purchase.",
+        "zh": "定价页在 0–500 位订阅者档位列出 Lite 按月 $15 或按年 $150，Plus 按月 $30 或按年 $240。年付卡片给出的月均约为 $12.49 与 $19.99。官网宣传 14 天试用，不应据此写成永久免费发送。\n\nLite 包含一个名单、三个自动化、三个落地页，每月发送额度为订阅上限的 10 倍。Plus 的自动化和名单数量不限，但发送额度仍为订阅上限的 12 倍。因此，自动化不限不代表邮件发送量不限；购买前应确认周期和受众档位。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_pricing_snapshot"
+      },
+      {
+        "id": "permission",
+        "title_en": "Permission is an operating prerequisite",
+        "title_zh": "接收许可是运营前提",
+        "en": "AWeber’s policy prohibits purchased, rented or otherwise bought lists and messages to people who did not request the information. It states that spam can lead to termination without refund. Import capability is not permission to contact an arbitrary address collection.\n\nBefore migration, preserve the reason each subscriber expects the messages and exclude records whose permission is uncertain. This is an operational evaluation suggestion, not legal advice or a conclusion that any particular campaign complies with local law.",
+        "zh": "AWeber 政策禁止购买、租用或以其他方式购得的名单，也禁止向未请求相关信息的人发信，并说明垃圾邮件可能导致封号且不退款。能够导入名单不等于可联系任意邮箱集合。\n\n迁移前建议保留订阅者为何期待收到邮件的依据，并排除许可不明的记录。这是运营评估建议，不是法律意见，也不代表某个活动已符合当地法律。",
+        "source_refs": ["permission"],
+        "evidence_type": "documented_policy_with_editorial_guidance"
+      },
+      {
+        "id": "pages-fit",
+        "title_en": "Keep acquisition pages and email delivery distinct",
+        "title_zh": "区分获客页面与邮件投递",
+        "en": "The old landing-page URL now redirects to AWeber’s AI landing-page builder. Its workflow is to describe a goal, review generated content, request edits and publish. A page can collect subscribers, but publishing it is not an end-to-end email acceptance test.\n\nShortlist AWeber when a named operator can maintain subscriber journeys and a permissioned audience. A team needing a specific self-hosted implementation or a transactional delivery API should verify that requirement separately; neither deployment rights nor transactional semantics were established by this research.",
+        "zh": "旧落地页网址目前跳转到 AWeber 的 AI 落地页构建器，流程是描述目标、审阅生成内容、提出修改并发布。页面可以收集订阅者，但发布页面不能代替完整邮件验收。\n\n当有人负责维护订阅路径且受众已许可接收时，可把 AWeber 列入候选。需要特定自托管实现或事务邮件 API 的团队应单独核对；本次研究未确认部署权利或事务投递语义。",
+        "source_refs": ["pages", "permission"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "AWeber: Subscriber Workflows, Tags, Pricing and Enrollment Limits",
+    "title_zh": "AWeber：订阅工作流、标签、价格与进入限制",
+    "description_en": "Understand AWeber enrollment tags, timed sequences, broadcasts, subscriber-based pricing and permission requirements.",
+    "description_zh": "了解 AWeber 的进入标签、定时序列、广播邮件、订阅者计费与接收许可条件。",
+    "primary_intent": "Evaluate an AWeber subscriber journey and migration behavior.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No live signup, send, bounce, unsubscribe or recovery test was executed.",
+      "zh": "未实际测试订阅、发送、退信、退订或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Permanent-free eligibility, checkout taxes, contract terms, source license, UI languages, regional availability and specific commerce connector behavior remain unverified.",
+      "zh": "持续免费资格、结算税费、合同条款、源码许可、界面语言、地区可用性及具体电商连接器行为仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

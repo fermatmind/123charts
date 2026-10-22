@@ -1,0 +1,373 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "shipflutter-ccd6ac1a",
+  "name": "ShipFlutter",
+  "website_url": "http://shipflutter.com/",
+  "domain": "shipflutter.com",
+  "identity_domain": "shipflutter.com",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "ShipFlutter is a paid Flutter and Firebase starter kit with a builder that assembles a downloadable project. Depending on the selected configuration, the ZIP includes an app, cloud functions and a landing page. The delivered project is source code for a developer to configure and run, rather than a hosted no-code application service.\n\nIts documentation describes authentication, payments and app modules, but connecting real Firebase services and payment providers remains the developer’s work. The homepage’s promise of modifiable code conflicts with the separate license restriction; commercial evaluation should keep that unresolved condition visible. No kit was purchased, downloaded or executed.",
+  "description_zh": "ShipFlutter 是付费 Flutter／Firebase 起步代码包，可通过构建器组装并下载项目。ZIP 按配置包含应用、云函数及落地页。交付的是由开发者配置、运行的源码，不是托管的无代码应用服务。\n\n文档介绍认证、支付及应用模块，但真实 Firebase 服务及支付商仍需开发者配置。首页允许修改代码的宣传与独立许可页限制冲突，商业评估需保留此未解决条件。本次未购买、下载或执行代码包。",
+  "core_features": [
+    {
+      "name_en": "Configurable source package",
+      "name_zh": "可配置源码包",
+      "explanation_en": "Choose modules in the builder and receive the configured project ZIP.",
+      "explanation_zh": "在构建器选模块，取得对应项目 ZIP。",
+      "explanation_scope": "product_specific",
+      "source_ref": "intro",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Flutter/Firebase setup",
+      "name_zh": "Flutter／Firebase 配置",
+      "explanation_en": "Register platforms and configure Firebase services for the generated app.",
+      "explanation_zh": "为生成应用登记平台并配置 Firebase 服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "setup",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Structured application code",
+      "name_zh": "结构化应用代码",
+      "explanation_en": "Separate views, controllers and services; model loading, data and error states.",
+      "explanation_zh": "拆分视图、控制器与服务，并表示加载、数据及错误状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "structure",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Platform-specific payment integration",
+      "name_zh": "按平台的支付集成",
+      "explanation_en": "Use RevenueCat for mobile and LemonSqueezy for web with provider configuration.",
+      "explanation_zh": "移动端使用 RevenueCat、网页使用 LemonSqueezy，需配置支付商。",
+      "explanation_scope": "product_specific",
+      "source_ref": "payments",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a Flutter/Firebase membership-app starting point",
+      "Inspect payment error and entitlement handling before release"
+    ],
+    "zh": [
+      "评估 Flutter／Firebase 会员应用起点",
+      "发布前检查支付错误及权益处理"
+    ],
+    "source_refs": ["setup", "structure", "payments"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Flutter developers",
+      "Mobile/web application developers",
+      "Technical founders"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Resolve the modification-rights contradiction before purchasing.",
+        "zh": "购买前厘清修改权矛盾。",
+        "source_refs": ["license", "home"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect prerequisites and configure an isolated Firebase project.",
+        "zh": "检查依赖并配置隔离 Firebase 项目。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test failed data reads and payment/entitlement transitions with provider test facilities.",
+        "zh": "用支付商测试设施检查读取失败及支付／权益变化。",
+        "source_refs": ["structure", "payments"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Firebase services and payment packages require manual configuration.",
+        "zh": "Firebase 服务及支付包需手动配置。",
+        "source_refs": ["setup", "payments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "AI/Functions require Blaze; runtime and payment fees are not included in the kit fee.",
+        "zh": "AI／Functions 要求 Blaze，运行及支付费用不包含在代码包费中。",
+        "source_refs": ["setup", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Homepage modification claims conflict with restrictive license text.",
+        "zh": "首页修改权宣传与限制性许可文本冲突。",
+        "source_refs": ["home", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_terms_read_with_conflict",
+    "is_open_source": false,
+    "url": "https://shipflutter.com/license/",
+    "source_ref": "license",
+    "scope_en": "Paid kit personal commercial license; modification/derivative rights conflict with FAQ and remain unresolved.",
+    "scope_zh": "付费包个人商业许可；修改／衍生权与 FAQ 冲突，尚未厘清。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "one_time_license_access_term",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:01:30.658385Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Starter1-year and Lifetime access/update licenses; paired displayed amounts99/132 and164/205, effective checkout unverified; runtime separate.",
+    "summary_zh": "Starter一年与Lifetime终身访问／更新许可；并列金额99／132及164／205，实际结账未核，运行另计。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/shipflutter",
+      "read_at": "2026-10-22T08:55:43.261Z",
+      "excerpt_sha256": "35cfdd7d0b799d98a2690c939376b88bcfd2bc7ce9ad1307a36879e35ce36132",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "ShipFlutter",
+      "title": "Flutter Starter Kit | ShipFlutter",
+      "url": "https://shipflutter.com/",
+      "read_at": "2026-10-22T12:01:30.658385Z",
+      "excerpt_sha256": "b8fb3fe1766ab8b76c2cd15e038d14d410416bf8f47acfbc4befa1f2d39ba110",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Builder-to-ZIP workflow, programming prerequisite and FAQ code-modification claims read; these conflict with separate license restrictions and are not treated as a settled grant."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ShipFlutter",
+      "title": "Flutter Starter Kit | ShipFlutter",
+      "url": "https://shipflutter.com/",
+      "read_at": "2026-10-22T12:02:37.650769Z",
+      "excerpt_sha256": "aedce3af8a12e32c47ef294c1fcc46712464ffb4e5640da5fd77a83eca81b4f6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual homepage pricing section read, not inaccessible guessed /pricing. Starter one-year and Lifetime access/update terms recorded. Flattened paired amounts/checkout not resolved."
+    },
+    {
+      "id": "intro",
+      "type": "official_documentation",
+      "site": "ShipFlutter",
+      "title": "Ready to ShipFlutter? | Documentation",
+      "url": "https://shipflutter.com/docs/",
+      "read_at": "2026-10-22T12:02:37.738531Z",
+      "excerpt_sha256": "b2b1f19bf774e0d64eae46cee87f7ea6f34bb8fb53a33b35f301717aba314534",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Purchase/activate builder license, configure project and download ZIP documented; no purchase or builder session."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "ShipFlutter",
+      "title": "Setup the project | Documentation",
+      "url": "https://shipflutter.com/docs/setup",
+      "read_at": "2026-10-22T12:03:58.195137Z",
+      "excerpt_sha256": "d174291d137c28118f1abd3bd48557d7a3ac3dcae515aa2341f840c074e4ea5d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Flutter/Firebase CLI prerequisites, separate project configuration, manual Auth/Firestore/App Check, and Blaze dependency read."
+    },
+    {
+      "id": "structure",
+      "type": "official_documentation",
+      "site": "ShipFlutter",
+      "title": "Learn the basics | Documentation",
+      "url": "https://shipflutter.com/docs/basics/",
+      "read_at": "2026-10-22T12:03:58.285825Z",
+      "excerpt_sha256": "4af7c94f2880e51862bbbf6295f006e743c840067efcf3d7ecbe84fdab8de606",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "app/functions/optional landing structure, feature view/controller/service split, signal loading/data/error states and localization code read."
+    },
+    {
+      "id": "payments",
+      "type": "official_documentation",
+      "site": "ShipFlutter",
+      "title": "Payment Basics | Documentation",
+      "url": "https://shipflutter.com/docs/payment/",
+      "read_at": "2026-10-22T12:07:57.983538Z",
+      "excerpt_sha256": "4754c2aa64b0a669e02a78e2011e5ab2fe58c89994e84cdfe81e6eecaaec6de2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "RevenueCat mobile versus LemonSqueezy web, packages prerequisite, PaymentException and Functions webhook/entitlement responsibilities read."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "ShipFlutter",
+      "title": "License of ShipFlutter | ShipFlutter",
+      "url": "https://shipflutter.com/license/",
+      "read_at": "2026-10-22T12:02:37.709167Z",
+      "excerpt_sha256": "cb3333af113e45f6ad1b5f28d2daeb1e580c793bdba87e6c4ccc30810b7cfa77",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Personal nontransferable nonsublicensable license allows unlimited personal/commercial projects but restriction forbids modification/derivatives, conflicting with FAQ. No legal interpretation resolving conflict."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:07:57.983538Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "intro", "setup", "license"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "From builder configuration to a local Flutter project",
+        "title_zh": "从构建器配置到本地 Flutter 项目",
+        "en": "The documented path is to buy a license, activate builder access, choose a template/modules and download a ZIP. Extract it into a workspace, install Flutter and an IDE, configure Firebase CLI/FlutterFire, and run the supplied project setup. A proposed membership app would first validate a disposable sign-in flow before adding paid access. The marketing claim of production readiness does not establish app-store approval, measured launch time or application-specific security.",
+        "zh": "文档流程为购买许可、激活构建器、选模板／模块并下载 ZIP。解压到工作目录，安装 Flutter 与 IDE、配置 Firebase CLI／FlutterFire，再执行项目设置。建议会员应用先验证可丢弃登录流程，再加入付费访问。宣传的生产可用不能证明商店审核通过、实际上线时间或应用特定安全性。",
+        "source_refs": ["intro", "home", "setup"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "firebase",
+        "title_en": "Generated files do not complete Firebase setup",
+        "title_zh": "生成文件不代表 Firebase 配置完成",
+        "en": "Setup registers the chosen app platforms and produces firebase_options.dart; the Firebase project alias is configured separately at the project root. Firestore and Authentication still need manual enablement. The guide highlights a Flutter Web App Check setup issue that can cause Firebase requests to be denied and describes development debug-token configuration. Treat development configuration separately from a production protection policy. AI and Functions modules require the Firebase Blaze plan, so the kit price does not cover the application’s cloud usage.",
+        "zh": "设置会登记选定应用平台并生成 firebase_options.dart；项目根目录另配 Firebase 项目别名。Firestore 与 Authentication 仍需手动启用。指南指出 Flutter Web 的 App Check 配置问题会导致 Firebase 请求拒绝，并介绍开发调试 token 配置；开发配置应与生产保护策略区分。AI 及 Functions 模块要求 Firebase Blaze 方案，代码包价格不包含应用云用量。",
+        "source_refs": ["setup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "code",
+        "title_en": "Follow the code’s state and feature boundaries",
+        "title_zh": "按代码状态及功能边界开发",
+        "en": "The basics guide separates app, functions and an optional landing directory. Within a feature, the view renders state, the controller maps model/service results and the service retrieves or updates data. Its Signals/context_watch example represents AsyncLoading, AsyncData and AsyncError rather than assuming every read succeeds. For evaluation, force a failed data request and check the displayed error and subsequent retry behavior. Localization JSON and generated code support application translation; they do not prove ready-made Chinese content or a Chinese builder interface.",
+        "zh": "基础指南拆分 app、functions 及可选 landing 目录。功能内由视图渲染状态、控制器映射模型／服务结果、服务读取或更新数据。Signals／context_watch 示例使用 AsyncLoading、AsyncData 与 AsyncError，不假设读取总成功。评估时应制造数据请求失败，检查错误显示及后续重试。翻译 JSON 与生成代码支持应用本地化，但不能证明现成中文内容或中文构建器界面。",
+        "source_refs": ["structure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "payments",
+        "title_en": "Configure packages and reconcile access changes",
+        "title_zh": "配置支付包并核对访问变化",
+        "en": "The payment guide separates RevenueCat mobile purchases from LemonSqueezy web purchases behind a common service. It documents retrieving a paywall, purchasing a package, catching PaymentException and observing entitlements. Packages must be configured first or the UI displays an error. Firebase Functions receive provider webhooks and update access/subscription state. Test cancellation, rejected payment and delayed entitlement updates before relying on paid access. These are proposed checks; no provider account, payment or webhook was exercised. Provider fees and store requirements are separate from kit access.",
+        "zh": "支付指南通过共同服务接口区分 RevenueCat 移动购买与 LemonSqueezy 网页购买，介绍获取付费墙、购买包、捕获 PaymentException 及观察权益。必须先配置 package，否则界面报错。Firebase Functions 接收支付商 webhook，更新访问／订阅状态。依赖付费访问前需测试取消、拒付及权益延迟更新。这些为建议检查，本次未操作支付商账户、支付或 webhook；支付商费用及商店要求另于代码包访问。",
+        "source_refs": ["payments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "One-year access and lifetime access differ from hosting",
+        "title_zh": "一年访问与终身访问不同于托管费用",
+        "en": "The pricing section describes Starter as one-year builder/update access and Lifetime as unlimited lifetime access/updates. Its reader output shows paired amounts of $99/$132 and $164/$205; checkout timed out, so the effective discount, taxes and final payable amount are not verified. The FAQ’s pay-once/reuse wording does not establish unlimited future cloud services. Confirm renewal rights, module scope, support and refund conditions before purchase; no monthly normalized price is inferred for a one-time license.",
+        "zh": "定价区将 Starter 描述为一年构建器／更新访问，Lifetime 为终身不限访问／更新。读取结果分别并列 $99／$132 与 $164／$205；结账页超时，实际折扣、税及应付金额未核实。FAQ 的一次付费复用不代表未来云服务不限。购买前需确认续期权、模块范围、支持及退款条件；不将一次性许可推算为月费。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Modification rights are unresolved across official pages",
+        "title_zh": "官方页面的修改权表述未一致",
+        "en": "The license grants a personal, nontransferable and nonsublicensable right to create unlimited personal or commercial projects, while retaining the starter-kit intellectual property. It also forbids modification, adaptation and derivative works. The homepage FAQ, by contrast, says code can be modified except for derivative starter-kit resale. Those are materially different conditions for a customizable starter kit. Do not resolve the conflict by assuming broad ownership or an open-source grant; obtain consistent current terms before adopting it in a commercial project. A linked sample’s license cannot establish the paid kit’s license.",
+        "zh": "许可给予个人、不可转让及不可分许可的使用权，可建立不限数量个人或商业项目，起步包知识产权仍归提供方；同时禁止修改、改编及衍生作品。首页 FAQ 则称可修改代码，但不得衍生转售起步包。对可定制起步包而言，两者条件存在实质差异。不能通过假定完整所有权或开源授权消解冲突，商业采用前需取得一致的当前条款。链接示例的许可不能证明付费包许可。",
+        "source_refs": ["license", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ShipFlutter: Firebase setup, payments and license conflicts",
+    "title_zh": "ShipFlutter：Firebase 配置、支付及许可冲突",
+    "description_en": "Review the Flutter starter-kit ZIP workflow, cloud prerequisites, payment entitlements and unresolved modification terms.",
+    "description_zh": "了解 Flutter 起步包 ZIP 流程、云依赖、支付权益及未厘清修改条款。",
+    "search_intent_en": "Evaluate ShipFlutter setup effort, fees and modification rights.",
+    "search_intent_zh": "评估 ShipFlutter 配置工作、费用及修改权。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No purchase, download, package inspection, Firebase deployment, payment, webhook or recovery was executed.",
+      "zh": "未购买、下载、检查实际包、部署 Firebase、支付、运行 webhook 或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The official FAQ and license disagree on modification/ownership; no clarification was obtained.",
+      "zh": "官方 FAQ 与许可的修改／所有权表述不一致，未取得澄清。",
+      "source_refs": ["home", "license"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Checkout timed out; effective price, tax, license activation duration, renewal and third-party fees remain unverified.",
+      "zh": "结账页超时，实际价格、税、激活时长、续期及第三方费用未核。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Dependency compatibility, production security, app-store acceptance, UI languages and maintenance cadence were not tested.",
+      "zh": "依赖兼容、生产安全、商店审核、界面语言及维护节奏未测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

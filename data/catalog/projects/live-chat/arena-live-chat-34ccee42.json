@@ -1,0 +1,405 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "arena-live-chat-34ccee42",
+  "name": "Arena Group Chat (Live Chat)",
+  "website_url": "https://arena.im/group-chat/",
+  "domain": "arena.im",
+  "identity_domain": "arena.im",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Arena Group Chat, called Live Chat in its help center, embeds many-to-many audience discussions into a website or mobile experience. It is suited to a live event, sports community or always-on audience space, with channels, polls, Q&A and moderation. It should not be confused with a private agent-to-customer support inbox. Arena Live Blog, Comments and Commerce AI are adjacent products with separate scopes.\n\nA hypothetical sports event can use topic channels, pre-moderated questions and moderator responses, while monitoring pageview quota and the visibility of the widget. Current product and pricing pages coexist with help articles dated2021–2022, so their operating details need confirmation for the selected account. No event, embed, moderation, payment, API or export was executed.",
+  "description_zh": "Arena Group Chat在帮助中心称Live Chat，可将多人观众讨论嵌入网站或移动体验。它面向直播活动、体育社区或持续开放的观众空间，包含频道、投票、问答及审核，不应与客服和客户间的私有支持收件箱混淆。Arena Live Blog、Comments及Commerce AI是范围不同的相邻产品。\n\n以假设体育活动为例，可设置话题频道、预审问题和主持人回答，同时监控页面浏览额度及组件可见性。当前产品／价格页与2021—2022年的帮助文章并存，操作细节需按所选账户确认。此次未执行活动、嵌入、审核、付款、API或导出。",
+  "core_features": [
+    {
+      "name_en": "Embedded audience group chat",
+      "name_zh": "嵌入观众群聊",
+      "explanation_en": "Create and style a group conversation for an event or ongoing website community.",
+      "explanation_zh": "为活动或持续网站社区创建并设置群聊外观。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pre-moderated Q&A",
+      "name_zh": "预审问答",
+      "explanation_en": "Optionally approve or archive submitted questions before audience publication.",
+      "explanation_zh": "可在向观众发布前批准或归档所提交问题。",
+      "explanation_scope": "product_specific",
+      "source_ref": "qa",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Topic channels",
+      "name_zh": "话题频道",
+      "explanation_en": "Separate discussions while sharing main chat settings and aggregate analytics.",
+      "explanation_zh": "分开讨论，同时继承主聊天设置并汇总分析。",
+      "explanation_scope": "product_specific",
+      "source_ref": "channels",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Moderator intervention",
+      "name_zh": "审核人员干预",
+      "explanation_en": "Review reported users, delete messages, ban participants and open or close the chatroom.",
+      "explanation_zh": "核查被举报用户、删除消息、封禁参与者及开关聊天室。",
+      "explanation_scope": "product_specific",
+      "source_ref": "moderation",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Host an audience discussion alongside a sports or media event.",
+      "Run moderated public Q&A with explicit staffing and pageview headroom."
+    ],
+    "zh": [
+      "在体育或媒体活动旁提供观众讨论。",
+      "在明确值守及页面浏览余量下运行受审核公开问答。"
+    ],
+    "source_refs": ["product", "qa", "billing"],
+    "basis": "Editorial event scenarios, not observed adoption or engagement gains."
+  },
+  "technical_details": {
+    "Metering": {
+      "en": "Current pricing lists monthly pageviews. The older concurrent-user article says no simultaneous-user cap; this does not remove pageview limits or prove performance at a particular audience size.",
+      "zh": "当前价格按月页面浏览量列额度。旧并发文章称不限制同时用户，但不取消页面浏览额度，也不证明特定观众规模下性能。",
+      "source_ref": "pricing",
+      "source_refs": ["pricing", "limits"],
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Audience engagement editor",
+      "Event community manager",
+      "Website moderator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create one Group Chat, choose appearance and publish its embed on a test page.",
+        "zh": "创建一个Group Chat，设置外观并在测试页发布嵌入。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure signup, moderation and channels; verify approved versus pending Q&A as an audience member.",
+        "zh": "配置注册、审核及频道，以观众身份核对已批准与待审问答。",
+        "source_refs": ["qa", "channels", "moderation"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm quota measurement, auto-upgrade/overage settings, moderator cover and export entitlement before an event.",
+        "zh": "活动前确认额度统计、自动升级／超额设置、审核值守及导出权益。",
+        "source_refs": ["billing", "pricing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website embed",
+        "source_ref": "product",
+        "scope": "Create and customize the Group Chat, then insert the provided code; actual CSP/CMS installation not tested."
+      },
+      {
+        "name": "Full API access",
+        "source_ref": "pricing",
+        "scope": "Enterprise card lists full API; endpoints,auth,ratesanddataexportcoverageunverified."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Older billing policy says widgets disappear at the pageview cap; auto-upgrade/overage can incur additional charges. Confirm current account behavior.",
+        "zh": "旧计费政策称达到页面浏览上限后组件消失，自动升级／超额可能收费，须确认当前账户行为。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Channels inherit main chat moderation and signup settings; analytics aggregate all channels while Q&A/polls are per channel.",
+        "zh": "频道继承主聊天审核及注册设置，分析汇总所有频道，问答／投票则按频道。",
+        "source_refs": ["channels"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The operating help articles are dated2021–2022. Their UI, trial and billing behavior were not verified against a current account.",
+        "zh": "操作帮助文章日期为2021—2022年，未以当前账户验证其界面、试用及计费行为。",
+        "source_refs": ["moderation", "qa", "channels", "limits", "billing"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://arena.im/terms-of-service/",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "billing", "terms"],
+    "normalized_monthly_price": 49,
+    "currency": "USD",
+    "billing_basis": "Website subscription with monthlypageviewlimits;monthlyandyearlypricedisplays. Olderbillingpolicycharges persiteexceptEnterprise;selectedOrderFormcontrolscommercialterms.",
+    "source_snapshot_en": "Free basicLiveBlog+GroupChat;monthlyStarter49/Professional349/Business999;yearlydisplaypermonth39/299/829;Enterprisecustom. Paidpageviews1000/10000/30000monthly. Freequota,overageratesandannualcheckouttotalnotestablished. Olderhelpdescribes14dayBusinessTrial,auto-upgrade/overagetoggles.",
+    "source_snapshot_zh": "Free含基础Live Blog与Group Chat；月付Starter49／Professional349／Business999美元，年付所示月价39／299／829；Enterprise定制。付费档月页面浏览1000／10000／30000。未确定免费额度、超额单价及年付结账总额。旧帮助描述14天Business试用及自动升级／超额开关。",
+    "checked_at": "2026-10-22T12:34:33.434512+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is this a private helpdesk chat?",
+      "question_zh": "这是私有服务台聊天吗？",
+      "answer_en": "Its documented focus is an audience group conversation with channels, polls and Q&A. A private support queue, agent SLA or ticket lifecycle is not established here.",
+      "answer_zh": "文档重点是带频道、投票及问答的观众群聊，此次未确定私有支持队列、客服SLA或工单生命周期。",
+      "source_refs": ["product", "channels"]
+    },
+    {
+      "question_en": "Does no concurrent-user limit mean unlimited use?",
+      "question_zh": "不限并发用户代表用量不限吗？",
+      "answer_en": "No. The current pricing table meters monthly pageviews, and older billing help describes hiding widgets or charging through configured upgrades/overage at the cap.",
+      "answer_zh": "不是。当前价格表按月页面浏览量计量，旧计费帮助描述到上限后隐藏组件，或按配置升级／超额收费。",
+      "source_refs": ["limits", "pricing", "billing"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/arena-live-chat",
+      "read_at": "2026-10-22T08:37:35.961Z",
+      "excerpt_sha256": "f7ed2c0df34936a0f38dae5bf3cbd62f7d121331b10ccdd11a5ecbc429d57675",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Group Chat: Real-Time Engagement & Community | Arena",
+      "title": "Group Chat: Real-Time Engagement & Community | Arena",
+      "url": "https://arena.im/group-chat/",
+      "read_at": "2026-10-22T12:31:05.769090+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "de09e5cea1da9a62df700cf1efd7a1b4a8d44b92683c34ae206ccf70d37e63ff",
+      "research_notes_en": "Current Group Chat public product replaces404assignedproductpath; event/alwaysoncommunityscope,embedsteps,polls/Q&A/conversioncards."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing - Arena",
+      "title": "Pricing - Arena",
+      "url": "https://arena.im/pricing/",
+      "read_at": "2026-10-22T12:31:05.538947+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "968e93457258540736e6cdb7a0cfa058029f05aae2763d132fde19623a42b678",
+      "research_notes_en": "Monthly49/349/999 and yearlydisplay39/299/829;FreebasicLiveBlog+GroupChat;1000/10000/30000monthlypageviewpaidtiers. No flattenediconentitlementinference."
+    },
+    {
+      "id": "moderation",
+      "type": "official_documentation",
+      "site": "Live Chat Moderation | Arena Help Center Intercom",
+      "title": "Live Chat Moderation | Arena Help Center Intercom",
+      "url": "https://help.arena.im/en/articles/3584675-live-chat-moderation",
+      "read_at": "2026-10-22T12:31:06.766131+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4b065da86b5717f728eaecfed45b134e09c56545f6ed0f177e26207a8695cc97",
+      "research_notes_en": "Nov2021liveblog-connectedchatconversationmoderation,reportedusers,delete/ban/openclose;notverifiedcurrentUI."
+    },
+    {
+      "id": "qa",
+      "type": "official_documentation",
+      "site": "How to enable Q&A on Live Chat | Arena Help Center Intercom",
+      "title": "How to enable Q&A on Live Chat | Arena Help Center Intercom",
+      "url": "https://help.arena.im/en/articles/4603372-how-to-enable-q-a-on-live-chat",
+      "read_at": "2026-10-22T12:31:05.286334+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1bc4ed69ba3fb5bf142e1de52812f596410c2855c1a0e74c4a29407ef55bee61",
+      "research_notes_en": "Nov2021Q&A enablement and optionalpre-moderation,approvedquestion/replypublishedcard;olderpaidplanentitlement."
+    },
+    {
+      "id": "channels",
+      "type": "official_documentation",
+      "site": "How to create and manage Channels in Live Chat | Arena Help Center Intercom",
+      "title": "How to create and manage Channels in Live Chat | Arena Help Center Intercom",
+      "url": "https://help.arena.im/en/articles/4616009-how-to-create-and-manage-channels-in-live-chat",
+      "read_at": "2026-10-22T12:34:32.453176+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "db5c9360b577912bfac73ee4d29e23f641364fd7b8fdfa2e905f02be1a5e415b",
+      "research_notes_en": "Nov2021channelsettingsinheritance,cachedmainchannelchange,aggregateanalyticsandchannel-specificQ&A/polls/streams."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Concurrent users in Live Chat | Arena Help Center Intercom",
+      "title": "Concurrent users in Live Chat | Arena Help Center Intercom",
+      "url": "https://help.arena.im/en/articles/4832787-concurrent-users-in-live-chat",
+      "read_at": "2026-10-22T12:31:07.389397+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9126c770d931302f00dabbe0c23fe19dabab08f566e29c8ad56b620348436ccf",
+      "research_notes_en": "Dec2022no-concurrent-usercapbutmonthlypageviewmetering,notcurrentunlimitedperformanceguarantee."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "Billing Policy | Arena Help Center Intercom",
+      "title": "Billing Policy | Arena Help Center Intercom",
+      "url": "https://help.arena.im/en/articles/3584353-billing-policy",
+      "read_at": "2026-10-22T12:34:33.434512+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1452e0b560eaa9178ee5dd36db3ea487635501e7afa0eb9784b079b6f96fc4c6",
+      "research_notes_en": "Dec2022per-sitesubscriptions,widgethiddenatcap,110%autoupgrade/overageandtrialdowngrade. Oldpolicyneedsselectedaccountconfirmation."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service | Arena",
+      "title": "Terms of Service | Arena",
+      "url": "https://arena.im/terms-of-service/",
+      "read_at": "2026-10-22T12:31:42.065774+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e393f13feb3887d69b1f79b204293190e9df03963768ef1c64992877f5868f6e",
+      "research_notes_en": "Selectedlimitedproprietarylicense,USDbilling,order-formterm/renewal,nonrefundabilityandterminationaccess;notcompletelegalreview."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:34:33.434512+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "channels",
+    "qa",
+    "billing",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "audience-scope",
+        "title_en": "Start with a shared audience discussion",
+        "title_zh": "从共享观众讨论开始",
+        "en": "The current official product is Group Chat; the assigned /products/livegroupchat/ path returned404, while /group-chat/ is live and the help center still calls it Live Chat. Its function is public audience participation during an event or continuously on a website, not a demonstrated one-to-one service queue. Polls, Q&A and conversion cards support participation and next actions; Live Blog and Comments have separate product pages.\n\nFor a hypothetical sports broadcast, an editor can place the chat beside coverage and create topic channels. Evaluate who can post, who moderates and whether questions are public. Published customer engagement percentages and scalability language are vendor claims rather than evidence for a particular event’s latency, moderation load or revenue.",
+        "zh": "当前官方产品称Group Chat。所分配/products/livegroupchat/路径返回404，/group-chat/可访问，帮助中心仍称Live Chat。它用于活动期间或网站持续观众参与，并非已证明的一对一服务队列。投票、问答及转化卡支持参与和下一步，Live Blog与Comments另有产品页面。\n\n以假设体育转播为例，编辑可在内容旁放置聊天并建立话题频道。应评估谁能发言、谁审核以及问题是否公开。厂商客户参与比例与扩容语言，不能证明特定活动延迟、审核负载或收入。",
+        "source_refs": ["product", "channels"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "moderation",
+        "title_en": "Prepare question approval and live intervention",
+        "title_zh": "准备问题审批及现场干预",
+        "en": "The2021 Q&A guide describes enabling a public Q&A tab where audience members ask, react and filter questions. Optional pre-moderation holds questions for approval or archive before publication. After approval a moderator can answer, and an answer card is published into the chat. This is a meaningful difference from an unreviewed message stream.\n\nThe moderation article describes a Conversation area with online, reported and banned users, message deletion, banning and opening/closing the room. Reporting a user is not the same as completing a moderation decision. Staff a test event, verify a pending question is hidden from an audience identity and check who can close or reopen discussion. These guides are old; exact current roles, controls, audit retention and failed-action behavior were not independently exercised.",
+        "zh": "2021年问答指南描述启用公开Q&A标签，观众可提问、互动及筛选。可选预审会在发布前暂存问题，由人员批准或归档。批准后可回答，并将回答卡发布至聊天，这与未经审阅的消息流有实质区别。\n\n审核文章描述Conversation区可查看在线、被举报及封禁用户、删除消息、封禁及开关聊天室。举报用户不等于已作出审核决定。应安排测试活动值守，以观众身份验证待审问题不可见，并核对谁可关闭及重开讨论。指南较旧，准确当前角色、控制、审计留存及失败动作未独立运行验证。",
+        "source_refs": ["qa", "moderation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "channels",
+        "title_en": "Channels separate topics but share important settings",
+        "title_zh": "频道区分话题，但共享关键设置",
+        "en": "The channel guide allows a name, emoji and a main channel that appears first. Main-channel changes may take several minutes because of caching. Crucially, language, pre-moderation, signup, link sharing, GIFs, reactions and profanity settings flow from the main chat into the other channels. Channel naming does not create independent access or moderation policy.\n\nThe same guide says analytics combine channels, while Q&A, polls and streams operate by channel. An event comparing two topic groups should not mistake aggregate analytics for separate-channel performance. Test an ordinary audience session after changing the main channel, a question submitted in each channel and moderation inheritance. Per-channel permissions, isolated exports and private-channel behavior were not established in the pages read.",
+        "zh": "频道指南允许设置名称、表情及首先显示的主频道。主频道变更可能因缓存需数分钟。关键是语言、预审、注册、链接、GIF、互动及脏话设置会从主聊天继承至其他频道，命名频道不会创造独立访问或审核策略。\n\n同文称分析汇总所有频道，问答、投票及流则按频道运行。比较两话题组的活动不能把总分析当独立频道表现。应在修改主频道后测试普通观众会话、各频道提问及审核继承。所读页面未确定按频道权限、隔离导出或私有频道行为。",
+        "source_refs": ["channels"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "metering",
+        "title_en": "Budget pageviews and the cost of reaching the cap",
+        "title_zh": "计算页面浏览量及触顶代价",
+        "en": "Current pricing lists paid monthly pageview allowances of1000/10000/30000 for Starter/Professional/Business. The2022 concurrency article says simultaneous users are not capped, but that is a different dimension from pageviews. A high-traffic page with little chat participation can therefore require a different allowance than a small page with many messages; the precise counting definition still needs confirmation.\n\nThe2022 billing policy states one subscription per website except Enterprise. It says widgets become invisible at the limit and Business posting can also be blocked. Optional auto-upgrade or Allow-overage is described at110% of quota; the threshold wording and exact transition behavior need current-account confirmation. Do not promise uninterrupted events from that policy. Before a campaign, inspect billing toggles, meter timing and projected traffic, and establish an alternative communication route if the widget disappears.",
+        "zh": "当前价格列Starter／Professional／Business每月页面浏览额度1000／10000／30000。2022并发文章称同时用户不限，但这与页面浏览不同。高流量、少聊天页面可能需要不同于小流量、多消息页面的额度，准确计数定义仍需确认。\n\n2022计费政策称除Enterprise外按网站订阅。文中称触顶后组件不可见，Business发帖页也可能被锁；可选自动升级或Allow-overage按110%额度描述，阈值措辞及实际切换需当前账户确认。不能据此承诺活动不中断。活动前应检查计费开关、统计时间及预计流量，并为组件消失准备其他沟通路线。",
+        "source_refs": ["pricing", "limits", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "tiers-terms",
+        "title_en": "Select the package and verify the order terms",
+        "title_zh": "选择套餐并核对订单条款",
+        "en": "The current page shows monthly prices of$49/$349/$999 and yearly-display monthly prices of$39/$299/$829 for Starter/Professional/Business; Enterprise is custom. Free lists basic Live Blog and Group Chat without a pageview allowance on the read pricing page. Starter adds polls/Q&A, Professional lists AI assistant and conversion cards, Business lists reports/data export and white label, and Enterprise lists full API and dedicated private servers. A dedicated-server card does not establish downloadable self-hosted software.\n\nSelected public terms specify US dollars, proprietary limited access, order-form fees, taxes and non-refundable payment obligations. They default to an annual term and annual renewals unless the order specifies otherwise, with thirty-day opt-out notice. The license wording includes internal/non-commercial use despite public community/commerce positioning; its applicability to the intended deployment needs written clarification. Trial documentation is dated2022 and describes fourteen days and free downgrade without a payment method. Current trial entitlement, complete export coverage, restoration and termination retrieval remain unverified.",
+        "zh": "当前页面Starter／Professional／Business月付$49／$349／$999，年付展示月价$39／$299／$829，Enterprise定制。Free列基础Live Blog与Group Chat，但所读价格页未列其页面浏览额度。Starter增加投票／问答，Professional列AI助手与转化卡，Business列报表／数据导出及白标，Enterprise列完整API及独立私服。独立服务器卡不代表可下载自托管软件。\n\n选读公开条款规定美元、专有有限访问、订单费用、税及不可退款支付义务。若订单未另定，默认一年期限及逐年续约，需提前30天退出通知。许可措辞含内部／非商业用途，与公开社区／商业定位存在适用范围疑点，需书面澄清。2022试用文档描述14天及未加支付方式时降免费；当前试用权益、完整导出、恢复及终止后取回未核实。",
+        "source_refs": ["pricing", "terms", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Arena Group Chat: Audience Moderation, Channels and Pageview Billing",
+    "title_zh": "Arena Group Chat：观众审核、频道及页面浏览计费",
+    "description_en": "Evaluate Arena event group chat, Q&A approval, inherited channel settings, pageview caps, widget visibility and current versus older plan documentation.",
+    "description_zh": "评估Arena活动群聊、问答审批、频道继承、页面浏览额度、组件可见性及新旧套餐文档。",
+    "primary_intent": "Evaluate Arena audience group chat and operational limits.",
+    "secondary_questions": [
+      "What happens at the pageview cap?",
+      "Are channel settings independent?",
+      "Is Group Chat a customer-support inbox?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No event, embed, user, moderation, quota boundary, API, export, purchase or recovery tested. Current applicability of2021–2022help,Freequota,pageviewcounting,overagerates,trial,permissions,order-formlicensewording,completeUIlanguagesanddataretrievalremainunverified.",
+      "zh": "未测试活动、嵌入、用户、审核、额度边界、API、导出、购买或恢复。2021—2022帮助当前适用性、免费额度、浏览计数、超额费、试用、权限、订单许可措辞、完整界面语言及数据取回未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

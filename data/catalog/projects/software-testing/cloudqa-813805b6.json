@@ -1,0 +1,399 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "cloudqa-813805b6",
+  "name": "CloudQA",
+  "website_url": "https://cloudqa.io/",
+  "domain": "cloudqa.io",
+  "identity_domain": "cloudqa.io",
+  "category": "software-testing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CloudQA is a web-test automation platform centered on recording user actions and replaying them as reusable checks. The current site offers both self-service tooling and an optional managed QA service; those choices involve different responsibilities for designing and maintaining tests.\n\nThis profile follows a proposed workflow from local browser recording through data-driven and API checks to failure diagnosis. It separates local execution from paid cloud capacity and keeps conflicting browser lists visible. No extension, account, test, uploaded file, API request or managed engagement was operated.",
+  "description_zh": "CloudQA 是以录制用户动作并重放为可复用检查为核心的网页测试自动化平台。当前网站提供自助工具及可选托管 QA 服务，两种选择对测试设计／维护责任的分配不同。\n\n本文沿拟定流程评估本地浏览器录制、数据驱动／API 检查及失败诊断，区分本地执行和付费云容量，并保留冲突浏览器清单。本次未操作扩展、账户、测试、文件上传、API 请求或托管服务。",
+  "core_features": [
+    {
+      "name_en": "Recorded browser workflows",
+      "name_zh": "录制浏览器流程",
+      "explanation_en": "Capture actions as ordered reusable test steps.",
+      "explanation_zh": "将动作录制为有序可复用测试步骤。",
+      "explanation_scope": "product_specific",
+      "source_ref": "overview",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Local Chrome execution",
+      "name_zh": "本地 Chrome 执行",
+      "explanation_en": "Replay tests through the authenticated Chrome extension.",
+      "explanation_zh": "通过已登录 Chrome 扩展重放测试。",
+      "explanation_scope": "product_specific",
+      "source_ref": "local",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Data-driven checks",
+      "name_zh": "数据驱动检查",
+      "explanation_en": "Use CSV inputs and variables for repeated scenarios.",
+      "explanation_zh": "用 CSV 输入及变量重复场景。",
+      "explanation_scope": "product_specific",
+      "source_ref": "data",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "API assertions",
+      "name_zh": "API 断言",
+      "explanation_en": "Check REST responses and reuse selected response values.",
+      "explanation_zh": "检查 REST 响应并复用选定响应值。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Record a regression with explicit positive/negative checks",
+      "Compare local session state with intended cloud behavior",
+      "Use data/API assertions and preserve failure evidence"
+    ],
+    "zh": [
+      "录制带明确正反检查的回归",
+      "比较本地会话与预期云行为",
+      "用数据／API 断言并保留失败证据"
+    ],
+    "source_refs": ["overview", "local", "data", "api", "results"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Quality engineers",
+      "Web application teams",
+      "Teams evaluating managed QA"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select a synthetic workflow, environment and expected assertions.",
+        "zh": "选择虚构流程、环境及预期断言。",
+        "source_refs": ["overview", "api"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check cookie state, variable mapping and first-failure evidence.",
+        "zh": "核 cookie 状态、变量映射及首个失败证据。",
+        "source_refs": ["local", "data", "results"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm browser entitlement, cloud concurrency and selected billing term.",
+        "zh": "确认浏览器权益、云并发及所选账期。",
+        "source_refs": ["browser", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Cloud unlimited runs are subject to fair use and separate parallel capacity.",
+        "zh": "云无限运行受公平使用及独立并发容量限制。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Regular-window local execution can inherit existing session state.",
+        "zh": "普通窗口本地执行可继承已有会话。",
+        "source_refs": ["local"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Browser/version entitlement is unresolved because official lists differ.",
+        "zh": "官方清单有差异，浏览器／版本权益待核。",
+        "source_refs": ["browser", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_local_paid_cloud_and_optional_managed_service",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:58:16.632011Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free local Kickstart; Scale Up displays $119/$99 monthly figures with billing context requiring confirmation. Cloud fair use/concurrency, separately licensed capabilities and custom managed QA affect total cost.",
+    "summary_zh": "免费本地 Kickstart；Scale Up 显示每月 $119／$99，账期需确认。云公平使用／并发、独立许可能力及定制托管 QA 影响总价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/cloudqa",
+      "read_at": "2026-10-22T08:39:38.264Z",
+      "excerpt_sha256": "db29f53ba8a816df1e63fc1ba43793859516109ef502eda9912b9faad0f85701",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Codeless Automation Testing Tools & QA Services | CloudQA",
+      "url": "https://cloudqa.io/",
+      "read_at": "2026-10-22T13:58:16.632011Z",
+      "excerpt_sha256": "85d125f674fed2475e660d0ae2809b5b1e0a5270fe49281066c92598e54d0bb0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Codeless platform and optional managed service read; demo success/counters not independent outcomes."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CloudQA",
+      "title": "CloudQA subscription plans",
+      "url": "https://cloudqa.io/subscription-plans/",
+      "read_at": "2026-10-22T13:58:16.632832Z",
+      "excerpt_sha256": "0b74b9169be48f052d49d87600da20e3b26d6b7e472210441742edcf443d13e8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual redirect subscription-plans; free local versus paid fair-use cloud, history and parallel add-on read; legacy browser FAQ conflicts."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Overview | Cloudqa",
+      "url": "https://doc.cloudqa.io/",
+      "read_at": "2026-10-22T13:58:16.633111Z",
+      "excerpt_sha256": "a1001eb7a2abdb6cdf78a73c95c7ea2641c244fb24468f3fe8f4baca7f5a12e4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Application/base URL, recorder, variables, suite and result organization read."
+    },
+    {
+      "id": "local",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Run Your Test Locally",
+      "url": "https://doc.cloudqa.io/run-locally/",
+      "read_at": "2026-10-22T13:58:45.799193Z",
+      "excerpt_sha256": "8f91ec3fadee954ab322bbc5575594fa94cd0329dbdcdb0c9eeb115dcd45bebd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Chrome extension, login, incognito versus regular state and local execution constraints read."
+    },
+    {
+      "id": "browser",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Cross browser testing",
+      "url": "https://doc.cloudqa.io/regression-testing-with-truRT/cross-browser/",
+      "read_at": "2026-10-22T13:59:26.870223Z",
+      "excerpt_sha256": "07fde16e730aa6f9a5a7c7d5700f6bc39e87a294d0d501427d4c71ed5384ee24",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Older cross-browser guide lists IE versus current pricing Edge; no universal compatibility claim."
+    },
+    {
+      "id": "data",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Data Driven Test",
+      "url": "https://doc.cloudqa.io/regression-testing-with-truRT/data-driven-test/",
+      "read_at": "2026-10-22T14:00:11.240314Z",
+      "excerpt_sha256": "852cddccf3006784f8d0694363252901ed4ce1cd502f26964f665f6faeb1e184",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CSV variable/input modes and dataset scopes read; no sample uploaded."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "API testing with TruAPI",
+      "url": "https://doc.cloudqa.io/tru-api/",
+      "read_at": "2026-10-22T14:00:11.240447Z",
+      "excerpt_sha256": "96ec6500ff7eae60d74b8e2e61ce6a6a2340187a0fb3a8e8bc45c051578c7193",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "REST methods/auth/assertions/JSONPath response variables read; sample endpoint not called."
+    },
+    {
+      "id": "results",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Test Recorder Results",
+      "url": "https://doc.cloudqa.io/why-did-my-test-case-fail/test-recorder-results/",
+      "read_at": "2026-10-22T13:59:26.870343Z",
+      "excerpt_sha256": "6bfa7c824613e35e5097948477ae4aa61958bc5fb3a586336057c89560cbf6a9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Step screenshots/status/timings/errors and report export read."
+    },
+    {
+      "id": "failure",
+      "type": "official_documentation",
+      "site": "CloudQA",
+      "title": "Test failure introduction",
+      "url": "https://doc.cloudqa.io/why-did-my-test-case-fail/introduction/",
+      "read_at": "2026-10-22T13:58:45.799316Z",
+      "excerpt_sha256": "8ad3c82b4f393bc60023892837e5b8b7e39900b4ad71bfd31fad6e9b11ee88f1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Failed-step error, screenshot baseline and manual reproduction guidance read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:00:11.240447Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "overview"],
+  "profile": {
+    "sections": [
+      {
+        "id": "record",
+        "title_en": "A recorded path needs explicit expected outcomes",
+        "title_zh": "录制路径需要明确预期结果",
+        "en": "The documentation organizes work into applications with base URLs, recorder steps, variables, suites and results. A click sequence captures what happened, not every requirement that should be true. Start with a short synthetic workflow and add checks for the expected result and a meaningful negative case. Verify environment parameters before replaying a write path; reusing a recording is not evidence that all business states are covered.",
+        "zh": "文档按含基地址的应用、录制步骤、变量、套件及结果组织工作。点击序列记录发生了什么，不包含全部应成立需求。应从简短虚构流程开始，增加预期结果检查及有意义的反例，重放写入路径前核对环境参数。复用录制不证明覆盖全部业务状态。",
+        "source_refs": ["overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "local",
+        "title_en": "Existing browser sessions affect the test precondition",
+        "title_zh": "已有浏览器会话影响测试前提",
+        "en": "Local execution uses the CloudQA Chrome extension and an account with test access. The guide distinguishes incognito from regular-window runs: regular mode can reuse cookies/session data, while incognito is intended for a fresh temporary context. It also warns against multiple local executions in one browser window. Compare the intended login state explicitly and save local edits before assuming they affect a later run. No extension or session was installed.",
+        "zh": "本地执行使用 CloudQA Chrome 扩展及有测试访问权的账户。指南区分无痕与普通窗口：普通模式可复用 cookie／会话，无痕用于临时新上下文，并提醒同一窗口避免多次本地并发。应明确比较预期登录状态，并保存本地编辑后再假定后续运行使用变更。本次未安装扩展或会话。",
+        "source_refs": ["local"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data",
+        "title_en": "Data scope changes how many scenarios execute",
+        "title_zh": "数据范围改变实际执行的场景",
+        "en": "The data-driven guide supports selected variables or complete input-field datasets from CSV, plus suite/environment-level data. Header names must correspond to the configured variable names. Define one expected outcome per synthetic row and estimate the total combinations before scheduling. Random values can avoid accidental reuse of a literal input, but do not prove valid test coverage or clean up the records a repeated workflow creates.",
+        "zh": "数据驱动指南支持 CSV 选定变量或完整输入字段数据，也有套件／环境级数据。列头需对应已配置变量名。应为每条虚构行定义预期结果并在调度前估算组合总数。随机值可避免复用固定输入，却不证明覆盖有效，也不会自动清理重复流程创建的记录。",
+        "source_refs": ["data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "Sending a request and checking its response are separate",
+        "title_zh": "发送请求与检查响应分开",
+        "en": "TruAPI lets a test specify method, URL, parameters, headers/body and authentication, then add explicit response assertions. JSONPath variables can carry response values into later requests. Inspect both success and invalid-input responses before linking this to a browser flow. The documentation’s public sample URL was not invoked; no credentials or production endpoints were used. A received status alone is not a complete functional assertion.",
+        "zh": "TruAPI 可指定方法、URL、参数、请求头／正文及认证，再添加明确响应断言；JSONPath 变量可将响应值传入后续请求。与浏览器流程连接前需检查成功和无效输入响应。本次未调用文档公共示例地址，也未使用凭据或生产端点。只收到状态码不是完整功能断言。",
+        "source_refs": ["api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "diagnose",
+        "title_en": "Inspect the first failed step before changing the test",
+        "title_zh": "修改测试前先检查首个失败步骤",
+        "en": "Recorded results show step status, duration, screenshots and error messages, with downloadable reports. The troubleshooting guide recommends comparing the failed step with its baseline and manually checking suspected application defects. Keep the distinction between an application failure, a bad precondition and an obsolete test step. A rerun that passes does not identify the original cause, so retain the relevant evidence and environment details before the history window expires.",
+        "zh": "录制结果显示步骤状态、时长、截图及错误，并可下载报告。排障指南建议将失败步骤与基线比较，人工复现疑似应用缺陷。应区分应用失败、前提错误及过时测试步骤。重跑通过不能解释原始原因，因此需在历史到期前保留相关证据及环境细节。",
+        "source_refs": ["results", "failure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "browser",
+        "title_en": "Official browser lists currently conflict",
+        "title_zh": "官方浏览器清单当前存在冲突",
+        "en": "The current pricing comparison lists Chrome for Free and Chrome/Firefox/Edge for paid tiers. Yet the same page’s FAQ and the cross-browser guide still name Internet Explorer, with different custom-plan wording for Edge/Safari. These cannot establish one precise current matrix. Ask for the actual browser/version entitlement and validate the target combination before committing to coverage; mobile web emulation is not evidence of native-app access under the same license.",
+        "zh": "当前定价对比列 Free 为 Chrome、付费为 Chrome／Firefox／Edge，但同页 FAQ 及跨浏览器指南仍列 Internet Explorer，对 Edge／Safari 定制方案说法也不同，无法据此形成精确现行矩阵。承诺覆盖前应核真实浏览器／版本权益并验证目标组合；移动网页模拟也不证明同许可包含原生应用。",
+        "source_refs": ["pricing", "browser"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free local runs differ from cloud capacity",
+        "title_zh": "免费本地运行不同于云容量",
+        "en": "Kickstart is displayed at $0 with local execution and seven-day history. Scale Up displays $119/month and $99/month figures whose selected billing context needs confirmation, with one-month history and cloud runs subject to fair use. Extra cloud parallel capacity is separately purchasable; managed QA is custom-priced. Synthetic monitoring, native apps and some tunnel capabilities are labeled separate licensing. An unlimited-run label is not unlimited concurrency or every product included.",
+        "zh": "Kickstart 显示 $0，含本地执行和七天历史。Scale Up 同时显示每月 $119 与 $99，所选账期需确认，含一月历史且云运行受公平使用约束。额外云并发可另购，托管 QA 定制报价。合成监控、原生应用及部分隧道能力另标独立许可。无限运行不代表无限并发或包含全部产品。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CloudQA: setup, operating limits and pricing",
+    "title_zh": "CloudQA：设置、运行边界及费用",
+    "description_en": "CloudQA is a web-test automation platform centered on recording user actions and replaying them as reusable checks. The current site offers both self-service tooling and ",
+    "description_zh": "CloudQA 是以录制用户动作并重放为可复用检查为核心的网页测试自动化平台。当前网站提供自助工具及可选托管 QA 服务，两种选择对测试设计／维护责任的分配不同。",
+    "search_intent_en": "Evaluate CloudQA for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 CloudQA。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No extension, account, file upload, test traffic, API request, schedule, notification or purchase was operated.",
+      "zh": "未操作扩展、账户、上传、测试流量、API 请求、调度、通知或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Pricing table versus FAQ/guide browser lists conflict. Current UI, history retention enforcement, free-plan continuity, final currency/taxes, integration coverage and security controls remain untested.",
+      "zh": "套餐表与 FAQ／指南浏览器清单冲突；当前界面、历史保留执行、免费方案持续性、最终币种／税、集成覆盖及安全控制未实测。",
+      "source_refs": ["pricing", "browser"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No software license or full service agreement was read; open-source status and export portability remain unverified.",
+      "zh": "未读软件许可或完整服务协议，开源状态及导出可移植性待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

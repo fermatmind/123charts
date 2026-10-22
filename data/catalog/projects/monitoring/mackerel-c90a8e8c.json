@@ -1,0 +1,336 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mackerel-c90a8e8c",
+  "name": "Mackerel",
+  "website_url": "https://en.mackerel.io/",
+  "domain": "en.mackerel.io",
+  "identity_domain": "mackerel.io",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Mackerel combines host metrics, checks and alerting in a hosted monitoring service. Agents and cloud integrations register managed hosts, while services, roles and monitors organize the operational view. Plugins can extend collection, but the hosted offer and plugin licensing are separate questions.\n\nEvaluation should check data freshness, host lifecycle and notification state. A graph does not prove that an old sample was evaluated for an alert, and retiring a host has different consequences from stopping or uninstalling an agent. Use synthetic faults and a deliberate offboarding procedure in the pilot.",
+  "description_zh": "Mackerel 将主机指标、检查及告警组合为托管监控服务。代理和云集成注册托管主机，service、role 和监控规则组织运行视图。插件可扩展采集，但托管服务和插件许可需分别核对。\n\n评估应检查数据新鲜度、主机生命周期和通知状态。图表不能证明旧样本已参与告警计算，退役主机也不同于停止或卸载代理。试点应使用模拟故障和明确的退出流程。",
+  "core_features": [
+    {
+      "name_en": "Host-aware monitoring states",
+      "name_zh": "按主机状态控制监控",
+      "explanation_en": "Working/standby hosts are monitored, but standby suppresses notifications.",
+      "explanation_zh": "working／standby 主机参与监控，standby 抑制通知。",
+      "explanation_scope": "product_specific",
+      "source_ref": "monitor",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separated account permissions",
+      "name_zh": "分离的账户权限",
+      "explanation_en": "Managers control API keys and integrations, while only the Owner controls plan/payment changes.",
+      "explanation_zh": "Manager 控制 API 密钥和集成，仅 Owner 可修改方案／付款。",
+      "explanation_scope": "product_specific",
+      "source_ref": "permissions",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Explicit host retirement",
+      "name_zh": "明确的主机退役",
+      "explanation_en": "Retirement removes a managed target and cannot restore its original host information.",
+      "explanation_zh": "退役移除托管目标，无法恢复原主机信息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "retire",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate alerting for a delayed host metric and a synthetic failure.",
+      "Check an auto-scaling host’s registration and retirement lifecycle."
+    ],
+    "zh": [
+      "评估延迟主机指标及模拟故障告警。",
+      "检查自动扩缩容主机的注册与退役生命周期。"
+    ],
+    "source_refs": ["monitor", "retire"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Infrastructure operators",
+      "Site reliability engineers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a disposable host, verify permitted agent communication and assign a minimal operator role.",
+        "zh": "选择可丢弃主机，核对获准代理通信并分配最小运行角色。",
+        "source_refs": ["agent", "permissions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test freshness, downtime exit and notifications, then rehearse retirement and estimate the chosen plan’s consumption.",
+        "zh": "测试新鲜度、维护结束及通知，再演练退役并估算所选方案消耗。",
+        "source_refs": ["monitor", "downtime", "retire", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Standby suppresses notifications even while monitoring continues.",
+        "zh": "standby 下监控继续但通知被抑制。",
+        "source_refs": ["monitor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Retirement cannot restore the original host identity or information.",
+        "zh": "退役后无法恢复原主机身份及信息。",
+        "source_refs": ["retire"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:12:59.815472Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free and a separate two-week Standard-equivalent trial are documented. Standard uses host/metric/span metering with tax-inclusive JPY rates and a JPY2,180 minimum when billable features are used. Host classification, extra metrics, external monitors and tracing affect totals; no universal flat subscription amount is inferred.",
+    "summary_zh": "文档区分 Free 与两周 Standard 同等功能试用。Standard 按主机／指标／span 计量，使用含税日元价格，有计费功能时最低 JPY2,180。主机分类、额外指标、外部监控和追踪影响总额，未推定通用固定订阅金额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mackerel-io",
+      "read_at": "2026-10-22T08:41:31.838Z",
+      "excerpt_sha256": "4a3d58b782993f45508b1649af190a23c66b857cf1648f9405d4cf97f781d358",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "Mackerel: A Revolutionary Server Management and Monitoring Service",
+      "url": "https://en.mackerel.io/",
+      "read_at": "2026-10-22T15:12:59.815472Z",
+      "excerpt_sha256": "3f42764a9d0ed780c74cd45d3bb3c6e18141d2cf951e8342176f7b6f9aca43a8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read server monitoring, plugins and automation offering."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Mackerel",
+      "title": "Pricing - Mackerel: A Revolutionary Server Management and Monitoring Service",
+      "url": "https://en.mackerel.io/pricing",
+      "read_at": "2026-10-22T15:12:59.815928Z",
+      "excerpt_sha256": "0713b0424bff80b5a2f6c0876fd52b673115489ba7c8c35396fac0dba270e2a6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read JPY tax-inclusive host/metric/span billing, minimum fee and Free/trial limits."
+    },
+    {
+      "id": "agent",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "Installing the agent - Mackerel Docs",
+      "url": "https://mackerel.io/docs/entry/howto/install-agent",
+      "read_at": "2026-10-22T15:14:36.311783Z",
+      "excerpt_sha256": "ad7141cf2fd9ee3864e5d99ba2478d4799f798017e7052a55024a154d7e4dfe9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read install/runtime network destinations and retained configuration/host ID files."
+    },
+    {
+      "id": "permissions",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "User permissions - Mackerel Docs",
+      "url": "https://mackerel.io/docs/entry/spec/authority",
+      "read_at": "2026-10-22T15:14:36.311597Z",
+      "excerpt_sha256": "747a1cd985d71b2e414896ca44ec04f3835ab1f62f87042f73b7bbe79559d130",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Owner/Manager/Collaborator/Viewer authority boundaries."
+    },
+    {
+      "id": "retire",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "Removing registered hosts from Mackerel’s managed targets - Mackerel Docs",
+      "url": "https://mackerel.io/docs/entry/howto/host-retirement",
+      "read_at": "2026-10-22T15:14:36.312894Z",
+      "excerpt_sha256": "08f46eb913b6cd6450786ebcafbd99c5d7a25cbfbd5f05bbf496634d22ed91c1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read irreversible host retirement and cloud-integration re-registration behavior."
+    },
+    {
+      "id": "monitor",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "Setting up monitoring and alerts - Mackerel Docs",
+      "url": "https://mackerel.io/docs/entry/howto/alerts",
+      "read_at": "2026-10-22T15:15:14.444570Z",
+      "excerpt_sha256": "46777c1e3ed4283df31bc2c7ea186976c06d8f45fca37196e0aeb556502b69d7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read host status, metric freshness, averaging and alert/notification separation."
+    },
+    {
+      "id": "downtime",
+      "type": "official_documentation",
+      "site": "Mackerel",
+      "title": "Configuring Downtime - Mackerel Docs",
+      "url": "https://mackerel.io/docs/entry/howto/downtimes",
+      "read_at": "2026-10-22T15:15:34.731080Z",
+      "excerpt_sha256": "49ae1db377cb08917b3db051c8b2ceec0a803fa4098db8315fbf88f61e925703",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read suppressed-alert behavior after maintenance windows and uptime exception."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:15:34.731080Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "agent"],
+  "profile": {
+    "sections": [
+      {
+        "id": "agent-network",
+        "title_en": "Check install and runtime egress separately",
+        "title_zh": "分别核对安装与运行出站连接",
+        "en": "Installation needs the documented package/service destinations; the running agent posts to api.mackerelio.com. Without runtime communication it cannot start and send metrics. Uninstalling leaves configuration and ID files behind. Verify network access and local state with a disposable host rather than assuming package installation establishes monitoring.",
+        "zh": "安装需要文档所列包仓库／服务地址，运行代理向 api.mackerelio.com 上报。运行通信不可用时无法启动并发送指标，卸载还会保留配置及 ID 文件。应使用可丢弃主机核对网络和本地状态，不能认为安装包成功即已监控。",
+        "source_refs": ["agent"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "roles",
+        "title_en": "Assign operational authority separately from billing",
+        "title_zh": "分别分配运行与账单权限",
+        "en": "An organization has one Owner, who alone can change plans and payment information. Managers can manage API keys, integrations and members. Collaborators can modify monitors and host state but cannot view/create keys; Viewers are read-only. Check whether the on-call operator needs configuration access before granting broader authority.",
+        "zh": "组织只有一位 Owner，仅其可修改方案和付款信息。Manager 可管理 API 密钥、集成及成员，Collaborator 可修改监控和主机状态但不能查看／创建密钥，Viewer 只读。应先明确值班人员是否需要配置权限，再授予更广权限。",
+        "source_refs": ["permissions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "freshness",
+        "title_en": "A graph and an alert evaluate data differently",
+        "title_zh": "图表与告警对数据的处理不同",
+        "en": "Monitoring skips samples more than twenty minutes old or older than previously submitted samples. Batched timestamps are evaluated using the latest value, so a visible historical spike may not raise an alert. Average monitors use a number of points, not a fixed number of minutes. Test delayed and missing data as well as threshold crossings.",
+        "zh": "监控跳过超过二十分钟或早于此前样本的数据，批量时间戳按最新值评估，因此图中历史尖峰可能不触发告警。平均值监控按样本点数而非固定分钟数计算。应同时测试延迟、缺失及越阈值情况。",
+        "source_refs": ["monitor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "maintenance",
+        "title_en": "Do not assume suppressed faults replay",
+        "title_zh": "不要假定受抑故障会重放",
+        "en": "Downtime suppresses matching alerts, and suppressed metric-threshold events do not automatically trigger when the window ends, even if still above threshold. Uptime monitoring has a documented exception for continued loss of communication. Recheck health after maintenance and distinguish alert suppression from merely muting a notification channel.",
+        "zh": "Downtime 抑制匹配告警，窗口结束后受抑的指标越阈值事件不会自动触发，即使仍越线。持续失联的 uptime 监控有明确例外。维护后应重新核对健康状态，并区分抑制告警与仅静音通知通道。",
+        "source_refs": ["downtime", "monitor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "offboarding",
+        "title_en": "Retirement is not a reversible pause",
+        "title_zh": "退役不是可逆暂停",
+        "en": "Retired host information cannot be restored; re-registering creates a new host identity. An AWS resource left in integration scope can register again, so update the integration’s exclusion tags as part of offboarding. Uninstall an installed agent as well. Rehearse with a disposable host before retiring an important history.",
+        "zh": "退役主机信息无法恢复，重新注册会创建新身份。仍在 AWS 集成范围内的资源可能再次注册，因此退出还需调整集成排除标签，并卸载已安装代理。退役重要历史前应先用可丢弃主机演练。",
+        "source_refs": ["retire", "agent"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "metering",
+        "title_en": "Budget host, metric and span consumption",
+        "title_zh": "预算主机、指标及 span 消耗",
+        "en": "The price page lists tax-inclusive Standard at JPY2,180 per standard-host month, JPY660 per micro-host month, JPY11 per metric and JPY330 per million spans above the stated free span amount. Billable Standard use has a JPY2,180 minimum. Free is bounded to five combined hosts and one-day retention, distinct from the two-week trial.",
+        "zh": "价格页含税标价为标准主机月 JPY2,180、微型主机月 JPY660、每指标 JPY11、超过所列免费量后每百万 span JPY330。Standard 有计费使用时最低 JPY2,180。Free 限合计五主机及一天保留，与两周试用不同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Mackerel: setup, operating limits and pricing",
+    "title_zh": "Mackerel：设置、运行边界及费用",
+    "description_en": "Mackerel combines host metrics, checks and alerting in a hosted monitoring service. Agents and cloud integrations register managed hosts, while services, roles and monito",
+    "description_zh": "Mackerel 将主机指标、检查及告警组合为托管监控服务。代理和云集成注册托管主机，service、role 和监控规则组织运行视图。插件可扩展采集，但托管服务和插件许可需分别核",
+    "search_intent_en": "Evaluate Mackerel for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Mackerel。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No agent, organization, API key, monitoring rule, alert message, host retirement or payment was operated.",
+      "zh": "未操作代理、组织、API 密钥、监控规则、告警消息、主机退役或付款。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full hosted/plugin license, complete metric retention/export guarantees, actual billing and observed alert delivery remain unverified.",
+      "zh": "完整托管／插件许可、完整指标保留／导出保证、实际账单及告警送达待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

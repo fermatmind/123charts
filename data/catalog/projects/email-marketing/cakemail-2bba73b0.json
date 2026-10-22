@@ -1,0 +1,338 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "cakemail-2bba73b0",
+  "name": "Cakemail",
+  "website_url": "https://www.cakemail.com/",
+  "domain": "www.cakemail.com",
+  "identity_domain": "cakemail.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Cakemail is a hosted email-marketing platform for building campaigns, maintaining audiences and sending automated follow-ups. Its marketing app includes forms, templates, segmentation and reports. A separate Email API surface serves developers adding messages to product flows; its advertised free allowance is approval-dependent.\n\nFor a newsletter operator, the practical setup includes a controlled sending domain, a contact list and a branded message. Workflows add conditions and delays around subscriber actions. This research explains those objects and their limits without treating vendor deliverability or revenue language as independently measured results.",
+  "description_zh": "Cakemail 是用于制作邮件活动、维护受众和发送自动跟进的托管邮件营销平台。营销应用包含表单、模板、分组和报表；独立的 Email API 面向需要把消息接入产品流程的开发者，其宣传的免费额度需经过批准。\n\n简报运营的实际准备包括可控制的发送域名、联系人名单和品牌邮件。工作流在订阅者动作周围增加条件与等待。本文解释这些对象和限制，不把厂商有关投递或收入的表述当作独立实测结果。",
+  "core_features": [
+    {
+      "name_en": "Branded email campaigns",
+      "name_zh": "品牌邮件活动",
+      "explanation_en": "Use brand settings and Smart Templates to prepare a newsletter.",
+      "explanation_zh": "使用品牌设置及 Smart Templates 制作简报。",
+      "source_ref": "first-steps",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Contact lists and segments",
+      "name_zh": "名单与分组",
+      "explanation_en": "Store attributes in lists and use segments to avoid unnecessary duplicate list entries.",
+      "explanation_zh": "在名单中维护属性，并用分组减少不必要的跨名单重复。",
+      "source_ref": "lists",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional email flows",
+      "name_zh": "条件邮件流程",
+      "explanation_en": "Combine delays, if/else conditions and path splits around email actions.",
+      "explanation_zh": "围绕邮件动作组合等待、if/else 条件与路径分流。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Domain authentication",
+      "name_zh": "域名认证",
+      "explanation_en": "Copy the account-generated DNS records for a private domain you control.",
+      "explanation_zh": "为自己控制的域名配置账户生成的 DNS 记录。",
+      "source_ref": "authentication",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Send a membership newsletter to interest-based segments.",
+      "Start a welcome sequence after a permissioned form signup."
+    ],
+    "zh": ["按兴趣分组发送会员简报。", "主动填写订阅表单后启动欢迎序列。"],
+    "source_refs": ["product", "first-steps", "automation"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter operator",
+      "Membership communications owner",
+      "Developer evaluating a separate Email API"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Prepare brand details and a controlled sending domain.",
+        "zh": "准备品牌资料和可控制的发送域名。",
+        "source_refs": ["first-steps", "authentication"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Import a small contact sample and model interests with attributes or segments.",
+        "zh": "导入少量联系人样本，并以属性或分组维护兴趣。",
+        "source_refs": ["lists"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate an automation and plan the duplicate-to-edit transition.",
+        "zh": "验证自动化，并安排复制后编辑的切换。",
+        "source_refs": ["automation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The same active address in several lists counts several times.",
+        "zh": "同一活跃邮箱在多个名单中会重复计数。",
+        "source_refs": ["lists"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Send and contact limits can stop further sending.",
+        "zh": "发送及联系人额度可能阻止后续发送。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Free marketing plan: 500 contacts and 6,000 monthly sends; paid matrix unreadable. Separate approval-dependent API allowance is not merged into the marketing plan.",
+    "source_snapshot_zh": "免费营销套餐含 500 位联系人及每月 6,000 次发送；付费表不可读。独立且需批准的 API 额度不合并计入营销套餐。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/cakemail",
+      "read_at": "2026-10-22T08:41:03.566Z",
+      "excerpt_sha256": "77ff3f98206e11d9cda267dabe3bde55a6b33857c8c463cc5d85a92227b49e4c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Cakemail",
+      "title": "Marketing Platform Plans and Pricing | Cakemail",
+      "url": "https://www.cakemail.com/plans/marketing-platform",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "d0282d9c9b4506ad9f45fbd0f7b139726516ab931a5cdc4394967ce5cd12f9f3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Marketing plan page redirects; free allowance, monthly billing and stop-sending behavior are readable, paid matrix remains Loading."
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Cakemail",
+      "title": "Marketing Service | Cakemail",
+      "url": "https://www.cakemail.com/",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "5ea9b02c0bdc3a1b1d8e9c53eb40b86598fda8ea633400588e0ca52a73722100",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Marketing platform, forms/pages, audience management and Email API are distinct product surfaces; API free allowance requires approval."
+    },
+    {
+      "id": "first-steps",
+      "type": "official_documentation",
+      "site": "Cakemail",
+      "title": "First Steps | Cakemail Help Center",
+      "url": "https://docs.cakemail.com/en/docs/first-steps",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "dd3898dd86145d2e6534e74206f2b259cac5abb378145f5c29dc794f37a9dfb5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Brand, senders, contact import and template setup; practical draft and test-email diagnostics."
+    },
+    {
+      "id": "authentication",
+      "type": "official_documentation",
+      "site": "Cakemail",
+      "title": "Authenticating Your Domain | Cakemail Help Center",
+      "url": "https://docs.cakemail.com/en/docs/senders/authenticating-domains",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "ce197c66f60f7295c6c4c83cc950882c8f267e4c5c86d41532edaa19addcd2b4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Private domain ownership, DNS access, generated DKIM TXT records and DMARC checking; authentication does not guarantee inbox placement."
+    },
+    {
+      "id": "lists",
+      "type": "official_documentation",
+      "site": "Cakemail",
+      "title": "Managing Contact Lists | Cakemail Help Center",
+      "url": "https://docs.cakemail.com/en/docs/audience/managing-contact-lists",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "11d54fcdafbf7c469ac8c4965e3f68a449245a7f2323a6232f3e77c0ce70e263",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free/Growth/Premium list counts and duplicate contacts across lists count multiple times."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Cakemail",
+      "title": "Understanding Email Automation | Cakemail Help Center",
+      "url": "https://docs.cakemail.com/en/docs/automations/understanding-email-automation",
+      "read_at": "2026-10-22T10:06:53.098971Z",
+      "excerpt_sha256": "314781d4cc9af599bc486eb3e9f9a2008d6c49cd8e60947271f47f45b5cdb17e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Triggers, delays, conditional branches, activation, statistics and duplicate-to-edit automation lifecycle."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:06:53.098971Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["product", "first-steps", "automation"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "Prepare a sender, audience and reusable design",
+        "title_zh": "准备发件人、受众和复用设计",
+        "en": "The first-steps guide starts with brand details, team users, sender addresses and domain validation. Contacts can be brought in by CSV or pasted, with tags and segments prepared during migration. Smart Templates apply the saved logo and colors.\n\nFor an illustrative membership newsletter, start with one permissioned list, record membership interests as attributes and build a monthly update. Inspect imported names and interests before choosing recipients. The vendor’s estimated setup durations are not a timing benchmark from this research.",
+        "zh": "入门指南先配置品牌资料、团队用户、发件地址和域名验证。联系人可通过 CSV 或粘贴导入，迁移时可准备标签和分组；Smart Templates 应用已保存的 Logo 与颜色。\n\n例如会员简报，可先建立一个有接收许可的名单，用属性记录会员兴趣，再制作月度更新。选择收件人前应检查导入的姓名和兴趣。厂商给出的准备时间估计不是本文测得的效率数据。",
+        "source_refs": ["first-steps"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "domain",
+        "title_en": "Domain ownership is an actual setup dependency",
+        "title_zh": "域名控制权是实际依赖",
+        "en": "The authentication guide requires a private domain under your control and access to its DNS settings. A personal Gmail or other public webmail domain cannot be authenticated by an individual customer. The app generates the account-specific DKIM TXT record and checks DMARC; copying another domain’s values will not work.\n\nThe guide allows up to 24–48 hours for propagation and says authentication is only one factor in inbox placement. Keep content, list quality and sender reputation in the evaluation; a verified-domain badge does not prove every recipient will see the message.",
+        "zh": "认证指南要求自己控制的独立域名及其 DNS 权限；个人用户无法认证 Gmail 等公共邮箱域名。应用生成对应账户的 DKIM TXT 记录并检查 DMARC，不能复用其他域名的值。\n\n指南提醒 DNS 传播可能需要 24–48 小时，并明确认证只是收件箱投递因素之一。评估时还应检查内容、名单质量和发件信誉；域名已验证不代表每位收件人都能看到邮件。",
+        "source_refs": ["authentication"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "lists",
+        "title_en": "Lists affect both organization and counted contacts",
+        "title_zh": "名单同时影响管理与联系人计数",
+        "en": "The list guide gives Free one audience, Growth three and Premium unlimited audiences. The same active email address in five lists counts as five contacts. A separate list for every interest can therefore increase the counted audience without representing five different people.\n\nFor the membership example, use segments within a maintained list for interests when that matches the communication structure. A list also has a default sender, language and subscription/opt-out redirection settings. That default language setting does not establish the languages available in the application interface.",
+        "zh": "名单指南列出 Free 一个受众名单、Growth 三个、Premium 名单不限。同一活跃邮箱在五个名单中会计为五位联系人。因此每种兴趣单建名单可能增加计费人数，并不代表五个不同的人。\n\n在会员示例中，如果符合沟通结构，可在维护良好的名单内按兴趣分组。名单还设有默认发件人、语言和订阅／退出跳转页面；名单语言设置不能证明应用界面支持哪些语言。",
+        "source_refs": ["lists"],
+        "evidence_type": "documented_with_editorial_modeling_guidance"
+      },
+      {
+        "id": "automation",
+        "title_en": "Treat activation and edits as a lifecycle",
+        "title_zh": "把启用和修改视为完整生命周期",
+        "en": "Cakemail’s automation guide describes a contact action triggering predefined tasks, with delays, if/else conditions and path splits. Its welcome example starts after a form signup. Before activation, the editor reports required fixes; statistics include sends, opens, clicks, unsubscribes and bounces.\n\nThe guide says existing automations must be duplicated for editing and recommends deactivating the original before activating the replacement. Plan the transition carefully and test a small segment, because an editable copy is not evidence that the old flow has stopped or that enrolled contacts have transferred.",
+        "zh": "自动化指南描述由联系人动作触发预设任务，并提供等待、if/else 条件和路径分流，欢迎示例从表单订阅后开始。启用前编辑器会提示必要修正；统计包括发送、打开、点击、退订和退信。\n\n指南说明现有自动化需复制后编辑，并建议启用替代版前停用原版。应仔细安排切换并先测试小分组；能够编辑副本不能证明旧流程已停止，也不能证明已有联系人已转入新版。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_transition_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Check contacts and monthly sends before launch",
+        "title_zh": "启动前分别核对联系人与月发送量",
+        "en": "The pricing page states an ongoing free marketing plan with 500 contacts and 6,000 monthly emails, without a card at signup. Paid recurring charges occur monthly. If the send allowance is exhausted, sending stops until renewal or an upgrade; exceeding the contact limit also prevents further sends until the audience or plan is adjusted.\n\nFor example, 500 members receiving four updates consume 2,000 sends before automated follow-ups. This is hypothetical arithmetic, not an actual bill. The paid plan matrix remained “Loading” and its linked billing app returned no readable offer, so paid amounts are left unknown rather than reusing the old directory price.",
+        "zh": "定价页列出持续免费的营销套餐：500 位联系人、每月 6,000 封邮件，注册无需信用卡。付费订阅按月自动扣费。发送额度用尽后，需等续期或升级才能继续；联系人超限也会停止后续发送，直到调整受众或套餐。\n\n假设 500 位会员收到四次更新，自动跟进之前已消耗 2,000 次发送。这是算例，不是实际账单。付费套餐表一直显示 Loading，链接的账单应用也未返回可读报价，因此金额保持未知，不沿用旧目录起价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "boundary-failure",
+        "title_en": "Do not substitute API credits for marketing limits",
+        "title_zh": "不要把 API 额度当营销额度",
+        "en": "The main site separately advertises an Email API for application-triggered messages and marks its 35,000 free monthly emails as subject to approval. That is not the same entitlement as the marketing app’s 6,000-email free allowance. Embedded and agency offerings also have their own product surfaces.\n\nCakemail is worth evaluating for an operator who can maintain lists and sender DNS. For a draft that will not send, the setup guide suggests checking required fields, authenticated sender, active contacts and credits. Account operation, API execution, repeat-entry behavior and automation migration were not tested; self-hosting and source-license rights remain unverified.",
+        "zh": "官网单独宣传用于应用触发消息的 Email API，并说明其每月 35,000 封免费额度需批准。这不同于营销应用每月 6,000 封的免费额度；嵌入式及代理商方案也有各自的产品入口。\n\n如果有人能维护名单和发件 DNS，可把 Cakemail 列入候选。草稿无法发送时，入门指南建议检查必填字段、已认证发件人、活跃联系人和额度。本次未测试账户、API、重复进入或自动化迁移；自托管和源码许可权利仍未核实。",
+        "source_refs": ["product", "first-steps"],
+        "evidence_type": "documented_with_editorial_fit_and_failure_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Cakemail: Contact Lists, Automations, Free Plan and API Boundaries",
+    "title_zh": "Cakemail：联系人名单、自动化、免费版与 API 边界",
+    "description_en": "Understand Cakemail list counting, sender authentication, automation changes and the difference between marketing and Email API plans.",
+    "description_zh": "了解 Cakemail 的名单计数、发件认证、自动化修改，以及营销套餐与 Email API 套餐的区别。",
+    "primary_intent": "Evaluate a Cakemail newsletter workflow and its operational capacity.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Paid matrix and linked billing app were not readable; exact paid tiers, checkout prices and contractual terms remain unverified.",
+      "zh": "付费表和链接账单应用不可读；具体付费档位、结算金额和合同条款仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No campaign, DNS edit, automation switch or API request was executed. API approval, interface languages, source license and regional availability remain unverified.",
+      "zh": "未实际执行活动、DNS 修改、自动化切换或 API 请求；API 批准条件、界面语言、源码许可和地区可用性仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

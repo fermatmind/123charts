@@ -1,0 +1,381 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "krakend-424ce5fb",
+  "name": "KrakenD",
+  "website_url": "https://www.krakend.io/",
+  "domain": "www.krakend.io",
+  "identity_domain": "krakend.io",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "KrakenD is a configuration-driven API gateway that can assemble one client-facing endpoint from multiple backend services. It separates the public path and method from the upstream calls, then can aggregate and transform supported responses.\n\nCommunity Edition is a self-hosted, stateless open-source gateway. Enterprise adds commercial capabilities and support. This profile focuses on API composition and its operating conditions; it does not turn the wider API/AI product menu into a claim that every feature is included in Community Edition.",
+  "description_zh": "KrakenD 是以配置驱动的 API 网关，可把多个后端服务组合成一个客户端端点。它将公开路径、方法与上游调用分开，再对支持的响应进行聚合和转换。\n\nCommunity Edition 为自托管、无状态的开源网关，Enterprise 另加商业能力及支持。本文聚焦 API 组合及运行条件；更广的 API／AI 产品菜单不代表每项功能均包含在社区版中。",
+  "core_features": [
+    {
+      "name_en": "Composite endpoints",
+      "name_zh": "组合端点",
+      "explanation_en": "Define a public contract backed by an array of upstream services.",
+      "explanation_zh": "用多个上游服务组成公开接口契约。",
+      "explanation_scope": "product_specific",
+      "source_ref": "endpoint",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Response aggregation",
+      "name_zh": "响应聚合",
+      "explanation_en": "Merge supported responses and group fields to avoid name collisions.",
+      "explanation_zh": "合并支持的响应，并以分组避免字段重名。",
+      "explanation_scope": "product_specific",
+      "source_ref": "aggregate",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pipeline time budgets",
+      "name_zh": "处理链时间预算",
+      "explanation_en": "Set a gateway-wide timeout and override it for individual endpoints.",
+      "explanation_zh": "设网关默认超时，并按端点覆盖。",
+      "explanation_scope": "product_specific",
+      "source_ref": "timeout",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Explicit input forwarding",
+      "name_zh": "显式转发输入",
+      "explanation_en": "Allow selected client headers and query parameters through to backends.",
+      "explanation_zh": "只允许选定客户端请求头、查询参数传给后端。",
+      "explanation_scope": "product_specific",
+      "source_ref": "endpoint",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Compose a read-only summary from two services",
+      "Verify client behavior when one upstream misses the deadline"
+    ],
+    "zh": ["从两个服务组合只读摘要", "验证一个上游超时后的客户端行为"],
+    "source_refs": ["aggregate", "timeout"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API developers",
+      "Platform engineers",
+      "Gateway operators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Community or Enterprise from required components, not generic labels.",
+        "zh": "按必需组件选择社区／企业版。",
+        "source_refs": ["endpoint", "license", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Define one endpoint, input allowlists and two read-only backends.",
+        "zh": "定义一个端点、输入允许列表及两个只读后端。",
+        "source_refs": ["endpoint"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate configuration, deploy in a disposable environment and inspect completion headers under failure.",
+        "zh": "验证配置，在可丢弃环境部署，故障时核对完成头。",
+        "source_refs": ["endpoint", "aggregate", "timeout"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "HTTP 200 can be a partial multi-backend response.",
+        "zh": "HTTP 200 可能只是多后端部分响应。",
+        "source_refs": ["aggregate", "timeout"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Several auth, export and distributed-rate components require Enterprise.",
+        "zh": "多项认证、导出及分布式限流组件需企业版。",
+        "source_refs": ["endpoint"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Stateless software does not remove operator deployment and recovery work.",
+        "zh": "无状态软件不免除部署与恢复工作。",
+        "source_refs": ["license", "install"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "classification": "Apache-2.0 Community Edition; commercial Enterprise separate",
+    "url": "https://www.krakend.io/open-source/",
+    "source_ref": "license",
+    "scope": "Community Edition only; Enterprise license not reviewed"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_and_custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:06:47.116740Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Community software free under Apache 2.0; Enterprise custom sales quote, stated not API-count/throughput based. Hosting and operations separate.",
+    "summary_zh": "Apache 2.0 社区软件免费；企业版向销售询价，官网称不按 API 数／吞吐计价；托管运维另计。",
+    "free_tier_scope_en": "Self-hosted Community Edition software, not a hosted service.",
+    "free_tier_scope_zh": "自托管社区版软件，不是托管服务。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/krakend-io",
+      "read_at": "2026-10-22T08:47:17.202Z",
+      "excerpt_sha256": "1834a91d764e5b829464368fb2f2610c079620cd6cdfef55fee1ef80bbc1ee52",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "KrakenD",
+      "title": "High-performance Open Source API Gateway | KrakenD",
+      "url": "https://www.krakend.io/",
+      "read_at": "2026-10-22T11:06:47.116740Z",
+      "excerpt_sha256": "d3fab05f895b5b52bf40d2179d3aef4a32c4196c5f33b99068f61d4c33cbc29d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Product identity and configuration-led gateway positioning read; vendor throughput and customer outcomes not independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "KrakenD",
+      "title": "Enterprise API Gateway for Security & Compliance | KrakenD Enterprise",
+      "url": "https://www.krakend.io/enterprise/",
+      "read_at": "2026-10-22T11:07:55.553170Z",
+      "excerpt_sha256": "dd1e385149d7fb772777fc049b31faf1c680add0e938283482f558dfcd1e276e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Enterprise page describes pricing not linked to API count or throughput and directs to sales; numeric quote and contract scope not published in this read."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "KrakenD",
+      "title": "Open Source API Gateway, Self-Hosted | KrakenD Community Edition",
+      "url": "https://www.krakend.io/open-source/",
+      "read_at": "2026-10-22T11:07:58.410233Z",
+      "excerpt_sha256": "8a0cef6c21412be4b09a52d61f982689289d1e91cd86249f7441e04305d577b3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official Community Edition page explicitly identifies Apache 2.0 and no license fee; separate commercial Enterprise features are not covered by that statement."
+    },
+    {
+      "id": "endpoint",
+      "type": "official_documentation",
+      "site": "KrakenD",
+      "title": "Endpoint Configuration | KrakenD API Gateway",
+      "url": "https://www.krakend.io/docs/endpoints/",
+      "read_at": "2026-10-22T11:09:09.215007Z",
+      "excerpt_sha256": "df48bed7d397e0196ab2043c9be50bdf49ae343efd799c71eaf8213a8211ad96",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Endpoint/backend contract, GET/JSON defaults, input allowlists, router validation and Enterprise-only components read."
+    },
+    {
+      "id": "aggregate",
+      "type": "official_documentation",
+      "site": "KrakenD",
+      "title": "API Composition and aggregation | KrakenD API Gateway",
+      "url": "https://www.krakend.io/docs/endpoints/response-manipulation/",
+      "read_at": "2026-10-22T11:08:02.051716Z",
+      "excerpt_sha256": "5d16326ec7856f62cf558c19cb21cd5774011cb5ee7826f93cd7b188602af7e1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Aggregation, grouping, incomplete response header and no-op limitations read."
+    },
+    {
+      "id": "timeout",
+      "type": "official_documentation",
+      "site": "KrakenD",
+      "title": "API Throttling and Timeout Management | KrakenD API Gateway",
+      "url": "https://www.krakend.io/docs/throttling/timeouts/",
+      "read_at": "2026-10-22T11:08:08.126533Z",
+      "excerpt_sha256": "32523e856848218d4a941e1c2cf68eb47ebd44e9a67db545322b2388584d90ad",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Whole-pipeline timeout, endpoint override, partial 200 vs no-content 500 and timeout-order guidance read; page updated 2022."
+    },
+    {
+      "id": "install",
+      "type": "official_documentation",
+      "site": "KrakenD",
+      "title": "KrakenD API Gateway Installation Guide | KrakenD API Gateway",
+      "url": "https://www.krakend.io/docs/overview/installing/",
+      "read_at": "2026-10-22T11:09:12.482336Z",
+      "excerpt_sha256": "c96c567db3116b6b2b885601c1f6a61245d8fc26b370ad549c75a5b2d96c98cd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Binary/container installation model read; old operating-system examples are not treated as current compatibility evidence."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:09:12.482336Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "endpoint", "license", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "compose",
+        "title_en": "Design the response before wiring the backends",
+        "title_zh": "先设计响应，再连接后端",
+        "en": "A proposed order-summary API could fetch order details from one service and shipping status from another. Define the public endpoint and backend array, then group each response so similarly named fields do not overwrite one another. This is response composition, not a distributed transaction: the documentation does not establish atomic writes across services. Use read-only test services first, specify required versus optional fields, and decide how a consumer should display missing shipping data.",
+        "zh": "建议用订单摘要 API 试验：一个服务取订单，另一个取物流。先定义公开端点及 backend 数组，再将响应分组，避免同名字段互相覆盖。这是响应组合，文档没有证明跨服务原子写入。可先用只读测试服务，明确必需／可选字段，以及缺少物流信息时客户端如何展示。",
+        "source_refs": ["endpoint", "aggregate"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "partial",
+        "title_en": "A successful status can contain an incomplete result",
+        "title_zh": "成功状态也可能带不完整结果",
+        "en": "When a multi-backend request times out but at least one valid response exists, the timeout guide describes HTTP 200 with the available parts. With no content it describes HTTP 500. The aggregation guide exposes X-Krakend-Completed to distinguish complete from partial responses and omits the cache header for incomplete content. A consumer that treats every 200 as a full order summary can therefore misread an upstream failure. Test a missing backend and inspect both the payload and completion header; no failure was executed here.",
+        "zh": "多后端请求超时但至少有一个有效响应时，超时指南描述为 HTTP 200 加已取得部分；没有内容则为 HTTP 500。聚合指南以 X-Krakend-Completed 区分完整与部分响应，不完整内容不附缓存头。因此，把每个 200 都当完整订单摘要的客户端可能误判上游失败。应让一个后端缺失，检查正文及完成头；本次未执行故障试验。",
+        "source_refs": ["aggregate", "timeout"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Timeout includes processing, not only the network call",
+        "title_zh": "超时包含处理时间，不只网络调用",
+        "en": "The endpoint budget covers fetching and manipulation across the pipe. An endpoint setting overrides the root default; the guide recommends client timeout greater than gateway timeout greater than backend timeout. Evaluate the complete path rather than assigning each backend the entire client budget. These documents describe timeout outcomes, not an automatic retry, business compensation or exactly-once guarantee. Record how the application handles partial output before enabling aggregation on a business-critical path.",
+        "zh": "端点时间预算涵盖整条链路的抓取和处理，端点配置覆盖根级默认值。指南建议客户端超时大于网关，网关大于后端。应评估完整路径，不把全部客户端预算分别分配给每个后端。这些文档描述超时结果，没有证明自动重试、业务补偿或恰好一次保证。关键业务启用聚合前，应定义应用如何处理部分输出。",
+        "source_refs": ["timeout"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "forward",
+        "title_en": "Forward only the inputs the upstream contract needs",
+        "title_zh": "只转发上游契约需要的输入",
+        "en": "Endpoint defaults are GET and JSON. Client headers and query strings are not forwarded by default; explicit lists control them, and wildcard forwarding also exposes cookies and unrelated values. Endpoint and backend methods are separate settings. Validate an allowed filter, an unexpected query parameter and required credentials. The same page marks API-key authentication, several transformation components, OpenAPI export and Redis-backed endpoint rate limits as Enterprise-only. Do not infer their Community availability from a generic feature label.",
+        "zh": "端点默认 GET 与 JSON；默认不转发客户端请求头和查询参数，需显式列出，通配转发还会暴露 Cookie 等无关值。端点方法与后端方法分别设置。应核对允许的过滤条件、意外参数及必需凭据。同页将 API key 认证、多项转换、OpenAPI 导出及 Redis 端点限流标为 Enterprise 专属，不能从泛化功能标签推定社区版也有。",
+        "source_refs": ["endpoint"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Own the configuration and the runtime",
+        "title_zh": "管理配置，也管理运行环境",
+        "en": "KrakenD documents binary and container deployment. Community is described as stateless without a database, but the operator still owns infrastructure, network reachability, configuration distribution, logs and recovery. Conflicting variable names in routes can cause a startup panic; the endpoint guide provides krakend check -t -c krakend.json to catch such problems earlier. Run checks against the chosen version and test a small deployment before promotion. Older installation examples do not establish compatibility with every current OS or container environment.",
+        "zh": "KrakenD 文档提供二进制及容器部署。社区版描述为无状态、无需数据库，但基础设施、网络可达性、配置分发、日志及恢复仍归运营方。路由变量命名冲突可导致启动 panic；端点指南提供 krakend check -t -c krakend.json 提前发现。应针对所选版本检查并先小规模验证。旧安装示例不能证明兼容所有当前系统及容器环境。",
+        "source_refs": ["install", "license", "endpoint"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free Community software and commercial Enterprise have different boundaries",
+        "title_zh": "免费社区软件与商业企业版边界不同",
+        "en": "The official Community page identifies Apache 2.0, free download/use/modification and no per-request license fees. This is a software-license statement, not free hosting or operations. Enterprise is sold separately; its page says pricing is not tied to API count or throughput, but gives no numerical quote in this read. Confirm purchased features, support SLA, deployment allowances, renewal and infrastructure costs with sales. Apache terms for Community do not grant the paid Enterprise feature set.",
+        "zh": "社区版官网明确 Apache 2.0，可免费下载、使用、修改，不收逐请求许可费。这是软件许可条件，不代表免费托管及运维。Enterprise 单独销售；页面说明不按 API 数或吞吐量定价，但本次读取没有金额。需向销售确认采购功能、支持 SLA、部署范围、续费及基础设施成本。社区版 Apache 条款不授予付费企业版功能。",
+        "source_refs": ["license", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Evaluate it for a configuration-owned aggregation layer",
+        "title_zh": "适合由团队掌控配置的聚合层",
+        "en": "KrakenD is worth evaluating when developers can define stable API contracts and operate a gateway near their services. It is a weaker fit if the requirement is a fully operated developer marketplace with no infrastructure responsibility; such a service was not established in the reviewed sources. Begin with two disposable read backends and compare complete, partial and empty outcomes. Throughput, latency, language support and real deployment compatibility remain unmeasured.",
+        "zh": "若开发团队能定义稳定 API 契约、在服务附近运维网关，可评估 KrakenD。若需求是完全代运维且无需负责基础设施的开发者市场，本次来源未证明该服务。可从两个可丢弃的只读后端开始，比较完整、部分及空结果。吞吐、延迟、语言支持及实际部署兼容性均未测量。",
+        "source_refs": ["endpoint", "aggregate", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "KrakenD: API aggregation, partial responses and edition boundaries",
+    "title_zh": "KrakenD：API 聚合、部分响应及版本边界",
+    "description_en": "Understand composite endpoints, forwarding allowlists, timeout outcomes and Community versus Enterprise costs.",
+    "description_zh": "了解组合端点、输入转发、超时结果及社区／企业版费用。",
+    "search_intent_en": "Evaluate KrakenD aggregation correctness and self-hosted operating requirements.",
+    "search_intent_zh": "评估 KrakenD 聚合正确性及自托管条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, timeout, throughput or failover test was performed.",
+      "zh": "未实测安装、超时、吞吐或故障恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Enterprise quote, exact contract/license and current supported deployment matrix were not verified.",
+      "zh": "未核实企业版报价、具体合同／许可及当前支持部署矩阵。",
+      "source_refs": ["pricing", "install"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The timeout guide is dated 2022; confirm behavior against the selected release.",
+      "zh": "超时指南标注 2022 年，需针对所选发行版确认行为。",
+      "source_refs": ["timeout"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "UI languages and a fully hosted portal/marketplace service were not established.",
+      "zh": "未确立界面语言及完整托管门户／市场服务。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

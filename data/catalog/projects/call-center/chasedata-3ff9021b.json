@@ -1,0 +1,414 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "chasedata-3ff9021b",
+  "name": "DialedIn (formerly ChaseData)",
+  "website_url": "https://getdialedin.com/",
+  "domain": "getdialedin.com",
+  "identity_domain": "getdialedin.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "DialedIn, formerly ChaseData, is a cloud contact-centre platform for inbound, outbound and blended campaigns. Managers configure leads, agent permissions, dialing modes and wrap-up rules; agents use the assigned workflows. The official rebrand page identifies the March 2023 name change, so this profile preserves the original ChaseData record rather than creating a second product.\n\nA distinctive workflow is Intelligent Contact Routing: an agent qualifies a contact in a script, submits mapped information and triggers rule-based transfer to an eligible destination. Schedules, caps and a no-available-route message matter as much as the successful transfer. Current pricing separates software seats from telecom usage, bundles and dedicated concurrent capacity. All-feature platform wording does not establish unlimited AI or calling. No tenant, call, script, integration, billing or export was tested.",
+  "description_zh": "DialedIn 原名 ChaseData，是支持呼入、外呼及混合活动的云联络中心平台。主管配置线索、客服权限、拨号模式及收尾规则，客服使用已分配流程。官方更名页确认2023年3月改名，因此本档案保留原 ChaseData 记录，不创建第二产品。\n\n其特色流程是 Intelligent Contact Routing：客服在脚本中确认联系人条件，提交已映射资料，触发按规则转往合资格目标。时间表、容量上限及无可用路由消息与成功转接同样重要。当前定价将软件座席与电话用量、分钟包及专用并发容量分开。平台全部功能的说法不证明AI或电话无限使用。未测试租户、电话、脚本、集成、计费或导出。",
+  "core_features": [
+    {
+      "name_en": "Blended campaign configuration",
+      "name_zh": "混合活动配置",
+      "explanation_en": "Assign inbound and outbound workflows,leads and permission-based agent access.",
+      "explanation_zh": "分配呼入及外呼流程、线索及按权限客服访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "introduction",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Script-triggered contact routing",
+      "name_zh": "脚本触发联系人路由",
+      "explanation_en": "Submit agent-collected fields to routing conditions,destination schedules and call caps.",
+      "explanation_zh": "将客服采集字段提交给路由条件、目标时间表及电话容量上限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "icr",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Transfer-time data handoff",
+      "name_zh": "转接时资料交接",
+      "explanation_en": "Map fields to a configured external endpoint before establishing the transfer or conference.",
+      "explanation_zh": "在建立转接或会议前向已配置外部端点映射字段。",
+      "explanation_scope": "product_specific",
+      "source_ref": "icr",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate telecom models",
+      "name_zh": "独立电话计费模式",
+      "explanation_en": "Choose pay-as-you-go minutes,bundled outbound minutes or quoted concurrent dialing capacity.",
+      "explanation_zh": "选择按量分钟、外呼分钟包或询价并发拨号容量。",
+      "explanation_scope": "product_specific",
+      "source_ref": "payg-annual",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A blended contact centre needing campaign-specific agent access and dispositions.",
+      "A multi-stage qualification team handing contacts to scheduled,capacity-limited destinations."
+    ],
+    "zh": [
+      "需要按活动配置客服访问及处置的混合联络中心。",
+      "向有时间表及容量限制目标交接联系人的多阶段确认团队。"
+    ],
+    "source_refs": ["introduction", "icr"],
+    "basis": "Editorial fit;not verified savings,lead conversion,revenue settlement or compliant-outreach certification."
+  },
+  "technical_details": {
+    "ICR integration timing": {
+      "en": "The webhook is described as firing just before transfer/conference establishment. A successful post is not evidence that the phone destination accepted the caller;retry and reconciliation behavior need testing.",
+      "zh": "文档称webhook在转接／会议建立前触发。提交成功不证明电话目标接受来电；需测试重试及对账行为。",
+      "source_ref": "icr",
+      "status": "documented_with_editorial_guidance"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Campaign administrator",
+      "Contact-centre supervisor",
+      "Agent script owner",
+      "CRM/transfer integration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "icr"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm the current client/version,team size,commitment and telecom model;request actual AI/add-on and carrier terms.",
+        "zh": "确认当前客户端／版本、人数、承诺及电话模式，并索取真实AI／附加项及运营商条件。",
+        "source_refs": ["introduction", "payg-annual"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure one campaign with approved lead data,agent access,dialing mode and wrap-up codes before adding transfer automation.",
+        "zh": "先以获准线索资料、客服访问、拨号模式及收尾代码配置一个活动，再增加转接自动化。",
+        "source_refs": ["introduction"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Map ICR fields and destination schedules/caps;test no route,unmapped fields,external endpoint failure and call acceptance separately.",
+        "zh": "映射ICR字段及目标时间表／上限，分别测试无路由、未映射字段、外部端点失败及电话接受。",
+        "source_refs": ["icr"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "ICR webhooks / availability checks",
+        "source_ref": "icr",
+        "scope": "Configured endpoint,field mapping,static fields and headers;destination availability may be checked before transfer. Exactauthentication/retry/atomicityuntested."
+      },
+      {
+        "name": "BYOC",
+        "source_ref": "payg-annual",
+        "scope": "Pricing says compatible across telecom options;carrier contract,rates,number eligibility and capacity require confirmation."
+      }
+    ],
+    "source_ref": "icr"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "ICR depends on a submitted script/form and mapped data;no eligible destination needs a configured agent message and recovery path.",
+        "zh": "ICR依赖已提交脚本／表单及映射资料，无合资格目标需配置客服消息及恢复路径。",
+        "source_refs": ["icr"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Configured ICR Potential/Actual Revenue references count attempts/sent calls;they are not independently verified payments or realized revenue.",
+        "zh": "ICR所配置Potential／Actual Revenue参考按尝试／已发送电话计，不是独立核实付款或实际收入。",
+        "source_refs": ["icr"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Software seat prices exclude pay-as-you-go telecom;high-volume capacity is a separate quote,not an unlimited minute promise.",
+        "zh": "软件座席价不含按量电话，高量容量需另询价，不是无限分钟承诺。",
+        "source_refs": ["payg-annual"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Legacy Windows-client documentation and current WebRTC marketing require version-specific confirmation;do not assume every role runs entirely in a browser.",
+        "zh": "历史Windows客户端文档与当前WebRTC宣传需按版本确认，不能假设每个角色都全在浏览器运行。",
+        "source_refs": ["introduction", "payg-annual"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "payg-annual",
+    "source_refs": [
+      "payg-annual",
+      "payg-monthly",
+      "bundle-monthly",
+      "bundle-annual"
+    ],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Dollar-display prices perlicensedusermonth depend on 4seatbands,annualcommitment vsmonth-to-month and telecommodel;ISOcurrency notexplicitlyestablished. Essentialsflatmonthlyseparate;not universal25minimum.",
+    "source_snapshot_en": "Seat bands5–49/50–99/100–199/200+:PAYG annualcommitment69/59/39/25 peruser/month,billedmonthly;month-to-month79/69/49/35. Bundled annual132/122/102/88;month-to-month142/132/112/98,modelnote5000outboundminutes/month,overagecontractrate. PAYG standardroutingfrom$0.0125/min. Highvolumecapacityquote,BYOCsupported. Essentials$299/monthupto9users,onepowerdialingline/agent,AIadd-onsavailable. DollarcurrencyISO,tax,numbercost,exactbundlepoolingandAIusageunknown.",
+    "source_snapshot_zh": "座席区间5–49／50–99／100–199／200+：按量电话的年度承诺每人每月69／59／39／25，按月开票；逐月79／69／49／35。分钟包年度132／122／102／88，逐月142／132／112／98，模式说明含每月5000外呼分钟，超额按合同费率。按量标准路由起$0.0125／分钟。高量容量询价，支持BYOC。Essentials每月$299最多9人，每客服一路power拨号，AI附加项可选。美元符号的ISO币种、税、号码费、分钟共享方式及AI用量未知。",
+    "checked_at": "2026-10-22T14:36:41.925161+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is ChaseData a different product from DialedIn?",
+      "question_zh": "ChaseData与DialedIn是不同产品吗？",
+      "answer_en": "The official page expressly identifies a March2023 rebrand from ChaseData to DialedIn. This record follows that first-party identity bridge while preserving its original slug.",
+      "answer_zh": "官方页明确确认2023年3月从ChaseData更名DialedIn。本记录沿用这一第一方身份关联，保留原slug。",
+      "source_refs": ["rebrand"]
+    },
+    {
+      "question_en": "Does a posted ICR record prove a completed phone transfer?",
+      "question_zh": "ICR记录提交能证明电话转接完成吗？",
+      "answer_en": "No. The documented webhook fires before transfer/conference establishment. Check the call result and external record separately.",
+      "answer_zh": "不能。文档webhook在转接／会议建立前触发，应分别检查电话结果与外部记录。",
+      "source_refs": ["icr"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/chasedata",
+      "read_at": "2026-10-22T08:45:46.461Z",
+      "excerpt_sha256": "93e8f1bc8445a11736913a7c44cbbc34f7f68d1e4950e7640ec647316cf469b3",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "rebrand",
+      "type": "official_documentation",
+      "site": "ChaseData is Now DialedIn – Discover Enhanced Call Center Solutions",
+      "title": "ChaseData is Now DialedIn – Discover Enhanced Call Center Solutions",
+      "url": "https://getdialedin.com/chasedata_rebrand/",
+      "read_at": "2026-10-22T14:35:14.052684+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d3a0a4b8d60e29ee9d1fe03fe2decde79a416120132df994131ba5624d00071e",
+      "research_notes_en": "Official ChaseData-to-DialedIn rebrand March2023;old assigned domain TLS expired,no bypass. Newdomain authoritative and profile slug retained."
+    },
+    {
+      "id": "introduction",
+      "type": "official_documentation",
+      "site": "DialedIn - User Guide - Introduction",
+      "title": "DialedIn - User Guide - Introduction",
+      "url": "https://docs.getdialedin.com/content-user-guide/docs-page-user-guide-introduction.html",
+      "read_at": "2026-10-22T14:36:03.338028+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "94855aadd07a23461b54d52a3daab3693f1b28cb6972aea130b01cf74d302c36",
+      "research_notes_en": "Cloud inbound/outbound/blended campaigns,management and permission-based agent clients;preview skip vs progressive timer,dispositions. Windows.NETclient and web-app requirements differ;not universalbrowseronly."
+    },
+    {
+      "id": "icr",
+      "type": "official_documentation",
+      "site": "DialedIn - Intelligent Contact Routing",
+      "title": "DialedIn - Intelligent Contact Routing",
+      "url": "https://docs.getdialedin.com/docs-page-icr.html",
+      "read_at": "2026-10-22T14:35:43.030304+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4961369f9adbb6aee8ee1a936ae101ba5ebd8798d941e323571c215b74506de7",
+      "research_notes_en": "Agent-script-triggered rule transfer,field conditions,weights,schedules,hour/daycaps,noavailablemessage,conference modes. Webhook before transfer;unmappedfield and userlogs;revenuefieldsconfiguredreferencesnotsettledpayments."
+    },
+    {
+      "id": "payg-annual",
+      "type": "official_pricing",
+      "site": "DialedIn",
+      "title": "DialedIn pricing — rendered telecom and commitment selection",
+      "url": "https://getdialedin.com/pricing/",
+      "read_at": "2026-10-22T14:36:25.198026+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "ffdd7672f4af21daebec9feecd6582110a120cc14afccad02417359e6dc2c128",
+      "research_notes_en": "Annual commitment selected,PAYG telecom,5–49/50–99/100–199/200+users69/59/39/25 perlicenseduser monthly billed;minutesfrom.0125standardroutingextra. Essentials299/monthupto9usersonepowerline/agent,AIadd-onsavailable;noall-AI-freeinference."
+    },
+    {
+      "id": "payg-monthly",
+      "type": "official_pricing",
+      "site": "DialedIn",
+      "title": "DialedIn pricing — rendered telecom and commitment selection",
+      "url": "https://getdialedin.com/pricing/",
+      "read_at": "2026-10-22T14:36:25.798363+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "e2dc54712bf4cb0bce287172b42587c61b4c6d24f48c70ee0a57447f4369908b",
+      "research_notes_en": "Month-to-month selected,PAYG telecom:79/69/49/35 perlicenseduser monthly bysamefourbands. No purchase/UTAliveroutecontactopened."
+    },
+    {
+      "id": "bundle-monthly",
+      "type": "official_pricing",
+      "site": "DialedIn",
+      "title": "DialedIn pricing — rendered telecom and commitment selection",
+      "url": "https://getdialedin.com/pricing/",
+      "read_at": "2026-10-22T14:36:38.581676+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "56891dbd5f7968cd6248455a3a6cf6861b6f91848f83d46d43a847698de812b9",
+      "research_notes_en": "Month-to-month bundled:142/132/112/98 perlicensedusermonth;modelnoteincludes5000outboundminutes/month,overagecontractedrate. Exactpool/individualallowanceandnumbereligibilitynottested."
+    },
+    {
+      "id": "bundle-annual",
+      "type": "official_pricing",
+      "site": "DialedIn",
+      "title": "DialedIn pricing — rendered telecom and commitment selection",
+      "url": "https://getdialedin.com/pricing/",
+      "read_at": "2026-10-22T14:36:41.925161+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "c507368e4637038c5f79b49dfbe518f0b1c76d40d6093eb4489b8e67291cad57",
+      "research_notes_en": "Annualcommitment bundled:132/122/102/88 perlicensedusermonth. Cardsbilledmonthlydespiteannualcommitment. HighvolumeconcurrentcapacityquoteandBYOCdifferentfromminutebundle."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms of Use | DialedIn",
+      "title": "Terms of Use | DialedIn",
+      "url": "https://getdialedin.com/terms-of-use/",
+      "read_at": "2026-10-22T14:35:26.434857+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3e29abc93288f20004ce61e68ba7ce60f32e66024240bcf18997318549b55999",
+      "research_notes_en": "Current public Terms expressly govern website/site information,not actualCCaaSlicense,subscriptioncancellation/refundcontract or tenant export rights."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:36:41.925161+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["rebrand", "introduction", "icr", "payg-annual"],
+  "profile": {
+    "sections": [
+      {
+        "id": "identity-clients",
+        "title_en": "Follow the rebrand while keeping client requirements specific",
+        "title_zh": "沿更名确认身份，并按客户端确认要求",
+        "en": "The official DialedIn rebrand page says ChaseData became DialedIn in March2023. It describes continuity for existing customers and changes to features and pricing;it does not mean an old quote or client build automatically has every current entitlement. The old assigned website failed certificate verification during this research and was not bypassed. Authoritative material was read on getdialedin.com and its documentation subdomain.\n\nThe user-guide introduction describes cloud-hosted management and agent clients,permission-based campaign access and blended calling. It also contains Windows/.NET client requirements and separate web-app requirements. Current pricing lists WebRTC. Confirm the intended tenant and client generation rather than reducing all deployment options to browser-only or assuming local clients imply a self-hosted server.",
+        "zh": "官方DialedIn更名页称ChaseData于2023年3月改名，描述已有客户服务连续及功能／价格变化；这不表示旧报价或客户端自动具有全部当前权益。研究时原分配官网证书验证失败，未绕过，权威资料改从getdialedin.com及其文档子域实读。\n\n用户指南介绍云端管理及客服客户端、按权限活动访问和混合呼叫，也包含Windows／.NET客户端要求及单独网页应用要求。当前定价列WebRTC。应确认目标租户及客户端代次，不能将所有部署简化为纯浏览器，也不能认为本地客户端表示自托管服务器。",
+        "source_refs": ["rebrand", "introduction", "payg-annual"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "campaign-design",
+        "title_en": "Campaign rules connect dialing,agent access and outcomes",
+        "title_zh": "活动规则连接拨号、客服访问与结果",
+        "en": "Managers configure campaigns,load leads and assign agents;agents receive access to the campaigns and records allowed by their role. Preview dialing allows lead review and a decision to call or skip. Progressive dialing also provides review but proceeds after a configured interval. Predictive and agentless modes have different delivery behavior. Choose the mode against the actual staffing and contact process rather than treating every automated mode as equivalent.\n\nFor an illustrative follow-up campaign,define the permitted list,agent assignment,schedule and disposition codes,then inspect how an unanswered attempt and a completed conversation move through the configured rules. Campaign-specific wrap-up codes can constrain the available outcome choices. They do not independently prove that the selected outcome is accurate or that the original contact permission was valid.",
+        "zh": "主管配置活动、加载线索并分配客服，客服按角色访问获准活动及记录。预览拨号允许先看线索，再决定拨打或跳过；渐进拨号也可先看，但在配置间隔后继续。预测及无客服模式有不同投递行为，应按真实人员容量和联系过程选模式，不能将自动模式视为等价。\n\n以假设跟进活动为例，定义获准名单、客服分配、时间表及处置代码，再检查未接尝试和已完成通话如何沿规则流转。活动专属收尾代码可限制可选结果，但不独立证明所选结果准确或原联系许可有效。",
+        "source_refs": ["introduction"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "icr-transfer",
+        "title_en": "A qualified contact still needs an available destination",
+        "title_zh": "确认条件后的联系人仍需可用目标",
+        "en": "Intelligent Contact Routing supports multi-stage operations in which an agent gathers information in a script/form and submits the contact for transfer. The workflow evaluates mapped fields against candidate phone destinations. Destination schedules,hourly/daily call caps and weights constrain eligibility and distribution. Configure the no-available-route message so the agent has a defined next action when nothing matches.\n\nNormal conference,private conference and blind transfer have different party visibility and participation;they are mutually exclusive modes. The ICR Requests view exposes submitted fields that were made available at rule level but not used in the corresponding destination conditions. A field appearing on a form is therefore not proof that the routing decision tested it. Review this view when a contact reaches an unexpected destination.\n\nICR can post mapped contact data to an external endpoint just before the transfer/conference is established,and can perform an availability check. A successful data post alone does not prove successful call delivery. Test endpoint failure,stale availability,cap exhaustion and retry duplication independently. Its Potential/Actual Revenue references are configured values derived from attempts and sent calls,not a payment ledger or independently verified realized revenue.",
+        "zh": "Intelligent Contact Routing面向多阶段运营：客服用脚本／表单采集信息，提交联系人转接。流程将已映射字段与候选电话目标条件比较，目标时间表、每小时／每日上限及权重限制资格及分配。应配置无可用路由消息，让无匹配时客服有明确下一步。\n\n普通会议、私密会议及盲转的参与方可见性不同，是互斥模式。ICR Requests视图显示在规则层提供、但未用于对应目标条件的提交字段，因此表单有某字段不证明路由测试过它；联系人到错误目标时应检查此视图。\n\nICR可在转接／会议建立前向外部端点提交映射资料，并可检查可用性。资料提交成功不证明电话投递成功。应分别测试端点失败、可用性过期、容量耗尽及重复重试。其Potential／Actual Revenue是基于尝试及已发送电话的配置参考值，不是付款账本或独立核实实际收入。",
+        "source_refs": ["icr"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "software-telecom",
+        "title_en": "Price seats and telecom as separate decisions",
+        "title_zh": "将座席与电话费用分开决策",
+        "en": "The rendered pricing controls distinguish annual commitment from month-to-month,while the cards say billed monthly per licensed user. For5–49,50–99,100–199and200+users respectively,PAYG software is69/59/39/25peruser/month on annual commitment,or79/69/49/35month-to-month. Standard-routing telecom starts at$0.0125/min separately. Do not present25as a five-user all-in price.\n\nWith bundled minutes selected,the same bands show132/122/102/88on annual commitment and142/132/112/98month-to-month. The model note includes5,000outbound minutes per month and charges overage at the contracted rate;the exact allocation/pooling and eligible destinations need contract confirmation. High-volume dialing is quoted concurrent capacity per licensed user rather than a minute pool. BYOC is advertised across telecom options.\n\nEssentials is a separate$299/month offer for up to nine users,with one power-dialing line per agent and AI add-ons available. Despite broad all-feature claims,the page also uses AI readiness and add-on wording. Confirm Edge/AI processing entitlements rather than assuming free unlimited inference. Currency ISO,taxes,number fees,contract renewal and capacity terms were not established;no universal normalized monthly cost is assigned.",
+        "zh": "渲染定价控件区分年度承诺与逐月，卡片同时称按许可用户每月开票。按5–49、50–99、100–199及200+人，按量电话的软件年度承诺每人每月为69／59／39／25，逐月为79／69／49／35，标准路由电话另从$0.0125／分钟起。不能将25描述为五人含全部费用的价格。\n\n选分钟包后，同样区间年度承诺132／122／102／88，逐月142／132／112／98。模式说明含每月5000外呼分钟，超额按合同费率；具体分配／共享及适用目的地需合同确认。高量拨号按许可用户询价并发容量，不是分钟池；各电话选项宣传支持BYOC。\n\nEssentials是独立每月$299、最多九人方案，每客服一路power拨号，并有AI附加项。尽管页面笼统称全部功能，也使用AI就绪及附加项说法，因此需确认Edge／AI处理权益，不能假设免费无限推理。ISO币种、税、号码费、合同续期及容量条件未建立，不给统一折月总成本。",
+        "source_refs": [
+          "payg-annual",
+          "payg-monthly",
+          "bundle-annual",
+          "bundle-monthly"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit-exit",
+        "title_en": "Operational ownership remains necessary after the rebrand",
+        "title_zh": "更名后仍需明确运营责任",
+        "en": "DialedIn fits an operation willing to own lead quality,agent permissions,dialing rules,transfer destinations and metric definitions. It offers a more structured path than treating dialing volume as the whole workflow. A team needing an instantly configured phone app,unreviewed autonomous lead transfers or proven unlimited AI entitlement has additional questions to resolve.\n\nThe public Terms of Use expressly concern the website and site information. They do not establish the actual hosted-service license,cancellation/refund rights or complete tenant export contract. Those remain unknown,as do full recording export,restore,AI data-processing locations,UI languages and tested connector behavior. Vendor continuity,implementation-speed,spam avoidance and reliability statements are documentation claims,not observations from an executed account.",
+        "zh": "DialedIn适合愿负责线索质量、客服权限、拨号规则、转接目标及指标定义的运营团队，其评估路径比只看拨打量更具体。需要即时配置电话应用、未经审查自主转移线索或已证无限AI权益的团队仍需进一步确认。\n\n公开Terms of Use明确关注网站及站内资料，不建立真实托管服务许可、取消／退款权或完整租户导出合同。这些保持未知，完整录音导出、恢复、AI处理位置、界面语言及已测连接器行为也未核实。厂商连续性、实施速度、防垃圾标记及可靠性说法是文档主张，不是执行账户观察。",
+        "source_refs": ["icr", "website-terms", "rebrand"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "DialedIn (ChaseData): ICR Transfer Rules, Software Seats and Telecom Pricing",
+    "title_zh": "DialedIn（ChaseData）：ICR转接规则、软件座席及电话价格",
+    "description_en": "Follow ChaseData’s DialedIn rebrand;review script-triggered routing,caps,webhook timing,annual/monthly software rates,bundled minutes and AI entitlement gaps.",
+    "description_zh": "沿ChaseData更名DialedIn核对脚本触发路由、容量上限、webhook时机、年度／月度软件价、分钟包及AI权益缺口。",
+    "primary_intent": "Evaluate current DialedIn identity,transfer workflow and total-cost boundaries.",
+    "secondary_questions": [
+      "What happens when no ICR destination qualifies?",
+      "Does a webhook prove call transfer?",
+      "What do software seat prices exclude?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,client,call,campaign,script,ICR,webhook,carrier,AI,payment,export or restore tested. ActualSaaSlicense,renewal/cancellation/refunds,SLA,currentclientbuild,precisebundlepooling/numbercoverage,currencyISO,tax/number/AIfees,AIregion/retention,portableexportandUIlanguagesunknown. OlddomainTLSexpirednotbypassed;newidentityconfirmedbyfirstpartyrebrand,notassumedfromredirect.",
+      "zh": "未测试租户、客户端、电话、活动、脚本、ICR、webhook、运营商、AI、付款、导出或恢复。真实SaaS许可、续期／取消／退款、SLA、当前客户端、分钟共享／号码覆盖、ISO币种、税／号码／AI费、AI地区／留存、可携导出及界面语言未知。旧域证书过期未绕过，新身份由第一方更名页确认，非靠重定向推断。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

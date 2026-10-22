@@ -1,0 +1,363 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "etlworks-integrator-4f213c68",
+  "name": "Etlworks Integrator",
+  "website_url": "https://etlworks.com/",
+  "domain": "etlworks.com",
+  "identity_domain": "etlworks.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Etlworks Integrator builds data flows between databases, files, APIs and supported applications. It combines mapping and orchestration with batch loading, incremental extraction and supported log-based CDC.\n\nCloud hosting, hybrid agents and a full customer-operated installation are separate deployment choices.",
+  "description_zh": "Etlworks Integrator 在数据库、文件、API 及受支持应用之间构建数据流程，将映射、编排与批量加载、增量提取及受支持的日志 CDC 结合。\n\n云托管、混合代理与完整客户自运维安装是不同部署选择。",
+  "core_features": [
+    {
+      "name_en": "Source-to-destination flows",
+      "name_zh": "源至目标流程",
+      "explanation_en": "Choose a flow type and map fields for the actual destination.",
+      "explanation_zh": "选择适合实际目标的流程类型并映射字段。",
+      "explanation_scope": "product_specific",
+      "source_ref": "patterns",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable schema handling",
+      "name_zh": "可配置结构处理",
+      "explanation_en": "Missing-table creation, added columns and table recreation have different switches.",
+      "explanation_zh": "缺表创建、追加列与重建表使用不同开关。",
+      "explanation_scope": "product_specific",
+      "source_ref": "schema",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Execution diagnostics",
+      "name_zh": "执行诊断",
+      "explanation_en": "Inspect status, transformation metrics and execution history.",
+      "explanation_zh": "检查状态、转换指标与执行历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "monitor",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Load paginated API orders into a test database.",
+      "Evaluate snapshot-to-CDC recovery for a supported source."
+    ],
+    "zh": [
+      "将分页 API 订单加载到测试数据库。",
+      "评估受支持源从快照转至 CDC 的恢复过程。"
+    ],
+    "source_refs": ["patterns", "cdc"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Integration engineer",
+      "Data engineer",
+      "Self-hosted platform administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the deployment and confirm connector/CDC entitlements.",
+        "zh": "选择部署并确认连接器／CDC 权限。",
+        "source_refs": ["deploy", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build one flow with explicit keys, mapping and schema settings.",
+        "zh": "构建一个流程，明确键、映射和结构设置。",
+        "source_refs": ["patterns", "schema"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare source/target counts and inspect warning/error runs.",
+        "zh": "对比源与目标计数，检查警告和失败运行。",
+        "source_refs": ["monitor", "errors"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Ignoring exceptions can conceal incomplete delivery unless separately monitored.",
+        "zh": "忽略异常时，若无单独监控，可能掩盖未完整交付。",
+        "source_refs": ["errors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Offline operation requires the matching license.",
+        "zh": "离线运行需对应许可。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription_by_plan_instance_environment_and_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:30:42.731099Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Monthly or annual plan; record/schedule limits and instance/environment licensing; conflicting Enterprise caps unresolved."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/etlworks-integrator",
+      "read_at": "2026-10-22T08:46:20.044Z",
+      "excerpt_sha256": "bae6a2fcc5670ddcdf27c8134ee812e691f72adfb364e3268952751a328faeb8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Etlworks: Data integration that works. Always.",
+      "url": "https://etlworks.com/",
+      "read_at": "2026-10-22T10:30:42.731099Z",
+      "excerpt_sha256": "43296443f4d74fef42e01c8cd3252ee8a57b7f4099ccaeb0a459513ca9d75842",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Integration platform identity and database/file/API workloads read; marketing performance not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Etlworks Integrator",
+      "title": "Pricing | Etlworks",
+      "url": "https://etlworks.com/pricing.html",
+      "read_at": "2026-10-22T10:30:46.514838Z",
+      "excerpt_sha256": "44e44b316d42568f64ea9817c04b481d89849fa4ba09df0ccf6fa9c510fe0d8c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Plan amounts, record counting, offline licensing and conflicting Enterprise caps read; no single normalized monthly price inferred."
+    },
+    {
+      "id": "patterns",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Where to start in Etlworks: integration patterns by use case – Etlworks Support",
+      "url": "https://support.etlworks.com/hc/en-us/articles/51792384259731-Where-to-start-in-Etlworks-integration-patterns-by-use-case",
+      "read_at": "2026-10-22T10:34:07.504637Z",
+      "excerpt_sha256": "c35c0c9d6371e074b593bebb891464b1cc7cd2a1255970b83b23dbca460a2a6f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official workload guide distinguishes HWM, CDC, bulk warehouse loading, API pagination and source-only connectors."
+    },
+    {
+      "id": "cdc",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Real-time CDC | Etlworks",
+      "url": "https://etlworks.com/real-time-cdc.html",
+      "read_at": "2026-10-22T10:31:14.789492Z",
+      "excerpt_sha256": "b1d026383424dbc4ddc4914d54a4debb44ee376a30d2323d1582915e2724f531",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Snapshot/log-offset model and source-log dependency read; paid-plan language conflicts with Business exclusion in pricing."
+    },
+    {
+      "id": "schema",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Schema drift handling: tables that follow your source | Etlworks",
+      "url": "https://etlworks.com/schema-drift.html",
+      "read_at": "2026-10-22T10:31:18.302197Z",
+      "excerpt_sha256": "25ac47055fbe362cefa229146f68e1b220c2f6a35eec0611cb6067e583e4f771",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Default table creation distinguished from opt-in ALTER and destructive recreation."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "On-premise & hybrid ETL | Etlworks",
+      "url": "https://etlworks.com/on-premise-etl.html",
+      "read_at": "2026-10-22T10:31:21.138421Z",
+      "excerpt_sha256": "4a94aa9abd65276f6774b2a17990193554051be1f928031f5c9b95ed727cac2a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Full platform and hybrid agents distinguished; outbound HTTPS and deployment responsibility read."
+    },
+    {
+      "id": "errors",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Handle exceptions in the Flows and in the transformations – Etlworks Support",
+      "url": "https://support.etlworks.com/hc/en-us/articles/360014697653-Handle-exceptions-in-the-Flows-and-in-the-transformations",
+      "read_at": "2026-10-22T10:34:31.111385Z",
+      "excerpt_sha256": "c7215f4969f53249bea8ea81cec0a18ce3edc070c08aaa0fd542434cb2e4b599",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Ignore/raise behavior and JavaScript handler override reviewed; ignored failures can require separate notifications."
+    },
+    {
+      "id": "monitor",
+      "type": "official_documentation",
+      "site": "Etlworks Integrator",
+      "title": "Monitor Flow Execution – Etlworks Support",
+      "url": "https://support.etlworks.com/hc/en-us/articles/50176146741651-Monitor-Flow-Execution",
+      "read_at": "2026-10-22T10:34:36.208642Z",
+      "excerpt_sha256": "d3af5c446f23333bde9e6b677b733832efbd685eb0198672e575f31c13392f28",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Execution history, status, counts, retry context and 9.8.0 hierarchy/agent version conditions read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:34:36.208642Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "patterns", "deploy"],
+  "profile": {
+    "sections": [
+      {
+        "id": "pattern",
+        "title_en": "Choose the integration pattern before drawing the flow",
+        "title_zh": "先选择集成模式，再构建流程",
+        "en": "The official guide separates database-to-database writes, native warehouse bulk loaders, SaaS connectors and generic HTTP APIs. HTTP work needs explicit authentication, pagination and response shaping. Some dedicated Google/social connectors are source-only. A proposed trial could load paginated orders into a test table, preserve order IDs, map amounts and compare the final page with the source. Neither a connector name nor a successful first page establishes complete extraction.",
+        "zh": "官方指南区分数据库写入、仓库原生批量加载、SaaS 连接器和通用 HTTP API。HTTP 任务需明确认证、分页及响应整形；部分 Google／社交专用连接器只可作源。建议试验：将分页订单加载至测试表，保留订单 ID、映射金额，并把最后一页与源对照。连接器名称或第一页成功，都不能证明提取完整。",
+        "source_refs": ["patterns"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "incremental",
+        "title_en": "A high-water mark is different from a log stream",
+        "title_zh": "高水位与日志流不同",
+        "en": "High-watermark extraction selects changes using a maintained timestamp or increasing sequence. CDC starts with a snapshot, then follows supported database logs and retained offsets. Recovery depends on the required logs still existing; do not assume a long outage can always resume without reinitialization. Evaluate inserts, updates, deletes and restart behavior for the selected source rather than applying one guarantee to every connector.",
+        "zh": "高水位提取通过持续维护的时间戳或递增序列选择变化。CDC 从快照开始，再跟随受支持数据库的日志及保存的偏移。恢复取决于所需日志仍存在，不能假定长时间中断后总能免初始化续传。应按所选源评估插入、更新、删除及重启行为，不能把同一保证套在所有连接器上。",
+        "source_refs": ["patterns", "cdc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "schema",
+        "title_en": "Automatic schema handling has explicit limits",
+        "title_zh": "自动结构处理有明确边界",
+        "en": "Missing-table creation is enabled for new transformations, but adding source columns with ALTER is off by default. Index creation is optional. A separate recreation switch drops and rebuilds a target when extra source columns appear and is also off by default. Strict and match-existing modes offer different failure behavior. For an evaluation, add a harmless field in a disposable schema and inspect generated DDL and the result before enabling production changes.",
+        "zh": "新转换默认开启缺表创建，但通过 ALTER 添加源列默认关闭；创建索引是可选项。另一重建开关会在出现额外源列时删除并重建目标，默认也关闭。严格匹配与匹配现有表模式具有不同失败行为。评估时可在可丢弃 schema 增加普通字段，检查生成的 DDL 及结果，再启用生产变更。",
+        "source_refs": ["schema"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Ignoring an exception changes what completion means",
+        "title_zh": "忽略异常会改变“完成”的含义",
+        "en": "A transformation can raise or ignore matching exceptions. A JavaScript error handler may override that choice; ignored exceptions can be collected for email notification. Therefore an apparently completed flow still needs record reconciliation. Monitoring exposes execution IDs, history, counts and warnings. Hierarchical metrics require Etlworks 9.8.0 or newer and a compatible upgraded agent; older agents retain flat metrics. No retry, rollback or data-loss behavior was exercised here.",
+        "zh": "转换可抛出或忽略匹配异常，JavaScript 错误处理器还能覆盖此选择；被忽略异常可汇总后邮件通知。因此表面完成的流程仍需对账。监控提供执行 ID、历史、计数与警告。层级指标要求 Etlworks 9.8.0 及以上，以及兼容的升级代理；旧代理继续使用平面指标。本次未实测重试、回滚或数据丢失行为。",
+        "source_refs": ["errors", "monitor"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Hybrid agents do not mean the entire platform is local",
+        "title_zh": "混合代理不代表整个平台均在本地",
+        "en": "Hybrid keeps the managed control plane while agents connect outward over HTTPS 443. Full installation places the platform in customer infrastructure, with operating and upgrade responsibility. The deployment page describes isolated operation, but standard subscription licensing requires a daily license-server check; an offline license is a separate paid option. Identify the intended network boundary and exact license before treating a deployment as air-gapped. Self-hosting alone establishes no open-source entitlement.",
+        "zh": "混合部署保留托管控制面，代理通过 HTTPS 443 向外连接；完整安装则把平台置于客户基础设施，由客户承担运行与升级责任。部署页描述隔离运行，但标准订阅许可要求每天连接许可服务器，离线许可是另外付费选项。认定完全隔离前应明确网络边界与实际许可。自托管本身不构成开源权限。",
+        "source_refs": ["deploy", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Compare plan scope and the unresolved official contradictions",
+        "title_zh": "比较套餐范围并保留官方矛盾",
+        "en": "Starter lists $300/month with annual billing or $330 monthly, with 3M records/month and five schedules. Business lists $600/$660, 30M and 20 schedules. Per-flow usage takes the larger extracted/loaded count, then totals across flows; file-copy operations are excluded. Enterprise starts at $1,000/month annually, but “unlimited” prose conflicts with explicit sizing-table caps. Business explicitly excludes CDC while the CDC page says every paid plan includes it. Confirm both in writing. Premium connectors, agents and additional environments can add cost; a 14-day trial is temporary.",
+        "zh": "Starter 年付折算每月 $300、月付 $330，含每月 300 万记录与五个调度；Business 对应 $600／$660、3000 万记录及 20 个调度。每条流程取提取与加载计数较大值，再跨流程合计；文件复制操作排除。Enterprise 年付折算每月 $1,000 起，但“无限”概括与规格表明确上限矛盾。Business 明确不含 CDC，CDC 页却称每个付费方案均含；两项都需书面确认。高级连接器、代理及额外环境可能增费，14 天试用仅为临时使用。",
+        "source_refs": ["pricing", "cdc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Budget for an integration maintainer",
+        "title_zh": "安排集成维护人员",
+        "en": "Evaluate Etlworks when one team needs several database, file and API patterns with deliberate schema and recovery policies. It requires someone who understands source permissions, mappings, target writes and diagnostics. A simpler export tool may be easier to assess when the only requirement is refreshing one spreadsheet. This is an editorial selection boundary, not a measured comparison or an approved alternative relationship.",
+        "zh": "当团队需要多种数据库、文件及 API 模式，并愿意明确结构和恢复策略时，可评估 Etlworks。需有人理解源权限、映射、目标写入及诊断。如果仅需刷新一张表格，更简单的导出工具可能更易评估。这是编辑判断，不是实测比较或已批准替代关系。",
+        "source_refs": ["patterns", "errors"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Etlworks Integrator: Flows, CDC, Schema Settings and Pricing",
+    "title_zh": "Etlworks Integrator：流程、CDC、结构设置与定价",
+    "description_en": "Evaluate Etlworks data-flow patterns, schema switches, hybrid agents, exception handling and unresolved plan limits.",
+    "description_zh": "评估 Etlworks 数据流程模式、结构开关、混合代理、异常处理及待确认套餐限制。",
+    "primary_intent": "Evaluate Etlworks integration patterns and deployment costs.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Enterprise unlimited-record wording conflicts with explicit caps; CDC inclusion conflicts across official pages.",
+      "zh": "Enterprise 无限记录表述与明确上限矛盾，CDC 是否包含在内也有官方页面冲突。",
+      "source_refs": ["pricing", "cdc"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Source-code license, actual connector/version compatibility, throughput, failover, UI languages and contract terms remain unverified or untested.",
+      "zh": "源码许可、实际连接器与版本兼容、吞吐、故障转移、界面语言及合同条款仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

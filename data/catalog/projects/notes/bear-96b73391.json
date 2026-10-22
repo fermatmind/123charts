@@ -1,0 +1,300 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "bear-96b73391",
+  "name": "Bear",
+  "website_url": "https://bear.app/",
+  "domain": "bear.app",
+  "identity_domain": "bear.app",
+  "category": "notes",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Bear is a Markdown note editor for Mac, iPhone and iPad. It combines formatted writing, attachments, sketches and tags for a personal library that can be used offline. The free app keeps notes locally; cross-device iCloud sync and several retrieval/export tools require Bear Pro.\n\nEvaluate it around writing and retrieving your own material. The official pages support a tag-based notebook workflow, rather than the recurring-task, shared-calendar and real-time-team feature bundle in the old directory entry.",
+  "description_zh": "Bear 是面向 Mac、iPhone 和 iPad 的 Markdown 笔记编辑器，把文字、附件、草图与标签组织为可离线使用的个人资料库。免费应用在本地保存笔记；跨设备 iCloud 同步及部分检索、导出工具需要 Bear Pro。\n\n选型时应围绕个人写作与资料检索评估。官方页面支持的是标签式笔记工作流，不能沿用旧目录中周期任务、共享日历和团队实时协作的混合功能表。",
+  "core_features": [
+    {
+      "name_en": "Markdown and nested tags",
+      "name_zh": "Markdown 与嵌套标签",
+      "explanation_en": "Organize writing with headings, lists and reusable nested tags.",
+      "explanation_zh": "用标题、列表及可复用的嵌套标签组织写作。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "tags",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pro sync and OCR",
+      "name_zh": "Pro 同步与 OCR",
+      "explanation_en": "Pro adds iCloud sync and search inside images/PDFs.",
+      "explanation_zh": "Pro 增加 iCloud 同步及图片／PDF 内文字搜索。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Library backup",
+      "name_zh": "资料库备份",
+      "explanation_en": "A .bear2bk backup can be restored, replacing the current library.",
+      "explanation_zh": ".bear2bk 备份可恢复并替换当前资料库。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Organize connected reading notes.",
+      "Draft offline and export a deliverable."
+    ],
+    "zh": ["组织关联的阅读笔记。", "离线起草并导出交付文件。"],
+    "source_refs": ["product"],
+    "basis": "Illustrative selection guidance; no customer outcome or hands-on claim."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Native Apple apps; optional Pro iCloud sync.",
+      "zh": "Apple 原生应用；可选 Pro iCloud 同步。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Personal writer", "Researcher using Apple devices"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Install on a supported Apple device and create a tagged note with an attachment.",
+        "zh": "在支持的 Apple 设备安装，创建带标签和附件的笔记。",
+        "source_refs": ["product", "tags"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "If evaluating Pro, confirm the Apple ID and test sync on a second disposable note before migration.",
+        "zh": "评估 Pro 时确认 Apple ID，迁移前用临时笔记在第二台设备验证同步。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Create a backup and inspect an exported file before moving a substantial library.",
+        "zh": "迁移大量资料前先生成备份并检查导出文件。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_exhaustively_verified",
+    "items": [],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Bear can create a .bear2bk backup. Its restore documentation explicitly says restoring permanently deletes the current notes, including trash, and replaces them with the backup. Encrypted notes remain encrypted and require their original password. For inspecting old material without replacing the library, the documentation describes renaming the backup to .zip and extracting TextBundle files. Take a fresh backup before any restore; sync alone is not a versioned recovery strategy.",
+        "zh": "Bear 可以生成 .bear2bk 备份。恢复文档明确说明：恢复会永久删除当前笔记，包括废纸篓中的内容，再用备份替换。加密笔记仍然加密，需要原密码。若只需查看旧资料而不替换资料库，文档提供了把备份改为 .zip 后提取 TextBundle 文件的方法。建议每次恢复前先生成新备份；仅靠同步不能替代版本化恢复策略。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "checked_at": "2026-10-22T15:55:21.003655+00:00",
+    "normalized_monthly_price": null,
+    "price_type": "freemium",
+    "source_ref": "pricing",
+    "currency": "USD",
+    "billing_basis": "Per Apple-ID subscription; monthly or annual.",
+    "source_snapshot_en": "Free local use; Pro US$2.99/month or US$29.99/year, seven-day trial; regional store prices vary.",
+    "source_snapshot_zh": "本地使用免费；Pro 每月 2.99 美元或每年 29.99 美元，七天试用；地区商店价格可能不同。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/bear-app",
+      "read_at": "2026-10-22T08:40:52.495Z",
+      "excerpt_sha256": "592ed03fa8a7239e29ee3fddce34e51182b642c0510a5cf5e079cdcaf997a392",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "bear",
+      "title": "Bear: Markdown Notes App for Mac, iPhone & iPad",
+      "url": "https://bear.app/",
+      "resolved_url": "https://bear.app/",
+      "read_at": "2026-10-22T15:52:07.812096+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "90ab30064152bb149b3112729391078469400ea6a6ba77d527bf7bdef5e14de5",
+      "body_sha256": "07153b6286f4581a5387afca9dda09b7fa90c34f1e94c1a6e02ccd004133c064",
+      "evidence_path": ".scratch/deep-research/batch-11/bear/product.txt",
+      "research_notes_en": "Apple-native local Markdown editor; distinguishes free local access from Pro retrieval and sync."
+    },
+    {
+      "id": "tags",
+      "type": "official_documentation",
+      "site": "bear",
+      "title": "How to use tags in Bear",
+      "url": "https://bear.app/faq/how-to-use-tags-in-bear/",
+      "resolved_url": "https://bear.app/faq/how-to-use-tags-in-bear/",
+      "read_at": "2026-10-22T15:52:58.691888+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "ac528ac04d9abff1ecc4cf97b9a86fa10941ecc7a35887c122ced266d1580f2c",
+      "body_sha256": "87303e4fb34f19ec5f8dcad2a1afd28267d04b0e14ae344bb603627205c1700f",
+      "evidence_path": ".scratch/deep-research/batch-11/bear/tags.txt",
+      "research_notes_en": "Nested tags support multi-context organization."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "bear",
+      "title": "Features and price of Bear Pro",
+      "url": "https://bear.app/faq/features-and-price-of-bear-pro/",
+      "resolved_url": "https://bear.app/faq/features-and-price-of-bear-pro/",
+      "read_at": "2026-10-22T15:52:58.678726+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "d130b7ffa42fbbd720d57c96853bc6cfa2cc8218894d868751e60d9ba4b8f255",
+      "body_sha256": "3c0f09356205c0cbbeb1e2c063e6faae8a4977acda5b28c6b4463073a2b72665",
+      "evidence_path": ".scratch/deep-research/batch-11/bear/pricing.txt",
+      "research_notes_en": "2.99 USD monthly, 29.99 USD yearly; seven-day trial, shared Apple ID, automatic store renewals."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "bear",
+      "title": "Backup and Restore Your Notes in Bear",
+      "url": "https://bear.app/faq/backup-restore/",
+      "resolved_url": "https://bear.app/faq/backup-restore/",
+      "read_at": "2026-10-22T15:52:58.687893+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "40172bc44ed44df8c04ea717406db8f1f07e2ad7478f75a96c7ff2bbb05f2439",
+      "body_sha256": "33406e30f9efe2a1d2c30c6817c251d970631961746fbd77d6816a6f869c4c58",
+      "evidence_path": ".scratch/deep-research/batch-11/bear/backup.txt",
+      "research_notes_en": "Restore deletes existing library; encrypted content retains password requirement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:55:21.003655+00:00"
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Primary-source research is a draft, not publication, owner verification, price approval or independent review.",
+    "English and Chinese carry matching amounts, billing periods, qualifications and unknowns.",
+    "Historical directory assertions are superseded, including unverified feature and API labels."
+  ],
+  "description_source_refs": ["product", "tags", "backup"],
+  "profile": {
+    "sections": [
+      {
+        "id": "capture",
+        "title_en": "From reading notes to a connected draft",
+        "title_zh": "从阅读笔记到关联草稿",
+        "en": "For an illustrative reading project, create a note for each source, add a nested tag such as #research/energy, and link related notes while drafting a synthesis. Markdown handles headings and lists; attachments and inline sketches keep supporting material near the text. Tags can place a note in more than one context without duplicating its contents. This is a proposed workflow, not an executed project.",
+        "zh": "例如整理阅读项目时，可以为每个来源创建笔记，加上 #research/energy 这类嵌套标签，再在综合写作时关联相关笔记。Markdown 负责标题和列表，附件与行内草图让参考材料靠近正文。标签让同一篇笔记出现在多个语境中，无需复制内容。这个流程是建议示例，未实际执行。",
+        "source_refs": ["tags", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "free",
+        "title_en": "Local notes versus Pro services",
+        "title_zh": "本地笔记与 Pro 服务",
+        "en": "Free use includes local notes and basic export formats. Pro adds iCloud sync, individual-note encryption/app locking, OCR search inside images and PDFs, and expanded exports including PDF, HTML and DOCX. A free local library therefore does not establish a free multi-device workflow. Confirm both Apple accounts and iCloud requirements before relying on a second device.",
+        "zh": "免费使用包含本地笔记及基础格式导出。Pro 增加 iCloud 同步、单篇笔记加密／应用锁、图片与 PDF 内文字的 OCR 搜索，以及 PDF、HTML、DOCX 等扩展导出。因此，免费本地资料库不等于免费的多设备工作流。依赖第二台设备前，应核对 Apple 账户与 iCloud 条件。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "One subscription across Apple devices",
+        "title_zh": "Apple 设备间共享订阅",
+        "en": "The official Pro help page lists US$2.99 monthly or US$29.99 yearly, each with a seven-day trial. A single subscription covers devices using the same Apple ID. Apple manages payment, renewal, cancellation and refund requests; local taxes and currency conversion can change the storefront price. The trial is separate from ongoing free local use, and renewals are automatic unless managed through the store.",
+        "zh": "官方 Pro 帮助页列出每月 2.99 美元或每年 29.99 美元，两者均有七天试用。同一 Apple ID 下的设备可共用一个订阅。Apple 管理付款、续订、取消及退款申请；当地税费和汇率可能改变商店价格。试用与持续免费的本地使用不同，订阅默认自动续费，需要在商店中管理。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "A restore replaces the current library",
+        "title_zh": "恢复会替换当前资料库",
+        "en": "Bear can create a .bear2bk backup. Its restore documentation explicitly says restoring permanently deletes the current notes, including trash, and replaces them with the backup. Encrypted notes remain encrypted and require their original password. For inspecting old material without replacing the library, the documentation describes renaming the backup to .zip and extracting TextBundle files. Take a fresh backup before any restore; sync alone is not a versioned recovery strategy.",
+        "zh": "Bear 可以生成 .bear2bk 备份。恢复文档明确说明：恢复会永久删除当前笔记，包括废纸篓中的内容，再用备份替换。加密笔记仍然加密，需要原密码。若只需查看旧资料而不替换资料库，文档提供了把备份改为 .zip 后提取 TextBundle 文件的方法。建议每次恢复前先生成新备份；仅靠同步不能替代版本化恢复策略。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Fit depends on the writing environment",
+        "title_zh": "是否适合取决于写作环境",
+        "en": "Bear is a plausible shortlist for someone who writes on supported Apple devices and wants tags, Markdown and local access. A team requiring browser-based co-editing, centrally assigned work or Android/Windows participation should investigate those requirements separately: the sources reviewed here do not establish them. Apple app distribution and iCloud sync are the documented operating model; no self-hosted server or open-source licence was verified.",
+        "zh": "如果主要在支持的 Apple 设备上写作，需要标签、Markdown 和本地访问，Bear 值得列入候选。若团队需要浏览器共同编辑、集中派发任务或 Android／Windows 参与，应另行核实；本次来源没有证明这些能力。文档描述的运行方式是 Apple 应用及 iCloud 同步；未核实可自行部署的服务端或开源许可。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "editorial_fit_judgment_based_on_documentation"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "No device, sync conflict, import fidelity, interface-language or regional purchase tests were performed.",
+      "zh": "未进行设备、同步冲突、导入保真度、界面语言或地区购买测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source documentation research; original English synthesis with matching Chinese sections. Workflow examples and evaluation advice were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Bear: Workflows, Pricing and Practical Limits",
+    "title_zh": "Bear：工作流程、费用与使用条件",
+    "description_en": "Bear is a Markdown note editor for Mac, iPhone and iPad. It combines formatted writing, attachments, sketches and tags for a personal library that can be used offline. Th",
+    "description_zh": "Bear 是面向 Mac、iPhone 和 iPad 的 Markdown 笔记编辑器，把文字、附件、草图与标签组织为可离线使用的个人资料库。免费应用在本地保存笔记；跨设备 iCloud 同步及部分检索、导出工具需要 Bear Pro。",
+    "primary_intent": "Understand the documented product and evaluate a specific workflow.",
+    "query_basis": "Editorial intent; no measured search volume, ranking or SEO/GEO outcome.",
+    "canonical_url": null
+  }
+}

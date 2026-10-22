@@ -1,0 +1,339 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "kanban-tool-2eaedb30",
+  "name": "Kanban Tool",
+  "website_url": "https://kanbantool.com/",
+  "domain": "kanbantool.com",
+  "identity_domain": "kanbantool.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Kanban Tool is a visual work-management service built around cards moving through a configured board. Columns express workflow stages and swimlanes can separate clients, teams or other work groups. WIP settings and analytics help a team inspect how much work is being handled, while the Enterprise plan adds time tracking and process automation.\n\nThe important distinction is between a visible column name and the configuration behind it. Lane types control timer behavior; cloning a board does not preserve every part of its history. The vendor also offers an On-Site virtual-machine deployment with separate licensing and operational responsibilities. This profile explains those boundaries without reporting a live account or installation test.",
+  "description_zh": "Kanban Tool 是以卡片在已配置看板中流转为基础的可视化工作管理服务。列表示流程阶段，泳道可以区分客户、团队或其他工作组。WIP 设置和分析帮助团队检查同时处理的工作量；Enterprise 另提供工时跟踪与流程自动化。\n\n需要区分可见列名与背后配置：Lane Type 决定计时行为，复制看板也不会保留所有历史。厂商还提供 On-Site 虚拟机部署，采用单独许可并带来相应运行责任。本文解释这些边界，没有实际测试账户或安装。",
+  "core_features": [
+    {
+      "name_en": "Configurable WIP units",
+      "name_zh": "可配置 WIP 单位",
+      "explanation_en": "Set column limits by count, estimated hours, difficulty or user.",
+      "explanation_zh": "按数量、估算工时、难度或用户设置列限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "wip",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Lane-based time tracking",
+      "name_zh": "基于列类型的工时跟踪",
+      "explanation_en": "Enterprise timers start, pause or stop according to configured lane type.",
+      "explanation_zh": "Enterprise 计时器按配置的列类型开始、暂停或停止。",
+      "explanation_scope": "product_specific",
+      "source_ref": "time-tracking",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reusable board structure",
+      "name_zh": "可复用看板结构",
+      "explanation_en": "Clone workflow setup with explicit exclusions for comments, archives and assignments.",
+      "explanation_zh": "复制流程配置，但明确排除评论、归档和分派。",
+      "explanation_scope": "product_specific",
+      "source_ref": "board-cloning",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Track a service request through work and waiting stages.",
+      "Reuse a board structure while preserving the old project’s history separately."
+    ],
+    "zh": [
+      "跟踪服务请求经过工作和等待阶段。",
+      "复用看板结构，同时另行保留旧项目历史。"
+    ],
+    "source_refs": ["basics", "board-cloning"],
+    "basis": "Suggested evaluation workflows, not measured benefits."
+  },
+  "technical_details": {
+    "Deployment options": {
+      "en": "Cloud service or separately licensed On-Site OVA deployment.",
+      "zh": "云服务或单独许可的 On-Site OVA 部署。",
+      "source_ref": "onsite",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Service workflow coordinator", "Kanban team lead"],
+    "roles_status": "editorial_inference",
+    "source_ref": "basics"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the account subdomain, create one board and explicitly share it with a participant.",
+        "zh": "选择账户子域名，创建一块看板，并明确共享给参与者。",
+        "source_refs": ["basics"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Choose WIP units and lane types; inspect one complete work/wait/done transition.",
+        "zh": "选择 WIP 单位与列类型，检查一次完整的工作／等待／完成转换。",
+        "source_refs": ["wip", "time-tracking"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "deployment_boundary_documented_not_tested",
+    "items": [],
+    "source_ref": "onsite",
+    "scope": "Offline On-Site disables several cloud integrations by default. Connector actions and recovery not tested."
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "A board clone excludes archived tasks, comments and team assignments.",
+        "zh": "复制看板不包含归档任务、评论和团队分派。",
+        "source_refs": ["board-cloning"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Time tracking/reporting requires Enterprise.",
+        "zh": "工时跟踪／报告需要 Enterprise。",
+        "source_refs": ["time-tracking"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_cloud_or_annual_onsite_license",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Free: two boards/two users, no attachments. Team/Enterprise cloud seats; On-Site sold in annual ten-user packs.",
+    "source_snapshot_zh": "Free 两块看板／两位用户，无附件。云端 Team／Enterprise 按席位；On-Site 按十用户年度包。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/kanban-tool",
+      "read_at": "2026-10-22T08:57:24.995Z",
+      "excerpt_sha256": "5f81a60cbd0b2cdb1cfe34489aed7edae15d2cf05d926cc6ae71cc6aa3084a69",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "kanbantool.com",
+      "title": "Free Trial & Pricing | Kanban Tool – Online and On-Site Kanban Software | Kanban Tool",
+      "url": "https://kanbantool.com/pricing",
+      "read_at": "2026-10-22T10:28:14.438423Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b2ab8614428233f384c34bfd0d2f37a9532c25533e981068287f04c305fa0aa3",
+      "research_notes_en": "Free has two boards/two users and no attachments; Team and Enterprise have different entitlements with USD/EUR prices."
+    },
+    {
+      "id": "basics",
+      "type": "official_documentation",
+      "site": "kanbantool.com",
+      "title": "Kanban Tool basics | Kanban Tool Support",
+      "url": "https://kanbantool.com/support/basics",
+      "read_at": "2026-10-22T10:28:14.438708Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8575c67d03e6e23181bb35fcd43e93d24c7782bbc4ed7be10d387d115b2da002",
+      "research_notes_en": "Account subdomain cannot be renamed; board creation needs suitable privileges and sharing determines what participants see."
+    },
+    {
+      "id": "wip",
+      "type": "official_documentation",
+      "site": "kanbantool.com",
+      "title": "How to set a Work in Progress (WIP) limit? | Kanban Tool Support",
+      "url": "https://kanbantool.com/support/kanban-board/how-to-set-a-work-in-progress-limit",
+      "read_at": "2026-10-22T10:28:14.438743Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "44e1dabdda92664d7e4cd7841760e96b64dcb9cdb6435da5061b116f712b6a06",
+      "research_notes_en": "Column WIP can use task count, estimated hours, difficulty or per-user limits."
+    },
+    {
+      "id": "onsite",
+      "type": "official_documentation",
+      "site": "kanbantool.com",
+      "title": "What is the price of the Kanban Tool software? | Kanban Tool Support",
+      "url": "https://kanbantool.com/support/pricing-and-payments/what-is-the-pricing-for-kanban-software",
+      "read_at": "2026-10-22T10:28:14.439160Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "97674b863914e4aff121ae395fface97363a21d5237c893318a17ee3c0584262",
+      "research_notes_en": "On-Site is an OVA virtual machine with annual ten-user license packs; offline operation changes integration availability."
+    },
+    {
+      "id": "board-cloning",
+      "type": "official_documentation",
+      "site": "kanbantool.com",
+      "title": "Kanban board | Kanban Tool Support",
+      "url": "https://kanbantool.com/support/kanban-board",
+      "read_at": "2026-10-22T10:28:14.439222Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4cae714fc41f4c872cd8559e48e8a9425e3b637500a28ab3efcbdceea3bb4404",
+      "research_notes_en": "Cloning includes structure and optionally visible tasks but excludes archived cards, comments and assignments."
+    },
+    {
+      "id": "time-tracking",
+      "type": "official_documentation",
+      "site": "kanbantool.com",
+      "title": "Time tracking | Kanban Tool Support",
+      "url": "https://kanbantool.com/support/time-tracking",
+      "read_at": "2026-10-22T10:28:14.439560Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7a265375852d146836bef73689af5cc7270e86308a36789a814b9fff2ea5c586",
+      "research_notes_en": "Enterprise time tracking depends on lane type; waiting pauses, in-progress starts and done stops. Owners and regular users have different correction rights."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:28:14.439560Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "basics",
+    "wip",
+    "time-tracking",
+    "board-cloning",
+    "onsite"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "board-example",
+        "title_en": "Make a board match one real service workflow",
+        "title_zh": "让看板对应一条真实服务流程",
+        "en": "For a hypothetical service request, use stages for incoming work, active work, waiting for review and completed work. Create one card with its owner and context, then follow its handoff through the board. The account owner controls board access, and board creation requires appropriate privileges.\n\nChoose the account subdomain carefully: the basic guide says it cannot be renamed later. Invite one representative participant and verify they can see the intended board. A login with an empty dashboard can reflect missing sharing rather than missing project data. This is an evaluation suggestion, not an account created for the profile.",
+        "zh": "假设处理服务请求，可以设置新请求、处理中、等待审阅和已完成阶段。创建一张带负责人和背景的卡片，再沿看板跟踪交接。账户所有者控制看板访问，创建看板需要相应权限。\n\n账户子域名要谨慎选择，基础指南说明之后不能改名。建议邀请一位代表性参与者，检查其能否看到目标看板。登录后面板为空，可能是尚未共享，而非项目数据丢失。这是评估建议，本次没有创建账户。",
+        "source_refs": ["basics", "board-cloning"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "wip-units",
+        "title_en": "A WIP number needs a unit",
+        "title_zh": "WIP 数字需要明确单位",
+        "en": "Kanban Tool lets a column use task count, total estimated hours, summed difficulty or individual user limits. A limit of four tasks is not the same as four estimated hours. The board editor records the selected type and value.\n\nFor a pilot, put two small and one large request into the active stage and compare whether the chosen unit represents the team’s real constraint. The setup article establishes configurable limits; it does not establish a universal hard-block policy for every role and movement path. Validate warning and enforcement behavior before depending on it to prevent overload.",
+        "zh": "Kanban Tool 可以按任务数、估计工时总和、难度总和或个人用户设置列的 WIP 限制。上限四项任务与四小时估算并不相同，看板编辑器记录具体类型和值。\n\n试点可以把两项小请求和一项大请求放入活跃阶段，检查所选单位是否代表团队真正的约束。配置文章证明可以设置限制，但不能确立所有角色、所有移动路径都执行统一硬阻止政策。依赖它预防超量前，应验证警告和强制行为。",
+        "source_refs": ["wip"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "time-behavior",
+        "title_en": "Lane type, not wording, drives the timer",
+        "title_zh": "计时由 Lane Type 驱动，而非列名",
+        "en": "On Enterprise, moving a card to an In Progress lane starts tracking, Queue/Waiting pauses it, and Done stops it and removes it from My work. Timers can also be started or stopped manually. Therefore, renaming a column “Doing” is not a substitute for assigning its underlying type.\n\nTest a request that spends time waiting for client input and inspect its time entries. Regular users may correct their own entries; account owners can correct any entry. Define who reviews corrections before using totals for reporting. These are recorded work intervals, not independently verified billable delivery.",
+        "zh": "在 Enterprise 中，把卡片移到 In Progress 类型的列会开始计时，Queue／Waiting 暂停计时，Done 停止并从 My work 移除，也可以手动启停。因此，仅把列改名为“处理中”，不能替代设置底层类型。\n\n应测试一条需要等待客户资料的请求，并查看时间条目。普通用户可以修正自己的条目，账户所有者可修正所有条目。使用汇总值报告前，应明确谁复核修正。这些是工作时段记录，不是经过独立验证的可计费交付。",
+        "source_refs": ["time-tracking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "clone-boundary",
+        "title_en": "Cloning is a workflow copy, not a full historical replica",
+        "title_zh": "复制流程不等于完整复制历史",
+        "en": "The board guide says cloning can preserve layout, card types, templates, enabled Power-Ups and process rules, optionally including visible tasks. Archived tasks, task comments and team-member assignments are not copied.\n\nFor a repeatable client workflow, this can be a starting structure, but it should not be treated as an archive migration. Inspect a clone with a commented card, an archived card and an assignment before adopting it as a template. Reapply ownership and sharing deliberately and retain the original when its history is needed. No clone operation was executed here.",
+        "zh": "看板指南说明，复制可保留布局、卡片类型、模板、已启用 Power-Ups 和流程规则，也可选择包含可见任务；归档任务、任务评论和团队成员分派不会复制。\n\n对于重复客户流程，它可用作起始结构，但不能当作历史档案迁移。建议使用带评论、归档和分派的卡片检查复制结果，再作为模板采用。应主动重新设置责任和共享，需要历史时保留原看板。本次没有实际执行复制。",
+        "source_refs": ["board-cloning"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cloud-cost",
+        "title_en": "Separate the free plan from Enterprise functions",
+        "title_zh": "区分免费套餐和 Enterprise 功能",
+        "en": "The public page lists an ongoing Free option with two boards, two users and no file attachments. In the USD display, Team is USD 6 per user/month and Enterprise USD 11; the page also renders EUR prices separately. A fourteen-day trial requires no credit card.\n\nTeam includes unlimited boards and attachments, while Enterprise names time tracking/reporting, groups and process automation. If a pilot depends on automatic time records, evaluate the edition that includes them rather than assuming a free board includes the full timer workflow. Confirm currency and purchase conditions for the actual account.",
+        "zh": "公开页面列出持续 Free 选项：两块看板、两位用户，不提供文件附件。美元视图中，Team 为每用户每月 6 美元，Enterprise 为 11 美元，页面也另显示欧元价格。十四天试用无需信用卡。\n\nTeam 提供不限量看板和附件，Enterprise 列出工时跟踪／报告、用户组和流程自动化。如果试点依赖自动工时记录，应评估包含该能力的版本，不能假设免费看板就包括完整计时流程。具体账户还需确认币种与购买条件。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "onsite-fit",
+        "title_en": "On-Site changes deployment and integration assumptions",
+        "title_zh": "On-Site 改变部署与集成前提",
+        "en": "On-Site is distributed as an OVA virtual-machine image, with published minimums of a 64-bit machine, 4 GB RAM, 10 GB disk and compatible virtualization. It uses annual ten-user license packs and a Team or Enterprise feature choice; setup or maintenance charges may apply. Exact pricing requires contact.\n\nOffline operation means cloud integrations such as Zapier and cloud-file services are disabled by default. Self-hosting therefore does not establish feature parity for every external connection, and it is not evidence of open-source licensing. Shortlist the product for visible service flow, then validate timer behavior, WIP policy, board access and the intended hosting model. No deployment, backup/recovery or integration was tested.",
+        "zh": "On-Site 以 OVA 虚拟机镜像分发，公开最低要求包括 64 位设备、4 GB 内存、10 GB 磁盘和兼容虚拟化环境。它按十用户年度许可证包销售，并选择 Team 或 Enterprise 能力；可能另有配置或维护费用，准确价格需联系厂商。\n\n离线运行意味着 Zapier 和云文件服务等集成默认禁用。因此，自托管不能证明每种外部连接都与云端一致，也不代表采用开源许可。若需要可视化服务流程，可以列入候选，再验证计时行为、WIP 政策、看板访问和预期托管方式。本次没有测试部署、备份／恢复或集成。",
+        "source_refs": ["onsite"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Kanban Tool: WIP Units, Timers, Board Cloning and On-Site Licensing",
+    "title_zh": "Kanban Tool：WIP 单位、计时、看板复制与 On-Site 许可",
+    "description_en": "Understand Kanban Tool lane-driven time tracking, cloning exclusions, free-plan limits and self-hosted conditions from official sources.",
+    "description_zh": "依据官方来源理解 Kanban Tool 按列类型计时、复制排除项、免费版限制及自托管条件。",
+    "primary_intent": "Evaluate visible work flow and deployment options.",
+    "secondary_questions": [
+      "What starts a task timer?",
+      "What is not copied with a board?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no keyword volume or ranking measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No board, timer, clone or On-Site installation was run. Exact WIP enforcement, recovery, live integrations and performance need testing.",
+      "zh": "未运行看板、计时、复制或 On-Site 安装。具体 WIP 强制行为、恢复、真实集成和性能仍需测试。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Purchase-specific currency/taxes, full license contract, current deployment stack support, interface languages and regional availability were not confirmed.",
+      "zh": "未确认特定购买的币种／税费、完整许可合同、当前部署栈支持、界面语言及地区可用性。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

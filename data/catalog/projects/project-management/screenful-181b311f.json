@@ -1,0 +1,404 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "screenful-181b311f",
+  "name": "Screenful",
+  "website_url": "https://screenful.com/",
+  "domain": "screenful.com",
+  "identity_domain": "screenful.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Screenful is a hosted analytics and reporting layer for work recorded in other task-management tools. It imports selected sources, maps workflow states and builds charts and reports around work flow, timing and other available fields. Its documentation describes reading source data rather than editing the underlying tasks.\n\nThe useful question is whether a report represents the intended work, time period and definition of completion. Source selection, mapping, synchronization and report visibility can all change that answer. The original project-management catalog category is retained, but this profile evaluates reporting on project work, without treating Screenful as a replacement execution board or a measure of individual output quality.",
+  "description_zh": "Screenful 是面向其他任务管理工具中工作数据的托管分析与报告层。它导入所选来源、映射流程状态，并围绕工作流、时间及可用字段创建图表和报告。文档说明它读取来源数据，不编辑底层任务。\n\n关键问题是：报告是否代表了预期工作、时间范围和完成定义。来源选择、映射、同步和报告可见性都会改变答案。目录保留原项目管理分类，但本文评估的是项目工作的报告能力，不能把它当作执行看板替代品，或个人产出质量的度量。",
+  "core_features": [
+    {
+      "name_en": "Workflow timing mapping",
+      "name_zh": "流程时间映射",
+      "explanation_en": "Map source states to not-started, active and completed work before reading timing.",
+      "explanation_zh": "解释时间指标前先把来源状态映射为未开始、活跃及已完成。",
+      "explanation_scope": "product_specific",
+      "source_ref": "trello-mapping",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scheduled report snapshots",
+      "name_zh": "定时报告快照",
+      "explanation_en": "Distribute a live link and PDF through email or Slack, with archived scheduled reports.",
+      "explanation_zh": "通过邮件或 Slack 分发在线链接与 PDF，并保留已调度报告档案。",
+      "explanation_scope": "product_specific",
+      "source_ref": "report-sharing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Analytics visibility controls",
+      "name_zh": "分析可见性控制",
+      "explanation_en": "Account roles, private reports and source-level restrictions have different conditions.",
+      "explanation_zh": "账户角色、私有报告和来源级限制各有不同条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "access-controls",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Check review-inclusive cycle time from a small Trello workflow.",
+      "Distribute a reviewed weekly report from existing task data."
+    ],
+    "zh": [
+      "从小型 Trello 流程检查包含审阅的周期时间。",
+      "依据既有任务数据分发经过核对的周报告。"
+    ],
+    "source_refs": ["trello-mapping", "report-sharing"],
+    "basis": "Proposed evaluations, not measured improvements."
+  },
+  "technical_details": {
+    "Product role": {
+      "en": "Hosted task-data analytics and reporting; source tasks are not updated.",
+      "zh": "托管任务数据分析与报告；不更新来源任务。",
+      "source_ref": "pricing-faq",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Delivery analyst", "Team reporting owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Import one representative source, review mapping and compare known records with a chart.",
+        "zh": "导入一个代表性来源，审阅映射，并将已知记录与图表对比。",
+        "source_refs": ["trello-mapping", "data-management"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check audience permissions and a sample report before scheduling distribution.",
+        "zh": "安排分发前检查受众权限和报告样例。",
+        "source_refs": ["access-controls", "report-sharing"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documentation_read_not_tested",
+    "items": [],
+    "source_ref": "github-import",
+    "scope": "Import shape and permissions described; no authorization, sync or MCP tested."
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Reset can remove statistics for items no longer returned by the source API.",
+        "zh": "重置可能移除来源 API 不再返回条目的统计。",
+        "source_refs": ["data-management"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A private chart can become visible through a shared report.",
+        "zh": "私有图表可能通过共享报告向他人可见。",
+        "source_refs": ["access-controls"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_terms_read",
+    "is_open_source": false,
+    "url": "https://screenful.com/legal/terms-of-service",
+    "source_ref": "terms",
+    "scope": "Hosted service rights; not independent component licensing."
+  },
+  "pricing": {
+    "status": "official_documentation_read_with_billing_conflict",
+    "price_type": "source_chart_report_history_tiers",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Unlimited users; tier limits on sources/charts/reports/history. Trial and paid service differ; billing FAQ/terms need reconciliation.",
+    "source_snapshot_zh": "不限用户，按来源／图表／报告／历史分档。试用与付费服务不同，账务 FAQ／条款需核对。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/screenful",
+      "read_at": "2026-10-22T09:06:33.456Z",
+      "excerpt_sha256": "bbc3f05729c4c4ec675e595e69d9a74aa8a975a01c8adf372d2039aa07313d7d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Screenful - #1 Productivity Analytics Platform",
+      "url": "https://screenful.com/",
+      "read_at": "2026-10-22T10:50:33.410274Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a2b638590648cfcd175af6f57d5e20c5322c35e7c6379d24c358f0ef1401311d",
+      "research_notes_en": "Task-data analytics and scheduled reporting; vendor superlatives and time-saving claims not independent evidence."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "screenful.com",
+      "title": "Screenful Pricing",
+      "url": "https://screenful.com/pricing",
+      "read_at": "2026-10-22T10:50:33.410567Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b09aba840f96bd0faa9d288e251f369436ef652f4268278dce67ba86ae7cf125",
+      "research_notes_en": "Plans meter sources/charts/reports/history rather than seats; returned month/annual presentation requires checkout confirmation."
+    },
+    {
+      "id": "report-sharing",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Schedule via email or Slack - Screenful Guide",
+      "url": "https://screenful.com/guide/scheduling-and-sharing-reports",
+      "read_at": "2026-10-22T10:50:33.411009Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1a67876295efb8234b2fdc70bbb2f081182953074df77372eae5442e94621e3c",
+      "research_notes_en": "Email/Slack schedules, PDF archive, bearer-style public links and permanent link revocation described."
+    },
+    {
+      "id": "charts",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Charts by Screenful",
+      "url": "https://screenful.com/tour/charts",
+      "read_at": "2026-10-22T10:50:33.411079Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ee5675c40da044c81f4a32f15d82e938d29fb9224954f54ca5937efd5fffcef3",
+      "research_notes_en": "Chart types and data grouping provide analysis views, not project execution."
+    },
+    {
+      "id": "data-management",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Managing data sources - Screenful Guide",
+      "url": "https://screenful.com/guide/managing-data-sources",
+      "read_at": "2026-10-22T10:50:33.411485Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a87f478767c2630178517e96004a6b903000e9270f9f698768fc9aed8229fc06",
+      "research_notes_en": "Hourly/manual sync, selected chart sources, reset loss of removed items and trend-history limits distinguished."
+    },
+    {
+      "id": "trello-mapping",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Workflow settings - Screenful Guide",
+      "url": "https://screenful.com/guide/map-your-trello-workflow",
+      "read_at": "2026-10-22T10:50:33.411552Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a1ed9bcef8eb9c388bca936b2406a15331c675eccbf003f42c35521648c272b1",
+      "research_notes_en": "Not-started/in-progress/done mapping determines timing; testing/review/waiting should reflect the true finish."
+    },
+    {
+      "id": "github-import",
+      "type": "official_integration",
+      "site": "screenful.com",
+      "title": "Screenful Guide for GitHub",
+      "url": "https://screenful.com/guide/github",
+      "read_at": "2026-10-22T10:50:33.411600Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "cb72f73f7a2a59e018363e742425bd641a3d43fe04255e0575f3183cec7df0c8",
+      "research_notes_en": "Repository and Project imports have different data-source units and metadata. No commits/code-level analytics; GitHub App/OAuth differ."
+    },
+    {
+      "id": "github-visibility",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Screenful Guide for GitHub",
+      "url": "https://screenful.com/guide/github",
+      "read_at": "2026-10-22T10:50:33.411942Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1eeceeb07271e5fee67aef6759c48bbf6662b97433b0ffc96e4d818701a5675b",
+      "research_notes_en": "Source permissions govern import; Screenful governs report visibility. OAuth-to-GitHub-App account switch not supported and MCP remains announced rather than tested."
+    },
+    {
+      "id": "pricing-faq",
+      "type": "official_pricing",
+      "site": "screenful.com",
+      "title": "Screenful Pricing",
+      "url": "https://screenful.com/pricing",
+      "read_at": "2026-10-22T10:50:33.412005Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "aa1098acd6b9ea0cd6d97bf9b7fe1314efd995401f2770fbe409810bf411eb46",
+      "research_notes_en": "Read-only analytics, source unit definitions, account removal after trial and stale Silver plan label observed. Do not silently harmonize conflicts."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "screenful.com",
+      "title": "Terms of Service - Screenful Legal Docs",
+      "url": "https://screenful.com/legal/terms-of-service",
+      "read_at": "2026-10-22T10:50:33.412308Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7e4236f24fbf33e368f502218bbf160e93f1a4bdd7790a4d641995d91bb2fa56",
+      "research_notes_en": "Recurring billing, downgrade/no-prorating terms, immediate cancellation access loss and optional AI data processing described."
+    },
+    {
+      "id": "access-controls",
+      "type": "official_documentation",
+      "site": "screenful.com",
+      "title": "Set user access and permissions - Screenful Guide for All",
+      "url": "https://screenful.com/guide/github/user-access-permissions",
+      "read_at": "2026-10-22T10:50:33.412385Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "cddc6a4ec2f10b31f2469d8469ad6c94e97852aa7171d9cbdfc5ea4541e0ba8c",
+      "research_notes_en": "Roles and chart/report/source visibility differ. Private charts added to reports inherit that report’s audience."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:50:33.412385Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["overview", "data-management", "pricing-faq"],
+  "profile": {
+    "sections": [
+      {
+        "id": "mapping-example",
+        "title_en": "Define finished work before interpreting cycle time",
+        "title_zh": "解释周期时间前先定义完成",
+        "en": "For a hypothetical Trello flow, map Backlog to Not started, implementation and review to In progress, and released work to Done. Screenful initially suggests a mapping that can be changed under Data Mapping. Its guide recommends keeping testing, review and waiting in the active portion until work is actually finished.\n\nCompare a few known cards against that definition before relying on the chart. Mapping review to Done can exclude a meaningful part of delivery. When new columns are added, inspect how they are mapped rather than assuming the old definition still holds. The proposed mapping was not configured or benchmarked here.",
+        "zh": "假设 Trello 流程包含待办、实现、审阅和发布，可以分别映射为 Not started、In progress、In progress 和 Done。Screenful 会提供初始建议，也可在 Data Mapping 修改。指南建议在真正完成前，把测试、审阅和等待保留在活跃阶段。\n\n依赖图表前，应抽查几张已知卡片是否符合定义。把审阅映射为 Done，可能排除交付的重要部分。新增列后也应检查映射，不能假设原定义自然延续。本次没有配置或测量该建议映射。",
+        "source_refs": ["trello-mapping"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "source-unit",
+        "title_en": "Import the data shape the report needs",
+        "title_zh": "导入报告所需的数据形态",
+        "en": "GitHub repository imports can place multiple repositories in one data source; a GitHub Project is one source with project metadata such as statuses, iterations and custom fields. Repository imports do not provide that same metadata. The guide does not support commit tracking or source-code metrics.\n\nChoose between a delivery-board question and an issue/PR question before importing. For example, a report grouped by a Project custom field needs the Project data rather than an assumption that repository issues contain it. Check one item’s fields and chart filters before combining sources. Source-unit pricing should follow the selected import type, not merely the number of repositories.",
+        "zh": "GitHub 仓库导入可以把多个仓库放入一个数据源；一个 GitHub Project 则是一个来源，包含状态、迭代和自定义字段等项目元数据。仓库导入不提供相同元数据。指南不支持提交跟踪或源码级指标。\n\n导入前应区分要回答的是交付看板问题，还是 issue／PR 问题。例如按 Project 自定义字段分组的报告，需要项目数据，不能假设仓库 issue 自带这些字段。合并来源前应检查一项数据的字段和图表过滤器，计量也应按所选导入类型，而非只数仓库。",
+        "source_refs": ["github-import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sync-reset",
+        "title_en": "A reset can change the historical answer",
+        "title_zh": "重置可能改变历史答案",
+        "en": "The source-management guide specifies automatic hourly sync and a manual sync control. A chart can use one or more imported sources, so a missing count first calls for checking source selection, filters and sync progress. An online report is not proof of instantaneous source freshness.\n\nReset rebuilds statistics from the current API response while preserving chart/report configuration and the source ID. Completed items removed from the board can disappear from the rebuilt statistics. Before resetting a source to troubleshoot an old count, preserve the relevant report and understand which historical items the API can still return. A configured trend-history window is also distinct from whether a task exists in the import.",
+        "zh": "来源管理指南说明自动同步每小时一次，也提供手动同步。图表可以使用一个或多个已导入来源，因此数量缺失时应先检查来源选择、过滤器和同步进度。在线报告不能证明来源数据即时刷新。\n\nReset 按当前 API 响应重建统计，同时保留图表／报告配置和来源 ID；已完成但从看板移除的条目，可能从重建统计中消失。为了排查旧数量而重置前，应保留相应报告，并确认 API 还能返回哪些历史条目。趋势可回溯窗口与任务是否存在于导入中，也不是同一问题。",
+        "source_refs": ["data-management"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access-scope",
+        "title_en": "Check analytics permissions separately from source access",
+        "title_zh": "分别检查分析权限与来源访问",
+        "en": "The GitHub guide says source permissions govern importing, while Screenful settings govern chart/report visibility. It also says moving an existing OAuth account to the GitHub App requires a new Screenful account. Do not assume a user’s source restrictions automatically become matching report restrictions.\n\nThe access guide distinguishes Admin, Member and Observer. Private charts/reports require Scale or higher, and data-source visibility controls require Enterprise. A private chart placed in a report is visible to that report’s audience; an emailed PDF of a private report can be read even when its online report cannot. Test the actual recipient view before sharing client or team data. The pricing FAQ still uses an older Silver label, so confirm the applicable entitlement.",
+        "zh": "GitHub 指南说明，来源权限控制导入，Screenful 设置控制图表／报告可见性；既有 OAuth 账户改用 GitHub App 需要新建 Screenful 账户。不能假设来源用户限制会自动成为对应报告限制。\n\n访问指南区分 Admin、Member 和 Observer。私有图表／报告需要 Scale 及以上，来源级可见性控制需要 Enterprise。私有图表加入报告后，该报告受众可以看到它；私有报告的邮件 PDF 可被阅读，即使在线版本不可访问。共享客户或团队数据前，应测试实际收件人视图。定价 FAQ 仍使用旧 Silver 名称，需确认适用权益。",
+        "source_refs": ["github-visibility", "access-controls", "pricing-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "distribution",
+        "title_en": "A live link and an emailed PDF serve different purposes",
+        "title_zh": "在线链接与邮件 PDF 作用不同",
+        "en": "Reports can be sent on daily, weekly or monthly schedules through email or Slack. The scheduling guide recommends a sample send first. Messages contain a live report link and a PDF, and scheduled reports enter an archive for reviewing earlier states.\n\nA public share link allows anyone possessing it to read the report without an account. Disabling public sharing permanently revokes that link; enabling it again generates a new one. Use the PDF as a dated snapshot and the online view as the current report, with sync latency in mind. Check the audience and contents before distribution. No email, Slack message or public link was created for this review.",
+        "zh": "报告可按日、周或月通过邮件或 Slack 发送，调度指南建议先发送样例。消息包含在线报告链接和 PDF，已调度报告进入档案，供查看早期状态。\n\n公开共享链接允许任何持有链接的人无需账户阅读。关闭公开共享会永久撤销该链接，再次启用会生成新链接。PDF 可用作带日期快照，在线视图用于查看当前报告，同时要考虑同步延迟。分发前应检查受众和内容。本次没有创建邮件、Slack 消息或公开链接。",
+        "source_refs": ["report-sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-limits",
+        "title_en": "Count sources, charts, reports and history",
+        "title_zh": "按来源、图表、报告与历史计量",
+        "en": "Screenful lists unlimited users, with monthly USD plans Starter USD 39, Pro USD 79, Scale USD 149 and Enterprise USD 399. Starter includes six sources, twenty charts, five reports and twelve months of trend history. A seventh source exceeds that included allowance even if there are only two viewers. Higher-tier controls and add-ons also affect cost. Confirm term, taxes and checkout; no single normalized price is recorded.\n\nThe fourteen-day trial needs no card. The FAQ says trial accounts are removed thirty days after trial expiry and cannot be recovered. Its billing wording suggests prorating on plan changes, while the terms exclude mid-cycle downgrade prorating. Confirm applicable conditions before changing a paid plan and preserve necessary reports before cancellation.",
+        "zh": "Screenful 列出不限用户，月度美元套餐为 Starter 39、Pro 79、Scale 149 和 Enterprise 399。Starter 包含六个来源、二十张图、五份报告和十二个月趋势历史。即使只有两位查看者，第七个来源也超出包含额度。高阶控制和附加项也会影响费用；应核对周期、税费与结账，本文不记录统一归一化价格。\n\n十四天试用无需银行卡。FAQ 说明试用结束三十天后移除试用账户，且无法恢复。其账务措辞称套餐变更可按比例处理，但条款排除周期内降级按比例退款。付费变更前应确认适用条件，取消前保留必要报告。",
+        "source_refs": ["pricing", "pricing-faq", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-service-fit",
+        "title_en": "Keep AI output tied to the underlying chart",
+        "title_zh": "把 AI 输出追溯到原始图表",
+        "en": "The terms make AI optional with administrator activation and describe processing by external providers. They require users to verify outputs. Public guides describe an assistant for questions and chart creation, while MCP is still presented as coming soon; a planned release date is not proof of a working connector.\n\nUse a known small dataset to compare an answer with the selected chart, mapping and period. Screenful is a candidate when existing task data can support a consistent reporting definition. It cannot establish data completeness, causal productivity improvements or individual work quality merely by drawing a chart. Terms retain customer data rights but restrict copying the service; self-hosting is not established. No AI output was tested.",
+        "zh": "条款将 AI 设为需管理员启用的可选能力，说明会由外部提供方处理，并要求用户验证输出。公开指南介绍问答和建图助手，但 MCP 仍显示即将推出；计划发布时间不能证明连接器已经可用。\n\n可用一组已知小数据，将回答与所选图表、映射和时间范围比较。如果既有任务数据能支持一致报告定义，可以把 Screenful 列入候选。绘制图表本身不能确立数据完整、生产力提升的因果关系或个人工作质量。条款保留客户数据权利，但限制复制服务；未确立自托管方式。本次未测试 AI 输出。",
+        "source_refs": ["terms", "github-visibility"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Screenful: Workflow Mapping, Report Sharing and Source-Based Costs",
+    "title_zh": "Screenful：流程映射、报告共享与来源计费",
+    "description_en": "Understand Screenful timing definitions, reset history changes, imported-data visibility and reporting limits.",
+    "description_zh": "理解 Screenful 时间定义、重置引起的历史变化、导入数据可见性及报告限制。",
+    "primary_intent": "Evaluate analytics on existing task data.",
+    "secondary_questions": [
+      "Why did historical counts change after reset?",
+      "Who can read a private chart inside a report?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no measured search volume or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No import, sync/reset, chart reconciliation, permissions, scheduled delivery, AI answer, export or cancellation was tested. Backfill completeness and recovery need testing.",
+      "zh": "未测试导入、同步／重置、图表核对、权限、定时投递、AI 回答、导出或取消。历史补齐完整性及恢复仍需测试。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Checkout term/taxes, downgrade proration, exact AI limits, complete data-processing/residency conditions, current MCP availability, interface languages and regions remain unverified.",
+      "zh": "结账周期／税费、降级按比例处理、具体 AI 额度、完整数据处理／驻留条件、当前 MCP 可用性、界面语言与地区仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

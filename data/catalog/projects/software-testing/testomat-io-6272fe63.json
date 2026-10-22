@@ -1,0 +1,363 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "testomat-io-6272fe63",
+  "name": "Testomat.io",
+  "website_url": "https://testomat.io/",
+  "domain": "testomat.io",
+  "identity_domain": "testomat.io",
+  "category": "software-testing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Testomat.io manages test cases, plans, execution history and reports across manual and automated testing. Its reporting integrations connect external test runners to a shared project record; importing an automated test is not the same action as executing it successfully.\n\nThis profile focuses on selecting project type, matching incoming results to existing cases, managing artifact storage and giving collaborators appropriate access. AI suggestions and dashboards remain aids to the team’s evaluation. No company, account, test, source import, reporter, CI integration, artifact bucket or paid seat was operated.",
+  "description_zh": "Testomat.io 管理人工及自动测试的用例、计划、执行历史和报告，通过报告集成将外部运行器连接到共享项目记录。导入自动测试与测试成功执行是不同动作。\n\n本文聚焦项目类型、传入结果与用例匹配、产物存储及协作者访问。AI 建议和面板仍是团队评估辅助。本次未操作公司、账户、测试、源码导入、报告器、CI 集成、产物桶或付费席位。",
+  "core_features": [
+    {
+      "name_en": "Manual and automated case management",
+      "name_zh": "人工及自动用例管理",
+      "explanation_en": "Organize cases in a BDD or Classical project.",
+      "explanation_zh": "在 BDD 或 Classical 项目中组织用例。",
+      "explanation_scope": "product_specific",
+      "source_ref": "start",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Result-to-case matching",
+      "name_zh": "结果与用例匹配",
+      "explanation_en": "Attach framework results to imported case history.",
+      "explanation_zh": "将框架结果对应到已导入用例历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "runs",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multi-framework reporting",
+      "name_zh": "多框架报告",
+      "explanation_en": "Use reporter outputs and pipelines for external test results.",
+      "explanation_zh": "用报告器输出及管道处理外部测试结果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reporter",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Company and project roles",
+      "name_zh": "公司及项目角色",
+      "explanation_en": "Set organization-level and project-specific access.",
+      "explanation_zh": "设置公司及具体项目访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Reconcile imported cases with framework reports",
+      "Plan private artifact storage and report access",
+      "Evaluate roles and seat interpretation across projects"
+    ],
+    "zh": [
+      "对齐导入用例与框架报告",
+      "规划私有产物存储及报告访问",
+      "跨项目评估角色与席位解释"
+    ],
+    "source_refs": ["start", "runs", "reporter", "roles", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Test managers",
+      "QA automation engineers",
+      "Cross-framework engineering teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose BDD/Classical and validate a known import set.",
+        "zh": "选 BDD／Classical 并验证已知导入集。",
+        "source_refs": ["start"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm matching/creation mode and actual external runner results.",
+        "zh": "核匹配／创建模式及外部运行器真实结果。",
+        "source_refs": ["runs"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect roles, bucket access and final paid seat calculation.",
+        "zh": "检查角色、桶访问及最终付费席位计算。",
+        "source_refs": ["roles", "reporter", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Automated labels and imported cases are not successful execution evidence.",
+        "zh": "自动标签和导入用例不是执行成功证据。",
+        "source_refs": ["start"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Result auto-creation differs between default management, explicit reporting mode and JUnit XML.",
+        "zh": "结果自动创建在默认管理、明确报告模式及 JUnit XML 间不同。",
+        "source_refs": ["runs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Artifact privacy depends on operator-owned storage, not only the management project.",
+        "zh": "产物隐私取决于运维自有存储，不只管理项目。",
+        "source_refs": ["reporter"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "user_project_subscription_and_external_artifact_storage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:25:31.281945Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free two users/two projects, no read-only users; Professional shows $30/user/month or $27 annual view; Enterprise quoted. Paid project-seat scope, AI entitlements, currency/tax and storage charges unverified.",
+    "summary_zh": "Free 两用户／两项目、无只读用户；Professional 显示每用户月付 $30 或年付视图 $27，Enterprise 询价。付费项目席位、AI 权益、币种／税及存储费用未核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/testomat-io",
+      "read_at": "2026-10-22T09:00:20.874Z",
+      "excerpt_sha256": "a4c4be7432c9a3d0f3d0fa2c4866b879aa38142b34411c4e183a9c60b747b323",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Testomat.io",
+      "title": "AI Test Management Tool | Testomat.io",
+      "url": "https://testomat.io/",
+      "read_at": "2026-10-22T14:25:31.281945Z",
+      "excerpt_sha256": "661ea30036cb12e5ef79892ea78a43939f60d7534fa09f5a0c1e1378091a2f4f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current AI test-management positioning and integration scope read; claimed100k execution/scale not independently validated."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Testomat.io",
+      "title": "AI Test Management Pricing Plans - Cost & Trials | Testomat.io",
+      "url": "https://testomat.io/pricing/",
+      "read_at": "2026-10-22T14:25:31.282600Z",
+      "excerpt_sha256": "521b439970cf46bfc9a1cf186f6e72104588e8e5f46b3f8699a21a52ea77b52a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free users/projects/attachment limits, monthly/annual display and enterprise/read-only controls read."
+    },
+    {
+      "id": "start",
+      "type": "official_documentation",
+      "site": "Testomat.io",
+      "title": "Start With Testomat.io",
+      "url": "https://docs.testomat.io/getting-started/",
+      "read_at": "2026-10-22T14:26:28.315009Z",
+      "excerpt_sha256": "154b289288d4daa3af4b09be8db4b3fd2e3c138e0e353348a50df74f895794ea",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "BDD/Classical/project boundaries and import-marked-Automated distinction read."
+    },
+    {
+      "id": "runs",
+      "type": "official_documentation",
+      "site": "Testomat.io",
+      "title": "Running Automated Tests | Docs",
+      "url": "https://docs.testomat.io/project/runs/running-automated-tests/",
+      "read_at": "2026-10-22T14:28:24.034652Z",
+      "excerpt_sha256": "f2e9127256ea3aa685880f7db7e6157cc314ec99b2503a9221a2c05d0ed1e4ef",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Import matching, unmatched default, CREATE override/JUnit exception, actual local/CI reporter commands and suite filtering read."
+    },
+    {
+      "id": "reporter",
+      "type": "official_documentation",
+      "site": "Testomat.io",
+      "title": "Testomat.io Reporter | Docs",
+      "url": "https://docs.testomat.io/test-reporting/reporter/",
+      "read_at": "2026-10-22T14:28:24.822762Z",
+      "excerpt_sha256": "1f69e526055713442c13d95a1a454186dd286bd8ad5c75829746aacb655abdf6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Reporter/pipes and owned S3 artifact storage, separate component scope and WIP labels read."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Testomat.io",
+      "title": "Users Roles & Access Overview | Docs",
+      "url": "https://docs.testomat.io/management/company/users-and-permissions/",
+      "read_at": "2026-10-22T14:29:07.556076Z",
+      "excerpt_sha256": "1748d4461a7c30b9c0aad20f97d1db4873f80eefd549fa83150553dc894ae355",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Company/project roles and free read-only paid-plan limits read; nominal QA label not proof of edit rights."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:29:07.556076Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "start"],
+  "profile": {
+    "sections": [
+      {
+        "id": "project",
+        "title_en": "Choose the case model before importing tests",
+        "title_zh": "导入前选择用例模型",
+        "en": "The getting-started guide distinguishes BDD projects for Cucumber/BDD descriptions from Classical projects for free-form cases and synced automation. Projects are separate entities. A suite groups related cases, while a run records an execution. Select the model for the actual repository and manual workflow before importing; a test labeled Automated indicates classification, not a successful assertion or complete coverage.",
+        "zh": "快速指南区分适用 Cucumber／BDD 描述的 BDD 项目，以及自由格式用例与同步自动化的 Classical 项目。项目是独立实体，套件分组用例，运行记录执行。导入前需按仓库及人工流程选择模型，Automated 标签只是分类，不证明断言成功或覆盖完整。",
+        "source_refs": ["start"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "matching",
+        "title_en": "An unmatched result is not silently a new case",
+        "title_zh": "未匹配结果不默认成为新用例",
+        "en": "In test-management mode, the run guide expects cases to be imported first. Unrecognized results appear as Unmatched and do not create new cases by default. Reporting-only creation can be enabled explicitly, while JUnit XML has a documented automatic-creation exception. Decide the intended mode and reconcile IDs/names with the repository before enabling automatic additions; otherwise duplicated or unrelated tests can distort history and coverage.",
+        "zh": "测试管理模式要求先导入用例，未识别结果显示 Unmatched，默认不新建用例。纯报告模式可明确开启创建，JUnit XML 又有自动创建例外。启用自动新增前需选预期模式、将 ID／名称与仓库对齐，否则重复或无关测试会扭曲历史及覆盖。",
+        "source_refs": ["runs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "execution",
+        "title_en": "The reporter receives results from a real runner",
+        "title_zh": "报告器接收真实运行器的结果",
+        "en": "The platform generates framework-specific instructions, but the documented command runs in the operator’s project or CI. Creating a run record alone does not launch or validate every external test. Verify that the runner started, reported all selected cases and ended with the expected status. Suite IDs passed from the UI also need CI configuration that consumes them. No generated command or reporter integration was run.",
+        "zh": "平台生成框架专属说明，但文档命令实际在运维项目或 CI 执行。只创建运行记录不启动或验证全部外部测试。应核运行器已启动、上报全部所选用例并以预期状态结束；界面传出的套件 ID 也需 CI 配置接收。本次未执行生成命令或集成报告器。",
+        "source_refs": ["runs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "artifacts",
+        "title_en": "Report visibility and object storage need separate settings",
+        "title_zh": "报告可见与对象存储需分别设置",
+        "en": "The reporter guide sends screenshots, videos and traces to the operator’s own S3-compatible storage, with public or private uploads. The reporter can output through multiple pipes and is also a separate standalone component. Configure bucket credentials, access and retention deliberately; a private management project does not prove every linked artifact is private. Open-source wording for the reporter does not establish a license for the complete hosted platform.",
+        "zh": "报告器指南将截图、视频及 trace 发往运维方自己的 S3 兼容存储，可公开或私有上传。报告器可通过多种管道输出，也是独立组件。需主动配置桶凭据、访问及保留；管理项目私有不证明每个链接产物私有。报告器开源说法不构成完整托管平台许可。",
+        "source_refs": ["reporter"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Company and project roles are not interchangeable",
+        "title_zh": "公司与项目角色不能互换",
+        "en": "The role guide allows different company and project roles for the same person. Read-only access is free on paid plans and does not grant editing; an invitation may display a QA label while remaining read-only. Accountant access is billing-only. Review both scopes and actual permissions before adding collaborators or granting project content. The guide’s paid project-seat wording also needs reconciliation with the pricing page’s per-user display for the chosen organization.",
+        "zh": "角色指南允许同一人在公司和项目拥有不同角色。只读在付费方案免费、不授编辑，邀请即使显示 QA 标签也可仍为只读；Accountant 仅账单。开放协作或内容前需核两层范围及真实权限。指南付费项目席位措辞也需与所选组织定价页按用户显示对照。",
+        "source_refs": ["roles", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "diagnosis",
+        "title_en": "Imported coverage and complete reporting are separate checks",
+        "title_zh": "导入覆盖与报告完整性需分别检查",
+        "en": "The getting-started guide warns that import discovery depends on filenames and the selected directory, and asks users to inspect corresponding source links. A generated Automated label cannot establish that the right files were discovered. Compare a small known case set with the import and the completed report, including a deliberate failure and interrupted execution. Keep missing, unmatched and unexecuted cases visible instead of counting every catalog entry as passing coverage.",
+        "zh": "快速指南提醒导入发现取决于文件名及所选目录，并要求检查源码链接。自动生成 Automated 标签不证明发现正确文件。应将已知小用例集与导入及完成报告比较，包括故意失败和中断运行，并保留缺失、未匹配及未执行状态，不能将目录全部用例计作通过覆盖。",
+        "source_refs": ["start", "runs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Free collaboration is limited by users and projects",
+        "title_zh": "免费协作受用户及项目限制",
+        "en": "Pricing lists Free with two users, two projects, no read-only users and 2 MB attachments. Professional displays $30/user/month, with a $27 annual view; Enterprise is quoted and includes separately described deployment/control features. Read-only availability on paid plans is different from unlimited free editing seats. Confirm billing period, project-seat interpretation, storage and specific AI entitlement before purchasing; several AI row/display details need account verification.",
+        "zh": "价格列 Free 为两用户、两项目、无只读用户及 2 MB 附件。Professional 显示每用户每月 $30，年付视图 $27；Enterprise 询价，并另述部署／控制能力。付费层提供只读不等于免费无限编辑席位。购买前需核账期、项目席位解释、存储及具体 AI 权益，部分 AI 行／显示细节需账户确认。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Testomat.io: setup, operating limits and pricing",
+    "title_zh": "Testomat.io：设置、运行边界及费用",
+    "description_en": "Testomat.io manages test cases, plans, execution history and reports across manual and automated testing. Its reporting integrations connect external test runners to a sh",
+    "description_zh": "Testomat.io 管理人工及自动测试的用例、计划、执行历史和报告，通过报告集成将外部运行器连接到共享项目记录。导入自动测试与测试成功执行是不同动作。",
+    "search_intent_en": "Evaluate Testomat.io for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Testomat.io。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No company, account, invitation, source import, test, reporter, CI, storage credential, upload, token or purchase was operated.",
+      "zh": "未操作公司、账户、邀请、源码导入、测试、报告器、CI、存储凭据、上传、token 或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exact seat calculation across projects, AI feature entitlement, quota/retention enforcement, export completeness and current UI languages require verification. The actual reporter license text was not read and no whole-platform open-source status is inferred.",
+      "zh": "跨项目席位计算、AI 权益、配额／保留执行、导出完整性及界面语言需核。未读报告器实际许可，不推定全平台开源状态。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Public feature matrix icons do not consistently distinguish entitlement in text; availability is not inferred from identical checkmark labels alone.",
+      "zh": "公开功能矩阵图标文字不能稳定区分权益，未仅凭同名 checkmark 标签推定可用性。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

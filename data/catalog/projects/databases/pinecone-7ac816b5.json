@@ -1,0 +1,399 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pinecone-7ac816b5",
+  "name": "Pinecone",
+  "website_url": "https://www.pinecone.io/",
+  "domain": "www.pinecone.io",
+  "identity_domain": "pinecone.io",
+  "category": "databases",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Pinecone offers a managed search/database platform for vector, sparse and full-text retrieval, alongside inference, Assistant and other agent-knowledge products. This profile evaluates Pinecone Database data modeling, ingestion, search and usage costs. A platform homepage does not mean every adjacent product or model is included in the same index or plan.\n\nA proposed support-search evaluation could split approved documents into retrievable chunks, retain source identifiers, ingest vectors and compare ranked hits with known relevant answers. Search similarity is one part of an application, not proof that a generated answer is factual or authorized for its user. No account, index, key, SDK, plugin or request was operated here.",
+  "description_zh": "Pinecone 提供面向向量、稀疏及全文检索的托管搜索／数据库平台，另有推理、Assistant 及其他 Agent 知识产品。本文评估 Pinecone Database 的建模、摄取、搜索及用量费用；平台首页不代表所有相邻产品／模型都包含于同一索引或计划。\n\n建议客服搜索将获准文档切成可检索块，保留来源标识，摄取向量后用已知相关答案比较排序命中。搜索相似度只是应用一环，不证明生成答案准确或已获当前用户访问授权。本次未操作账户、索引、密钥、SDK、插件或请求。",
+  "core_features": [
+    {
+      "name_en": "Vector and text search models",
+      "name_zh": "向量及文本搜索模型",
+      "explanation_en": "Choose document-schema or vector-record indexes for the intended ranking signals.",
+      "explanation_zh": "按所需排序信号选择文档模式或向量记录索引。",
+      "explanation_scope": "product_specific",
+      "source_ref": "model",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Bring-your-own embeddings",
+      "name_zh": "自带嵌入向量",
+      "explanation_en": "Store existing vectors with matching dimensions and query model.",
+      "explanation_zh": "存储已有向量，匹配维度及查询模型。",
+      "explanation_scope": "product_specific",
+      "source_ref": "vectors",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Namespace management",
+      "name_zh": "命名空间管理",
+      "explanation_en": "Organize indexed data and enumerate namespaces with pagination.",
+      "explanation_zh": "组织索引数据，以分页枚举命名空间。",
+      "explanation_scope": "product_specific",
+      "source_ref": "namespaces",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Usage-based search operations",
+      "name_zh": "按量搜索操作",
+      "explanation_en": "Measure reads, writes, retained data and other enabled services separately.",
+      "explanation_zh": "分别计量读、写、保留数据及其他启用服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cost",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate chunk-based support retrieval with known relevant sources",
+      "Test tenant-scoped search and asynchronous ingestion readiness",
+      "Estimate query/write/model costs under capped versus usage-based plans"
+    ],
+    "zh": [
+      "用已知相关来源评估分块客服检索",
+      "测试租户范围搜索及异步摄取就绪",
+      "比较固定限额及按量计划下的查询／写／模型费用"
+    ],
+    "source_refs": ["model", "vectors", "namespaces", "cost", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Search engineers",
+      "AI application developers",
+      "Teams operating retrieval services"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the index data model and define stable chunk/source identifiers.",
+        "zh": "选择索引模型，定义稳定块／来源标识。",
+        "source_refs": ["model"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify model dimensions, searchable readiness and trusted namespace/filter selection.",
+        "zh": "核对模型维度、搜索就绪及可信命名空间／过滤选择。",
+        "source_refs": ["vectors", "namespaces"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Evaluate retry behavior, all cost meters and account quota/alert settings.",
+        "zh": "评估重试、全部费用计量及账户限额／提醒设置。",
+        "source_refs": ["errors", "cost", "pricing", "alerts"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Document schema migration is not supported after index creation; chunking is an application concern.",
+        "zh": "文档模式不支持创建后迁移，切块由应用处理。",
+        "source_refs": ["model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Upserts are indexed asynchronously; a fixed tutorial sleep is not a freshness guarantee.",
+        "zh": "Upsert 后异步索引，教程固定等待不保证新鲜度。",
+        "source_refs": ["vectors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Email spend alerts do not establish a hard cap, and plan/model costs differ.",
+        "zh": "邮件提醒不证明硬上限，计划及模型费用不同。",
+        "source_refs": ["alerts", "cost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_capped_flat_builder_or_usage_minimum",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:18:30.560936Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Starterfree;Builder20/monthflatcap,Standard50minimum,Enterprise500minimum $display;Standard3week300credittrial. Per-service usage/quotas and checkout currency/tax require verification.",
+    "summary_zh": "Starter免费；Builder每月固定限额20，Standard最低50、Enterprise最低500的$展示；Standard三周300额度试用。各服务用量／限额及结账币种／税需核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pinecone-io",
+      "read_at": "2026-10-22T08:50:33.631Z",
+      "excerpt_sha256": "a1f46169eaaf3da16708a2fef811c544aa6c097bd1ef621bedc33b63d0c826a0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "The trusted AI knowledge company | Pinecone",
+      "url": "https://www.pinecone.io/",
+      "read_at": "2026-10-22T13:18:30.560936Z",
+      "excerpt_sha256": "a014a9ad9220c0f2cf595e473e15058dff62f284835d38afea47b7deac4eeab5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current agentknowledge/platformscope; separate Database/Assistant/Nexus and performance/securitymarketing notindependentproof. No plugininstalled."
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Pinecone quickstart - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/get-started/quickstart",
+      "read_at": "2026-10-22T13:19:12.279034Z",
+      "excerpt_sha256": "af357d5adf117b3195ac99f9ddf79655c189a2283b1f7072aaa08c4db647146e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CurrentmanualsemanticBYOvectors/fulltext paths; account/APIkey; agentpluginoptional andnotexecuted."
+    },
+    {
+      "id": "vectors",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Bring your own vectors - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/get-started/quickstart/bring-your-own-vectors",
+      "read_at": "2026-10-22T13:20:53.986056Z",
+      "excerpt_sha256": "cd2fc8d4f44fb51de8f6a780772de9637934859f90e95af5cdaef5c8a7b67d19",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Python3.10+/SDK, documentdensefield/dimensionmetric/samemodelquery,metadata40KB andasyncindexing example read."
+    },
+    {
+      "id": "model",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Data modeling - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/index-data/data-modeling",
+      "read_at": "2026-10-22T13:25:00.576011Z",
+      "excerpt_sha256": "aabc7bd0c80773f4ab127605af4e43f8c1d46d5052552b21503cd7f25abaf8e7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Documentsvsrecords/indexcreation choice,chunkingapplicationowned,schemamigrationunsupported,filterbeforeone-rankingtype; no universalmodelcompatibility."
+    },
+    {
+      "id": "namespaces",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Manage namespaces - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/manage-data/manage-namespaces",
+      "read_at": "2026-10-22T13:20:54.092984Z",
+      "excerpt_sha256": "dcab1c0aaba022a2ddde7ac6a988490e778916ef2b1324b15c7cc529b7b2ab60",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actuallyreadnamespacecreate2025-10+, autovsupfrontcreation,100pagepagination and size_bytes0notempty caveat. Laterdeletionbodynotread/notadopted."
+    },
+    {
+      "id": "cost",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Understand Pinecone cost - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/manage-cost/understanding-cost",
+      "read_at": "2026-10-22T13:21:20.993030Z",
+      "excerpt_sha256": "28cf13009f422684cf9a0992f864eec950ca57e667463826ffe07453c45448c4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monthlyminimumnotadditive,Builderhardquota;RUpernamespaceGB/min0.25,responseparametersnotRU;WUperKB/min5 andoldrecordsize; separateembedding/rerank/backup read."
+    },
+    {
+      "id": "errors",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Error handling - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/production/error-handling",
+      "read_at": "2026-10-22T13:21:21.098120Z",
+      "excerpt_sha256": "f36c57a2937fac6a23cf835f5c8ffdb5c5ab51aecf32b1e1ae811be80791e792",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "4xxcorrectrequestexcept429/transient5xx backoffjitter; GoSDKretrypolicy read. Noactualrequestorretry."
+    },
+    {
+      "id": "alerts",
+      "type": "official_documentation",
+      "site": "Pinecone",
+      "title": "Set monthly spend alerts - Pinecone Docs",
+      "url": "https://docs.pinecone.io/guides/manage-cost/set-spend-alerts",
+      "read_at": "2026-10-22T13:21:21.200818Z",
+      "excerpt_sha256": "90e9f0a2f92ebff5addd34b78b10b82228c63570b089c3fca4fafb1782d329c9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Standard/Enterpriseemailthresholds/reset,autoalertdoublepriorinvoice; not universalspendstop. CappedStarter/Builderdistinct."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pinecone",
+      "title": "Pricing | Pinecone",
+      "url": "https://www.pinecone.io/pricing/",
+      "read_at": "2026-10-22T13:19:08.542576Z",
+      "excerpt_sha256": "a46348e5bfe09418403ffdfd6bd41cbd4d7d2ad90f8a3e74a72861abe7f88a79",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Starterfree,Builder20flat,Standard50minimum/3week300trial,Enterprise500minimum;BYOCenterprise/securityfeatures scope. Currency $checkoutunverified."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:25:00.576011Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "quickstart", "vectors", "model"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Choose documents or records before creating an index",
+        "title_zh": "建索引前先选择文档或记录",
+        "en": "The data-model guide distinguishes document-schema indexes from dense/sparse vector-record indexes. Documents can carry text and vector ranking fields together, but each search chooses one scoring type; combining independent ranked lists can be an application step. Schema migration after creation is not supported by the guide. Retrieval ranks whole documents, so application-side chunking matters for long sources. Define chunk IDs and source linkage before ingestion, rather than assuming a long uploaded file is automatically divided into useful hits.",
+        "zh": "建模指南区分文档模式索引及稠密／稀疏向量记录索引。文档可同时有文本和向量排序字段，但每次搜索选一种计分类型，独立排序列表的合并可能由应用完成。指南不支持创建后模式迁移，检索按完整文档排序，因此长来源需应用切块。摄取前应定义块 ID 和来源关系，不能推定长文件自动切成有用命中。",
+        "source_refs": ["model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "embed",
+        "title_en": "Existing vectors still need a compatible query model",
+        "title_zh": "已有向量仍需兼容的查询模型",
+        "en": "The bring-your-own path does not embed text for you. Set the dense field’s dimension to the model output and choose its distance metric; query vectors must come from the same embedding model. The example uses Python3.10 or later and an authenticated SDK. Ingestion is indexed asynchronously—the tutorial’s brief wait is an example, not a guaranteed readiness deadline. Verify a known new document is searchable and its stored source fields are correct before evaluating relevance.",
+        "zh": "自带向量路径不会替你嵌入文本。稠密字段维度需匹配模型输出，并选距离指标；查询向量需来自相同嵌入模型。示例采用 Python3.10以上和认证 SDK。摄取后异步索引，教程短暂等待仅为示例，不是保证就绪期限。评估相关性前应验证已知新文档可搜索，且保存的来源字段正确。",
+        "source_refs": ["vectors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scope",
+        "title_en": "Namespaces need application-level selection discipline",
+        "title_zh": "命名空间需要应用正确选择",
+        "en": "Namespaces can appear automatically on upsert or be created in advance; explicit creation requires API2025-10 or later. Listing returns a default page of up to100 and a continuation token when more remain. The guide warns that approximate size_bytes=0 does not always mean empty. For a multi-customer search, choose namespace/filter scope from trusted application context and test cross-customer queries. Organization alone does not establish end-user authorization, complete enumeration or verified deletion.",
+        "zh": "命名空间可随 upsert 自动出现或提前创建，显式创建需 API2025-10以上。默认每页最多100个，有后续数据时返回续页 token；指南提醒近似 size_bytes=0 不一定为空。多客户搜索应由可信应用上下文选定命名空间／过滤，并测试跨客户查询。组织方式本身不证明终端用户授权、枚举完整或删除已验证。",
+        "source_refs": ["namespaces", "model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Fix invalid requests and back off transient failures",
+        "title_zh": "修正无效请求，对暂时故障退避",
+        "en": "The error guide separates invalid credentials, permissions and malformed requests from429 rate limits and transient5xx failures. Correct non-transient client errors rather than repeatedly submitting them; use bounded exponential backoff with jitter for retryable cases. Inspect actual SDK/version retry behavior and preserve enough request identity to reconcile an uncertain ingestion result. A returned API success or an agent-generated quickstart does not validate search coverage or application access control. No error or retry was exercised here.",
+        "zh": "错误指南区分无效凭据、权限、格式请求，以及429限流／暂时5xx故障。非暂时客户端错误应修正，不能反复提交；可重试情形采用有界指数退避及抖动。需检查具体 SDK／版本行为，并保留足够请求标识核对摄取结果不确定情形。API 成功或 Agent 生成入门流程不验证搜索覆盖及应用访问控制，本次未触发错误或重试。",
+        "source_refs": ["errors", "quickstart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "meters",
+        "title_en": "Read cost follows searched data, not just returned hits",
+        "title_zh": "读取费用取决于搜索数据，不只返回命中数",
+        "en": "The cost guide meters read units, write units, storage and egress, with embedding, reranking, imports and backups separate. It describes query/search read units by namespace size, with a0.25RU minimum; lowering top_k or excluding returned metadata does not lower that particular meter. Upsert uses request size with a5WU minimum and adds the replaced record’s size when updating. Measure representative namespace/record sizes, batch shape and extra model calls before comparing a cost per user question.",
+        "zh": "费用指南分别计量读取单位、写入单位、存储及外发，嵌入、重排、导入和备份另计。查询／搜索读取按命名空间大小，最低0.25RU；降低 top_k 或不返回元数据不降低这一计量。Upsert 按请求大小、最低5WU，替换已有记录还计旧记录大小。比较每用户问题费用前需测代表命名空间／记录大小、批次及附加模型调用。",
+        "source_refs": ["cost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans",
+        "title_en": "A flat capped plan and a usage minimum behave differently",
+        "title_zh": "固定限额计划与用量最低承诺不同",
+        "en": "The pricing display lists Starter free, Builder$20/month flat, Standard$50 minimum and Enterprise$500 minimum. The cost guide says Builder blocks use beyond included quotas, whereas Standard/Enterprise bill actual usage above the minimum; the minimum is not added again to that usage total. Standard advertises a three-week$300-credit trial. Backups, roles, private networking and BYOC have tier-specific conditions. Exact included quotas, currency/tax and checkout were not verified; a minimum is not an unlimited-service price.",
+        "zh": "定价展示 Starter 免费、Builder 每月固定$20、Standard 最低$50、Enterprise 最低$500。费用指南说明 Builder 超含额后阻断，Standard／Enterprise 超最低承诺按实际用量收，最低承诺不会再叠加到该总额。Standard 宣传三周$300额度试用。备份、角色、私网及 BYOC 有档位条件；具体含额、币种／税及结账未核，最低承诺不是无限服务包价。",
+        "source_refs": ["pricing", "cost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "alert",
+        "title_en": "An email threshold is not a hard usage cap",
+        "title_zh": "邮件阈值不是用量硬上限",
+        "en": "Standard and Enterprise can notify chosen recipients when monthly spending reaches a configured threshold. The guide also describes an automatic alert above twice the previous month’s invoice; notification recipients/settings can change but that threshold cannot. Starter/Builder instead use plan quotas. Inspect alerts and quota behavior separately, including who receives warnings and what the app does when a request is blocked. The documentation does not establish an instantaneous universal stop at a chosen email threshold.",
+        "zh": "Standard／Enterprise 可在月消费到配置阈值时通知指定收件人；指南另介绍超过上月账单两倍的自动提醒，收件／通知设置可改，但该阈值不可改。Starter／Builder 则使用计划额度。需分别检查提醒及限额，包括谁收警告、请求被阻断时应用如何处理；文档不能证明邮件阈值可即时停止全部消费。",
+        "source_refs": ["alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Pinecone: document models, vector search and usage costs",
+    "title_zh": "Pinecone：文档模型、向量搜索及用量费用",
+    "description_en": "Review chunks, embedding compatibility, namespaces, asynchronous indexing, request errors and spending alerts.",
+    "description_zh": "了解分块、嵌入兼容、命名空间、异步索引、请求错误及消费提醒。",
+    "search_intent_en": "Evaluate Pinecone Database retrieval behavior and billing boundaries.",
+    "search_intent_zh": "评估 Pinecone Database 检索行为及计费边界。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, API key, plugin, SDK install, index, upsert, search, tenant access, retry, alert or billing operation was executed.",
+      "zh": "未执行账户、API key、插件、SDK 安装、索引、upsert、搜索、租户访问、重试、提醒或计费操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current included-plan quotas, Documents/Vectors API version compatibility, indexing freshness, backup/recovery, deletion and access isolation were not tested.",
+      "zh": "当前计划含额、Documents／Vectors API 版本兼容、索引新鲜度、备份／恢复、删除及访问隔离未测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full product license/generated-answer rights, BYOC operational/data-flow details, actual currency/tax and UI languages not independently verified. Assistant, Inference and Nexus capabilities are not merged into Database entitlements.",
+      "zh": "完整产品许可／生成答案权、BYOC 运行／数据流、实际币种／税及界面语言未独立核实；Assistant、Inference、Nexus 能力不合并为 Database 权益。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

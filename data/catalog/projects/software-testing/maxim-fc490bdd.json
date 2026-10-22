@@ -1,0 +1,375 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "maxim-fc490bdd",
+  "name": "Maxim",
+  "website_url": "https://www.getmaxim.ai/evals",
+  "domain": "www.getmaxim.ai",
+  "identity_domain": "getmaxim.ai",
+  "category": "software-testing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Maxim’s evaluation product supports prompt experiments, agent evaluations, distributed tracing and dataset curation. Its dedicated /evals pages remain distinct from the root site’s Bifrost gateway offering. This record evaluates the AI quality platform, using its own product documentation and prices.\n\nA useful trial connects a deliberately selected prompt or test endpoint to a representative dataset, explicit grading rules and inspectable results. Trace visibility and evaluator scores are inputs to an assessment, not proof that every generated answer is correct. No account, provider key, endpoint, dataset, SDK or evaluation was operated.",
+  "description_zh": "Maxim 评测产品支持提示实验、Agent 评测、分布式追踪及数据集整理。其独立 /evals 页面与主站 Bifrost 网关不同，本文按自身文档及价格评估 AI 质量平台。\n\n合适试用会将明确选择的提示或测试端点，与代表性数据集、评分规则和可检查结果连接起来。追踪可见及评测分数是判断输入，不证明每个生成答案正确。本次未操作账户、服务方密钥、端点、数据集、SDK 或评测。",
+  "core_features": [
+    {
+      "name_en": "Prompt and endpoint evaluation",
+      "name_zh": "提示及端点评测",
+      "explanation_en": "Evaluate a saved prompt or mapped HTTP endpoint response.",
+      "explanation_zh": "评测保存的提示或已映射 HTTP 端点响应。",
+      "explanation_scope": "product_specific",
+      "source_ref": "first-eval",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable grading",
+      "name_zh": "可配置评分",
+      "explanation_en": "Define evaluator scales and query/run pass conditions.",
+      "explanation_zh": "定义评分尺度及单条／运行通过条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "library",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Tracing and online evaluation",
+      "name_zh": "追踪及在线评测",
+      "explanation_en": "Apply filters and rules to inspect production traces.",
+      "explanation_zh": "按筛选及规则检查生产追踪。",
+      "explanation_scope": "product_specific",
+      "source_ref": "trace",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Organization and workspace roles",
+      "name_zh": "组织及工作区角色",
+      "explanation_en": "Control account settings and individual workspace resources separately.",
+      "explanation_zh": "分别控制账户设置与工作区资源。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Compare prompt or endpoint variants with explicit grading",
+      "Curate observed failure traces into a stable evaluation set",
+      "Review collaboration access and short log-retention limits"
+    ],
+    "zh": [
+      "按明确评分比较提示或端点方案",
+      "将观察到的失败追踪整理为稳定评测集",
+      "检查协作访问及较短日志保留限制"
+    ],
+    "source_refs": ["first-eval", "library", "trace", "roles", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "AI application engineers",
+      "Evaluation and QA teams",
+      "LLM operations teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select /evals product scope and a synthetic prompt/endpoint.",
+        "zh": "选择 /evals 产品及虚构提示／端点。",
+        "source_refs": ["home", "first-eval"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review output mapping, dataset columns and both pass thresholds.",
+        "zh": "检查输出映射、数据集列及两层通过阈值。",
+        "source_refs": ["first-eval", "library"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm roles, log capture and retention before adding real data.",
+        "zh": "加入真实数据前核角色、日志捕获及保留。",
+        "source_refs": ["roles", "trace", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Evaluator scores require task-specific calibration and do not guarantee correctness.",
+        "zh": "评测分数需按任务校准，不保证正确性。",
+        "source_refs": ["library"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Root Bifrost product claims and prices do not automatically apply to Maxim evaluation.",
+        "zh": "主站 Bifrost 主张及价格不自动适用于 Maxim 评测。",
+        "source_refs": ["home", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Free has limited seats/log capacity and three-day retention.",
+        "zh": "Free 有席位／日志容量限制及三天保留。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "evaluation_seats_logs_retention_and_separate_provider_use",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:11:23.324417Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Evaluation Developer free up to three seats/10k logs monthly/three-day retention; Professional $29 and Business $49 per seat/month billed monthly. Provider/human-service costs and final checkout not verified.",
+    "summary_zh": "评测 Developer 免费最多三席位／每月一万日志／三天保留；Professional 每席位月付 $29、Business $49。服务方／人工服务费及最终结账未核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/maxim-ai",
+      "read_at": "2026-10-22T08:47:41.444Z",
+      "excerpt_sha256": "0e9742a78829235e33a901df243d2f516a3feccd110d83c591384d91acad3f60",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "The GenAI evaluation and observability platform",
+      "url": "https://www.getmaxim.ai/evals",
+      "read_at": "2026-10-22T14:11:23.324417Z",
+      "excerpt_sha256": "c2f98514f1bad0391f88d1417726780a6f55daafe57a34ed350dcafe6398713d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual /evals product page remains evaluation/observability; root now Bifrost, not merged with gateway pricing."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Maxim",
+      "title": "Pricing | Maxim AI",
+      "url": "https://www.getmaxim.ai/evals/pricing",
+      "read_at": "2026-10-22T14:11:23.323996Z",
+      "excerpt_sha256": "594a6f618c4d962fc317fc4680161c0a7c02471c0368a33c6f80e7667baf4afa",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual evals pricing free seats/logs/retention, professional/business and paid log overage read."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "Platform Overview",
+      "url": "https://www.getmaxim.ai/docs/introduction/overview",
+      "read_at": "2026-10-22T14:09:28.394052Z",
+      "excerpt_sha256": "5e822195ceabba8f50390adb8a426d7a3c29fee98e4a4690601478871c0b4997",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Prompt experimentation, evaluations, observability and dataset engine scope read."
+    },
+    {
+      "id": "first-eval",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "Running Your First Eval - Maxim Docs",
+      "url": "https://www.getmaxim.ai/docs/introduction/running-your-first-eval",
+      "read_at": "2026-10-22T14:12:07.948492Z",
+      "excerpt_sha256": "6d5f645e5bc606024d1f2acc3d9838da44382efc0a72c1a46e5231cc62b90546",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Provider/prompt/HTTP endpoint output mapping, dataset/evaluator/run workflow read; legacy provider names not adopted as current product support."
+    },
+    {
+      "id": "library",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "Library Concepts - Maxim Docs",
+      "url": "https://www.getmaxim.ai/docs/library/concepts",
+      "read_at": "2026-10-22T14:11:24.273938Z",
+      "excerpt_sha256": "4c8aba910eb5a3a1b5a9611be9e15ce596083fca85ab38737f68617c3003731e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Evaluator types, per-query/run pass conditions and reserved dataset/output variables read."
+    },
+    {
+      "id": "trace",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "Tracing Overview - Maxim Docs",
+      "url": "https://www.getmaxim.ai/docs/tracing/overview",
+      "read_at": "2026-10-22T14:11:24.273473Z",
+      "excerpt_sha256": "aa3298ae9a7bc5ce7b06dec1b707e8c3109e5a00dcf4fc90b622044c14690a7a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Distributed tracing, filtered online evaluations, threshold alerts and log-to-dataset curation read."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Maxim",
+      "title": "Members and Roles - Maxim Docs",
+      "url": "https://www.getmaxim.ai/docs/settings/members-and-roles",
+      "read_at": "2026-10-22T14:11:24.273146Z",
+      "excerpt_sha256": "a0fc4526a66be05f40ea46b6df5382f88e0fa8df090f3d79a522821b0f675958",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Organization plus workspace role scopes and independent billing-admin authority read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:12:07.948492Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "overview"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Use the evaluation product’s pages rather than gateway pricing",
+        "title_zh": "采用评测产品页面而非网关价格",
+        "en": "The root website currently presents Bifrost, while /evals presents Maxim’s simulation, evaluation and observability platform. The latter has its own pricing and documentation. Retain the original Maxim identity and evaluate the intended product rather than transferring an open-source gateway or enterprise-hosting claim to the evaluation service. The catalog website link now points to this specific same-domain product page.",
+        "zh": "主站当前展示 Bifrost，/evals 则介绍 Maxim 的模拟、评测及可观测平台，并有独立定价／文档。应保留原 Maxim 身份，按预期产品评估，不能将开源网关或企业主机主张转移至评测服务。目录官网链接现指向同域具体产品页。",
+        "source_refs": ["home", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Output mapping determines what is actually evaluated",
+        "title_zh": "输出映射决定实际评测内容",
+        "en": "The first-eval guide distinguishes a saved prompt from an HTTP endpoint and requires selecting the response field used for evaluation. A successful endpoint call can still map the wrong field. Define synthetic inputs and expected outputs, inspect the returned structure, then choose the evaluator and dataset. Keep provider credentials and endpoint side effects separate from scoring setup; no sample endpoint or model call was made here.",
+        "zh": "首次评测指南区分保存的提示与 HTTP 端点，并要求选择用于评测的响应字段。端点调用成功仍可能映射错字段。应定义虚构输入及预期输出、检查响应结构，再选评测器和数据集。服务方凭据及端点副作用与评分设置需分开，本次未调用样本端点或模型。",
+        "source_refs": ["first-eval"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "grading",
+        "title_en": "A score needs a scale and two pass decisions",
+        "title_zh": "评分需要尺度及两层通过决策",
+        "en": "The library describes AI, programmatic, statistical, human and API-based evaluators. Grading separates a query’s passing score from the percentage of dataset queries needed for the run to pass. Document both thresholds and their rationale before comparing variants. An LLM judge or similarity metric can be useful without being ground truth; inspect representative disagreements and calibrate against human-reviewed examples. No evaluator accuracy was independently measured.",
+        "zh": "库文档介绍 AI、程序、统计、人工及 API 评测器。评分将单条通过分数与整次运行所需通过比例分开。比较方案前应记录两种阈值及理由。LLM 裁判或相似度指标可以有用，却不等于真值；需检查代表性分歧并用人工审查样本校准。本次未独立测评测器准确性。",
+        "source_refs": ["library"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dataset",
+        "title_en": "Expected values and generated outputs have different roles",
+        "title_zh": "预期值与生成输出职责不同",
+        "en": "Dataset concepts distinguish input, expected output, already generated output, context and other reserved columns. The quickstart then binds a dataset and evaluators to a chosen prompt or endpoint. Review column semantics and keep a stable comparison set when testing a change. Synthetic generation is a data-building aid, not evidence that rare failures or real user distributions are represented. Record what the evaluation leaves untested.",
+        "zh": "数据集概念区分输入、预期输出、已生成输出、上下文及其他保留列；快速流程再将数据集及评测器绑定到提示或端点。需审查列语义，并在比较变更时保留稳定样本集。合成生成是构造数据的辅助，不证明覆盖罕见失败或真实用户分布，应记录未测范围。",
+        "source_refs": ["library", "first-eval"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trace",
+        "title_en": "A production trace needs intentional capture and sampling",
+        "title_zh": "生产追踪需要主动捕获及抽样",
+        "en": "The tracing guide follows request/response lifecycles and supports filtered online evaluations, alerts and turning logs into targeted datasets. Instrumentation, sampling and selected evaluation rules determine what becomes visible. Inspect what prompts, outputs and identifiers enter the logging path before using real traffic. A trace can explain observed behavior without revealing a model’s internal reasoning or proving unobserved paths correct. SDK integration and delivery reliability were not tested.",
+        "zh": "追踪指南跟踪请求／响应生命周期，支持筛选在线评测、告警及将日志整理成目标数据集。埋点、抽样和所选规则决定可见范围。使用真实流量前应检查哪些提示、输出及标识进入日志。追踪可解释观察行为，不代表揭示模型内部推理或证明未观察路径正确。本次未测 SDK 集成及投递可靠性。",
+        "source_refs": ["trace"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Account administration and workspace editing are separate",
+        "title_zh": "账户管理与工作区编辑分开",
+        "en": "The role guide gives users an organization role and a workspace role for each workspace they access. Organization settings cover members, billing, keys and workspace management; workspace roles govern the resources inside. A billing administrator is not simply a workspace editor. Map required tasks to both scopes and confirm the selected plan grants the relevant controls before inviting collaborators or importing sensitive evaluation data. No invitation or permission was changed.",
+        "zh": "角色指南为用户分配组织角色及各可访问工作区角色。组织设置覆盖成员、账单、密钥及工作区管理，工作区角色控制内部资源。账单管理员不等同工作区编辑者。邀请协作者或导入敏感评测数据前，应将任务对应到两层范围，并核所选套餐包含相应控制。本次未更改邀请或权限。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fees",
+        "title_en": "Seats, log volume and retention set separate limits",
+        "title_zh": "席位、日志量及保留分别限制",
+        "en": "The evaluation pricing page lists Developer free for up to three seats, one workspace, ten thousand logs per month and three-day retention. Professional is displayed at $29/seat/month and Business at $49, billed monthly, with longer retention and larger log allowances. Paid log overage is listed at $1 per ten thousand logs; Free does not permit overage. Confirm model-provider charges, human services and final currency/taxes separately before budgeting.",
+        "zh": "评测定价页列 Developer 免费，最多三席位、一个工作区、每月一万日志及三天保留。Professional 显示每席位每月 $29、Business $49，月结，含更长保留及更多日志。付费超额日志列每一万 $1，Free 不允许超额。预算前还需分别核模型服务费、人工服务及最终币种／税。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Maxim: setup, operating limits and pricing",
+    "title_zh": "Maxim：设置、运行边界及费用",
+    "description_en": "Maxim’s evaluation product supports prompt experiments, agent evaluations, distributed tracing and dataset curation. Its dedicated /evals pages remain distinct from the r",
+    "description_zh": "Maxim 评测产品支持提示实验、Agent 评测、分布式追踪及数据集整理。其独立 /evals 页面与主站 Bifrost 网关不同，本文按自身文档及价格评估 AI 质量平台。",
+    "search_intent_en": "Evaluate Maxim for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Maxim。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, API key, SDK, endpoint, model inference, dataset, evaluation, trace, alert, invitation or purchase was operated.",
+      "zh": "未操作账户、API 密钥、SDK、端点、模型推理、数据集、评测、追踪、告警、邀请或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The quickstart names older provider models; current model availability, provider terms/costs, exact export/retention enforcement, evaluator validity and data privacy require direct verification. No complete license or independent compliance certification was read.",
+      "zh": "快速指南出现较早服务方模型名称；当前模型可用性、服务方条款／费用、导出／保留执行、评分有效性及数据隐私需直接核实。未读完整许可或独立合规认证。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The Bifrost main-site fee/license pages were read for scope only, and were not relabeled as evaluation product authority.",
+      "zh": "Bifrost 主站费用／许可页仅用于范围核对，未改标成评测产品权威。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

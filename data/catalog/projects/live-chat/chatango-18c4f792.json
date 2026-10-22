@@ -1,0 +1,369 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "chatango-18c4f792",
+  "name": "Chatango",
+  "website_url": "https://chatango.com/",
+  "domain": "chatango.com",
+  "identity_domain": "chatango.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Chatango provides embeddable group chat and separate private messaging. Its group configurator offers Box, Ticker and Tab layouts, while owners and permissioned moderators control posting, banned content, message deletion and participant bans. It is a community conversation tool, not a documented service-ticket system with customer routing and SLA management.\n\nFor a hypothetical stream discussion, choose a permanent group name, embed an HTML5 layout, decide whether anonymous posting and private messaging are allowed, and staff moderation before traffic arrives. The help pages include legacy Flash and old Windows references, so current browser compatibility and private-history behavior remain untested. No group, account, post, payment or moderation action was created by this research.",
+  "description_zh": "Chatango提供可嵌入群聊及独立私信。群聊配置器有Box、Ticker与Tab布局，所有者及获授权审核人员可控制发言、禁用内容、删消息和封禁参与者。它是社区沟通工具，所读文档未建立带客户路由及SLA管理的服务工单系统。\n\n以假设直播讨论为例，应选永久群名称、嵌入HTML5布局、决定是否允许匿名发言和私信，并在流量到来前安排审核。帮助页含旧Flash及旧Windows描述，当前浏览器兼容和私信历史行为仍未测试。此次未创建群、账户、帖子、付款或审核操作。",
+  "core_features": [
+    {
+      "name_en": "Embeddable group layouts",
+      "name_zh": "可嵌入群聊布局",
+      "explanation_en": "Choose Box, Ticker or Tab and customize the expanded appearance.",
+      "explanation_zh": "选择Box、Ticker或Tab并定制展开外观。",
+      "explanation_scope": "product_specific",
+      "source_ref": "group",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Posting restrictions",
+      "name_zh": "发言限制",
+      "explanation_en": "Configure anonymity, broadcast-only posting, closed-without-moderators and slow mode.",
+      "explanation_zh": "配置匿名、仅广播、无审核人员时关闭及慢速模式。",
+      "explanation_scope": "product_specific",
+      "source_ref": "group",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Permissioned moderation",
+      "name_zh": "分权限审核",
+      "explanation_en": "Grant moderators distinct privileges for deleting, banning and group administration.",
+      "explanation_zh": "向审核人员授予不同删除、封禁及群管理权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "group",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Banned content and beta auto-moderation",
+      "name_zh": "禁用内容及测试版自动审核",
+      "explanation_en": "Word-parts/exact-word lists and rich-content controls complement beta repetition detection.",
+      "explanation_zh": "词片段／完整词列表和富内容控制，配合测试版重复消息识别。",
+      "explanation_scope": "product_specific",
+      "source_ref": "group",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate moderated group discussion beside a stream or community page.",
+      "Use broadcast mode for an owner-led interview instead of unrestricted audience posting."
+    ],
+    "zh": [
+      "评估直播或社区页旁受审核的群讨论。",
+      "用广播模式进行主持访谈，替代观众自由发言。"
+    ],
+    "source_refs": ["group"],
+    "basis": "Editorial scenarios, not executed communities or observed engagement."
+  },
+  "technical_details": {
+    "Embedding boundary": {
+      "en": "The owner guide describes a separate-domain iframe and encrypted communication when embedded on HTTPS. Those are vendor claims; browser/CSP/cookie behavior and current protocol support were not tested.",
+      "zh": "所有者指南描述独立域名iframe及在HTTPS嵌入时加密通信。这些是厂商陈述，未测试浏览器／CSP／Cookie行为及当前协议支持。",
+      "source_ref": "group",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Community site owner",
+      "Stream moderator",
+      "Audience host"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "group"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a permanent group name and a suitable HTML5 layout before generating an embed.",
+        "zh": "生成嵌入前选择永久群名称及合适HTML5布局。",
+        "source_refs": ["group"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Define anonymity, private-message, link/image and moderator-presence policies.",
+        "zh": "确定匿名、私信、链接／图片及审核人员在场策略。",
+        "source_refs": ["group"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test ordinary-user and moderator views, false-positive filtering, bans and mobile layout before a larger event.",
+        "zh": "大型活动前测试普通用户与审核视图、误过滤、封禁及移动布局。",
+        "source_refs": ["group"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website HTML5 embed",
+        "source_ref": "group",
+        "scope": "Box/Ticker/Tab configurator; no verifiedCRM,service-deskAPIoridentityproviderintegration."
+      }
+    ],
+    "source_ref": "group"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Group names are permanent; username changes are described as starting another account.",
+        "zh": "群名称永久固定，更换用户名被描述为另开账户。",
+        "source_refs": ["group", "account"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Closed without mods intentionally prevents posting when no moderator is present. Slow mode can exempt moderators.",
+        "zh": "无审核人员时关闭会有意阻止发言，慢速模式可豁免审核人员。",
+        "source_refs": ["group"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Private-chat help contains obsolete Flash and Windows instructions; current history and connection behavior require confirmation.",
+        "zh": "私信帮助含过时Flash及Windows说明，当前历史和连接行为需确认。",
+        "source_refs": ["private"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://globalhelp.chatango.com/page?full_terms",
+    "source_ref": "license"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["help", "pricing"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Officialhelpadvertisesfreeembedding;termsconfirmpaidpremiumfeatures.Noamount,subscriptionperiod,premiumfeaturetableorcapacityscheduleverified.",
+    "source_snapshot_en": "No verified numeric starting price. Paid premium features exist under Apr9 2026terms;refundsonlyexceptionallyifnotifiedwithin21daysofpayment,withpremiumaccessterminatedifrefunded. Paymentdoesnotexemptmoderation. Freecapacity/support/adsnotestablished.",
+    "source_snapshot_zh": "未核实数字起价。2026年4月9日条款确认付费高级功能，仅可能在支付后21天内通知的特殊情况退款，退款会终止高级访问。付费不豁免审核。免费容量、支持及广告条件未确定。",
+    "checked_at": "2026-10-22T12:37:12.185129+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does paying prevent a moderator from banning me?",
+      "question_zh": "付费就不会被审核人员封禁吗？",
+      "answer_en": "No. The terms explicitly keep paid users subject to the usual rules, moderator bans and other-user reports.",
+      "answer_zh": "不会。条款明确付费用户仍须遵守常规规则，可被审核人员封禁或其他用户举报。",
+      "source_refs": ["pricing"]
+    },
+    {
+      "question_en": "Does hiding the participant counter make a group private?",
+      "question_zh": "隐藏参与人数就让群变私有吗？",
+      "answer_en": "The guide describes hiding the counter and participant list, not an authentication or invitation-only boundary. Verify posting and access controls separately.",
+      "answer_zh": "指南描述隐藏人数及参与列表，并非认证或仅受邀访问边界，须另核对发言与访问控制。",
+      "source_refs": ["group"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/chatango",
+      "read_at": "2026-10-22T08:40:48.842Z",
+      "excerpt_sha256": "28639819dcd3a153ad987f10dddb940a4a11785a21047c8d929d38a83f4b274b",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "help",
+      "type": "official_documentation",
+      "site": "Chatango - Add Free Live Chat to any Webpage",
+      "title": "Chatango - Add Free Live Chat to any Webpage",
+      "url": "https://globalhelp.chatango.com/help",
+      "read_at": "2026-10-22T12:30:50.042525+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7895a33f558a15fa46ac49b1e05e748f6851094295e504388b6136234ca23a46",
+      "research_notes_en": "Officialhelpnavigationadvertisesfreewebsitechatandseparatesgroups/privatechat."
+    },
+    {
+      "id": "group",
+      "type": "official_documentation",
+      "site": "Chatango - Help - group chat owner",
+      "title": "Chatango - Help - group chat owner",
+      "url": "https://globalhelp.chatango.com/help?help_group_owner",
+      "read_at": "2026-10-22T12:31:43.326416+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7e06c713d93dbfe3d47d77f1b1a50443ed732a33b76e4282f0bb00679963731d",
+      "research_notes_en": "ActualownerinstructionsforBox/Ticker/Tab,permanentgroupname,restrictions,moderatorpermissions,betaautomodandHTTPSiframe. LegacyFlashreferencesnotadoptedascurrentinstalladvice."
+    },
+    {
+      "id": "private",
+      "type": "official_documentation",
+      "site": "Chatango - Help - Private Chat",
+      "title": "Chatango - Help - Private Chat",
+      "url": "https://globalhelp.chatango.com/help?help_private_chat",
+      "read_at": "2026-10-22T12:37:12.185129+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cf9ff0467eb20c0f792311660bbc39c9c1301c0208889dbb88022e8eb1faf167",
+      "research_notes_en": "Privateblock/historydocscontainoutdatedFlash/Windowsreferences;localhistoryonlytreatedasdocumentedclaimnotcurrenttestedguarantee."
+    },
+    {
+      "id": "account",
+      "type": "official_documentation",
+      "site": "Chatango - Help - Account",
+      "title": "Chatango - Help - Account",
+      "url": "https://globalhelp.chatango.com/help?help_account",
+      "read_at": "2026-10-22T12:37:11.550112+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "822af6745f9f98b0afd05ced276cb41931376004532159365c00f3b508757d8f",
+      "research_notes_en": "Usernamechangevi anewaccount;email/passwordrecoveryandlimiteddeletioninstructions."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Chatango Terms of Use",
+      "title": "Chatango Terms of Use",
+      "url": "https://globalhelp.chatango.com/page?full_terms",
+      "read_at": "2026-10-22T12:31:42.275990+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d6040965f3b376dc042644b89dbb8629000111152a43ba0c614fb3de10318059",
+      "research_notes_en": "PaymentsandRefundssectionconfirmsoptionalpremiumfeaturesandexceptionalrefundrequestwithin21days;noamount/tier/quotaestablished."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Chatango Terms of Use",
+      "title": "Chatango Terms of Use",
+      "url": "https://globalhelp.chatango.com/page?full_terms",
+      "read_at": "2026-10-22T12:31:42.275990+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d6040965f3b376dc042644b89dbb8629000111152a43ba0c614fb3de10318059",
+      "research_notes_en": "Apr9 2026termsreserveChatangotechnologyownership;hostedserviceandcontentmoderationresponsibilityselectedreview."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:37:12.185129+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["help", "group", "private"],
+  "profile": {
+    "sections": [
+      {
+        "id": "embed-community",
+        "title_en": "Choose the group and its durable identity",
+        "title_zh": "选择群聊及其固定身份",
+        "en": "Chatango’s official help distinguishes owner-managed groups from private messaging. Groups can appear as a Box or compact Ticker/Tab that expands into a fuller view. The configurator can alter colors, images, styles and visible URL, but the group name itself is permanent. Plan that name before placing an embed across multiple pages. The account guide similarly describes changing a username by starting another account, not renaming the existing identity.\n\nFor a hypothetical live-stream audience, test one HTML5 embed on an HTTPS staging page and inspect desktop and mobile behavior. The owner guide describes automatic encrypted communication on HTTPS and iframe isolation from the hosting site. These are documentation claims; availability, accessibility, browser privacy restrictions and scalability were not measured here. Free-room links elsewhere are not proof that a particular commercial deployment has unlimited capacity or support.",
+        "zh": "Chatango官方帮助区分所有者管理群与私信。群可显示为Box，或展开为完整视图的紧凑Ticker／Tab。配置器可改颜色、图片、样式及显示网址，但群名称永久固定，应在多页嵌入前规划。账户指南同样将换用户名描述为新开账户，而非修改既有身份。\n\n以假设直播观众为例，可在HTTPS测试页试一个HTML5嵌入，检查桌面与移动行为。所有者指南描述HTTPS自动加密及与宿主站点的iframe隔离，这些属于文档陈述，此次未测可用性、无障碍、浏览器隐私限制或扩容。其他免费聊天室链接也不证明某商业部署容量或支持无限。",
+        "source_refs": ["help", "group", "account"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "posting-policy",
+        "title_en": "Set posting policy before the first busy session",
+        "title_zh": "首次高峰前确定发言策略",
+        "en": "The owner guide provides several distinct controls: No anons requires login for posting; Broadcast permits only the owner and designated moderators; Closed without mods stops posting when no moderator is present. Slow mode defaults to one post per thirty seconds or a configured interval, with owner exemption and optional moderator exemption. Those choices change participation, not merely visual presentation.\n\nFor a larger event the guide recommends banned content, restricted anonymity, slow mode, enough moderators and optionally disabling private messaging in the embed configurator. It suggests moderator coverage above three hundred participants, but that recommendation is not a hard capacity limit or staffing guarantee. Test what an ordinary viewer can do when the last moderator leaves. A proxy/VPN posting restriction can exclude legitimate participants; it is not proof of verified identity or complete abuse prevention.",
+        "zh": "所有者指南有几种不同控制：No anons要求登录发言；Broadcast只允许所有者及指定审核人员；Closed without mods在无审核人员时停止发言。慢速模式默认每30秒一帖或配置间隔，所有者豁免，审核人员可选豁免。这些设置改变参与方式，不只是外观。\n\n针对大型活动，指南建议禁用内容、限制匿名、慢速、足够审核人员，并可在配置器禁用私信。文中建议300人以上保持审核值守，但这是建议，不是硬容量或人员保证。应测试最后审核人员离开后普通观众还能做什么。限制代理／VPN发言可能排除正常参与者，也不证明身份已验证或全面防滥用。",
+        "source_refs": ["group"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "moderation-controls",
+        "title_en": "Separate silent filtering, removal and banning",
+        "title_zh": "区分静默过滤、删除及封禁",
+        "en": "Banned content can match word parts or exact words and can disallow links, video and images. The guide says choosing Only to author leaves a censored message visible to its sender while hiding it from others. That is a visibility outcome, not a delivery error. Verify expected phrases and innocent longer words before applying a broad list. Auto-moderation is labelled beta and targets repetition or nonsense; its multilingual claim is not a tested language-accuracy result.\n\nOwners and permissioned moderators can delete one message or all messages from a person, ban/unban users and receive individually assigned moderator/admin privileges. Easyban combines banning and message removal. Grant only the powers needed for a role and test an unintended ban/removal before a high-volume event. The guide does not establish a complete immutable audit trail, message recovery or a reversible bulk-delete workflow.",
+        "zh": "禁用内容可匹配词片段或完整词，并禁用链接、视频及图片。指南称Only to author会让被过滤消息只对发件人可见，对其他人隐藏；这是可见性结果，不是投递错误。使用宽泛词表前应测试预期词组及无害长词。自动审核标beta，针对重复或无意义消息，多语言主张不是已测语言准确率。\n\n所有者及获授权审核人员可删除单条或某人的全部消息、封禁／解封，并获单独审核／管理员权限。Easyban组合封禁与删消息。应只授角色所需权限，高峰前测试误封／误删；指南未建立完整不可变审计、消息恢复或可逆批量删除流程。",
+        "source_refs": ["group"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "private-records",
+        "title_en": "Do not turn local private-history instructions into a backup promise",
+        "title_zh": "勿把本地私信历史说明当备份保证",
+        "en": "Private messaging has separate controls for blocking registered users or anonymous contacts, hiding a profile from Meet People and reporting abuse. The private guide states that conversation history is local to the sending/receiving device rather than saved on Chatango servers, and that deleting a local copy does not delete the other person’s copy. Its connection sections also refer to Flash Player and obsolete Windows versions, so this history statement must be treated as an untested legacy-document claim.\n\nCommunity participation and private exchanges therefore need separate record policies. No verified cross-device synchronization, complete export, restore, enterprise retention or customer-support integrations were found in the material read. The terms say users, owners and participants perform moderation and that service/content access may be removed. No transcript, device history, account deletion or recovery was executed.",
+        "zh": "私信有独立控制，可阻止注册用户或匿名联系、在Meet People隐藏资料及举报滥用。私信指南称对话历史在发送／接收设备本地，而非Chatango服务器，删除本地副本不会删除对方副本。但连接章节也提及Flash Player及旧Windows，因此该历史陈述应视为未经测试的旧文档主张。\n\n社区参与与私聊需分别制定记录策略。所读材料未核实跨设备同步、完整导出、恢复、企业留存或客服集成。条款称用户、群主及参与者负责审核，服务／内容访问可能移除。本研究未执行聊天记录、设备历史、账户删除或恢复。",
+        "source_refs": ["private", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-status",
+        "title_en": "Free embedding and paid premium access are different claims",
+        "title_zh": "免费嵌入与付费高级访问是不同主张",
+        "en": "Official help advertises free website chat, while the April9,2026 terms confirm optional premium features. The read pages do not provide a current amount, billing period, premium feature list, capacity allowance or advertising schedule. Numeric starting prices and unlimited-service claims would therefore be unsupported. The payment-problem form is a support route, not a pricing table or purchase confirmation.\n\nThe terms allow refunds only exceptionally when notification is received within twenty-one days of payment; a refund ends premium access, and paid users remain subject to moderator bans and reports. They reserve ownership of the service technology rather than granting an open-source license. Chatango is reasonable to investigate for a moderated community embed, but a business needing contractual response times, controlled ticket ownership or auditable record restoration should establish those requirements independently before relying on it.",
+        "zh": "官方帮助宣传免费网站聊天，2026年4月9日条款确认可选高级付费功能。所读页面未提供当前金额、计费周期、高级功能表、容量或广告安排，因此不能支持数字起价或无限服务主张。支付问题表单是支持入口，不是价目表或购买确认。\n\n条款仅可能对支付后21天内通知的特殊情况退款，退款终止高级访问，付费用户仍可被审核封禁及举报。条款保留服务技术所有权，未授开源许可。Chatango可作为受审核社区嵌入的研究对象，但需要合同响应时限、受控工单归属或可审计记录恢复的企业，应在依赖前另确定要求。",
+        "source_refs": ["help", "pricing", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Chatango: Group Embeds, Moderator Controls and Premium Pricing Gaps",
+    "title_zh": "Chatango：群嵌入、审核控制及高级价格缺口",
+    "description_en": "Research Chatango layouts, permanent names, broadcast/slow modes, moderation visibility, legacy private-history claims and optional paid features.",
+    "description_zh": "研究Chatango布局、永久名称、广播／慢速模式、审核可见性、旧私信历史主张及可选付费功能。",
+    "primary_intent": "Evaluate Chatango community group chat and moderation requirements.",
+    "secondary_questions": [
+      "Can a group name change?",
+      "What happens without moderators?",
+      "Does payment prevent bans?"
+    ],
+    "query_basis": "Editorial questions, not measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No group/account creation,post,embed,moderation,payment,exportorrestoretested. Currentbrowser/privatehistorybehavior,premiumamount/features,capacity,ads,supportSLA,API,retention,UIlanguagesandrecordportabilityunverified.",
+      "zh": "未测试群／账户创建、发帖、嵌入、审核、付款、导出或恢复。当前浏览器／私信历史行为、高级金额／功能、容量、广告、支持SLA、API、留存、界面语言及记录可迁移性未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

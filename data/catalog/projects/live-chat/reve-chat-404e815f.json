@@ -1,0 +1,458 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "reve-chat-404e815f",
+  "name": "REVE Chat",
+  "website_url": "https://www.revechat.com/",
+  "domain": "www.revechat.com",
+  "identity_domain": "revechat.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "REVE Chat is a customer engagement suite combining a human inbox,visual chatbot flows,Wize AI Agent workflows,ticketing and optional channels or campaigns. Wize AI Agent can use configured data and tools;AI Copilot assists human agents and is sold separately per seat. Traditional chatbot conversations,Wize AI conversations and human conversations have distinct inbox views and should not be treated as one execution model.\n\nFor an illustrative order inquiry,a configured trigger passes the visitor message to an AI Agent,which consults an approved source and either returns a mapped response or sets a structured handover flag. A condition must route that flag to a human node,and a person must accept responsibility. Public billing documents conflict on carryforward,legacy credits and some voice behavior. This is documentation research and a public pricing-toggle check,without an account,AI response,workflow,backend action,payment or export test.",
+  "description_zh": "REVE Chat 是客户互动套件，结合真人收件箱、可视化聊天机器人流程、Wize AI Agent 工作流、工单及可选渠道或营销活动。Wize AI Agent 使用已配置资料及工具，AI Copilot 则辅助真人，按座席另售。传统机器人、Wize AI 及真人会话有不同收件箱视图，不能视作同一执行模型。\n\n以假设订单咨询为例，触发器将访客消息交给 AI Agent，后者查已批准来源，再返回映射回复或设置结构化交接标志。条件节点必须将该标志路由至真人节点，并由人员负责接收。公开计费资料在额度结转、旧积分及部分语音行为上冲突。本稿为文档研究及公开价格切换核对，未测试账号、AI 回答、工作流、后台操作、支付或导出。",
+  "core_features": [
+    {
+      "name_en": "Unified human and automation inbox",
+      "name_zh": "真人与自动化统一收件箱",
+      "explanation_en": "Separate human,Unassigned,Bots and AI Agent folders expose ownership and automation state.",
+      "explanation_zh": "区分真人、未分配、Bots 及 AI Agent 文件夹，呈现归属及自动化状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "inbox",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured Wize AI workflows",
+      "name_zh": "已配置 Wize AI 工作流",
+      "explanation_en": "Map message input,select provider/model,connect tools and map the final output into Response To Chat.",
+      "explanation_zh": "映射消息输入、选提供商／模型、连接工具，并将最终输出映射到 Response To Chat。",
+      "explanation_scope": "product_specific",
+      "source_ref": "first-workflow",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Structured human handover",
+      "name_zh": "结构化真人交接",
+      "explanation_en": "Return a consistent handover attribute and branch on its value instead of assuming a prompt performs the transfer.",
+      "explanation_zh": "返回一致的交接属性并按其值分支，不能认为提示词本身执行转接。",
+      "explanation_scope": "product_specific",
+      "source_ref": "handover-condition",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI Conversation usage windows",
+      "name_zh": "AI Conversation 用量窗口",
+      "explanation_en": "Meter substantive AI handling within a fixed24-hour identity/channel window,including meaningful handling before human handover.",
+      "explanation_zh": "在固定24小时身份／渠道窗口内计量实质 AI 处理，包含转真人前的有效处理。",
+      "explanation_scope": "product_specific",
+      "source_ref": "metering",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Teams operating website/social support with explicit human ownership and maintained knowledge.",
+      "A controlled Wize workflow pilot with read-only product data and tested escalation."
+    ],
+    "zh": [
+      "有明确人工归属及维护知识的网站／社交支持团队。",
+      "以只读产品资料及已测试升级路径开展可控 Wize 工作流试点。"
+    ],
+    "source_refs": ["product", "first-workflow", "handover-condition"],
+    "basis": "Editorial scenarios,not observed automation or sales outcomes."
+  },
+  "technical_details": {
+    "Fixed usage window": {
+      "en": "The first accepted inbound message starts a fixed24h clock;greeting-only does not charge. Substantive AI handling activates one unit. Reconnect,transfer,new session ID or reassignment does not extend/reset an eligible identity/channel window.",
+      "zh": "首条有效入站消息启动固定24小时计时，纯问候不收费，实质 AI 处理激活1单位。重连、转接、新会话ID或重分配不延长／重置同一合格身份渠道窗口。",
+      "source_ref": "metering",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support operations owner",
+      "AI workflow administrator",
+      "Business-data integration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm package,monthly or annual billing,seats,AI allowance and written treatment of rollover and voice before purchase.",
+        "zh": "购买前确认套餐、月付或年付、座席、AI 额度及书面结转／语音规则。",
+        "source_refs": [
+          "pricing",
+          "monthly-rendered",
+          "annual-rendered",
+          "metering"
+        ],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Bind the chat source/widget,map incoming text and outgoing AI output,connect approved data and test before setting Active.",
+        "zh": "绑定聊天来源／组件，映射入站文本及 AI 输出，连接批准资料，测试后再设 Active。",
+        "source_refs": ["first-workflow"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Use a consistent boolean handover schema,connect true and false branches,and test empty/malformed output,no source,no agent and exhausted capacity.",
+        "zh": "使用一致布尔交接 schema，连接真假分支，并测试空／错误输出、无来源、无人值守及额度用尽。",
+        "source_refs": ["handover-condition", "metering", "inbox"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Knowledge Base / Google Sheets / Shopify tools",
+        "source_ref": "first-workflow",
+        "scope": "Configuredtoolsarenextsteps,notsourcesautomaticallygrantedbytextprompt;authenticationandwritepermissionsuntested."
+      },
+      {
+        "name": "Provider/model selection",
+        "source_ref": "first-workflow",
+        "scope": "GuideillustratesOpenAIandgpt-4o-mini;notproofeverymodelorproviderchargeisincluded."
+      },
+      {
+        "name": "WhatsApp and Business Email",
+        "source_ref": "pricing",
+        "scope": "Listed8and5/monthadd-onswithplan-dependentincludes;third-partycosts/approvalsnotestablished."
+      },
+      {
+        "name": "Co-browsing",
+        "source_ref": "inbox",
+        "scope": "Requiresselectedwidgetfeatureenableandvisitoracceptance,notanunconditionalaccount-widecapability."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A workflow can succeed internally while delivering no visitor reply if Response To Chat has no mapped AI output.",
+        "zh": "Response To Chat 未映射 AI 输出时，工作流内部成功也可能没有访客回复。",
+        "source_refs": ["first-workflow"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The condition guide mixes a generic string schema with a later boolean example;copying without consistent types can misroute.",
+        "zh": "条件指南混合通用字符串 schema 与后面的布尔示例，不统一类型地照抄可能错路由。",
+        "source_refs": ["handover-condition"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A meaningful AI-to-human handover can still consume one AI Conversation;it is not a verified successful-resolution-only fee.",
+        "zh": "AI 有效处理后转真人仍可消耗1次 AI Conversation，不是已证仅成功解决才收费。",
+        "source_refs": ["metering"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Rollover is internally contradictory in the usage guide,and the pricing FAQ still uses oldAI Credits terminology;require actual account terms.",
+        "zh": "用量指南内部结转规则互相矛盾，价格FAQ仍用旧 AI Credits 术语，需实际账户条款。",
+        "source_refs": ["metering", "pricing"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.revechat.com/terms-of-service/",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": [
+      "pricing",
+      "monthly-rendered",
+      "annual-rendered",
+      "metering",
+      "terms"
+    ],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Basepackageincludes seats andAIConversationallowance;renderedmonthlyvsannualdisplay,extra seats,conversations,Copilotandchannelsseparate.Unresolvedrollover/voiceandlegacyFAQpreventuniversalnormalizedprice.",
+    "source_snapshot_en": "Free1seat/10AIConversations/month/30dayhistory. MonthlyStarter14.99(1seat/50),Growth59.99(3/250),Enterprise291.99(10/1000). Yearlytogglemonthlydisplay12.74/50.99/248.19. Extraseats8.99/13.99/24.99monthly,guidecaps5/25/200;AIConversation0.25each,Copilot9/seat/month. Growth/Enterprisebasevoice100/500minutesinrenderedcards.14daytrialFAQstilllistsoldcredits;exactcurrenttrialallowanceunconfirmed. Renewalsautomaticandnonrefundableunderterms.",
+    "source_snapshot_zh": "Free 1座席／每月10 AI Conversations／30天历史。月付 Starter14.99（1座席／50次）、Growth59.99（3／250）、Enterprise291.99（10／1000）。年付切换折合月价12.74／50.99／248.19。额外座席月价8.99／13.99／24.99，指南总人数上限5／25／200；额外 AI Conversation 每次0.25，Copilot 每座席每月9。渲染卡 Growth／Enterprise 基础语音100／500分钟。14天试用FAQ仍列旧积分，当前真实试用额度未确认。条款自动续费且不退款。",
+    "checked_at": "2026-10-22T13:50:16.172649+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does a human handover erase the AI charge?",
+      "question_zh": "转真人会取消 AI 费用吗？",
+      "answer_en": "No. Meaningful AI handling remains one charged conversation within the window. Human-only messages after handover add no AI charge,but a later new eligible AI window can.",
+      "answer_zh": "不会。窗口内有效 AI 处理仍保留1次计费，转接后纯真人消息不增 AI 费用，但之后新的合格 AI 窗口可计费。",
+      "source_refs": ["metering"]
+    },
+    {
+      "question_en": "Can an AI role prompt replace source connections?",
+      "question_zh": "AI 角色提示能替代资料连接吗？",
+      "answer_en": "No. The setup guide requires connected sources/tools,correct input/output mapping,a tested workflow and Active status. Instructions alone do not grant backend access or authority.",
+      "answer_zh": "不能。设置指南要求连接来源／工具、正确输入输出映射、测试工作流及 Active 状态，指令本身不授后台访问或操作权限。",
+      "source_refs": ["first-workflow", "handover-condition"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/reve-chat",
+      "read_at": "2026-10-22T09:06:58.064Z",
+      "excerpt_sha256": "a6017ad45982060ea759c78dbeb6436ce36fb2119fc8660de68e9d911023f763",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI-driven customer service software for your business | REVE Chat",
+      "title": "AI-driven customer service software for your business | REVE Chat",
+      "url": "https://www.revechat.com/",
+      "read_at": "2026-10-22T13:47:14.393317+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5734afe677652a1e0c9a086cbd5e626ed7710d71c4918b1bb6a4aedac195ca88",
+      "research_notes_en": "CurrentWizeAI,livechat,traditionalchatbot,ticketing,campaignandCopilotdistinctsurfaces;noallinclusioninference."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "REVE Chat Pricing: AI Agent, Live Chat & Chatbot Plans",
+      "title": "REVE Chat Pricing: AI Agent, Live Chat & Chatbot Plans",
+      "url": "https://www.revechat.com/pricing/",
+      "read_at": "2026-10-22T13:48:10.840504+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "88d2ae697098bc9a1835eab82bf60687e35fbb02bc878143867770b3f9812fa5",
+      "research_notes_en": "Currentcards14.99/59.99/291.99 andFree,butstaticcomparisontable29/99/279andFAQAIcreditsconflictwithnewguide;nostaticiconinference."
+    },
+    {
+      "id": "monthly-rendered",
+      "type": "official_pricing",
+      "site": "REVE Chat Pricing",
+      "title": "REVE Chat Pricing — rendered monthly-rendered",
+      "url": "https://www.revechat.com/pricing/",
+      "read_at": "2026-10-22T13:50:16.172649+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility",
+      "excerpt_sha256": "36006b807eacad57d64bda47302d521c5bf078b043a29d45a22abe67875539ef",
+      "research_notes_en": "ClickedPaymonthlyafteryearly;currentcards14.99/59.99/291.99,1/3/10seats,50/250/1000conversations;renderedcomparisonupdatedfromstaleHTMLandwhitelabel199versusstaticContactSales."
+    },
+    {
+      "id": "annual-rendered",
+      "type": "official_pricing",
+      "site": "REVE Chat Pricing",
+      "title": "REVE Chat Pricing — rendered annual-rendered",
+      "url": "https://www.revechat.com/pricing/",
+      "read_at": "2026-10-22T13:50:15.579415+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility",
+      "excerpt_sha256": "a94ade35efc128b5ad6b96d114f47c31e87bc9d373072cf964cbdda88c6f495b",
+      "research_notes_en": "ClickedPayyearly;cards12.74/50.99/248.19monthlydisplay,monthlyquotasunchanged,add-onsunchanged;noaccount/checkout."
+    },
+    {
+      "id": "metering",
+      "type": "official_documentation",
+      "site": "Pricing Guide and AI Conversion",
+      "title": "Pricing Guide and AI Conversion",
+      "url": "https://www.revechat.com/help-center/pricing-guide/",
+      "read_at": "2026-10-22T13:47:55.635197+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "bbd2348ee828711dc460b9979c3c338152529a5c18dfee62fbb08e008d1a24ff",
+      "research_notes_en": "Fixed24hfromfirstacceptedinbound,substantiveAIstartscharge,handoverstillbillable,noextrahumanusage;guideinternallyconflictscarryforwardversusFAQexpiry,andvoicerepliesversusv2.3textonly;KBcapsTBD."
+    },
+    {
+      "id": "first-workflow",
+      "type": "official_documentation",
+      "site": "Create Your First Wize AI Agent",
+      "title": "Create Your First Wize AI Agent",
+      "url": "https://www.revechat.com/help-center/create-wize-ai-agent/",
+      "read_at": "2026-10-22T13:47:56.163695+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7882914e9077f2b4f4d2ab3be831ade9b3816d34fd5aa774d12809c04079c1b5",
+      "research_notes_en": "Trigger/AI/ResponseToChat,mappedinputandoutput,savedtestrunrevealsdata,activeaftertest;instructionsdonotconnectdatasourcesbythemselves."
+    },
+    {
+      "id": "handover-condition",
+      "type": "official_documentation",
+      "site": "How to Apply Conditions in your AI Agent workflow",
+      "title": "How to Apply Conditions in your AI Agent workflow",
+      "url": "https://www.revechat.com/help-center/how-to-apply-conditions-in-your-ai-agent-workflow/",
+      "read_at": "2026-10-22T13:47:56.367795+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5e796bf02bdea802d6f5df8acb33e9290c46163534d4f1858cfd601847f96c60",
+      "research_notes_en": "Attribute+structuredschemathenconditiontruehumanelsechat;genericexampledeclaresstringbutrealexampleboolean;missing/mismatchedattributesnotintendedpath,notautomaticguaranteedhandoff."
+    },
+    {
+      "id": "inbox",
+      "type": "official_documentation",
+      "site": "Chats",
+      "title": "Chats",
+      "url": "https://www.revechat.com/help-center/chats-section/",
+      "read_at": "2026-10-22T13:48:10.703518+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cdffe061415d0d0a21594b2cd73833fc3213cee4d16da0fb9762306ac2e6d838",
+      "research_notes_en": "HumanInbox,Unassigned,traditionalBotsandWizeAIseparatefolders,history/abandonedviews;co-browsingwidgetenableandvisitoracceptance."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service - REVE Chat",
+      "title": "Terms of Service - REVE Chat",
+      "url": "https://www.revechat.com/terms-of-service/",
+      "read_at": "2026-10-22T13:48:10.364922+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6312e022ee7872d8fcc6f9cbecfae55268d3951bf11d0df992fe3f47188ddb8a",
+      "research_notes_en": "Proprietaryserviceownership,automaticrenewalwithoutguaranteedreminder,nonrefundincludingrenewal,contentrightsforservice."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:50:16.172649+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "inbox",
+    "first-workflow",
+    "handover-condition",
+    "metering",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-boundaries",
+        "title_en": "Keep Wize AI,traditional bots and human Copilot distinct",
+        "title_zh": "区分 Wize AI、传统机器人及真人 Copilot",
+        "en": "REVE Chat’s platform contains live chat,traditional visual chatbot flows,Wize AI Agent workflows,ticketing,campaigns and AI Copilot. The current inbox separates Your Inbox,Unassigned,Bots’ Chat and AI Agent’s Chat. That distinction matters when locating a stuck request:an active Wize conversation is not necessarily in the traditional bot folder or a human’s assigned queue. History also distinguishes human/bot conversations and abandoned requests.\n\nWize AI is intended to respond and use configured tools,whereas Copilot suggests replies,rewrites,summaries and translation for a human. A marketing list of channels and business actions does not establish every package’s entitlement or authorization. AI Voice phone calls,voice messages and tickets also have different commercial boundaries. This research did not operate any workspace or submit a test conversation.",
+        "zh": "REVE Chat 平台包含真人聊天、传统可视机器人流程、Wize AI Agent 工作流、工单、活动及 AI Copilot。当前收件箱区分 Your Inbox、Unassigned、Bots’ Chat 及 AI Agent’s Chat。寻找卡住请求时这个区别很重要：活跃 Wize 会话未必位于传统机器人文件夹或真人已分配队列。历史也区分真人／机器人及遗弃请求。\n\nWize AI 面向客户回答并用已配置工具，Copilot 则给真人建议、改写、摘要及翻译。渠道和业务动作营销清单不建立所有套餐权益或权限。AI Voice 电话、语音消息及工单也有不同商业边界。本研究未操作工作区或提交测试会话。",
+        "source_refs": ["product", "inbox", "metering"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow-example",
+        "title_en": "Wire a response,then add a real handover branch",
+        "title_zh": "先连接回复，再增加真实交接分支",
+        "en": "The starter workflow is On chat message → AI Agent → Response To Chat. Select the intended source and widget,map the trigger’s message text into the AI input,choose a provider/model and write behavior instructions. The guide asks for a saved test execution to expose input data before mapping;creating three nodes alone does not complete the connections. It also warns that a successful workflow can send nothing if the final node does not contain the AI output. Test the visitor-visible result,not only the green execution state.\n\nFor an illustrative order question,the prompt should use only a connected approved source. A detailed instruction does not connect a knowledge base,Google Sheet or Shopify store and does not authorize a refund. Add tools with limited permissions and a clear owner. The basic guide’s output-variable instructions mix structured-response navigation and an output expression;verify the actual execution payload rather than copying a path without checking. Save,run and inspect the result before switching the workflow Active.",
+        "zh": "基础工作流为 On chat message → AI Agent → Response To Chat。选择正确来源和组件，将触发消息文本映射到 AI 输入，选提供商／模型并写行为指令。指南要求保存并测试执行以暴露输入资料，再进行映射；仅建三个节点不完成连接。它还警示最终节点无 AI 输出时，工作流成功也可能不发消息。因此应测试访客可见结果，不能只看执行绿色状态。\n\n以假设订单问题为例，提示应只用已连接的批准来源。详细指令不连接知识库、Google Sheet 或 Shopify，也不授权退款。工具需有限权限及明确负责人。基础指南输出变量说明混合结构化回复导航与 output 表达式，应核对实际执行载荷，不能未经检查照抄路径。切 Active 前需保存、运行并检查结果。",
+        "source_refs": ["first-workflow"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "handover-failure",
+        "title_en": "A handover sentence does not transfer a conversation",
+        "title_zh": "交接话术本身不会转接会话",
+        "en": "The conditions guide creates requested_humanhandover,requires structured AI output,checks the value in a Condition node and connects true to Human handover and false to Response To Chat. A natural-language sentence promising a specialist is therefore not the transfer mechanism. The guide warns that empty,misnamed or unexpected attributes can miss the intended path. Its generic schema uses a string while the detailed example uses a boolean;use one consistent type and test real outputs.\n\nA useful acceptance sample includes an explicit human request,a refund dispute,missing knowledge,malformed output and no available agent. Confirm the conversation reaches Unassigned or an owned human inbox and that somebody monitors it. The handover flag is an AI inference,not authenticated authority to alter an account. Co-browsing separately requires the widget feature to be enabled and the visitor to accept;it should not be inferred from an icon or an AI decision.",
+        "zh": "条件指南创建 requested_humanhandover，要求 AI 结构化输出，在 Condition 节点检查该值，并将 true 连 Human handover、false 连 Response To Chat。因此，答复中承诺联系专家不是转接机制。指南提醒空、命名错或异常属性会错过预期路径。通用 schema 用字符串，而详细示例用布尔，应统一类型并测实际输出。\n\n有用验收样本包括明确要真人、退款争议、知识缺失、输出错误及无人可用。需确认会话进入 Unassigned 或有归属真人收件箱，并有人监控。交接标志是 AI 推断，不是改账户的认证权限。共同浏览还需启用组件功能并经访客接受，不能从图标或 AI 决定推断已成立。",
+        "source_refs": ["handover-condition", "inbox"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "metering",
+        "title_en": "Count a fixed window rather than messages or proven resolutions",
+        "title_zh": "按固定窗口计费，不是按消息或已证解决",
+        "en": "The usage guide starts a fixed24-hour window with the first accepted inbound visitor message. A greeting starts the clock without charging;AI handling of a substantive request activates one billable AI Conversation. If a visitor says hello Monday10:00 and asks an order question at10:03,the window still ends Tuesday10:00. Reconnects,reassignment,new technical session IDs and transfers do not extend/reset an eligible identity/channel window. Multiple requests inside it remain one unit.\n\nMeaningful AI handling before a human transfer still counts. Pure human messages after transfer do not create another AI charge merely because24hours pass. A later new substantive AI activation after the old window can. This is not equivalent to successful final resolution,a conversion sale or per-message billing. The guide says an already-counted window can continue when capacity runs out,and new AI-required chats move/stay Unassigned for humans until capacity returns. That requires a staffed fallback.\n\nThe guide’s v2.3FAQ includes up to50 successfully processed visitor images and30minutes of inbound voice-message STT per conversation,with text replies. Image50 triggers CAPTCHA but solving it does not remove the image cap;invalid CAPTCHA stops AI queries while a human may still help. After30audio minutes,the visitor is asked to use text. Earlier prose allows text or voice replies,and a phone-call table describes separate minutes. Confirm the actual release and media behavior;voice messages are not the same product as live AI phone calls.",
+        "zh": "用量指南从首条有效入站访客消息启动固定24小时窗口。问候启动计时但不收费，AI 实质处理请求才激活1次 AI Conversation。如果周一10:00问好、10:03问订单，窗口仍在周二10:00结束。重连、重分配、新技术会话ID及转接不延长／重置同一合格身份渠道窗口；其中多个请求仍是1单位。\n\nAI 有效处理后转真人仍计费，转后纯真人消息不会仅因过24小时而产生新 AI 费用。旧窗口后新的实质 AI 激活可再计费。这不等于最终成功解决、成交或逐消息收费。指南称额度用尽时已计窗口可继续，新需 AI 聊天进入／留在 Unassigned，待有额度再由 AI 处理，因此需要真人回退。\n\n指南 v2.3 FAQ 每次对话含最多50张成功处理访客图片、30分钟入站语音 STT，回复文本。第50张触发 CAPTCHA，但完成后也不解除图片上限，失败则停止 AI 查询，真人仍可协助。超过30音频分钟要求访客用文字。前面正文又允许文本或语音回复，电话表另列分钟，需确认实际版本及媒体行为；语音消息不等于实时 AI 电话。",
+        "source_refs": ["metering"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing-conflicts",
+        "title_en": "Verify rendered prices and unresolved allowance contradictions",
+        "title_zh": "核对渲染价格及未解决的额度冲突",
+        "en": "The public page’s monthly toggle showed Starter14.99,Growth59.99 and Enterprise291.99 USD per month,including1/3/10 seats and50/250/1,000 monthly AI Conversations. Switching to yearly displayed12.74/50.99/248.19 per month. Free lists one seat,ten AI Conversations and30-day history. Paid history is90days/one year/two years. Growth/Enterprise cards include100/500 AI phone minutes. These were public UI observations,not a checkout or a promise about tax or a customer’s legacy contract.\n\nExtra seats are8.99/13.99/24.99 monthly,with guide limits5/25/200;extra AI Conversations are0.25 each and Copilot9 per seat/month. WhatsApp and Business Email are listed at8 and5 monthly as add-ons,while some tiers advertise channel inclusion;confirm package scope and provider charges. The rendered white-label card showed199/month where static text said Contact Sales. Static comparison headers29/99/279 changed to current card amounts after rendering;do not use those stale HTML headers as the quote.\n\nMore serious contradictions remain. The same usage guide says unused monthly conversations carry forward,then says in FAQ17 that monthly/recurring capacity expires,with only non-expiring packs retained. Knowledge document caps are explicitly TBD. The pricing FAQ still describes AI Credits,non-carryover credits and only selected higher plans having AI Agents,while new cards/guide say every plan has agents and no AI Credits. Its14-day trial also lists old credit/session allowances. Record the conflicts instead of selecting the most generous interpretation;obtain written account-specific terms before relying on rollover or trial units.",
+        "zh": "公开价格页月付切换显示 Starter14.99、Growth59.99、Enterprise291.99美元每月，含1／3／10座席及每月50／250／1,000 AI Conversations。切年付显示折合每月12.74／50.99／248.19。Free 列1座席、10次 AI Conversation、30天历史，付费历史90天／1年／2年。Growth／Enterprise 卡含100／500 AI 电话分钟。这些是公开界面观察，不是结账或税费／旧客户合同承诺。\n\n额外座席月价8.99／13.99／24.99，指南人数上限5／25／200；额外 AI Conversation 每次0.25，Copilot 每座席每月9。WhatsApp、Business Email 附加月价8及5，部分层又宣传渠道包含，需确认套餐范围和提供商费。渲染免品牌卡显示199／月，而静态文本为 Contact Sales。静态比较标题29／99／279在渲染后改为当前卡价格，不能以旧 HTML 标题报价。\n\n更重要的冲突仍存在：同一用量指南先说未用月额度结转，FAQ17又说月度／经常性容量到期，仅不过期包保留。知识文档上限明确 TBD。价格 FAQ 仍讲 AI Credits、不结转积分及仅较高层含 AI Agent，新卡／指南却说每层有 Agent、无 AI Credits。14天试用也仍列旧积分／会话额度。应保留冲突，不能挑最宽松解释；依赖结转或试用单位前须取得账户书面条件。",
+        "source_refs": [
+          "pricing",
+          "monthly-rendered",
+          "annual-rendered",
+          "metering"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operating-fit",
+        "title_en": "Tie adoption to ownership,data and a reversible exit",
+        "title_zh": "采用前明确归属、资料及可逆退出",
+        "en": "REVE Chat fits a team that can own a multichannel inbox,maintain prompts and sources and monitor automation handovers. Unassigned is a visible backlog,not proof of human response;Abandoned Chats helps find requests never picked up. Model-provider choice,backend connectors and a knowledge claim require actual scope and permission testing. Marketing to finance,education or banking is not independent evidence of a suitable high-impact decision process.\n\nTerms retain proprietary service ownership and provide automatic renewal,without a guaranteed renewal reminder,and generally no refunds including renewals. The pricing FAQ promises end-of-cycle downgrade to Free and continued access to historical data,but Free has30-day history and the precise scope of old-data access was not established. Export and retention should be confirmed before downgrade. No complete transcript/attachment export,restore,data location,provider processing agreement or deletion procedure was verified. This is hosted service research,not an open-source deployment or independent security/AI assessment.",
+        "zh": "REVE Chat 适合能负责多渠道收件箱、维护提示及来源、监控自动化交接的团队。Unassigned 是可见待办，不证明真人已回应；Abandoned Chats 可发现未接请求。模型提供商、后台连接器及知识主张都需实际范围与权限测试。面向金融、教育或银行营销不独立证明适用于高影响决策。\n\n条款保留专有服务所有权，规定自动续费、不保证续费提醒，并通常不退款，包括续费。价格 FAQ 承诺周期结束降 Free 并继续看历史，但 Free 又有30天历史，旧资料访问准确范围未建立，降级前需确认导出及留存。此次未核实完整聊天／附件导出、恢复、资料位置、提供商处理协议或删除流程。这是托管服务研究，不是开源部署或独立安全／AI 评估。",
+        "source_refs": ["inbox", "first-workflow", "terms", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "REVE Chat: Wize Workflows, Human Handover, AI Windows and Pricing",
+    "title_zh": "REVE Chat：Wize 工作流、真人交接、AI 窗口及价格",
+    "description_en": "Evaluate REVE Chat workflow mappings, typed handover conditions, fixed24-hourAIConversation metering, rendered prices and unresolved rollover/credit conflicts.",
+    "description_zh": "评估 REVE Chat 工作流映射、交接类型条件、固定24小时 AI Conversation 计费、渲染价格及未解决的结转／积分冲突。",
+    "primary_intent": "Evaluate human/AI customer workflows and account-specific commercial limits.",
+    "secondary_questions": [
+      "Does handover still count?",
+      "Does the24h window roll?",
+      "Do unused allowances carry forward?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,workflow,AI response,handoff,backend action,provider,channel,payment,export or restore tested. Rollover contradiction,old credits/session FAQ,trialunits,KBcapsTBD,voicemessageoutputversusv2.3,phonebilling,addoninclusions/tax,postdowngradehistory,completeportability,retention/deletion,DPA/locationandUIlanguagesunresolved. Renderedpricecheckispublictoggleonly.",
+      "zh": "未测试账号、工作流、AI 回答、交接、后台操作、提供商、渠道、支付、导出或恢复。结转冲突、旧积分／会话 FAQ、试用单位、TBD知识上限、语音消息回复与v2.3、电话计费、附加项包含／税、降级后历史、完整迁移、留存／删除、DPA／位置及界面语言未解决，渲染价格仅核对公开切换。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

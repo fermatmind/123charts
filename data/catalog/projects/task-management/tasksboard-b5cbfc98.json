@@ -1,0 +1,429 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "tasksboard-b5cbfc98",
+  "name": "TasksBoard",
+  "website_url": "https://tasksboard.com/",
+  "domain": "tasksboard.com",
+  "identity_domain": "tasksboard.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "TasksBoard is an independent full-screen interface for Google Tasks. It turns lists into visible board columns and adds organization, sharing and paid features around existing Google-account task data. It is not a separate migration of all work into a new task database.\n\nCollaboration introduces an important distinction: each person has a Google Tasks list copy, reconciled by TasksBoard while someone opens the app. Recurrence, board metadata, file permissions and data recovery have their own rules. This documentation-based profile focuses on those conditions rather than adopting a universal instant-sync or security claim.",
+  "description_zh": "TasksBoard 是独立的 Google Tasks 全屏界面，把列表显示为看板列，并在现有 Google 账户任务数据之上增加组织、共享及付费功能；它不表示把全部工作迁移到新的任务数据库。\n\n协作带来重要区别：每人拥有 Google Tasks 列表副本，由 TasksBoard 在有人打开应用时协调同步。重复规则、看板元数据、文件权限及数据恢复各有规则。本档案基于文档聚焦这些条件，不采用通用即时同步或安全认证承诺。",
+  "core_features": [
+    {
+      "name_en": "Google Tasks board",
+      "name_zh": "Google Tasks 看板",
+      "explanation_en": "Arrange existing lists as columns in a full-screen interface.",
+      "explanation_zh": "在全屏界面把已有列表排列成列。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Shared list copies",
+      "name_zh": "共享列表副本",
+      "explanation_en": "Collaborators retain account-specific copies that TasksBoard reconciles.",
+      "explanation_zh": "协作者保留各账户副本，由 TasksBoard 协调。",
+      "explanation_scope": "product_specific",
+      "source_ref": "shared-faq",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Task recurrence metadata",
+      "name_zh": "任务重复元数据",
+      "explanation_en": "TasksBoard stores its own repeat/time/reminder rules in task details.",
+      "explanation_zh": "TasksBoard 把自有重复／时间／提醒规则存入任务详情。",
+      "explanation_scope": "product_specific",
+      "source_ref": "repeat",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Use a disposable shared checklist to check owner/collaborator edits across Google accounts before organizing live client work."
+    ],
+    "zh": [
+      "先用可丢弃共享检查表核对 Google 多账户间所有者／协作者编辑，再组织真实客户工作。"
+    ],
+    "source_refs": ["shared-faq", "background"],
+    "basis": "Proposed evaluation; no task/account operations or customer claims."
+  },
+  "technical_details": {
+    "Account and connectivity": {
+      "en": "Google sign-in and internet required. Google Tasks mobile apps are linked for underlying tasks; browser desktop installation is not proof of a separate native desktop database.",
+      "zh": "需要 Google 登录和网络。链接的 Google Tasks 移动应用用于底层任务；浏览器桌面安装不证明独立原生桌面数据库。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Google Tasks user needing a wider board",
+      "Small group sharing editable checklists"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm the Google account and requested scope, then inspect a disposable list before sharing.",
+        "zh": "确认 Google 账户及请求 scope，先检查可丢弃列表再共享。",
+        "source_refs": ["security", "shared-faq"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check both account copies, closed-app synchronization, recurrence and a downloaded CSV before importing important work.",
+        "zh": "导入重要工作前，核对双方账户副本、关闭应用时同步、重复及下载的 CSV。",
+        "source_refs": ["background", "repeat", "export"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "security",
+    "scope": "GoogleTasks plus separately requestedDrivefile operations. Gmail/Calendar task visibility is not permission to read all mail/calendar; TeamAPI/webhookadvertising not exercised."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Stopping sharing does not delete collaborators’ existing copies. Shared synchronization waits if nobody opens TasksBoard.",
+        "zh": "停止共享不会删除协作者已有副本；无人打开 TasksBoard 时共享同步会等待。",
+        "source_refs": ["shared-faq", "background"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Recovery excludes whole deleted lists and Delete all completed tasks; exact Google retention duration not established.",
+        "zh": "恢复不覆盖整列表删除及 Delete all completed tasks，Google 准确保留时长未确立。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "Public pricing page offered and displayed English/Chinese; complete signed-in application localization not verified."
+  },
+  "license": {
+    "status": "service_terms_read_source_rights_not_granted",
+    "is_open_source": null,
+    "url": "https://docs.google.com/document/d/e/2PACX-1vRmU4OVlapXiYqsM3O9zy9v0JaVYEuYtbK3aq70c6ey5ere8xv5rNQzp-iHc3LNdjJeKR1JnzTQS8AB/pub?embedded=true",
+    "source_ref": "terms",
+    "scope": "Officially embedded service terms retain vendor IP; no application source redistribution license established."
+  },
+  "pricing": {
+    "status": "official_browser_display_checkout_unverified",
+    "price_type": "free_personal_pro_team_per_user_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "USDselector:Pro$4.99monthly or$3.99/mo billedyearly; Team$5.99/user monthly or$4.99/user/mo billedyearly. Freebase.7daypaidtrialcard required perhelp; tax/checkout unverified.",
+    "source_snapshot_zh": "USD 选择器：Pro 月付 $4.99 或年付折合每月 $3.99；Team 每人月付 $5.99 或年付折合每月 $4.99。基础免费。帮助称七天付费试用需卡；税／结账未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/tasksboard",
+      "read_at": "2026-10-22T09:06:29.891Z",
+      "excerpt_sha256": "e0f236f81bc3bf774eb1a16e738620bd25885e4454556efdfc535ea288a75c33",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "tasksboard.com",
+      "title": "TasksBoard | Full screen app for Google Tasks",
+      "url": "https://tasksboard.com/",
+      "read_at": "2026-10-22T12:05:02.536220Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "da1b0debe315c06de2a754774927620d13c9f4ba353ce72bf8288f17aa1b31db",
+      "research_notes_en": "GoogleTasks-based board, corefreeplan and publicfeaturecheckmarks read; popularity/testimonials not adopted. Homepage sync language qualified by actual support docs."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "tasksboard.com",
+      "title": "TasksBoard | Desktop app for Google Tasks",
+      "url": "https://tasksboard.com/pricing",
+      "read_at": "2026-10-22T12:05:02.536896Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "26c775c7857ba0918094ee8f86e49ca5729c6ea95e0c93f6b8e88b064ea24fc6",
+      "research_notes_en": "Browser pricepage actualUSD annual/monthly rates and currentcancel/TeamFAQ read; no account or checkout. Publiclanguage selector used only to read English."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "tasksboard.com",
+      "title": "Security & Privacy, How TasksBoard Protects Your Data | TasksBoard",
+      "url": "https://tasksboard.com/security",
+      "read_at": "2026-10-22T12:05:02.537340Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f76bdcf13f689331959aec65700ed3b44783f5ac79f7fe8d69ff9699a4a566f4",
+      "research_notes_en": "Actual Tasks scope and optionalDrivefile scope text read; TLS/endtoendheading not adopted as independent E2EE proof or certification."
+    },
+    {
+      "id": "shared-faq",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Shared lists FAQ | TasksBoard Support",
+      "url": "https://support.tasksboard.com/collaboration/shared-list-faq/",
+      "read_at": "2026-10-22T12:05:02.537699Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e88d624a9957e193da56c642c8ae5de3e9361f6060a5da49c1f15930f27c9eeb",
+      "research_notes_en": "Sharedcopy model, owner, linknonexpiry, retainedcopiesuponremove, fiveownedfree limit and boardpaidconflict read; no sharingaction."
+    },
+    {
+      "id": "recovery",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Recover deleted Google tasks | TasksBoard Support",
+      "url": "https://support.tasksboard.com/how-to/recover-deleted-google-tasks/",
+      "read_at": "2026-10-22T12:05:02.537739Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8e7c031d099587b223f0a550dfbd40c7b2ca577d3e04fe365f44c52a29ff1ae9",
+      "research_notes_en": "Google-retained recentlydeleted task recovery documented; wholelist/deleteallcompleted excluded, no fixed retention time."
+    },
+    {
+      "id": "repeat",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Set/Delete repeating tasks | TasksBoard Support",
+      "url": "https://support.tasksboard.com/how-to/set-delete-repeating-tasks/",
+      "read_at": "2026-10-22T12:05:02.538224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0f0b9f73374dbde5df953124c946f93f038ca8f16720d9bee1e0f7ad7335f9e0",
+      "research_notes_en": "TasksBoard repeat/time/reminder stored in details unlike nativeGoogle recurrence; nextoccurrence/15mincatchup/reminderlimit rules read."
+    },
+    {
+      "id": "background",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Sync in the background | TasksBoard Support",
+      "url": "https://support.tasksboard.com/how-to/sync-in-the-background/",
+      "read_at": "2026-10-22T12:05:02.538592Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "adb301bbfc6e0efac5c3a2d2a5aafecee2f006c0dcaef01bf088181156c0e22d",
+      "research_notes_en": "Sharedcopies synchronize while a member hasTasksBoardopen; outsideclient edits wait, manualSyncnow. Notunconditionalbackgroundsync."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Export a list to Google Sheets | TasksBoard Support",
+      "url": "https://support.tasksboard.com/how-to/export-a-list-to-google-sheets/",
+      "read_at": "2026-10-22T12:05:02.538623Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "134413d52fa7bf690056806f197242d306c794bb098701aab353e607f97d2595",
+      "research_notes_en": "Sheets snapshotPremium and CSVallplans withoutDrivepermission, fields/nesting/linkscope read; noexportexecuted."
+    },
+    {
+      "id": "refunds",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Refunds and unexpected charges | TasksBoard Support",
+      "url": "https://support.tasksboard.com/premium/refunds/",
+      "read_at": "2026-10-22T12:05:02.538657Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "48dd8580f61914a1d957f0bf92ec05c7c5eb9b82c9f34ce5eeb555506a1c319e",
+      "research_notes_en": "Currenthelp says30daysfromcharge, monthlyfull/yearlyprorata, refundendsPremium and7daytrialcard/no reminder. Terms differ insubscribeversuschargewording."
+    },
+    {
+      "id": "privacy-details",
+      "type": "official_documentation",
+      "site": "support.tasksboard.com",
+      "title": "Privacy and Security | TasksBoard Support",
+      "url": "https://support.tasksboard.com/privacy-and-security/",
+      "read_at": "2026-10-22T12:05:02.538689Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "72ea2d54a790ce38deceeb1f80f915c332b4956ca35d32be239f676fcaa8ae89",
+      "research_notes_en": "Vendor token/profile/listmetadata/boardmetadata storage,taskdata local/Google distinction and delete-before-revoke sequence read; not an audit."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "docs.google.com",
+      "title": "TasksBoard - Terms of Service",
+      "url": "https://docs.google.com/document/d/e/2PACX-1vRmU4OVlapXiYqsM3O9zy9v0JaVYEuYtbK3aq70c6ey5ere8xv5rNQzp-iHc3LNdjJeKR1JnzTQS8AB/pub?embedded=true",
+      "read_at": "2026-10-22T12:05:02.539090Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e0e6c0168807690d7317b99ef1e7863d65791d2fab7e18be5bdb391d8151be30",
+      "research_notes_en": "Official /terms embeds publishedGoogleDoc, actualMay2024bodyread. ServiceIPreserved, cancellationperiodend, paidassociateddata loss and30dayssubscribingrefund wording."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "docs.google.com",
+      "title": "TasksBoard - Privacy Policy",
+      "url": "https://docs.google.com/document/d/e/2PACX-1vSNwp_4o2nWhNKdQHEc7tfp-py6FstV1MTt8msDomdwPOsaEXfoJZkZsUcfdkzrqrbOqNfRs1mnLbZK/pub?embedded=true",
+      "read_at": "2026-10-22T12:05:02.539146Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "79015149f91ab0ac22ed2e0126904645068e56570e35e8240e6ce651f57a262c",
+      "research_notes_en": "Official /privacy embeds publishedGoogleDoc, actualtaskdataGoogle/profile+logs/providerprocessingtext read; not no-data-anywhere or independently audited."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:05:02.539146Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "shared-faq",
+    "background",
+    "privacy-details"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "board-account",
+        "title_en": "Move a test task before relying on the wider board",
+        "title_zh": "依赖宽幅看板前先移动测试任务",
+        "en": "For a proposed shared review list, start with one harmless task, a due date and a short note. Inspect it in TasksBoard and the intended Google Tasks account before adding important items. Moving a card is a real task change; the wider board is an interface to Google-account work, not an isolated planning sketch.\n\nA board can group lists while colors and board organization have TasksBoard-specific metadata. Google mobile-client links do not establish that every paid board feature appears in those clients. Internet access is required; the homepage explicitly says TasksBoard has no offline mode.",
+        "zh": "假设使用共享复核列表，可先建一个无害任务、到期日及简短笔记，分别在 TasksBoard 和目标 Google Tasks 账户检查，再添加重要工作。移动卡片是真实任务修改，宽幅看板是 Google 账户工作的界面，不是隔离规划草图。\n\n看板组织多个列表，颜色及布局有 TasksBoard 专属元数据。链接 Google 移动客户端不证明全部付费看板能力都在这些客户端出现。需要网络，首页明确称 TasksBoard 没有离线模式。",
+        "source_refs": ["product", "privacy-details"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "sharing-copy",
+        "title_en": "A stopped share leaves existing copies behind",
+        "title_zh": "停止共享仍会留下已有副本",
+        "en": "The shared-list FAQ says the first sharer owns the list and each collaborator gets a Google Tasks copy. Removing a collaborator or stopping sharing ends synchronization but leaves the current copy in their account. An invitation link does not expire; limiting new joins and individual removal have paid conditions.\n\nDo not use revocation as a promise to retrieve previously distributed information. For client-sensitive work, choose the participants and retained-content policy before sending an invitation. Free accounts can own five shared lists; joining another person’s list does not use that ownership allowance. Whole-board sharing has separate paid eligibility, and official pages differ on its Pro/Team placement—confirm both sides.",
+        "zh": "共享列表 FAQ 称首次分享者是所有者，每位协作者得到 Google Tasks 副本。移除协作者或停止共享会结束同步，但对方账户保留当前副本。邀请链接不过期，限制新成员加入及单独移除有付费条件。\n\n不能把撤权当作取回已分发信息的承诺。涉及客户内容，应先确定参与者及已保留内容规则，再发邀请。免费账户可拥有五个共享列表，加入他人列表不占该所有者额度。整看板共享有独立付费要求，官方页面对 Pro／Team 归属存在差异，需确认双方。",
+        "source_refs": ["shared-faq", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sync-window",
+        "title_en": "Shared copies wait for TasksBoard to reconcile them",
+        "title_zh": "共享副本需要 TasksBoard 协调",
+        "en": "Support distinguishes personal reads from shared-copy reconciliation. Shared lists update while someone on the list has TasksBoard open. An edit made in Gmail, Calendar or a Google Tasks mobile client waits until someone opens TasksBoard; when everyone closes it, the copies wait. Sync now is the documented manual check.\n\nFor an important handoff, compare a known task on both accounts after reconciliation. A missing task may be an account-selection or authorization problem rather than deletion. The general real-time homepage statement does not justify assuming a closed-app background service continually reconciles all shared copies.",
+        "zh": "支持文档区分个人读取与共享副本协调。共享列表会在有人打开 TasksBoard 时更新；在 Gmail、Calendar 或 Google Tasks 移动端修改后，需等有人打开 TasksBoard。全部关闭时，副本等待；Sync now 是文档提供的手工检查。\n\n重要交接应在协调后比较双方账户的已知任务。任务缺失可能来自账户选择或授权问题，未必被删除。首页通用实时表述不能支持“关闭应用后后台仍持续协调全部共享副本”的假设。",
+        "source_refs": ["background"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "repeat-native",
+        "title_en": "Native Google repeats and TasksBoard repeats are different",
+        "title_zh": "Google 原生重复与 TasksBoard 重复不同",
+        "en": "The repeat guide says Google’s native recurrence/time rules are not available through its third-party API path. TasksBoard stores its own repeat, time and reminder lines in task details. Completing its repeated task creates a next occurrence; undo removes that occurrence. Changes from a Google client can take about fifteen minutes to generate the next task.\n\nNative Google repeats follow Google’s own series. Deleting their current occurrence in TasksBoard does not stop the whole series. Test one routine before mixing clients, preserve the metadata lines, and inspect reminder scheduling after external completion. Timing is documented with tolerances, not a guaranteed exact-second alarm.",
+        "zh": "重复指南称此第三方 API 路径无法取得 Google 原生重复／时间规则。TasksBoard 把自己的重复、时间及提醒行存入任务详情；完成其重复任务会创建下一实例，撤销会移除该实例。从 Google 客户端完成后，创建下一项可能约需十五分钟。\n\nGoogle 原生重复由 Google 管理序列，在 TasksBoard 删除当前实例不会停止整个系列。混用客户端前，应测试一次例行任务、保留元数据行，并检查外部完成后的提醒安排。文档给出时间容差，不是精确到秒的闹钟保证。",
+        "source_refs": ["repeat"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permission-data",
+        "title_en": "Tasks access is separate from Drive and data storage",
+        "title_zh": "任务访问、Drive 权限及数据存储分别核对",
+        "en": "The security page describes Google Tasks access at sign-in and a separate Drive file scope for selected/created files. Gmail-origin links or Calendar visibility do not by themselves grant access to all mail or calendars. Vendor support also documents stored account profiles, access tokens and board/list metadata, alongside tasks retained in Google and local browser handling.\n\nDo not reduce this to “no data stored anywhere” or infer end-to-end encryption from a TLS heading. Review actual authorization and the current policies for the intended sharing/AI/API path. The documented metadata-deletion sequence requires signing in before revoking Google access; no deletion, revocation or security audit was performed.",
+        "zh": "安全页描述登录时 Google Tasks 权限，以及针对所选／所建文件另行请求的 Drive file scope。Gmail 来源链接或 Calendar 可见性本身不授予全部邮件或日历访问。厂商支持也说明保存账户资料、访问 token 及看板／列表元数据，同时任务保留在 Google 并在浏览器本地处理。\n\n不能简化为“任何地方都不存数据”，也不能从 TLS 标题推断端到端加密。应按目标共享／AI／API 路径检查实际授权及当前政策。文档的元数据删除流程要求在撤销 Google 访问前登录完成；本次没有删除、撤权或安全审计。",
+        "source_refs": ["security", "privacy-details", "privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "export-recover",
+        "title_en": "Snapshots and recently deleted tasks solve different problems",
+        "title_zh": "快照与最近删除任务解决不同问题",
+        "en": "Google Sheets export is paid and produces a snapshot, not a live sheet sync. CSV download is available on every plan without Drive access. Links and attachments remain references in Notes; copying a row does not guarantee its reader gains file permission or that a whole board can be rebuilt.\n\nSupport documents restoring recently deleted tasks that Google still retains, with notes and due dates. It excludes Delete all completed tasks and whole-list deletion, and does not establish a fixed recovery period. Preserve a verified external copy before bulk changes and check its subtask structure. Neither export nor this limited restore was executed.",
+        "zh": "Google Sheets 导出付费，生成快照，不会持续同步表格；所有方案可下载 CSV，且不需 Drive 权限。链接和附件仍作为 Notes 中的引用，复制行不保证读者获得文件权限，也不保证重建整个看板。\n\n支持文档可恢复 Google 仍保留的最近删除任务及笔记／到期日，但不覆盖 Delete all completed tasks 和整个列表删除，也未确立固定恢复期。批量修改前，应保存已验证外部副本并检查子任务结构。本次没有执行导出或该有限恢复。",
+        "source_refs": ["export", "recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "paid-access",
+        "title_en": "Separate free use, a card-backed trial and cancellation",
+        "title_zh": "区分免费使用、需卡试用及取消",
+        "en": "The public USD selector shows Pro at $4.99 monthly or $3.99/month billed yearly, and Team at $5.99/user monthly or $4.99/user/month billed yearly. Team adds centralized per-user billing and view-only collaboration among other features. Actual tax and checkout totals were not verified.\n\nThe seven-day paid trial requests a card and starts charging on its stated date unless cancelled; support says no trial-end/yearly-renewal reminder is sent. Cancellation keeps paid access to period end. The current help refund policy uses thirty days from the charge, with annual refunds prorated; older linked terms say thirty days from subscribing. Confirm the relevant charge rather than assuming identical rules. A refund ends Premium immediately; export paid-feature data before lapse.",
+        "zh": "公开 USD 选择器显示 Pro 月付 $4.99 或年付折合每月 $3.99；Team 每人月付 $5.99 或年付折合每月 $4.99。Team 增加集中逐用户计费及只读协作等功能。实际税和结账总额未核实。\n\n七天付费试用需卡，未取消则在标明日期扣费；支持称不会发送试用结束／年续费提醒。取消后付费访问保留至周期末。当前帮助退款政策按扣费后三十天、年付按比例；较早链接条款按订阅后三十天。应确认相关扣款，不能假设规则相同。退款会立即结束 Premium，失效前应导出付费功能数据。",
+        "source_refs": ["pricing", "refunds", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "TasksBoard: Google Tasks Sharing, Sync Windows and Pricing",
+    "title_zh": "TasksBoard：Google Tasks 共享、同步窗口及价格",
+    "description_en": "Evaluate shared copies, retained data after revocation, native versus custom repeats, CSV export and paid trial conditions.",
+    "description_zh": "评估共享副本、撤权后保留数据、原生与自有重复、CSV 导出及付费试用条件。",
+    "primary_intent": "Evaluate Google Tasks board collaboration and data behavior.",
+    "secondary_questions": [
+      "Do collaborators keep copies when sharing stops?",
+      "Do shared lists sync when everyone closes TasksBoard?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No Google sign-in/authorization, task/share/role action, repeat/reminder, Drive operation, export/import, restore, payment, cancellation or API/AI operation tested.",
+      "zh": "未测试 Google 登录／授权、任务／共享／角色操作、重复／提醒、Drive 操作、导出／导入、恢复、付款、取消或 API／AI 操作。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Pro/Team whole-board eligibility differs across public pages, refund time origin differs between help and older terms, and exact checkout/tax/seat limits need confirmation.",
+      "zh": "公开页对 Pro／Team 整看板资格描述不同，帮助与旧条款的退款起算不同，准确结账／税／席位限制需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Shared conflict/deletion behavior beyond read conditions, native/custom recurrence coexistence, complete board/file recovery, current AI/API data handling and full signed-in UI languages unverified.",
+      "zh": "所读条件外的共享冲突／删除、原生与自有重复共存、完整看板／文件恢复、当前 AI／API 数据处理及全部登录后界面语言未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

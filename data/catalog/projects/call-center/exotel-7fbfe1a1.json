@@ -1,0 +1,441 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "exotel-7fbfe1a1",
+  "name": "Exotel",
+  "website_url": "https://exotel.com/",
+  "domain": "exotel.com",
+  "identity_domain": "exotel.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Exotel is a customer-communications platform spanning enterprise contact centres,business-phone services,communication APIs and AI products. The current enterprise-contact-centre documentation identifies that platform as formerly Ameyo,but its Omni Contact Center and Engage (ExoCampaigns) documentation areas remain separate. This profile does not treat the old Ameyo Engage record as an identical current entitlement.\n\nFor an illustrative enterprise support call,choose an IVR/CRM-based route,assign it to a queue,then verify agent eligibility,overflow and the resulting record. For historical ticket retrieval,check the separate Interaction Archiver license,role and date filters;it does not archive voice/video recordings. Pricing also has separate enterprise-license and prepaid business-phone models. No tenant,call,flow,AI,carrier,payment,archive query or export was executed.",
+  "description_zh": "Exotel是客户通信平台，覆盖企业联络中心、商务电话、通信API及AI产品。当前企业联络中心文档称其原为Ameyo，但Omni Contact Center与Engage（ExoCampaigns）文档区仍分开。本档案不将旧Ameyo Engage记录当作相同当前权益。\n\n以假设企业支持电话为例，选IVR／CRM路由、分配队列，再检查客服资格、溢出及所生成记录。历史工单取回需另查Interaction Archiver许可、角色及日期过滤，它不归档语音／视频录音。定价也区分企业许可与预付商务电话模式。未执行租户、电话、流程、AI、运营商、付款、归档查询或导出。",
+  "core_features": [
+    {
+      "name_en": "Enterprise routing and queues",
+      "name_zh": "企业路由及队列",
+      "explanation_en": "Use IVR/CRM/skills and queue or call priority,with a configured nodeflow and queue assignment.",
+      "explanation_zh": "使用IVR／CRM／技能及队列或电话优先级，并配置nodeflow及队列分配。",
+      "explanation_scope": "product_specific",
+      "source_ref": "acd",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Licensed interaction archiving",
+      "name_zh": "有许可的互动归档",
+      "explanation_en": "Search archived ticket/message/chat data with version-specific license,role and date-range limits.",
+      "explanation_zh": "按版本许可、角色及日期范围限制查询已归档工单／消息／聊天。",
+      "explanation_scope": "product_specific",
+      "source_ref": "archiver",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate telecom commercial models",
+      "name_zh": "不同电话商业模式",
+      "explanation_en": "Distinguish enterprise contact-centre licenses from prepaid phone rental,validity and usage credits.",
+      "explanation_zh": "区分企业联络中心许可与预付电话租金、有效期及用量余额。",
+      "explanation_scope": "product_specific",
+      "source_ref": "phone-pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Version-scoped operational limits",
+      "name_zh": "按版本限定运营上限",
+      "explanation_en": "Review release-specific Omni chat/ticket limits rather than inferring unlimited capacity from a package label.",
+      "explanation_zh": "按版本核对Omni聊天／工单限制，不能从套餐标签推断无限容量。",
+      "explanation_scope": "product_specific",
+      "source_ref": "omni-fup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "An enterprise evaluating configured contact-centre routing,agent access and historical ticket retrieval.",
+      "A business-phone/API team managing prepaid validity and credits with a separately selected communications scope."
+    ],
+    "zh": [
+      "评估已配置联络中心路由、客服访问及历史工单取回的企业。",
+      "按单独通信范围管理预付有效期和余额的商务电话／API团队。"
+    ],
+    "source_refs": ["acd", "archiver", "phone-pricing", "prepaid-wallet"],
+    "basis": "Editorial fit;not verified cost savings,uptime,AI accuracy or integration outcomes."
+  },
+  "technical_details": {
+    "Archive data boundary": {
+      "en": "Interaction Archiver stores expired tickets,messages,attachments and chat logs. Voice/video recordings require separate VLA configuration. Retrieval APIs and attachment behavior are version-specific.",
+      "zh": "Interaction Archiver保存过期工单、消息、附件及聊天日志，语音／视频录音需另配VLA，取回API及附件行为按版本限定。",
+      "source_ref": "archiver",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise contact-centre administrator",
+      "Telephony/API owner",
+      "Campaign supervisor",
+      "Records/retention owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "contact-center-scope"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the actual Exotel product,release,deployment and order form;separate enterprise licenses,phone credits,AI and streaming.",
+        "zh": "选择真实Exotel产品、版本、部署及订单，区分企业许可、电话余额、AI及流服务。",
+        "source_refs": [
+          "enterprise-pricing",
+          "phone-pricing",
+          "contact-center-scope"
+        ],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Map one IVR/CRM route to a queue,agent skills and failure/overflow treatment;obtain required nodeflow artifacts for the chosen configuration.",
+        "zh": "将一个IVR／CRM路由映射队列、客服技能及失败／溢出处理，为所选配置取得所需nodeflow文件。",
+        "source_refs": ["acd"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Verify call records and the separate ticket/audio retention paths,then test role restrictions,date ranges and export before production reliance.",
+        "zh": "核对电话记录及独立工单／音频留存路径，再测试角色、日期范围及导出后用于运营。",
+        "source_refs": ["archiver", "omni-fup", "cloud-terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "CRM and IVR routing data",
+        "source_ref": "acd",
+        "scope": "RoutingcanuseCRMdata/IVR/hours/skills;exactconnectorversion,permissions andwrite-backuntested."
+      },
+      {
+        "name": "Interaction Archiver retrieval APIs",
+        "source_ref": "archiver",
+        "scope": "4.13.32+licensedquerypathforarchivedtickets/messages/attachments,subjecttorole/filter/ratelimits;notvoicevideobackupAPI."
+      },
+      {
+        "name": "Agent Stream voice streaming",
+        "source_ref": "enterprise-pricing",
+        "scope": "Explicitlyexcludedfromlistedenterpriseplans,separateoffering/pricing. No inclusion inferred fromAIbranding."
+      }
+    ],
+    "source_ref": "enterprise-pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Enterprise$70/$100 cards do not establish a per-user/month unit or all-in telecom cost in the reviewed text.",
+        "zh": "企业$70／$100卡片的已读文字未建立每用户／月单位或含全部电话成本。",
+        "source_refs": ["enterprise-pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A new route may require a service-engineer-provided nodeflow and explicit queue assignment,despite general drag-and-drop marketing.",
+        "zh": "虽然笼统宣传拖放，新路由仍可能需服务工程师提供nodeflow并明确分配队列。",
+        "source_refs": ["acd"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Interaction Archiver excludes voice/video and requires a license from4.13.32;supervisor visibility is narrower than admin visibility.",
+        "zh": "Interaction Archiver排除语音／视频，4.13.32起需许可；主管可见范围小于管理员。",
+        "source_refs": ["archiver"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Prepaid service requires valid account term and balance;recharging after expiry can forfeit unused balance under the support guide.",
+        "zh": "按支持指南，预付需有效期及余额，到期后才充值可能损失未用余额。",
+        "source_refs": ["prepaid-wallet"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Omni4.13x FUP numbers are version/product-specific and cannot be treated as every Exotel voice/API limit.",
+        "zh": "Omni4.13x FUP按版本／产品限定，不能当作全部Exotel语音／API限制。",
+        "source_refs": ["omni-fup"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://exotel.com/terms-of-service-exotel/",
+    "source_ref": "cloud-terms",
+    "notes_en": "PublishedcloudcommunicationsProducttermsgrantlimitedrevocableuse,notownershipofExophonenumbers or vendorsoftware. Actualenterpriseorderformapplicabilityneedsreview.",
+    "notes_zh": "公开云通信Product条款授予有限可撤销使用权，不转移Exophone号码或厂商软件所有权，真实企业订单适用性需核。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "enterprise-pricing",
+    "source_refs": ["enterprise-pricing", "phone-pricing", "prepaid-wallet"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Distinctenterprise-license and INRprepaidphoneoffers;enterprise70/100period/unit/ISOcurrencyunknown. No blended peragent/monthnormalization.",
+    "source_snapshot_en": "Enterprise:XPrime$70,XPro$100 withunclearunit/term,XTRMquote;AgentStreamexcluded. INRBusinessPhone:Dabbler9999/5monthvalidity=4999rental+5000credits,1number3agents;Believer19999/11months=10499+9500,2numbers6agents;Influencer49499/11months=10499+39000,10numbersunlimitedagents. Credit=INR1. Phonepage7daytrial500credits. Prepaidvalidityandbalancebothrequired;unusedbalancecarryonlybeforeexpiry,supportsaysnonrefund. AI/enterpriseactualfeesandunitstoconfirm.",
+    "source_snapshot_zh": "企业：XPrime$70、XPro$100但单位／周期不明，XTRM询价，AgentStream不含。INR商务电话：Dabbler9999／五个月有效期=租金4999+5000余额、1号码3客服；Believer19999／11个月=10499+9500、2号码6客服；Influencer49499／11个月=10499+39000、10号码不限客服。1余额=INR1。电话页七天试用500余额。预付同时需有效期及余额，余额需到期前续才能结转，支持称预付款不退。AI／企业真实费用及单位待核。",
+    "checked_at": "2026-10-22T15:07:29.329989+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does Interaction Archiver retain call audio?",
+      "question_zh": "Interaction Archiver会保留电话音频吗？",
+      "answer_en": "The document explicitly excludes voice/video recordings,which need separate VLA configuration. It archives ticket-associated messages,attachments and chat logs.",
+      "answer_zh": "文档明确排除语音／视频录音，需另配VLA；它归档工单关联消息、附件及聊天日志。",
+      "source_refs": ["archiver"]
+    },
+    {
+      "question_en": "Can I treat enterprise$70 as a monthly all-in seat price?",
+      "question_zh": "能把企业$70当每月含全部费用的座席价吗？",
+      "answer_en": "No verified unit/period was established. The enterprise page asks for sales consultation and separately excludes Agent Stream;phone-wallet packs use another model.",
+      "answer_zh": "未建立已核单位／周期。企业页需销售沟通且另排除Agent Stream；电话余额包又是另一模式。",
+      "source_refs": ["enterprise-pricing", "phone-pricing"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/exotel",
+      "read_at": "2026-10-22T08:56:29.422Z",
+      "excerpt_sha256": "4071b5f81e4ca79c75d436dc202d84769bafbd61afa6b4ae61ddb1cd2d2b48f2",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "enterprise-pricing",
+      "type": "official_pricing",
+      "site": "Exotel Contact Center Solution Pricing | CcaaS Pricing",
+      "title": "Exotel Contact Center Solution Pricing | CcaaS Pricing",
+      "url": "https://exotel.com/pricing/enterprise-contact-center/",
+      "read_at": "2026-10-22T15:05:40.197474+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "30fbf791563bcca9428ccc141328e239dc21692e0707bef977fd198ef0a9fdd7",
+      "research_notes_en": "XPrime70/XPro100 dollaramounts withoutclearperiod/unit,XTRMquote,slablicenses anddeploymentchoices;AgentStreamexplicitlyexcluded. Noassumptionmonthlyperagent."
+    },
+    {
+      "id": "phone-pricing",
+      "type": "official_pricing",
+      "site": "Exotel's Pricing: Check Out Our Plans & Choose the Best One!",
+      "title": "Exotel's Pricing: Check Out Our Plans & Choose the Best One!",
+      "url": "https://exotel.com/pricing/business-phone-system/",
+      "read_at": "2026-10-22T15:06:12.890112+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "dfcb58ce0a730b25254a437b19664cc1511cb4bf86ac612ac3e9940a838f5ddd",
+      "research_notes_en": "SeparateINRprepaidBusinessPhoneDabbler9999/5months/4999rental5000credits/3agents1number,Believer19999/11months/10499rental9500credits/6agents2numbers,Influencer49499/11months/10499rental39000credits/unlimitedagents10numbers. Trial7d500credits. WhatsAppperconversationtableunverifiednotadopted."
+    },
+    {
+      "id": "prepaid-wallet",
+      "type": "official_documentation",
+      "site": "Exotel payment terms & pricing model : Exotel Support Center",
+      "title": "Exotel payment terms & pricing model : Exotel Support Center",
+      "url": "https://support.exotel.com/support/solutions/articles/125556-what-are-your-payment-terms-",
+      "read_at": "2026-10-22T15:06:12.679318+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a19915e4a4209eb60cd875efce97e34525e9a46b55d1b731b7024fa3e9fad51f",
+      "research_notes_en": "July2025supportprepaidbalanceANDvalidityrequired;earlyrechargeextendsfromexpiry/carriesbalance,lateafterexpiryforfeitsbalance,topupnotvalidityrenewal;nonrefund/no temporarysuspend. ScopeprepaidnotallCCaaScontracts."
+    },
+    {
+      "id": "contact-center-scope",
+      "type": "official_documentation",
+      "site": "Exotel Docs",
+      "title": "Exotel Docs",
+      "url": "https://docs.exotel.com/contact-center",
+      "read_at": "2026-10-22T15:06:12.679835+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f483f3bd5453d1fc090ac90364b610029b80ea1aa354f23b54f4d8438e8ea865",
+      "research_notes_en": "CurrentportalOct21 2026 identifiesenterprisecontactcenterasformerAmeyo;separatesOmniCCandEngageExoCampaigns. DoesnotmapoldAmeyoEngageentitlements."
+    },
+    {
+      "id": "acd",
+      "type": "official_documentation",
+      "site": "Exotel Docs",
+      "title": "Exotel Docs",
+      "url": "https://docs.exotel.com/contact-center/inbound-routing-strategies-automatic-call-distributor",
+      "read_at": "2026-10-22T15:07:29.329989+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "179943edc30619ad06e1ab4cab2ac931fe6c1245a47938ba1da79981c43bd3e7",
+      "research_notes_en": "CRM/IVR/hours/skillrouting,queuevscallpriority/sticky. Detailedadminrequiresengineerprovided.nodeflow/.anfxuploadandqueueassignment;notuniversalnoimplementation."
+    },
+    {
+      "id": "archiver",
+      "type": "official_documentation",
+      "site": "Exotel Docs",
+      "title": "Exotel Docs",
+      "url": "https://docs.exotel.com/contact-center/interaction-archiver",
+      "read_at": "2026-10-22T15:07:26.223174+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "764e4155685c6820e4dd68c9d8edf117782019e5d6d210014a250ffcbcc3b634",
+      "research_notes_en": "Interactionarchiveexcludesvoice/videoVLAseparate;10yearsor4crore(40m)earlier,mandatorycampaign<=30dayrange,supervisoractiveassignedvsadminallincldeleted. Version4.13.32requiresenableInteractionArchiverlicense andaddsattachments/retrievalAPI."
+    },
+    {
+      "id": "omni-fup",
+      "type": "official_documentation",
+      "site": "Exotel Docs",
+      "title": "Exotel Docs",
+      "url": "https://docs.exotel.com/contact-center/omni-cc-fupor-chat-and-ticketing-or-m1",
+      "read_at": "2026-10-22T15:07:27.173960+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4f5220d5d2441038a66c8fe0359a3e71dff20e1b1353bfe4171b159a662a5f73",
+      "research_notes_en": "Release4.13xchat/ticketFUPonly:queueusers200,totalcreated650,allagentlivechats320,queuewaiting20,chatattachment5MB/total20MB;breachmaylagnotunlimitedallproductcapacity."
+    },
+    {
+      "id": "cloud-terms",
+      "type": "official_license",
+      "site": "Exotel Terms of Service | Exotel",
+      "title": "Exotel Terms of Service | Exotel",
+      "url": "https://exotel.com/terms-of-service-exotel/",
+      "read_at": "2026-10-22T15:05:41.481933+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "30906303aacf1fb18301ccb93d87a479d5770eb70867fe53ebdc13fdcdbc8bfa",
+      "research_notes_en": "Service/Exophone/APIterms limitedrevocableuse,noownershipnumber;creditlimitstop;downloadbeforetermination,deleteASAPexceptlaw,9monthassistnotguaranteedarchive. Postpaid30dnotice/prepaidcloseaccount;actualenterpriseorderformscopeunreviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:07:29.329989+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "enterprise-pricing",
+    "phone-pricing",
+    "contact-center-scope",
+    "acd",
+    "archiver"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-map",
+        "title_en": "Choose the current Exotel product and release",
+        "title_zh": "选择当前Exotel产品及版本",
+        "en": "Exotel spans enterprise contact centres,business-phone/API communications and AI products. Its current Contact Center Documentation portal identifies the enterprise platform as formerly Ameyo and organizes Omni features by routing,campaigns,agent desktop,digital channels and archiving. Engage (ExoCampaigns) has a separate documentation area. That does not establish a one-to-one migration of the old Ameyo Engage product or an entitlement shared by every Exotel account.\n\nThe enterprise commercial page offers XPrime,XPro and XTRM with different integration/AI/routing descriptions and lists multiple deployment choices. Voice streaming through Agent Stream is explicitly separate. Map which product owns the number,carrier,agent workspace,AI tools and historical records before assuming that an AI/contact-centre headline includes all of them.",
+        "zh": "Exotel覆盖企业联络中心、商务电话／API及AI产品。当前Contact Center Documentation称企业平台原为Ameyo，按路由、活动、客服桌面、数字渠道及归档组织Omni功能；Engage（ExoCampaigns）有独立文档区。这不建立旧Ameyo Engage一对一迁移或全部Exotel账户共享权益。\n\n企业商业页提供XPrime、XPro及XTRM，集成／AI／路由描述不同，并列多部署选择。Agent Stream语音流明确单独提供。需先映射哪个产品负责号码、运营商、客服工作区、AI工具及历史记录，不能假设AI／联络中心标题全含。",
+        "source_refs": ["contact-center-scope", "enterprise-pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing",
+        "title_en": "Routing logic must also be assigned to a queue",
+        "title_zh": "路由逻辑还需分配到队列",
+        "en": "For an illustrative service call,IVR choice or CRM data identifies a service requirement,and ACD chooses an eligible queue or agent. The documentation distinguishes skill priority,queue priority,priority assigned to the call itself and preferred-agent continuity. A higher-priority call can move ahead of an older lower-priority call;these are different policy choices,not interchangeable labels.\n\nThe detailed administrator workflow requires adding a routing context flow,uploading a.nodeflow or.anfx file provided by a service engineer,and assigning its ACD node to the campaign queue. A general drag-and-drop description does not prove every routing change can be completed without implementation help. Test an unassigned route,no available skill,overflow and a changed priority against actual staffing. Claims of no extra waiting are vendor descriptions,not measured guarantees.",
+        "zh": "以假设服务电话为例，IVR选择或CRM资料确定服务需求，ACD选择合资格队列或客服。文档区分技能优先、队列优先、电话自身优先及偏好客服连续性。高优先电话可排在更早低优先来电前，这是不同政策选择，标签不能互换。\n\n详细管理员流程要求添加路由上下文、上传服务工程师提供的.nodeflow或.anfx文件，并将ACD节点分配活动队列。笼统拖放说明不证明每个路由修改都无需实施帮助。应按真实人员测试未分配路由、无可用技能、溢出及优先级变化。无额外等待是厂商描述，不是实测保证。",
+        "source_refs": ["acd"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "archive",
+        "title_en": "Historical ticket retrieval is licensed and excludes audio/video",
+        "title_zh": "历史工单取回需许可，且排除音视频",
+        "en": "Interaction Archiver stores expired tickets and associated messages,attachments and chat logs. Voice and video recordings are explicitly excluded and require separate VLA configuration. It is not a single archive for all contact-centre media. Starting with4.13.32,the enableInteractionArchiver license key must be active;the page also identifies version-specific attachment and retrieval-API support.\n\nSearch requires a campaign and a date range no longer than30days,including when searching by interaction or ticket ID. Admins can see all campaigns including deleted ones,while supervisors are limited to their currently assigned active campaigns. No results can therefore mean missing filters or role scope rather than missing data. Retention is bounded by ten years or40million interactions,whichever is reached first,and retrieval is rate-limited. Confirm the actual release,license and separate recording archive before promising a complete export.",
+        "zh": "Interaction Archiver保存过期工单及关联消息、附件、聊天日志，明确排除语音／视频录音，需另配VLA。因此不是全部媒体统一档案。4.13.32起需enableInteractionArchiver许可生效，页面还列按版本的附件及取回API支持。\n\n搜索必须选活动及不超过30天日期范围，即使用互动／工单ID也受限制。管理员可见全部含已删活动，主管仅见当前分配的活跃活动。因此无结果可能是缺过滤或角色范围，不一定资料缺失。留存限十年或四千万互动，先到为准，取回有限速。承诺完整导出前需确认真实版本、许可及独立录音档案。",
+        "source_refs": ["archiver"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release-limits",
+        "title_en": "Omni chat and ticket limits are not universal voice capacity",
+        "title_zh": "Omni聊天及工单限制不是通用语音容量",
+        "en": "The published Omni chat/ticket FUP explicitly targets the4.13xrelease. It lists200users in a queue,650created users,320live chats across all agents and20queued chats per queue,along with attachment and operation limits. The document warns that exceeding its parameters can create lag. These numbers are neither a universal Exotel API quota nor a promise that every package licenses that capacity.\n\nUse the tenant’s release and workload profile when planning a campaign. Ask how bot handoffs,attachments,searches and concurrent ticket work consume capacity,then test the intended peak with the actual implementation owner. A marketing label such as unlimited channels does not override product-specific resource and licensing limits. No load test was performed.",
+        "zh": "公开Omni聊天／工单FUP明确针对4.13x版本，列每队列200用户、可创建650用户、全客服合计320实时聊天及每队列20等待聊天，还有附件及操作限制，并警告超出可造成延迟。这些不是通用Exotel API配额，也不证明每套餐许可相应容量。\n\n规划活动时需用租户版本及负载特征，确认机器人转接、附件、查询和并行工单如何消耗容量，再由真实实施负责人测试目标峰值。无限渠道宣传不能覆盖具体资源及许可限制，未做负载测试。",
+        "source_refs": ["omni-fup", "enterprise-pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "two-bills",
+        "title_en": "Separate enterprise licenses from prepaid phone packs",
+        "title_zh": "区分企业许可与预付电话包",
+        "en": "Enterprise pricing displays XPrime70and XPro100with dollar symbols,but the reviewed text does not specify a billing period or per-agent unit;XTRM requests a quote. Do not turn those amounts into normalized monthly seat prices. Agent Stream is excluded,and license slabs,AI usage,telecom and deployment services require an actual quote.\n\nThe separate INR business-phone page publishes Dabbler9999for five-month validity,including4999rental and5000credits,one Exophone and three agents. Believer19999has eleven-month validity,10499rental,9500credits,two numbers and six agents. Influencer49499has eleven-month validity,10499rental,39000credits,ten numbers and unlimited agents. One credit is one rupee,not one minute. The page’s seven-day500-credit trial is scoped to that offer,not every enterprise platform.\n\nThe prepaid support guide requires both an unexpired account and available balance. Recharging before expiry carries unused balance and extends validity from the existing expiry;recharging after expiry can lose the remaining balance. A top-up solves low credits without necessarily being a validity renewal. The guide says prepayments are not refunded and temporary suspension is unavailable. Do not apply those rules blindly to a separately negotiated postpaid enterprise contract. Published WhatsApp table amounts were not adopted as independently verified current carrier rates.",
+        "zh": "企业页以美元符号显示XPrime70及XPro100，但已读文字没明确周期或每客服单位，XTRM需询价。不能归一化每月座席价；Agent Stream不含，许可阶梯、AI用量、电话及部署服务需真实报价。\n\n另一INR商务电话页列Dabbler9999、五个月有效期，含租金4999及5000余额、一个Exophone和三客服；Believer19999、11个月，租金10499、9500余额、两号码六客服；Influencer49499、11个月，租金10499、39000余额、十号码不限客服。1余额为1卢比，不是一分钟。页面七天500余额试用仅属该方案，不是全部企业平台。\n\n预付支持指南要求账户未过期且有余额。到期前充值可结转余额，并从原到期日延长有效期，到期后充值可能损失余款；补余额也不必然等于续有效期。指南称预付款不退，不能临时暂停。不能直接套到另议后付企业合同。公开WhatsApp表金额未当作独立核实当前运营商费率。",
+        "source_refs": [
+          "enterprise-pricing",
+          "phone-pricing",
+          "prepaid-wallet"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-exit",
+        "title_en": "Preserve records before terminating the relevant service",
+        "title_zh": "终止对应服务前先保存记录",
+        "en": "The published cloud-communications Product terms grant nonexclusive,nontransferable,revocable use and do not transfer ownership of Exophone numbers. They require customer records to be downloaded before termination and describe deletion as soon as reasonably possible afterward,subject to legal retention. A best-effort reference to providing recent data is not a guaranteed archive or restore service.\n\nThe same terms distinguish postpaid termination on30days’written notice from a prepaid close-account action settling the deposit. Current enterprise order forms and deployment-specific terms were not reviewed,so those rights must be checked against the selected contract. Exotel fits teams able to own routing,credits,licenses and media-specific retention. Complete portable export,restore,AI data regions,UI languages,carrier continuity and actual price units remain unverified.",
+        "zh": "公开云通信Product条款授予非独占、不可转移、可撤销使用权，不转移Exophone号码所有权。要求终止前下载客户记录，之后在合理可行时尽快删除，依法留存除外。尽力提供近期资料的表述不是保证归档或恢复服务。\n\n同一条款区分后付提前30天书面终止，与预付关闭账户并结算押金。未审阅当前企业订单及部署专属条款，权利需按所选合同确认。Exotel适合能负责路由、余额、许可及分媒体留存的团队。完整可携导出、恢复、AI资料地区、界面语言、运营商连续性及真实价格单位仍未核实。",
+        "source_refs": ["cloud-terms", "archiver", "prepaid-wallet"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Exotel: Contact-Centre Routing, Licensed Archives and Separate Phone Pricing",
+    "title_zh": "Exotel：联络中心路由、有许可归档及独立电话价格",
+    "description_en": "Review Exotel Omni routing,nodeflows,versioned archive/FUP boundaries,enterprise pricing units and prepaid phone validity/credit conditions.",
+    "description_zh": "核对Exotel Omni路由、nodeflow、按版本归档／FUP边界、企业价格单位及预付电话有效期／余额条件。",
+    "primary_intent": "Evaluate Exotel product scope,implementation and commercial boundaries.",
+    "secondary_questions": [
+      "Does the archive include voice recordings?",
+      "What does enterprise70 actually price?",
+      "Does a top-up extend validity?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,flow,call,carrier,AI,archiveAPI/payment,export orrestoretested. Actualenterprise70/100unit/term/currencyISO,licenseslabs,AI/telecom/streamingcosts,orderformrights,region/retention/recordingVLA,connectorpermissions,performance,completeexportandUIlanguagesunknown. Omni4.13x/4.13.32docsscopepreserved,notallproducts;oldAmeyoEngageexactentitlementmappingunresolved. WhatsAppperconversationtableunverifiednotadopted.",
+      "zh": "未测试租户、流程、电话、运营商、AI、归档API／付款、导出或恢复。企业70／100真实单位／周期／ISO币种、许可阶梯、AI／电话／流费用、订单权利、地区／留存／录音VLA、连接器权限、性能、完整导出及界面语言未知。保留Omni4.13x／4.13.32文档范围，不套全部产品；旧Ameyo Engage具体权益映射未解决。WhatsApp每会话表未核且未采用。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

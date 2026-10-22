@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "robly-bac58e59",
+  "name": "Robly",
+  "website_url": "https://www.robly.com/",
+  "domain": "www.robly.com",
+  "identity_domain": "robly.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Robly is an email campaign service with contact management, automation journeys and sending controls. OpenGen resends a campaign to recorded non-openers, while Robly AI spreads delivery within a selected time window. RoblyEngage is separately described as audience cleanup rather than a resend action.\n\nFor an occasional event newsletter, those controls interact: a long initial delivery window shortens the practical time before a scheduled reminder. This profile explains that timing, migration suppression, journey conditions and contact-based billing. Vendor open-rate guarantees are not presented as independently measured outcomes.",
+  "description_zh": "Robly 提供邮件活动、联系人管理、自动化路径及发送控制。OpenGen 向记录中的未打开者重发；Robly AI 在所选窗口内分散投递。RoblyEngage 则单独描述为受众清理，而非重发动作。\n\n偶尔发送活动简报时，这些控制会相互影响：较长的首次投递窗口会缩短排定提醒前的实际间隔。本文解释该时间关系、迁移抑制、路径条件及联系人计费，未将厂商打开率保证当作独立实测结果。",
+  "core_features": [
+    {
+      "name_en": "OpenGen resend",
+      "name_zh": "OpenGen 重发",
+      "explanation_en": "Schedule a second version for recorded non-openers with its own subject.",
+      "explanation_zh": "为记录中的未打开者安排独立主题的第二版。",
+      "source_ref": "opengen",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Robly AI delivery window",
+      "name_zh": "Robly AI 投递窗口",
+      "explanation_en": "Choose the maximum window over which subscriber-specific timing is applied.",
+      "explanation_zh": "选择应用订阅者个体时间预测的最大窗口。",
+      "source_ref": "ai-timing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "List/tag journeys",
+      "name_zh": "列表／标签路径",
+      "explanation_en": "Trigger actions on list or tag changes with delay and condition steps.",
+      "explanation_zh": "通过列表或标签变化触发动作，并加入等待与条件。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Suppression migration",
+      "name_zh": "抑制迁移",
+      "explanation_en": "Import a Do Not Mail list and preserve migrated Mailchimp opt-outs/bounces.",
+      "explanation_zh": "导入 Do Not Mail 列表并保留 Mailchimp 迁移的退出／退信。",
+      "source_ref": "import",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Schedule an occasional invitation and a deliberate non-opener resend.",
+      "Migrate a permissioned newsletter audience with its Do Not Mail history."
+    ],
+    "zh": [
+      "安排偶发邀请及明确计划的未打开者重发。",
+      "迁移已许可简报受众并保留 Do Not Mail 历史。"
+    ],
+    "source_refs": ["opengen", "ai-timing", "frequency", "pricing"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter marketer",
+      "Event communications operator",
+      "Audience migration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "opengen"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Check suppression import and purchased contact capacity.",
+        "zh": "检查抑制导入及已购买联系人容量。",
+        "source_refs": ["import", "billable"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set the AI window before choosing the reminder time.",
+        "zh": "选择提醒时间前先设置 AI 窗口。",
+        "source_refs": ["ai-timing", "opengen"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review a test journey before setting it Live.",
+        "zh": "切换 Live 前审核测试路径。",
+        "source_refs": ["automation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "OpenGen is prohibited above twice-weekly sending according to its help page.",
+        "zh": "帮助页称每周发送超过两次者禁止使用 OpenGen。",
+        "source_refs": ["frequency"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "An import over the contact allowance can automatically upgrade the account.",
+        "zh": "超过联系人额度的导入可能自动升级账户。",
+        "source_refs": ["import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A journey field-update action overwrites the selected value.",
+        "zh": "路径字段更新动作会覆盖所选值。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Monthly cards: $19 up to 500 contacts; $35 for 501–2,500; $58 for 2,500–5,000; unlimited emails advertised. SMS is separate add-on. General 14-day trial and qualifying-organization free program are distinct.",
+    "source_snapshot_zh": "月付卡片：500 人以内 $19，501–2,500 人 $35，2,500–5,000 人 $58，宣传不限邮件。短信独立附加。一般十四天试用与符合资格组织免费计划不同。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/robly",
+      "read_at": "2026-10-22T09:07:37.072Z",
+      "excerpt_sha256": "d8fb55ff1d517d46d4c71598770ca1981a17deb3d303bc6ddfe23b398a233712",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Robly",
+      "title": "Robly Email Marketing | Get 50% More Opens | OpenGen",
+      "url": "https://www.robly.com/pricing/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "046dfede33041b1fa1ac789b7910e329219aa39b0329748d7e9c1288d8b0f513",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Contact tiers with unlimited emails; SMS paid add-on, 14-day trial and separate custom-template cost."
+    },
+    {
+      "id": "opengen",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "How do I send a campaign with OpenGen? – support.robly.com",
+      "url": "https://support.robly.com/how-do-i-schedule-a-campaign-with-opengen/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "172109817620e76af1c89c4ed83fbcd6f5daf9e2f005482b5378e11d56858fcf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Non-opener resend, two-day recommendation, AI-window interaction, generated-campaign appearance and edit/cancel limits."
+    },
+    {
+      "id": "frequency",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "What are OpenGen and RoblyEngage? – support.robly.com",
+      "url": "https://support.robly.com/what-are-opengen-and-roblyengage/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "c5c34919beb2375a44c5c433882b5e69e32c9e27ce6b6a6138b9dfb99fc50bc0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "OpenGen not permitted above twice-weekly sending; RoblyEngage described separately from resending."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "What is automation, and how do I use it? – support.robly.com",
+      "url": "https://support.robly.com/how-to-use-automation/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "2ef72c3d7cbc0ea48472a921b26ff08ace7f1de7ec4344d41e6b7786871d5872",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "List/tag addition/removal triggers, delay, field overwrite, per-contact split probability and Live/Pause controls."
+    },
+    {
+      "id": "import",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "How Do I Import Contacts to Robly? – support.robly.com",
+      "url": "https://support.robly.com/robly-email-import-contacts/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "16d3770ca9aba7ec54ffda3e78c3965e9fc98ee3990dddc37bfc4bc49c719c36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Permission certification, suppression import, field mapping and automatic upgrade above contact plan."
+    },
+    {
+      "id": "ai-timing",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "How to Use Robly AI – support.robly.com",
+      "url": "https://support.robly.com/how-to-enable-and-use-robly-ai/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "3b29684bbd21afb909352a79121080694b19f8b0cd1fa7de7ddcb3f4642865ca",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Maximum send window, cold-start fallback at window end, automatic OpenGen inheritance and reporting delay."
+    },
+    {
+      "id": "billable",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "Am I billed for Unsubscribed contacts? – support.robly.com",
+      "url": "https://support.robly.com/am-i-billed-for-unsubscribed-contacts/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "936484d79e3340edc51a8c1ffa2102469ee4cd24772d5d8e89982ae42916e25f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Bill active contacts stored or sent to, whichever greater; unsubscribed contacts excluded."
+    },
+    {
+      "id": "organization-free",
+      "type": "official_documentation",
+      "site": "Robly",
+      "title": "Does Robly offer special pricing for non-profits, religious organizations, or community groups? – support.robly.com",
+      "url": "https://support.robly.com/does-robly-have-a-discount-for-non-profits/",
+      "read_at": "2026-10-22T10:48:40.323079Z",
+      "excerpt_sha256": "20d7ebae16a2d966aa2eebc55c65ea9228f7076dff9f5ee8e815bfe9a8f2f98a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Qualifying nonprofits, religious organizations and community groups have an application-specific free program; detailed qualification not verified."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:48:40.323079Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["opengen", "ai-timing", "frequency", "pricing"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "resend",
+        "title_en": "Plan a reminder around the whole initial send",
+        "title_zh": "按整个首次发送过程规划提醒",
+        "en": "OpenGen targets recipients recorded as not opening the first campaign. Its setup guide recommends at least two days and a revised subject. The generated campaign appears only after the first send completes and may take an additional hour to display.\n\nFor an illustrative event invitation, account for Robly AI’s full sending window. A two-day reminder after a 23-hour initial window can reach the last recipient roughly a day after their first message. Inspect the actual schedule and event deadline, not just the two date labels. Content and subject can be edited before resend, but the guide says recipients cannot.",
+        "zh": "OpenGen 针对记录中未打开首次活动的人。设置指南建议至少两天并更换主题。生成的重发活动需等首次发送完成才出现，还可能额外等待一小时显示。\n\n例如活动邀请，需计入 Robly AI 的完整发送窗口。首次窗口为 23 小时，安排两天后提醒，最后一位收件人实际可能只间隔约一天。应检查实际排程与活动截止，而非仅看两个日期标签。重发前可编辑内容及主题，但指南称不能更改收件人。",
+        "source_refs": ["opengen"],
+        "evidence_type": "documented_with_editorial_timing_example"
+      },
+      {
+        "id": "ai-window",
+        "title_en": "Prediction still operates inside a deadline",
+        "title_zh": "预测仍受截止窗口约束",
+        "en": "Robly AI uses a contact’s prior opening times to choose delivery within the configured window. When history is insufficient or the predicted time is outside the window, the guide says delivery occurs at the end. OpenGen inherits AI if the original campaign used it.\n\nReporting has a documented 24-hour delay; the guide recommends waiting at least 48 hours, preferably 72, to evaluate the first send. A deadline-critical notice needs a suitable window and verification of actual message outcomes. No prediction accuracy, inbox placement or engagement improvement was tested for this profile.",
+        "zh": "Robly AI 按联系人的既往打开时间，在所配窗口内选择投递。历史不足或预测时间在窗口外时，指南称在窗口末尾发送。原始活动使用 AI 时，OpenGen 也继承该设置。\n\n报告有文档注明的 24 小时延迟，指南建议首次发送至少等 48 小时、最好 72 小时再评估。截止时间关键的通知需要合适窗口并验证实际消息结果。本文未测试预测准确性、收件箱位置或互动提升。",
+        "source_refs": ["ai-timing"],
+        "evidence_type": "documented_with_editorial_deadline_guidance"
+      },
+      {
+        "id": "frequency-fit",
+        "title_en": "A resend product has a frequency boundary",
+        "title_zh": "重发产品有频率边界",
+        "en": "The OpenGen/RoblyEngage explanation prohibits OpenGen for senders sending more than twice a week and recommends a much less frequent cadence. Confirm the meaning of its bi-weekly wording with support rather than choosing one interpretation. This is a material fit constraint for a daily publisher.\n\nThat page describes RoblyEngage as removing disengaged recipients after sufficient sending history. Review the audience implications before enabling cleanup. A missing tracked open should not automatically be treated as an affirmative request to delete a person, and a vendor marketing guarantee does not prove the future results of a particular list.",
+        "zh": "OpenGen／RoblyEngage 说明禁止每周发送超过两次的发送者使用 OpenGen，并建议更低频率。其 bi-weekly 表述需向支持确认，不能直接选定一种释义。这是日更出版者的实质适用限制。\n\n同页将 RoblyEngage 描述为在足够发送历史后移除低互动者。启用清理前应检查受众影响。缺少被跟踪的打开，不能自动等同于本人明确要求删除；厂商营销保证也不能证明某列表未来表现。",
+        "source_refs": ["frequency"],
+        "evidence_type": "documented_with_editorial_audience_guidance"
+      },
+      {
+        "id": "journey",
+        "title_en": "Changes to audience data can drive another action",
+        "title_zh": "受众数据变化可能驱动下一动作",
+        "en": "Robly journeys trigger when a contact is added to or removed from a list or tag. They can send content, wait, change membership or overwrite a contact field. For a welcome path, prepare the content and entry object first, then choose spacing and conditional follow-up.\n\nThe guide’s Split Test is a probability per arriving contact, not a guarantee of an exact final ratio in a small cohort. Clicking Live activates ready actions; sent mail cannot be undone. Pause exists, but this page does not establish detailed in-flight freezing, timer recovery or repeat-entry semantics. Those require a separate account test.",
+        "zh": "Robly 路径可在联系人加入／离开列表或添加／移除标签时触发；可发内容、等待、改成员身份或覆盖字段。欢迎路径应先准备内容及入口对象，再选择间隔与条件跟进。\n\n指南中的 Split Test 是每位到达联系人的概率，不能保证小群体最终精确比例。点击 Live 会启用已就绪动作，已发送邮件无法撤回。页面提供 Pause，但未确立进行中冻结、计时恢复或重复进入细节，需另做账户测试。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_journey_guidance"
+      },
+      {
+        "id": "migration",
+        "title_en": "Carry opt-outs across before the first campaign",
+        "title_zh": "首次活动前先保留退出记录",
+        "en": "The import guide forbids purchased/rented lists and requires an opt-in certification. CSV fields must be mapped correctly; lists, tags and applicable autoresponders can be assigned during import. A queued import confirmation is not a row-level content review.\n\nThe documented Mailchimp route ports opt-outs and hard bounces as Do Not Mail, and a separate suppression CSV can populate the Non-Subscribed folder. Inspect a known suppressed address and a valid subscriber after migration. Uploading above the plan’s contact allowance automatically upgrades the account according to the guide, so confirm capacity before sending the file.",
+        "zh": "导入指南禁止购买／租用列表，并要求许可认证。CSV 字段需正确映射；导入时可指定列表、标签及适用自动回复。提示已排队不等于逐行内容检查。\n\n文档中的 Mailchimp 迁移将退出及硬退信保留为 Do Not Mail，也可单独导入抑制 CSV 到 Non-Subscribed 文件夹。迁移后应核对一位已知被抑制者及一位有效订阅者。指南称超过联系人额度的上传会自动升级账户，因此提交文件前需确认容量。",
+        "source_refs": ["import"],
+        "evidence_type": "documented_with_editorial_migration_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Stored contacts and recipients both matter to the bill",
+        "title_zh": "存储联系人与实际收件人都影响费用",
+        "en": "Current monthly cards show $19 up to 500 contacts, $35 for 501–2,500 and $58 for 2,500–5,000, with unlimited emails. Billing help says active contacts stored or sent to count at whichever is greater; unsubscribed contacts are excluded. Reducing the stored list therefore should not be assumed to erase already-incurred recipient usage.\n\nSMS is an add-on to an active email subscription, not standalone, and its credits have a separate schedule. A 14-day trial is advertised. Qualifying nonprofits, religious organizations and community groups have a separately documented free program; qualification and scope were not inspected in an account.",
+        "zh": "当前月付卡片为 500 人以内 $19，501–2,500 人 $35，2,500–5,000 人 $58，并称不限邮件。计费帮助说明活跃存储人数与发送人数取较大者，退订排除。因此不能假设减少存储列表就抹除已发生的收件人用量。\n\n短信是活跃邮件订阅的附加项，非独立服务，有独立额度价格。官网宣传十四天试用；符合条件的非营利、宗教及社区组织另有免费计划。本文未在账户核查资格和范围。",
+        "source_refs": ["pricing", "billable", "organization-free"],
+        "evidence_type": "documented_pricing_conditions"
+      },
+      {
+        "id": "evaluation",
+        "title_en": "Match the tool to a measured campaign process",
+        "title_zh": "将工具纳入可测量活动流程",
+        "en": "Robly merits evaluation for an operator managing permissioned lists and occasional campaigns who can plan resend frequency, inspect suppression and allow a defined delivery window. A rapid daily publication or immediate critical notification needs particular scrutiny of those constraints.\n\nStart with an owned test address, prepared journey content and a clear event deadline. Confirm billing, sender setup and cancellation behavior in the actual account before using customer data. This research did not verify SMTP/API retries, UI languages, regional SMS eligibility, source licensing, self-hosting or contractual data location.",
+        "zh": "能管理已许可列表、偶尔活动，并能规划重发频率、检查抑制及接受明确投递窗口的运营者，可评估 Robly。高频日更或必须立即送达的关键通知，需重点检查这些约束。\n\n应从自己控制的测试地址、已准备路径内容及明确活动截止开始。使用客户数据前，需在实际账户确认计费、发送者设置及取消行为。本文未核实 SMTP／API 重试、界面语言、短信地区资格、源码许可、自托管或合同数据位置。",
+        "source_refs": ["automation", "import", "ai-timing"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Robly: OpenGen Timing, AI Windows, Journeys and Contact Billing",
+    "title_zh": "Robly：OpenGen 时间、AI 窗口、路径及联系人计费",
+    "description_en": "Understand Robly non-opener resend rules, AI reporting delays, suppression imports and current contact-based pricing.",
+    "description_zh": "了解 Robly 未打开重发规则、AI 报告延迟、抑制导入及当前联系人计价。",
+    "primary_intent": "Evaluate Robly campaign timing and audience operations without assuming vendor performance gains.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact organization-free qualifications, checkout/tax, higher contact selector and SMS country eligibility are unverified. Confirm the ambiguous bi-weekly cadence wording.",
+      "zh": "组织免费资格、结算／税、更高联系人档位及短信国家资格未核实；bi-weekly 频率歧义需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No import, send, journey, AI result or integration was tested. In-flight pause/reentry, UI languages, deployment rights, license and contract data location remain unverified.",
+      "zh": "未测试导入、发送、路径、AI 结果或集成。进行中暂停／重入、界面语言、部署权利、许可及合同数据位置仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

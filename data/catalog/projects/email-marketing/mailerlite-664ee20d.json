@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mailerlite-664ee20d",
+  "name": "MailerLite",
+  "website_url": "https://www.mailerlite.com/",
+  "domain": "www.mailerlite.com",
+  "identity_domain": "mailerlite.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "MailerLite combines newsletters, forms, landing pages and subscriber-triggered automation. A workflow can send a welcome lesson, wait, branch on a condition and send a subsequent message. Whether those messages are appropriately spaced depends on explicitly configured steps.\n\nThe current offer uses Free, Comfort and Power, while paid-account migration occurs at renewal or a manual plan change. This profile separates current documented limits from legacy plans and explains enrollment, reentry and delayed-message recovery. It is based on public documentation rather than an executed sending test.",
+  "description_zh": "MailerLite 集合新闻简报、表单、落地页与订阅者触发的自动化。流程可发送欢迎课程、等待、按条件分支，再发送后续消息；消息间隔是否合适，取决于明确配置的步骤。\n\n当前报价采用 Free、Comfort 和 Power，但付费账户在续费或手动改套餐时逐步迁移。本文区分现行文档限制与旧套餐，并解释进入、重复进入及延迟邮件恢复。依据为公开文档，未执行发送测试。",
+  "core_features": [
+    {
+      "name_en": "Sequential workflow editor",
+      "name_zh": "顺序流程编辑器",
+      "explanation_en": "Build a triggered journey with email, delay and condition steps.",
+      "explanation_zh": "组合触发器、邮件、等待与条件步骤。",
+      "source_ref": "workflow",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Controlled subscriber enrollment",
+      "name_zh": "受控订阅者进入",
+      "explanation_en": "Enroll qualifying existing subscribers or manually select a starting step.",
+      "explanation_zh": "让符合条件的现有人进入，或手动选择起始步骤。",
+      "source_ref": "manual-entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Group and form triggers",
+      "name_zh": "群组及表单触发器",
+      "explanation_en": "Use joins or form completions with trigger-specific reentry and confirmation rules.",
+      "explanation_zh": "使用加入群组或完成表单，并遵循各自重复进入与确认规则。",
+      "source_ref": "triggers",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Activity inspection",
+      "name_zh": "活动检查",
+      "explanation_en": "Inspect progress, completion, cancellation and failure with associated reasons.",
+      "explanation_zh": "查看进行中、完成、取消及失败状态和相关原因。",
+      "source_ref": "activity",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Deliver a welcome course with explicit waiting periods.",
+      "Migrate a permissioned cohort into a selected lesson after checking prerequisites."
+    ],
+    "zh": [
+      "通过明确等待间隔发送欢迎课程。",
+      "核对先修要求后，将已许可群体迁移到指定课程。"
+    ],
+    "source_refs": ["pricing", "workflow", "paid-update"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter operator",
+      "Course creator",
+      "Lifecycle marketer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm current versus Classic account and its actual plan migration state.",
+        "zh": "确认现行或 Classic 账户及其真实套餐迁移状态。",
+        "source_refs": ["workflow", "paid-update"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Define entry and delay rules, then inspect one subscriber path.",
+        "zh": "定义进入及等待规则，再检查一个订阅者路径。",
+        "source_refs": ["triggers", "steps"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review activity and quota state before retrying a failed lesson.",
+        "zh": "重试失败课程前检查活动及额度状态。",
+        "source_refs": ["activity", "free-update"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Manual entry bypasses the original trigger checks.",
+        "zh": "手动进入绕过原始触发器检查。",
+        "source_refs": ["manual-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A paused delay reactivated more than seven days after its scheduled date fails.",
+        "zh": "暂停的等待步骤在排定日期七天后重新启用会失败。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Free subscribers and monthly sends have separate restrictions.",
+        "zh": "免费订阅者数与月发送量有独立限制。",
+        "source_refs": ["free-update"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Free: 250 subscribers and 2,500 monthly emails. Current Comfort starts $12/month and Power $25/month; annual prepayment saves 10%. Exact audience tier, taxes and migrated account terms require confirmation.",
+    "source_snapshot_zh": "Free：250 位订阅者、每月 2,500 封。现行 Comfort 每月 $12 起，Power $25 起；全年预付优惠 10%。具体人数档位、税及迁移账户条款需确认。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mailerlite",
+      "read_at": "2026-10-22T09:03:55.526Z",
+      "excerpt_sha256": "733d9feebddf7faceb08b2ea4b57e9f5a2e447e11c0f08c89bd76e3d9a5fd7e7",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "MailerLite",
+      "title": "Simple, Transparent Pricing - MailerLite",
+      "url": "https://www.mailerlite.com/pricing",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "b9893ad42ff679e0615a471a934603042c37981eb9ec226f6f83eb9ba3da3944",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Free/Comfort/Power matrix, starting prices, annual payment and separate Transactional tab."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "How To Create An Automation Workflow - MailerLite",
+      "url": "https://www.mailerlite.com/help/how-to-create-an-automation-workflow",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "cb348371cba7606a3217af3d9498f44ffcfb787e116a4e18eccb0ea852bfd24b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Sequential processing, no-delay simultaneous emails, activation enrollment, seven-day delay recovery and independent workflow copies."
+    },
+    {
+      "id": "manual-entry",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "How to add subscribers to an automation (workflow) - MailerLite",
+      "url": "https://www.mailerlite.com/help/how-to-add-existing-subscribers-to-a-workflow",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "5027d51e6b13e6e29a51c1e0062c3ed2b8a1ffa45d2ff635a4950953b750375f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Manual enrollment bypasses original triggers; activity-based reentry can resume from selected steps."
+    },
+    {
+      "id": "triggers",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "Automation Triggers - MailerLite",
+      "url": "https://www.mailerlite.com/help/how-to-set-up-automation-triggers",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "7d2c7bea59c5f6fbc2de1f18ee029a35ce21e4d9f807dde22a49c5e8189d0483",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Group reentry requires an actual leave/rejoin, once-per-24-hour limit and form double-opt-in qualification."
+    },
+    {
+      "id": "steps",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "How To Use Automation Steps (Rules and Actions) - MailerLite",
+      "url": "https://www.mailerlite.com/help/how-to-use-automation-steps",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "48c1667c0966dd05e4c48c1aab9a37fffc2c9bf250dcc59947b65a80a29f1f72",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Delay steps, condition branches and scheduled-date behavior."
+    },
+    {
+      "id": "activity",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "How To Use Automation Activity - MailerLite",
+      "url": "https://www.mailerlite.com/help/how-to-use-automation-activity",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "a8d451ad5a9569d521d85bf36a30de19673d382dccb1c9507aa9bc59d3d94d28",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Activity statuses, reason and timestamp investigation, cancellation and failure causes."
+    },
+    {
+      "id": "free-update",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "Free plan update: What you need to know - MailerLite",
+      "url": "https://www.mailerlite.com/help/free-plan-update-faq",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "49906ca5c5c4fe181484c7ec1e1410e8ce5af96670a50415cc82faf7bb7423a2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "June 2026 limits, active unique subscriber counting, restricted state and over-limit enrollment/sending behavior."
+    },
+    {
+      "id": "paid-update",
+      "type": "official_documentation",
+      "site": "MailerLite",
+      "title": "Moving to the new Comfort and Power plans: What you need to know - MailerLite",
+      "url": "https://www.mailerlite.com/help/paid-plans-update-faq",
+      "read_at": "2026-10-22T10:34:41.830369Z",
+      "excerpt_sha256": "e95c9f129017041dffc6659933485f3138bbdedc6cb1cc0a5c4f069be34ce76a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Gradual renewal migration, shared website/landing-page allowance, Comfort sending multiplier and Power unlimited use."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:34:41.830369Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["pricing", "workflow", "paid-update"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "lessons",
+        "title_en": "Give each lesson an explicit interval",
+        "title_zh": "给每节课程明确设置间隔",
+        "en": "The workflow guide describes immediate sequential processing. Without delay steps, several email steps can reach the same subscriber at the same time. A welcome course therefore needs an intentional wait between its introduction and follow-up, not merely two messages placed in order.\n\nChoose whether the wait is a relative duration or a calendar target. The steps guide provides behavior for people who arrive after a scheduled date, including continuing or stopping. For a time-limited event, decide what late arrivals should receive before activating the journey.",
+        "zh": "流程指南说明步骤立即顺序处理。没有等待步骤时，多封邮件可能同时到达同一订阅者。因此，欢迎课程的介绍与后续之间需明确等待，不能仅按顺序放两封邮件。\n\n应选择相对时长还是日历目标。步骤指南对晚于排定日期到达的人提供继续或停止等处理。限时活动应在启用前明确迟到者收到什么。",
+        "source_refs": ["workflow", "steps"],
+        "evidence_type": "documented_with_editorial_course_example"
+      },
+      {
+        "id": "enrollment",
+        "title_en": "Manual enrollment changes the entry contract",
+        "title_zh": "手动进入改变入口条件",
+        "en": "When an automation is activated, eligible existing subscribers can be included according to its trigger conditions. The separate manual-add process can select individuals or groups and start them at the beginning or a chosen step. That manual route bypasses the original trigger checks, while conditions inside the workflow still apply.\n\nFor a migrated class, verify permission and prerequisites before adding the cohort. Starting directly at lesson three is an editorial decision about prior knowledge, not proof that the subscriber satisfied the original signup trigger.",
+        "zh": "自动化启用时，可按触发条件纳入符合条件的已有订阅者。独立的手动添加流程可选择个人或群组，并从头或指定步骤开始；该入口绕过原始触发器检查，但流程内部条件仍生效。\n\n迁移学员时，添加前应核对许可与先修要求。从第三课开始是对已有知识的编辑判断，不能证明该订阅者满足原始订阅触发条件。",
+        "source_refs": ["manual-entry"],
+        "evidence_type": "documented_with_editorial_migration_guidance"
+      },
+      {
+        "id": "reentry",
+        "title_en": "A recurring welcome path needs a real new event",
+        "title_zh": "重复欢迎路径需要真实的新事件",
+        "en": "The group trigger can permit reentry, with a documented once-per-24-hour restriction. A subscriber must actually leave and rejoin the group; repeatedly applying membership is not equivalent. Optional removal behavior can also end participation when a person leaves the trigger group.\n\nDouble opt-in changes form enrollment: with multiple forms, the confirmed form determines the associated form-triggered workflow. MailerLite suggests a group-based trigger for the documented multiple-form case. Test the intended confirmation path with representative addresses before treating every form submission as an enrollment.",
+        "zh": "群组触发器可允许重复进入，但文档限制每 24 小时一次。订阅者必须实际退出再加入，反复设置成员身份并不等同。可选的移除行为还可在离开触发群组时结束参与。\n\n双重确认会影响表单进入：多个表单时，完成确认的表单决定对应的表单触发流程。MailerLite 对该情形建议使用群组触发。将每次提交视为进入前，应以代表性地址测试预期确认路径。",
+        "source_refs": ["triggers"],
+        "evidence_type": "documented_with_editorial_entry_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "A long pause can turn a delay into a failure",
+        "title_zh": "长时间暂停可能让等待变为失败",
+        "en": "Paused subscribers stay at their current step, but the workflow guide gives delay steps a specific recovery window. Reactivation within seven days after the scheduled delay date advances those subscribers immediately. Reactivation later marks them Failed and stops their progression.\n\nInspect Activity for reason and timing rather than assuming that a paused lesson simply resumes its original spacing. The activity and manual-entry guides support investigating canceled/failed subscribers and selectively restarting at an appropriate step. Check message relevance and prior delivery before retrying; a replay should not be treated as automatically harmless.",
+        "zh": "暂停的人停在当前步骤，但流程指南为等待步骤规定了恢复窗口：排定等待日期之后七天内重新启用，会立即继续；更晚则标记 Failed，并停止后续。\n\n应在 Activity 查看原因与时间，不能假设暂停课程会保持原间隔继续。活动及手动进入指南支持检查取消／失败的人，并选择合适步骤重新开始。重试前需核对消息时效和既往投递，不能认为重放天然无影响。",
+        "source_refs": ["workflow", "activity", "manual-entry"],
+        "evidence_type": "documented_with_editorial_recovery_guidance"
+      },
+      {
+        "id": "free",
+        "title_en": "Free capacity is both audience and usage capacity",
+        "title_zh": "免费容量同时包括受众与使用量",
+        "en": "The June 16, 2026 update sets Free at 250 subscribers and 2,500 monthly emails, with two seats, three active automations, three forms, one digital product, one landing page and one five-page website. Unique active addresses count once across groups; unsubscribed and bounced contacts are excluded. Campaign and automation emails both consume sends.\n\nOver the audience cap, campaigns and automations are blocked and manual/API/integration additions are restricted, while forms and landing pages continue collecting under the documented exception. Exceeding the sending allowance pauses sends until reset or upgrade. Draft retention does not mean an over-limit account remains operational.",
+        "zh": "2026 年 6 月 16 日更新将 Free 设为 250 位订阅者、每月 2,500 封，含两个席位、三个活跃自动化、三个表单、一个数字产品、一个落地页和一个最多五页的网站。跨群组的同一活跃地址只算一次，退订及退信联系人排除；活动和自动化邮件都耗用发送量。\n\n超过受众上限时，活动和自动化被阻止，手动／API／集成新增受限；表单和落地页按文档例外继续收集。超过发送量则暂停，直到重置或升级。保留草稿不等于超限账户仍可运行。",
+        "source_refs": ["free-update"],
+        "evidence_type": "documented_capacity_rules"
+      },
+      {
+        "id": "paid",
+        "title_en": "Match the account migration and the selected tier",
+        "title_zh": "核对账户迁移及所选人数档位",
+        "en": "Comfort replaces Growing Business and Power replaces Advanced, but migration is gradual at renewal or a manual plan change. Comfort permits 50 active automations, ten forms, ten landing pages and websites combined, and five digital products. Its monthly sends equal ten times the subscriber tier ceiling; Power provides unlimited listed feature use and monthly emails.\n\nThe pricing FAQ gives starting figures of $12/month for Comfort and $25/month for Power; annual prepayment saves 10%, with applicable tax separate. These are starting figures, not a quote for an unspecified audience. An account still awaiting renewal may remain on its older structure.",
+        "zh": "Comfort 替代 Growing Business，Power 替代 Advanced，但迁移在续费或手动改套餐时逐步发生。Comfort 允许 50 个活跃自动化、十个表单、落地页与网站合计十个，以及五个数字产品；每月发送量为订阅者档位上限的十倍。Power 对所列功能用量和每月邮件不限。\n\n价格 FAQ 给出 Comfort 每月 $12 起、Power $25 起；全年预付优惠 10%，适用税另计。这是起价，不能作为未知人数的报价。等待续费的账户可能仍沿用旧结构。",
+        "source_refs": ["paid-update", "pricing"],
+        "evidence_type": "documented_plan_comparison"
+      },
+      {
+        "id": "boundaries",
+        "title_en": "Use the documentation for the product actually in the account",
+        "title_zh": "采用账户实际产品对应的文档",
+        "en": "The workflow guide directs Classic accounts to separate documentation. The pricing page also separates marketing from transactional email. Neither the current workflow behavior nor its send allowance should be assumed to describe Classic or the separate transactional product.\n\nMailerLite is an evaluation candidate for a newsletter operator who also needs a compact teaching or onboarding journey and can monitor activity and quotas. Verify the account version, current plan and one complete subscriber path. This research did not establish delivery performance, UI language coverage, regional eligibility, source licensing or self-hosting rights.",
+        "zh": "流程指南将 Classic 账户引向独立文档，价格页也将营销与事务邮件分开。现行流程行为及发送额度不能直接套用于 Classic 或独立事务产品。\n\n既做简报、又需要简短教学或入门路径，且能监控活动及额度的运营者，可评估 MailerLite。需核对账户版本、当前套餐及一个完整订阅者路径。本文未确认投递表现、界面语言覆盖、地区资格、源码许可或自托管权利。",
+        "source_refs": ["workflow", "pricing", "activity"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "MailerLite: Workflow Entry, Pause Recovery and Current Plan Limits",
+    "title_zh": "MailerLite：流程进入、暂停恢复及当前套餐限制",
+    "description_en": "Understand MailerLite manual enrollment, group reentry, delayed-message failures and the Free/Comfort/Power plan transition.",
+    "description_zh": "了解 MailerLite 手动进入、群组重复触发、延迟消息失败，以及 Free／Comfort／Power 套餐迁移。",
+    "primary_intent": "Evaluate MailerLite subscriber journeys against current enrollment, recovery and billing rules.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact account migration date, selected audience quote, checkout tax and real feature entitlement were not inspected in an account.",
+      "zh": "未在账户内检查具体迁移日期、所选人数报价、结算税及真实功能权限。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No form, workflow, email or retry was executed. Classic, transactional sending, UI languages, regional eligibility and deployment/license rights require separate checks.",
+      "zh": "未执行表单、流程、邮件或重试。Classic、事务发送、界面语言、地区资格及部署／许可权利需另查。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

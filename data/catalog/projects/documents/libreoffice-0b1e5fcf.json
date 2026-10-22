@@ -1,0 +1,452 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "libreoffice-0b1e5fcf",
+  "name": "LibreOffice",
+  "website_url": "https://www.libreoffice.org/",
+  "domain": "www.libreoffice.org",
+  "identity_domain": "libreoffice.org",
+  "category": "documents",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "LibreOffice is a free, open-source office suite with Writer, Calc, Impress, Draw, Base and Math. Its document work is primarily file editing and export, rather than a hosted approval repository. Writer and Calc provide review tools, Microsoft Office formats can be opened and saved with compatibility limits, and PDF export requires deliberate output settings. Community software and separately supplied enterprise support are different offers.",
+  "description_zh": "LibreOffice 是免费开源办公套件，包含 Writer、Calc、Impress、Draw、Base 和 Math，文档工作主要是文件编辑与导出，并非托管审批文档库。Writer 与 Calc 提供审阅工具，可读写 Microsoft Office 格式但有兼容限制，PDF 导出需主动选择产物设置。社区软件与另行提供的企业支持是不同服务。",
+  "core_features": [
+    {
+      "name_en": "Office-format exchange",
+      "name_zh": "Office 格式交换",
+      "explanation_en": "Writer/Calc/Impress read and save corresponding Microsoft formats with documented layout and macro limits.",
+      "explanation_zh": "Writer／Calc／Impress 可读写对应 Microsoft 格式，但文档明确版式和宏限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "office",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Recorded-change review",
+      "name_zh": "修订记录审阅",
+      "explanation_en": "Track Changes and comparison support review but do not capture every modification.",
+      "explanation_zh": "修订记录和比较可辅助审阅，但不覆盖每种修改。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tracking",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Selectable PDF output",
+      "name_zh": "可选 PDF 产物",
+      "explanation_en": "Hybrid export embeds editable ODF; whole-sheet export can include hidden sheets.",
+      "explanation_zh": "混合导出嵌入可编辑 ODF，整表导出可包含隐藏工作表。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pdf",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Draft and review a synthetic proposal plus cost workbook, preserving editable masters and inspecting recipient-format/PDF outputs."
+    ],
+    "zh": [
+      "起草审阅模拟提案及成本工作簿，保留可编辑主稿并检查接收格式及 PDF 产物。"
+    ],
+    "source_refs": ["suite", "compare", "pdf"],
+    "basis": "Proposed evaluation, no measured business outcome or executed document conversion."
+  },
+  "technical_details": {
+    "Platforms": {
+      "en": "Desktop packages for Windows/macOS/Linux; architecture and Java requirements depend on selected version/features.",
+      "zh": "Windows／macOS／Linux 桌面包，架构及 Java 要求依所选版本功能。",
+      "source_ref": "requirements",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Document author",
+      "Spreadsheet user",
+      "Office deployment administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "business"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select OS/architecture and source format; preserve a synthetic original and compare a saved round-trip/PDF result before migration.",
+        "zh": "选择系统架构和源格式，保留模拟原件，在迁移前检查保存回转及 PDF 结果。",
+        "source_refs": ["download", "office", "compatibility", "pdf"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "file_interoperability_documented_not_tested",
+    "items": [],
+    "source_ref": "office",
+    "scope": "Microsoft-format exchange and macro handling documented; no hosted DMS API, live cloud coauthoring or extension interoperability assumed."
+  },
+  "limitations": {
+    "status": "documented_scope_limits",
+    "items": [
+      {
+        "en": "Complex Office roundtrips and VBA have limits; tracking omits some changes, SaveAs loses embedded version history, and PDF settings may expose hidden sheets or source ODF.",
+        "zh": "复杂 Office 回转及 VBA 有限制，修订不覆盖全部改动，另存为丢内嵌版本，PDF 设置可能带出隐藏表和源 ODF。",
+        "source_refs": ["compatibility", "tracking", "versions", "pdf"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "packages_documented_exact_ui_not_tested",
+    "items": [],
+    "source_ref": "download",
+    "scope": "Language and offline-help packages shown; this Chinese editorial text is not a Chinese UI acceptance test."
+  },
+  "license": {
+    "status": "official_source_license_identification_read",
+    "is_open_source": true,
+    "url": "https://www.libreoffice.org/",
+    "source_ref": "source-license",
+    "scope": "Official site explicitly identifies MPL2.0 source license; linked old license page404, full bundled notices and redistribution compliance not assessed."
+  },
+  "pricing": {
+    "status": "official_sustained_free_offer_read",
+    "price_type": "free_community_software_separate_partner_services",
+    "officially_checked": true,
+    "source_ref": "free-offer",
+    "normalized_price": null,
+    "source_snapshot_en": "Official community suite available at no cost; partner enterprise support/migration/services separately scoped.",
+    "source_snapshot_zh": "官方社区套件免费；伙伴企业支持、迁移及服务另行确定范围。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/libreoffice-org",
+      "read_at": "2026-10-22T09:06:19.246Z",
+      "excerpt_sha256": "14091813f84bc082a1e1917ac05b20e2963aa04c83e6bb87630a42091978bdcb",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "suite",
+      "type": "official_documentation",
+      "site": "www.libreoffice.org",
+      "title": "Free and private office suite, no forced AI — LibreOffice",
+      "url": "https://www.libreoffice.org/",
+      "read_at": "2026-10-22T16:20:12.858823Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8afad7dc122f4e1c15eee823a3b6653432e50a6c71407e6ea5294e5e541fc1a",
+      "research_notes_en": "Actual desktop suite modules and free/open-source positioning; not a hosted DMS or universal online collaboration entitlement."
+    },
+    {
+      "id": "free-offer",
+      "type": "official_pricing",
+      "site": "www.libreoffice.org",
+      "title": "Free and private office suite, no forced AI — LibreOffice",
+      "url": "https://www.libreoffice.org/",
+      "read_at": "2026-10-22T16:20:12.859183Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8afad7dc122f4e1c15eee823a3b6653432e50a6c71407e6ea5294e5e541fc1a",
+      "research_notes_en": "Actual official no-cost access, not a limited trial; business partner services separate."
+    },
+    {
+      "id": "source-license",
+      "type": "official_license",
+      "site": "www.libreoffice.org",
+      "title": "Free and private office suite, no forced AI — LibreOffice",
+      "url": "https://www.libreoffice.org/",
+      "read_at": "2026-10-22T16:20:12.859224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8afad7dc122f4e1c15eee823a3b6653432e50a6c71407e6ea5294e5e541fc1a",
+      "research_notes_en": "Actual footer explicitly identifies LibreOffice source code as MPLv2.0, separate from websiteCCBYSA and trademarks. Linked old /download/license returns404; full bundled notices not reviewed."
+    },
+    {
+      "id": "business",
+      "type": "official_documentation",
+      "site": "www.libreoffice.org",
+      "title": "For business — LibreOffice",
+      "url": "https://www.libreoffice.org/for-business/",
+      "read_at": "2026-10-22T16:20:12.859680Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "27e276c63b9abc96bb76b3cb395a37908720011b9fb307b6aaf128873af1ad81",
+      "research_notes_en": "Actual TDF no technical support, community assistance and recommended partner Enterprise family with SLA/services; not mandatory paid license for all business use."
+    },
+    {
+      "id": "download",
+      "type": "official_documentation",
+      "site": "www.libreoffice.org",
+      "title": "Download — LibreOffice",
+      "url": "https://www.libreoffice.org/download/",
+      "read_at": "2026-10-22T16:20:12.859720Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "41012dd62f76b989efa96ee679d8d03c8d08815ecd04562374f54c9a6875c333",
+      "research_notes_en": "Actual download displays26.8.1 Windows/macOS/Linux architecture packages and separate offline help. Dynamic prerelease note not treated as universally selected state; no binaries downloaded."
+    },
+    {
+      "id": "requirements",
+      "type": "official_documentation",
+      "site": "www.libreoffice.org",
+      "title": "System requirements — LibreOffice",
+      "url": "https://www.libreoffice.org/system-requirements/",
+      "read_at": "2026-10-22T16:20:12.859775Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6510c3405b286eb4d84bdc9e396c37c516692cd6ed4df3c101d6ed9383950a32",
+      "research_notes_en": "Actual OS/architecture/Java scope; most features do not need Java, Base does. No installation or independent lifecycle audit."
+    },
+    {
+      "id": "office",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Using Microsoft Office and LibreOffice",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_user.html?DbPAR=BASE&System=WIN",
+      "read_at": "2026-10-22T16:20:12.860229Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f6766f1d43af309b107980f45999627ec4ddab150ffc4f191bb1ba15a0aa1316",
+      "research_notes_en": "Actual Microsoft format load/save, default-format settings, copy-converter wizard and VBA preservation versus limited execution."
+    },
+    {
+      "id": "tracking",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Recording Changes",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/redlining_enter.html?DbPAR=BASIC%2F1000&System=UNIX",
+      "read_at": "2026-10-22T16:20:12.860260Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "90eb5032378860a96df5656df78dff902ee5c26181b8f99adbb3c179838b9b53",
+      "research_notes_en": "Actual Record switch, comments and explicitly incomplete change tracking; not immutable audit."
+    },
+    {
+      "id": "compatibility",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "About Converting Microsoft Office Documents",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_import_export_limitations.html?DbPAR=WRITER&System=UNIX",
+      "read_at": "2026-10-22T16:20:12.860286Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "54cef6fb95b9b308c5fd86fbefae20756c8d42e92fb29f0e5b1746d3561b0ec2",
+      "research_notes_en": "Actual complex layout, revision marks, spreadsheet functions and macros conversion limits; example is documentation not executed benchmark."
+    },
+    {
+      "id": "pdf",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "PDF Export General",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/01/ref_pdf_export_general.html",
+      "read_at": "2026-10-22T16:20:12.860626Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c0819467476f3e41eba2e364b36e1f3895fb3fbfda2f14c813e3281735e4c7e8",
+      "research_notes_en": "Actual PDF print-range/selection options, hidden-sheet whole-sheet output, comments and hybridPDFembeddedODF; not safe-redaction proof."
+    },
+    {
+      "id": "accept",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Accepting or Rejecting Changes",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/redlining_accept.html",
+      "read_at": "2026-10-22T16:20:12.861150Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8dcc735764fd5c6c54953846034eea99a1d9f34b599a2538e8da8bd39b4c2b91",
+      "research_notes_en": "Actual individual/all change decisions with filtered and hierarchical review; no document opened."
+    },
+    {
+      "id": "compare",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Comparing Versions of a Document",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/redlining_doccompare.html",
+      "read_at": "2026-10-22T16:20:12.861416Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "07e84a131db3027f7e548d06c4a4a64499dd2e83446b032763748f8cb64c29b7",
+      "research_notes_en": "Actual newer-document-open-first comparison with older original and acceptance of inserted/deleted text."
+    },
+    {
+      "id": "version-overview",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Version Management",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/redlining_versions.html",
+      "read_at": "2026-10-22T16:20:12.861642Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5e513e8d419dbf2625e08ca07e85005b13181835c668d481146222756a352b89",
+      "research_notes_en": "Actual multiple versions in samefile; not server backup or shared immutablehistory."
+    },
+    {
+      "id": "pdf-security",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "PDF Export Security",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/01/ref_pdf_export_security.html",
+      "read_at": "2026-10-22T16:20:12.861669Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0881b918b08d1c0e29e2bea59dbff914c1bd8a1e321c55ce97bca666314097f2",
+      "research_notes_en": "Actual PDF opening versus permissions passwords; reader compliance matters and some print restrictions not universally honored."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "help.libreoffice.org",
+      "title": "Versions",
+      "url": "https://help.libreoffice.org/latest/en-US/text/shared/01/01190000.html",
+      "read_at": "2026-10-22T16:20:12.861917Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8ef5901e9065c70dc7c5d0147d4778fd35eed506f89631fdd1f118a3b615ec34",
+      "research_notes_en": "Actual SaveNewVersion, close-triggered version option, read-only old versions and SaveAscopy drops version information. No version recovery operation."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:20:12.861917Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["suite", "office", "tracking", "pdf", "business"],
+  "profile": {
+    "sections": [
+      {
+        "id": "suite-and-deliverable",
+        "title_en": "Choose an editable master and a delivery artifact",
+        "title_zh": "选定可编辑主稿与交付产物",
+        "en": "Writer handles text, Calc spreadsheets, Impress slides, Draw diagrams, Base database work and Math equations. The suite is a collection of authoring tools, so directory labels such as document management or collaboration should not imply that a hosted approval process, organizational retention system or cloud account is included.\n\nAn editorial pilot could use a fictional supplier proposal in Writer and a supporting cost workbook in Calc. Keep an identified editable master, define the recipient’s required format and decide whether review copies should contain comments. Separate the proposal’s wording from the workbook’s calculated result. Choose two outputs if needed: a source file for continued editing and a checked PDF for reading. This proposed exercise has not been executed; there is no measured compatibility, rendering quality or business time saving in this profile.",
+        "zh": "Writer 处理文字、Calc 表格、Impress 演示、Draw 图示、Base 数据库、Math 公式。套件提供创作工具，因此目录中的文档管理或协作标签不能隐含托管审批流程、机构保留系统或云账户。\n\n编辑建议使用虚构供应商提案的 Writer 文件和配套成本 Calc 工作簿。保留明确可编辑主稿，定义接收方要求格式，并决定审阅副本是否包含评论。提案措辞和工作簿计算结果应分别核对；必要时交付两种产物：后续编辑的源文件与检查后的阅读 PDF。本建议练习未执行，档案不含实测兼容、渲染质量或节时结果。",
+        "source_refs": ["suite", "office", "pdf"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "roundtrip-and-macros",
+        "title_en": "Opening a Microsoft file is only the first compatibility check",
+        "title_zh": "打开 Microsoft 文件只是兼容核对的第一步",
+        "en": "The help maps DOC/DOCX to Writer, XLS/XLSX to Calc and PPT/PPTX to Impress, with Save As selecting the output format. Complex tables, revision marks, embedded objects, charts and some spreadsheet functions are documented conversion trouble spots. Preserve the original, reopen the proposed recipient format and inspect the parts that matter to the actual proposal. For the workbook, compare formula meaning and totals rather than relying on a visually similar grid.\n\nVBA preservation and VBA execution are different. The documentation describes retaining Microsoft macro code for later Microsoft use and limited execution of some Excel scripts; the object models are not generally interchangeable. Do not infer an unchanged automation pipeline from a successfully opened XLSM-like workflow. If the proposal process depends on macros, test trusted representative copies and record the expected calculation and output. No macro was enabled or run and no file was converted.",
+        "zh": "帮助将 DOC／DOCX 对应 Writer、XLS／XLSX 对应 Calc、PPT／PPTX 对应 Impress，并由另存为选择输出格式。复杂表格、修订标记、嵌入对象、图表及部分表格函数都是文档中的转换风险点。应保留原件，重新打开目标接收格式并检查提案关键部分；工作簿需核对公式含义及总计，不能只看网格相似。\n\n保留 VBA 和执行 VBA 是两件事。文档描述可保留 Microsoft 宏代码供其后使用，以及对部分 Excel 脚本的有限执行；对象模型并非普遍互换。不能以文件成功打开推断自动化流程不变。若提案流程依赖宏，应以可信代表性副本核对计算及产物。本研究未启用运行宏或转换文件。",
+        "source_refs": ["office", "compatibility"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "review-and-comparison",
+        "title_en": "Use revision tools with a known original",
+        "title_zh": "配合明确原件使用审阅工具",
+        "en": "Writer and Calc can record changes, with author/time information and comments. The help explicitly says some changes are not recorded, including a tab-stop alignment change. The record is a review aid rather than proof that every action was captured. Manage Changes can accept or reject individual or all changes, and filtering affects which entries are shown as actionable. A shorter visible list is not evidence that unshown edits disappeared.\n\nFor a returned proposal without tracked changes, the comparison guide says to open the newer reviewer’s document first and select the older original. Inserted/deleted text can then be reviewed, with the accepted result saved under a deliberate name. Identify those two inputs before using the comparison; reversing the intended baseline can change the interpretation. Document acceptance here is an editorial choice, not a legally authenticated signature or organizational approval. No review or comparison was performed.",
+        "zh": "Writer 和 Calc 可记录带作者时间及评论的修订，但帮助明确部分改动不记录，例如制表位对齐改变。修订是审阅辅助，不证明捕获所有动作。Manage Changes 可逐项或全部接受拒绝，过滤会影响显示及可操作条目；列表变短不表示未显示修改消失。\n\n若返回提案未记录修订，比较指南要求先打开较新的审阅者文件，再选较旧原件，随后审阅插入删除并以明确名称保存接受结果。操作前需识别两份输入，颠倒基线会改变解释。此处接受文档属于编辑选择，不是已认证法律签名或机构审批。本研究未审阅或比较文件。",
+        "source_refs": ["tracking", "accept", "compare"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pdf-output",
+        "title_en": "Inspect what the PDF actually includes",
+        "title_zh": "检查 PDF 实际包含的内容",
+        "en": "PDF export offers page/selection/print-range choices. Whole-sheet export is different: it ignores sheet print ranges and shown/hidden state and puts every sheet on a page. A hidden internal cost sheet may therefore enter that output. Hybrid PDF also embeds an editable ODF file rather than producing only a flattened reading copy. Choose those settings according to the intended recipient and inspect the actual artifact.\n\nComments may be exported as annotations or in margins; a watermark is not source-document content or proven redaction. The Security tab distinguishes an opening password from editing/printing restrictions, and warns that reader compliance matters. These controls do not establish that every recipient application prevents copying or printing. For the proposal, check the selected sheets/pages, comments and embedded source before release. No PDF, password, signature or redaction was created or independently tested.",
+        "zh": "PDF 导出可选择页面、选区及打印范围；整表导出却忽略打印区域和显示隐藏状态，将每张表放在一页上，因此隐藏的内部成本表也可能输出。混合 PDF 还嵌入可编辑 ODF，并非只有扁平阅读副本。需按接收方选择设置，并检查实际产物。\n\n评论可导出为批注或页边文字，水印不属于源文档内容，也不是已证明的脱敏。安全页区分打开密码与编辑打印限制，并提醒依赖阅读器遵守；不能保证任何接收应用都阻止复制或打印。建议提案发布前核对表页、评论及嵌入源文件。本研究未创建或独立测试 PDF、密码、签名或脱敏。",
+        "source_refs": ["pdf", "pdf-security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "versions-and-recovery",
+        "title_en": "Embedded versions do not replace a backup",
+        "title_zh": "文件内版本不替代备份",
+        "en": "File > Versions stores multiple states in the same file, including comments, and can open an older state read-only. Its close-triggered option saves a new version when changed content warrants it; the guide distinguishes closing after an unchanged manual save. More importantly, Save As of a file containing versions does not carry that version information into the copy. A renamed handover file is not evidence that the complete embedded history accompanied it.\n\nFor the proposal, decide whether the recipient needs only the final file, the review record or a complete history. Keep a separate verified backup and do not overwrite the sole original during format trials. Loss of the one container file can affect its embedded versions too; exact filesystem/cloud backup and recovery behavior was not researched for an installed environment. No version was saved, deleted, restored or copied.",
+        "zh": "File > Versions 在同一文件保存多个状态及评论，可只读打开旧状态。按关闭保存选项会在已修改内容需要时保存新版本，指南也区分手动保存后未改动就关闭的情况。更关键的是，带版本文件经 Save As 复制时，不把版本信息带入副本；改名交接文件不证明内嵌历史完整随行。\n\n提案需明确接收方要最终稿、审阅记录还是完整历史，另保留核对过的备份，不在格式试验中覆盖唯一原件。容器文件丢失也会影响内嵌版本；未研究某套安装环境的文件系统云备份及恢复行为。本研究未保存、删除、恢复或复制版本。",
+        "source_refs": ["versions", "version-overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "installation-cost-license",
+        "title_en": "Separate the free suite from support and deployment work",
+        "title_zh": "区分免费套件与支持部署工作",
+        "en": "The current download page displays version26.8.1 packages for Windows, macOS and Linux architectures, with offline help/language packages separate. Select the intended architecture and supported environment; the requirements identify Java for particular functions, notably Base, rather than every ordinary editing task. Displayed package/version information is a retrieval snapshot, not proof a local machine is updated. No binary was downloaded or installed.\n\nThe official site states the suite is available at no cost and identifies its source license as MPL2.0, separately from website-content licensing and trademarks. This is sustained free software, not a time-limited trial. The old linked license page returned404, so detailed bundled third-party notices and redistribution requirements remain unreviewed. TDF says it does not provide technical support and recommends ecosystem enterprise variants for organizations needing support/SLA; Enterprise is a family of partner offerings, not one mandatory paid edition. Budget separately for support, migration, training, fonts, extensions and compatibility work. No partner quote or payment was requested.",
+        "zh": "当前下载页显示 Windows、macOS 及 Linux 架构的 26.8.1 包，离线帮助和语言包另列。需选择目标架构及受支持环境；要求将 Java 限于特定功能，尤其 Base，并非每种普通编辑任务。显示的包版本是读取快照，不证明本机已更新。本研究未下载或安装二进制。\n\n官网明确套件免费使用，源码许可为 MPL2.0，与网站内容许可及商标分开。这是持续免费软件，不是限期试用。旧链接许可页返回404，详细捆绑第三方通知及再分发要求尚未核查。TDF 说明不提供技术支持，并建议需支持或 SLA 的组织考虑生态企业版本；Enterprise 是伙伴服务家族，不是一个强制付费版本。应另预算支持、迁移、培训、字体、扩展及兼容核对。本研究未请求伙伴报价或支付。",
+        "source_refs": [
+          "download",
+          "requirements",
+          "free-offer",
+          "source-license",
+          "business"
+        ],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "LibreOffice: File Compatibility, Review and PDF Export Conditions",
+    "title_zh": "LibreOffice：文件兼容、审阅及 PDF 导出条件",
+    "description_en": "Evaluate LibreOffice editing, Microsoft-format roundtrips, tracked changes, embedded versions, PDF contents and free software versus support.",
+    "description_zh": "评估 LibreOffice 编辑、Microsoft 格式回转、修订、内嵌版本、PDF 内容及免费软件与支持区别。",
+    "search_intent_status": "editorial_inference_not_measured"
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, binary/extension download, document or macro execution, file conversion, review, version operation, PDF/security/accessibility test or partner purchase performed.",
+      "zh": "未安装、下载二进制扩展、执行文档宏、转换、审阅、操作版本、测试 PDF 安全无障碍或购买伙伴服务。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact version/OS-specific compatibility, font substitution, formula and VBA behavior, full bundled license notices, extension/cloud services, backup recovery and partner service prices/SLA remain unverified.",
+      "zh": "精确版本系统兼容、字体替换、公式及 VBA 行为、完整捆绑许可通知、扩展云服务、备份恢复和伙伴服务价 SLA 未核实。",
+      "source_refs": [
+        "compatibility",
+        "requirements",
+        "source-license",
+        "business"
+      ],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Malformed relative help links initially redirected to generic Writer help; normalized observed canonical topic paths read for actual review/version/security facts. License link404 not misrepresented as full text; package prerelease placeholder not treated as current selected state.",
+      "zh": "畸形相对帮助链接最初跳到通用 Writer 帮助，随后按已见规范主题路径读取审阅版本安全正文。未把许可页404当全文，亦不把包预发布占位提示当当前选择状态。",
+      "source_refs": [
+        "accept",
+        "compare",
+        "versions",
+        "source-license",
+        "download"
+      ],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

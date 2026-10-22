@@ -1,0 +1,293 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "notesnook-8d60d600",
+  "name": "Notesnook",
+  "website_url": "https://notesnook.com/",
+  "domain": "notesnook.com",
+  "identity_domain": "notesnook.com",
+  "category": "notes",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Notesnook is an open-source note application centred on end-to-end encrypted personal notes and cross-device sync. It documents a rich editor, linked notes, notebooks, attachments, web clipping, optional published notes and reminders. Client and server source availability is distinct from the limits of the vendor-hosted service.\n\nThe current free offer includes unlimited notes and devices, with attachment allowances rather than a note-count paywall. Recovery deserves particular attention because the documented encryption model prevents staff from simply retrieving readable notes for a user.",
+  "description_zh": "Notesnook 是以端到端加密个人笔记与跨设备同步为核心的开源笔记应用，文档列有富文本编辑、笔记关联、笔记本、附件、网页采集、可选笔记发布与提醒。客户端／服务端源码可用，与厂商托管服务的额度是两回事。\n\n当前免费方案不限制笔记与设备，主要通过附件额度区分，而非按笔记数量收费。恢复尤其需要关注，因为文档中的加密模型不允许员工直接为用户找回可读笔记。",
+  "core_features": [
+    {
+      "name_en": "Encrypted note sync",
+      "name_zh": "加密笔记同步",
+      "explanation_en": "The vendor documents encryption before notes leave the device.",
+      "explanation_zh": "厂商文档说明笔记离开设备前进行加密。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "help",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Rich linked notes",
+      "name_zh": "富文本关联笔记",
+      "explanation_en": "Tables, tasks, attachments and bidirectional note context are documented.",
+      "explanation_zh": "文档提供表格、任务、附件及双向笔记上下文。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Optional note publishing",
+      "name_zh": "可选笔记发布",
+      "explanation_en": "Publish a selected note as a Monograph with optional password protection.",
+      "explanation_zh": "可把选中笔记发布为 Monograph，并可选择密码保护。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Keep a private cross-device research journal with linked sources."],
+    "zh": ["维护关联来源的私密跨设备研究日志。"],
+    "source_refs": ["product"],
+    "basis": "Illustrative selection guidance; no customer outcome or hands-on claim."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor sync and multi-platform clients; self-hosting advertised but current operational readiness unverified.",
+      "zh": "厂商同步与多平台客户端；宣传可自行托管，但当前运行就绪性未核实。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Privacy-conscious individual",
+      "Cross-device researcher"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a test account and a linked note with an attachment within the plan limit.",
+        "zh": "创建测试账户，写关联笔记并加入限额内附件。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Review recovery-key and backup documentation before storing irreplaceable notes.",
+        "zh": "保存不可替代笔记前，阅读恢复密钥与备份说明。",
+        "source_refs": ["help"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Verify sync and a recipient view separately, particularly for published Monographs.",
+        "zh": "分别核对同步与接收者视图，尤其是已发布 Monograph。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_exhaustively_verified",
+    "items": [],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The official help says notes are encrypted before leaving the device and the vendor cannot recover readable notes for the user. Keep a recovery key and a representative export/backup outside the working device, then test restoration with non-sensitive data. The source licence read is GPLv3. Pricing advertises a self-hostable sync server while the homepage roadmap still labels self-hosting work in progress; production readiness and operating steps therefore need separate verification. No sync server, account recovery or encryption implementation was tested here.",
+        "zh": "官方帮助说明笔记离开设备前已加密，厂商无法为用户恢复可读内容。建议把恢复密钥与代表性导出／备份保存在工作设备之外，再用非敏感资料测试恢复。读取的源码许可为 GPLv3。定价页宣传同步服务可自行托管，但首页路线图仍将自行托管标为进行中，因此生产就绪程度及操作步骤需单独验证。本次未测试同步服务、账户恢复或加密实现。",
+        "source_refs": ["help", "license", "product", "pricing"],
+        "evidence_type": "documented_limits_with_editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "url": "https://raw.githubusercontent.com/streetwriters/notesnook/master/LICENSE",
+    "source_ref": "license",
+    "name": "GPL-3.0"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "checked_at": "2026-10-22T16:06:45.913500+00:00",
+    "normalized_monthly_price": null,
+    "price_type": "freemium",
+    "source_ref": "pricing",
+    "currency": "SGD",
+    "billing_basis": "Subscription with monthly attachment allowance; retrieved tax-inclusive region.",
+    "source_snapshot_en": "Free 50MB/month attachments, 10MB/file. SGD Essential 2.77 monthly or 27.86 yearly; Pro 9.74 monthly or 97.53 yearly. Paid monthly/yearly trial 14 days with payment method.",
+    "source_snapshot_zh": "免费附件每月 50MB、单文件 10MB。新加坡元 Essential 按月 2.77 或年费 27.86；Pro 按月 9.74 或年费 97.53。按月／年付费试用 14 天，需付款方式。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/notesnook",
+      "read_at": "2026-10-22T09:06:36.799Z",
+      "excerpt_sha256": "867a0f1115cfcc8a6c1adf7e0416d0e840cdec0c76cd4d19274285d34b66fa9c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "notesnook",
+      "title": "Notesnook | Open source & zero knowledge private note taking appClose menuOpen menu",
+      "url": "https://notesnook.com/",
+      "resolved_url": "https://notesnook.com/",
+      "read_at": "2026-10-22T15:55:30.595630+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "f192aedbba73a2a98acd16d6a843f4a17fa5f00f4f8d6ec9ee6b2943ac4a8c22",
+      "body_sha256": "24e9cb15f0e685a2044945a3ddc4beb00c31d343d20537a9c622e6ae2e3b4bad",
+      "evidence_path": ".scratch/deep-research/batch-11/notesnook/product.txt",
+      "research_notes_en": "Encrypted rich notes, publishing and source availability; self-hosting roadmap caveat preserved."
+    },
+    {
+      "id": "help",
+      "type": "official_documentation",
+      "site": "notesnook",
+      "title": "Notesnook Help",
+      "url": "https://notesnook.com/help",
+      "resolved_url": "https://notesnook.com/help/",
+      "read_at": "2026-10-22T15:58:07.932400+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "243e448ef427b34fe2caf408da34619915fd6b1445b0cb72ceaf95b6df5331f2",
+      "body_sha256": "28b7c8a232c5727294993e244dd16b08f548af5dcc666a8e92cad71360d04164",
+      "evidence_path": ".scratch/deep-research/batch-11/notesnook/help.txt",
+      "research_notes_en": "Encryption and inability of vendor to recover readable user data."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "notesnook",
+      "title": "Pricing | Notesnook — encrypted notes, free foreverClose menuOpen menu",
+      "url": "https://notesnook.com/pricing/",
+      "resolved_url": "https://notesnook.com/pricing",
+      "read_at": "2026-10-22T15:55:32.068052+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "59a13b1756fbfb993d22c1cc1f65f4050e9d89d36c3c4a9417e30dc74b15e8e3",
+      "body_sha256": "b077860d452f1677e1e64b7439e5f37d48bee5f3a0995adc623da73a27634dd3",
+      "evidence_path": ".scratch/deep-research/batch-11/notesnook/pricing.txt",
+      "research_notes_en": "SGD regional prices, monthly attachment allowances, cancellation and trial conditions."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "notesnook",
+      "title": "Notesnook client repository — GNU GPL version 3",
+      "url": "https://raw.githubusercontent.com/streetwriters/notesnook/master/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/streetwriters/notesnook/master/LICENSE",
+      "read_at": "2026-10-22T16:02:52.758894+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "099abc31d7ec492194f57c26894aabcb880f1111ddb21e8eeb2c6221965377f9",
+      "body_sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+      "evidence_path": ".scratch/deep-research/batch-11/notesnook/license.txt",
+      "research_notes_en": "Read the actual client-repository GPLv3 licence; no code reused."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:06:45.913500+00:00"
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Primary-source research is a draft, not publication, owner verification, price approval or independent review.",
+    "English and Chinese carry matching amounts, billing periods, qualifications and unknowns.",
+    "Historical directory assertions are superseded, including unverified feature and API labels."
+  ],
+  "description_source_refs": ["product", "help"],
+  "profile": {
+    "sections": [
+      {
+        "id": "writing",
+        "title_en": "Capture privately, publish deliberately",
+        "title_zh": "私密采集，主动选择发布",
+        "en": "For an illustrative research journal, create notebooks, clip references, write linked notes and attach supporting files within the selected allowance. A published Monograph is a separate sharing action and can optionally be password protected. Do not assume that publishing one note keeps that note within the same private-account access boundary. Inspect the recipient view before sharing real private material. The described editor includes tables, tasks, code and maths rather than plain text only.",
+        "zh": "例如研究日志可创建笔记本、采集参考、写关联笔记，并在套餐额度内加入附件。发布 Monograph 是单独共享动作，可选择密码保护。不能默认已发布笔记仍受私密账户同样的访问边界保护。共享真实私密资料前，应检查接收者视图。文档中的编辑器包括表格、任务、代码与数学内容，不限于纯文字。",
+        "source_refs": ["product", "help"],
+        "evidence_type": "documented_features_with_editorial_example"
+      },
+      {
+        "id": "free",
+        "title_en": "Unlimited notes, limited attachments",
+        "title_zh": "笔记不限，附件有限",
+        "en": "The free plan lists unlimited notes/devices, 50 MB attachment storage per month and a 10 MB file limit. Essential lists 1 GB/month and 100 MB files; Pro 10 GB/month and 1 GB files; Believer 25 GB/month and 5 GB files. Preserve the per-month wording instead of describing these as a permanent total storage pool. Cancellation documentation says written notes remain readable, editable and exportable on Free.",
+        "zh": "免费方案列出不限笔记／设备、每月 50 MB 附件存储及单文件 10 MB。Essential 为每月 1 GB、单文件 100 MB；Pro 每月 10 GB、单文件 1 GB；Believer 每月 25 GB、单文件 5 GB。应保留“每月”单位，不能写成永久总存储池。取消说明表示已写笔记在 Free 上仍可读、编辑和导出。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "A regional snapshot and optional paid trials",
+        "title_zh": "地区价格快照与可选付费试用",
+        "en": "The retrieved page localised prices to tax-inclusive SGD: Essential SGD2.77 monthly or SGD27.86 yearly; Pro SGD9.74 monthly or SGD97.53 yearly. These are regional snapshots, not USD or universal prices. Monthly/yearly trials last 14 days and require a payment method; the prepaid five-year offer has no trial. Ongoing Free requires no card and has no trial clock. Store purchases and web/desktop purchases use different payment providers.",
+        "zh": "读取页面将金额本地化为含税新加坡元：Essential 按月 SGD2.77 或年费 SGD27.86；Pro 按月 SGD9.74 或年费 SGD97.53。这是地区快照，不能当作美元或通用价格。按月／按年付费试用为 14 天，需要付款方式；预付五年方案不提供试用。持续 Free 无需信用卡，也无试用倒计时。商店购买与 Web／桌面购买使用不同付款渠道。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Open source does not remove recovery duties",
+        "title_zh": "开源不免除恢复责任",
+        "en": "The official help says notes are encrypted before leaving the device and the vendor cannot recover readable notes for the user. Keep a recovery key and a representative export/backup outside the working device, then test restoration with non-sensitive data. The source licence read is GPLv3. Pricing advertises a self-hostable sync server while the homepage roadmap still labels self-hosting work in progress; production readiness and operating steps therefore need separate verification. No sync server, account recovery or encryption implementation was tested here.",
+        "zh": "官方帮助说明笔记离开设备前已加密，厂商无法为用户恢复可读内容。建议把恢复密钥与代表性导出／备份保存在工作设备之外，再用非敏感资料测试恢复。读取的源码许可为 GPLv3。定价页宣传同步服务可自行托管，但首页路线图仍将自行托管标为进行中，因此生产就绪程度及操作步骤需单独验证。本次未测试同步服务、账户恢复或加密实现。",
+        "source_refs": ["help", "license", "product", "pricing"],
+        "evidence_type": "documented_limits_with_editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "Self-host production readiness, recovery-key handling, encrypted backup restore, publication permissions and cryptographic implementation were not tested.",
+      "zh": "未测试自行托管生产就绪性、恢复密钥处理、加密备份恢复、发布权限或密码学实现。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source documentation research; original English synthesis with matching Chinese sections. Workflow examples and evaluation advice were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Notesnook: Workflows, Pricing and Practical Limits",
+    "title_zh": "Notesnook：工作流程、费用与使用条件",
+    "description_en": "Notesnook is an open-source note application centred on end-to-end encrypted personal notes and cross-device sync. It documents a rich editor, linked notes, notebooks, at",
+    "description_zh": "Notesnook 是以端到端加密个人笔记与跨设备同步为核心的开源笔记应用，文档列有富文本编辑、笔记关联、笔记本、附件、网页采集、可选笔记发布与提醒。客户端／服务端源码可用，与厂商托管服务的额度是两回事。",
+    "primary_intent": "Understand the documented product and evaluate a specific workflow.",
+    "query_basis": "Editorial intent; no measured search volume, ranking or SEO/GEO outcome.",
+    "canonical_url": null
+  }
+}

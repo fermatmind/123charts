@@ -1,0 +1,270 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "apigee-edge-d4c9d902",
+  "name": "Apigee Edge",
+  "website_url": "https://cloud.google.com/apigee/",
+  "domain": "cloud.google.com",
+  "identity_domain": "google.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Apigee Edge manages backend APIs through configurable API proxies. Its documentation distinguishes the client-facing ProxyEndpoint from the backend-facing TargetEndpoint, allowing policy and connection configuration on separate request/response legs. A proxy bundle’s configuration revision is distinct from the public API version seen by clients.\n\nThis record covers Edge Public Cloud and Private Cloud. It does not substitute current Apigee X/hybrid packaging or Google Cloud pay-as-you-go prices.",
+  "description_zh": "Apigee Edge 通过可配置 API 代理管理后端 API。文档区分面向调用方的 ProxyEndpoint 与面向后端的 TargetEndpoint，分别配置请求／响应两段的策略和连接。代理包配置 revision 与客户端看到的公开 API 版本不同。\n\n本档案限定 Edge Public Cloud 和 Private Cloud，不替换为当前 Apigee X／hybrid 打包或 Google Cloud 按量价格。",
+  "core_features": [
+    {
+      "name_en": "Two endpoint boundaries",
+      "name_zh": "两个端点边界",
+      "explanation_en": "Configure the app-facing proxy separately from the backend target connection.",
+      "explanation_zh": "将应用侧代理与后端目标连接分别配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "proxy",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configuration revisions",
+      "name_zh": "配置修订",
+      "explanation_en": "Track numbered proxy configurations independently of public API versions.",
+      "explanation_zh": "独立于公开 API 版本跟踪编号代理配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Public or Private Cloud",
+      "name_zh": "公有云或私有云",
+      "explanation_en": "Edge deployment modes assign different infrastructure and administrative responsibilities.",
+      "explanation_zh": "Edge 部署模式对应不同基础设施及管理责任。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot an Edge proxy over a harmless backend with explicit request/response expectations.",
+      "Rehearse revision deployment and routing checks in a nonproduction environment."
+    ],
+    "zh": [
+      "使用无害后端试点 Edge 代理，并明确请求／响应预期。",
+      "在非生产环境演练 revision 部署及路由检查。"
+    ],
+    "source_refs": ["proxy", "deployment"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineers",
+      "Existing Apigee Edge operators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm Edge Public/Private Cloud and an authorized test environment before defining a proxy.",
+        "zh": "定义代理前确认 Edge Public／Private Cloud 及获准测试环境。",
+        "source_refs": ["home", "proxy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect deployed revision/state and both endpoint policies before a controlled rollout.",
+        "zh": "受控发布前检查部署 revision／状态及两端策略。",
+        "source_refs": ["deployment", "proxy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Proxy revision rollback does not roll back backend data or public API semantics.",
+        "zh": "代理 revision 回退不回退后端数据或公开 API 语义。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Different basepaths can leave two revisions deployed after override.",
+        "zh": "不同 basepath 可能使 override 后保留两个已部署 revision。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "not_verified",
+    "price_type": "unknown",
+    "officially_checked": false,
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "Current Edge-specific commercial terms were not established. Google Cloud Apigee pay-as-you-go pricing was not transferred to Edge. The overview’s account categories and documentation licenses do not verify a current customer offer. Pricing stays not_verified/unknown with no normalized amount.",
+    "summary_zh": "未确认当前 Edge 专属商业条款，未套用 Google Cloud Apigee 按量价格。概览账户类别和文档许可不证明当前客户方案，价格保持 not_verified／unknown，不赋标准化金额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/apigee-edge",
+      "read_at": "2026-10-22T08:37:03.952Z",
+      "excerpt_sha256": "764d92688502561e7c38a8ffa4a01d2595d055fdd183c641386ecfeccf2281fe",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "What is Apigee Edge?  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/get-started/what-apigee-edge",
+      "read_at": "2026-10-22T10:58:59.927031Z",
+      "excerpt_sha256": "bca613f746ada74f0c716255feed8f84a65401565ed83cb1a866c758fc1aa3b7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read original Edge overview and explicit distinction from current Apigee/hybrid; vendor page identifies Google affiliation."
+    },
+    {
+      "id": "proxy",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "Understanding APIs and API proxies  |  Apigee Edge  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies",
+      "read_at": "2026-10-22T16:19:08.662084Z",
+      "excerpt_sha256": "b85a985966fe91d570db461759f48d6448177d1f5f89fe9b5c76a389b0ba4ae0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Edge ProxyEndpoint/TargetEndpoint, policy and bundle model."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "Deploy API proxies using the API  |  Apigee Edge  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/deploy/deploy-api-proxies-using-management-api",
+      "read_at": "2026-10-22T16:20:44.981605Z",
+      "excerpt_sha256": "2cdd0ce92c4e46ae85bb28a1450c16beee20f70b55cb45b293ae7b4fc72a884e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual revision/environment state, prior-revision rollback and override/delay/basepath caveat."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:20:44.981605Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "research_gaps": [
+    {
+      "en": "No organization, proxy, policy, management API, credential, deployment, rollback or purchase was operated.",
+      "zh": "未操作组织、代理、策略、管理 API、凭据、部署、回退或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current contract, available account types, complete software license, access enforcement, throughput and Private Cloud recovery remain unverified.",
+      "zh": "当前合同、可用账户类别、完整软件许可、实际访问执行、吞吐及 Private Cloud 恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "description_source_refs": ["home", "proxy"],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-boundary",
+        "title_en": "Choose the actual Edge deployment",
+        "title_zh": "选择实际 Edge 部署",
+        "en": "The overview describes vendor-operated Public Cloud and customer-operated Private Cloud, with feature differences. Private Cloud makes installation, upgrades and maintenance the customer’s responsibility. Determine the intended product/version before planning dependencies. The page’s general account categories do not establish a currently purchasable free offer or the terms of a particular customer contract.",
+        "zh": "概览区分厂商运行的 Public Cloud 与客户运行的 Private Cloud，且功能不同。Private Cloud 的安装、升级、维护由客户负责。应先确定产品／版本再规划依赖；页面的一般账户类别不证明当前可购买的免费方案或具体合同条款。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "request-flow",
+        "title_en": "Check both client and target policies",
+        "title_zh": "检查调用侧与目标侧策略",
+        "en": "ProxyEndpoint defines how clients reach the proxy and can attach security/quota policies. TargetEndpoint defines backend routing, protocol and connection security, with response processing. A proxy can be defined in the UI, imported as a bundle or managed through APIs. Test one harmless backend and compare allowed, denied and backend-failure responses rather than treating successful import as effective protection.",
+        "zh": "ProxyEndpoint 定义客户端访问及安全／配额策略；TargetEndpoint 定义后端路由、协议、连接安全和响应处理。代理可经 UI、导入包或管理 API 定义。应使用无害后端比较允许、拒绝及后端失败响应，不能将导入成功视为保护已生效。",
+        "source_refs": ["proxy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-state",
+        "title_en": "Import, revision and deployment are separate",
+        "title_zh": "导入、修订与部署分开",
+        "en": "A proxy must be deployed to an environment before invocation. Inspect organization/environment/revision state when diagnosing failure. Deploying an earlier revision can restore proxy configuration, but does not restore backend data or public API semantics. Import success alone is insufficient.",
+        "zh": "代理部署到环境后才能调用。排错应检查组织／环境／revision 状态。重新部署旧 revision 可恢复代理配置，不恢复后端数据或公开 API 语义；仅导入成功不足。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "transition",
+        "title_en": "A rollout option has a basepath condition",
+        "title_zh": "切换选项有 basepath 条件",
+        "en": "Override retains the old revision while deploying the new one; delay allows older transactions to finish. Different basepaths can leave both revisions deployed. Rehearse routing and observed state; the documented seamless mode is not a measured zero-error guarantee.",
+        "zh": "Override 在部署新 revision 时保留旧版，delay 等待旧事务。不同 basepath 可能使两版均已部署。应演练路由及状态；文档无缝模式不是实测零错误保证。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Apigee Edge: workflows, operating limits and cost",
+    "title_zh": "Apigee Edge：流程、运行限制与费用",
+    "description_en": "Apigee Edge manages backend APIs through configurable API proxies. Its documentation distinguishes the client-facing ProxyEndpoint from the backend-facing TargetEndpoint,",
+    "description_zh": "Apigee Edge 通过可配置 API 代理管理后端 API。文档区分面向调用方的 ProxyEndpoint 与面向后端的 TargetEndpoint，分别配置请求／响应两",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of Apigee Edge.",
+    "search_intent_zh": "评估 Apigee Edge 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  }
+}

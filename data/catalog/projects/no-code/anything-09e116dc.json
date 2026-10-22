@@ -1,0 +1,333 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "anything-09e116dc",
+  "name": "Anything",
+  "website_url": "https://www.anything.com/",
+  "domain": "www.anything.com",
+  "identity_domain": "anything.com",
+  "category": "no-code",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Anything is an AI-assisted builder for websites, mobile apps and tools. It combines generated app work with hosted databases, server-side functions and publication controls. The official migration notice places the current service at anything.com.\n\nIts evaluation needs more than a generated preview: development and production data are separate, published pages need their own access design, and both building and deployed AI integrations can consume credits. Use a small synthetic-data app to establish these operating costs and boundaries before adopting it.",
+  "description_zh": "Anything 是面向网站、移动应用及工具的 AI 辅助构建平台，将应用生成与托管数据库、服务端函数和发布控制结合。官方迁移公告确认当前服务位于 anything.com。\n\n评估时需超越生成预览：开发与生产数据分开，已发布页面需要单独设计访问控制，构建过程和已部署的 AI 集成都可能消耗积分。应先用模拟数据小应用验证运行成本及边界，再决定是否采用。",
+  "core_features": [
+    {
+      "name_en": "Separate development and production data",
+      "name_zh": "开发与生产数据分离",
+      "explanation_en": "Publishing applies database structure changes; development records are not automatically copied into production.",
+      "explanation_zh": "发布应用数据库结构变更，不会自动将开发记录复制到生产。",
+      "explanation_scope": "product_specific",
+      "source_ref": "database",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Server-side API credentials",
+      "name_zh": "服务端 API 凭据",
+      "explanation_en": "External API calls can use backend functions and named Saved Secrets.",
+      "explanation_zh": "外部 API 可通过后端函数和命名 Saved Secrets 调用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "secrets",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Build and runtime credits",
+      "name_zh": "构建及运行积分",
+      "explanation_en": "Credits cover generation and platform AI integrations, with distinct monthly and top-off expiration rules.",
+      "explanation_zh": "积分用于生成及平台 AI 集成，月度额度与加购积分的有效期规则不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "credits",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot a small account-protected tool with synthetic records.",
+      "Evaluate a backend API integration with a failed-provider response."
+    ],
+    "zh": [
+      "试点有账户访问控制的小工具，使用模拟记录。",
+      "用服务商失败响应评估后端 API 集成。"
+    ],
+    "source_refs": ["publish", "secrets"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["App prototypers", "Internal-tool developers"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a disposable app, inspect generated behavior and map development versus production data.",
+        "zh": "建立可丢弃应用，检查生成行为并明确开发与生产数据边界。",
+        "source_refs": ["home", "database"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test anonymous access, an API failure and credit reporting before choosing an annual commitment.",
+        "zh": "选择年付承诺前，测试匿名访问、API 失败及积分报告。",
+        "source_refs": ["publish", "secrets", "subscription"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Unpublishing preserves project data; it does not erase the database.",
+        "zh": "取消发布会保留项目数据，不会擦除数据库。",
+        "source_refs": ["publish"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Legacy database quota labels do not map cleanly to the current Pro/Max offers.",
+        "zh": "旧数据库额度方案名称不能直接对应当前 Pro／Max 报价。",
+        "source_refs": ["database", "subscription"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:39:58.828605Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Paid subscriptions are required for building. Pro is $19/month equivalent with $228 upfront annual billing, or $24 monthly; Max is $199/month equivalent annually or $239 monthly. Credit top-offs and deployed AI usage affect costs. Free downgrade continuity is narrower than paid building access.",
+    "summary_zh": "构建需要付费订阅。Pro 年付一次扣 $228，折合每月 $19，或月付 $24；Max 年付折合每月 $199，或月付 $239。积分加购及已部署 AI 用量会影响成本，降到 Free 后的延续权益小于付费构建权限。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/createanything",
+      "read_at": "2026-10-22T08:48:35.106Z",
+      "excerpt_sha256": "28874ef299f0987e84b9f1f5ba1a35b2f097c7ca1e93fa5c7b4952a72324c89f",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "Welcome to Anything",
+      "url": "https://www.anything.com/docs/welcome",
+      "read_at": "2026-10-22T14:39:58.828605Z",
+      "excerpt_sha256": "cfc85b74eabceb7d3acc126c2b3372f9a4c1c54ec753ec2b95e4c99f01e8e923",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current app-builder introduction on the new official domain."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Anything",
+      "title": "Anything - AI app builder",
+      "url": "https://www.anything.com/pricing",
+      "read_at": "2026-10-22T14:39:58.828018Z",
+      "excerpt_sha256": "cde5759d1ff56de910cb2c69b5a2dc6f00113ad0d13409221d754a61852c9f79",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current offer, credits and plan table."
+    },
+    {
+      "id": "database",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "Databases",
+      "url": "https://www.anything.com/docs/apps/databases",
+      "read_at": "2026-10-22T14:40:33.087425Z",
+      "excerpt_sha256": "f6f6825a8cd495e68def5747efd915f295b3dc6a12fff91e832bbeb09bda89c8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read separate development/production data, schema publishing, reset, linking and SQL export."
+    },
+    {
+      "id": "publish",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "Publish",
+      "url": "https://www.anything.com/docs/launch/publish",
+      "read_at": "2026-10-22T14:40:34.035223Z",
+      "excerpt_sha256": "aa4d755a99abda06ca37938ac7789a05e55a4b2debe0cb16b59933d6dac513d0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read public publication, backend deployment, mobile testing and unpublish behavior."
+    },
+    {
+      "id": "secrets",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "External APIs",
+      "url": "https://www.anything.com/docs/quick-tips/external-apis",
+      "read_at": "2026-10-22T14:40:33.598237Z",
+      "excerpt_sha256": "b6f0f5c1dc2f522cb84a598605f4da183bca9dcc2ed650f80f7e63b7350481de",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read backend external API integration and Saved Secrets."
+    },
+    {
+      "id": "credits",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "Credits",
+      "url": "https://www.anything.com/docs/account/credits",
+      "read_at": "2026-10-22T14:40:36.273968Z",
+      "excerpt_sha256": "7067c061c90447e4fb8e2bb8c671e23d70cad200397c832a664dd1fda18f25b6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read build/runtime credit use, annual/monthly amounts, expiration and top-off rules."
+    },
+    {
+      "id": "subscription",
+      "type": "official_documentation",
+      "site": "Anything",
+      "title": "Subscriptions",
+      "url": "https://www.anything.com/docs/account/subscriptions",
+      "read_at": "2026-10-22T14:40:36.274221Z",
+      "excerpt_sha256": "f7bb2d1514373c32fe9de1530a5144b3ee33107f877f510bd57f11a248369060",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read upfront annual billing and Free downgrade continuity."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:40:36.274221Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "database"],
+  "profile": {
+    "sections": [
+      {
+        "id": "schema",
+        "title_en": "Review schema changes before publishing",
+        "title_zh": "发布前复查结构变更",
+        "en": "Publishing synchronizes structure rather than development rows. Removing fields can lose data; resetting development structure to the published version also deletes newly added tables or fields and their data. Rehearse schema changes with disposable records and inspect production separately.",
+        "zh": "发布同步结构而非开发记录。删除字段可能丢失数据；将开发结构重置到已发布版本也会删除新增表或字段及其数据。应使用可丢弃记录演练结构变更，单独检查生产数据。",
+        "source_refs": ["database"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-sharing",
+        "title_en": "Treat linked databases as shared state",
+        "title_zh": "将连接的数据库视为共享状态",
+        "en": "Linking another project’s database shares its data; unlinking is different from deleting it. SQL export can include development and production files, while restoring automatic backups requires support. Verify recovery requirements separately from the availability of an export button.",
+        "zh": "连接另一项目的数据库会共享数据，解除连接不同于删除数据库。SQL 导出可包含开发和生产文件，自动备份恢复则需要支持协助。应独立核对恢复要求，不能仅凭导出按钮判断恢复能力。",
+        "source_refs": ["database"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "publication",
+        "title_en": "Public links need deliberate access control",
+        "title_zh": "公开链接需要明确访问控制",
+        "en": "A preview is creator-only, but a published app can be opened by anyone with its link. Add user-account access controls for private tools. Mobile instructions cover TestFlight and Play internal testing; apps using functions or a database also require publishing the web/backend portion. This does not prove public store approval.",
+        "zh": "预览仅创建者可见，但发布后任何持链接者都可访问。私有工具需增加用户账户访问控制。移动发布文档覆盖 TestFlight 和 Play 内部测试；使用函数或数据库时还需发布网页／后端部分，这不能证明已通过公开商店审核。",
+        "source_refs": ["publish"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "credentials",
+        "title_en": "Keep provider keys in backend secrets",
+        "title_zh": "将服务商密钥保存在后端秘密配置",
+        "en": "The API guide places authenticated calls in backend functions and stores credentials in Saved Secrets. Secret names must match the generated code. Review requests, response handling and provider limits; a successful app preview does not demonstrate that credentials stay out of client code or that all errors are handled.",
+        "zh": "API 指南将鉴权调用放在后端函数，凭据存入 Saved Secrets，秘密名称需与生成代码一致。仍应检查请求、响应处理及服务商限额，预览成功不能证明凭据不会进入客户端，也不能证明所有错误均已处理。",
+        "source_refs": ["secrets"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "credits",
+        "title_en": "Budget for generation and deployed AI",
+        "title_zh": "同时预算生成和已部署 AI",
+        "en": "Credit consumption varies by mode and task, and deployed platform AI integrations also spend credits. Monthly allocations expire at the billing-cycle boundary, while purchased top-offs do not expire. Check both development and runtime usage; included bonus credits should not be added a second time to the displayed allocation.",
+        "zh": "积分消耗随模式和任务变化，已部署的平台 AI 集成也会消耗积分。月度额度在账期边界到期，加购积分不失效。应同时检查开发与运行用量，展示额度中已含的奖励积分不能再次相加。",
+        "source_refs": ["credits", "subscription"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Distinguish annual rates and Free continuity",
+        "title_zh": "区分年付折算价与免费延续",
+        "en": "The subscription guide gives Pro as $228 paid annually, equivalent to $19/month; monthly billing is $24. Max is $199/month on annual billing or $239 monthly. Downgrading to Free preserves existing data and published apps, but removes paid capabilities and new generation access. It is not an unrestricted free building plan.",
+        "zh": "订阅指南写明 Pro 年付一次扣 $228，折合每月 $19；月付为 $24。Max 年付折合每月 $199，月付 $239。降到 Free 会保留现有数据及已发布应用，但失去付费能力和新增生成功能，不能理解为无限制免费构建方案。",
+        "source_refs": ["subscription", "credits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Anything: setup, operating limits and pricing",
+    "title_zh": "Anything：设置、运行边界及费用",
+    "description_en": "Anything is an AI-assisted builder for websites, mobile apps and tools. It combines generated app work with hosted databases, server-side functions and publication contro",
+    "description_zh": "Anything 是面向网站、移动应用及工具的 AI 辅助构建平台，将应用生成与托管数据库、服务端函数和发布控制结合。官方迁移公告确认当前服务位于 anything.com。",
+    "search_intent_en": "Evaluate Anything for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Anything。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No generation, account, backend, database, publication, app-store submission or purchase was executed.",
+      "zh": "未执行生成、账户、后端、数据库、发布、商店提交或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The code-export guide returned only a header and its Markdown route was unreadable. Full code portability, license, backup retention/RPO and actual runtime behavior remain unverified.",
+      "zh": "代码导出指南仅返回标题，Markdown 路径也不可读。完整代码可迁移性、许可、备份保留／RPO 及真实运行行为待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

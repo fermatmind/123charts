@@ -1,0 +1,427 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "streamtime-434bfa07",
+  "name": "Streamtime",
+  "website_url": "https://streamtime.net/",
+  "domain": "streamtime.net",
+  "identity_domain": "streamtime.net",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Streamtime is a hosted project and business-management service oriented toward creative businesses. It connects a client job’s plan, assigned people, scheduled To Dos, recorded time, quotes, invoices and reporting. Its useful distinction is between estimating a job, putting work on someone’s schedule and recording what was used.\n\nFor an agency, those records can support a review of delivery and job economics when rates, time and expense states are maintained consistently. A profit figure or availability heat map still depends on the data entered. The profile below follows a small creative job and its conditions without reporting measured profitability, team wellbeing or a live account test.",
+  "description_zh": "Streamtime 是面向创意业务的托管项目与业务管理服务，连接客户工作的计划、人员、已排 To Do、实际工时、报价、发票和报告。一个关键区别是：估算工作、把工作放入个人日程，以及记录已用量，属于不同步骤。\n\n对于代理机构，如果费率、工时和费用状态维护一致，这些记录可支持交付及项目经济性复核。利润数字或产能热图仍取决于输入数据。以下跟踪一个小型创意工作及其条件，没有声称实测盈利、团队福祉或真实账户。",
+  "core_features": [
+    {
+      "name_en": "Job-to-schedule workflow",
+      "name_zh": "工作到排程的流程",
+      "explanation_en": "Plan hours separately from creating and assigning To Dos.",
+      "explanation_zh": "计划工时与创建／分派 To Do 分开。",
+      "explanation_scope": "product_specific",
+      "source_ref": "job-page",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Used/planned time review",
+      "name_zh": "已用／计划工时复核",
+      "explanation_en": "Inspect hours, cost, sell and billing status at entry level.",
+      "explanation_zh": "在条目层检查小时、成本、销售值和计费状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "time-review",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Flexible invoice basis",
+      "name_zh": "灵活发票依据",
+      "explanation_en": "Build invoices from plans, quotes, time or installments.",
+      "explanation_zh": "根据计划、报价、工时或分期创建发票。",
+      "explanation_scope": "product_specific",
+      "source_ref": "billing-workflow",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Plan and schedule a brochure job, then reconcile recorded work and an invoice draft."
+    ],
+    "zh": ["规划并排入宣传册工作，再核对实际记录和发票草稿。"],
+    "source_refs": ["planning", "job-page", "billing-workflow"],
+    "basis": "Hypothetical evaluation, not observed commercial results."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor cloud hosting; FAQ names AWS. Restore and data location not independently verified.",
+      "zh": "厂商云托管，FAQ 列出 AWS；未独立验证恢复及数据位置。",
+      "source_ref": "hosting",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Creative studio operations manager",
+      "Agency project lead"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Set up one job with explicit estimates, people/roles and rates, then schedule a small portion.",
+        "zh": "建立带明确估算、人员／角色和费率的一项工作，再排入一小部分。",
+        "source_refs": ["planning", "job-page"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Reconcile time entries and a draft invoice, including the destination accounting system if used.",
+        "zh": "核对工时和发票草稿；使用会计系统时也检查目标端。",
+        "source_refs": ["time-review", "billing-workflow", "integrations"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "integrations",
+    "scope": "Accounting, Google Calendar and Zapier paths described; mappings, rate limits and recovery not verified."
+  },
+  "limitations": {
+    "status": "documented_with_source_conflict",
+    "items": [
+      {
+        "en": "Planned hours do not create To Dos automatically.",
+        "zh": "计划工时不会自动创建 To Do。",
+        "source_refs": ["job-page"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Official glossary numeric examples conflict with the stated unscheduled-time formula.",
+        "zh": "官方术语表数字样例与所述未排工时公式冲突。",
+        "source_refs": ["time-glossary"],
+        "evidence_type": "source_inconsistency"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_agreement_read",
+    "is_open_source": false,
+    "url": "https://streamtime.net/legal/licence-agreement",
+    "source_ref": "terms-rights",
+    "scope": "Limited contracted internal-use rights; no self-host/source grant established."
+  },
+  "pricing": {
+    "status": "official_quote_process_read_amount_unknown",
+    "price_type": "tailored_monthly_usage_quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Business/usage inquiry determines monthly quote; no universal public amount read.",
+    "source_snapshot_zh": "按业务／使用情况询问后确定月报价，未读到统一公开金额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/streamtime",
+      "read_at": "2026-10-22T09:07:26.582Z",
+      "excerpt_sha256": "50c1235779d72309b91a6c765594abd28d3dc1a5113cca37faf199beadf1a11e",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "streamtime.net",
+      "title": "Streamtime — project management software for creative businesses",
+      "url": "https://streamtime.net/",
+      "read_at": "2026-10-22T10:56:39.852523Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ce48f65263bbe1f89619ffa4f329283eb0a88aba8ec8d7d3d1f14c948db4c27d",
+      "research_notes_en": "Creative-business job planning, time, capacity and reporting; wellbeing/marketing outcomes not independently established."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "streamtime.net",
+      "title": "Pricing | Streamtime",
+      "url": "https://streamtime.net/pricing",
+      "read_at": "2026-10-22T10:56:39.852852Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9bbc87d57602a3db5373baecc77ad7d0b7960177530f3b7de50e123b8303a03d",
+      "research_notes_en": "Pricing form asks usage needs, permanent/freelance headcount and revenue/currency; no universal rate returned, no form submitted."
+    },
+    {
+      "id": "planning",
+      "type": "official_documentation",
+      "site": "streamtime.net",
+      "title": "Project Planning | Streamtime",
+      "url": "https://streamtime.net/features/project-planning",
+      "read_at": "2026-10-22T10:56:39.853285Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "869e46b0f4281d0cfcd61fdb6f63b8058f95035c5a3f798377663acbc2f9cde0",
+      "research_notes_en": "Jobs carry clients, dates, teams and estimated hours; groups/project tracker and retainers described."
+    },
+    {
+      "id": "schedule",
+      "type": "official_documentation",
+      "site": "streamtime.net",
+      "title": "Time Tracking & Scheduling | Streamtime",
+      "url": "https://streamtime.net/features/time-tracking-and-scheduling",
+      "read_at": "2026-10-22T10:56:39.853346Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d6035c6e45e3f89d95d704c56fd1efaf869ca11b3644b781fb7db738c4697eed",
+      "research_notes_en": "Schedule/To Do synchronization and availability views described; no performance or capacity accuracy test."
+    },
+    {
+      "id": "billing-workflow",
+      "type": "official_documentation",
+      "site": "streamtime.net",
+      "title": "Quoting & Invoicing Software | Streamtime",
+      "url": "https://streamtime.net/features/quoting-and-invoicing",
+      "read_at": "2026-10-22T10:56:39.853383Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4b26bb0d16e0a71d051f079f8e47640d122ac7e840fd9578772ddb0bc0fa0bd9",
+      "research_notes_en": "Invoices can be based on job plans, quotes, time or installments; external accounting must be separately validated."
+    },
+    {
+      "id": "terms-exit",
+      "type": "official_license",
+      "site": "streamtime.net",
+      "title": "Streamtime Licence Agreement",
+      "url": "https://streamtime.net/legal/licence-agreement",
+      "read_at": "2026-10-22T10:56:39.853878Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6ec46d2b2d5cf53f3fc040ea7925cad2d737e9f8d173770e0c78269896b6e9f1",
+      "research_notes_en": "Termination ends software use; EU/EEA switching clauses have specific scope and are not a universal export promise."
+    },
+    {
+      "id": "terms-rights",
+      "type": "official_license",
+      "site": "streamtime.net",
+      "title": "Streamtime Licence Agreement",
+      "url": "https://streamtime.net/legal/licence-agreement",
+      "read_at": "2026-10-22T10:56:39.853952Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "58004e6a5db680f862d84307266a33cfb21478d8fe317961179b3de8db5f443f",
+      "research_notes_en": "Order-based internal-use license and additional AI usage-limit conditions read; not source-code/self-host rights."
+    },
+    {
+      "id": "job-page",
+      "type": "official_documentation",
+      "site": "help.streamtime.net",
+      "title": "The Job Page: Quick Start Guide | Help Portal | Streamtime",
+      "url": "https://help.streamtime.net/en/articles/11456443-the-job-page-quick-start-guide",
+      "read_at": "2026-10-22T10:56:39.854482Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9e9775462f07c349774fb3dc8a2504a0436893426356984e3564bfdde7394778",
+      "research_notes_en": "Planning hours does not create To Dos; cost/sell and expense status have distinct meanings. Financial/admin permissions specified."
+    },
+    {
+      "id": "todo-window",
+      "type": "official_documentation",
+      "site": "help.streamtime.net",
+      "title": "Creating and editing a To Do | Help Portal | Streamtime",
+      "url": "https://help.streamtime.net/en/articles/16183714-creating-and-editing-a-to-do",
+      "read_at": "2026-10-22T10:56:39.854536Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4bf402b05968d5123e677223521e96484d8d128ea4c08cb19a30f3abad35ab8d",
+      "research_notes_en": "New2026 window has assignment/search/permissions boundaries and read-only billed/archived entries."
+    },
+    {
+      "id": "time-glossary",
+      "type": "official_documentation",
+      "site": "help.streamtime.net",
+      "title": "Glossary: Common Terms Used across Streamtime | Help Portal | Streamtime",
+      "url": "https://help.streamtime.net/en/articles/9752436-glossary-common-terms-used-across-streamtime",
+      "read_at": "2026-10-22T10:56:39.854584Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "085ac1e4492111147a879550003c32f082064b63cdf8653aa1e133a31d93556c",
+      "research_notes_en": "Used/planned/scheduled definitions read; Sofia numeric examples and Remaining prose inconsistent, not copied as arithmetic truth."
+    },
+    {
+      "id": "time-review",
+      "type": "official_documentation",
+      "site": "help.streamtime.net",
+      "title": "Where can I see the time entered? | Help Portal | Streamtime",
+      "url": "https://help.streamtime.net/en/articles/3890-where-can-i-see-the-time-entered",
+      "read_at": "2026-10-22T10:56:39.854613Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0611c264d973ce86ffc7d09db579b535c479f23ad84df45db10611155e478f42",
+      "research_notes_en": "Time list shows hours/cost/sell, CSV export and extra hours tracked; client export may contain internal costs."
+    },
+    {
+      "id": "integrations",
+      "type": "official_integration",
+      "site": "streamtime.net",
+      "title": "Integrations: Xero, QuickBooks & Zapier | Streamtime",
+      "url": "https://streamtime.net/features/integrations",
+      "read_at": "2026-10-22T10:56:39.855035Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4958be4e9c82ce6c9a643f23ccacdde3d4042385823a99038e16f70b7aa6a2bf",
+      "research_notes_en": "Native accounting, Google Calendar and Zapier paths described; no exact mapping/direction/recovery validated."
+    },
+    {
+      "id": "hosting",
+      "type": "official_documentation",
+      "site": "streamtime.net",
+      "title": "Frequently Asked Questions | Streamtime",
+      "url": "https://streamtime.net/faqs",
+      "read_at": "2026-10-22T10:56:39.855078Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b5edea164a4a192eed6ae0484ac48e006f6e46857566aff1a1fc5f0d3cc21dce",
+      "research_notes_en": "Cloud/AWS and team access described; vendor backup claims are not restore verification."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:56:39.855078Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["overview", "planning", "job-page", "schedule"],
+  "profile": {
+    "sections": [
+      {
+        "id": "job-example",
+        "title_en": "A planned job is not yet a personal schedule",
+        "title_zh": "计划工作还不是个人日程",
+        "en": "For a hypothetical brochure job, enter the client, deliverables, dates, people/roles and estimated hours. The planning page describes groups for related jobs and retainers; the Job Page guide explicitly says planned time does not automatically create To Dos.\n\nAssign and schedule a small portion of the work, then inspect it from the relevant person’s view. This separates a commercial estimate from an actual time commitment. Check financial/admin permissions with the person responsible for the budget rather than assuming every team member sees the same job details. The example was not created in Streamtime.",
+        "zh": "假设承接宣传册工作，可以输入客户、交付项、日期、人员／角色和估算工时。规划页介绍了相关工作分组及长期服务安排；Job Page 指南明确说明，计划工时不会自动创建 To Do。\n\n建议先分派并排入一小部分，再从对应人员视图检查，区分商业估算与真实时间承诺。预算负责人应检查财务／管理权限，不能假设每位成员看到相同工作明细。本次没有在 Streamtime 创建样例。",
+        "source_refs": ["planning", "job-page"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "time-equation",
+        "title_en": "Reconcile planned, used and scheduled hours",
+        "title_zh": "核对计划、已用和已排工时",
+        "en": "The glossary distinguishes Planned time from Used/logged time and Scheduled time that has not yet been logged. Its stated Unscheduled formula subtracts both Used and Scheduled from Planned.\n\nAn independent illustration: twelve planned hours minus five logged hours minus four scheduled hours leaves three unscheduled hours. Seven hours remain unlogged, with four of those already scheduled. These are different questions. The official glossary’s own numeric examples disagree with its formula and its Remaining prose repeats Unscheduled, so they should not be silently copied. Validate the labels and results in the intended account before using them to promise capacity. This is arithmetic guidance, not a product calculation test.",
+        "zh": "术语表区分 Planned 计划工时、Used／logged 已记录工时，以及尚未记录的 Scheduled 已排工时；其 Unscheduled 公式是 Planned 减去 Used 和 Scheduled。\n\n独立示例：计划十二小时，减去已记五小时和已排四小时，得到未排三小时；未记录总量为七小时，其中四小时已经排入日程。两者回答不同问题。官方术语表自身数字与公式不一致，Remaining 段落又重复 Unscheduled，不能直接照抄。用它承诺产能前，应在目标账户验证标签与结果。这是算术指导，不是产品计算测试。",
+        "source_refs": ["time-glossary"],
+        "evidence_type": "documented_with_editorial_arithmetic"
+      },
+      {
+        "id": "todo-failure",
+        "title_en": "Missing work can reflect assignment or permission",
+        "title_zh": "找不到工作时先检查分派和权限",
+        "en": "The new2026 To Do guide says search defaults to assigned items. Show all items reveals role-based work and lets users with job-edit rights create a new item. Selecting an unassigned item can assign the user to it when creating the To Do. Users without edit rights can instead record job-level extra hours.\n\nFor the brochure job, inspect the job number before choosing a repeated item name. Check which interface version the user has, since the new modal is switchable. A billed entry, archived job or missing edit permission can open read-only. Investigate those states before treating different controls as a defect; no permissions or billed entries were changed here.",
+        "zh": "2026 新 To Do 指南说明，搜索默认显示已分派条目；Show all items 可找到按角色安排的工作，也允许有工作编辑权的用户创建新条目。选择未分派条目创建 To Do，可能把本人分派到该条目。没有编辑权的用户则可记录工作级额外工时。\n\n对于宣传册工作，选择同名条目前应核对工作编号。新窗口可切换，要检查用户界面版本。已计费条目、归档工作或缺少编辑权限，都会导致只读视图。应先排查这些状态，再把控制差异当作故障。本次没有改动权限或已计费条目。",
+        "source_refs": ["todo-window"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-versus-sell",
+        "title_en": "Hours, internal cost and sell value are separate",
+        "title_zh": "工时、内部成本与销售值分别判断",
+        "en": "The Job Page distinguishes hours from the financial value of time. Different team sell rates can consume the planned sell allowance at a different pace from planned hours. Draft expenses are planned; approved or paid expenses count as used. The cost/sell toggle does not mean every comparison is against a fixed planned-cost baseline.\n\nUse the Time list to inspect a few entries, their item assignment, billed state, cost and sell figures. Unlinked records can appear as Extra Hours Tracked. Review them before concluding the item is under budget. CSV exports can include internal cost columns, so inspect a client-facing extract before sharing it. No accounting or client report was exported here.",
+        "zh": "Job Page 区分小时与时间的财务价值。不同人员销售费率可能使销售额度与计划小时按不同速度消耗。Draft 费用属于计划，Approved 或 Paid 费用计为已用；Cost／Sell 切换不代表所有比较都以固定计划成本为基线。\n\n应在 Time 列表检查少量条目的归属、已计费状态、成本和销售值。未关联计划条目的记录可能显示为 Extra Hours Tracked，下结论说工作低于预算前应先审阅。CSV 导出可能包含内部成本列，面向客户时共享前需检查。本次未导出会计或客户报告。",
+        "source_refs": ["job-page", "time-review"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "invoice-connection",
+        "title_en": "Reconcile the invoice in both systems",
+        "title_zh": "在两端核对发票",
+        "en": "The quoting page supports invoicing from a plan, quote, recorded time or installments. The integration page names native Xero, QuickBooks and MYOB AccountRight connections, with other automation routes through Zapier. It also advertises Google Calendar synchronization. These labels do not establish every field mapping, eligibility condition or recovery rule.\n\nFor the pilot, take one clearly identified draft invoice and inspect the intended account, tax/account codes, totals and destination state. If a sync appears uncertain, check both systems before repeating it; an integration logo is not an exactly-once guarantee. Confirm calendar direction, conflict handling and how a meeting is allocated before treating it as billable time. No invoice or calendar operation was executed.",
+        "zh": "报价页支持根据计划、报价、已记录时间或分期创建发票。集成页列出原生 Xero、QuickBooks 和 MYOB AccountRight 连接，以及通过 Zapier 的其他自动化路径，也宣传 Google Calendar 同步。这些名称不能确立每个字段映射、资格条件或恢复规则。\n\n试点可使用一张标识清楚的发票草稿，检查目标账户、税／会计科目、总额和目标状态。同步不确定时，重复前应检查两端；集成标志不代表恰好一次保证。把会议当作计费时间前，还需确认日历方向、冲突处理和工作分配方式。本次没有执行发票或日历操作。",
+        "source_refs": ["billing-workflow", "integrations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing-scope",
+        "title_en": "A current quote depends on the business and usage",
+        "title_zh": "当前报价取决于业务和使用情况",
+        "en": "The present pricing page asks about planning/time/billing needs, permanent staff, average monthly freelancers, revenue and currency, and describes one monthly price adjusted with usage and growth. It does not return a universal public seat amount in the read material. No form was submitted and no rate was inferred from an old directory listing.\n\nRequest a written scope covering intended users, modules, integrations, onboarding and renewal. The license agreement also addresses AI usage and says additional AI usage fees require an Additional Usage Limit. Exact included credits, consumption and availability were not verified, so include those in a quote if AI is needed. A trial entitlement or sustained-free option was not established.",
+        "zh": "当前定价页询问规划／工时／计费需求、固定员工、月均自由职业者、收入和币种，并描述随使用及增长调整的单一月费。读取资料没有给出统一公开席位金额。本次没有提交表单，也没有从旧目录推断费率。\n\n应取得书面范围，覆盖预期用户、模块、集成、入门和续期。许可协议也规定 AI 用量，称额外 AI 使用费需设置 Additional Usage Limit。具体包含积分、消耗和可用性未核实；需要 AI 时应纳入报价。本次未确立试用权益或持续免费选项。",
+        "source_refs": ["pricing", "terms-rights"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "hosting-fit",
+        "title_en": "Keep business continuity and licensing explicit",
+        "title_zh": "明确业务连续性与许可",
+        "en": "The FAQ describes AWS cloud hosting and vendor backups, but this review did not verify a restore, recovery objective or account-specific location. The agreement grants limited internal-business use during the contracted term, with scope in the Order; it does not transfer platform rights. Its EU/EEA switching clauses are scoped conditions, not a universal export timeline for all customers.\n\nShortlist Streamtime for a creative business that can maintain its job estimates, rates, schedule and time capture as one process. If only a lightweight checklist is needed, this commercial workflow may add unnecessary setup. Validate an export and exit conditions before depending on the service as the sole record. No wellbeing, utilization improvement or profitability result was measured.",
+        "zh": "FAQ 介绍 AWS 云托管及厂商备份，但本次未验证恢复、恢复目标或账户具体位置。协议按订单范围，在合同期授予有限内部业务使用权，不转让平台权利；其中欧盟／欧洲经济区切换条款有特定范围，不能当作所有客户统一导出时间线。\n\n如果创意业务能把估算、费率、排程和工时维护成一条流程，可以列入候选。仅需轻量清单时，这类商业流程可能增加配置负担。把它作为唯一记录前，应验证导出及退出条件。本次没有测量福祉、利用率改善或盈利结果。",
+        "source_refs": ["hosting", "terms-rights", "terms-exit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Streamtime: Job Planning, Scheduled Time, Costs and Quote Conditions",
+    "title_zh": "Streamtime：工作规划、已排工时、成本与报价条件",
+    "description_en": "Understand Streamtime job/To Do boundaries, time arithmetic, cost versus sell, invoicing and usage-based quotation.",
+    "description_zh": "理解 Streamtime 工作／To Do 边界、工时算式、成本与销售值、发票及按使用询价。",
+    "primary_intent": "Evaluate a creative-business job-to-billing workflow.",
+    "secondary_questions": [
+      "Why did planned hours not create scheduled work?",
+      "How do used and scheduled time differ?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no measured search volume or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No live job, To Do, rate calculation, invoice, integration, AI output, export or restore tested. New/old modal behavior and billing permissions need account validation.",
+      "zh": "未测试真实工作、To Do、费率计算、发票、集成、AI 输出、导出或恢复。新旧窗口行为和计费权限需在账户验证。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Current quote, trial/free eligibility, AI credits, exact subscription/renewal terms, recovery/data residency, complete exit format, supported interface languages and regions remain unverified.",
+      "zh": "当前报价、试用／免费资格、AI 积分、具体订阅／续期条款、恢复／数据驻留、完整退出格式、界面语言及地区仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

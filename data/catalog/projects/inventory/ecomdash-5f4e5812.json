@@ -1,0 +1,245 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "ecomdash-5f4e5812",
+  "name": "Ecomdash",
+  "website_url": "https://www.ecomdash.com/",
+  "domain": "www.ecomdash.com",
+  "identity_domain": "ecomdash.com",
+  "category": "inventory",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "ecomdash is documented as a multichannel inventory and order-management service. Its current login page states that ecomdash is becoming Network Solutions and tells existing users to continue logging in without service disruption.\n\nThis draft focuses on the existing-service workflow documented in the official help center. The current new-customer package, price and onboarding availability were not established; Network Solutions website-builder plans are not substituted for ecomdash terms.",
+  "description_zh": "ecomdash 的官方资料将其描述为多渠道库存和订单管理服务。当前登录页表示 ecomdash 正转为 Network Solutions，并告知现有用户继续照常登录、服务不会中断。\n\n本稿聚焦官方帮助中心记录的现有服务流程。当前新客户套餐、价格及准入未确认，不使用 Network Solutions 建站套餐替代 ecomdash 条款。",
+  "core_features": [
+    {
+      "name_en": "Line-level warehouse allocation",
+      "name_zh": "订单行级仓库分配",
+      "explanation_en": "The workflow guide says warehouse-priority rules assign order lines before quantities are reduced at the assigned location.",
+      "explanation_zh": "流程指南说明按仓库优先级分配订单行，再扣减对应地点库存。",
+      "source_ref": "workflow",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multiple fulfillment paths",
+      "name_zh": "多种履约路径",
+      "explanation_en": "The guide describes self-fulfillment, supplier/3PL routing, Amazon fulfillment, purchase-order and work-order flows.",
+      "explanation_zh": "指南描述自营、供应商或 3PL、Amazon、采购单和生产工单履约。",
+      "source_ref": "workflow",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Follow allocation before stock reduction"],
+    "zh": ["跟踪分配与库存扣减顺序"],
+    "source_refs": ["workflow"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Existing ecomdash administrator",
+      "Ecommerce migration lead"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "not_verified",
+    "price_type": "unknown",
+    "officially_checked": false,
+    "source_ref": "commercial",
+    "checked_at": "2026-10-22T15:58:02.538422+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "No current ecomdash tariff established. Existing-service transition notice is available; official cost article returned 403.",
+    "source_snapshot_en": "No current ecomdash tariff established. Existing-service transition notice is available; official cost article returned 403.",
+    "source_snapshot_zh": "未确认当前 ecomdash 费率；可读取现有服务过渡通知，官方费用文章返回 403。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/ecomdash",
+      "read_at": "2026-10-22T08:50:03.507Z",
+      "excerpt_sha256": "9614c246f5d1bae6a5d14c77deb028dfe30be76fecae9c9f6f7ec005136b6e36",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Ecomdash",
+      "url": "https://app.ecomdash.com/",
+      "title": "ecomdash",
+      "read_at": "2026-10-22T15:26:16.661038+00:00",
+      "excerpt_sha256": "255df0da6f0523aeaa0439564a3722797fe5358d2e9bc86c91aaba86cb2cc406",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read actual login/Network Solutions transition notice; confirms existing-user guidance, not new-sale availability."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "Ecomdash",
+      "url": "https://support.ecomdash.com/hc/en-us/articles/360021219511-Sales-Order-Processing-Workflow",
+      "title": "Sales Order Processing Workflow – ecomdash support",
+      "read_at": "2026-10-22T15:54:31.797952+00:00",
+      "excerpt_sha256": "eb16022f4f1e36b4ce68e3c776d81d468a8d499ce6b38f04dfd63599c4f0f782",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read complete official 2021 order flow; distinguish app completion from carrier delivery."
+    },
+    {
+      "id": "feed",
+      "type": "official_documentation",
+      "site": "Ecomdash",
+      "url": "https://support.ecomdash.com/hc/en-us/articles/360003068912-Setting-up-an-Inventory-Feed",
+      "title": "Setting up an Inventory Feed – ecomdash support",
+      "read_at": "2026-10-22T15:54:31.798043+00:00",
+      "excerpt_sha256": "614cb32a10d4dc55721ac0953158d88b6cff37b23341584654406389b0086bb3",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read archived 2020 feed setup instructions; explicitly bounded as legacy evidence."
+    },
+    {
+      "id": "commercial",
+      "type": "official_pricing",
+      "site": "Ecomdash",
+      "url": "https://app.ecomdash.com/",
+      "title": "ecomdash",
+      "read_at": "2026-10-22T15:26:16.661038+00:00",
+      "excerpt_sha256": "255df0da6f0523aeaa0439564a3722797fe5358d2e9bc86c91aaba86cb2cc406",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Same login transition notice retained as commercial context; no tariff asserted. Official cost endpoint returned 403 and was not retried."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:58:02.538422+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product", "workflow"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Follow allocation before stock reduction",
+        "title_zh": "跟踪分配与库存扣减顺序",
+        "en": "The sales-order article describes automatic storefront imports, manual order creation and CSV uploads. Warehouse priority rules then assign each line, with manual reassignment possible, before reducing inventory at that warehouse. A representative existing-account check should include an order split between two warehouses and a corrected assignment, comparing physical stock and channel records afterward. The article was updated in 2021; its continued publication does not guarantee unchanged connector behavior.",
+        "zh": "销售订单文章描述自动店铺导入、手工创建和 CSV 上传，随后仓库优先级规则逐行分配，也可手动重分配，再扣减该仓库存。现有账户可检查跨两仓拆分及修正分配的订单，并核对实物与渠道记录。文章更新于 2021 年，持续公开不保证连接器行为始终未变。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "completion",
+        "title_en": "Separate tracking entry from physical delivery",
+        "title_zh": "区分追踪录入与实物交付",
+        "en": "The guide says labels created in ecomdash return carrier tracking directly; externally generated labels may require manual entry. Supplier tracking can use FTP if the supplier supports it, and FBA can return tracking automatically. An order may become complete after label generation, tracking entry or a storefront completion event. That application state is not proof of carrier delivery; reconcile the events relevant to the actual fulfillment partner.",
+        "zh": "指南说明在 ecomdash 创建标签时直接接收承运追踪；外部标签可能需手工录入。供应商支持时可通过 FTP 返回追踪，FBA 也可自动返回。生成标签、录入追踪或店铺完成事件均可能使订单变为完成；应用状态不证明承运商已送达，应按实际履约伙伴核对事件。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "feeds",
+        "title_en": "Treat the archived feed guide as legacy instructions",
+        "title_zh": "将归档数据源指南视为旧操作说明",
+        "en": "The inventory-feed article is explicitly in Archive and dated 2020. It describes supplier-file intervals, column mapping, warehouse assignment and overwrite versus increment semantics, plus history for upload errors. Those distinctions remain useful migration questions, but the exact menu paths and supported protocols require account-specific confirmation. Do not run the archived procedure against production merely because it is still publicly readable.",
+        "zh": "库存数据源文章明确归入 Archive，日期为 2020 年，描述供应商文件周期、列映射、仓库分配、覆盖与增量语义及上传错误历史。这些区别仍可用于迁移核查，但确切菜单及协议支持需按账户确认。不能仅因旧指南仍公开就直接用于生产。",
+        "source_refs": ["feed"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Keep transition evidence separate from pricing",
+        "title_zh": "区分品牌过渡与价格证据",
+        "en": "The login notice establishes what existing users are told about the transition; it publishes no current subscription amount or billing unit. The official cost article returned HTTP 403 and was not retried. A free-trial link is not proof of successful new signup or ongoing free use. Existing users should confirm invoices, renewal, integration support and exports with their account provider before changing operational dependencies.",
+        "zh": "登录通知说明现有用户收到的品牌过渡指引，没有公开当前订阅金额或计费单位。官方费用文章返回 HTTP 403 后未重试。免费试用链接不能证明新注册成功或持续免费。现有用户在调整业务依赖前应向账户服务方确认账单、续费、集成支持与导出。",
+        "source_refs": ["commercial", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Ecomdash: Follow allocation before stock reduction",
+    "title_zh": "Ecomdash：跟踪分配与库存扣减顺序",
+    "description_en": "ecomdash is documented as a multichannel inventory and order-management service. Its current login page states that ecomdash is becoming Network Solutions and tells existing users to continue logging in without service disruption.",
+    "description_zh": "ecomdash 的官方资料将其描述为多渠道库存和订单管理服务。当前登录页表示 ecomdash 正转为 Network Solutions，并告知现有用户继续照常登录、服务不会中断。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "New-customer availability, current subscriptions and live connector/feed behavior are unresolved; documented workflows include explicitly archived material.",
+      "zh": "新客户准入、当前订阅及实际连接器和数据源行为未解决；流程资料包含明确归档内容。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "availability": {
+    "status": "existing_service_documented_new_sales_unverified",
+    "source_ref": "product"
+  }
+}

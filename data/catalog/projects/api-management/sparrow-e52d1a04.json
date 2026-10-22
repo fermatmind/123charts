@@ -1,0 +1,379 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "sparrow-e52d1a04",
+  "name": "Sparrow",
+  "website_url": "https://sparrowapp.dev/",
+  "domain": "sparrowapp.dev",
+  "identity_domain": "sparrowapp.dev",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Sparrow is an API testing and collaboration application with request collections, environments and multi-step Test Flows. It offers a browser client and desktop applications, with separate self-hosted arrangements. It is an API client/testing layer rather than evidence of a production gateway that enforces every consumer request.\n\nThe website presents Sparrow as free and open source, while paid tiers add collaboration, automation, history and security features. Source-license scope and hosted-service entitlement need separate checks; this profile does not label every paid or self-hosted capability freely available.",
+  "description_zh": "Sparrow 是 API 测试与协作应用，提供请求集合、环境及多步骤 Test Flow，可使用浏览器、桌面应用或另行安排自托管。它属于 API 客户端／测试层，本次证据不代表它是执行全部消费者请求策略的生产网关。\n\n官网将 Sparrow 描述为免费开源，同时付费层增加协作、自动化、历史及安全功能。源码许可范围与托管服务权限需分别核对，本文不将所有付费／自托管能力标为免费。",
+  "core_features": [
+    {
+      "name_en": "Collections and imports",
+      "name_zh": "集合与导入",
+      "explanation_en": "Group related requests and import OpenAPI or Postman v2.1 collections.",
+      "explanation_zh": "组织相关请求，导入 OpenAPI 或 Postman v2.1 集合。",
+      "explanation_scope": "product_specific",
+      "source_ref": "collections",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Environment variables",
+      "name_zh": "环境变量",
+      "explanation_en": "Reuse base URLs, tokens and headers with selected variable sets.",
+      "explanation_zh": "选择变量集，复用地址、token 及请求头。",
+      "explanation_scope": "product_specific",
+      "source_ref": "environment",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Sequential Test Flows",
+      "name_zh": "顺序测试流程",
+      "explanation_en": "Chain request blocks and reference prior responses with dynamic expressions.",
+      "explanation_zh": "串联请求块，以动态表达式引用此前响应。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flow",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a login-to-read request workflow",
+      "Check imported collections and environment switching"
+    ],
+    "zh": ["评估登录至读取的请求流程", "核对导入集合及环境切换"],
+    "source_refs": ["collections", "flow", "environment"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API developers",
+      "QA engineers",
+      "Team workspace administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose web or desktop and create a disposable test workspace.",
+        "zh": "选择网页或桌面，创建可丢弃测试工作区。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Import a small collection, select a non-production environment and compare each request.",
+        "zh": "导入小集合、选择非生产环境并逐个核对请求。",
+        "source_refs": ["collections", "environment"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Chain only verified response fields and inspect failed blocks before adding schedules.",
+        "zh": "只串联已确认响应字段，增加定时任务前先检查失败块。",
+        "source_refs": ["flow"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A failed flow is not documented as a transaction with automatic compensation.",
+        "zh": "文档未将失败流程定义为自动补偿事务。",
+        "source_refs": ["flow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Workspace, test-flow, history, AI and vault limits differ by plan.",
+        "zh": "工作区、流程、历史、AI、保险库限制依方案不同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Full self-hosted architecture, external model transmission and whole-platform license remain unverified.",
+        "zh": "完整自托管架构、外部模型传输及平台整体许可仍未核实。",
+        "source_refs": ["setup", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_subscription_custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:24:10.472362Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Community free; displayed Standard $9.99, Professional $19.99, Enterprise $49.99/user/month; billing toggle state unverified. Self-hosted quote separate.",
+    "summary_zh": "社区版免费；展示 Standard $9.99、Professional $19.99、Enterprise $49.99 每用户每月，切换周期未确认；自托管另询价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/sparrow-api",
+      "read_at": "2026-10-22T08:57:54.662Z",
+      "excerpt_sha256": "40700211cda576aec5d61a2fa306d6ff47070a7406261dca671444d2fd851a76",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "Sparrow - Simplifying API testing",
+      "url": "https://sparrowapp.dev/",
+      "read_at": "2026-10-22T11:24:10.472362Z",
+      "excerpt_sha256": "656dd56a496aec579c83d94da13e0926803769bc2b75b7a70f5ab5a761f88330",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API testing client identity, desktop/web entry points and open-source marketing read; no benchmark or full-platform license inference."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Sparrow",
+      "title": "Pricing - Sparrow - Simplifying API testing",
+      "url": "https://sparrowapp.dev/pricing/",
+      "read_at": "2026-10-22T11:24:13.846643Z",
+      "excerpt_sha256": "c058e748bd84bf7bcd0cbd2928e79d43ab97c076d5528d201cb80686152bfad2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Community/Standard/Professional/Enterprise card prices and workspace/flow/history limits read. Billing toggle state not reliably determined; self-hosting custom sales route separate."
+    },
+    {
+      "id": "intro",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "Introduction to Sparrow | Sparrow Documentation",
+      "url": "https://docs.sparrowapp.dev/docs/user-manual/application/introduction/introduction-to-sparrow",
+      "read_at": "2026-10-22T11:25:03.120992Z",
+      "excerpt_sha256": "6384839e0c29f323821e6238bfc08102fc78bba36ee50c6db888399a4d7314f2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Product scope, active Swagger sync restrictions, workspace visibility and client modes read; advertised speed/privacy guarantees not independently adopted."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "Setup | Sparrow Documentation",
+      "url": "https://docs.sparrowapp.dev/docs/user-manual/application/introduction/setup",
+      "read_at": "2026-10-22T11:25:40.107364Z",
+      "excerpt_sha256": "0d2687e2b236ab2d2ffd488345f03974445a644c5c7f66f7603d99bd5234ab92",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Web sign-in versus desktop local API access setup read; no installation performed."
+    },
+    {
+      "id": "collections",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "Collections | Sparrow Documentation",
+      "url": "https://docs.sparrowapp.dev/docs/user-manual/application/workspace-features/collections",
+      "read_at": "2026-10-22T11:25:46.458146Z",
+      "excerpt_sha256": "dc779d87650e75e42dbf4668ee09e3101aaa88860d3a9fb0d5cf61fd843d9d30",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Request grouping, OpenAPI YAML/JSON and Postman v2.1 import paths read; unsupported script/schedule portability not inferred."
+    },
+    {
+      "id": "environment",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "What are Environments | Sparrow Documentation",
+      "url": "https://docs.sparrowapp.dev/docs/user-manual/application/core-concepts/environments",
+      "read_at": "2026-10-22T11:25:43.292742Z",
+      "excerpt_sha256": "04835480ac78f064f13ec371f34a1702481a9e7b2a0e7045837dd2564c1d57e8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Global/workspace variables, interpolation and environment selection reviewed; not equated to paid vault secrecy."
+    },
+    {
+      "id": "flow",
+      "type": "official_documentation",
+      "site": "Sparrow",
+      "title": "Overview of Test Flows | Sparrow Documentation",
+      "url": "https://docs.sparrowapp.dev/docs/user-manual/application/workspace-features/testflows",
+      "read_at": "2026-10-22T11:25:06.239452Z",
+      "excerpt_sha256": "90701ddb73eb63aaa9beb270632e8c50e38e0572036bb3f97a5c4b54190ed92a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Sequential API blocks, dynamic previous-response expressions, red/green outcomes and schedule controls read; rollback/retry semantics not specified."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Sparrow",
+      "title": "Terms of Service - Sparrow - Simplifying API testing",
+      "url": "https://sparrowapp.dev/terms-of-service/",
+      "read_at": "2026-10-22T11:25:12.055130Z",
+      "excerpt_sha256": "aacc97a848aa23f8bc7b3d4274390839c31fcaa045ead240a9d480eebd979caf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Techdome executable-use grant and separate OSS licenses read. Terms reference GitHub generic OSS terms rather than a clear complete component-license inventory; whole-platform open-source classification left unknown."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:25:46.458146Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": [
+    "home",
+    "intro",
+    "collections",
+    "pricing",
+    "terms"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Build one request collection before automating a flow",
+        "title_zh": "先组织请求，再自动执行流程",
+        "en": "A proposed evaluation could collect login and read-only profile requests, choose a staging environment and confirm each request separately. Collections can start empty or import an OpenAPI YAML/JSON file or Postman v2.1 collection. Successful import is not proof that all scripts, schedules or provider-specific behavior migrated; compare authorization, parameters and expected responses. Add short request descriptions so another developer can reproduce the same task. None of these calls or imports was executed here.",
+        "zh": "建议先收集登录及只读资料请求，选择 staging 环境，分别确认请求。集合可新建为空，也可导入 OpenAPI YAML／JSON 或 Postman v2.1。导入成功不代表脚本、定时设置及特定平台行为全部迁移，应比较授权、参数及预期响应，并加简短说明便于他人复现。本次未执行这些请求或导入。",
+        "source_refs": ["collections", "environment"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "flow",
+        "title_en": "Data dependencies must match actual prior responses",
+        "title_zh": "数据依赖必须匹配实际前序响应",
+        "en": "Test Flows execute API blocks sequentially. A later request can use a dynamic expression to read a token or ID from a prior block; Run Preview helps inspect whether the referenced field exists. Results expose per-block status/time and request/response details. Deleting a middle block reconnects subsequent blocks, so recheck expressions and assumptions after editing. A red block identifies a failed call, but the reviewed guide does not establish automatic rollback, retry or exactly-once effects. Keep mutations disposable and define cleanup yourself.",
+        "zh": "Test Flow 按顺序执行 API 块，后续请求可用动态表达式读取前块 token 或 ID，以 Run Preview 检查字段是否存在。结果提供逐块状态／耗时及请求响应详情。删除中间块会重新连接后续块，编辑后需重查表达式及假设。红块表示调用失败，但已读指南未证明自动回滚、重试或恰好一次效果。修改操作应使用可丢弃数据，并自行定义清理。",
+        "source_refs": ["flow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "environment",
+        "title_en": "An environment selection changes where requests go",
+        "title_zh": "环境选择会改变请求去向",
+        "en": "Environment values can supply base URLs, tokens and headers, with global or workspace scope and {{variable}} interpolation in URLs, headers and bodies. The documented selector is used before execution. Define clearly named non-production environments and inspect the resolved target before running a collection. Variable reuse reduces repeated editing but does not prove secret isolation, field-level permissions or encryption. Paid Env Vault and bring-your-own-vault offerings have separate entitlement; their exact storage and recovery behavior remain unverified.",
+        "zh": "环境值提供地址、token、请求头，支持全局或工作区范围，以及 URL、请求头、正文中的 {{variable}} 插值。文档要求执行前选择环境。应明确命名非生产环境，运行集合前核对解析目标。变量复用减少重复编辑，但不能证明秘密隔离、字段权限或加密。付费 Env Vault 及自带保险库另有权限，其具体存储／恢复行为未核实。",
+        "source_refs": ["environment", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sync",
+        "title_en": "A synced collection has an upstream source of structure",
+        "title_zh": "同步集合的结构有上游来源",
+        "en": "The introduction describes Active Sync from live Swagger URLs and says structural edits to synced collections are disabled to reduce drift. Treat that as a source-of-truth decision: determine where a path or schema should change before editing the imported copy. The documentation also distinguishes public/private visibility and team roles. A useful trial compares a deliberately updated definition and the intended audience, rather than assuming all local changes are pushed back or every workspace is private.",
+        "zh": "入门文档介绍从在线 Swagger URL 进行 Active Sync，并说明为减少偏移，会禁用同步集合的结构编辑。因此需先确定路径或 schema 应在何处修改，再编辑导入副本。文档也区分公开／私有可见性及团队角色。试验应比较有意更新的定义及目标受众，不能假设所有本地修改都会反向推送，或每个工作区均私有。",
+        "source_refs": ["intro"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Desktop access and self-hosted service are separate choices",
+        "title_zh": "桌面访问与自托管服务是不同选择",
+        "en": "The setup guide distinguishes a browser service from standalone desktop clients intended for local API access. A separate sales-priced self-hosted offering is advertised. Installing a client does not establish that collaboration storage, AI calls and every service component are also local. Verify outbound dependencies, supported infrastructure and external model behavior for the selected setup. Vendor claims of complete privacy or lower resource use were not treated as measured outcomes.",
+        "zh": "设置指南区分浏览器服务与面向本地 API 访问的独立桌面客户端，另有向销售询价的自托管方案。安装客户端不能证明协作存储、AI 调用及全部服务组件也都在本地。应核对所选方案的对外依赖、基础设施及外部模型行为；未将完全隐私或更低资源占用宣传当作测量结论。",
+        "source_refs": ["setup", "intro", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fees",
+        "title_en": "Compare flows, workspaces and history as well as seats",
+        "title_zh": "除席位外，还要比较流程、工作区及历史",
+        "en": "The pricing cards show Community $0, Standard $9.99, Professional $19.99 and Enterprise $49.99 per user/month. The rendered monthly/annual toggle state was not verified, so these are displayed figures, not confirmed billing-cycle quotes. Community lists five collaborators, three workspaces and 50 AI requests/month. Standard lists ten flows/workspace, 30 APIs/flow and seven-day history; Professional lists 25 flows and 15-day history, Enterprise unlimited flows and 30-day history. Paid trials are 14 days; self-hosting is a separate sales quote.",
+        "zh": "定价卡显示 Community $0、Standard $9.99、Professional $19.99、Enterprise $49.99，每用户每月。未确认渲染的月付／年付切换状态，因此只是展示数字，不是已确认周期报价。Community 列五协作者、三工作区及每月 50 次 AI 请求；Standard 列每工作区十流程、每流程三十 API、七天历史；Professional 列 25 流程及十五天历史，Enterprise 不限流程及三十天历史。付费试用十四天，自托管另向销售询价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Open-source marketing does not settle the whole service license",
+        "title_zh": "开源宣传不能确定完整服务许可",
+        "en": "The published terms identify Techdome as the provider and grant limited executable use, with OSS components subject to their own licenses. Its OSS reference points to generic GitHub terms, not a complete reviewed Sparrow component inventory. Therefore the whole product license remains unknown here despite the homepage’s open-source wording. Confirm the actual repository license, edition and commercial deployment terms before deciding that a self-hosted installation or every Enterprise feature is covered by an open-source grant.",
+        "zh": "公布条款以 Techdome 为提供方，授予有限可执行形式使用权，开源组件另受各自许可约束。其开源引用指向通用 GitHub 条款，不是本次已审阅的完整 Sparrow 组件清单。因此，即使首页称开源，本文仍将完整产品许可保持未知。认定自托管或全部 Enterprise 功能由开源授权涵盖前，需确认实际仓库许可、版本及商业部署条款。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Sparrow: API Test Flows, imports and edition conditions",
+    "title_zh": "Sparrow：API 测试流程、导入及版本条件",
+    "description_en": "Review request chaining, environment scope, Active Sync, displayed plan limits and unresolved license boundaries.",
+    "description_zh": "了解请求串联、环境范围、Active Sync、展示方案限制及待核许可边界。",
+    "search_intent_en": "Evaluate Sparrow API testing workflow and team costs.",
+    "search_intent_zh": "评估 Sparrow API 测试流程及团队成本。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No application, import, flow, sync, schedule or failure handling was tested.",
+      "zh": "未实测应用、导入、流程、同步、定时任务及故障处理。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Billing toggle/cycle, self-hosted quote, current component licenses, recovery behavior and data residency require confirmation.",
+      "zh": "计费切换／周期、自托管报价、当前组件许可、恢复行为及数据驻留需确认。",
+      "source_refs": ["pricing", "terms"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Interface language support, full Postman script compatibility and exact vault storage were not verified.",
+      "zh": "未核实界面语言、完整 Postman 脚本兼容及保险库具体存储。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

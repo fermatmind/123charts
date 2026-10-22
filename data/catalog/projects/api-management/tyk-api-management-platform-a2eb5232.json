@@ -1,0 +1,385 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "tyk-api-management-platform-a2eb5232",
+  "name": "Tyk API Management Platform",
+  "website_url": "https://tyk.io/",
+  "domain": "tyk.io",
+  "identity_domain": "tyk.io",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Tyk is an API gateway and management platform. Gateway handles traffic and policy enforcement; Dashboard manages APIs and access; Developer Portal organizes API discovery and subscriptions; Pump exports analytics. Cloud, hybrid and self-managed arrangements place these responsibilities in different environments.\n\nThe free open-source Gateway is not the whole commercial platform. This profile concentrates on API routing, policies, rate limits and deployment boundaries. The current site also promotes AI/MCP capabilities, whose exact version and subscription entitlement should be checked separately.",
+  "description_zh": "Tyk 是 API 网关与管理平台。Gateway 处理流量及策略，Dashboard 管理 API 和访问，Developer Portal 组织发现及订阅，Pump 导出分析。云、混合、自运维方案将这些责任放在不同环境。\n\n免费开源 Gateway 不是完整商业平台。本文聚焦 API 路由、策略、限流及部署边界；当前网站也推广 AI／MCP，具体版本及订阅权限应另核。",
+  "core_features": [
+    {
+      "name_en": "Gateway policy enforcement",
+      "name_zh": "网关策略执行",
+      "explanation_en": "Route requests through authentication and selected endpoint middleware.",
+      "explanation_zh": "经认证及选定端点中间件路由请求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "transform",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Consumer limits and quotas",
+      "name_zh": "消费者限速及额度",
+      "explanation_en": "Choose rate-limit algorithms and credential or custom keys.",
+      "explanation_zh": "选择限流算法及凭据／自定义键。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rate",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Management and consumer interfaces",
+      "name_zh": "管理与消费者界面",
+      "explanation_en": "Use Dashboard and Portal for administration and developer access.",
+      "explanation_zh": "用 Dashboard 和 Portal 管理及提供开发者访问。",
+      "explanation_scope": "product_specific",
+      "source_ref": "components",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate gateway auth and endpoint restrictions",
+      "Check multi-node rate-limit behavior with uneven traffic"
+    ],
+    "zh": ["评估网关认证及端点限制", "以不均流量检查多节点限流"],
+    "source_refs": ["secure", "transform", "rate"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineers",
+      "Gateway operators",
+      "API product teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose OSS Gateway or a licensed full-stack deployment.",
+        "zh": "选择开源网关或获许可完整部署。",
+        "source_refs": ["deployment", "license"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use one read API and a key/policy; test permitted and rejected calls.",
+        "zh": "用一个读取 API 及密钥／策略，测试允许及拒绝请求。",
+        "source_refs": ["secure"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test limit grouping, cache and failure behavior before production.",
+        "zh": "生产前测试额度分组、缓存及失败行为。",
+        "source_refs": ["rate", "secure", "transform"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Uneven low-volume traffic can cause DRL false positives.",
+        "zh": "低量不均流量可能导致 DRL 误限。",
+        "source_refs": ["rate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Allowlist, ignore-auth and missing metadata can change expected access/limit scope.",
+        "zh": "允许列表、忽略认证及缺失元数据会改变预期访问／限流范围。",
+        "source_refs": ["transform", "rate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Free Gateway does not include all proprietary management components.",
+        "zh": "免费网关不包含全部专有管理组件。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "usage_flat_custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:26:47.133416Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Core consumption-based; Professional flat-rate/unlimited listed consumption; Enterprise custom. Numeric quote not displayed; separate free OSS gateway and 48-hour Cloud trial.",
+    "summary_zh": "Core 按用量，Professional 列固定价／用量不限，企业版定制；未显示数字报价，另有免费开源网关及四十八小时云试用。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/tyk-api-management-platform",
+      "read_at": "2026-10-22T09:03:08.581Z",
+      "excerpt_sha256": "70909ff37612c78dd1f8a3d0894fa056e06b2215dfb141d42434b0fe4853f16b",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "API Management Platform & API Gateway | Tyk.io",
+      "url": "https://tyk.io/",
+      "read_at": "2026-10-22T11:26:47.133416Z",
+      "excerpt_sha256": "79369d3959a228cf2370d39f6a0337181f9bb0c4a73a3d71488479e4c09edb31",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Platform identity and Cloud/Hybrid/Self-managed range read; no advertised throughput or blanket local-data claim adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Tyk API Management Platform",
+      "title": "Tyk pricing | Tyk API Management",
+      "url": "https://tyk.io/pricing/",
+      "read_at": "2026-10-22T11:26:50.599215Z",
+      "excerpt_sha256": "4c7b8de2783cab7b6995824974991a7affa6e6e1c341cd390ce393bf2ef6d60c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Core consumption, Professional flat rate and Enterprise custom plans, all deployment modes, 48-hour Cloud trial and separate free OSS gateway reviewed; numeric subscription quote not shown."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Tyk API Management Deployment Options - Tyk Documentation",
+      "url": "https://tyk.io/docs/apim",
+      "read_at": "2026-10-22T11:30:35.529567Z",
+      "excerpt_sha256": "b42f7b3bcbde0122f9bbc6288984a125f93f587e015264b170dea51e92f97c4e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed/control-plane and self-managed/OSS feature boundaries read; paid self-managed license distinct from free gateway."
+    },
+    {
+      "id": "components",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Tyk Components - Tyk Documentation",
+      "url": "https://tyk.io/docs/tyk-components",
+      "read_at": "2026-10-22T11:37:38.068460Z",
+      "excerpt_sha256": "e7b3ade936a34f93357682693837584e2a4bf65ebe8db90945bbed8052b73bf6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Gateway/Dashboard/Portal/Pump/Redis-related component responsibilities read."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Tyk API Management Platform",
+      "title": "Tyk Stack - Tyk Documentation",
+      "url": "https://tyk.io/docs/tyk-stack",
+      "read_at": "2026-10-22T11:33:46.757485Z",
+      "excerpt_sha256": "3b6923697dea1d2ba0da4ade3363a5111bcac3c3e09e31aa1f3da1c0e26eacf3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official stack licensing page identifies MPL2.0 open components versus proprietary Dashboard/Portal/MDCB/UDG/Operator/Sync; complete current component agreements and customer entitlement not independently verified."
+    },
+    {
+      "id": "start",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Getting Started with Tyk - Tyk Documentation",
+      "url": "https://tyk.io/docs/getting-started/quick-start",
+      "read_at": "2026-10-22T11:33:46.739479Z",
+      "excerpt_sha256": "422fd6ec04238bafdd18c4857d11499edef4c960592065e28785a9002c14c804",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Self-managed demo includes Redis, PostgreSQL, Pump and sample APIs; test credentials are not recommended as production setup."
+    },
+    {
+      "id": "secure",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Create and Secure APIs with Tyk - Tyk Documentation",
+      "url": "https://tyk.io/docs/getting-started/secure-api",
+      "read_at": "2026-10-22T11:34:07.878769Z",
+      "excerpt_sha256": "d0f3d0c0c62c5c4eafe585bb6188679af3640b2aaac93f5cd394ac15f67acd36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Key/policy authentication trial, invalid requests, cached response header and 10-second sample-cache example read."
+    },
+    {
+      "id": "rate",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Rate Limiting - Tyk Documentation",
+      "url": "https://tyk.io/docs/api-management/rate-limit",
+      "read_at": "2026-10-22T11:37:38.086775Z",
+      "excerpt_sha256": "431ee952dcccb1ee944cbbd13d61dc6e3482ecd4afe8d163184d036f2bd528cf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Distributed limiter equal-share assumption, low-rate false positives, Redis alternatives and metadata-key fallback read."
+    },
+    {
+      "id": "transform",
+      "type": "official_documentation",
+      "site": "Tyk API Management Platform",
+      "title": "Transform Traffic by using Tyk Middleware - Tyk Documentation",
+      "url": "https://tyk.io/docs/api-management/traffic-transformation",
+      "read_at": "2026-10-22T11:37:38.103514Z",
+      "excerpt_sha256": "3ca0a240084cefe4d5258f51abeb7fc8648147d84b47dfe8a65309013be6e4ed",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Routing middleware, allowlist whole-API blocking, optional timeout/circuit breaker and OAS-vs-Classic request validation read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:37:38.103514Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "components", "deployment", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "path",
+        "title_en": "Manage the public API path and its upstream together",
+        "title_zh": "一起管理公开 API 路径及上游",
+        "en": "A proposed trial could expose a read-only order endpoint, create a policy/key and compare valid, missing and invalid credentials. The API listen path and target URL determine routing; optional middleware can transform requests and responses. The tutorial also demonstrates cached responses with X-Tyk-Cached-Response. Check that a cached read is acceptable and that authentication and allowed methods match the backend contract. This is an evaluation suggestion, not a request executed here.",
+        "zh": "建议试验公开一个只读订单端点、创建策略／密钥，比较有效、缺失、无效凭据。API 监听路径及目标地址决定路由，可选中间件转换请求响应。教程还演示 X-Tyk-Cached-Response 缓存响应。应确认缓存读取可接受，认证及允许方法符合后端契约。本例为评估建议，本次未发请求。",
+        "source_refs": ["secure", "transform"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "scope",
+        "title_en": "Middleware settings can change the rest of the API",
+        "title_zh": "中间件设置可能影响其余 API",
+        "en": "Enabling an endpoint allowlist blocks the rest of the API except endpoints explicitly allowed; it is not merely an annotation on one route. Ignore Authentication deliberately skips authentication on an endpoint. Request validation differs between OAS and Classic definitions: the guide describes headers/body for OAS and body-only for Classic. Test rejected paths and unintended methods alongside the happy path. A gateway setting does not stop consumers bypassing it through an independently reachable backend.",
+        "zh": "启用端点允许列表后，其余未明确允许端点会被阻止，并非仅给一路径加注释。Ignore Authentication 则有意跳过端点认证。请求校验也区分 OAS 与 Classic：指南描述前者校验请求头／正文，后者仅正文。除成功路径外需测试被拒路径及意外方法；若消费者能独立直达后端，网关设置无法防止绕过。",
+        "source_refs": ["transform"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Distributed rate limiting assumes traffic distribution",
+        "title_zh": "分布式限流依赖流量分布",
+        "en": "The Distributed Rate Limiter divides allowance among gateways. The guide warns that uneven load balancing at low rates can produce false positives. Redis-based alternatives and a threshold-based fallback change the tradeoff. Custom rate-limit keys depend on required credential metadata; an empty evaluated key falls back to credential-ID limiting. If a shared organization allowance is intended, missing metadata can therefore change the effective grouping. Evaluate uneven traffic and absent metadata before treating a configuration as an exact global commercial quota.",
+        "zh": "Distributed Rate Limiter 将额度分给各网关；指南警告低速率下负载不均会产生误限。Redis 替代方案及阈值回退改变权衡。自定义限流键依赖所需凭据元数据，计算结果为空时回退到凭据 ID。若原意是组织共享额度，缺失元数据就可能改变实际分组。将配置作为准确全局商业额度前，应测试不均流量及缺失元数据。",
+        "source_refs": ["rate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Timeouts and circuit breakers are optional policies",
+        "title_zh": "超时及熔断是可选策略",
+        "en": "The transformation guide describes endpoint timeouts and circuit breakers to limit waiting and repeated upstream failure. Their presence in the product does not show they are enabled or tuned for a particular API. Start with a deliberately slow disposable backend and inspect client status, logs and possible prior side effects; gateway cancellation is not evidence that the backend transaction was undone. Exact retry/status behavior for the selected release and topology was not verified here.",
+        "zh": "转换指南描述端点超时及熔断，用于限制等待及反复上游失败。产品具备这些能力不代表具体 API 已启用、调好。可用有意缓慢的可丢弃后端检查客户端状态、日志及此前副作用；网关取消不能证明后端事务已撤销。本次未核实所选版本、拓扑的具体重试／状态行为。",
+        "source_refs": ["transform"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operation",
+        "title_en": "The full demo includes operational dependencies",
+        "title_zh": "完整演示包含运维依赖",
+        "en": "The self-managed quickstart includes Gateway, Dashboard, Portal, Redis, PostgreSQL, Pump and sample services. Pump moves analytics written through Redis to reporting storage. A working sample is not a production topology or backup plan. Confirm persistence, component compatibility, upgrades and recovery before real traffic. Cloud manages infrastructure; hybrid keeps customer data planes with a managed control plane; self-management leaves the runtime and stores with the operator. No container or service was started during this research.",
+        "zh": "自运维 Quickstart 含 Gateway、Dashboard、Portal、Redis、PostgreSQL、Pump 及示例服务，Pump 将经 Redis 写入的分析搬到报告存储。示例可运行不等于生产拓扑或备份计划，接真实流量前需核对持久化、组件兼容、升级及恢复。云方案管理基础设施，混合方案将客户数据面配托管控制面，自运维则由运营方负责运行与存储。本次未启动容器或服务。",
+        "source_refs": ["start", "deployment", "components"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Free Gateway and paid management have distinct licenses",
+        "title_zh": "免费 Gateway 与付费管理许可不同",
+        "en": "Official documentation distinguishes open-source Gateway/Pump and other components from proprietary Dashboard, Developer Portal and other platform parts. Its licensing guide identifies MPL 2.0 for listed open components and license keys for proprietary on-premises components. A self-managed trial of the whole stack does not grant perpetual use of all of it. Because the catalog entry is the complete platform, its open-source boolean remains unknown rather than applying the Gateway license to everything; verify current component and purchase terms.",
+        "zh": "官方区分开源 Gateway／Pump 等组件与专有 Dashboard、Developer Portal 及其他平台部分，许可指南为所列开源组件标 MPL 2.0，专有本地组件需许可密钥。完整栈自运维试用不授予所有部分永久使用。目录对象为完整平台，因此整体开源布尔保持未知，不将 Gateway 许可套给全部产品；仍需核对当前组件及采购条款。",
+        "source_refs": ["license", "deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Choose consumption pricing or a flat contract",
+        "title_zh": "选择用量计价或固定合同",
+        "en": "Core is consumption-based; Professional is described as flat rate with unlimited API services/requests; Enterprise is custom for more complex needs. All three support cloud, hybrid and self-managed modes, but no numeric subscription quote was shown. Confirm the metered unit, commitment, add-ons and infrastructure costs before comparing plans. The free OSS gateway is separate from the 48-hour full-featured Cloud trial. The deployment guide’s general no-usage-limits wording should not erase Core’s current consumption model.",
+        "zh": "Core 按消费计价，Professional 描述为固定价、API 服务／请求不限，Enterprise 为复杂需求定制。三层均支持云、混合、自运维，但未展示数字报价。比较前需确认计量单位、承诺、附加项及基础设施成本。免费开源网关与四十八小时全功能云试用分别存在；部署指南概括“不限用量”不能抹去当前 Core 消费模式。",
+        "source_refs": ["pricing", "deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Tyk: gateway policies, distributed rate limits and platform licenses",
+    "title_zh": "Tyk：网关策略、分布式限流及平台许可",
+    "description_en": "Understand API routing, access restrictions, multi-node quota behavior and free Gateway versus commercial management.",
+    "description_zh": "了解 API 路由、访问限制、多节点额度及免费网关与商业管理边界。",
+    "search_intent_en": "Evaluate Tyk gateway operations and commercial platform conditions.",
+    "search_intent_zh": "评估 Tyk 网关运维及商业平台条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No gateway, database, policy, request, limiter or failover was run.",
+      "zh": "未运行网关、数据库、策略、请求、限流及故障切换。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exact consumption unit/quote, current full-platform license and selected component compatibility require confirmation.",
+      "zh": "具体消费单位／报价、当前完整平台许可及组件兼容需确认。",
+      "source_refs": ["pricing", "license"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Several guessed timeout documentation paths were inaccessible; only the actually read middleware overview supports the timeout discussion. Exact release behavior, UI languages and real performance remain unverified.",
+      "zh": "多个尝试的超时文档路径不可访问；超时讨论仅依据实际读取的中间件总览，具体版本行为、界面语言及性能未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

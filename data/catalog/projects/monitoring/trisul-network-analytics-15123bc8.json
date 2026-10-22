@@ -1,0 +1,336 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "trisul-network-analytics-15123bc8",
+  "name": "Trisul Network Analytics",
+  "website_url": "https://trisul.org/",
+  "domain": "trisul.org",
+  "identity_domain": "trisul.org",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Trisul Network Analytics runs on Linux and uses a shared platform for network security monitoring, NetFlow analysis, IPDR and ISP analytics. NSM receives raw traffic from SPAN/TAP; the flow-oriented modes receive exported flow records, with ISP analytics also using BGP. Mode selection does not create missing input traffic.\n\nDeployment planning should connect probe placement, hub storage, user context scope and recovery. Its included license is a seven-day trial. The former continuously rolling three-day license is no longer supported, so a current evaluation should not be described as permanently free.",
+  "description_zh": "Trisul Network Analytics 运行于 Linux，以同一平台承载网络安全监控、NetFlow 分析、IPDR 和 ISP 分析。NSM 接收 SPAN／TAP 原始流量，流分析模式接收导出记录，ISP 分析还使用 BGP。选择模式不会补齐缺失输入。\n\n部署规划需连接探针位置、Hub 存储、用户 Context 范围及恢复。内置许可为七天试用，旧的三天持续滚动许可已停止支持，当前评估不能描述为永久免费。",
+  "core_features": [
+    {
+      "name_en": "Probe and Hub topology",
+      "name_zh": "Probe 与 Hub 拓扑",
+      "explanation_en": "Probes process traffic while Hubs store results within a trusted Domain.",
+      "explanation_zh": "Probe 处理流量，Hub 在受信 Domain 内保存结果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Context-scoped access",
+      "name_zh": "按 Context 限制访问",
+      "explanation_en": "A user’s Allowed Context field limits the selected contexts available to that account.",
+      "explanation_zh": "用户的 Allowed Context 字段限制账户可访问的 Context。",
+      "explanation_scope": "product_specific",
+      "source_ref": "users",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate configuration/data recovery",
+      "name_zh": "区分配置与数据恢复",
+      "explanation_en": "Backups distinguish configuration from metrics, flows, alerts and packets.",
+      "explanation_zh": "备份区分配置与指标、流、告警、数据包。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Compare packet and flow modes with known lab traffic.",
+      "Verify context-restricted access and recover a small stopped-context backup."
+    ],
+    "zh": [
+      "用已知实验流量比较抓包与流分析模式。",
+      "验证受限 Context 访问，并恢复小型已停 Context 的备份。"
+    ],
+    "source_refs": ["home", "users", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Network traffic analysts",
+      "Self-hosted monitoring administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the product mode, supported Linux host and authorized SPAN/TAP or flow export source.",
+        "zh": "选择产品模式、受支持 Linux 主机及获准 SPAN／TAP 或流导出源。",
+        "source_refs": ["home"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review trial expiry, active-IP/probe licensing, restricted access and a complete recovery copy.",
+        "zh": "核对试用到期、活跃 IP／探针许可、受限访问及完整恢复副本。",
+        "source_refs": ["trial", "pricing", "users", "backup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Trial expiry and excess licensed-IP traffic can affect usable monitoring coverage.",
+        "zh": "试用到期与超许可 IP 流量可影响可用监控范围。",
+        "source_refs": ["trial", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Configuration-only backup does not preserve all historical packet/flow data.",
+        "zh": "仅配置备份不保留全部历史包／流数据。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "version"],
+    "checked_at": "2026-10-22T15:31:11.737417Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Production uses quoted perpetual licenses based on network size and probe scope. One year of support/upgrades is included; later support is 20% of license cost per year. The included7-day trial has storage/router/probe limits and expires. No exact dollar quote or current 8.0 licensing reconciliation was established.",
+    "summary_zh": "生产使用按网络规模及探针范围报价的永久许可，含一年支持／升级，之后支持为许可价的每年 20%。内置七天试用有存储／路由器／探针限制且会到期。未取得具体美元报价，当前 8.0 许可与旧 FAQ 的对应待核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/trisul-network-analytics",
+      "read_at": "2026-10-22T09:00:13.758Z",
+      "excerpt_sha256": "5464c0b3397d16d418092dda666572cef26b15008909ce5ad5290a17bcacebd0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "How to Get Started | Trisul Network Analytics Docs",
+      "url": "https://docs.trisul.org/docs/guide/starthere/quickstart/",
+      "read_at": "2026-10-22T15:35:13.934274Z",
+      "excerpt_sha256": "6d2382bb3fb4094649934005a29310121e62f8f055fc75b2bf7af3d269553308",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual current Linux setup, four product modes and traffic input requirements."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Trisul Network Analytics",
+      "title": "Trisul Network Analytics Pricing | Flexible Plans",
+      "url": "https://www.trisul.org/pricing/",
+      "read_at": "2026-10-22T15:31:11.737417Z",
+      "excerpt_sha256": "97fa075ea1eb590b9efd3411249f8b4c487ebbfbcec40a0a230ab61ad54acf0e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read perpetual active-IP/probe model, trial constraints and support renewal percentage; no exact dollar quote."
+    },
+    {
+      "id": "trial",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "Get Trisul Network Analytics | Free 7-Day Trial License",
+      "url": "https://trisul.org/free-license/",
+      "read_at": "2026-10-22T15:34:41.477911Z",
+      "excerpt_sha256": "3c55cba02c9d9fdabb52479d9f72beb38592ead3de328cdc517d434ecc5fb6b9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read7-day expiry, old rolling license withdrawal and trial storage/probe limits."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "Trisul Basic Architecture | Trisul Network Analytics Docs",
+      "url": "https://docs.trisul.org/docs/guide/starthere/what_is_trisul/architecture/",
+      "read_at": "2026-10-22T15:36:03.281840Z",
+      "excerpt_sha256": "258f01ae17a7e70fa78e83db067dc4c30a88eb375a4469af57408851d9ac7f63",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Probe/Hub/Domain/Profile/Context/WebTrisul distinctions."
+    },
+    {
+      "id": "users",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "Users | Trisul Network Analytics Docs",
+      "url": "https://docs.trisul.org/docs/guide/ag/webadmin/manageusers/",
+      "read_at": "2026-10-22T15:36:03.283024Z",
+      "excerpt_sha256": "a0927a8c3e9f477b238bc0093b0b87bcf8afa66487a2b5f8673bfd1dbae0f8c8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read role/context scope, concurrent-login option and conditional2FA methods."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "Backups | Trisul Network Analytics Docs",
+      "url": "https://docs.trisul.org/docs/guide/ag/context/backup/",
+      "read_at": "2026-10-22T15:36:45.390795Z",
+      "excerpt_sha256": "fbf31e7f9f8a7837e6edde65ce61c880061b8ee90f5f1ebb61555f92808754d8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read configuration versus traffic data backup, stopped-context copies and distributed-node coverage."
+    },
+    {
+      "id": "version",
+      "type": "official_documentation",
+      "site": "Trisul Network Analytics",
+      "title": "Trisul Network Analytics Docs",
+      "url": "https://docs.trisul.org/",
+      "read_at": "2026-10-22T15:34:41.477520+00:00",
+      "excerpt_sha256": "a2000eb9689a87db52a168bbad6b01c9b602150a09284a2c54c0e9dbac2596b6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current documentation entry identifying8.0 October2026, separate from pricing FAQ7.0."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:36:45.390795Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "trial"],
+  "profile": {
+    "sections": [
+      {
+        "id": "input",
+        "title_en": "Select the mode and supply the right input",
+        "title_zh": "选择模式并提供正确输入",
+        "en": "The quickstart distinguishes raw packet capture from NetFlow/IPFIX/sFlow input. NSM requires more resources than flow-based operation. A Linux VM or bare-metal host must match the supported operating-system requirements. Validate that a known test flow reaches the intended input before evaluating dashboard completeness; installation alone does not prove packet or exporter visibility.",
+        "zh": "快速入门区分原始抓包与 NetFlow／IPFIX／sFlow 输入，NSM 比流分析消耗更多资源。Linux VM 或物理机须符合受支持系统要求。判断仪表盘完整性前，应验证已知测试流进入预期输入，安装成功不证明已看见数据包或 exporter。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "topology",
+        "title_en": "Separate processing, storage and user interface",
+        "title_zh": "区分处理、存储及用户界面",
+        "en": "A Probe processes traffic, a Hub stores results, and WebTrisul exposes the user interface. A Domain certificate authenticates nodes and supplies endpoints. Profiles configure Probes; Contexts organize traffic data. Map these boundaries explicitly for distributed placement and storage planning rather than treating every node as an interchangeable collector.",
+        "zh": "Probe 处理流量，Hub 存储结果，WebTrisul 提供界面；Domain 证书认证节点并提供端点。Profile 配置 Probe，Context 组织流量数据。分布式部署与存储规划应明确这些边界，各节点并非可任意互换的采集器。",
+        "source_refs": ["architecture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Check context scope and authentication prerequisites",
+        "title_zh": "检查 Context 范围及认证前提",
+        "en": "User setup combines a role with Allowed Context restrictions. Concurrent logins are enabled by default; disabling them terminates the older session when the account signs in again.2FA options depend on configuration: email needs a registered email address and SMS needs both a configured gateway and mobile number. Test an account restricted to the intended context.",
+        "zh": "用户设置结合角色与 Allowed Context 限制。默认允许并发登录，禁用后再次登录会终止旧会话。2FA 依配置而定：邮件需登记地址，短信需网关及手机号。应测试一个仅限目标 Context 的账户。",
+        "source_refs": ["users"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "A configuration archive is not all traffic history",
+        "title_zh": "配置存档不等于全部流量历史",
+        "en": "The backup guide separates configuration and potentially terabytes of traffic data, recommending a DR node for full-scale data backup. Complete configuration coverage includes Hub, Probe and WebTrisul state, including users and licenses. Manual data copy/restore requires stopping the context. Distributed deployments need each node covered. Rehearse a restore with disposable data before relying on the archive.",
+        "zh": "备份指南区分配置与可能达 TB 级的流量数据，大规模数据备份推荐 DR 节点。完整配置需覆盖 Hub、Probe 及 WebTrisul 状态，含用户和许可。手动复制／恢复数据需停止 Context，分布式部署需覆盖各节点。依赖存档前应使用可丢弃数据演练恢复。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trial",
+        "title_en": "The legacy rolling grant has ended",
+        "title_zh": "旧滚动免费许可已结束",
+        "en": "The current free-license page grants seven days, then requires an extension or purchase. It caps trial packet storage at 10 GB per probe, NetFlow at two routers and one probe per domain, with further feature limits. Its explicit withdrawal of the old three-day rolling license prevents treating an old installation guide as a sustained-free entitlement.",
+        "zh": "当前免费许可页给予七天，之后需延期或购买；试用每探针抓包存储上限 10GB、NetFlow 两台路由器、每 Domain 一个探针，另有限制。页面明确撤销旧三天滚动许可，因此不能将旧安装指南视为长期免费依据。",
+        "source_refs": ["trial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Size by active IPs, probes and support",
+        "title_zh": "按活跃 IP、探针及支持核算",
+        "en": "Pricing describes perpetual licenses sized by active internal IPs, with one year of support/upgrades and later support at 20% of license cost annually. Its per-probe FAQ explicitly names version 7.0; current documentation advertises8.0, so confirm the quote’s version basis. Crossing an IP limit may leave excess traffic/flows incorrectly processed, despite the service continuing.",
+        "zh": "价格页说明按活跃内部 IP 核算永久许可，含一年支持／升级，之后年度支持费为许可价的 20%。按探针 FAQ 明确提到 7.0，而当前文档展示 8.0，应确认报价版本依据。超过 IP 上限时服务仍运行，但超额流量／流可能无法正确处理。",
+        "source_refs": ["pricing", "version"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Trisul Network Analytics: setup, operating limits and pricing",
+    "title_zh": "Trisul Network Analytics：设置、运行边界及费用",
+    "description_en": "Trisul Network Analytics runs on Linux and uses a shared platform for network security monitoring, NetFlow analysis, IPDR and ISP analytics. NSM receives raw traffic from",
+    "description_zh": "Trisul Network Analytics 运行于 Linux，以同一平台承载网络安全监控、NetFlow 分析、IPDR 和 ISP 分析。NSM 接收 SPAN／TAP ",
+    "search_intent_en": "Evaluate Trisul Network Analytics for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Trisul Network Analytics。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, packet/flow capture, account, authentication, backup/restore, DR or purchase was executed.",
+      "zh": "未执行安装、包／流采集、账户、认证、备份／恢复、DR 或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full license,8.0 commercial terms, throughput claims, enforced tenant isolation and recovery remain unverified.",
+      "zh": "完整许可、8.0 商业条款、吞吐主张、实际租户隔离及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

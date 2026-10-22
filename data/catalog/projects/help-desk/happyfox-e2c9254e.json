@@ -1,0 +1,353 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "happyfox-e2c9254e",
+  "name": "HappyFox Help Desk",
+  "website_url": "https://www.happyfox.com/helpdesk/",
+  "domain": "www.happyfox.com",
+  "identity_domain": "happyfox.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "HappyFox Help Desk turns customer or employee requests into tickets with queues, categories, ownership, knowledge and service targets. The current product can be configured for customer service, IT, HR or operations, but separate forms and access rules are needed to make those workflows distinct. Help Desk is one product within HappyFox; Service Desk, AI, Web Messaging, Workflows and BI have separate scope or pricing.\n\nEvaluation should connect one incoming request to an owner, a rule and an applicable SLA, then compare the actual selected cost model. Agent-based plans and flat unlimited-agent plans meter different things. This is public-documentation research; no account, rule, migration, timer, message or payment was tested.",
+  "description_zh": "HappyFox Help Desk 将客户或员工请求转为带队列、分类、负责人、知识及服务目标的工单。当前产品可配置用于客户服务、IT、HR 或运营，但需分别设计表单和访问规则来区分流程。Help Desk 是 HappyFox 的一个产品，Service Desk、AI、Web Messaging、Workflows、BI 有独立范围或价格。\n\n评估应将一个接收请求连接到负责人、规则及适用 SLA，再比较真实所选成本模式。按坐席与固定价无限坐席方案计量不同。本文基于公开文档，未测试账户、规则、迁移、计时、消息或付款。",
+  "core_features": [
+    {
+      "name_en": "Configured support ticket queues",
+      "name_zh": "可配置支持工单队列",
+      "explanation_en": "Organize customer or internal requests with forms, categories, statuses, permissions and knowledge.",
+      "explanation_zh": "以表单、分类、状态、权限及知识组织客户或内部请求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Single-action Smart Rules",
+      "name_zh": "单动作 Smart Rules",
+      "explanation_en": "A documented rule performs one configured action.",
+      "explanation_zh": "文档中的每条规则执行一个已配置动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rules",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional SLA timing",
+      "name_zh": "条件 SLA 计时",
+      "explanation_en": "Scope service targets using categories, conditions and schedules.",
+      "explanation_zh": "使用分类、条件及日历界定服务目标。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sla",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a customer queue and a private employee queue with different access and ownership.",
+      "Compare per-agent spending with flat pricing using actual annual ticket demand."
+    ],
+    "zh": [
+      "评估访问和归属不同的客户队列及私有员工队列。",
+      "用真实年度工单需求比较每坐席与固定价支出。"
+    ],
+    "source_refs": ["product", "pricing"],
+    "basis": "Editorial tasks, not execution or independently measured benefits."
+  },
+  "technical_details": {
+    "Product scope": {
+      "en": "Hosted subscription. Built-in helpdesk rules differ from the separately priced Workflows product and AI Contact Center Suite.",
+      "zh": "托管订阅，帮助台内置规则与单独定价 Workflows 产品及 AI Contact Center Suite 不同。",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Customer support manager",
+      "Internal service owner",
+      "Help desk administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define request forms, categories, team access and the owner of each queue.",
+        "zh": "定义请求表单、分类、团队访问及各队列负责人。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot one action and inspect the intended service clock before enabling customer notifications.",
+        "zh": "启用客户通知前，试点一个动作并检查预期服务时钟。",
+        "source_refs": ["rules", "sla"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm plan, term, minimum users, ticket allowance and separately purchased products in the order.",
+        "zh": "在订单中确认套餐、期限、最低用户、工单额度及单独购买产品。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Slack and webhooks",
+        "source_ref": "rules",
+        "scope": "Configured connection/enabled capability required."
+      },
+      {
+        "name": "Help Desk integration catalog",
+        "source_ref": "pricing",
+        "scope": "Plan table includes Shopify/Pipedrive and higher-plan collaboration/CRM options; exact object mapping, sync and provider fees unverified."
+      }
+    ],
+    "source_ref": "pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Multiple automatic actions need separate rules or a separately scoped workflow.",
+        "zh": "多个自动动作需分别建立规则或另行明确工作流范围。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Unlimited-agent plans have annual ticket allowances and overage; high agent-based tiers still bill each user despite having no headcount cap.",
+        "zh": "无限坐席档有年度工单额度及超额费；高档按坐席套餐即使无人数上限仍逐人计费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.happyfox.com/terms-services/",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "terms"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Either per-agent monthly/annual/two-year subscription or fixed unlimited-agent subscription with yearly ticket quota; signed order and designated-plan minimums apply.",
+    "source_snapshot_en": "Basic/Team/Pro monthly$29/$69/$119 per agent, annual equivalents$24/$49/$99, two-year$21/$39/$89; Basic max5agents. Unlimited-agent annual equivalents Growth$1,999/20,000tickets per year, Scale$3,999/150,000, ScalePlus$5,999/300,000. AI/WebMessaging/Workflows/BI separate. Terms mention5-user minimum on designated plans; applicability needs the order.",
+    "source_snapshot_zh": "Basic／Team／Pro每坐席月付$29／$69／$119，年付折月$24／$49／$99，两年$21／$39／$89；Basic最多5坐席。无限坐席年付折月Growth$1,999／每年20,000工单，Scale$3,999／150,000，ScalePlus$5,999／300,000。AI／WebMessaging／Workflows／BI另购。条款提指定套餐最低5用户，适用需订单确认。",
+    "checked_at": "2026-10-22T11:31:43.724347+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does no agent-count cap mean agents are free?",
+      "question_zh": "无人数上限表示坐席免费吗？",
+      "answer_en": "No. Higher agent-based tiers still charge for every support agent. The flat unlimited-agent option is a separate annual-ticket model.",
+      "answer_zh": "不是，高档按坐席套餐仍逐位收费。固定价无限坐席是另一种年度工单模式。",
+      "source_refs": ["pricing"]
+    },
+    {
+      "question_en": "Is AI included in the Help Desk price?",
+      "question_zh": "Help Desk 价格包含 AI 吗？",
+      "answer_en": "The current pricing FAQ lists AI, Web Messaging, Workflows and BI as separate products, with bundling discussed through sales. Integration availability is not a purchased license.",
+      "answer_zh": "当前定价FAQ将AI、Web Messaging、Workflows及BI列为独立产品，组合由销售讨论。可集成不等于已购买许可。",
+      "source_refs": ["pricing"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/happyfox",
+      "read_at": "2026-10-22T08:50:03.507Z",
+      "excerpt_sha256": "0760193795c606c64dd178bbc3e98f03685ebf8299e06f96081a6b9fcde773e2",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI Help Desk Software for CS, IT, HR & Ops | HappyFox",
+      "title": "AI Help Desk Software for CS, IT, HR & Ops | HappyFox",
+      "url": "https://www.happyfox.com/helpdesk/",
+      "read_at": "2026-10-22T11:30:44.130813+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "52a1210774ece0aaf4cb37dc8b012ce9e6e2dcb9efbaf1980a7ae8ffedaab77d",
+      "research_notes_en": "Current selected product is Help Desk, not all HappyFox family products. Shared tickets, internal/customer teams, reporting and separately linked AI/QA read."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "HappyFox Help Desk Pricing",
+      "title": "HappyFox Help Desk Pricing",
+      "url": "https://www.happyfox.com/helpdesk/pricing/",
+      "read_at": "2026-10-22T11:30:47.347324+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ed299b8893d3bd05e6dc0e2cf92d558a460742dfc0165cbbd2272b14b286f442",
+      "research_notes_en": "Old price paths redirect to /helpdesk/pricing; both per-agent and unlimited-agent/yearly-ticket models read, full numeric terms and separate-product FAQ."
+    },
+    {
+      "id": "rules",
+      "type": "official_documentation",
+      "site": "Create and Manage Smart Rules - HappyFox Support",
+      "title": "Create and Manage Smart Rules - HappyFox Support",
+      "url": "https://support.happyfox.com/kb/article/167-create-and-manage-smart-rules/",
+      "read_at": "2026-10-22T11:31:04.539931Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c69359fa1b0c5e57e991e93e8efbf0ce0b6b7755c510837ada132397f7aeda90",
+      "research_notes_en": "August2026 HelpDesk breadcrumb; one-action rules, permission, category/schedule/once conditions and integration prerequisites; body also names AIContactCenter."
+    },
+    {
+      "id": "sla",
+      "type": "official_documentation",
+      "site": "How do SLAs work in HappyFox? - HappyFox Support",
+      "title": "How do SLAs work in HappyFox? - HappyFox Support",
+      "url": "https://support.happyfox.com/kb/article/629-how-do-slas-work-in-happyfox/",
+      "read_at": "2026-10-22T11:31:08.001693Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a62f0defca5e739899f1f001ba8adbe7032250296ad28d8b96856aa08e156cd7",
+      "research_notes_en": "August2026 SLA condition-gated timer restart/clear versus objective-event timer, schedules and excluded-state pauses."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service | HappyFox",
+      "title": "Terms of Service | HappyFox",
+      "url": "https://www.happyfox.com/terms-services/",
+      "read_at": "2026-10-22T11:31:43.724347+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "20e9cd42e8545e2ea7d28cb5368bd40e5973010a740187e7efc8812bcd054b98",
+      "research_notes_en": "Proprietary hosted subscription, US-dollar payments, order fees, designated-plan five-user minimum and nonrefundable payments. Order-specific applicability not inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:31:43.724347+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "pricing", "rules", "sla"],
+  "profile": {
+    "sections": [
+      {
+        "id": "support-scope",
+        "title_en": "Choose the queue and information boundary first",
+        "title_zh": "先选队列及信息边界",
+        "en": "Help Desk is designed to support more than one service team. For an illustrative employee-access request, separate the private employee form/category from a public customer queue, identify its owner and decide what the requester can see. Shared software does not make HR or IT records appropriate for every customer-service role.\n\nThe product describes customizable fields/statuses, knowledge and reporting, while the price matrix gates capabilities such as custom roles, queues, proactive collision and asset tasks. Demonstrate the actual selected plan and a restricted agent view. A feature offered elsewhere in HappyFox’s product family should not silently become part of this deployment.",
+        "zh": "Help Desk 可支持多个服务团队。以假设员工访问申请为例，应将私有员工表单／分类与公开客户队列分开，指定负责人，并确定请求人可见内容。共用软件不表示HR或IT记录适合所有客服角色访问。\n\n产品描述自定义字段／状态、知识及报表，价格矩阵对自定义角色、队列、主动冲突提示和资产任务等作权限区分。应演示所选套餐及受限坐席视图；HappyFox其他产品中的功能不能自动并入此次部署。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "rule",
+        "title_en": "Keep each automatic action accountable",
+        "title_zh": "让每个自动动作有明确责任",
+        "en": "Smart Rules use conditions, categories, an optional work schedule and a run-once choice to perform one action. Management permission is required. Slack, SMS, webhooks and Workflows need their respective setup. The guide sits under Help Desk but also names AI Contact Center; confirm the selected account UI.\n\nPilot a narrow assignment first, then inspect repeated updates, unavailable owners and accidental customer replies. Exact retry, precedence and rollback remain unverified.",
+        "zh": "Smart Rules 结合条件、分类、可选工作日历及只运行一次选项，执行单个动作，需要管理权限。Slack、SMS、webhook及Workflows需分别配置。指南归于Help Desk却也提AI Contact Center，应确认所选账户界面。\n\n先试点窄范围分配，再检查重复更新、负责人不可用及意外客户回复。准确重试、优先级及回滚未核实。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "clock",
+        "title_en": "An SLA condition can change when time begins",
+        "title_zh": "SLA条件会改变计时起点",
+        "en": "The SLA guide separates objective timing from condition-gated evaluation. With gating enabled, matching conditions start the timer; losing the match clears its target, and a later match recalculates it. Excluded statuses instead pause time, while the work schedule determines counted hours.\n\nCompare a priority change and a waiting status against actual elapsed customer time. A met timer is not proof the underlying request was solved.",
+        "zh": "SLA指南区分目标事件计时与条件满足后评估。启用条件门控时，匹配后开始，失去匹配清除期限，之后再匹配重新计算。排除状态则暂停，工作日历决定计入时段。\n\n应将优先级变更和等待状态与客户实际经过时间对照。计时达标不能证明底层请求已解决。",
+        "source_refs": ["sla"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-model",
+        "title_en": "Compare annual ticket demand with paid agent headcount",
+        "title_zh": "比较年度工单需求与付费坐席数",
+        "en": "The current agent-based model lists Basic, Team and Pro at $29/$69/$119 per agent/month on monthly billing, $24/$49/$99 annual equivalents and $21/$39/$89 on two-year terms. Basic is capped at five users. Higher tiers remove the cap, but each agent still costs money. Enterprise Pro is custom.\n\nThe separate fixed-price model includes unlimited agents with annual ticket allowances: Growth $1,999/month billed annually for 20,000 yearly tickets; Scale $3,999 for 150,000; Scale Plus $5,999 for 300,000. Ultimate is custom with a displayed million-ticket allowance. Overage is listed separately. The table’s per-ticket/month unit needs order clarification before projecting a bill; neither ticket allowance nor unlimited seats means every resource is unlimited.",
+        "zh": "当前按坐席模式Basic／Team／Pro月付每人每月$29／$69／$119，年付折月$24／$49／$99，两年期限$21／$39／$89。Basic最多5用户，高档取消人数上限但仍逐位收费，Enterprise Pro定制。\n\n独立固定价模式包含无限坐席及年度工单额度：Growth年付折月$1,999、每年20,000工单；Scale$3,999、150,000；Scale Plus$5,999、300,000；Ultimate定制并显示百万工单额度，超额另列。表中每工单／月单位需订单澄清后才能预测账单；工单额度或无限席位均不等于所有资源无限。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract-entry",
+        "title_en": "Resolve minimums, adjacent products and migration scope",
+        "title_zh": "明确最低量、相邻产品及迁移范围",
+        "en": "The current page offers a fourteen-day Help Desk trial through the demo form. It does not establish an unconditional no-card signup or sustained-free use. Annual subscriptions advertise included migration covering mapping through cutover and thirty days of stabilization; inspect actual record counts, attachments, fields and workflow behavior rather than treating the offer as a completed migration.\n\nTerms specify US-dollar advance payments, nonrefundable fees and a five-user minimum for designated plans. Confirm whether that minimum applies to the chosen order rather than assuming a one-seat Basic purchase. AI, Web Messaging, Workflows and BI have separate prices even when a native integration is available. The documented service is proprietary; exact deployment region, license exceptions, export/restore, UI languages, provider charges and regional purchase remain unverified.",
+        "zh": "当前页面通过演示表单提供14天Help Desk试用，不能确定无条件免卡注册或持续免费。年订阅宣传包含从映射到切换及30天稳定支持的迁移；应检查实际记录数、附件、字段及流程，不能把方案当完成迁移。\n\n条款要求美元预付、费用不退，并对指定套餐设最低5用户。应确认是否适用所选订单，不能假定Basic可买单席位。AI、Web Messaging、Workflows及BI即使可原生集成仍有独立价格。文档服务属专有，准确部署地区、许可例外、导出／恢复、界面语言、服务商费及地区购买未核实。",
+        "source_refs": ["pricing", "terms", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "HappyFox Help Desk: Smart Rules, SLA Clocks and Two Pricing Models",
+    "title_zh": "HappyFox Help Desk：Smart Rules、SLA时钟及两种定价",
+    "description_en": "Evaluate HappyFox Help Desk ticket scope, single-action rules, condition-gated SLA timers, paid seat caps, unlimited-agent quotas and separate AI/Workflows products.",
+    "description_zh": "评估HappyFox Help Desk工单范围、单动作规则、条件SLA计时、付费席位上限、无限坐席额度及独立AI／Workflows产品。",
+    "primary_intent": "Evaluate HappyFox Help Desk operations and subscription model.",
+    "secondary_questions": [
+      "Are higher-tier agents free?",
+      "How do SLA conditions reset time?",
+      "Are AI and Workflows included?"
+    ],
+    "query_basis": "Editorial questions; no measured keyword demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant, timer, rule, migration, integration, AI or purchase tested. Selected-order minimums, overage unit/application, adjunct product prices, region, full UI languages, export/restore and regional access remain unverified.",
+      "zh": "未测试租户、计时、规则、迁移、集成、AI或购买。所选订单最低量、超额单位／适用、相邻产品价、地区、完整界面语言、导出／恢复及地区访问未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Support HTML fetches returned empty text; successful public-reader article content was saved and hashed separately. Product and price paths now use /helpdesk; Smart Rule guide body and breadcrumb use different family labels.",
+      "zh": "支持页HTML提取为空，成功网页读取器正文单独保存并计算哈希。产品及定价路径现在采用/helpdesk；Smart Rule指南正文与面包屑使用不同产品家族标签。",
+      "source_refs": ["rules", "sla", "pricing"],
+      "evidence_type": "observed_documentation_conditions"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

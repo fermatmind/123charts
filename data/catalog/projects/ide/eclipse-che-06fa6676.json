@@ -1,0 +1,315 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "eclipse-che-06fa6676",
+  "name": "Eclipse Che",
+  "website_url": "https://eclipse.dev/che/",
+  "domain": "eclipse.dev",
+  "identity_domain": "eclipse.dev",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Eclipse Che supplies development workspaces on Kubernetes. A project can describe its environment in a Devfile and offer a browser-accessible IDE, while platform administrators operate the cluster and its workspace policies. The reviewed stable documentation is version 7.123.x; no Kubernetes installation or IDE session was executed.\n\nSeparate the upstream cluster deployment from Red Hat’s hosted OpenShift Dev Spaces/Sandbox offer. Their account lifetime, workspace stop conditions, packaging and support differ. Likewise, allowing a workspace source URL and limiting concurrent workspaces control different parts of the platform.",
+  "description_zh": "Eclipse Che 在 Kubernetes 上提供开发工作区。项目可用 Devfile 描述环境并提供浏览器 IDE，平台管理员负责集群及工作区策略。实读 stable 文档为 7.123.x，本次未执行 Kubernetes 安装或 IDE 会话。\n\n应区分上游集群部署与 Red Hat 托管 OpenShift Dev Spaces／Sandbox；账户寿命、工作区停止条件、打包及支持不同。允许工作区来源 URL 与限制并发工作区，也控制不同环节。",
+  "core_features": [
+    {
+      "name_en": "Devfile environments",
+      "name_zh": "Devfile 环境",
+      "explanation_en": "Define a software-described workspace alongside project code.",
+      "explanation_zh": "在项目代码旁描述工作区环境。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Cluster concurrency limit",
+      "name_zh": "集群并发上限",
+      "explanation_en": "Set a maximum number of running workspaces across all users.",
+      "explanation_zh": "设置跨全部用户的运行工作区数量上限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "concurrency",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Allowed initiation sources",
+      "name_zh": "允许的启动来源",
+      "explanation_en": "Configure approved URL patterns for starting a cloud development environment.",
+      "explanation_zh": "配置允许启动云开发环境的 URL 模式。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sources",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a Devfile workspace on a disposable supported cluster.",
+      "Compare concurrency/source controls with hosted-service data-lifetime conditions."
+    ],
+    "zh": [
+      "在可丢弃受支持集群评估 Devfile 工作区。",
+      "比较并发／来源控制与托管服务数据寿命。"
+    ],
+    "source_refs": ["home", "platforms", "concurrency", "sources", "hosted"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Developer platform engineers",
+      "Kubernetes workspace administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select self-hosted or the separately packaged hosted offer and review the matching prerequisites.",
+        "zh": "选择自托管或独立打包托管方案，核对对应前提。",
+        "source_refs": ["installation", "platforms", "hosted"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test approved/denied sources, a small concurrency cap and independent persistence/export before team use.",
+        "zh": "团队使用前测试批准／拒绝来源、小并发上限及独立持久化／导出。",
+        "source_refs": ["sources", "concurrency", "hosted"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Allowed source URLs do not establish runtime network isolation.",
+        "zh": "允许来源 URL 不证明运行时网络隔离。",
+        "source_refs": ["sources"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The hosted guide’s30-day data deletion is separate from self-hosted cluster lifecycle.",
+        "zh": "托管指南的三十天数据删除与自托管生命周期分开。",
+        "source_refs": ["hosted"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "not_verified",
+    "price_type": "unknown",
+    "officially_checked": false,
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "No current complete Che fee/free-use or full license source was established. Pricing remains not_verified/unknown. Cluster infrastructure, chosen support/distribution and Red Hat hosted terms need separate verification; the hosted usage limits are not a pricing grant.",
+    "summary_zh": "未确认当前完整 Che 费用／免费使用或完整许可来源，价格保持 not_verified／unknown。集群基础设施、支持／发行版及 Red Hat 托管条款需分别核对，托管用量限制不是价格授权。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/eclipse-che",
+      "read_at": "2026-10-22T08:49:30.533Z",
+      "excerpt_sha256": "b9d16490ebc32f6e040f5431a356e695cebbdeca3fb971c59257738bc96cea16",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Home | Eclipse Che",
+      "url": "https://eclipse.dev/che/",
+      "read_at": "2026-10-22T15:57:45.947747Z",
+      "excerpt_sha256": "5aed2a7a013bc66e66552ebec4ef5be4aec2a5d217f833dd652d2a6336b81bd0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual canonical Che homepage; dated UI/IDE marketing not used as current compatibility proof."
+    },
+    {
+      "id": "installation",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Install Che :: Eclipse Che Documentation",
+      "url": "https://eclipse.dev/che/docs/stable/install/installing-che/",
+      "read_at": "2026-10-22T12:58:09.302477Z",
+      "excerpt_sha256": "20d571594d9feef35e8430ac6ec615e93e1dc23b9da52a492831e88ae1ffb413",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read stable7.123.x one-instance-per-cluster and local single-node restriction."
+    },
+    {
+      "id": "platforms",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Supported platforms :: Eclipse Che Documentation",
+      "url": "https://eclipse.dev/che/docs/stable/discover/supported-platforms/",
+      "read_at": "2026-10-22T12:58:05.674490Z",
+      "excerpt_sha256": "86589b839c0c84c2a59b52e254ae1ddbd02595c136e64ebc885c1689c4bb9463",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual supported-platform documentation, not an installation test."
+    },
+    {
+      "id": "concurrency",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Limiting the number of workspaces that all users can run simultaneously :: Eclipse Che Documentation",
+      "url": "https://eclipse.dev/che/docs/stable/administration-guide/limiting-the-number-of-workspaces-that-all-users-can-run-simultaneously/",
+      "read_at": "2026-10-22T16:13:58.119339Z",
+      "excerpt_sha256": "b04246b421c9f3d97bc76bdee0845613040fa0a62fa09dfcd8beedf445830625",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read cluster-wide concurrent workspace setting and -1 meaning no configured limit."
+    },
+    {
+      "id": "sources",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Configuring allowed URLs for Cloud Development Environments :: Eclipse Che Documentation",
+      "url": "https://eclipse.dev/che/docs/stable/administration-guide/configuring-allowed-urls-for-cloud-development-environments/",
+      "read_at": "2026-10-22T16:13:58.119464Z",
+      "excerpt_sha256": "1c702127b26e4abf7ec80c4d428b14cca74718939ef4e08dca46756286efe8d0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read allowedSources URL patterns for CDE initiation; not a runtime egress policy."
+    },
+    {
+      "id": "hosted",
+      "type": "official_documentation",
+      "site": "Eclipse Che",
+      "title": "Eclipse Che hosted by Red Hat :: Eclipse Che Documentation",
+      "url": "https://eclipse.dev/che/docs/stable/hosted-che/hosted-che/",
+      "read_at": "2026-10-22T12:50:53.842282Z",
+      "excerpt_sha256": "44f6fbc53dad2e568e074aae90889a242a85223accf5bf8cd4cde3cacd76ea94",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read separately packaged Red Hat hosted service,30-day deletion and workspace stop limits."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:13:58.119464Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "research_gaps": [
+    {
+      "en": "No cluster, workspace, source allowlist, credential, account, data deletion or purchase was operated.",
+      "zh": "未操作集群、工作区、来源白名单、凭据、账户、数据删除或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual distribution license, fees, supported IDE versions, enforced authorization, persistence and recovery remain unverified.",
+      "zh": "实际发行版许可、费用、支持 IDE 版本、实际授权执行、持久化及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "description_source_refs": ["home", "installation", "hosted"],
+  "profile": {
+    "sections": [
+      {
+        "id": "installation-scope",
+        "title_en": "Plan one Che instance per cluster",
+        "title_zh": "按每集群一个 Che 实例规划",
+        "en": "The installation guide permits one Che instance per cluster and selects methods according to platform and restrictions. It explicitly reserves local single-node clusters for testing/development rather than organization/team hosting. Use a disposable cluster to verify prerequisites and storage behavior before planning shared operation; a local successful start is not a production capacity test.",
+        "zh": "安装指南限定每集群一个 Che 实例，按平台及限制选择安装方式，并明确本地单节点用于测试／开发，不用于组织或团队托管。共享运行规划前应在可丢弃集群验证前提与存储；本地启动成功不构成生产容量测试。",
+        "source_refs": ["installation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workspace-capacity",
+        "title_en": "No configured concurrency cap is not infinite capacity",
+        "title_zh": "未配置并发上限不等于无限容量",
+        "en": "The global setting maxNumberOfRunningWorkspacesPerCluster limits concurrent running workspaces across the cluster. The guide says the default is unlimited and -1 disables the configured cap. This does not remove Kubernetes resource constraints. Test the chosen admission boundary with a small set of authorized users and observe pending/failed starts.",
+        "zh": "maxNumberOfRunningWorkspacesPerCluster 限制整个集群同时运行的工作区。指南说明默认不限量，-1 关闭该配置上限，但不会消除 Kubernetes 资源约束。应使用少量获准用户测试设定边界，并观察等待或失败启动。",
+        "source_refs": ["concurrency"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "source-boundary",
+        "title_en": "URL approval controls initiation",
+        "title_zh": "URL 批准控制启动",
+        "en": "The allowedSources.urls list defines approved sources for initiating CDEs and accepts wildcard patterns. A broad domain wildcard permits many paths under that domain. Evaluate an approved repository URL and a denied one, using narrow patterns. This page does not establish a firewall or a network-egress restriction for code already running inside a workspace.",
+        "zh": "allowedSources.urls 定义启动 CDE 的批准来源，并支持通配符。宽泛域模式会允许该域下很多路径。应使用较窄模式测试批准和拒绝的仓库 URL；此页不证明已运行工作区代码的防火墙或出站网络限制。",
+        "source_refs": ["sources"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "hosted-service",
+        "title_en": "Hosted trial data has an independent lifetime",
+        "title_zh": "托管试用数据有独立寿命",
+        "en": "The hosted guide identifies Red Hat OpenShift Dev Spaces as a separately packaged product built from Che. It lists a 30-day account period followed by access revocation and data/workspace deletion, a 12-hour maximum run and30-minute idle stop. These are hosted-service conditions, not defaults for every self-hosted Che cluster. Keep a separate repository/export plan before evaluating that offer.",
+        "zh": "托管指南将 Red Hat OpenShift Dev Spaces 说明为基于 Che 的独立打包产品，列账户三十天后撤销访问并删除数据／工作区、单次最长十二小时、闲置三十分钟停止。这些属于托管服务条件，不是所有自托管 Che 集群默认值。评估前应准备独立仓库／导出方案。",
+        "source_refs": ["hosted"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Document infrastructure cost without inventing a price",
+        "title_zh": "记录基础设施成本，不补造价格",
+        "en": "The reviewed pages document cluster installation and a bounded external hosted offer, but do not establish a universal current Che fee schedule or full software license grant. Budget infrastructure and support separately and inspect the actual distribution’s license. Do not convert hosted Sandbox usage limits or an open-source label into a sustained-free hosted plan.",
+        "zh": "已读页面说明集群安装及有时限外部托管方案，但未确认统一当前 Che 费用表或完整软件授权。应分别预算基础设施与支持，并检查实际发行版许可。不能把 Sandbox 限额或开源标签转成长期免费托管方案。",
+        "source_refs": ["installation", "hosted"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Eclipse Che: workflows, operating limits and cost",
+    "title_zh": "Eclipse Che：流程、运行限制与费用",
+    "description_en": "Eclipse Che supplies development workspaces on Kubernetes. A project can describe its environment in a Devfile and offer a browser-accessible IDE, while platform administ",
+    "description_zh": "Eclipse Che 在 Kubernetes 上提供开发工作区。项目可用 Devfile 描述环境并提供浏览器 IDE，平台管理员负责集群及工作区策略。实读 stable 文档",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of Eclipse Che.",
+    "search_intent_zh": "评估 Eclipse Che 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  }
+}

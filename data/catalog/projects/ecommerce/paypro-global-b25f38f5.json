@@ -1,0 +1,235 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "paypro-global-b25f38f5",
+  "name": "PayPro Global",
+  "website_url": "https://payproglobal.com/",
+  "domain": "payproglobal.com",
+  "identity_domain": "payproglobal.com",
+  "category": "ecommerce",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "PayPro Global is a Merchant of Record platform for SaaS, software and video games. It combines checkout, recurring billing, transaction-tax handling, fraud operations and customer billing support, while the software developer continues to support its own product.\n\nIts developer documentation is especially important for fulfilment: order and subscription events are sent to the seller’s backend through webhooks/IPNs. A paid transaction and a delivered licence are separate outcomes that need to be reconciled.",
+  "description_zh": "PayPro Global 是面向 SaaS、软件和电子游戏的 Merchant of Record 平台，结合结账、周期收费、交易税务、反欺诈和客户账单支持，软件开发者仍负责自己的产品支持。\n\n交付环节尤其需要阅读开发文档：订单及订阅事件通过 webhook／IPN 发送给卖家后端。交易已付款与许可已交付是两种不同结果，需要核对。",
+  "core_features": [
+    {
+      "name_en": "MoR and recurring billing",
+      "name_zh": "MoR 与周期收费",
+      "explanation_en": "Manage transactions, renewals and billing support through the platform.",
+      "explanation_zh": "通过平台管理交易、续费及账单支持。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Webhook transaction events",
+      "name_zh": "交易 webhook 事件",
+      "explanation_en": "Receive order/refund and subscription events through HTTPS POST.",
+      "explanation_zh": "通过 HTTPS POST 接收订单退款及订阅事件。",
+      "source_ref": "events",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "IPN logs and resend",
+      "name_zh": "IPN 日志及重发",
+      "explanation_en": "Inspect delivery history and manually resend event data from the dashboard.",
+      "explanation_zh": "在后台查看投递历史并重发事件数据。",
+      "source_ref": "events",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Connect a paid order to a licence key"],
+    "zh": ["把付款订单连接许可密钥"],
+    "source_refs": ["events"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Software vendor", "SaaS billing developer"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:18:55.660880+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Quote-only bundled MoR offer; numeric rate, settlement timing and transaction exceptions unverified.",
+    "source_snapshot_en": "Quote-only bundled MoR offer; numeric rate, settlement timing and transaction exceptions unverified.",
+    "source_snapshot_zh": "捆绑 MoR 询价；数字费率、结算时间及交易例外未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/paypro-global",
+      "read_at": "2026-10-22T08:59:53.580Z",
+      "excerpt_sha256": "8814b89db951a60a9b1e258e777246efb31c8c6cd77dfaa767dcc84316fe6f3d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "PayPro Global",
+      "url": "https://payproglobal.com/",
+      "title": "Sell Software and SaaS Online with PayPro Global",
+      "read_at": "2026-10-22T15:10:55.528900+00:00",
+      "excerpt_sha256": "b54f37f50ae0b6a4245ddcdcccbf4da74c18a8e73b3fa6767dd463a517442056",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read current digital MoR scope and distinction between billing support and software developer support."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "PayPro Global",
+      "url": "https://payproglobal.com/pricing/",
+      "title": "PayPro Global's Pricing",
+      "read_at": "2026-10-22T15:13:39.808861+00:00",
+      "excerpt_sha256": "c7ed1bc50f984ce481691a58727914cb3f42fdb18a433c1367b2cfc25425c11e",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read quote-only bundled commercial offer; no numeric rate or settlement commitment."
+    },
+    {
+      "id": "events",
+      "type": "official_documentation",
+      "site": "PayPro Global",
+      "url": "https://developers.payproglobal.com/docs/integrate-with-paypro-global/webhook-ipn/",
+      "title": "Getting Started With Webhooks | PayPro Global Documentation",
+      "read_at": "2026-10-22T15:14:37.475289+00:00",
+      "excerpt_sha256": "f7e00a4a9fddfbad779ae5dc2db16fb4aa608d72b9988bf2b458baedd570453c",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read event meanings, form/HTTPS/HTTP200 contract, LicenseRequested response, finite retries, logs, resend and signature/hash options."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:18:55.660880+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "licence",
+        "title_en": "Connect a paid order to a licence key",
+        "title_zh": "把付款订单连接许可密钥",
+        "en": "For a one-time software purchase, OrderCharged indicates a processed initial order; recurring payment success has its own SubscriptionChargeSucceed event. The IPN documentation describes HTTPS POST with form-encoded content and HTTP 200 as success. A separate LicenseRequested request expects the returned response to be the licence delivered to the customer. Keep order/product identifiers and verify events before changing entitlements. No endpoint or licence generator was run.",
+        "zh": "一次性软件购买中，OrderCharged 表示初始订单已处理，周期付款成功另有 SubscriptionChargeSucceed 事件。IPN 文档规定 HTTPS POST、表单编码及 HTTP 200 成功响应；独立 LicenseRequested 请求则把返回内容作为交付客户的许可。应保留订单商品标识，并在修改权益前验证事件。本文未运行端点或许可生成器。",
+        "source_refs": ["events"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Plan for finite delivery retries",
+        "title_zh": "按有限投递重试规划恢复",
+        "en": "The documentation says failed IPN delivery is retried every 30 minutes for a maximum of three attempts, followed by an email notice; key-generation failures also trigger notices. Delivery logs and resend controls exist in Reports → Others → IPN. Interpret the documented limit explicitly with support if it matters whether the initial call is included. A later resend can repeat a business action, so proposed testing should include duplicate-safe fulfilment and a reconciled customer licence.",
+        "zh": "文档说明 IPN 失败每 30 分钟重试，最多 3 次尝试，最后失败后发送邮件；许可生成失败也有通知。Reports → Others → IPN 可查看日志及重发。若初次调用是否包含在次数内影响设计，应向支持明确确认。重发可能重复业务动作，因此建议测试防重复交付，并核对客户最终许可。",
+        "source_refs": ["events"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quote",
+        "title_en": "Obtain the actual rate and settlement terms",
+        "title_zh": "取得实际费率及结算条款",
+        "en": "The official pricing page offers Get a Quote and describes a bundled solution rather than publishing a numeric rate. It lists payments, billing/recovery, API/IPN, checkout, analytics and related services. No universal percentage, monthly subscription or payout schedule was verified. Ask for transaction mix, currencies, refunds, chargebacks, settlement and product eligibility in the agreement. “All features” marketing does not settle every commercial exception.",
+        "zh": "官方通过 Get a Quote 提供捆绑方案，未公布数字费率，列有支付、账单恢复、API／IPN、结账、分析及相关服务。未核实统一百分比、月订阅或结算周期。应在协议中询问交易组合、币种、退款、拒付、结算和商品准入。“包含全部功能”的宣传不能确定每项商业例外。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Evaluate billing infrastructure and product fulfilment together",
+        "title_zh": "同时评估账单基础设施与产品交付",
+        "en": "Digital sellers wanting a managed reseller relationship have a relevant case; a physical-store inventory system is a different need. Prepare products, vendor onboarding data, a reachable verified webhook and support ownership. The vendor’s compliance descriptions require an applicable contract and are not a legal conclusion for the seller. No payment, licence delivery, recovery benchmark, self-hosted package or open-source licence was verified.",
+        "zh": "需要托管经销合作的数字卖家有相关场景，实体店库存系统则是不同需求。应准备商品、卖家入驻资料、可达且可验证的 webhook 及支持责任。厂商合规说明需适用合同，不能替卖家作法律结论。本文未实测支付、许可交付或恢复，也未核实自托管包和开源许可。",
+        "source_refs": ["product", "pricing", "events"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "PayPro Global: Connect a paid order to a licence key",
+    "title_zh": "PayPro Global：把付款订单连接许可密钥",
+    "description_en": "PayPro Global is a Merchant of Record platform for SaaS, software and video games. It combines checkout, recurring billing, transaction-tax handling, fraud operations and customer billing support, while the software developer continues to support its own product.",
+    "description_zh": "PayPro Global 是面向 SaaS、软件和电子游戏的 Merchant of Record 平台，结合结账、周期收费、交易税务、反欺诈和客户账单支持，软件开发者仍负责自己的产品支持。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Initial-call interpretation of retry count, exact signature verification procedure, event ordering, rate/payout/reserve terms and seller approval remain unverified.",
+      "zh": "重试次数是否含首次、具体签名验证步骤、事件顺序、费率结算准备金条款及卖家审批仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ]
+}

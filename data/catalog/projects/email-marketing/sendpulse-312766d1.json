@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "sendpulse-312766d1",
+  "name": "SendPulse",
+  "website_url": "https://sendpulse.com/",
+  "domain": "sendpulse.com",
+  "identity_domain": "sendpulse.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "SendPulse’s email service covers campaigns, audience lists and Automation360 flows inside a broader product family. An email workflow combines entry events, messages, waits and branching, but a field filter and a behavioral condition answer different questions. Other tools such as chatbots, CRM and transactional sending have their own setup and commercial boundaries.\n\nThis profile uses a reminder journey to explain contact identity, incomplete data, unsubscribe handling and stopping an obsolete message. It focuses on the email product and documented flow behavior, without executing a campaign or treating every platform feature as included in an email subscription.",
+  "description_zh": "SendPulse 邮件服务在更大的产品家族中提供活动、受众列表及 Automation360 流程。邮件流程组合入口事件、消息、等待及分支，但字段筛选与行为条件回答不同问题。聊天机器人、CRM 及事务发送等其他工具有独立设置及商业边界。\n\n本文用提醒路径解释联系人标识、不完整数据、退订处理及停止过时消息，聚焦邮件产品及文档流程行为。未执行活动，也未将平台所有功能视为邮件订阅已包含。",
+  "core_features": [
+    {
+      "name_en": "List/event entry",
+      "name_zh": "列表／事件进入",
+      "explanation_en": "Identify participants by email or phone and configure repeat frequency.",
+      "explanation_zh": "以邮件或电话识别参与者，并配置重复频率。",
+      "source_ref": "entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Data-based filters",
+      "name_zh": "数据筛选",
+      "explanation_en": "Check values and tags with source-specific and empty-value rules.",
+      "explanation_zh": "依据来源及空值规则检查字段和标签。",
+      "source_ref": "empty-filter",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Behavioral conditions",
+      "name_zh": "行为条件",
+      "explanation_en": "On paid plans, branch based on delivery, opening, clicking or other events.",
+      "explanation_zh": "付费套餐可按投递、打开、点击或其他事件分支。",
+      "source_ref": "condition",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Flow stop events",
+      "name_zh": "流程停止事件",
+      "explanation_en": "End pending follow-ups after a matching custom or pixel event.",
+      "explanation_zh": "匹配自定义或像素事件后结束待发送跟进。",
+      "source_ref": "stop-event",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Run a registration reminder that stops on a matched completion event.",
+      "Branch a subscriber flow after checking complete, correctly scoped data."
+    ],
+    "zh": [
+      "运行能在匹配完成事件后停止的报名提醒。",
+      "检查数据完整及范围正确后再将订阅者流程分支。"
+    ],
+    "source_refs": ["pricing", "entry", "condition", "stop-event"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle marketer",
+      "Email campaign operator",
+      "Event integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify the contact and define entry/reentry before adding messages.",
+        "zh": "添加消息前先确定联系人及进入／重入。",
+        "source_refs": ["entry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check missing variables, tag source, subscription scope and account timezone.",
+        "zh": "检查缺失变量、标签来源、订阅范围及账户时区。",
+        "source_refs": ["empty-filter", "tag-scope", "condition", "pause-step"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test a normal path and a matched stop event using a controlled address.",
+        "zh": "使用受控地址测试正常路径及匹配停止事件。",
+        "source_refs": ["stop-event"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Empty filter values can hold a contact outside both Yes and No branches.",
+        "zh": "空筛选值可让联系人停在 Yes 与 No 两分支之外。",
+        "source_refs": ["empty-filter"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Email-triggered tag filters do not also inspect CRM tags.",
+        "zh": "Email 触发的标签筛选不会同时检查 CRM 标签。",
+        "source_refs": ["tag-scope"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Pixel stop events depend on identifying the visitor as the contact.",
+        "zh": "像素停止事件依赖将访客识别为联系人。",
+        "source_refs": ["stop-event"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Free 500 subscribers/15,000 monthly emails, five flows. Displayed annual 500-contact cards: Standard $9.60/month equivalent, Pro $11.52. Volume-based offers are separate; exact checkout and tax unverified.",
+    "source_snapshot_zh": "Free 500 人／每月 15,000 封／五个流程。所显示年付 500 人卡片：Standard 每月等值 $9.60，Pro $11.52。按发送量报价独立，真实结算及税未核实。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/sendpulse",
+      "read_at": "2026-10-22T09:08:31.306Z",
+      "excerpt_sha256": "1fa9db3c303406a0fc1b2f5a0b86c5c2de4d0233846d92d35650ee112891006a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "SendPulse",
+      "title": "Pricing | SendPulse",
+      "url": "https://sendpulse.com/pricing",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "8b1de87825884c0bb0e337d686a1f0b3593a584cf36e2b55a95937a928a8b95c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Email pricing at redirected /pricing; Free/paid automation counts, annual 500-contact cards, per-email offer and separate product tabs."
+    },
+    {
+      "id": "entry",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Email service triggers | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/email-triggers",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "3b076adee9bf555be5100d4539caceff79b54264b7ca2161e7ae5d2390b0fcc5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Email/phone identifier, account-wide daily starts, list-entry sources and repeat-frequency controls."
+    },
+    {
+      "id": "empty-filter",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Filter element in Automation | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/automation-360-filter",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "b7f8b7ab55eda1dfd238554e49b511acfe3300034027fb76df69f0aa3d04f055",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Empty values become Stopped/Held rather than a Yes/No route, zero valid, async writes and case sensitivity."
+    },
+    {
+      "id": "tag-scope",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Filter element in Automation | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/automation-360-filter",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "c32dd7600826d40c078abd376a86b4252a5d73cb2e33f2b1813037d3abe6ac23",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Email versus CRM tag scope, assignment delay and filter behavior."
+    },
+    {
+      "id": "condition",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Condition element in Automation 360 | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/automation360-condition",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "cc4907027f5b58afb18fcf6c0c57b63a423197db4e67889a0f243c1ec41f3f2b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Paid behavioral conditions, observed delivery/open/click events and subscription-category/flow exceptions."
+    },
+    {
+      "id": "pause-step",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Pause element in Automation360 | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/pause-element",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "06ed6e357e99f8cabbf94a656d2b93f2ad8184b2b9a7b3ababf32a5c75aa25e1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Relative/calendar waits in account timezone and optional stop after selected date."
+    },
+    {
+      "id": "paused-flow",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Paused automations | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/pause",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "c6a1f63d2aa2ada7df2a4b39ec67c9eed49002c144c5f10308958d63411b1281",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Whole-flow pause blocks new starts while queued time advances; due contacts described as completed."
+    },
+    {
+      "id": "stop-event",
+      "type": "official_documentation",
+      "site": "SendPulse",
+      "title": "Stop a flow using an event | SendPulse",
+      "url": "https://sendpulse.com/knowledge-base/email-service/automation360/send-stop-series-event",
+      "read_at": "2026-10-22T10:53:33.728556Z",
+      "excerpt_sha256": "32b3c788a7198899e4344ca1e2c1c2ce4801f6fcf1553ebf6d21d0bc07ddbdee",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Custom/pixel stop conditions, email/phone matching, queue removal and cross-browser pixel limitations."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:53:33.728556Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["pricing", "entry", "condition", "stop-event"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry-example",
+        "title_en": "Give the reminder a stable contact and entry rule",
+        "title_zh": "为提醒确定联系人及入口规则",
+        "en": "An illustrative registration reminder can begin when a subscriber joins a selected mailing list. The Email trigger guide includes manual additions, API/integration additions and form signups. A start needs at least email or phone, and the account has a documented 100,000-contact daily total across flow starts, resetting in its timezone.\n\nRepeat-entry settings include every time, weekly, monthly or a custom interval. Decide whether a second registration should create a new reminder sequence. A repeat event is not automatically a new permission grant, and several entry sources can represent the same person.",
+        "zh": "例如报名提醒，可从订阅者加入指定邮件列表开始。Email 触发指南包括手动、API／集成及表单新增。入口至少需要 email 或 phone；账户所有流程入口合计每日 100,000 位联系人，并按账户时区重置。\n\n重复进入可选每次、每周、每月或自定义间隔。应决定第二次报名是否创建新提醒系列。重复事件不自动等于新许可，多种入口也可能代表同一人。",
+        "source_refs": ["entry"],
+        "evidence_type": "documented_with_editorial_registration_example"
+      },
+      {
+        "id": "filter-failure",
+        "title_en": "Missing data can stop a contact outside both branches",
+        "title_zh": "缺失数据可能让联系人停在两个分支之外",
+        "en": "The Filter guide says an empty checked variable can mark a contact Stopped, shown as Held in element statistics, rather than routing to Yes or No. Numeric zero is valid. Separate API writes can race, and an Any filter can still stop if one checked variable is empty.\n\nThe guide recommends allowing at least ten minutes for queued data to save and checking exact case. Tag filters also depend on the initiating tool: an Email-triggered flow checks mailing-list tags, not CRM tags. For the reminder, verify the required field is persisted before the branch. Do not diagnose every held contact as simply failing the business condition.",
+        "zh": "Filter 指南称，被检查变量为空时，联系人可能成为 Stopped，在元素统计中显示 Held，而非走 Yes 或 No。数值零有效。分开的 API 写入可能竞争，Any 筛选也可能因某变量为空而停止。\n\n指南建议为排队数据保存至少留十分钟，并检查大小写。标签筛选还取决于入口工具：Email 触发只查邮件列表标签，不查 CRM 标签。提醒示例应在分支前验证必需字段已保存，不能将所有停留都诊断为业务条件不满足。",
+        "source_refs": ["empty-filter", "tag-scope"],
+        "evidence_type": "documented_with_editorial_failure_guidance"
+      },
+      {
+        "id": "consent-condition",
+        "title_en": "An eligible contact can still skip the email element",
+        "title_zh": "符合流程条件也可能跳过邮件元素",
+        "en": "The paid Condition element tracks actions such as delivery, opens, clicks or a custom event, rather than merely comparing a stored field. The guide says unsubscribed contacts can pass non-email elements while skipping Email. With Launch for mailing list, fully unsubscribed contacts are excluded from the start; category/flow opt-outs can continue while skipping emails.\n\nFor an event reminder, inspect both participation and message eligibility. A contact visible in the journey is not proof that an email was sent. Keep the subscription scope intact during troubleshooting rather than resubscribing someone just to make a branch execute.",
+        "zh": "付费 Condition 元素跟踪投递、打开、点击或自定义事件，而非只比较存储字段。指南称退订者可通过非邮件元素，但跳过 Email。使用 Launch for mailing list 时，全部退订者不进入；分类／流程退订者可继续但跳过邮件。\n\n活动提醒应同时检查流程参与及消息资格。联系人出现在路径中，不代表邮件已发送。排障时应保留订阅范围，不能只为让分支执行而重新订阅。",
+        "source_refs": ["condition"],
+        "evidence_type": "documented_with_editorial_subscription_guidance"
+      },
+      {
+        "id": "timing",
+        "title_en": "A wait block is different from pausing the whole flow",
+        "title_zh": "等待块与暂停整个流程不同",
+        "en": "The Pause element can wait a duration, a calendar date or a recurring time window, all using the account timezone. A date without a supplied time receives midnight. It can stop progression after a selected date, useful for avoiding stale reminders.\n\nThe separate Paused automations article says queued time continues and due contacts are completed, while new starts are blocked. Its wording does not establish a universal catch-up replay of every missed message. Before a maintenance pause, inspect queued contacts and verify what resumption will do with representative dates. Do not equate a relative wait with an operational stop.",
+        "zh": "Pause 元素可等待相对时长、日历日期或周期时间窗口，全部使用账户时区。日期未提供时间时按午夜处理，也可在指定日期后停止推进，以避免过时提醒。\n\n独立的 Paused automations 文章称排队时间继续流逝，到触发时间的联系人会完成，同时阻止新入口。其表述不足以证明所有错过消息都会补发。维护暂停前需检查排队联系人，并以代表性日期验证恢复，不能将相对等待等同运行停用。",
+        "source_refs": ["pause-step", "paused-flow"],
+        "evidence_type": "documented_with_editorial_pause_boundary"
+      },
+      {
+        "id": "stop-condition",
+        "title_en": "Stop a reminder when its purpose disappears",
+        "title_zh": "提醒目的消失时应停止",
+        "en": "A stop event can remove a waiting contact from flow queues when the corresponding action occurs. For example, a confirmed registration should end reminders asking that person to register. A custom event must already be configured and carry the email or phone identifier. The starting event itself cannot also be selected as that flow’s stop event.\n\nPixel-based stopping requires matching a visitor to the contact. Another browser, private mode, cleared storage or another device can break that match according to the guide. Test the stop signal and inspect queue removal before relying on it to suppress redundant messages. An event received elsewhere is not proof that this contact was matched.",
+        "zh": "相应动作发生时，停止事件可将等待中的联系人移出流程队列。例如确认报名后，就该结束催促其报名的提醒。自定义事件须预先配置，并携带邮件或电话标识；同一流程不能把起始事件也选为停止事件。\n\n像素停止需要将访客匹配到联系人。指南称换浏览器、隐私模式、清除存储或换设备都可能破坏匹配。依赖它抑制多余消息前，应测试停止信号并检查移出队列。其他地方收到事件，不能证明此联系人已匹配。",
+        "source_refs": ["stop-event"],
+        "evidence_type": "documented_with_editorial_stop_example"
+      },
+      {
+        "id": "price",
+        "title_en": "Price the email service and flow capacity together",
+        "title_zh": "同时核算邮件服务及流程容量",
+        "en": "Current Email pricing lists Free for 500 subscribers and 15,000 monthly emails, with five flows, 50 elements per flow and one event. At the displayed annual 500-subscriber selection, Standard is $9.60/month equivalent and Pro $11.52; the separate 10,000-email offers show $48 and $57.60. These purchase bases should not be merged.\n\nStandard/Pro/Enterprise flow capacities are 10/50/unlimited and element capacities 70/150/unlimited. Enterprise requires at least 2,500 contacts. Annual prepayment and pay-as-you-go annual usage differ. Confirm the selected offer, tax and required elements; a Free canvas does not include every behavioral condition.",
+        "zh": "当前 Email 价格列出 Free：500 人、每月 15,000 封、五个流程、每流程 50 个元素及一个事件。所显示 500 人年付选项中，Standard 每月等值 $9.60，Pro $11.52；独立 10,000 封报价为 $48 和 $57.60。不能合并不同购买基准。\n\nStandard／Pro／Enterprise 的流程容量为 10／50／不限，元素为 70／150／不限；Enterprise 至少 2,500 人。全年预付与按量购买的全年使用不同。需确认所选报价、税及必需元素，Free 画布不包含所有行为条件。",
+        "source_refs": ["pricing", "condition"],
+        "evidence_type": "documented_pricing_conditions"
+      },
+      {
+        "id": "fit-boundaries",
+        "title_en": "Evaluate one complete email loop before adding channels",
+        "title_zh": "增加渠道前先评估完整邮件闭环",
+        "en": "SendPulse merits evaluation when an operator can define an entry identifier, complete data, subscription scope and an explicit stopping condition. The registration example needs all four before a reminder is dependable. The presence of CRM, SMS, chatbots or course tools in navigation does not establish that those products share the email plan’s allowance or permissions.\n\nUse a controlled address, one complete trigger-to-message path and one stop/failure case. Verify actual sender setup and quota behavior in the account. No account, API event, automation, delivery test, source license, UI-language coverage or self-hosting right was inspected here.",
+        "zh": "运营者能定义入口标识、完整数据、订阅范围及明确停止条件时，可评估 SendPulse。报名提醒要可靠，示例中的四项都需具备。导航出现 CRM、短信、机器人或课程工具，不代表它们共用邮件套餐额度或权限。\n\n应以受控地址检查一个完整触发到消息路径，再检查一个停止／失败情形。需在账户核对真实发送者设置及额度行为。本文未检查账户、API 事件、自动化、投递测试、源码许可、界面语言覆盖或自托管权利。",
+        "source_refs": ["entry", "condition", "stop-event", "pricing"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "SendPulse Email: Automation Data, Stop Events, Pauses and Pricing",
+    "title_zh": "SendPulse 邮件：自动化数据、停止事件、暂停及价格",
+    "description_en": "Understand SendPulse Email triggers, held filter contacts, subscription scope and flow capacity before building reminder automation.",
+    "description_zh": "构建提醒自动化前，了解 SendPulse Email 触发、筛选停留、订阅范围及流程容量。",
+    "primary_intent": "Evaluate SendPulse Email automation with complete data and reliable stopping conditions.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "The older paused-flow article has ambiguous due-contact completion wording; precise missed-message/catch-up behavior needs controlled account testing. Exact selected quote, taxes and cross-tool charges remain unverified.",
+      "zh": "较旧暂停文章对到期联系人完成的措辞有歧义，错过消息／补发细节需受控账户测试。具体报价、税及跨工具收费未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No campaign, event, pixel, integration or send was executed. Sender configuration, retry behavior, regional availability, UI languages, licensing and self-hosting rights need separate checks.",
+      "zh": "未执行活动、事件、像素、集成或发送。发送者配置、重试行为、地区可用性、界面语言、许可及自托管权利需另查。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "klaxoon-797c8ba5",
+  "name": "Klaxoon",
+  "website_url": "https://klaxoon.com/klaxoon-difference/",
+  "domain": "klaxoon.com",
+  "identity_domain": "klaxoon.com",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Klaxoon is a visual collaboration platform for facilitated workshops, idea organization and interactive activities. Its Board canvas can collect contributions and feed a reviewed action plan, while other activity types serve sessions and structured participation. The originally assigned product URL redirects to the current platform overview.\n\nKlaxoon is now presented within Wrike’s portfolio, but its subscription is not automatically a Wrike work-management license. This profile follows a workshop from participation settings through idea review, export and optional Wrike handoff, keeping facilitator rights, audience limits, AI action quotas and downstream permissions distinct.",
+  "description_zh": "Klaxoon 是可视协作平台，用于引导式工作坊、想法整理及互动活动。Board 画布可收集贡献并形成经复核的行动计划，其他活动类型用于会议和结构化参与。原分配产品 URL 会跳转至当前平台概览。\n\nKlaxoon 现归入 Wrike 产品组合，但其订阅不会自动成为 Wrike 工作管理许可证。本稿沿工作坊的参与设置、想法复核、导出及可选 Wrike 交接展开，区分主持权限、受众限额、AI 动作配额和下游权限。",
+  "core_features": [
+    {
+      "name_en": "Facilitated Board collaboration",
+      "name_zh": "引导式 Board 协作",
+      "explanation_en": "Set interaction and access rules before inviting a workshop audience.",
+      "explanation_zh": "邀请工作坊受众前先设置互动及访问规则。",
+      "explanation_scope": "product_specific",
+      "source_ref": "board-sharing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reviewed idea-to-work handoff",
+      "name_zh": "经复核的想法交接",
+      "explanation_en": "Inspect an AI-proposed structure before creating work in a connected Wrike Space.",
+      "explanation_zh": "向已连接 Wrike Space 创建工作前复核 AI 提议结构。",
+      "explanation_scope": "product_specific",
+      "source_ref": "wrike-conversion",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Visual and structured exports",
+      "name_zh": "可视及结构化导出",
+      "explanation_en": "A board snapshot, idea spreadsheet and KLX activity file serve different purposes.",
+      "explanation_zh": "看板快照、想法电子表格及 KLX 活动文件用途不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "klx-export",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Facilitate one retrospective, inspect a generated action structure, then choose a structured export or reviewed Wrike handoff."
+    ],
+    "zh": [
+      "引导一次回顾，检查生成行动结构，再选择结构化导出或经复核的 Wrike 交接。"
+    ],
+    "source_refs": ["create-board", "board-sharing", "wrike-conversion"],
+    "basis": "Proposed evaluation only, not measured customer adoption."
+  },
+  "technical_details": {
+    "Boundary": {
+      "en": "Visual collaboration and Wrike execution remain distinct licenses/access models; no full platform migration tested.",
+      "zh": "可视协作与 Wrike 执行保持不同许可／访问模型，未测试完整平台迁移。",
+      "source_ref": "wrike-conversion",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Workshop facilitator",
+      "Retrospective organizer",
+      "Team member reviewing ideas before task creation"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm host, audience and activity limits; create a non-sensitive Board and inspect participant settings.",
+        "zh": "确认主持、受众和活动限额，建立非敏感 Board 并检查参与设置。",
+        "source_refs": ["create-board", "pricing", "board-sharing"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check identity/export settings and review generated outputs before any Wrike import or assistant write.",
+        "zh": "Wrike 导入或助手写操作前，核对身份／导出设置并复核生成结果。",
+        "source_refs": ["identity-sharing", "mcp", "wrike-conversion"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documentation_read_not_executed",
+    "items": [],
+    "source_ref": "wrike-conversion",
+    "scope": "Wrike embedding,widgetdisplay,revieweditemcreation and MCPboardwrites have differentconditions; no integration installed."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Identity hiding needs duplication to reverse; Wrike permissions are not synchronized; cross-datacenter board migration is unsupported.",
+        "zh": "反转身份隐藏需复制活动，Wrike 权限不同步，不支持跨数据中心 Board 迁移。",
+        "source_refs": ["identity-sharing", "wrike-conversion"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "ui_locales_not_verified",
+    "items": [],
+    "scope": "Translation of board text is documented; complete UI locale coverage not established."
+  },
+  "license": {
+    "status": "proprietary_hosted_service_terms_read",
+    "is_open_source": false,
+    "url": "https://www.wrike.com/legal/enterprise-wmsa/",
+    "source_ref": "enterprise-terms",
+    "scope": "Official Klaxoon price page links these terms; vendor retains technology rights. Enterprisehostingoptions do not grant open source."
+  },
+  "pricing": {
+    "status": "official_display_and_scope_checked",
+    "price_type": "limited_free_trial_and_paid_host_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Starter annual-billing display is $24.90/host/month; Enterprise requires quote, Free labeled limited trial access. Monthly amount, ISO currency/checkout, taxes and purchased AI quota unverified.",
+    "source_snapshot_zh": "Starter 年结显示每主持人每月 $24.90，Enterprise 需询价，Free 标为有限试用访问。月付金额、ISO 币种／结账、税及购买 AI 配额未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/klaxoon",
+      "read_at": "2026-10-22T08:50:06.879Z",
+      "excerpt_sha256": "06d717f37b8a467042d13f2555def31823dbf1da9f0d446851c3e6dd1451e1fd",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "klaxoon.com",
+      "title": "The collaborative platform designed for companies | Klaxoon by Wrike",
+      "url": "https://klaxoon.com/",
+      "read_at": "2026-10-22T13:04:38.551216Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "16e2e12d1fcf7a31d47178378cb0d649a0a40c6788a0370bb807bd8676895e79",
+      "research_notes_en": "Read current KlaxoonbyWrike portfolio/whiteboard scope and Wrike taskhandoff. Do not attribute WrikeCopilot/agents or entire projectplatform to standaloneKlaxoon."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "klaxoon.com",
+      "title": "Plans and pricing | Klaxoon by Wrike",
+      "url": "https://klaxoon.com/solutions-pricing/",
+      "read_at": "2026-10-22T13:04:38.551874Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f4d2ba339675559eb9c5a705c77aea30a300f9be534a60aa2d0db63627f0cef3",
+      "research_notes_en": "Read full actual publictable/FAQ:hostvsmonthlyAudiencevsactivitycontributors,Free trial wording,annual24.90Starter up to4Pros,Enterprise5+,storage/exportconditions,concurrency/Sessionlimits,AIactionquotas and Wrikenotincluded."
+    },
+    {
+      "id": "board-sharing",
+      "type": "official_documentation",
+      "site": "help.klaxoon.com",
+      "title": "How to Share a Klaxoon Board – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/32662329152530-How-to-Share-a-Klaxoon-Board",
+      "read_at": "2026-10-22T13:04:38.552339Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "085ee2bbb26b5b45b0da330519f807229deb136d753626cb8c328aa73a3bdf85",
+      "research_notes_en": "Read defaultfreeinteraction vs controlledplacement,participantfeature controls,team/open/nickname sharing and environmentredirect."
+    },
+    {
+      "id": "identity-sharing",
+      "type": "official_documentation",
+      "site": "help.klaxoon.com",
+      "title": "How Can I Share My Activity? – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/30958259304466-How-Can-I-Share-My-Activity",
+      "read_at": "2026-10-22T13:04:38.552374Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "684dbe817a28d9c09d4ccd458df6655fceda854d9a4def3c8b34d6cc3d8c478f",
+      "research_notes_en": "Read noaccountnickname and hiddenidentityduringactivity/export; hidingcannotbeundone withoutduplicate. No verifiedidentityguarantee."
+    },
+    {
+      "id": "board-export",
+      "type": "official_documentation",
+      "site": "help.klaxoon.com",
+      "title": "Export Content From a Klaxoon Board – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/32682057422354-Export-Content-From-a-Klaxoon-Board",
+      "read_at": "2026-10-22T13:04:38.552401Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d9dedb43b39cfbd96121bf3622d0db6f05d15c351f86dfed5320e8d666ea91f2",
+      "research_notes_en": "Read visualPDF/image vs idea spreadsheetZIP/XLSX/CSV includingauthor/email/categories/likes. Not proof of fullrestorableaccount."
+    },
+    {
+      "id": "wrike-widget",
+      "type": "official_integration",
+      "site": "help.klaxoon.com",
+      "title": "How Does the Wrike Widget Work? – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/30958328377362-How-Does-the-Wrike-Widget-Work",
+      "read_at": "2026-10-22T13:04:38.552425Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "63a59169e64e614cfae240e4160c66b0b044028e740046ab8242deb3af220117",
+      "research_notes_en": "Read PRO/integration prerequisite,eachparticipantWrikecredentials,insufficientrightsno display,privatebrowse/Teams/Zoomlimitations."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "developers.klaxoon.com",
+      "title": "Introduction to Klaxoon MCP",
+      "url": "https://developers.klaxoon.com/klaxoon/docs/introduction-to-klaxoon-mcp/",
+      "read_at": "2026-10-22T13:04:38.552818Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "965b6de4c3ef9499a5f342f41556cd9bf283a3516e559b6c0b7b95678a3ccf7a",
+      "research_notes_en": "Read paid plan marketing separately; officialdeveloperpage permits existingrightsread/write limitedtext/stickies/shapes/connectors,thirdpartyAPI toggle and OAuthredirectconditions."
+    },
+    {
+      "id": "ai-scope",
+      "type": "official_documentation",
+      "site": "klaxoon.com",
+      "title": "AI features to boost your productivity | Klaxoon by Wrike",
+      "url": "https://klaxoon.com/ai-features/",
+      "read_at": "2026-10-22T13:04:38.552876Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "062179743a2a0b61f7474953fef9c1934142dc968b3858baa72a0acb28d4184b",
+      "research_notes_en": "Read KlaxoonAIsummary/classify/translate/actionplan/template vs Wrikeagents/Copilot; Essential/Elite metering and planquota,notunlimitedAI."
+    },
+    {
+      "id": "eshop-terms",
+      "type": "official_documentation",
+      "site": "www.wrike.com",
+      "title": "Wrike Terms & Conditions",
+      "url": "https://www.wrike.com/security/terms/",
+      "read_at": "2026-10-22T13:04:38.553159Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e8351d7fb5c3e9d71156c5b8e2f4f0cc89d498a522d05b0522fa731928dc2745",
+      "research_notes_en": "Officialpricepage eShopterms links Wrike securityterms. Read nonrefund/cancelrenewal,possibleimmediatedeactivation/limitedexport and pre-exitexport duty. No universalrecoverywindow inferred."
+    },
+    {
+      "id": "create-board",
+      "type": "official_documentation",
+      "site": "help.klaxoon.com",
+      "title": "Create a Board – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/32662240968850-Create-a-Board",
+      "read_at": "2026-10-22T13:04:38.554092Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b58df6e3546fff4cf489e599081ea0feccacbbd09865e13046590234f6db696b",
+      "research_notes_en": "Read +NEW→Board,name250characters,optionalimage,create and canvasentry."
+    },
+    {
+      "id": "klx-export",
+      "type": "official_documentation",
+      "site": "help.klaxoon.com",
+      "title": "Exporting activities – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/30958710929938-Exporting-activities",
+      "read_at": "2026-10-22T13:04:38.554120Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f7529806d19d61f78d26e14b01da3271345fd4fc09d3e565c8c1c20b63e642e6",
+      "research_notes_en": "Read PROonlyKLXactivityexport/reimportanotheraccount,selectedSession/Missionmedia scope; notfulltenantbackup."
+    },
+    {
+      "id": "wrike-conversion",
+      "type": "official_integration",
+      "site": "help.klaxoon.com",
+      "title": "Wrike & Klaxoon integration: new capabilities & AI features – Klaxoon",
+      "url": "https://help.klaxoon.com/hc/en-us/articles/30958306947986-Wrike-Klaxoon-integration-new-capabilities-AI-features",
+      "read_at": "2026-10-22T13:04:38.554154Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1cfaf9f0ecc4ea4c04292fe1290494071f9bf6478edf97a2b5b7ed2ac001ba9a",
+      "research_notes_en": "Read adminenabledSpaceTools board,AIreviewthenconfirmcreatesWrikeitems,complexcontentlimits,no permission/usersync,nocrossdatacentermigration and Wrikefulluser/adminAIrequirements."
+    },
+    {
+      "id": "enterprise-terms",
+      "type": "official_license",
+      "site": "www.wrike.com",
+      "title": "Wrike Terms & Conditions",
+      "url": "https://www.wrike.com/legal/enterprise-wmsa/",
+      "read_at": "2026-10-22T13:04:38.554625Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a733f63fd81fe46105461218ca1ba8e93207dee7eb6d638984290deffd4f499d",
+      "research_notes_en": "OfficialTermsSaleslinkread:OrderFormscope,12monthrenewal/30daynoticeunlessdifferent,no reduction/nonrefund,immediatedeactivationrisk,30dayfeepaidcopyrequest and proprietarytechnology rights."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:04:38.554625Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "create-board",
+    "pricing",
+    "wrike-conversion"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "workshop-start",
+        "title_en": "Prepare the audience before collecting ideas",
+        "title_zh": "收集想法前先准备受众",
+        "en": "A proposed retrospective begins with +NEW → Board, a descriptive name and a few clearly separated prompts. The documented name limit is 250 characters; a background image is optional. Treat the infinite canvas as visual space, not unlimited licensed participation or storage. Choose the workshop purpose and who will facilitate it before relying on AI-generated structure or opening the activity widely. This example was not executed.",
+        "zh": "假设进行回顾，可从 +NEW → Board 开始，填写描述性名称并安排几个清晰分开的提示。文档名称上限为250字符，背景图片可选。无限画布指可视空间，不代表无限许可参与或存储。应先明确工作坊目的及主持人，再依赖 AI 结构或广泛开放活动。本例未执行。",
+        "source_refs": ["create-board"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "interaction-and-identity",
+        "title_en": "Interaction, access and participant identity are separate settings",
+        "title_zh": "互动、访问及参与身份是不同设置",
+        "en": "Board’s default free-interaction mode allows participants to work with other people’s ideas and objects. Controlled mode reserves placement of ideas for the facilitator; it is not a blanket read-only claim. Participant settings separately govern views and features such as export, import and presenting.\n\nOpen-link and nickname participation can avoid account creation. A nickname is not a verified real-world identity. Hiding identities removes names/photos from the activity and exported results, and the current guide says that choice cannot be reversed on the same activity: duplicate it to change the setting. Inspect the intended combination before inviting confidential feedback, and do not confuse open participation with a private audience.",
+        "zh": "Board 默认的自由互动模式允许参与者操作他人想法及对象；受控模式把想法位置控制留给主持人，并不等于全部只读。参与者设置另行控制视图，以及导出、导入、演示等功能。\n\n开放链接和昵称参与可避免创建账户，昵称不是经验证的真实身份。隐藏身份会从活动及导出结果中移除姓名／照片，当前指南称同一活动不能反转这一选择，需复制活动后变更。邀请保密反馈前应检查目标组合，也不能把开放参与视为私密受众。",
+        "source_refs": ["board-sharing", "identity-sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-to-wrike",
+        "title_en": "Review the proposed structure before creating downstream work",
+        "title_zh": "创建下游工作前先复核建议结构",
+        "en": "Klaxoon AI can summarize, group and translate ideas or generate a board framework. A proposed workshop can use this as a draft, then check whether an outlying concern disappeared during grouping. Its Essential/Elite action model is metered; included AI does not mean unlimited use or unlimited template generation.\n\nThe documented Wrike conversion asks you to suggest a structure, review/reorder/edit it and confirm import to a chosen Space. That creates Wrike items, so check destination access and the actual owner/task fields first. Images or drawings may not be fully supported. Some features are beta; connected accounts, a Wrike full-user license and administrator AI approval are documented requirements. It is not proof that a visual idea became an approved, correctly permissioned commitment.",
+        "zh": "Klaxoon AI 可摘要、分组、翻译想法或生成看板框架。拟议工作坊可把它作为草稿，再核查分组是否遗漏少数意见。Essential／Elite 动作按用量计量，包含 AI 不代表无限使用或无限生成模板。\n\nWrike 转换文档要求先建议结构，复核／重排／编辑，再确认导入选定 Space。该动作会创建 Wrike 项，因此需先核对目标访问和真实负责人／任务字段；图片或绘图可能不完全支持。部分功能为 beta，文档要求账户连接、Wrike 完整用户许可及管理员 AI 批准。这不证明可视想法已成为经批准、权限正确的承诺。",
+        "source_refs": ["ai-scope", "wrike-conversion"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "connected-views",
+        "title_en": "A Wrike widget is a credentialed view, not shared access",
+        "title_zh": "Wrike 小组件是凭证视图，不是共享授权",
+        "en": "The widget displays a Wrike dashboard inside a Board for PRO users with the integration enabled. Each participant’s Wrike credentials determine what appears; insufficient rights can leave it undisplayed. Private browsing is unsupported, and the widget guide excludes Teams and Zoom while allowing Google Meet. That is a widget constraint, not a statement that all Klaxoon usage is incompatible with those products.\n\nThe integration guide explicitly says users and sharing permissions do not synchronize between Klaxoon and Wrike. Boards added as Wrike Space tools also sit at Space scope rather than being tied to a single task. Cross-datacenter board migration is unsupported. Plan both audiences and data locations before relying on an embedded view.",
+        "zh": "对已启用集成的 PRO 用户，小组件可在 Board 内呈现 Wrike 仪表盘。每名参与者的 Wrike 凭证决定显示内容，权限不足可能不显示。指南不支持私密浏览，并排除 Teams、Zoom，允许 Google Meet。这是小组件限制，不等于全部 Klaxoon 使用与这些产品不兼容。\n\n集成指南明确称，Klaxoon 与 Wrike 不同步用户及共享权限。作为 Wrike Space 工具加入的 Board 也属于 Space 范围，不绑定单一任务；跨数据中心看板迁移不支持。依赖嵌入视图前应规划两边受众及数据位置。",
+        "source_refs": ["wrike-widget", "wrike-conversion"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp-writes",
+        "title_en": "An assistant can change supported Board objects",
+        "title_zh": "助手可以修改受支持 Board 对象",
+        "en": "Klaxoon MCP is a read/write connection to whiteboards, limited in the developer introduction to text, sticky notes, shapes and connectors. It operates within the connected user’s existing rights. A summary request and a bulk rearrangement therefore have different effects, even though both use natural language. Inspect the targeted board and intended edits before accepting generated changes.\n\nPaid-plan availability is stated on pricing; organization third-party API access must be enabled, and OAuth/client callback configuration can block a connection. These are real setup conditions, not evidence that every assistant or every board object works. MCP output reuse in another tool does not prove an automatic synchronized task link. No connector, OAuth flow, assistant read or write was executed.",
+        "zh": "开发者简介将 Klaxoon MCP 定义为白板读写连接，支持对象限于文字、便签、形状及连接线，并按连接用户既有权限操作。因此，摘要请求与批量重排即使都用自然语言，效果也不同。接受生成修改前应检查目标看板及拟改内容。\n\n价格页说明付费套餐可用；组织需启用第三方 API 访问，OAuth／客户端回调配置也可能阻塞连接。这些是真实设置条件，不证明每种助手或每种对象都可用。把 MCP 输出复用到其他工具，也不证明自动同步任务链接。本研究未执行连接器、OAuth、助手读写。",
+        "source_refs": ["mcp", "pricing"],
+        "evidence_type": "documented_with_editorial_evaluation"
+      },
+      {
+        "id": "export-purpose",
+        "title_en": "Choose an export for the next use of the data",
+        "title_zh": "按数据下一步用途选择导出",
+        "en": "Image/PDF exports are visual snapshots. ZIP, Excel and CSV export ideas as rows with fields such as content, category, likes, creator and file references; inspect whether personal identifiers are present before sharing the file. Participant feature controls and plan entitlement still matter.\n\nA separate PRO activity export produces a KLX file that can be reimported into another account, covering the selected activities/media described by that guide. This is a more specific portability mechanism than a screenshot, but it does not establish a full organization backup with original links, permissions and all history. Verify one sample’s contents and reimport before depending on it for exit or recovery. No export/reimport was tested.",
+        "zh": "图片／PDF 是可视快照；ZIP、Excel、CSV 把想法导出为行，字段包括内容、类别、点赞、创建者和文件引用。共享文件前需检查个人标识，参与者功能控制和套餐资格仍适用。\n\n独立 PRO 活动导出生成可导入另一账户的 KLX 文件，覆盖该指南所述选定活动／媒体。它比截图更具体地提供可迁移机制，但不确立能完整备份组织原链接、权限及全部历史。依赖其退出或恢复前应检查一个样本及再导入。本研究未测试导出／再导入。",
+        "source_refs": ["board-export", "klx-export"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-economics",
+        "title_en": "Hosts, monthly audience and activity contributors have different limits",
+        "title_zh": "主持人、月度受众及活动贡献者限额不同",
+        "en": "The displayed Starter price is $24.90 per host/month billed annually, for one to four PRO hosts; monthly billing is mentioned but its amount was not established. Enterprise starts at five PRO users and requires a quote. Free is described as limited trial access with one open activity and five contributors per activity, so this research does not certify permanent free entitlement. Starter lists twenty contributors per activity and 100 unique monthly Audience contributors. Enterprise’s unlimited participation still has a 1,000 concurrent-user condition and separate Session limits; do not treat every number as simultaneous seats.\n\nWrike is not automatically included in Klaxoon Enterprise. AI quotas, add-ons, actual currency/taxes, region and a bundle need confirmation in the purchased offer. The comparison’s Session wording is not fully consistent with its headline limit; obtain the intended event’s exact capacity.",
+        "zh": "Starter 显示价格为每主持人每月 $24.90、按年结算，适合一至四名 PRO 主持人；页面提到月付，但未确立月付金额。Enterprise 从五名 PRO 起，需询价。Free 描述为有限试用访问，最多一个开放活动、每活动五名贡献者，因此本研究不认证永久免费资格。Starter 列出每活动二十贡献者，以及每月100名不同的 Audience 贡献者。Enterprise 的无限参与仍受1,000并发用户条件及独立 Session 限制，不能把全部数值当作同时席位。\n\nKlaxoon Enterprise 不自动包含 Wrike。AI 配额、附加项、实际币种／税、地区及捆绑需按购买方案确认。对比表的 Session 文字与标题限制不完全一致，目标活动准确容量需询明。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "service-terms",
+        "title_en": "Select the actual contract and export before ending access",
+        "title_zh": "核对实际合同，并在终止访问前导出",
+        "en": "The price page links separate eShop and enterprise terms hosted by Wrike. eShop terms warn that cancellation can immediately deactivate the account or limit export, with no credit for unused periods except where law requires. Enterprise terms generally renew for twelve months with thirty-day notice unless the Order Form differs; a copy requested within thirty days after termination can carry an additional fee. Neither is a promise of continued editing or a free recovery window.\n\nVendor technology rights remain proprietary; self-hosted or dedicated hosting mentioned as an enterprise option is not an open-source license. Confirm the specific service, agreement, region and AI processing terms before operational use. Public marketing compliance/certification claims were not independently audited. No account, workshop, invitation, AI action, downstream task, payment or cancellation was performed.",
+        "zh": "价格页分别链接 Wrike 托管的 eShop 和企业条款。eShop 条款提示取消可立即停用账户或限制导出，除法律要求外，不为未用期间提供抵扣。企业条款通常按十二个月续订，提前三十天通知，除非订单另约；终止后三十天内请求副本可能另收费。两者均不承诺继续编辑或免费恢复窗口。\n\n厂商技术权利保持专有，企业选项中的自托管或专用托管不等于开源许可证。运营使用前应确认具体服务、合同、地区及 AI 处理条款。营销中的合规／认证主张未独立审计。本研究未执行账户、工作坊、邀请、AI 动作、下游任务、付款或取消。",
+        "source_refs": ["eshop-terms", "enterprise-terms", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Klaxoon: Workshop Permissions, Wrike Handoff and Host Pricing",
+    "title_zh": "Klaxoon：工作坊权限、Wrike 交接及主持人定价",
+    "description_en": "Assess Board participation, irreversible identity hiding, AI draft review, KLX export, scoped MCP writes and separate Wrike access.",
+    "description_zh": "评估 Board 参与、不可直接反转的身份隐藏、AI 草稿复核、KLX 导出、有限 MCP 写操作及独立 Wrike 访问。",
+    "primary_intent": "Evaluate a workshop-to-action workflow in Klaxoon.",
+    "secondary_questions": [
+      "Does Klaxoon Enterprise include Wrike?",
+      "How do participant identity and export settings affect a workshop?"
+    ],
+    "query_basis": "Editorial questions; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No registration, Board/activity interaction, hiddenidentitysetting, export/KLX reimport, AI quality, MCP/OAuth, Wrike connection/import, purchase or cancellation tested.",
+      "zh": "未测试注册、Board／活动互动、身份隐藏设置、导出／KLX 再导入、AI 质量、MCP／OAuth、Wrike 连接／导入、购买或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Permanent Free entitlement, exact monthly/currency/tax quote, Audience counting rules, Session/concurrency capacity differences, AI action allotment/overage and checkout unverified.",
+      "zh": "永久 Free 资格、准确月付／币种／税报价、Audience 计数规则、Session／并发容量差异、AI 动作分配／超额及结账未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Full restorable backup, deletion retention, contracted selfhosting/residency, AI provider/training/retention, administrator implementation and offline/mobile parity not established.",
+      "zh": "完整可恢复备份、删除保留、合同自托管／数据地区、AI 供应商／训练／保留、管理员实现及离线／移动一致性未确立。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

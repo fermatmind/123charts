@@ -1,0 +1,443 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "airbyte-46abe2cb",
+  "name": "Airbyte",
+  "website_url": "https://airbyte.com/",
+  "domain": "airbyte.com",
+  "identity_domain": "airbyte.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Airbyte provides data replication from source systems into warehouses, lakes, databases and supported operational destinations. A connection joins a configured source and destination, selects streams and fields, and defines how data is read and written. The old airbyte.io website redirects to airbyte.com.\n\nCore can be self-hosted, managed plans have distinct volume or capacity pricing, and Enterprise Flex separates a customer-side data plane from managed orchestration. Airbyte also has an Agents/context product area; replication support for a connector does not by itself establish real-time agent read/write support or commercial parity.",
+  "description_zh": "Airbyte 将源系统数据复制到仓库、数据湖、数据库及受支持的业务目标。Connection 关联配置好的源与目标，选择数据流和字段，并定义读取、写入方式。旧官网 airbyte.io 已跳转 airbyte.com。\n\nCore 可自托管，托管套餐区分数据量或容量计费，Enterprise Flex 则将客户侧数据层与托管编排分开。Airbyte 另有 Agents／上下文产品领域；连接器支持复制，不等于已确认实时 Agent 读写或各商业版本权限相同。",
+  "core_features": [
+    {
+      "name_en": "Stream-based connections",
+      "name_zh": "按数据流配置连接",
+      "explanation_en": "Select source streams, fields, destination and schedule for a connection.",
+      "explanation_zh": "为连接选择源数据流、字段、目标与调度。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connection",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Read/write sync modes",
+      "name_zh": "读写同步模式",
+      "explanation_en": "Combine incremental or full reads with supported append/overwrite/deduped writes.",
+      "explanation_zh": "将增量或全量读取与受支持的追加、覆盖或去重写入组合。",
+      "explanation_scope": "product_specific",
+      "source_ref": "modes",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Log-based CDC",
+      "name_zh": "基于日志的 CDC",
+      "explanation_en": "Snapshot and subsequently consume supported database change logs on sync intervals.",
+      "explanation_zh": "先建立快照，再按同步间隔消费受支持数据库变更日志。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cdc-guide",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Activation reject handling",
+      "name_zh": "业务目标拒绝记录处理",
+      "explanation_en": "Inspect rejected-record counts and optionally write rejects to configured S3 storage.",
+      "explanation_zh": "检查拒绝记录计数，并可写入配置好的 S3 存储。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rejects",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Replicate a selected order stream into an analytical destination.",
+      "Move curated warehouse data into a supported activation destination and reconcile rejects."
+    ],
+    "zh": [
+      "把所选订单数据流复制到分析目标。",
+      "将整理后的仓库数据发送到受支持业务目标，并核对拒绝记录。"
+    ],
+    "source_refs": ["connection", "rejects"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data engineer",
+      "Analytics platform maintainer",
+      "Self-managed Kubernetes operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "docs"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose managed volume/capacity pricing or a self-hosted Core deployment.",
+        "zh": "选择托管数据量／容量套餐，或自托管 Core 部署。",
+        "source_refs": ["pricing", "deploy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure source and destination, select one stream and verify its read/write mode.",
+        "zh": "配置源和目标，选择一个数据流，核对读写模式。",
+        "source_refs": ["connection", "modes"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test insert, update, applicable delete and rejected data with destination reconciliation.",
+        "zh": "测试插入、更新、适用的删除及拒绝数据，并对账目标。",
+        "source_refs": ["dedupe", "cdc-guide", "rejects"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Incremental cursor changes are essential; an unchanged cursor can hide an update.",
+        "zh": "增量游标变化很重要，游标不变可能导致漏掉更新。",
+        "source_refs": ["dedupe"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Successful activation syncs can still contain rejected records.",
+        "zh": "业务激活同步成功仍可能包含拒绝记录。",
+        "source_refs": ["rejects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": null,
+    "classification": "ELv2_restrictions_for_Core_and_component_specific_licenses",
+    "name": "Elastic License 2.0; component-specific license review required",
+    "url": "https://docs.airbyte.com/community/licenses/license-faq",
+    "source_ref": "license"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_self_hosted_and_volume_or_capacity_paid_plans",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:20:20.519355Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Standard/Plus source-type credits; Pro/Enterprise Flex dedicated Data Worker capacity."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/airbyte-io",
+      "read_at": "2026-10-22T08:37:07.865Z",
+      "excerpt_sha256": "5f7f7c8b7012020cbff9f0e8c0b6d587b990642fefc09c431d320f0fedb93cff",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Airbyte Docs",
+      "url": "https://docs.airbyte.com/",
+      "read_at": "2026-10-22T10:20:20.519355Z",
+      "excerpt_sha256": "ea367609c8ba0582c82b7017a05868e8fd0fea609cd56b7c7bd6ebb045b37115",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Data Replication and Agents are distinct documented areas; no blanket parity inferred."
+    },
+    {
+      "id": "modes",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Sync Modes | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/using-airbyte/core-concepts/sync-modes/",
+      "read_at": "2026-10-22T10:20:23.472220Z",
+      "excerpt_sha256": "eb0ec2ddbcf756290086d6af4a4be3f644dfc28dffb4315e5b74916c6708b55a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Source read mode and destination write mode combine only when supported by both connectors."
+    },
+    {
+      "id": "dedupe",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Incremental Sync - Append + Deduped | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/using-airbyte/core-concepts/sync-modes/incremental-append-deduped",
+      "read_at": "2026-10-22T10:20:44.985716Z",
+      "excerpt_sha256": "eaf8484cc485308d794b8ca8f2979b2c6686c50445d1b33a4b84fa0367eb3cdf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cursor/primary-key behavior, inclusive at-least-once delivery and unchanged-cursor limitation reviewed."
+    },
+    {
+      "id": "connection",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Add a connection | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/move-data/add-connection",
+      "read_at": "2026-10-22T10:20:50.951394Z",
+      "excerpt_sha256": "758077f132726d5ca75eddd621f77f6d6c8e7cad251cf6fe7d049e7e976c5cfc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Source/destination selection, stream config and stricter activation-destination schema reviewed."
+    },
+    {
+      "id": "cdc-guide",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Change Data Capture (CDC) | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/understanding-airbyte/cdc",
+      "read_at": "2026-10-22T10:22:02.135128Z",
+      "excerpt_sha256": "aa520daec7b07279772db351e539e89b669e3a01e35d3240ed77b3dbae120782",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CDC snapshots, interval-based log consumption, primary keys and database-specific limits read."
+    },
+    {
+      "id": "rejects",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Rejected records | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/move-data/rejected-records",
+      "read_at": "2026-10-22T10:21:59.003037Z",
+      "excerpt_sha256": "e84d2f71b43626cc8d0105f948fc30b4b6eb7c6848fdac91b83e163157a3f2f7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Activation sync can succeed while records are rejected; optional S3 rejects and repair path read."
+    },
+    {
+      "id": "cloud-cost",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Manage billing and credits | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/cloud/managing-airbyte-cloud/manage-credits",
+      "read_at": "2026-10-22T10:20:29.465086Z",
+      "excerpt_sha256": "7d8e41fd41924adb932c9bb735db52c81eb28f21b7f13b80c67ee3e53ca174f1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Rows versus GB credit rules, overage continuation and trial cap read."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Deploying Airbyte | Airbyte Docs",
+      "url": "https://docs.airbyte.com/platform/deploying-airbyte",
+      "read_at": "2026-10-22T10:20:54.075444Z",
+      "excerpt_sha256": "df99414bc2955e64e0f57fb3bfa3179f8e13cdf785a2e85318b0b8c4aba0f4d8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Kubernetes/Helm deployment, storage/secrets integrations and upgrade duties read."
+    },
+    {
+      "id": "migration",
+      "type": "official_documentation",
+      "site": "Airbyte",
+      "title": "Data Movement for Analytics and AI Agents",
+      "url": "https://airbyte.com/",
+      "read_at": "2026-10-22T10:19:42.133198Z",
+      "excerpt_sha256": "2b7d3b611cd6f5a9fd676b3787cac1bc3ec3e90051a187a4cdce97a9ea48f4c8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Requested https://airbyte.io/ and observed explicit redirect to https://airbyte.com/; canonical identity updated without changing slug."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Airbyte",
+      "title": "Airbyte Pricing | Open-Source Data Integration & AI Context",
+      "url": "https://airbyte.com/pricing",
+      "read_at": "2026-10-22T10:19:45.587404Z",
+      "excerpt_sha256": "6fac8826a0fc8d865d7a7ca30adfaaf9f80a14bece94a09655e1d00123abc659",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Standard/Plus credit pricing distinguished from Pro/Enterprise Flex capacity quotes and free self-hosted Core."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Airbyte",
+      "title": "License FAQ | Airbyte Docs",
+      "url": "https://docs.airbyte.com/community/licenses/license-faq",
+      "read_at": "2026-10-22T10:20:42.113418Z",
+      "excerpt_sha256": "f25885de4e5d743ca793920d91c9901b0359491a0f75eef6b1917f4504257bdc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ELv2 use and managed-service/license-key/notice restrictions reviewed; no blanket permissive open-source entitlement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:22:02.135128Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["docs", "connection", "pricing", "migration"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Define one connection and its streams before scaling",
+        "title_zh": "扩展前先定义一个连接及其数据流",
+        "en": "A source and destination must be configured before they can form a connection. Airbyte discovers the source schema, then the user selects streams, fields, sync modes, keys and scheduling. ELT destinations permit relatively flexible tables, while activation destinations have pre-existing required fields and insertion rules. For an evaluation, choose a single orders stream, a test destination namespace and an owner for schema changes. A catalog entry is insufficient evidence that your database version, account permission or destination write mode is supported.",
+        "zh": "源与目标需先配置，才能组成连接。Airbyte 发现源 schema 后，使用方选择数据流、字段、同步模式、键及调度。ELT 目标的表结构较灵活，业务激活目标则有预先定义的必填字段与写入规则。评估时可先选一个 orders 数据流、测试目标 namespace，并指定 schema 变更负责人。目录中有连接器，不能证明数据库版本、账户权限或目标写入模式一定支持。",
+        "source_refs": ["connection"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "modes",
+        "title_en": "Incremental describes reading; append and overwrite describe writing",
+        "title_zh": "增量描述读取，追加与覆盖描述写入",
+        "en": "The first half of a sync mode determines whether Airbyte reads the full source or a delta. The second half controls whether the destination appends, replaces existing data or produces a de-duplicated result. The first incremental run still needs the initial data set, and mode availability depends on the source/destination pair. For a proposed orders evaluation, compare an initial load with one inserted order and one changed order. Confirm which rows appear in the analytical table, rather than equating “sync successful” with the reporting semantics you intended.",
+        "zh": "同步模式前半部分决定读取全量还是变化量，后半部分决定目标追加、替换已有数据或生成去重结果。第一次增量运行仍需初始数据集，模式可用性取决于源与目标组合。以订单评估为例，应比较首次加载、插入一条订单及更新一条订单后的结果，检查分析表具体出现哪些行，而不是把“同步成功”等同预期报表语义。",
+        "source_refs": ["modes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cursor",
+        "title_en": "Deduplication requires meaningful keys and change tracking",
+        "title_zh": "去重需要有效键及变化跟踪",
+        "en": "Incremental Append + Deduped uses a primary key and cursor to identify the latest result. With order_id as key and updated_at as cursor, a changed amount should replace the prior final-table value when the source emits that change. The guide warns that updates without advancing a cursor can be missed, and inclusive cursors can resend data under at-least-once delivery. Test a repeated identifier and a source update with an unchanged timestamp. Choose the key from business identity, not merely a column that happens to be unique in a small sample.",
+        "zh": "Incremental Append + Deduped 使用主键与游标识别最新结果。例如以 order_id 为键、updated_at 为游标，源发出变化后，更新的金额应替换最终表旧值。指南警告，不推进游标的更新可能被漏掉；包含边界的游标在至少一次交付下也可能重复发送。建议测试标识重复及时间戳不变的源更新。键应依据业务身份选择，而非只看小样本中某列恰好唯一。",
+        "source_refs": ["dedupe"],
+        "evidence_type": "documented_rules_with_hypothetical_evaluation"
+      },
+      {
+        "id": "cdc",
+        "title_en": "CDC is connector-specific scheduled log consumption",
+        "title_zh": "CDC 是按连接器条件定时消费日志",
+        "en": "The CDC guide starts with a snapshot and then reads from the saved log position at later sync intervals. It explicitly does not describe an infinite streaming source. Most sources require primary keys for CDC; tables, database permissions and log retention need connector-specific setup. Schema additions require review and snapshot handling, and not all database changes appear as row events. For a production test, verify inserts, updates, deletes and a new column on the actual database version before advertising complete change capture.",
+        "zh": "CDC 指南先建立快照，之后在同步间隔中从保存的日志位置继续读取，明确不是无限流式源。多数源的 CDC 需要主键；表、数据库权限与日志保留需按具体连接器配置。新增 schema 需要审核和快照处理，数据库的所有变更也不都会作为行事件出现。生产验证应基于真实数据库版本检查插入、更新、删除及新增列后，再承诺变更捕获完整性。",
+        "source_refs": ["cdc-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quality",
+        "title_en": "An activation sync can succeed with rejected records",
+        "title_zh": "业务目标同步成功仍可能包含拒绝记录",
+        "en": "For activation destinations, incompatible field formats, missing required values or uniqueness violations can reject records even while the overall sync succeeds. The guide exposes counts in Timeline and sync logs, and writes rejected data to S3 only if that storage is configured. Fixes may need to occur upstream before a later sync can process the record. Build acceptance around both job status and rejected-record counts. Our suggested test contains one valid row and one malformed destination field, followed by a repair and verification in the destination.",
+        "zh": "对于业务激活目标，字段格式不兼容、必填值缺失或唯一性冲突都可能导致记录被拒绝，即使整体同步成功。指南在 Timeline 和同步日志展示计数，只有配置相应存储后才将拒绝数据写入 S3。可能需要先在上游修复，再由后续同步处理。验收应同时检查任务状态与拒绝记录数量。建议输入一条有效记录及一条目标字段异常记录，修复后再次核对目标。",
+        "source_refs": ["rejects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Separate volume credits from dedicated capacity",
+        "title_zh": "区分数据量积分与专用容量",
+        "en": "The current page lists Standard from $20/month including five credits and Plus from $189/month; displayed frequency limits are hourly and 15 minutes respectively. Pro and Enterprise Flex require capacity quotes based on Data Workers, with faster scheduling and different governance scope. Core is free to self-host, which does not eliminate infrastructure or maintenance costs. The commercial model is therefore not a single per-row price across all editions. Request connector entitlements, scheduling and capacity for the workload you intend to run.",
+        "zh": "当前页面列出 Standard 每月 $20 起，含五积分；Plus 每月 $189 起，展示的调度频率分别为每小时和 15 分钟。Pro 与 Enterprise Flex 按 Data Worker 容量询价，调度更频繁且治理范围不同。Core 可免费自托管，但基础设施与维护仍有费用。因此所有版本并非采用统一逐行价格；应按目标负载询问连接器权限、调度及容量。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "metering",
+        "title_en": "Source type changes the credit calculation",
+        "title_zh": "源类型决定积分计算方法",
+        "en": "The billing guide meters API/custom sources at six credits per million rows and database/files at four credits per GB. Full refresh recharges all synced rows; serialized transit size can exceed the compressed source’s size. Hypothetically, two million API rows consume 12 credits, while two GB of metered database data consume eight; those quantities are not interchangeable. Syncs continue after credits run out and overage is billed, rather than silently stopping at the allowance. The trial begins after the first successful sync and ends at 14 days or 400 trial credits, whichever comes first.",
+        "zh": "计费指南对 API／自定义源按每百万行六积分，对数据库／文件按每 GB 四积分。全量刷新会再次计入全部同步行；传输序列化大小也可能超过压缩后的源数据。假设两百万 API 行消耗 12 积分，两 GB 计量数据库数据消耗八积分，两种数量不能互换。积分用完后同步继续并产生超额费用，不会默默停在额度内。试用从首个成功同步后开始，到 14 天或 400 试用积分任一先到即结束。",
+        "source_refs": ["cloud-cost"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "hosting",
+        "title_en": "Self-hosting requires a maintained Kubernetes deployment",
+        "title_zh": "自托管需要维护 Kubernetes 部署",
+        "en": "The deployment guide uses Kubernetes and recommends Helm with the documented chart values. Storage for logs/state, external databases, secrets and ingress can be integrated into the operator’s environment. Chart version and platform version are different identifiers, so follow the compatibility instructions rather than copying a dated example version. The team must plan upgrades and recoverability as well as connector jobs. Enterprise Flex is a different commercial deployment arrangement with a managed control plane. No cluster, state backup or restore was exercised for this profile.",
+        "zh": "部署指南使用 Kubernetes，建议按文档 chart values 通过 Helm 部署；日志与状态存储、外部数据库、secret 及 ingress 可接入使用方环境。Chart 版本与平台版本是不同标识，应按兼容说明选择，不能照抄过时示例。团队除连接器任务外还需安排升级与恢复。Enterprise Flex 则是带托管控制层的另一种商业部署安排。本文未操作集群、状态备份或恢复。",
+        "source_refs": ["deploy", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Source availability has a managed-service boundary",
+        "title_zh": "源码可用仍有托管服务边界",
+        "en": "The license FAQ documents ELv2 restrictions: do not offer Airbyte itself as a managed service, bypass license-key controls or remove notices. It distinguishes using Airbyte behind an application from directly exposing its UI/API as your product. These conditions should be matched to the exact components and version you use; the vendor’s broad “open source” marketing is not a blanket permissive license. This record keeps a scoped mixed-license classification rather than treating every platform, connector and managed feature as identically licensed.",
+        "zh": "许可 FAQ 列出 ELv2 边界：不得把 Airbyte 本身作为托管服务提供、绕过许可密钥控制或删除声明，并区分应用后台使用与把 UI／API 直接作为自己的产品暴露。应按具体组件与版本核对这些条件；厂商笼统的“开源”宣传不等于全面宽松许可。本文保留有范围的混合许可分类，不把平台、连接器与托管功能视为同一许可。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Fit depends on replication semantics and connector ownership",
+        "title_zh": "适用性取决于复制语义与连接器维护责任",
+        "en": "Airbyte merits evaluation when a team wants explicit source/destination replication and can reason about stream keys, cursors and destination quality. It is less suitable as a promise of instantaneous two-way synchronization for an arbitrary app pair. Follow one changed record through the selected mode, including a delete if the source supports it, and verify job counters plus final destination state. Neither the connector count nor an AI context interface establishes that every connector can write to every source system. Performance and savings were not measured here.",
+        "zh": "当团队需要明确的源到目标复制，并能理解数据流的键、游标及目标质量时，Airbyte 值得评估。若想为任意应用组合承诺即时双向同步，适用性较弱。应跟踪一条变化记录在所选模式中的全过程；源支持时还需检查删除，并同时核对任务计数与目标最终状态。连接器数量或 AI 上下文界面都不能证明每个连接器可写回所有源系统。本文未测性能或节省效果。",
+        "source_refs": ["modes", "cdc-guide", "docs"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Airbyte: Sync Modes, CDC, Credits, Self-Hosting and License",
+    "title_zh": "Airbyte：同步模式、CDC、积分、自托管与许可",
+    "description_en": "Evaluate Airbyte stream replication, keys/cursors, activation rejects, volume versus capacity pricing and deployment/license conditions.",
+    "description_zh": "评估 Airbyte 数据流复制、键与游标、业务目标拒绝记录、数据量与容量计价及部署许可条件。",
+    "primary_intent": "Choose an Airbyte replication mode and operational edition.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Selected connector versions, source permissions, destination throughput, restore behavior, UI languages and regional purchasing remain untested.",
+      "zh": "未实测所选连接器版本、源权限、目标吞吐、恢复、界面语言及地区购买条件。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full platform, connector and agent-component license terms must be matched to exact versions and use case; no commercial embedding approval is implied.",
+      "zh": "整个平台、连接器及 Agent 组件的许可需匹配具体版本和用法，本文不构成商业嵌入批准。",
+      "source_refs": ["license"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "identity_history": {
+    "previous_website_url": "https://airbyte.io/",
+    "observed_redirect_url": "https://airbyte.com/",
+    "source_ref": "migration"
+  }
+}

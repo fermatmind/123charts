@@ -1,0 +1,470 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "fileinvite-01973b9c",
+  "name": "FileInvite",
+  "website_url": "https://www.fileinvite.com/",
+  "domain": "www.fileinvite.com",
+  "identity_domain": "fileinvite.com",
+  "category": "documents",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "FileInvite is a hosted document-collection platform currently focused on commercial and complex lending. Lenders define requests, invite borrowers and other parties, review returned material and route files to existing storage or connected systems. It is a collection layer rather than proof of loan approval or a complete records repository. Its current public Standard offer starts at USD 9,900 per year; specific volume, implementation and Enterprise requirements need a quote.",
+  "description_zh": "FileInvite 是托管文档收集平台，当前重点面向商业及复杂贷款。贷款团队定义资料请求、邀请借款人和其他参与方、审阅返回资料，再将文件送往既有存储或连接系统。它是资料收集层，不代表贷款已获批或完整档案库。当前公开 Standard 方案起价为每年 USD 9,900，具体规模、实施及 Enterprise 需求需报价。",
+  "core_features": [
+    {
+      "name_en": "Party-specific requests",
+      "name_zh": "按参与方指定请求",
+      "explanation_en": "A multi-party Invite can require each person or one party to act, with separate visibility choices.",
+      "explanation_zh": "多方 Invite 可要求每人或一人处理，并分别选择可见范围。",
+      "explanation_scope": "product_specific",
+      "source_ref": "multipart",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Returned versus approved status",
+      "name_zh": "区分返回与获批状态",
+      "explanation_en": "Requests track pending, returned, approved and rejected by contact.",
+      "explanation_zh": "请求按联系人记录待处理、已返回、获批及拒绝。",
+      "explanation_scope": "product_specific",
+      "source_ref": "status",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Invite-specific cloud sync",
+      "name_zh": "每个 Invite 独立云同步",
+      "explanation_en": "Sync uses the original owner’s configured connection and each Invite’s settings.",
+      "explanation_zh": "同步使用原所有者配置的连接及各 Invite 设置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync-failure",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate borrower and guarantor collection with separate request review and downstream file reconciliation."
+    ],
+    "zh": ["评估借款人及担保人资料收集，分别审阅请求并核对下游文件。"],
+    "source_refs": ["multipart", "status", "sync-failure"],
+    "basis": "Proposed synthetic pilot, not credit advice or observed customer performance."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Hosted collection service; existing loan/storage systems remain distinct.",
+      "zh": "托管收集服务；既有贷款及存储系统仍独立。",
+      "source_ref": "product",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Commercial loan processor",
+      "Underwriter reviewing collected material",
+      "Integration administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define synthetic parties and period-specific requests, visibility, submitted/approved acceptance and owner-specific storage destination; confirm quote and terms.",
+        "zh": "定义模拟参与方及指定期间请求、可见性、提交获批验收和所有者专属存储目的地，并确认报价条款。",
+        "source_refs": ["multipart", "status", "sync-failure", "pricing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_connected",
+    "items": [],
+    "source_ref": "pricing",
+    "scope": "Current FAQ distinguishes base storage from Enterprise SharePoint/connected workflow/API; legacy names not silently mapped. Retry/duplicate and deletion propagation unverified."
+  },
+  "limitations": {
+    "status": "documented_scope_limits",
+    "items": [
+      {
+        "en": "Finished may precede complete forms; reminders stop independently of approval. Close differs from permanent delete, and cloud sync is owner/Invite-specific.",
+        "zh": "完成操作可能早于表单完整，提醒停止不等于审批。关闭不同于永久删除，云同步依所有者及 Invite 配置。",
+        "source_refs": ["submit", "multipart", "close", "sync-failure"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "restricted_service_license_read",
+    "is_open_source": false,
+    "url": "https://www.fileinvite.com/terms",
+    "source_ref": "terms",
+    "scope": "Restricted browser service; explicit no source/object code right. Order-specific changes unknown."
+  },
+  "pricing": {
+    "status": "official_current_offer_read",
+    "price_type": "annual_starting_offer_and_enterprise_quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Standard starts USD9900/year for up to100typical commercial loans; annual billing, variable setup, Enterprise quote. Counted units/current full entitlement require order.",
+    "source_snapshot_zh": "Standard 起价每年 USD9900，最多100笔典型商业贷款；年付、实施费变化、Enterprise 报价。计量单位及完整权益需订单确认。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/fileinvite",
+      "read_at": "2026-10-22T09:03:55.526Z",
+      "excerpt_sha256": "8d2b6ee56e26eb23a6204f68008957bc09950b4191b9c494020f7ba8db23e75a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "www.fileinvite.com",
+      "title": "Document Collection Platform for Complex Lending | FileInvite",
+      "url": "https://www.fileinvite.com/",
+      "read_at": "2026-10-22T16:04:26.497072Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "de5bf9b4fb519f4ecce4665256be523c0d2f773ca4dd560718a03f6204903be6",
+      "research_notes_en": "Read current commercial/complex lending collection-layer positioning, secure links and routing to existing systems. Vendor speed/revenue/review counts not independently verified or adopted as outcomes."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.fileinvite.com",
+      "title": "Plans & Pricing for Document Collection Platform | FileInvite",
+      "url": "https://www.fileinvite.com/pricing",
+      "read_at": "2026-10-22T16:04:26.497717Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8a819c008e3f1e4e1600a0bbce731c426dffc5800c155d60a41ff58f5aab07e3",
+      "research_notes_en": "Read current Standard USD9900/year starting quote, annual volume/Enterprise, setup costs, integration FAQ and inconsistent collected-document wording. Icon-only plan cells not treated as verified entitlements."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "www.fileinvite.com",
+      "title": "Terms and Conditions | FileInvite",
+      "url": "https://www.fileinvite.com/terms",
+      "read_at": "2026-10-22T16:04:26.497910Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d534755a7d7b977531554bf36ec1827bd58756393211fbf4143ce26616df4b74",
+      "research_notes_en": "Actual April2024 terms: restricted SaaS browser license, no source/object code, customer material ownership/service license and possible deletion30daysaftertermination. Current order applicability requires confirmation."
+    },
+    {
+      "id": "refund",
+      "type": "official_documentation",
+      "site": "www.fileinvite.com",
+      "title": "FileInvite Refund Policy",
+      "url": "https://www.fileinvite.com/refund-policy",
+      "read_at": "2026-10-22T16:04:26.498056Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4d0025938f31896929bc13b9b4ae45eacc47aeb1ec8cfb9e5ea6ce4dc35fe119",
+      "research_notes_en": "Actual prepaid automatic renewal/no-refund summary with legal/discretionary exceptions and at least seven working days written-help route. Monthly language differs from current annual sales packaging."
+    },
+    {
+      "id": "termination",
+      "type": "official_documentation",
+      "site": "www.fileinvite.com",
+      "title": "Terms and Conditions | FileInvite",
+      "url": "https://www.fileinvite.com/terms",
+      "read_at": "2026-10-22T16:04:26.498107Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2829091bdcc26018331e82bbe15f0aa05619411ecbf380e495cb57f8d4a23576",
+      "research_notes_en": "Actual termination effective seventh day after customer notice, general free-plan references and hosting-law customer responsibility; no current permanent free plan inferred."
+    },
+    {
+      "id": "approval",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Approving or Rejecting Request Documents",
+      "url": "https://help.fileinvite.com/approving-or-rejecting-request-documents",
+      "read_at": "2026-10-22T16:04:26.498375Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8cf4c5f7f778c23f86e5196f01e1b329f35b4162a32ee071b27c5f510afb33ca",
+      "research_notes_en": "Actual request/contact approvals/rejections, reversible icons and Revision Needed feedback. Not an underwriting decision or immutable file signature."
+    },
+    {
+      "id": "status",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Tracking Request Status",
+      "url": "https://help.fileinvite.com/tracking-request-status",
+      "read_at": "2026-10-22T16:04:26.498412Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5ff6549a038b0e1e41082e888228c3b7ef258a29e696cb575ac42c53842634fb",
+      "research_notes_en": "Actual per-contact returned/pending/approved/rejected statuses; returned does not equal approved."
+    },
+    {
+      "id": "close",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Closing and Reopening an Invite",
+      "url": "https://help.fileinvite.com/closing-and-reopening-an-invite",
+      "read_at": "2026-10-22T16:04:26.498437Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "66a13a489f3458bae7d67eddc1483f73abcaf5596cedbdfda3b97788376b01f3",
+      "research_notes_en": "Actual whole/percontact close blocks client access without notification, retains sender history, reopen possible; deletion permanent with files."
+    },
+    {
+      "id": "sync",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Manage Cloud Sync for an existing Invite",
+      "url": "https://help.fileinvite.com/manage-cloud-sync-for-an-existing-invite",
+      "read_at": "2026-10-22T16:04:26.498463Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3f8d2354487651f48713b940b81bb83b948f1d9b4de0b78c3401951f867d05fe",
+      "research_notes_en": "Actual peruser/perInvite cloud settings and resync existing uploads; legacy Pro/Team names not mapped to current Standard/Enterprise."
+    },
+    {
+      "id": "submit",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Completing, Signing, and Returning Requested Files",
+      "url": "https://help.fileinvite.com/completing-requested-files",
+      "read_at": "2026-10-22T16:04:26.498589Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0f0bd8eef47db43b4474628fef98a4e0178fff5c24a17934114bcc27e0d643b1",
+      "research_notes_en": "Actual live-form draft versus submit, I-am-finished allowed with missing forms and separate later approval."
+    },
+    {
+      "id": "portal-password",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Setting a Client Portal Password",
+      "url": "https://help.fileinvite.com/setting-a-client-portal-password",
+      "read_at": "2026-10-22T16:04:26.498610Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c82c0736e6faf710d695309487cbdd232e5e8fb5c260c9dcc048ae7b99fccaa4",
+      "research_notes_en": "Actual optional password protection and contact-created password; no-account headline not universally no-password."
+    },
+    {
+      "id": "sync-failure",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Troubleshooting Cloud Storage Integration Issues",
+      "url": "https://help.fileinvite.com/troubleshooting-cloud-integration-issues",
+      "read_at": "2026-10-22T16:04:26.498646Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8f7555d55365cc4d89c642ee703c297d261120dbd359816d1bfe5c9b3e697cd",
+      "research_notes_en": "Actual missing submission/incomplete LiveForms, owner-specific credentials and perInvite settings troubleshooting; no guarantee all files synced."
+    },
+    {
+      "id": "original",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Download an Original Copy of an Uploaded File",
+      "url": "https://help.fileinvite.com/download-original-copy",
+      "read_at": "2026-10-22T16:04:26.498679Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b8211eed968dd1a284f06cfdaa35df99f7b58f834b11015a23eca6687098d3b5",
+      "research_notes_en": "Actual separate original download and generated PDF copy, rather than source replacement."
+    },
+    {
+      "id": "drive-change",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Changes to Our Google Drive Integration",
+      "url": "https://help.fileinvite.com/changes-to-our-google-drive-integration",
+      "read_at": "2026-10-22T16:04:26.498699Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e4a7a445c1c4469c5e326ed08615925cb55b5315c97872743a208378763418ec",
+      "research_notes_en": "Actual May2024 integration change: FileInvite Documents folder, old folders remain but arbitrary/shared folder selection no longer accessible in integration."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "www.fileinvite.com",
+      "title": "Privacy and Cookies Policy | FileInvite",
+      "url": "https://www.fileinvite.com/privacy",
+      "read_at": "2026-10-22T16:04:26.498875Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "269f2e15f5fe80797245b733288b1ab81230f29e521dea96d3dd8b5140a24d7a",
+      "research_notes_en": "Actual invited-customer controller/provider processor, service content/metadata, subprocessor and international access clauses. Not proof AI data stays within one region."
+    },
+    {
+      "id": "multipart",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Create and Send an Invite to Multiple Parties",
+      "url": "https://help.fileinvite.com/create-and-send-an-invite-to-multiple-parties",
+      "read_at": "2026-10-22T16:04:26.498931Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "999a7b3af58f3bbf2dda6ab53e11929cfd2d4e608e3a989e15a5d473259c4029",
+      "research_notes_en": "Actual assigned-party visibility/action choices, up to15 contacts and overdue-reminder end after14daysorImfinished; no live Invite sent."
+    },
+    {
+      "id": "delete",
+      "type": "official_documentation",
+      "site": "help.fileinvite.com",
+      "title": "Delete Uploaded Files",
+      "url": "https://help.fileinvite.com/delete-uploaded-files",
+      "read_at": "2026-10-22T16:04:26.498952Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "62523d053bf5cb819ea9434fb04ba2920d7c8d0ab63781bde635d06301189f8c",
+      "research_notes_en": "Actual uploaded-file deletion permanent, not rejected-request correction or reversible close."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:04:26.498952Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["product", "pricing", "approval"],
+  "profile": {
+    "sections": [
+      {
+        "id": "collection-record",
+        "title_en": "Model the loan package as requests and responsible parties",
+        "title_zh": "将贷款资料包建模为请求及责任方",
+        "en": "FileInvite sits between document contributors and the lender’s existing systems. The current homepage describes a mobile portal, templates, reminders, naming and status tracking. Those capabilities organize collection; they do not establish whether a borrower qualifies for credit, whether a statement is genuine or whether a legally required record set is complete. Marketing speed and time-saving figures were not independently checked.\n\nA proposed pilot could use a fictional business borrower and one guarantor with synthetic statements, identity placeholders and an ownership schedule. Give the loan a stable reference and define the required period and party for every request. The multiple-party guide permits up to fifteen contacts and lets a request require each person or a single party, with control over submitted-information visibility. Test the intended borrower/guarantor separation using synthetic records before collecting real financial material. A shared request and a separately assigned personal statement are different configurations. No Invite, contact or financial document was created.",
+        "zh": "FileInvite 位于资料提供者与贷款团队既有系统之间。当前首页描述移动门户、模板、提醒、命名和状态跟踪。这些能力组织收集，不确立借款人信贷资格、报表真伪或法定档案完整。营销中的速度和节时数字未独立核查。\n\n建议试点用虚构企业借款人及一名担保人，配合模拟报表、身份占位资料和持有权益表。为贷款设置稳定编号，并给每项请求明确期间和提供方。多方指南允许最多十五名联系人，可要求每人或一人处理，并控制已提交资料的可见范围。收集真实财务资料前，应以模拟资料检查借款人与担保人的隔离。共享请求和单独指定的个人报表是不同配置。本研究未创建 Invite、联系人或财务文档。",
+        "source_refs": ["product", "multipart"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "submission-and-chasing",
+        "title_en": "Finished, submitted and approved are separate states",
+        "title_zh": "完成、提交和获批是不同状态",
+        "en": "A live form saved as a draft has not been submitted. The client can also click “I’m finished” while some forms are missing and receive a missing-form warning. The multiple-party guide says overdue reminders stop fourteen days after the due date or when that action is used, whichever comes first. An end to reminders therefore does not demonstrate that the package is complete.\n\nThe lender’s request view separately tracks pending, returned, approved and rejected material for each contact. In the proposed pilot, deliberately leave the guarantor’s requested period missing while submitting the business statement. Acceptance should inspect each required contact/request and the file contents, not just a notification, aggregate progress or the absence of further reminders. The client help also distinguishes completing an online form from uploading a separately completed file. No messages, reminders, signatures or submissions were sent.",
+        "zh": "在线表单保存草稿尚未提交。客户也可在部分表单缺失时点击“I’m finished”，并收到缺失提示。多方指南规定逾期提醒在到期后十四天或该操作发生时停止，以较早者为准。因此不再提醒不证明资料包完整。\n\n贷款团队的请求视图另按联系人跟踪待处理、已返回、获批和拒绝。建议试点可只提交企业报表，故意缺少担保人的目标期间。验收应查看每个必要联系人和请求及文件内容，不能只看通知、汇总进度或没有后续提醒。客户端帮助还区分在线填写与上传另行完成的文件。本研究未发送消息、提醒、签名或提交。",
+        "source_refs": ["submit", "multipart", "status"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "review-and-portal-access",
+        "title_en": "Review the return without assuming a universal open portal",
+        "title_zh": "审阅返回资料并核对门户访问条件",
+        "en": "Request approval and rejection are selected for particular contacts. Rejection can include revision instructions; the client sees Revision Needed and receives a notification. These decisions can be reversed. Treat them as collection-review state, not an irreversible underwriting determination or proof that a document’s contents are authentic. Record which file and requested period the reviewer accepted.\n\nThe homepage’s no-account borrower experience coexists with optional password protection. When enabled, the contact creates a portal password. Party assignment also controls which requests a contact can work on and what submitted information is shared. A secure-link headline does not replace those settings. The privacy policy describes the inviting organization as controller and FileInvite as processor for invited end-user information, with service-provider and international-access provisions. Confirm the intended region, current DPA, subprocessors and AI-processing conditions for sensitive lending material; certifications and encryption claims were not independently audited here.",
+        "zh": "审批或拒绝针对特定联系人的请求，拒绝可附修改说明，客户会看到 Revision Needed 并收到通知；这些决定可撤销。应将其视作资料审阅状态，不是不可逆信贷决策，也不证明文档内容真实。需记录审阅者接受的文件和期间。\n\n首页无需创建账户的借款人体验，与可选密码保护并存；开启后联系人需创建门户密码。参与方分配还控制其可处理请求和共享资料。安全链接宣传不能替代设置。隐私政策将邀请机构列为受邀资料的控制方、FileInvite 为处理方，并有服务提供方及跨境访问条款。敏感贷款资料应确认地区、当前 DPA、分处理方及 AI 处理条件；本研究未独立审计认证和加密主张。",
+        "source_refs": [
+          "approval",
+          "portal-password",
+          "multipart",
+          "privacy",
+          "product"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "storage-and-failures",
+        "title_en": "Verify the owner, submission and destination before resync",
+        "title_zh": "重新同步前先核对所有者、提交与目的地",
+        "en": "Cloud settings belong to individual FileInvite users. An invitation created by another user does not inherit your own connection, and sync must be enabled for each Invite. An existing Invite may need manual configuration and resync after a connection is added. The troubleshooting guide first checks whether files were actually submitted; incomplete or partly signed LiveForms cannot be downloaded or copied to storage. An expired external connection is another failure path.\n\nThe Google Drive change guide describes a dedicated FileInvite Documents folder and the loss of arbitrary/shared-folder selection through the integration; old folders remain in Drive. For the synthetic loan, record the original owner, expected destination and a manifest of originals and generated copies. After a controlled retry, reconcile the destination rather than assuming a success message proves every record arrived. Connector-specific duplicate handling, rename propagation and deletion behavior remain unverified. Older help names Pro/Team; those names were not mapped to current Standard/Enterprise entitlements.",
+        "zh": "云设置属于各个 FileInvite 用户，另一用户创建的邀请不会继承你自己的连接，每个 Invite 也需独立启用同步。新增连接后，既有 Invite 可能需手动配置及重新同步。排错指南首先检查文件是否真正提交；未完成或部分签署的 LiveForms 不能下载或复制到存储，外部连接过期也是失败路径。\n\nGoogle Drive 变更指南说明专用 FileInvite Documents 文件夹，以及集成内不再能选择任意或共享文件夹；旧文件夹仍在 Drive。模拟贷款应记录原创建人、预期目的地及原件生成副本清单。受控重试后核对目的地，不以成功提示证明全部记录到达。具体连接器的重复处理、改名传播及删除行为未核实。旧帮助中的 Pro／Team 名称未强行映射到当前 Standard／Enterprise 权益。",
+        "source_refs": ["sync", "sync-failure", "drive-change"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "closure-and-output",
+        "title_en": "Close collection deliberately and preserve the required output",
+        "title_zh": "主动关闭收集并保留必要产物",
+        "en": "Closing an Invite can stop all contacts or selected contacts from accessing the portal while preserving sender-side requests, messages and history; it can be reopened. The guide says closing or archiving sends no notification email to the borrower. If access is ending, decide how the borrower will be told rather than assuming an automatic message was delivered. Deleting an Invite also deletes returned files and cannot be undone. The uploaded-file deletion guide likewise calls deletion permanent.\n\nAn original uploaded file can be downloaded separately from the generated PDF copy. A converted statement may serve review while the original spreadsheet is needed for reconciliation; choose the intended artifact. Before the pilot is closed, verify the files and separate request/history records needed downstream. A PDF bundle or a synced directory has not been shown to restore an entire tenant or all conversation/audit states. No closing, reopening, download, deletion or backup was performed.",
+        "zh": "关闭 Invite 可阻止全部或指定联系人访问门户，同时保留发送方的请求、消息和历史，并可重新打开。指南说明关闭或归档不会给借款人发送通知邮件；结束访问时，应决定如何告知，不假定已自动通知。删除 Invite 会连带删除返回文件且不可撤销；单独上传文件删除指南也明确永久删除。\n\n原始上传文件可与生成的 PDF 副本分别下载。转换后的报表可用于审阅，原始电子表格则可能用于核对，应选明确产物。关闭试点前需检查下游所需文件及独立请求历史。PDF 合集或同步文件夹尚未证明能恢复完整租户、对话及审计状态。本研究未关闭、重开、下载、删除或备份。",
+        "source_refs": ["close", "delete", "original"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-scope",
+        "title_en": "Use the current annual offer and resolve its billing unit",
+        "title_zh": "采用当前年度报价并确认计费单位",
+        "en": "The current pricing page states Standard starts at USD 9,900 per year for up to one hundred typical commercial loans annually; Enterprise is quoted for greater volume and additional requirements. Setup costs vary, and current sales plans are billed annually. The same page also says pricing follows successfully collected documents. That leaves a concrete quote question: define the counted unit, document/loan allowance and growth adjustment. Do not divide the starting annual figure into an assumed per-user or per-document tariff.\n\nThe pricing FAQ explicitly names OneDrive for Business, Google Drive and Box for all plans, with SharePoint, connected workflows and API/custom work scoped to Enterprise. Exact seats, thresholds, storage, AI email matching, support and tax need the order. An old help entitlement or a generic product integration list is insufficient. No current permanent free plan or trial duration was established from the sales offer. Define the pilot’s scope and obtain the implementation and renewal terms before committing a real loan process. No sales form or payment was submitted.",
+        "zh": "当前价格页写 Standard 起价每年 USD 9,900，适用于每年最多一百笔典型商业贷款；更高规模及额外要求由 Enterprise 报价。实施费用按复杂度变化，当前销售方案按年计费；同页另称按成功收集文档计价。因此报价必须具体定义计数单位、文档或贷款额度及增长调整，不能把年度起价除成假定的人均或单文档费率。\n\n价格 FAQ 明确所有方案列 OneDrive for Business、Google Drive 和 Box，将 SharePoint、连接流程及 API 定制归于 Enterprise。准确席位、阈值、存储、AI 邮件匹配、支持及税需订单确认，旧帮助权益或通用集成清单不足以确立。当前销售方案未确立永久免费层或试用期限。接入真实贷款流程前应定义试点范围并取得实施及续费条款。本研究未提交销售表单或支付。",
+        "source_refs": ["pricing", "sync"],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      },
+      {
+        "id": "license-and-exit",
+        "title_en": "Confirm the order and extract before ending the service",
+        "title_zh": "确认订单并在结束服务前提取资料",
+        "en": "The linked April 2024 terms grant restricted browser-service use and no access to platform source or object code; this is not an open-source license. They describe automatic renewal and limited refund exceptions. The refund page says prepaid subscription charges generally are not refunded and asks for written help at least seven working days before renewal if account cancellation is difficult. Its monthly-plan language and old clause numbering do not establish current monthly availability.\n\nThe terms make customer termination effective on the seventh day after notice unless earlier specified, and say materials may be deleted thirty days after termination with extraction possible beforehand. Confirm the applicable order and usable export route rather than treating that text as a tested restore window. Generic free-plan references do not prove a current free offer. Preserve originals, messages and necessary review evidence before exit and verify downstream access independently. Contract-specific exceptions, exact export coverage and backup deletion remain unverified; no cancellation or agreement acceptance was performed.",
+        "zh": "已链接的 2024 年四月条款授予受限浏览器服务使用，不提供平台源码或目标代码，不是开源许可。条款描述自动续订及有限退款例外；退款页说明预付订阅费用通常不退，账户取消遇到困难时要求至少在续费前七个工作日书面求助。其月付文字和旧条款编号不确立当前仍可月付。\n\n条款规定客户终止通常在通知后第七天生效，除非指定更早日期；终止三十天后可能删除资料，之前可提取。应确认适用订单及可用导出路径，不能将文字当作实测恢复窗口。通用免费层表述也不证明当前免费方案。退出前需保留原件、消息及必要审阅证据，并独立检查下游访问。合同例外、准确导出覆盖及备份删除未核实；本研究未取消或接受协议。",
+        "source_refs": ["terms", "termination", "refund", "original"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "FileInvite: Lending Document Requests, Review and Sync Conditions",
+    "title_zh": "FileInvite：贷款文档请求、审阅及同步条件",
+    "description_en": "Evaluate FileInvite borrower collection, per-party status, submission gaps, owner-specific sync, permanent deletion and annual quote scope.",
+    "description_zh": "评估 FileInvite 借款人资料收集、按参与方状态、提交缺口、所有者专属同步、永久删除及年度报价范围。",
+    "search_intent_status": "editorial_inference_not_measured"
+  },
+  "research_gaps": [
+    {
+      "en": "No account, contact, Invite, upload, financial data, signing, notification, approval, cloud connection, API, download, closure, deletion, cancellation or purchase operation performed.",
+      "zh": "未执行账户、联系人、Invite、上传、财务资料、签名、通知、审批、云连接、API、下载、关闭、删除、取消或购买。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Current counted billing unit, full seats/AI/usage quote, trial/free availability, legacy help applicability, region/DPA/AI subprocessors and full tenant export/restore unverified. Security/compliance and business outcome claims not independently checked.",
+      "zh": "当前计费单位、完整席位 AI 用量报价、试用免费可用性、旧帮助适用性、地区 DPA 及 AI 分处理方和完整租户导出恢复未核实；未独立核查安全合规及业务成效。",
+      "source_refs": ["pricing", "sync", "privacy", "termination"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Current annual Standard/Enterprise sales packaging differs from old Pro/Team sync and generic monthly/free contract references; preserve scope conflict rather than invent plan mapping. Pricing comparison checkmarks are not represented in reader text.",
+      "zh": "当前年度 Standard／Enterprise 包装与旧 Pro／Team 同步及通用月付免费合同表述不同，保留范围差异而不虚构映射。读取器未呈现价格对比勾选图标。",
+      "source_refs": ["pricing", "sync", "terms", "refund"],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

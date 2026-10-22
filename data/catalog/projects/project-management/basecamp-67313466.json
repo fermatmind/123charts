@@ -1,0 +1,371 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "basecamp-67313466",
+  "name": "Basecamp",
+  "website_url": "https://basecamp.com/",
+  "domain": "basecamp.com",
+  "identity_domain": "basecamp.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Basecamp brings project communication and work tracking into a shared project space. A team can choose message boards for durable discussions, to-dos for assignments, card tables for staged work, calendars for dates and files for reference materials. The current product is Basecamp 5; older help links can redirect to revised instructions.\n\nThe selection question is whether this project-centered toolbox matches how the team communicates and hands off work. It does not require every project to have the same set of tools. This profile examines that setup, client visibility, manually reported progress and current package limits, without claiming that fewer apps or notifications automatically improve delivery.",
+  "description_zh": "Basecamp 将项目沟通和工作跟踪放进共享项目空间。团队可以选择用消息板保留持续讨论、用待办分派任务、用卡片表跟踪阶段、用日历管理日期，并用文件工具保存参考资料。当前产品为 Basecamp 5，旧帮助链接可能跳转到修订后的说明。\n\n选型重点是这种以项目为中心的工具组合，是否符合团队的沟通和交接方式。各项目不必使用完全相同的工具。本文核对项目配置、客户可见范围、人工报告的进度和当前套餐限制，不声称减少应用或通知就一定能改善交付。",
+  "core_features": [
+    {
+      "name_en": "Project tool selection",
+      "name_zh": "项目工具选择",
+      "explanation_en": "Start a project empty and add the work and communication tools it needs.",
+      "explanation_zh": "从空项目开始，添加所需的工作和沟通工具。",
+      "explanation_scope": "product_specific",
+      "source_ref": "projects",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Staged card work",
+      "name_zh": "分阶段卡片工作",
+      "explanation_en": "Track cards through workflow columns; subtasks do not automatically advance the parent card.",
+      "explanation_zh": "按流程列跟踪卡片，子任务不会自动推进主卡片。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cards",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Human-updated Hill Charts",
+      "name_zh": "人工更新的 Hill Charts",
+      "explanation_en": "Track uncertainty and execution at to-do-list level with update history.",
+      "explanation_zh": "在待办列表层面表达未知和执行状态，并保存更新历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hills",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate a client engagement with deliberate visibility settings.",
+      "Collect recurring team updates alongside project work."
+    ],
+    "zh": [
+      "通过明确的可见性设置协调客户项目。",
+      "在项目工作旁收集定期团队更新。"
+    ],
+    "source_refs": ["clients", "check-ins"],
+    "basis": "Editorial task suggestions, not measured outcomes."
+  },
+  "technical_details": {
+    "Progress model": {
+      "en": "Hill Chart status is manually updated at to-do-list level.",
+      "zh": "Hill Chart 状态在待办列表层面由人工更新。",
+      "source_ref": "hills",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Project coordinator", "Client-services team lead"],
+    "roles_status": "editorial_inference",
+    "source_ref": "features"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create one invite-only project, select tools and add a small representative work list.",
+        "zh": "创建一个邀请制项目，选择工具并添加少量代表性工作。",
+        "source_refs": ["projects"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Verify inherited visibility and historical comments before inviting a real client.",
+        "zh": "邀请真实客户前，检查继承可见性和历史评论。",
+        "source_refs": ["clients"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_connection_model_read_not_executed",
+    "items": [
+      {
+        "name": "External AI assistants / CLI",
+        "source_ref": "agents",
+        "scope": "Authenticated Basecamp access documented; no assistant or CLI connection tested."
+      }
+    ],
+    "source_ref": "agents"
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Client visibility can reveal existing comments and inherited content.",
+        "zh": "客户可见性可能公开已有评论和继承内容。",
+        "source_refs": ["clients"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Hill Charts do not update automatically.",
+        "zh": "Hill Charts 不会自动更新。",
+        "source_refs": ["hills"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_package_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Free: one project, three users. Business packages cap active projects/users or offer Pro Unlimited; billing cadence matters.",
+    "source_snapshot_zh": "免费版一个项目、三位用户；商业套餐限制活跃项目／用户，或提供 Pro Unlimited，付款周期影响金额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/basecamp",
+      "read_at": "2026-10-22T08:42:53.299Z",
+      "excerpt_sha256": "de8fab8efe5e41b8536156d2b9ae71de8367d8352724e38f8245b7e2ad1349bc",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "features",
+      "type": "official_documentation",
+      "site": "basecamp.com",
+      "title": "Basecamp — Features, benefits, benefits, and benefits",
+      "url": "https://basecamp.com/features",
+      "read_at": "2026-10-22T10:10:46.154248Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2c425d0bdc4f3f14c57420120574000317f724bc8b4dde564174abd974ed57fc",
+      "research_notes_en": "Current tools include message boards, to-dos, card tables, calendars and project files."
+    },
+    {
+      "id": "agents",
+      "type": "official_integration",
+      "site": "basecamp.com",
+      "title": "Basecamp — Basecamp CLI and Agent Skill: Agent first, agent native",
+      "url": "https://basecamp.com/agents",
+      "read_at": "2026-10-22T10:10:46.154617Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e3b8c09814ee6076b1a52ac77cc9169fb29dab9118bc0fe5fc341030251b62d2",
+      "research_notes_en": "Official CLI/API/SDK and assistant connections use authenticated Basecamp access; no agent was connected."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "basecamp.com",
+      "title": "Basecamp — Pricing",
+      "url": "https://basecamp.com/pricing",
+      "read_at": "2026-10-22T10:10:46.154677Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "67bbe64ce6cd62571d2372a365f9c782eee0a064cc294b3cb5b53b5487c25730",
+      "research_notes_en": "Current packages combine active-project, user and storage caps. Paid-to-free downgrade is unavailable; Pro Unlimited has different annual/monthly rates."
+    },
+    {
+      "id": "projects",
+      "type": "official_documentation",
+      "site": "3.basecamp-help.com",
+      "title": "Creating and setting up a Project - Basecamp 5 Help",
+      "url": "https://5.basecamp-help.com/article/1176-creating-and-setting-up-a-project",
+      "read_at": "2026-10-22T10:10:46.155224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ccfff1f139520cd5ae40dadf1e8291abfe7d6e06564e484769933aa65321186f",
+      "research_notes_en": "Legacy help URL redirects to current Basecamp 5 setup. New projects start empty, invite-only, with tools chosen explicitly."
+    },
+    {
+      "id": "check-ins",
+      "type": "official_documentation",
+      "site": "5.basecamp-help.com",
+      "title": "Automatic Check-Ins - Basecamp 5 Help",
+      "url": "https://5.basecamp-help.com/article/1051-automatic-check-ins",
+      "read_at": "2026-10-22T10:10:46.155536Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b6ce1f2d964ecb8f97e64992654af361cc8d68276ace6ce67c5f365bef57e7f9",
+      "research_notes_en": "Questions have a schedule and selected participants. Answer-reminder and response notifications have separate opt-outs."
+    },
+    {
+      "id": "clients",
+      "type": "official_documentation",
+      "site": "5.basecamp-help.com",
+      "title": "What Clients can see and do - Basecamp 5 Help",
+      "url": "https://5.basecamp-help.com/article/1082-what-clients-can-see-and-do",
+      "read_at": "2026-10-22T10:10:46.155579Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "225cb866515027b8ff2058dd7d18dce765c95e57e7a1e56daaa6e05abfe6de2f",
+      "research_notes_en": "Visibility can be inherited from lists, tables and folders; revealing an item also reveals existing comments. Clients cannot see Hill Charts."
+    },
+    {
+      "id": "cards",
+      "type": "official_documentation",
+      "site": "5.basecamp-help.com",
+      "title": "Card Tables - Basecamp 5 Help",
+      "url": "https://5.basecamp-help.com/article/1063-card-tables",
+      "read_at": "2026-10-22T10:10:46.155616Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c59e335908b26cae80446271e4fefbda07cc4ec89abc9edb628bb97f65b913cd",
+      "research_notes_en": "Cards have assignments, dates and subtasks; completing a subtask does not change the parent card status."
+    },
+    {
+      "id": "hills",
+      "type": "official_documentation",
+      "site": "5.basecamp-help.com",
+      "title": "Tracking to-do lists on the Hill Chart - Basecamp 5 Help",
+      "url": "https://5.basecamp-help.com/article/1078-hill-charts",
+      "read_at": "2026-10-22T10:10:46.155649Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "cc877fbae35570a90c0622195327b411fb0c370940b4ad63fa26588624dbc71f",
+      "research_notes_en": "Hill positions are human-updated and tracked at to-do-list level, with history snapshots; clients cannot view them."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:10:46.155649Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["features", "projects"],
+  "profile": {
+    "sections": [
+      {
+        "id": "project-example",
+        "title_en": "Build one project around its actual handoffs",
+        "title_zh": "按实际交接搭建一个项目",
+        "en": "Consider a hypothetical client design engagement. Create a named project, add a message board for the brief, a to-do tool for deliverables and a file area for assets. Basecamp 5 starts a project empty, so the coordinator adds tools rather than inheriting a full default layout. New projects are invite-only; clients must be added manually even when a project is All-Access.\n\nChoose where the authoritative brief and delivery discussion belong before inviting the client. Verify the project with a team participant and a client participant. This is an evaluation sequence, not a client engagement executed for this profile.",
+        "zh": "假设团队承接一项客户设计工作，可以创建命名项目，加入用于简报的消息板、用于交付任务的待办工具和用于素材的文件区域。Basecamp 5 的新项目最初为空，需要协调人员添加工具，而不是继承一整套默认布局。新项目默认为邀请制；即使是 All-Access 项目，也必须手动加入客户。\n\n邀请客户前，应先决定权威简报和交付讨论放在哪里，再以团队成员和客户两种身份检查。这是一套评估顺序，并非本文实际执行过的客户项目。",
+        "source_refs": ["projects"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "tool-choice",
+        "title_en": "Choose a conversation or a workflow deliberately",
+        "title_zh": "明确选择讨论工具或流程工具",
+        "en": "Message Boards keep a discussion and its replies together. To-dos track individual work, while Card Tables represent stages. For a design pipeline, a card might move from brief to drafting to review; give it an assignee, date and supporting context.\n\nCard subtasks can have their own assignees and dates, but completing a subtask does not change the card’s overall status. Decide who moves the parent card forward and what “review complete” means. Otherwise a finished checklist could coexist with a card still in the prior stage. That is a workflow-design consequence, not a reported software failure.",
+        "zh": "消息板把讨论和回复放在一起；待办跟踪具体工作，卡片表则表示阶段。设计流程中的卡片可以从简报进入起草，再进入审阅，并设置负责人、日期和背景资料。\n\n卡片子任务可有各自的负责人和日期，但完成子任务不会改变卡片总状态。因此，要明确谁负责推进主卡片，以及“审阅完成”的含义，否则可能出现清单全部完成、卡片却仍停留在原阶段的情况。这是流程设计上的后果，不是本文报告的软件故障。",
+        "source_refs": ["features", "cards"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "client-visibility",
+        "title_en": "Sharing a container can share its history",
+        "title_zh": "共享容器也可能共享历史内容",
+        "en": "Client content begins private to the team, and clients see items made visible to them. Visibility is not always per message or per task: to-dos inherit from their list, cards from their table, comments from their parent item, and files inside a folder from that folder. Making an item visible also exposes its existing comments.\n\nKeep internal working discussion outside a container intended for the client. Test one representative list, card table and folder before importing live content. A client cannot see Hill Charts even when the corresponding to-do list is visible, so a shared task list does not establish access to every progress view.",
+        "zh": "客户项目的内容起初对团队私有，客户只能看到被设为可见的事项。权限并非总能逐条设置：待办继承列表可见性，卡片继承卡片表，评论继承其所属事项，文件夹内文件继承文件夹。将事项设为客户可见，也会公开已有评论。\n\n因此，内部工作讨论应放在准备交给客户的容器之外。导入真实内容前，应验证一份代表性的列表、卡片表和文件夹。即使客户看得到待办列表，也看不到对应 Hill Chart；共享任务列表并不意味着能查看所有进度视图。",
+        "source_refs": ["clients"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "hill-progress",
+        "title_en": "Hill Charts describe uncertainty through human updates",
+        "title_zh": "用人工更新表达工作的未知部分",
+        "en": "Hill Charts track to-do lists rather than individual to-dos. Their positions represent the team’s understanding of whether work is still being figured out or is ready for execution. They do not update automatically: a person moves the dots, adds context and saves an update, creating a history snapshot.\n\nUse a pilot to establish who owns those updates and how often they happen. If a dot does not move, ask whether the work is blocked, its scope is unclear or nobody updated the chart. Do not read the position as an automatically calculated completion percentage or forecast.",
+        "zh": "Hill Charts 跟踪待办列表，而非单个待办。位置表达团队对工作的理解：仍在解决未知问题，还是已有明确方案、正在执行。图表不会自动更新，需要人员移动圆点、补充背景并保存；每次更新会生成历史快照。\n\n试点应明确谁负责更新、多久更新一次。圆点不动时，应检查工作是否受阻、范围是否不清，或只是无人更新。不能把位置当作自动计算的完成比例或预测。",
+        "source_refs": ["hills"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "check-ins",
+        "title_en": "A recurring question is not mandatory reporting",
+        "title_zh": "定期提问不等于强制报告",
+        "en": "Automatic Check-ins asks selected people a recurring question at a chosen time and collects answers in the project. A hypothetical weekly blocker question can provide context before coordination, but it does not inspect completed work or certify the answer.\n\nPeople can separately opt out of question reminders and notifications of others’ answers. The organizer can choose who is asked but cannot control each person’s response-notification subscription. Agree on the reporting expectation with the team and review unanswered questions explicitly, rather than treating lack of a reminder or reply as proof that nothing is blocked.",
+        "zh": "Automatic Check-ins 会在指定时间向选定人员重复提问，并在项目中收集答案。比如每周询问阻碍，可以为协调提供背景，但工具不会检查已完成工作，也不认证回答真实性。\n\n用户可以分别退出问题提醒和他人答案通知。组织者可以选择问谁，但不能控制每个人是否订阅答案通知。因此，应与团队明确报告要求，主动检查未回答的问题，不能因为没有提醒或回复就认为工作没有阻碍。",
+        "source_refs": ["check-ins"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-boundaries",
+        "title_en": "Current packages cap projects and people",
+        "title_zh": "当前套餐同时限制项目和人员",
+        "en": "The current free plan has one project, three users and 1 GB storage. Freelancer is USD 29/month for three active projects and five users; Pro is USD 79/month for eight projects and ten users; Pro Plus is USD 99/month for twelve projects and fifteen users. Pro Unlimited is USD 199/month billed annually or USD 329/month billed monthly, with unlimited users/projects and 1 TB storage. Clients and contractors count as people.\n\nBusiness trials last 30 days. Paid accounts cannot downgrade into the free package. Confirm live packaging: the pricing page places time tracking in Pro Plus, while the setup help uses older Pro/Unlimited naming, so that entitlement remains a purchase-check item.",
+        "zh": "当前免费套餐为一个项目、三位用户和 1 GB 存储。Freelancer 每月 29 美元，支持三个活跃项目和五位用户；Pro 每月 79 美元，支持八个项目和十位用户；Pro Plus 每月 99 美元，支持十二个项目和十五位用户。Pro Unlimited 按年付款折合每月 199 美元，按月付款 329 美元，项目和用户不限量，含 1 TB 存储。客户与承包商也计入人数。\n\n商业版试用 30 天。付费账户不能降到免费套餐。应核对实际购买的权益：定价页将工时跟踪列于 Pro Plus，项目配置帮助却使用较旧的 Pro／Unlimited 名称，因此这项权益仍需在购买时确认。",
+        "source_refs": ["pricing", "projects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "agents-and-fit",
+        "title_en": "Connected agents still need the right access",
+        "title_zh": "接入代理仍需合适的访问权",
+        "en": "Basecamp publishes a CLI, API and SDK and describes assistant connections that require signing in and approving access. The assistant works with the projects available to that account. This is access to Basecamp from an external tool, not evidence that Basecamp includes the model subscription or independently verifies generated actions.\n\nAs an editorial fit judgment, shortlist the service for project-centered discussions and deliverables when the team can maintain visibility rules and progress updates. Verify a separate requirement for dependency scheduling, permission granularity or automated recovery before adoption. No connector, client account, calendar subscription or agent was run in this research; self-hosting and source-license rights were not established.",
+        "zh": "Basecamp 发布 CLI、API 和 SDK，并说明接入助手需要登录和授权，助手使用该账户可访问的项目。这表示外部工具能够访问 Basecamp，不能据此推定包含模型订阅，也不能证明自动生成的动作已获独立验证。\n\n从编辑选型角度看，能够维护可见性规则和进度更新的团队，可以为以项目为中心的讨论与交付进一步评估该服务。若另有依赖排期、细粒度权限或自动失败恢复要求，应在采用前单独验证。本次没有运行连接器、客户账户、日历订阅或代理，也未确立自托管及源代码许可权利。",
+        "source_refs": ["agents", "features"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Basecamp 5: Project Tools, Client Visibility and Current Packages",
+    "title_zh": "Basecamp 5：项目工具、客户可见性与当前套餐",
+    "description_en": "Understand Basecamp 5 setup, shared client history, manually updated Hill Charts and package limits using current official sources.",
+    "description_zh": "依据当前官方资料理解 Basecamp 5 配置、客户可见历史、人工更新的 Hill Charts 和套餐限制。",
+    "primary_intent": "Evaluate a project-centered team and client workflow.",
+    "secondary_questions": [
+      "Do clients see old comments?",
+      "Do Hill Charts update automatically?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no measured keyword volume or rankings.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Pricing and setup help use inconsistent plan naming for time tracking. Confirm the purchased entitlement rather than relying on older labels.",
+      "zh": "定价页与配置帮助对工时跟踪使用不一致的套餐名称，应确认所购权益，不能依赖旧标签。",
+      "source_refs": ["pricing", "projects"],
+      "evidence_type": "documented_source_conflict"
+    },
+    {
+      "en": "No account or integration was tested. Self-hosting rights, license contract, interface languages, regional purchasing and operational recovery remain unconfirmed.",
+      "zh": "未测试账户或集成。自托管权利、许可合同、界面语言、地区购买和运行恢复仍未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

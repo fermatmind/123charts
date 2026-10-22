@@ -1,0 +1,356 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pipeliner-crm-6a48a383",
+  "name": "Coevera (formerly Pipeliner CRM)",
+  "website_url": "https://www.coevera.com/",
+  "domain": "www.coevera.com",
+  "identity_domain": "coevera.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Coevera is the current name of Pipeliner CRM: the former pipelinersales.com website redirects to Coevera, and the current homepage explicitly identifies the earlier brand. It is a B2B sales CRM organized around visual deal pipelines, account context and guided sales work. Voyager provides in-product AI assistance; Automatizer handles configured processes, and an MCP connection exposes CRM work to external AI assistants under a separate beta setup.\n\nA useful evaluation starts with your actual pipeline stages, required records and sales-team permissions. The vendor currently targets teams of at least fifteen sellers in its standard pricing, with exceptions discussed through sales. This profile distinguishes migration preparation, workflow execution and AI access from broad claims about speed or cost savings. No account, migration, workflow or AI tool was tested for this catalog.",
+  "description_zh": "Coevera 是 Pipeliner CRM 的当前名称：原 pipelinersales.com 网站跳转到 Coevera，当前首页也明确标注原品牌。它是围绕可视化交易管线、账户背景和销售引导组织的 B2B CRM。Voyager 提供产品内 AI 辅助，Automatizer 执行配置流程；MCP 连接则通过单独的测试版设置向外部 AI 助手开放 CRM 工作。\n\n评估应从真实管线阶段、必需记录及销售团队权限开始。当前标准定价面向至少15名销售人员的团队，例外需向销售讨论。本文区分迁移准备、工作流执行和 AI 访问，不把速度或节省成本宣传当实测结果；没有实际测试账户、迁移、工作流或 AI 工具。",
+  "core_features": [
+    {
+      "name_en": "Visual sales pipeline",
+      "name_zh": "可视化销售管线",
+      "explanation_en": "Manage deals across custom stages with multiple pipeline views and related customer context.",
+      "explanation_zh": "通过多种管线视图及客户背景，在自定义阶段间管理交易。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Process Manager and run logs",
+      "name_zh": "流程管理与执行日志",
+      "explanation_en": "Track Automatizer processes and inspect test/live runs, warnings and errors.",
+      "explanation_zh": "跟踪 Automatizer 流程并检查测试／正式执行、警告和错误。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automatizer",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Voyager AI assistance",
+      "name_zh": "Voyager AI 辅助",
+      "explanation_en": "Use in-product sales assistance with edition/credit conditions distinct from base record storage.",
+      "explanation_zh": "使用产品内销售辅助，其版本／积分条件与基本记录存储不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Public-beta MCP access",
+      "name_zh": "公开测试版 MCP 访问",
+      "explanation_en": "Request an external AI connection through administration and user consent; beta and activation conditions apply.",
+      "explanation_zh": "通过管理端申请外部 AI 连接并由用户授权，受测试版及激活条件限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Map a B2B sales process into explicit deal stages and required next actions.",
+      "Check contact migration values and ownership before replacing a source CRM."
+    ],
+    "zh": [
+      "把 B2B 销售流程映射为明确阶段及必需后续动作。",
+      "替换原 CRM 前核对联系人迁移值和负责人。"
+    ],
+    "source_refs": ["product", "migration"],
+    "basis": "Editorial evaluation tasks; vendor migration case is not this catalog test."
+  },
+  "technical_details": {
+    "Identity and access": {
+      "en": "Current canonical site is coevera.com; old Pipeliner branding and some billing/support references remain. Admin-requested MCP connects to the managed CRM rather than a separate contact database.",
+      "zh": "当前规范站点为 coevera.com，部分账单／支持引用仍保留 Pipeliner 品牌。管理员申请的 MCP 连接托管 CRM，并非另建联系人数据库。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "B2B sales manager",
+      "CRM migration owner",
+      "Sales process administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory source fields and value sets, including ownership and consent-related data.",
+        "zh": "盘点来源字段和值集合，包含负责人及同意相关数据。",
+        "source_refs": ["migration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Agree stages, roles and the selected subscription/add-ons before testing a process.",
+        "zh": "测试流程前约定阶段、角色及所选订阅／附加项。",
+        "source_refs": ["pricing", "automatizer"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Inspect record values and run logs, then separately request any required beta MCP connector.",
+        "zh": "检查记录值及执行日志，再单独申请所需测试版 MCP 连接器。",
+        "source_refs": ["migration", "automatizer", "mcp"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "MCP-compatible AI clients",
+        "source_ref": "mcp",
+        "scope": "Public beta; admin add-on request, vendor activation and user authentication/consent required."
+      }
+    ],
+    "source_ref": "mcp"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Migration success counts do not establish value completeness; the vendor blueprint describes dropdown mismatches that leave fields empty.",
+        "zh": "迁移成功数量不能证明值完整；厂商蓝图描述下拉选项不匹配导致字段为空。",
+        "source_refs": ["migration"],
+        "evidence_type": "vendor_documented_case_not_independently_tested"
+      },
+      {
+        "en": "Automatizer warns about issues such as missing email authorization or unavailable template fields; inspect run logs rather than assuming every run completed.",
+        "zh": "Automatizer 对邮箱授权缺失或模板字段不可用等问题给出警告；应检查日志，不能假定每次都完整执行。",
+        "source_refs": ["automatizer"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "automatizer"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Per user/month billed annually, standard 15-user minimum; add-on and AI-credit conditions need selected-package confirmation.",
+    "source_snapshot_en": "Business $85, Enterprise $115, Unlimited $150 per user/month billed annually. Smaller-team exceptions are sales-led, not an unconditional lower minimum.",
+    "source_snapshot_zh": "Business 每用户每月85美元、Enterprise 115美元、Unlimited 150美元，按年付款；较小团队例外由销售确定，并非无条件降低最低人数。",
+    "checked_at": "2026-10-22T10:33:42.798675+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is this a different listing from Pipeliner CRM?",
+      "question_zh": "这与 Pipeliner CRM 是另一个档案吗？",
+      "answer_en": "This record preserves the original slug while updating the verified current name and canonical domain. The vendor explicitly says Coevera was formerly Pipeliner CRM.",
+      "answer_zh": "本记录保留原 slug，同时更新已核实的当前名称及规范域名。厂商明确说明 Coevera 原名 Pipeliner CRM。",
+      "source_refs": ["product"]
+    },
+    {
+      "question_en": "Can I connect an AI assistant immediately without account setup?",
+      "question_zh": "无需账户配置就能立即连接 AI 助手吗？",
+      "answer_en": "The MCP page describes public-beta activation through the administration add-ons and a user sign-in/consent flow. It is not unconditional instant access.",
+      "answer_zh": "MCP 页描述通过管理附加项激活公开测试版，并由用户登录／授权，不能当作无条件即时访问。",
+      "source_refs": ["mcp"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pipeliner-crm",
+      "read_at": "2026-10-22T09:05:38.845Z",
+      "excerpt_sha256": "96eaffb873e7c059d32184305cd5e0be808f845dbe858ccd8702194d85828ceb",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Coevera | Visual Pipeline and AI-Powered Sales CRM",
+      "title": "Coevera | Visual Pipeline and AI-Powered Sales CRM",
+      "url": "https://www.coevera.com/",
+      "read_at": "2026-10-22T10:32:37.761448+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e8566db8b132c8d57e402b0814148be1ecfc8dcba26c7060cba1ea686393af09",
+      "research_notes_en": "Requested pipelinersales.com redirected to coevera.com; homepage explicitly says formerly Pipeliner CRM. Visual B2B pipeline CRM, Voyager AI and no-code automation; vendor adoption/TCO claims not tested."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Coevera Pricing | Transparent CRM Plans & Features",
+      "title": "Coevera Pricing | Transparent CRM Plans & Features",
+      "url": "https://www.coevera.com/crm/pricing/",
+      "read_at": "2026-10-22T10:33:36.785875+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "85b498b94026d7653ee94215017c41c92ca1bd72aa19fa8a98915043b29dcb99",
+      "research_notes_en": "Business $85, Enterprise $115, Unlimited $150 per user/month billed annually, standard 15-user minimum with sales-led smaller-team exceptions. Voyager 2 allowance/paid usage and spending caps."
+    },
+    {
+      "id": "migration",
+      "type": "official_documentation",
+      "site": "How do you migrate contacts from another system without silently losing data? — Coevera Blueprint 005",
+      "title": "How do you migrate contacts from another system without silently losing data? — Coevera Blueprint 005",
+      "url": "https://blueprints.coevera.com/blueprints/contact-migration-without-data-loss/",
+      "read_at": "2026-10-22T10:33:38.530398+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f4990fa3bd9523a52e94d08e6add14f9bb3e4803904646e7fca4111004839fd5",
+      "research_notes_en": "Vendor-authored Blueprint 005 details source inventory, owner/consent mapping, dropdown option mismatch and reconciliation; its observed results remain vendor evidence, not this catalog hands-on testing."
+    },
+    {
+      "id": "automatizer",
+      "type": "official_documentation",
+      "site": "Automatizer — The Process Manager and Process Notifications | Coevera Cloud Help Center",
+      "title": "Automatizer — The Process Manager and Process Notifications | Coevera Cloud Help Center",
+      "url": "https://help.coevera.com/en/articles/3841438-automatizer-the-process-manager-and-process-notifications",
+      "read_at": "2026-10-22T10:33:41.427757+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "baa40bdc67299494d1f783e876d7995754e1f195b6940b4d9076457fb08f4fb7",
+      "research_notes_en": "Paid add-on wording, trigger/condition/action model, process ownership, test/live logs, warning/error distinctions and repeated-failure Stop notifications. Exact contract inclusion needs confirmation."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "Coevera MCP Server: connect Claude, ChatGPT and other AI assistants to your CRM",
+      "title": "Coevera MCP Server: connect Claude, ChatGPT and other AI assistants to your CRM",
+      "url": "https://www.coevera.com/mcp-server/",
+      "read_at": "2026-10-22T10:33:42.798675+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b266fdbc8d393666737b6cc44f8d8f28d1d2b8f933e8c2796a649e3e619d529f",
+      "research_notes_en": "Public-beta CRM MCP connection requested via admin add-ons; vendor activation and user consent required. Tools expose read/change/delete behavior under authenticated user permissions."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:33:42.798675+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "pricing", "automatizer", "mcp"],
+  "profile": {
+    "sections": [
+      {
+        "id": "sales-model",
+        "title_en": "Make the stage mean a completed business condition",
+        "title_zh": "让阶段表示已完成的业务条件",
+        "en": "The current product describes drag-and-drop pipeline stages and Kanban, list, chart, bubble and map views. For an illustrative B2B sale, define what qualification, proposal and commercial review mean, then attach an owner and next activity. These stage names are examples, not mandatory defaults.\n\nA view helps a manager inspect work; it does not establish that an opportunity was qualified accurately or that the next action happened. Test a deal with incomplete information and a restricted user role, not only a complete administrator sample. Adoption speed, implementation time and reduced cost on the homepage remain vendor claims without a benchmark from this research.",
+        "zh": "当前产品描述拖动管线阶段及看板、列表、图表、气泡和地图视图。以假设 B2B 销售为例，先定义资格判断、提案和商务复核的含义，再指定负责人和下一活动。这些阶段名只是示例，不是强制默认值。\n\n视图帮助经理检查工作，但不能证明机会资格判断正确或下一动作已经完成。应测试信息不全的交易及权限受限用户，而不只使用管理员完整样例。首页的采用速度、实施时间及成本降低仍属厂商声明，本文未作基准验证。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "migration",
+        "title_en": "Reconcile actual values, not just imported record counts",
+        "title_zh": "核对实际字段值，而非只看导入数量",
+        "en": "Coevera's migration blueprint distinguishes structurally valid rows from valid target values. It reports that dropdown values without matching target options can leave a field empty despite an imported record. That is a vendor-authored case, not a failure reproduced in this catalog. Its useful operational lesson is to inventory the full source export and compare value sets before import.\n\nFor evaluation, include an unknown dropdown option, a casing variation, a shared email address and a record with a different owner. Check identity, ownership, required flags and value completeness after importing. Preserve source provenance and agree which fields are deliberately omitted. A small recent sample may miss older cohorts of data; a completed migration job is not by itself an acceptance test.",
+        "zh": "Coevera 迁移蓝图区分结构有效的行和目标字段值有效。它报告：目标选项不存在时，下拉字段可能为空，而记录仍已导入。这是厂商撰写案例，不是本目录复现的故障。可借鉴的操作要点是盘点完整来源导出，并在导入前比较值集合。\n\n评估建议包含未知下拉项、大小写变体、共用邮箱和不同负责人的记录。导入后检查身份、归属、必需标记及值完整性，保留来源记录，并约定哪些字段明确放弃。较小的近期样例可能漏掉旧数据群体，迁移任务完成本身不构成验收。",
+        "source_refs": ["migration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "process-failure",
+        "title_en": "Inspect warnings as well as errors",
+        "title_zh": "同时检查警告与错误",
+        "en": "Automatizer's help page describes processes containing triggers, if/then conditions and actions. The Process Manager exposes active/inactive status and test/live execution logs. Process ownership affects editing and notifications, so designate an accountable maintainer rather than leaving automation under an unavailable user's account.\n\nThe documentation distinguishes warnings from errors: missing email authorization, unavailable personalization fields and failed related-record updates can be warnings; inaccessible/deleted fields or insufficient record permissions can be errors. It also describes a Stop notification after the last twenty executions ended with errors. Do not assume a quiet inbox means healthy execution, since repeated notifications are throttled. Inspect the actual run and affected record before retrying; no live failure was reproduced here.",
+        "zh": "Automatizer 帮助页描述流程由触发器、if／then 条件和动作组成。Process Manager 显示启用／停用状态，以及测试／正式执行日志。流程归属影响编辑和通知，因此应指定能持续负责的维护者，避免依赖已无法联系的账户。\n\n文档区分警告和错误：邮箱授权缺失、个性化字段不可用及关联记录更新失败可能是警告；字段不可访问／被删或记录权限不足可能是错误。它还说明最近20次执行均出错时的 Stop 通知。重复通知会限频，因此邮件安静不表示执行正常。重试前应检查实际执行和受影响记录；本文未复现线上故障。",
+        "source_refs": ["automatizer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-boundary",
+        "title_en": "Voyager and external MCP clients are different paths",
+        "title_zh": "Voyager 与外部 MCP 客户端是不同路径",
+        "en": "Voyager provides assistance inside Coevera. The price table distinguishes Voyager 1 from Voyager 2, with a resetting allowance, paid use beyond it and administrator spending caps. The public-beta MCP server instead lets an approved external client access live CRM data. It requires an admin request, vendor activation and user consent.\n\nThe MCP page says tools declare read/change/delete behavior and inherit authenticated-user permissions. Treat that as the documented access model, not independent proof that every client enforces the intended confirmation. Begin with scoped read access and verify an actual permission boundary before contemplating changes. A generated recommendation is not a verified customer fact, and no AI or authorization behavior was tested.",
+        "zh": "Voyager 在 Coevera 内提供辅助。价格表区分 Voyager 1 和 Voyager 2，后者说明会重置的额度、超额付费及管理员支出上限。公开测试版 MCP 服务器则让获准的外部客户端访问实时 CRM 数据，需要管理员申请、厂商激活及用户授权。\n\nMCP 页说明工具标明读／改／删行为，并继承登录用户权限。这是文档访问模型，不是每个客户端都会执行所需确认的独立证明。评估建议从限定只读范围开始，在考虑改动前核对真实权限边界。生成建议不等于已核实客户事实；本文未测试 AI 或授权行为。",
+        "source_refs": ["pricing", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-fit",
+        "title_en": "Budget the annual team commitment and scoped extras",
+        "title_zh": "预算年度团队承诺及明确附加项",
+        "en": "The current pricing page lists Business at $85, Enterprise at $115 and Unlimited at $150 per user/month billed annually, normally with at least fifteen users. Fifteen Business users illustrate 15 × 85 × 12 = $15,300 for a year before any unconfirmed extras or tax. The vendor invites smaller teams with an expansion case to discuss an exception; that is not a published unconditional one-seat offer.\n\nThe help page calls Automatizer a paid add-on, while the pricing table and AI usage terms must determine the contracted package. Confirm workflow inclusion, AI credits, migration scope, support, integrations and renewal together. This managed B2B CRM merits evaluation for a sales organization that can define its process and own data quality; exact license, data region, API limits, export coverage, UI languages and regional purchasing remain unverified. No implementation, subscription or claimed savings was measured.",
+        "zh": "当前定价页列出 Business 每用户每月85美元、Enterprise 115美元、Unlimited 150美元，按年付款，通常至少15用户。以15个 Business 用户计算，一年为15 × 85 × 12 = 15,300美元，未含尚未确认的附加项或税。厂商邀请有扩张计划的小团队讨论例外，这不是公开无条件的单席位方案。\n\n帮助页称 Automatizer 为付费附加项，最终合同组合还应结合定价表和 AI 用量条款确定。应一起确认工作流、AI 积分、迁移范围、支持、集成及续订。能定义销售流程并负责数据质量的 B2B 组织可进一步评估，但准确许可、数据地区、API 限制、导出覆盖、界面语言和地区购买仍未核实。本文未测量实施、订阅或宣传节省。",
+        "source_refs": ["pricing", "automatizer"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Coevera, Formerly Pipeliner CRM: Migration, Workflows and Pricing",
+    "title_zh": "Coevera（原 Pipeliner CRM）：迁移、工作流与定价",
+    "description_en": "Understand the Pipeliner-to-Coevera rename, visual B2B sales pipeline, import value checks, Automatizer logs, MCP beta and annual minimum-user pricing.",
+    "description_zh": "了解 Pipeliner 更名 Coevera、B2B 可视化销售管线、导入值核对、Automatizer 日志、MCP 测试版及年度最低用户计价。",
+    "primary_intent": "Identify the current Pipeliner CRM product and evaluate Coevera sales workflows.",
+    "secondary_questions": [
+      "What changed in the product name/domain?",
+      "Can successful imports lose dropdown values?",
+      "What is the standard annual minimum?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No migration, process, AI connector or subscription was executed. Actual add-on inclusion, paid AI amounts, license, data location, API limits, export coverage, UI languages and regional purchase access remain unverified.",
+      "zh": "未实际执行迁移、流程、AI 连接器或订阅；实际附加项包含范围、AI 付费金额、许可、数据位置、API 限制、导出覆盖、界面语言及地区购买仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Former pipelinersales.com redirects to coevera.com and the brand is explicitly renamed. This record retains its original slug; coordinator-owned indexes must be refreshed during integration.",
+      "zh": "原 pipelinersales.com 跳转到 coevera.com，品牌明确更名。本记录保留原 slug；整合时需由协调方更新其负责的索引。",
+      "source_refs": ["product"],
+      "evidence_type": "documented_identity_migration"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

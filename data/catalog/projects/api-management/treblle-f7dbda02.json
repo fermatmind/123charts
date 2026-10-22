@@ -1,0 +1,385 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "treblle-f7dbda02",
+  "name": "Treblle",
+  "website_url": "https://treblle.com/",
+  "domain": "treblle.com",
+  "identity_domain": "treblle.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Treblle collects API request and response telemetry through application SDKs or integrations with existing gateways, then presents request investigation, analytics, documentation, governance and security signals. It adds a runtime visibility layer to an API estate rather than requiring every API to be rebuilt inside a new gateway.\n\nIts current site describes a broad runtime-intelligence platform. Specific integration behavior matters: what is captured, masked and transmitted depends on the chosen SDK and configuration. Monitoring findings are not evidence that an API is automatically repaired, compliant or protected from every attack.",
+  "description_zh": "Treblle 通过应用 SDK 或既有网关集成采集 API 请求／响应遥测，提供请求调查、分析、文档、治理及安全信号。它给 API 增加运行可见性层，不要求将每个 API 重建到新网关。\n\n当前官网描述广泛运行智能平台，但具体集成行为很重要：采集、脱敏及传输取决于 SDK 与配置。监控发现不能证明 API 已自动修复、合规或防御全部攻击。",
+  "core_features": [
+    {
+      "name_en": "Runtime request investigation",
+      "name_zh": "运行请求调查",
+      "explanation_en": "Filter requests and inspect status, timing, metadata and request/response details.",
+      "explanation_zh": "过滤请求，核对状态、耗时、元数据及请求响应详情。",
+      "explanation_scope": "product_specific",
+      "source_ref": "requests",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "SDK-side data masking",
+      "name_zh": "SDK 侧数据脱敏",
+      "explanation_en": "Mask configured body/header keys before telemetry leaves the application.",
+      "explanation_zh": "遥测离开应用前对配置的正文／请求头键脱敏。",
+      "explanation_scope": "product_specific",
+      "source_ref": "express",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Search and spike alerts",
+      "name_zh": "搜索与突增告警",
+      "explanation_en": "Create saved-search or traffic-spike notifications for selected recipients.",
+      "explanation_zh": "向选定接收者提供已存搜索或流量突增告警。",
+      "explanation_scope": "product_specific",
+      "source_ref": "alerts",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Investigate an error for one API customer",
+      "Evaluate masking and alert matching before broad telemetry rollout"
+    ],
+    "zh": ["调查单个 API 客户的错误", "扩大遥测前评估脱敏及告警匹配"],
+    "source_refs": ["requests", "mask", "alerts"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Backend developers",
+      "API platform engineers",
+      "API operations and security teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select one supported SDK or gateway integration and a disposable API.",
+        "zh": "选择支持的 SDK／网关集成及可丢弃 API。",
+        "source_refs": ["how", "express"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect custom fields, default masking, metadata and ingress before emitting telemetry.",
+        "zh": "发送遥测前检查自定义字段、默认脱敏、元数据及 ingress。",
+        "source_refs": ["express", "mask"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare success/error requests and configure one narrowly scoped saved-search alert.",
+        "zh": "比较成功／错误请求，配置一个范围明确的已存搜索告警。",
+        "source_refs": ["requests", "alerts"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Express custom masking replaces defaults and metadata is not masked.",
+        "zh": "Express 自定义脱敏替换默认项，元数据不脱敏。",
+        "source_refs": ["express"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Visibility depends on captured traffic; alerts do not establish automatic prevention or repair.",
+        "zh": "可见性取决于采集流量，告警不证明自动防御或修复。",
+        "source_refs": ["how", "alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Customer ID reuse can give a customer access to multiple APIs.",
+        "zh": "客户 ID 复用可能使客户访问多个 API。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription_custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:26:36.250607Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Core $233/month billed yearly: 5 APIs, 500 requests/min, 5M/month, 30-day retention. Growth/Enterprise custom. Sustained free entitlement not established.",
+    "summary_zh": "Core 按年月均 $233：五 API、每分钟五百、每月五百万请求及三十天保留；Growth／Enterprise 定制，持续免费权限未确立。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/treblle",
+      "read_at": "2026-10-22T09:00:00.371Z",
+      "excerpt_sha256": "ee5b8b621a3c803f174484a5944d48d12a5a2a1c0541d694140b3d1cc744291a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Treblle - Runtime Intelligence Platform",
+      "url": "https://treblle.com/",
+      "read_at": "2026-10-22T11:26:36.250607Z",
+      "excerpt_sha256": "cc21551ed1a24eb3f9f5a06fdbdcb25d7d7a111e1d40fa12bc42d4b910a9c75a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current runtime intelligence platform scope read; marketing security and efficiency claims not independently certified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Treblle",
+      "title": "Pricing | Treblle",
+      "url": "https://treblle.com/pricing",
+      "read_at": "2026-10-22T11:26:39.306083Z",
+      "excerpt_sha256": "94f4d91ea9bc74112fa59ddad178d4ee9b971b646a452e73b0b583884fe13acb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Core $233/month billed yearly, 5 APIs, 500 requests/minute, 5M monthly requests and 30-day retention read; Growth/Enterprise custom and ambiguous free CTA retained."
+    },
+    {
+      "id": "how",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "How Treblle Works – Treblle documentation",
+      "url": "https://docs.treblle.com/getting-started/how-treblle-works",
+      "read_at": "2026-10-22T11:33:46.826542Z",
+      "excerpt_sha256": "094d7bc6f86c92b7ee0f2bdf7e8d4fe4591d5e594eb9246cad55780ac46c60b5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Application SDK versus existing gateway integration, request/response capture and derived insights reviewed."
+    },
+    {
+      "id": "express",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Treblle with Express – Treblle documentation",
+      "url": "https://docs.treblle.com/integrate-treblle/integrations/javascript/express",
+      "read_at": "2026-10-22T11:34:07.912079Z",
+      "excerpt_sha256": "a5d6649378bcc4bd193a058b1be369b57457090e2fe851469b59b25e8af3eca6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "JavaScript v3 Node18/Express4-5, middleware ordering, default ingress, masking replacement/disable behavior, unmasked metadata and removed Workers support read."
+    },
+    {
+      "id": "mask",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Data Masking – Treblle documentation",
+      "url": "https://docs.treblle.com/explore-treblle/platform/data-masking",
+      "read_at": "2026-10-22T11:33:46.791423Z",
+      "excerpt_sha256": "721f444a22085c9dd53ae5d1f5de0b97cef5b9321671b674b612cdbe6decdcb3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "General masking guide default fields and length-preserving stars read; more detailed selected SDK behavior takes precedence for the Express example."
+    },
+    {
+      "id": "requests",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Requests Dashboard – Treblle documentation",
+      "url": "https://docs.treblle.com/explore-treblle/platform/requests/dashboard",
+      "read_at": "2026-10-22T11:34:27.850679Z",
+      "excerpt_sha256": "ed41ea2027c42da2770bf37416da28c6aa1825be21869ceb26197607c7b6df52",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Request details, filters, saved searches and expiring request sharing read."
+    },
+    {
+      "id": "alerts",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Custom Alerts – Treblle documentation",
+      "url": "https://docs.treblle.com/explore-treblle/platform/alerts/custom-alerts",
+      "read_at": "2026-10-22T11:34:07.895250Z",
+      "excerpt_sha256": "e9f1a3cf2d572d0221c953c423ec975f55d941166d616ac90651a39df09c51e2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Saved-search versus spike alerts and recipients/frequency selection read; notification not equated with automatic traffic blocking."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Roles and Permissions- User Management – Treblle documentation",
+      "url": "https://docs.treblle.com/explore-treblle/admin/roles-and-permissions",
+      "read_at": "2026-10-22T11:33:46.809278Z",
+      "excerpt_sha256": "a073b064f7464e30b9994ac053ffc79bcb560c97413cf9058401342173c82ffd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Internal users, CSV immediate access, customer-ID matching across APIs and API/group access reviewed."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Treblle",
+      "title": "Deployment Options | Treblle",
+      "url": "https://treblle.com/deployment-options",
+      "read_at": "2026-10-22T11:34:27.869628Z",
+      "excerpt_sha256": "672a4378cd139d4d322d6ce604e4f08cb94474f826bf3d8978a868e5f619bced",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Vendor describes SaaS/on-prem/air-gapped/BYO-cloud models with feature parity; deployment-specific contracts and model/network dependencies not tested."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:34:27.869628Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "how", "express"],
+  "profile": {
+    "sections": [
+      {
+        "id": "capture",
+        "title_en": "Instrument a test API before drawing conclusions",
+        "title_zh": "先接入测试 API，再解释数据",
+        "en": "A proposed order-API trial could use an application SDK to capture a successful read and a deliberate backend error, then compare them in the Requests dashboard. SDK integrations capture inside application code; gateway integrations observe through an existing gateway. Coverage is limited to the traffic actually integrated and captured. A discovered endpoint list or generated OpenAPI description cannot establish that undocumented, never-exercised paths or every error contract are complete. No telemetry or live request was sent here.",
+        "zh": "建议用订单 API 试验：以 SDK 采集一次成功读取及有意后端错误，再在 Requests 面板比较。SDK 在应用代码内采集，网关集成则从既有网关观察。覆盖范围取决于实际接入、采集的流量；端点发现列表或生成 OpenAPI 不能证明从未执行路径及每种错误契约完整。本次未发送遥测或实际请求。",
+        "source_refs": ["how", "requests"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "sdk",
+        "title_en": "Express setup has version and ordering requirements",
+        "title_zh": "Express 设置有版本及顺序要求",
+        "en": "The current JavaScript v3 guide requires Node.js 18+ and Express 4.x/5.x. Register body parsing before useTreblle and application routes afterward. SDK token and API key identify the integration; the default ingress is ingress.treblle.com unless overridden. Confirm framework/version and region routing before installation. The guide says v3 removed its old Cloudflare Workers exports, so the generic JavaScript label is insufficient evidence of edge-runtime compatibility. SQL query capture is opt-in, not automatically present in every request.",
+        "zh": "当前 JavaScript v3 指南要求 Node.js 18+、Express 4.x／5.x；正文解析在 useTreblle 之前，应用路由在后。以 SDK token 和 API key 识别集成，未覆盖时默认 ingress.treblle.com。安装前应确认框架／版本及地区路由。指南说明 v3 移除了旧 Cloudflare Workers 导出，因此 JavaScript 标签不足以证明边缘运行兼容；SQL 查询采集需主动接入，不是每请求自动具备。",
+        "source_refs": ["express"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "masking",
+        "title_en": "Custom masking can remove the default protection",
+        "title_zh": "自定义脱敏可能移除默认保护",
+        "en": "In the Express guide, maskedKeywords replaces the default list. Extend DEFAULT_MASKED_KEYWORDS to add fields; an empty array disables masking. The same guide says metadata is sent verbatim, so custom metadata must not be treated as covered by body/header keyword masking. The general masking guide describes length-preserving stars, which still reveal value length. Test representative custom fields and inspect the captured payload before broad rollout. Do not adopt the broader never-stores-raw-sensitive-data statement as an unconditional guarantee for every configuration.",
+        "zh": "Express 指南中，maskedKeywords 会替换默认列表；增加字段应扩展 DEFAULT_MASKED_KEYWORDS，空数组则关闭脱敏。同页说明 metadata 原样发送，因此不能把自定义元数据视为受正文／请求头键脱敏覆盖。通用指南描述等长星号，仍会暴露值长度。扩大接入前应以代表性自定义字段检查采集载荷，不能将概括性“从不存原始敏感数据”作为所有配置的无条件保证。",
+        "source_refs": ["express", "mask", "how"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "investigate",
+        "title_en": "A saved search becomes an alert, not a remediation",
+        "title_zh": "已存搜索形成告警，不是修复",
+        "en": "The Requests view can filter a customer, endpoint, status or timing and open a detailed request. A frequently used filter can be saved for a matching-request alert. Spike alerts instead watch sudden traffic increases; select frequency, channel and recipients. A spike can reflect a broken client or an attack, and a notification does not itself block traffic or restore the backend. Exercise a disposable error and verify both matching and nonmatching requests, notification delay and the team’s response procedure.",
+        "zh": "Requests 可按客户、端点、状态、耗时过滤并查看详情，常用过滤可保存为匹配请求告警；突增告警则观察流量变化，需选频率、通道及接收者。突增可能源于故障客户端或攻击，通知本身不会阻断流量或恢复后端。应使用可丢弃错误检查匹配／不匹配请求、通知延迟及团队响应流程。",
+        "source_refs": ["requests", "alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Customer IDs can span more than one API",
+        "title_zh": "客户 ID 可能跨越多个 API",
+        "en": "The role guide distinguishes internal users, external customers, groups and API-specific access. A customer’s ID must match the ID in API telemetry; matching IDs across multiple APIs automatically grant access to all matching APIs. CSV user import grants immediate access without an email invitation. These details matter before partner access is enabled. Test identity naming and the resulting API set, rather than assuming one invitation corresponds to exactly one API. No users were invited or permissions changed in this research.",
+        "zh": "角色指南区分内部用户、外部客户、组及逐 API 权限。客户 ID 必须匹配 API 遥测中的 ID；若多 API 有相同 ID，会自动取得所有匹配 API 的访问。CSV 用户导入会即时授权，不发邀请邮件。伙伴访问启用前应测试身份命名及最终可见 API，不能假设一次邀请只对应一个 API。本研究未邀请用户或改变权限。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Deployment parity is a vendor claim with contract conditions",
+        "title_zh": "部署功能一致性需落实到合同",
+        "en": "Treblle offers SaaS, on-premises, air-gapped and bring-your-own-cloud models and claims feature parity. Their operating responsibilities differ: hosted infrastructure, customer-operated environment or vendor-managed platform in a customer cloud account. For a restricted network, confirm installation updates, AI/model dependencies, telemetry destinations and support access in the actual proposal. This review did not establish an open-source license for the entire platform or independently test offline operation, residency or security certifications.",
+        "zh": "Treblle 提供 SaaS、本地、隔离网及自带云部署，并宣称功能一致。其运维责任不同：托管基础设施、客户运行环境，或厂商管理客户云账号内的平台。受限网络需在实际方案中确认安装更新、AI／模型依赖、遥测目标及支持访问。本次未确立完整平台开源许可，也未独立验证离线、驻留或安全认证。",
+        "source_refs": ["deploy", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "API count, peak rate, monthly volume and retention all matter",
+        "title_zh": "API 数、峰值速率、月量及保留期都重要",
+        "en": "Core is displayed at $233/month billed yearly, with five APIs and 500 requests/minute; its comparison table also lists five million requests/month and 30-day retention. These are separate limits, not interchangeable throughput promises. Growth and Enterprise are custom quotes; Enterprise lists on-prem/BYO cloud and broader capabilities. The page also says start free, without a clear sustained free entitlement in this read. Confirm trial/free conditions, over-limit handling, data retention and deployment inclusion rather than treating the CTA as a permanent free tier.",
+        "zh": "Core 展示为按年计费月均 $233，含五 API、每分钟五百请求；比较表另列每月五百万请求及三十天保留。这些是分别的限制，不能互换为吞吐保证。Growth、Enterprise 定制报价，Enterprise 列本地／自带云及更广能力。页面同时称可免费开始，但本次未读到明确持续免费权限。需确认试用／免费条件、超限处理、保留及部署包含范围，不能把入口口号视为永久免费层。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Treblle: API telemetry, masking and runtime investigation",
+    "title_zh": "Treblle：API 遥测、脱敏及运行调查",
+    "description_en": "Review SDK/gateway capture, custom masking, customer access, alert conditions and pricing limits.",
+    "description_zh": "了解 SDK／网关采集、自定义脱敏、客户访问、告警条件及计费限制。",
+    "search_intent_en": "Evaluate Treblle runtime visibility and telemetry boundaries.",
+    "search_intent_zh": "评估 Treblle 运行可见性及遥测边界。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No telemetry, SDK installation, alert, access grant, offline deployment or failure test was executed.",
+      "zh": "未执行遥测、SDK 安装、告警、授权、离线部署或故障测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exact over-limit behavior, free/trial entitlement, SLA, region, offline AI dependencies and contract license require confirmation.",
+      "zh": "具体超限行为、免费／试用权限、SLA、地区、离线 AI 依赖及合同许可需确认。",
+      "source_refs": ["pricing", "deploy"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "UI languages, security certifications, complete traffic capture and actual performance were not independently verified.",
+      "zh": "界面语言、安全认证、完整流量采集及实际性能未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

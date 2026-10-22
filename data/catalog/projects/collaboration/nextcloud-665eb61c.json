@@ -1,0 +1,464 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "nextcloud-665eb61c",
+  "name": "Nextcloud",
+  "website_url": "https://nextcloud.com/",
+  "domain": "nextcloud.com",
+  "identity_domain": "nextcloud.com",
+  "category": "collaboration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Nextcloud is an open-source content collaboration platform that an organization can operate on its own infrastructure or obtain through a hosting provider. Hub brings Files, Talk, Groupware, Office, Assistant and Flow together, while actual capabilities depend on installed apps, selected backends and the deployment.\n\nA useful evaluation starts with one shared folder and follows external access, local edits, recovery and ongoing administration. Free server software, an Enterprise support subscription and a provider-hosted account are different cost and responsibility models. This profile uses the server/stable manuals, which identified version 35 when read; server/latest identified an upcoming version 36.",
+  "description_zh": "Nextcloud 是开源内容协作平台，组织可在自身基础设施运行，也可通过托管商获取。Hub 结合 Files、Talk、Groupware、Office、Assistant 和 Flow，实际能力取决于安装的应用、所选后端及部署。\n\n有效评估应从一个共享文件夹开始，追踪外部访问、本地编辑、恢复及持续管理。免费服务器软件、Enterprise 支持订阅及供应商托管账户具有不同费用和责任模型。本稿采用读取时标为35的 server/stable 手册；server/latest 当时标为即将发布的36。",
+  "core_features": [
+    {
+      "name_en": "Self-operated collaboration server",
+      "name_zh": "自行运营的协作服务器",
+      "explanation_en": "Community server and clients support a deployment with operator-controlled apps and infrastructure.",
+      "explanation_zh": "Community 服务器及客户端支持由运营者控制应用和基础设施的部署。",
+      "explanation_scope": "product_specific",
+      "source_ref": "server-editions",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable folder and link sharing",
+      "name_zh": "可配置文件夹与链接共享",
+      "explanation_en": "Public viewing, editable shares and upload-only file drops serve different recipient tasks.",
+      "explanation_zh": "公开查看、可编辑共享和仅上传 File drop 对应不同接收任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "file-sharing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Sync with explicit conflict handling",
+      "name_zh": "同步及明确冲突处理",
+      "explanation_en": "Local/remote edits can produce a local conflict copy that needs reconciliation.",
+      "explanation_zh": "本地／远端同时更改可能产生需协调的本地冲突副本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync-conflicts",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a design-review folder through file-drop intake, reviewer access, local conflicts and a disposable restore."
+    ],
+    "zh": [
+      "沿设计审阅文件夹评估 File drop 接收、审阅权限、本地冲突及可丢弃环境恢复。"
+    ],
+    "source_refs": ["file-sharing", "sync-conflicts", "restore"],
+    "basis": "Proposed workflow, not executed or measured customer adoption."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Linux-based server plus web/desktop/mobile clients; app/backend and installation method determine operating requirements.",
+      "zh": "Linux 服务器及网页／桌面／移动客户端，应用／后端及安装方式决定运行要求。",
+      "source_ref": "requirements",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Instance administrator or hosting provider",
+      "Team managing shared files and selected collaboration apps"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "server-editions"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the operating owner, exact server release, required apps and a non-sensitive folder workflow.",
+        "zh": "选择运行负责人、精确服务器版本、所需应用及非敏感文件夹流程。",
+        "source_refs": ["server-editions", "requirements"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check sharing, desktop conflict handling and a coherent isolated restore before sensitive use.",
+        "zh": "敏感使用前检查共享、桌面冲突处理及一致的隔离恢复。",
+        "source_refs": ["file-sharing", "sync-conflicts", "backup", "restore"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documentation_read_not_executed",
+    "items": [],
+    "source_ref": "hub",
+    "scope": "Hub apps, editor choices and optional AI providers require actual setup; no API, third-party storage, identity provider or backend configured."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "A local sync copy and updater code backup are not complete server backups; optional remote AI can change the data-processing boundary.",
+        "zh": "本地同步副本及更新器代码备份不是完整服务器备份，可选远端 AI 会改变数据处理边界。",
+        "source_refs": ["backup", "updater", "ai-backends"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "English manuals read. Documentation translations and support languages do not prove complete UI/app translation coverage."
+  },
+  "license": {
+    "status": "official_server_agpl_read",
+    "is_open_source": true,
+    "url": "https://github.com/nextcloud/server/blob/master/COPYING",
+    "source_ref": "server-license",
+    "scope": "Nextcloud Server GNU AGPLv3; README describes later contributions as AGPLv3-or-later. Other apps/clients, models and hosting/support agreements require their own terms."
+  },
+  "pricing": {
+    "status": "official_enterprise_files_pricing_checked",
+    "price_type": "free_community_server_with_paid_enterprise_support_and_separate_hosting_components",
+    "officially_checked": true,
+    "source_ref": "enterprise-pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Enterprise Files starts at 100 users, EUR net/user/year: Standard 71.29, Premium 104.99, Ultimate 204.75. Optional components, hosting and operating costs separate. No provider or contract checkout verified.",
+    "source_snapshot_zh": "Enterprise Files 从100用户起，欧元净价／用户／年：Standard71.29、Premium104.99、Ultimate204.75。可选组件、托管及运行成本另计，未核托管商／合同结账。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/nextcloud",
+      "read_at": "2026-10-22T09:00:47.047Z",
+      "excerpt_sha256": "8cce92bbe894396bd93912af44fbcf61bf2b176b1aad5e1875f3c0b33e151f9e",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "hub",
+      "type": "official_documentation",
+      "site": "nextcloud.com",
+      "title": "The next-generation digital workspace that puts you in control",
+      "url": "https://nextcloud.com/hub/",
+      "read_at": "2026-10-22T13:43:57.403741Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6d1d0c30dab872da5367ab7b11e4810090ce0672b370b05011f9627b8b423936",
+      "research_notes_en": "Read modular Hub composition and deployment choices. Marketingprivacy/compliance/no-leak claims not treated as measured or guaranteed."
+    },
+    {
+      "id": "enterprise-pricing",
+      "type": "official_pricing",
+      "site": "nextcloud.com",
+      "title": "Nextcloud Enterprise pricing",
+      "url": "https://nextcloud.com/pricing/",
+      "read_at": "2026-10-22T13:43:57.404012Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7d59a2fe4defdd60e1ed9809e4e8900e2f62f66691341e5e4b1ee14b5382193d",
+      "research_notes_en": "Read Files table Standard71.29/Premium104.99/Ultimate204.75EUR peruser/year starting100; optionalTalk/Groupware/Office andsupport not allbundled."
+    },
+    {
+      "id": "server-editions",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Introduction — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual",
+      "read_at": "2026-10-22T13:43:57.404383Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7d8d41e95607875ab54adc5598c4de7e72706bf9cd87914c2149e5c37d3920a9",
+      "research_notes_en": "Actual stable path identifies35; Communityfree/source vs Enterprisepackaging/support with bothfunctionality/source. Latest path was36upcoming and not used for releasedfeature conclusions."
+    },
+    {
+      "id": "file-sharing",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "File sharing — Nextcloud 35 User Manual",
+      "url": "https://docs.nextcloud.com/server/stable/user_manual/en/files/sharing.html",
+      "read_at": "2026-10-22T13:43:57.404852Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "581509324612e977ec6ca6fb388c8a0cf2fa3016fbb29a55f7c03f80d69f308d",
+      "research_notes_en": "Actual35stable sharing read: link/filedrop/hidedownloadlimitations,upstreamaccess visibility andfederationacceptance; noaccessaction."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Backup — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual/maintenance/backup.html",
+      "read_at": "2026-10-22T13:43:57.404910Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "38affe3d70b790d7c9c7fa2516c1acf38d87affa04f43f9a0710e8bf0a7a36cd",
+      "research_notes_en": "Actual35stable backup includesconfig/customapps/data/theme/database,maintenanceconsistency. No commands executed."
+    },
+    {
+      "id": "updater",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Upgrade via built-in updater — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual/maintenance/update.html",
+      "read_at": "2026-10-22T13:43:57.404941Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f2993a669cc50dd54f6302cc07b63e5e30094f357a7adf86c0f3bb25d68215e9",
+      "research_notes_en": "Actual35stable built-in updater onlycodebackup,secondmigrationphase,no downgrade/majorskip andfailedstepresume; no install/update."
+    },
+    {
+      "id": "ai-backends",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Overview — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual/ai/overview.html",
+      "read_at": "2026-10-22T13:43:57.404972Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c4a92e9f40a6315bdf48168897d46e61a8bf8c87b6f397a3c37cf09662a27e06",
+      "research_notes_en": "Actual35stable optionalapps/backend architecture distinguishesonprem andremoteprocessing; nomodelruns or ratingadoptedasindependentquality."
+    },
+    {
+      "id": "requirements",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "System requirements — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual/installation/system_requirements.html",
+      "read_at": "2026-10-22T13:43:57.405472Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "459628ad67020fe3b102cbf280842f52ede8b35fa308e0434a670481840546ef",
+      "research_notes_en": "Read35stableLinux/webserver/PHP/database andperprocessRAMscope;SQLitetestingminimalnotuniversalproductionrecommendation."
+    },
+    {
+      "id": "office",
+      "type": "official_documentation",
+      "site": "nextcloud.com",
+      "title": "Nextcloud Office powered by Euro-Office",
+      "url": "https://nextcloud.com/office/",
+      "read_at": "2026-10-22T13:43:57.405539Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9ca38cca508b646e9bc86d81291ee949a9530e2fa6c0dc266c373294d9ea71e3",
+      "research_notes_en": "Readcurrent OfficepoweredbyEuroOffice withothereditors,releaseavailability andinstalloption; compatibility/performance claims notbenchmark."
+    },
+    {
+      "id": "restore",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Restoring backup — Nextcloud 35 Administration Manual",
+      "url": "https://docs.nextcloud.com/server/stable/admin_manual/maintenance/restore.html",
+      "read_at": "2026-10-22T13:43:57.405583Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a362466f49bec2456fc06dc1dcdb30def5b1d98856b1683ac7dea83af7a561e5",
+      "research_notes_en": "Readactual35stable restore essentialtrio andpostrecoveryserverauthority/datafingerprintconditionalrisk;no destructivecommandsrun."
+    },
+    {
+      "id": "sync-conflicts",
+      "type": "official_documentation",
+      "site": "docs.nextcloud.com",
+      "title": "Conflicts — Nextcloud 35 User Manual",
+      "url": "https://docs.nextcloud.com/server/stable/user_manual/en/desktop/conflicts.html",
+      "read_at": "2026-10-22T13:43:57.405941Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0473eaaea4e2bc023c2cf7a8c65cb767418d1d81f78cdbe2239198ed158229ce",
+      "research_notes_en": "Actual35stable client conflict behavior,localconflictcopy/remoteprimary,no defaultupload andmanualmerge; noold3.8pageused."
+    },
+    {
+      "id": "subscription-conditions",
+      "type": "official_pricing",
+      "site": "nextcloud.com",
+      "title": "Nextcloud Enterprise pricing",
+      "url": "https://nextcloud.com/pricing/",
+      "read_at": "2026-10-22T13:43:57.406292Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "124b068f9fb7f043425667a73f793aba139a67afd2dad8a9728375ebf79937d2",
+      "research_notes_en": "ReadactualConditions netEUR/year100userminimum andnohostingforEnterprise;separateNextcloudOneoffer not universalhostingclaim."
+    },
+    {
+      "id": "server-license",
+      "type": "official_license",
+      "site": "github.com",
+      "title": "Nextcloud Server COPYING",
+      "url": "https://github.com/nextcloud/server/blob/master/COPYING",
+      "read_at": "2026-10-22T13:43:57.406574Z",
+      "verification": "official_documentation_read",
+      "transport": "official_github_connector_file_read",
+      "excerpt_sha256": "bb3d204f9601166c91db4b10b3ea4eae80ec8282df5790285111a6ca1ca65caf",
+      "research_notes_en": "ActualofficialserverCOPYINGread through GitHubconnector:GNUAGPLversion3. Noexternalcodecopied."
+    },
+    {
+      "id": "server-readme",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "Nextcloud Server README",
+      "url": "https://github.com/nextcloud/server/blob/master/README.md",
+      "read_at": "2026-10-22T13:43:57.406837Z",
+      "verification": "official_documentation_read",
+      "transport": "official_github_connector_file_read",
+      "excerpt_sha256": "242982ccf4a8f79848e0ccbcf01f86cfba044d73e59cf102a6695cf06ddb13d2",
+      "research_notes_en": "ActualREADME read: hosting/selfinstall choices,gitcheckoutnotproduction instruction,AGPLv3-or-latercontributions andthirdpartycomponents. No softwareinstalled."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:43:57.406837Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["hub", "server-editions"],
+  "profile": {
+    "sections": [
+      {
+        "id": "ownership-model",
+        "title_en": "Choose who operates the instance",
+        "title_zh": "先选择实例运营者",
+        "en": "Community is free and community-supported. Enterprise adds packaging, expertise and support arrangements; the administration manual says both include functionality and source code. A hosted account instead depends on its provider’s offer and administration. These options change who manages updates, accounts, storage and recovery.\n\nHub is modular: a file service can be the first deployment without proving every conferencing, office or AI capability is already configured. For a proposed design-review workspace, identify the required apps and operational owner before inviting the team. A single sign-in and shared interface do not eliminate the underlying services or their resource needs. No server or hosted account was created.",
+        "zh": "Community 免费，由社区支持；Enterprise 增加打包、专业能力及支持安排，管理手册称两者均含功能和源码。托管账户则取决于供应商方案和管理。这些选择改变由谁负责更新、账户、存储及恢复。\n\nHub 是模块化平台，先部署文件服务并不证明会议、办公或 AI 能力都已配置。假设建立设计审阅工作区，应先确认所需应用及运行负责人，再邀请团队。统一登录和界面不会消除底层服务及资源需求。本研究未创建服务器或托管账户。",
+        "source_refs": ["server-editions", "hub"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "folder-contract",
+        "title_en": "A recipient’s task determines the share",
+        "title_zh": "按接收者任务决定共享方式",
+        "en": "For proposed artwork intake, use an upload-only File drop when the contributor should not see existing submissions. A reviewer may instead need read/download or editing rights. Public links can have a password and expiry, and multiple links can carry different rights, subject to administrator configuration. Hide download only removes convenient download controls; the manual does not describe it as preventing a recipient from obtaining the content.\n\nCheck Others with access for permissions inherited from a parent folder; that view is restricted to owners or sharees with resharing rights. Removing one link does not establish that every other access path is gone. Federation can mount a remote Nextcloud share after recipient acceptance; it does not establish a shared organization-wide identity or an independent backup. Test the intended upload, review and revocation tasks with synthetic files.",
+        "zh": "假设接收设计素材，贡献者不应看到已有提交时，可使用仅上传的 File drop；审阅者则可能需要读取／下载或编辑权限。公开链接可设密码及期限，多条链接可有不同权限，但受管理员配置限制。Hide download 只移除便捷下载控件，手册未把它描述为阻止接收者获取内容。\n\n可用 Others with access 检查父文件夹继承权限，该视图限所有者或具有再次共享权的接收者。移除一个链接不证明其他访问路径都已消失。联邦共享可在接收者接受后挂载远端 Nextcloud 共享，但不确立跨组织统一身份或独立备份。应使用虚构文件测试目标上传、审阅及撤销任务。",
+        "source_refs": ["file-sharing"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "local-edit-conflict",
+        "title_en": "Local editing can leave an unsent conflict copy",
+        "title_zh": "本地编辑可能留下未上传冲突副本",
+        "en": "Suppose one designer edits a local specification while another changes the remote file before the next synchronization. The client preserves the local version as a conflict copy and downloads the remote version into the normal file. By default, the local conflict copy is not uploaded. Colleagues looking only at the server may therefore miss those local changes.\n\nThe documented resolution requires comparing the versions and incorporating the wanted changes into the base file. Do not assume that a green-looking shared folder or a real-time office editor makes every external desktop format merge automatically. Check the conflict notification and preserve both versions until the accepted result is clear. This is a proposed scenario, not a performed sync or recovery test.",
+        "zh": "假设一名设计师编辑本地规格，另一人在下次同步前更改远端文件。客户端会把本地版保留为冲突副本，并把远端版下载到普通文件；默认不会上传本地冲突副本，因此只看服务器的同事可能看不到这些更改。\n\n文档要求比较两个版本，把需要的更改合入基础文件。不能假定共享文件夹看似正常，或有实时办公编辑器，就能自动合并所有外部桌面格式。应检查冲突通知，在确认采纳结果前保留两版。这是拟议场景，本研究未执行同步或恢复测试。",
+        "source_refs": ["sync-conflicts"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "editor-ai-backend",
+        "title_en": "Office and AI depend on the chosen processing path",
+        "title_zh": "办公和 AI 依赖所选处理路径",
+        "en": "The current Office page offers Euro-Office alongside other editor choices such as Collabora Online. Select the actual editor and test the team’s files, comments and export round trip; vendor format-compatibility claims are not a guarantee that complex workbooks, layouts or macros survive unchanged. Installing a file server alone does not settle the editing backend.\n\nThe AI manual makes features optional through separate apps and distinguishes local processing from third-party providers behind a similar interface. A locally hosted Nextcloud can still send processing to a remote AI service. Confirm the selected provider, data flow, required compute, model terms and charges before enabling sensitive tasks. The public source license does not establish model/training-data licensing or output accuracy. No editor, model or external AI request was run.",
+        "zh": "当前 Office 页面提供 Euro-Office，也保留 Collabora Online 等编辑器选项。应选择实际编辑器，测试团队文件、评论及导出再打开的往返；厂商格式兼容性主张不保证复杂工作簿、版式或宏原样保留。仅安装文件服务器不能确定编辑后端。\n\nAI 手册规定功能通过独立应用可选启用，并区分相似界面背后的本地处理和第三方供应商。本地托管的 Nextcloud 仍可能把处理发送到远端 AI 服务。启用敏感任务前应确认供应商、数据流、计算资源、模型条款及费用。公开源码许可不确立模型／训练数据许可或输出准确性。本研究未运行编辑器、模型或外部 AI 请求。",
+        "source_refs": ["office", "ai-backends"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "coherent-recovery",
+        "title_en": "A restorable installation needs more than synchronized files",
+        "title_zh": "可恢复安装需要的不止同步文件",
+        "en": "The backup guide includes configuration, data, database, themes and custom apps when present, with maintenance mode used for a consistent operation. The restore guide explicitly requires the database, data and configuration together. A synchronized desktop folder or an archive of visible documents is not that server backup.\n\nAfter an older backup is restored, the server is normally authoritative and clients may have newer data. The documented data-fingerprint procedure changes reconciliation behavior for that case and can create conflicts; it is not a routine replacement for a coherent backup. For a proposed acceptance check, restore a disposable copy and examine accounts, file contents, shares and enabled apps before reconnecting production clients. External storage and other app backends need deployment-specific treatment, which was not established here. No backup, destructive restore step or command was executed.",
+        "zh": "备份指南要求配置、数据、数据库、主题，以及存在时的自定义应用，并用维护模式确保操作一致性。恢复指南明确要求数据库、数据和配置同时存在。桌面同步文件夹或可见文档归档不是这种服务器备份。\n\n恢复旧备份后，服务器通常作为权威源，而客户端可能有较新数据。文档的 data-fingerprint 流程针对该情况改变协调行为，可能产生冲突，不能代替一致备份。拟议验收应在可丢弃副本恢复，检查账户、文件内容、共享及启用应用，再重连生产客户端。外部存储和其他应用后端需按具体部署处理，此处未确立。本研究未运行备份、破坏性恢复步骤或命令。",
+        "source_refs": ["backup", "restore"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "upgrader-boundary",
+        "title_en": "Updater success has a code phase and a migration phase",
+        "title_zh": "更新器成功涉及代码及迁移两个阶段",
+        "en": "The built-in updater backs up the existing code, not the database or data directory. After replacing files, database/app migration still has to run. Its manual-installation scope should not be transferred unchanged to every appliance or container deployment.\n\nThe guide warns against downgrades and skipping major versions. If an updater step fails, it can resume the failed step after the cause is resolved; blindly restoring only old application code is not the documented rollback. Keep a matching backup and check app compatibility and actual post-upgrade behavior before returning the instance to service. This research did not perform an upgrade or establish a universal zero-downtime procedure.",
+        "zh": "内置更新器备份现有代码，不备份数据库或数据目录。替换文件后仍需执行数据库／应用迁移，其手动安装适用范围不应原样套到所有设备包或容器部署。\n\n指南警告不要降级或跳过主版本。更新步骤失败时，可解决原因后从失败步骤继续；只恢复旧应用代码不是文档规定的回滚。应保存匹配备份，检查应用兼容性及更新后真实行为，再恢复服务。本研究未升级，也未确立通用零停机流程。",
+        "source_refs": ["updater"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operating-footprint",
+        "title_en": "Size the server and each enabled workload",
+        "title_zh": "按服务器及启用负载估算资源",
+        "en": "The inspected stable manual describes a Linux server with a web server, PHP runtime and database. SQLite is recommended only for testing and minimal instances. Its memory figures are per process and vary with users, apps, files and activity; they should not be quoted as the total memory requirement for a full Hub with conferencing and AI.\n\nUse the requirements for the exact target release and chosen installation method, then test representative file sizes and concurrent tasks. A browser login succeeding does not verify background operations, mail, editing, network reachability or recovery. Supported operating systems, PHP/database versions and mobile requirements change, so no permanent version matrix or scale benchmark is claimed here.",
+        "zh": "所读稳定手册描述 Linux 服务器、网页服务器、PHP 及数据库；SQLite 仅建议用于测试和极简实例。内存指标按进程计算，并随用户、应用、文件及活动变化，不能把它当作含会议和 AI 的完整 Hub 总内存需求。\n\n应使用目标版本及安装方式的要求，再测试代表性文件大小和并发任务。网页登录成功不验证后台操作、邮件、编辑、网络可达性或恢复。支持的系统、PHP／数据库及移动要求会变化，因此此处不宣称永久版本表或规模基准。",
+        "source_refs": ["requirements"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "software-support-hosting",
+        "title_en": "Separate software cost, support and hosting",
+        "title_zh": "区分软件、支持及托管费用",
+        "en": "The inspected Enterprise Files table starts at 100 users: Standard €71.29/user/year, Premium €104.99 and Ultimate €204.75, net of VAT. At the displayed Standard floor, 100 users imply €7,129/year for that listed subscription before extras; this is an editorial calculation, not a quote. Talk, Groupware and Office appear as optional paid components, so the full workspace total needs a scoped offer.\n\nCommunity software can be used without this Enterprise subscription, but infrastructure, administration, backup and optional backend costs remain. The pricing conditions describe support rather than included hosting and separately link a managed Nextcloud One offer; provider terms must be checked independently. Confirm supported release lifecycle, response versus resolution commitments, included services and renewal/exit conditions. No Enterprise purchase or hosting quotation was obtained.",
+        "zh": "所读 Enterprise Files 表从100用户起：Standard 每用户每年 €71.29、Premium €104.99、Ultimate €204.75，未含增值税。按显示的 Standard 下限，100用户该订阅等值每年 €7,129，未加额外项；这是编辑算例，不是报价。Talk、Groupware 和 Office 列为额外付费组件，完整工作区需按范围报价。\n\nCommunity 软件可不购买该 Enterprise 订阅，但基础设施、管理、备份及可选后端仍有成本。定价条件描述支持而非包含托管，另行链接托管 Nextcloud One 方案，供应商条款需独立核对。应确认支持版本生命周期、响应与解决承诺区别、包含服务及续订／退出条件。本研究未购买 Enterprise 或取得托管报价。",
+        "source_refs": [
+          "enterprise-pricing",
+          "subscription-conditions",
+          "server-editions"
+        ],
+        "evidence_type": "documented_with_editorial_calculation"
+      },
+      {
+        "id": "license-fit",
+        "title_en": "Open server rights come with operating responsibility",
+        "title_zh": "服务器开源权利伴随运营责任",
+        "en": "The official server repository contains the GNU AGPLv3 license; its README describes later contributions as AGPLv3 or later. This supports an open-source server classification. Check each app, client and integration’s own license, and the applicable obligations when modifying or offering the software, rather than treating every connected component as one permissive package.\n\nNextcloud is a practical candidate when control over hosting, apps and data is a requirement and someone can maintain the instance or select a responsible provider. A team expecting a fixed, fully operated SaaS allowance must evaluate a specific hosting offer. Data residency, security outcomes, recovery time, complete cross-app export and legal compliance depend on that deployment and were not verified.",
+        "zh": "官方服务器仓库包含 GNU AGPLv3 许可证，README 将后续贡献描述为 AGPLv3 或更新版本，支持把服务器归为开源。应分别检查应用、客户端、集成许可及修改／提供软件时的适用义务，不能把所有相连组件当作同一个宽松许可包。\n\n当托管、应用及数据控制是需求，并有人维护实例或选择负责的托管商时，Nextcloud 可列入候选。期望固定额度、完整代运营 SaaS 的团队应评估具体托管方案。数据驻留、安全结果、恢复时间、跨应用完整导出及法律合规依赖具体部署，此处未核实。",
+        "source_refs": ["server-license", "server-readme"],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Nextcloud: Self-Hosted Sharing, Sync Conflicts, Backups and Cost",
+    "title_zh": "Nextcloud：自托管共享、同步冲突、备份及费用",
+    "description_en": "Evaluate Nextcloud through recipient-specific links, local conflict copies, coherent recovery, updater limits and separate support, hosting and AI backends.",
+    "description_zh": "从按接收者任务共享、本地冲突副本、一致恢复、更新器限制及独立支持／托管／AI 后端评估 Nextcloud。",
+    "primary_intent": "Evaluate operator-controlled content collaboration and its maintenance responsibilities.",
+    "secondary_questions": [
+      "Does Nextcloud updater back up the database and user files?",
+      "Can a self-hosted Nextcloud still use remote AI processing?"
+    ],
+    "query_basis": "Editorial questions; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No server, provider account, app/editor/AI setup, share, sync, upgrade, backup/restore, purchase or cancellation executed.",
+      "zh": "未执行服务器、托管账户、应用／编辑器／AI 设置、共享、同步、升级、备份／恢复、购买或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact deployed release and method, editor round-trip fidelity, Talk infrastructure/capacity, storage/backend handling, AI data flow/model terms and performance need environment-specific validation. Stable URL identified35 at reading time and can move later.",
+      "zh": "实际部署版本及方式、编辑器往返保真、Talk 基础设施／容量、存储／后端处理、AI 数据流／模型条款及性能需环境专属验证。稳定 URL 读取时标为35，之后可能变化。",
+      "source_refs": ["requirements", "office", "ai-backends"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Complete app-wide export/restore and external storage, provider DPA/residency/retention/recovery, precise support SLA, renewal/cancellation terms, regional taxes and permanent hosted-free entitlement were not established.",
+      "zh": "跨应用完整导出／恢复及外部存储、托管商 DPA／驻留／保留／恢复、精确支持 SLA、续订／取消、地区税及持续托管免费资格未确立。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

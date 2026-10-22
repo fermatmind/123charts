@@ -1,0 +1,425 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "focalscope-00c73b70",
+  "name": "FocalScope",
+  "website_url": "https://www.focalscope.com/",
+  "domain": "www.focalscope.com",
+  "identity_domain": "focalscope.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "FocalScope combines email tickets, voice, website chat, messaging and customer context in an agent workspace. Its live chat can transfer between teams, store transcripts on a customer card and create email follow-up tickets. Routing and SLA policies distribute work across agents; AI capabilities have their own beta and commercial scope.\n\nFor an illustrative order-status request, connect the correct customer/order context, route the chat, handle unavailable agents and create an owned follow-up when the session cannot resolve it. Cloud, on-premise, hybrid and BYOC differ in operating responsibility. Published per-agent prices do not remove minimum-user or contract obligations in the EULA. This profile is public-documentation research without a tenant, AI/chat, deployment, API, purchase or restore test.",
+  "description_zh": "FocalScope在客服工作区结合邮件工单、语音、网站聊天、消息及客户上下文。在线聊天可跨团队转接、将记录存入客户卡，并创建邮件后续工单。路由和SLA策略跨客服分配工作，AI另有测试版及商业范围。\n\n以假设订单状态请求为例，应连接正确客户／订单上下文、路由聊天、处理客服不可用，并在当次无法解决时创建明确归属的跟进。云、本地、混合及BYOC的运营责任不同，公布每客服价不取消EULA中的最低人数或合同义务。本稿为公开文档研究，未测试租户、AI／聊天、部署、API、购买或恢复。",
+  "core_features": [
+    {
+      "name_en": "Chat-to-ticket continuity",
+      "name_zh": "聊天到工单连续性",
+      "explanation_en": "Transfer a live session,retain customer-card history and create email follow-up tickets.",
+      "explanation_zh": "转接实时会话、保留客户卡历史，并创建邮件跟进工单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "chat",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Cross-channel routing and SLA",
+      "name_zh": "跨渠道路由及SLA",
+      "explanation_en": "Choose routing strategies and configure timer pause/stop conditions and escalation alerts.",
+      "explanation_zh": "选择路由策略，配置计时暂停／停止及升级提醒。",
+      "explanation_scope": "product_specific",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Capacity-aware widget behavior",
+      "name_zh": "按客服容量调整组件",
+      "explanation_en": "At full agent capacity the widget can switch offline,offer a form or be hidden.",
+      "explanation_zh": "客服满载时可切离线、展示表单或隐藏组件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "chat",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scoped deployment choices",
+      "name_zh": "按范围确定部署选项",
+      "explanation_en": "Managed cloud,on-premise,hybrid and BYOC require distinct technical/operational scope.",
+      "explanation_zh": "托管云、本地、混合及BYOC需分别确定技术／运营范围。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot website support that needs shared email follow-up and customer history.",
+      "Compare managed cloud with a specifically scoped deployment under internal governance."
+    ],
+    "zh": [
+      "试点需要共享邮件跟进及客户历史的网站支持。",
+      "将托管云与按内部治理明确范围的部署比较。"
+    ],
+    "source_refs": ["chat", "deployment"],
+    "basis": "Editorial scenarios without measured operational results."
+  },
+  "technical_details": {
+    "Published on-premise prerequisites": {
+      "en": "Dedicated/virtual server,4Intelcores+,16GBRAM+,IIS,WindowsServer2019+,SQLServer2019Standard+withFullTextSearchandCLR;500MBinstalland100–300GBstorage. Exact release,OS/SQL licensing and backup design require scoping.",
+      "zh": "独立／虚拟服务器、至少4Intel核心及16GB内存、IIS、Windows Server2019以上、SQL Server2019 Standard以上且含全文检索和CLR；安装500MB、存储100—300GB。准确版本、系统／SQL许可及备份设计需另定。",
+      "source_ref": "requirements",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Omnichannel support manager",
+      "Contact center administrator",
+      "Enterprise deployment owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "routing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm named users,minimum commitments,channels and deployment scope in the selected order.",
+        "zh": "在所选订单确认实名用户、最低承诺、渠道及部署范围。",
+        "source_refs": ["pricing", "eula", "deployment"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot one widget,customercard,routingqueue and explicit email follow-up owner.",
+        "zh": "试点一个组件、客户卡、路由队列及明确邮件跟进负责人。",
+        "source_refs": ["chat", "routing"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test fullcapacity,offhours,SLApause/reassignment andbetaAIhandoff beforebroadrelease.",
+        "zh": "广泛上线前测试满载、非营业、SLA暂停／重分配及测试版AI交接。",
+        "source_refs": ["chat", "routing", "ai"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Validate export,restore,access and termination/uninstall obligations for the chosen deployment.",
+        "zh": "按所选部署验证导出、恢复、访问及终止／卸载义务。",
+        "source_refs": ["deployment", "eula"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "CRM / ERP / e-commerce context",
+        "source_ref": "chat",
+        "scope": "Customer card can display external orders/customer data; mapping,identitymatchandwritepermissionunverified."
+      },
+      {
+        "name": "Open APIs",
+        "source_ref": "developers",
+        "scope": "Published actions includequeryemails/retrievetickets/closetickets/sendmail;auth,rates,versionandfailurebehaviornotestablished."
+      },
+      {
+        "name": "MCP",
+        "source_ref": "ai",
+        "scope": "Explicitlybeta;notproofgenerallyavailableexternaltoolrightsorpriceinclusion."
+      }
+    ],
+    "source_ref": "developers"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Agentic AI live chat,WhatsApp,web knowledge and MCP are labelled beta; selected voice follow-up emails are coming soon.",
+        "zh": "Agentic AI聊天、WhatsApp、网页知识及MCP标测试版，部分语音后续邮件标即将推出。",
+        "source_refs": ["ai"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "EULA minimums are two Small Cloud users and five Cloud/on-premise users, while pricing headlines quote per-user rates.",
+        "zh": "EULA最低Small Cloud2用户，Cloud／本地5用户，而价格标题按用户报价。",
+        "source_refs": ["eula", "pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "On-premise/hybrid/BYOC are scoped projects, not an unconditional self-service install or proof all AI processing stays local.",
+        "zh": "本地／混合／BYOC需定制项目，不是无条件自助安装，也不证明全部AI处理留本地。",
+        "source_refs": ["deployment", "ai"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.focalscope.com/eula.html",
+    "source_ref": "eula"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "eula"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "PublishednameduserpermonthratewithEULAminimumusersandnoncancelablecontract;quotationcanoverride. Headlineisnotminimumteamorcheckouttotal.",
+    "source_snapshot_en": "SmallCloud$9/agent/monthup2agents,2mailboxes,2GB;Cloud$39andOnprem$39,voice/chatbotsquote. EULAminimum2SmallCloudor5Cloud/onprem:illustrativebase$18/$195permonthbeforetax/extras,notcheckout.30daynocardtrial;nopermanentfreeplanestablished.",
+    "source_snapshot_zh": "Small Cloud每客服每月9美元，最多2客服、2邮箱、2GB；Cloud与本地各39美元，语音／聊天机器人询价。EULA最低Small Cloud2人、Cloud／本地5人，示例基础月费18／195美元，未含税／附加且不是结账价。30天无需卡试用，未确定永久免费档。",
+    "checked_at": "2026-10-22T12:52:33.549913+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does the$9headline mean a one-user$9team?",
+      "question_zh": "9美元标题代表单用户团队只付9美元吗？",
+      "answer_en": "Not established. EULA specifies at least two Small Cloud users. Combined with the published rate that implies an illustrative$18base monthly amount, subject to the actual quote/term and taxes.",
+      "answer_zh": "不能确定。EULA要求Small Cloud至少2用户，与公布单价组合得到示例基础月费18美元，仍受实际报价／期限及税约束。",
+      "source_refs": ["pricing", "eula"]
+    },
+    {
+      "question_en": "Does on-premise mean all AI is local?",
+      "question_zh": "本地部署代表全部AI在本地吗？",
+      "answer_en": "No such guarantee was established. The deployment page calls for scoping and AI features may use internal and external sources; agree the actual data path and provider dependencies.",
+      "answer_zh": "此次未确定此保证。部署页要求定范围，AI可用内部及外部来源，应明确真实数据路径和提供商依赖。",
+      "source_refs": ["deployment", "ai"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/focalscope",
+      "read_at": "2026-10-22T08:49:54.123Z",
+      "excerpt_sha256": "53a16758edd94d1452a304a8605ea875d3f53ffb7bb87287d9cb553ca6cd3e04",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "chat",
+      "type": "official_documentation",
+      "site": "Best Live Chat Software for Customer Service in 2026| FocalScope",
+      "title": "Best Live Chat Software for Customer Service in 2026| FocalScope",
+      "url": "https://www.focalscope.com/live-chat.html",
+      "read_at": "2026-10-22T12:51:45.174332+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8c48936e626fdf3579ab9a16d14bc3f8315e0044502d4d9aa7d09da5da58b9d2",
+      "research_notes_en": "Livechatrouting,capacityofflineoptions,customercontext,follow-upticketandtranscriptworkflow;marketingoutcomesnotvalidated."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Plans starting from just $9 a month | FocalScope Pricing",
+      "title": "Plans starting from just $9 a month | FocalScope Pricing",
+      "url": "https://www.focalscope.com/pricing.html",
+      "read_at": "2026-10-22T12:51:40.970196+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "032735de4f20955c738e861c8ba24573dc7ba9015af4e37814aeb323eea6df33",
+      "research_notes_en": "9SmallCloudup2agents/2mailboxes/2GB,39Cloud/onprem,namedusersinclude supervisors/managers,voice/AIadd-onsquote."
+    },
+    {
+      "id": "routing",
+      "type": "official_documentation",
+      "site": "Automate Workflows, Routing, and Track SLAs | FocalScope",
+      "title": "Automate Workflows, Routing, and Track SLAs | FocalScope",
+      "url": "https://www.focalscope.com/routing-sla.html",
+      "read_at": "2026-10-22T12:51:41.059927+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b85c4f382d5473cf1989c5c784fd74f15f02123b16d68066d8b86c28d79542d9",
+      "research_notes_en": "Priority,availability,roundrobin,skills/preferred/manualroutingandSLApausestopsescalations;noexactordering/retryguarantee."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "The full platform, under your control | FocalScope",
+      "title": "The full platform, under your control | FocalScope",
+      "url": "https://www.focalscope.com/on-premise-contact-center-software.html",
+      "read_at": "2026-10-22T12:51:39.746332+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "05293bb369688d1831835c26549f93e14e254b9c85fe52376ed6c3b14303f2ee",
+      "research_notes_en": "Controlledonprem/hybrid/BYOCtailoredscoping,noselfserviceoneclick,noguaranteedall-localAI."
+    },
+    {
+      "id": "requirements",
+      "type": "official_documentation",
+      "site": "System Requirements | FocalScope",
+      "title": "System Requirements | FocalScope",
+      "url": "https://www.focalscope.com/system-requirements.html",
+      "read_at": "2026-10-22T12:52:32.957299+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7c6a5096a772a4a0b0edc98b3ae690a78fdffc499e056af18e08094118fde9c3",
+      "research_notes_en": "ActualonpremWindowsServer2019+,IIS,SQLServer2019Standard+fulltext/CLR,4cores16GBandstorage;currentversioncompatibilitynotexecuted."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "Agentic AI and Copilot for Customer Service | FocalScope",
+      "title": "Agentic AI and Copilot for Customer Service | FocalScope",
+      "url": "https://www.focalscope.com/agentic-ai-copilot.html",
+      "read_at": "2026-10-22T12:52:33.549913+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "de23614d99982d9d8c2f51eeb4c3e1329568266c5c417c53af2a6fb9740821a8",
+      "research_notes_en": "AIchat/WhatsApp/webknowledge/MCPmarkedbeta;voicefollowupemailcomingsoon.80+languagesclaimnotfullUIcoverage."
+    },
+    {
+      "id": "developers",
+      "type": "official_documentation",
+      "site": "Build your own integrations with open APIs | FocalScope",
+      "title": "Build your own integrations with open APIs | FocalScope",
+      "url": "https://www.focalscope.com/developers.html",
+      "read_at": "2026-10-22T12:51:40.399918+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1bc302bb44553681548ed315b64646b9929fc27373a10b12e4f8296c692a3df1",
+      "research_notes_en": "OpenAPIactionsquerytickets/close/send;APIpublicscopewithoutauthentication/rate/errorreference."
+    },
+    {
+      "id": "eula",
+      "type": "official_license",
+      "site": "End User License Agreement | FocalScope",
+      "title": "End User License Agreement | FocalScope",
+      "url": "https://www.focalscope.com/eula.html",
+      "read_at": "2026-10-22T12:51:42.913867+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "133288e57c464a8dbdfc98a8a21cdeb82042a4adb003ed3e9a2871ae9837be7e",
+      "research_notes_en": "Selectedproprietarysubscription,2/5nameduserminima,nonrefundability/termreduction,one(2)yearsambiguity,onpremremoteuninstallcondition."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:52:33.549913+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "chat",
+    "routing",
+    "deployment",
+    "pricing",
+    "eula",
+    "ai"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "support-loop",
+        "title_en": "Trace the live conversation into owned follow-up",
+        "title_zh": "将实时对话追踪至明确归属的跟进",
+        "en": "FocalScope’s chat is one channel in a broader customer-service workspace. Customer cards hold prior interactions, contact details and notes; integrations can add order or shipment references. Sessions can move to another team, attach customer files and become follow-up email tickets when a single chat is insufficient. Unlimited widget placement is not a claim of unlimited agents, storage or every channel entitlement.\n\nFor an illustrative delayed order, confirm the right customer and order before answering, transfer to the responsible team and create a follow-up with an owner if shipment details are missing. Verify the transcript, attachments and next action survive that transition. Automatically recording a session does not by itself demonstrate complete export, customer identity matching or resolution. Vendor conversion stories were not independently validated.",
+        "zh": "FocalScope聊天是更广客户服务工作区的一条渠道。客户卡保存既有互动、联系方式及备注，集成可增加订单／物流参考。会话可转其他团队、收客户文件，单次不足时创建邮件跟进工单。组件放置不限不表示客服、存储或所有渠道权益不限。\n\n以假设订单延迟为例，回答前核对正确客户及订单，转负责团队，若缺物流资料则创建有负责人的跟进。需验证记录、附件及下一动作随之保留。自动记录会话本身不证明完整导出、身份匹配或解决；厂商转化案例未独立验证。",
+        "source_refs": ["chat", "pricing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "capacity-routing",
+        "title_en": "Model busy and unavailable states before adding automation",
+        "title_zh": "自动化前先设计繁忙及不可用状态",
+        "en": "The chat page offers offline mode outside operating hours and when agents reach capacity. The chosen response can be a bot,a contact form or hiding the widget. These have materially different customer outcomes: a hidden widget creates no live handoff, while a form needs a follow-up owner. Agent availability can also be balanced across channels.\n\nRouting documentation describes priority,availability,round-robin,fair distribution,skills,preferred-agent and manual approaches. SLA profiles define working hours and timer pause/stop conditions, with aging alerts,backlog views and configurable redistribution if an agent does not respond. The pages do not specify rule precedence,transactional reassignment or exact timer mechanics for every channel. Test competing routes,an agent going offline,an on-hold case and a late reassignment against the selected policy rather than treating an SLA alert as a resolution guarantee.",
+        "zh": "聊天页允许在非营业或客服满载时切离线，响应可选机器人、联系表单或隐藏组件，结果差异很大：隐藏组件没有真人交接，表单则需后续负责人。客服可用性也可跨渠道平衡。\n\n路由文档描述优先、可用性、轮询、公平分配、技能、偏好客服及人工方式。SLA设工作时间及暂停／停止，带老化提醒、积压视图及客服未回应时可配置重分配。页面未说明每渠道规则优先级、事务式重分配或准确计时机制。应按所选策略测试竞争路由、客服离线、挂起及延迟重分配，不能把提醒当解决保证。",
+        "source_refs": ["chat", "routing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-release",
+        "title_en": "Respect beta and coming-soon boundaries",
+        "title_zh": "遵守测试版及即将推出边界",
+        "en": "The AI page presents Copilot,classification,summaries and automated interactions across channels. It explicitly labels agentic live chat and WhatsApp as beta,along with website-knowledge integration and MCP. Selected voice follow-up email functions are coming soon. Those labels limit what can be assumed from the broad all-channel AI headline.\n\nFor a pilot,restrict knowledge and tools to the approved task,check a missing-answer escalation and inspect the resulting human context. The claimed eighty-plus AI languages do not establish complete UI language coverage or tested answer accuracy. Pricing calls chatbots an add-on requiring contact; included AI credits,model providers,tool-write approval and failure recovery were not established. Private-workspace marketing does not prove every inference or external website access stays inside the customer’s environment.",
+        "zh": "AI页展示Copilot、分类、摘要及跨渠道自动互动，但明确将agentic聊天、WhatsApp、网页知识集成及MCP标beta，部分语音后续邮件标即将推出。这些标签限制了对全渠道AI标题的推断。\n\n试点时应把知识及工具限于获准任务，检查缺答案升级及交给真人的上下文。80多AI语言主张不确定完整界面语言或已测准确性。价格将聊天机器人列为需联系的附加项，未确定包含点数、模型商、工具写入审批及失败恢复。私有工作区宣传不能证明每次推理或外部网页访问都留在客户环境。",
+        "source_refs": ["ai", "pricing", "deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-license",
+        "title_en": "Scope the deployment and its proprietary obligations",
+        "title_zh": "明确部署及专有许可义务",
+        "en": "FocalScope offers managed cloud and discusses on-premise,hybrid and BYOC as tailored projects requiring technical and operational review. The workspace may stay familiar while data location,access,updates and infrastructure ownership change. It is not a promise that any buyer can download a one-click local install with identical external dependencies.\n\nPublished on-premise requirements include Windows Server2019+,IIS,SQL Server2019Standard+with Full Text Search and CLR,four cores and16GBRAM,plus storage. Software licensing,backup,availability and supported version combinations add costs beyond the seat rate. The EULA grants proprietary subscription use,restricts redistribution and reserves usage-control components; open APIs and SQL access do not make the product open source. Developer summaries list query,close and send actions,but no verified authentication/rate/error contract was established here.",
+        "zh": "FocalScope提供托管云，并将本地、混合及BYOC描述为需技术及运营审查的定制项目。工作区可熟悉不变，但数据位置、访问、更新及基础设施归属不同，并非承诺任意买方可一键本地安装且外部依赖相同。\n\n公布本地要求含Windows Server2019以上、IIS、SQL Server2019 Standard以上且启全文检索及CLR、4核心、16GB内存和存储。软件许可、备份、可用性及版本组合带来席位外成本。EULA授专有订阅使用、限制再分发并保留用量控制组件，开放API或SQL访问不等于开源。开发摘要列查询、关闭及发送动作，但此次未确定认证／限流／错误契约。",
+        "source_refs": ["deployment", "requirements", "eula", "developers"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "named-cost",
+        "title_en": "Count licensed staff and minimum users",
+        "title_zh": "计算授权人员及最低用户",
+        "en": "Pricing lists Small Cloud$9per agent/month for up to two agents,two mailboxes and2GB; Cloud and On-premise$39per agent/month. An agent is a named user,including supervisors and managers. EULA minimums are two Small Cloud users and five Cloud/on-premise users. Combining those stated numbers gives illustrative base amounts of$18and$195/month before taxes,voice,AI or infrastructure; the selected quotation remains decisive.\n\nCloud storage is shown as30/60/90GB without a complete allocation rule in the read page; on-premise unlimited storage does not supply infinite physical disks. Voice and chatbots are separately quoted. A thirty-day no-card trial does not establish permanent free use. EULA generally makes payments non-refundable and prevents reducing users during the committed term,so a monthly rate should not be described as cancel-anytime billing. Currency defaults to USD unless the commercial document says otherwise.",
+        "zh": "价格列Small Cloud每客服每月9美元，最多2客服、2邮箱、2GB；Cloud及本地每客服39美元。客服是实名用户，含主管及经理。EULA最低Small Cloud2人，Cloud／本地5人，组合得到示例基础月费18及195美元，未含税、语音、AI或基础设施，所选报价仍关键。\n\n云存储列30／60／90GB，但所读页面未给完整分配规则；本地不限存储也不供应无限磁盘。语音及聊天机器人另询价。30天无需卡试用不建立永久免费。EULA一般不退款，并禁止承诺期减席，因此月单价不应写成随时可取消；除商业文件另定外币种默认USD。",
+        "source_refs": ["pricing", "eula"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "Resolve term wording and exit mechanics before commitment",
+        "title_zh": "承诺前解决期限措辞及退出机制",
+        "en": "The EULA contains a visible initial-term inconsistency,writing one(2)years. It also describes renewal and advance-notice conditions and a more specific reduction notice measured by the current calendar month plus three months before renewal. Do not silently choose one numerical duration. Obtain the actual order and an unambiguous end/reduction date.\n\nFor on-premise,the EULA says termination requires vendor remote access to uninstall and that obligations and fees can continue until removal. This is a material operational condition,not evidence that simply stopping the server ends payment. Cloud removal of all users discontinues the instance. Plan record extraction,securely scoped uninstall access and internal handover before termination. Complete export,attachment portability,backup restoration and data deletion timing were not verified; no system or account was changed.",
+        "zh": "EULA初始期限有可见矛盾，写作one(2)years，另有续约及提前通知，并以当前日历月加续约前3个月描述更具体减席通知。不能默默选择一个数值期限，应取得真实订单和无歧义结束／减席日期。\n\n本地部署EULA称终止需提供厂商远程卸载访问，移除前义务与费用可继续。这是实质运营条件，不证明停止服务器就停止付款。云全部用户移除会终止实例。应在终止前规划记录取回、安全限定卸载访问及内部交接。完整导出、附件可迁移性、备份恢复及删除时间未验证，此次未修改系统或账户。",
+        "source_refs": ["eula", "deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "FocalScope: Chat Follow-up, SLA Routing, Deployment and Named-User Costs",
+    "title_zh": "FocalScope：聊天跟进、SLA路由、部署及实名用户费用",
+    "description_en": "Research FocalScope live-chat capacity, ticket handoff, beta AI, Windows/SQL requirements, minimum users and EULA exit conditions.",
+    "description_zh": "研究FocalScope聊天容量、工单交接、测试版AI、Windows／SQL要求、最低用户及EULA退出条件。",
+    "primary_intent": "Evaluate FocalScope omnichannel live chat and deployment obligations.",
+    "secondary_questions": [
+      "What is the minimum team cost?",
+      "Is agentic chat generally available?",
+      "How does on-premise termination work?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,chat,AI,routing,SLA,API,deployment,purchase,export,uninstallorrestoretested. Exactorderterm,minimumentitlements,AI/providerbilling,securityscope,cloudstorageallocation,APIerrors,fullUIlanguages,recordportabilityanddatadeletionremainunverified.",
+      "zh": "未测试租户、聊天、AI、路由、SLA、API、部署、购买、导出、卸载或恢复。准确订单期限、最低权益、AI／提供商计费、安全范围、云存储分配、API错误、完整界面语言、记录可迁移性及删除未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

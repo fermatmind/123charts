@@ -1,0 +1,419 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "bright-pattern-9fd0f825",
+  "name": "Bright Pattern",
+  "website_url": "https://www.brightpattern.com/",
+  "domain": "www.brightpattern.com",
+  "identity_domain": "brightpattern.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Bright Pattern is a contact-centre platform for routing voice and digital interactions, operating agent workspaces and supervising service delivery. The current platform also markets AI assistance, interaction analysis, quality management and native workforce management. Official packages separate voice, digital, combined omnichannel and mobile use; the mobile package lists manual outbound calling rather than every dialer mode.\n\nA useful evaluation follows one caller from an IVR choice through agent selection, connection, no-answer handling and a final disposition, then checks what the report actually counted. Bright Pattern exposes scenario branches for those decisions. Public cloud, private cloud and on-premise deployments are offered, but the published pricing page requests a quote and does not establish amounts or billing units. This profile reviews documents; no tenant, call, routing rule, integration, payment or migration was executed.",
+  "description_zh": "Bright Pattern 是联络中心平台，用于路由语音及数字互动、运行客服工作区并监督服务交付。当前平台还宣传 AI 辅助、互动分析、质检及原生人力管理。官方套餐区分语音、数字、组合全渠道和移动用途；移动套餐列的是手动外呼，并非全部拨号模式。\n\n可用一通电话评估：从 IVR 选择，经客服选择、连接、未接处理到最终处置，再检查报告究竟计了什么。Bright Pattern 提供这些决策的场景分支。平台提供公有云、私有云和本地部署，但公开定价页要求询价，未建立金额或计费单位。本档案只审阅文档，未执行租户、电话、路由规则、集成、付款或迁移。",
+  "core_features": [
+    {
+      "name_en": "Scenario-based call delivery",
+      "name_zh": "按场景投递电话",
+      "explanation_en": "Select an agent, connect the destination and handle no answer, busy and transfer failure separately.",
+      "explanation_zh": "选择客服、连接目标，并分别处理未接、忙线及转接失败。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connect-call",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conversational IVR building blocks",
+      "name_zh": "对话式 IVR 组件",
+      "explanation_en": "Use configured speech services and explicit recognition, DTMF and failure branches.",
+      "explanation_zh": "使用已配置语音服务及明确识别、按键和失败分支。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ivr",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Concurrent agent work",
+      "name_zh": "客服并行处理",
+      "explanation_en": "Interpret state together with configured media capacity rather than treating Busy as always unavailable.",
+      "explanation_zh": "结合媒体容量配置理解状态，不将 Busy 一概当不可接新互动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "agent-states",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Interaction-path investigation",
+      "name_zh": "互动路径调查",
+      "explanation_en": "Follow scenario exits to explain report dispositions and overflow handling.",
+      "explanation_zh": "跟踪场景出口，解释报表处置及溢出处理。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reports",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Deployment choice",
+      "name_zh": "部署选择",
+      "explanation_en": "Evaluate public cloud, private cloud or on-premise versions against operational and data requirements.",
+      "explanation_zh": "按运营及资料要求评估公有云、私有云或本地版本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A contact centre needing explicit call-routing failure branches and operational reporting.",
+      "A service organization comparing voice-only and voice-plus-digital packages with deployment requirements."
+    ],
+    "zh": [
+      "需要明确电话路由失败分支及运营报告的联络中心。",
+      "按部署要求比较纯语音与语音加数字套餐的服务组织。"
+    ],
+    "source_refs": ["connect-call", "packages", "deployment"],
+    "basis": "Editorial fit based on documentation; no measured deployment speed, savings or customer outcomes."
+  },
+  "technical_details": {
+    "Routing state": {
+      "en": "Busy and After Call Work can still accept interactions in concurrent configurations; Not Ready receives none. Actual media capacity and configuration matter.",
+      "zh": "并行配置中 Busy 及 After Call Work 仍可能接到互动；Not Ready 不接新互动。需看真实媒体容量及配置。",
+      "source_ref": "agent-states",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Contact-centre administrator",
+      "Telephony owner",
+      "Service supervisor",
+      "Workforce planner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "platform"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the actual voice/digital/mobile package and deployment; request a quote with usage, retention and module scope.",
+        "zh": "选定真实语音／数字／移动套餐及部署，索取明确用量、留存及模块范围的报价。",
+        "source_refs": ["packages", "deployment"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Map one inbound call to a service and destination, then explicitly connect no-answer, busy, transfer-failed and after-hours branches.",
+        "zh": "将一个呼入流程映射服务及目标，并明确连接未接、忙线、转接失败及非营业时段分支。",
+        "source_refs": ["connect-call", "reports"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test agent disconnect, concurrency, silence, rejected calls and overflow; reconcile scenario paths with reports before treating counts as customer outcomes.",
+        "zh": "测试客服断线、并发、静默、拒接及溢出；先核对场景路径与报告，再将数量用于判断客户结果。",
+        "source_refs": ["agent-states", "ivr", "reports"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Speech-to-text / text-to-speech integration accounts",
+        "source_ref": "ivr",
+        "scope": "Required for the documented Play-Listen conversational IVR block; provider entitlement, fees and processing location not established."
+      },
+      {
+        "name": "CRM / ITSM / WFM integrations",
+        "source_ref": "packages",
+        "scope": "Pricing lists optional integration paths including Salesforce, Zendesk, Dynamics, ServiceNow and workforce tools; connector versions, permissions and fees require quote-specific review."
+      }
+    ],
+    "source_ref": "packages"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A successfully selected destination can still reject or fail to answer; routing and connection are separate steps.",
+        "zh": "成功选出目标后仍可能拒接或未接，路由与连接是不同步骤。",
+        "source_refs": ["connect-call"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Handled report totals can include external overflow without a local agent answer; transfers can create repeated counts.",
+        "zh": "Handled 总数可包含无本中心客服接听的外部溢出，转接可重复计数。",
+        "source_refs": ["reports"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "On-premise availability does not establish that every external AI/STT/TTS or CRM integration remains local.",
+        "zh": "提供本地部署不证明每个外部 AI／STT／TTS 或 CRM 集成都留在本地。",
+        "source_refs": ["deployment", "ivr"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Free product demo availability does not establish a self-service free trial or an ongoing free plan.",
+        "zh": "提供免费产品演示不证明有自助免费试用或长期免费方案。",
+        "source_refs": ["packages"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "packages",
+    "source_refs": ["packages"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Quote-only packages; actual amounts, license/concurrency units, minimums, billing term and usage rates unknown.",
+    "source_snapshot_en": "Call Center Standard: voice IVR/ACD, five outbound dialing modes and native recording. Digital CX: SMS/MMS, campaigns, web/video chat, email and social messengers. Omnichannel CX combines both. Bright Pattern Mobile lists manual outbound only. Optional modules include AI, quality, integrations and extended recording; base voice/screen recording retention advertised as 90/30 days. Public page requests quotes and offers a free demo, with no numeric price or trial duration.",
+    "source_snapshot_zh": "Call Center Standard：语音 IVR／ACD、五种外呼模式及原生录音。Digital CX：SMS／MMS、活动、网页／视频聊天、邮件及社交消息。Omnichannel CX 组合两者。Bright Pattern Mobile 仅列手动外呼。AI、质检、集成及延长录制留存列为选项；基础语音／屏幕录制宣传留存90／30天。公开页要求询价并提供免费演示，无数字价格或试用时长。",
+    "checked_at": "2026-10-22T14:21:37.382842+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does Busy mean an agent cannot receive another interaction?",
+      "question_zh": "Busy 是否表示客服不能再接互动？",
+      "answer_en": "Not always. Under concurrent handling, availability depends on configured capacity; Busy or ACW may still receive work. Not Ready blocks new interactions.",
+      "answer_zh": "不一定。并行处理时取决于容量配置，Busy 或 ACW 仍可能接新任务；Not Ready 阻止新互动。",
+      "source_refs": ["agent-states"]
+    },
+    {
+      "question_en": "Does Handled prove an agent answered?",
+      "question_zh": "Handled 能证明客服接听吗？",
+      "answer_en": "No. The reporting FAQ describes calls sent to external overflow with No Agent disposition being included. Inspect scenario steps and the chosen metric definition.",
+      "answer_zh": "不能。报告 FAQ 描述 No Agent 处置、转外部溢出的电话也可能计入，需检查场景步骤及所用指标定义。",
+      "source_refs": ["reports"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/bright-pattern",
+      "read_at": "2026-10-22T08:39:51.967Z",
+      "excerpt_sha256": "4d10e20cc13161ef4fbaa463ab9dc883f4f6e5bfe55ea0fce8e6d1721132530a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "Best Omnichannel Call Center Software | Bright Pattern",
+      "title": "Best Omnichannel Call Center Software | Bright Pattern",
+      "url": "https://www.brightpattern.com/",
+      "read_at": "2026-10-22T14:20:38.540300+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a021a59d63119019969a5af4d13da835edd33e30801fa937aa5e2b99cd4b0c97",
+      "research_notes_en": "Current platform combines omnichannel ACD, AI suite and native WFM; deployment and marketing claims distinguished from purchased entitlements."
+    },
+    {
+      "id": "packages",
+      "type": "official_pricing",
+      "site": "Call & Contact Center Software Pricing | Bright Pattern",
+      "title": "Call & Contact Center Software Pricing | Bright Pattern",
+      "url": "https://www.brightpattern.com/call-center-software-pricing/",
+      "read_at": "2026-10-22T14:20:53.617666+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a7a2477f1097da426b28c0c9de3a83a6d2d5a9db804ed400a847844b0c1692ae",
+      "research_notes_en": "Official quote-only Standard voice, Digital CX, combined Omnichannel CX and Mobile packages; Mobile outbound manual only. Base voice/screen retention 90/30 days; extended retention and other modules optional. No amount, unit or trial term."
+    },
+    {
+      "id": "connect-call",
+      "type": "official_documentation",
+      "site": "latest:Scenario-builder-reference-guide/ScenarioBlocks/ConnectCall - Bright Pattern Documentation",
+      "title": "latest:Scenario-builder-reference-guide/ScenarioBlocks/ConnectCall - Bright Pattern Documentation",
+      "url": "https://help.brightpattern.com/latest:Scenario-builder-reference-guide/ConnectCall",
+      "read_at": "2026-10-22T14:21:20.052624+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "84034137e934d890451643fb56a843fc76936244e41a60aeb1cf197e92bec5a5",
+      "research_notes_en": "Latest Connect Call destination variable/override, continuing queue treatment, 30-second No Answer default, Busy rejection/SIP486, Target Disconnected and Transfer Failed exits. Software/hardphone autoanswer differs."
+    },
+    {
+      "id": "agent-states",
+      "type": "official_documentation",
+      "site": "latest:Agent-Desktop-2.0/Agent-guide/Work/States/HowtoInterpretYourCurrentState - Bright Pattern Documentation",
+      "title": "latest:Agent-Desktop-2.0/Agent-guide/Work/States/HowtoInterpretYourCurrentState - Bright Pattern Documentation",
+      "url": "https://help.brightpattern.com/latest:Agent-Desktop-2.0/Agent-guide/Work/States/HowtoInterpretYourCurrentState",
+      "read_at": "2026-10-22T14:21:13.951892+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7e4757945552ea94221ecaa7b627b4578209900763d193ddfda081827f7d7eec",
+      "research_notes_en": "Desktop2.0 concurrent interactions can receive work while Busy/ACW; Not Ready blocks all new work, and disconnect/rejection can set it. Single-interaction ACW differs."
+    },
+    {
+      "id": "ivr",
+      "type": "official_documentation",
+      "site": "latest:Scenario-builder-reference-guide/ScenarioBlocks/PlayListen - Bright Pattern Documentation",
+      "title": "latest:Scenario-builder-reference-guide/ScenarioBlocks/PlayListen - Bright Pattern Documentation",
+      "url": "https://help.brightpattern.com/latest:Scenario-builder-reference-guide/PlayListen",
+      "read_at": "2026-10-22T14:21:16.809665+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "67d54674e02462490f65227e4367c2247408f30a17387207a79108f3d9fdd3bc",
+      "research_notes_en": "Play-Listen requires STT/TTS integration accounts; recognition confidence is not semantic correctness. Separate DTMF/Failed/Timeout branches; timeout default20seconds after prompt completion/interruption, not full call."
+    },
+    {
+      "id": "reports",
+      "type": "official_documentation",
+      "site": "latest:Faq/InterpretingReports - Bright Pattern Documentation",
+      "title": "latest:Faq/InterpretingReports - Bright Pattern Documentation",
+      "url": "https://help.brightpattern.com/latest:Faq/InterpretingReports",
+      "read_at": "2026-10-22T14:21:15.904140+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d84beccabb19b8851f385220967029837a2e537c22ee7d92aa266d5dd5567c11",
+      "research_notes_en": "Reports include after-hours and external overflow calls; Handled does not prove local agent answered. Scenario Steps trace exits; transfers can count repeatedly; caller ID can be forwarded/spoofed."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "On-Premise Contact Center Solutions + Private Cloud Contact Center Solutions | Bright Pattern",
+      "title": "On-Premise Contact Center Solutions + Private Cloud Contact Center Solutions | Bright Pattern",
+      "url": "https://www.brightpattern.com/on-premise-contact-center-solutions/",
+      "read_at": "2026-10-22T14:21:37.382842+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "316d307bfb5eb99e5cb553cde25ae1cc209008633f00bb757e04d5b34cbebf83",
+      "research_notes_en": "Vendor offers same platform public cloud/private cloud/on-premise with upgrade parity and migration claims. No independent migration, full local AI processing, infrastructure sizing or contract verified."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms & Conditions | Bright Pattern Call Center Software",
+      "title": "Terms & Conditions | Bright Pattern Call Center Software",
+      "url": "https://www.brightpattern.com/terms-conditions/",
+      "read_at": "2026-10-22T14:20:54.107695+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a218313588bb7085c6976ba85ff5a3003172fb04bab0e80a5581c57ad38c76cb",
+      "research_notes_en": "Public terms govern website materials and customization warranty disclaimer, not a complete purchased software license/SLA/refund contract."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:21:37.382842+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "platform",
+    "packages",
+    "connect-call",
+    "reports",
+    "deployment"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "package-boundaries",
+        "title_en": "Choose the channel package before reading the feature catalogue",
+        "title_zh": "先选渠道套餐，再读功能目录",
+        "en": "Bright Pattern combines interaction routing, an agent desktop, supervision and reporting, with current AI and native workforce-management offerings. Its pricing page does not put every feature into one identical package. Call Center Standard is voice-focused, Digital CX covers digital channels, and Omnichannel CX combines those sets. Bright Pattern Mobile is an enterprise mobile offering whose outbound entry is manual calling; do not infer predictive dialing from the general platform catalogue.\n\nThe home page’s AI suite spans real-time virtual agents, transcription and agent assistance, plus asynchronous summaries, analytics and quality scoring. Native WFM covers forecasting, schedules and intraday management. These are vendor product descriptions, not proof that every quoted edition includes every module or that generated scores are accurate. This platform is best evaluated as a configured contact-centre operation, not merely a shared telephone number or an AI bot subscription.",
+        "zh": "Bright Pattern 结合互动路由、客服桌面、监督和报告，当前还提供 AI 及原生人力管理。定价页没有把全部功能放进同一个套餐。Call Center Standard 偏语音，Digital CX 覆盖数字渠道，Omnichannel CX 组合两者。Bright Pattern Mobile 是企业移动方案，外呼项为手动拨号，不能从平台总目录推断其含预测拨号。\n\n首页 AI 套件覆盖实时虚拟客服、转写、客服辅助，以及异步摘要、分析和质检评分。原生 WFM 覆盖预测、排班及日内管理。这些是厂商产品说明，不证明每份报价包含所有模块，或生成评分准确。更适合按已配置联络中心运营评估，而不只是共享电话号码或 AI 机器人订阅。",
+        "source_refs": ["platform", "packages"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "call-delivery",
+        "title_en": "An agent match is not yet an answered call",
+        "title_zh": "匹配客服并不等于电话已接通",
+        "en": "For an illustrative support call, a scenario selects an agent and supplies a destination to Connect Call. Queue treatment started by Find Agent continues while the target rings. Connect Call can use a default when the destination is empty, while an explicit override ignores the destination variable. An unnoticed override could therefore defeat the intended routing choice.\n\nThe documented default no-answer wait is 30 seconds. No Answer, Busy, Target Disconnected and Transfer Failed are separate exits; Busy includes SIP 486 or agent rejection. A normal target-side hang-up can continue into a survey rather than mean transfer failure. Auto-answer is documented for softphones, with hardphone support dependent on the device. Configure and test each branch with the real endpoint instead of treating a green agent-selection step as a completed customer conversation.",
+        "zh": "以假设支持电话为例，场景选出客服后，将目标交给 Connect Call。Find Agent 开始的队列处理会在目标响铃期间继续。目标为空时可用默认号码，而明确覆盖值会忽略目标变量。因此未注意的覆盖值可能使原定路由选择失效。\n\n文档默认未接等待30秒。No Answer、Busy、Target Disconnected 和 Transfer Failed 是不同出口；Busy 包含 SIP 486 或客服拒接。目标正常挂机后可继续问卷，不等于转接失败。软电话有自动接听说明，硬电话取决于设备。应以真实终端配置并测试每条分支，不能将客服选择成功当作客户通话完成。",
+        "source_refs": ["connect-call"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "speech-and-states",
+        "title_en": "Speech recovery and agent capacity are separate controls",
+        "title_zh": "语音恢复与客服容量是不同控制",
+        "en": "The documented Play-Listen block requires configured STT and TTS integration accounts. It captures a recognized phrase and speech-engine confidence, and separates DTMF, failed collection and silence timeout paths. Its default 20-second maximum timeout starts after the prompt ends or is interrupted according to configuration. That is not a maximum call duration. Low confidence can be routed to a human; a high confidence number does not prove the caller’s meaning or identity. Test silence, accents, interrupted prompts and touch-tone fallback with the selected provider.\n\nAgent Desktop 2.0 also distinguishes a single-interaction model from concurrent work. With concurrency, Busy and even After Call Work can still receive new work within configured capacity. In sequential handling, ACW blocks the next interaction until completed. Not Ready blocks new interactions regardless of concurrency; rejection, missed delivery or desktop disconnection can trigger it. A login count or green browser tab is therefore insufficient evidence of staffed routing capacity.",
+        "zh": "文档中的 Play-Listen 需要已配置 STT 及 TTS 集成账户。它捕获识别文本和语音引擎置信度，并区分按键、采集失败和静默超时。默认20秒最大等待按配置从提示结束或被打断后开始，不是整通电话最长时长。低置信度可转真人，高置信度数字也不证明语义或身份。应以所选服务测试静默、口音、提示中断及按键回退。\n\nAgent Desktop 2.0 另区分单互动与并行处理。并行时 Busy 甚至 After Call Work 在容量内仍可能接新任务；顺序处理时 ACW 完成前阻止下一互动。Not Ready 不论并发都阻止新互动，拒接、投递未答或桌面断线可触发。因此登录人数或浏览器在线不足以证明真实可接待容量。",
+        "source_refs": ["ivr", "agent-states"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "Reconcile the path before using a report as an outcome",
+        "title_zh": "先核对路径，再把报告当结果",
+        "en": "The reporting FAQ explains why received totals include after-hours calls and why a Handled metric can include No Agent calls sent to an external overflow destination. Transferred or escalated calls may be counted more than once, and some calls never queue. These counts do not directly establish unique customers, local agent answers or resolved requests.\n\nAn administrator can investigate Interaction Records and its Scenario Steps to identify the branches taken. Add meaningful dispositions to unavailable/busy/no-answer paths and explicitly configure business hours rather than hiding operational failures through filters. The same FAQ notes that From_Phone is carrier-supplied and may reflect forwarded or spoofed caller information. Treat it as routing/report data, not sufficient proof of customer identity. These are documentation-based evaluation points; no real records were inspected.",
+        "zh": "报告 FAQ 解释了为何接入总数包含非营业时段电话，以及 Handled 指标为何可包含 No Agent、转往外部溢出线路的电话。转接或升级可重复计数，部分电话从未进入队列。这些数不直接证明独立客户数、本中心客服接听数或已解决请求数。\n\n管理员可查 Interaction Records 及其 Scenario Steps 了解实际分支。应给不可用／忙线／未接路径加入有意义处置，并明确营业时间，不能靠过滤隐藏运营失败。同一 FAQ 指出 From_Phone 来自运营商，可能反映转发或伪造号码。应将其视为路由／报告资料，不能单独证明客户身份。这些是基于文档的评估点，未查看真实记录。",
+        "source_refs": ["reports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-commercial",
+        "title_en": "Deployment choice does not settle fees or data flow",
+        "title_zh": "部署选择不能代替费用及资料路径确认",
+        "en": "Bright Pattern offers public-cloud CCaaS and describes the same platform for private cloud and on-premise, with continuing feature updates. Its parity and disruption-free migration statements remain vendor claims; infrastructure sizing, upgrade responsibility and a migration rehearsal were not verified. External speech/AI and CRM integrations still require their own data-flow review, so on-premise software alone does not establish fully local processing.\n\nThe official pricing page asks buyers to select a package and additional options, then request a quote. No amount, currency, seat/concurrent-license unit, minimum or billing commitment is established. It lists AI, quality management, integrations and extended recording among options, and advertises base voice/screen recording retention of 90/30 days. Confirm what that retention includes and how complete records are exported. A free product demo is not evidence of a free trial or sustained free plan.\n\nPublic Terms and Conditions concern website materials and include a customization warranty disclaimer; they are not a complete service license or exit contract. Actual software licensing, cancellation/refund rights, SLA, export/restore, regional processing and UI languages remain unknown. The platform fits teams able to own routing, staffing and reporting definitions; buyers needing an instantly priced self-service phone app or verified fully local AI require more evidence.",
+        "zh": "Bright Pattern 提供公有云 CCaaS，并称私有云及本地运行相同平台、持续更新功能。功能同等及无中断迁移仍是厂商主张，未验证设施规格、升级责任或迁移演练。外部语音／AI 及 CRM 集成仍需单独核对资料路径，因此本地软件本身不证明处理全部在本地。\n\n官方定价页要求先选套餐及附加项，再询价。未建立金额、币种、座席／并发许可单位、最低数量或承诺周期。AI、质检、集成及延长录制留存列为选项，基础语音／屏幕录制宣传留存90／30天。需确认留存包含什么，以及如何完整导出记录。免费产品演示不证明免费试用或长期免费方案。\n\n公开 Terms and Conditions 关注网站资料，含定制修改的保修免责，并非完整服务许可或退出合同。真实软件许可、取消／退款权、SLA、导出／恢复、地区处理及界面语言未知。平台适合能负责路由、排班及报告定义的团队；寻找即时公开价格的自助电话应用或已验证全本地 AI 的买家仍需更多证据。",
+        "source_refs": ["deployment", "ivr", "packages", "website-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Bright Pattern: Call Scenarios, Agent Capacity, Reporting and Quote Boundaries",
+    "title_zh": "Bright Pattern：电话场景、客服容量、报告及询价边界",
+    "description_en": "Review Bright Pattern package scope,call failure branches,concurrent agent states,report interpretation and cloud/on-premise choices with quote-only commercial terms.",
+    "description_zh": "核对 Bright Pattern 套餐范围、电话失败分支、客服并行状态、报告解读及云／本地部署选择，商业条件需询价。",
+    "primary_intent": "Evaluate configurable contact-centre workflows and commercial scope.",
+    "secondary_questions": [
+      "Does Busy block new work?",
+      "What does Handled count?",
+      "Are on-premise AI integrations local?"
+    ],
+    "query_basis": "Editorial questions; no search demand measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,call,scenario,concurrency,STT/TTS,integration,payment,report record,migration,export or restore tested. Amounts,currency,license unit/minimum/term,trial entitlement,actual service license,SLA,cancellation/refunds,complete export,AI data locations and UI languages unverified. Latest docs may differ from a contracted version; vendor rankings,certification and migration claims not independently verified.",
+      "zh": "未测试账户、电话、场景、并发、STT／TTS、集成、付款、报告记录、迁移、导出或恢复。金额、币种、许可单位／最低数／周期、试用权益、真实服务许可、SLA、取消／退款、完整导出、AI资料位置及界面语言未核实。Latest 文档可能与合同版本不同，厂商排名、认证及迁移主张未独立验证。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

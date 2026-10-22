@@ -1,0 +1,424 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "highlevel-3172bdfa",
+  "name": "HighLevel",
+  "website_url": "https://www.gohighlevel.com/",
+  "domain": "www.gohighlevel.com",
+  "identity_domain": "gohighlevel.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "HighLevel combines CRM records and sales pipelines with lead capture, conversations, booking calendars, automation and payment-related tools. It serves individual businesses as well as agencies managing client sub-accounts. That second model is central to evaluation: an agency can configure client environments and, on eligible plans, package or rebill services.\n\nThis is therefore broader than a standalone contact database. A useful pilot follows one inquiry into a conversation, a scheduled appointment and an owned opportunity, while checking who pays for each communication. The software subscription, usage wallet and optional AI products are different cost layers. This profile explains their documented boundaries; it does not claim an agency resale business was operated, a campaign was sent or the advertised growth figures were independently verified.",
+  "description_zh": "HighLevel 将 CRM 记录及销售管线与线索采集、沟通、预约日历、自动化和支付相关工具结合起来。它既服务单个企业，也支持代理商管理客户子账户。后者是选型核心：代理商可配置客户环境，并在符合条件的套餐上打包或转收服务费用。\n\n因此，它的范围超过独立联系人数据库。试点可沿着一条咨询进入沟通、预约及有负责人的机会，同时核对每次沟通费用由谁承担。软件订阅、用量钱包及可选 AI 产品属于不同费用层。本文解释文档中的边界，没有实际运营转售业务、发送活动或独立验证宣传增长数据。",
+  "core_features": [
+    {
+      "name_en": "CRM and client sub-accounts",
+      "name_zh": "CRM 与客户子账户",
+      "explanation_en": "Organize business records and pipelines within client environments; account counts and SaaS capabilities depend on plan.",
+      "explanation_zh": "在客户环境内组织业务记录和管线；账户数量及 SaaS 能力取决于套餐。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Event-triggered workflows",
+      "name_zh": "事件触发工作流",
+      "explanation_en": "Configure triggers, filters and actions around forms, appointments, CRM updates and other supported events.",
+      "explanation_zh": "围绕表单、预约、CRM 更新及其他支持事件配置触发器、筛选和动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "workflows",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Workflow enrollment controls",
+      "name_zh": "工作流进入控制",
+      "explanation_en": "Configure re-entry, opportunity instances, response stopping and communication timing.",
+      "explanation_zh": "配置再次进入、机会实例、回复停止及沟通时机。",
+      "explanation_scope": "product_specific",
+      "source_ref": "settings",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Usage wallets and client rebilling",
+      "name_zh": "用量钱包与客户转收",
+      "explanation_en": "Review agency-funded usage and optionally recover supported costs from sub-accounts on eligible plans.",
+      "explanation_zh": "查看由代理商承担的用量，并在符合套餐条件时向子账户转收支持的费用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "wallet",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Follow up a form inquiry and route it to a booked appointment.",
+      "Configure separate client workspaces and budget their messaging/AI usage."
+    ],
+    "zh": [
+      "跟进表单咨询并引导至预约。",
+      "配置独立客户空间，预算各自消息／AI 用量。"
+    ],
+    "source_refs": ["workflows", "pricing", "billing"],
+    "basis": "Illustrative workflows, not executed campaigns or resale results."
+  },
+  "technical_details": {
+    "Account model": {
+      "en": "Managed platform with an agency view and client sub-account contexts; imported Agent Studio snapshots transfer selected configuration rather than customer live data.",
+      "zh": "托管平台，区分代理商视图及客户子账户；导入的 Agent Studio 快照迁移选定配置，而非客户实时数据。",
+      "source_ref": "snapshots",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Business lead-response owner",
+      "Agency operations manager",
+      "Agency SaaS/reselling operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the business/sub-account, define one incoming event and the responsible owner.",
+        "zh": "选择企业／子账户，定义一个输入事件和负责人员。",
+        "source_refs": ["pricing", "workflows"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure the required sender, calendar and workflow enrollment settings before enabling communications.",
+        "zh": "启用沟通前配置所需发送方、日历和工作流进入设置。",
+        "source_refs": ["product", "settings"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test with a fresh contact and a live event, inspect execution history, and compare wallet charges with expected actions.",
+        "zh": "用新联系人及真实事件测试，检查执行历史，并将钱包费用与预期动作对照。",
+        "source_refs": ["workflows", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Agency Stripe for rebilling",
+        "source_ref": "wallet",
+        "scope": "Agency processor relationship for client charges; HighLevel bills the agency first."
+      },
+      {
+        "name": "Workflow webhooks",
+        "source_ref": "workflows",
+        "scope": "External trigger/action route described; exact endpoint permissions and retry guarantees not tested."
+      }
+    ],
+    "source_ref": "workflows"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Appointment- and invoice-triggered workflows have a repeat-entry exception even when ordinary Allow Re-entry is off.",
+        "zh": "预约和发票触发的工作流存在重复进入例外，即使普通 Allow Re-entry 已关闭。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A zero wallet balance can interrupt services; rebilling does not remove the agency responsibility for usage charges.",
+        "zh": "钱包归零可能中断服务；转收费用不会解除代理商承担用量费用的责任。",
+        "source_refs": ["wallet"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "billing", "ai-pricing"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Base agency subscription plus service usage and optional per-location or agency add-ons.",
+    "source_snapshot_en": "Starter $97/month, Unlimited $297/month, Agency Pro $497/month; annual cards $970/$2970/$4970. Communication and AI rates require separate calculation.",
+    "source_snapshot_zh": "Starter 每月97美元、Unlimited 297美元、Agency Pro 497美元；年付卡片为970／2970／4970美元。沟通及 AI 费用需另外计算。",
+    "checked_at": "2026-10-22T10:16:39.773208Z"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Do unlimited contacts and users mean unlimited paid messaging?",
+      "question_zh": "不限联系人和用户是否等于付费消息也不限量？",
+      "answer_en": "No. The pricing page marks usage charges, and the billing guide describes wallet-funded phone, email, AI and premium workflow use.",
+      "answer_zh": "不是。定价页标注用量费用，计费指南说明电话、邮件、AI 和高级工作流等由钱包承担。",
+      "source_refs": ["pricing", "billing"]
+    },
+    {
+      "question_en": "Is an Agent Studio snapshot a backup of customer conversations?",
+      "question_zh": "Agent Studio 快照是否备份客户沟通？",
+      "answer_en": "No. Its documentation excludes contacts, conversation history, messages and live data; it transfers configuration and selected assets.",
+      "answer_zh": "不是。其文档排除联系人、沟通历史、消息及实时数据，仅迁移配置和选定资源。",
+      "source_refs": ["snapshots"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/gohighlevel",
+      "read_at": "2026-10-22T08:56:19.122Z",
+      "excerpt_sha256": "ec0b39ae4d069767a33579213903408e4062bba565db2d446e0c362f81f492d8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "GoHighLevel - It's time to take your Agency to the Next Level",
+      "title": "GoHighLevel - It's time to take your Agency to the Next Level",
+      "url": "https://www.gohighlevel.com/",
+      "read_at": "2026-10-22T10:15:25.783621Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9f15487d78ba13b234ea6dcd9db6b4e2829b16ca83220a4193f28555e5791b0d",
+      "research_notes_en": "Business platform combining CRM/pipelines with forms, conversations, booking, payments and optional AI; no growth statistics adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "HighLevel Pricing",
+      "title": "HighLevel Pricing",
+      "url": "https://www.gohighlevel.com/pricing",
+      "read_at": "2026-10-22T10:15:25.783621Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "df2225cfa265a881440611d13618a562d4ad999c8cb54f94528e6464c406db24",
+      "research_notes_en": "Starter $97 monthly/970 yearly with three sub-accounts; Unlimited $297/2970; Agency Pro $497/4970 with SaaS mode. Unlimited users/contacts do not waive usage charges."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "HighLevel Pricing & Billing: Wallets, Charges, Rebilling : HighLevel Support Portal",
+      "title": "HighLevel Pricing & Billing: Wallets, Charges, Rebilling : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001156-highlevel-pricing-guide",
+      "read_at": "2026-10-22T10:16:15.623861Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "33d163f2515e1e25dae84820596e9a272ef98797bce9060e050a7f5e7698b311",
+      "research_notes_en": "Base subscription separate from agency-wallet usage, phone/email/AI and premium workflow charges; service-specific rates and rebilling conditions."
+    },
+    {
+      "id": "wallet",
+      "type": "official_documentation",
+      "site": "Rebilling, Reselling, and Wallets Explained : HighLevel Support Portal",
+      "title": "Rebilling, Reselling, and Wallets Explained : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002095-rebilling-reselling-and-wallets-explained",
+      "read_at": "2026-10-22T10:16:15.631738Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0ad85bba955d691d4783873dddb7815af9b2c3d06fb346e971e9406ad4e408f4",
+      "research_notes_en": "Agency billed first, agency Stripe charges sub-account for rebilling, auto-recharge thresholds, interruption at zero and on-hold configuration when payment missing."
+    },
+    {
+      "id": "workflows",
+      "type": "official_documentation",
+      "site": "Getting Started with Workflows in HighLevel : HighLevel Support Portal",
+      "title": "Getting Started with Workflows in HighLevel : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002288",
+      "read_at": "2026-10-22T10:16:39.766087Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fbf4fd54ab2ac27eb6a63e95d9c25a157a1de5694d7019f328d81dd3273c1caf",
+      "research_notes_en": "Trigger/filter/action model, forms/appointments/payment events, drafts/live testing and execution/enrollment troubleshooting."
+    },
+    {
+      "id": "settings",
+      "type": "official_documentation",
+      "site": "Workflow Settings- Overview : HighLevel Support Portal",
+      "title": "Workflow Settings- Overview : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001239875-workflow-settings-overview/",
+      "read_at": "2026-10-22T10:16:39.759639Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "26b0033368e39680d8f18beb83579b2069e5a001ab5277a0cab7d6ccb6ee6c11",
+      "research_notes_en": "Re-entry and appointment/invoice exception; multiple-opportunity instances; Stop on Response; contact-timezone fallback and communication windows."
+    },
+    {
+      "id": "snapshots",
+      "type": "official_documentation",
+      "site": "Clone Agent Studio AI Agents Using Account Snapshots : HighLevel Support Portal",
+      "title": "Clone Agent Studio AI Agents Using Account Snapshots : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007504-how-to-clone-and-share-agent-studio-agents-using-snapshots",
+      "read_at": "2026-10-22T10:16:15.638398Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "487f3c9dcdfba54f45998de1607c8a1600c4ee7e564659555ba0482e93323524",
+      "research_notes_en": "Agent Studio configuration and selected knowledge bases can move through snapshots; contacts, conversation history, messages and live data are excluded. Scope is agent snapshots, not all asset categories."
+    },
+    {
+      "id": "ai-pricing",
+      "type": "official_pricing",
+      "site": "HighLevel AI Products Pricing: Voice AI, Agent Studio & More : HighLevel Support Portal",
+      "title": "HighLevel AI Products Pricing: Voice AI, Agent Studio & More : HighLevel Support Portal",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000006652-ai-product-pricing-update%E2%81%A9?fp_ref=ghlcentral",
+      "read_at": "2026-10-22T10:16:39.773208Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4b7d39f787d43ea30d37b7c948a8b8f62384ab8290e4e793fff5f17816c2ddd3",
+      "research_notes_en": "AI Growth $50/location/month and AI Employee Unlimited $97/location/month subject to coverage/fair use; phone charges separate, Agent Studio remains usage based."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:16:39.773208Z",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "pricing", "billing", "wallet"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Business workspace and agency business model",
+        "title_zh": "业务工作空间与代理商经营模式",
+        "en": "HighLevel's product overview spans capture, nurture and closing work: forms, CRM/pipelines, conversations, calendars and payments. Decide which part of that journey your team will own. A single business needs a working process; an agency also needs client account boundaries, configuration ownership and a policy for passing on usage costs.\n\nSub-account capacity and SaaS packaging are plan-dependent. Reselling a managed platform is not the same as owning its source code or deploying it yourself. No self-hosted release or open-source license was verified in the reviewed material. Features elsewhere in the product family should be checked against the actual subscription rather than treated as one unlimited bundle.",
+        "zh": "HighLevel 产品总览覆盖采集、培育及成交工作，包括表单、CRM／管线、沟通、日历及支付。应明确团队负责旅程的哪些环节。单个企业需要可运行的流程，代理商还需要客户账户边界、配置归属和用量转收费政策。\n\n子账户容量及 SaaS 打包受套餐限制。转售托管平台，不等于拥有源代码或能自行部署；已读资料未核实自行托管发行版或开源许可。产品家族中的其他功能应与实际订阅核对，不能视为统一不限量组合。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "lead-example",
+        "title_en": "Worked example: inquiry to appointment follow-up",
+        "title_zh": "示例：咨询到预约跟进",
+        "en": "Suppose a local service business receives a website inquiry. An illustrative workflow starts from the form event, checks qualifying fields, sends a confirmation and assigns an owned opportunity or follow-up task. A booking event can then start a separate reminder process. The workflow guide describes the trigger/filter/action model; this example was not run.\n\nDefine the successful destination before building: the right contact, responsible person and appointment state. A send action succeeding does not prove the person read the message or attended. Start with one channel and representative records so that the live trigger, data mapping and recipient can be checked separately from an attractive workflow diagram.",
+        "zh": "假设本地服务企业收到网站咨询。示例工作流由表单事件启动，检查资格字段，发送确认，并分配有负责人的机会或跟进任务。预约事件再启动独立提醒流程。工作流指南说明触发器／筛选／动作模型；本文未运行该示例。\n\n搭建前定义正确结果，包括联系人、负责人和预约状态。发送动作成功，不能证明对方已阅读或到场。建议先用一个渠道和代表性记录，分别核对真实触发、数据映射及接收人，而非仅查看流程图。",
+        "source_refs": ["workflows"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "enrollment",
+        "title_en": "Re-entry, response and time windows have specific semantics",
+        "title_zh": "再次进入、回复和时间窗口有明确语义",
+        "en": "Allow Re-entry normally permits a contact to return after completion or removal, not while still active. Appointment- and invoice-based triggers are exceptions that can enroll for each appointment or invoice. Stop on Response applies to replies to messages from that workflow; do not assume it stops every unrelated campaign.\n\nContact-timezone scheduling falls back to the account timezone when the contact has none. Communication windows govern message/call timing rather than all internal actions. Evaluate a repeat appointment, an early reply and a missing timezone. These documented conditions are why a generic promise of no duplicate messages would be too broad.",
+        "zh": "Allow Re-entry 通常允许联系人在完成或移出后再次进入，不允许仍在流程内时重复进入；预约和发票触发属于例外，可按每个预约或发票进入。Stop on Response 针对该工作流发出消息的回复，不能假定会停止所有无关活动。\n\n联系人没有时区时，以联系人时区执行的计划会回退到账户时区。沟通窗口控制消息／电话时机，而非全部内部动作。应评估重复预约、提前回复和时区缺失。这些文档条件也说明，笼统承诺绝不重复发送会过于宽泛。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "A workflow test is not the whole live path",
+        "title_zh": "流程测试不等于完整线上路径",
+        "en": "The getting-started guide recommends using a fresh contact, reviewing filters and re-entry, comparing test mode with live events, and checking execution/error history. A workflow may pass an action test while its real incoming event never qualifies. Inspect enrollment first, then the actual step results.\n\nFor an unresolved issue, retain the affected contact, workflow name, approximate time and relevant error evidence for support. Avoid repeatedly enrolling the same contact without inspecting prior effects. This is evaluation guidance based on the troubleshooting documentation, not a performed recovery or a guarantee that external actions are transactional.",
+        "zh": "入门指南建议使用新联系人，检查筛选及再次进入设置，对照测试模式与真实事件，并查看执行／错误历史。动作测试通过时，真实输入事件仍可能根本不符合进入条件。应先检查进入记录，再看实际步骤结果。\n\n问题未解决时，应为支持保留受影响联系人、工作流名称、大致时间和相关错误证据。未检查已有结果前，不宜反复让同一联系人重新进入。这是根据排错文档提出的评估建议，本文未实际恢复故障，也不保证外部动作具备事务性。",
+        "source_refs": ["workflows"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "base-cost",
+        "title_en": "Separate base account capacity from consumption",
+        "title_zh": "区分基础账户容量与实际消耗",
+        "en": "The pricing page lists Starter at $97/month or $970/year with three sub-accounts; Unlimited at $297/month or $2,970/year with unlimited sub-accounts; and Agency Pro at $497/month or $4,970/year with SaaS Mode and additional packaging/rebilling capabilities. Enterprise is sales-led. The page advertises unlimited contacts/users while explicitly marking usage-priced features.\n\nThese are agency subscription figures, not a per-contact message budget. Choose the account structure first, then estimate communications and enabled add-ons separately. A client receiving an agency's branded service may see that agency's packaged price rather than HighLevel's base price; this catalog does not quote a particular reseller's commercial offer.",
+        "zh": "定价页列出 Starter 每月97美元或每年970美元，含3个子账户；Unlimited 每月297美元或每年2,970美元，子账户不限量；Agency Pro 每月497美元或每年4,970美元，提供 SaaS Mode 及更多打包／转收费能力。Enterprise 通过销售联系。页面宣传联系人／用户不限量，同时明确标注按用量收费的功能。\n\n这些是代理商订阅金额，不是每个联系人可发送消息的预算。先选账户结构，再单独估算沟通及附加项。购买代理商品牌服务的客户可能看到代理商的打包价，而非 HighLevel 基础价；本目录不提供具体转售商报价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "wallet-risk",
+        "title_en": "The agency pays before recovering client usage",
+        "title_zh": "代理商先付款，再回收客户用量成本",
+        "en": "The wallet documentation says HighLevel charges the Agency Wallet for client usage first. With rebilling, the agency's payment setup charges the client, potentially at a markup on eligible plans. An unpaid client bill therefore does not erase the agency's underlying consumption cost. Wallets preload funds and recharge at configured thresholds; a zero balance can interrupt services.\n\nSet an owner for wallet monitoring and inspect the client-level transaction breakdown during a pilot. A reload is a funding event, not the same as consumption for that period. Reconcile the wallet movement with actual service charges before treating the agency card statement as a precise per-client invoice.",
+        "zh": "钱包文档说明，HighLevel 先从 Agency Wallet 扣除客户用量。启用转收费后，由代理商的支付配置向客户收费，符合套餐条件时还可加价。客户账单未付款，不会消除代理商已发生的消耗成本。钱包预存资金，并按配置阈值补充；余额为零可能中断服务。\n\n试点时应明确钱包监控负责人，检查按客户列出的交易明细。充值是资金补入，不等于当期消耗。在把代理商银行卡账单当作精确客户发票前，需将钱包变动与实际服务费用对账。",
+        "source_refs": ["wallet"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "usage-cost",
+        "title_en": "Budget ordinary messaging and AI separately",
+        "title_zh": "分别预算普通消息和 AI",
+        "en": "The billing guide lists email usage at $0.675 per 1,000 emails. A hypothetical 10,000 ordinary emails at that rate imply $6.75 of usage before other services, subscription, extras or tax. This is arithmetic, not an observed bill. Calls, SMS, validation and premium workflow actions have their own billing rules.\n\nThe AI pricing page lists Growth at $50/month per enabled location and AI Employee Unlimited at $97/location/month. Coverage and fair use apply; phone charges remain separate, and Agent Studio is still pay-per-use. An AI plan called Unlimited is therefore not an unlimited all-channel communications bill. Confirm the actual products, location count and spend-limit settings before enabling AI for clients.",
+        "zh": "计费指南列出邮件用量每1,000封0.675美元。假设按该费率发送10,000封普通邮件，对应用量6.75美元，未包含其他服务、订阅、附加项或税费。这是计算示例，不是观察到的账单。电话、SMS、验证和高级工作流动作各有计费规则。\n\nAI 定价页列出 Growth 每个启用地点每月50美元，AI Employee Unlimited 每地点每月97美元，仍受覆盖范围和合理使用条件限制；电话费用另外计算，Agent Studio 依然按用量付费。因此名为 Unlimited 的 AI 套餐，不是所有渠道通信的无限总账单。为客户启用前需确认实际产品、地点数及支出限制设置。",
+        "source_refs": ["billing", "ai-pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "reuse-fit",
+        "title_en": "Reuse configuration without calling it a data backup",
+        "title_zh": "复用配置时不要误认为备份数据",
+        "en": "The Agent Studio snapshot guide describes packaging agent configuration and selected knowledge bases for other sub-accounts. It excludes contacts, conversation history, messages and live data. This is a reusable configuration path for that product scope, not evidence of a full customer-data backup or migration. Check conflicts and target permissions before loading a configuration.\n\nHighLevel merits evaluation when lead response, appointments and agency client operations need a common platform and someone will own messaging, costs and exceptions. It requires more proof for strict migration fidelity, data-location requirements or a guaranteed external workflow. Exact API quotas, regional phone/payment availability, UI languages, export coverage and contract security obligations remain unverified; no account or paid service was exercised.",
+        "zh": "Agent Studio 快照指南说明，可把代理配置和选定知识库打包给其他子账户；它排除联系人、沟通历史、消息及实时数据。这是在该产品范围内复用配置的路径，不是完整客户数据备份或迁移的证据。加载前应核对冲突及目标权限。\n\n当线索响应、预约和代理商客户运营需要共用平台，且有人负责消息、费用和异常时，HighLevel 值得评估。严格迁移一致性、数据位置要求或外部流程保证则需更多证据。准确 API 额度、地区电话／支付可用性、界面语言、导出覆盖及合同安全义务仍未核实；本文未使用账户或付费服务。",
+        "source_refs": ["snapshots", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "HighLevel: CRM Workflows, Sub-Accounts, Wallets and AI Costs",
+    "title_zh": "HighLevel：CRM 工作流、子账户、钱包与 AI 费用",
+    "description_en": "Understand HighLevel agency/sub-account scope, workflow re-entry, wallet rebilling, base plans and separate communication and AI charges.",
+    "description_zh": "了解 HighLevel 代理商／子账户范围、工作流再次进入、钱包转收费、基础套餐和独立沟通及 AI 费用。",
+    "primary_intent": "Evaluate HighLevel CRM and agency operations with actual workflow and billing conditions.",
+    "secondary_questions": [
+      "How does re-entry differ for appointments?",
+      "Who pays wallet usage first?",
+      "Does unlimited AI cover phone charges?"
+    ],
+    "query_basis": "Editorial intent hypotheses, not measured demand, ranking or AI visibility.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "API quotas, regional registration/phone/payment eligibility, data location, UI languages, complete export coverage and contractual security requirements were not established.",
+      "zh": "API 额度、地区注册／电话／支付资格、数据位置、界面语言、完整导出范围和合同安全要求尚未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, workflow, rebilling, phone, email, AI or snapshot operation was executed. Exact entitlements and consumption should be evaluated against a selected plan and region.",
+      "zh": "未实际执行账户、工作流、转收费、电话、邮件、AI 或快照操作；准确权益和消耗需按所选套餐及地区评估。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

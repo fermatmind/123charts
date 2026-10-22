@@ -1,0 +1,373 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "8base-6c4e6a63",
+  "name": "8base",
+  "website_url": "https://www.8base.com/",
+  "domain": "www.8base.com",
+  "identity_domain": "8base.com",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "8base provides a managed backend for web and mobile applications: a relational data model, generated GraphQL API, authentication/authorization, file storage and custom server-side functions. Developers connect a frontend to a workspace rather than building every backend service from scratch.\n\nIts website also presents App Builder for frontend development and Archie for product specification. Those are different parts of the offering; a generated plan is not a deployed application. This profile concentrates on the documented backend workflow and preserves uncertainty around current runtime support and mixed pricing dimensions.",
+  "description_zh": "8base 为网页及移动应用提供托管后端，包括关系数据模型、生成的 GraphQL API、认证／授权、文件存储及自定义服务端函数。开发者将前端连接至工作区，无需从零实现每项后端服务。\n\n官网另列面向前端的 App Builder 及面向产品规格的 Archie，属于不同部分；生成方案不代表已部署应用。本文聚焦已公开的后端流程，并保留当前运行时支持及混合计价维度的不确定性。",
+  "core_features": [
+    {
+      "name_en": "Generated GraphQL backend",
+      "name_zh": "生成 GraphQL 后端",
+      "explanation_en": "Define relational tables and expose queries/mutations with managed app services.",
+      "explanation_zh": "定义关系表，通过托管应用服务提供查询／变更。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backend",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Record and field permissions",
+      "name_zh": "记录与字段权限",
+      "explanation_en": "Combine role CRUD controls with custom record filters and field access.",
+      "explanation_zh": "将角色 CRUD 与记录过滤、字段权限组合。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Custom backend functions",
+      "name_zh": "自定义后端函数",
+      "explanation_en": "Extend behavior with resolvers, webhooks, triggers and tasks.",
+      "explanation_zh": "以 resolver、webhook、trigger 及 task 扩展行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "functions",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Build a notes model with user-scoped GraphQL access",
+      "Evaluate a privileged custom resolver and its failure boundary"
+    ],
+    "zh": [
+      "建立按用户限制的笔记 GraphQL 模型",
+      "评估提权自定义 resolver 及失败边界"
+    ],
+    "source_refs": ["quick", "roles", "functions"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "JavaScript/TypeScript developers",
+      "Full-stack application teams",
+      "Backend permission administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create a disposable backend model and inspect its GraphQL queries.",
+        "zh": "建立可丢弃后端模型，检查 GraphQL 查询。",
+        "source_refs": ["quick"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure a restricted role and compare user/token/admin calls.",
+        "zh": "配置受限角色，比较用户／token／管理员调用。",
+        "source_refs": ["roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm supported runtime and quote before deploying custom functions.",
+        "zh": "部署自定义函数前确认支持运行时及报价。",
+        "source_refs": ["functions", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Internal function permission bypass requires deliberate privileged-path review.",
+        "zh": "函数内部权限绕过需明确检查提权路径。",
+        "source_refs": ["functions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Documentation still names Node14; current runtime support is unverified.",
+        "zh": "文档仍写 Node14，当前运行时支持未核实。",
+        "source_refs": ["functions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Mixed seat/project/capacity pricing prevents an unqualified total-cost estimate.",
+        "zh": "席位／项目／容量混合计价无法直接估总成本。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "classification": "Proprietary 8base platform and GraphQL engine per official FAQ",
+    "url": "https://www.8base.com/platform",
+    "source_ref": "platform",
+    "scope": "8base platform; underlying tooling and client packages separate"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_seat_capacity_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:41:48.307274Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free plus Developer25/month section; Professional50/developer/month min3; Enterprise75 min10. Project/capacity/overage dimensions require quote; no normalized all-in price.",
+    "summary_zh": "免费及 Developer 每月25区，Professional 每开发者月50至少3人，Enterprise75至少10人；项目／容量／超额需报价，不归一完整价格。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/8base",
+      "read_at": "2026-10-22T08:36:50.476Z",
+      "excerpt_sha256": "38c323f3af9cd71b3dd7d134d70cddd9f260c8000fc3f4e8e9ec43a4aac64f0d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "8base",
+      "title": "Home",
+      "url": "https://www.8base.com/",
+      "read_at": "2026-10-22T11:41:48.307274Z",
+      "excerpt_sha256": "d9dd39a31a58f2806aabafed78ec6762697078f6b41e47bf8604abadfed8a915",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "BaaS/App Builder/Archie product boundaries read; banner token-sale external link not followed or treated as product evidence."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "8base",
+      "title": "Pricing | 8base",
+      "url": "https://www.8base.com/pricing",
+      "read_at": "2026-10-22T11:41:48.345495Z",
+      "excerpt_sha256": "fcb03d1598a9a7fa3ee8e8177e48a782661408aa42e535962d9453db24428280",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free, Developer25, Professional50/developer/month minimum3, Enterprise75 minimum10 and per-project/resource-overage FAQ read; mixed billing dimensions kept unresolved."
+    },
+    {
+      "id": "platform",
+      "type": "official_license",
+      "site": "8base",
+      "title": "Platform",
+      "url": "https://www.8base.com/platform",
+      "read_at": "2026-10-22T11:44:11.853347Z",
+      "excerpt_sha256": "01be2c2d25b18034ebd0fc6aaefd36102a56a528edc10aea9c6db64f261a669e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Explicit non-open-source platform/GraphQL engine statement plus AWS Aurora/S3/Lambda deployment model read. Broad zero-downtime claims not adopted."
+    },
+    {
+      "id": "backend",
+      "type": "official_documentation",
+      "site": "8base",
+      "title": "Backend Development | 8base Docs",
+      "url": "https://docs.8base.com/backend/",
+      "read_at": "2026-10-22T11:42:37.561709Z",
+      "excerpt_sha256": "b44aa7653187876501db527aff033e9e317ac80172b49242a3c02725c84fcf8c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed GraphQL/MySQL backend, authentication, console, custom functions and environment pipeline scope read."
+    },
+    {
+      "id": "quick",
+      "type": "official_documentation",
+      "site": "8base",
+      "title": "Quick Start | 8base Docs",
+      "url": "https://docs.8base.com/backend/overview/quick-start/",
+      "read_at": "2026-10-22T11:42:37.593228Z",
+      "excerpt_sha256": "d9d1eec5d5352aaadda083a0401a6ccd9b72bb98a17477f46d7a18e1d4cf36b8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Notes/User relation, GraphQL mutation/query, role setup, local CLI and separate front-end integration reviewed, not executed."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "8base",
+      "title": "Roles and Permissions | 8base Docs",
+      "url": "https://docs.8base.com/backend/app-services/roles-and-permissions/",
+      "read_at": "2026-10-22T11:42:37.538356Z",
+      "excerpt_sha256": "74c2a0959c6243a8421bd204932e58f95afcca4ee9aeccf0bcf0545efbfc93b7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "User vs console role, field/record filters, Guest/Admin and API token no-user-context behavior read."
+    },
+    {
+      "id": "functions",
+      "type": "official_documentation",
+      "site": "8base",
+      "title": "Working with Custom Functions | 8base Docs",
+      "url": "https://docs.8base.com/backend/custom-functions/types/",
+      "read_at": "2026-10-22T11:42:37.479716Z",
+      "excerpt_sha256": "0bf0633208cbb019ab436ba98115f18f8c61fc685e49136657ab2721a7809db1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Four function types, local 8base.yml/CLI deployment, checkPermissions default/bypass, 20s default/900s configurable timeout and dated Node14 runtime statement reviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:44:11.853347Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "backend", "platform", "quick"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Model application data and test its API contract",
+        "title_zh": "建模应用数据并测试 API 契约",
+        "en": "A proposed notes application could define a Notes table linked to Users, create a few disposable notes with a mutation and retrieve the intended user’s notes through GraphQL. The official quickstart uses this relational workflow and a separate React/Vue client. Inspect requested fields, filters and update permissions rather than treating a generated API as a finished application. The UI, application-specific validation and actual authorization checks still need implementation and testing. No workspace, mutation or starter app was run here.",
+        "zh": "建议用笔记应用试验：定义关联 Users 的 Notes 表，以 mutation 创建可丢弃笔记，再用 GraphQL 读取目标用户笔记。官方 Quickstart 采用该关系流程及独立 React／Vue 客户端。应检查字段、过滤及更新权限，不能把生成 API 当作完整应用。界面、业务校验及实际授权仍需实现测试。本次未运行工作区、mutation 或 starter。",
+        "source_refs": ["quick", "backend"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "roles",
+        "title_en": "Application users and developer access are different",
+        "title_zh": "应用用户与开发者访问不同",
+        "en": "The role guide separates data permissions from Management Console administration. Data rules include table CRUD, fields and custom read/update filters; roles can apply to application users as well as team members. API tokens are static, have no user context and start without permissions. Give a service token only the needed role, and test a regular user, another owner and a guest independently. A browser that hides an edit button does not establish database isolation. Do not infer that a console administrator’s successful query represents a normal user’s result.",
+        "zh": "角色指南区分数据权限与管理控制台权限。数据规则含表 CRUD、字段及读／更新过滤，角色可用于应用用户及团队成员。API token 是静态、无用户上下文的凭据，默认无权限。服务 token 应只授必要角色，分别测试普通用户、另一所有者及访客。浏览器隐藏编辑按钮不能证明数据库隔离，控制台管理员查询成功也不能代表普通用户结果。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "logic",
+        "title_en": "Custom functions can cross a permission boundary",
+        "title_zh": "自定义函数可能跨越权限边界",
+        "en": "Functions are developed locally, declared in 8base.yml and deployed to a workspace with the CLI. The guide describes resolvers, webhooks, triggers and tasks. Its internal gqlRequest defaults to checking the requester’s permissions, but checkPermissions:false bypasses those checks inside functions. That option is unavailable to client requests. Review privileged branches explicitly and validate caller input before using a function as a service integration. A function’s ability to call other functions does not establish atomic effects across external systems.",
+        "zh": "函数在本地开发、以 8base.yml 声明，经 CLI 部署到工作区。指南区分 resolver、webhook、trigger、task。内部 gqlRequest 默认检查请求者权限，但函数内 checkPermissions:false 可跳过；客户端请求不能使用此选项。将函数用作服务集成前，需明确审查提权分支及调用输入。能调用其他函数不代表跨外部系统原子生效。",
+        "source_refs": ["functions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "A timeout is an error, not proof of rolled-back side effects",
+        "title_zh": "超时是错误，不证明副作用已回滚",
+        "en": "The function guide gives a default 20-second execution limit and a configurable extension up to 900 seconds. It suggests background tasks for longer work, but does not establish exactly-once delivery or compensation. Test partial completion, duplicate calls and client cancellation with disposable records. The same guide still names Node.js 14, so its runtime statement is dated and must not be used as a current supported-version recommendation. Confirm the actual runtime, package compatibility and gateway/client deadlines before deployment.",
+        "zh": "函数指南列默认二十秒执行限制，可配置延长至九百秒，并建议长任务使用后台任务，但没有证明恰好一次或补偿。应以可丢弃记录测试部分完成、重复调用及客户端取消。同页仍写 Node.js 14，因此该运行时表述过旧，不能作为当前支持版本推荐。部署前需确认实际运行时、依赖兼容及网关／客户端截止。",
+        "source_refs": ["functions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Managed AWS resources are not a portable open platform",
+        "title_zh": "托管 AWS 资源不代表可移植开源平台",
+        "en": "The platform page identifies Aurora MySQL for workspace data, S3 for files, SNS for events and Lambda for functions. It discusses shared/dedicated arrangements and custom AWS-hosted options. Exact customer-account deployment, backup, export/restore and regional entitlements need a proposal; self-host wording does not prove arbitrary on-premises installation. The same official FAQ explicitly says the 8base platform and its GraphQL engine are not open source, despite using open-source tooling and GraphQL standards. No commercial license text or exit migration was tested.",
+        "zh": "平台页列 Aurora MySQL 工作区数据、S3 文件、SNS 事件及 Lambda 函数，并说明共享／专用及定制 AWS 方案。客户账号部署、备份、导出恢复及地区权限需实际方案确认，自托管字样不能证明任意本地安装。同一官方 FAQ 明确平台及 GraphQL 引擎不开源，尽管使用开源工具及 GraphQL 标准。本次未测试商业条款或退出迁移。",
+        "source_refs": ["platform"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Developer seats, projects and capacity appear together",
+        "title_zh": "开发者席位、项目及容量同时出现",
+        "en": "The pricing page shows Free at $0, a Developer section at $25/month, Professional $50/developer/month with three developers minimum and Enterprise $75 with ten minimum. It also describes provisioned capacity units, per-project charging and workspace-plan overages. These dimensions are not reconciled clearly enough to calculate an all-in minimum. Client App Users are registered end users, distinct from developers. Obtain a quote covering environments, capacity, end users and overages; do not multiply only one headline and ignore the other meters.",
+        "zh": "定价页列 Free $0、Developer 区每月 $25、Professional 每开发者每月 $50 且至少三人，Enterprise $75 且至少十人；还描述预配容量单位、逐项目收费及工作区方案超额。这些维度未清楚对应，无法计算完整最低费用。Client App Users 是注册终端用户，不是开发者。报价需覆盖环境、容量、终端用户及超额，不能只乘一个标题数字而忽略其他计量。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Evaluate a managed GraphQL backend, then the builder separately",
+        "title_zh": "先评估托管 GraphQL 后端，再评估构建器",
+        "en": "8base can be evaluated by JavaScript/TypeScript teams that want a managed relational backend and can own frontend integration and permission rules. Teams requiring verified current runtime support, an open-source engine or a fully local platform need additional evidence or a different fit. Begin with one small model and compare ordinary-user access with privileged functions. Current signup/provisioning, SLA, UI languages and production availability were not exercised. An unrelated token-sale banner link was not followed or used to infer ownership or product changes.",
+        "zh": "需要托管关系后端、能负责前端集成及权限的 JavaScript／TypeScript 团队可评估 8base。若要求已验证当前运行支持、开源引擎或完整本地平台，则需额外证据或另选方案。可从小模型开始，比较普通用户与提权函数访问。本次未执行注册／开通、SLA、界面语言及生产可用性；未跟随首页无关 token-sale 横幅，也未据此推断所有权或产品变化。",
+        "source_refs": ["backend", "roles", "functions", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "8base: managed GraphQL, roles and custom-function conditions",
+    "title_zh": "8base：托管 GraphQL、角色及自定义函数条件",
+    "description_en": "Understand backend modeling, user/token permissions, function timeouts, proprietary scope and mixed pricing dimensions.",
+    "description_zh": "了解后端建模、用户／token 权限、函数超时、专有平台及混合计价。",
+    "search_intent_en": "Evaluate 8base backend architecture and actual operating requirements.",
+    "search_intent_zh": "评估 8base 后端架构及实际运行条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No signup, API request, runtime, function, payment or migration was executed.",
+      "zh": "未执行注册、API 请求、运行环境、函数、支付或迁移。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Node14 wording is dated; actual supported runtime, security updates and present provisioning/support availability need confirmation.",
+      "zh": "Node14 表述过旧，实际运行时、安全更新及当前开通／支持可用性需确认。",
+      "source_refs": ["functions"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Billing mixes developer/project/workspace/capacity language; exact quote and free capacity were not reconciled.",
+      "zh": "计费混合开发者／项目／工作区／容量说法，未厘清完整报价及免费容量。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "App Builder/Archie features, cloud-account deployment rights, contract, UI languages and backup recovery were not deeply verified.",
+      "zh": "未深入核实 App Builder／Archie 功能、云账号部署权限、合同、界面语言及备份恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

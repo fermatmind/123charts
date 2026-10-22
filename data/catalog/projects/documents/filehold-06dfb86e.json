@@ -1,0 +1,502 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "filehold-06dfb86e",
+  "name": "FileHold",
+  "website_url": "https://filehold.com/",
+  "domain": "filehold.com",
+  "identity_domain": "filehold.com",
+  "category": "documents",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "FileHold manages a document library with schemas and metadata, search, check-out/check-in and version history. It offers vendor-hosted Cloud and customer-hosted deployment, with review/approval workflow among its optional modules. A controlled document’s current version, approved version and exported copy can represent different states. Purchase is scoped by users, deployment and optional features rather than a public fixed price.",
+  "description_zh": "FileHold 通过 schema、元数据、搜索、签出签入和版本历史管理文档库，可选厂商托管 Cloud 或客户自行部署，审阅审批流程属于可选模块。受控文档的当前版、获批版与导出副本可能是不同状态。采购按用户、部署和可选功能确定，官网未给出固定公开金额。",
+  "core_features": [
+    {
+      "name_en": "Check-out and explicit check-in",
+      "name_zh": "签出与明确签入",
+      "explanation_en": "A checked-out copy is edited locally; others see its changes after check-in.",
+      "explanation_zh": "签出的副本在本地编辑，签入后他人才看到变更。",
+      "explanation_scope": "product_specific",
+      "source_ref": "checkin",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Approval visibility configuration",
+      "name_zh": "审批可见性配置",
+      "explanation_en": "Schema-level and workflow-level hiding have different release conditions.",
+      "explanation_zh": "schema 级与流程级隐藏有不同解除条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "visibility",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Version-aware export",
+      "name_zh": "按版本导出",
+      "explanation_en": "Native files plus metadata XML do not include every approval and version-control attribute.",
+      "explanation_zh": "原生文件及元数据 XML 不含全部审批和版本控制属性。",
+      "explanation_scope": "product_specific",
+      "source_ref": "export",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a controlled maintenance instruction across drafting, approval, reader visibility and export."
+    ],
+    "zh": ["评估受控维护指引的草拟、审批、读者可见性和导出。"],
+    "basis": "Proposed evaluation; no customer adoption or business outcome observed.",
+    "source_refs": ["workflow", "visibility", "export"]
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor Cloud or customer-hosted Windows/IIS/SQL; current requirements explicitly scope 18.1.",
+      "zh": "厂商 Cloud 或客户托管 Windows/IIS/SQL；当前要求明确针对 18.1。",
+      "source_ref": "requirements",
+      "status": "documentation_read"
+    },
+    "API": {
+      "en": "Authenticated web services, mostly SOAP/XML; custom application support separate.",
+      "zh": "经认证 Web Services，多数 SOAP/XML；自定义应用支持另计。",
+      "source_ref": "api",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Document controller",
+      "Library administrator",
+      "Integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "roles"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select exact deployment and options; define a synthetic instruction, schema, approval visibility and required export before arranging an assisted trial.",
+        "zh": "选定部署及模块，定义虚构指引、schema、审批可见性及必要导出，再安排协助试用。",
+        "source_refs": ["trial", "visibility", "export"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_connected",
+    "items": [],
+    "source_ref": "api",
+    "scope": "Office/Teams, optional signing/identity integrations and SOAP/XML API documented; exact entitlement, credentials, versions and error handling unverified."
+  },
+  "limitations": {
+    "status": "documented_scope_limits",
+    "items": [
+      {
+        "en": "Standard export omits approval/version-control fields; workflow hiding scope and recovery retention require configuration checks.",
+        "zh": "标准导出缺少审批和版本控制字段；流程隐藏范围与恢复保留期需核对配置。",
+        "source_refs": ["export", "visibility", "purge"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "standard",
+    "scope": "Standard page lists French/Spanish packs and customer/partner translations including Chinese; exact delivered Chinese UI/support not verified."
+  },
+  "license": {
+    "status": "restricted_rights_documentation_read_full_order_unverified",
+    "is_open_source": false,
+    "url": "https://filehold.com/terms-of-use/",
+    "source_ref": "terms",
+    "scope": "Explicit permission required to copy/modify/distribute software/content; customer API access is not an open-source grant. Full order-specific license not reviewed."
+  },
+  "pricing": {
+    "status": "official_quote_and_trial_read",
+    "price_type": "per_user_quote_with_optional_modules",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Per-user subscriptions, custom quote; assisted trial options, no public numeric amount adopted.",
+    "source_snapshot_zh": "按用户订阅、定制报价，有协助试用；未采用公开数值金额。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/filehold",
+      "read_at": "2026-10-22T09:00:47.047Z",
+      "excerpt_sha256": "4a8eeede8debe88c3b8c0a2236caba02e0d43c144de553dcba02545938f103f1",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "filehold.com",
+      "title": "Purchase Options - FileHold",
+      "url": "https://filehold.com/how-to-buy/purchase-options/",
+      "read_at": "2026-10-22T15:59:03.702027Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "bf8d4e806fadf1a709952d9485ff35fd86e429c927d4711ac47b62843f5f04f2",
+      "research_notes_en": "Actual per-user subscription/custom quote, deployment and optional features; no numerical price published."
+    },
+    {
+      "id": "cloud",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "FileHold Cloud - FileHold",
+      "url": "https://filehold.com/products/filehold-cloud/",
+      "read_at": "2026-10-22T15:59:03.702927Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "173bc07f1d1f9c36f8fa3e6ac0af33e3101be6b3ae68b20942c988e3c2114812",
+      "research_notes_en": "Actual vendor hosting/patching and 99% or greater availability marketing. ISO alignment is not an independently checked certification or order-specific SLA."
+    },
+    {
+      "id": "standard",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "Standard Document Management Software Features - FileHold",
+      "url": "https://filehold.com/features/standard/",
+      "read_at": "2026-10-22T15:59:03.703557Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "27ee19cbbd57fc09e7bcede5f4ee9063e4f4faa4e93df4cb2a4f7fef7b03db2d",
+      "research_notes_en": "Read actual standard-feature body including indexing, virtual folders, Office/Teams and language packs; security/efficiency claims not independently verified."
+    },
+    {
+      "id": "optional",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "Optional Document Management Software Features - FileHold",
+      "url": "https://filehold.com/features/optional/",
+      "read_at": "2026-10-22T15:59:03.704063Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4222ad4c57c76700ff0b0e243f2c2d71b0397979a80881271566468822ac0be4",
+      "research_notes_en": "Read optional workflow, advanced routing, external signatures and paid identity integrations; not all standard-entitlement."
+    },
+    {
+      "id": "requirements",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "System Requirements - FileHold",
+      "url": "https://filehold.com/how-to-buy/system-requirements/",
+      "read_at": "2026-10-22T15:59:03.704114Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ef466f2f14d1d497e514e0bc1f5239fc73a3e2cc987d1d40b4481dae0721cbb0",
+      "research_notes_en": "Actual 18.1 self-hosted dedicated US-English Windows/IIS/SQL requirements and workload sizing; no server installed."
+    },
+    {
+      "id": "trial",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "Software Trials - FileHold",
+      "url": "https://filehold.com/how-to-buy/free-trials/",
+      "read_at": "2026-10-22T15:59:03.704151Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c5e44875b298b7de7c3f911a47db2731e5188c3283d9a9bdf9900d7fa54a0bd0",
+      "research_notes_en": "Actual assisted demo, 5–10-day installed trial and up-to-30-day PoC with orientation and potentially paid services; not permanent free production."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "Document Workflow for Review & Approval Software - FileHold",
+      "url": "https://filehold.com/features/optional/workflow/",
+      "read_at": "2026-10-22T15:59:03.704437Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1f1f5a6c96cdaa8ff6702bde3bdc2bdd42fdae90b42e86ebd609b2bd262d9801",
+      "research_notes_en": "Actual main/supporting documents, review/approval distinction, one/all participation and updating files during workflow."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "filehold.com",
+      "title": "Terms of Use - FileHold",
+      "url": "https://filehold.com/terms-of-use/",
+      "read_at": "2026-10-22T15:59:03.704832Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "74b9b3885875009b574c85fc750f7ca4503dc8b80b05f6864ee88505c5daec4a",
+      "research_notes_en": "Actual copyrighted content/software ownership and permission requirement; not a complete order-specific DMS license or hosting cancellation contract."
+    },
+    {
+      "id": "filecare",
+      "type": "official_documentation",
+      "site": "filehold.com",
+      "title": "Service Level Agreement (SLA) - FileHold",
+      "url": "https://filehold.com/support/service-level-agreement/",
+      "read_at": "2026-10-22T15:59:03.704900Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6cc6dc188d4d6a8824d367372bac54f33cdf3e2768950256ab92208f465d7296",
+      "research_notes_en": "Actual Cloud/customer infrastructure and backup responsibilities, response versus resolution objectives, annual support and custom-app exclusions."
+    },
+    {
+      "id": "recover",
+      "type": "official_documentation",
+      "site": "www.kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://www.kb.filehold.com/help/library/recover-documents",
+      "read_at": "2026-10-22T15:59:03.705207Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e276522ef7ef600d0a48a914a72f69b6ef92ca9d396eaa8a9c2b293c7c58928f",
+      "research_notes_en": "Actual soft-deleted files recover to original library location before purge."
+    },
+    {
+      "id": "purge",
+      "type": "official_documentation",
+      "site": "www.kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://www.kb.filehold.com/help/library/permanently-delete-documents",
+      "read_at": "2026-10-22T15:59:03.705222Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "19063ce58a21d9df3a57c51e9a87eae40cf9ca62ef1d5aa65aecde847fbe7afd",
+      "research_notes_en": "Actual default seven-day retention configurable 1–1000, daily lifecycle timing, permanent deletion retains usage logs only."
+    },
+    {
+      "id": "undo",
+      "type": "official_documentation",
+      "site": "www.kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://www.kb.filehold.com/help/library/checkin-for-users",
+      "read_at": "2026-10-22T15:59:03.705239Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1d9b1583ce90c46048a06c4c319b24a337a13a8f9fa8bd8f2f18494c8e0f6bcb",
+      "research_notes_en": "Actual administrator undo checkout releases lock with unchanged version; does not retrieve absent user edits."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/developer/web-services-api-overview",
+      "read_at": "2026-10-22T15:59:03.705263Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ea96d6a8a3b9abd765aa41115595bf301cfd4e47fe44cd6ad06498dfe1e05492",
+      "research_notes_en": "Actual authenticated SOAP/XML web services, customer API terms and separate custom-app support; open API is not open-source software."
+    },
+    {
+      "id": "checkin",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/user/check-out-check-in",
+      "read_at": "2026-10-22T15:59:03.705568Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4620a6b0c3698306a81c7e16d966cfe0c8f4fb2e805f611309d6ab60ebe0fade",
+      "research_notes_en": "Actual local/native edit and explicit check-in, unchanged-file undo option, metadata reset and local-copy cleanup conditions."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/system/user-roles",
+      "read_at": "2026-10-22T15:59:03.705606Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c2887b8ae82e19f24c772e1dce7115c05686ba1af03496f4f864f11e152a0a10",
+      "research_notes_en": "Actual twelve-role hierarchy versus older marketing count, highest role on same folder and cabinet-ownership condition."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/user/version-history",
+      "read_at": "2026-10-22T15:59:03.705642Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7cdaa938ab34fda8f845786f2f10e8248b58c6f02c851d278dba44f92acc9634",
+      "research_notes_en": "Actual version-owner changes, permitted history deletion and reinstatement as new numbered current version with metadata choice."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/user/exporting-documents-FDA",
+      "read_at": "2026-10-22T15:59:03.705666Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9818074f458d927a0de9ab7ab8a0e6d4a19228d9e527aa508144588c3bcc7a9f",
+      "research_notes_en": "Actual native files plus XML, visible selected/latest version, excludes approval status/version control numbers; not complete recovery backup."
+    },
+    {
+      "id": "visibility",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/workflow/hide-document-until-approved",
+      "read_at": "2026-10-22T15:59:03.705748Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "41259b49f95a1042783926deacf6bd32d800d8676a8da78b3a42c427f4c25162",
+      "research_notes_en": "Actual template-only versus schema-wide hidden-version conditions and nonapproval/new-version rule; global latest-approved visibility is configurable."
+    },
+    {
+      "id": "folder-access",
+      "type": "official_documentation",
+      "site": "kb.filehold.com",
+      "title": "- DMS FileHold Systems",
+      "url": "https://kb.filehold.com/help/library/folder-access",
+      "read_at": "2026-10-22T15:59:03.705770Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f986dcbcd51ccc3039ae33d91efdefc06ff29aa795d36d66dba2751adeedb89f",
+      "research_notes_en": "Actual cabinet prerequisite/folder membership and effective permissions; group roles can be locally reduced."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:59:03.705770Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "standard",
+    "optional",
+    "pricing",
+    "visibility",
+    "export"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "library-and-evaluation",
+        "title_en": "Define the library record before importing a folder",
+        "title_zh": "导入文件夹前先定义文档记录",
+        "en": "FileHold organizes a library and classifies documents using schemas and metadata. Search can use text and metadata; virtual folders collect views of documents stored in different locations. Office and Teams integration are documented, but a Teams working copy and the authoritative checked-in library document still need an agreed handover. A folder of files is not automatically a reliable controlled-document register.\n\nAn editorial pilot could use a fictional maintenance instruction with an equipment ID, instruction number, revision and owner. Choose a schema, identify the intended reader and define which revision may be used on the shop floor. Introduce a deliberately incorrect equipment tag to see whether review catches a discoverable but misclassified instruction. This is a proposed acceptance exercise, not an observed customer deployment, search benchmark or compliance finding. FileHold suits teams willing to administer this library structure; a person seeking immediate, unmanaged note editing would face a different setup burden.",
+        "zh": "FileHold 组织文档库，使用 schema 和元数据分类文档，可按正文和元数据搜索，虚拟文件夹则集中显示分散存储的文档视图。文档介绍 Office 及 Teams 集成，但 Teams 工作副本与正式签入库文件之间仍需约定交接。文件夹有文件，不自动意味着受控文档登记可靠。\n\n编辑建议用虚构维护指引试点，设设备标识、指引编号、修订及所有者。选定 schema、目标读者及车间可用修订，再故意设错设备标签，检查审阅能否发现可搜索但归类错误的指引。这是建议验收练习，不是客户部署、搜索性能或合规结论。适合愿意管理文档库结构的团队；只想立即编辑个人笔记的人会面对不同的配置负担。",
+        "source_refs": ["standard", "workflow"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "checkin-and-lock",
+        "title_en": "Saving a local file does not complete its library handover",
+        "title_zh": "保存本地文件不完成库内交接",
+        "en": "Checking out locks the library document against another editor, while permitted readers can still get a copy. The web client downloads a file for its native application; finishing that edit requires checking the file back in. Required metadata may be cleared for re-entry if the schema enables that behavior. Local working copies may be removed after successful check-in according to preferences or administrator settings, so the pilot should verify the intended source file and resulting library content before treating the task as finished.\n\nAn unchanged file can use the undo-checkout option. An administrator can also release an absent user’s checkout without changes, retaining the original version number. That operation is not recovery of the user’s unsent local edits. For the maintenance instruction, distinguish a saved local draft, a newly checked-in version and an unchanged lock release in the acceptance record. No document or checkout was operated in this research.",
+        "zh": "签出会锁定库文档，防止另一编辑者修改，但有权读者仍能取得副本。网页客户端下载文件交给原生应用编辑，完成后还需签入。若 schema 开启相应选项，必填元数据会清空并要求重填。偏好或管理员设置还可能在成功签入后清理本地工作副本，因此试点应核对所选来源文件及库内结果，再确认完成。\n\n未改动文件可撤销签出，管理员也能为离岗用户无修改解除锁，并保持原版本号。这不等于找回该用户尚未发送的本地修改。维护指引验收应区分本地已保存草稿、新签入版本和无修改解锁。本研究未操作文档或签出。",
+        "source_refs": ["checkin", "undo"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "approval-and-distribution",
+        "title_en": "Approve the intended version and choose the correct hiding rule",
+        "title_zh": "审批目标版本并选择正确隐藏规则",
+        "en": "Workflow is an optional module. Review tasks collect feedback; approval tasks collect approval decisions. A workflow may include main documents and supporting material, and completion can require one or all assigned users. Files and metadata can change during the process. For the proposed instruction, identify the main file, required decision-makers and exact version on the sign-off history instead of treating a started workflow or an email as acceptance.\n\nThe visibility settings have materially different scope. Template/instance hiding applies during the workflow and is released when it ends, including rejection or cancellation. Schema-level hiding keeps unapproved versions hidden from ordinary readers; after nonapproval, another attempt requires a new document version. Owners, participants, observers and administrators have special visibility. Decide the intended distribution rule before relying on it, then check an ordinary reader separately. Optional Adobe/DocuSign processing is another path whose licensing and return handling need scoping; it is not implied by basic file storage.",
+        "zh": "工作流是可选模块：review 收集反馈，approval 收集审批决定，可包含主文档和辅助资料，并要求一人或全体指定人员完成。流程中仍可修改文件及元数据。建议的指引应明确主文件、必要决策者和签署历史所指的具体版本，不以流程启动或邮件当作接受。\n\n可见性设置范围不同。模板或实例级隐藏只在流程期间生效，拒绝或取消等结束状态也会解除。schema 级隐藏会让未获批版本持续对普通读者隐藏，未批准后需创建新版本再尝试。所有者、参与者、观察者及管理员有特殊可见性。依赖前先确定发布规则，并另用普通读者核对。可选 Adobe／DocuSign 流程是另一条需明确许可及返回处理的路径，基础文件存储不隐含该能力。",
+        "source_refs": ["optional", "workflow", "visibility"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access-and-history",
+        "title_en": "A role label is not enough to establish document access",
+        "title_zh": "角色名称不足以确立文档访问",
+        "en": "The current knowledge base describes twelve roles, while an older marketing summary says eleven. The operational guide explains a role hierarchy and the highest assigned role where a user reaches the same folder through multiple groups. Some capabilities also need ownership: a cabinet administrator does not acquire full administration over a cabinet merely from the role name. Folder access requires membership, with cabinet membership a prerequisite for assigning its groups; advanced settings may reduce a role locally. Inspect effective permissions for the intended folder.\n\nVersion history is also conditional. Authorized users can explicitly delete earlier versions; history is not an immutable promise that every old file is retained forever. Reinstating old content creates the next numbered version, with a choice between the old metadata and current metadata. For a corrected maintenance instruction, choose that metadata behavior deliberately and review approval status again. Returning to old content does not by itself establish that it is suitable for current equipment.",
+        "zh": "当前知识库描述十二个角色，较旧营销概述写十一个。操作指南说明角色层级，同一用户通过多个组访问同一文件夹时采用所获较高角色；部分能力还取决于所有权，柜管理员不能仅凭角色名称获得任意柜的完整管理。文件夹访问要求成员身份，为其分配组又以柜成员为前提；高级配置可在局部降低角色。应检查目标文件夹的实际权限。\n\n版本历史也有条件：获授权用户可以明确删除旧版，因此不保证所有旧文件永久不可变保留。恢复旧内容会创建下一个编号的版本，并可选择旧元数据或当前元数据。维护指引回退时应主动选择元数据行为，并重新检查审批状态。内容回到旧版，不自动证明适合当前设备。",
+        "source_refs": ["roles", "folder-access", "versions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deletion-and-export",
+        "title_en": "Plan recovery and export as different operations",
+        "title_zh": "将恢复和导出分别规划",
+        "en": "Soft-deleted files leave the ordinary library and may be recovered to their original location before permanent deletion. The documented retention setting defaults to seven days and allows 1–1000 days; the daily lifecycle job determines actual purge timing. Hard deletion removes files and related data while retaining usage logs. A remaining log is not a recoverable document. Confirm the installation’s setting rather than promising a universal recovery window.\n\nThe desktop export produces native files and metadata XML, normally for the latest version visible in the selected view. It excludes approval status and version-control numbers. Exporting an entire folder therefore does not establish a complete version and approval archive or a restorable server backup. For the pilot, inspect a small export against the required instruction, metadata, history and sign-off record before planning migration or exit. Full restore and contract-specific posttermination access remain unverified. No deletion, export or recovery was performed.",
+        "zh": "软删除文件会离开普通文档库，在永久删除前可恢复至原位置。文档保留设置默认七天，可设 1–1000 天，实际清理由每日生命周期任务决定。硬删除会删除文件及相关数据，但保留使用日志；日志仍在不等于文档可恢复。应核对安装中的设置，不能承诺统一恢复期。\n\n桌面导出生成原生文件和元数据 XML，通常取所选视图中可见的最新版本，不含审批状态和版本控制号。因此导出整个文件夹不证明拥有完整版本审批档案或可恢复服务器备份。建议先用小型导出逐项核对指引、元数据、历史及签署记录，再规划迁移或退出。完整恢复及合同终止后的访问期限未核实。本研究未删除、导出或恢复。",
+        "source_refs": ["recover", "purge", "export"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-and-api",
+        "title_en": "Choose who owns the server and integration work",
+        "title_zh": "确定服务器及集成的责任方",
+        "en": "The reviewed system requirements target FileHold 18.1. Self-hosted installation requires a dedicated supported US-English Windows Server environment, IIS and SQL Server with the specified collation. Capacity depends on clients, searches, database layout and document/index storage; a small minimum configuration is not a performance guarantee for a busy library. Cloud transfers infrastructure and backup responsibility to FileHold, while customer-hosted/private-cloud infrastructure and backups remain the customer’s responsibility under the support overview. Hosting marketing describes ISO alignment, not independently verified certification.\n\nThe API uses authenticated web services, mostly SOAP/XML, shared with standard clients. Public API access does not make the product open source. FileCare covers the standard API but not responsibility for debugging a custom application. A proposed import should map business identifiers and metadata, then reconcile results in a test environment; no retry, idempotency or safe bulk-delete behavior was established for a specific API method. No software, connector or server was installed.",
+        "zh": "已读系统要求针对 FileHold 18.1。自行部署需要受支持的专用美式英语 Windows Server、IIS 及指定排序规则的 SQL Server。容量取决于客户端、查询、数据库布局及文档索引存储，小型最低配置不保证繁忙文档库的性能。支持概述将 Cloud 基础设施和备份交给 FileHold，客户托管或私有云的基础设施备份仍由客户负责。托管营销描述 ISO 原则一致性，不是独立核验的认证。\n\nAPI 使用经认证的 Web Services，多数为 SOAP/XML，与标准客户端共用。公开 API 不使产品成为开源。FileCare 覆盖标准 API，但不承担自定义应用调试责任。建议导入先映射业务标识和元数据，在测试环境核对结果；未确立某个具体 API 的重试、幂等或安全批量删除行为。本研究未安装软件、连接器或服务器。",
+        "source_refs": ["requirements", "cloud", "filecare", "api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "purchase-and-support",
+        "title_en": "Budget for the selected users, options and assisted evaluation",
+        "title_zh": "按所选用户、模块及协助评估预算",
+        "en": "The current purchase page offers per-user subscriptions for Cloud or self-hosting and a custom quote based on usage and selected optional features. It publishes no numerical fee. Its no-document-volume-limit language does not establish unlimited infrastructure capacity or a fixed storage entitlement. Ask a quote to separate users, workflow, identity integration, hosting, migration and services.\n\nThe trial page distinguishes an assisted interactive demonstration, a 5–10-day installed trial and a PoC up to thirty days. Orientation is required; advanced services may cost extra. None is permanent free production use. FileCare is annual support: response deadlines and resolution objectives differ, customer-hosted disaster reinstall assistance can incur fees, and third-party/custom-app exclusions matter. The terms page reserves software/content rights and requires permission for reuse; complete deployment-specific license, renewal, cancellation and exit terms still need the order. No quote request, trial registration, agreement acceptance or purchase was made.",
+        "zh": "当前采购页提供 Cloud 或自行部署的按用户订阅，按使用情况及可选功能定制报价，没有数值金额。不限制文档量的表述不确立无限基础设施容量或固定存储权益。报价应拆分用户、流程、身份集成、托管、迁移及服务。\n\n试用页区分协助式交互演示、5–10 天安装试用和最长三十天 PoC，要求基础培训，高级服务可能另收费。均不是永久免费生产。FileCare 为年度支持，回复期限与解决目标不同，客户托管灾难重装协助可能收费，还需留意第三方和自定义应用排除。条款页保留软件及内容权利，复用需许可；完整部署专属许可、续费、取消及退出条款仍需订单确认。本研究未询价、注册试用、接受协议或购买。",
+        "source_refs": ["pricing", "trial", "filecare", "terms"],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "FileHold: Controlled Documents, Approval Visibility and Export Limits",
+    "title_zh": "FileHold：受控文档、审批可见性及导出限制",
+    "description_en": "Evaluate FileHold check-in, optional approval workflows, role scope, recovery, export and Cloud or self-hosted quote conditions.",
+    "description_zh": "评估 FileHold 签入、可选审批流程、角色范围、恢复导出及 Cloud 或自行部署的报价条件。",
+    "search_intent_status": "editorial_inference_not_measured"
+  },
+  "research_gaps": [
+    {
+      "en": "No account, installation, file import/edit/check-in, approval, permission change, API, signature, export, backup, deletion, restore, contact or payment operation performed.",
+      "zh": "未执行账户、安装、文件导入编辑签入、审批、权限变更、API、签名、导出、备份、删除、恢复、联系或支付。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact Cloud region/backup recovery SLA, current user/storage quote, connector entitlements, complete license/renewal/cancellation/exit terms and production workflow settings unverified. No certification, security or performance claim independently checked.",
+      "zh": "精确 Cloud 地区及备份恢复 SLA、当前用户存储报价、连接器权益、完整许可续费取消退出条款及生产流程设置未核实；未独立核查认证、安全或性能。",
+      "source_refs": ["cloud", "pricing", "filecare", "terms", "visibility"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Knowledge-base role count differs from marketing; old Brava commands and legacy guide downloads are not assumed available in new installations. Actual version and client must be confirmed.",
+      "zh": "知识库角色数与营销有差异，旧 Brava 命令及历史指南下载不当作新安装可用能力；需确认实际版本和客户端。",
+      "source_refs": ["roles", "standard", "versions"],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

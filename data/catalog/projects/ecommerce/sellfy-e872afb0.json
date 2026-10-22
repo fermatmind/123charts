@@ -1,0 +1,223 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "sellfy-e872afb0",
+  "name": "Sellfy",
+  "website_url": "https://sellfy.com/",
+  "domain": "sellfy.com",
+  "identity_domain": "sellfy.com",
+  "category": "ecommerce",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Sellfy is a hosted store builder for creators selling digital downloads, subscriptions, physical products and print-on-demand merchandise. A creator can use a standalone store or embed product widgets and buy buttons in an existing site.\n\nPayments go to the seller’s connected Stripe or PayPal account. Sellfy’s subscription and revenue-cap rules are separate from those processors’ charges and eligibility; a 14-day store-building trial is not the same as a free live selling plan.",
+  "description_zh": "Sellfy 是面向创作者的托管商店构建器，可销售数字下载、订阅、实物及按需印刷商品。创作者可使用独立店铺，或在已有网站嵌入商品组件和购买按钮。\n\n款项进入卖家连接的 Stripe 或 PayPal 账户。Sellfy 订阅和收入额度规则，与支付处理费及准入分开；14 天建店试用不等于免费正式销售套餐。",
+  "core_features": [
+    {
+      "name_en": "Digital and recurring products",
+      "name_zh": "数字及周期商品",
+      "explanation_en": "Sell downloads and subscriptions alongside other product types.",
+      "explanation_zh": "在其他商品类型之外销售下载及订阅。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Standalone or embedded shop",
+      "name_zh": "独立或嵌入店铺",
+      "explanation_en": "Use a hosted storefront, buy buttons or product widgets.",
+      "explanation_zh": "使用托管店面、购买按钮或商品组件。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Revenue-capped subscriptions",
+      "name_zh": "按收入上限分订阅",
+      "explanation_en": "Plan choice depends on annual sales, with upgrade/overage conditions.",
+      "explanation_zh": "按年度销售额选择套餐，并有升级超额条件。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Trace a paid download to the buyer’s access"],
+    "zh": ["跟踪付款下载与买方访问"],
+    "source_refs": ["product", "pricing"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Digital creator", "Download/subscription merchant"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:23:39.592349+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Monthly/annual subscription by yearly sales cap; processor fees extra; possible 2% excess-revenue charge if over cap without upgrading.",
+    "source_snapshot_en": "Monthly/annual subscription by yearly sales cap; processor fees extra; possible 2% excess-revenue charge if over cap without upgrading.",
+    "source_snapshot_zh": "按年销售上限分月／年订阅，支付处理另计；超限不升级可能对超出收入收 2%。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/sellfy",
+      "read_at": "2026-10-22T09:07:45.251Z",
+      "excerpt_sha256": "3b48c7462ed0d53cebfacd2794e1b56342054fd65a8d16b19971443791e47862",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Sellfy",
+      "url": "https://sellfy.com/",
+      "title": "Online Store Builder: Create a Free Online Store | Sellfy",
+      "read_at": "2026-10-22T15:14:03.940741+00:00",
+      "excerpt_sha256": "32c180fa128c16795b487867d326e9b4b5886037e499f317f40a9f23e0943062",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read creator product types, hosted/embedded model, processor handoff and explicit trial-to-paid selling requirement."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Sellfy",
+      "url": "https://sellfy.com/pricing/",
+      "title": "Sellfy Pricing: Plans From $22/mo, 0% Transaction Fees",
+      "read_at": "2026-10-22T15:14:55.878876+00:00",
+      "excerpt_sha256": "6b36c9c0c3d574467cc92896b7bda5eb771f8babe914f8aea1c8f7e22d683250",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read cadence/caps, conditional 2% overage, separate processor fees and country eligibility; file/migration table-versus-FAQ differences preserved."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:23:39.592349+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "download",
+        "title_en": "Trace a paid download to the buyer’s access",
+        "title_zh": "跟踪付款下载与买方访问",
+        "en": "A creator could upload a permitted file, write the product description, connect a payment account and inspect checkout and delivery. Before launch, verify an unsuccessful payment and a refunded order as well as the normal purchase. Print-on-demand and physical fulfilment are different workflows from an instant download and require their own cost and delivery checks. No purchase or file delivery was executed.",
+        "zh": "创作者可上传允许的文件、填写商品描述、连接支付账户，并核对结账及交付。上线前除了正常购买，还应检查付款失败和退款订单。按需印刷及实物履约不同于即时下载，需分别核对成本配送。本文未执行购买或文件交付。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans",
+        "title_en": "Read the annual sales cap before comparing subscription prices",
+        "title_zh": "比较订阅价格前先看年度销售上限",
+        "en": "The pricing page lists annual-billing equivalents of US$22, US$59 and US$119 per month for Starter, Business and Premium, versus monthly payments of US$29, US$79 and US$159. Annual sales caps are US$10,000, US$50,000 and US$200,000. If a seller exceeds the plan and does not upgrade, the FAQ says Sellfy may charge 2% on revenue above the limit. A zero ordinary transaction fee therefore is not an unconditional zero-fee promise.",
+        "zh": "定价页列出 Starter、Business、Premium 年付折算每月 22、59、119 美元，逐月付款分别为 29、79、159 美元；年度销售上限为 10,000、50,000、200,000 美元。FAQ 说明超限不升级时，可能对超出收入收 2%。因此常规交易费为零，不等于无条件零费用。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dependencies",
+        "title_en": "Payment eligibility and product limits need checking",
+        "title_zh": "核对支付资格及商品限制",
+        "en": "The official FAQ says a seller unable to receive through both supported processors can only offer free products. Processor fees remain additional to the Sellfy subscription. The table shows plan-specific file-size limits, while another FAQ uses a general 10 GB statement; migration entitlement text also differs between the table and FAQ. Confirm the operative limit and service scope for your files rather than selecting the most generous sentence.",
+        "zh": "官方 FAQ 说明若两种受支持支付方式都无法收款，只能提供免费商品；支付处理费也在 Sellfy 订阅之外另计。表格显示按套餐分文件大小，而另一 FAQ 使用通用 10 GB 说法，迁移权益在表格和 FAQ 也有差异。应确认自身文件实际适用额度和服务范围，不能挑最宽松表述。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Use the trial to prepare a creator store",
+        "title_zh": "用试用准备创作者商店",
+        "en": "A creator with an existing audience and a manageable catalogue has a relevant use case. A multi-vendor marketplace or complex warehouse operation needs a different scope. The homepage says selling requires upgrading the trial store to a paid plan. Prepare files, rights, gateway account, tax/shipping inputs and refund ownership. No hosting-region, source-code/self-hosting licence, subscription recovery or independent sales outcome was verified.",
+        "zh": "已有受众、目录可管理的创作者有相关场景。多卖家市场或复杂仓储需求则不同。主页说明试用店须升级付费才能销售。应准备文件、权利、支付账户、税配送输入及退款责任。本文未核实托管地区、源码自托管许可、订阅恢复或独立销售效果。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Sellfy: Trace a paid download to the buyer’s access",
+    "title_zh": "Sellfy：跟踪付款下载与买方访问",
+    "description_en": "Sellfy is a hosted store builder for creators selling digital downloads, subscriptions, physical products and print-on-demand merchandise. A creator can use a standalone store or embed product widgets and buy buttons in an existing site.",
+    "description_zh": "Sellfy 是面向创作者的托管商店构建器，可销售数字下载、订阅、实物及按需印刷商品。创作者可使用独立店铺，或在已有网站嵌入商品组件和购买按钮。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "File-size and migration-entitlement inconsistencies, precise sales-cap period/base, POD fulfilment economics, payout/processor eligibility and exit/recovery terms remain unverified.",
+      "zh": "文件大小和迁移权益矛盾、销售额度周期口径、POD 履约成本、结算支付资格及退出恢复条款仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ]
+}

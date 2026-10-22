@@ -1,0 +1,244 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "fastspring-d3af5387",
+  "name": "FastSpring",
+  "website_url": "https://fastspring.com/",
+  "domain": "fastspring.com",
+  "identity_domain": "fastspring.com",
+  "category": "ecommerce",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "FastSpring is a Merchant of Record service for software, SaaS and digital goods. It combines checkout, payment processing, recurring billing, transaction-tax handling, fraud operations and reporting rather than providing only a payment gateway.\n\nThe seller integrates its product and fulfilment with this managed transaction layer. FastSpring’s pricing FAQ explicitly says it is not offered as a payment-processor-only purchase; its revenue-share arrangement is part of the broader MoR model.",
+  "description_zh": "FastSpring 是供软件、SaaS 及数字商品使用的 Merchant of Record 服务，结合结账、支付处理、周期收费、交易税务、反欺诈及报表，而不只是支付网关。\n\n卖家将自己的产品和交付连接这一托管交易层。定价 FAQ 明确说明不能仅按支付处理服务采购，其收入分成属于更广的 MoR 模式。",
+  "core_features": [
+    {
+      "name_en": "Managed MoR checkout",
+      "name_zh": "托管 MoR 结账",
+      "explanation_en": "Combine transaction handling with branded checkout and related tax/fraud operations.",
+      "explanation_zh": "结合交易处理、品牌结账及相关税务反欺诈运营。",
+      "source_ref": "overview",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Flexible subscription management",
+      "name_zh": "灵活订阅管理",
+      "explanation_en": "The overview lists intervals, proration, trials, upgrades, downgrades and pauses.",
+      "explanation_zh": "概览列有周期、按比例计费、试用、升降级及暂停。",
+      "source_ref": "overview",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Revenue-share pricing",
+      "name_zh": "收入分成定价",
+      "explanation_en": "Fees are withheld from transactions before distribution to the seller.",
+      "explanation_zh": "分配给卖家前从交易中扣除费用。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Connect a paid subscription to software access"],
+    "zh": ["把已付订阅连接软件访问权"],
+    "source_refs": ["overview", "product"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["SaaS vendor", "Digital product billing team"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "see_profile_and_research_gaps",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:13:05.699960+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Custom revenue share by transaction type and volume, withheld from proceeds; no stated minimum transaction volume.",
+    "source_snapshot_en": "Custom revenue share by transaction type and volume, withheld from proceeds; no stated minimum transaction volume.",
+    "source_snapshot_zh": "按交易类型及量定制收入分成，从款项中扣除；页面说明无最低交易量。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/fastspring",
+      "read_at": "2026-10-22T08:50:17.410Z",
+      "excerpt_sha256": "6cb21d3f18f355c04fbb1b96105201bb63b4bf7d1cbe6d4192efbf53d9f68a29",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "FastSpring",
+      "url": "https://fastspring.com/",
+      "title": "\n    FastSpring: Global Payments, Subscriptions, & Tax Compliance  ",
+      "read_at": "2026-10-22T15:03:05.986031+00:00",
+      "excerpt_sha256": "53db8b9a06ec66eeeeaac7b2a932ed4a25be59f3d774ddf547b63c3bf1fdb197",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read digital-goods MoR positioning and developer/API/webhook entry points."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "FastSpring",
+      "url": "https://fastspring.com/product-overview/",
+      "title": "\n    Product Overview - FastSpring  ",
+      "read_at": "2026-10-22T15:08:10.700175+00:00",
+      "excerpt_sha256": "79cedf1eaae4e1945e6373ffae0830f671bf297c01a1553f10cef5237df84afd",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read bundled checkout/payment/tax scope and subscription intervals/proration/pauses without adopting revenue claims."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "FastSpring",
+      "url": "https://fastspring.com/pricing/",
+      "title": "\n    FastSpring Pricing: All-in-One Pricing. No Additional Fees.  ",
+      "read_at": "2026-10-22T15:08:09.627542+00:00",
+      "excerpt_sha256": "a0b50d459f234e8e2a498603181632d31ab601b3e7bc17627bbf6b50ab6cece4",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read custom revenue share, automatic fee withholding, no minimum volume and explicit no processor-only purchase; no public numeric commission."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:13:05.699960+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "entitlements",
+        "title_en": "Connect a paid subscription to software access",
+        "title_zh": "把已付订阅连接软件访问权",
+        "en": "A SaaS seller could configure a plan, offer branded checkout and use APIs or webhooks to update its own access system. The overview lists trials, proration and plan changes. Define how pending payment, renewal, cancellation and refund affect the product account; a successful checkout is only one state. Test duplicate events and delayed notifications before automating access. No transactions or integration events were executed.",
+        "zh": "SaaS 卖家可配置方案、提供品牌结账，并通过 API 或 webhook 更新自家访问系统。概览列有试用、按比例计费及方案变化。应明确待付款、续费、取消和退款对产品账户的影响；结账成功只是一个状态。自动管理权限前应测试重复事件及通知延迟。本文未执行交易或集成事件。",
+        "source_refs": ["overview", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "model",
+        "title_en": "Do not treat the MoR as a standalone gateway",
+        "title_zh": "不能把 MoR 当作独立支付网关",
+        "en": "FastSpring documents responsibility for transaction checkout, tax collection/remittance and payment operations within its MoR service. The pricing FAQ rejects a processor-only purchase and describes bundled features. Match product eligibility and the seller agreement to the actual business before migration; this profile does not determine the seller’s legal or tax obligations. A generic retail store with physical fulfilment may require a different service boundary.",
+        "zh": "FastSpring 在 MoR 服务中描述承担交易结账、税款收取缴纳及支付运营，定价 FAQ 不提供仅支付处理采购，并介绍捆绑功能。迁移前应以实际业务核对产品准入和卖家协议；本文不判断卖家的法律税务义务。需要实物履约的通用零售店可能需要不同服务边界。",
+        "source_refs": ["overview", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Request the transaction-specific revenue share",
+        "title_zh": "询问适用交易的收入分成",
+        "en": "The official pricing page describes a custom flat-rate revenue share based on transaction type and business volume. It states there is no minimum transaction volume, and fees are automatically withheld before funds are distributed. The quote form asks monthly value, transaction count and geographic split; no public numeric commission was verified. Confirm payout cadence, currencies, refunds, disputes and any negotiated exceptions in the agreement.",
+        "zh": "官方描述按交易类型及业务量定制统一收入分成，说明无最低交易量，并在分配资金前自动扣费。报价表收集月交易额、笔数及地区比例，未核实公开数字佣金。应在协议中确认结算周期、币种、退款、争议及协商例外。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Plan fulfilment and failure ownership",
+        "title_zh": "规划交付及失败责任",
+        "en": "FastSpring offers developer APIs, webhooks and checkout tools, while the seller remains responsible for its application and the connection to fulfilment. Prepare product IDs, pricing, account mapping and support ownership. A renewal feature does not establish recovery timing after a failed charge, and a revenue dashboard does not substitute for payout reconciliation. The exact event ordering, retry and reserve policies were not verified.",
+        "zh": "FastSpring 提供 API、webhook 和结账工具，卖家仍需负责自身应用及交付连接。应准备商品标识、价格、账户映射及支持责任。支持续费不能证明扣费失败后的恢复时序，收入仪表盘也不能代替结算核对。具体事件顺序、重试和准备金政策未核实。",
+        "source_refs": ["product", "overview", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Evaluate a managed digital-sales relationship",
+        "title_zh": "评估托管数字销售合作关系",
+        "en": "Digital sellers wanting outsourced transaction infrastructure have a relevant evaluation case. A team that wants to operate the commerce source code itself should not equate API access with self-hosting rights. No open-source licence, production checkout, recovery test or independent acceptance-rate benchmark was verified. The public trial/demo route does not establish seller approval or permanent free use.",
+        "zh": "希望外包交易基础设施的数字产品卖家有相关评估场景。想自行运维电商源码的团队，不能把 API 访问当作自托管权利。本文未核实开源许可、生产结账、恢复测试或独立支付成功率。公开试用／演示入口不等于卖家已获批准或永久免费。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "FastSpring: Connect a paid subscription to software access",
+    "title_zh": "FastSpring：把已付订阅连接软件访问权",
+    "description_en": "FastSpring is a Merchant of Record service for software, SaaS and digital goods. It combines checkout, payment processing, recurring billing, transaction-tax handling, fraud operations and reporting rather than providing only a payment gateway.",
+    "description_zh": "FastSpring 是供软件、SaaS 及数字商品使用的 Merchant of Record 服务，结合结账、支付处理、周期收费、交易税务、反欺诈及报表，而不只是支付网关。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Numeric commission, product/country eligibility, payout/reserve rules, refund/dispute terms and event/retry guarantees remain unverified.",
+      "zh": "数字佣金、商品国家准入、结算准备金规则、退款争议条款及事件重试保证仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ]
+}

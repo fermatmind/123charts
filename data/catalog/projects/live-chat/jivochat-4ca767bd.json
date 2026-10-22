@@ -1,0 +1,430 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "jivochat-4ca767bd",
+  "name": "JivoChat",
+  "website_url": "https://www.jivochat.com/",
+  "domain": "www.jivochat.com",
+  "identity_domain": "jivochat.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "JivoChat supplies website chat and connected messaging software for a business’s own agents. It combines operator conversations,CRM context,proactive engagement and separately priced AI,WhatsApp,phone and other modules. Its AI Agent handles customer-facing responses;AI Assistant helps human writing. Those are different roles and commercial items.\n\nFor an illustrative delivery request,route the conversation to a suitable operator,check what happens when they fail to respond,and preserve an owned follow-up if AI cannot help. Invite-versus-assign routing and Chat Rescue have different effects. Current public pricing also contains conflicting free-agent counts. This profile is documentation research without a workspace,visitor chat,AI response,provider connection,payment or export test.",
+  "description_zh": "JivoChat为企业自有客服提供网站聊天及连接消息软件，结合客服对话、CRM上下文、主动互动和独立计费的AI、WhatsApp、电话等模块。AI Agent面向客户自动回答，AI Assistant帮助真人写作，角色及商业项目不同。\n\n以假设配送请求为例，应路由合适客服，检查其未响应时行为，并在AI无法帮助时保留明确归属的跟进。邀请与分配路由，以及Chat Rescue效果不同。当前公开价格也有免费客服人数冲突。本稿为文档研究，未测试工作区、访客聊天、AI回答、提供商连接、支付或导出。",
+  "core_features": [
+    {
+      "name_en": "Operator messaging workspace",
+      "name_zh": "客服消息工作区",
+      "explanation_en": "Connect website and supported channels for the business’s own staff;not an outsourced-agent service.",
+      "explanation_zh": "连接网站及受支持渠道供企业自有人员使用，并非外包客服服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Invite or assign routing",
+      "name_zh": "邀请或分配路由",
+      "explanation_en": "Invite the least-busy/all operators or assign without rejection under documented Enterprise conditions.",
+      "explanation_zh": "邀请最空闲／全部客服，或按Enterprise条件不可拒绝地分配。",
+      "explanation_scope": "product_specific",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Timed Chat Rescue",
+      "name_zh": "定时Chat Rescue",
+      "explanation_en": "Return unanswered accepted chats to the channel inbox and surface inactive chats to other operators.",
+      "explanation_zh": "将已接未答聊天退回渠道收件箱，并向其他客服展示闲置聊天。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rescue",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured AI knowledge",
+      "name_zh": "配置AI知识",
+      "explanation_en": "Use instructions,files,public-domain sources and editableQ&A,with separate limits.",
+      "explanation_zh": "使用说明、文件、公开域名及可编辑问答，分别受限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ai-setup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot web support with human routing and an explicitly tested no-answer fallback.",
+      "Evaluate AI replies on an isolated channel with a maintained knowledge owner."
+    ],
+    "zh": [
+      "以真人路由及已测试未答回退试点网站支持。",
+      "在隔离渠道评估AI回复，并指定知识维护人。"
+    ],
+    "source_refs": ["routing", "rescue", "ai-setup"],
+    "basis": "Editorial scenarios,not observed workload reduction or conversion gains."
+  },
+  "technical_details": {
+    "AI source limits": {
+      "en": "Setup permits up to15AIoperators,5files up to30MBeach and5publicdomains for web search;individual page URLs are not accepted there. Instructions belong in Details,not an uploaded file.",
+      "zh": "设置允许最多15AI操作员、5个各最多30MB文件，网页搜索最多5公开域名且不接受单页网址。指令放Details，不是上传文件。",
+      "source_ref": "ai-setup",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Website support lead",
+      "Contact channel administrator",
+      "AI knowledge maintainer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirmplan,freeagententitlement,channels,modulesandactualstaffingbeforeaddingthewidget.",
+        "zh": "添加组件前确认套餐、免费客服权益、渠道、模块及实际值守。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilotinvite/assignruleswithcapacity,unavailableoperatorandfallbacktimers.",
+        "zh": "以容量、客服不可用及回退计时试点邀请／分配规则。",
+        "source_refs": ["routing", "rescue"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "AssignAIonlytoatestchannel,reviewscannedknowledge,andtestmissing/staleanswersandhumantakeover.",
+        "zh": "只将AI指派测试渠道，复核扫描知识，测试缺失／陈旧答案及真人接管。",
+        "source_refs": ["ai-setup", "knowledge", "ai-product"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website / supported messengers",
+        "source_ref": "pricing",
+        "scope": "Freeandpaidchannelentitlementsandprovidercostsvary;matrixiconsnotfullyverified."
+      },
+      {
+        "name": "WhatsApp module",
+        "source_ref": "pricing",
+        "scope": "Pricepagealsochargesmodule27/monthannual;Professionalintegrationlabeldoesnotproveproviderusageincluded."
+      },
+      {
+        "name": "AI Agent",
+        "source_ref": "ai-product",
+        "scope": "VendoridentifiesOpenAItechnologyandthird-partyprocessingagreement;fullprovider/DPA/dataretentionunreviewed."
+      }
+    ],
+    "source_ref": "pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Forced assignment requires ten or more connected operators in the routing guide;an invitation is not guaranteed acceptance.",
+        "zh": "路由指南要求至少10位连接客服才可强制分配，邀请不保证接收。",
+        "source_refs": ["routing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Fallback can expose a specialist request to any eligible channel operator after the configured wait.",
+        "zh": "配置等待后回退可能将专家请求交给任意合格渠道客服。",
+        "source_refs": ["routing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Uploaded knowledge files are replaced rather than edited in place;website knowledge may not update immediately.",
+        "zh": "上传知识文件需替换而非原处编辑，网站知识可能不即时更新。",
+        "source_refs": ["knowledge", "ai-setup"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Freeagentcountconflictsbetweenfiveintheheadingandtwointhetable;termscancellationisdistinctfromplan downgrade.",
+        "zh": "免费人数标题5人与表格2人冲突，条款取消账户与降套餐不同。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.jivochat.com/terms/",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Publishedannualper-agentheadlineplusseparatemodules,notuniversalflatcost.Freeheadcountconflict,currencycode,AIusageandcheckoutunverified.",
+    "source_snapshot_en": "Annualperagent/monthBasic$28,Professional$42,Enterprise$56;AI Agentmodule$69/agent/monthannual. Free$0but5agentsheadingvs2table,history2months. WhatsApp$27/monthannual;AI Assistant$13,Marketing$6,TelephonyPlus$4annualdisplay.14daytrial,VATextra.",
+    "source_snapshot_zh": "年付每客服月价Basic$28、Professional$42、Enterprise$56；AI Agent模块年付每agent每月$69。Free$0但标题5客服、表格2人，历史2个月。WhatsApp年付月价$27，AI Assistant$13、Marketing$6、Telephony Plus$4。14天试用，VAT另计。",
+    "checked_at": "2026-10-22T13:12:47.324973+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Can an invited operator reject a chat?",
+      "question_zh": "被邀请客服能拒绝聊天吗？",
+      "answer_en": "Invitationstrategiesallowaccept/reject.Forcedassignmentisadifferentstrategywiththeguide’sEnterpriseandconnected-operatorconditions.",
+      "answer_zh": "邀请策略允许接收／拒绝。强制分配是另一策略，受指南Enterprise及连接客服人数条件限制。",
+      "source_refs": ["routing"]
+    },
+    {
+      "question_en": "Can an instructions PDF replace the Details prompt?",
+      "question_zh": "指令PDF能替代Details提示吗？",
+      "answer_en": "No.TheAIsetupguidesaysinstructionsmustbeinDetails;uploadedfilesareknowledgeandarenotinterpretedasthatprompt.",
+      "answer_zh": "不能。AI设置指南称指令必须放Details，上传文件是知识，不按该提示解释。",
+      "source_refs": ["ai-setup"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/jivochat",
+      "read_at": "2026-10-22T09:00:30.030Z",
+      "excerpt_sha256": "2e86efb181462d207a4e30978ebe3dd99f7d305db336bd51072c9ecb98f49238",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Live Chat Software for Websites | JivoChat",
+      "title": "Live Chat Software for Websites | JivoChat",
+      "url": "https://www.jivochat.com/",
+      "read_at": "2026-10-22T13:00:13.124383+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1b7ca016c0580d5b2ceb56b2314ac7862373489811ceb88f6b75e3c1ed81e734",
+      "research_notes_en": "Currentsoftware-onlywebsitechatandmessaging;AI Agent/Assistant,phone,CRMseparatecapabilities."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Free Live Chat for Websites | JivoChat",
+      "title": "Free Live Chat for Websites | JivoChat",
+      "url": "https://www.jivochat.com/pricing/",
+      "read_at": "2026-10-22T13:01:43.695546+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d88f688dbc25370641ec555c66485c22a10ca5cf7b9d550c87e84d38ded4628c",
+      "research_notes_en": "Annual28/42/56peragentandmodules;Free5vs2agentconflict,2monthfreehistory,14daytrial,VATextra;visualmatrixmarksnotinferred."
+    },
+    {
+      "id": "routing",
+      "type": "official_documentation",
+      "site": "How to enable chat routing",
+      "title": "How to enable chat routing",
+      "url": "https://www.jivochat.com/help/functions/chat-routing.html",
+      "read_at": "2026-10-22T13:12:46.095368+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a14e45e98b9b875f71caf351256ed9f4e78eb765e30a296912474ddd15e59a6a",
+      "research_notes_en": "Enterpriseinviteversusnonrejectableassign,10connectedoperatorcondition,fallback60secondsconfigurableandpriority."
+    },
+    {
+      "id": "rescue",
+      "type": "official_documentation",
+      "site": "How to use Chats Rescue feature",
+      "title": "How to use Chats Rescue feature",
+      "url": "https://www.jivochat.com/help/agentapp/chats-rescue.html",
+      "read_at": "2026-10-22T13:12:47.324973+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d63e078c3bc086b98b28c9b293e82935f457b4bd968b2af3ea6c3429831506c8",
+      "research_notes_en": "Firstresponsetimer30secondsdefault,inactivityreminderandchanneloperatorredisplay;notguaranteedresolution."
+    },
+    {
+      "id": "ai-setup",
+      "type": "official_documentation",
+      "site": "AI Agent configuration for automatic customer responses",
+      "title": "AI Agent configuration for automatic customer responses",
+      "url": "https://www.jivochat.com/help/functions/setting-ai-agent.html",
+      "read_at": "2026-10-22T13:12:46.987541+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5bb893fa2d27d9ec6a75b894587a72e753ee32c29fbdba251aa022ad62174ac0",
+      "research_notes_en": "Paidmoduleupto15AIoperators,separatetestchannel,Detailsinstructionsnotfiles,5files30MBeach,5publicdomainsnotpageURLs,websitefreshnesscaveat."
+    },
+    {
+      "id": "knowledge",
+      "type": "official_documentation",
+      "site": "Tips for Building a Knowledge Base for an AI Agent",
+      "title": "Tips for Building a Knowledge Base for an AI Agent",
+      "url": "https://www.jivochat.com/help/functions/tips-for-building-a-knowledge-base-for-an-ai-agent.html",
+      "read_at": "2026-10-22T13:12:45.623977+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "0144f0f37c3166ed8c13449d856657979e6b45113dd1dce847e6bd962f1de729",
+      "research_notes_en": "5filelimit,manualreplaceuploadedfiles,50editable/disableableQ&Apairs,taggingonlyvendorretrievalrecommendation."
+    },
+    {
+      "id": "ai-product",
+      "type": "official_documentation",
+      "site": "AI Agent from Jivo – automate Customer Service up to 80% | Jivo",
+      "title": "AI Agent from Jivo – automate Customer Service up to 80% | Jivo",
+      "url": "https://www.jivochat.com/ai-agent/",
+      "read_at": "2026-10-22T13:12:23.977339+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a225cf5ab089722225fc97010c148dfede77002c05979d2d011de4ddba51f1a1",
+      "research_notes_en": "AIvsassistantdistinction,humanmonitor/takeoverandOpenAIproviderclaim;nohallucination/learningclaimsunverified."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Live Chat software for websites online customers support — JivoChat",
+      "title": "Live Chat software for websites online customers support — JivoChat",
+      "url": "https://www.jivochat.com/terms/",
+      "read_at": "2026-10-22T13:12:23.407684+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cb950650f2d552c35e3c88bda28f08430482308ff831cd88cef9d9ae3b4a7fcf",
+      "research_notes_en": "Proprietarylimitedlicense,automaticrenewal,immediatecancellationaccessloss,10dayunusedinitialrefundexception andseparate modules."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:12:47.324973+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "routing",
+    "rescue",
+    "ai-setup",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "agent-service",
+        "title_en": "Separate human software,AI replies and writing assistance",
+        "title_zh": "区分真人软件、AI回答及写作辅助",
+        "en": "JivoChat supplies the software;its pricing FAQ explicitly says it does not supply customer-service staff. The website workspace can connect supported social and messaging channels,whileCRM,phone,video,marketing and AI sit in the broader menu. A plan name or integration label does not establish that all modules and provider charges are included.\n\nThe AI Agent is intended to answer visitors and collect context;AI Assistant is separately marketed for human writing. A meaningful pilot begins with a defined channel,available staff and an escalation owner. Claims about80%automation,zero hallucinations or revenue increases are vendor statements,not independent results. No real conversation or worker deployment was performed here.",
+        "zh": "JivoChat供应软件，价格FAQ明确不供应客服人员。网站工作区可连受支持社交及消息渠道，CRM、电话、视频、营销和AI属于更广菜单。套餐名或集成标签不证明全部模块和提供商费用包含。\n\nAI Agent面向访客回答及采集上下文，AI Assistant另作真人写作辅助。有效试点始于明确渠道、可用人员及升级负责人。80%自动化、零幻觉及收入提升均属厂商陈述，不是独立结果。本研究未执行真实对话或人员部署。",
+        "source_refs": ["product", "pricing", "ai-product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing",
+        "title_en": "Invitation,assignment and fallback change who owns a chat",
+        "title_zh": "邀请、分配及回退改变聊天归属",
+        "en": "Enterprise routing can invite the least-busy operator,invite everyone or assign without an operator’s ability to reject. The guide places forced assignment behind a condition of ten or more connected operators. Selecting a destination is therefore different from actually securing acceptance. Rules can include channel,conditions,capacity,strategy and priority.\n\nFor an illustrative specialist inquiry,the designated operator may be unavailable. The guide describes a configurable fallback wait,default sixty seconds,after which the request reaches other eligible operators on the channel. That fallback may sacrifice specialization. Test an absent expert,a busy team and two competing rules;record final ownership and the customer-facing wait. Neither a least-active calculation nor a forced assignment proves a timely or competent response.",
+        "zh": "Enterprise路由可邀请最空闲客服、邀请全部，或不可拒绝地分配。指南将强制分配限定至少10位连接客服，因此指定目标不同于确保接收。规则可含渠道、条件、容量、策略及优先级。\n\n以假设专家咨询为例，指定人员可能不可用。指南描述可配置回退等待，默认60秒，随后请求转给渠道其他合格客服，可能牺牲专业匹配。应测试专家缺席、团队忙碌及竞争规则，记录最终归属和客户等待。最低活跃量或强制分配都不证明及时且胜任回应。",
+        "source_refs": ["routing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "rescue",
+        "title_en": "Rescue an accepted but unanswered conversation",
+        "title_zh": "挽回已接却未答的会话",
+        "en": "Chat Rescue handles a different failure from initial routing. If an operator accepts but does not answer within the configured first-response time,the chat returns to Inbox and is offered to operators assigned to the channel. The default first-response timer is thirty seconds. Another timer watches an ongoing chat,prompts the original operator to continue or close,and can expose it to colleagues when ignored.\n\nA second operator may join or close the conversation. This prevents neither an incorrect closure nor an unresolved request by itself. Test a visitor’s follow-up while the original operator is on a call and verify the next operator sees sufficient context. The page uses VIP/PRO inclusion labels and older PRO wording;confirm the actual plan rather than treating the final sentence as a distinct current package.",
+        "zh": "Chat Rescue处理不同于初始路由的失败。客服接收后在首答时限内未回复，聊天退回Inbox并提供给渠道已分配客服，默认首答30秒。另一个计时检查进行中的聊天，提示原客服继续或关闭，忽略时可向同事展示。\n\n第二位客服可加入或关闭，但这本身不能防止错关或请求仍未解决。应测试原客服通话时访客追问，验证接手者有充分上下文。页面有VIP／PRO包含标签和旧PRO措辞，需确认真实套餐，不能把末句当独立当前套餐。",
+        "source_refs": ["rescue"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-configuration",
+        "title_en": "Keep behavior instructions separate from maintained knowledge",
+        "title_zh": "将行为指令与维护知识分开",
+        "en": "The AI module must be purchased and can create up to fifteen AI operators. Setup scans public website information,but the guide asks operators to review the resulting details and contacts. It recommends a separate Chat Page channel for testing. Behavior instructions belong in Details;uploading them as a file does not make them the system prompt.\n\nKnowledge permits up to five files of thirtyMB each and fifty editable/disableable Q&A pairs. Uploaded files are replaced rather than edited in place. Web search accepts up to five public domains,not individual page URLs,and the guide warns that website information may not refresh immediately. Test a changed price,a removed policy and an unanswered request after every update. Source-only or double-bracket retrieval claims do not establish zero hallucination risk. Human takeover and provider-data handling require actual configuration review.",
+        "zh": "AI模块需购买，最多创建15个AI操作员。设置扫描公开网站资料，但指南要求复核生成详情及联系方式，并建议用独立Chat Page测试。行为指令放Details，上传为文件不会使其成为系统提示。\n\n知识最多5文件，每个30MB，另有50组可编辑／禁用问答。文件需替换而非原处编辑。网页搜索最多5公开域名，不接受单页网址，指南提醒网站资料可能不即时刷新。每次更新后应测试改价、移除政策及未答请求。仅依来源或双括号检索主张不证明零幻觉，真人接手及提供商资料处理需检查实际配置。",
+        "source_refs": ["ai-setup", "knowledge", "ai-product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Resolve the free limit and modular costs",
+        "title_zh": "解决免费额度及模块成本",
+        "en": "Annual-displayed rates are$28/$42/$56per agent/month for Basic/Professional/Enterprise. Free is advertised with five agents in one heading but at most two in the comparison;the same table limits free history to two months. The fourteen-day trial is separate from ongoing free mode. Do not silently select the more generous count.\n\nAI Agent is separately listed at$69per agent/month annually,with WhatsApp,AI Assistant,marketing and telephony add-ons also displayed. Exact AI consumption,provider charges,currency code and checkout total are unverified;VAT is extra. General terms describe advance recurring payment and immediate access loss on account cancellation,with a narrow ten-day initial-unused-payment refund exception. That is different from simply downgrading a paid plan. Verify the selected license and export records before closing access.",
+        "zh": "Basic／Professional／Enterprise年付展示每客服月价$28／$42／$56。Free一处标题称5客服，比较表却最多2人，同表限制免费历史2个月。14天试用不同于持续免费，不能默默选更宽人数。\n\nAI Agent另列年付每agent每月$69，WhatsApp、AI Assistant、营销及电话也有附加项。准确AI消耗、提供商费用、币种代码和结账总额未核实，VAT另计。一般条款描述预付续费及账户取消立即失去访问，初次未使用支付有狭窄10天退款例外。这与单纯降套餐不同，关闭前需确认所选许可及导出记录。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operational-fit",
+        "title_en": "Check authority,records and module scope before relying on automation",
+        "title_zh": "依赖自动化前检查权限、记录及模块范围",
+        "en": "For a support rollout,verify who may configure a channel,change routing,close chats and access archives. The terms grant a limited proprietary service license;downloadable apps and developer tools do not turn the service into an open-source or self-hosted platform. The AI product page identifies external OpenAI processing,but the complete provider agreement and tenant-specific data flow were not reviewed.\n\nNo complete account export,attachment migration,restore guarantee or post-cancellation retrieval window was established. A useful acceptance sample should include one human rescue,one wrong-route fallback,one stale AI answer and a record export. Keep ownership of those outcomes with the business rather than treating a summary,sentiment score or automatically closed chat as proof of resolution.",
+        "zh": "支持上线应核对谁可配置渠道、改路由、关闭聊天及访问归档。条款授有限专有服务许可，可下载应用及开发工具不使服务开源或可自托管。AI产品页标外部OpenAI处理，但完整提供商协议及租户专属数据路径未审阅。\n\n此次未建立完整账户导出、附件迁移、恢复保证或取消后取回窗口。有用验收样本应包含真人挽回、错误路由回退、陈旧AI答案及记录导出。业务应负责这些结果，不能将摘要、情绪分或自动关聊天当解决证明。",
+        "source_refs": [
+          "terms",
+          "ai-product",
+          "routing",
+          "rescue",
+          "knowledge"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "JivoChat: Invite vs Assign Routing,Chat Rescue,AI Knowledge and Costs",
+    "title_zh": "JivoChat：邀请／分配路由、Chat Rescue、AI知识及成本",
+    "description_en": "Evaluate JivoChat routing thresholds,rescue timers,AI setup/file limits,free-agent conflicts and separate module costs.",
+    "description_zh": "评估JivoChat路由人数门槛、挽回计时、AI设置／文件限制、免费人数冲突及独立模块费。",
+    "primary_intent": "Evaluate JivoChat human and AI support workflow conditions.",
+    "secondary_questions": [
+      "Can operators reject routing?",
+      "What happens to accepted unanswered chats?",
+      "How many free agents are allowed?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No workspace,channel,routing,rescue,AI,providerconnection,payment,exportorrestoretested. Free2/5agentconflict,finalcurrency/contract,AIunitusage,providerfees,DPA,retention,completeportability,APIbehaviorandfullUIlanguagesremainunverified.",
+      "zh": "未测试工作区、渠道、路由、挽回、AI、提供商连接、支付、导出或恢复。免费2／5人冲突、最终币种／合同、AI用量单位、提供商费、DPA、留存、完整迁移、API行为及完整界面语言未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

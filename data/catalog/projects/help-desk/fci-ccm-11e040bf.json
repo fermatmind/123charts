@@ -1,0 +1,378 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "fci-ccm-11e040bf",
+  "name": "VARTA by FCI (FCI CCM)",
+  "website_url": "https://www.fci-ccm.com/",
+  "domain": "www.fci-ccm.com",
+  "identity_domain": "fci-ccm.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "The current FCI CCM website presents VARTA by FCI, a customer-communications platform focused on banks and financial institutions. Core handles governed documents and templates, Signal handles transactional alerts, Stream handles corporate statement delivery and ERP-oriented formats, and Sense is presented as an insight/next-best-action layer. This is broader communication generation and orchestration, rather than simply a shared support-ticket inbox.\n\nA useful assessment follows source customer data through a selected template, routing policy and delivery record, or checks a corporate statement against its target ERP import. Product pages describe governance, fallback and flexible deployment, but do not independently establish compliance, guaranteed receipt, savings or operational recovery. No bank system, document, message, deployment or purchase was tested.",
+  "description_zh": "当前 FCI CCM 官网呈现 VARTA by FCI，面向银行及金融机构的客户通信平台。Core 处理受治理文档及模板，Signal 处理交易提醒，Stream 处理企业对账单送达及面向 ERP 的格式，Sense 被描述为洞察／下一最佳动作层。它覆盖通信生成和编排，不只是共享支持工单收件箱。\n\n评估可跟踪来源客户数据如何进入模板、路由政策及送达记录，或核对企业对账单与目标 ERP 导入。产品页描述治理、兜底及灵活部署，但不能独立证明合规、保证接收、节省或运营恢复。未测试银行系统、文档、消息、部署或购买。",
+  "core_features": [
+    {
+      "name_en": "Governed document communication",
+      "name_zh": "受治理文档通信",
+      "explanation_en": "Core standardizes data, reusable templates and multiformat output with versioning and delivery traceability.",
+      "explanation_zh": "Core 规范数据、可复用模板及多格式输出，描述版本管理和送达追踪。",
+      "explanation_scope": "product_specific",
+      "source_ref": "core",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Transactional notification routing",
+      "name_zh": "交易通知路由",
+      "explanation_en": "Signal monitors gateway availability and delivery status, with configured rerouting across gateways/channels.",
+      "explanation_zh": "Signal 监测网关可用性及送达状态，可配置跨网关／渠道重路由。",
+      "explanation_scope": "product_specific",
+      "source_ref": "signal",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Corporate statement transformation",
+      "name_zh": "企业对账单转换",
+      "explanation_en": "Stream describes reusable business rules, configurable formats/fields and delivery schedules for ERP-oriented statements.",
+      "explanation_zh": "Stream 描述用于 ERP 对账单的可复用业务规则、格式／字段及送达计划。",
+      "explanation_scope": "product_specific",
+      "source_ref": "stream",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Rules of Engagement",
+      "name_zh": "互动规则",
+      "explanation_en": "The vendor FAQ describes message frequency controls, priority, channel optimization and urgent-notification exceptions.",
+      "explanation_zh": "厂商 FAQ 描述消息频率控制、优先级、渠道优化及紧急通知例外。",
+      "explanation_scope": "product_specific",
+      "source_ref": "faq",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a governed statement-generation and delivery process with a traceable source dataset.",
+      "Test a delayed transactional notification and a corporate ERP statement import using synthetic data."
+    ],
+    "zh": [
+      "使用可追溯来源数据评估受治理对账单生成及送达流程。",
+      "用合成数据测试延迟交易通知及企业 ERP 对账单导入。"
+    ],
+    "source_refs": ["core", "signal", "stream"],
+    "basis": "Editorial evaluation tasks, not production banking, financial advice or measured customer results."
+  },
+  "technical_details": {
+    "Deployment and scope": {
+      "en": "Vendor offers cloud, on-premises and hybrid architecture. The homepage also lists Quadient Inspire/OpenText Exstream professional services, which are adjacent service offerings, not established VARTA license inclusions.",
+      "zh": "厂商提供云、本地及混合架构方案。首页还列出 Quadient Inspire／OpenText Exstream 专业服务，它们是相邻服务，不能确定包含在 VARTA 许可中。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Bank communications operations owner",
+      "Document template/governance manager",
+      "Corporate banking integration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the communication task and module, authoritative source fields, recipient identity and approval responsibilities.",
+        "zh": "选择通信任务及模块、权威来源字段、收件身份及审批责任。",
+        "source_refs": ["product", "core"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Demonstrate one synthetic document/alert and inspect output values, routing and delivery evidence including an exception.",
+        "zh": "演示一份合成文档／提醒，检查输出值、路由及包含例外的送达证据。",
+        "source_refs": ["core", "signal"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Scope deployment, message gateways, ERP mappings, monitoring, support and contract costs with the vendor.",
+        "zh": "与厂商明确部署、消息网关、ERP 映射、监测、支持及合同成本。",
+        "source_refs": ["stream", "commercial", "product"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Core banking, CRM, customer data and consent/document systems",
+        "source_ref": "product",
+        "scope": "Integration categories advertised; no universal named connector, schema, latency or permission contract verified."
+      },
+      {
+        "name": "Corporate ERP statement consumers",
+        "source_ref": "stream",
+        "scope": "Configurable multi-format statements and direct ERP integration offered; target ERP, message version and reconciliation semantics require scoped testing."
+      },
+      {
+        "name": "Multiple telecom/message gateways",
+        "source_ref": "signal",
+        "scope": "Vendor-agnostic routing offer; carrier access, channel eligibility, receipts and fees remain to be agreed."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Signal says zero dependency on third-party gateways while also describing connections to multiple telecom gateways. Interpret this as a vendor-lock-in positioning claim, not the absence of delivery providers.",
+        "zh": "Signal 一面称不依赖第三方网关，一面描述连接多个通信网关，应理解为避免厂商锁定的定位，不能当不存在送达服务商。",
+        "source_refs": ["signal"],
+        "evidence_type": "observed_documentation_ambiguity"
+      },
+      {
+        "en": "Regulatory, accessibility and guaranteed-delivery language is vendor marketing, without an independent legal, technical or production verification here.",
+        "zh": "法规、无障碍和保证送达措辞属于厂商营销，本文未作独立法律、技术或生产验证。",
+        "source_refs": ["core", "signal", "stream"],
+        "evidence_type": "vendor_claims_not_independently_verified"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "commercial",
+    "source_refs": ["commercial", "product"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Sales-led demo and scoped enterprise engagement; no numeric rate, seat/message/document unit, minimum term, trial or sustained-free offer established.",
+    "source_snapshot_en": "Official route offers a 30-minute discussion and product demonstration, not a published software quote. Deployment, migration, gateway/provider usage and professional services need scope-specific pricing.",
+    "source_snapshot_zh": "官方入口提供30分钟沟通及产品演示，不是公开软件报价。部署、迁移、网关／服务商用量及专业服务需按范围定价。",
+    "checked_at": "2026-10-22T11:22:29.319795+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is FCI CCM simply a help desk ticketing app?",
+      "question_zh": "FCI CCM 只是帮助台工单应用吗？",
+      "answer_en": "The current official site emphasizes VARTA communications: documents, transaction alerts, statements and engagement intelligence. Evaluate a ticketing requirement separately rather than inferring it from the inherited catalog category.",
+      "answer_zh": "当前官网强调 VARTA 通信：文档、交易提醒、对账单及互动洞察。工单需求应单独评估，不能从既有目录分类推断。",
+      "source_refs": ["product", "core", "signal", "stream"]
+    },
+    {
+      "question_en": "Does a delivery status prove the customer read the message?",
+      "question_zh": "送达状态能证明客户读过消息吗？",
+      "answer_en": "The page describes status, timestamp and routing-path logs. Exact provider receipt meanings and read confirmation were not established; agree acceptance criteria for the selected channel.",
+      "answer_zh": "页面描述状态、时间戳和路由路径日志，但未确定准确服务商回执含义及已读确认，应约定所选渠道验收条件。",
+      "source_refs": ["signal"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/fci-ccm",
+      "read_at": "2026-10-22T08:46:53.408Z",
+      "excerpt_sha256": "f8661608ce9deecea085eaf77b626f1a33536abf0cfbbf817f10f311abd10e32",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "VARTA by FCI | Insights-led Customer Communications Platform",
+      "title": "VARTA by FCI | Insights-led Customer Communications Platform",
+      "url": "https://www.fci-ccm.com/",
+      "read_at": "2026-10-22T11:22:14.813645+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a7dad83e2483500b892257adec63b25b338b1cb39ae3b0763f18d8987dd73643",
+      "research_notes_en": "Current canonical www site presents VARTA by FCI and four modules. Cloud/on-prem/hybrid offers and integration categories read; security, compliance and financial outcome claims unverified."
+    },
+    {
+      "id": "core",
+      "type": "official_documentation",
+      "site": "VARTACore: Modern Customer Communications Management Platform",
+      "title": "VARTACore: Modern Customer Communications Management Platform",
+      "url": "https://www.fci-ccm.com/product/vartacore.php",
+      "read_at": "2026-10-22T11:22:28.718209+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "29bd4093b092d611a9e50b8a73071d2063303fe6afbcbbe3e8aec8ec7db235e7",
+      "research_notes_en": "Data/template/output layers, reusable versioned templates, document formats, preferred-channel routing and traceability."
+    },
+    {
+      "id": "signal",
+      "type": "official_documentation",
+      "site": "VARTASignal: Real-time Transactional Alerts and Notifications",
+      "title": "VARTASignal: Real-time Transactional Alerts and Notifications",
+      "url": "https://www.fci-ccm.com/product/vartasignal.php",
+      "read_at": "2026-10-22T11:22:29.319795+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1c4a9cf524f70da4d5334b731e548fec9992fd272ac96775951cc1020cdb57eb",
+      "research_notes_en": "Event-critical notification monitoring, delivery status/routing paths, multigateway switching and cross-channel reroute. Always-delivered/zero-failure wording not adopted."
+    },
+    {
+      "id": "stream",
+      "type": "official_documentation",
+      "site": "Enhance Corporate Client Experience with VARTAStream",
+      "title": "Enhance Corporate Client Experience with VARTAStream",
+      "url": "https://www.fci-ccm.com/product/vartastream.php",
+      "read_at": "2026-10-22T11:22:29.237273+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a5126b265daa86caf8e8063752fe2734a3ddec4a97a1d34b6030d1202b16f7e5",
+      "research_notes_en": "Corporate statement transformation and ERP-ready output, reusable rules, schedule/backdated delivery, cloud/on-prem deployment. Scale, savings and regulatory claims not tested."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Frequently Asked Questions On CCM - FCI",
+      "title": "Frequently Asked Questions On CCM - FCI",
+      "url": "https://www.fci-ccm.com/resources/faq.php",
+      "read_at": "2026-10-22T11:22:28.715856+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "411e90fadc5b73fd7213c08ccec24e19af123485ff7c2e6a5056b1434fe4d518",
+      "research_notes_en": "Vendor distinguishes CCM from CRM; Rules of Engagement include frequency, priority, channel and urgent exceptions. Compliance assurances not independently verified."
+    },
+    {
+      "id": "commercial",
+      "type": "official_pricing",
+      "site": "Book a Demo - FCI VARTA",
+      "title": "Book a Demo - FCI VARTA",
+      "url": "https://www.fci-ccm.com/book-a-demo.php",
+      "read_at": "2026-10-22T11:22:28.843561+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f88368f4625c3de24795cae15c58f4bafab5153cbfaf7b68a88037f73fe6e622",
+      "research_notes_en": "Official product demo/contact route, no numerical license price, billing unit, term, trial/free entitlement or complete commercial quote."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:22:29.319795+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "core", "signal", "stream"],
+  "profile": {
+    "sections": [
+      {
+        "id": "module-map",
+        "title_en": "Choose the communication responsibility before the module",
+        "title_zh": "先选通信职责，再选模块",
+        "en": "VARTA’s current module map separates Core documents, Signal event-critical notifications, Stream corporate statements and Sense engagement insights. A bank sending a periodic statement has a different acceptance problem from one sending a time-sensitive OTP. A corporate treasury statement adds target format and reconciliation requirements beyond either message.\n\nThe official FAQ distinguishes communication management from broader CRM records. Existing bank/CRM data remains an input and source of truth; creating a communication is not proof that the underlying financial transaction occurred. Quadient/OpenText implementation services listed on the site are adjacent offers. This record retains its assigned catalog path while documenting the current VARTA identity; category/index integration remains coordinator-owned.",
+        "zh": "VARTA 当前模块图区分 Core 文档、Signal 关键事件通知、Stream 企业对账单和 Sense 互动洞察。银行定期对账单与限时 OTP 的验收问题不同，企业资金对账单还增加目标格式及对账要求。\n\n官方 FAQ 区分通信管理与更广 CRM 记录。现有银行／CRM 数据仍是输入和事实来源，生成通信不能证明底层金融交易发生。网站列出的 Quadient／OpenText 实施服务是相邻方案。本档保留分配目录路径并记录当前 VARTA 身份，分类／索引整合由协调方处理。",
+        "source_refs": ["product", "faq", "core", "signal", "stream"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "document",
+        "title_en": "Trace data, template version and output together",
+        "title_zh": "同时追溯数据、模板版本及输出",
+        "en": "Core describes a data layer for standardization/ETL, a template layer for reusable versioned assets and an output layer for formats such as PDF, HTML5 and print, distributed through selected channels. The same customer fields can feed different outputs, making field definitions and template governance central to evaluation.\n\nFor a synthetic monthly statement, compare account identity, period, amounts and missing-field handling across the intended formats. Identify who approves a template, which version produced the output and what the delivery log means. Versioning and audit-ready marketing do not by themselves establish approval enforcement, regulatory compliance or a tested restore process. No customer document was generated here.",
+        "zh": "Core 描述用于规范化／ETL 的数据层、可复用版本化资产模板层，以及 PDF、HTML5、印刷等输出层，再经选定渠道分发。同一客户字段可进入不同输出，字段定义和模板治理因此是评估重点。\n\n使用合成月度对账单时，应比较目标格式中的账户身份、周期、金额及缺失字段处理，明确谁批准模板、哪一版本生成输出及送达日志含义。版本管理和可供审计营销本身不能确定审批强制执行、法规合规或已测试恢复；本文未生成客户文档。",
+        "source_refs": ["core"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "notification",
+        "title_en": "Distinguish queued, delivered and confirmed outcomes",
+        "title_zh": "区分排队、送达及已确认结果",
+        "en": "Signal describes a command center tracking availability, latency, cost anomalies and message outcomes. It offers alternate gateway or channel routing after delay/failure, with timestamps and routing paths. Its wording about no third-party gateway dependency sits alongside multi-gateway connectivity, so the actual carrier and provider responsibilities must be specified.\n\nA pilot should include an unavailable gateway, delayed receipt, duplicate event, expired OTP and a fallback channel the customer cannot use. These are proposed checks. Agree deduplication, retry windows, sequence, consent/preferences and the meaning of provider receipts. The page’s no-failure and guaranteed-delivery claims are not independently verified guarantees, and no message was sent.",
+        "zh": "Signal 描述监测可用性、延迟、成本异常及消息结果的控制台，延迟／失败后可换网关或渠道，并记录时间戳和路由路径。“不依赖第三方网关”的措辞与多网关连接并存，因此需明确运营商及服务商责任。\n\n试点应包含网关不可用、回执延迟、重复事件、OTP过期及客户不能使用兜底渠道。这些是建议检查，应约定去重、重试窗口、顺序、同意／偏好及服务商回执含义。页面零失败和保证送达措辞未经独立验证，本文未发送消息。",
+        "source_refs": ["signal"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "corporate-output",
+        "title_en": "ERP-ready statements still need target-system validation",
+        "title_zh": "面向 ERP 的对账单仍需目标系统验证",
+        "en": "Stream targets corporate onboarding, statement transformation and reconciliation, describing reusable business rules, fields/formats and hourly/daily/intraday or backdated delivery. Cloud and on-premises options are advertised. The important question is whether the chosen corporate client can consume the actual generated statement correctly.\n\nUse representative transaction types, identifiers, corrections, currencies and empty periods. Compare control totals and ordering in the target ERP before treating a successful file delivery as successful reconciliation. ISO 20022-ready wording does not establish every message version or field mapping. Large-file performance, automatic failover and savings remain vendor claims; actual schema compatibility, recovery objectives and operational limits were not tested.",
+        "zh": "Stream 面向企业接入、对账单转换及对账，描述可复用规则、字段／格式，以及每小时、每天、日内或补发计划，并宣传云及本地方案。关键是所选企业客户能否正确消费实际生成对账单。\n\n应使用代表性交易类型、标识、更正、币种及空周期，在目标 ERP 比较控制总数和顺序，再把文件送达视为对账成功。ISO 20022-ready 不能证明每个消息版本或字段映射都支持。大文件性能、自动故障切换及节省仍属厂商声明；准确 schema 兼容、恢复目标及运行限制未测试。",
+        "source_refs": ["stream"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scope-cost",
+        "title_en": "Scope governance, deployment and provider cost as one engagement",
+        "title_zh": "把治理、部署及服务商成本纳入同一项目范围",
+        "en": "The site describes frequency controls, critical-message priority and urgent exceptions in Rules of Engagement, alongside insights that can suggest offers. Separate mandatory service communication from promotional targeting and specify which source data, preferences and approvals apply. A suggested next-best offer is not a verified customer need or financial recommendation.\n\nThe demo route has no published numerical software price. Confirm selected modules, environments, integration/migration work, template services, print/mail, carrier usage, support and retention/exit obligations. Cloud/on-premises/hybrid availability is an offer, not an open-source license or free self-hosting entitlement. The exact license, data location, UI languages, API limits, export/restore and regional contracting remain unverified. This is a fit candidate for scoped bank communications work; simple support-inbox buyers need to establish a different workflow fit.",
+        "zh": "网站在 Rules of Engagement 中描述频率控制、关键消息优先级及紧急例外，并有建议产品方案的洞察。应区分必要服务通信及营销定向，明确所用来源数据、偏好及审批。下一最佳方案建议不等于已核实客户需要或金融建议。\n\n演示入口没有公开软件数值价。应确认模块、环境、集成／迁移、模板服务、印刷邮寄、运营商用量、支持及保留／退出义务。云／本地／混合可用是方案，不代表开源许可或免费自行托管权。准确许可、数据位置、界面语言、API 限制、导出／恢复和地区合同仍未核实。它适合进一步评估有明确范围的银行通信任务，简单支持收件箱买方需另确认流程适配。",
+        "source_refs": ["faq", "product", "commercial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "VARTA by FCI: Documents, Transaction Alerts and Corporate Statements",
+    "title_zh": "VARTA by FCI：文档、交易提醒及企业对账单",
+    "description_en": "Understand FCI CCM’s current VARTA modules, governed data-to-document output, alert routing, ERP statement requirements and sales-led deployment/pricing gaps.",
+    "description_zh": "了解 FCI CCM 当前 VARTA 模块、受治理数据到文档输出、提醒路由、ERP 对账单要求及部署／销售定价缺口。",
+    "primary_intent": "Identify FCI CCM VARTA and evaluate bank communications scope.",
+    "secondary_questions": [
+      "How do Core, Signal and Stream differ?",
+      "What does a delivery log establish?",
+      "What must be validated in an ERP statement?"
+    ],
+    "query_basis": "Editorial intent; no measured keyword demand or search effect.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, bank connection, document, message, ERP import, failover, compliance review or purchase executed. Versioned implementation details, delivery/receipt semantics, prices, license, locations, UI languages, API limits and export/restore remain unverified.",
+      "zh": "未运行账户、银行连接、文档、消息、ERP 导入、故障切换、合规审查或购买。版本化实施细节、送达／回执语义、价格、许可、位置、界面语言、API 限制及导出／恢复未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Current official identity and scope are VARTA by FCI, focused on financial-services communications. Original slug/category retained under batch ownership; coordinator must review current-name/domain/category/index integration.",
+      "zh": "当前官方身份及范围为 VARTA by FCI，聚焦金融服务通信。本批权限下保留原 slug／分类，协调方需核对现名／域名／分类／索引整合。",
+      "source_refs": ["product"],
+      "evidence_type": "documented_identity_and_scope"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

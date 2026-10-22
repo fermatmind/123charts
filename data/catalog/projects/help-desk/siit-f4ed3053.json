@@ -1,0 +1,419 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "siit-f4ed3053",
+  "name": "Siit",
+  "website_url": "https://www.siit.io/",
+  "domain": "www.siit.io",
+  "identity_domain": "siit.io",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Siit is an internal service desk for employee requests across IT, HR and other operations, using Slack, Teams, email and a service portal. It combines request handling with employee, application and equipment context, workflows, approvals and AI. Its AI Triage, autonomous IT playbooks and human-reviewed Assist have different execution paths.\n\nA useful evaluation follows one employee app-access request through qualification, the correct approver, identity-system action and confirmation. Published automation claims do not replace checking audience, role, app ownership, failure and cancellation paths. Siit prices by request-handling admins rather than employee requesters. This is public-documentation research; no account, directory, approval, AI, workflow or purchase was tested.",
+  "description_zh": "Siit 是处理IT、HR及其他内部运营员工请求的服务台，采用Slack、Teams、邮件及服务门户。它结合请求处理、员工／应用／设备上下文、工作流、审批及AI。AI Triage、自主IT剧本及人工审阅Assist的执行路径不同。\n\n有效评估应将一次员工应用权限申请追踪至补充资料、正确审批人、身份系统动作及确认。公开自动化主张不能替代受众、角色、应用归属、失败及取消路径检查。Siit按处理请求的管理员收费，而非员工请求者。本文为公开文档研究，未测试账户、目录、审批、AI、工作流或购买。",
+  "core_features": [
+    {
+      "name_en": "Employee request and context workspace",
+      "name_zh": "员工请求及上下文工作区",
+      "explanation_en": "Bring internal support channels and people/app/equipment data together.",
+      "explanation_zh": "汇集内部支持渠道及人员／应用／设备数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Workflow approval branches",
+      "name_zh": "工作流审批分支",
+      "explanation_en": "Pause a workflow for approval and choose approved/rejected follow-up actions.",
+      "explanation_zh": "暂停流程等待审批，按通过／拒绝选择后续动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "approval",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Role-scoped identity actions",
+      "name_zh": "按角色限定身份动作",
+      "explanation_en": "Connected Entra actions use matched employee identities and integration-specific role access.",
+      "explanation_zh": "已连接Entra动作使用匹配员工身份及集成专属角色权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "entra",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reviewed Assist resolution plans",
+      "name_zh": "审阅后执行Assist解决计划",
+      "explanation_en": "A whole action plan can be applied or denied; execution stops at first failure.",
+      "explanation_zh": "可整份应用或拒绝动作计划，遇首个失败停止。",
+      "explanation_scope": "product_specific",
+      "source_ref": "assist",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot employee application access with explicit audience, role, owner and approval policy.",
+      "Compare AI-assisted request investigation with controlled directory provisioning."
+    ],
+    "zh": [
+      "以明确受众、角色、负责人及审批策略试点员工应用权限。",
+      "比较AI辅助请求调查与受控目录开通。"
+    ],
+    "source_refs": ["triage", "provision", "assist", "entra"],
+    "basis": "Editorial scenarios, not executed access changes or measured efficiency."
+  },
+  "technical_details": {
+    "Directory linkage": {
+      "en": "Entra actions require connectedintegration,allowedSiitroleandmatchingprimaryemail;theprovidercanrejectprotectedaccountsorgroupsoutsideconfiguredscope.",
+      "zh": "Entra动作需已连接集成、允许的Siit角色及主邮箱匹配，服务商可拒绝受保护账户或配置范围外组。",
+      "source_ref": "entra",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "IT operations administrator",
+      "Employee service owner",
+      "HR operations coordinator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Prepare published knowledge, distinct service descriptions, mandatory fields and employee-manager mapping.",
+        "zh": "准备已发布知识、清晰服务描述、必填字段及员工经理映射。",
+        "source_refs": ["triage"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot one app policy with a restricted role audience, correct owner and controlled approval.",
+        "zh": "以限定角色受众、正确负责人及受控审批试点一个应用策略。",
+        "source_refs": ["triage", "approval"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test rejection, cancellation, missing identity and a failed directory action before broader rollout.",
+        "zh": "扩大上线前测试拒绝、取消、身份缺失及目录动作失败。",
+        "source_refs": ["approval", "entra", "assist"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Slack / Microsoft Teams / Email",
+        "source_ref": "pricing",
+        "scope": "Internalemployeechannels;requestflow/agentownershipmustbeconfigured."
+      },
+      {
+        "name": "Microsoft Entra ID",
+        "source_ref": "entra",
+        "scope": "Matchedemployeeidentity,roleandGraphconsentrequired;actualactionschangeexternalsystem."
+      },
+      {
+        "name": "Okta / JumpCloud / Google Workspace",
+        "source_ref": "provision",
+        "scope": "Appaccessplaybooktemplatesdependonconnectedintegration,dynamicActionsandgroupmapping."
+      }
+    ],
+    "source_ref": "pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Cancelling a pending approval stops at that step, without running either approved or rejected branch.",
+        "zh": "取消待审批会停在该步骤，不运行通过或拒绝任一分支。",
+        "source_refs": ["approval"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Legacy Workflows and App Access Policies on the same app can produce duplicate approvals or conflicting provisioning.",
+        "zh": "同一应用同时运行旧工作流和App Access策略，可能重复审批或冲突开通。",
+        "source_refs": ["triage"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "An interrupted Assist step marked Unconfirmed may already have applied; there is no one-click undo.",
+        "zh": "中断Assist步骤标Unconfirmed时可能已执行，没有一键撤销。",
+        "source_refs": ["assist"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.siit.io/terms-of-service",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "assist"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Perrequest-handlingadminpermonthbilledannually;unlimitedemployeerequesters;Assistlimitsandfairuseapply.Dollarcodeunverified.",
+    "source_snapshot_en": "Essentials23,Standard45,Pro89peradmin/monthannual;Customquote. Essentials/Standard/trialAssist10conversationsperadmin/week,onequestion+upto3followups;Profairuse.14dayfullfeaturetrial;noongoingfreeplanormonthlycashpriceestablished.",
+    "source_snapshot_zh": "Essentials每管理员每月年付折月23、Standard45、Pro89，Custom询价。Essentials／Standard／试用Assist每管理员每周10会话，每会话1问加最多3次追问，Pro合理使用。14天全功能试用，未确定持续免费套餐或月付现金价。",
+    "checked_at": "2026-10-22T12:10:02.395138+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does cancelling an approval mean it is rejected?",
+      "question_zh": "取消审批就表示拒绝吗？",
+      "answer_en": "No. The documented workflow stops at that approval and runs neither decision branch. Plan the remaining request ownership separately.",
+      "answer_zh": "不是，文档流程停在该审批，不运行任一决策分支，需单独安排剩余请求归属。",
+      "source_refs": ["approval"]
+    },
+    {
+      "question_en": "Will stopping Assist undo its changes?",
+      "question_zh": "停止Assist会撤销其修改吗？",
+      "answer_en": "No. Already approved actions are not rolled back. Check Done, Failed, Not run or Unconfirmed state before retrying.",
+      "answer_zh": "不会，已批准动作不回滚，重试前检查Done、Failed、Not run或Unconfirmed状态。",
+      "source_refs": ["assist"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/siit-io",
+      "read_at": "2026-10-22T09:07:32.940Z",
+      "excerpt_sha256": "16b86c09c0433bdcb4e97ad59457923483bcf2029c8e2f21948e17ce33753388",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Siit - The AI Service Desk",
+      "title": "Siit - The AI Service Desk",
+      "url": "https://www.siit.io/",
+      "read_at": "2026-10-22T12:09:31.353679+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2b35c041110c5af565b70c71f22e12db591b15f3c7e4abcf217e7a5fbcf338ab",
+      "research_notes_en": "CurrentinternalAIservicedesk,employee/identity/devicecontext,workflowsandagentpositioning; vendoroutcomesnotindependent."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Siit Pricing",
+      "title": "Siit Pricing",
+      "url": "https://www.siit.io/pricing",
+      "read_at": "2026-10-22T12:09:31.945745+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "40c73301a387a38ba6621b039ddb255001347715c1b8e06c8ad55992043ff23c",
+      "research_notes_en": "Adminpriced23/45/89annualequiv,unlimitedemployees,Assistlimits,14daytrial;tableplaceholdertextnotadoptedasfeatures."
+    },
+    {
+      "id": "approval",
+      "type": "official_documentation",
+      "site": "Manage Approval Requests",
+      "title": "Manage Approval Requests",
+      "url": "https://help.siit.io/approval-requests",
+      "read_at": "2026-10-22T12:09:50.574224+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a3b2594d2100df777da8df9226b8235208d134c7f4ab40671b607506cecfd0fd",
+      "research_notes_en": "Approvals pauseworkflow,approved/rejectedbranches,dynamic/static/groupapprovers,reminders,cancelstopsbothbranches."
+    },
+    {
+      "id": "provision",
+      "type": "official_documentation",
+      "site": "Automate App Access/Provisioning with the AI IT Agent",
+      "title": "Automate App Access/Provisioning with the AI IT Agent",
+      "url": "https://help.siit.io/ai-agent-app-provisioning",
+      "read_at": "2026-10-22T12:09:49.986276+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1a2b876f89b2e52378fa9ab40ca2900eb7c94bfc1e8e0d181afad09b5ce630f1",
+      "research_notes_en": "AIITAgentplaybookactualActionsreferencesrequired,app/groupmappingandfailurecreatesstandardrequest;notexecuted."
+    },
+    {
+      "id": "triage",
+      "type": "official_documentation",
+      "site": "Triage Agent — Best-in-Class Account Setup",
+      "title": "Triage Agent — Best-in-Class Account Setup",
+      "url": "https://help.siit.io/triage-agent-best-in-class-account-setup",
+      "read_at": "2026-10-22T12:09:50.697168+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "de2c46b0d59d0adfbbad09fe0b62fe41bcad1052900ec78ec17bc8be663b3045",
+      "research_notes_en": "Currentknowledge/serviceAbout/forms/HRIS/AppAccessprerequisites,restrictedcategoryinvisibility,mandatoryfieldsandduplicatelegacyworkflowpolicyrisk."
+    },
+    {
+      "id": "entra",
+      "type": "official_documentation",
+      "site": "Use Microsoft Entra ID actions in Siit",
+      "title": "Use Microsoft Entra ID actions in Siit",
+      "url": "https://help.siit.io/use-microsoft-entra-id-actions-in-siit",
+      "read_at": "2026-10-22T12:09:50.359829+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "78b1f521b32d707ec958e8c7e4433fa106f36c4511b895ba371d33dbdb0b2592",
+      "research_notes_en": "Identitymatching,rolepermissiononintegration,realdirectorywrites,timelinefailures,suspendversusdelete; protectedaccountandgroupscopeerrors."
+    },
+    {
+      "id": "assist",
+      "type": "official_documentation",
+      "site": "Assist - Guide",
+      "title": "Assist - Guide",
+      "url": "https://help.siit.io/siit-assist-guide",
+      "read_at": "2026-10-22T12:09:50.171650+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c161c74329acffefcc83ccb0285f2cd7d3b55aaa4ecf5960193261683e9f87b0",
+      "research_notes_en": "Humanreviewedwritesandwholeplanapproval,stopfirstfailure,unconfirmedstate,noautomaticundo,identityscopeandweeklyallowance."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Siit Terms of Service",
+      "title": "Siit Terms of Service",
+      "url": "https://www.siit.io/terms-of-service",
+      "read_at": "2026-10-22T12:10:02.395138+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8e80e97b0b8e0a4edfbfe9370c8b18cd331d745d99bf490e4099038039dfebf7",
+      "research_notes_en": "Selectedlimitedproprietarylicense andSaaSscope/terminationaccess;notcomprehensivelegalreview."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:10:02.395138+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "triage",
+    "provision",
+    "approval",
+    "assist",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "internal-scope",
+        "title_en": "Start with employee service and authoritative context",
+        "title_zh": "从员工服务及权威上下文开始",
+        "en": "Siit is designed for internal operations: an employee asks in Slack, Teams, email or a portal, while the service desk uses people, apps, equipment and knowledge context. An external retail inbox is a different workflow. Current product positioning includes agents that qualify requests and act through configured systems, plus Assist for administrators.\n\nFor an illustrative application request, verify the actual employee, reporting manager, app role and business reason. HRIS relationships and identity matching are prerequisites, not facts inferred from a display name. Vendor customer stories, deflection percentages and compliance labels are not independently verified outcomes in this profile.",
+        "zh": "Siit面向内部运营：员工在Slack、Teams、邮件或门户提问，服务台使用人员、应用、设备及知识上下文。外部零售收件箱是不同流程。当前产品定位包含补充请求资料并通过配置系统行动的代理，以及管理员Assist。\n\n以假设应用申请为例，应确认真实员工、直属经理、应用角色及业务理由。HRIS关系和身份匹配是前提，不能从显示名称推断。厂商案例、分流比例及合规标签不是本文独立验证结果。",
+        "source_refs": ["product", "triage", "entra"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "triage-inputs",
+        "title_en": "Triage depends on the existing catalog and policies",
+        "title_zh": "分诊依赖已有目录与策略",
+        "en": "The current setup guide says Triage reads published knowledge, service About descriptions, forms, people data and App Access Policies. Draft articles are invisible, and restricted service categories can be unavailable to the agent. It actively collects mandatory form fields; optional values are only filled when volunteered.\n\nEach app needs a scoped role audience and an owner. A broad default audience or missing owner can cause incorrect routing or a stalled approval. Running a legacy Workflow and App Access Policy together can create duplicate approvals/provisioning. Likewise, overlapping agents on a channel can bypass the intended form. Pilot one app/channel and verify role, reason, duration, approver and resulting access record before expanding.",
+        "zh": "当前设置指南称Triage读取已发布知识、服务About描述、表单、人员资料及App Access策略。草稿文章不可见，受限服务分类可能无法供代理使用。它主动收集必填字段，可选值仅在员工自发提供时填入。\n\n每个应用需限定角色受众及负责人，过宽默认受众或缺少负责人可能错路由或卡审批。旧工作流与App Access策略同时运行会重复审批／开通；渠道上重叠代理也可能绕过预期表单。应试点单应用／渠道，核对角色、理由、期限、审批人及最终访问记录再扩大。",
+        "source_refs": ["triage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "approval-path",
+        "title_en": "Cancellation has a different result from rejection",
+        "title_zh": "取消与拒绝结果不同",
+        "en": "An approval is a workflow decision point that pauses progress, not simply a notification. It can use a manager, app owner, selected people or groups and multiple sequential rounds. Approved and rejected branches need explicit actions; reminders only follow up on pending decisions.\n\nThe guide states that cancelling a pending approval stops the workflow at that step and takes neither branch. Therefore a cancelled app request does not automatically become a rejected, closed or reassigned request. Verify ownership after cancellation and a missing/incorrect approver. Provisioning playbooks also require inserting the actual dynamic Actions: writing an action name as prose alone is insufficient. A configured failure request is a documented follow-up, not an executed recovery guarantee.",
+        "zh": "审批是暂停进展的工作流决策点，不只是通知。可使用经理、应用负责人、指定人员或组，以及多轮顺序审批。通过及拒绝分支需明确动作，提醒只是跟进待决策。\n\n指南称取消待审批会将工作流停在该步，不走任一分支，因此取消应用申请不会自动变成拒绝、关闭或重分配。应核对取消后及审批人缺失／错误时的负责人。开通剧本还必须插入实际动态Actions，仅写自然语言动作名不够。配置失败后建请求属于文档跟进，不是已执行恢复保证。",
+        "source_refs": ["approval", "provision"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "identity-write",
+        "title_en": "Treat directory actions as actual external changes",
+        "title_zh": "将目录动作视为真实外部变更",
+        "en": "Entra actions require a connected integration, an allowed Siit role and a requester matched by primary email. The guide describes group changes, suspension, session revocation and password-change requirements as immediate directory operations recorded in the request timeline. Suspension is distinct from deletion.\n\nA visible action in Siit does not prove Microsoft accepted it: protected accounts, missing Graph permissions and out-of-scope/non-manageable groups can fail. Inspect the timeline and target state before retrying. An existing connection or plan inclusion does not substitute for the correct employee and approved authority. No directory, credentials, group or session was changed by this research.",
+        "zh": "Entra动作要求已连集成、允许的Siit角色，以及按主邮箱匹配请求人。指南将组修改、暂停、会话撤销及强制改密描述为记入请求时间线的真实目录操作，暂停与删除不同。\n\nSiit显示动作不证明Microsoft接受：受保护账户、缺少Graph权限、范围外或不可管理组可能失败。重试前应检查时间线和目标状态。已有连接或套餐包含不能替代正确员工及获批权限。本研究未修改目录、凭据、组或会话。",
+        "source_refs": ["entra"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "assist",
+        "title_en": "Review the plan and reconcile partial execution",
+        "title_zh": "审阅计划并核对部分执行",
+        "en": "Assist runs with the administrator’s identity and role. Individual workspace writes present an approval card; request-resolution plans instead receive one apply/deny decision for the whole ordered plan. The plan stops on its first failure. A stopped run does not roll back approved actions, and Unconfirmed means a step may or may not already have applied.\n\nReview Done, Failed and Not run results against actual objects before repeating a request. This distinction matters when a plan changes configuration and then sends a message: a late failure can leave earlier changes in place. The guide describes no one-click undo. Approval UX and role scoping are documentation claims; their enforcement was not independently exercised here.",
+        "zh": "Assist使用管理员身份及角色。单个工作区写入显示审批卡，请求解决计划则对整份有序计划一次应用／拒绝，遇首个失败停止。停止运行不会回滚已批准动作，Unconfirmed表示步骤可能已执行也可能未执行。\n\n重复请求前应对照真实对象检查Done、Failed及Not run。计划先改配置再发消息时尤需注意，后续失败可能留下前面修改。指南称没有一键撤销。审批交互及角色范围是文档主张，此次未独立运行验证。",
+        "source_refs": ["assist"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Count admins and separate Assist from autonomous agents",
+        "title_zh": "计算管理员并区分Assist与自主代理",
+        "en": "Current annual-billed prices are$23/$45/$89 per admin/month for Essentials/Standard/Pro; Custom is quoted. An admin manages and resolves requests. Employee requesters are unlimited at no extra headcount charge. Standard adds workflow and asset/app capabilities; Pro lists agents, AI Triage, monitoring and custom reporting.\n\nAssist is included but not universally unlimited: trial, Essentials and Standard allow ten conversations per admin/week, each one question with up to three follow-ups. Reaching the allowance pauses the composer until reset; Pro is fair use. A fourteen-day full-feature trial does not establish a permanent free tier or the exact paid package. Confirm currency, monthly billing, fair-use terms, exports/restore and operational integration scope in the selected order.",
+        "zh": "当前年付折月Essentials／Standard／Pro为每管理员$23／$45／$89，Custom询价。管理员是管理并解决请求的人，员工请求者不限且不按人数加费。Standard增加工作流及资产／应用能力，Pro列代理、AI Triage、监控及自定义报表。\n\nAssist包含但并非普遍无限：试用、Essentials及Standard每管理员每周10会话，每会话1问加最多3追问。达到额度后编辑器暂停至重置，Pro适用合理使用。14天全功能试用不能证明永久免费档或准确付费组合。需在所选订单确认币种、月付、合理使用、导出／恢复及运营集成范围。",
+        "source_refs": ["pricing", "assist", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Siit: Employee Access Workflows, Approvals, Assist and Admin Pricing",
+    "title_zh": "Siit：员工权限流程、审批、Assist及管理员价格",
+    "description_en": "Evaluate Siit internal service scope, triage inputs, duplicate provisioning, cancelled approvals, Entra authority, partial Assist execution and admin-based costs.",
+    "description_zh": "评估Siit内部服务范围、分诊输入、重复开通、取消审批、Entra权限、Assist部分执行及管理员成本。",
+    "primary_intent": "Evaluate Siit employee service workflows and operational control.",
+    "secondary_questions": [
+      "Does cancelling approval reject the request?",
+      "Can Assist undo partial work?",
+      "Are employee requesters billed?"
+    ],
+    "query_basis": "Editorial questions; no measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No workspace, AI, policy, approval, directoryaction, workflow, trial, purchase, export or restore executed. Currency,monthlypaymentprice,fair-useceiling,fullUIlanguages,region,completeexport/recovery andselectedcontractscope remainunverified.",
+      "zh": "未执行工作区、AI、策略、审批、目录动作、工作流、试用、购买、导出或恢复。币种、月付价、合理使用上限、完整界面语言、地区、完整导出／恢复及所选合同范围未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

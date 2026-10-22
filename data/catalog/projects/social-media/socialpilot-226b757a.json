@@ -1,0 +1,581 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "socialpilot-226b757a",
+  "name": "SocialPilot",
+  "website_url": "https://www.socialpilot.co/",
+  "domain": "www.socialpilot.co",
+  "identity_domain": "socialpilot.co",
+  "category": "social-media",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "SocialPilot is a managed social media workspace for preparing, scheduling, reviewing and reporting on connected accounts. Its Social Media product combines a calendar, platform-specific captions, account queues, team/client workflows, bulk CSV import, analytics and an MCP connection for AI-assisted actions. Reviews and Listings appear as separate products; their capabilities should not be assumed included in a social publishing subscription.\n\nIt is a candidate for an agency coordinating several clients or a small team that wants publishing and reporting in one workspace. The decisive checks are operational: whether the right account receives each version, which person can approve it, how a CSV maps to accounts, and what happens when authorization or media fails. The public client-approval workflow still permits manager approval without a client decision. This profile reviews documentation, not an account trial, native publication test or independently measured engagement result.",
+  "description_zh": "SocialPilot 是面向已连接账户准备、排程、审核及报告的托管社交媒体工作区。Social Media 产品结合日历、平台专属文案、账户队列、团队／客户流程、批量 CSV 导入、分析，以及供 AI 辅助操作的 MCP 连接。Reviews 与 Listings 作为独立产品出现，不能假设其能力包含在社交发布订阅中。\n\n它可供协调多客户的机构，或希望集中发布与报告的小团队评估。关键是实际流程：每份版本发到哪个账户、谁有权批准、CSV 如何映射账户，以及授权／媒体失败后如何处理。公开客户审批流程仍允许经理不经客户决定而批准。本档案核对文档，未执行账户试用、原生发布或独立互动效果测试。",
+  "core_features": [
+    {
+      "name_en": "Shared composer with channel variants",
+      "name_zh": "带渠道版本的共享编辑器",
+      "explanation_en": "Customize captions, then inspect each selected destination before scheduling.",
+      "explanation_zh": "定制文案后，在排程前检查各所选目的地。",
+      "source_ref": "composer",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Internal and client review",
+      "name_zh": "内部与客户审核",
+      "explanation_en": "Content Scheduler review differs from optional manager-to-client routing.",
+      "explanation_zh": "Content Scheduler 审核不同于经理可选的客户送审。",
+      "source_ref": "approval",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Bulk CSV scheduling",
+      "name_zh": "批量 CSV 排程",
+      "explanation_en": "Preview up to 500 items using the scheduling-specific column layout.",
+      "explanation_zh": "采用排程专用列结构，预览最多 500 项。",
+      "source_ref": "bulk",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scoped MCP automation",
+      "name_zh": "限定权限的 MCP 自动化",
+      "explanation_en": "Connected agents use the account access already granted to the user.",
+      "explanation_zh": "连接的代理使用已授予该用户的账户访问。",
+      "source_ref": "mcp",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate several client accounts with a visible review and publishing calendar.",
+      "Prepare a spreadsheet campaign and inspect account mappings before bulk scheduling.",
+      "Produce period-specific reports after verifying live rather than editor data."
+    ],
+    "zh": [
+      "通过可见审核／发布日历协调多个客户账户。",
+      "准备表格活动，批量排程前检查账户映射。",
+      "确认真实而非编辑器数据后制作指定周期报告。"
+    ],
+    "source_refs": ["overview", "composer", "approval"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "Agency account manager",
+        "zh": "机构客户经理"
+      },
+      {
+        "en": "Social content scheduler",
+        "zh": "社交内容排程员"
+      },
+      {
+        "en": "Reporting analyst",
+        "zh": "报告分析人员"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify the Social Media plan and exact regional account/user allowances.",
+        "zh": "确认 Social Media 档位及准确地区账户／用户额度。",
+        "source_refs": ["pricing", "price-detail"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Connect intended accounts and inspect timezone and reusable queue slots.",
+        "zh": "连接准确账户并核时区及复用队列时段。",
+        "source_refs": ["slots", "timezone"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Save a draft explicitly and inspect each customized caption.",
+        "zh": "明确保存草稿并逐份检查定制文案。",
+        "source_refs": ["composer"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Agree on who signs off; manager discretion remains in the client workflow.",
+        "zh": "约定签认人；客户流程仍保留经理裁量。",
+        "source_refs": ["approval"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Monitor Error/Delivered states and export only an inspected Live Data report.",
+        "zh": "监控 Error／Delivered 状态，仅导出已检查 Live Data 的报告。",
+        "source_refs": ["recovery", "analytics"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Configured client approval still permits manager approval without sending to the client.",
+        "zh": "已配置客户审批仍允许经理不送客户而批准。",
+        "source_refs": ["approval"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Bulk import uses distinct scheduling/library schemas and a 500-item maximum.",
+        "zh": "批量导入区分排程／内容库结构，最多 500 项。",
+        "source_refs": ["bulk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Native deletion from Delivered excludes Instagram and TikTok.",
+        "zh": "从 Delivered 原生删除排除 Instagram 及 TikTok。",
+        "source_refs": ["manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Report editing initially displays dummy data.",
+        "zh": "报告编辑起初显示演示数据。",
+        "source_refs": ["analytics"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Official July 2026 pricing Markdown lists US monthly USD 30/50/100/200 for Essentials/Standard/Premium/Ultimate; annual monthly equivalents 25.50/42.50/85/170. Global allowances: 7/15/25/50 accounts and 1/3/6/unlimited users. Current HTML interleaves different annual/monthly numerals, so rates remain a documented snapshot, not a normalized quote. India packs change account/user allowances, not merely currency. Standard adds internal approval; Premium adds client approval and bulk CSV. Enterprise is quoted with REST API/SSO. Pricing advertises a 14-day no-card trial; no permanent free plan. Billing help states prices before applicable taxes. Confirm the actual regional checkout.",
+    "source_snapshot_zh": "官方 2026 年 7 月价格 Markdown 列美国月付 USD 30／50／100／200，对应 Essentials／Standard／Premium／Ultimate；年付月均 25.50／42.50／85／170。全球额度为 7／15／25／50 账户及 1／3／6／不限用户。当前 HTML 交错显示不同年／月数字，因此仅保留文档快照，不分配标准化报价。印度套餐改变账户／用户额度，不只是换币种。Standard 增内部审批，Premium 增客户审批及批量 CSV。Enterprise 询价并含 REST API／SSO。价格页宣传 14 天免卡试用，无永久免费档；账单帮助说明未含适用税。需确认真实地区结算。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "price-detail", "billing", "downgrade"]
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/socialpilot",
+      "read_at": "2026-10-22T09:06:29.891Z",
+      "excerpt_sha256": "a7be1f06308a69376d99ff0a861a250e068c0d2165f054fc55e807375c48d063",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Social Media Management and Scheduling Tool | SocialPilot",
+      "url": "https://www.socialpilot.co/",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "9433b3e46bf1ee2bed8519d7037c9fef3b3c61b4a9d00c246f6ca22a65f34a55",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual homepage distinguishes Social Media, Reviews and Listings products; promotional outcomes not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "SocialPilot",
+      "title": "SocialPilot: Plans & Pricing",
+      "url": "https://www.socialpilot.co/plans",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "89fba5d3fc73c584770bde36ffc8a3db33361bf39edc01a2cd018fc4f19cfc8e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current HTML pricing read; interleaved annual/monthly numerals conflict with dated machine-readable rates, no invented normalized price."
+    },
+    {
+      "id": "price-detail",
+      "type": "official_pricing",
+      "site": "SocialPilot",
+      "title": "SocialPilot Pricing",
+      "url": "https://www.socialpilot.co/socialpilot-pricing.md",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "df572fc6b019031dd69432d3ec4973c6425fe3e360d127b59b05c091bdfeef2a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official detailed pricing Markdown last updated July 2026, regional entitlements and API/MCP distinction; not assumed newer than current checkout."
+    },
+    {
+      "id": "composer",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How to Create and Schedule a Post on the New Create Post? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894934686993-How-to-Create-and-Schedule-a-Post-on-the-New-Create-Post",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "2fea1a77a85b019f62591054e77e74b870481df23945283fb36e525556ec574f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual new composer, autosave versus draft, customization overwrite, scheduling actions and repeat-account cap."
+    },
+    {
+      "id": "slots",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How to Set or Change a Schedule for Feed Content? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895001757585-How-to-Set-or-Change-a-Schedule-for-Feed-Content",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "9ca422e8cf4736fccc7d10b4f8804195d695f7c7bf8ee2d8a2c755b5d823ee61",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual per-account weekday/time slots and Add to Queue behavior."
+    },
+    {
+      "id": "timezone",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Why Are My Posts Not Getting Published as per the Schedule? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895001336081-Why-Are-My-Posts-Not-Getting-Published-as-per-the-Schedule",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "a53416dd0ad9c958f89e047598099827ede0e6d9dcab7844e12c72e9dceda5ff",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual account Profile Date and Time correction, not browser timezone assumption."
+    },
+    {
+      "id": "team",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How Do I Add Members to My Team? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895050689425-How-Do-I-Add-Members-to-My-Team",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "5539ff1227af28cd0c98ab267d0f25b4e7c002ed52e9ea430b260f88687e10c7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual role permissions and client-role conversion restriction; legacy plan names superseded by current pricing."
+    },
+    {
+      "id": "approval",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How Do I Manage Team & Client Approval Workflows in SocialPilot? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895024701073-How-Do-I-Manage-Team-Client-Approval-Workflows-in-SocialPilot",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "304a08acc1a254fee0c4d5442cb71780931b6e46c950344161732693f81ba2df",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual manager discretion despite Need Client Approval setting, correction loop and portal scope."
+    },
+    {
+      "id": "bulk",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How to Bulk Schedule Posts Through SocialPilot? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894942661777-How-to-Bulk-Schedule-Posts-Through-SocialPilot",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "a9c762ec23bed740e473f8c86a272abcfe28e6e2f21d0473d2f2e07dc1f4fbc2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual maximum 500, positional scheduling CSV distinct from library CSV, preview and account assignment."
+    },
+    {
+      "id": "validation",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Create Post Errors in SocialPilot and How to Fix Them – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894956346641-Create-Post-Errors-in-SocialPilot-and-How-to-Fix-Them",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "c185fa36a01635abdcb91be5f7bef0803f2fd067f3a6542a912b24b45aaf1f5f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual format-specific composer errors/warnings; no universal social-platform specifications inferred."
+    },
+    {
+      "id": "instagram",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Any Restrictions For Media Posts With Instagram Direct Publishing? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894985655441-Any-Restrictions-For-Media-Posts-With-Instagram-Direct-Publishing",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "fa211a171c9a319e6fba105a779a9f74522b0680663e77106b33ce8402c68b97",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual direct-publishing media guide; aspect-ratio discrepancy with error catalog retained."
+    },
+    {
+      "id": "recovery",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Why is My Post Generating an Error? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895001043473-Why-is-My-Post-Generating-an-Error",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "fea4d8e7c24ec08b0986e895401bd2d708b8f22a09394f37de498c8b8c417566",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual Error-tab correction, lost access and reauthorization; Instagram numeric limit not independently adopted."
+    },
+    {
+      "id": "pause",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "How to Stop All Sharing Activities of a Connected Account? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894937674641-How-to-Stop-All-Sharing-Activities-of-a-Connected-Account",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "f4c2f4698ab8941c972aae72da5155f0b8255e834e9283bfea03c2a06cfb9c26",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual account and global pause controls; no exact missed-slot replay contract stated."
+    },
+    {
+      "id": "manage",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Manage Your Posts From SocialPilot – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49894958494481-Manage-Your-Posts-From-SocialPilot",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "a478468c8d62f43a5865ecb2b7dea7c06f7b4e82de18dbbf8f9dd575c1ff0936",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual post states, draft calendar visibility and native-delete exceptions."
+    },
+    {
+      "id": "analytics",
+      "type": "official_documentation",
+      "site": "SocialPilot",
+      "title": "Common Questions About Analytics and Reports – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895019206161-Common-Questions-About-Analytics-and-Reports",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "6d318a829d469b025a66d75d49ac5a2afcabde4878bed1d050fe9121db76f6cb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual report range/history separation, dummy report editor data and native metric differences."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "SocialPilot",
+      "title": "SocialPilot MCP Server and Supported Integrations – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895071869969-SocialPilot-MCP-Server-and-Supported-Integrations",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "ce01c38a3b773c307026d50ec1bba60c3572a6b4fa72716868962741d75bca33",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual discover/create/review/monitor tools and existing user access boundary; connector not operated."
+    },
+    {
+      "id": "refund",
+      "type": "official_pricing",
+      "site": "SocialPilot",
+      "title": "Refund policy – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895084063249-Refund-policy",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "85bfcecdeb180a0603b37251c34c78042df03254d0c9b38ff597ba15248487b4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual annual refund exclusion and ambiguous one-day wording, not simplified into guaranteed 24-hour refund."
+    },
+    {
+      "id": "downgrade",
+      "type": "official_pricing",
+      "site": "SocialPilot",
+      "title": "How do I downgrade to a lower plan? – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895039931665-How-do-I-downgrade-to-a-lower-plan",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "c98fdbc3206f8d474910d1cae674defb71caec1bf25050e096d7360567fdfb74",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual support-mediated downgrade and explicit no SocialPilot Lite Free plan."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "SocialPilot",
+      "title": "SocialPilot: Billings and Subscriptions – SocialPilot",
+      "url": "https://help.socialpilot.co/hc/en-us/articles/49895039596689-SocialPilot-Billings-and-Subscriptions",
+      "read_at": "2026-10-22T14:03:24.620122Z",
+      "excerpt_sha256": "afc7f3380f62ef1f188d8f15ba0016203b1adb0f280f64783be24f08b6a8a091",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual before-tax statement and Standard+ matrix; legacy/updated plan coverage discrepancy preserved."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:03:24.620122Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "composer", "approval"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "compose",
+        "title_en": "Autosave is not a saved draft",
+        "title_zh": "自动保存不等于已存草稿",
+        "en": "The new composer shares main media across selected platforms and permits caption customization. Turning customization off replaces custom captions with main text after confirmation. Real-time autosave preserves the open composer, but does not create a saved draft. Editorial campaign setup: explicitly save the draft and inspect each customized caption after changing the common announcement.",
+        "zh": "新编辑器向所选平台共享主媒体，允许定制文案。关闭定制会在确认后用主文替换专属文案。实时自动保存保留打开的编辑器，但不创建已存草稿。编辑活动设置：明确保存草稿，修改共用公告后逐份检查定制文案。",
+        "source_refs": ["composer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "timing",
+        "title_en": "Queue slots, explicit times and repetitions require different checks",
+        "title_zh": "队列时段、指定时间及循环需要不同检查",
+        "en": "Account schedules define weekday/time slots. Add to Queue takes the next free slot; Share Next prioritizes the next available slot, while Share Now publishes immediately. Explicit scheduling and staggered timing are separate choices. Repeat supports at most ten selected accounts; daily, weekly and monthly horizons differ. The timezone troubleshooting page points to Profile → Your Profile → Date and Time. Editorial timed launch: verify account slots, timezone and every assigned time before committing, especially after switching scheduling mode. Documentation does not establish how a timezone change retroactively transforms existing queued timestamps.",
+        "zh": "账户排程定义星期／时间时段。Add to Queue 使用下个空位，Share Next 优先下个可用位，Share Now 立即发布。指定时间与错峰是独立选择。循环最多选择十个账户，日／周／月循环期限不同。时区故障页指向 Profile → Your Profile → Date and Time。编辑定时上线：提交前核账户时段、时区及每个分配时间，尤其切换排程模式后。文档未确定改时区如何追溯转换已有队列时间戳。",
+        "source_refs": ["slots", "composer", "timezone"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "roles",
+        "title_en": "A scheduler’s post waits, but a manager’s need not",
+        "title_zh": "排程员的帖子需等待，经理的未必",
+        "en": "Owner/Admin invite team members. Content Schedulers submit to Pending Review; Manager/Admin/Owner approval is needed before queuing. Those higher roles can create posts without that approval step. Managers may connect/remove accounts only when separately allowed; Admin does not manage subscription billing. Client publishing, analytics and inbox permissions are optional. Team roles can change, but a Client cannot be converted into a team role or vice versa. Editorial staffing: assign access to actual client accounts before inviting; do not interpret a client label as a mandatory publishing restriction. The guide retains old plan names, so current pricing must determine available seats.",
+        "zh": "Owner／Admin 邀请团队。Content Scheduler 提交到 Pending Review，经 Manager／Admin／Owner 批准后才能入队；较高角色自己建帖不需该审批。Manager 仅另获许可时可连接／移除账户，Admin 不管订阅账单。客户发布、分析及收件箱权限可选。团队角色可改，但 Client 与团队角色不能互转。编辑人员配置：邀请前分配真实客户账户访问，不能把客户标签理解成强制发布限制。指南保留旧套餐名，可用席位应看现行价格。",
+        "source_refs": ["team"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "approval",
+        "title_en": "Client approval is not enforced after the manager step",
+        "title_zh": "经理步骤后并不强制客户批准",
+        "en": "A manager can approve a scheduler’s post into the queue, send it to the client, or return it with comments. Even when Need Client Approval and a client approver are configured, the guide says the manager chooses whether to seek client approval. A client can approve or return the post; after correction, the manager can approve directly or resend it. The On-The-Go portal needs no client login and exposes the assigned accounts’ calendar, queued and delivered posts, not merely one preview. Editorial agency handoff: agree on the human sign-off process and inspect portal scope before sharing; configuration alone does not guarantee the client sees the final revision.",
+        "zh": "经理可将排程员帖子批准入队、送客户或附评退回。即使设置 Need Client Approval 及客户审批人，指南仍说由经理选择是否送客户。客户可批准或退回，修正后经理可直接批准或重送。On-The-Go 门户不需客户登录，呈现分配账户的日历、队列及已发帖，不仅一个预览。编辑机构交接：约定人工签认流程，分享前检查门户范围；仅配置不能保证客户看到最终修订。",
+        "source_refs": ["approval"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "import",
+        "title_en": "Scheduling and library imports use different CSV schemas",
+        "title_zh": "排程与内容库导入使用不同 CSV 结构",
+        "en": "Bulk scheduling accepts up to 500 posts. Its positional columns cover content, public media URLs, date/time, account IDs, first comment and tags. Semicolons separate image URLs; video is single-file. Blank account IDs use the accounts selected during import, while already assigned rows retain their mapping. Only one X account is allowed. The preview permits corrections before scheduling. Import to Library instead uses content/media/comment/tags/type/title columns and saves separate reusable items. Editorial spreadsheet preparation: download the correct template and test a small preview; a library CSV is not interchangeable with a scheduling CSV, and import is not evidence of native delivery.",
+        "zh": "批量排程最多 500 帖，位置列依次涉及内容、公开媒体 URL、日期时间、账户 ID、首评及标签。图片 URL 用分号分隔，视频单文件。空账户 ID 使用导入时所选账户，已分配行保留映射，只允许一个 X 账户。排程前可在预览修正。Import to Library 则用内容／媒体／首评／标签／类型／标题列，保存独立可复用项。编辑表格准备：下载正确模板并预览少量；内容库 CSV 与排程 CSV 不通用，导入也不能证明原生投递。",
+        "source_refs": ["bulk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "formats",
+        "title_en": "Composer checks and runtime failures are separate stages",
+        "title_zh": "编辑器校验与运行时失败是不同阶段",
+        "en": "The composer blocks final actions until errors are resolved; dismissible warnings are different. Its error catalog includes platform-specific truncation/conversion, such as only the first ten Instagram carousel items and a PDF-to-image cutoff. The direct-publishing guide and error catalog disagree on Instagram feed aspect ratios; do not treat either as a universal current Meta specification. Runtime Error entries can instead reflect expired authorization, lost page access, policy rejection, duplicate X content or media constraints. The recovery guide directs correction and re-sharing/rescheduling, with reauthorization where needed. Editorial recovery: retain the exact account/error and inspect the native result when uncertain before another attempt; no universal automatic retry or delivery SLA was verified.",
+        "zh": "编辑器在错误解决前阻止最终操作，可关闭警告与错误不同。错误目录含平台专属截断／转换，例如 Instagram 轮播仅前十项及 PDF 转图片数量截断。直接发布指南与错误目录的 Instagram feed 比例不一致，不能将任一视为当前 Meta 通用规范。运行时 Error 还可能来自授权到期、页面权限丢失、政策拒绝、X 重复内容或媒体限制。恢复指南要求修正后重新分享／排程，必要时重授权。编辑恢复：保留准确账户／错误，不明时先查原生结果再尝试；未核普遍自动重试或投递 SLA。",
+        "source_refs": ["composer", "validation", "instagram", "recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pause",
+        "title_en": "Pause sharing and delete a delivered post have different effects",
+        "title_zh": "暂停分享与删除已发帖作用不同",
+        "en": "Manage Accounts can pause one account or use the header control to pause all; Running resumes sharing. The guide does not specify exact replay behavior for missed slots. Manage Posts separates Queued, Unscheduled, Error, Delivered and Pending Approval. Delivered displays the last six months; that is not proof of complete data retention. Dated drafts appear in Calendar, undated drafts do not. Native deletion from Delivered has role/platform restrictions and excludes Instagram and TikTok; disconnected or removed accounts also prevent it. Editorial incident response: pause the intended scope, inspect native posts separately, and review old times before resuming rather than treating pause as unpublishing.",
+        "zh": "Manage Accounts 可暂停单账户，或用页头控件暂停全部，Running 恢复分享。指南未说明错过时段的准确补发行为。Manage Posts 区分 Queued、Unscheduled、Error、Delivered、Pending Approval。Delivered 显示最近六个月，不能证明完整保留期。带日期草稿出现在 Calendar，无日期者不出现。从 Delivered 删除原生帖有角色／平台限制，排除 Instagram 及 TikTok，断开或移除账户也不能删。编辑事件响应：暂停准确范围，单独检查原生帖子，恢复前复核旧时间，不能把暂停当撤回已发内容。",
+        "source_refs": ["pause", "manage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reports",
+        "title_en": "Report editing uses dummy data until Live Data is opened",
+        "title_zh": "报告编辑在打开 Live Data 前使用演示数据",
+        "en": "The report editor uses dummy data; Live Data opens a real preview. Last 90 Days ends yesterday, whereas Last 3 Months means three full calendar months. Available history can extend two years, but one report covers at most three months; the guide lists shorter LinkedIn and Google Business Profile history. Meta-native and SocialPilot values can differ through calculation, attribution windows and synchronization. Organic and boosted Meta results have separate blocks. Editorial reporting: record the exact account, period and data mode before exporting. Do not present editor placeholders as customer performance or substitute zero for unavailable metrics.",
+        "zh": "报告编辑器使用演示数据，Live Data 才打开真实预览。Last 90 Days 截至昨天，Last 3 Months 指三个完整日历月。可得历史可达两年，但单份报告最多三个月；指南列出较短 LinkedIn 与 Google Business Profile 历史。Meta 原生与 SocialPilot 数值可因计算、归因窗口及同步不同。Meta 自然与推广结果有独立区块。编辑报告：导出前记录准确账户、周期及数据模式，不能把编辑器占位数据呈为客户业绩，也不能用零替代不可得指标。",
+        "source_refs": ["analytics"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "automation",
+        "title_en": "MCP actions inherit user access and differ from the REST API",
+        "title_zh": "MCP 动作继承用户访问，不等于 REST API",
+        "en": "The MCP guide sequences account/group discovery, draft or post creation, review, and status monitoring. Tools distinguish queued, delivered, error and unscheduled posts. Agents gain no additional account/data access beyond the connected user. The pricing document lists MCP for paid plans while public REST API access is Enterprise-only. Editorial automation evaluation: identify the intended account and preserve a review point before a publishing-capable action, then inspect actual delivery state. A chat response alone is not native-publication evidence, and no connector or approval interaction was executed in this research.",
+        "zh": "MCP 指南顺序为发现账户／组、创建草稿或帖子、审核、监控状态。工具区分队列、已发、错误及未排程。代理不会获得超出连接用户的账户／数据访问。价格文档列付费档可用 MCP，公开 REST API 则仅 Enterprise。编辑自动化评估：明确准确账户，在可发布动作前保留审核节点，再检查真实投递状态。聊天回复本身不能证明原生发布，本研究未操作连接器或审批交互。",
+        "source_refs": ["mcp", "price-detail"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Downgrade requires support and annual payments are excluded from refunds",
+        "title_zh": "降档需支持处理，年付不退款",
+        "en": "The downgrade guide directs users to support and explicitly says SocialPilot Lite Free is no longer offered. A trial is not sustained free access. The refund page offers the latest charge under recent-charge/unused-plan conditions, but its one-day wording is ambiguous; it denies prorated refunds after more than a day of paid use and excludes annual plans. Eligible processing is described as five to ten business days to the currently available payment method. Editorial subscription decision: confirm the selected billing interval, regional capacity and cancellation/end date before paying. No cancellation timing, downgrade effective date or safe preservation of excess scheduled work was established.",
+        "zh": "降档指南要求联系支持，并明确不再提供 SocialPilot Lite Free。试用不等于持续免费。退款页在刚扣费／未用计划条件下提供最近扣费退款，但一天相关措辞含糊；使用付费档超过一天不按比例退，年付排除退款。符合资格时说明向当前可用付款方式处理，需五至十工作日。编辑订阅决策：付款前核计费周期、地区容量及取消／结束日期。取消时点、降档生效日及超额计划工作的安全保留均未确定。",
+        "source_refs": ["downgrade", "refund"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "SocialPilot: client approval, CSV mapping and publishing recovery",
+    "title_zh": "SocialPilot：客户审批、CSV 映射及发布恢复",
+    "description_en": "Review SocialPilot drafts, queue timing, manager discretion, bulk formats, live analytics and regional plan differences.",
+    "description_zh": "核对 SocialPilot 草稿、队列时间、经理裁量、批量格式、真实分析及地区套餐差异。",
+    "primary_intent": "Evaluate SocialPilot social publishing and client operations",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Current HTML rates and dated Markdown differ; checkout, regional entitlements, exact tax, cancellation timing and downgrade effects were not operated.",
+      "zh": "当前 HTML 费率与有日期 Markdown 不一致，未操作结算、地区权益、准确税、取消时点及降档效果。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Help articles retain legacy plan/platform labels; Instagram ratio/duration and rate-limit statements were not verified against current native provider documentation.",
+      "zh": "帮助文章保留旧套餐／平台名，Instagram 比例／时长及频率限制未对当前原生提供方文档核验。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Portal expiry/password controls, missed-slot replay, universal retry/SLA, full retention, UI languages, regional availability and source-code licensing remain unverified.",
+      "zh": "门户到期／密码、错过时段补发、普遍重试／SLA、完整保留期、界面语言、地区可用及源码许可未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No channel connected, CSV uploaded, account invited, MCP action, purchase, native publishing or performance test executed.",
+      "zh": "未连接渠道、上传 CSV、邀请账户、执行 MCP 动作、购买、原生发布或效果测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

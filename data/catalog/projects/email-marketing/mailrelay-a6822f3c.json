@@ -1,0 +1,380 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mailrelay-a6822f3c",
+  "name": "Mailrelay",
+  "website_url": "https://mailrelay.com/",
+  "domain": "mailrelay.com",
+  "identity_domain": "mailrelay.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Mailrelay is an email marketing service organized around subscriber groups, campaign design, automation and usage packages. Its group-entry automation can respond to contacts added through a form, an import or a manual operation, so audience preparation is part of the sending workflow.\n\nThe free account advertises substantial monthly capacity, but contacts, message-size credits and paid channel add-ons remain separate constraints. This profile follows a permissioned audience migration through group handling, welcome automation, reports and billing, without treating vendor performance claims as measured results.",
+  "description_zh": "Mailrelay 是围绕订阅者群组、活动设计、自动化及用量套餐组织的邮件营销服务。加入群组的自动化可响应表单、导入或手动新增，因此受众准备本身就是发送流程的一部分。\n\n免费账户宣传较高月容量，但联系人、按消息大小计算的积分及付费渠道附加包仍是独立约束。本文沿已许可受众的迁移，解释群组处理、欢迎自动化、报告及计费，未将厂商表现宣传当作实测结果。",
+  "core_features": [
+    {
+      "name_en": "Group-driven welcome flows",
+      "name_zh": "群组驱动欢迎流程",
+      "explanation_en": "Trigger on a group addition and combine messages with waits.",
+      "explanation_zh": "以加入群组触发，将消息与等待组合。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Controlled audience import",
+      "name_zh": "受控受众导入",
+      "explanation_en": "Map fields and choose whether existing contacts retain their groups.",
+      "explanation_zh": "映射字段，并决定已有联系人是否保留原群组。",
+      "source_ref": "import",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Usage breakdown",
+      "name_zh": "用量分解",
+      "explanation_en": "Review campaign, automation and other credit consumption separately.",
+      "explanation_zh": "分别查看活动、自动化及其他积分消耗。",
+      "source_ref": "usage",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "SMTP add-on",
+      "name_zh": "SMTP 附加包",
+      "explanation_en": "Use application or external-software sending after enabling the package.",
+      "explanation_zh": "启用附加包后用于应用或外部软件发送。",
+      "source_ref": "smtp",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Migrate a permissioned member list while retaining topic groups.",
+      "Build a group-entry welcome and monitor its usage and message outcomes."
+    ],
+    "zh": [
+      "迁移已许可会员列表并保留主题群组。",
+      "建立加入群组的欢迎流程，并监控用量及消息结果。"
+    ],
+    "source_refs": ["automation", "import", "pricing", "usage"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter operator",
+      "Audience migration owner",
+      "Application mail developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "automation"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify sender-domain authentication before preparing a small import.",
+        "zh": "准备小规模导入前验证发送域名认证。",
+        "source_refs": ["authentication"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Map fields and explicitly choose existing-contact group handling.",
+        "zh": "映射字段并明确选择已有联系人群组处理。",
+        "source_refs": ["import"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect enabled automations, import failures and remaining package capacity.",
+        "zh": "检查已启用流程、导入失败及套餐剩余容量。",
+        "source_refs": ["automation", "import", "usage"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Imported group additions can trigger enabled welcome automation.",
+        "zh": "导入造成的群组新增可触发已启用欢迎自动化。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Deleting contacts does not erase monthly sent-contact usage.",
+        "zh": "删除联系人不会清除月度已发送联系人用量。",
+        "source_refs": ["usage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "SMTP/API access has a separate add-on cost on Free after trial.",
+        "zh": "Free 的 SMTP／API 试用后有独立附加包费用。",
+        "source_refs": ["pricing", "smtp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Free: 80,000 monthly emails/20,000 contacts, size-weighted credits. Free SMTP/API after 30-day trial €14.95/month; logo removal €4.95/month. Monthly commitment and prepaid differ. Dynamic paid totals not verified; VAT separate where applicable.",
+    "source_snapshot_zh": "Free：每月 80,000 封／20,000 人，按消息大小计积分。Free SMTP／API 三十天试用后每月 €14.95，移除标志 €4.95。月付承诺期与预付不同。动态付费总额未核实，适用 VAT 另计。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mailrelay",
+      "read_at": "2026-10-22T09:06:19.246Z",
+      "excerpt_sha256": "b456eb45530a8be60f62699a7305dee5f038591b3c919ccc8977e05ff7f2ff13",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Mailrelay",
+      "title": "Email Marketing Pricing & Free Account | Mailrelay",
+      "url": "https://mailrelay.com/en/pricing/",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "fe5f28f425e00acfa7721d7de5af482c77679ce0348b73d122141d696edd9e24",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free 80,000 emails/20,000 contacts, size-weighted credits, add-on prices, 12-month monthly commitment, prepaid terms and incomplete paid slider output."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "How to Create and Manage Email Automations in Mailrelay : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000393273-automations",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "a5a7b221436eefd5a671dd8286acb0711c2364a3fb5ed7432b524536f89ad56e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Group entry includes imports/manual/forms, initial disabled state and explicit timed drip steps."
+    },
+    {
+      "id": "import",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "How to Import Contacts into Mailrelay: Step-by-Step Guide : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000156748-imports",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "3854f7a3d8d9ea62be9bfdb843ad55cdb42dbfb88875fb357529ec51de577c7b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Column mapping defaults non-email fields to None; existing-contact and group-replacement choices; row-level failure report."
+    },
+    {
+      "id": "groups",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "How to Create and Use Groups in Mailrelay: List Segmentation : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000133607-how-to-create-and-use-groups",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "50846c1bb4db20f7d97cde1fbd28e3d956eb5565da2357578f90fbfc5b76d7ac",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Group export excludes subscribers; group trash restoration requires subscribers not permanently deleted."
+    },
+    {
+      "id": "smtp",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "Set up SMTP with a 30-Day Free Trial in Mailrelay : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000160464-smtp-settings",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "403c53e18d23d330ba6ce09f7b0e7c4773a5fd737578a672513c26c8dfb317f2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "SMTP/API add-on trial, plan-credit consumption and recipient counting, credential display and encryption choices."
+    },
+    {
+      "id": "automation-report",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "How to View Automation Reports in Mailrelay: Track Workflow Performance : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000415909-automation-reports",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "7b421f0f0c908ff7a5256081622eb3c2ab21aaa0b7f5b616de418f89f39d8e7e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Enabled status, sent/unique impression/click reports, per-email status and activity log."
+    },
+    {
+      "id": "usage",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "Package Usage in Mailrelay: Check Credits & Subscribers : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000157600-package-usage",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "5ea91198ad94813541b5db2a7ed24e182992739514032fe6b97d0aefdeba09d5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monthly unique sent contacts cannot be reduced by deletion; consumption categories, prepaid import limits, seven-day export retention and paid renewal reset."
+    },
+    {
+      "id": "authentication",
+      "type": "official_documentation",
+      "site": "Mailrelay",
+      "title": "How to Set Up Sender Authentication in Mailrelay: SPF, DKIM & DMARC : Mailrelay",
+      "url": "https://help.mailrelay.com/en/support/solutions/articles/103000069378-set-your-sender-configuring-spf-custom-domain-dkim-and-dmarc",
+      "read_at": "2026-10-22T10:42:58.821639Z",
+      "excerpt_sha256": "6b23a4451bbd2850c2193536c9132ac9aa99ad330595f50dda8e7b1791c8857e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "DNS access, email-authentication status and tracking custom-domain setup."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:42:58.821639Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["automation", "import", "pricing", "usage"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "migration",
+        "title_en": "Decide what an import is allowed to change",
+        "title_zh": "先决定导入允许改变什么",
+        "en": "The import wizard accepts CSV/TXT and direct platform migration. It automatically maps the email column, while other columns initially remain None and are not imported. Every additional field needs deliberate mapping.\n\nExisting contacts are ignored unless updating is enabled. With updating, the operator can retain current groups and add new ones, or replace group membership with the selected groups. For a hypothetical member newsletter, replacing groups could remove an unrelated topic preference. Use the import’s per-row Success/Failure reason and downloadable report to verify the intended result, rather than treating file upload as completion.",
+        "zh": "导入向导支持 CSV／TXT 及直接平台迁移。邮件列会自动映射，其他列最初为 None，不会导入；额外字段需明确映射。\n\n除非启用更新，否则忽略已有联系人。更新时可保留原群组并新增，或以所选群组替换原成员身份。假设迁移会员简报，替换群组可能移除其他主题偏好。应通过逐行 Success／Failure 原因及可下载报告核对结果，不能将上传文件视为完成。",
+        "source_refs": ["import"],
+        "evidence_type": "documented_with_editorial_migration_example"
+      },
+      {
+        "id": "welcome",
+        "title_en": "An import can be a live automation event",
+        "title_zh": "导入可能成为实时自动化事件",
+        "en": "The welcome example listens for additions to a selected group. The guide explicitly includes imported, manually added and form-added contacts. Its automation starts Disabled and must be enabled separately; saving the content alone does not activate it. A drip continuation uses an explicit Wait step before the next email.\n\nBefore importing a historical audience, inspect all enabled group listeners. Decide whether those members should receive a new welcome at all. Use a small representative cohort to verify entry and spacing; this research did not execute reentry, pause recovery or retrospective enrollment, and does not infer their rules.",
+        "zh": "欢迎示例监听指定群组的新增。指南明确包括导入、手动及表单新增。自动化创建时为 Disabled，需另行启用；只保存内容不会启动。滴灌后续通过明确的 Wait 步骤再发送下一封。\n\n导入历史受众前，应检查所有已启用群组监听，并决定这些成员是否还该收到新欢迎。需用小规模代表性群体验证进入及间隔；本文未执行重复进入、暂停恢复或追溯纳入，也不推断其规则。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_import_guidance"
+      },
+      {
+        "id": "groups-export",
+        "title_en": "A group backup is not an audience backup",
+        "title_zh": "群组备份不等于受众备份",
+        "en": "The group-management guide distinguishes exporting group metadata from exporting the subscribers belonging to a group. The former contains such fields as group ID, name and subscriber count, without the actual audience rows.\n\nGroup deletion goes to a group trash, and restoration can restore its membership only if the underlying subscribers have not been permanently deleted. Before a cleanup, inspect which object is selected and retain the required subscriber export separately. A restorable group container is not evidence that permanently removed contact data can be recovered.",
+        "zh": "群组管理指南区分导出群组元数据与导出群内订阅者。前者包含群组 ID、名称及人数等，不含实际受众记录。\n\n删除群组后进入群组回收站；只有底层订阅者未永久删除，恢复时才可保留成员。清理前需检查选中对象，并另存必要订阅者导出。群组容器可恢复，不能证明永久删除的联系人数据也能恢复。",
+        "source_refs": ["groups"],
+        "evidence_type": "documented_with_editorial_backup_guidance"
+      },
+      {
+        "id": "usage",
+        "title_en": "Sent-contact usage persists through deletion",
+        "title_zh": "已发送联系人用量不会因删除消失",
+        "en": "The monthly usage guide counts unique contacts sent to during the cycle; deleting them does not reduce that counter. Its detailed view separates newsletters, automations and Other, which includes tests, SMTP and seed accounts. An operator should therefore reconcile every sending route when forecasting remaining capacity.\n\nPrepaid credits last twelve months. The usage guide gives an import limit of twice the account’s credits and a recipient bound equal to credits, while pricing broadly says prepaid has no subscriber limit. Confirm that distinction before a large import. Generated usage exports expire after seven days; advancing a paid renewal creates a new invoice and cannot be undone.",
+        "zh": "月度用量指南计算周期内发送过的唯一联系人，删除不会减少该计数。明细区分新闻简报、自动化和 Other，后者含测试、SMTP 及种子账户。预测剩余容量时，应核对所有发送途径。\n\n预付积分有效期十二个月。用量指南将导入上限设为账户积分两倍，收件人边界为积分数；价格页则概括为预付不限制订阅者。大规模导入前需确认区别。生成的用量导出七天后过期；提前付费续期会开新发票且不可撤销。",
+        "source_refs": ["usage", "pricing"],
+        "evidence_type": "documented_with_unresolved_prepaid_boundary"
+      },
+      {
+        "id": "smtp-setup",
+        "title_en": "SMTP access is a separate package decision",
+        "title_zh": "SMTP 权限需单独评估",
+        "en": "The SMTP guide describes a 30-day SMTP/API trial that starts immediately when clicked, followed by accepting terms and enabling the service. SMTP messages consume plan credits and unique recipients affect the subscriber limit. Connection credentials are generated for the account; the password is shown once and can be regenerated.\n\nA production integration needs control of sender-domain DNS, confirmation of authentication status and an encrypted connection. The guide offers STARTTLS and TLS options. Verify message acceptance and final delivery separately; no SMTP session, DNS change or API request was performed for this profile.",
+        "zh": "SMTP 指南说明 SMTP／API 试用为三十天，点击后立即开始，再接受条款并启用。SMTP 消息消耗套餐积分，唯一收件人影响订阅者上限。连接凭据按账户生成，密码仅展示一次，可重新生成。\n\n正式集成需要控制发送域名 DNS、确认认证状态并使用加密连接。指南提供 STARTTLS 及 TLS 选项。消息接受与最终投递应分别验证；本文未建立 SMTP 会话、修改 DNS 或请求 API。",
+        "source_refs": ["smtp", "authentication"],
+        "evidence_type": "documented_with_editorial_setup_guidance"
+      },
+      {
+        "id": "reports",
+        "title_en": "Check enabled state and individual message outcomes",
+        "title_zh": "检查启用状态及逐消息结果",
+        "en": "Automation reports can filter by ID, name, enabled state and date. Their overview exposes sent emails, impressions, clicks, SMS and an activity log. The sent-email view shows individual statuses; unique views and unique clicks differ from repeated interactions.\n\nAfter the member migration, inspect whether the welcome automation was enabled and whether representative messages reached a meaningful terminal status. Match the import report to the sending report. Neither a green enabled label nor an impression count proves every intended member received and read the message.",
+        "zh": "自动化报告可按 ID、名称、启用状态及日期筛选；概览包含已发邮件、展示、点击、短信及活动日志。邮件视图展示逐消息状态，唯一浏览及唯一点击与重复互动不同。\n\n会员迁移后，应检查欢迎流程是否启用，以及代表性消息是否到达有意义的终态。需将导入报告与发送报告核对。绿色启用标签或展示计数，都不能证明每位目标会员已收到并阅读。",
+        "source_refs": ["automation-report", "import"],
+        "evidence_type": "documented_with_editorial_acceptance_guidance"
+      },
+      {
+        "id": "price-fit",
+        "title_en": "The free allowance does not make every channel free",
+        "title_zh": "免费额度不代表所有渠道免费",
+        "en": "The current Free offer lists 80,000 monthly emails and 20,000 contacts. Messages consume one credit per 100 kB block, including attachments; a 250 kB message consumes three. SMTP/API costs €14.95/month after its trial on Free; removing the logo costs €4.95/month.\n\nMonthly contracts state a twelve-month commitment unless modified at extra cost; prepaid is a distinct purchase. Paid slider amounts did not resolve reliably, so displayed zero placeholders are not quoted as free paid plans. Mailrelay merits evaluation for group-based campaigns with disciplined import and capacity management. Confirm a concrete quote, tax and account conditions before purchase.",
+        "zh": "当前 Free 列出每月 80,000 封及 20,000 人。消息每个 100 kB 区块消耗一个积分，含附件；250 kB 消息耗三个。Free 中 SMTP／API 试用后每月 €14.95，移除标志每月 €4.95。\n\n月付合同注明十二个月承诺期，额外付费可调整；预付是独立购买方式。付费滑块金额未可靠呈现，因此不把零值占位符当作免费付费套餐。对能严格管理导入与容量的群组活动，可评估 Mailrelay。购买前需确认具体报价、税及账户条件。",
+        "source_refs": ["pricing", "smtp"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Mailrelay: Group Imports, Welcome Automation, Credits and SMTP Costs",
+    "title_zh": "Mailrelay：群组导入、欢迎自动化、积分及 SMTP 费用",
+    "description_en": "Understand Mailrelay import update choices, group-triggered sends, monthly recipient usage and Free add-on boundaries.",
+    "description_zh": "了解 Mailrelay 导入更新选择、群组触发发送、月度收件人用量及免费附加包边界。",
+    "primary_intent": "Evaluate Mailrelay audience migration and group-based sending against actual usage rules.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Paid slider prices and checkout were not verified. Prepaid subscriber-limit wording differs between pricing and detailed usage documentation; exact Free counting wording also needs account confirmation.",
+      "zh": "未核实付费滑块价格及结算。价格与详细用量文档对预付订阅者上限表述不同，Free 计数原文也需账户确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No import, workflow, email or SMTP/API operation was executed. Reentry, in-flight pause recovery, UI languages, regional eligibility, source license and self-hosting rights remain unverified.",
+      "zh": "未执行导入、流程、邮件或 SMTP／API。重复进入、暂停中恢复、界面语言、地区资格、源码许可及自托管权利仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

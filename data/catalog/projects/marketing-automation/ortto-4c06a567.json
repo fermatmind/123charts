@@ -1,0 +1,470 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "ortto-4c06a567",
+  "name": "Ortto",
+  "website_url": "https://ortto.com/",
+  "domain": "ortto.com",
+  "identity_domain": "ortto.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Ortto brings customer data, marketing campaigns and analytics together. Its Journey campaigns connect entry criteria to message, action, delay, condition and filter shapes. The current journey guide describes both person/account data and integrated-source activity, with plan-specific limits rather than an unlimited workflow canvas.\n\nThe important design choice is how activity is attached to a particular trip. An occurs event can remain the journey’s sticky activity, supporting relevant message data and correlated exits; a historical has-occurred test can instead pull a later event’s details. This profile examines current Ortto execution, not older Autopilot Journeys shape behavior retained elsewhere in the same help center.",
+  "description_zh": "Ortto 将客户数据、营销活动及分析组合。Journey 活动把入口条件连接至消息、动作、延迟、条件及筛选节点。当前旅程指南描述人员／账户数据和集成来源行为，并提供分套餐限制，并非无限工作流画布。\n\n关键设计选择是如何将行为绑定到某次旅程。occurs 事件可作为旅程的 sticky activity，支持相关消息数据及关联退出；历史 has occurred 检查则可能引用后来事件的详情。本文研究当前 Ortto 执行，不套用同一帮助中心保留的旧 Autopilot Journeys 节点行为。",
+  "core_features": [
+    {
+      "name_en": "Activity-correlated journeys",
+      "name_zh": "行为关联旅程",
+      "explanation_en": "Sticky entry activity attributes can correlate later conditions, exits and message data.",
+      "explanation_zh": "固定入口行为属性可关联后续条件、退出及消息数据。",
+      "source_ref": "attributes",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Explicit concurrent admission",
+      "name_zh": "明确的并发准入",
+      "explanation_en": "Participation settings distinguish once-ever, one active trip and concurrent trips.",
+      "explanation_zh": "参与设置区分永久一次、单个活动旅程及并发旅程。",
+      "source_ref": "preview",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Live wait recalculation",
+      "name_zh": "活动等待重算",
+      "explanation_en": "Published delay/filter edits apply to contacts already waiting.",
+      "explanation_zh": "发布的延迟／筛选修改可应用于已经等待的联系人。",
+      "source_ref": "edit",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Documented action retry backoff",
+      "name_zh": "有文档的动作重试退避",
+      "explanation_en": "Eligible integration failures hold contacts at the action while attempts follow an increasing interval schedule.",
+      "explanation_zh": "符合条件的集成失败按逐渐增长间隔尝试，期间联系人留在动作节点。",
+      "source_ref": "retry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: data-led lifecycle teams needing event-specific trip context and correlated follow-up.",
+      "Editorial fit: operators prepared to manage concurrency, waiting cohorts and integration retry outcomes."
+    ],
+    "zh": [
+      "编辑判断的适用场景：需要事件专属旅程上下文及关联跟进的数据驱动生命周期团队。",
+      "编辑判断的适用场景：准备管理并发、等待群体及集成重试结果的运营团队。"
+    ],
+    "source_refs": ["create", "attributes"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle marketing operator",
+      "Customer data specialist",
+      "Integration engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "create"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose occurs versus historical criteria and validate the event identifier and attribute types.",
+        "zh": "选择 occurs 或历史条件，验证事件 ID 及属性类型。",
+        "source_refs": ["entry", "attributes"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set participation, repeatable actions, correlated exits and idle limits deliberately.",
+        "zh": "明确设置参与、动作重复、关联退出及闲置限制。",
+        "source_refs": ["preview", "test"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Run an internal-only journey and inspect activity, waiting states and retry outcomes.",
+        "zh": "运行仅限内部的旅程并检查活动、等待状态及重试结果。",
+        "source_refs": ["test", "retry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Before edits or pause/resume, inspect waiting contacts and confirm billing/usage state.",
+        "zh": "编辑或暂停／恢复前检查等待联系人及账单／用量状态。",
+        "source_refs": ["edit", "pause", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A disabled shape blocks rather than automatically skips; delay clocks continue while the whole journey is off.",
+        "zh": "停用节点会阻塞而非自动跳过；整个旅程关闭时延迟时钟仍继续。",
+        "source_refs": ["off-shapes", "pause"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The retry table/prose differ in how they count retries; the table has twelve total attempts including the first.",
+        "zh": "重试表与正文计数措辞不同；表中是含首次的十二次总尝试。",
+        "source_refs": ["retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Recipient visibility of 90 days is not a guarantee that all activity attributes or all reports have the same retention.",
+        "zh": "收件人可见 90 天，不保证全部行为属性或报告保留期相同。",
+        "source_refs": ["preview", "attributes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "No current base subscription dollar amount verified: official pricing link returns 404. Actual billing help says contact tier controls included email volume, extra email can be purchased, SMS numbers/credits and other features are add-ons. Non-legacy plans incur email overage of $1 per 1,000 increments; SMS stops beyond 2× monthly credits. Limits reset on the first UTC day of each month. Trial is 14 days/10,000 contacts/100 email sends, excluding SMS. Exact contract, current tiers and entitlements require the actual offer; no sustained free plan verified.",
+    "source_snapshot_zh": "未核实当前基础订阅金额：官方价格链接返回 404。实读账单帮助说联系人档位决定包含邮件量，可另购邮件；短信号码／额度及其他功能为附加项。非旧套餐的邮件超额按每 1,000 次 $1 计费；短信超过月额度两倍停止。额度于每月首日 UTC 重置。试用 14 天／10,000 联系人／100 邮件发送，不含短信。准确合同、当前档位及权限需以实际方案确认；未核实持续免费套餐。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/ortto",
+      "read_at": "2026-10-22T09:07:45.251Z",
+      "excerpt_sha256": "8882599e99f3a20627bea8b4d66441fd38090398077ee9d71774f39dc43287d1",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "Creating a journey campaign - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-168-creating-a-journey-campaign-2",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "369d1c8d594531264ea3328581efaeae3d5f7a137d989c7a7064c8f1b5bef224",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Ortto journey creation and limits; not legacy Autopilot action documentation."
+    },
+    {
+      "id": "entry",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "Journey entry criteria - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-733-journey-entry-criteria",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "b901e42d9a673738ce148d1872e369d832ba0d59860318323ed0fb7a97335d36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual occurs/non-occurs and six-hour backdating rules."
+    },
+    {
+      "id": "attributes",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "Matching activity attributes in journeys - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-156-matching-activity-attributes-in-journeys",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "6586bc9818c6984e1c5ea1c7b58e8e83b06e7bc9f4e7ab5a6fc374f71c057062",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual sticky event and typed attribute correlation; no payload was submitted."
+    },
+    {
+      "id": "preview",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "Journey preview page - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-734-journey-preview-page",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "0a77956d4b5ab3b064a7f31d37eb136519d2a103a0049d185dceb17f46d1ea30",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual concurrent-entry options, idle exits and recipient-report horizon."
+    },
+    {
+      "id": "pause",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "What happens to delay shapes when journeys are switched ON/OFF - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-730-what-happens-to-delay-shapes-when-journeys-are-switched-on-off",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "2e20e7cf0730e0da7226e2a9ad736903329497cbcc28497097641c9c98658080",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual countdown behavior while journey is off."
+    },
+    {
+      "id": "off-shapes",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "Shapes that are switched off - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-856-shapes-that-are-switched-off",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "cc61029cd75beac1f4dd3587db8e2793edd6f38458857dc69c87a83e1166b597",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual blocked-off-shape behavior and manual-move restriction."
+    },
+    {
+      "id": "edit",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "What happens when delay and filter shapes are modified - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-749-what-happens-when-delay-and-filter-shapes-are-modified",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "c5652de498e0b26aa941d4c04bc5923176e630603767f6b171a156f16cd71fac",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual existing-contact delay/filter recalculation after publication."
+    },
+    {
+      "id": "retry",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "How failed journey actions are retried - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-817-how-failed-journey-actions-are-retried",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "bd4808bb6527af8edc4d8093b8583ecf3f9bfb06eb10d82bf77371ca6bdd8d05",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual retry table counts initial attempt among 12 rows; prose loosely says retries. No exactly-once or automatic replay inferred."
+    },
+    {
+      "id": "test",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "How to test your journey - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-799-how-to-test-your-journey",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "eb56495242c33f6ff2502153bfdac0d0e1a1b905361cc8382205eafb8e075dbd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual internal-contact live test, separate shape-repeat setting and email-only test."
+    },
+    {
+      "id": "trial",
+      "type": "official_pricing",
+      "site": "Ortto",
+      "title": "14 day trial plans - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-39-14-day-trial-plans",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "b0bc3def1ca7d99f23ee0a38887c6535501036a013521b4b7a10b3d9fc7fdb6b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual 14-day trial, 10,000-contact/100-send limits excluding SMS; older free-plan migration copy not adopted."
+    },
+    {
+      "id": "contact-limit",
+      "type": "official_pricing",
+      "site": "Ortto",
+      "title": "What happens if you exceed your contact limit? - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-689-what-happens-when-you-exceed-your-contact-limit",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "c2d211efbb1a25b7671a62c6e963a682ac4e0a8425984da80308559506b27eb7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual optional contact auto-upgrade mechanism, unlike blanket older no-auto-upgrade pricing FAQ."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Ortto",
+      "title": "Checking and managing your plan - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-38-checking-and-managing-your-plan",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "64a8cbf42e27bb1cf45bd0f9059a4c5ac3c3166061f91396050e831c9c23605b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current plan usage, overage, SMS stop threshold and expiry rules. Exact public plan page returns 404; no numerical subscription fee adopted."
+    },
+    {
+      "id": "restricted",
+      "type": "official_documentation",
+      "site": "Ortto",
+      "title": "What happens if your account is restricted? - Ortto Knowledge Base | Help Center & Documentation",
+      "url": "https://help.ortto.com/a-690-what-happens-if-your-account-is-restricted",
+      "read_at": "2026-10-22T12:21:59.802649Z",
+      "excerpt_sha256": "f59f397da3dd63a0ca95c48c88d6ec70d7e9f6012eef64e94d3b0eed1009cffc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual restricted-account effects distinguished from expired-account effects."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:21:59.802649Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["create", "attributes"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "data-context",
+        "title_en": "Keep the trip’s event distinct from later events",
+        "title_zh": "区分旅程入口事件与后来事件",
+        "en": "An occurs entry stores a sticky activity whose attributes remain available throughout the journey, beyond the usual 90-day activity window. A has occurred entry is not sticky: a subsequent event can replace details used by merge tags. For an editorial service-case follow-up, correlate case-created and case-closed events with a stable case identifier so closing one case does not end another case’s trip. Attribute types must match; date matching uses the resolved calendar date in the relevant timezone. A condition checks past events, while an occurs filter waits for a new event after arrival.",
+        "zh": "occurs 入口存储固定行为，其属性在整个旅程可用，可超过通常的 90 天行为窗口。has occurred 入口并不固定，后来事件可能替换合并标签使用的详情。编辑示例：服务工单跟进应以稳定工单 ID 关联创建与关闭事件，避免关闭一张工单却终止另一旅程。属性类型必须匹配；日期匹配使用相关时区转换后的自然日期。Condition 检查历史行为，occurs Filter 则等待到达节点后的新事件。",
+        "source_refs": ["attributes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entry",
+        "title_en": "An event occurrence and a qualifying state restart differently",
+        "title_zh": "事件发生与合格状态的重启方式不同",
+        "en": "Editing entry criteria does not eject existing contacts. With occurs, editing or toggling off/on does not create entry without an event; events submitted late can still trigger if their timestamp is within the past six hours. Non-occurs criteria have different edit/toggle re-entry rules, subject to participation settings. Recurring localized entries may be scheduled up to 24 hours ahead, so last-minute filter edits can miss already scheduled entrants. Test both new and delayed events instead of using a toggle as a universal replay button.",
+        "zh": "编辑入口不会移出现有联系人。对于 occurs，没有事件时编辑或开关重启不会创建加入；迟交事件的时间戳在过去六小时内仍可触发。非 occurs 条件的编辑／开关重入规则不同，且受参与设置约束。本地时区的周期加入可能提前最多 24 小时安排，因此临时筛选修改可能影响不到已安排人员。应同时测试新事件及延迟事件，不能把开关当作通用重放按钮。",
+        "source_refs": ["entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "repeat",
+        "title_en": "Trip recurrence and repeatable actions are independent",
+        "title_zh": "旅程重复与动作重复相互独立",
+        "en": "Participation can allow a single lifetime entry, repeat entry only after leaving, or multiple simultaneous trips. The test guide separately requires relevant actions/messages to allow repetition; otherwise a later trip can enter but fail to repeat its action. Default exits include finishing the last shape or remaining idle for a configured period, with a maximum idle threshold of 365 days. For a repeat-request workflow, test two instances and verify both the entry setting and each action’s repeat behavior. A membership setting alone does not promise another email.",
+        "zh": "参与可选择永久一次、退出后才允许重入，或多个同时旅程。测试指南另要求相关动作／消息允许重复，否则后一次旅程虽可加入，却无法重复动作。默认退出包括完成最终节点或闲置达到配置时长，闲置上限为 365 天。重复请求流程应测试两个实例，同时检查入口和每项动作的重复行为。成员设置本身不能保证另一封邮件。",
+        "source_refs": ["preview", "test"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pause",
+        "title_en": "Pausing movement does not freeze elapsed time",
+        "title_zh": "暂停移动不会冻结经过时间",
+        "en": "Turning the journey off pauses contacts at their current step, but delay countdowns continue. Resuming after the period has elapsed moves contacts onward immediately; the same principle applies to timed filter waits. Turning an individual shape off instead blocks arrivals there rather than skipping it, until enabled or the configured idle exit applies. Manual movement is not supported for condition shapes. Before a maintenance pause, inspect waiting cohorts and the expected return time, because reopening can release a group together.",
+        "zh": "关闭旅程将联系人停在当前步骤，但延迟倒计时继续。时长已过再恢复会立即前进；带时长的筛选等待同理。单独关闭节点则阻塞到达者，不会跳过，直到启用或触发已配闲置退出。条件节点不支持手动移至下一步。维护暂停前应检查等待群体及预计恢复时间，因为重新开启可能同时放行一批人。",
+        "source_refs": ["pause", "off-shapes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "edit",
+        "title_en": "Published delay changes affect people already waiting",
+        "title_zh": "发布的延迟修改会影响已等待人员",
+        "en": "Increasing or decreasing a delay recalculates existing contacts’ remaining wait using elapsed time. Changing a filter also evaluates contacts already in it against the new criteria; some may advance immediately. Changes must be published or the old conditions continue. For an editorial renewal-date correction, identify the affected waiting cohort before publishing, then inspect the resulting movement. A saved canvas is not confirmation that live logic changed, and a restored configuration cannot be assumed to undo actions or messages already executed.",
+        "zh": "增加或减少延迟会按已经过时间重算已有联系人的剩余等待。修改筛选也会按新条件评估已有人员，部分可能立即前进。必须发布，否则仍用旧条件。编辑示例：续费日期修正应在发布前确认受影响等待群体，再检查结果。保存画布不能证明活动逻辑已变化，恢复配置也不能假定能撤回已执行动作或消息。",
+        "source_refs": ["edit", "test"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retry",
+        "title_en": "Retrying an action can hold up the rest of the trip",
+        "title_zh": "动作重试可能阻塞其余旅程",
+        "en": "Eligible integration failures retry while contacts remain at the action. The table lists twelve attempts including the initial call, with increasing delays through roughly seven days and six hours; prose also loosely calls this twelve retries. Webhook errors 400–599 qualify except 400, 401, 403, 404 and 405. Failures caused by a source system’s own process, such as a Salesforce flow, are excluded. Build an editorial receiver test around acknowledgement, duplicate handling and eventual timeout; the document does not establish ordering or exactly-once side effects.",
+        "zh": "符合条件的集成故障会在联系人留在动作节点时重试。表格列出包含首次调用的十二次尝试，延迟逐渐增长至约七天六小时；正文也宽泛称十二次重试。Webhook 的 400–599 错误适用，但排除 400、401、403、404、405。来源系统自身流程导致的失败，如 Salesforce flow，不重试。编辑建议：接收端测试应检查确认、重复处理及最终超时；文档不能确认顺序或恰好一次副作用。",
+        "source_refs": ["retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "test-report",
+        "title_en": "A test contact runs an enabled journey",
+        "title_zh": "测试联系人会运行已启用旅程",
+        "en": "The documented end-to-end test restricts entry to an internal email and turns the journey on; it is a live workflow exercise. Email-only Send test is separate, and can use a selected or random contact for merge tags. Use a chosen internal profile for a deliberate rendering check, then inspect journey recipients and activity for routing. The recipient list covers the past 90 days and separates active, exited and completed states. A successful email preview alone does not validate correlated exits, repeated actions or integration delivery.",
+        "zh": "文档端到端测试把入口限定为内部邮箱并开启旅程，这是实际工作流测试。邮件 Send test 是另一功能，可选择或随机取联系人填充合并标签。渲染检查应明确使用内部档案，再通过旅程收件人及活动检查路由。收件人列表覆盖过去 90 天，区分活动、退出及完成状态。邮件预览成功不能单独验证关联退出、重复动作或集成投递。",
+        "source_refs": ["test", "preview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "usage",
+        "title_en": "Restricted and expired accounts behave differently",
+        "title_zh": "受限与过期账户行为不同",
+        "en": "The contact-limit guide provides a seven-day adjustment period and an optional auto-upgrade setting that immediately bills the difference once applied. A restricted account blocks new contacts and editing/publishing, yet existing active journeys and scheduled campaigns continue. This differs from expiry after prolonged non-payment, where active features stop and recording ceases. Do not infer that an account warning safely halts all automation. Check the exact account state and usage; routine archiving/deletion recommendations are not authorization to remove business data.",
+        "zh": "联系人数指南提供七天调整期，以及应用后立即收取差额的可选自动升级。受限账户阻止新联系人及编辑／发布，但已有活动旅程与定时活动继续。这不同于长期未付费后的过期状态，后者停止活动功能及记录。不能认为账户警告会安全停止全部自动化。应检查准确状态及用量；常规归档／删除建议不构成移除业务数据的授权。",
+        "source_refs": ["contact-limit", "restricted", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Separate trial access, base fees and overages",
+        "title_zh": "区分试用、基础费与超额费",
+        "en": "The actual trial guide allows 14 days, up to 10,000 contacts and 100 email sends, excluding SMS. Current billing help separates contact tiers, additional email volume, SMS numbers/credits and other add-ons. It says most plans continue email with overage fees while SMS stops above twice its monthly credit allowance; legacy annual plans have an exception. The public pricing destination returned 404, so exact subscription amounts remain unknown. Older Autopilot migration/free-plan copy and a 2023 no-auto-upgrade FAQ were not treated as universal current entitlements.",
+        "zh": "实读试用指南提供 14 天、最多 10,000 联系人及 100 次邮件发送，不含短信。当前账单帮助区分联系人档位、附加邮件量、短信号码／额度及其他附加项。多数套餐邮件超额继续并计费，短信超过月额度两倍停止；旧年付套餐有例外。公开价格目标返回 404，准确订阅金额仍未知。旧 Autopilot 迁移／免费套餐文案及 2023 年“不自动升级”FAQ 未被当作通用当前权限。",
+        "source_refs": ["trial", "pricing", "contact-limit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Ortto journeys: event context, pause clocks and action retries",
+    "title_zh": "Ortto 旅程：事件上下文、暂停时钟与动作重试",
+    "description_en": "Evaluate current Ortto sticky activities, correlated exits, concurrency, wait edits, disabled shapes, action retries and billing limits.",
+    "description_zh": "评估当前 Ortto 固定行为、关联退出、并发、等待修改、停用节点、动作重试及账单限制。",
+    "primary_intent": "Evaluate Ortto journey data context and operational execution",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, event submission, journey publication, recipient ejection, message, integration or purchase executed.",
+      "zh": "未执行账户、事件提交、旅程发布、收件人移出、消息、集成或购买操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Public subscription pricing destination unavailable; exact current plan/legacy eligibility and contract remain unknown.",
+      "zh": "公开订阅价格目标不可用；当前具体套餐／旧权限资格及合同未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exactly-once integration effects, account-specific latency, rollback side effects, regional eligibility, UI languages and self-hosting rights remain unverified.",
+      "zh": "恰好一次集成效果、账户延迟、回滚副作用、地区资格、界面语言及自托管权利未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

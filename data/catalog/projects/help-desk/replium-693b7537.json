@@ -1,0 +1,351 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "replium-693b7537",
+  "name": "Replium",
+  "website_url": "https://replium.chat/",
+  "domain": "replium.chat",
+  "identity_domain": "replium.chat",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Replium offers a help center, embedded live chat, email and a shared inbox for small teams. The current product is human-operated customer support with searchable articles, saved replies, private notes and offline-waiting email alerts. An optional MCP connection lets a team’s own AI client read or change permitted workspace content; this is separate from an autonomous customer-answering bot.\n\nThe current self-service offer is a limited free plan, with Pro arranged manually. The homepage explicitly marks customer AI answers and help-center custom domains as not yet generally available. Evaluation should check article visibility, alert conditions, token authority and actual capacity rather than adopting roadmap claims. This is browser-based documentation research; no account, embed, token, message or purchase was tested.",
+  "description_zh": "Replium 为小团队提供帮助中心、嵌入式在线聊天、邮件及共享收件箱。当前产品由人工处理客户支持，包含可搜索文章、保存回复、私有备注及离线等待邮件提醒。可选MCP连接让团队自己的AI客户端读取或修改获准工作区内容，与自主回答客户的机器人不同。\n\n当前自助方案是有限免费档，Pro人工安排。首页明确将客户AI回答和帮助中心自定义域名标为尚未普遍可用。评估应检查文章可见性、提醒条件、令牌权限及真实容量，不能采用路线图作为已交付主张。本文为浏览器文档研究，未测试账户、嵌入、令牌、消息或购买。",
+  "core_features": [
+    {
+      "name_en": "Help articles and shared support inbox",
+      "name_zh": "帮助文章及共享支持收件箱",
+      "explanation_en": "Publish searchable articles and handle remaining chat/email conversations with the team.",
+      "explanation_zh": "发布可搜索文章，并由团队处理剩余聊天／邮件会话。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional empty-console alerts",
+      "name_zh": "有条件的无人在线提醒",
+      "explanation_en": "Notify owners/admins about qualifying unanswered messages that arrived while nobody was online.",
+      "explanation_zh": "对无人在线时到达、符合条件的未回复消息通知负责人／管理员。",
+      "explanation_scope": "product_specific",
+      "source_ref": "alerts",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Personal-role MCP access",
+      "name_zh": "个人角色MCP访问",
+      "explanation_en": "External AI tools inherit the token owner’s permitted tools and write attribution.",
+      "explanation_zh": "外部AI工具继承令牌所有者获准工具及写入归属。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Publish a small set of repeat-question answers and keep exceptions in a two-person inbox.",
+      "Use a role-scoped AI client to draft knowledge articles for human review."
+    ],
+    "zh": [
+      "发布少量重复问题答案，将例外留在双人收件箱。",
+      "使用按角色限定的AI客户端起草知识文章并由人工审阅。"
+    ],
+    "source_refs": ["product", "mcp"],
+    "basis": "Editorial evaluation tasks, not executed workflows or measured gains."
+  },
+  "technical_details": {
+    "Rendered source research": {
+      "en": "OrdinaryHTML/publicreaderreturnedtitle-onlyshells;theactualhomepage,expandedFAQandhelp/termspageswerereadinbrowser.SelectedexactAXexcerptsarehashed.",
+      "zh": "普通HTML／网页读取器返回仅标题壳，已在浏览器实际阅读首页、展开FAQ及帮助／条款页，保存选定原始AX文字和哈希。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business owner",
+      "Two-person support team",
+      "Knowledge author"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Draft a few current answers, inspect preview visibility and publish only intended public content.",
+        "zh": "起草少量现行答案，检查预览可见性，仅发布预期公开内容。",
+        "source_refs": ["product", "mcp"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Place the widget on an allowed site and test online/offline arrival and reply ownership.",
+        "zh": "将组件放入允许站点，测试在线／离线到达及回复归属。",
+        "source_refs": ["product", "alerts"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm plan capacity and restrict any optional MCP token to the intended personal role.",
+        "zh": "确认套餐容量，将可选MCP令牌限定于预期个人角色。",
+        "source_refs": ["product", "mcp"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website script embed",
+        "source_ref": "product",
+        "scope": "WordPress/Shopify/Webflowcanhostscript;dedicatedWordPresspluginnotestablishedasreleased."
+      },
+      {
+        "name": "MCP-compatible AI clients",
+        "source_ref": "mcp",
+        "scope": "Ownpersonaltoken;toolsdependonrole,canwritereplies/settingswhenpermitted,nogeneralread-onlyassumption."
+      },
+      {
+        "name": "Email support",
+        "source_ref": "product",
+        "scope": "Homeadvertisesemailintoinboxandemailreplies;exactprovider/authconfigurationnotverified."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Customer AI answers are not enabled for ordinary workspaces yet; custom help-center domains remain planned.",
+        "zh": "普通工作区尚未启用客户AI回答，帮助中心自定义域名仍为计划。",
+        "source_refs": ["product", "terms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A message arriving while someone is online never creates an empty-console alert, even if unanswered later.",
+        "zh": "消息到达时若有人在线，即使之后未答，也不会产生无人在线提醒。",
+        "source_refs": ["alerts"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "MCP searches can include drafts, and signed previews are accessible without an account for seven days.",
+        "zh": "MCP搜索可包含草稿，签名预览无需账户可访问7天。",
+        "source_refs": ["mcp"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_and_quote_required_paid",
+    "officially_checked": true,
+    "source_ref": "product",
+    "source_refs": ["product", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "CurrentFreecapacitylimits;Pro manuallyarrangedwithoutpublishednumericprice.Nocardselfserviceformatreadtime.FutureAIcreditsnotcurrentallowance.",
+    "source_snapshot_en": "Free0with2people,100newconversationspercalendarmonth,50articles/20categoriesandbranding.Openconversationscontinueatlimit.Promanualquoteformorecapacity/brandingremoval.CustomdomainandcustomerAIare roadmap,notpurchasedcurrentfeatures.",
+    "source_snapshot_zh": "Free为0，含2人、每自然月100新会话、50文章／20分类及品牌标。达上限后已有打开会话继续。Pro人工报价增加容量／去标。自定义域名及客户AI属路线图，非当前已购买功能。",
+    "checked_at": "2026-10-22T12:15:33.686405+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does Replium already answer customers with AI?",
+      "question_zh": "Replium已用AI自动回答客户吗？",
+      "answer_en": "The current homepage says this is in development and not enabled for other workspaces yet. Connecting your own AI client over MCP is a different capability.",
+      "answer_zh": "当前首页称该功能开发中，尚未为其他工作区启用；通过MCP连接自己的AI客户端是另一能力。",
+      "source_refs": ["product", "mcp"]
+    },
+    {
+      "question_en": "Does deactivating a teammate permanently revoke their token?",
+      "question_zh": "停用成员会永久撤销其令牌吗？",
+      "answer_en": "No. Calls stop while the owner is inactive, but tokens work again on reactivation. Explicit revocation is permanent.",
+      "answer_zh": "不会，所有者停用时调用停止，重新启用后令牌恢复，明确撤销才永久失效。",
+      "source_refs": ["mcp"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/replium",
+      "read_at": "2026-10-22T09:06:40.207Z",
+      "excerpt_sha256": "04cedc850383dd46d46486d2b8c170c8cc402ad96f47c256f488e6217ada2007",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_pricing",
+      "site": "Help center software with live chat for small teams — Replium",
+      "title": "Help center software with live chat for small teams — Replium",
+      "url": "https://replium.chat/",
+      "read_at": "2026-10-22T12:14:43.882020+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "d9bace9c802211ad543775be900dd9ba42ea30d7abadf4c85c09cd1f764e1403",
+      "research_notes_en": "ActualrenderedhomeincludingFree/Pro,roadmap,articlepreview,embed/inboxandexpanded100conversationFAQread.SSR/indexingclaimnotindependentlyverified. The homepage contains the actual current Free/Pro pricing section and is the pricing source as well; not a separate price page."
+    },
+    {
+      "id": "alerts",
+      "type": "official_documentation",
+      "site": "Alerts: know when a visitor is left waiting",
+      "title": "Alerts: know when a visitor is left waiting",
+      "url": "https://help.replium.chat/kb/alerts-know-when-a-visitor-is-left-waiting",
+      "read_at": "2026-10-22T12:14:43.885758+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "12f467e5cb71ba7123610ea67cf817c4b4b318bd6df0f8af8238a064e49421d0",
+      "research_notes_en": "Fullrenderedofficialarticle read:empty-at-arrivalandat-check,defaultwait/quietperiod,workinghours,ownersadminsnotoperators,onehourceiling,previewprivacy."
+    },
+    {
+      "id": "mcp",
+      "type": "official_documentation",
+      "site": "Connect an AI client to your workspace over MCP",
+      "title": "Connect an AI client to your workspace over MCP",
+      "url": "https://help.replium.chat/kb/connect-an-ai-client-to-your-workspace-over-mcp",
+      "read_at": "2026-10-22T12:15:33.682103+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "9849fa8b4217755c4384d852e5e732911268b0f3aaf24bed73eaa48a5f6e1cb2",
+      "research_notes_en": "Fullrenderedofficialarticle read:personalroletools,attributedwrites,seven-daypreview,noMCPdelete,immediatesettingsanddeactivationversusrevocation."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service — Replium",
+      "title": "Terms of Service — Replium",
+      "url": "https://replium.chat/terms",
+      "read_at": "2026-10-22T12:15:33.686405+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "b81205c18f9a375c4c62b8ba02af6d2d2a933a4e5a94aa92edb29f9ac391f44e",
+      "research_notes_en": "FullrenderedSeptember2026termsread:manualpaidsetup,nouptimeguarantee,contentownership,restrictedcollection,exportbeforeclosureanddeletionwindows."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:15:33.686405+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "alerts", "mcp", "terms"],
+  "profile": {
+    "sections": [
+      {
+        "id": "knowledge",
+        "title_en": "Publish a small answer set with explicit visibility",
+        "title_zh": "以明确可见性发布少量答案",
+        "en": "Replium’s current workflow starts with help articles, then uses live chat and a shared inbox for questions that still need a person. It advertises searchable categories, article feedback, branding and signed draft previews. The homepage’s server-rendering/sitemap claims are vendor descriptions; indexing or search traffic was not independently checked.\n\nFor an illustrative returns question, publish the actual return-window policy and keep an unfinished exception draft private. The MCP guide says search can see drafts and a preview link exposes one article for seven days without login. Review what a customer link or an AI-generated answer can reveal before publishing. No article or link was created here.",
+        "zh": "Replium当前流程先提供帮助文章，再用在线聊天和共享收件箱处理仍需人工的问题，宣传分类搜索、文章反馈、品牌及签名草稿预览。首页的服务端渲染／sitemap属于厂商描述，此次未独立检查收录或搜索流量。\n\n以假设退货问题为例，应发布真实退货窗口政策，未完成例外草稿保持私有。MCP指南称搜索能看到草稿，预览链接无需登录可暴露单篇文章7天。发布前应审查客户链接或AI生成回答可能披露什么。此次未创建文章或链接。",
+        "source_refs": ["product", "mcp"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "alert",
+        "title_en": "An empty-room alert is not an SLA monitor",
+        "title_zh": "无人在线提醒不是SLA监控",
+        "en": "The alert requires an open conversation whose customer message arrived with nobody online, remained unanswered for the configured wait and still has nobody online. Someone present at arrival prevents the alert even if the message later waits an hour; opening the console during the wait cancels it. Owners/admins receive it, operators do not.\n\nDefaults are a three-minute wait and fifteen-minute quiet period. Working hours can defer the alert until opening, and a one-hour ceiling limits old-message alerts. Message previews can put customer text into email and can be disabled. Test an empty console, a present-but-busy operator and after-hours reopening separately. Turning alerts off leaves the waiting conversation in the inbox; no alert or email delivery was tested.",
+        "zh": "提醒要求未关闭会话的客户消息到达时无人在线，经过配置等待仍未回复且仍无人在线。到达时有人在线会阻止提醒，即使后来等了一小时；等待期间打开控制台也会取消。收件人为负责人／管理员，不包括操作员。\n\n默认等待3分钟、静默15分钟。工作时间可将提醒延至开门，一小时上限限制旧消息提醒。消息预览会将客户文字放入邮件，可关闭。应分别测试控制台无人、有忙碌操作员及下班后重新开门。关闭提醒仍保留收件箱待答记录，此次未测试提醒或邮件投递。",
+        "source_refs": ["alerts"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp-authority",
+        "title_en": "External AI clients act as their token owner",
+        "title_zh": "外部AI客户端以令牌所有者行动",
+        "en": "MCP tokens inherit personal role permissions. Owners/admins can use authoring and settings tools; operators get knowledge reads and inbox work, including replies and internal notes. Writes carry the person’s name and are not visually distinguished from their manual replies. Widget or alert changes take effect immediately.\n\nA token is shown once, and no MCP delete tools are documented. Deactivation stops calls but preserves tokens, so reactivating the owner restores them; permanent revocation is separate. Use a clearly named client token and inspect available tools before delegating. A client that can draft articles may also publish or send when its role allows it. This research created no token, changed no access and ran no MCP call.",
+        "zh": "MCP令牌继承个人角色权限。负责人／管理员可用创作及设置工具，操作员获得知识读取和收件箱工作，包括回复及内部备注。写入记在个人名下，外观不区分其手工回复；组件或提醒修改立即生效。\n\n令牌仅显示一次，文档无MCP删除工具。停用会阻止调用但保留令牌，重新启用所有者会恢复，永久撤销为另一步。委派前应使用明确命名客户端令牌并检查可用工具。能起草的客户端在角色允许时也可能发布或发送。本研究未创建令牌、改变访问或执行MCP调用。",
+        "source_refs": ["mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "availability",
+        "title_en": "Keep roadmap features out of the live product scope",
+        "title_zh": "将路线图功能留在现有范围之外",
+        "en": "The homepage explicitly says ordinary customer replies are currently human-written. AI answers from published articles are being tried in the vendor’s own workspace and are not enabled for other workspaces yet. Help-center custom domains are planned, and the WordPress plugin is being prepared rather than established as released. The script embed is the documented current path.\n\nUsing Claude/Cursor or another client to draft content over MCP is separate from autonomous visitor answers. Do not sell future AI credits, a custom domain or a shipped plugin as an existing subscription benefit. Confirm the actual current workspace before comparing automation against another helpdesk. No general-availability release, multilingual UI coverage or third-party integration was independently tested.",
+        "zh": "首页明确称普通客户回复目前由人工撰写。从已发布文章生成AI回答正在厂商自己工作区尝试，尚未为其他工作区启用。帮助中心自定义域名为计划，WordPress插件在准备，不能视为已发布；脚本嵌入才是当前文档路径。\n\n使用Claude／Cursor等客户端经MCP起草内容，与自主回答访客不同。不能将未来AI积分、自定义域名或已发布插件作为现有订阅权益。比较其他帮助台自动化前，应确认实际当前工作区。普遍可用版本、多语言界面覆盖或第三方集成均未独立测试。",
+        "source_refs": ["product", "terms", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity-exit",
+        "title_en": "Treat the free tier as capacity-limited service",
+        "title_zh": "将免费档视为有容量限制的服务",
+        "en": "The current self-service plan is free for two people, one hundred new conversations per calendar month, fifty articles and twenty categories, with Replium branding. The expanded FAQ says existing open conversations continue at the limit and the counter resets each calendar month. Pro capacity and branding removal are arranged manually, without a published price or card form.\n\nThe September2026 terms provide no uptime guarantee and require requesting content return before closure. Workspace deletion is described within thirty days, with backup expiry within another thirty days. These are vendor contract statements, not tested export completeness or restore. Software license/open-source rights, paid overage behavior, data region and complete export format remain unverified. A no-cost service should still be evaluated against expected volume, working hours and exit needs.",
+        "zh": "当前自助免费档含2人、每自然月100新会话、50文章和20分类，并带Replium品牌。展开FAQ称达上限后已有打开会话继续，每自然月重置。Pro容量及去标需人工安排，没有公开价格或存卡表单。\n\n2026年9月条款不提供可用率保证，要求关停前申请内容返还。工作区数据描述为30天内删除，备份再过30天到期。这些是厂商合同陈述，不是已测导出完整或恢复。软件许可／开源权、付费超额行为、数据地区及完整导出格式未核实。免费服务也应按预计容量、工作时间及退出需求评估。",
+        "source_refs": ["product", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Replium: Human Support, Offline Alerts, MCP Roles and Free Limits",
+    "title_zh": "Replium：人工支持、离线提醒、MCP角色及免费限制",
+    "description_en": "Evaluate current Replium help articles, empty-console alerts, personal MCP tokens, planned customer AI/custom domains and the limited free tier.",
+    "description_zh": "评估当前Replium帮助文章、无人在线提醒、个人MCP令牌、计划中的客户AI／自定义域名及有限免费档。",
+    "primary_intent": "Evaluate Replium current small-team support and capacity.",
+    "secondary_questions": [
+      "Is customer AI available yet?",
+      "Which messages create an alert?",
+      "Does deactivation revoke tokens?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,widget,article,preview,token,MCPcall,message,alert,purchase,exportorrestoreexecuted. Softwarelicense,paidprice/overage,fullUIlanguages,dataregion,exportformatandfutureAIavailabilityremainunverified.",
+      "zh": "未执行账户、组件、文章、预览、令牌、MCP调用、消息、提醒、购买、导出或恢复。软件许可、付费价格／超额、完整界面语言、数据地区、导出格式及未来AI可用性未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "HTTPandpublic-readerretrievalreturnedtitle-onlyshells.Actualbrowser-renderedhome/FAQ/help/termspageswereread;selectedexactAXexcerptsstoredandhashed.Noshellfetchcountedasdocumentationbody.",
+      "zh": "HTTP及网页读取器返回仅标题壳，已实际阅读浏览器渲染首页／FAQ／帮助／条款，保存选定原始AX文字及哈希，未将壳抓取算作文档正文。",
+      "source_refs": ["product", "alerts", "mcp", "terms"],
+      "evidence_type": "observed_retrieval_conditions"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "gqueues-fc44a150",
+  "name": "GQueues",
+  "website_url": "https://www.gqueues.com/",
+  "domain": "www.gqueues.com",
+  "identity_domain": "gqueues.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "GQueues is a task-management service built around a Google Account, with personal queues, shared/team queues, assignments, tags and date-based organization. It adds task coordination around Google Calendar, Gmail and Drive rather than replacing those services. List and board views present the work; Smart Queues filter across it.\n\nThe important evaluation boundary is how a task change affects another system: a calendar deletion can complete or remove work, and a shared attachment can retain Drive access after the task becomes private again. This profile follows those conditions, import/recovery choices and AI access without claiming a live account test or measured business benefit.",
+  "description_zh": "GQueues 是围绕 Google 账户的任务管理服务，包含个人队列、共享／团队队列、分派、标签及按日期组织。它围绕 Google Calendar、Gmail 和 Drive 增加任务协作；列表／看板呈现工作，Smart Queues 跨队列筛选。\n\n评估重点是任务修改怎样影响另一系统：删除日历事件可能完成或移除工作，共享附件也可能在任务移回私有后保留 Drive 权限。以下检查这些条件、导入／恢复选择及 AI 访问，没有声称真实账户试用或实测业务收益。",
+  "core_features": [
+    {
+      "name_en": "Google-linked task queues",
+      "name_zh": "Google 关联任务队列",
+      "explanation_en": "Personal/shared queues connect task work with Google tools.",
+      "explanation_zh": "个人／共享队列连接任务与 Google 工具。",
+      "explanation_scope": "product_specific",
+      "source_ref": "overview",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Calendar state rules",
+      "name_zh": "日历状态规则",
+      "explanation_en": "Deleting an event can have different task/subtask consequences.",
+      "explanation_zh": "删除事件可对任务／子任务产生不同结果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "calendar-settings",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Recoverable backup format",
+      "name_zh": "可重新导入的备份格式",
+      "explanation_en": "Backup CSV is distinct from non-importable human-readable CSV.",
+      "explanation_zh": "Backup CSV 与不可重导入的易读 CSV 不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Coordinate a Google-based client-review queue and verify calendar/file permission side effects."
+    ],
+    "zh": ["协调基于 Google 的客户审阅队列，并验证日历／文件权限副作用。"],
+    "source_refs": ["overview", "calendar-settings", "drive-sharing"],
+    "basis": "Proposed pilot, not a measured result."
+  },
+  "technical_details": {
+    "Account": {
+      "en": "Google Account-based cloud service with mobile clients; no self-host grant.",
+      "zh": "基于 Google 账户的云服务及移动客户端；未授予自托管权。",
+      "source_ref": "overview",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Google-based team coordinator",
+      "Individual task planner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the intended Google account and personal/team queue, with a known task and owner.",
+        "zh": "选择目标 Google 账户及个人／团队队列，使用一项已知任务和负责人。",
+        "source_refs": ["overview", "task-fields"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Inspect Calendar deletion policy, attachment permissions and an unchanged backup file before rollout.",
+        "zh": "推广前检查 Calendar 删除策略、附件权限及未改动备份文件。",
+        "source_refs": ["calendar-settings", "drive-sharing", "backup"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "mcp",
+    "scope": "Google tools and OAuth MCP read; no account grant, sync or API invocation."
+  },
+  "limitations": {
+    "status": "documented_and_source_conflict",
+    "items": [
+      {
+        "en": "Removing queue access does not automatically revoke Drive attachment rights.",
+        "zh": "移除队列访问不会自动撤销 Drive 附件权限。",
+        "source_refs": ["drive-sharing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Pricing FAQ has annual-only/monthly-cycle wording conflict.",
+        "zh": "定价 FAQ 的仅年付与月付周期文字冲突。",
+        "source_refs": ["billing-conditions"],
+        "evidence_type": "source_conflict"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_terms_read",
+    "is_open_source": false,
+    "url": "https://www.gqueues.com/terms",
+    "source_ref": "terms",
+    "scope": "Limited service access and scoped API rights; not platform source or self-hosting rights."
+  },
+  "pricing": {
+    "status": "official_display_and_billing_conflict",
+    "price_type": "free_lite_and_google_account_license",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Lite ongoing free; YOU/BUSINESS annual equivalents displayed. Actual monthly cycle/rate and plan-specific AI allowance require account confirmation.",
+    "source_snapshot_zh": "Lite 持续免费；展示 YOU／BUSINESS 年付折合价。实际月付周期／费率及分方案 AI 额度需在账户确认。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/gqueues",
+      "read_at": "2026-10-22T08:42:45.273Z",
+      "excerpt_sha256": "1f09cb1c730d083de0496daf35860b09d3c5c8142ce6441820085b3441449aad",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "www.gqueues.com",
+      "title": "GQueues - Manage tasks & to-do lists with your Google Account",
+      "url": "https://www.gqueues.com/",
+      "read_at": "2026-10-22T11:22:10.821767Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "304693624fe33c3f30b9993746c0683513aaecab70ae51160743939d039013c7",
+      "research_notes_en": "Google-account task service with queues, sharing and Google integration scope; vendor customer/ROI claims not independent evidence."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.gqueues.com",
+      "title": "Plans & Pricing | GQueues",
+      "url": "https://www.gqueues.com/pricing",
+      "read_at": "2026-10-22T11:22:10.822084Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3e0776ea69bf3c67b57f2b8dd8c4f5e47ff7d55bcc9996460143fb271f13caeb",
+      "research_notes_en": "Lite free, annual equivalents YOU3USD/BUSINESS4USD per user; dynamic comparison icons and monthly FAQ internally inconsistent, exact current checkout unknown."
+    },
+    {
+      "id": "billing-conditions",
+      "type": "official_pricing",
+      "site": "www.gqueues.com",
+      "title": "Plans & Pricing | GQueues",
+      "url": "https://www.gqueues.com/pricing",
+      "read_at": "2026-10-22T11:22:10.822767Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2cf38baad05425c793d17949daa4c3f7177663497efc525d17159ef00eb08395",
+      "research_notes_en": "Pricing FAQ says annual-only but also explains monthly cancellation and cycle switching. Google email defines licensed user; trial reverts to Lite without card."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "www.gqueues.com",
+      "title": "Terms of Use | GQueues",
+      "url": "https://www.gqueues.com/terms",
+      "read_at": "2026-10-22T11:22:10.823524Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "466959db19f644a44b12c71d50de1d2879cb1c243c519e2944f0f907dbb10f54",
+      "research_notes_en": "September2026 limited-service license, API/MCP rights and broad account-access data conditions read; no source/self-host grant."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "learn.gqueues.com",
+      "title": "Getting started with the GQueues MCP | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/15382389-getting-started-with-the-gqueues-mcp",
+      "read_at": "2026-10-22T11:22:10.823588Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6bdb6380fc690610270c972ca9e3236242861e1e6464f57e39f531a797718138",
+      "research_notes_en": "OAuth assistant uses available queues; defaults to Inbox, exact-match duplicate suppression about a day and trash deletion. Not a universal idempotency/confirmation guarantee."
+    },
+    {
+      "id": "calendar-settings",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Customize your settings for Google Calendar syncing | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5304593-customize-your-settings-for-google-calendar-syncing",
+      "read_at": "2026-10-22T11:22:10.824017Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "85b4a6709aa89eef646211a633e2958e1107fde89ad1c3aa6ffc873be1d7e36d",
+      "research_notes_en": "Calendar deletion policy can clear date, complete parent/subtasks, delete or do nothing."
+    },
+    {
+      "id": "team-calendar",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Activate team calendars to stay in sync with your team | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5317817-activate-team-calendars-to-stay-in-sync-with-your-team",
+      "read_at": "2026-10-22T11:22:10.824046Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d67a3449eab038c3e90e08558a4c1ef2194df0f6667472a659386dc9d167641e",
+      "research_notes_en": "Team settings override personal calendar rules and default queue controls new Calendar-created tasks."
+    },
+    {
+      "id": "bulk",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Edit multiple tasks at once with bulk actions | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/7141612-edit-multiple-tasks-at-once-with-bulk-actions",
+      "read_at": "2026-10-22T11:22:10.824073Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "87dc4b96cee2d3a3484a726d8097ee7a1cf7f85046e2b8ed5751c85d67f72776",
+      "research_notes_en": "25-task cap, implicit subtasks in move/complete/delete and permission restrictions; bulk delete has trash recovery but no undo button."
+    },
+    {
+      "id": "task-fields",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Create and edit tasks | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5314373-create-and-edit-tasks",
+      "read_at": "2026-10-22T11:22:10.824108Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "94c2c20cf3e153e69d542c0b356dfb8ce520e4e71073e40f3370ae47b291c175",
+      "research_notes_en": "Date/time/duration semantics and Google Calendar activation needed for reminders."
+    },
+    {
+      "id": "drive-sharing",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Share attachments with your team so everyone has the same information | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5336379-share-attachments-with-your-team-so-everyone-has-the-same-information",
+      "read_at": "2026-10-22T11:22:10.824340Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d731035b82644e02de8acf959adb9ac306691a3e4c6a9e7a3d64f402a8268b78",
+      "research_notes_en": "Attachment grants read/editor rights by queue role; moving private or removing collaborator does not revoke Drive permissions."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Export and import your GQueues data | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5315038-export-and-import-your-gqueues-data",
+      "read_at": "2026-10-22T11:22:10.824374Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "da10e928120ef5e6dd7853eab885f0e692b7b4b07bfd70f7c1161b7aee5834ce",
+      "research_notes_en": "Backup CSV versus human-readable CSV; MyQueues export excludes teams/shared and import adds rather than replaces."
+    },
+    {
+      "id": "csv-import",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Import tasks from a CSV file | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/12802662-import-tasks-from-a-csv-file",
+      "read_at": "2026-10-22T11:22:10.824419Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "306c452522bcd023e5d95983e8eac6aa8c0949ab650675dbec00acaa1dfaa088",
+      "research_notes_en": "UTC and parent-order requirements, attachment import unsupported, bad rows skipped and later repeated-row fields ignored."
+    },
+    {
+      "id": "sync-recovery",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Troubleshooting for Google Calendar syncing | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5301365-troubleshooting-for-google-calendar-syncing",
+      "read_at": "2026-10-22T11:22:10.824455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f7a8109ea0ca29152a17231b3f65f8ce109d04fe51ed5b07551ed03b7a87aa10",
+      "research_notes_en": "Initial background activation,3timezone locations and team-specific settings; reset affects GQueues calendar."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "learn.gqueues.com",
+      "title": "Set team member roles to manage access to tasks | GQueues Help Center",
+      "url": "https://learn.gqueues.com/en/articles/5318066-set-team-member-roles-to-manage-access-to-tasks",
+      "read_at": "2026-10-22T11:22:10.824480Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d70182fd15ee29b9d81bfd7176a874e851510b920fbf951159981860a94c6511",
+      "research_notes_en": "Current six team roles named; permission table absent in reader, exact per-action matrix not inferred."
+    },
+    {
+      "id": "mcp-overview",
+      "type": "official_integration",
+      "site": "www.gqueues.com",
+      "title": "GQueues MCP: AI Project Management with Claude & ChatGPT",
+      "url": "https://www.gqueues.com/mcp",
+      "read_at": "2026-10-22T11:24:12.582511Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9c499c116f5a2560a5e43f3e09696c2346d26f8d1e8912c58b6f025cf2a5be5d",
+      "research_notes_en": "MCP product page excludes permanent task deletion, preserves account permissions and supports revocation; not a hands-on test."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:22:10.824480Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["overview", "calendar-settings", "drive-sharing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "task-example",
+        "title_en": "Make a dated task explicit before automating it",
+        "title_zh": "自动化前明确任务日期及责任",
+        "en": "For a hypothetical weekly client review, create a task with the client context, a named owner, a date/time and the link to its review material. Decide whether the queue is personal, shared or a Team Queue. A filtered Smart Queue can help find relevant work, but does not change the source queue’s editing rights.\n\nThe task guide treats duration as the corresponding Google Calendar event length. Reminders require activated Calendar syncing. Check a date-only task separately from one with a specific time rather than assuming they generate the same reminder. The example was not created; agreement on acceptance still determines whether the client review is complete.",
+        "zh": "假设每周复核客户工作，可创建包含客户上下文、明确负责人、日期／时间和审阅材料链接的任务，并决定采用个人、共享还是 Team Queue。Smart Queue 可筛选相关工作，但不会改变源队列编辑权限。\n\n任务指南把时长对应到 Google Calendar 事件长度，提醒需要启用 Calendar 同步。应分别检查仅有日期和有具体时间的任务，不能假设两者提醒相同。本次没有创建样例；客户复核是否完成仍取决于约定验收。",
+        "source_refs": ["overview", "task-fields", "bulk"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "calendar-consequences",
+        "title_en": "Choose what deleting a calendar event means",
+        "title_zh": "先选择删除日历事件的含义",
+        "en": "Calendar settings allow a deleted Google event to clear the GQueues date, complete the task and its subtasks, delete them, or do nothing. Team Calendar rules override personal settings, and the team’s default queue determines where calendar-created tasks land. A calendar cleanup can therefore be a task-state operation.\n\nBefore a rollout, inspect the active team settings and use a clearly named test item. If dates appear wrong or tasks are missing, first check activation completion and the timezones in GQueues, the GQueues calendar and primary Google Calendar settings. Initial activation runs in the background; a missing item immediately after activation is not sufficient evidence of lost data. No sync, reset or deletion was executed.",
+        "zh": "Calendar 设置允许把删除 Google 事件解释为清除 GQueues 日期、完成任务及子任务、删除它们，或不做任何操作。Team Calendar 规则覆盖个人设置，团队默认队列决定从日历创建的任务落到哪里。因此，整理日历也可能改变任务状态。\n\n推广前应检查当前团队设置，并使用命名清楚的测试项。日期错误或任务缺失时，先检查激活完成状态，以及 GQueues、GQueues 日历和 Google 主日历三处时区。首次激活在后台进行，刚启用就未看到任务，不足以证明数据丢失。本次未执行同步、重置或删除。",
+        "source_refs": ["calendar-settings", "team-calendar", "sync-recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "attachment-access",
+        "title_en": "Moving a task back to private does not unshare its files",
+        "title_zh": "任务移回私有不会取消文件共享",
+        "en": "An attachment in a shared/team queue grants Google Drive access according to the recipient’s queue role: view-oriented roles get read access, while collaborators/managers/owners can receive editing access. Moving an attached task into a shared queue can widen file access automatically. Moving it back to private, or removing a collaborator, does not automatically revoke that Drive access.\n\nFor a client review, inspect the actual file’s sharing settings as well as the task. The guide suggests placing a link in notes and managing Drive permissions directly when collaborators should not receive edit rights. Do not infer revocation from the disappearance of a task in someone’s GQueues view. No file was shared in this research.",
+        "zh": "共享／团队队列中的附件按接收者队列角色授予 Google Drive 权限：偏查看角色获得读取权限，协作者／经理／所有者可获得编辑权限。带附件任务移入共享队列可能自动扩大文件访问；移回私有或移除协作者不会自动撤销这些 Drive 权限。\n\n客户审阅应同时检查实际文件共享设置和任务。指南建议在不应给协作者编辑权限时，把链接放在备注并直接管理 Drive 权限。不能因为任务从对方 GQueues 视图消失就推断文件权限已撤销。本次没有共享文件。",
+        "source_refs": ["drive-sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bulk-and-import",
+        "title_en": "A batch can succeed while some work was skipped",
+        "title_zh": "批次成功也可能跳过部分任务",
+        "en": "Bulk actions select at most twenty-five tasks. Completing, deleting or moving a parent includes its subtasks even when they were not selected. Bulk delete has no Undo button, although the guide points to trash recovery. Mixed queue permissions can restrict which items or actions are selectable.\n\nThe separate CSV importer continues past invalid rows. It requires exact parent-title matching and parent-before-child order, UTC date/time fields and a single destination account/team; attachments are not supported. Repeated rows for assignments/comments use only the first row for other task fields. Compare expected rows with actual tasks and inspect skipped inputs before reimporting, so a partial result does not become an accidental duplicate set.",
+        "zh": "批量操作最多选择二十五项任务。完成、删除或移动父任务时，会包含未选中的子任务。批量删除没有 Undo 按钮，但指南指向回收站恢复；混合队列权限也会限制可选择项或动作。\n\n独立 CSV 导入器会跳过无效行继续处理，要求父标题精确匹配、父行在子行前、日期／时间采用 UTC，且每次仅导入一个账户／团队，不支持附件。为分派／评论重复的行，其余任务字段只采用第一行。重新导入前应比较预期行与真实任务，并检查被跳过输入，避免把部分结果变为重复任务集。",
+        "source_refs": ["bulk", "csv-import"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backup-format",
+        "title_en": "Keep a backup file distinct from a spreadsheet copy",
+        "title_zh": "区分备份文件与表格副本",
+        "en": "GQueues Backup CSV can be imported back; the human-readable CSV cannot. Personal Settings export includes My Queues/Inbox and active/archived tasks, but excludes Teams and queues shared with you. Those require separate queue exports or an owner’s team export. Import adds data instead of replacing existing queues, so duplicates need inspection.\n\nKeep the original backup file unchanged. Opening it in a spreadsheet may silently alter formatting; use a separate copy for analysis. Check that one known task’s notes, dates, history and file access meet the intended recovery need. The guide’s export functionality is documentation evidence, not a verified full-account restore or promise that external attachment bytes are included. No file was exported or imported here.",
+        "zh": "GQueues Backup CSV 可重新导入，human-readable CSV 则不能。个人设置导出包含 My Queues／Inbox 及活跃／归档任务，但不包含 Teams 或他人共享队列；这些需分别导出队列，或由所有者导出团队。导入会新增而不替换现有队列，因此需检查重复。\n\n应保持原备份文件不变。表格软件可能静默改变格式，分析时使用独立副本。应检查一项已知任务的备注、日期、历史及文件访问是否满足恢复需要。文档中的导出能力不是本次验证过的全账户恢复，也不保证包含外部附件本体。本次未导出或导入文件。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "assistant-access",
+        "title_en": "Review shared content before connecting an assistant",
+        "title_zh": "连接助手前复核共享内容",
+        "en": "The MCP uses OAuth and the connected account’s queue/team permissions. An unspecified destination defaults to Inbox. The guide describes about a day of exact-match duplicate suppression, with a skipped repeat reported to the assistant; that is not a general guarantee that retries or near-identical tasks are deduplicated. Tasks can go to trash, while permanent deletion is excluded on the MCP product page.\n\nThe terms say an authorized agent can access all content available to its account, including shared work, and the external AI provider has its own processing terms. Check the intended queue, changed fields and stored result before extending a pilot. Usage allowances depend on plan and external assistant costs are separate. No token, OAuth approval or agent action was performed.",
+        "zh": "MCP 使用 OAuth，继承已连接账户的队列／团队权限。未指定目标时默认进入 Inbox。指南描述约一天内完全匹配的重复抑制，并把跳过结果告知助手；这不保证所有重试或近似任务都会去重。任务可移入回收站，MCP 产品页则排除永久删除。\n\n条款称获授权代理能访问账户有权查看的全部内容，包括共享工作；外部 AI 提供方另有处理条款。扩展试点前应检查目标队列、修改字段及存储结果。用量额度取决于方案，外部助手费用另计。本次未生成 token、批准 OAuth 或执行代理动作。",
+        "source_refs": ["mcp", "terms", "mcp-overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-price",
+        "title_en": "A Google Account defines the licensed user",
+        "title_zh": "一个 Google 账户对应一个许可用户",
+        "en": "The displayed annual equivalents are USD3/month for YOU and USD4/user/month for BUSINESS, with volume discounts from five licenses. Lite is free and does not expire; the fourteen-day BUSINESS trial reverts to Lite without a purchase. The pricing FAQ also contains an annual-only statement alongside monthly refund/cycle-switching explanations, so confirm actual available billing cycles rather than inferring a monthly price.\n\nA license follows a Google email account; BUSINESS can include accounts from different domains and does not require buying for the whole domain. Verify whether the intended team sharing, calendar and AI quota conditions need BUSINESS. The service license is limited access to vendor software, not open-source or self-hosting rights. Shortlist GQueues when Google-linked task coordination fits; validate external permissions and recovery before relying on it as the sole record.",
+        "zh": "展示的年付折合价为 YOU 每月 3 美元、BUSINESS 每用户每月 4 美元，五个许可起有批量折扣。Lite 免费且不过期，十四天 BUSINESS 试用未购买时转回 Lite。定价 FAQ 又同时写有仅年付，以及月付退款／周期切换说明，因此应确认实际可选周期，不能推算月付价格。\n\n许可跟随 Google 邮箱账户；BUSINESS 可包含不同域名账户，不要求为整个域名购买。应确认预期团队共享、日历及 AI 额度是否需要 BUSINESS。服务许可只提供厂商软件有限访问，不授予开源或自托管权。适合 Google 关联任务协作时可列入候选；作为唯一记录前，应验证外部权限和恢复。",
+        "source_refs": ["pricing", "billing-conditions", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "GQueues: Google Task Queues, Calendar Rules, Drive Sharing and Backup",
+    "title_zh": "GQueues：Google 任务队列、日历规则、Drive 共享与备份",
+    "description_en": "Evaluate GQueues task coordination, calendar deletion effects, persistent file permissions, CSV formats and AI account access.",
+    "description_zh": "评估 GQueues 任务协作、日历删除影响、持续文件权限、CSV 格式与 AI 账户访问。",
+    "primary_intent": "Evaluate Google-based team task coordination.",
+    "secondary_questions": [
+      "Does removing a teammate revoke Drive attachments?",
+      "Can human-readable CSV restore queues?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No Google login, task, Calendar sync/delete/reset, Drive sharing, CSV import/export/restore or agent operation tested. Exact role permission table was not rendered in reader.",
+      "zh": "未测试 Google 登录、任务、Calendar 同步／删除／重置、Drive 共享、CSV 导入／导出／恢复或代理操作。阅读器未渲染完整角色权限表。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Current checkout cycles/taxes, plan-specific API/MCP quotas and overflow, external AI processing, complete backup file coverage, data residency/retention/recovery and current UI languages remain unverified.",
+      "zh": "当前结账周期／税费、各方案 API／MCP 额度及超额、外部 AI 处理、完整备份文件覆盖、数据驻留／保留／恢复及当前界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

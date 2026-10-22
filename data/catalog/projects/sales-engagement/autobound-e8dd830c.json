@@ -1,0 +1,248 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "autobound-e8dd830c",
+  "name": "Autobound",
+  "website_url": "https://www.autobound.ai/",
+  "domain": "www.autobound.ai",
+  "identity_domain": "autobound.ai",
+  "category": "sales-engagement",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Autobound’s current official site centers on a signal database, REST API and MCP server. It describes company events such as funding, hiring, leadership changes and news, rather than positioning a standalone sales-sequence editor as the core product. Keep that current scope distinct from legacy directory labels about sales email automation. Numerical coverage claims are provider statements, not an independently audited inventory in this profile.\n\nThe API page separates search, enrich and buyer-intent families. A company enrichment call accepts a domain, email or LinkedIn URL and can return up to 500 matching signals. A small evaluation could query a known company domain, inspect event dates and entity matching, then feed only reviewed signals into CRM prioritization. MCP uses an account sign-in and authorization flow; the REST path is for code. Both share the account and credit balance.",
+  "description_zh": "Autobound 当前官网以信号数据库、REST API 和 MCP 服务器为中心，描述融资、招聘、领导层变化与新闻等公司事件，没有把独立销售序列编辑器作为核心定位。应把这一范围与旧目录里的销售邮件自动化标签区分。覆盖数量是厂商声明，本档案没有独立审计其数据库存。\n\nAPI 页面区分搜索、数据补充与购买意向接口。公司补充接口接受域名、邮箱或 LinkedIn URL，单次可返回最多 500 条匹配信号。小规模评估可先查询熟悉的公司域名，核对事件日期与实体匹配，再把审查后的信号交给 CRM 排序。MCP 使用账户登录与授权；REST 适用于代码调用。两者共享账户和额度。",
+  "core_features": [
+    {
+      "name_en": "Signal search and enrichment",
+      "name_zh": "信号搜索与补充",
+      "explanation_en": "Query company events and enrich a domain with matching signals.",
+      "explanation_zh": "查询公司事件并为域名补充匹配信号。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "REST and MCP access",
+      "name_zh": "REST 与 MCP 接入",
+      "explanation_en": "Access the same data and credits from code or an authorized MCP client.",
+      "explanation_zh": "从代码或经授权的 MCP 客户端使用相同数据和额度。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": ["Enrich one domain before subscribing a production process"],
+    "zh": ["先补充单个域名，再接入生产流程"],
+    "source_refs": ["api"],
+    "basis": "Illustrative evaluation workflow; not an executed test or customer result."
+  },
+  "technical_details": {
+    "Evaluation scope": {
+      "en": "Official public documentation research. Account setup, integrations and delivery were not executed.",
+      "zh": "研究官方公开资料；未实际注册、运行集成或验证交付。",
+      "source_ref": "product",
+      "status": "documentation_reviewed"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [],
+    "roles_status": "not_verified",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "The API page separates search, enrich and buyer-intent families. A company enrichment call accepts a domain, email or LinkedIn URL and can return up to 500 matching signals. A small evaluation could query a known company domain, inspect event dates and entity matching, then feed only reviewed signals into CRM prioritization. MCP uses an account sign-in and authorization flow; the REST path is for code. Both share the account and credit balance.",
+        "zh": "API 页面区分搜索、数据补充与购买意向接口。公司补充接口接受域名、邮箱或 LinkedIn URL，单次可返回最多 500 条匹配信号。小规模评估可先查询熟悉的公司域名，核对事件日期与实体匹配，再把审查后的信号交给 CRM 排序。MCP 使用账户登录与授权；REST 适用于代码调用。两者共享账户和额度。",
+        "source_refs": ["api"]
+      }
+    ]
+  },
+  "integrations": {
+    "status": "see_documented_profile",
+    "items": [],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_and_editorial",
+    "items": [
+      {
+        "en": "For a hypothetical company returning ten enrichment signals, the documented rate implies twenty credits; it does not imply one company always costs twenty. Inspect actual result count and balance before batch jobs. Signal freshness, missing companies and ambiguous domains need application-level handling. We did not verify rate limits, error codes or automatic retry behavior, so a failed request should be investigated before replaying a batch.",
+        "zh": "假设某公司返回十条补充信号，按文档费率应消耗二十额度；这不代表查询一家公司固定花二十额度。批量任务前应检查真实结果数量与余额。信号新鲜度、未覆盖公司和模糊域名需要应用自行处理。本次未确认限流、错误码及自动重试行为，因此请求失败后应先调查，再重跑批次。",
+        "source_refs": ["pricing", "api"]
+      },
+      {
+        "en": "Consider Autobound for developers, data teams and RevOps that need structured event input. A team needing only manual follow-up emails would still need an execution surface. The API page also describes scheduled GCS file delivery; that is data delivery into your infrastructure, not evidence that the server software is open source or self-hostable. Data redistribution rights and contractual coverage must be established for the intended integration.",
+        "zh": "开发者、数据团队与需要结构化事件输入的 RevOps 可考虑 Autobound。只想手工跟进邮件的团队仍需要执行工具。API 页还描述定期向 GCS 发送文件；这属于把数据送入你的基础设施，不能证明服务器软件开源或可自托管。集成前仍需确认数据再分发权与合同覆盖范围。",
+        "source_refs": ["api", "pricing"]
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:57:15.619227+00:00",
+    "normalized_monthly_price": null,
+    "source_snapshot_en": "Pricing states two credits per search result and two per enrichment signal; zero-result requests are free. Starter is $19 for 1,900 credits, Growth $49 for 5,444, and Scale $149 for 19,867. Credits do not expire and packages pool together. Signup includes 1,000 free credits to try the API; this is a finite allowance, not proof of an indefinitely replenished free plan. Flat-file licensing and larger custom arrangements have separate quoted terms.",
+    "source_snapshot_zh": "定价说明每条搜索结果消耗两额度，每条补充信号消耗两额度；零结果请求免费。Starter 为 19 美元／1,900 额度，Growth 为 49 美元／5,444，Scale 为 149 美元／19,867。额度不过期，购买包可合并。注册提供 1,000 免费额度试用 API；这是有限额度，不能证明存在持续补充的免费套餐。批量文件许可及更大规模方案另行报价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Autobound",
+      "title": "B2B Signal Intelligence: 700+ Signals | Autobound",
+      "url": "https://www.autobound.ai/",
+      "read_at": "2026-10-22T15:51:25.196146+00:00",
+      "excerpt_sha256": "350bd960bb78708b02188110d81c81ebd4bdb74d64a6174dfc8733dba3e8f9c1",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/autobound-e8dd830c/product.txt",
+      "research_notes_en": "Current signal-layer positioning supersedes old sales engagement labels."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "Autobound",
+      "title": "Signal API: 700+ B2B signals by REST or MCP | Autobound",
+      "url": "https://www.autobound.ai/signal-api",
+      "read_at": "2026-10-22T15:52:23.762021+00:00",
+      "excerpt_sha256": "f1abea6b86e87c89ee1e50ae507f5553fde3ee34b14b43273d540fee1dff8506",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/autobound-e8dd830c/api.txt",
+      "research_notes_en": "Read endpoint families, 500-signal enrichment ceiling and MCP authorization flow."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Autobound",
+      "title": "Autobound Pricing: Signal Data Plans & Credits | Autobound",
+      "url": "https://www.autobound.ai/pricing",
+      "read_at": "2026-10-22T15:52:23.355120+00:00",
+      "excerpt_sha256": "34cb3e593d5fb0613e8e30e3d606ca11c9f821178f2c9e344a0e4b0f36d073ca",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/autobound-e8dd830c/pricing.txt",
+      "research_notes_en": "Read credit packs, result metering, free signup allowance and non-expiry."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:57:15.619227+00:00",
+    "scope": "Primary public pages only; no identity claim, pricing approval, independent review, hands-on testing or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "research_draft"
+    },
+    "zh": {
+      "status": "translated_research_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original bilingual documentary synthesis. Provider claims are not independently measured outcomes.",
+    "Draft retained; alternatives not reviewed. Pricing snapshot is not an approved quote."
+  ],
+  "description_source_refs": ["product", "api"],
+  "profile": {
+    "title_en": "Autobound: workflow, access and evaluation conditions",
+    "title_zh": "Autobound：流程、使用条件与选型",
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Current product: a signal data layer",
+        "title_zh": "当前产品：信号数据层",
+        "en": "Autobound’s current official site centers on a signal database, REST API and MCP server. It describes company events such as funding, hiring, leadership changes and news, rather than positioning a standalone sales-sequence editor as the core product. Keep that current scope distinct from legacy directory labels about sales email automation. Numerical coverage claims are provider statements, not an independently audited inventory in this profile.",
+        "zh": "Autobound 当前官网以信号数据库、REST API 和 MCP 服务器为中心，描述融资、招聘、领导层变化与新闻等公司事件，没有把独立销售序列编辑器作为核心定位。应把这一范围与旧目录里的销售邮件自动化标签区分。覆盖数量是厂商声明，本档案没有独立审计其数据库存。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Enrich one domain before subscribing a production process",
+        "title_zh": "先补充单个域名，再接入生产流程",
+        "en": "The API page separates search, enrich and buyer-intent families. A company enrichment call accepts a domain, email or LinkedIn URL and can return up to 500 matching signals. A small evaluation could query a known company domain, inspect event dates and entity matching, then feed only reviewed signals into CRM prioritization. MCP uses an account sign-in and authorization flow; the REST path is for code. Both share the account and credit balance.",
+        "zh": "API 页面区分搜索、数据补充与购买意向接口。公司补充接口接受域名、邮箱或 LinkedIn URL，单次可返回最多 500 条匹配信号。小规模评估可先查询熟悉的公司域名，核对事件日期与实体匹配，再把审查后的信号交给 CRM 排序。MCP 使用账户登录与授权；REST 适用于代码调用。两者共享账户和额度。",
+        "source_refs": ["api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Credits buy returned results, not a seller seat",
+        "title_zh": "按返回结果消耗额度，不是购买销售席位",
+        "en": "Pricing states two credits per search result and two per enrichment signal; zero-result requests are free. Starter is $19 for 1,900 credits, Growth $49 for 5,444, and Scale $149 for 19,867. Credits do not expire and packages pool together. Signup includes 1,000 free credits to try the API; this is a finite allowance, not proof of an indefinitely replenished free plan. Flat-file licensing and larger custom arrangements have separate quoted terms.",
+        "zh": "定价说明每条搜索结果消耗两额度，每条补充信号消耗两额度；零结果请求免费。Starter 为 19 美元／1,900 额度，Growth 为 49 美元／5,444，Scale 为 149 美元／19,867。额度不过期，购买包可合并。注册提供 1,000 免费额度试用 API；这是有限额度，不能证明存在持续补充的免费套餐。批量文件许可及更大规模方案另行报价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Budget for signals, and handle uncertain matches",
+        "title_zh": "按信号预算，并处理不确定匹配",
+        "en": "For a hypothetical company returning ten enrichment signals, the documented rate implies twenty credits; it does not imply one company always costs twenty. Inspect actual result count and balance before batch jobs. Signal freshness, missing companies and ambiguous domains need application-level handling. We did not verify rate limits, error codes or automatic retry behavior, so a failed request should be investigated before replaying a batch.",
+        "zh": "假设某公司返回十条补充信号，按文档费率应消耗二十额度；这不代表查询一家公司固定花二十额度。批量任务前应检查真实结果数量与余额。信号新鲜度、未覆盖公司和模糊域名需要应用自行处理。本次未确认限流、错误码及自动重试行为，因此请求失败后应先调查，再重跑批次。",
+        "source_refs": ["pricing", "api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "A data input for GTM systems, not their whole workflow",
+        "title_zh": "它是 GTM 系统的数据输入，不等于完整工作流",
+        "en": "Consider Autobound for developers, data teams and RevOps that need structured event input. A team needing only manual follow-up emails would still need an execution surface. The API page also describes scheduled GCS file delivery; that is data delivery into your infrastructure, not evidence that the server software is open source or self-hostable. Data redistribution rights and contractual coverage must be established for the intended integration.",
+        "zh": "开发者、数据团队与需要结构化事件输入的 RevOps 可考虑 Autobound。只想手工跟进邮件的团队仍需要执行工具。API 页还描述定期向 GCS 发送文件；这属于把数据送入你的基础设施，不能证明服务器软件开源或可自托管。集成前仍需确认数据再分发权与合同覆盖范围。",
+        "source_refs": ["api", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Autobound: workflow, pricing and limits",
+    "title_zh": "Autobound：流程、费用与限制",
+    "description_en": "Autobound’s current official site centers on a signal database, REST API and MCP server. It describes company events such as funding, hiring, leadership ch",
+    "description_zh": "Autobound 当前官网以信号数据库、REST API 和 MCP 服务器为中心，描述融资、招聘、领导层变化与新闻等公司事件，没有把独立销售序列编辑器作为核心定位。应",
+    "primary_intent": "Understand the documented product and evaluate a concrete workflow.",
+    "secondary_questions": [],
+    "query_basis": "Editorial questions; no search volume, ranking or traffic measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account or integration was tested. UI languages, regional availability, data residency, source-code licensing and contractual terms require confirmation for the intended purchase.",
+      "zh": "未实测账户或集成。界面语言、地区可用性、数据驻留、源代码许可及具体采购合同条款仍需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; examples are hypothetical and evaluation advice is marked.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "appointy-4223c199",
+  "name": "Appointy",
+  "website_url": "https://www.appointy.com/",
+  "domain": "www.appointy.com",
+  "identity_domain": "appointy.com",
+  "category": "scheduling",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Appointy is an online appointment system for service businesses, combining a booking page, staff/service availability, reminders, payments and customer management. It also documents classes, resources and multi-location operation, with those capabilities gated by plan.\n\nA perpetual Free plan and a full-feature 14-day trial are separate offers. A workflow built during the trial needs to be checked against the plan that will remain afterwards.",
+  "description_zh": "Appointy 是面向服务业务的在线预约系统，结合预约页、员工／服务可用时间、提醒、付款与客户管理，也列有课程、资源及多地点运营，但相关能力受套餐约束。\n\n永久免费方案与完整功能的 14 天试用是两种不同安排。试用期间搭建的流程，需要按之后实际保留的套餐重新核对。",
+  "core_features": [
+    {
+      "name_en": "Availability-based bookings",
+      "name_zh": "基于可用时间的预约",
+      "explanation_en": "Set service/staff hours, buffers and booking restrictions.",
+      "explanation_zh": "设置服务／员工时间、缓冲及预约限制。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "booking",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-gated staff/resources",
+      "name_zh": "按套餐开放员工／资源",
+      "explanation_en": "Professional documents staff logins and resource scheduling.",
+      "explanation_zh": "Professional 列有员工登录与资源排程。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Free plan and export",
+      "name_zh": "免费方案与导出",
+      "explanation_en": "Free has defined staff/service/appointment limits; every plan can export data.",
+      "explanation_zh": "Free 有明确员工／服务／预约上限；所有方案可导出数据。",
+      "explanation_scope": "product_specific_documented",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Offer customer self-booking within real staff and service availability."
+    ],
+    "zh": ["按真实员工与服务时间提供客户自助预约。"],
+    "source_refs": ["product"],
+    "basis": "Illustrative selection guidance; no customer outcome or hands-on claim."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Vendor hosted booking system with mobile access and external integrations.",
+      "zh": "厂商托管预约系统，提供移动访问与外部集成。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Solo service business",
+      "Studio scheduler",
+      "Multi-location operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Configure one service, staff hours and buffer rules.",
+        "zh": "配置一种服务、员工时间与缓冲规则。",
+        "source_refs": ["booking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Share/embed the page and check booking, rescheduling and reminders with a disposable record.",
+        "zh": "分享／嵌入页面，用临时记录检查预订、改期与提醒。",
+        "source_refs": ["booking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Recheck the intended post-trial plan and export route before real customer rollout.",
+        "zh": "面向真实客户前重新核对试用后的目标套餐及导出方式。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_exhaustively_verified",
+    "items": [],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Appointy documents prepayments, reminders, cancellation restrictions and data export on every plan. If a payment or calendar handoff fails, inspect both systems before recreating the booking, then retain an export before migration or cancellation; this is handling advice, not a transaction guarantee. It fits businesses needing customer self-service and staff availability. No live booking, refund, export, failure recovery, self-hosted edition or open-source licence was verified. Detailed payment-help retrieval was 403, so processor edge cases remain open.",
+        "zh": "Appointy 文档列预付款、提醒、取消限制，并说明所有方案均可导出数据。支付或日历交接失败时，建议先核对两边系统再重建预约，迁移或取消前保留导出；这不是事务保证。它适合需要客户自助与员工可用时间的业务。未验证真实预订、退款、导出、故障恢复、自行部署版或开源许可。详细支付帮助读取遇到 403，因此支付渠道边界仍待确认。",
+        "source_refs": ["booking", "pricing"],
+        "evidence_type": "documented_limits_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "checked_at": "2026-10-22T16:19:27.517305+00:00",
+    "normalized_monthly_price": null,
+    "price_type": "freemium",
+    "source_ref": "pricing",
+    "currency": "USD",
+    "billing_basis": "Plan subscription plus staff/location extras; annual/monthly options.",
+    "source_snapshot_en": "Free 1 staff/5 services/100 appointments monthly. Annual monthly-equivalents $19.99/$49.99/$79.99; monthly $29.99/$59.99/$99.99. No-card trial 14 days, then Free unless upgraded.",
+    "source_snapshot_zh": "免费一员工／五服务／每月 100 预约。年付月均 19.99／49.99／79.99 美元；按月 29.99／59.99／99.99。无需信用卡试用 14 天，未升级则降至免费。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/appointy",
+      "read_at": "2026-10-22T08:41:10.751Z",
+      "excerpt_sha256": "f11415c7edbab6867888bce58dbe690ce44c25680c8d6b0834197bee2e305f46",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "appointy",
+      "title": "Appointment Scheduling Software | Online Scheduler Software",
+      "url": "https://www.appointy.com/",
+      "resolved_url": "https://www.appointy.com/",
+      "read_at": "2026-10-22T15:58:07.953607+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "d033244f7971164db3c5d5fa376fded532ea61c5fa15c9973f373ececb11bac2",
+      "body_sha256": "95e6253c0fd13fab2f46f9c3ab0f2587490b8a31418a0d470d7448ac673df36a",
+      "evidence_path": ".scratch/deep-research/batch-11/appointy/product.txt",
+      "research_notes_en": "Appointment service identity, persistent Free vs trial; outcome metrics excluded."
+    },
+    {
+      "id": "booking",
+      "type": "official_documentation",
+      "site": "appointy",
+      "title": "Online Appointment Booking System - Appointy",
+      "url": "https://www.appointy.com/online-booking-software/",
+      "resolved_url": "https://www.appointy.com/online-booking-software/",
+      "read_at": "2026-10-22T16:14:26.916412+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "52423191481c471f9c8eeabdae9768b7faff816fd8b3f83a629795adf5f2e78b",
+      "body_sha256": "a83dcb89d1a254daf294dd84617ec80b081f4d51adb7617d5dad3aab738baea1",
+      "evidence_path": ".scratch/deep-research/batch-11/appointy/booking.txt",
+      "research_notes_en": "Concrete service-hours, widget, customer changes and payment/reminder workflow."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "appointy",
+      "title": "Pricing & Signup",
+      "url": "https://www.appointy.com/pricing/",
+      "resolved_url": "https://www.appointy.com/pricing/",
+      "read_at": "2026-10-22T15:58:08.169282+00:00",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_https",
+      "excerpt_sha256": "7f55e9aa365fdeca710cc9461658a927cc3bf92ad7e268767414318f24169f9e",
+      "body_sha256": "e800971f060707e00b3c60fa9e33019e4475fa6f3eb0dbb396e55edc1b3ff3cf",
+      "evidence_path": ".scratch/deep-research/batch-11/appointy/pricing.txt",
+      "research_notes_en": "USD annual/monthly pairs, staff/location gates, 2,000/day fair use and automatic trial downgrade."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:19:27.517305+00:00"
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Primary-source research is a draft, not publication, owner verification, price approval or independent review.",
+    "English and Chinese carry matching amounts, billing periods, qualifications and unknowns.",
+    "Historical directory assertions are superseded, including unverified feature and API labels."
+  ],
+  "description_source_refs": ["product", "booking"],
+  "profile": {
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "Define services before sharing a booking link",
+        "title_zh": "分享预约链接前先定义服务",
+        "en": "The official three-step flow starts with services and working hours, including buffers, blocked time and irregular availability, then sharing a link or embedding the widget. An illustrative studio pilot adds one service and one staff calendar, takes a test booking and reschedules it through the intended customer path. Resource scheduling and separate staff logins are paid-plan considerations, so do not configure a room-dependent workflow under assumptions drawn from a temporary trial.",
+        "zh": "官方三步流程先定义服务和工作时间，包括缓冲、阻挡时段与不规则可用时间，再分享链接或嵌入组件。工作室试点可先添加一项服务和一个员工日历，创建测试预约，再按目标客户路径改期。资源排程和独立员工登录涉及付费档，不能依据临时试用的权限假定长期方案可运行依赖房间的流程。",
+        "source_refs": ["booking", "pricing"],
+        "evidence_type": "documented_workflow_with_editorial_example"
+      },
+      {
+        "id": "free",
+        "title_en": "The small free plan and the downgrade path",
+        "title_zh": "小型免费方案与降级路径",
+        "en": "Free includes one staff member, five services and 100 appointments per month, plus website integration, Square and reminders on the plan page. Growth adds Google calendar sync/iCal and additional prepayment processors; Professional includes five staff, staff logins and resources. The no-card 14-day trial automatically downgrades to Free if no upgrade is chosen. Test the retained free configuration rather than assuming the full trial workflow survives unchanged.",
+        "zh": "套餐页列 Free 含一员工、五服务、每月 100 预约，以及网站集成、Square 与提醒。Growth 增加 Google 日历同步／iCal 和更多预付支付渠道；Professional 含五员工、员工登录与资源。无需信用卡的 14 天试用在未选择升级时自动降至 Free。应测试长期保留的免费配置，不能假定完整试用流程原样保留。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Annual equivalents, extra staff and fair use",
+        "title_zh": "年度折算、额外员工与公平用量",
+        "en": "The USD page shows Growth $19.99/month annually or $29.99 monthly; Professional $49.99 or $59.99; Enterprise $79.99 or $99.99, with two locations included in Enterprise. Extra staff and locations have separate prices. Paid appointment volume is subject to a stated 2,000-per-day fair-use limit; “unlimited services” is not a guarantee of unlimited operational throughput. Provider charges, tax, SMS rules and exact extra-location cadence need confirmation for the intended account.",
+        "zh": "美元页列 Growth 年付折算每月 19.99、按月 29.99；Professional 49.99 或 59.99；Enterprise 79.99 或 99.99，Enterprise 含两个地点。额外员工和地点另有价格。付费预约量受每日 2,000 次公平使用限制；“服务不限”不保证运营吞吐无限。目标账户需确认支付渠道费、税、短信规则和额外地点确切账期。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Inspect the booking and the payment separately",
+        "title_zh": "分别检查预约与付款",
+        "en": "Appointy documents prepayments, reminders, cancellation restrictions and data export on every plan. If a payment or calendar handoff fails, inspect both systems before recreating the booking, then retain an export before migration or cancellation; this is handling advice, not a transaction guarantee. It fits businesses needing customer self-service and staff availability. No live booking, refund, export, failure recovery, self-hosted edition or open-source licence was verified. Detailed payment-help retrieval was 403, so processor edge cases remain open.",
+        "zh": "Appointy 文档列预付款、提醒、取消限制，并说明所有方案均可导出数据。支付或日历交接失败时，建议先核对两边系统再重建预约，迁移或取消前保留导出；这不是事务保证。它适合需要客户自助与员工可用时间的业务。未验证真实预订、退款、导出、故障恢复、自行部署版或开源许可。详细支付帮助读取遇到 403，因此支付渠道边界仍待确认。",
+        "source_refs": ["booking", "pricing"],
+        "evidence_type": "documented_limits_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "Live processor/refund behaviour, SMS charges, integration permissions, extra-location billing and recovery/export fidelity were not tested. Payment-help article was 403.",
+      "zh": "未测试真实支付／退款、短信费用、集成权限、额外地点计费及恢复／导出保真度；支付帮助文章读取为 403。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source documentation research; original English synthesis with matching Chinese sections. Workflow examples and evaluation advice were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Appointy: Workflows, Pricing and Practical Limits",
+    "title_zh": "Appointy：工作流程、费用与使用条件",
+    "description_en": "Appointy is an online appointment system for service businesses, combining a booking page, staff/service availability, reminders, payments and customer management. It als",
+    "description_zh": "Appointy 是面向服务业务的在线预约系统，结合预约页、员工／服务可用时间、提醒、付款与客户管理，也列有课程、资源及多地点运营，但相关能力受套餐约束。",
+    "primary_intent": "Understand the documented product and evaluate a specific workflow.",
+    "query_basis": "Editorial intent; no measured search volume, ranking or SEO/GEO outcome.",
+    "canonical_url": null
+  }
+}

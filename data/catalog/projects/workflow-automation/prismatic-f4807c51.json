@@ -1,0 +1,434 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "prismatic-f4807c51",
+  "name": "Prismatic",
+  "website_url": "https://prismatic.io/",
+  "domain": "prismatic.io",
+  "identity_domain": "prismatic.io",
+  "category": "workflow-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Prismatic is an embedded integration platform for B2B software products. Your team supplies the integration logic through TypeScript or a low-code designer; the platform supplies customer configuration, execution and operational infrastructure. An integration can be installed separately for each customer as an instance with that customer’s connections and settings.\n\nProductized integrations, an embedded customer workflow builder and agentic flows are different delivery models. Plan selection affects which models and hosting options are included. This profile describes official documentation rather than a tested application embed or an endorsement of vendor delivery-speed claims.",
+  "description_zh": "Prismatic 是面向 B2B 软件产品的嵌入式集成平台。团队用 TypeScript 或低代码设计器提供集成逻辑，平台提供客户配置、执行及运营基础设施。同一集成可以为不同客户分别安装成 instance，使用各自连接与设置。\n\n产品化集成、嵌入式客户流程构建器及 Agent 流程属于不同交付模式，所选套餐会影响具体模式及托管选项。本文解释官方文档，未实测应用嵌入，也未认可厂商关于交付速度的宣传。",
+  "core_features": [
+    {
+      "name_en": "Code-native and low-code integrations",
+      "name_zh": "代码与低代码集成",
+      "explanation_en": "Build integration logic in TypeScript or the visual designer.",
+      "explanation_zh": "通过 TypeScript 或可视化设计器构建集成逻辑。",
+      "explanation_scope": "product_specific",
+      "source_ref": "docs",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Customer-specific instances",
+      "name_zh": "客户专属实例",
+      "explanation_en": "Configure an integration separately for each customer.",
+      "explanation_zh": "为每个客户分别配置同一集成。",
+      "explanation_scope": "product_specific",
+      "source_ref": "instances",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Embedded delivery choices",
+      "name_zh": "嵌入式交付选择",
+      "explanation_en": "Offer productized installations or a customer workflow builder according to the selected scope.",
+      "explanation_zh": "按所选范围提供产品化集成安装或客户流程构建器。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Asynchronous execution retry",
+      "name_zh": "异步执行重试",
+      "explanation_en": "Configure retry attempts and backoff for asynchronously invoked flows.",
+      "explanation_zh": "为异步调用流程配置重试次数及退避。",
+      "explanation_scope": "product_specific",
+      "source_ref": "retry",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Offer a productized integration with separate credentials for each customer.",
+      "Expose a scoped workflow as an agent tool or customer-built extension."
+    ],
+    "zh": [
+      "按每位客户独立凭据提供产品化集成。",
+      "把范围明确的流程作为 Agent 工具或客户自建扩展。"
+    ],
+    "source_refs": ["instances", "deployment"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "B2B SaaS integration developer",
+      "Product team owning an integration marketplace",
+      "Customer integration support engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "docs"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose team-built integration, customer builder or agentic flow scope.",
+        "zh": "选择团队构建集成、客户构建器或 Agent 流程范围。",
+        "source_refs": ["deployment"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build a small flow and define customer connections and configuration.",
+        "zh": "构建小流程，定义客户连接与配置。",
+        "source_refs": ["docs", "instances"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Deploy a test instance and verify its output, alerts and safe replay policy.",
+        "zh": "部署测试实例，核对输出、告警及安全重放策略。",
+        "source_refs": ["testing", "logs", "replay"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Automatic flow retry is documented for asynchronous invocation, not all invocation modes.",
+        "zh": "自动流程重试文档适用于异步调用，不能扩展到全部调用模式。",
+        "source_refs": ["retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Additional regional stacks require synchronization and eligible contract scope.",
+        "zh": "额外区域 stack 需要同步工作及适用合同范围。",
+        "source_refs": ["regions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "quote_based_instance_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:06:39.334551Z",
+    "normalized_monthly_price": null,
+    "billing_basis": "Time-enabled customer instances and plan scope; not API calls or execution count; rate unknown."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/prismatic-io",
+      "read_at": "2026-10-22T08:58:21.338Z",
+      "excerpt_sha256": "edd6c56f4291a5b6c731bde9d8631972bd6ebcf882a2cd4e56e8f45d82c8ddc8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Prismatic",
+      "title": "Embedded iPaaS Pricing for B2B SaaS Companies | Prismatic",
+      "url": "https://prismatic.io/pricing/",
+      "read_at": "2026-10-22T10:06:39.334551Z",
+      "excerpt_sha256": "9db5b7f3bf17e44aa2de8e783d8017cdb6f5dbea3c579b0537be8fd225fe66e7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Scale/Enterprise/Custom, instance-based pricing and enterprise feature boundaries read; no public amount invented."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "What is Prismatic? | Prismatic Docs",
+      "url": "https://prismatic.io/docs/",
+      "read_at": "2026-10-22T10:06:43.366457Z",
+      "excerpt_sha256": "f36edc67599e224e6e41f6db282e21f0f23cc7513c25516ddc16a90a9829b1de",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Team-built TypeScript and low-code integrations distinguished from end-user embedded workflows."
+    },
+    {
+      "id": "instances",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Instances Overview | Prismatic Docs",
+      "url": "https://prismatic.io/docs/instances/",
+      "read_at": "2026-10-22T10:07:45.486693Z",
+      "excerpt_sha256": "79b64d184d48adaa2671d1f236e10503928bb93fb7584e65d38ef4648ad00811",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Customer-specific configuration, deployment lifecycle and enabled-time billing read."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Deployment Options | Prismatic Docs",
+      "url": "https://prismatic.io/docs/platform/deployment-options/",
+      "read_at": "2026-10-22T10:07:48.493083Z",
+      "excerpt_sha256": "d066d114408a88417dc5db6ddbd386da35899fbeed1d18cdd59592f943e6fa5b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Marketplace, embedded builder, agentic flows and custom delivery models reviewed."
+    },
+    {
+      "id": "tutorial",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Build with Low-Code | Prismatic Docs",
+      "url": "https://prismatic.io/docs/get-started/build-integrations/first-integration-low-code/",
+      "read_at": "2026-10-22T10:08:28.136062Z",
+      "excerpt_sha256": "f55003365388092102790a549efe607dbc385042b8249aa37bad6530c63730de",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Text introduction describes TODO REST API to Slack example; embedded video not inspected."
+    },
+    {
+      "id": "testing",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Testing Instances | Prismatic Docs",
+      "url": "https://prismatic.io/docs/instances/testing/",
+      "read_at": "2026-10-22T10:08:25.496835Z",
+      "excerpt_sha256": "0dbd59d9e999f02d082d96525ab26e24ee74b2669b7bec81c3a42a51bc505800",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Test tab payload/header injection, generated webhooks and test-log access read."
+    },
+    {
+      "id": "logs",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Monitoring Overview | Prismatic Docs",
+      "url": "https://prismatic.io/docs/monitor-instances/",
+      "read_at": "2026-10-22T10:08:31.612526Z",
+      "excerpt_sha256": "1be60ce0b71e0240b3ed0227b1fcf9b285e3a6b9e862ab0a95c348a324d734e6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monitoring separates logging, event alerts, transient retry and replay after logic fixes."
+    },
+    {
+      "id": "retry",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Automatic Execution Retry | Prismatic Docs",
+      "url": "https://prismatic.io/docs/monitor-instances/retry-and-replay/automatic-retry/",
+      "read_at": "2026-10-22T10:08:59.580011Z",
+      "excerpt_sha256": "0220bfeb008715dfd5667077af254790247faaf4e6af250775f36c827212040f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Asynchronous retry configuration, up to ten attempts, backoff and cancellation ID reviewed."
+    },
+    {
+      "id": "replay",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Replay Failed Executions | Prismatic Docs",
+      "url": "https://prismatic.io/docs/monitor-instances/retry-and-replay/replaying-failed-executions/",
+      "read_at": "2026-10-22T10:09:02.460551Z",
+      "excerpt_sha256": "c3beb8d026a26bda372c5df11e950ecc88b8c606ad130e30838e419a97354cf6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Failed-execution query, successful-replay exclusion and replay mutation behavior read."
+    },
+    {
+      "id": "regions",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Deployment Regions | Prismatic Docs",
+      "url": "https://prismatic.io/docs/configure-prismatic/deployment-regions/",
+      "read_at": "2026-10-22T10:10:48.892235Z",
+      "excerpt_sha256": "ddee33442a3ece5d61fa917a3a2e451e78b3c220648c5884ec257645cfd8f2e5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Separate regional stacks, private AWS deployment and cross-region synchronization duties reviewed."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Prismatic",
+      "title": "Terms of Use | Prismatic",
+      "url": "https://prismatic.io/legal/terms/",
+      "read_at": "2026-10-22T10:10:52.615734Z",
+      "excerpt_sha256": "0e2832bfe5c78fc1162b39bf51dd304f53974b0d245189bcacdcdb43c39e087d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Public site/trial terms distinguish separate non-trial contract; no complete service license inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:10:52.615734Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["docs", "instances", "deployment", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "ownership",
+        "title_en": "You still own the business logic",
+        "title_zh": "业务逻辑仍由使用方负责",
+        "en": "Prismatic separates the code or low-code integration design from infrastructure for running it. The team must still define what data moves, which operation changes a record and which configuration a customer supplies. For example, mapping a service ticket into a customer’s project system needs a rule for priority, status and destination identity. No generic connector library can select those business semantics for you. Choose code or low-code according to the maintainers and test needs rather than assuming one path removes engineering responsibility.",
+        "zh": "Prismatic 将代码或低代码集成设计与运行基础设施分开。团队仍需定义传哪些数据、用哪个操作修改记录，以及客户提供哪些配置。例如把服务工单映射到客户项目系统，需要约定优先级、状态及目标标识；通用连接器目录无法替使用方决定业务语义。选择代码或低代码应依据维护人员与测试需要，不能认为某条路径消除了工程责任。",
+        "source_refs": ["docs"],
+        "evidence_type": "editorial_guidance_based_on_documented_model"
+      },
+      {
+        "id": "instances",
+        "title_en": "One integration can produce many separately configured instances",
+        "title_zh": "一个集成可以产生多个独立配置的实例",
+        "en": "An instance is a customer-specific configured copy, with connections and configuration variables supplied through a wizard. The team can deploy it for the customer or expose activation through a marketplace. Deployment can invoke deploy triggers and lifecycle functions, creates flow webhooks and registers schedules. Keep deployment-time side effects separate from normal business-event processing. As an evaluation, install the same integration for two test customers and verify that the connection and destination choices remain customer-specific.",
+        "zh": "Instance 是为具体客户配置的集成副本，通过配置向导提供连接与变量。团队可以代为部署，也可让客户从市场激活。部署时可调用 deploy trigger 及生命周期函数，同时创建流程 webhook、注册计划。因此应区分部署时副作用与日常业务事件处理。建议为两个测试客户安装同一集成，核对连接与目标选择是否保持客户独立。",
+        "source_refs": ["instances"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "example",
+        "title_en": "Use the small tutorial to inspect data transitions",
+        "title_zh": "用小教程检查数据变化",
+        "en": "The low-code tutorial’s text describes fetching TODO items from a REST API and posting incomplete items to Slack. That is a useful starting shape: fetch records, inspect a completion flag, then send selected content. For a production adaptation, define how duplicate TODO IDs, missing text and later completion updates should behave. A periodic fetch that posts every incomplete item may need additional state rules to avoid repeated notifications. These are proposed design checks; the embedded tutorial video and connected Slack account were not tested for this profile.",
+        "zh": "低代码教程文字描述了从 REST API 获取 TODO，再把未完成项目发到 Slack 的流程。它提供一个便于检查的结构：获取记录、判断完成标记、发送选定内容。若用于生产，还需约定 TODO ID 重复、文本缺失及之后标记完成时的行为。定时获取并发送全部未完成项目，可能需要额外状态规则避免重复通知。这些是设计检查建议；本文未检查嵌入视频，也未连接 Slack 实测。",
+        "source_refs": ["tutorial"],
+        "evidence_type": "documented_example_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "delivery",
+        "title_en": "A marketplace and an embedded builder serve different users",
+        "title_zh": "市场与嵌入式构建器服务不同操作需求",
+        "en": "Productized integrations are built by your team and activated by customers through a configuration experience. The embedded workflow builder lets customers author workflows within your app; custom integrations target individual customer needs. Agentic flows expose integration work as MCP tools. Choose which actor can author logic and which can only configure a prepared installation. An LLM-facing tool also needs a deliberately scoped action contract; the availability of MCP does not validate a particular agent’s decisions or permissions.",
+        "zh": "产品化集成由团队构建，客户通过配置体验激活；嵌入式流程构建器允许客户在自有应用内编写流程；定制集成处理单个客户的特殊需求。Agent 流程则把集成工作作为 MCP 工具提供。应先决定谁能编写逻辑、谁只能配置现成安装实例。面向 LLM 的工具还需明确动作范围；具备 MCP 能力并不能证明某个 Agent 的决策或权限正确。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "verification",
+        "title_en": "Test the deployed customer configuration",
+        "title_zh": "测试已部署的客户配置",
+        "en": "The instance Test tab accepts a payload and custom HTTP headers, and logs are available after invocation. Deployed flows can also receive webhooks or scheduled invocations. Our recommended acceptance follows a representative request through the chosen customer instance to the real test destination, then checks a malformed record and a repeated identifier. A successful designer test does not establish that every customer’s credentials, configuration or target permissions are valid. Record the tested customer, flow and configuration when evaluating supportability.",
+        "zh": "实例 Test 页可填写负载与自定义 HTTP header，调用后可查看日志。部署流程也可通过 webhook 或定时计划启动。建议让代表性请求经过所选客户实例到达真实测试目标，再检查格式异常及标识重复的记录。设计器测试成功不能证明所有客户的凭据、配置或目标权限都有效。评估可支持性时，应记录测试客户、流程与配置。",
+        "source_refs": ["testing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Distinguish transient retry from replay after a logic fix",
+        "title_zh": "区分暂时故障重试与修正逻辑后的重放",
+        "en": "Automatic retry is configurable for asynchronous invocations, with up to ten retry attempts, optional exponential backoff and a maximum delay of 24 hours. A cancellation identifier can cancel queued retries superseded by a newer invocation. This is particularly relevant to updates where an old value must not overwrite a newer one. Replay is a separate API-driven operation using an earlier execution’s input after the cause is fixed. The replay guide checks successful prior replays before issuing another. Keep destination writes safe to repeat; neither mechanism establishes exactly-once business effects.",
+        "zh": "异步调用可配置自动重试，最多十次重试，支持指数退避，最大间隔为 24 小时。取消标识可在更新调用到来后取消已被取代的排队重试，对于防止旧值覆盖新值尤其重要。Replay 是另一项 API 操作，在修复原因后用先前执行的输入重新运行；指南会先检查是否已成功重放。目标写入仍需能安全重复，这两种机制都不能证明业务效果严格只发生一次。",
+        "source_refs": ["retry", "replay"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "support",
+        "title_en": "Logging and alerting must be connected to a support process",
+        "title_zh": "日志与告警需要接入支持流程",
+        "en": "The monitoring overview distinguishes execution-step logging, configurable webhook/email alerts and retry/replay. Use alerts to identify the affected customer and flow, then inspect the relevant execution before changing its logic. Our suggested support record includes a business identifier and destination result so the team can distinguish missing delivery from a duplicated side effect. Log access and retention should be matched to the purchased plan and customer data policy. No monitoring, alert endpoint or restore behavior was exercised here.",
+        "zh": "监控概述区分执行步骤日志、可配置 webhook／邮件告警，以及重试或重放。可通过告警识别受影响客户与流程，再检查对应执行后调整逻辑。建议支持记录保留业务标识及目标结果，用于区分未交付与副作用重复。日志访问与保留需对应购买套餐及客户数据政策。本文未实际操作监控、告警端点或恢复。",
+        "source_refs": ["logs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "The enabled instance is the commercial unit",
+        "title_zh": "启用中的实例是商业计量单位",
+        "en": "Pricing lists Scale, Enterprise and Custom without a public dollar amount. It states that API calls and executions are not the billing unit; plans use per-instance pricing. The instance guide says charging depends on time enabled and pauses are not billed. Hypothetically, one integration enabled for 20 customers creates 20 customer instances, not one instance simply because the design is shared. Enterprise adds items such as the embedded workflow builder, higher concurrency, on-prem connectivity and custom log retention. Concurrency is therefore still a capacity concern even without execution-based billing. Request actual instance rates and contract definitions before costing deployment.",
+        "zh": "定价列出 Scale、Enterprise、Custom，未公开美元金额，并明确不按 API 调用或执行次数计费，而采用实例价格。实例指南说明费用取决于启用时长，暂停期间不计费。假设同一集成为 20 个客户启用，就形成 20 个客户实例，不能因设计共用而算作一个。Enterprise 增加嵌入式流程构建器、较高并发、内网连接及自定义日志保留等项目。因此即使不按执行计费，并发仍是容量问题。估算部署费用前需取得实际实例费率与合同定义。",
+        "source_refs": ["pricing", "instances"],
+        "evidence_type": "documented_rules_with_hypothetical_example"
+      },
+      {
+        "id": "hosting",
+        "title_en": "Regional stacks and private cloud are specific deployments",
+        "title_zh": "区域 stack 与私有云都是具体部署",
+        "en": "The regional guide says default accounts use US Commercial, with additional regions enabled under eligible enterprise contracts. Multiple stacks require component and integration synchronization. A private deployment is installed by Prismatic’s DevOps team into your AWS account in the chosen region, with support supplying endpoints and allowlists. This is different from an established right to download and operate an unrestricted open-source platform. The public terms govern site/trial use and explicitly place non-trial service use under a separate agreement. Trial terms also warn that trial data is unavailable afterward; do not use a trial as the sole retained record of an evaluation.",
+        "zh": "区域指南说明默认账户使用 US Commercial，额外区域按适用企业合同开通；多个 stack 之间需要同步组件与集成。私有部署由 Prismatic DevOps 团队安装到使用方指定区域的 AWS 账户，端点与白名单由支持提供。这不同于已取得下载并运营无限制开源平台的权利。公开条款覆盖网站及试用，并说明非试用服务另签协议；条款也提示试用结束后数据不可用，不宜把试用当评估记录的唯一保存处。",
+        "source_refs": ["regions", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Choose it when integration is a supported product capability",
+        "title_zh": "需要把集成作为产品能力维护时再选择",
+        "en": "Prismatic merits evaluation when a B2B software team needs repeatable customer deployments and can maintain the supplied logic, connector extensions and support workflow. A single internal data handoff may not justify customer-instance provisioning and embedding. Evaluate a real connector operation, the customer configuration wizard and a recoverable failure before adopting. Open-source connector marketing does not establish the license of the complete hosted platform; no blanket open-source classification was assigned here.",
+        "zh": "当 B2B 软件团队需要重复部署客户集成，并能维护逻辑、连接器扩展及支持流程时，Prismatic 值得评估。单个内部交接未必需要客户实例开通及嵌入。采用前应评估真实连接器操作、客户配置向导及一次可恢复失败。关于连接器开源的宣传不能确定完整托管平台的许可，本文未对整个平台作笼统开源分类。",
+        "source_refs": ["docs", "deployment", "terms"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Prismatic: Customer Instances, Embedded Workflows, Retries and Costs",
+    "title_zh": "Prismatic：客户实例、嵌入式流程、重试与费用",
+    "description_en": "Evaluate Prismatic’s TypeScript and low-code paths, per-customer deployment, instance billing, replay and private-region responsibilities.",
+    "description_zh": "评估 Prismatic 的 TypeScript 与低代码路径、客户独立部署、实例计费、重放及私有区域责任。",
+    "primary_intent": "Evaluate integration infrastructure built into a B2B product.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Actual instance rates, contract concurrency, specific connector behavior, private-host responsibilities, platform source licensing and UI languages remain unverified or untested.",
+      "zh": "实际实例费率、合同并发、具体连接器行为、私有托管职责、平台源码许可及界面语言仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The low-code tutorial video was not viewed; only its text introduction supports the described example.",
+      "zh": "未观看低代码教程视频；所述示例仅依据文字介绍。",
+      "source_refs": ["tutorial"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

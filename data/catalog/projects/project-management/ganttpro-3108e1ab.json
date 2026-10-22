@@ -1,0 +1,330 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "ganttpro-3108e1ab",
+  "name": "GanttPRO",
+  "website_url": "https://ganttpro.com/",
+  "domain": "ganttpro.com",
+  "identity_domain": "ganttpro.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "GanttPRO is an online project-planning service centered on a Gantt schedule: tasks have dates and dependencies, milestones identify important events, and resources connect planned work to available capacity. It also provides other views of project information. The practical question is how the schedule should react when work or availability changes.\n\nIts settings make that question explicit. Automatic scheduling can recalculate dependent tasks, while calendars and effort modes change how durations are derived. Baselines preserve a comparison point instead of silently redefining the original plan. This profile explains those mechanisms and their limits from official documentation; it is not a timing, reliability or resource-allocation benchmark.",
+  "description_zh": "GanttPRO 是以甘特排期为中心的在线项目规划服务：任务有日期和依赖，里程碑表示重要事件，资源将计划工作与可用容量关联起来，也提供项目资料的其他视图。实际选型问题是，当工作或可用时间变化时，排期应怎样响应。\n\n其设置明确体现了这一点。自动排期可以重新计算依赖任务，日历和投入模式则影响工期的推导方式。基线保留一个比较参照，避免悄然把新计划当成原计划。本文依据官方文档解释这些机制和边界，没有进行速度、可靠性或资源分配基准测试。",
+  "core_features": [
+    {
+      "name_en": "Dependency scheduling",
+      "name_zh": "依赖排期",
+      "explanation_en": "Use four relationship types with lead/lag to model sequencing.",
+      "explanation_zh": "通过四类关系及提前／延迟量建模顺序。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dependencies",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Saved baselines",
+      "name_zh": "已保存基线",
+      "explanation_en": "Compare a current project with one selected saved version.",
+      "explanation_zh": "把当前项目与选中的保存版本比较。",
+      "explanation_scope": "product_specific",
+      "source_ref": "baseline",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Effort and progress modes",
+      "name_zh": "投入与进度模式",
+      "explanation_en": "Choose what remains fixed and how parent progress is aggregated.",
+      "explanation_zh": "选择固定的量，并定义父级进度如何汇总。",
+      "explanation_scope": "product_specific",
+      "source_ref": "settings",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Plan an interdependent product-launch schedule.",
+      "Compare revised dates with an agreed baseline."
+    ],
+    "zh": ["规划存在依赖的产品发布排期。", "将修订日期与约定基线比较。"],
+    "source_refs": ["dependencies", "baseline"],
+    "basis": "Proposed evaluation workflows, not measured outcomes."
+  },
+  "technical_details": {
+    "Scheduling model": {
+      "en": "Automatic scheduling, working calendars and effort mode determine calculated dates.",
+      "zh": "自动排期、工作日历和投入模式共同影响计算日期。",
+      "source_ref": "settings",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Project scheduler", "Resource planning coordinator"],
+    "roles_status": "editorial_inference",
+    "source_ref": "features"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose calendar and effort settings, then add a representative dependency pair.",
+        "zh": "选择日历和投入设置，再加入一对代表性依赖任务。",
+        "source_refs": ["settings", "dependencies"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Save a baseline and inspect the downstream effect of one date change.",
+        "zh": "保存基线，检查一次日期变更对下游的影响。",
+        "source_refs": ["baseline", "dependencies"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_tested",
+    "items": [],
+    "source_ref": "features",
+    "scope": "Official overview names Jira Cloud and communication/calendar integrations; directions, fields and recovery were not verified."
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Only one saved baseline is displayed at a time.",
+        "zh": "一次只能显示一条已保存基线。",
+        "source_refs": ["baseline"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Dense dependencies and large active views can slow performance.",
+        "zh": "密集依赖和大型活跃视图可能拖慢性能。",
+        "source_refs": ["performance"],
+        "evidence_type": "vendor_documented_not_benchmarked"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid_seat_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Team-size-dependent Core/Advanced/Business and Enterprise. Fourteen-day trial; no sustained free entitlement established.",
+    "source_snapshot_zh": "Core／Advanced／Business 和 Enterprise 随人数配置计费。14 天试用，未确立持续免费权益。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/ganttpro",
+      "read_at": "2026-10-22T08:55:18.961Z",
+      "excerpt_sha256": "ce818e9908da9ecca3ff4dbcc9fab9d3336a3e8dfc57501e68ae2edcdd09340f",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "settings",
+      "type": "official_documentation",
+      "site": "help.ganttpro.com",
+      "title": "Project settings – GanttPRO Knowledge Base",
+      "url": "https://help.ganttpro.com/hc/en-us/articles/5423962258449-Project-settings",
+      "read_at": "2026-10-22T10:23:01.066518Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "60263085fc55849ef523012cd81f11ae7c06367a4cf02e978debefcf7d4e2a93",
+      "research_notes_en": "Automatic scheduling, calendar and effort-allocation settings affect dates and progress calculations; changes require project rights."
+    },
+    {
+      "id": "performance",
+      "type": "official_documentation",
+      "site": "help.ganttpro.com",
+      "title": "Maximizing GanttPRO's performance – GanttPRO Knowledge Base",
+      "url": "https://help.ganttpro.com/hc/en-us/articles/25405684007954-Maximizing-GanttPRO-s-performance",
+      "read_at": "2026-10-22T10:23:01.066759Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c48c2ac50a08f782dd187a1cc0d7724fd8e6968c2f3986001a37ecd4c61b285f",
+      "research_notes_en": "Large portfolios, dense dependencies and visible calculation layers can slow the UI; performance claims are vendor statements, not independent benchmarks."
+    },
+    {
+      "id": "features",
+      "type": "official_documentation",
+      "site": "help.ganttpro.com",
+      "title": "Core features – GanttPRO Knowledge Base",
+      "url": "https://help.ganttpro.com/hc/en-us/articles/4403968959505-Core-features",
+      "read_at": "2026-10-22T10:23:01.066809Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1395a539663d5393163f16043b63c9d13852f2f9943d8a5fc27fb3e84af9a076",
+      "research_notes_en": "Online Gantt planning includes tasks, dependencies, resources and alternative views; this does not establish every plan entitlement."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ganttpro.com",
+      "title": "Online Gantt Chart Software Pricing Plans | GanttPRO",
+      "url": "https://ganttpro.com/pricing/",
+      "read_at": "2026-10-22T10:23:01.067252Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2393e9cc3a63e9766335522a547968d01129afd81258267670fcd66483650ba9",
+      "research_notes_en": "Selected view uses twenty members and annual billing; Core/Advanced/Business rates are conditional on that configuration. Fourteen-day trial and Enterprise minimum conditions are explicit."
+    },
+    {
+      "id": "baseline",
+      "type": "official_documentation",
+      "site": "help.ganttpro.com",
+      "title": "Baseline view – GanttPRO Knowledge Base",
+      "url": "https://help.ganttpro.com/hc/en-us/articles/5486816280849-Baseline-view",
+      "read_at": "2026-10-22T10:23:01.067685Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a4b5fb11a89c06635bf3ab18b331d54bcfce2034d5f1b9edf4b39839573b2459",
+      "research_notes_en": "Save named baselines and compare one at a time; a baseline can also be created from an earlier history version."
+    },
+    {
+      "id": "dependencies",
+      "type": "official_documentation",
+      "site": "help.ganttpro.com",
+      "title": "Creating dependencies – GanttPRO Knowledge Base",
+      "url": "https://help.ganttpro.com/hc/en-us/articles/5486660021905-Creating-dependencies",
+      "read_at": "2026-10-22T10:23:01.067741Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a6cc79a57ecc1f6391893327c0b4c24932d4fcaa654ecf8b83e6bee8ec00fbc4",
+      "research_notes_en": "Four task-dependency types support positive lag and negative lead; units follow project duration settings."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:23:01.067741Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["features", "settings", "baseline"],
+  "profile": {
+    "sections": [
+      {
+        "id": "dependency-example",
+        "title_en": "Model the dependency that the work actually needs",
+        "title_zh": "按工作实际需要建立依赖",
+        "en": "For a hypothetical product launch, requirements completion may precede build start. That is a Finish-to-Start relationship. GanttPRO also documents Finish-to-Finish, Start-to-Start and Start-to-Finish, so not every connection means “finish the first item before starting the second.”\n\nA positive lag creates a gap; a negative lead permits overlap, using the project’s duration unit. Test one pair with the intended working calendar before linking a large plan. Changing a duration can move connected tasks, so inspect the successor date rather than only checking that an arrow exists. This example was not executed.",
+        "zh": "假设产品发布要求先完成需求，再开始构建，这属于 Finish-to-Start 关系。GanttPRO 也记录了 Finish-to-Finish、Start-to-Start 和 Start-to-Finish，因此并非每条连线都表示“第一项完成后第二项才开始”。\n\n正的 lag 创建间隔，负的 lead 允许重叠，使用项目设定的工期单位。连接大型计划前，应先按准备采用的工作日历测试一对任务。修改工期可能移动关联任务，因此要核对后续日期，不能只检查是否画出了箭头。本例没有实际执行。",
+        "source_refs": ["dependencies"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "schedule-modes",
+        "title_en": "Dates depend on scheduling and effort settings",
+        "title_zh": "日期取决于排期与投入设置",
+        "en": "Automatic scheduling is enabled by default on new projects and can be disabled. It recalculates dependent schedules when dates or links change. Project settings also distinguish fixed estimation, fixed duration, and fixed duration plus estimation; changing assignments can therefore change different calculated values.\n\nFor a pilot, set the working week and choose the effort mode before adding people. Record which value is meant to stay fixed. A second assignee should not be assumed to halve a task’s elapsed duration without inspecting that mode and resource calendar.",
+        "zh": "新项目默认启用自动排期，也可关闭。当日期或依赖变化时，它会重新计算关联排期。项目设置还区分固定估算、固定工期，以及同时固定工期与估算，因此修改分派时，不同模式会改变不同计算值。\n\n试点应先设置工作周、选择投入模式，再加入人员，并记录哪个值应该固定。不能在未检查模式和资源日历时，就假定增加一位受派人员会把经过工期减半。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "progress",
+        "title_en": "The same completed work can yield different percentages",
+        "title_zh": "相同完成工作可得到不同百分比",
+        "en": "Progress can use duration weighting or a simple task average. In an illustrative plan with one six-day task and three two-day tasks, completing only the six-day task gives 50% by duration and 25% by task count. This is arithmetic applying the documented options, not a tested project.\n\nAgree on the basis before reporting. Neither percentage establishes accepted deliverables or budget consumption, and changing the basis changes the interpretation without completing more work.",
+        "zh": "进度可以按工期加权，也可以按任务简单平均。举例来说，一项六天任务加三项各两天任务，只完成六天任务时，按工期为 50%，按任务数为 25%。这是运用文档选项的算术例子，并非实测项目。\n\n报告前应统一口径。两个百分比都不能直接证明交付物验收或预算消耗；改变口径也不会增加实际完成工作。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "baseline",
+        "title_en": "Preserve the reference before revising the plan",
+        "title_zh": "修订计划前先保留参照",
+        "en": "A baseline saves a project version for later comparison. GanttPRO can retain multiple baselines but display only one at a time. The chart shows baseline timing beneath task bars and distinguishes original versus current field values. The help also describes saving an earlier version from change history as a baseline.\n\nSave a clearly named reference before a pilot schedule change, move an upstream task, then inspect the variance. A baseline reveals a difference from the saved plan; it does not judge whether the new plan is approved or restore work in external systems. Keep the approval decision alongside the planning comparison.",
+        "zh": "基线保存项目版本，用于后续比较。GanttPRO 可保留多条基线，但一次只能显示一条。图表在任务条下显示基线时间，并区分原值和当前字段值。帮助文档也说明，可以从变更历史中选择早期版本保存为基线。\n\n试点改动排期前，应保存名称清晰的参照，再移动上游任务并检查偏差。基线揭示与所保存计划的差异，但不判断新计划是否获批，也不恢复外部系统中的工作。规划比较旁仍需保留审批结论。",
+        "source_refs": ["baseline"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scale",
+        "title_en": "Large schedules need representative validation",
+        "title_zh": "大型排期需要有代表性的验证",
+        "en": "The vendor’s performance guide identifies data volume, dense dependency graphs, large portfolios, long workload ranges and always-visible baseline/critical-path layers as potential slowdown factors. Its stated capacity figures are vendor claims, not measurements made for this profile.\n\nUse a realistic subset of your plan and typical participant hardware. Include the actual dependency density and views used during planning; an empty demo cannot establish the experience on a large portfolio. Separate inactive work where appropriate and compare whether hiding unused calculation layers helps. This does not establish a guaranteed latency or maximum for your environment.",
+        "zh": "厂商的性能指南将数据量、密集依赖图、大型项目组合、过长负载时间范围，以及持续显示基线／关键路径列为可能拖慢速度的因素。页面中的容量数字是厂商主张，不是本档案的测量结果。\n\n建议使用真实计划的代表性子集和参与者常用硬件，保留实际依赖密度与规划视图；空白演示不能证明大型项目组合的体验。可按需要分开非活跃工作，并比较隐藏未用计算层是否有帮助。这不能确立你的环境中的保证延迟或容量上限。",
+        "source_refs": ["performance"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price-fit",
+        "title_en": "Read the selected team size with the price",
+        "title_zh": "价格必须连同所选人数一起读",
+        "en": "The retrieved annual view selects twenty members and advertises per-user monthly equivalents of USD 7 for Core, USD 10 for Advanced and USD 17 for Business. Team-size controls and discounts mean these are configuration snapshots. Enterprise shows an offer and a five-user minimum with annual billing; a universal normalized amount is left unset.\n\nCore names Gantt charts, calendars and automatic scheduling; Advanced adds customization; Business names workload, portfolios, budgets and time tracking. A 14-day fully featured trial is not evidence of continuing free use. Shortlist GanttPRO when dependency-based schedule planning is central, then verify the needed edition, sharing and resource behavior. License/self-hosting rights and real integrations remain unverified.",
+        "zh": "读取的年付视图选择了二十位成员，展示 Core 每用户每月折合 7 美元、Advanced 10 美元、Business 17 美元。人数选择与折扣会影响价格，这些只是配置快照。Enterprise 展示优惠，要求至少五用户并按年付款；本文不填写普遍适用的标准化金额。\n\nCore 列出甘特图、日历和自动排期，Advanced 增加定制，Business 列出负载、项目组合、预算和工时跟踪。14 天完整功能试用不能证明可以持续免费。当依赖排期是核心需求时，可以列入候选，再核对版本、共享和资源行为。许可／自托管权利及真实集成仍未核实。",
+        "source_refs": ["pricing", "features"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "GanttPRO: Dependencies, Baselines, Resource Modes and Pricing",
+    "title_zh": "GanttPRO：依赖、基线、资源模式与价格",
+    "description_en": "Understand GanttPRO scheduling, duration versus average progress, saved baselines and team-size price conditions with official sources.",
+    "description_zh": "依据官方来源理解 GanttPRO 排期、工期与平均进度、保存基线及人数价格条件。",
+    "primary_intent": "Evaluate dependency-based project planning.",
+    "secondary_questions": [
+      "Why do assignments change duration?",
+      "What does a saved baseline show?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no measured keyword volume or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No real project or integration was executed; schedule enforcement, resource allocation and performance on a representative workload need testing.",
+      "zh": "未运行真实项目或集成；排期约束、资源分配和代表性负载性能仍需测试。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Checkout-specific seat price, license contract, self-hosting rights, interface languages and regional purchasing were not confirmed.",
+      "zh": "未确认结账时的特定席位价格、许可合同、自托管权利、界面语言及地区购买条件。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

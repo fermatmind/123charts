@@ -1,0 +1,379 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "github-3aeb0024",
+  "name": "GitHub",
+  "website_url": "https://github.com/",
+  "domain": "github.com",
+  "identity_domain": "github.com",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "GitHub hosts Git repositories and the collaboration around them: changes, issues, pull-request review, project planning and automation. Developers can keep code history, discussion and checks beside the same change, while using tools such as GitHub Actions to run configured build/test/deployment work.\n\nThe GitHub platform is broader than Git itself and includes separately scoped services such as Copilot, Codespaces and security products. Repository hosting is not automatically a working production application, and public visibility is not automatically an open-source license. This profile focuses on the code-to-checked-change workflow and its access/cost conditions.",
+  "description_zh": "GitHub 托管 Git 仓库及周边协作：改动、issue、pull request 审阅、项目规划和自动化。开发者可将代码历史、讨论及检查放在同一改动旁，使用 GitHub Actions 执行配置的构建／测试／部署。\n\n平台范围比 Git 本身广，另含 Copilot、Codespaces、安全等服务。托管代码不代表生产应用已可用，公开可见也不自动取得开源许可。本文聚焦代码至受检查改动的流程及访问／费用条件。",
+  "core_features": [
+    {
+      "name_en": "Versioned code collaboration",
+      "name_zh": "版本化代码协作",
+      "explanation_en": "Record commits and discuss a proposed change with review/history.",
+      "explanation_zh": "记录提交，通过审阅及历史讨论改动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flow",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Event-driven Actions",
+      "name_zh": "事件驱动 Actions",
+      "explanation_en": "Run configured jobs/steps on repository events or schedules.",
+      "explanation_zh": "按仓库事件或时间执行配置的 job／step。",
+      "explanation_scope": "product_specific",
+      "source_ref": "actions",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Repository roles and branch rules",
+      "name_zh": "仓库角色及分支规则",
+      "explanation_en": "Assign collaboration access and optionally enforce selected merge/push conditions.",
+      "explanation_zh": "分配协作权限，按需执行合并／推送条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate code history, review and a failing/corrected check",
+      "Estimate seat, runner and artifact usage for a private team repository"
+    ],
+    "zh": [
+      "评估代码历史、审阅及失败／修正检查",
+      "估算私有团队仓库的席位、runner 及产物用量"
+    ],
+    "source_refs": ["flow", "actions", "pricing", "billing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Software developers",
+      "Maintainers and reviewers",
+      "Engineering administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Use a disposable repository and inspect the exact code change/history.",
+        "zh": "使用可丢弃仓库，检查具体改动及历史。",
+        "source_refs": ["flow"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure only a relevant evaluation workflow and inspect both failure and success logs.",
+        "zh": "配置相关评估 workflow，检查失败及成功日志。",
+        "source_refs": ["actions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify roles, actual rules and billing ownership before adding collaborators or paid usage.",
+        "zh": "增加协作者或付费用量前核查角色、实际规则及计费归属。",
+        "source_refs": ["roles", "protection", "billing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Automation runs only the configured event/job scope; passing checks do not prove production availability.",
+        "zh": "自动化只运行所配事件／job 范围，通过检查不能证明生产可用。",
+        "source_refs": ["actions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Private-repository controls and product entitlements vary by plan.",
+        "zh": "私有仓库控制及产品权限依套餐不同。",
+        "source_refs": ["protection", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Deleting artifacts does not refund accrued storage, and public-to-private does not remove existing copies.",
+        "zh": "删除产物不退已累计存储，公开改私有也不移除已有副本。",
+        "source_refs": ["billing", "licensing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_seat_usage_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:53:07.667838Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free0; displayed Team4 and Enterprise from21 USD/user/month with first12-month labels; runners/storage/Codespaces/Copilot/security entitlements separate.",
+    "summary_zh": "Free0；展示 Team4、Enterprise21美元每用户每月起，带前十二月标记；runner／存储／Codespaces／Copilot／安全权限另核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/github",
+      "read_at": "2026-10-22T08:49:11.631Z",
+      "excerpt_sha256": "34c41199f114759474f05936b1a693bd207f67b6fdb0b159be9ce94929f49b34",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub · GitHub",
+      "url": "https://github.com/",
+      "read_at": "2026-10-22T11:53:07.667838Z",
+      "excerpt_sha256": "ffb70c6f838640493a863a22a799643ad635a4b2978e8248e7e5094a54009f47",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Git-based collaboration plus issues/review/automation/AI product scope read; vendor adoption/efficiency claims not measured."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "GitHub",
+      "title": "GitHub · Plans & pricing for every developer and team · GitHub",
+      "url": "https://github.com/pricing",
+      "read_at": "2026-10-22T11:53:07.626240Z",
+      "excerpt_sha256": "60d37f62df282374a55dc3dd83fab8162f29b5935876e27d802941abc06a2093",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free0, Team4/user/month and Enterprise21 starting price, first12-month labels, and separately metered/add-on products reviewed. Introductory labels retained rather than permanent-price claim."
+    },
+    {
+      "id": "flow",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "GitHub flow - GitHub Docs",
+      "url": "https://docs.github.com/en/get-started/using-github/github-flow",
+      "read_at": "2026-10-22T11:53:28.739921Z",
+      "excerpt_sha256": "08e74b4b93c7d81889d8feb60f8feacd1775db3c2874dbebf3589eb670dd01a0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Documented branch/commit/push/review/merge history workflow read as a product example only, not instructions to change this batch delivery or create a PR."
+    },
+    {
+      "id": "actions",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "Understanding GitHub Actions - GitHub Docs",
+      "url": "https://docs.github.com/en/actions/get-started/understand-github-actions",
+      "read_at": "2026-10-22T11:56:51.684931Z",
+      "excerpt_sha256": "71e5826219ddd45c4bec415513daa152b17e318c7ed654b97e3e88793754e48f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual canonical redirect read: event/YAML workflow, jobs, steps, dependency ordering and hosted/self-hosted runners."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "GitHub Actions billing - GitHub Docs",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "read_at": "2026-10-22T11:53:28.848553Z",
+      "excerpt_sha256": "1718ee346790330387fec45e6805081ae81140a18bb722f56dc3ce4edca243ce",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual canonical billing guide: public standard runners vs private allowances, owner billing, failed attempts, artifact/package pooled storage vs separate cache and hourly accrued usage."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "Repository roles for an organization - GitHub Docs",
+      "url": "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization",
+      "read_at": "2026-10-22T11:53:56.601140Z",
+      "excerpt_sha256": "d499714779e85afd9740b8b611cdf727c1f7b0e27533b6c4d18a3f445925374f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read/Triage/Write/Maintain/Admin organization repository roles, base permissions and deploy-key access persistence read."
+    },
+    {
+      "id": "protection",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "About protected branches - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+      "read_at": "2026-10-22T11:54:34.604000Z",
+      "excerpt_sha256": "1af0adc32a65dd97746c64bd17d3c45ec95e780a537a2c2d5fbffb9eec7f2b36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Plan/public-private availability, optional required checks, default admin exception and configured restrictions read; no repository settings changed."
+    },
+    {
+      "id": "licensing",
+      "type": "official_documentation",
+      "site": "GitHub",
+      "title": "Licensing a repository - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository",
+      "read_at": "2026-10-22T11:54:34.819285Z",
+      "excerpt_sha256": "cdd056547d90dd88756441a2cbcd195cc88a62f243d09ab8ee51b49949cb9c83",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Public repository visibility does not automatically grant an open-source license; existing forks/copies survive privatization. This is repository-content guidance, not a full GitHub platform source license."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:56:51.684931Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": [
+    "home",
+    "flow",
+    "actions",
+    "pricing",
+    "licensing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "change",
+        "title_en": "Make a change reviewable and reproducible",
+        "title_zh": "让改动可审阅、可复现",
+        "en": "A proposed evaluation could modify one small application behavior, commit the files and compare the diff/history. The documented GitHub flow uses a branch and pull request so collaborators can discuss the change and configured checks can run before merging. That is one supported collaboration pattern, not a requirement for every repository. Inspect what changed, how it was tested and which commit is being reviewed. No new repository, issue or pull request was created for this research.",
+        "zh": "建议以一个小应用行为改动试验，提交文件并比较差异／历史。GitHub flow 文档采用分支及 pull request，让协作者讨论，并在合并前运行所配置检查。这是支持的协作模式之一，不是全部仓库必需流程。需核对改动、测试方式及审阅提交。本研究未创建新仓库、issue 或 pull request。",
+        "source_refs": ["flow"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "automation",
+        "title_en": "Workflow files specify what actually runs",
+        "title_zh": "实际执行内容由 workflow 文件决定",
+        "en": "Actions workflows are YAML files under .github/workflows. Events start jobs; job dependencies determine sequencing, and steps run code or reusable actions on a runner. A repository without a relevant configured workflow does not automatically test or deploy every commit. In a disposable evaluation, deliberately fail one assertion and inspect the job/step log, then verify a corrected commit. A green build is evidence only of the checks that ran, not that the public application or every user journey works.",
+        "zh": "Actions workflow 为 .github/workflows 下 YAML。事件启动 job，依赖决定顺序，step 在 runner 执行脚本或可复用 action。未配置相关 workflow 的仓库不会自动测试或部署每个提交。可在可丢弃试验中有意使断言失败、检查 job／step 日志，再验证修正提交。绿色构建只能证明实际运行检查，不能证明公开应用及所有流程正常。",
+        "source_refs": ["actions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "A collaboration role and a branch rule solve different problems",
+        "title_zh": "协作角色与分支规则解决不同问题",
+        "en": "Organization repositories offer Read, Triage, Write, Maintain and Admin roles. Branch rules can separately require checks, restrict pushes or protect history. Availability differs for public/private repositories and plans. Classic protection excludes admins by default unless configured otherwise; do not infer that a protected label constrains every actor. Deploy keys have another access path and can remain usable after a person leaves the organization. Review the actual account, app/key and repository settings before relying on a particular access boundary.",
+        "zh": "组织仓库有 Read、Triage、Write、Maintain、Admin 角色。分支规则另可要求检查、限制推送或保护历史，公开／私有及套餐可用性不同。经典保护默认不限制管理员，除非另配置，不能从受保护标签推断约束全部参与者。部署 key 又是另一访问路径，人员离开组织后仍可能使用。依赖具体边界前需核查账号、应用／key 及实际仓库设置。",
+        "source_refs": ["roles", "protection"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ci-cost",
+        "title_en": "Failed jobs and retained artifacts can still cost money",
+        "title_zh": "失败 job 及保留产物仍可能计费",
+        "en": "Actions billing distinguishes standard hosted runners for public repositories from private-repository allowances and paid overages. Costs belong to the repository owner, including runs initiated by writers. A failed five-minute run plus a successful ten-minute retry consumes fifteen minutes. Artifact storage accrues hourly; deleting an artifact stops future storage accrual but does not erase earlier accrued usage. Artifact/Packages storage share an allowance, while cache has a separate per-repository allowance. Budget both compute attempts and retained data rather than assuming only successful jobs count.",
+        "zh": "Actions 区分公开仓库标准托管 runner、私有仓库额度及超额。费用归仓库所有者，包括写权限用户触发的运行。失败五分钟后成功重跑十分钟，会消耗十五分钟。产物存储按小时累计，删除仅停止后续存储计费，不清除此前累计；产物与 Packages 共享额度，cache 则另按仓库分配。预算应包括失败尝试及保留数据，不能只算成功 job。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans",
+        "title_en": "Separate seat subscriptions from metered products",
+        "title_zh": "区分席位订阅与计量产品",
+        "en": "The current page lists Free at $0 with unlimited public/private repositories, Team at $4/user/month and Enterprise starting $21/user/month. Team/Enterprise figures carry a first-12-month label, so renewal must be confirmed. Actions, Codespaces, Copilot and security capabilities have their own allowances, usage or add-ons; not every page feature is included in a seat price. For example, current Free organizations receive 2,000 standard-runner minutes and 500 MB artifact allowance. Confirm account type, repository visibility, seats and usage rather than quoting a single all-in platform price.",
+        "zh": "当前页面列 Free $0、公开／私有仓库不限，Team 每用户每月 $4，Enterprise $21 起；后两者带前十二月标记，续费需确认。Actions、Codespaces、Copilot、安全能力另有额度、计量或附加项，不能把页面全部功能算入席位价。例如当前免费组织含两千标准 runner 分钟及五百 MB 产物额度。应确认账号类型、可见性、席位及用量，不能给单一完整平台价。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "rights",
+        "title_en": "Public source and open-source rights are separate",
+        "title_zh": "公开源码与开源权利需区分",
+        "en": "The licensing guide says a public repository needs an appropriate license to grant open-source reuse rights; without one, ordinary copyright restrictions still apply. GitHub terms separately permit viewing/forking on the service, and existing forks or local copies survive a later switch to private. Review a project’s own license rather than applying Git’s license or GitHub’s public-hosting status to it. This also does not establish that the entire GitHub hosted platform is open source. Full platform terms and individual project licenses were not audited here.",
+        "zh": "许可指南说明公开仓库仍需适当许可才授予开源复用权，没有许可仍适用通常版权限制。GitHub 条款另允许在服务内查看／fork，之后改私有也不会移除既有 fork 或本地副本。应检查项目自身许可，不能套 Git 许可或 GitHub 公开托管状态；同样不能由此证明完整托管平台开源。本次未审计整个平台条款及各项目许可。",
+        "source_refs": ["licensing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "GitHub: repositories, Actions, access and usage costs",
+    "title_zh": "GitHub：仓库、Actions、权限及用量费用",
+    "description_en": "Review code collaboration, configured CI checks, role/protection boundaries, Actions billing and public-source licensing.",
+    "description_zh": "了解代码协作、所配 CI 检查、角色／保护边界、Actions 计费及公开源码许可。",
+    "search_intent_en": "Evaluate GitHub application-delivery workflow and team operating costs.",
+    "search_intent_zh": "评估 GitHub 应用交付流程及团队运行成本。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No evaluation workflow, repository permission, branch rule or product subscription was created/changed for this profile.",
+      "zh": "本档案未创建／修改评估 workflow、仓库权限、分支规则或产品订阅。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exact post-introductory renewal, negotiated Enterprise agreement, add-on pricing, regional taxes and chosen runner rates require current checkout/contract confirmation.",
+      "zh": "优惠后续费、企业协议、附加价格、地区税费及所选 runner 费率需实际结算／合同确认。",
+      "source_refs": ["pricing", "billing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "GitHub Enterprise Server deployment, data-residency scope, UI languages, backup restore and full-platform license were not deeply verified.",
+      "zh": "未深入核实 GitHub Enterprise Server 部署、数据驻留范围、界面语言、备份恢复及完整平台许可。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "This is public product documentation research; it does not independently validate any real customer repository, CI or deployment.",
+      "zh": "本文为公开产品文档研究，不独立验证任何真实客户仓库、CI 或部署。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

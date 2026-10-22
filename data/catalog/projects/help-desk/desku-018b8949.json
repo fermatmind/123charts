@@ -1,0 +1,390 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "desku-018b8949",
+  "name": "Desku",
+  "website_url": "https://desku.io/",
+  "domain": "desku.io",
+  "identity_domain": "desku.io",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Desku is a hosted customer-support platform for shared conversations across chat, email and connected social channels. The inbox combines ticket ownership, priority, departments, internal notes and customer profiles; EVA AI and automation add generated replies, classification and workflow actions under plan-specific conditions.\n\nA useful evaluation separates the free website-chat entry plan, paid shared-email support, rule automation and AI cost. Current official pages contain conflicting seat, trial and feature-availability wording, so this profile records the differences instead of combining them into an unconditional feature list. No tenant, channel, rule, AI answer, integration or subscription was tested.",
+  "description_zh": "Desku 是托管客户支持平台，集中聊天、邮件及已连接社交渠道的共享对话。收件箱组合工单归属、优先级、部门、内部备注及客户档案；EVA AI 与自动化按套餐条件增加生成回复、分类及流程动作。\n\n评估应区分免费网站聊天入门方案、付费共享邮件支持、规则自动化和 AI 成本。当前官方页面在席位、试用和功能可用性上有冲突，因此本文记录差异，不将其合成无条件功能表。未测试租户、渠道、规则、AI 回答、集成或订阅。",
+  "core_features": [
+    {
+      "name_en": "Shared inbox with customer context",
+      "name_zh": "带客户背景的共享收件箱",
+      "explanation_en": "Manage status, priority, department and assignee beside the conversation and customer profile.",
+      "explanation_zh": "在对话及客户档案旁管理状态、优先级、部门和负责人。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dashboard",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Private notes versus customer replies",
+      "name_zh": "私有备注与客户回复",
+      "explanation_en": "The composer separates Reply, which sends to the customer, from Note, which is private to the team.",
+      "explanation_zh": "编辑器区分发送给客户的 Reply 和仅团队可见的 Note。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dashboard",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Node-based ticket workflows",
+      "name_zh": "节点式工单流程",
+      "explanation_en": "Start from ticket events, filter by properties and branch into actions; several advanced nodes remain forthcoming or inconsistent across guides.",
+      "explanation_zh": "从工单事件开始，按属性筛选并分支执行动作；若干高级节点仍待发布或指南不一致。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flows",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "EVA and Copilot AI options",
+      "name_zh": "EVA 与 Copilot AI 选项",
+      "explanation_en": "Paid plan cards describe BYOK, with separate EVA token and eligible Copilot seat add-ons.",
+      "explanation_zh": "付费套餐卡描述 BYOK，另有 EVA token 及符合资格的 Copilot 席位附加项。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Route new support tickets by channel and priority while preserving private team context.",
+      "Evaluate AI-assisted replies and ecommerce customer context without assuming every connector is already available."
+    ],
+    "zh": [
+      "按渠道及优先级路由新支持工单，同时保留团队私有背景。",
+      "评估 AI 辅助回复及电商客户背景，不假定每个连接器均已可用。"
+    ],
+    "source_refs": ["dashboard", "flows", "pricing"],
+    "basis": "Editorial evaluation tasks based on public documentation, not customer or hands-on results."
+  },
+  "technical_details": {
+    "Hosted configuration": {
+      "en": "Cloud workspace with role-dependent settings and visual automation. Marketing describes API/webhook capabilities, but two setup guides disagree about current API action availability.",
+      "zh": "云端工作空间，设置随角色变化，提供可视化自动化。营销描述 API／webhook 能力，但两篇配置指南对当前 API 动作可用性不一致。",
+      "source_ref": "create",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business support manager",
+      "Ecommerce support agent",
+      "Help desk administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the required inbox/channel, profile capacity, user roles and plan before importing customer data.",
+        "zh": "导入客户数据前，选择所需收件箱／渠道、客户档案容量、角色及套餐。",
+        "source_refs": ["pricing", "dashboard"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Build a ticket-created rule with a channel filter and explicit true/false outcomes; inspect private notes separately from public replies.",
+        "zh": "用工单创建触发器、渠道筛选及明确真假分支建立规则，分别检查私有备注和公开回复。",
+        "source_refs": ["flows", "create", "dashboard"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Verify actual nodes and AI key/token configuration in the selected account before publishing live responses.",
+        "zh": "发布真实回复前，在所选账户核对实际节点及 AI key／token 配置。",
+        "source_refs": ["pricing", "flows", "create"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Shopify and WooCommerce",
+        "source_ref": "pricing",
+        "scope": "Plan comparison describes customer/order context and limited store counts; actual permissions, fields and write operations not tested."
+      },
+      {
+        "name": "HubSpot and Pipedrive",
+        "source_ref": "pricing",
+        "scope": "Explicitly marked Coming Soon in the price comparison; not counted as currently available connectors."
+      },
+      {
+        "name": "WhatsApp, Facebook, Instagram, Telegram, Slack and Aircall",
+        "source_ref": "pricing",
+        "scope": "Business card names these channels/integrations; setup, provider charges and regional access not established."
+      }
+    ],
+    "source_ref": "pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Customer-created/message triggers, A/B, time filters, response filters, delay and agent notifications are marked coming soon in the detailed guides. API action availability differs between two guides.",
+        "zh": "详细指南将客户创建／发消息触发器、A/B、时间筛选、响应筛选、延迟及坐席通知标为后续；两篇指南对 API 动作可用性不同。",
+        "source_refs": ["flows", "create"],
+        "evidence_type": "observed_documentation_inconsistency"
+      },
+      {
+        "en": "BYOK unlimited AI wording does not establish free external model usage or unlimited software-plan capacity. Purchased token limits and provider billing remain separate evaluation questions.",
+        "zh": "BYOK 无限 AI 措辞不能证明外部模型免费或软件套餐容量无限；所购 token 限制及服务商账单是独立评估事项。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_interpretation"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "product"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Flat displayed dollar monthly plan with included seats, profiles and inbox limits; optional AI/token/visitor/seat add-ons. Actual currency and annual quote not established.",
+    "source_snapshot_en": "Free $0:2 agents/200 profiles/one shared inbox; Growth $39:6 agents on card (FAQ says5)/5,000 profiles; Advance $79:12/50,000; Business $179:25/200,000. EVA token add-on $59/month up to5M, Copilot $29/seat/month with BYOK, extra Business seats $10. Annual discount and trial-card wording conflict.",
+    "source_snapshot_zh": "Free $0：2坐席／200档案／1共享收件箱；Growth $39：卡片6坐席（FAQ称5）／5,000档案；Advance $79：12／50,000；Business $179：25／200,000。EVA token 附加项每月$59、最多5M，Copilot 每席位每月$29并配BYOK，Business 额外席位$10。年付折扣及试用信用卡措辞冲突。",
+    "checked_at": "2026-10-22T11:16:01.067849+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is the API workflow action definitely available?",
+      "question_zh": "API 工作流动作确定可用吗？",
+      "answer_en": "The creation guide lists it as available, while the automation overview article marks it coming soon. Confirm the actual selected-account node before relying on it.",
+      "answer_zh": "创建指南列为可用，自动化概览文章却标为后续；依赖前需确认所选账户实际节点。",
+      "source_refs": ["create", "flows"]
+    },
+    {
+      "question_en": "Does every trial require no credit card?",
+      "question_zh": "所有试用都无需信用卡吗？",
+      "answer_en": "No-card headlines conflict with pricing/footer language requiring a card for paid trials and a refundable $1 verification. The free plan is explicitly no-card; confirm the selected paid signup conditions.",
+      "answer_zh": "免卡标题与定价／页脚要求付费试用信用卡及可退$1验证的说明冲突。免费档明确免卡；付费注册需确认所选条件。",
+      "source_refs": ["product", "pricing"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/desku-io",
+      "read_at": "2026-10-22T08:41:57.912Z",
+      "excerpt_sha256": "5b90ecc086a077c603e3998c622c33a7b33f0a42a5affd24c1e671ee0a6f663c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI Customer Service Software For Smarter Support | Desku",
+      "title": "AI Customer Service Software For Smarter Support | Desku",
+      "url": "https://desku.io/",
+      "read_at": "2026-10-22T11:13:34.028528+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "795ec0fd586f6cda45173ef14b5f73dbe813738c2c9db43934023e15e9e4f852",
+      "research_notes_en": "Shared inbox/live chat/Eva product read. Homepage no-card headline conflicts with paid-trial footer; performance and ratings claims not verified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing",
+      "title": "Pricing",
+      "url": "https://desku.io/pricing/",
+      "read_at": "2026-10-22T11:15:26.693286+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "bda99973a93327a299a9a33042a3c74bc8f385f2cc8ab146ef575a34f43d8262",
+      "research_notes_en": "Free/Growth/Advance/Business, included seats/profiles, BYOK versus token add-on, trial verification and no-refund cancellation. Growth5/6 and annual-discount inconsistencies retained."
+    },
+    {
+      "id": "dashboard",
+      "type": "official_documentation",
+      "site": "Dashboard of Desku.io",
+      "title": "Dashboard of Desku.io",
+      "url": "https://desku.io/docs/en/article/dashboard-of-desku",
+      "read_at": "2026-10-22T11:16:00.990414+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9a8ee5042c73ebe7b4f0fd8f68a56ee14b981ba68c41b0f8b7b4e3b3426c3d46",
+      "research_notes_en": "September 21 2026 dashboard and conversation guide: role-dependent views, Reply versus private Note, customer panels, metrics and export."
+    },
+    {
+      "id": "flows",
+      "type": "official_documentation",
+      "site": "Automation Flows in Desku",
+      "title": "Automation Flows in Desku",
+      "url": "https://desku.io/docs/en/article/automation-flows-in-desku",
+      "read_at": "2026-10-22T11:16:00.990208+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b7c547341d05031c397386d825630d218af5f5167b10c9a72a6c04e7af3277c8",
+      "research_notes_en": "Explicit event triggers, filters and actions with coming-soon labels. API call listed coming soon, unlike creation guide."
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "Creating New Ticket Automation",
+      "title": "Creating New Ticket Automation",
+      "url": "https://desku.io/docs/en/article/creating-new-automation",
+      "read_at": "2026-10-22T11:16:01.067849+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "470fbb9a3227cc4cce389ab08f3cdbe5e08fa671eae246a7301af5cc656e8105",
+      "research_notes_en": "Flow creation, true/false branches and Publish schedule; API Call listed available, time/delay/notification features still coming soon."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "AI Customer Service Automation | No-Code Workflow Engine",
+      "title": "AI Customer Service Automation | No-Code Workflow Engine",
+      "url": "https://desku.io/platform/automation/",
+      "read_at": "2026-10-22T11:15:27.723948+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8de7247d9c9869b23135c51313bbc8457cddb35f42d5215f4ee251ea6966d4ef",
+      "research_notes_en": "Broad event/condition/action and AI classification platform offer; plan gating and preview described, detailed docs narrower."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Terms & Conditions | Desku Customer Support Software",
+      "title": "Terms & Conditions | Desku Customer Support Software",
+      "url": "https://desku.io/terms/",
+      "read_at": "2026-10-22T11:15:26.609593+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "021a0dc1cc6b143d99a0c8944a281f3bbbf7f0bd59e6a0654f6ee054b282e6c1",
+      "research_notes_en": "Cloud subscription/use restrictions and AI human-review wording read, but legal entity field remains an explicit placeholder. Final counterparty/license not verified."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:16:01.067849+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "pricing",
+    "dashboard",
+    "flows",
+    "create"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "agent-context",
+        "title_en": "Separate a customer reply from the team’s private note",
+        "title_zh": "区分客户回复与团队私有备注",
+        "en": "The September 2026 dashboard guide describes a conversation list, the active thread and an About Customer panel. A header holds status, priority, department and assignee; saved views filter work such as unassigned or pending reply. The composer’s Reply mode sends to the customer, while Note stores private team context.\n\nFor a hypothetical return request, identify the correct customer and order before assigning the ticket, then add an internal investigation note and a separate public update. Inspect visibility with an agent role as well as an administrator. A merge suggestion is a candidate identity match, not proof that two customers are the same; exact merge recovery was not established.",
+        "zh": "2026年9月面板指南描述对话列表、活跃线程及 About Customer 面板。顶部包含状态、优先级、部门及负责人，保存视图可筛选未分配、等待回复等工作。编辑器 Reply 发送给客户，Note 保存团队私有背景。\n\n以假设退货请求为例，分配前先识别正确客户和订单，再分别添加内部调查备注及公开进展。应同时使用坐席及管理员角色检查可见性。合并建议是候选身份匹配，不能证明两位客户相同；准确合并恢复仍未确定。",
+        "source_refs": ["dashboard"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Build from the documented event and explicit false branch",
+        "title_zh": "按文档事件及明确假分支建立流程",
+        "en": "The detailed guides list ticket-created/updated, assignee/status change and tag-change triggers. Filters check ticket status, channel, priority, agent, team and tags, with true/false branches. Actions include ticket creation/update/deletion, notes, tags, followers, CCs and replies. These actions can change customer-visible work, so begin with synthetic tickets and a clear intended result.\n\nThe guides mark customer-created/message triggers, A/B, time and response filters, delays and agent notifications as forthcoming. One lists API calls as available and another marks them coming soon. A broad platform page is not enough to resolve that contradiction. Verify the actual account editor, selected plan and publishing schedule; do not build a critical delay or external transaction around an unresolved node.",
+        "zh": "详细指南列出工单创建／更新、负责人／状态变更及标签变化触发器。筛选检查状态、渠道、优先级、坐席、团队及标签，并有真假分支。动作包含创建／更新／删除工单、备注、标签、关注者、抄送及回复，会改变客户可见工作，应先用合成工单和明确目标结果。\n\n指南将客户创建／消息触发器、A/B、时间及响应筛选、延迟和坐席通知列为后续。一篇称 API 调用可用，另一篇称后续，泛化平台页不能解决矛盾。应核对实际账户编辑器、套餐及发布时间安排，避免依赖未明确节点实现关键延迟或外部交易。",
+        "source_refs": ["flows", "create", "automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure-ai",
+        "title_en": "Inspect the result and retain human work when AI stops",
+        "title_zh": "检查结果，并在 AI 停止时保留人工处理",
+        "en": "Marketing describes AI intent/sentiment inputs and safeguards against loops or conflicting actions. No precise retry, rollback or conflict-order specification was established in the read guides. A useful pilot should include a rule whose action updates its own trigger field, a missing owner, a rejected external action and an incorrect AI classification; these are proposed checks, not observed faults.\n\nThe dashboard separates EVA involvement, autonomous resolution, routed-to-agent work and generated answers. Those measures describe different events and should not become a verified resolution rate without examining the underlying tickets. Pricing says exhausted Eva capacity stops Eva until reset or an add-on while other features continue; exact base-token allowances are not clear. Confirm the operational human queue rather than assuming a generated response completed the request.",
+        "zh": "营销描述 AI 意图／情绪输入，以及防循环和冲突动作措施，但所读指南未确定准确重试、回滚或冲突顺序规范。试点可包含动作改动自身触发字段、负责人缺失、外部动作被拒及 AI 分类错误；这些是建议检查，不是已观察故障。\n\n面板区分 EVA 参与、独立解决、转人工及生成答案，含义不同，不检查原工单就不能当成已验证解决率。定价称 Eva 容量耗尽后停至重置或购买附加项，其他功能继续，但基本 token 额度不清楚。应确认人工队列确实接手，不能假定生成回复即完成请求。",
+        "source_refs": ["automation", "dashboard", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Budget the plan, AI provider and eligible add-ons together",
+        "title_zh": "一起预算套餐、AI 服务商及符合资格的附加项",
+        "en": "Monthly cards show Free $0, Growth $39, Advance $79 and Business $179 with included seats and customer-profile limits. Growth’s card says six seats but its FAQ says five. Advance/Business add more channels and features; SLA, webhook access and collision handling appear on the Business card, while some connectors are marked coming soon. Plain extracted checkmark tables do not reliably establish every lower-tier inclusion.\n\nPaid cards advertise unlimited Eva with BYOK. This is not evidence that external model usage is free. The page separately lists an Eva token add-on at $59/month up to 5M tokens, eligible Copilot at $29/seat/month with BYOK, and extra Business seats at $10. Its annual banner says two months free while the FAQ calls this 10%; do not normalize an annual quote from inconsistent wording. Billing currency, base AI allowance and complete add-on eligibility remain unverified.",
+        "zh": "月付卡显示 Free $0、Growth $39、Advance $79、Business $179，并限制所含席位及客户档案。Growth 卡称6席位，FAQ却称5。Advance／Business 增加渠道及功能；SLA、webhook 及冲突处理列在 Business 卡，部分连接器标为后续。提取后的勾选表不能可靠确定每个低档权限。\n\n付费卡宣传 BYOK 下无限 Eva，不能证明外部模型用量免费。页面另列 Eva token 附加项每月$59、最多5M，符合资格的 Copilot 每席位每月$29并配BYOK，以及 Business 额外席位$10。年度标题称免两个月，FAQ却称10%，不能由矛盾措辞归一化年付报价。计费币种、基本 AI 额度及完整附加项资格仍未核实。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entry-exit",
+        "title_en": "Resolve trial conditions and the unfinished legal identity",
+        "title_zh": "明确试用条件及未填完整法律身份",
+        "en": "The free card offers two agents and 200 profiles. Paid trials are described as fourteen days with a card and refundable $1 payment verification in the pricing FAQ/footer, despite no-card headlines elsewhere. Cancellation is described as ending future renewal without a refund, with access until the billing period ends and reduction to free-plan limits. These are published descriptions, not a completed purchase test.\n\nThe terms describe a cloud subscription, restricted access license and customer responsibility for reviewing AI output, but the named legal entity still contains a bracketed placeholder. Do not treat that text as a verified final counterparty or complete signed agreement. Confirm the service agreement, data exports, retention/recovery, selected hosting region and available UI languages. Desku merits evaluation for a team with a defined inbox/routing need; no claimed cost saving, rating, compliance outcome or setup speed was independently verified.",
+        "zh": "免费卡提供2坐席及200档案。定价 FAQ／页脚描述付费试用14天、需信用卡及可退$1付款验证，与其他免卡标题不同。取消被描述为停止未来续订、无退款，当前计费期内仍可访问，之后降至免费限制。这是公开说明，不是完成购买测试。\n\n条款描述云订阅、受限访问许可及客户复核 AI 输出责任，但法律实体名称仍带方括号占位，不能当作已确认最终合同方或完整签署协议。应确认服务合同、数据导出、保留／恢复、所选托管地区及可用界面语言。对有明确收件箱／路由需求的团队，Desku 可进一步评估；节省成本、评分、合规结果及配置速度均未独立验证。",
+        "source_refs": ["pricing", "product", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Desku: Shared Inbox, Workflow Conditions, EVA and Plan Costs",
+    "title_zh": "Desku：共享收件箱、流程条件、EVA 与套餐费用",
+    "description_en": "Evaluate Desku private notes, ticket triggers, current versus forthcoming automation, BYOK/add-on costs and conflicting seat, trial and annual-pricing documentation.",
+    "description_zh": "评估 Desku 私有备注、工单触发器、当前／后续自动化、BYOK／附加项成本，以及席位、试用和年付文档冲突。",
+    "primary_intent": "Evaluate Desku support workflow and selected-plan requirements.",
+    "secondary_questions": [
+      "Are API actions available now?",
+      "What does unlimited Eva with BYOK mean?",
+      "Does a paid trial need a card?"
+    ],
+    "query_basis": "Editorial questions; no search demand or ranking measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, role, rule, channel, integration, AI or purchase tested. API node availability, Growth seat count, annual discount, paid-trial conditions, base AI quotas, currency, final legal entity/license, region, exports/restore and UI languages remain unverified.",
+      "zh": "未测试账户、角色、规则、渠道、集成、AI 或购买。API 节点可用性、Growth 席位、年付折扣、付费试用条件、基本 AI 额度、币种、最终法律实体／许可、地区、导出／恢复及界面语言未核实。",
+      "source_refs": ["pricing", "flows", "create", "terms"],
+      "evidence_type": "not_tested_and_documentation_inconsistency"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

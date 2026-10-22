@@ -1,0 +1,364 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "archiz-crm-3b56403d",
+  "name": "Archiz CRM",
+  "website_url": "https://archizsolutions.com/crm-software/",
+  "domain": "archizsolutions.com",
+  "identity_domain": "archizsolutions.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Archiz presents its CRM as a customizable combination of sales lead management, marketing campaigns and customer support, with AI agent offerings for routing, follow-ups and data cleanup. The current official CRM page redirects from the older crm-software-solutions path to crm-software. Its custom-development positioning means the actual delivery scope needs to be agreed rather than inferred from every linked industry or agent page.\n\nUseful documented evaluation paths include capturing a prospect, routing it to an owner and checking duplicate records before outreach. Public pages describe these capabilities but do not establish a tested release, account-level availability, contractual package or measured customer result. No demo request was submitted and no CRM or AI operation was run.",
+  "description_zh": "Archiz 将 CRM 定位为可定制组合，覆盖销售线索管理、营销活动和客户支持，并提供路由、跟进及数据清理等 AI agent 方案。当前官方 CRM 页从旧 crm-software-solutions 路径跳转至 crm-software。由于强调定制交付，实际范围需约定，不能从每个行业或 agent 链接推定全部包含。\n\n有文档描述的评估路径包括捕获潜在对象、分配负责人，以及联系前检查重复记录。公开页面描述这些能力，但不能证明已测试版本、具体账户可用性、合同套餐或经测量的客户结果。本文未提交演示申请，也未运行 CRM 或 AI 操作。",
+  "core_features": [
+    {
+      "name_en": "Custom sales, campaign and support modules",
+      "name_zh": "定制销售、营销及支持模块",
+      "explanation_en": "Vendor offers configurable fields, workflows and modules; delivered scope and interfaces require a project-specific demo.",
+      "explanation_zh": "厂商提供字段、流程及模块定制，实际范围和接口需项目演示确认。",
+      "explanation_scope": "product_specific",
+      "source_ref": "custom",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Rule-based lead routing",
+      "name_zh": "规则线索路由",
+      "explanation_en": "Described routing uses lead fields, territory, workload and availability, with configured timed reassignment.",
+      "explanation_zh": "描述中的路由采用线索字段、区域、工作量和可用性，并可配置超时重新分配。",
+      "explanation_scope": "product_specific",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scheduled duplicate cleanup",
+      "name_zh": "定时重复清理",
+      "explanation_en": "The vendor describes fuzzy matching and selecting a master record with merged history; restore and approval semantics are not established.",
+      "explanation_zh": "厂商描述模糊匹配、选择主记录及合并历史，恢复与审批语义尚未确定。",
+      "explanation_scope": "product_specific",
+      "source_ref": "duplicates",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a custom intake-to-owner workflow for an organization with explicit lead fields and assignment rules.",
+      "Compare similar contacts before allowing scheduled cleanup to alter records."
+    ],
+    "zh": [
+      "为已有明确线索字段和分配规则的组织评估定制接收到负责人流程。",
+      "允许定时清理改动记录前，比较相似联系人。"
+    ],
+    "source_refs": ["custom", "routing", "duplicates"],
+    "basis": "Editorial tasks derived from vendor capability descriptions; not hands-on or customer evidence."
+  },
+  "technical_details": {
+    "Delivery model": {
+      "en": "Custom CRM with promoted cloud access and optional agent work; no versioned installation guide, API specification, hosting region or exact deployment contract verified.",
+      "zh": "定制 CRM，宣传云端访问及可选 agent 工作；未核实版本化安装指南、API 规格、托管地区或准确部署合同。",
+      "source_ref": "custom",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Sales operations owner",
+      "Custom CRM project owner",
+      "Customer support manager"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "custom"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "List required record fields, ownership rules and the exact sales/support modules to demonstrate.",
+        "zh": "列出必需记录字段、负责人规则及需演示的准确销售／支持模块。",
+        "source_refs": ["custom", "routing"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Use synthetic leads to inspect missing fields, duplicate matches, unavailable owners and no-match routing.",
+        "zh": "使用合成线索检查缺失字段、重复匹配、负责人不可用及路由无匹配情形。",
+        "source_refs": ["routing", "duplicates", "form"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Obtain written implementation, messaging, hosting, maintenance and export terms before purchase.",
+        "zh": "购买前获取实施、消息、托管、维护及导出书面条件。",
+        "source_refs": ["contact", "custom"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Google Sheets audit in vendor form-to-CRM case",
+        "source_ref": "form",
+        "scope": "A described case implementation, not a verified generally available connector or customer outcome."
+      },
+      {
+        "name": "Email, calendar and support-system customization",
+        "source_ref": "custom",
+        "scope": "Broad custom integration offer; exact providers, API, sync semantics and fees not established."
+      }
+    ],
+    "source_ref": "custom"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Case-study text mixes form ingestion and mailbox parsing and gives inconsistent response-time/outcome figures. Those numbers are excluded from product performance claims.",
+        "zh": "案例混用表单接收及邮箱解析，并给出不一致响应时间／效果数值；本文不将这些数字用于产品性能主张。",
+        "source_refs": ["form"],
+        "evidence_type": "observed_documentation_inconsistency"
+      },
+      {
+        "en": "No-match routing, merge undo, automated-action approvals and failed-message retry behavior are not documented in the pages read.",
+        "zh": "所读页面未说明路由无匹配、合并撤销、自动动作审批及消息失败重试行为。",
+        "source_refs": ["routing", "duplicates", "form"],
+        "evidence_type": "documentation_gap"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "contact",
+    "source_refs": ["contact", "custom"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Project/demo contact; no public numeric rate, minimum seats, billing term, usage charges or complete quote established.",
+    "source_snapshot_en": "Pages invite a free demo/trial, but the read material does not specify trial duration, eligibility, included modules or conversion conditions. No sustained-free plan established.",
+    "source_snapshot_zh": "页面邀请免费演示／试用，但所读材料未说明时长、资格、所含模块或转付费条件；未确定持续免费方案。",
+    "checked_at": "2026-10-22T11:00:38.624240+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does every listed AI agent come with the CRM?",
+      "question_zh": "列出的每个 AI agent 都包含在 CRM 中吗？",
+      "answer_en": "The website links a broad agent library, but no package entitlement or tested release was established. Agree the actual modules and actions in the demonstration and contract.",
+      "answer_zh": "网站链接广泛 agent 库，但未确定套餐权限或已测试版本，应在演示和合同中约定具体模块及动作。",
+      "source_refs": ["product", "custom"]
+    },
+    {
+      "question_en": "Is automatic duplicate merging reversible?",
+      "question_zh": "自动重复合并可撤销吗？",
+      "answer_en": "The page describes matching, master selection and history merging; it does not establish an undo or restore procedure. Request a synthetic-record demonstration before enabling scheduled changes.",
+      "answer_zh": "页面描述匹配、主记录选择及历史合并，但未确定撤销或恢复程序；启用定时改动前应要求合成记录演示。",
+      "source_refs": ["duplicates"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/archiz-crm",
+      "read_at": "2026-10-22T08:37:32.425Z",
+      "excerpt_sha256": "cde0b428d4095c6f1fdc24e7f7ee597a9dfb496a08a4503ea3ca548510f1e908",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Best CRM Software with AI Agents for Real Estate Sales 2026",
+      "title": "Best CRM Software with AI Agents for Real Estate Sales 2026",
+      "url": "https://archizsolutions.com/crm-software/",
+      "read_at": "2026-10-22T10:59:44.381678+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d2b07c42cf8e437e77920f95a47f8ac194690963812e965e1e428b934a98b336",
+      "research_notes_en": "Original CRM-software-solutions path redirects normally to crm-software; current 2026 product text read. AI outcome, security and generic industry claims not independently verified."
+    },
+    {
+      "id": "custom",
+      "type": "official_documentation",
+      "site": "Custom CRM Software | Agentic CRM with AI Agents 2026",
+      "title": "Custom CRM Software | Agentic CRM with AI Agents 2026",
+      "url": "https://archizsolutions.com/custom-crm-software/",
+      "read_at": "2026-10-22T11:00:04.981280+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "26ed561145aff3ba98691678c84c0a8c42d0ffac792cc01a1b7d33568ed25032",
+      "research_notes_en": "Custom modules across sales, campaigns and support; cloud access promoted but exact hosting, release and license unknown."
+    },
+    {
+      "id": "routing",
+      "type": "official_documentation",
+      "site": "Auto-assign leads based on rules – AI Routing 2026 | Archiz",
+      "title": "Auto-assign leads based on rules – AI Routing 2026 | Archiz",
+      "url": "https://archizsolutions.com/auto-assign-leads-based-on-rules/",
+      "read_at": "2026-10-22T11:00:03.163284+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "822bf230b0863484d4239a50a65a6630150be8845cadec813e90fac651e3032d",
+      "research_notes_en": "Vendor describes field-based routing, workload/calendar checks and timed reassignment; no actual rule execution or no-match behavior demonstrated."
+    },
+    {
+      "id": "duplicates",
+      "type": "official_documentation",
+      "site": "Duplicate Lead Cleaner – Auto Deduplicate 2026 | Archiz",
+      "title": "Duplicate Lead Cleaner – Auto Deduplicate 2026 | Archiz",
+      "url": "https://archizsolutions.com/duplicate-lead-cleaner/",
+      "read_at": "2026-10-22T11:00:03.044755+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "eddd34027738c60c48ae1e79be603ea79b0a547cb4beb70240257afc1accebff",
+      "research_notes_en": "Scheduled fuzzy match and master-record/history merge described. Generic FAQ statements about modern CRMs are not verified Archiz integrations."
+    },
+    {
+      "id": "form",
+      "type": "official_documentation",
+      "site": "Automated form-to-CRM -",
+      "title": "Automated form-to-CRM -",
+      "url": "https://archizsolutions.com/automated-form-to-crm/",
+      "read_at": "2026-10-22T11:00:38.624240+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c1da61c14f5e0f5451d8a5c3d019db9e30fe3d35d6e309af878ff90e2e7bafec",
+      "research_notes_en": "Vendor case describes validation/upsert/routing/reply/Sheets audit but mixes forms and inbox parsing, three minutes and 90 seconds, and different outcome percentages. Numerical outcomes not adopted as evidence."
+    },
+    {
+      "id": "contact",
+      "type": "official_pricing",
+      "site": "Contact - For CRM Software Solutions | Best CRM Software provider India",
+      "title": "Contact - For CRM Software Solutions | Best CRM Software provider India",
+      "url": "https://archizsolutions.com/contact/",
+      "read_at": "2026-10-22T11:00:12.169990+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3d28cddb476e944557469074f0a58c950d75dfbbb6004472c9e425e8aff8dcf9",
+      "research_notes_en": "Official callback/project/demo route read; no numeric price, seat unit, term or trial length published in retrieved text."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:00:38.624240+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "custom", "routing", "duplicates"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Treat Archiz as a scoped custom CRM engagement",
+        "title_zh": "将 Archiz 作为明确范围的定制 CRM 项目",
+        "en": "The custom page combines sales pipeline work, marketing channels, ticketing and business operations. It invites buyers to select modules and adapt fields or workflows. The directory name does not establish a fixed all-inclusive edition, and linked hospital, IVR or WhatsApp products should not silently become the CRM package.\n\nA practical starting brief names the lead, contact and support records to store, the people allowed to view or change them, and the events that should create an activity. Ask to see these requirements in the proposed delivery. Autonomous AI, real-time reporting and security descriptions remain vendor statements, without an execution or technical audit in this research.",
+        "zh": "定制页组合销售管线、营销渠道、工单及业务运营，并邀请买方选择模块、调整字段和流程。目录名称不能确定固定全包版本，医院、IVR 或 WhatsApp 等相邻产品链接也不能自动成为 CRM 套餐。\n\n实用需求说明应列出要保存的线索、联系人和支持记录，谁可查看／改动，以及什么事件应创建活动。应要求在拟交付方案中演示这些需求。自主 AI、实时报表及安全说明仍属厂商陈述，本文没有运行或技术审计。",
+        "source_refs": ["custom", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing",
+        "title_en": "Make assignment conditions and exceptions explicit",
+        "title_zh": "明确分配条件与例外",
+        "en": "The routing page describes standard/custom field criteria, geography, company size, product interest and layered conditions. It also describes workload and calendar availability plus timed reassignment when a representative has not acted. These are capabilities claimed on a product page, not an administrator manual proving an exact rule precedence.\n\nFor a hypothetical real-estate intake, route by location and property interest, then inspect an existing account owner, absent representative, missing location and a duplicated submission. Decide the fallback owner and what counts as action before setting a reassignment timer. The page’s example threshold is not a service-level guarantee. No-match handling, concurrent updates, retries and audit retention still require demonstration.",
+        "zh": "路由页描述标准／自定义字段、地理、公司规模、产品兴趣及分层条件，也描述工作量、日历可用性，以及人员未行动时的超时重新分配。这些是产品页能力声明，不是证明准确规则优先级的管理员手册。\n\n以假设房地产接收流程为例，按地区和物业兴趣分配，再检查现有账户负责人、人员缺席、地区缺失及重复提交。设置计时前先确定兜底负责人和什么算行动。页面示例阈值不等于服务水平保证；无匹配处理、并发更新、重试及审计保留仍需演示。",
+        "source_refs": ["routing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "matching",
+        "title_en": "A similar name is a candidate match, not confirmed identity",
+        "title_zh": "相似姓名是候选匹配，不是已确认身份",
+        "en": "Duplicate Lead Cleaner is described as finding records using names, email, phone or company, including fuzzy variants. The page says it recommends a master from recency or completeness and merges histories, with scheduled execution. It does not specify tie-breaking, cross-company isolation or a complete recovery procedure.\n\nEvaluation should include two people with similar names, a shared phone, conflicting owners and unique notes on both records. Compare the proposed master and resulting history, then establish approval and restoration before scheduling changes. Generic FAQ language about popular CRMs is not proof of a supported Archiz connector to every named service. Customer-volume and improvement claims were not independently verified.",
+        "zh": "Duplicate Lead Cleaner 被描述为按姓名、邮箱、电话或公司查找记录，包含模糊变体。页面称按近期活动或完整程度推荐主记录并合并历史，支持定时运行，但未说明平局选择、跨公司隔离或完整恢复程序。\n\n评估应包含同名近似的两个人、共用电话、负责人冲突及两边独有备注。应对照拟选主记录及最终历史，再明确审批和恢复后安排定时改动。FAQ 泛指热门 CRM 的文字不能证明 Archiz 对每个被列服务都提供连接器。客户量及改善主张未独立核实。",
+        "source_refs": ["duplicates"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "case-evidence",
+        "title_en": "Use the intake case as a workflow sketch, with evidence limits",
+        "title_zh": "把接收案例当流程草图，并保留证据限制",
+        "en": "The vendor’s form-to-CRM case sketches validation, normalized upsert, deduplication, routing, an initial reply with a booking link, reminders and a Sheets audit. That sequence suggests useful acceptance points: source attribution, a single intended record, correct owner, an appropriate message and visible exceptions.\n\nThe same page shifts between web forms and shared-mailbox parsing, gives different response-time figures and uses different outcome percentages. The client is not identified in the read text. This profile therefore does not reproduce the figures as verified benefits or infer which implementation is generally available. Failed parsing, provider rejection, duplicate replies and replay after outage are questions for the actual demo, not behaviors established here.",
+        "zh": "厂商 form-to-CRM 案例勾勒校验、规范化更新／新增、去重、路由、含预约链接的初次回复、提醒及 Sheets 审计，可据此制定验收点：来源标记、单条预期记录、正确负责人、适当消息及可见例外。\n\n同页在 Web 表单和共享邮箱解析间切换，响应时间数值不同，效果比例也不同，所读文字未指明客户。因此本文不把数字当核实收益，也不推断哪种实施已普遍提供。解析失败、服务商拒绝、重复回复和中断后重放，应由实际演示回答，本文未确定。",
+        "source_refs": ["form"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Resolve delivery, cost and exit conditions before adoption",
+        "title_zh": "采用前明确交付、成本及退出条件",
+        "en": "The current contact and custom pages provide project/demo routes and trial invitations without a numeric public rate or complete billing basis. Confirm licenses or subscription, custom development, migration, message-provider usage, hosting, support, change requests and maintenance separately. A free-demo button does not establish sustained free use or an unconditional trial.\n\nArchiz promotes cloud access. Current CRM, routing and cleanup pages were readable over ordinary HTTPS, but reading sales pages does not verify a live customer deployment. Teams able to own a scoped implementation can evaluate the offer; exact live release, hosting, license, data export/restore, integrations, UI languages and regional purchase remain unverified.",
+        "zh": "当前联系及定制页提供项目／演示入口和试用邀请，没有公开数值价格或完整计费基础。应分别确认许可或订阅、定制开发、迁移、消息服务用量、托管、支持、变更需求及维护。免费演示按钮不能证明持续免费或无条件试用。\n\nArchiz 宣传云访问。当前 CRM、路由及清理页可经普通 HTTPS 读取，但销售页面可读不能验证真实客户部署。能负责明确范围实施的团队可评估，但准确线上版本、托管、许可、数据导出／恢复、集成、界面语言及地区购买仍未核实。",
+        "source_refs": ["contact", "custom", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Archiz CRM: Custom Scope, Lead Routing and Duplicate Cleanup",
+    "title_zh": "Archiz CRM：定制范围、线索路由与重复清理",
+    "description_en": "Evaluate Archiz custom CRM and AI agent offers using documented routing and matching claims, workflow examples, quote gaps and unresolved recovery conditions.",
+    "description_zh": "依据路由及匹配文档声明、流程示例、报价缺口和未确定恢复条件，评估 Archiz 定制 CRM 与 AI agent 方案。",
+    "primary_intent": "Understand Archiz CRM implementation scope and evaluation requirements.",
+    "secondary_questions": [
+      "Which modules are actually included?",
+      "How should routing exceptions be evaluated?",
+      "Can duplicate merges be restored?"
+    ],
+    "query_basis": "Editorial questions; no search-demand or ranking measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No demo, account, routing, merge, AI action or purchase run. Exact released features, no-match/error behavior, approvals, retries, recovery, pricing, license, hosting, exports, UI languages and regional purchasing unverified.",
+      "zh": "未运行演示、账户、路由、合并、AI 动作或购买；准确已发布功能、无匹配／错误行为、审批、重试、恢复、价格、许可、托管、导出、界面语言及地区购买未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Vendor case mixes input types and inconsistent outcome metrics; generic CRM FAQ statements do not verify Archiz-specific connectors.",
+      "zh": "厂商案例混用输入类型及不一致效果指标；泛化 CRM FAQ 不能验证 Archiz 专属连接器。",
+      "source_refs": ["form", "duplicates"],
+      "evidence_type": "observed_documentation_inconsistency"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

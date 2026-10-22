@@ -1,0 +1,452 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "bigin-by-zoho-crm-b49871ef",
+  "name": "Bigin by Zoho CRM",
+  "website_url": "https://www.bigin.com/",
+  "domain": "www.bigin.com",
+  "identity_domain": "bigin.com",
+  "category": "crm",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Bigin by Zoho CRM is a customer relationship application for small businesses that need to turn scattered contact details and follow-ups into an owned process. Its organizing unit is the pipeline: a record moves through stages, while contacts, companies, products and activities supply the surrounding context. Team Pipelines extend this model to operations such as onboarding and service, rather than restricting every team to one sales board.\n\nThe practical decision is how much process structure you need. Bigin provides forms, communication integrations and rule-based actions around those records. It is a separate application from Zoho CRM; connecting another Zoho service does not make that service part of the same subscription. This profile examines the documented record workflow, setup dependencies and cost boundaries. It does not report an account trial or measured business results.",
+  "description_zh": "Bigin by Zoho CRM 面向需要把分散联系人和后续跟进整理成明确流程的小企业。其组织单位是管线：记录按阶段推进，联系人、公司、产品和活动提供关联信息。Team Pipelines 将这种方式扩展到客户入门和服务等工作，不要求所有团队共用一块销售看板。\n\n选型关键是需要多复杂的流程结构。Bigin 围绕记录提供表单、沟通集成和规则动作。它与 Zoho CRM 是不同应用；连接其他 Zoho 服务，不代表相应服务已包含在同一订阅中。本文说明文档中的记录流程、配置依赖和费用边界，没有实际注册试用或测量业务成效。",
+  "core_features": [
+    {
+      "name_en": "Team-specific pipelines",
+      "name_zh": "按团队设置管线",
+      "explanation_en": "Give different customer processes their own record types, fields, stages and permissions.",
+      "explanation_zh": "为不同客户流程设置各自的记录类型、字段、阶段和权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "team-pipelines",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Connected records across pipelines",
+      "name_zh": "跨管线关联记录",
+      "explanation_en": "Configured transitions can create connected records in the next team process.",
+      "explanation_zh": "按配置的转换条件，在下一团队流程中创建关联记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connected-pipelines",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Conditional workflows",
+      "name_zh": "条件工作流",
+      "explanation_en": "Choose a trigger, conditions and actions such as ownership changes, tasks or field updates.",
+      "explanation_zh": "选择触发器、条件以及负责人调整、任务或字段更新等动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "workflows",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Import history and undo",
+      "name_zh": "导入历史与撤回",
+      "explanation_en": "Inspect updated/skipped records and use the documented 30-day import undo window.",
+      "explanation_zh": "检查更新及跳过的记录，并在文档所列30天窗口内撤回导入。",
+      "explanation_scope": "product_specific",
+      "source_ref": "imports",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Track an inquiry from qualification to a won or lost outcome.",
+      "Start an onboarding process from a completed sales record."
+    ],
+    "zh": [
+      "跟踪咨询从资格判断到成交或流失的过程。",
+      "由完成的销售记录启动客户入门流程。"
+    ],
+    "source_refs": ["team-pipelines", "connected-pipelines"],
+    "basis": "Illustrative evaluation tasks, not observed deployments."
+  },
+  "technical_details": {
+    "Application model": {
+      "en": "Hosted CRM with web configuration and mobile applications; some pipeline setup remains on the web.",
+      "zh": "托管 CRM，通过网页配置并提供移动应用；部分管线配置需在网页完成。",
+      "source_ref": "team-pipelines",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business sales owner",
+      "Customer onboarding coordinator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define one pipeline and its record fields, owner and completion stages before importing a small sample.",
+        "zh": "先定义一条管线的字段、负责人和完成阶段，再导入小批样例。",
+        "source_refs": ["team-pipelines", "imports"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Map columns to the intended module and check import history, including skipped records.",
+        "zh": "把列映射到正确模块，检查导入历史及跳过记录。",
+        "source_refs": ["imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Add one trigger-condition-action rule, then check the target record and recipient using disposable data.",
+        "zh": "增加一条触发器—条件—动作规则，用可丢弃数据核对目标记录和接收人。",
+        "source_refs": ["workflows"],
+        "evidence_type": "editorial_test_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Email providers via IMAP/POP3",
+        "source_ref": "email",
+        "scope": "Provider authentication and sharing settings still apply."
+      },
+      {
+        "name": "Zoho MCP",
+        "source_ref": "mcp",
+        "scope": "AI client initiated actions; separate app access and entitlements need checking."
+      }
+    ],
+    "source_ref": "features"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "AI availability is marked early access in the feature overview; do not assume every advertised agent is enabled for every account.",
+        "zh": "功能总览将 AI 标为早期开放，不能假定所有宣传的代理均已为每个账户启用。",
+        "source_refs": ["features"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Record quotas cover more than contacts: pipeline records, activities and notes also matter.",
+        "zh": "记录额度并非只算联系人；管线记录、活动和备注同样需要计入。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Per user; yearly-billed and monthly figures differ; capacity/add-ons and region affect totals.",
+    "source_snapshot_en": "USD yearly-billed view: Express $7, Premier $12, Bigin 360 $18 per user/month; Free is single-user. Locale rendering varied.",
+    "source_snapshot_zh": "美元按年付款页面：Express 每用户每月7美元、Premier 12美元、Bigin 360 18美元；Free 为单用户。地区页面渲染存在差异。",
+    "checked_at": "2026-10-22T09:57:43.100840Z"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is Bigin the same application as Zoho CRM?",
+      "question_zh": "Bigin 与 Zoho CRM 是同一应用吗？",
+      "answer_en": "No. The migration documentation describes moving data between the two; assess the receiving model and entitlements separately.",
+      "answer_zh": "不是。迁移文档说明了两者之间的数据迁移，应分别核对接收端的数据模型和订阅权益。",
+      "source_refs": ["imports"]
+    },
+    {
+      "question_en": "Does a form submission have to create an approved record immediately?",
+      "question_zh": "提交表单是否必须立即成为已批准记录？",
+      "answer_en": "The forms page describes an approval option before adding captured data, alongside direct record creation. Configure the intended route.",
+      "answer_zh": "表单页同时说明直接创建记录和先审批采集数据的方式，需要配置所需路径。",
+      "source_refs": ["forms"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/bigin-by-zoho-crm",
+      "read_at": "2026-10-22T08:41:46.526Z",
+      "excerpt_sha256": "fe3425987d6155072cc7ee435aa63483c1c1e2e35246c57eab9821ff4ef14b51",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI-Powered simple CRM for small businesses | Bigin by Zoho CRM",
+      "title": "AI-Powered simple CRM for small businesses | Bigin by Zoho CRM",
+      "url": "https://www.bigin.com/",
+      "read_at": "2026-10-22T09:56:38.041606Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a8750b5bfa25422c6da79051245d313ecbc43475ac8f8730fc6e6ed448a458c3",
+      "research_notes_en": "Small-business CRM positioning; the retrieved homepage redirected to the US page. No customer growth claims adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Bigin Pricing and Editions | The Most Affordable CRM",
+      "title": "Bigin Pricing and Editions | The Most Affordable CRM",
+      "url": "https://www.bigin.com/pricing.html",
+      "read_at": "2026-10-22T09:56:38.048500Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "313131c7f3a779af897b3915968bc3eee39f6da5bfb10e51baf3c012ec126b18",
+      "research_notes_en": "USD view: Free single user/500 records; Express 7, Premier 12, Bigin 360 18 USD per user/month billed yearly. Separate monthly figures and AI credit conditions. A later locale redirect produced inconsistent zero/INR text; no universal payable price inferred."
+    },
+    {
+      "id": "features",
+      "type": "official_documentation",
+      "site": "CRM Features | Power your small business with Bigin",
+      "title": "CRM Features | Power your small business with Bigin",
+      "url": "https://www.bigin.com/features.html",
+      "read_at": "2026-10-22T09:56:38.048500Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "242856c7b25d232aca9f2e576f337bd2eae45b70ed0919463a8aaeefea1c22a2",
+      "research_notes_en": "Feature overview marks AI as early access; integrations with other Zoho products do not make those products included modules."
+    },
+    {
+      "id": "team-pipelines",
+      "type": "official_documentation",
+      "site": "Team Pipelines in Bigin | Small Business CRM",
+      "title": "Team Pipelines in Bigin | Small Business CRM",
+      "url": "https://www.bigin.com/features/team-pipelines.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.094224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6cb77246fff6247db018fea3e75b4bbbf15a69951fe8d16d4ec6b4dd18817ecd",
+      "research_notes_en": "Separate record types, fields, stages, owners and access for team processes; sub-pipelines and web/mobile setup distinction."
+    },
+    {
+      "id": "connected-pipelines",
+      "type": "official_documentation",
+      "site": "Connected Pipelines | Bigin by Zoho CRM",
+      "title": "Connected Pipelines | Bigin by Zoho CRM",
+      "url": "https://www.bigin.com/features/connected-pipelines.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.094224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0d5d0153df643a6b5c7ce761de8e1a4fc7ec594e2e9efed7baa2b77bdc3d2074",
+      "research_notes_en": "Configured transitions create connected records for subsequent teams; not a guarantee of external transaction completion."
+    },
+    {
+      "id": "imports",
+      "type": "official_documentation",
+      "site": "Import and export data in your CRM | Bigin by Zoho CRM",
+      "title": "Import and export data in your CRM | Bigin by Zoho CRM",
+      "url": "https://www.bigin.com/features/import-and-export-data-bigin.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.094224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "bbcb1c4eaf128e1303b67eb770d93e50b5319c8f05d9dd989dfee41a0995657f",
+      "research_notes_en": "Import mapping, module/pipeline placement, skipped/updated counts, CSV export, undo within 30 days, and Zoho CRM migration."
+    },
+    {
+      "id": "workflows",
+      "type": "official_documentation",
+      "site": "Automate everyday tasks | Workflows in Bigin by Zoho CRM",
+      "title": "Automate everyday tasks | Workflows in Bigin by Zoho CRM",
+      "url": "https://www.bigin.com/features/workflows.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.094224Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8e3a5bbd2b9d1d9600fd92bd010b4873e2553a61b059ff5964b325a51f5ae8a1",
+      "research_notes_en": "Trigger-condition-action rules, assigning ownership, field updates, scheduled activity and messaging actions."
+    },
+    {
+      "id": "email",
+      "type": "official_documentation",
+      "site": "Kirim email lewat Bigin | Bigin dari Zoho CRM",
+      "title": "Kirim email lewat Bigin | Bigin dari Zoho CRM",
+      "url": "https://www.bigin.com/id/features/email.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.100840Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "858544c8c014ebc48473e95a15ecafaf4e7a16c57238b73ea68631e88144bb2c",
+      "research_notes_en": "Actual redirected Indonesian text read: IMAP/POP3, linked email, sharing permissions, templates, Zoho Campaigns boundary and Email-In aliases."
+    },
+    {
+      "id": "forms",
+      "type": "official_documentation",
+      "site": "Kumpulkan data pelanggan dengan mudah | Formulir di Bigin",
+      "title": "Kumpulkan data pelanggan dengan mudah | Formulir di Bigin",
+      "url": "https://www.bigin.com/id/features/forms.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.100840Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "659ea4a7181c768579b9f217f83c8bb907805c4a8edb131d3113776079fe1350",
+      "research_notes_en": "Actual redirected Indonesian text read: drag/drop fields, links/QR/embed distribution, preview, record approval and CAPTCHA options."
+    },
+    {
+      "id": "mcp",
+      "type": "official_documentation",
+      "site": "Zoho MCP for Bigin",
+      "title": "Zoho MCP for Bigin",
+      "url": "https://www.bigin.com/features/zoho-mcp.html?src=bigin-feature",
+      "read_at": "2026-10-22T09:57:43.100840Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b9a921f03f756d946bd4852078c77003ca195e7160bdd09eafe23b3377a85df1",
+      "research_notes_en": "AI clients can request CRM actions and cross-app work; accuracy and all-or-nothing execution not tested."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:57:43.100840Z",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "team-pipelines",
+    "features",
+    "imports"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "record-model",
+        "title_en": "Design the process before the board",
+        "title_zh": "先定义流程，再配置看板",
+        "en": "A Team Pipeline can represent a different type of work with its own fields and access. A sales opportunity and a support request should therefore be designed as different records when their completion criteria differ. Sub-pipelines can distinguish variations within a process. Owners and permissions determine who can act on the information.\n\nFor evaluation, write down the required customer reference, next action and completion condition for each record type. A visually tidy board will not repair missing ownership or ambiguous stages. These are process-design recommendations, not a claim that Bigin enforces your business policy automatically.",
+        "zh": "Team Pipeline 可表示不同工作类型，并拥有各自字段及访问权限。销售机会与支持请求的完成标准不同时，应设计成不同记录。子管线用于区分同一流程中的不同分支，负责人和权限决定谁可以处理信息。\n\n建议逐类写清客户关联、下一动作和完成条件。看板整齐不能弥补负责人缺失或阶段定义模糊。这些属于流程设计建议，不代表 Bigin 会自动执行你的全部业务政策。",
+        "source_refs": ["team-pipelines"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "handoff",
+        "title_en": "Worked example: sale to onboarding",
+        "title_zh": "示例：从成交交给客户入门团队",
+        "en": "Imagine a small installation business with a Sales pipeline and an Onboarding pipeline. When a qualified sale reaches the configured completion stage, Connected Pipelines can create a linked record for the next team. Carry forward the customer reference and installation notes, then assign the next owner. This is a hypothetical use of the documented handoff model, not a workflow executed here.\n\nA linked onboarding record means that the next process exists. It does not prove the equipment was installed, a bill was paid, or an external system committed the same change. Inspect both records and define what should happen if an operator reopens the sale. Duplicate and reversal behavior remain evaluation questions.",
+        "zh": "假设一家安装服务商分别建立 Sales 和 Onboarding 管线。销售达到已配置的完成阶段后，Connected Pipelines 可为下一团队创建关联记录。把客户关联及安装备注带入，再指定接手人。这是依据文档交接模型设计的假设示例，本文没有运行该流程。\n\n创建客户入门关联记录，只说明下个流程已建立，不能证明设备安装、账单支付或外部系统提交也已经完成。应核对两条记录，并定义销售被重新打开时怎么办；重复与撤回行为仍需实际验证。",
+        "source_refs": ["connected-pipelines"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "automation",
+        "title_en": "Rules need deliberate entry conditions",
+        "title_zh": "规则需要明确的进入条件",
+        "en": "Bigin describes workflows as triggers plus conditions plus actions. Available action families include creating records, assigning owners, updating values and scheduling activities. The documentation also describes delayed and repeating execution. Choose the business event first; then decide whether a change should create new work or update existing work.\n\nFor example, a change to a high-priority inquiry can schedule a follow-up task for its owner. Check an unchanged record, a missing field and a second qualifying edit as well as a successful first edit. The feature page does not establish an exactly-once guarantee or transactional recovery policy, so this profile does not promise either.",
+        "zh": "Bigin 将工作流描述为触发器、条件和动作的组合。动作包括创建记录、分配负责人、更新字段以及安排活动，文档还说明延迟与周期执行。先选择业务事件，再决定变化应新增工作还是更新已有工作。\n\n例如，高优先级咨询发生变化时，可为负责人安排跟进任务。除了首次成功编辑，还建议检查未变化记录、字段缺失和第二次符合条件的编辑。功能页未给出恰好执行一次或事务恢复保证，本文不作这类承诺。",
+        "source_refs": ["workflows"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migration",
+        "title_en": "Import validation and the 30-day undo window",
+        "title_zh": "导入核对与30天撤回窗口",
+        "en": "The import documentation describes column mapping, choosing the receiving module or pipeline, and an import history showing updated and skipped counts. It also documents removing imported data through Undo Import within 30 days and exporting module records to CSV. Treat undo as a defined import feature, not a universal backup of every subsequent edit.\n\nStart with a small file containing a company, two contacts and a representative activity. Verify their associations rather than accepting only a successful upload count. If moving from Zoho CRM, check which fields and process structures survive migration; the existence of a migration route does not establish full configuration parity.",
+        "zh": "导入文档说明列映射、选择接收模块或管线，以及显示更新和跳过数量的导入历史；还说明可在导入后30天内通过 Undo Import 移除导入数据，并把模块记录导出为 CSV。撤回是特定的导入功能，不能理解为后续所有编辑的通用备份。\n\n建议先用包含一家公司、两个联系人及代表性活动的小文件，核对关联关系，而非只看上传成功数量。从 Zoho CRM 迁移时，还要检查哪些字段和流程结构被保留；有迁移路径不代表配置完全等价。",
+        "source_refs": ["imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "forms-email",
+        "title_en": "Capture requests without exposing every email",
+        "title_zh": "采集请求，同时控制邮件可见范围",
+        "en": "Forms can be embedded or shared through a link or QR code. The source describes preview, approval and CAPTCHA options; choose whether a submission should immediately become a record or wait for review. Field validation and recipient selection still need representative tests.\n\nThe email feature describes connecting providers, associating messages with records and controlling email sharing. Email-In aliases create pipeline records from incoming team mail, while Zoho Campaigns is an integration for more involved campaigns. These are distinct paths: displaying a contact email, converting an incoming inquiry and running a campaign are different jobs. Test the chosen provider and permissions before exposing a shared mailbox.",
+        "zh": "表单可嵌入网页，也可通过链接或二维码分发。来源说明了预览、审批和 CAPTCHA 选项；应决定提交后立即创建记录还是等待审核。字段校验和接收人选择仍需用代表性数据测试。\n\n邮件功能页说明连接服务商、把邮件关联到记录以及控制邮件共享。Email-In 别名把团队收件转为管线记录，而较复杂的营销活动可通过 Zoho Campaigns 集成处理。显示联系人邮件、把咨询转成记录和执行营销活动是不同任务，使用共享邮箱前应验证所选服务商及权限。",
+        "source_refs": ["forms", "email"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Read seats, records and add-ons together",
+        "title_zh": "一起计算席位、记录和附加项",
+        "en": "The retrieved USD view lists Express at $7, Premier at $12 and Bigin 360 at $18 per user per month when billed yearly; separate monthly figures are higher. Free is a single-user edition with 500 records. For illustration, three Express seats at the yearly-billed rate imply $252 for twelve months before tax and extras: 3 × 7 × 12. This is arithmetic, not a purchase quote.\n\nThe page counts pipeline entries, contacts, activities and notes as records. Express lists 50,000 records and three Team Pipelines; Premier lists 100,000 and five. Extra capacity and AI usage can have add-on charges. AI credits are feature-dependent, not a fixed count of successful actions. A later retrieval redirected to a locale page with inconsistent zero amounts and INR text, so region and checkout must be reconfirmed; no normalized bill is recorded.",
+        "zh": "读取到的美元页面列出按年付款时 Express 每用户每月7美元、Premier 12美元、Bigin 360 18美元；另列的按月金额更高。Free 为单用户，含500条记录。以3个 Express 席位为例，按年付款费率计算12个月为252美元：3 × 7 × 12，未含税及附加项。这只是算例，不是购买报价。\n\n页面将管线条目、联系人、活动和备注均计作记录。Express 列出50,000条记录和3条 Team Pipelines，Premier 为100,000条及5条。额外容量与 AI 用量可能产生附加费用；AI 积分按功能消耗，不能直接等同于成功动作数。后续读取跳转到地区页，出现零金额与印度卢比文本不一致的情况，因此需重新核对地区及结账条件，本文不填写统一实付月价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "ai",
+        "title_en": "Separate AI requests from deterministic rules",
+        "title_zh": "区分 AI 请求与确定性规则",
+        "en": "The feature overview labels AI capabilities as early access. Zoho MCP for Bigin describes giving AI clients access to CRM data and requesting actions across applications. That is a different control path from a predefined record workflow. A generated summary or requested action should not be treated as a verified customer fact simply because the CRM can display it.\n\nFor a pilot, restrict the exposed records and test a read-only request before considering changes that contact customers. Confirm the actual account entitlement, action set and usage pricing. This is evaluation guidance; no AI accuracy, authorization behavior or cross-app rollback was tested.",
+        "zh": "功能总览将 AI 能力标为早期开放。Zoho MCP for Bigin 描述让 AI 客户端访问 CRM 数据，并请求跨应用动作；这与预先定义的记录工作流属于不同控制路径。CRM 能显示生成摘要或执行请求，并不让其中内容自动成为已核实的客户事实。\n\n试点时建议先限制可访问记录，用只读请求核对后，再评估会联系客户的改动。需确认账户实际权益、动作范围和用量价格。这是评估建议；本文未测试 AI 准确性、授权行为或跨应用回滚。",
+        "source_refs": ["features", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Who should evaluate it further",
+        "title_zh": "哪些团队值得继续评估",
+        "en": "Bigin is worth examining when a small team needs explicit owners and stages across customer handoffs without first designing an enterprise CRM program. Evaluate a complete path from capture to follow-up to closure, including an exception that remains unresolved. If the business needs deeper enterprise customization, compare the required model with Zoho CRM rather than assuming the two are interchangeable.\n\nThe reviewed material describes a hosted application and client apps. It does not establish a self-hosted deployment or an open-source license, and neither is asserted here. Data residency, regional signup/payment access, contract protections and exact API quotas remain unverified. A successful documentation review does not resolve those procurement and implementation questions.",
+        "zh": "如果小团队需要在客户交接中明确负责人和阶段，又不准备先设计大型 CRM 项目，Bigin 值得进一步评估。建议验证从采集、跟进到结束的完整路径，并包含尚未解决的异常。如果需要更深入的企业级定制，应把所需模型与 Zoho CRM 对照，不能假定两者可以直接互换。\n\n已读资料描述托管应用和客户端，没有确立可自行托管的部署方式或开源许可，本文也不作相应声明。数据驻留、地区注册及付款、合同保障和准确 API 额度仍未核实；文档核对不能替代这些采购与实施问题。",
+        "source_refs": ["product", "imports", "features"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Bigin by Zoho CRM: Pipelines, Handoffs, Pricing and Limits",
+    "title_zh": "Bigin by Zoho CRM：管线、团队交接、定价与限制",
+    "description_en": "Understand Bigin records, connected pipelines, import undo, workflow rules and dated subscription conditions before a small-business CRM pilot.",
+    "description_zh": "了解 Bigin 的记录、关联管线、导入撤回、工作流规则和带日期的订阅条件，判断小企业 CRM 试点要求。",
+    "primary_intent": "Understand Bigin and evaluate a customer-record workflow.",
+    "secondary_questions": [
+      "How do connected pipelines work?",
+      "What counts toward records?",
+      "How does Bigin differ from Zoho CRM?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact account-specific AI access, API quotas, email/phone/WhatsApp charges, contract terms and regional/data-residency availability were not established.",
+      "zh": "尚未确认具体账户的 AI 权限、API 额度、邮件／电话／WhatsApp 费用、合同条款以及地区与数据驻留可用性。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, import, workflow or MCP action was executed. Localized pricing reads differed; reconfirm the intended currency and checkout.",
+      "zh": "未实际运行账户、导入、工作流或 MCP 动作。地区定价读取结果不同，应核对目标币种和结账条件。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

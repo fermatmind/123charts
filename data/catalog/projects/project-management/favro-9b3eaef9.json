@@ -1,0 +1,348 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "favro-9b3eaef9",
+  "name": "Favro",
+  "website_url": "https://www.favro.com/",
+  "domain": "www.favro.com",
+  "identity_domain": "favro.com",
+  "category": "project-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Favro organizes collaborative work through cards, boards/backlogs, collections and relations between them. A card can be present in more than one location, letting a delivery team keep its workflow while another team follows the same underlying work. Its relations view exposes where the card is and the status it has on the associated boards.\n\nThat model is useful to investigate when cross-team handoffs matter more than maintaining an isolated checklist. It also demands clear rules for shared card information, board-specific status and progress reporting. This profile explains those distinctions, the separate external-member/guest roles and team-size billing from official documentation, without claiming a hands-on rollout.",
+  "description_zh": "Favro 通过卡片、看板／待办池、集合及其关系组织协作工作。一张卡片可以同时存在于多个位置，让交付团队保留自己的工作流，另一团队也能跟踪同一项底层工作。关系视图展示卡片在哪些看板上，以及对应状态。\n\n当跨团队交接比维护独立清单更重要时，这种模型值得进一步研究。同时，需要为共享卡片信息、看板特定状态和进度报告制定清晰规则。本文依据官方文档解释这些差别、外部成员与访客两种角色，以及团队人数计费方式，没有实际推广测试。",
+  "core_features": [
+    {
+      "name_en": "Cards in multiple locations",
+      "name_zh": "多位置卡片",
+      "explanation_en": "Add the same card to multiple boards/backlogs instead of relocating it.",
+      "explanation_zh": "把同一卡片加入多个看板／待办池，而非移走。",
+      "explanation_scope": "product_specific",
+      "source_ref": "add-move",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Board relations",
+      "name_zh": "看板关系",
+      "explanation_en": "Inspect card locations and manage the status shown on each board.",
+      "explanation_zh": "查看卡片位置，并管理各看板上的状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "relations",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured progress aggregation",
+      "name_zh": "可配置进度汇总",
+      "explanation_en": "Choose completion statuses and whether unplaced cards contribute to progress.",
+      "explanation_zh": "选择完成状态，并决定未加入卡片是否参与进度计算。",
+      "explanation_scope": "product_specific",
+      "source_ref": "progress",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Track a shared campaign deliverable across specialist teams.",
+      "Review the completion definition behind a portfolio progress percentage."
+    ],
+    "zh": [
+      "跨专业团队跟踪共享活动交付物。",
+      "复核汇总进度百分比背后的完成定义。"
+    ],
+    "source_refs": ["relations", "progress"],
+    "basis": "Editorial evaluation suggestions, not measured outcomes."
+  },
+  "technical_details": {
+    "Shared work model": {
+      "en": "Adding preserves the card across locations; board relations expose location-specific status.",
+      "zh": "添加让卡片保留在多个位置，看板关系展示各位置的状态。",
+      "source_ref": "relations",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Cross-team delivery coordinator",
+      "Project portfolio owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "progress"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Add a representative card to a backlog and a receiving board; inspect both locations.",
+        "zh": "把代表性卡片加入待办池和接收看板，检查两处结果。",
+        "source_refs": ["add-move", "relations"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Define progress and test an archived and an unplaced card.",
+        "zh": "定义进度，并测试一张归档卡片及一张未加入卡片。",
+        "source_refs": ["progress"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": [],
+    "source_ref": "pricing",
+    "scope": "Plan-specific apps/API capabilities listed; no individual integration was executed or mapped."
+  },
+  "limitations": {
+    "status": "documented",
+    "items": [
+      {
+        "en": "Archived cards are excluded from advanced progress aggregation.",
+        "zh": "已归档卡片不计入高级进度汇总。",
+        "source_refs": ["progress"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Guests cannot use the full toolset and are unavailable on Lite.",
+        "zh": "访客不能使用完整工具集，Lite 不提供访客。",
+        "source_refs": ["externals"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "bucketed_team_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Minimum two users; team buckets rather than exact active-person count. Fourteen-day trial, no permanent free plan.",
+    "source_snapshot_zh": "至少两用户，按团队人数档位而非精确活跃人数计费。14 天试用，没有永久免费套餐。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/favro",
+      "read_at": "2026-10-22T08:49:54.123Z",
+      "excerpt_sha256": "ba5a51e88771a3795bcc0c0104efb013aa10d7c930fc0c3d542a3489bf41bdba",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.favro.com",
+      "title": "Pricing",
+      "url": "https://www.favro.com/pricing",
+      "read_at": "2026-10-22T10:20:18.622145Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0fb844c1363208c2a620ca7c5db113df23c2c8fbf547530c5ad49f8c5f83c589",
+      "research_notes_en": "Lite, Standard and Enterprise use team-size buckets and billing frequency. Current rendered example selects ten users and annual billing."
+    },
+    {
+      "id": "add-move",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "Adding and moving cards | How to Favro",
+      "url": "https://help.favro.com/en/articles/1019893-adding-and-moving-cards",
+      "read_at": "2026-10-22T10:20:18.622384Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "14b2f4908584ccbe8d87304f15a55f5bada2e1bf8bf2f338de1584f836252b44",
+      "research_notes_en": "Adding preserves a card in multiple locations; moving changes its location."
+    },
+    {
+      "id": "relations",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "Card Relations | How to Favro",
+      "url": "https://help.favro.com/en/articles/5603578-card-relations",
+      "read_at": "2026-10-22T10:20:18.622417Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "bbf27c30d3b69665e6db9ac4d501d8930dcb6757803183ae10913ac6bc83ca64",
+      "research_notes_en": "On boards exposes card locations and board-specific status management."
+    },
+    {
+      "id": "progress",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "Advanced Progress Management | How to Favro",
+      "url": "https://help.favro.com/en/articles/7262665-advanced-progress-management",
+      "read_at": "2026-10-22T10:20:18.622441Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "614deb5acfc0a5609bda5c8b923ef1ba3b119d96a60122dd540cb33d47c6cdc0",
+      "research_notes_en": "Progress aggregation depends on selected boards, done definitions and treatment of missing/archived cards."
+    },
+    {
+      "id": "attachments",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "How to link cards and boards in Favro | How to Favro",
+      "url": "https://help.favro.com/en/articles/1401330-how-to-link-cards-and-boards-in-favro",
+      "read_at": "2026-10-22T10:20:18.622461Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "1c230cea788d0d6c4398453c66d3134c662b67175162a3a9bedb7deccef8a2b0",
+      "research_notes_en": "Cards and boards can have dynamic linked attachments; this is contextual linking, not verified automatic dependency enforcement."
+    },
+    {
+      "id": "externals",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "Collaborating with externals in Favro | How to Favro",
+      "url": "https://help.favro.com/en/articles/1019938-collaborating-with-externals-in-favro",
+      "read_at": "2026-10-22T10:20:18.622740Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "73e068136b8b8681721af63e0d185366900eee321834f0f7c22cba3e8b446305",
+      "research_notes_en": "External members count toward seats; guests are limited and only available on Standard/Enterprise. Guest capabilities differ substantially."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "help.favro.com",
+      "title": "FAQ | How to Favro",
+      "url": "https://help.favro.com/en/articles/3780738-faq",
+      "read_at": "2026-10-22T10:20:18.622784Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "46a107828337bd835b7b339a52b918d2453116a740a92b908d8e939f35dcc75e",
+      "research_notes_en": "No sustained free plan; minimum two users and bucket billing. Cancellation removes full access rather than guaranteeing access through paid period."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:20:18.622784Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["add-move", "relations", "externals"],
+  "profile": {
+    "sections": [
+      {
+        "id": "shared-card",
+        "title_en": "A handoff can reuse a card without moving it away",
+        "title_zh": "交接可复用卡片，无需移走原卡片",
+        "en": "For a hypothetical campaign asset, the product backlog can hold the same card that appears on a design board. Adding keeps the card in both places; moving relocates it. The On boards menu can add, remove, locate and manage the card’s status on its boards.\n\nUse one disposable card to compare shared descriptions with the statuses shown on each board. Agree which team owns which transition. Do not treat the card’s appearance in a second board as a completed handoff or assume all board statuses mean the same thing. This example is an evaluation design, not an executed campaign.",
+        "zh": "假设有一项活动素材，产品待办池中的同一卡片可以同时出现在设计看板。添加会让卡片保留在两处，移动则改变其位置。On boards 菜单可以添加、移除、定位卡片，并管理各看板状态。\n\n建议用一张可丢弃卡片，比对共享描述与各看板展示的状态，并约定每次转换由哪个团队负责。出现在第二个看板，不代表交接已经完成，也不能假设各看板状态含义相同。这是评估设计，并非实际执行过的活动。",
+        "source_refs": ["add-move", "relations"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "linking",
+        "title_en": "A linked dependency is context before it is enforcement",
+        "title_zh": "关联首先表达背景，不能直接当作强制依赖",
+        "en": "Favro lets a card attach other cards or boards. A linked card appears as an attachment on both sides, allowing navigation and visibility into where the related work resides. This can expose a blocking design item from a delivery backlog.\n\nThe FAQ distinguishes this from a dependency where moving one card automatically moves another. Treat attachments as documented relationships and verify any automation separately. For a pilot, link the blocking item and inspect whether the downstream team can reach the expected context; do not promise automatic gating or recovery based on a link alone.",
+        "zh": "Favro 允许卡片附加其他卡片或看板。关联卡片会在双方显示为附件，支持相互跳转，并展示相关工作的位置。例如，交付待办池可以由此找到阻碍交付的设计事项。\n\nFAQ 将这种关联与“移动一张卡片就自动移动另一张”的依赖行为分开。因此，应把附件视为有文档支持的关系，自动化需另行验证。试点可以关联阻碍事项，检查下游团队能否找到所需背景；不能仅凭链接就承诺自动阻止执行或恢复。",
+        "source_refs": ["attachments", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "progress-denominator",
+        "title_en": "Define what counts in the progress percentage",
+        "title_zh": "明确进度百分比的分母",
+        "en": "Advanced Progress Management can aggregate child work using statuses or checklists, including selected boards from different collections. Each board can have its own definition of done. Archived cards are excluded even when visible, and configuration decides whether cards not yet on selected boards count as zero or are omitted.\n\nIn a hypothetical four-item deliverable, excluding an unstarted item could make a percentage look better without completing more work. That is an interpretation risk of the chosen denominator, not a measured Favro defect. Include a not-yet-added card and an archived card when validating the report.",
+        "zh": "Advanced Progress Management 可按状态或检查清单汇总子工作，并选择不同集合中的看板。各看板可以有自己的完成定义。已归档卡片即使可见，也不计入；尚未加入所选看板的卡片，可以按配置记为零，也可以排除。\n\n假设某交付物有四个事项，排除一个尚未开始的事项，可能在工作并未增加时让百分比变好。这是分母选择带来的解读风险，不是实测 Favro 缺陷。验证报告时，应包含一张尚未加入的卡片和一张已归档卡片。",
+        "source_refs": ["progress"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "external-roles",
+        "title_en": "External members and guests are different roles",
+        "title_zh": "外部成员和访客是不同角色",
+        "en": "An external member counts toward the user limit and initially sees no collections until access is granted. Guests do not count toward that limit, but are available only on Standard and Enterprise and cannot be invited from the organization’s own domain. The guide also limits guest access to tools such as calendars, timelines, advanced search and timesheets.\n\nBudget and configure access by role, not by calling everyone outside the team a guest. Before inviting a real client, verify a representative collection and card with the intended role. Guest collaboration does not mean organization administration, and a free guest allowance is not unlimited member functionality.",
+        "zh": "外部成员计入用户上限，最初看不到集合，需要另行授予访问权。访客不计入该上限，但仅 Standard 和 Enterprise 提供，而且不能从组织自身域名邀请。指南也限制访客使用日历、时间线、高级搜索和工时表等工具。\n\n预算与权限应按角色设计，不能把团队之外所有人都叫作访客。邀请真实客户前，应按预期角色验证一个代表性集合和卡片。访客协作不等于组织管理权限，免费访客额度也不等于完整成员功能不限量。",
+        "source_refs": ["externals"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "User buckets change the seat arithmetic",
+        "title_zh": "用户档位会改变席位计算",
+        "en": "Favro has no sustained free plan and offers a 14-day trial; plans start at two users. Its FAQ says three users require the five-user bucket, and going above five moves to ten. The retrieved annual ten-user example shows Lite at USD 51/month and Standard at USD 68/month; these are that selected configuration, not a quote for three active users. Enterprise uses tailored pricing.\n\nLite has five collections and lacks private collections and guest accounts. Compare required access and API capabilities with the chosen edition. The FAQ warns that cancelling removes full access, so confirm the intended billing-change process before cancelling simply to switch cadence.",
+        "zh": "Favro 没有持续免费套餐，提供 14 天试用，套餐从两用户起。FAQ 说明，三位用户需要五用户档位，超过五位会转为十用户。读取的十用户年付样例显示，Lite 折合每月 51 美元，Standard 为 68 美元；这只是所选配置，不是按三位活跃用户报价。Enterprise 采用定制价格。\n\nLite 只有五个集合，不含私有集合和访客账户。应把所需访问权及 API 能力与版本逐项对照。FAQ 还警告，取消后会失去完整访问，因此为了更改付款周期而取消之前，应先确认正确的账单切换流程。",
+        "source_refs": ["pricing", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pilot-fit",
+        "title_en": "Prove one shared-work path before wider rollout",
+        "title_zh": "扩大使用前证明一条共享工作路径",
+        "en": "Start with one collection, a backlog and the receiving team’s board. Add one representative card, link a related item and define a progress rule. Then verify the same card from both teams’ views and from the proposed external role. These steps test the model that makes Favro distinctive rather than merely populating a board.\n\nAs an editorial fit judgment, investigate it for cross-team work where shared records and local workflow views are valuable. Establish a separate proof for strict execution gating, restricted external reporting or high-volume automation. This research did not execute integrations or determine self-hosting rights, license contract, data residency, UI languages or operational recovery behavior.",
+        "zh": "从一个集合、一个待办池和接收团队的看板开始，加入一张代表性卡片，关联相关事项，并定义进度规则。随后从两个团队视角及拟采用的外部角色检查同一卡片。这些步骤验证的是 Favro 的共享工作模型，而不只是往看板中填卡片。\n\n从编辑选型判断看，需要共享记录又保留各团队本地工作流视图时，值得进一步研究。严格执行阻止、受限外部报表或大量自动化都需要单独证明。本次未运行集成，也未确定自托管权利、许可合同、数据驻留、界面语言或运行恢复行为。",
+        "source_refs": ["add-move", "relations", "progress", "externals"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Favro: Shared Cards, Board Status, Progress Rules and User Buckets",
+    "title_zh": "Favro：共享卡片、看板状态、进度规则与用户档位",
+    "description_en": "Understand Favro card relations, progress denominators, external roles and bucket pricing from official documentation.",
+    "description_zh": "依据官方文档理解 Favro 卡片关系、进度分母、外部角色和分档价格。",
+    "primary_intent": "Evaluate shared cross-team work and pricing structure.",
+    "secondary_questions": [
+      "Does adding a card move it?",
+      "Which cards count in progress?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no keyword volume or rankings measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account or connector was run. Automation overage/retry behavior, current deployment rights, license contract, UI languages and regional availability remain unverified.",
+      "zh": "未运行账户或连接器。自动化超额／重试行为、当前部署权利、许可合同、界面语言和地区可用性仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Current payable price and cancellation/billing changes must be confirmed for the selected bucket and account; rendered amounts are one annual ten-user configuration.",
+      "zh": "当前可支付价格及取消／账单切换需按所选档位和账户确认；读取金额仅为十用户年付配置。",
+      "source_refs": ["pricing", "faq"],
+      "evidence_type": "purchase_configuration_not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

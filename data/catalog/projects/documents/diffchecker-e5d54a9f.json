@@ -1,0 +1,379 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "diffchecker-e5d54a9f",
+  "name": "Diffchecker",
+  "website_url": "https://www.diffchecker.com/",
+  "domain": "www.diffchecker.com",
+  "identity_domain": "diffchecker.com",
+  "category": "documents",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Diffchecker compares two versions of text, documents, images or spreadsheets. It helps locate differences for human review; it does not maintain a document lifecycle or decide whether a change is correct. The browser tools and the Windows, Mac and Linux desktop app have different data handling and feature boundaries. In particular, document redlines and folder comparison belong to the desktop offering, while AI summaries are a web capability.",
+  "description_zh": "Diffchecker 比较文本、文档、图像或电子表格的两个版本，帮助人工定位差异；它不管理文档生命周期，也不判断修改是否正确。浏览器工具与 Windows、Mac、Linux 桌面应用的数据处理及功能边界不同。其中，文档修订标记和文件夹比较属于桌面端能力，AI 摘要则属于网页能力。",
+  "core_features": [
+    {
+      "name_en": "Comparison modes for documents",
+      "name_zh": "文档比较模式",
+      "explanation_en": "Choose textual, formatted, visual or OCR comparison according to the evidence being reviewed.",
+      "explanation_zh": "按审查资料选择纯文本、格式、视觉或 OCR 比较。",
+      "explanation_scope": "product_specific",
+      "source_ref": "documents",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Formula-aware spreadsheet comparison",
+      "name_zh": "识别公式的表格比较",
+      "explanation_en": "Formula mode can expose changed expressions despite unchanged displayed values.",
+      "explanation_zh": "即使显示值相同，公式模式也可揭示表达式变化。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sheets",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Local desktop comparison",
+      "name_zh": "本地桌面比较",
+      "explanation_en": "The EULA excludes compared documents and diff content from the diagnostic data it describes.",
+      "explanation_zh": "EULA 将比较文档和差异内容排除在其描述的诊断数据外。",
+      "explanation_scope": "product_specific",
+      "source_ref": "eula",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Review synthetic configuration changes, contract revisions or budget formula edits against a preserved source pair."
+    ],
+    "zh": ["依据保留的原始文件对审查虚构配置变更、合同修订或预算公式修改。"],
+    "source_refs": ["text", "documents", "sheets"],
+    "basis": "Proposed evaluation only; not observed customer adoption."
+  },
+  "technical_details": {
+    "Platforms": {
+      "en": "Browser tools; separate Windows, Mac and Linux desktop app.",
+      "zh": "浏览器工具，以及独立 Windows、Mac、Linux 桌面应用。",
+      "source_ref": "desktop",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Revision reviewer", "Developer reviewing text changes"],
+    "roles_status": "editorial_inference",
+    "source_ref": "text"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the comparison mode and client, then define a synthetic changed/unchanged source pair and preserve the enabled ignore settings.",
+        "zh": "选定比较模式和客户端，再定义虚构的有改及未改文件对，并保留所启用的忽略设置。",
+        "source_refs": ["text", "documents", "sheets"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_entry_points_not_connected",
+    "items": [],
+    "source_ref": "plans",
+    "scope": "API and iManage entry points read; connector contracts, API pricing and runtime behavior unverified."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "The document-page Word/PowerPoint 10 MB cap conflicts with the generalized pricing size row; no upload or OCR accuracy verified.",
+        "zh": "文档页 Word/PowerPoint 的 10 MB 上限与价格页通用大小条目冲突；未验证上传或 OCR 准确率。",
+        "source_refs": ["documents", "plans"],
+        "evidence_type": "documented_conflict"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "proprietary_web_and_desktop_terms_read",
+    "is_open_source": false,
+    "url": "https://www.diffchecker.com/eula/",
+    "source_ref": "eula",
+    "scope": "Restricted desktop use license and proprietary web-service terms; no source modification or redistribution grant."
+  },
+  "pricing": {
+    "status": "official_cycle_display_read",
+    "price_type": "free_basic_and_per_user_subscription",
+    "officially_checked": true,
+    "source_ref": "cycle-display",
+    "normalized_price": null,
+    "source_snapshot_en": "Basic free; Pro + Desktop $21 monthly or $15/user/month with Yearly selected; Legal $28 or $20; Enterprise $40 annual-only. Displayed amounts; no checkout.",
+    "source_snapshot_zh": "Basic 免费；Pro + Desktop 月付 $21，选择年付时折算每用户每月 $15；Legal 为 $28 或 $20；Enterprise 为 $40，仅年付。为页面金额，未结账。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/diffchecker",
+      "read_at": "2026-10-22T08:48:02.964Z",
+      "excerpt_sha256": "f81143ca415b4a55e8d5bff0cc3aef6053371deee8022d843e704f097c5c8c78",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "text",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Compare text and find differences online or offline - Diffchecker",
+      "url": "https://www.diffchecker.com/",
+      "read_at": "2026-10-22T15:10:28.556874Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "17b9e98f4f621cd8adb1e669936cde93c99f13e0bec69d4f3e92657c41a80499",
+      "research_notes_en": "Read text comparison workflow and browser-processing claim; no comparison executed. Ignore rules can change what a reviewer sees."
+    },
+    {
+      "id": "web-privacy",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Privacy Policy - Diffchecker",
+      "url": "https://www.diffchecker.com/privacy-policy/",
+      "read_at": "2026-10-22T15:10:28.558591Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8b889d888bc5ffe497a5389446a5de806b88c69da9954bc786de4460a5adec99",
+      "research_notes_en": "Read April 2024 website privacy policy including analytics, session replay and purpose-based retention."
+    },
+    {
+      "id": "plans",
+      "type": "official_pricing",
+      "site": "www.diffchecker.com",
+      "title": "Diffchecker Pricing - Plans & Features",
+      "url": "https://www.diffchecker.com/pricing/",
+      "read_at": "2026-10-22T15:10:28.559366Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "183691a2ad23124082e60fdad2c0539976320efae2194a99103d18481ccf1c0c",
+      "research_notes_en": "Read separate Basic/Pro/Desktop entitlements. Pricing display requires cycle verification; generalized no-size-limit row conflicts with document page cap."
+    },
+    {
+      "id": "documents",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Compare PDFs & Word documents online or offline - Diffchecker",
+      "url": "https://www.diffchecker.com/word-pdf-compare/",
+      "read_at": "2026-10-22T15:10:28.560895Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "f76841fcc2fec73631c626c161c200eaccdd276d82ce2bd04d7027173dcdf9f0",
+      "research_notes_en": "Read distinct rich/plain/image/OCR/redline workflows and 10 MB web Word/PowerPoint cap."
+    },
+    {
+      "id": "sheets",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Compare Excel & other spreadsheets online or offline - Diffchecker",
+      "url": "https://www.diffchecker.com/excel-compare/",
+      "read_at": "2026-10-22T15:10:28.561106Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ce2a55fd279c20b1b5c2a35150c98381bfa6edabce04474e560f0f8f9f33c764",
+      "research_notes_en": "Read sheet selection, formula mode, sorting and date normalization. No workbook uploaded."
+    },
+    {
+      "id": "desktop",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Offline file comparison for Windows & Mac - Diffchecker Desktop",
+      "url": "https://www.diffchecker.com/desktop/",
+      "read_at": "2026-10-22T15:10:28.561184Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6773a214b6e878166781557ceb583943df82bc925b761385637d8d9ed6e55676",
+      "research_notes_en": "Read offline app, seat assignment, renewal, cancellation and refund-request FAQ; no installation or payment."
+    },
+    {
+      "id": "eula",
+      "type": "official_license",
+      "site": "www.diffchecker.com",
+      "title": "END-USER LICENSE AGREEMENT (“Agreement”) – Diffchecker Desktop - Diffchecker",
+      "url": "https://www.diffchecker.com/eula/",
+      "read_at": "2026-10-22T15:10:28.565071Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7db42fd2aaf265247c8e3cec057f0f0a423bd7a18178e3b29c33632b1fcade85",
+      "research_notes_en": "Read restricted desktop use license, primary-user device limit and optional diagnostic data collection; compared content excluded."
+    },
+    {
+      "id": "desktop-privacy",
+      "type": "official_documentation",
+      "site": "www.diffchecker.com",
+      "title": "Privacy Policy – Diffchecker Desktop - Diffchecker",
+      "url": "https://www.diffchecker.com/desktop-privacy/",
+      "read_at": "2026-10-22T15:10:28.567323Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6b01625594b3938ae4a6b754d4500c95d9b94da3af073ad6400c0cf720d7e603",
+      "research_notes_en": "Desktop policy separates local compared content from account/payment/support personal data and purpose/legal retention."
+    },
+    {
+      "id": "web-terms",
+      "type": "official_license",
+      "site": "www.diffchecker.com",
+      "title": "Terms and Conditions - Diffchecker",
+      "url": "https://www.diffchecker.com/terms/",
+      "read_at": "2026-10-22T15:10:28.568846Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b96c22d043c3367c56edf388d212a5cd103e83a67c1df022a46687bab430ca38",
+      "research_notes_en": "Read proprietary web-service license and broad uploaded/posted data provisions; not evidence that every local comparison is uploaded."
+    },
+    {
+      "id": "cycle-display",
+      "type": "official_pricing",
+      "site": "www.diffchecker.com",
+      "title": "Diffchecker Pricing - Plans & Features",
+      "url": "https://www.diffchecker.com/pricing/",
+      "read_at": "2026-10-22T15:10:28.569452Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_selected_observation",
+      "excerpt_sha256": "5162a8b948dac48a0e7477d09bc97cf69146fe525cf4d1f5591d4eba80fa946b",
+      "research_notes_en": "Actual selected annual and monthly cards read. No checkout; Enterprise remains annual-only on both display states."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:10:28.569452Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["text", "documents", "desktop", "plans"],
+  "profile": {
+    "sections": [
+      {
+        "id": "review-question",
+        "title_en": "Decide what difference matters before comparing",
+        "title_zh": "比较前先确定关注哪类差异",
+        "en": "A text diff makes additions and removals visible; it does not establish the intended meaning of a revision. Diffchecker starts with original text on the left and changed text on the right. Word or character precision and controls for whitespace, case and custom ignores affect the review surface. Hiding unchanged lines changes presentation, not the underlying business decision.\n\nFor an editorial evaluation, prepare two synthetic configuration extracts with one changed endpoint, one indentation-only edit and one removed condition. First inspect without ignore rules, then record which rules were enabled and why. Otherwise a tidy result can conceal the exact edit that matters. Preserve the source pair and settings with the review decision. Browser performance for very large inputs was not measured; no comparison was run.",
+        "zh": "文本差异可显示新增与移除，但不确立修订的预期含义。Diffchecker 左侧放原文，右侧放改后文本。单词或字符精度，以及空白、大小写和自定义忽略控制，会影响审查呈现。隐藏未改行改变显示方式，不替代业务判断。\n\n编辑建议的评估可准备两份虚构配置摘录，包含端点变化、仅缩进修改和条件删除。先不启用忽略规则，再记录启用了哪些规则及原因，否则整洁结果可能隐藏真正重要的修改。应将原始文件对和设置与审查决定一同保留。本研究未测大输入的浏览器性能，也未实际比较。",
+        "source_refs": ["text"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "document-modes",
+        "title_en": "Text, layout and scans need different evidence",
+        "title_zh": "文本、版式和扫描件需要不同证据",
+        "en": "The document tool separates rich text, plain text and page-image comparison. OCR is relevant when a scan has no usable text layer; page rearrangement can help align corresponding material. Desktop Redline supports accepting or rejecting changes and exporting a combined result, including Word tracked changes. Those operations are distinct from viewing a side-by-side report.\n\nA proposed synthetic contract test should include a wording change, a moved paragraph and a changed image. Inspect text and image results separately, and compare the output with both originals. An empty text result from a scan is not evidence of identical pages. OCR mistakes and page alignment can affect the detected difference. The document page states a 10 MB web limit for Word and PowerPoint despite the pricing table’s general no-size-limit row; do not promise unrestricted uploads. No file or password was supplied.",
+        "zh": "文档工具区分富文本、纯文本和页面图像比较。扫描件没有可用文本层时需要 OCR；重排页面可帮助对应材料对齐。桌面端 Redline 支持接受或拒绝修改并导出合并结果，包括 Word 修订。该操作与查看并排报告不同。\n\n建议的虚构合同测试可包含措辞变化、段落移动及图像变化，分别检查文本和图像结果，并将输出与两个原件比较。扫描件文本结果为空不证明页面一致；OCR 错误和页面对齐都可能影响差异。文档页说明网页 Word 和 PowerPoint 上限为 10 MB，与价格表笼统的不限大小条目存在冲突，因此不能承诺无限上传。本研究未提供文件或密码。",
+        "source_refs": ["documents", "plans"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "spreadsheet-semantics",
+        "title_en": "Equal cell values can conceal changed formulas",
+        "title_zh": "单元格值相同也可能存在公式变化",
+        "en": "The spreadsheet tool accepts Excel-family files and delimited formats, lets the reviewer choose sheets and offers Standard and Formulas modes. Sorting by a chosen column changes row matching; date normalization can reduce formatting noise. These settings require context rather than automatic acceptance.\n\nFor a synthetic budget, change a subtotal formula so it references an additional currently empty row. The displayed number can stay the same even though future behavior changes. Compare in formula mode as well as value mode. If rows were reordered, retain a stable record identifier and inspect the effect of sorting before dismissing changes. A date such as 03/04 requires an agreed locale before normalization. Check the exported comparison against the originals rather than treating its highlighted cells as a complete spreadsheet audit. No formulas, macros, imports or exports were executed.",
+        "zh": "表格工具接受 Excel 系列及分隔文本格式，可选择工作表，并提供 Standard 和 Formulas 模式。按指定列排序会改变行匹配；日期规范化可减少格式干扰，但这些设置需要上下文，不能自动接受。\n\n虚构预算样例可将小计公式改为多引用一行当前为空的数据。显示数值可能不变，未来行为却已变化，因此应同时比较公式与值。若行顺序变化，应保留稳定记录标识并检查排序影响，再决定哪些差异可忽略。03/04 这类日期需要先约定地区读法。应将导出的比较与原件核对，不把高亮单元格当作完整表格审计。本研究未执行公式、宏、导入或导出。",
+        "source_refs": ["sheets"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "local-and-web",
+        "title_en": "Keep local comparison separate from online features",
+        "title_zh": "区分本地比较与在线功能",
+        "en": "Desktop documentation advertises offline comparison and local saving. Its EULA says compared documents and diff content are not received or stored by the vendor, while non-personal diagnostic collection can be disabled in preferences and is disabled for Enterprise. The desktop privacy policy still covers account, payment, support and other personal information. Local comparison does not mean the vendor has no information about a customer.\n\nThe web privacy policy describes analytics and session replay, including non-excluded form entries. Web terms separately grant broad rights over data posted, uploaded or communicated through the service. These provisions do not prove every local comparison is uploaded, but they prevent treating a browser-processing statement as a universal confidentiality guarantee. For sensitive review, establish the exact client, enabled online features, telemetry setting and applicable agreement. AI provider handling and cloud-save deletion deadlines were not established. No network or privacy behavior was independently tested.",
+        "zh": "桌面文档宣传离线比较及本地保存。EULA 声明厂商不接收或存储比较文档与差异内容；非个人诊断采集可在偏好设置关闭，Enterprise 默认关闭。桌面隐私政策仍涵盖账户、支付、支持及其他个人信息，因此本地比较不等于厂商没有客户信息。\n\n网页隐私政策描述分析及会话回放，包括未排除的表单输入；网页条款另对发布、上传或经服务传达的数据规定广泛使用权。这不证明每次本地比较都会上传，但不能把浏览器处理声明视为通用保密保证。敏感审查应明确精确客户端、启用的在线功能、诊断设置及适用协议。AI 提供方处理和云端保存删除期限未确立。本研究未独立测试网络或隐私行为。",
+        "source_refs": [
+          "desktop",
+          "eula",
+          "desktop-privacy",
+          "web-privacy",
+          "web-terms"
+        ],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      },
+      {
+        "id": "plans-and-cycle",
+        "title_en": "Separate free comparison, trials and recurring seats",
+        "title_zh": "区分免费比较、试用与续费席位",
+        "en": "Basic provides ongoing free tools with feature-specific allowances, rather than a time-limited paid plan. The current table lists word comparison as included, while character precision and several convenience tools have monthly quotas. AI summaries are not part of the offline Desktop column.\n\nThe actual pricing controls show Pro + Desktop at $21 per user/month on Monthly, or $15 on Yearly; Legal is $28 or $20 respectively. Enterprise shows $40 per user/month with annual billing only. These are displayed dollar amounts, not a tax-inclusive checkout or currency conversion. The desktop FAQ describes a 14-day trial without a card, automatic renewal, cancellation retaining access through the paid term, and a refund request within 30 days of purchase. No trial or purchase was started; exact order and renewal-refund eligibility still require confirmation.",
+        "zh": "Basic 提供持续免费工具和按功能划分的用量额度，不是限期付费套餐。当前表格将单词比较列为包含，字符精度及若干便利工具则有月额度。AI 摘要不在离线 Desktop 列中。\n\n实际价格控件显示：Pro + Desktop 月付每用户每月 $21，年付折算 $15；Legal 分别为 $28 和 $20。Enterprise 显示每用户每月 $40，仅年付。这是页面带 $ 符号的金额，不是含税结账或汇率换算。桌面 FAQ 描述无须银行卡的 14 天试用、自动续费、取消后使用至已付周期末，以及购买后 30 天内提出退款申请。本研究未启动试用或购买；精确订单及续费退款资格仍需确认。",
+        "source_refs": ["plans", "cycle-display", "desktop"],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      },
+      {
+        "id": "seat-and-review-boundary",
+        "title_en": "A comparison license is not a records system",
+        "title_zh": "比较许可不等于记录管理系统",
+        "en": "The desktop EULA grants a restricted use license, reserves software ownership and prohibits modifications, redistribution and credential sharing. One person may use up to three devices as their primary user; this is not one seat for three colleagues. The FAQ describes assigning purchased licenses to employees. Account administration is separate from a reviewer’s authority to approve a business document.\n\nFor a team evaluation, assign a named reviewer to a synthetic file pair and agree how the accepted result returns to the authoritative repository. Check that the source revision, comparison settings and accepted output remain identifiable. Diffchecker’s redline decision does not automatically update an external approval workflow, retention policy or access permission. API and iManage entry points are documented, but their request schemas, authorization, retry behavior and restoration guarantees were not researched here. No license was assigned, connector activated or record replaced.",
+        "zh": "桌面 EULA 授予受限使用许可，保留软件所有权，并禁止修改、再分发及共享凭据。一个人可作为主用户使用至多三台设备，并非一个席位供三位同事使用。FAQ 描述向员工分配已购买许可。账户管理与审查者批准业务文档的权限相互独立。\n\n团队评估可由指定审查者处理虚构文件对，并约定被接受结果如何返回权威资料库。需确保来源修订、比较设置和接受输出仍可辨认。Diffchecker 的修订决定不会自动更新外部审批流、保留政策或访问权限。官网有 API 和 iManage 入口，但本研究未核查请求契约、授权、重试行为及恢复保证，也未分配许可、激活连接器或替换记录。",
+        "source_refs": ["eula", "desktop", "plans"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Diffchecker: Document Modes, Formula Differences and Offline Scope",
+    "title_zh": "Diffchecker：文档模式、公式差异与离线范围",
+    "description_en": "Choose Diffchecker comparison modes with clear web/desktop boundaries, formula-review examples, billing cycles and privacy conditions.",
+    "description_zh": "结合网页与桌面边界、公式审查样例、计费周期及隐私条件，选择 Diffchecker 比较模式。",
+    "primary_intent": "Evaluate Diffchecker for reviewing two file versions.",
+    "secondary_questions": [
+      "Can equal spreadsheet values hide formula changes?",
+      "Does offline comparison exclude all customer-data collection?"
+    ],
+    "query_basis": "Editorial intent; no keyword-demand or ranking measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, file upload, comparison, OCR, redline decision, AI request, cloud save/share, installation, telemetry change, license assignment, API call, checkout, cancellation, deletion or restore executed.",
+      "zh": "未执行账户、文件上传、比较、OCR、修订决定、AI 请求、云端保存共享、安装、诊断设置变更、许可分配、API、结账、取消、删除或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "AI provider behavior, cloud-save recovery/deletion, API entitlements, precise supported OS versions, export fidelity and performance remain unverified. Marketing privacy and certification claims were not independently audited.",
+      "zh": "AI 提供方行为、云端保存恢复删除、API 权益、精确受支持系统版本、导出保真与性能未核实；营销隐私及认证主张未经独立审计。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Pricing grid and document size statements conflict. The grid explicitly includes word-level comparison while homepage free/pro wording is broader; use current plan-specific entitlements rather than inferring every advanced tool is unlimited.",
+      "zh": "价格表与文档大小说明冲突。表格明确包含单词比较，而首页免费与付费表述更宽泛；应按当前逐功能权益，不推断所有高级工具均无限。",
+      "source_refs": ["text", "documents", "plans"],
+      "evidence_type": "documented_scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "superlist-48eb0446",
+  "name": "Superlist",
+  "website_url": "https://www.superlist.com/",
+  "domain": "www.superlist.com",
+  "identity_domain": "superlist.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Superlist combines tasks and notes in rich lists. A task can open into its own detailed document with subtasks, attachments and discussion, while sidebar sections organize lists. Personal work and explicitly shared lists can live in the same application on macOS, iOS, Android and Web.\n\nIts workflow extends into recurring tasks, calendar and task-service integrations, voice capture and AI meeting notes. These are separate capabilities with distinct billing, data and platform conditions. This profile focuses on list collaboration, synchronization side effects and recoverable changes; it does not claim a tested sync, recording or productivity result.",
+  "description_zh": "Superlist 把任务和笔记放入富内容列表。任务可打开为独立详情文档，包含子任务、附件及讨论；侧栏分区用于组织列表。个人工作与明确共享的列表可共存在 macOS、iOS、Android 及 Web 应用。\n\n流程还延伸到重复任务、日历及任务服务集成、语音捕获和 AI 会议笔记。这些是独立能力，各有计费、数据及平台条件。本档案聚焦列表协作、同步副作用及可恢复修改；不声称实测同步、录音或生产力结果。",
+  "core_features": [
+    {
+      "name_en": "Task documents",
+      "name_zh": "任务文档",
+      "explanation_en": "Task details hold text, nested tasks and attachments.",
+      "explanation_zh": "任务详情可包含文字、嵌套任务及附件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "basics",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "List collaboration",
+      "name_zh": "列表协作",
+      "explanation_en": "A collaborator can edit content and manage other collaborators.",
+      "explanation_zh": "协作者可编辑内容及管理其他协作者。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sharing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Repeating task reopening",
+      "name_zh": "重复任务重新打开",
+      "explanation_en": "Completion reopens the task with its next due date.",
+      "explanation_zh": "完成后以新到期日重新打开任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "recurrence",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Trash recovery",
+      "name_zh": "回收站恢复",
+      "explanation_en": "Restore tasks/lists subject to current shared access and feature rollout scope.",
+      "explanation_zh": "可恢复任务／列表，受当前共享访问及功能上线范围限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "trash",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Keep release-review notes and actions together, with a private preparation list and an intentionally shared review list."
+    ],
+    "zh": [
+      "把发布复核笔记与动作放在一起，使用个人准备列表及有意共享的复核列表。"
+    ],
+    "source_refs": ["basics", "sharing"],
+    "basis": "Hypothetical evaluation, not a real recording, customer case or task operation."
+  },
+  "technical_details": {
+    "Clients": {
+      "en": "Official macOS/iOS/Android/Web clients; no current native Windows/Linux client established. Platform-specific meeting support and offline conflict behavior need checks.",
+      "zh": "官方提供 macOS／iOS／Android／Web；未确立当前原生 Windows／Linux 客户端。会议平台支持及离线冲突行为需核查。",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Individual managing tasks with context",
+      "Small team collaborating in editable lists"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "basics"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the client/plan and create a disposable private list before adding collaborators.",
+        "zh": "选择客户端／方案，先建可丢弃私有列表，再添加协作者。",
+        "source_refs": ["pricing", "sharing"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Pilot a recurring task, shared permission, calendar side effect and trash restore before using important work.",
+        "zh": "用于重要工作前，试点重复任务、共享权限、日历副作用及回收站恢复。",
+        "source_refs": ["recurrence", "sharing", "calendar", "trash"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "calendar",
+    "scope": "GoogleCalendar and MicrosoftToDo semantics reviewed separately; MCP marketing not treated as tested API specification."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Calendar-event deletion clears a task due date; reconnecting a previously disabled ToDo list can duplicate it.",
+        "zh": "删除日历事件会清除任务到期日；重新启用已停用的 ToDo 列表可能产生重复。",
+        "source_refs": ["calendar", "todo-sync"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Free-list cap and meeting-client descriptions differ across official pages; verify current account rather than assuming the broadest interpretation.",
+        "zh": "官方不同页面对免费列表上限及会议客户端描述不同，应确认当前账户，不能采用最宽泛解释。",
+        "source_refs": ["pricing", "billing-faq", "meetings", "updates"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "proprietary_service_rights_read",
+    "is_open_source": false,
+    "url": "https://www.superlist.com/terms",
+    "source_ref": "license",
+    "scope": "Application use license denies source entitlement; separately published components keep their own licenses, not an application-wide open-source grant."
+  },
+  "pricing": {
+    "status": "official_browser_display_checkout_unverified",
+    "price_type": "free_base_per_person_basic_super_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing-browser",
+    "normalized_price": null,
+    "source_snapshot_en": "Free$0; Basic$6/person/month or$59/year; Super$25/person/month or$249/year. Annual display rounds equivalents to$5/$21. Currencycode/tax/storecheckout unverified.",
+    "source_snapshot_zh": "Free $0；Basic 每人月付 $6 或年付 $59；Super 每人月付 $25 或年付 $249。年付展示把月均四舍五入为 $5／$21。币种代码／税／商店结账未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/superlist",
+      "read_at": "2026-10-22T09:03:35.635Z",
+      "excerpt_sha256": "c7f5b30d17355680dfe2bfd4fbfd9b2864e0f52aa4a0eee4916855ca6466829a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "www.superlist.com",
+      "title": "Superlist — Task Management & To-Do List App for Work and Life",
+      "url": "https://www.superlist.com/",
+      "read_at": "2026-10-22T11:56:44.072933Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "350a3fa3d24d1163b12d665307207719d137df9721ddcb7a56643ad7d26db584",
+      "research_notes_en": "Tasks/notes/list application and official macOS/iOS/Android/Web entry links read; user testimonials and productivity promises not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.superlist.com",
+      "title": "Superlist Pricing: Free Plan & Team Plans for Task Management",
+      "url": "https://www.superlist.com/pricing",
+      "read_at": "2026-10-22T11:56:44.073903Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5148557676b8fed8314b3d5fc8b1fa6ab268357663e5e1c86791500d32f014f5",
+      "research_notes_en": "Free/Basic/Super entitlements and exact59/249annual totals read; rounded5/21monthly equivalents not multiplied into annual quotes."
+    },
+    {
+      "id": "components",
+      "type": "official_documentation",
+      "site": "www.superlist.com",
+      "title": "Open Source",
+      "url": "https://www.superlist.com/open-source",
+      "read_at": "2026-10-22T11:56:44.073957Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "92b973ea42ea81a5adfbfe19fbd86c67a86aea8a394c702c784755c6afcfd3b3",
+      "research_notes_en": "Open Source page describes separate Flutter components, not a source license for the hosted Superlist application."
+    },
+    {
+      "id": "updates",
+      "type": "official_documentation",
+      "site": "www.superlist.com",
+      "title": "What's New in Superlist: Latest Features & Product Updates",
+      "url": "https://www.superlist.com/updates",
+      "read_at": "2026-10-22T11:56:44.073995Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3b4892b07354f83ea0b1c65796f07266a673bb87d27ed60fbba3741b4ca9110c",
+      "research_notes_en": "Current published1.58Oct8trash and1.57recurrence/activity updates plus1.56Androidmeeting note release read; not installed or performance tested."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "www.superlist.com",
+      "title": "Superlist for your AI Agents",
+      "url": "https://www.superlist.com/mcp",
+      "read_at": "2026-10-22T11:56:44.074022Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "228c5699a0983479f711f0b80f997a1b2c198a2d976b1cd87a9fe832dd595095",
+      "research_notes_en": "Official MCP marketing describes task/list reads and writes; exact exposed tools, auth scopes and plan conditions not verified."
+    },
+    {
+      "id": "basics",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Superlist basics: lists, tasks, sections & meetings explained | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/10050-superlist-basics-lists-tasks-sections-meetings-explained",
+      "read_at": "2026-10-22T11:56:44.074534Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "af2cec929ddcd27d62e2a4061e16e526baf94459dba4956f9e90c5979299c6e5",
+      "research_notes_en": "Lists as rich docs, nested task details, sections and sidebar behavior read."
+    },
+    {
+      "id": "billing-faq",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Superlist pricing FAQ: plans, billing and what's included | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/125694-superlist-pricing-faq-plans-billing-and-what-s-included",
+      "read_at": "2026-10-22T11:56:44.074569Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2eca7ac12b4fd8aa8c468d33444b79cb68dba9748de8b8abdabc8f3a08e13f51",
+      "research_notes_en": "FAQ separate5private/5shared limits differ from price-page wording; team-to-personal entitlement and refund transition read."
+    },
+    {
+      "id": "trash",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Trash: restore or permanently delete tasks and lists | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/860039-trash-restore-or-permanently-delete-tasks-and-lists",
+      "read_at": "2026-10-22T11:56:44.074590Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "73bdf3ade89272d034a1fb2bc295857df1f19fd9fd8caf14f83463ea2b1a8d2c",
+      "research_notes_en": "Trash scope, no automatic purge, restore fallback, lost shared access and pre-feature deletion exclusion read."
+    },
+    {
+      "id": "recurrence",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Repeating tasks | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/78873-repeating-tasks",
+      "read_at": "2026-10-22T11:56:44.074612Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d27f7e76d1263618c07942efdc319ca0dbcb6079f6a17aa81c5013320195c506",
+      "research_notes_en": "Completing a repeat reopens same task with updated due date; full late-completion rules not stated."
+    },
+    {
+      "id": "teams",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Create and manage teams in Superlist | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/99131-create-and-manage-teams-in-superlist",
+      "read_at": "2026-10-22T11:56:44.074628Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "268623b3b998acfafa7bf29e00be701a66c31370635414a87dda8768723d3641",
+      "research_notes_en": "Team creation, list sharing and membership controls read; no invitations sent."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Share lists with collaborators | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/10057-share-lists-with-collaborators",
+      "read_at": "2026-10-22T11:56:44.074646Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b9fdf35dac217cd90a47d2e7f478bb6f8e9d2032485db01ea07164b5a719015e",
+      "research_notes_en": "Lists private by default; collaborators can change content and collaborators, but cannot remove creator/delete list."
+    },
+    {
+      "id": "calendar",
+      "type": "official_integration",
+      "site": "help.superlist.com",
+      "title": "Google Calendar integration: see tasks alongside events | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/10062-google-calendar-integration-see-tasks-alongside-events",
+      "read_at": "2026-10-22T11:56:44.074665Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "7965ad9bc679f60c3449896b5a5da4335fcee3f6ab3435cf8ed8ec854bb4fcc4",
+      "research_notes_en": "Post-connection dated tasks toevents, 30min timedblocks, completion/defaultremove, eventdeleteclearsduedate and disconnectcleanup read."
+    },
+    {
+      "id": "meetings",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "AI meeting notes in Superlist: summaries and next actions, automatically | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/310871-ai-meeting-notes-in-superlist-summaries-and-next-actions-automatically",
+      "read_at": "2026-10-22T11:56:44.074684Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "77777eabda9d0c19a3ec105cc7db5faf0455090fb62554a1ffbe9b0e5ed0d2f9",
+      "research_notes_en": "Meeting summaries via device audio/macOS14/iOS, legacyProlimit and Superunlimited read; narrower platform wording differs from newerAndroidrelease."
+    },
+    {
+      "id": "account",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Manage your settings and account | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/18967-manage-your-settings-and-account",
+      "read_at": "2026-10-22T11:56:44.075069Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "27e9bbc662d04ddfe9a2051cc29c269bf1a72db5b3a207d0020fdcdeea634527",
+      "research_notes_en": "Web-purchased subscription management visibility, primary-email constraints and permanent account deletion read; no action."
+    },
+    {
+      "id": "talk",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Talk: Superlist's AI voice assistant for hands-free tasks | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/74945-talk-superlist-s-ai-voice-assistant-for-hands-free-tasks",
+      "read_at": "2026-10-22T11:56:44.075106Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "01b583acc3299efce378e6717c3d17be26118e57f8cbbe791b7164c02b3ea7a7",
+      "research_notes_en": "Basic/Super voice task/document output and list-only audio-note condition read."
+    },
+    {
+      "id": "talk-privacy",
+      "type": "official_documentation",
+      "site": "help.superlist.com",
+      "title": "Talk privacy: how Superlist handles your voice data | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/227395-talk-privacy-how-superlist-handles-your-voice-data",
+      "read_at": "2026-10-22T11:56:44.075123Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "118539f9223053b19f192413b1ca0b584d655637870b2569d7f2e35149cc434f",
+      "research_notes_en": "Vendor Talk audio/transcript consent/no-training statement read; no processing audit or local-only inference."
+    },
+    {
+      "id": "todo-sync",
+      "type": "official_integration",
+      "site": "help.superlist.com",
+      "title": "Microsoft To Do integration: sync tasks with Superlist | Superlist Help Center",
+      "url": "https://help.superlist.com/en/articles/101871-microsoft-to-do-integration-sync-tasks-with-superlist",
+      "read_at": "2026-10-22T11:56:44.075139Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "81a541e153af1584b74d8d28f932730439f9e773698d8bd72567fea2c94b044a",
+      "research_notes_en": "MicrosoftToDo selectivelists, title/status/date sync and reenableduplicate-list warning read."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "www.superlist.com",
+      "title": "Terms",
+      "url": "https://www.superlist.com/terms",
+      "read_at": "2026-10-22T11:56:44.075506Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4d5f6350d294d5bab3ed6f361e1a16b4b0a30727b2b747775e09cfa5b6e078e9",
+      "research_notes_en": "Actual contract grants limited nontransferable use and denies source-code entitlement; componentlicense exception distinct. Seat-change billing and customer backup duty read."
+    },
+    {
+      "id": "exit-terms",
+      "type": "official_documentation",
+      "site": "www.superlist.com",
+      "title": "Terms",
+      "url": "https://www.superlist.com/terms",
+      "read_at": "2026-10-22T11:56:44.075552Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "04fd7a394734a49f2ff892a8eb066f436ecbad96c513feeaced5393fbb9537e3",
+      "research_notes_en": "Paidcancellationperiodend versus accountdelete/noRefund and seven-daypostagreementCSVright read; no actual CSVexit tested."
+    },
+    {
+      "id": "pricing-browser",
+      "type": "official_pricing",
+      "site": "www.superlist.com",
+      "title": "Superlist Pricing: Free Plan & Team Plans for Task Management",
+      "url": "https://www.superlist.com/pricing",
+      "read_at": "2026-10-22T11:56:44.075722Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "d183ae2bf8061f3cb2223883f050c328be1ed1ce9a9a29a97f4936168413a548",
+      "research_notes_en": "Browser AX and screenshots confirm annual totals/rounded equivalents then monthly Basic6/Super25 perperson. Public presentation only; no checkout/currencycode check."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:56:44.075722Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "basics",
+    "calendar",
+    "talk",
+    "meetings"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "notes-action",
+        "title_en": "Keep the decision next to the next action",
+        "title_zh": "把决策与下一动作放在一起",
+        "en": "For a proposed release review, keep the review context as text and create tasks for checking the fix, preparing a note and confirming acceptance. Each task can hold its own details and smaller actions. A sidebar section groups lists; removing a section does not delete its lists.\n\nChoose one simple structure before nesting deeply. A checked task means someone marked it complete, not that release acceptance passed. This is a practical evaluation of Superlist’s rich-list/task model, not a verified project-management, dependency or approval system.",
+        "zh": "假设复核一次发布，可用文字记录上下文，分别创建检查修复、准备说明及确认验收的任务。每项任务可有自己的细节及更小动作。侧栏分区用于组织列表，移除分区不会删除列表。\n\n深度嵌套前，应先选简单结构。勾选任务只说明有人标记完成，不证明发布通过验收。这是对 Superlist 富列表／任务模型的实用评估，没有确立项目管理依赖或审批系统。",
+        "source_refs": ["basics"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "collaboration",
+        "title_en": "A collaborator receives editing and invitation powers",
+        "title_zh": "协作者得到编辑及邀请权限",
+        "en": "Lists begin private. Sharing a list grants collaborators the ability to view, add and remove content, change list presentation and add/remove other collaborators. They cannot remove the creator or delete the entire list. This is broader than a read-only stakeholder link.\n\nFor a client review, first decide whether the person should change content and membership. Use a harmless list to inspect both permissions and revocation. A team membership and a list share are separate actions in the help guide; do not assume every personal list becomes team-visible or that every invited guest is restricted to comments.",
+        "zh": "列表默认私有。共享后协作者可查看、添加及移除内容、改变列表展示、添加／移除其他协作者，但不能移除创建者或删除整个列表。该权限超出干系人只读链接。\n\n邀请客户复核前，应确定其是否应该修改内容及成员。用无害列表检查权限与撤销。帮助指南中的加入团队与共享列表是独立动作，不能假设全部个人列表自动对团队可见，也不能假设受邀 Guest 只能评论。",
+        "source_refs": ["sharing", "teams"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "repeat-log",
+        "title_en": "Completing a repeat advances an existing task",
+        "title_zh": "完成重复任务会推进已有任务",
+        "en": "The repeat guide says completion reopens the task with an updated due date and retained details. Current update notes add specific weekday selection and a per-task activity log for changes such as dates, assignees, title and status. This is different from assuming every occurrence creates an independent history record.\n\nPilot an on-time and a late completion, then inspect the next date and available history. Completion-based versus fixed-calendar arithmetic, missed instances and timezone handling were not fully established. Record the intended routine explicitly before using repeating tasks for a deadline that must not drift.",
+        "zh": "重复指南称完成后任务以新到期日重新打开，并保留详情。当前更新说明增加指定星期及逐任务活动记录，可查看日期、负责人、标题和状态等修改。这不同于假设每个实例都有独立历史记录。\n\n试点应分别按时、延迟完成，再检查下一日期及可用历史。按完成时点或固定日历计算、遗漏实例及跨时区处理尚未完整确立。用于不能漂移的截止承诺前，应明确所需重复规则。",
+        "source_refs": ["recurrence", "updates"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sync-effects",
+        "title_en": "Calendar deletion and integration toggles change task data",
+        "title_zh": "日历删除及集成开关会改变任务数据",
+        "en": "Google Calendar integration adds relevant dated tasks as events only for dates added after connection. A timed task becomes a thirty-minute event. Completion removes the event by default; deleting the event clears the task’s due date. Disconnect removes exported calendar events but retains Superlist tasks and dates.\n\nMicrosoft To Do separately synchronizes selected lists and task titles, completion and dates. Its guide warns that disabling then re-enabling a list creates a duplicate in Superlist. Test each path with disposable data before treating an integration switch as a harmless pause. Conflict, offline and repeated-toggle recovery were not exercised.",
+        "zh": "Google Calendar 集成只处理连接后添加的日期，把符合条件的任务转为事件；有时间任务生成三十分钟事件。默认完成会移除事件，删除事件则清除任务到期日。断开连接会移除已导出日历事件，但保留 Superlist 任务及日期。\n\nMicrosoft To Do 另同步所选列表及任务标题、完成状态和日期；指南警告停用后重新启用列表会在 Superlist 创建重复。不能把集成开关当作无害暂停，应先用可丢弃数据测试各路径。本次未操作冲突、离线或重复开关恢复。",
+        "source_refs": ["calendar", "todo-sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "voice-meetings",
+        "title_en": "Voice capture, meeting notes and MCP are separate paths",
+        "title_zh": "语音捕获、会议笔记及 MCP 是独立路径",
+        "en": "Talk on Basic/Super creates tasks and content from voice; audio notes are documented for lists, not Inbox/Today. Meeting Notes capture device audio into a meeting list, transcript and summary. Check device permissions and participant consent before recording, then verify names, dates and proposed actions instead of treating a generated summary as agreed minutes.\n\nMeeting help still mentions macOS/iOS and legacy Pro quotas, whereas a newer release note adds Android. Verify the intended client and current entitlement. MCP marketing describes task/list writes, but this research did not establish exact tools, scopes, approval defaults or model costs. The short Talk no-training/consent policy is a vendor statement, not proof of local-only processing.",
+        "zh": "Basic／Super 的 Talk 从语音创建任务及内容；音频笔记按文档适用于列表，不适用于 Inbox／Today。Meeting Notes 把设备音频转为会议列表、转录及摘要。录音前应核对设备权限与参与者同意，再复核姓名、日期和拟议动作，不能把生成摘要当作已确认纪要。\n\n会议帮助页仍提 macOS／iOS 及旧 Pro 额度，而较新发布说明增加 Android；应确认目标客户端及当前权益。MCP 营销描述任务／列表写入，但本次未确立准确工具、scope、默认审批或模型费用。Talk 的简短不训练／同意政策是厂商陈述，不证明仅本地处理。",
+        "source_refs": ["talk", "meetings", "updates", "mcp", "talk-privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Use annual totals rather than rounded monthly headlines",
+        "title_zh": "用年付总额，避免用四舍五入月均倒推",
+        "en": "Browser toggles show Basic at $6/person monthly or $59/year, and Super at $25 monthly or $249/year. Annual headlines round to $5 and $21; multiplying them by twelve would overstate the displayed annual totals. Free includes unlimited tasks/notes with list, sharing and storage limits.\n\nThe pricing page’s five-list wording differs from the FAQ’s five private plus five shared lists. Confirm the exact cap in the account. Basic adds integrations, Talk and larger storage; Super adds meeting notes and other AI features. Team upgrades include matching personal entitlement, and the FAQ describes refunding an overlapping personal subscription. Regional/store currency, tax, detailed AI fair-use and current checkout remain unverified.",
+        "zh": "浏览器切换显示 Basic 每人月付 $6 或年付 $59；Super 月付 $25 或年付 $249。年付月均展示四舍五入为 $5、$21，乘十二会高于展示年费。免费层包含不限量任务／笔记，但限制列表、共享及存储。\n\n定价页的五列表措辞与 FAQ 的五私有加五共享不同，需在账户确认准确上限。Basic 增加集成、Talk 及更大存储，Super 增加会议笔记等 AI。团队升级包含对应个人权益，FAQ 描述重叠个人订阅退款。地区／商店币种、税、AI 具体合理使用及当前结账仍未核实。",
+        "source_refs": ["pricing", "pricing-browser", "billing-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trash-exit",
+        "title_en": "Trash is not a complete independent backup",
+        "title_zh": "回收站不是完整独立备份",
+        "en": "Trash retains post-launch deleted tasks/lists until permanent deletion. If a task’s original list is missing, restore places it in Inbox; lost shared-list access can block recovery. Items deleted before Trash launched are not included, and Delete Forever cannot be undone in the app.\n\nTerms require customer backups and describe a seven-day CSV-export right after the agreement ends, but the practical complete export/restore path was not tested. Paid cancellation normally ends at the paid period; deleting the account is permanent and is not the same action. Superlist’s open-source page lists separate Flutter components. The application contract denies source-code entitlement, so those projects do not make the entire service open source.",
+        "zh": "回收站保留功能上线后删除的任务／列表，直至永久删除。任务原列表不存在时恢复至 Inbox；失去共享列表权限可能阻止恢复。回收站不包含功能上线前删除项，Delete Forever 在应用内不能撤销。\n\n条款要求客户备份，并描述协议结束后七天内 CSV 导出权，但实际完整导出／恢复路径未测试。付费取消通常于付费周期末生效，永久删账户是另一动作。Superlist 开源页列出独立 Flutter 组件；应用合同不授予源码权利，因此这些项目不使整个服务成为开源。",
+        "source_refs": [
+          "trash",
+          "exit-terms",
+          "account",
+          "license",
+          "components"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Superlist: Shared Lists, Recurrence, Calendar Effects and Pricing",
+    "title_zh": "Superlist：共享列表、重复、日历副作用及价格",
+    "description_en": "Evaluate task documents, collaborator powers, AI capture, calendar and To Do sync, annual totals and Trash recovery.",
+    "description_zh": "评估任务文档、协作者权限、AI 捕获、日历与 To Do 同步、年费及回收站恢复。",
+    "primary_intent": "Evaluate shared task/note workflows and data-change conditions.",
+    "secondary_questions": [
+      "What happens when a calendar event is deleted?",
+      "Does an open-source component license cover the service?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, sign-in, shared invitation, task/repeat change, voice/meeting recording, calendar or ToDo grant, MCP connection, billing, Trash action or CSV restore tested.",
+      "zh": "未测试安装、登录、共享邀请、任务／重复修改、语音／会议录音、日历或 ToDo 授权、MCP 连接、付款、回收站操作或 CSV 恢复。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact free list cap, Android versus older meeting-help scope, legacy Pro entitlements, detailed AI limits/retention, MCP auth/plan/tool inventory, regional checkout and seat/guest charges remain unverified.",
+      "zh": "准确免费列表上限、Android 与旧会议帮助范围差异、旧 Pro 权益、AI 具体限制／保留、MCP 授权／方案／工具清单、地区结账及席位／Guest 收费未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Offline/conflict resolution, late recurrence arithmetic, complete export/import recovery and full current interface languages unknown.",
+      "zh": "离线／冲突解决、延迟完成的重复计算、完整导出／导入恢复及全部当前界面语言未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

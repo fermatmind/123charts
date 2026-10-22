@@ -1,0 +1,373 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "wso2-api-manager-aef076cc",
+  "name": "WSO2 API Manager",
+  "website_url": "https://wso2.com/api-platform/api-manager/",
+  "domain": "wso2.com",
+  "identity_domain": "wso2.com",
+  "category": "api-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "WSO2 API Manager is currently presented as API Manager Server, a self-hosted API lifecycle system with Publisher, Developer Portal, gateway and key-management capabilities. Teams expose backend services, publish an API offering, manage consumer subscriptions and enforce access at the gateway.\n\nThe former API-management landing page now leads to the wider WSO2 API Platform. This record remains about API Manager Server, distinguishing it from managed cloud and other family products. Starting with 4.7, its product page describes a Java Classic Gateway or a Go Platform Gateway choice; detailed behavior must match the gateway and release selected.",
+  "description_zh": "WSO2 API Manager 当前以 API Manager Server 展示，为自托管 API 生命周期系统，包含 Publisher、Developer Portal、网关及密钥管理能力。团队可公开后端服务、发布 API 产品、管理消费者订阅，并在网关执行访问控制。\n\n旧 API 管理入口现进入更广的 WSO2 API Platform。本文仍聚焦 API Manager Server，区分托管云及其他家族产品。产品页说明从 4.7 起可选 Java Classic Gateway 或 Go Platform Gateway；具体行为必须对应所选网关与发行版。",
+  "core_features": [
+    {
+      "name_en": "API lifecycle and consumer subscription",
+      "name_zh": "API 生命周期及消费者订阅",
+      "explanation_en": "Create, deploy and publish an API, then subscribe and obtain access credentials.",
+      "explanation_zh": "创建、部署、发布 API，再订阅并获取访问凭据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "quick",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "API-bound keys in 4.7",
+      "name_zh": "4.7 API 专属密钥",
+      "explanation_en": "Issue opaque API-specific keys with environment and optional expiration scope.",
+      "explanation_zh": "签发 API 专属不透明密钥，设置环境及可选有效期。",
+      "explanation_scope": "product_specific",
+      "source_ref": "key",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Subscription blocking",
+      "name_zh": "订阅阻断",
+      "explanation_en": "Block a selected API/application subscription, with cache-dependent enforcement timing.",
+      "explanation_zh": "阻断选定 API／应用订阅，生效时间取决于缓存。",
+      "explanation_scope": "product_specific",
+      "source_ref": "block",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate Publisher-to-subscription access for one API",
+      "Test subscription blocking versus key revocation timing"
+    ],
+    "zh": [
+      "评估一个 API 从发布到订阅的访问",
+      "测试订阅阻断与 key 撤销的时间差异"
+    ],
+    "source_refs": ["quick", "block", "key"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineers",
+      "Gateway and identity administrators",
+      "API product owners"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a Server release and gateway, then verify its JDK/database prerequisites.",
+        "zh": "选择 Server 版本及网关，核对 JDK／数据库前提。",
+        "source_refs": ["product", "quick", "prerequisites"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a disposable backend and explicitly configure publication, subscription and credentials.",
+        "zh": "用可丢弃后端，明确配置发布、订阅及凭据。",
+        "source_refs": ["quick", "key"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check wrong-API access, key rotation and cached subscription-block behavior before real consumers.",
+        "zh": "接入真实消费者前检查错误 API 访问、key 轮换及缓存订阅阻断行为。",
+        "source_refs": ["key", "block"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Subscription cache can delay block/unblock; scope is a selected API/application relationship.",
+        "zh": "订阅缓存可能延迟阻断／解除，范围为选定 API／应用关系。",
+        "source_refs": ["block"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "4.7 API-bound keys and Classic timeout settings must not be generalized across older releases or all gateways.",
+        "zh": "4.7 API 专属 key 及 Classic 超时设置不能泛化至旧版本或全部网关。",
+        "source_refs": ["key", "tuning"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A quickstart JVM topology and baseline resources are not a production capacity guarantee.",
+        "zh": "Quickstart JVM 拓扑及资源基线不是生产容量保证。",
+        "source_refs": ["quick", "prerequisites"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "classification": "Apache-2.0 API Manager Server as stated on dedicated official product page",
+    "url": "https://wso2.com/api-platform/api-manager/",
+    "source_ref": "product",
+    "scope": "API Manager Server software; commercial support and external services separate"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "open_source_custom_support",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:30:39.473455Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Server software Apache2.0; self-managed enterprise subscription custom quote plus infrastructure. Wider cloud Growth from $119/month and 30-day trial are separate platform offers.",
+    "summary_zh": "Server 软件 Apache 2.0，自运维企业订阅定制报价、另负担基础设施；更广云 Growth 每月 $119 起及三十天试用为不同平台方案。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/wso2-api-manager",
+      "read_at": "2026-10-22T09:04:10.931Z",
+      "excerpt_sha256": "ec1b3355aff7e7f771beb337a2cfc50bcbad87accdf0a5214cdb94fabf52835b",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_license",
+      "site": "WSO2 API Manager",
+      "title": "WSO2 API Manager Server",
+      "url": "https://wso2.com/api-platform/api-manager/",
+      "read_at": "2026-10-22T11:30:39.473455Z",
+      "excerpt_sha256": "02b40d3661e9a4967d18e6f068802750ea90323a396fd22d8a1450cbd181245d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Dedicated API Manager Server identity, self-hosted scope, Apache2.0 statement and 4.7 Classic/Platform gateway choice read; broader family not merged into single entitlement."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "WSO2 API Manager",
+      "title": "WSO2 API Platform Pricing",
+      "url": "https://wso2.com/api-platform/pricing/",
+      "read_at": "2026-10-22T11:30:42.588578Z",
+      "excerpt_sha256": "cb331db20439e27c514ae6f763414f5e7d97ca33936229e37b4626e06e50eb1a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current platform pricing distinguishes self-managed API Manager custom enterprise quote from 30-day cloud trial and Growth starting119; cloud meters not assigned as server license fees."
+    },
+    {
+      "id": "quick",
+      "type": "official_documentation",
+      "site": "WSO2 API Manager",
+      "title": "Quick Start Guide - WSO2 API Manager Documentation",
+      "url": "https://apim.docs.wso2.com/en/latest/get-started/api-manager-quick-start-guide/",
+      "read_at": "2026-10-22T11:35:46.576257Z",
+      "excerpt_sha256": "d7be573b1aeb5b5ca9e83e0aa3c03a91242628c7e6464dcae7dae7d41592ee0a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual latest quickstart body read beyond large navigation: all-in-one JVM, JDK21, create/deploy/publish, subscription and test-token invocation; self-signed demo bypass instructions not adopted/executed."
+    },
+    {
+      "id": "prerequisites",
+      "type": "official_documentation",
+      "site": "WSO2 API Manager",
+      "title": "Installation Prerequisites - WSO2 API Manager Documentation",
+      "url": "https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/",
+      "read_at": "2026-10-22T11:35:46.558156Z",
+      "excerpt_sha256": "39125b555701fb33fa4c9de8b5dc223f5ce3d6de8ee4f2954a2954676bee1f3c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual latest prerequisite body read: runtime-specific compatibility, RDBMS recommendation, baseline RAM/disk and ARM matrix. Old browser/OS examples not recommended."
+    },
+    {
+      "id": "key",
+      "type": "official_documentation",
+      "site": "WSO2 API Manager",
+      "title": "API Keys - WSO2 API Manager Documentation",
+      "url": "https://apim.docs.wso2.com/en/latest/api-security/runtime/api-authentication/secure-apis-using-api-keys/",
+      "read_at": "2026-10-22T11:35:03.193197Z",
+      "excerpt_sha256": "3eece1ef93bf298305e428c1b3a86038072b86d63ccf262e18dc58c877103738",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual latest API-key body read: 4.7 API-bound opaque key, environment scope, subscription association, default no expiry and rotation/revocation distinctions."
+    },
+    {
+      "id": "block",
+      "type": "official_documentation",
+      "site": "WSO2 API Manager",
+      "title": "Block Subscription to an API - WSO2 API Manager Documentation",
+      "url": "https://apim.docs.wso2.com/en/latest/api-design-manage/design/advanced-topics/block-subscription-to-an-api/",
+      "read_at": "2026-10-22T11:35:03.219299Z",
+      "excerpt_sha256": "179877163bef16c48121c65929d9de550f7d36a4fff5bb6b7683fd93ddc2aa52",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual subscription-blocking body read: per-API/application scope, production-only choice, default token cache delaying block/unblock, regeneration caveat."
+    },
+    {
+      "id": "tuning",
+      "type": "official_documentation",
+      "site": "WSO2 API Manager",
+      "title": "API-M Performance Tuning - WSO2 API Manager Documentation",
+      "url": "https://apim.docs.wso2.com/en/latest/install-and-setup/setup/deployment-best-practices/tuning-performance/",
+      "read_at": "2026-10-22T11:35:03.237736Z",
+      "excerpt_sha256": "3caa9fb03761ccf7c10e163ea283ae3a71eb7201b92d35218dfbd0d6c597c743",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Classic Gateway-specific timeout architecture, connection versus socket inactivity versus global/endpoint timers reviewed; not applied to new Go Platform Gateway."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:35:46.576257Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["product", "quick", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "lifecycle",
+        "title_en": "Publishing and consumer access are connected steps",
+        "title_zh": "发布及消费者访问是相连步骤",
+        "en": "A proposed evaluation could proxy a disposable order-status service. Define the API context/version/backend in Publisher, deploy it to a gateway and publish it in Developer Portal. Create an application/subscription and test with its access token. The current quickstart combines Create & Publish for its sample, but the underlying concerns remain definition, deployment, discovery and access. Test a permitted and a rejected call, not merely a visible portal entry. No server or request was operated during this research.",
+        "zh": "建议以可丢弃订单状态服务做代理试验。在 Publisher 定义上下文／版本／后端，部署网关并发布到 Developer Portal，创建应用／订阅，再用访问 token 测试。当前 Quickstart 为示例合并 Create & Publish，但仍需处理定义、部署、发现及访问。应测试允许和拒绝请求，不能只确认门户有条目。本次未运行服务器或请求。",
+        "source_refs": ["quick"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "keys",
+        "title_en": "API keys have release-specific scope and defaults",
+        "title_zh": "API key 范围与默认值依版本而异",
+        "en": "The current guide introduces API-bound opaque keys from 4.7: one key is scoped to one API and can target production or sandbox. A subscription-enabled API also requires a valid application subscription and key association; a subscriptionless API does not. Default keys do not expire unless validity is set. Regeneration revokes the prior key and preserves application association. Do not use older application-key assumptions for the newer model. Test wrong-API, expired and rotated keys in the selected release.",
+        "zh": "当前指南说明 4.7 起提供 API 专属不透明 key，一个 key 限一个 API，可选生产或沙盒。要求订阅的 API 还需有效应用订阅及 key 关联，不要求订阅的则不需。默认 key 不到期，需主动设有效期。重新生成会撤销旧 key，保留应用关联。不能将旧应用级 key 假设套用新模型，应在选定版本测试错误 API、过期及轮换 key。",
+        "source_refs": ["key"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "block",
+        "title_en": "A subscription block is not necessarily immediate",
+        "title_zh": "阻断订阅不一定立即生效",
+        "en": "Blocking one API subscription for one application does not automatically block the same customer’s other APIs or other applications. Production-only blocking leaves sandbox access available. The documented default gateway token cache can delay blocking and unblocking until expiry, approximately 15 minutes; the guide describes a regenerated token as a different case. Treat this separately from API-key revocation, whose guide describes immediate invalidation. Test the actual token type and cache configuration before relying on an emergency access-removal time.",
+        "zh": "阻断某应用的一项 API 订阅，不会自动阻断同客户其他 API 或应用；仅阻断生产仍保留沙盒。文档说明默认网关 token 缓存可使阻断／解除延迟至到期，约十五分钟，重新生成 token 则另述。需与 API key 撤销分开，后者指南描述立即失效。依赖紧急撤权时间前，应测试实际 token 类型及缓存配置。",
+        "source_refs": ["block", "key"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "timeout",
+        "title_en": "Classic Gateway has more than one timeout",
+        "title_zh": "Classic Gateway 有多类超时",
+        "en": "The tuning guide distinguishes connection establishment, socket inactivity, global callback wait and endpoint-specific timeout/action. Socket timeout measures inactivity between packets rather than total business-operation duration. It also calls out separate behavior for a default-version API template. Therefore changing one timeout does not establish a complete deadline or rollback policy. Inspect the client, gateway and backend together with a slow disposable service. These Classic Gateway settings must not be copied unexamined to the Go Platform Gateway.",
+        "zh": "调优指南区分建连、套接字空闲、全局回调等待及逐端点超时／动作。套接字超时测数据包间空闲，不是业务操作总时长，还提示默认版本 API 模板有单独行为。因此只改一项超时不能确立完整截止或回滚策略。应以缓慢的可丢弃服务一并检查客户端、网关、后端；不能未经核对把 Classic 配置照搬到 Go Platform Gateway。",
+        "source_refs": ["tuning", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "The all-in-one package is an evaluation topology",
+        "title_zh": "一体包是评估拓扑",
+        "en": "The quickstart runs core components in one JVM and currently calls for JDK 21. Prerequisites are runtime/version-specific; the page lists a 4 GB RAM and 10 GB free-space baseline, while real concurrency, logs, backups and databases determine production sizing. WSO2 recommends an industry RDBMS for most enterprise production uses rather than assuming the embedded H2 setup is enough. Verify trusted certificates, credentials, persistence and recovery before deployment. Historical browser/OS examples on the page were not adopted as current recommendations.",
+        "zh": "Quickstart 把核心组件放一个 JVM，当前要求 JDK 21。前提依运行时／版本而异，页面列 4 GB RAM、10 GB 空间基线，生产容量仍取决于并发、日志、备份及数据库。WSO2 对多数企业生产建议使用行业 RDBMS，不能假设内置 H2 足够。部署前需核对可信证书、凭据、持久化及恢复；未把页面历史浏览器／系统示例作为当前建议。",
+        "source_refs": ["quick", "prerequisites"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Apache software and a production subscription are distinct",
+        "title_zh": "Apache 软件与生产订阅需区分",
+        "en": "The dedicated Server page states Apache 2.0 and full source, with no per-gateway fees or usage caps for the described software. That does not make infrastructure, maintenance, supported builds, updates or commercial SLAs free. The broader pricing page separately offers a self-managed API Manager enterprise quote at the customer’s scale and describes commercial production subscriptions. Confirm the distribution, update/support rights and selected gateway in the actual proposal. The published Apache statement is scoped to Server, not every external integration or service.",
+        "zh": "Server 专页声明 Apache 2.0、完整源码，所述软件无逐网关费用及用量上限，但不代表基础设施、维护、受支持构建、更新或商业 SLA 免费。更广定价页另为自运维 API Manager 按客户规模提供企业报价，并描述商业生产订阅。实际方案需确认发行包、更新／支持权及网关；Apache 声明限定 Server，不适用于每个外部集成或服务。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Cloud Growth pricing is not the Server license price",
+        "title_zh": "云 Growth 起价不是 Server 许可价",
+        "en": "The current API Platform page shows a 30-day $0 trial with five managed interfaces and one million gateway events, plus Growth from $119/month with stated interface/event bands. Managed interfaces count APIs, MCP servers and LLM proxies. Those cloud/platform meters should not be converted into a Server per-seat or permanent-free claim. For self-managed Server, pricing is a tailored enterprise quote plus customer infrastructure. Exact regional quote, renewal, metered-event definition and overages were not verified here.",
+        "zh": "当前 API Platform 页列三十天 $0 试用、五个受管接口及一百万网关事件，Growth 每月 $119 起并列接口／事件范围。受管接口包括 API、MCP server、LLM proxy。这些云／平台计量不能转成 Server 席位价或永久免费声明。自运维 Server 则按规模企业询价，客户另负担基础设施。本次未核实地区报价、续费、事件具体定义及超额。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "WSO2 API Manager Server: subscriptions, 4.7 keys and deployment",
+    "title_zh": "WSO2 API Manager Server：订阅、4.7 密钥及部署",
+    "description_en": "Review API publication, scoped keys, cached subscription blocking, Classic timeouts and Server versus cloud pricing.",
+    "description_zh": "了解 API 发布、专属 key、缓存订阅阻断、Classic 超时及 Server／云计费。",
+    "search_intent_en": "Evaluate self-hosted WSO2 API Manager with release-specific access behavior.",
+    "search_intent_zh": "结合版本访问行为评估自托管 WSO2 API Manager。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No server, gateway, token, key rotation, subscription block or failure was tested.",
+      "zh": "未实测服务器、网关、token、key 轮换、订阅阻断或故障。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Latest documentation is a moving target; installed release and Classic/Platform Gateway details must be confirmed before applying procedures.",
+      "zh": "Latest 文档会变化，采用流程前需确认安装版本及 Classic／Platform Gateway 细节。",
+      "source_refs": ["product", "key", "tuning"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual enterprise quote, supported distribution/update rights, SLA, UI languages and production recovery remain unverified.",
+      "zh": "实际企业报价、受支持发行／更新权、SLA、界面语言及生产恢复仍未核实。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Prerequisite docs include dated OS/browser examples; exact compatibility requires a version-specific matrix.",
+      "zh": "前提文档包含过时系统／浏览器示例，具体兼容需版本对应矩阵。",
+      "source_refs": ["prerequisites"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

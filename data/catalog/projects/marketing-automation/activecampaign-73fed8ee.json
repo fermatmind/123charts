@@ -1,0 +1,397 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "activecampaign-73fed8ee",
+  "name": "ActiveCampaign",
+  "website_url": "https://www.activecampaign.com/",
+  "domain": "www.activecampaign.com",
+  "identity_domain": "activecampaign.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "ActiveCampaign combines email campaigns, contact data and multi-step automations, with CRM and additional messaging capabilities sold according to plan and add-on. An automation responds to a start condition, moves contacts through actions and waits, and can track a defined business goal.\n\nEvaluating a re-engagement journey requires more than a recipe: the operator must control repeat entry, list eligibility, queued contacts and the commercial limits of each action. This profile explains those conditions and the differences between current status documentation and an older pause explanation. No campaign or account action was executed.",
+  "description_zh": "ActiveCampaign 结合邮件活动、联系人数据及多步骤自动化；CRM 和其他消息能力按套餐及附加项提供。自动化响应起始条件，让联系人经过动作和等待，并可跟踪指定业务目标。\n\n评估重新互动路径不能只看现成配方，还需控制重复进入、列表资格、排队联系人及各动作的商业限制。本文解释这些条件，以及现行状态文档与较旧暂停说明的差异。未执行活动或账户操作。",
+  "core_features": [
+    {
+      "name_en": "Multi-step automation",
+      "name_zh": "多步骤自动化",
+      "explanation_en": "Combine start conditions, actions and waits within plan-specific limits.",
+      "explanation_zh": "在套餐限制内组合起始条件、动作及等待。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Workflow concurrency settings",
+      "name_zh": "流程并发设置",
+      "explanation_en": "Control once-only entry or reentry after a previous run exits.",
+      "explanation_zh": "控制仅进入一次，或前一轮退出后再进入。",
+      "source_ref": "settings",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Contact run management",
+      "name_zh": "联系人运行管理",
+      "explanation_en": "Inspect overlapping runs and end one or all current runs.",
+      "explanation_zh": "检查重叠运行并结束单轮或全部当前运行。",
+      "source_ref": "manual-runs",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pause-entry queue",
+      "name_zh": "暂停入口队列",
+      "explanation_en": "Queue qualifying entrants temporarily and review deduplication before activation.",
+      "explanation_zh": "临时排队合格进入者，并在启用前检查去重。",
+      "source_ref": "statuses",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Manage a permissioned re-engagement cohort without uncontrolled overlapping runs.",
+      "Inspect and repair a nurture journey affected by a plan change."
+    ],
+    "zh": [
+      "管理已许可重新互动群体，并避免失控的重叠运行。",
+      "检查及修复受套餐变化影响的培育路径。"
+    ],
+    "source_refs": ["pricing", "settings", "statuses", "troubleshooting"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle automation owner",
+      "CRM marketing operator",
+      "Revenue operations analyst"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define entry, concurrency and list eligibility for a small controlled cohort.",
+        "zh": "为受控小群体定义进入、并发及列表资格。",
+        "source_refs": ["settings", "troubleshooting"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect pause queues and deduplication choices before reactivation.",
+        "zh": "重新启用前检查暂停队列及去重选择。",
+        "source_refs": ["statuses"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review unsupported actions, contact counting and send costs against the actual plan.",
+        "zh": "按真实套餐检查不支持动作、联系人计数及发送费用。",
+        "source_refs": ["downgrade", "contact-billing", "send-cost"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Workflow-level once-only entry overrides a trigger configured to repeat.",
+        "zh": "流程级仅一次会覆盖触发器重复设置。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A thirty-day pause expiry discards queued entrants.",
+        "zh": "暂停三十天到期会丢弃排队进入者。",
+        "source_refs": ["statuses"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Plan upgrades do not automatically reactivate flows deactivated by downgrades.",
+        "zh": "升级不会自动恢复因降级而停用的流程。",
+        "source_refs": ["downgrade"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Current plans Starter/Plus/Pro/Enterprise use contact tiers and 10x/10x/12x/15x monthly marketing sends. Starter five actions/automation. Monetary amounts did not render. Contact counting depends on account creation date; excess sends and add-ons can add costs.",
+    "source_snapshot_zh": "现行 Starter／Plus／Pro／Enterprise 按联系人档位，月营销发送为十／十／十二／十五倍。Starter 每流程五个动作。金额未呈现。联系人计数依账户创建日，超额发送及附加项可能收费。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/activecampaign",
+      "read_at": "2026-10-22T08:37:54.860Z",
+      "excerpt_sha256": "873ac4ec0eaa4dc8a34eafe535c3520ee34f8e6e0be15f22a4767bc08ff6bfb8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ActiveCampaign",
+      "title": "Platform Pricing & Features | ActiveCampaign",
+      "url": "https://www.activecampaign.com/pricing",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "b0c8c336130ad9bc2406df100ef7e10b6b3fce06e4cb9b517159ba5c0baa28d0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Starter/Plus/Pro/Enterprise matrix, 5-action Starter cap, 10x/12x/15x sending and paid channel/CRM add-ons; dynamic amounts absent."
+    },
+    {
+      "id": "statuses",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "How Automation Statuses work at ActiveCampaign – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/30704380034460-How-Automation-Statuses-work-at-ActiveCampaign",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "73c4e0af440b1c74fcf2329a22751b84b31fd15bd7534cd72cbb65b9630d7b53",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Three statuses, pause queue, 30-day expiry, deduplication upon activation and terminal-step release; summary/body differ on existing-contact movement."
+    },
+    {
+      "id": "downgrade",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "Automations and account downgrade FAQs – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/15074854029468-Automations-and-account-downgrade-FAQs",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "54b118eec7910e65598384f7254b2b5c229e83bb2b837c3561982500f02c81f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Unsupported actions/triggers deactivate flows, Starter over five actions, and upgrading does not automatically reactivate."
+    },
+    {
+      "id": "troubleshooting",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "How to troubleshoot your automation – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/115000383124-How-to-troubleshoot-your-automation",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "3b19fd1bbb405ff540f75e2c45848239ecdbee2ade4cbf2b6ac6716b994837cb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Non-retroactive triggers, third-party form mismatch, subscription prerequisites and non-retroactive added actions."
+    },
+    {
+      "id": "manual-runs",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "How do I manually add or remove contacts from an automation? – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/221298807-How-do-I-manually-add-or-remove-contacts-from-an-automation",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "90ccf06d4b8f98b7d548b71449a5977a92f352fb7f9cde481d5b18d38e6b6dfb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Manual entry starts at once; current overlapping runs and individual/all-run ending controls."
+    },
+    {
+      "id": "contact-billing",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "Do unsubscribed, unconfirmed, or bounced contacts count against my contact limit? – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/115000337324-Do-unsubscribed-unconfirmed-or-bounced-contacts-count-against-my-contact-limit",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "9b4da92a04a058013c7da7360b46ffbd3497495a7f5d657938d1d23b944b3165",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Account creation cutoff November 3, 2025 changes all-status versus active-only contact counting."
+    },
+    {
+      "id": "send-cost",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "About email send limits and overage fees – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/10918125380764-About-email-send-limits-and-overage-fees",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "243de3b93a6bfba9b49b687f8917cce8977278887f091ae8cd26cdd53204eabc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Direct/automated marketing send limits, billing-cycle resets, $0.005 excess and extreme-overage stop; 1:1/transactional excluded."
+    },
+    {
+      "id": "settings",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "About Automation Settings – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/18819387236508-About-Automation-Settings",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "479a2290f782cff6af6df8433d572f686e099bc8f802d49135fb7b486d33f071",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Automation-level concurrency overrides trigger repeat setting; once/any/after-exit, exit criteria and conversion denominator."
+    },
+    {
+      "id": "wait-clock",
+      "type": "official_documentation",
+      "site": "ActiveCampaign",
+      "title": "What happens to contacts in an automation if I pause it? – ActiveCampaign Help Center",
+      "url": "https://help.activecampaign.com/hc/en-us/articles/218788827-What-happens-to-contacts-in-an-automation-if-I-pause-it",
+      "read_at": "2026-10-22T10:58:04.516113Z",
+      "excerpt_sha256": "895484eb183d7d44afb82145fae6eea13db09c2e35a4bac504a89e4136bb12e8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Timed/conditional wait elapsed time continues during pause; older wording treats pause/Inactive together."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:58:04.516113Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "pricing",
+    "settings",
+    "statuses",
+    "troubleshooting"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry-example",
+        "title_en": "A re-engagement recipe needs an explicit cohort",
+        "title_zh": "重新互动配方需要明确群体",
+        "en": "For an illustrative re-engagement journey, first define the permissioned audience and the new event that should enroll it. The troubleshooting guide says most triggers are not retroactive, with date-based exceptions. Creating a flow after a past tag or signup event does not automatically backfill those people. A third-party form also does not qualify for the native Submits Form trigger.\n\nThe manual-entry guide provides individual or segment-based entry into an active automation, starting at once. Review that selection before applying it. A historical cohort may need a different opening message from a newly arriving subscriber rather than an indiscriminate replay of the original welcome.",
+        "zh": "例如重新互动路径，应先定义已许可受众及使其进入的新事件。排障指南称多数触发不追溯，日期类有例外。过去已添加标签或订阅，之后才创建流程，不会自动补入；第三方表单也不符合原生 Submits Form 触发。\n\n手动进入指南允许将个人或分群加入活跃自动化，并立即开始。应用前需审核所选群体。历史群体可能需要不同开场，不能无差别重放原始欢迎。",
+        "source_refs": ["troubleshooting", "manual-runs"],
+        "evidence_type": "documented_with_editorial_cohort_example"
+      },
+      {
+        "id": "run-control",
+        "title_en": "Trigger repetition and workflow concurrency can disagree",
+        "title_zh": "触发重复与流程并发可能不一致",
+        "en": "The Settings tab overrides trigger settings. A trigger configured for multiple runs can still admit a person only once when the automation-level setting says Only once. Only after they have exited allows repeat participation without simultaneous runs; the documented default Any number of times can permit overlap.\n\nFor the re-engagement example, decide whether a new activity should restart, overlap or wait until completion. The manual-run tools can end one run, all current runs, or manage duplicates. Ending a run stops its remaining actions; that is different from removing a tag that originally caused entry.",
+        "zh": "Settings 页会覆盖触发器设置。触发器即使允许多次运行，自动化级 Only once 仍只让同一人进入一次。Only after they have exited 允许重复但不同时运行；文档默认 Any number of times 可能产生重叠。\n\n重新互动示例应明确新活动是重启、重叠还是等前轮完成。手动运行工具可结束单轮、全部当前轮或管理重复。结束运行会停止其余动作，与移除最初触发进入的标签不同。",
+        "source_refs": ["settings", "manual-runs"],
+        "evidence_type": "documented_with_editorial_run_guidance"
+      },
+      {
+        "id": "pause-queue",
+        "title_en": "Paused preserves a temporary queue; Inactive discards it",
+        "title_zh": "Paused 临时保留队列，Inactive 丢弃队列",
+        "en": "The three-status guide says Paused queues new qualifying contacts. Its detailed section lets existing contacts proceed until a Wait, Wait until or Goal step, while its introductory summary broadly says they are held in place. Confirm the actual account behavior before treating pause as an immediate halt of all effects.\n\nPaused becomes Inactive after thirty days, discarding queued entrants. On resumption, separate options deduplicate repeated queued contacts and exclude those already in the automation. Changing to Inactive discards queued entrants permanently. Review both choices before reopening a long-paused journey; a later activation does not recover a discarded queue.",
+        "zh": "三状态指南称 Paused 会将新合格联系人排队。详细段落允许现有人走到 Wait、Wait until 或 Goal 才停，但开头概括为原地停留。将暂停视为立即停止所有效果前，需确认实际账户行为。\n\n暂停三十天后变 Inactive，并丢弃排队新人。恢复时可分别选择去重重复排队者，以及排除已在流程内的人。转 Inactive 会永久丢弃队列。重开长暂停路径前需审核两项选择，之后启用不会恢复已丢弃队列。",
+        "source_refs": ["statuses"],
+        "evidence_type": "documented_conflict_and_queue_guidance"
+      },
+      {
+        "id": "wait-subscription",
+        "title_en": "Elapsed waits and message eligibility are separate",
+        "title_zh": "已流逝等待与消息资格分别检查",
+        "en": "The dedicated wait-clock guide says elapsed time continues while paused. Its example releases a contact after resumption when the time alternative has expired, even without the awaited click. That page still calls pause and Inactive equivalent, unlike the newer three-status guide; use it for the documented timing example and verify the selected state in the account.\n\nAn unsubscribed, bounced or unconfirmed contact may skip Send Email, and a contact needs a list subscription to receive marketing messages. Inspect the contact path and status. Reaching an action or completing a timer does not establish consent or prove a message reached the inbox.",
+        "zh": "独立等待计时指南称暂停期间时间继续流逝。其示例中，即使未发生所等点击，只要时间选项已到期，恢复后也继续。该页仍将暂停与 Inactive 等同，与新版三状态不同；可参考其计时示例，但需核对账户所选状态。\n\n退订、退信或未确认者可能跳过 Send Email，接收营销消息也需要列表订阅。应检查联系人路径及状态。到达动作或完成计时，不代表许可已具备，也不能证明邮件进入收件箱。",
+        "source_refs": ["wait-clock", "statuses", "troubleshooting"],
+        "evidence_type": "documented_with_state_scope_caveat"
+      },
+      {
+        "id": "downgrade",
+        "title_en": "A cheaper plan can deactivate an existing journey",
+        "title_zh": "更低价套餐可能停用现有路径",
+        "en": "The downgrade FAQ says unsupported triggers or actions deactivate the automation. Starter also deactivates flows containing more than five actions. Flagged components must be removed or changed and the automation explicitly reactivated. Later changing the subscription does not automatically reactivate a previously deactivated journey.\n\nFor an established nurture, inspect the actual steps before reducing the plan. Removing a waiting Jump To step can release its contacts to the next action after activation, so a structural correction can also change who receives the next message. Review in-flight runs and the resulting path before applying it.",
+        "zh": "降级 FAQ 称，不支持的触发或动作会停用自动化；Starter 还会停用超过五个动作的流程。需移除或调整标记组件，再明确重新启用。之后再次改订阅，也不会自动恢复此前停用的路径。\n\n已有培育流程应在降级前检查实际步骤。移除正在等待的 Jump To 后，启用可能让其联系人进入下一动作，因此结构修正也改变下一消息收件人。应用前需检查进行中运行及修改后路径。",
+        "source_refs": ["downgrade"],
+        "evidence_type": "documented_with_editorial_downgrade_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Account age changes the contact count",
+        "title_zh": "账户创建时间改变联系人计数",
+        "en": "The contact-limit guide distinguishes accounts created on or after November 3, 2025, which count every list status, from accounts created by November 2, which count active contacts only. A universal claim that unsubscribed contacts are free would therefore be incorrect.\n\nCurrent send allowances are 10 times the contact limit for Starter/Plus, 12 for Pro and 15 for Enterprise. Direct and automated marketing campaigns share this pool; 1:1 and transactional mail are excluded. The overage article lists $0.005 per excess send and a further shutdown at extreme overage, so ordinary excess does not simply mean a free delayed queue. Check the actual billing cycle and account terms.",
+        "zh": "联系人上限指南区分：2025 年 11 月 3 日及以后创建的账户计算所有列表状态；11 月 2 日以前只计算活跃联系人。因此不能统一声称退订联系人不收费。\n\n现行发送额度为 Starter／Plus 联系人上限十倍、Pro 十二倍、Enterprise 十五倍。直接及自动营销活动共用额度，1:1 与事务邮件排除。超额文章列出每次 $0.005，并在极端超额时停止发送；普通超额不是免费的延迟队列。需核对真实计费周期及账户条款。",
+        "source_refs": ["contact-billing", "send-cost", "pricing"],
+        "evidence_type": "documented_pricing_mechanisms"
+      },
+      {
+        "id": "fit-and-offer",
+        "title_en": "Budget the actions and add-ons actually required",
+        "title_zh": "按实际所需动作及附加项预算",
+        "en": "The current pricing page exposes contact/send/seat limits, while its monetary amounts did not render in this read. Starter allows five actions per automation; higher plans list unlimited actions. CRM enhancements, SMS and transactional sending have separate commercial surfaces. A trial link does not establish a permanent free plan or an unrestricted sending allowance.\n\nActiveCampaign merits evaluation when someone can maintain contact data, subscription states and run-level behavior as the journey evolves. For a single uncomplicated announcement, that operational scope may exceed the need. Confirm an account-specific quote and test entry, suppression, pause and downgrade effects before using customer data. No hands-on result, regional availability, source license or self-hosting entitlement was verified.",
+        "zh": "当前价格页呈现联系人／发送／席位限制，但本次未显示金额。Starter 每个自动化允许五个动作，更高档列不限动作。CRM 增强、短信及事务发送有独立商业范围。试用链接不代表永久免费或无限制发送。\n\n有人能持续维护联系人数据、订阅状态及逐轮行为时，可评估 ActiveCampaign。若只是一次简单通知，这些运行工作可能超出需要。使用客户数据前，应确认账户报价，并测试进入、抑制、暂停及降级影响。未验证上手结果、地区可用性、源码许可或自托管权利。",
+        "source_refs": ["pricing", "downgrade", "troubleshooting"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ActiveCampaign: Automation Runs, Pause Queues, Downgrades and Costs",
+    "title_zh": "ActiveCampaign：自动化运行、暂停队列、降级及费用",
+    "description_en": "Understand ActiveCampaign concurrency, thirty-day pause expiry, subscription eligibility and account-age-dependent contact billing.",
+    "description_zh": "了解 ActiveCampaign 并发、三十天暂停到期、订阅资格及按账户创建时间变化的联系人计费。",
+    "primary_intent": "Evaluate ActiveCampaign lifecycle journeys with current run, state and commercial boundaries.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Status documentation conflicts on immediate movement and older pause/Inactive equivalence. Exact account rollout, wait recovery and queue behavior need controlled testing.",
+      "zh": "状态文档对即时推进及旧版暂停／Inactive 等同存在冲突；账户实际更新、等待恢复及队列行为需受控测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No automation, send, import or billing change was executed. Exact monetary quote, tax, add-on scope, UI languages, regions, license, deployment rights and contract data location remain unverified.",
+      "zh": "未执行自动化、发送、导入或计费变更。准确金额、税、附加范围、界面语言、地区、许可、部署权利及合同数据位置仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

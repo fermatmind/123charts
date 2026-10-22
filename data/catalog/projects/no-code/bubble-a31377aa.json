@@ -1,0 +1,321 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "bubble-a31377aa",
+  "name": "Bubble",
+  "website_url": "https://bubble.io/",
+  "domain": "bubble.io",
+  "identity_domain": "bubble.io",
+  "category": "no-code",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Bubble combines AI-assisted creation and visual editing for web and native mobile apps with a hosted database and workflow backend. It is relevant for teams that want application logic and data behavior in the same editor rather than a static page prototype.\n\nThe editor does not remove implementation decisions. Privacy rules, workflow authorization, API credential placement and workload consumption all affect the resulting app. Evaluate those together using a small application with two user roles and an explicit background task.",
+  "description_zh": "Bubble 将 AI 辅助创建与可视化编辑结合，用于网页和原生移动应用，并提供托管数据库及工作流后端。适合希望在同一编辑器定义应用逻辑和数据行为，而不仅制作静态页面原型的团队。\n\n编辑器不会消除实现决策。隐私规则、工作流授权、API 凭据位置及工作负载消耗都会影响成品。可用包含两个用户角色和明确后台任务的小应用综合评估这些方面。",
+  "core_features": [
+    {
+      "name_en": "Server-side privacy rules",
+      "name_zh": "服务端隐私规则",
+      "explanation_en": "Rules govern returned data, searchable fields and auto-binding, with distinct workflow-write considerations.",
+      "explanation_zh": "规则控制返回数据、可搜索字段和自动绑定，工作流写入还需单独考虑。",
+      "explanation_scope": "product_specific",
+      "source_ref": "privacy",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Independent backend workflows",
+      "name_zh": "独立后台工作流",
+      "explanation_en": "Server events can run without a user keeping a page open.",
+      "explanation_zh": "服务端事件无需用户保持页面打开也可运行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backend",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Private API parameters",
+      "name_zh": "API 私密参数",
+      "explanation_en": "The API Connector can retain private parameters on the server rather than in client code.",
+      "explanation_zh": "API Connector 可将私密参数保留在服务端，避免进入客户端代码。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connector",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a two-role business app with a scheduled backend task.",
+      "Measure workload for a representative search and update flow."
+    ],
+    "zh": [
+      "评估含两个角色及计划后台任务的业务应用。",
+      "测量代表性搜索与更新流程的工作负载。"
+    ],
+    "source_refs": ["privacy", "backend", "workload"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Application builders", "No-code developers"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Model synthetic data and two roles; check searches, file access and workflow writes independently.",
+        "zh": "建立模拟数据及两个角色，分别核对搜索、文件访问和工作流写入。",
+        "source_refs": ["privacy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect connector defaults and observe representative workload before selecting live deployment and overage settings.",
+        "zh": "检查连接器默认值，观察代表性工作负载，再选择正式部署及超额设置。",
+        "source_refs": ["connector", "workload", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Hiding an element does not prove server-side data protection.",
+        "zh": "隐藏组件不能证明服务端数据受到保护。",
+        "source_refs": ["privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Server resource allowance and application authorization are separate concerns.",
+        "zh": "服务端资源额度与应用授权需分别评估。",
+        "source_refs": ["workload", "privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:51:35.961356Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free provides development access; the read Web & Mobile annual selection lists Starter/Growth/Team at $59/$209/$549 per month equivalent. Pricing is project-based with cumulative workload, optional tiers/overages, storage and plugin charges. These are not universal web-only or monthly-checkout rates.",
+    "summary_zh": "Free 提供开发权限；已读 Web & Mobile 年付选项中 Starter／Growth／Team 折合每月 $59／$209／$549。按项目计费并累计工作负载，还可能有额度包、超额、存储及插件费用。这些不是通用网页单端或月付结账价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/bubble-io",
+      "read_at": "2026-10-22T08:46:31.264Z",
+      "excerpt_sha256": "00ea5874b5ced78bd39606236cbf505f0644e55576c04a676e98c4defa0ca8da",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Bubble",
+      "title": "Bubble: Build web & mobile apps with the only no-code AI app builder",
+      "url": "https://bubble.io/",
+      "read_at": "2026-10-22T14:51:35.961356Z",
+      "excerpt_sha256": "838e264e1b327c0c73487e1caeee16f16d123f41b97216fffbcc500de870ea08",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read web/mobile builder positioning and shared backend offering."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Bubble",
+      "title": "Bubble Pricing — Start Free, Scale as You Grow",
+      "url": "https://bubble.io/pricing",
+      "read_at": "2026-10-22T14:51:35.961712Z",
+      "excerpt_sha256": "2a162cabbe3b255840dc19129cac174f9f1eea4f9979f13aac439b66e2a3ed8c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read selected Web & Mobile annual cards, workload aggregation, overages and paid live deployment."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "Bubble",
+      "title": "Protecting data with privacy rules",
+      "url": "https://manual.bubble.io/help-guides/data/the-database/protecting-data-with-privacy-rules",
+      "read_at": "2026-10-22T14:53:48.814334Z",
+      "excerpt_sha256": "7702619427aa8cebb616a90b8389cdc05eea494f43e92cfcdfaea45408ae0e18",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read privacy rules including workflow modifications, search constraints and page-refresh caveat."
+    },
+    {
+      "id": "backend",
+      "type": "official_documentation",
+      "site": "Bubble",
+      "title": "The frontend and backend",
+      "url": "https://manual.bubble.io/help-guides/logic/the-frontend-and-backend",
+      "read_at": "2026-10-22T14:53:06.645572Z",
+      "excerpt_sha256": "8802e83c9c1c10c787f8a66755660189b7c8a62b15d619da232bd41d85edc14f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read client/server workflow lifetimes and backend activation."
+    },
+    {
+      "id": "connector",
+      "type": "official_documentation",
+      "site": "Bubble",
+      "title": "API Connector security",
+      "url": "https://manual.bubble.io/help-guides/security/api-security/api-connector-security",
+      "read_at": "2026-10-22T14:53:06.645756Z",
+      "excerpt_sha256": "73f8b96b19d5f44fc1c799342f992aa8bbb2cf04040124e878ef0c2d0ed50393",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read private API parameters, URL parameterization and initialization defaults."
+    },
+    {
+      "id": "workload",
+      "type": "official_documentation",
+      "site": "Bubble",
+      "title": "Workload",
+      "url": "https://manual.bubble.io/help-guides/workload",
+      "read_at": "2026-10-22T14:52:05.931288Z",
+      "excerpt_sha256": "52dcaa316d1e0a69d1afcbe08d8e640f1b2ffb50a53183867c14507553d0a9a5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read workload resource model and measurement/optimization guidance."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:53:48.814334Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "privacy"],
+  "profile": {
+    "sections": [
+      {
+        "id": "authorization",
+        "title_en": "Read each privacy permission literally",
+        "title_zh": "逐项理解隐私权限",
+        "en": "Field-view restrictions do not themselves prevent Make changes to a thing workflow actions; auto-binding restrictions are also distinct. Add Only when authorization conditions to the relevant actions. Search access and constraints need separate review, and private files require matching upload configuration. Test authorized and denied roles.",
+        "zh": "字段查看限制本身不会阻止 Make changes to a thing 工作流动作，自动绑定限制也属于另一权限。相关动作应加入 Only when 授权条件。搜索访问及约束需分别检查，私有文件还需匹配上传配置。应测试允许和拒绝角色。",
+        "source_refs": ["privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "search",
+        "title_en": "Account for inference and cached views",
+        "title_zh": "考虑搜索推断与已有页面",
+        "en": "Allowing search constraints on hidden fields can reveal values indirectly. The guide distinguishes Off, Automatic and Strict search privacy modes; strict requires explicit constraint permission. It also warns that changed privacy outcomes may require a page refresh. Review the actual data returned, not only visible components.",
+        "zh": "允许按隐藏字段搜索可能间接暴露其值。指南区分 Off、Automatic、Strict 搜索隐私模式，Strict 要求明确约束权限；规则变化后的显示结果也可能需要刷新页面。应检查实际返回数据，而不仅看界面组件。",
+        "source_refs": ["privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "lifetime",
+        "title_en": "Put durable work on the backend",
+        "title_zh": "将持续任务放到后端",
+        "en": "Frontend workflows depend on the page’s lifetime. Backend workflows run on Bubble’s server, supporting schedules, database-change events and incoming API requests. Enable the backend editor through the documented API setting and verify what happens if a user closes the page during the intended task.",
+        "zh": "前端工作流依赖页面生命周期。后台工作流在 Bubble 服务端运行，支持计划、数据库变更事件及传入 API 请求。按文档通过 API 设置启用后台编辑器，并验证用户在任务中关闭页面后的行为。",
+        "source_refs": ["backend"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api-secrets",
+        "title_en": "Parameterize secrets before initialization",
+        "title_zh": "初始化前先参数化秘密信息",
+        "en": "Private parameters are server-held, but a key pasted literally into a URL can remain visible in application code. Parameterize the value and mark it private. Initialization defaults can also become part of the code base; remove sensitive defaults rather than treating a private header as protection for every part of a request.",
+        "zh": "私密参数保留在服务端，但直接写入 URL 的密钥仍可能出现在应用代码中。应将值参数化并标记私密。初始化默认值也可能成为代码的一部分，需移除敏感默认值，不能认为一个私密请求头已保护整个请求。",
+        "source_refs": ["connector"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-model",
+        "title_en": "Measure shared web and mobile workload",
+        "title_zh": "测量网页与移动共享工作负载",
+        "en": "Workload units aggregate server resource use rather than counting users alone. Within a project, web and mobile activity contribute to the same total. Measure representative tasks and optimize expensive operations before forecasting scale. Keep resource consumption distinct from app correctness or response-time guarantees.",
+        "zh": "工作负载单位汇总服务端资源消耗，并非只计算用户数。同一项目内网页及移动活动计入同一总额。预测规模前，应测量代表性任务并优化高消耗操作。资源消耗不能直接等同于应用正确性或响应时间保证。",
+        "source_refs": ["pricing", "workload"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "launch-budget",
+        "title_en": "Separate development and live deployment",
+        "title_zh": "区分开发与正式部署",
+        "en": "Free is a development offer. The selected Web & Mobile page lists annual-billed Starter at $59/month equivalent with 175K WU; other plan selections differ. Paid live deployment is needed for the documented mobile distribution/testing route. Overages can be disabled, so include both a budget cap and the app’s response to exhausted allowance in a pilot.",
+        "zh": "Free 面向开发。当前选中的 Web & Mobile 页列出 Starter 年付折合每月 $59、175K WU，其他方案选择不同。文档中的移动分发／测试路径需要付费正式部署。可关闭超额用量，因此试点应同时检查预算上限与额度耗尽后的应用行为。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Bubble: setup, operating limits and pricing",
+    "title_zh": "Bubble：设置、运行边界及费用",
+    "description_en": "Bubble combines AI-assisted creation and visual editing for web and native mobile apps with a hosted database and workflow backend. It is relevant for teams that want app",
+    "description_zh": "Bubble 将 AI 辅助创建与可视化编辑结合，用于网页和原生移动应用，并提供托管数据库及工作流后端。适合希望在同一编辑器定义应用逻辑和数据行为，而不仅制作静态页面原型的团队。",
+    "search_intent_en": "Evaluate Bubble for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Bubble。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, API request, backend task, billing setting or deployment was executed.",
+      "zh": "未执行应用、API 请求、后台任务、账单设置或部署。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full license, code portability, backup recovery, plugin compatibility and actual production performance remain unverified.",
+      "zh": "完整许可、代码可迁移性、备份恢复、插件兼容性及真实生产性能待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

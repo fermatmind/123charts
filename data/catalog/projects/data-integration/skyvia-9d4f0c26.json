@@ -1,0 +1,324 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "skyvia-9d4f0c26",
+  "name": "Skyvia",
+  "website_url": "https://skyvia.com/",
+  "domain": "skyvia.com",
+  "identity_domain": "skyvia.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Skyvia is a hosted data platform with distinct products for integration, backup, querying, access endpoints and automation. This profile focuses on Data Integration: imports/exports, warehouse replication, two-way synchronization and more complex data/control flows. Buying one product does not automatically include the others.\n\nThe integration kind matters. A scheduled export, a replication and a two-way synchronization have different identity, deletion and conflict rules, even when they use the same connection.",
+  "description_zh": "Skyvia 是托管数据平台，集成、备份、查询、访问端点和自动化是分别提供的产品。本文聚焦 Data Integration，包括导入／导出、仓库复制、双向同步及更复杂的数据／控制流程。购买其中一种产品不自动包含其他产品。\n\n集成类型很重要：即使使用同一连接，计划导出、复制及双向同步的身份、删除和冲突规则仍不同。",
+  "core_features": [
+    {
+      "name_en": "Two-way synchronization",
+      "name_zh": "双向同步",
+      "explanation_en": "Maintain an ID map and apply changes in both directions under documented conflict rules.",
+      "explanation_zh": "维护 ID 映射，在文档冲突规则下双向应用变化。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable replication",
+      "name_zh": "可配置复制",
+      "explanation_en": "Select objects, fields, ingestion mode and target schema behavior.",
+      "explanation_zh": "选择对象、字段、提取模式及目标结构行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "replication",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Recent-record imports",
+      "name_zh": "近期记录导入",
+      "explanation_en": "Use source timestamps where the specific cloud object supports them.",
+      "explanation_zh": "在具体云对象支持时使用源时间戳。",
+      "explanation_scope": "product_specific",
+      "source_ref": "import",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Replicate selected cloud objects into a test warehouse.",
+      "Evaluate two-way record matching and source-wins conflicts."
+    ],
+    "zh": [
+      "复制所选云对象到测试仓库。",
+      "评估双向记录匹配及 Source 优先冲突。"
+    ],
+    "source_refs": ["replication", "sync"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data integration specialist",
+      "CRM administrator",
+      "Analytics pipeline maintainer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the Integration product and operation kind.",
+        "zh": "选择 Integration 产品及操作类型。",
+        "source_refs": ["home", "limits"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Prepare test connections, keys and deletion/conflict rules.",
+        "zh": "准备测试连接、键及删除／冲突规则。",
+        "source_refs": ["sync", "replication"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare repeat-run target records and subscription usage.",
+        "zh": "对比重复运行目标记录与订阅用量。",
+        "source_refs": ["limits"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "First synchronization can duplicate pre-existing overlapping data.",
+        "zh": "初次同步可能重复既有重叠数据。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Source-wins conflicts discard Target edits even in different fields.",
+        "zh": "Source 优先冲突会丢弃 Target 编辑，即使修改不同字段。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "independent_product_record_volume_and_cadence_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:49:01.385643Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Integration feature tier and selected monthly records; annual/monthly and additional record options differ."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/skyvia",
+      "read_at": "2026-10-22T09:00:03.678Z",
+      "excerpt_sha256": "2b616434eaa53246d071df53da323e3b6b3e618e56638668eb38f3b008d335e8",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Skyvia",
+      "title": "Skyvia | Cloud Data Integration, Backup, Access & Management",
+      "url": "https://skyvia.com/",
+      "read_at": "2026-10-22T10:49:01.385643Z",
+      "excerpt_sha256": "41da2dbdfcc5bc4187d4a4cf8e2dcfdd16326743a0444a7dc4f8b6d97c3d20d1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Platform product breadth read; Integration distinguished from separately priced Backup/Query/Connect/Automation."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Skyvia",
+      "title": "Skyvia Pricing",
+      "url": "https://skyvia.com/pricing",
+      "read_at": "2026-10-22T10:49:04.435450Z",
+      "excerpt_sha256": "685d0375d488957d6a480632c121cf8713b4c044312dd7a60cf6adf9b34e1b51",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Integration plan display, record volume selectors, cadence, schedule limits/expiry and overage rates reviewed."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Skyvia",
+      "title": "Subscription Limits and Plans in More Details",
+      "url": "https://docs.skyvia.com/account-management/subscription-limits-and-plans-in-more-details.html",
+      "read_at": "2026-10-22T10:50:29.959372Z",
+      "excerpt_sha256": "250e678a8369fdbd25f1e31106b9adfadc452ff6a93c427e4ee6847627b228f4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current vs legacy record counting, independent product subscriptions and quota behavior read."
+    },
+    {
+      "id": "sync",
+      "type": "official_documentation",
+      "site": "Skyvia",
+      "title": "Synchronization Overview",
+      "url": "https://docs.skyvia.com/data-integration/synchronization/",
+      "read_at": "2026-10-22T10:50:06.312243Z",
+      "excerpt_sha256": "80563c79b932954a8d1a682d248cdf30499bb19b21edd5591521376541c89ae5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "First-run ID map duplicates and source-wins whole-record conflicts; timestamp/trigger/identity requirements read."
+    },
+    {
+      "id": "replication",
+      "type": "official_documentation",
+      "site": "Skyvia",
+      "title": "Configuring Replication",
+      "url": "https://docs.skyvia.com/data-integration/replication/configuring-replication-integration.html",
+      "read_at": "2026-10-22T10:50:09.257213Z",
+      "excerpt_sha256": "45182d23281d1e402bb8981aff351e840103b5f142bf5df2567e45ff11bb33b5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Full/incremental/resync, schema additions versus ignored deletions and source-specific deleted-record modes read."
+    },
+    {
+      "id": "import",
+      "type": "official_documentation",
+      "site": "Skyvia",
+      "title": "How to Import Only Recently Added or Changed Data from Cloud Sources",
+      "url": "https://docs.skyvia.com/data-integration/import/how-to-guides/importing-only-recently-added-or-changed-data-from-cloud-sources.html",
+      "read_at": "2026-10-22T10:51:53.483548Z",
+      "excerpt_sha256": "b2e7c9d8035e9fde82b88fed2dda7a6a2832c21e0b23f70caa1dd11fe1a5ac0f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official recent-record import example read; source timestamp prerequisites distinguished from CDC and two-way synchronization."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:51:53.483548Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "limits", "sync", "replication"],
+  "profile": {
+    "sections": [
+      {
+        "id": "selection",
+        "title_en": "Start with a defined integration kind",
+        "title_zh": "从明确集成类型开始",
+        "en": "Use an import/export for a directed movement, replication for a warehouse copy, and Synchronization only when both systems should accept changes. A proposed trial could import newly created test leads into a disposable list with an explicit destination lookup. The documented recent-record filter needs creation/modification timestamps in the source object; connector availability alone does not establish that capability. Confirm permitted reads and writes before setting a schedule.",
+        "zh": "单向移动可用导入／导出，仓库副本用复制，只有两侧都需接受变化时才考虑 Synchronization。建议试验：将新建测试 lead 导入可丢弃列表，明确目标查找。文档近期记录过滤要求源对象具有创建／修改时间戳；存在连接器本身不能证明此能力。设置调度前应确认允许的读取与写入。",
+        "source_refs": ["home", "import"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "sync",
+        "title_en": "Prepare the first run and decide which side wins",
+        "title_zh": "准备初次运行，决定哪侧优先",
+        "en": "Synchronization initially copies both directions without comparing identical business records, then builds an ID map. An empty side is recommended to avoid duplicates. Later conflicts use Source precedence at whole-record level: a Target-only phone edit can be lost when Source changes the same contact’s email. This is not per-field merging. Test simultaneous edits and deletes before relying on two-way consistency; database identity keys and supported cloud timestamp/insert/update capabilities are prerequisites.",
+        "zh": "Synchronization 初次运行会双向复制，不先比较相同业务记录，随后建立 ID 映射；文档建议一侧为空以避免重复。之后发生冲突时，Source 在整条记录层面优先：Source 修改同一联系人的邮箱时，Target 单独修改的电话也可能丢失。这不是逐字段合并。依赖双向一致性前应测试同时编辑及删除，并满足数据库自增主键、云对象时间戳及插入／更新能力要求。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "replica",
+        "title_en": "Deletion and schema changes depend on mode",
+        "title_zh": "删除与结构变化取决于模式",
+        "en": "Replication can perform an initial full load then increments. Database New and New-and-modified modes do not track deletes; the reviewed guide limits log-based mode to SQL Server. Schema updates add selected columns/tables while ignoring structural deletions. Full resync can recreate tables, including resync modes that do so regardless of a creation checkbox. Choose a separate target schema and confirm soft/hard deletion settings and downstream dependencies before changing modes or resetting LastSyncTime. No resync or deletion was executed here.",
+        "zh": "复制可初次全量后增量运行。数据库 New 及 New-and-modified 模式不跟踪删除；本次指南将日志模式限定为 SQL Server。结构更新添加所选列／表，但忽略结构删除。全量重新同步可能重建表，某些 resync 模式不受创建复选框限制。改变模式或重置 LastSyncTime 前，应采用独立目标 schema，确认软／硬删除设置及下游依赖。本次未执行重新同步或删除。",
+        "source_refs": ["replication"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "usage",
+        "title_en": "Count operations, not distinct business identities",
+        "title_zh": "计算处理操作，而非唯一业务身份",
+        "en": "Current billing counts successful target creates, updates and deletes, including an update writing the same values. Synchronization counts both sides; export counts output CSV rows. A repeated full load can therefore consume more allowance than the number of distinct customers suggests. The subscription guide says a running job can finish beyond quota while later starts are blocked unless additional records are allowed. Keep billing usage and business reconciliation separate; legacy free/basic limits in the same guide do not define current plans.",
+        "zh": "当前计费计算成功的目标创建、更新及删除，连写入相同值的更新也算。同步计算两侧，导出计算输出 CSV 行。因此反复全量加载的额度消耗可高于唯一客户数量。订阅指南称，正在运行的任务可超额度完成，之后的新运行会被阻止，除非允许额外记录。应区分计费用量与业务对账；同页旧 Free／Basic 限制不定义当前方案。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Record volume and scheduling both affect plan choice",
+        "title_zh": "记录用量与调度共同影响套餐",
+        "en": "Integration Free lists 10K records/month, daily runs and two schedules that expire after 30 days. Displayed paid monthly/annual-equivalent prices start at $99/$79 Basic, $199/$159 Standard and $499/$399 Professional, with volume selected separately. Their listed maximum cadence is daily/hourly/one minute and schedule allowance five/fifty/unlimited. Standard extra records are $0.06/1K, Professional $0.02/1K. Confirm the selected volume and exact annual bill; the card amount alone is not a universal all-volume quote. Backup, Query, Connect and Automation are independent subscriptions.",
+        "zh": "Integration Free 列每月一万记录、每日运行及两个 30 天后过期的调度。付费展示月付／年付折算起价：Basic $99／$79、Standard $199／$159、Professional $499／$399，记录用量另选；所列最高频率依次为每日／每小时／每分钟，调度数为五／五十／无限。Standard 额外每千记录 $0.06，Professional $0.02。应确认所选用量及实际年账单，卡片金额不是所有用量统一报价。Backup、Query、Connect、Automation 独立订阅。",
+        "source_refs": ["pricing", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "A sync owner must reconcile records and conflicts",
+        "title_zh": "同步负责人需对账并管理冲突",
+        "en": "Skyvia is worth evaluating for a known source/target pair and explicit movement or replication rules. It is a weaker fit for a requirement that assumes conflict-free simultaneous edits or universal deletion tracking. Evaluate one normal run, an invalid record, concurrent edits and a repeat run against a disposable target. Actual retry/replay semantics, schema recovery, performance, full platform license and UI localization remain unverified; no trial account or production run was used.",
+        "zh": "若源目标组合已知，且移动／复制规则明确，可评估 Skyvia。若需求假设两侧同时编辑永无冲突、或所有模式都跟踪删除，适用性较弱。建议在可丢弃目标评估正常运行、非法记录、同时编辑及重复运行。实际重试／重放、结构恢复、性能、完整平台许可及界面本地化仍未核实，本次未使用试用账号或生产运行。",
+        "source_refs": ["sync", "replication", "import"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Skyvia: Replication, Two-Way Sync Conflicts and Record Pricing",
+    "title_zh": "Skyvia：复制、双向同步冲突与记录定价",
+    "description_en": "Evaluate Skyvia Integration first-run duplicates, source-wins conflicts, deletion modes, schema resync and record limits.",
+    "description_zh": "评估 Skyvia Integration 初次重复、Source 优先冲突、删除模式、结构重同步及记录限制。",
+    "primary_intent": "Evaluate a specific Skyvia Integration workload and plan.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact selected-volume price, connector-specific behavior, retry policy, license, UI languages, performance and restore behavior remain unverified or untested.",
+      "zh": "所选用量实际价格、连接器行为、重试策略、许可、界面语言、性能及恢复行为仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

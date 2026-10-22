@@ -1,0 +1,421 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "3clogic-5145826b",
+  "name": "3CLogic",
+  "website_url": "https://www.3clogic.com/",
+  "domain": "www.3clogic.com",
+  "identity_domain": "3clogic.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "3CLogic is an enterprise voice-first contact-centre platform combining Voice AI,live-agent CTI,intelligent IVR,SMS,transcription and analytics with existing systems of record. ServiceNow is a major integration path across CSM,ITSM and HRSD;the broader platform also lists Halo,SAP,Salesforce and others. It is not established as an included ServiceNow feature or a standalone free dialer.\n\nFor an illustrative service-desk call,look up a reliable customer record,apply the business’s approved identity validation,then retrieve a status or route to a qualified human while retaining context. Missing phone data and poorly scoped authentication can break that journey before AI helps. Hybrid deployment can retain an existing phone/carrier environment. Public commercial documentation only establishes tailored demos and requested trials/POCs;prices and billing units remain unknown. No tenant,call,AI,workflow,carrier,payment or export was tested.",
+  "description_zh": "3CLogic 是企业语音优先联络中心平台，将 Voice AI、真人 CTI、智能 IVR、SMS、转写及分析与现有记录系统结合。ServiceNow 是重要集成路径，覆盖 CSM、ITSM 及 HRSD；较广平台还列 Halo、SAP、Salesforce 等。未建立其为 ServiceNow 自带功能或独立免费拨号器。\n\n以假设服务台电话为例，查询可靠客户记录，按企业批准方式验证身份，再取状态或路由合适真人并保留上下文。电话资料缺失及认证范围不清可能在 AI 帮助前破坏流程。混合部署可保留已有电话／运营商环境。公开商业文档仅确认定制演示及需申请试用／POC，价格和计费单位保持未知。未测试租户、电话、AI、工作流、运营商、支付或导出。",
+  "core_features": [
+    {
+      "name_en": "CRM-embedded voice workspace",
+      "name_zh": "嵌入 CRM 的语音工作区",
+      "explanation_en": "Use caller screen-pops,click-to-call and associated call records in the configured ServiceNowCSM workspace.",
+      "explanation_zh": "在已配置 ServiceNow CSM 工作区使用来电弹屏、点击拨号及关联通话记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "csm",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Intelligent IVR workflows",
+      "name_zh": "智能 IVR 工作流",
+      "explanation_en": "Design voice self-service and skill/profile/history-based routing using ServiceNow data.",
+      "explanation_zh": "以 ServiceNow 资料设计语音自助及按技能／档案／历史路由。",
+      "explanation_scope": "product_specific",
+      "source_ref": "csm",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Voice AI tools and testing",
+      "name_zh": "Voice AI 工具及测试",
+      "explanation_en": "Configure abilities and knowledge,test in Playground and inspect tool use before live deployment.",
+      "explanation_zh": "配置能力及知识，在 Playground 测试并检查工具使用后再部署。",
+      "explanation_scope": "product_specific",
+      "source_ref": "voice-ai",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Hybrid carrier preservation",
+      "name_zh": "混合模式保留运营商",
+      "explanation_en": "Retain existing numbers and carrier contracts while adding cloud contact-centre capabilities.",
+      "explanation_zh": "增加云联络中心能力时保留已有号码及运营商合同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hybrid",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "An enterprise service desk extending existing ServiceNow records and workflows into voice.",
+      "A phased contact-centre modernization retaining a compatible on-premise phone/carrier investment."
+    ],
+    "zh": [
+      "企业服务台将已有 ServiceNow 记录及工作流扩展至语音。",
+      "保留兼容本地电话／运营商投入的分阶段联络中心现代化。"
+    ],
+    "source_refs": ["csm", "implementation", "hybrid"],
+    "basis": "Editorial fit,not observed cost savings,call deflection or independent integration certification."
+  },
+  "technical_details": {
+    "Backend tool authority": {
+      "en": "The Voice AI page says external API calls are made by a backend service,not directly by the LLM. Customers still need to scope data,credentials and allowed actions;no enforcement was tested.",
+      "zh": "Voice AI 页称外部 API 由后台服务调用，不由 LLM 直接调用。客户仍需限定资料、凭据及允许动作，未测试执行约束。",
+      "source_ref": "voice-ai",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise service-desk lead",
+      "ServiceNow administrator",
+      "Telephony and integration owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "implementation"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Scope one operational call journey with the service-desk lead,system administrator and telephony owner;request actual commercial and trial terms.",
+        "zh": "与服务台负责人、系统管理员及电话负责人限定一个运营电话流程，并请求真实商业及试用条件。",
+        "source_refs": ["implementation", "commercial-faq"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Clean and standardize record/phone data,define approved identity checks and map the selected CRM/phone topology.",
+        "zh": "清理并统一记录／电话资料，定义批准身份检查，映射所选 CRM／电话拓扑。",
+        "source_refs": ["implementation", "hybrid"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Build limited IVR/AI abilities,test wrong data,no answer,backend failure and human escalation,and verify case association and recording scope.",
+        "zh": "构建有限 IVR／AI 能力，测试错资料、未答、后台失败及真人升级，并核对工单关联及录音范围。",
+        "source_refs": ["voice-ai", "csm", "commercial-faq"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "ServiceNow CSM / ITSM / HRSD",
+        "source_ref": "implementation",
+        "scope": "Specificworkflows,dataquality,permissionsandversionsrequireimplementationreview;notautomaticallyincludedServiceNowentitlement."
+      },
+      {
+        "name": "REST APIs / webhooks",
+        "source_ref": "voice-ai",
+        "scope": "Backendserviceperformsconfiguredabilities;promptrequestdoesnotgrantrecordwrite/refundauthority."
+      },
+      {
+        "name": "Existing on-premise phone system / carrier",
+        "source_ref": "hybrid",
+        "scope": "HybridBYOCretainscontractsandnumbers;actualconnectorcompatibility,portingandroutingfailureuntested."
+      },
+      {
+        "name": "Halo / SAP / Salesforce",
+        "source_ref": "product",
+        "scope": "Currentplatformlistsintegrationpaths;detailedentitlementsandparitynotreviewed."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Caller lookup or SMS validation depends on accurate,current,consistently formatted phone data in the system of record.",
+        "zh": "来电查询或 SMS 验证依赖记录系统中准确、当前且统一格式的电话资料。",
+        "source_refs": ["implementation"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A password-reset demo or employee identifier alone is not evidence of a complete approved identity-validation flow.",
+        "zh": "重置密码演示或员工编号本身不证明完整且获批身份验证流程。",
+        "source_refs": ["implementation"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Hybrid deployment preserves phone infrastructure but does not establish all AI or record processing stays on premises.",
+        "zh": "混合部署保留电话设施，不证明全部 AI 或记录处理留在本地。",
+        "source_refs": ["hybrid", "commercial-faq"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "PublicFAQoffersrequestedPOCs,butdoesnotestablishprice,seat/concurrency/minuteunits,freedurationorcancellationterms.",
+        "zh": "公开 FAQ 提供需申请 POC，但不建立价格、座席／并发／分钟单位、免费时长或取消条款。",
+        "source_refs": ["commercial-faq", "website-terms"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "commercial-faq",
+    "source_refs": ["commercial-faq", "website-terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Onlyofficialcommercialavailability/trialconditionsverified;noamount,billingunit,commitment,minimumorfeeplanestablished.Noapprovalofpricing.",
+    "source_snapshot_en": "OfficialFAQ:tailoredlivedemosafterrequirementsreview;livetrialsandPOCscanbemadeavailableonrequestthroughAccountExecutive.Noactualamount,seat/concurrency/minuteunit,trialdurationorfree-trialfeeconditionpublishedinreviewedsources.Productcontractsseparatefromwebsiteterms.",
+    "source_snapshot_zh": "官方 FAQ：评估需求后提供定制实时演示，真人试用及 POC 可向 Account Executive 申请。已读来源未公布金额、座席／并发／分钟单位、试用时长或免费条件。产品合同与网站条款分开。",
+    "checked_at": "2026-10-22T14:11:32.184133+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does hybrid mean all data and AI remain on premises?",
+      "question_zh": "混合模式是否表示全部资料及 AI 留本地？",
+      "answer_en": "No such blanket claim was established. Hybrid preserves selected phone/carrier infrastructure;FAQ separately allows call-recording storage in a customer cloud instance or on premises. Other processing needs a data-flow review.",
+      "answer_zh": "未建立这种通用主张。混合模式保留选定电话／运营商设施，FAQ 另允许录音放客户云或本地，其他处理需资料路径核对。",
+      "source_refs": ["hybrid", "commercial-faq"]
+    },
+    {
+      "question_en": "Are the public website terms the contact-centre license?",
+      "question_zh": "网站公开条款就是联络中心许可证吗？",
+      "answer_en": "The website terms expressly defer product obligations to the agreements under which products are sold/licensed. The actual SaaS license,billing and exit contract were not reviewed.",
+      "answer_zh": "网站条款明确将产品义务交给销售／许可协议。此次未审查实际 SaaS 许可、计费及退出合同。",
+      "source_refs": ["website-terms"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/3clogic",
+      "read_at": "2026-10-22T08:36:33.887Z",
+      "excerpt_sha256": "8ef5200ef919bc053829a0ff699c0be91630fc853a5ecd82f45c470b77ce15ec",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI-Powered CX and Contact Center Solutions | CCaaS | 3CLogic",
+      "title": "AI-Powered CX and Contact Center Solutions | CCaaS | 3CLogic",
+      "url": "https://www.3clogic.com/",
+      "read_at": "2026-10-22T14:10:11.107016+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "667b08b745230b2f6bccace9dc072df981cd3f0b76018b3721b0824942e00428",
+      "research_notes_en": "Currentvoice-firstCXwithAIHub,CCaaS,humanCTIandmultipleCRMplatforms;nativeintegrationnotallfeatures/defaultauth."
+    },
+    {
+      "id": "csm",
+      "type": "official_documentation",
+      "site": "Cloud Contact Center Integration for ServiceNow CSM | 3CLogic",
+      "title": "Cloud Contact Center Integration for ServiceNow CSM | 3CLogic",
+      "url": "https://www.3clogic.com/solutions/servicenow-customer-service-management",
+      "read_at": "2026-10-22T14:10:30.565691+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ef535b047b3c97ef3f545652b4bcb97a9ee542b68c8bca22779eaf1ed36eebc1",
+      "research_notes_en": "ServiceNowCSMworkspaceCTI,screenpop,clicktocall,nativeIVR,recordings/transcripts/summariesassociatedContact/Case,SMSAWAandPhoneLogreporting."
+    },
+    {
+      "id": "implementation",
+      "type": "official_documentation",
+      "site": "Best Practices when integrating Voice AI and IVR solutions with ServiceNow",
+      "title": "Best Practices when integrating Voice AI and IVR solutions with ServiceNow",
+      "url": "https://blog.3clogic.com/best-practices-when-integrating-voice-ai-and-ivr-solution-with-servicenow",
+      "read_at": "2026-10-22T14:10:34.340621+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d838507753faa0f448259db901061d7f002c73ed82e64b7a704033db7662f63f",
+      "research_notes_en": "Sept2025implementationdirector:currentstandardE164data,OTPexampledependsonstoredmobilenumber,ID-onlyresetunsafe,operationalstakeholdersandshortIVRjourneys."
+    },
+    {
+      "id": "voice-ai",
+      "type": "official_documentation",
+      "site": "Build & Deploy Powerful Voice AI Agents | Voice AI Hub | 3CLogic",
+      "title": "Build & Deploy Powerful Voice AI Agents | Voice AI Hub | 3CLogic",
+      "url": "https://www.3clogic.com/products/voice-ai-agents",
+      "read_at": "2026-10-22T14:11:13.659015+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "42d5294e1edb78887e49ff78ff7a18e0ca41a50b4718466d825061ce07f24c1c",
+      "research_notes_en": "AIHubpersonalities/guardrails,RESTwebhookabilitiesviaBACKENDnotLLM,uploadknowledge,playground,traces,threadsandhuman/specialistdelegation;nomonetaryorservice-levelguarantee."
+    },
+    {
+      "id": "hybrid",
+      "type": "official_documentation",
+      "site": "Contact Center Software | Enterprise Hybrid Cloud | 3CLogic",
+      "title": "Contact Center Software | Enterprise Hybrid Cloud | 3CLogic",
+      "url": "https://www.3clogic.com/products/enterprise-hybrid-contact-center",
+      "read_at": "2026-10-22T14:11:14.244055+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8517d14d4ce4a633d5cc8bf19915c7f62716d706d0ccdca49cd475f4301dcc29",
+      "research_notes_en": "Hybridretainscurrentonpremisesphone/carriercontracts/numbers,cloudmodernizationthenoptionalTotalCloud;notfullylocalAIorfreeuniversalcompatibility."
+    },
+    {
+      "id": "commercial-faq",
+      "type": "official_pricing",
+      "site": "We’ve Got Answers | Contact Center Platform FAQ | 3CLogic",
+      "title": "We’ve Got Answers | Contact Center Platform FAQ | 3CLogic",
+      "url": "https://www.3clogic.com/resources/frequently-asked-questions",
+      "read_at": "2026-10-22T14:11:32.184133+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2520d0520fb651dd5747131cb324f85561b886b89f404bcda21a7b480df26d85",
+      "research_notes_en": "CommercialavailabilityFAQexplicitlyofferscatereddemosandlivetrials/POCsonrequestafterrequirementsreview;noamount,unit,termorfree-trialdurationpublished. AlsoAWS,browser/VPN,optionalcustomerrecordingstorage,trainingandsupport."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms of Use | 3CLogic",
+      "title": "Terms of Use | 3CLogic",
+      "url": "https://www.3clogic.com/terms-of-use",
+      "read_at": "2026-10-22T14:11:13.018395+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "695c6dd8c34dc901e87114053db76d2f48539cf552432348b21a5709def356fc",
+      "research_notes_en": "May2026termsgovernpublicwebsite;productobligationssolelyunderseparatesold/licensedagreements. NotusedasSaaSlicenseorrefundcontract."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:11:32.184133+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "csm",
+    "implementation",
+    "hybrid",
+    "commercial-faq"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "system-role",
+        "title_en": "Add voice to the system of record rather than replace the CRM",
+        "title_zh": "向记录系统增加语音，而非替代 CRM",
+        "en": "3CLogic positions itself as enterprise Voice AI and CCaaS connected to systems such as ServiceNow,Halo,SAP and Salesforce. Its ServiceNowCSM page embeds CTI in Configurable Agent Workspace,with caller screen-pops,click-to-call and historical context. Voice and SMS complement existing ServiceNow digital channels;the presence of chat/email in an omnichannel description does not mean3CLogic replaces every native channel or license.\n\nThe CSM implementation can associate recordings,real-time transcriptions and generated summaries with a designated Contact or Case,and provides phone-log-linked reporting. That is useful for following a voice interaction through an existing service process,but does not prove record matching or AI summary accuracy. Select the actual platform/workspace and use case before assuming feature parity across all named integrations.",
+        "zh": "3CLogic 将自身定位为连接 ServiceNow、Halo、SAP、Salesforce 等记录系统的企业 Voice AI 与 CCaaS。ServiceNow CSM 页面将 CTI 嵌入 Configurable Agent Workspace，提供来电弹屏、点击拨号及历史上下文。语音和 SMS 补充 ServiceNow 原有数字渠道，全渠道描述里有聊天／邮件不表示3CLogic替代所有原生渠道或许可。\n\nCSM 实现可将录音、实时转写及生成摘要关联指定 Contact 或 Case，并提供关联电话日志的报告。这有助追踪既有服务过程，但不证明匹配或 AI 摘要准确。需先选实际平台／工作区及用例，不能认为所列集成都功能相同。",
+        "source_refs": ["product", "csm"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-authentication",
+        "title_en": "A caller lookup depends on data and an approved validation design",
+        "title_zh": "来电查询依赖资料及批准的验证设计",
+        "en": "For an illustrative service-desk status request,the voice workflow must find the right employee/customer record and validate what the caller may access. The implementation director’s September2025 guide warns that missing or inconsistently formatted numbers undermine lookups and personalised workflows;it explicitly calls out standardized E.164data. Its SMS OTP example depends on a current mobile number already on file. A phone number or an employee ID is not independently verified caller authority.\n\nThe guide warns against discovering identity-validation requirements after implementation starts,and specifically criticises employee-ID-only password-reset flows. Treat its OTP sequence as an example to review against the organization’s policy,not a complete tested security design. Test wrong/recycled/missing phone data,failed SMS and an unrecognized caller. Define a human alternative that does not expose someone else’s case or silently perform an unauthorized write.",
+        "zh": "以假设服务台状态查询为例，语音流程需找到正确员工／客户记录，并验证来电者可访问什么。实施负责人2025年9月指南提醒电话缺失或格式不一会破坏查询及个性化流程，明确提及标准 E.164。其 SMS OTP 示例依赖系统已存的当前手机。号码或员工编号不是独立核实的来电授权。\n\n指南警示不要实施后才发现身份验证要求，特别批评仅用员工编号重置密码。应将 OTP 顺序作为按组织政策评审的示例，不能当完整已测安全设计。需测错号／回收号／缺号、短信失败及陌生来电者，定义不会泄露他人工单或默默执行未授权写入的人工替代。",
+        "source_refs": ["implementation"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "voice-ai-tools",
+        "title_en": "Separate prompt style,knowledge and backend abilities",
+        "title_zh": "区分提示风格、知识及后台能力",
+        "en": "Voice AI Hub exposes personality/guardrails,knowledge uploads,abilities,Playground,threads and evaluation. Tone or an instruction to process a refund does not create an integration or grant authority. Abilities connect to external systems through REST APIs/webhooks;the product page says calls are executed by a backend service rather than directly by the LLM,so credential and data-sharing controls must be implemented there. The reviewed material does not establish actual tenant-specific permissions or transactional guarantees.\n\nPlayground supports chat or simulated-phone testing and inspection of intent,configured tool use,delegation and flow handling. Use that to test a known answer,missing knowledge,tool timeout and an explicit human request. Threads are intended to retain context and hand off to specialized AI or human agents,but an intended warm transfer is not proof that a person accepted it. Review the resulting record and recipient context,not just a plausible spoken response.",
+        "zh": "Voice AI Hub 提供个性／护栏、知识上传、能力、Playground、线程及评估。语气或“处理退款”指令不会创建集成或授权。能力通过 REST API／webhook 连接外部系统，产品页称后台服务而非 LLM 直接执行调用，因此凭据和资料分享控制需在后台实施。已读资料不建立具体租户权限或事务保证。\n\nPlayground 支持聊天或模拟电话测试，检查意图、配置工具使用、委派及流程。可用来测已知答案、知识缺失、工具超时及明确要真人。线程旨在保留上下文并转专业 AI 或真人，但预期热转不证明有人接收。需看结果记录和接收者上下文，不能只听似真回复。",
+        "source_refs": ["voice-ai"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "flow-design",
+        "title_en": "Design the shortest useful voice journey with operating staff",
+        "title_zh": "和运营人员设计最短有用语音路径",
+        "en": "The ServiceNow-native IVR designer can use NLU,speech/text conversion and stored data for self-service and skill/profile/history-based routing. Supervisors can edit flows through a visual interface. That does not eliminate the need to decide who handles an exception,which records are authoritative or whether a backend operation succeeded. The implementation guide asks service-desk leads and ServiceNow admins to participate early so a demo matches actual operations.\n\nIts example of an overbuilt journey stacks validation,major-incident announcements,SMS offers and ticket updates before reaching simple device help. More automation can increase friction and abandonment. Define one valuable path and an early route to qualified staff;test silence,misrecognition,closed hours and an unavailable specialist. Analytics can show paths,queues,waits and abandoned calls,but those signals should guide review rather than be treated as evidence every self-service interaction was resolved.",
+        "zh": "ServiceNow 原生 IVR 设计器可用 NLU、语音文字转换及已存资料，进行自助及按技能／档案／历史路由。主管可用可视界面改流程，但仍需确定谁处理例外、哪些记录权威及后台操作是否成功。实施指南要求服务台负责人及 ServiceNow 管理员早期参与，使演示贴合真实运营。\n\n其过度流程示例在简单设备帮助前堆叠验证、重大事件播报、SMS 推荐及工单更新。更多自动化可能增加阻力及放弃。应限定一条有价值路径并提前提供合格真人出口，测试静默、识别错、非营业及专家不可用。分析可显示路径、队列、等待及遗弃，但这些信号用于复核，不证明每次自助均已解决。",
+        "source_refs": ["implementation", "csm", "commercial-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Hybrid preserves telephony investment with a separate data decision",
+        "title_zh": "混合模式保留电话投入，但资料另需决策",
+        "en": "3CLogic’s FAQ describes global AWS hosting and browser-based remote agent/supervisor use,including VPN environments. Hybrid deployment adds cloud contact-centre functions while retaining compatible on-premise phone infrastructure. Bring Your Own Carrier preserves existing numbers,carrier contracts and rates,and can be a step toward Total Cloud. It is not evidence of a fully local AI server or universal plug-and-play compatibility with every PBX/version.\n\nThe FAQ says recording hosting is provided by default but customers can choose a provisioned cloud instance or on-premise storage. That specific option is not a statement that transcripts,prompts,AI processing or every log follows the same location. Map those flows separately and confirm retention,permissions,call continuity and a failure route when the CRM or cloud is unavailable. Vendor certification badges and AWS compliance do not independently certify the chosen configuration;no certificate,DPA or failover exercise was verified here.",
+        "zh": "3CLogic FAQ 描述全球 AWS 托管及浏览器远程客服／主管使用，包含 VPN 环境。混合部署在保留兼容本地电话设施的同时增加云联络中心功能。自带运营商可保留已有号码、运营商合同及费率，并作为转 Total Cloud 的一步，不证明全本地 AI 服务器或每种 PBX／版本都即插即用。\n\nFAQ 称默认提供录音托管，但客户可选其云实例或本地保存。这一具体选项不表示转写、提示、AI处理或全部日志都跟随同一位置。应分别映射，并确认留存、权限、电话连续性及 CRM／云不可用时路径。厂商认证徽章及 AWS 合规不独立认证所选配置，此次未验证证书、DPA或故障切换演练。",
+        "source_refs": ["hybrid", "commercial-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-fit",
+        "title_en": "Commercial conditions and product licensing remain account-specific",
+        "title_zh": "商业条件及产品许可仍需账户确定",
+        "en": "The actual commercial condition available in the reviewed FAQ is a tailored live demo after requirements review,with live trials/POCs available on request through an account executive. This does not specify price,billing unit,minimum seats,concurrency,minutes,trial duration or whether a trial is free. No third-party starting amount is adopted. Obtain a quote covering CRM-side entitlements,carrier/number costs,voice/AI usage,implementation,storage and support before estimating total cost;those cost categories are an editorial procurement checklist,not verified separate fees.\n\nThe FAQ advertises included live virtual training,recorded material and24/7support with a designated account manager. Final coverage/SLA must be checked in the commercial agreement. Public May2026 website Terms of Use explicitly say product obligations are governed solely by the agreements under which products are sold/licensed. This profile therefore leaves the actual service-license/open-source field unknown rather than treating a website copyright notice as the SaaS contract.\n\n3CLogic fits an enterprise that owns its CRM data,telephony and validation design and wants voice inside that workflow. A buyer seeking an instantly priced standalone phone app,unreviewed autonomous account changes or guaranteed full local processing needs additional evidence. Complete call/attachment export,restoration,cancellation/refund rights,versions and user-interface languages were not established.",
+        "zh": "已读 FAQ 可确认的商业条件是评估需求后定制实时演示，并可向账户主管申请试用／POC；它没有明确价格、单位、最低人数、并发、分钟、试用时长或是否免费。不采用第三方起价。估算总成本前应取覆盖 CRM 权益、运营商／号码、语音／AI用量、实施、存储和支持的报价；这些成本类别是编辑采购核对项，不是已证额外费用。\n\nFAQ 宣传包含实时虚拟培训、录制资料及有账户经理的24小时支持，最终覆盖／SLA须看商业协议。2026年5月网站 Terms of Use明确产品义务仅由销售／许可协议决定，因此本档案将实际服务许可／开源字段保持未知，不以网站版权说明充当 SaaS 合同。\n\n3CLogic 适合掌握 CRM 资料、电话及验证设计，希望将语音融入流程的企业。寻找即时明确价格的独立电话应用、未经审查自主账户修改或保证全部本地处理的买家仍需证据。完整通话／附件导出、恢复、取消／退款权、版本及界面语言未建立。",
+        "source_refs": [
+          "commercial-faq",
+          "website-terms",
+          "implementation",
+          "hybrid"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "3CLogic: ServiceNow Voice, AI Abilities, Data Prerequisites and Hybrid Cloud",
+    "title_zh": "3CLogic：ServiceNow 语音、AI 能力、资料依赖及混合云",
+    "description_en": "Evaluate 3CLogic CTI/IVR workflows,caller-data and validation prerequisites,VoiceAI tools and testing,carrier-preserving hybrid deployment and unknown commercial terms.",
+    "description_zh": "评估3CLogic CTI／IVR流程、来电资料及验证依赖、Voice AI 工具与测试、保留运营商的混合部署及未知商业条件。",
+    "primary_intent": "Evaluate enterprise voice integration prerequisites and account-specific terms.",
+    "secondary_questions": [
+      "What record data does caller validation require?",
+      "Does hybrid keep all AI local?",
+      "What commercial terms are actually public?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,call,AI,workflow,backend,carrier,payment,export or restore tested. Price/billingunit/term/seatminimum/AIminuteallowance,POCfreeconditions,actualSaaSlicense,SLA/cancellation/refund,connectorversions,roleisolation,recording/transcript/AIprocessinglocations,retention,DPA,certificatesandUIlanguagesunverified. Commercialsourceonlyverifiesrequestedtrial/demoavailability,notprices.",
+      "zh": "未测试租户、电话、AI、工作流、后台、运营商、支付、导出或恢复。价格／计费单位／周期／最低座席／AI分钟额度、POC免费条件、真实SaaS许可、SLA／取消／退款、连接器版本、角色隔离、录音／转写／AI位置、留存、DPA、证书及界面语言未核实。商业来源仅核查需申请演示／试用，不确认价格。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "testim-5d3d2647",
+  "name": "Testim",
+  "website_url": "https://www.testim.io/",
+  "domain": "www.testim.io",
+  "identity_domain": "testim.io",
+  "category": "software-testing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Testim creates and executes UI tests through local browser, mobile and remote-grid workflows. Its public product site remains testim.io, while the former help root redirects to Tricentis’s Testim documentation. The operating guides describe different execution entry points and a subscription model based on parallelism, not simply a count of saved tests.\n\nEvaluation needs the run’s actual launch path, grid and device configuration. Two runs described as local can have different quota treatment, and a generic localhost address is not the documented local-driver exemption. Pricing and trial eligibility remain independently unverified where current pages disagree.",
+  "description_zh": "Testim 通过本地浏览器、移动端及远端 grid 流程创建和执行 UI 测试。产品站仍为 testim.io，旧帮助根站跳到 Tricentis 的 Testim 文档。操作指南区分执行入口，并描述按并行能力的订阅模型，而非仅按保存测试数量。\n\n评估需核对运行真实入口、grid 及设备配置。两个都称“本地”的运行可能有不同配额处理，localhost 地址也不等于文档的本地驱动豁免。当前页面存在差异，价格和试用资格仍独立未核实。",
+  "core_features": [
+    {
+      "name_en": "Multiple execution paths",
+      "name_zh": "多种执行入口",
+      "explanation_en": "Run through the editor, local browser, configured grid or CLI with different routing.",
+      "explanation_zh": "通过编辑器、本地浏览器、已配置 grid 或 CLI 运行，路由不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "execution",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Parallelism-based accounting",
+      "name_zh": "按并行能力核算",
+      "explanation_en": "The Plans guide distinguishes parallel slots and usage-hour conditions.",
+      "explanation_zh": "Plans 指南区分并行 slot 及用时条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "plans",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Browser extension setup",
+      "name_zh": "浏览器扩展设置",
+      "explanation_en": "The account guide describes installing the Testim extension before authoring access.",
+      "explanation_zh": "账户指南说明安装 Testim 扩展及登录设置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "account",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Compare one editor-local run with the intended CI/grid entry point.",
+      "Pin a mobile target and verify actual parallel-slot/hour accounting with the account owner."
+    ],
+    "zh": [
+      "比较一次编辑器本地运行与目标 CI／grid 入口。",
+      "固定移动目标，并同账户负责人核对真实并行 slot／小时核算。"
+    ],
+    "source_refs": ["execution", "plans"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["UI automation engineers", "Mobile test teams"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose an account/plan and the correct extension or CLI execution mode.",
+        "zh": "选择账户／方案及正确扩展或 CLI 执行模式。",
+        "source_refs": ["account", "execution"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Pin the environment/device, review quota conditions and inspect failure evidence before scheduling.",
+        "zh": "计划前固定环境／设备，核对配额条件并检查失败证据。",
+        "source_refs": ["execution", "plans"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A grid or CLI run against localhost can still consume parallel quota.",
+        "zh": "指向 localhost 的 grid／CLI 运行仍可能消耗并行配额。",
+        "source_refs": ["plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Omitted remote mobile configuration can select the first available device.",
+        "zh": "省略远端移动配置可能选择第一台可用设备。",
+        "source_refs": ["execution"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "not_verified",
+    "price_type": "unknown",
+    "officially_checked": false,
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "The current commercial offer is unresolved: account onboarding retains1,000-free-runs/7-day-trial wording while Plans describes parallel slots and usage hours. No universal numeric rate or current account eligibility was verified. Pricing remains not_verified/unknown; documented quota mechanics are not a purchase or free-use approval.",
+    "summary_zh": "当前商业方案未解决：入门保留一千免费 runs／七天试用措辞，Plans 则描述并行 slot 和用时。未确认统一数字价格或当前账户资格，价格保持 not_verified／unknown；配额机制不构成购买或免费使用批准。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/testim-io",
+      "read_at": "2026-10-22T08:58:14.034Z",
+      "excerpt_sha256": "f731500d56e040127b7b99f9e38c09ae380adb696a5b46f931c2567a6762dea2",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Testim",
+      "title": "Automated UI and Functional Testing - AI-Powered Stability - Testim.io",
+      "url": "https://www.testim.io/",
+      "read_at": "2026-10-22T14:17:47.480801Z",
+      "excerpt_sha256": "813ecdfd17b518572545966fdf588edb98dbdfc693f9c5458494de3a2a6ad377",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read product identity; promotional performance/AI quality claims not independently adopted."
+    },
+    {
+      "id": "documentation-location",
+      "type": "official_documentation",
+      "site": "Testim",
+      "title": "Home",
+      "url": "https://docs.tricentis.com/testim/content/home.htm",
+      "read_at": "2026-10-22T14:17:47.483646Z",
+      "excerpt_sha256": "d95d63ea284abba6632a69df741f545ba5392f77990c68a8af0035b5312ca6ce",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual help.testim.io HTTPS redirect into named Testim documentation at Tricentis."
+    },
+    {
+      "id": "execution",
+      "type": "official_documentation",
+      "site": "Testim",
+      "title": "Running Tests Overview",
+      "url": "https://docs.tricentis.com/testim/content/running-tests/running-tests-overview.htm",
+      "read_at": "2026-10-22T14:18:32.569572Z",
+      "excerpt_sha256": "5ada0666e4c2d18bcf9ab18f108eac9be38a2573f352511d3602437461ca7bd6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read local/grid/editor/CLI/scheduler execution and mobile target-selection behavior."
+    },
+    {
+      "id": "plans",
+      "type": "official_documentation",
+      "site": "Testim",
+      "title": "Plans",
+      "url": "https://docs.tricentis.com/testim/content/administration/subscription-plans/index.htm",
+      "read_at": "2026-10-22T16:19:07.093435Z",
+      "excerpt_sha256": "14e771b45f4c92cf904f9dbe0c320c71ad8e32ddc6a8123bdd5ed93ac9a24d1b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read parallelization model, hours, Company Owner view and precise local/CLI quota exceptions."
+    },
+    {
+      "id": "account",
+      "type": "official_documentation",
+      "site": "Testim",
+      "title": "Setting up Your Account",
+      "url": "https://docs.tricentis.com/testim/content/getting-started/setting-up-your-account.htm",
+      "read_at": "2026-10-22T16:19:07.098643Z",
+      "excerpt_sha256": "23361de2b7168deb559ba5cc76b9c7f4d0c1406d279b782ea7fd8fc5e46f2c11",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual extension/account instructions and legacy1000-runs/free-trial wording; not reconciled with parallel model."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:19:07.098643Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "research_gaps": [
+    {
+      "en": "Exact Tricentis documentation snapshots are recorded as a Testim-specific authority chain, not a merger of all Tricentis products.",
+      "zh": "精确 Tricentis 文档快照按 Testim 专属来源链记录，不合并全部 Tricentis 产品。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No account, extension, app upload, device, test, token, CLI or purchase was operated. Current offer, full license, role enforcement, retention and recovery remain unverified.",
+      "zh": "未操作账户、扩展、应用上传、设备、测试、token、CLI 或购买。当前方案、完整许可、角色执行、保留及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "description_source_refs": ["home", "execution"],
+  "profile": {
+    "sections": [
+      {
+        "id": "entry-point",
+        "title_en": "Confirm where the test will actually run",
+        "title_zh": "确认测试真实运行位置",
+        "en": "The overview separates local/editor and grid runs. Web Test List runs are local; Scheduler runs use a remote grid and require a label or suite. Record the actual launch path/environment before comparing a manual pass with CI.",
+        "zh": "概览区分本地／编辑器与 grid。Web Test List 在本地运行，Scheduler 用远端 grid 且需 label 或 suite。比较手动通过与 CI 前，应记录真实入口／环境。",
+        "source_refs": ["execution"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mobile-target",
+        "title_en": "Make mobile selection reproducible",
+        "title_zh": "使移动设备选择可复现",
+        "en": "Remote mobile runs need a grid and configuration. Without configuration, the first available grid device is used; editor overrides can change the device/app. Pin the target and inspect result metadata before comparing a rerun with the original failure.",
+        "zh": "远端移动运行需 grid 和配置；缺配置时用 grid 第一台可用设备，编辑器覆盖可改变设备／应用。比较重跑与原始失败前，应固定目标并检查结果元数据。",
+        "source_refs": ["execution"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quota",
+        "title_en": "Localhost is not the local-driver exemption",
+        "title_zh": "Localhost 不等于本地驱动豁免",
+        "en": "Plans uses parallelization rather than runs. Editor-local and use-local-chrome-driver runs are exempt; CLI/grid localhost runs still count. It lists 1,000 monthly hours across three parallels and200 per additional parallel. Confirm the actual account terms; local execution does not universally mean free use.",
+        "zh": "Plans 按并行而非 runs。本地编辑器及 use-local-chrome-driver 豁免，CLI／grid 的 localhost 仍计。页面列三并行共每月一千小时、额外并行各二百小时。需核对账户条款，本地不普遍等于免费。",
+        "source_refs": ["plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup",
+        "title_en": "Reconcile account onboarding with the selected plan",
+        "title_zh": "将账户入门与所选方案对应",
+        "en": "The account guide describes extension installation and account signup but retains wording about1,000 free monthly runs and a 7-day trial enabled through contact. That is not automatically compatible with the newer parallelism model. Confirm account eligibility and actual plan before assigning a free allowance. No signup, browser extension or credentials were used here.",
+        "zh": "账户指南描述扩展安装与注册，但保留每月一千免费 runs 及联系启用七天试用的措辞，未必与较新并行模型对应。赋予免费额度前应核对账户资格及真实方案；本次未注册、安装扩展或使用凭据。",
+        "source_refs": ["account", "plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ci",
+        "title_en": "Review the generated CLI target and credential",
+        "title_zh": "检查生成的 CLI 目标及凭据",
+        "en": "The CLI generator includes token/project plus a grid or local-driver mode. Review the generated target and keep credentials in the established CI secret mechanism. No command was executed; retention, isolation and retry billing remain unverified.",
+        "zh": "CLI 生成器包含 token／project 与 grid 或本地驱动模式。应检查生成目标，沿用既有 CI secret 机制；本次未执行命令，保留、隔离及重试费用待核。",
+        "source_refs": ["execution"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Testim: workflows, operating limits and cost",
+    "title_zh": "Testim：流程、运行限制与费用",
+    "description_en": "Testim creates and executes UI tests through local browser, mobile and remote-grid workflows. Its public product site remains testim.io, while the former help root redire",
+    "description_zh": "Testim 通过本地浏览器、移动端及远端 grid 流程创建和执行 UI 测试。产品站仍为 testim.io，旧帮助根站跳到 Tricentis 的 Testim 文档。操作指",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of Testim.",
+    "search_intent_zh": "评估 Testim 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  }
+}

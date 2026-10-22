@@ -1,0 +1,695 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "mangools-1ea0269e",
+  "name": "Mangools",
+  "website_url": "https://mangools.com/",
+  "domain": "mangools.com",
+  "identity_domain": "mangools.com",
+  "category": "seo",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Mangools connects keyword research in KWFinder, result-page analysis in SERPChecker, configured ranking observations in SERPWatcher, backlinks in LinkMiner and domain summaries in SiteProfiler. AI Search Watcher adds repeated brand-prompt observations across AI answer engines. A shared account and interlinked tools make a keyword-to-page evaluation possible, while REST and hosted MCP provide programmatic access.\n\nA focused evaluation follows one audience query through its locale, dated SERP, feasible page and a comparable tracking panel. Keep estimated search/traffic metrics separate from measured visits, and distinguish lookup allowance from persistent tracking capacity. Current API documentation exposes detailed burst and quota behavior; some older FAQ and trial descriptions lag the wider suite. Public pricing cards did not render in either the reader or the actual browser, so no current paid amount is asserted. No account operation or outcome test was performed.",
+  "description_zh": "Mangools 连接 KWFinder 词研究、SERPChecker 结果页分析、SERPWatcher 配置排名观察、LinkMiner 外链及 SiteProfiler 域摘要。AI Search Watcher 增加跨 AI 回答引擎的重复品牌提示观察。共享账户及互联工具支持从关键词到页面评估，REST 及托管 MCP 提供程序访问。\n\n聚焦评估沿一个受众查询走过地区、定日期 SERP、可行页面及可比跟踪面板。搜索／流量估计需与实测访问分开，查询额度与持续跟踪容量也不同。当前 API 文档有详细突发及额度规则，部分旧 FAQ／试用描述落后于扩大的套件。价格卡在读取器及真实浏览器都未渲染，因此不确认当前付费金额。未操作账户或测试结果。",
+  "core_features": [
+    {
+      "name_en": "URL-relative keyword difficulty",
+      "name_zh": "URL 相对词难度",
+      "explanation_en": "RKD adjusts the query’s difficulty using the chosen page’s link-profile strength.",
+      "explanation_zh": "RKD 按所选页链接强度调查询难度。",
+      "source_ref": "rkd-restore",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-dependent ranking cadence",
+      "name_zh": "依套餐排名周期",
+      "explanation_en": "Basic/Premium are documented as weekly and Agency as daily.",
+      "explanation_zh": "文档 Basic／Premium 周更，Agency 日更。",
+      "source_ref": "serpwatcher",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Loaded-backlink export",
+      "name_zh": "已加载外链导出",
+      "explanation_en": "LinkMiner exports the current loaded set, not automatically the complete database.",
+      "explanation_zh": "LinkMiner 导当前加载集，不自动导全数据库。",
+      "source_ref": "linkminer",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable AI monitor",
+      "name_zh": "可配置 AI 监控",
+      "explanation_en": "Create a monitor with brand, domain, location, device, model IDs and prompts.",
+      "explanation_zh": "以品牌、域、位置、设备、模型 ID 及提示建监控。",
+      "source_ref": "ai-create",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Take a locale-specific keyword through a dated SERP and candidate-page evaluation.",
+      "Track a stable Google panel and share an explicitly scoped client report.",
+      "Evaluate a small AI monitor before expanding engines or prompt coverage."
+    ],
+    "zh": [
+      "将地区词经定日期 SERP 及候选页评估。",
+      "跟踪稳定 Google 面板并分享明确范围客户报告。",
+      "扩引擎或提示覆盖前评少量 AI 监控。"
+    ],
+    "source_refs": [
+      "overview",
+      "kwfinder",
+      "serpchecker",
+      "api-docs",
+      "pricing"
+    ],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "SEO generalist",
+        "zh": "综合 SEO 人员"
+      },
+      {
+        "en": "Content research editor",
+        "zh": "内容研究编辑"
+      },
+      {
+        "en": "Agency reporting analyst",
+        "zh": "机构报告分析人员"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose locale and input scope, then inspect KD/SERP dates.",
+        "zh": "选地区及输入范围，再审 KD／SERP 日期。",
+        "source_refs": ["kwfinder"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare actual result intent before adopting model scores.",
+        "zh": "采用模型分数前比真实结果意图。",
+        "source_refs": ["serpchecker"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Budget lookup pools and device-specific tracking separately.",
+        "zh": "分开预算查询池及设备跟踪。",
+        "source_refs": ["faq", "serpwatcher"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review shared-link visibility and connector Tracking ID.",
+        "zh": "审分享链接可见性及连接器 Tracking ID。",
+        "source_refs": ["sharing", "looker"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set immutable AI dimensions before creating a monitor.",
+        "zh": "建 AI 监控前定不可变维度。",
+        "source_refs": ["ai-create", "ai-edit"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Read actual error type and subscription agreement before recovery or billing actions.",
+        "zh": "恢复或账单动作前读真实错类型及订阅协议。",
+        "source_refs": ["api-errors", "terms"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Research snapshots, database ranks and tracked observations may use different dates.",
+        "zh": "研究快照、库排名及跟踪观察日期可不同。",
+        "source_refs": ["kwfinder", "faq-data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Both devices consume two tracked keywords; Basic/Premium update weekly.",
+        "zh": "双设备耗两词，Basic／Premium 周更。",
+        "source_refs": ["serpwatcher"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "LinkMiner exports only loaded rows and New-window docs differ.",
+        "zh": "LinkMiner 只导加载行，New 窗口文档不同。",
+        "source_refs": ["linkminer", "faq-data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Anyone with a tracking share link can interact with its report.",
+        "zh": "持跟踪分享链接者可交互报告。",
+        "source_refs": ["sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "AI location/platform/language cannot be changed via settings update.",
+        "zh": "AI 地区／设备／语言不能经设置更新改。",
+        "source_refs": ["ai-edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Official FAQ explicitly describes a permanent Free plan without a credit card; exact current capacities and paid amounts not established. Actual pricing page and background browser showed billing FAQ but no plan cards. Paid subscriptions auto-renew monthly/yearly until disabled and remain active to prepaid end. Main-tool subscriptions and dedicated keyword/SERP API quotas must be distinguished. AI/trackings may consume paid capacity despite Free endpoint calls. Refund statements differ between pricing/FAQ and current terms. Exact tax, regional checkout, discounts, AI rates and retention unknown; no normalized price.",
+    "source_snapshot_zh": "官方 FAQ 明称持续免卡 Free，准确当前容量及付费金额未确定，真实价格页及后台浏览器仅显账单 FAQ、无卡。付费按月／年自动续至关闭，保权限到已付期末。主工具订阅及独立关键词／SERP API 额度需分，AI／tracking 即使端点 Free 仍可用付费容量。价格／FAQ 与当前条款退款说明不同。准确税、地区结账、折扣、AI 费率及保留未知，不设标准化价。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "faq", "terms"]
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/mangools",
+      "read_at": "2026-10-22T08:50:57.793Z",
+      "excerpt_sha256": "7481e20ee27169f2f1a45123b021ad4f122b2d9b310764e570e14af516027082",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Affordable & Easy-to-Use SEO Tools | Mangools",
+      "url": "https://mangools.com/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "d77d202d04b13526e0ef8be704e6afec67fec56a109fedde0191914ebfb244b4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current suite includes AI Search Watcher and API/MCP; no marketing outcomes adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Mangools",
+      "title": "Plans & Pricing | Mangools",
+      "url": "https://mangools.com/plans-and-pricing",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "4a011284dc38d12e15f387567586e2566554a2ffb9b9560f035963f3960babf3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual page has billing FAQ but no amount/capacity cards, also absent in ordinary background browser AX. No third-party price substituted."
+    },
+    {
+      "id": "kwfinder",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "KWFinder Guide: A Step-By-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/kwfinder-guide/?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "f4414eebdb4a9b7a67f2e8a865398cd0ac64e8fc52dd81815530fc527822fb12",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual keyword/domain/gap research, KD/RKD and cached SERP dates, input scopes and lists."
+    },
+    {
+      "id": "serpwatcher",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "SERPWatcher Guide: A Step-By-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/serpwatcher-guide/?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "1b00f245a82b3f66f6f1ef38a2f1dac96ced4a0616d2d6a725ebf484620d5daa",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Basic/Premium weekly versus Agency daily and device quota; older trial wording preserved."
+    },
+    {
+      "id": "siteprofiler",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "SiteProfiler Guide: A Step-by-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/siteprofiler-guide/?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "9a3a4b5fbd98f4b3a8c73c5d2e34e7e495cee1af0263cebd6f20aa8370ea3e12",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Mostly domain-based metrics, backlink summaries and top content; legacy Alexa/Facebook fields not treated as current entitlement."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Frequently asked questions | Mangools",
+      "url": "https://mangools.com/faq?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "943183b788c2f36006131a454006532c2240083a1c5dac5b8602e4c86e3db40d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free plan, rolling lookup resets, shared seats and billing help; source timing/API differences retained."
+    },
+    {
+      "id": "ai-overview",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "AI Search Watcher: Accurate & Affordable LLM Rank Tracker",
+      "url": "https://mangools.com/ai-search-watcher/?ref=header-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "3801865bb6741121f9cf6df9f84eec0f5b169ece22bd271fa07120d3006cc01a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Eight marketed AI engines and repeated prompt observations; exact model/cadence/formula not established."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "Mangools",
+      "title": "Mangools MCP Server: Best SEO MCP Server for AI Assistants | Mangools",
+      "url": "https://mangools.com/mcp?ref=menu-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "47552447792153f5f675e4cdac23ab2eaf4aabfff297b1ba704fdd0201cacbda",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual hosted OAuth/token auth, beta, mutation tools and quota/capacity distinctions."
+    },
+    {
+      "id": "api-overview",
+      "type": "official_integration",
+      "site": "Mangools",
+      "title": "Mangools SEO API: SEO & AI Search Visibility Data in One Place",
+      "url": "https://mangools.com/api?ref=menu-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "6a4fc1e9d9d568c7fc17a24a69faba211e292c43a162f1be0b981036e0975f8e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current all-tools API uses X-Access-Token and supports mutating trackings/prompts."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "SERPWatcher Guide: A Step-By-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/serpwatcher-guide/?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "b57021ec965c25be9327a33d60279d047aa187cb5cd9966099ee47cb2e868cc7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Anyone-link interactive reports, email schedules, white-label branding/domain and independent Looker token guide."
+    },
+    {
+      "id": "faq-data",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Frequently asked questions | Mangools",
+      "url": "https://mangools.com/faq?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "30cca6e043bcdd6615932fa8fd9aa748ec1ef731667004aafc41fc08462a29bd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Different research dates, provider-based link datasets and legacy API wording; canonical same FAQ budget shared."
+    },
+    {
+      "id": "api-docs",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Mangools API | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "ce2425ff7e7e3a29bb4f7910596d13c17d09059a346fcd1be4da454f2128a650",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current v3 reference index and tool coverage."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Terms & Conditions | Mangools",
+      "url": "https://mangools.com/conditions?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "9f3dba90b75aaa76e0d793c9803378e2e86d5a9190791a730b1c2bf9d9a35f29",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current auto-renewal, differentiated refund conditions and no permissive reuse inferred."
+    },
+    {
+      "id": "rkd-restore",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Product Update: Relative Keyword Difficulty & Location Trackings",
+      "url": "https://mangools.com/blog/relative-keyword-difficulty-and-multi-location-trackings/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "a4f22d32f30fa8fe88259cf50ca3f65f57010cc25ce84125a46a1b3edaf98086",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Documented URL-relative difficulty, domain grouping and show-deleted restoration; actual retention window unknown."
+    },
+    {
+      "id": "performance-index",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "What is Performance Index in SERPWatcher? | Mangools",
+      "url": "https://mangools.com/blog/performance-index/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "94244c314921652f6c050c143a4e34016f7fc709143e18a29c4449d3590d9f9e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Weighted ranking metric, selected set/date and no measured site traffic."
+    },
+    {
+      "id": "looker",
+      "type": "official_integration",
+      "site": "Mangools",
+      "title": "SERPWatcher Data Studio Connector - Integration Guide",
+      "url": "https://mangools.com/blog/google-looker-studio-connector/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "65a370f6d47c19653b3a72c1c48a757347307304eff4ca51af653e4cfde23b5a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "September23 actual Google auth, generated connector token and TrackingID."
+    },
+    {
+      "id": "linkminer",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "LinkMiner Guide: A Step-by-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/linkminer-guide/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "b424f885876397a2a2294cd0dbcf3e66c0beb3912776fb47f0c78b0f30ab3e61",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Canonical guide actual full body after attributed-guide timeout; URL scopes, combined indexes and loaded-only export."
+    },
+    {
+      "id": "api-auth",
+      "type": "official_integration",
+      "site": "Mangools",
+      "title": "Authentication | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/authentication/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "00dff9ac6160aedbe4ea11f5bbb5f95576e1a1ddb2733a37f4eb1043808be19e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API key in x-access-token, not bearer; no authenticated call."
+    },
+    {
+      "id": "api-errors",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Errors | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/errors/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "22d1fe3c86852cfd2652a2f75815b3e72308746ebf6165f425f65c397f05af5b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Three distinct429 bodies, auth/validation/conflict meanings."
+    },
+    {
+      "id": "api-limits",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Rate limits | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/rate-limits/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "93eaae78ff933f17caeade6097e8fa7604100e193978a9880b0068e10edc4608",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Separate API-key/hosted burst rates, quota pools, cache exclusions and gatewayHTML429."
+    },
+    {
+      "id": "ai-api",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "AI Search Watcher | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/ai-search-watcher/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "1bba1bfc0c1f4958aeec979ee98e4e3f96be2141baaabf4ff6da2cb7a8a11193",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AI endpoint calls marked free; distinct from paid monitor capacity described by MCP."
+    },
+    {
+      "id": "ai-create",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Create AI monitoring for a brand | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/ai-search-watcher/post-aiwatcher-monitor/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "d3d5d4d5dd1653ecfba64c225490d2a002344511102da4c2027ad1f5dc3f18c4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual required brand/domain/location/platform/model/prompt fields; Anywhere0 unsupported and language fallback."
+    },
+    {
+      "id": "ai-edit",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "Update monitor settings | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/ai-search-watcher/put-aiwatcher-monitor-by-id-settings/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "7abb41e533e64088350eb1a4417f67acb5086851068b974c612fcd6fc830a6d9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Location/platform/language immutable; only supplied settings change and unknown fields422; ten name variations."
+    },
+    {
+      "id": "rank-api",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "SERPWatcher | Mangools API Documentation",
+      "url": "https://apidocs.mangools.com/serpwatcher/",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "2fe7a8759975614c4f40323031019e6d8d64d8adbd33cb155794b7170a5f310f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Rank mutation/report endpoints marked free per call, separate capacity implications."
+    },
+    {
+      "id": "serpchecker",
+      "type": "official_documentation",
+      "site": "Mangools",
+      "title": "SERPChecker Guide: A Step-by-Step Tutorial for Beginners | Mangools",
+      "url": "https://mangools.com/blog/serpchecker-guide/?ref=footer-mngls",
+      "read_at": "2026-10-22T15:41:11.071423Z",
+      "excerpt_sha256": "691f7dcae2d09a0d3bccb2fc8cb1ed667fb265ebd88e248555e7bc1fcd2e7f50",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Location/device SERP snapshot, Compare row and benchmark feature-impact/CTR metrics."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:41:11.071423Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "overview",
+    "kwfinder",
+    "serpchecker",
+    "api-docs",
+    "pricing"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "keyword-research",
+        "title_en": "A keyword score needs the right audience and input scope",
+        "title_zh": "关键词分数需正确受众及输入范围",
+        "en": "KWFinder separates seed-based suggestions, domain/URL rankings and competitor gaps. Search volume is a twelve-month average by default; EV estimates visits from ranking, CTR and volume. Exact-URL research is case-sensitive and a trailing slash can change results. KD uses ranking pages’ link-profile strength; RKD additionally uses the candidate page. Cached KD/SERP dates can be up to thirty days old or older for untouched terms. Editorial shortlist: select locale and page intent, inspect the snapshot date, then refresh only the candidates that matter. A low difficulty number or an unranked database row does not establish a guaranteed opportunity in today’s live results.",
+        "zh": "KWFinder 分种子建议、域／URL 排名及竞品缺口，量默认十二月平均，EV 按排名／CTR／量估访问。准确 URL 研究区分大小写、尾斜杠会改结果。KD 用排名页链接强度，RKD 另用候选页。KD／SERP 缓存可三十日、久未点词更旧。编辑候选：选地区及意图、审快照日，再只刷关键候选。低难度或数据库缺排名不确定今天实时机会保证。",
+        "source_refs": ["kwfinder", "rkd-restore"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "serp-analysis",
+        "title_en": "A Compare row does not insert a page into Google",
+        "title_zh": "Compare 行不将页面插入 Google",
+        "en": "SERPChecker selects query, location and desktop/mobile before displaying result metrics and a Snapshot. Compare adds the chosen URL alongside ranked pages for evaluation. Feature Impact is a one-to-five estimate; fold visibility assumes a common screen size, and CTR uses benchmark data. A result export can include selected or all metrics, with a separate PNG snapshot. Editorial review: inspect actual result formats, dominant intent and visible features before writing a brief. Dragging a page into the comparison or showing a favorable benchmark does not predict a specific future rank, click rate or publication outcome.",
+        "zh": "SERPChecker 选词、位置及桌面／移动后显指标及 Snapshot，Compare 将所选 URL 放排名页旁比较。Feature Impact 是一至五估计，首屏可见度假设常见屏幕，CTR 用基准。导出可选部分／全指标，另 PNG 快照。编辑核查：写简报前审真实结果形式、主意图及可见功能。拖页比较或有利基准不预测具体未来排名、点击率或发布结果。",
+        "source_refs": ["serpchecker"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quota",
+        "title_en": "Lookups reset after the first request, not at midnight",
+        "title_zh": "查询额度从首请求起重置，不是午夜",
+        "en": "The FAQ describes a twenty-four-hour countdown started by the first request; after refill, it waits for the next request before restarting. A search/import uses a keyword lookup, while fetching a keyword’s SERP/KD uses a separate SERP lookup, with recently cached exceptions. Sub-users share the parent allowance rather than receiving independent pools. Editorial batch: inspect Available resources and separate research, refresh and persistent tracking needs before importing a long list. A list saved successfully is not evidence that every term’s difficulty was refreshed, and another team member’s consumption can reduce the remaining shared allowance.",
+        "zh": "FAQ 描述首请求起二十四小时倒计时，补满后等下一个请求再起。搜索／导入耗关键词查询，取词 SERP／KD 耗独立 SERP 查询，近期缓存有例外。子用户共用父额度，不获独立池。编辑批次：长表导入前审 Available resources、分研究／刷新／持续跟踪需求。成功保存表不证明每词难度刷新，其他成员消耗也会减共享余量。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "tracking",
+        "title_en": "Choose the sampling cadence before interpreting a ranking trend",
+        "title_zh": "解释排名趋势前先选采样周期",
+        "en": "Current SERPWatcher guidance sets Basic/Premium to weekly and Agency to daily observations. Tracking is a domain/location/platform setup; desktop and mobile consume separate keyword capacity. Keywords can come from files or a KWFinder list. Tags, filters and selected dates change the displayed aggregate. PI weights the tracked rankings by search volume; estimated visits remain a CTR-based model. Editorial monitoring: keep the panel, device and date comparison stable and treat a weekly series as weekly evidence. A better subset PI does not mean the whole domain improved, and modeled visits are not measured sessions or revenue.",
+        "zh": "当前 SERPWatcher 指南 Basic／Premium 周观察、Agency 日观察。Tracking 为域／位置／设备配置，桌面及移动占独立词容量，可由文件或 KWFinder 表加词。标签、筛选及日期改汇总。PI 按搜索量加权跟踪排名，估访问仍是 CTR 模型。编辑监控：维持面板、设备及比较日期稳定，周序列按周证据用。子集 PI 更高不代表全域进步，模型访问不是实测会话或收入。",
+        "source_refs": ["serpwatcher", "performance-index"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sharing-recovery",
+        "title_en": "Shared tracking is interactive, and deleted items may be restored",
+        "title_zh": "共享跟踪可交互，已删项可恢复",
+        "en": "The guide permits anyone with the share link to select dates, filter and inspect keyword details. Scheduled emails can be weekly/monthly with separate alert triggers. The product update documents showing deleted trackings/keywords and restoring them; it does not specify a retention window. Editorial handoff: review the actual public-facing view and keep a dated export when a fixed client record is needed. A restoration feature is not a guarantee of unlimited recovery, and a branded URL alone does not establish authentication. This research did not create a share, send an email, modify DNS or delete/restore a tracking.",
+        "zh": "指南允许持分享链接者选日期、筛及审词详情。邮件可周／月，警报另设触发。产品更新记显示已删 tracking／词并恢复，未给保留窗口。编辑交付：审真实接收视图，需固定客户记录时留定日期导出。恢复功能不保证无限恢复，品牌 URL 本身不确定认证。本研究未分享、发邮件、改 DNS 或删／恢复跟踪。",
+        "source_refs": ["sharing", "rkd-restore"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "looker",
+        "title_en": "The connector token and Tracking ID identify different things",
+        "title_zh": "连接器 token 与 Tracking ID 标识不同对象",
+        "en": "The September connector guide authorizes Mangools in Google, generates a unique token from the selected SERPWatcher report, and separately supplies the Tracking ID from its URL. The resulting data source exposes fields and freshness settings before a report is created. Editorial integration: verify the connected Google identity, intended tracking, dates and displayed fields before sharing the resulting report. A successful authorization does not prove the chosen Tracking ID belongs to the intended client, nor that a source with weekly observations became a daily measurement merely because Looker refreshed its view. No connector or Google authorization was executed here.",
+        "zh": "九月连接器指南先在 Google 授 Mangools，从选定 SERPWatcher 报告生成专用 token，再另给 URL 中 Tracking ID。数据源在建报告前显示字段及新鲜度设置。编辑集成：分享前核 Google 身份、目标 tracking、日期及字段。授权成功不证明 Tracking ID 是目标客户，也不让每周观察因 Looker 刷视图而成为每日测量。此处未连接或 Google 授权。",
+        "source_refs": ["looker"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backlinks",
+        "title_en": "URL syntax and loaded rows determine a LinkMiner export",
+        "title_zh": "URL 形式及已加载行决定 LinkMiner 导出",
+        "en": "LinkMiner distinguishes root domain, subdomain, exact URL and wildcard path; adding a scheme can turn a broad-looking input into an exact URL. It combines Majestic Fresh/Historic results, while the headline total uses Fresh data. Load more fetches another five hundred rows and export contains only currently loaded links. The guide calls New the last thirty days, while FAQ says ninety; that window is unresolved. Editorial backlink sample: preserve input scope, loaded count and active/deleted filters, then inspect the referring page rather than treating a strength metric as quality certification. A partial export is not the full backlink database.",
+        "zh": "LinkMiner 分根域、子域、准确 URL 及通配路径，加协议可把看似广域输入变准确页。结果合 Majestic Fresh／Historic、总数用 Fresh。Load more 再取五百行，导出只含当前加载链。指南 New 为三十日，FAQ 九十，窗口未解。编辑外链样本：留输入范围、加载数及 active／deleted 筛，再审来源页，不能将强度分当质量认证。部分导出不是全外链库。",
+        "source_refs": ["linkminer", "faq-data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "domain-summary",
+        "title_en": "SiteProfiler summaries need a consistent domain scope",
+        "title_zh": "SiteProfiler 摘要需一致域范围",
+        "en": "SiteProfiler accepts a domain or URL but recommends a root domain because most fields are domain-based. It summarizes provider authority metrics, backlink distributions, top content and suggested competitors, with links into LinkMiner for underlying rows. The guide still names Alexa/Facebook-based fields, whose present availability was not verified. Editorial comparison: match the input level, provider and observation period, then inspect the relevant referring pages or content before prioritizing action. A popularity or backlink summary does not identify a customer segment, establish actual site revenue or independently prove that a competitor’s tactics caused its ranking performance.",
+        "zh": "SiteProfiler 收域／URL，但多数字段基于域而建议根域，汇提供者权威指标、外链分布、头部内容及建议竞品，并连 LinkMiner 底层行。指南仍列 Alexa／Facebook 字段，当前可用性未核。编辑比较：匹配输入层级、提供者及周期，再审来源页／内容后排动作。热度或外链摘要不识别客户群、不确定真实收入，也不独立证明竞品策略造成排名表现。",
+        "source_refs": ["siteprofiler"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-panel",
+        "title_en": "AI locale, device and language are creation-time settings",
+        "title_zh": "AI 地区、设备及语言是创建时设置",
+        "en": "AI Search Watcher markets eight engines and repeated runs per prompt. Its current create contract takes brand/domain, a supported location, platform, model IDs and prompts; Anywhere location zero is rejected despite generic placeholder examples. Missing/unknown language falls back to the location default or English. Settings updates can change brand, up to ten variations, domain, models and report controls, but not location/platform/language; unknown fields return422. Editorial first panel: establish those dimensions before creation and inspect entity detection in actual answers. Repeated averages are samples of the configured panel, not all consumer conversations; exact collection mode, repeat count and visibility formula remain unverified.",
+        "zh": "AI Search Watcher 宣传八引擎及逐提示多次运行。当前创建契约收品牌／域、支持位置、设备、模型 ID 及提示；Anywhere 零不支持，通用占位示例却有零。缺／未知语言退位置默认或英语。更新可改品牌、最多十变体、域、模型及报告控制，不能改地区／设备／语言，未知字段返422。编辑首面板：创建前定这些维度，审原回答实体发现。重复均值是配置面板样本，不是全部消费者对话，准确采集模式、重复数及公式未核。",
+        "source_refs": ["ai-overview", "ai-create", "ai-edit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api-recovery",
+        "title_en": "Burst throttling and spent quota share429 but need different responses",
+        "title_zh": "突发节流及额度耗尽同返429，处理不同",
+        "en": "REST/SDK key clients have three requests per thirty-second sliding window per account/resource pool; the hosted MCP has a different burst rate. Quota pools can be rolling daily or monthly. RateLimit429 supplies retry_after; CreditLimit429 lacks it, so repeated short retries do not replenish allowance. A gateway can instead return HTML429, requiring content-type inspection before JSON parsing. Identical cached requests within twenty-four hours and refused429 requests are documented as uncharged. Editorial client: pace each resource pool, distinguish authorization/validation failures, and inspect the actual error before retrying. No API request or observed throttling was used to test these published limits.",
+        "zh": "REST／SDK key 客户端每账户／资源池三十秒滑窗三请求，托管 MCP 突发率不同。额度池可滚动每日或每月。RateLimit429 给 retry_after，CreditLimit429 无，短时重试不补额度。网关可返 HTML429，解析 JSON 前需审 content-type。文档称二十四小时内相同缓存请求及被拒429不收费。编辑客户端：按池节奏、分认证／验证失败、重试前审真实错。未用 API 请求或实测节流验证公开限额。",
+        "source_refs": ["api-limits", "api-errors", "api-auth"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp",
+        "title_en": "A Free endpoint label does not remove monitor-capacity requirements",
+        "title_zh": "端点 Free 标记不取消监控容量要求",
+        "en": "The hosted MCP is beta and supports OAuth or an API-token header. It can create trackings/AI monitors, change keywords and reports, and use paid capacity. Its docs say calls use the account’s API pools; the AI/rank API tables separately mark the endpoint invocation Free. These are different meters, so neither Free labels nor a welcome bonus establish unlimited monitor operation. Editorial assistant use: scope the project and desired mutation, inspect the tool’s quota implications and verify the returned object. Client confirmation behavior was not tested. Token rotation invalidates the prior key immediately, and authentication recovery differs from depleted quota.",
+        "zh": "托管 MCP 为 beta，支持 OAuth 或 API-token 头，可建 tracking／AI monitor、改词／报告并用付费容量。文档称调用用账户 API 池，AI／排名 API 表另标端点调用 Free。计量不同，Free 标签或欢迎额度不确定不限监控。编辑助手使用：限定项目及变更，审工具额度影响并核返回对象；未测试客户端确认。重置 token 立即废旧 key，认证恢复不同额度耗尽。",
+        "source_refs": ["mcp", "ai-api", "rank-api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing-exit",
+        "title_en": "Cancellation stops renewal; refund conditions differ by source",
+        "title_zh": "取消停续费，退款条件因来源不同",
+        "en": "Pricing/FAQ say disabling auto-renewal preserves the paid period and describe a forty-eight-hour refund request, with pricing excluding consecutive subscriptions. Current terms instead distinguish consumer withdrawal, business customers and annual-renewal refunds, and call crypto/wire payments non-refundable. These statements are recorded without assessing legal applicability or promising a refund. A permanent no-card Free plan is stated in FAQ, while older guides still refer to a ten-day trial. Editorial purchase/exit: check the actual plan, checkout agreement and renewal date, export necessary records before access changes, and obtain a clear account-level refund decision; no current paid amount or retention window was established.",
+        "zh": "价格／FAQ 称停自动续费保已付期，描述四十八小时退款请求、价格排连续订阅。当前条款另分消费者撤回、商业客户及年续费退款，并称 crypto／电汇不退。此记录不评法律适用或承诺退款。FAQ 称持续免卡 Free，旧指南仍十日试用。编辑购买／退出：核真实套餐、结账协议及续费日，权限变化前导所需记录，取得明确账户退款决定；未确定当前付费金额及保留窗口。",
+        "source_refs": ["pricing", "faq", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Mangools: research snapshots, tracking cadence and API limits",
+    "title_zh": "Mangools：研究快照、跟踪周期及 API 限额",
+    "description_en": "Review Mangools keyword and SERP workflow, tracking reports, backlinks, AI monitors, shared quotas and exit limits.",
+    "description_zh": "核 Mangools 词／SERP 流程、跟踪报告、外链、AI 监控、共享额度及退出限制。",
+    "primary_intent": "Evaluate Mangools interconnected SEO research and tracking workflow",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Paid plan cards absent in both public reader and actual browser; current amounts/capacities, regional tax/checkout and AI pricing not verified.",
+      "zh": "读取器及真实浏览器均无付费卡，当前金额／容量、地区税／结账及 AI 价未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Permanent Free FAQ versus old trial wording, LinkMiner New30/90-day windows, API entitlement descriptions and refund terms differ; not silently reconciled.",
+      "zh": "持续 Free FAQ 与旧试用、LinkMiner New 三十／九十日、API 权益及退款条款不同，未暗中统一。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exact AI collection/repeat/scoring method, current legacy SiteProfiler fields, member permission boundaries, complete UI languages and retention/recovery windows unknown.",
+      "zh": "准确 AI 采集／重复／评分、旧 SiteProfiler 字段现状、成员权限边界、完整界面语言及保留／恢复窗口未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, purchase, lookup consumption, tracking/monitor creation, API/MCP/Google connection, share, DNS change, export, cancellation or outcome/accuracy test performed; source-code reuse permission not established.",
+      "zh": "未开户、购买、耗查询、建跟踪／监控、连 API／MCP／Google、分享、改 DNS、导出、取消或测效果／准确性，未确定源码复用许可。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

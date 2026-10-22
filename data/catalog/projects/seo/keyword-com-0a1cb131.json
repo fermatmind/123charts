@@ -1,0 +1,747 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "keyword-com-0a1cb131",
+  "name": "Keyword.com",
+  "website_url": "https://keyword.com/",
+  "domain": "keyword.com",
+  "identity_domain": "keyword.com",
+  "category": "seo",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Keyword.com tracks configured Google search results and brand presence in AI-generated answers. Its two work areas use different objects: SERP projects hold keyword/location/device configurations, while AI brands hold prompts executed against selected engines. Shared dashboards, exports, a REST API and a hosted MCP server expose the resulting measurements.\n\nA useful evaluation pairs a small, precisely defined Google panel with a deliberate AI prompt panel, then checks source snapshots before presenting trends to a client. Keyword counts, AI run credits, manual refresh allowances and change limits are separate constraints. Current help describes a migration to fixed Top 50/100 depths; older manual-refresh and billing articles still contain conflicting details. This original profile distinguishes those versions and documented exit consequences without creating an account, consuming credits or connecting a Google property.",
+  "description_zh": "Keyword.com 跟踪配置的 Google 搜索结果及品牌在 AI 回答中的出现。两工作区对象不同：SERP 项目放关键词／位置／设备配置，AI 品牌放向所选引擎执行的提示词；共享仪表盘、导出、REST API 及托管 MCP 提供所得测量。\n\n评估适合将少量准确 Google 面板与明确 AI 提示词面板配对，向客户呈趋势前核来源快照。关键词数量、AI 运行积分、手动刷新额度及变更限制各自独立。当前帮助描述迁到固定 Top 50／100 深度，旧手动刷新及账单文章仍有矛盾。本原创条目区分版本及文档退出后果，未注册、耗积分或连接 Google 属性。",
+  "core_features": [
+    {
+      "name_en": "Configured Google tracking",
+      "name_zh": "配置式 Google 跟踪",
+      "explanation_en": "Separate location and device combinations count separately.",
+      "explanation_zh": "不同位置、设备组合独立计数。",
+      "source_ref": "keyword-setup",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI response inspection",
+      "name_zh": "AI 回答检查",
+      "explanation_en": "Inspect the execution and source answer behind mentions and citations.",
+      "explanation_zh": "审提及及引用背后的执行与原回答。",
+      "source_ref": "ai-method",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Live client dashboards",
+      "name_zh": "实时客户仪表盘",
+      "explanation_en": "Shared Projects mirror enabled views and table configuration.",
+      "explanation_zh": "Shared Projects 映射启用视图及表配置。",
+      "source_ref": "reporting",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "REST and MCP access",
+      "name_zh": "REST 及 MCP 访问",
+      "explanation_en": "Programmatic surfaces include mutations as well as data retrieval.",
+      "explanation_zh": "程序接口既有数据读取也有变更。",
+      "source_ref": "mcp",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Monitor a client’s Google rankings with explicit local/device scope.",
+      "Compare brand detection and citations across a controlled AI prompt panel.",
+      "Share live client views while retaining dated exports for monthly reporting."
+    ],
+    "zh": [
+      "按明确本地／设备范围监控客户 Google 排名。",
+      "用受控 AI 提示面板比较品牌发现及引用。",
+      "分享实时客户视图并留定日期月报导出。"
+    ],
+    "source_refs": [
+      "overview",
+      "keyword-setup",
+      "ai-brand",
+      "ai-configuration",
+      "migration"
+    ],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "SEO agency analyst",
+        "zh": "SEO 机构分析人员"
+      },
+      {
+        "en": "Local search specialist",
+        "zh": "本地搜索人员"
+      },
+      {
+        "en": "Brand search reporting lead",
+        "zh": "品牌搜索报告负责人"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Check Broad/Exact, default devices and capital-city location before a small import.",
+        "zh": "少量导入前查 Broad／Exact、默认设备及首都位置。",
+        "source_refs": ["keyword-setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm the actual tracking-depth migration and individual timestamps.",
+        "zh": "确认实际深度迁移及逐词时间戳。",
+        "source_refs": ["collection", "migration"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Create one AI brand and inspect first responses before scaling prompts.",
+        "zh": "建一个 AI 品牌，扩提示前审首回答。",
+        "source_refs": ["ai-brand", "ai-method"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review pre-save AI estimates and separate change/refresh counters.",
+        "zh": "审 AI 保存前估计及独立变更／刷新计数。",
+        "source_refs": ["ai-configuration", "add-limits", "manual-refresh"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect recipient access and static report dates before distribution.",
+        "zh": "分发前审接收访问及静态报告日期。",
+        "source_refs": ["reporting", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Export each work area before exercising its distinct cancellation path.",
+        "zh": "执行不同取消路径前导各工作区。",
+        "source_refs": ["exit"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Identical text on different devices or locations uses separate keyword slots.",
+        "zh": "相同文本在不同设备／位置占独立词名额。",
+        "source_refs": ["keyword-setup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Continuous history smooths display but creates no missing measurements.",
+        "zh": "连续历史平滑显示，不造缺失测量。",
+        "source_refs": ["continuous-history"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Zero AI credits pause automatic and block manual checks.",
+        "zh": "AI 零积分暂停自动并阻手动检查。",
+        "source_refs": ["ai-credits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Blank group restrictions allow all eligible SERP projects; AI-brand boundaries not established.",
+        "zh": "组限制留空允许全部合资格 SERP 项目，AI 品牌边界未确定。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "AI cancellation immediately deletes prompts/history per the exit guide.",
+        "zh": "按退出指南，AI 取消立刻删提示／历史。",
+        "source_refs": ["exit"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Current cards: Search Visibility $4/month or $36/year ($3 monthly equivalent); 360° $33/month or $312/year ($26 equivalent); AI Visibility $9.80/month or $94/year ($7.83 equivalent). Selected capacities/depth/frequency were not operated. White-label $29/month or $278/year is extra; custom starts $490/month. Fourteen-day no-card trial includes 100 daily SERP keywords and 20 AI credits; payment details enable automatic subscription start. Paid billing uses cards and address/tax status; exact currency code, tax and checkout total not verified. No normalized quote.",
+    "source_snapshot_zh": "当前卡：Search Visibility 月 $4 或年 $36（月等值 $3）；360° 月 $33 或年 $312（月等值 $26）；AI Visibility 月 $9.80 或年 $94（月等值 $7.83）。所选容量／深度／频率未操作。白标另月 $29 或年 $278，定制月 $490 起。十四天免卡试用含百个日更 SERP 词及二十 AI 积分，加付款信息会自动启订阅。付费使用卡并按地址／税身份，准确币种代码、税及结账总额未核，不设标准化报价。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "billing", "payments"]
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/keyword-com",
+      "read_at": "2026-10-22T08:47:52.459Z",
+      "excerpt_sha256": "2fa7948bad268aa66c3b0ed56fa79509c8f758e481c5f397709998d0da02d85e",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Keyword Rank Tracker and AI Visibility Tracker | Keyword.com",
+      "url": "https://keyword.com/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "1e3e0893ff9ef380aa5e419eee53810fce0cfc335f71c4faba73552ecd8e68fa",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current SERP/AI product identity; accuracy and customer outcomes not independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Keyword.com",
+      "title": "Keyword.com Pricing & Plans",
+      "url": "https://keyword.com/pricing/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "ceb2555587e5c9add0781bba0d7376d7cbeab8d3b55a669c76b75072e7aaba61",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current three plan cards and separately priced white-label add-on; selectors not operated."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Billing, Plans & Subscriptions | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13399613-billing-plans-subscriptions",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "829302ddcf66f11c622383801a224601422216c0ff379c2fa40da16236e27ac1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current bundle/frequency model, dashboard-free API distinction and trial deletion window."
+    },
+    {
+      "id": "ai-credits",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "How AI Visibility Credits Work | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13400018-how-ai-visibility-credits-work",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "be2e306f77b1c3d4afd37191b367bdbfeb13a74148f4ca2442c6ea8d843bfc9c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual credit depletion, no automatic overage and billing-cycle expiry; model costs differ from current calculator."
+    },
+    {
+      "id": "ai-configuration",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Adding and Configuring Search Terms in AI Visibility | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13728433-adding-and-configuring-search-terms-in-ai-visibility",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "27fe929e484151c2fa4c6ea74792b1d2f3cee5ff139157ef29e0f3d7004ecf9d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Unique per-engine configurations, CSV path, estimate and concurrency queue."
+    },
+    {
+      "id": "collection",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "How Keywords Are Tracked & Updated | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13659773-how-keywords-are-tracked-updated",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "ce84da73de45f597a78db7460b9ee33486f8e82c35dc8a6f40e5635ae9a6e124",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "UTC queue, latest-keyword timestamp and new Top50/100 depths."
+    },
+    {
+      "id": "reporting",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Sharing Reports in Keyword.com (Overview Guide) | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13712438-sharing-reports-in-keyword-com-overview-guide",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "07f55e327761b0ae28360138918fc796ec64ab0c4b3e094d3e9f75214d76d60f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Live shared projects versus filtered/date-controlled static exports and schedules."
+    },
+    {
+      "id": "serp-metrics",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Share of Voice & Visibility Metrics | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13712387-share-of-voice-visibility-metrics",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "2399628e527a6a058b70f330a88c7df2e7b9e74d000d3488611beb40ab344750",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Modeled traffic/SoV, mixed regions and historical-period top competitors."
+    },
+    {
+      "id": "ai-metrics",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "AI Visibility Metrics Explained (formulas & interpretation) | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13889350-ai-visibility-metrics-explained-formulas-interpretation",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "9ca5583564ce8d82e6d4907a6fc8b49bd1facbfeaf9941d1035058c32d4dfb2a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Detection denominator, conditional position, visibility formula and positive sentiment definition."
+    },
+    {
+      "id": "ai-brand",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Creating An AI Visibility Brand | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13727010-creating-an-ai-visibility-brand",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "b30f83139ad0d4e2348cf08891aaab88794d0c0d9fcd6e1430326e868fd34791",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Domain plus brand identity; no collection until terms are added."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "Keyword.com",
+      "title": "MCP server reference | Keyword.com",
+      "url": "https://keyword.com/docs/mcp/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "833ab49146e920a4ed2d4eb119a2e55c99bfc4fb6359c913a625d9789be79759",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Hosted OAuth tools read and write; deletion unrecoverable via MCP, archive reversible; no connection executed."
+    },
+    {
+      "id": "api-help",
+      "type": "official_integration",
+      "site": "Keyword.com",
+      "title": "Google SERP Tracking API | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13714931-google-serp-tracking-api",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "50ce761ae46c94dc2597087326dde0fd72c8be91f3009248cb052af10b15a3db",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Standard API excludes Spyglass HTML and is rate limited."
+    },
+    {
+      "id": "keyword-setup",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Adding & Editing Keywords | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13674529-adding-editing-keywords",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "4f6fa5f1bdfd5edf7f8cbfff3d7d606d54a91425bb5a37facf57d09f9ed7bfb5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual broad/exact and default desktop/mobile, capital-city location and 150-byte boundary."
+    },
+    {
+      "id": "add-limits",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Keyword Add & Delete Limits | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13684692-keyword-add-delete-limits",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "a8852777ca125d76b9d301f34ae1a923f1462a3d3a442cb3384ec9a27d2bcd22",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Add/delete/move combined allowance, weekly copy inconsistency and edit exceptions."
+    },
+    {
+      "id": "manual-refresh",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "On-Demand Keyword Updates (Manual Refreshes) | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13670551-on-demand-keyword-updates-manual-refreshes",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "76c1e7ec201e7668c7bea8698450ddbf7d937fa92595522c87ecd8d1c4badaf9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Refresh allowance and immediately charged reset; legacy Top20 conflicts new migration guide."
+    },
+    {
+      "id": "continuous-history",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Maintain Continuous Rank History | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13659833-maintain-continuous-rank-history",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "c0b6c1f825bcaa2b84dd41a5ba86fad7f02fd222c64d2aa4238c6b67fba6f65b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Visual interpolation does not create measurements, affect SoV or exports."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "User & Access Permissions | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13559169-user-access-permissions",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "c3cfad04b410fe52499179efc0f4e4c12d00ccfda4a25fe0f3d86e9f4570610d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "September invitation/member redesign, blank group means unrestricted; no AI-brand boundary inferred."
+    },
+    {
+      "id": "exit",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Cancel, Downgrade & Account Closure | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13722548-cancel-downgrade-account-closure",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "94c543242ac6fdf74a48eb28583a8f25eb42818505f4265bce1034b5d00c2b1f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Different SERP/AIV cancellation/data consequences and immediate prorated-credit downgrade."
+    },
+    {
+      "id": "payments",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Payments, Invoices & Taxes | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13400023-payments-invoices-taxes",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "30fda44a3d1e7090617a07225d72caa21d972158dc7c2f9ac299e98bc12abf34",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Credit card, invoice/tax process and end-of-cycle downgrade conflict with May exit guide."
+    },
+    {
+      "id": "ai-method",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "How AI Visibility Tracking Works | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13726605-how-ai-visibility-tracking-works",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "b3548f1cbee5852a20963421663283306f7a65397ee134933802c0c7e8870df1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Structured prompt execution, full responses and AI Spyglass, not a personalized consumer account test."
+    },
+    {
+      "id": "ai-engines",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Supported AI Models & Sources | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13727486-supported-ai-models-sources",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "ffa077783f27082f8c7c442c73c3678518370c22902ec3112fae40d2e77092b6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Independent engine tests, grounding/training distinction; no definitive source-mode inference from missing citation."
+    },
+    {
+      "id": "migration",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Migrating from Hybrid Tracking to Consistent Tracking | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/15359776-migrating-from-hybrid-tracking-to-consistent-tracking",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "23fca67e9b7eff77c1d4070268635a2ac13ac0715a4f3329949fa6b3ae5d1fd8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "June Hybrid-to-Consistent/Enhanced transition preserves history, future OTR retired, actual account cutover unknown."
+    },
+    {
+      "id": "api-reference",
+      "type": "official_integration",
+      "site": "Keyword.com",
+      "title": "SERP Tracker API reference | Keyword.com",
+      "url": "https://keyword.com/docs/serp-api/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "43f3f01ba3097db488e28b2f1c68a05e7bc2232a854b66d5888def9b09080b7d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual v2 auth types, token-specific request rates and error handling; no authenticated request."
+    },
+    {
+      "id": "gsc",
+      "type": "official_integration",
+      "site": "Keyword.com",
+      "title": "Integrating Google Search Console (GSC) | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13714589-integrating-google-search-console-gsc",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "1e1d13c2a7cc52e5280fe4444d794e32f44bd20cba08e4a10622c0e2964a34cb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "August multi-account/property access, shared connections, 8h/24h timing and comparison window."
+    },
+    {
+      "id": "citations",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Citations, Sources & Attribution In AI Results | Keyword.com Support Hub",
+      "url": "https://support.keyword.com/en/articles/13727523-citations-sources-attribution-in-ai-results",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "32b8b567a76d9e5324f8613dc08b691195ac700fca45a3e9a3c8b5814651aa36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Mention versus source reference; no causal attribution of answer generation."
+    },
+    {
+      "id": "pricing-details",
+      "type": "official_pricing",
+      "site": "Keyword.com",
+      "title": "Keyword.com Pricing & Plans",
+      "url": "https://keyword.com/pricing/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "c81d1c7185b36198aa6b88e53291e09303ba010d3d85a7dc82491a2c7f2b7b5f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current calculator rates, monthly refresh FAQ versus cycle-based help; no normalized quote."
+    },
+    {
+      "id": "api-marketing",
+      "type": "official_documentation",
+      "site": "Keyword.com",
+      "title": "Keyword.com Rank Tracker API – Build dashboards, automate reporting & connect to Claude",
+      "url": "https://keyword.com/rank-tracker-api/",
+      "read_at": "2026-10-22T15:23:00.943395Z",
+      "excerpt_sha256": "70b77ab968236fcfa8a48fec045537bec6245ea786546081d59ee520daea74db",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Unlimited monthly API marketing and project cadence compared to detailed rate/whole-plan docs."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:23:00.943395Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "overview",
+    "keyword-setup",
+    "ai-brand",
+    "ai-configuration",
+    "migration"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "first-panel",
+        "title_en": "Defaults can double keyword use and choose the wrong city",
+        "title_zh": "默认项可能双倍用词并选择错误城市",
+        "en": "Add Keywords distinguishes Google, Maps, bulk input and suggestions. Broad tracking reports the highest-ranking page under the domain and ignores an entered path; Exact follows only the specified URL. Desktop and mobile are both selected by default and consume separate slots. The guide says selecting a Google region pre-fills its capital city as location. Terms are limited to 150 UTF-8 bytes, which is not 150 Chinese characters. Editorial first panel: inspect the URL scope, subdomain option, city, language and device icons before a bulk import. Retaining history while editing settings does not make observations before and after a scope change directly comparable.",
+        "zh": "Add Keywords 分 Google、Maps、批量及建议。Broad 返回域下最高排名页、忽略输入路径，Exact 只跟指定 URL。默认同时选桌面及移动，占独立名额；指南称选 Google 区域会预填首都作位置。词限 150 UTF-8 字节，不是 150 汉字。编辑首面板：批量导入前审 URL 范围、子域选项、城市、语言及设备图标。编辑保留历史不代表范围更改前后观察可直接比较。",
+        "source_refs": ["keyword-setup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "update-depth",
+        "title_en": "A project timestamp does not prove every row is fresh",
+        "title_zh": "项目时间戳不证明每行新鲜",
+        "en": "Automatic updates queue from 00:00 UTC, with keywords processed in batches. The project Last updated time represents its most recently updated keyword, not completion of every row. New Consistent Tracking collects Top 50 and Enhanced Top 100 on each update, displaying >50 or >100 outside the range. Hybrid Tracking is being retired, but old history remains. Its legacy Top 20/manual-refresh guide is inconsistent with the newer depth model. Editorial rank check: identify the project’s actual migration state, depth and individual collection date before interpreting a missing rank. This research did not establish that every existing account has already migrated.",
+        "zh": "自动更新从 UTC 00:00 排队，分批处理词；项目 Last updated 是最新一个词，不是全部行完成。新 Consistent 每次 Top 50、Enhanced Top 100，范围外显示 >50／>100。Hybrid 正退役，旧历史保留，其旧 Top 20／手刷指南与新深度不同。编辑排名检查：解读缺失排名前查实际迁移状态、深度及逐词采集日，本研究未确定全部旧账户已迁完。",
+        "source_refs": ["collection", "migration", "manual-refresh"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "change-budget",
+        "title_en": "Editing differs from deleting, moving or buying another refresh",
+        "title_zh": "编辑不同于删除、移动或购买刷新",
+        "en": "The change-limit article combines adds, deletes and moves in one allowance; ordinary setting/tag edits are exempt. Daily-plan examples allow one package-sized batch per day, while weekly examples and reset instructions say per week despite contradictory copied daily wording. On-demand refreshes have their own cycle allowance. Reset on demand refresh limit is documented as immediately charging the stored card, not a free counter reset. Pricing’s monthly refresh wording conflicts with daily/weekly help. Editorial migration: use edits for corrections, check current counters and spread imports within the actual account limit; deleting rows does not erase prior change usage or automatically reduce a subscribed bundle.",
+        "zh": "变更限额将新增、删除、移动合并计量，普通设置／标签编辑豁免。日付频率示例每一天一份套餐量，周更示例及重置说每周，但有复制的每日措辞矛盾。手刷另有周期额度，Reset on demand refresh limit 文档称立刻扣已存卡，不是免费重置；价格页按月说法与帮助日／周周期冲突。编辑迁移：纠正配置用编辑，查实际计数及分批导入，删行不抹已用变更量，也不自动缩订阅包。",
+        "source_refs": [
+          "add-limits",
+          "manual-refresh",
+          "billing",
+          "pricing-details"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "serp-interpretation",
+        "title_en": "SoV is modeled click equity within the tracked panel",
+        "title_zh": "SoV 是跟踪面板内的模型点击份额",
+        "en": "Visibility and Estimated Traffic use ranking, search volume and modeled CTR; they are not measured site visits. Share of Voice allocates expected click equity to the ten leading domains across the tracked keyword set. It refreshes as keywords are collected, mixes regions and chooses historical competitors for the period being viewed rather than applying today’s top ten to all history. Maintain Continuous History only connects chart lines across missing measurements; it does not create ranks, change calculations or fill exports. Editorial analysis: hold the panel and settings comparable, inspect missing dates and separate real GSC clicks from a model before explaining an apparent gain.",
+        "zh": "Visibility、Estimated Traffic 用排名、搜索量及模型 CTR，不是实测站点访问。SoV 将跟踪词集合预期点击分给领先十域，随词采集更新、混地区，并按所看历史时段选竞品，不把今天十域套全部历史。Maintain Continuous History 只连接缺测曲线，不造排名、不改计算、不填导出。编辑分析：维持可比面板及设置、审缺日期，并将真实 GSC 点击与模型分开再解释增幅。",
+        "source_refs": ["serp-metrics", "continuous-history"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "gsc",
+        "title_en": "A Google connection is shared, but the selected property still matters",
+        "title_zh": "Google 连接共享，所选属性仍关键",
+        "en": "Admins can connect multiple Google accounts; their connections are available across the Keyword.com account, and the property picker labels the Google identity with access. Adding another connection does not replace existing ones. GSC adds clicks, impressions and CTR and supplies untracked-query suggestions. The guide allows about eight hours after keyword adds/edits and then daily refresh; its comparison uses the last twenty-eight days, same query and country. Editorial missing-data recovery: confirm the selected property, remaining Google access, region and sync timing before reconnecting. A visible property in a shared picker is not independent evidence of a teammate’s restricted AI-brand or SERP-project permissions.",
+        "zh": "Admin 可连多个 Google 账户，连接全 Keyword.com 账户可用，属性选择器标有访问的 Google 身份；新连接不替换旧项。GSC 加点击、展示、CTR 及未跟踪查询建议。指南给加／改词后约八小时、之后每日刷新，比较用最近二十八日、同查询及国家。编辑缺数据恢复：重连前核所选属性、Google 剩余权限、地区及同步时点。共享选择器可见属性，不独立证明队友受限 AI 品牌或 SERP 项目权限。",
+        "source_refs": ["gsc", "roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-setup",
+        "title_en": "A brand and a prompt configuration are different objects",
+        "title_zh": "品牌与提示词配置是不同对象",
+        "en": "Create an AI brand with domain and name; creating the brand alone collects no data until search terms are added. A prompt can be added manually, pasted in bulk or uploaded with the supplied CSV template. Three engines create three tracked entries; location changes create another configuration, and Expert Mode can adjust generation settings. History begins with actual runs, without retroactive data. Editorial prompt panel: document audience intent, naming and engine/location/settings before saving, then inspect the first response. An internal description does not change the prompt sent to the model, and duplicating configurations merely to get a larger count can fragment the trend and increase usage.",
+        "zh": "用域及名称建 AI 品牌，单建品牌不采数据，需加搜索词。可手加、批贴或按提供 CSV 模板上传。三引擎建三跟踪项，改位置另建配置，Expert Mode 可调生成设置。历史从真实运行开始，无追溯补数据。编辑提示词面板：保存前记录受众意图、命名及引擎／位置／设置，再审首回答。内部说明不改实际送模型的提示词，只为放大数量复制配置会割裂趋势并增用量。",
+        "source_refs": ["ai-brand", "ai-configuration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-metrics",
+        "title_en": "Position is conditional on detection, while missing runs affect visibility",
+        "title_zh": "位置以被发现为条件，缺席运行仍影响可见性",
+        "en": "Detection Rate divides runs containing the brand by all runs; Position averages only detected runs. Visibility multiplies detection rate by a rank score of 1/(1+0.1×(average rank−1)), then by 100. Top 3 Rate also uses all runs. Mentions count occurrences, so repetition within one answer can add mentions without adding a detected run. Sentiment is the positive proportion of classified mentions and does not enter Visibility Score. Latest, 24-hour, seven-day and thirty-day windows answer different questions. Editorial comparison: inspect sample counts, window and engine alongside scores. A strong position when detected can coexist with frequent absence, and a smooth average does not establish population-wide AI market share.",
+        "zh": "Detection Rate 为含品牌运行除全部运行，Position 只平均发现品牌项。Visibility 用发现率乘 1／(1+0.1×(平均位置−1)) 再乘百，Top 3 Rate 也分母全部运行。Mentions 数出现次数，一答重复可加提及而不加发现运行。Sentiment 为分类提及中正面比例，不进入 Visibility。最新、二十四小时、七日、三十日窗口回答不同问题。编辑比较：分数旁审样本数、窗口及引擎。出现时位置佳仍可能经常缺席，平滑均值不确定总体 AI 市场份额。",
+        "source_refs": ["ai-metrics"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-evidence",
+        "title_en": "Inspect the response before treating a citation as attribution",
+        "title_zh": "先审回答再把引用当归因",
+        "en": "The workflow stores execution history and AI Spyglass responses for structured prompts sent to selected engines. It tracks a contextual brand mention separately from a supporting reference or link. A citation is not a measured referral, factual endorsement or proof that a specific page caused the answer. Official model/source pages describe both web grounding and pretrained knowledge, but the exact consumer-session collection method, model routing and brand alias rules were not established here. Editorial review: open the response, verify the named entity and cited URL, and compare the same prompt and engine over repeated runs. Do not infer training-data inclusion merely because a brand appears without a link.",
+        "zh": "流程存选定引擎结构化提示的执行历史及 AI Spyglass 回答，区分语境品牌提及与来源／链接。引用不是实测引荐、事实背书，也不证明某页导致回答。官方模型／来源页描述检索及预训练知识，但本研究未确定准确消费者会话采集、模型路由及品牌别名规则。编辑核查：开回答、核实体及引用 URL，再对同提示及引擎比多次运行。品牌无链接出现不能推断已进入训练数据。",
+        "source_refs": ["ai-method", "ai-engines", "citations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-budget",
+        "title_en": "Runway is a usage forecast and depleted credits stop checks",
+        "title_zh": "Runway 是用量预测，积分耗尽会停检查",
+        "en": "A run is one term against one engine at one refresh event. Credit use depends on engine and cadence; unused credits expire at the billing-cycle end. Runway estimates days remaining under the current configuration. At zero, automatic runs pause and manual runs are blocked, with no automatic overages documented. Concurrent runs can queue rather than fail immediately. The older help model costs and naming differ from the current pricing calculator, which separates chat-app and API-model rates. Editorial budget: use the live pre-save estimate for a small panel and review actual usage before increasing frequency; no stable universal cost per prompt or guaranteed model identifier is inferred.",
+        "zh": "一次 run 为一个词在一个引擎的一次刷新，用量取决引擎及频率，余积分账期末过期。Runway 估当前配置可用天数，零余额自动暂停、手动被阻，文档无自动超量收费。并发可排队而非立刻失败。旧帮助模型费率／名称与当前价格计算器不同，后者分 chat app 与 API 模型。编辑预算：少量面板用保存前实时估计，扩频前审真实用量，不推稳定统一每提示成本或保证模型标识。",
+        "source_refs": ["ai-credits", "ai-configuration", "pricing-details"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "Live sharing mirrors configuration; exports preserve the selected moment",
+        "title_zh": "实时分享映射配置，导出保存所选时刻",
+        "en": "Shared Projects and embedded dashboards are live read-only views. Enabled tabs, visible columns, filters and sorting affect what recipients see. Scheduled PDF/CSV reports and manual exports use the selected project/group, date and table settings; files are static at export. The current price page sells a separate white-label add-on covering custom domain, removed vendor branding and password-protected shared reports, despite broader homepage inclusion language. Editorial handoff: review a recipient-visible view and export before distributing either, then retain the dated file when a monthly record is needed. A private portal around an iframe does not independently prove the underlying shared link requires authentication.",
+        "zh": "Shared Projects 及嵌入仪表盘是实时只读，启用页签、可见列、筛选及排序影响接收者所见。定期 PDF／CSV 及手导按项目／组、日期及表设置，文件导出后静态。当前价格将自定义域、移除厂商品牌及报告密码另作白标加购，首页却有更宽泛包含说法。编辑交付：分发前审接收可见视图及导出，需月度记录时留定日期文件。私有门户包 iframe 不独立证明底层分享链接需认证。",
+        "source_refs": ["reporting", "pricing", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Leaving Groups blank means unrestricted eligible access",
+        "title_zh": "Groups 留空表示不限制合资格访问",
+        "en": "Shared Access sends expiring one-time invitations to individual logins. Viewer reads, Member edits permitted areas, and Admin manages settings, members and billing. Viewers/Members can be restricted to chosen Google SERP Project Groups; leaving Groups blank imposes no restriction. Role/access changes apply immediately. The September guide names both Team Access and Shared Access in navigation and does not establish equivalent AI-brand restrictions. It recommends adding an accepted new Admin before disabling an old primary identity, since the primary email is not directly editable. Editorial team setup: verify actual selected groups and acceptance status, rather than assuming a Viewer or a sent invitation is already a narrow client boundary.",
+        "zh": "Shared Access 向个人登录发会过期单次邀请。Viewer 读、Member 编辑允许区域、Admin 管设置／成员／账单。Viewer／Member 可限选定 Google SERP Project Groups，Groups 留空不作限制。角色／访问变更即生效。九月指南导航混称 Team Access／Shared Access，未确定等效 AI 品牌限制；主邮箱不可直接改，建议新 Admin 接受后再禁旧身份。编辑团队设置：核实际选组及接受状态，不能认为 Viewer 名称或已发邀请本身就是狭窄客户边界。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "Unlimited monthly pulls still have per-token rate limits",
+        "title_zh": "月调用不限仍有逐 token 速率上限",
+        "en": "The v2 REST reference uses bearer authentication. A Master token covers the account and administrative actions; Project Auth Token plus shortkey scopes access to a project. Standard API help excludes Spyglass HTML snapshot data. Detailed limits are sixty requests/minute for most groups and thirty for competitor history, with HTTP 429 on excess. Marketing’s no-call-limit wording therefore does not imply unlimited concurrency; its per-project frequency wording also differs from whole-subscription help. Editorial integration: choose the needed token scope, paginate and cache data, inspect 401/403/422 errors and back off on throttling. A successful data pull does not trigger a new observation unless a refresh operation is requested and allowed.",
+        "zh": "v2 REST 用 bearer 认证。Master token 覆盖账户及管理动作，Project Auth Token 加 shortkey 限项目；标准 API 帮助排除 Spyglass HTML。详细上限多数每 token 每分钟六十，竞品历史三十，超量 HTTP 429。宣传不限调用不等于不限并发，其逐项目频率也与整订阅帮助不同。编辑集成：选所需 token 范围、分页缓存、审 401／403／422，并节流退避。成功拉数据不触发新观察，需另外请求及获准刷新。",
+        "source_refs": [
+          "api-reference",
+          "api-help",
+          "api-marketing",
+          "billing"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp",
+        "title_en": "The hosted MCP can alter projects and sharing settings",
+        "title_zh": "托管 MCP 可改项目及分享设置",
+        "en": "The MCP reference connects over OAuth and exposes reads alongside keyword additions, refreshes, project deletion and account/project share-link edits. It says write calls request client approval, but this research did not operate a client or verify enforcement. Archive/restore pauses tracking reversibly; delete operations cannot be undone via MCP. Data scope follows the authorized account, and an unscoped analysis request can span projects. Editorial first use: name the project, date range and intended read or mutation explicitly, then inspect the actual tool arguments and result. An assistant’s fluent ranking explanation does not itself prove a write happened or establish why rankings changed.",
+        "zh": "MCP 参考以 OAuth 连接，除读取还可加词、刷新、删项目及改账户／项目分享设置。文档称写调用请求客户端批准，但本研究未操作客户端或验证执行。Archive／restore 可逆暂停，删除不能经 MCP 撤回。范围跟授权账户，未限定分析可跨项目。编辑首用：明确项目、日期及意图读／写，再审真实工具参数及结果。助手流畅排名解释本身不证明写成功，也不确定排名变化原因。",
+        "source_refs": ["mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit",
+        "title_en": "SERP retention and AI deletion follow different cancellation rules",
+        "title_zh": "SERP 保留及 AI 删除遵循不同取消规则",
+        "en": "Subscriptions are cancelled separately in Subscriptions & Billing. SERP tracking continues to the paid-period end; data is then retained six months for reactivation before permanent removal. The May exit guide says AI Visibility cancellation immediately ends access and deletes all prompts/history without recovery or refund. It also describes immediate downgrade with prorated account credit, while the older payments article says downgrade at cycle end without current-period credit. Editorial exit: export both work areas before cancelling, confirm the actual downgrade effective date and understand that cancelling one subscription does not cancel the other. An inactive no-card trial has a separate thirty-day permanent-deletion rule.",
+        "zh": "订阅在 Subscriptions & Billing 分别取消。SERP 跟到已付期末，之后数据保六个月可恢复，再永久删；五月退出指南称 AI 取消立即停访问及删全部提示／历史，无恢复或退款。又称降级立即生效、差额按比例入账户抵扣，较旧付款文章却称期末降且不抵当前期。编辑退出：取消前导两工作区，核实际降级生效日；取消一个不取消另一个。免卡失效试用另有三十天永久删除规则。",
+        "source_refs": ["exit", "payments", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Keyword.com: tracking depth, AI credits and cancellation rules",
+    "title_zh": "Keyword.com：跟踪深度、AI 积分及取消规则",
+    "description_en": "Review Keyword.com local keyword setup, Top50/100 migration, AI visibility metrics, reports, API scopes and data exit.",
+    "description_zh": "核 Keyword.com 本地词配置、Top50／100 迁移、AI 可见性、报告、API 范围及数据退出。",
+    "primary_intent": "Evaluate Keyword.com Google SERP and AI visibility workflow",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Actual account cutover, model routing/identifiers, AI collection interface, alias matching and selected plan configuration not operated.",
+      "zh": "未操作真实账户切换、模型路由／标识、AI 采集界面、别名匹配及所选套餐配置。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Legacy Top20/manual guide, daily/weekly versus monthly refresh wording, AI model costs, API cadence and downgrade timing remain inconsistent across official pages.",
+      "zh": "官方旧 Top20／手刷、日周与月刷新措辞、AI 模型费率、API 频率及降级时点仍冲突。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "AI-brand permission boundaries and actual client write-approval enforcement not established; complete UI languages and source-code license unknown.",
+      "zh": "AI 品牌权限边界及客户端写批准执行未确定，完整界面语言及源码许可未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No signup, payment, keyword import, prompt run, credit use, Google connection, API/MCP connection, sharing action, export, cancellation or hands-on accuracy test performed.",
+      "zh": "未注册、付款、导词、运行提示、耗积分、连接 Google／API／MCP、分享、导出、取消或实测准确性。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

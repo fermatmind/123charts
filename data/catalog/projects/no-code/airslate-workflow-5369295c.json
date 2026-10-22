@@ -1,0 +1,348 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "airslate-workflow-5369295c",
+  "name": "altaFlow",
+  "website_url": "https://altaflow.com/",
+  "domain": "altaflow.com",
+  "identity_domain": "altaflow.com",
+  "category": "no-code",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "altaFlow, formerly airSlate WorkFlow, builds document processes with forms, recipient steps, conditions and automation bots. Its current offering connects document preparation and completion with surrounding business systems.\n\nThe important design decisions concern when a bot runs, which recipient sees each document, and who retains access to private workflows. Teams evaluating a repeatable approval process should test those boundaries and a failed integration before estimating document-based costs.",
+  "description_zh": "altaFlow 原名 airSlate WorkFlow，以表单、收件人步骤、条件及自动化机器人构建文档流程，当前产品将文档准备和完成环节与周边业务系统连接。\n\n设计时需要明确机器人何时执行、各收件人可见哪些文档，以及哪些角色仍能访问私有流程。评估重复审批流程的团队应先测试这些边界和集成失败情况，再估算按文档计费的成本。",
+  "core_features": [
+    {
+      "name_en": "Revision-aware bots",
+      "name_zh": "按修订触发的机器人",
+      "explanation_en": "Between-step bots can execute for each technical revision; placement changes the trigger context.",
+      "explanation_zh": "步骤间机器人可按每次技术修订执行，放置位置影响触发上下文。",
+      "explanation_scope": "product_specific",
+      "source_ref": "bots",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Layered access roles",
+      "name_zh": "分层访问角色",
+      "explanation_en": "Workspace, workflow and group roles grant different, sometimes additive, capabilities.",
+      "explanation_zh": "工作区、流程和分组角色提供不同且可能叠加的能力。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Recipient conditions",
+      "name_zh": "收件人条件控制",
+      "explanation_en": "Conditions can govern fields, steps, bots and document visibility with distinct defaults.",
+      "explanation_zh": "条件可控制字段、步骤、机器人及文档显示，各类对象默认行为不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "logic",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot a multi-recipient approval with a deliberately failed notification.",
+      "Check conditional document visibility under a guest role."
+    ],
+    "zh": [
+      "试点多收件人审批，并模拟通知失败。",
+      "用访客角色检查条件文档显示。"
+    ],
+    "source_refs": ["workflow", "email", "logic"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Operations managers",
+      "Document workflow administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Map documents, recipients and privileged roles using synthetic content.",
+        "zh": "用模拟内容列出文档、收件人及高权限角色。",
+        "source_refs": ["workflow", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test each recipient branch and bot failure mode; obtain a document-volume quote for the selected connectors.",
+        "zh": "逐一测试收件人分支和机器人失败方式，按所选连接器取得文档量报价。",
+        "source_refs": ["logic", "email", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Diagram visibility is not a complete bot inventory.",
+        "zh": "流程图不能作为完整机器人清单。",
+        "source_refs": ["bots"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A private workflow remains accessible to documented privileged workspace roles.",
+        "zh": "私有流程仍允许文档列出的工作区高权限角色访问。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:35:38.932620Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Standard starts at $1.40 per document; Advanced and Enterprise use custom volume pricing. Listed plans have unlimited users. Premium connectors are add-ons on Standard and Advanced, and API/SSO capabilities depend on tier. No universal free-service entitlement or fixed total was established.",
+    "summary_zh": "Standard 每文档起价 $1.40，Advanced 和 Enterprise 按量定制报价。所列方案不限用户数。高级连接器在 Standard 和 Advanced 中为附加项，API／SSO 能力取决于层级。未核实普遍适用的免费服务权益或固定总价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/airslate",
+      "read_at": "2026-10-22T08:37:19.983Z",
+      "excerpt_sha256": "7ff0f3ace581c9161a649b6657d68cf6bee7324e0f72432b96ec7b2b420df53c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "altaFlow",
+      "url": "https://altaflow.com/",
+      "read_at": "2026-10-22T14:35:38.932620Z",
+      "excerpt_sha256": "aceb158202fa2a7a7181198b96d355d9e9e851262c722b126fa746e493f8e946",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current document workflow offering and FAQ."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "altaFlow",
+      "title": "altaFlow Pricing | Document Automation, Unlimited Users",
+      "url": "https://altaflow.com/pricing",
+      "read_at": "2026-10-22T14:36:20.325776Z",
+      "excerpt_sha256": "5d41588cd4a3a6ea4677e9626651fab7a3e47b1b4d52a44b8a23ce3738fc18c2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read document-based Standard, Advanced and Enterprise pricing and premium connector add-ons."
+    },
+    {
+      "id": "bots",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Bots in workflow diagram",
+      "url": "https://support.altaflow.com/en/articles/12632305-bots-in-workflow-diagram",
+      "read_at": "2026-10-22T14:38:55.645661Z",
+      "excerpt_sha256": "a143bceeddf92692d36086e84d46d22e1b1ff4491ba2ccd1b3fa028e9fb88237",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read in-step versus between-step bots, revision triggers and pending setup."
+    },
+    {
+      "id": "logic",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Conditional logic in altaFlow",
+      "url": "https://support.altaflow.com/en/articles/16201884-conditional-logic-in-altaflow",
+      "read_at": "2026-10-22T14:38:55.645979Z",
+      "excerpt_sha256": "37463bc7fbb1851158e9f25194c23f5775c2488b183be0a3233d2a06eb7ad2cf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read field, step, bot and document condition defaults and non-transitive visibility."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Roles and permissions",
+      "url": "https://support.altaflow.com/en/articles/12607813-roles-and-permissions",
+      "read_at": "2026-10-22T14:40:34.890180Z",
+      "excerpt_sha256": "ac9efdfc9c556327f98126ff4c3643072dfd3e7d297c82af120fbf0e2b851648",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read workspace/workflow/group permission layers and private-workflow access."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Create your workflow",
+      "url": "https://support.altaflow.com/en/articles/12628467-create-your-workflow",
+      "read_at": "2026-10-22T14:40:34.890417Z",
+      "excerpt_sha256": "e0c67c3c02697d5aebf2285f8cee830eca584c15325ee7b36158ff03f3413ecd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read reusable workflow construction, branches, fields and recipient settings."
+    },
+    {
+      "id": "email",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Email on Documents Completion Bot",
+      "url": "https://support.altaflow.com/en/articles/12638542-email-on-documents-completion-bot",
+      "read_at": "2026-10-22T14:40:34.890675Z",
+      "excerpt_sha256": "35eec54ae30e0e1ca854090dbf4e73cbbbf25868491b6afc8918d781c02b8538",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read completion-email bot triggers, attachments and skip/stop failure modes."
+    },
+    {
+      "id": "legacy-billing",
+      "type": "official_documentation",
+      "site": "altaFlow",
+      "title": "Credits",
+      "url": "https://support.altaflow.com/en/articles/12675004-credits",
+      "read_at": "2026-10-22T14:41:28.763302Z",
+      "excerpt_sha256": "f21709868dca8685fc31e76b3d109c1e9d22c44eef962b03342c7f0357c228ce",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read explicit legacy credit-plan scope; did not apply its unit conversion or overage to new document plans."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:41:28.763302Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "bots"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Build a reusable document route",
+        "title_zh": "建立可复用的文档路径",
+        "en": "A workflow groups documents and recipient steps, including parallel branches. Use a small approval example to check assignments and completion behavior. Deleting a branch removes its steps; hiding a document can unassign its fields, so review routing and field ownership after structural edits.",
+        "zh": "流程组合文档与收件人步骤，也支持并行分支。可用小型审批例子检查分配及完成行为。删除分支会删除其步骤，隐藏文档可能解除字段分配，因此调整结构后应复查路径和字段归属。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bot-placement",
+        "title_en": "Review triggers beyond the diagram",
+        "title_zh": "核对图示之外的触发条件",
+        "en": "Bots inside a step operate in that step’s context, while between-step bots can run for each technical revision. Pending indicates incomplete setup. Not every bot appears in the diagram; use the broader bot configuration to inspect automation coverage. Disabling a bot preserves its settings.",
+        "zh": "步骤内机器人在对应步骤上下文执行，步骤间机器人可能按每次技术修订执行。Pending 表示配置尚未完成。图中并非显示所有机器人，应结合完整机器人配置核对自动化覆盖范围。禁用会保留设置。",
+        "source_refs": ["bots"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "conditions",
+        "title_en": "Test the recipient view",
+        "title_zh": "测试收件人视角",
+        "en": "A conditional document is hidden unless its show condition succeeds, unlike steps that run by default. Visibility dependencies are not automatically transitive: changing one document’s state may leave a later document visible unless its own condition includes the needed dependencies. Administrators see all documents, so their view is insufficient for recipient testing.",
+        "zh": "条件文档在显示条件成立前隐藏，步骤则默认执行。可见性依赖不会自动传递：前一文档状态变化后，后续文档仍可能显示，除非后者条件明确包含所需依赖。管理员可见所有文档，因此不能仅用管理员视角验收收件人体验。",
+        "source_refs": ["logic"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permissions",
+        "title_en": "Private still has privileged readers",
+        "title_zh": "私有流程仍有高权限访问者",
+        "en": "Workspace Owners, Supervisors and Auditors retain access to private workflows; Auditor includes read access across the workspace. Workflow-level grants can add permissions without changing the workspace role. Evaluate confidential documents against the complete role combination, including group roles, rather than the private label alone.",
+        "zh": "工作区 Owner、Supervisor 和 Auditor 仍可访问私有流程，Auditor 可读取工作区范围内容。流程级授权可在不改变工作区角色的情况下增加权限。保密文档应按完整角色组合评估，包括分组角色，不能只看 private 标记。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Completion and notification are separate",
+        "title_zh": "区分流程完成与通知送达",
+        "en": "The completion-email bot can run once per completed workflow or for revisions. Its failure behavior can skip an error and let the workflow continue, or stop processing. Check bot execution and attachment settings before using workflow completion as a notification success signal. A free bot designation does not make the overall service free.",
+        "zh": "完成通知邮件机器人可按流程完成或修订执行。失败处理可跳过错误并继续流程，也可停止处理。将流程完成视为通知成功信号前，应检查机器人执行及附件设置。机器人标记免费不代表整项服务免费。",
+        "source_refs": ["email"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing-scope",
+        "title_en": "Separate new document and legacy credit plans",
+        "title_zh": "区分文档新方案与旧积分方案",
+        "en": "Current pricing is document-based with unlimited users across listed plans. The Credits article explicitly applies to credit-based subscriptions and directs document-plan customers elsewhere. Do not convert old credit allowances or overage rates into the current document offer; confirm the account’s billing model and connector entitlement first.",
+        "zh": "当前价格按文档计费，所列方案均提供不限用户数。Credits 文章明确仅适用于积分订阅，并引导文档方案用户查看其他资料。不能用旧积分额度或超额单价换算当前文档报价，应先核对账户计费模型和连接器权益。",
+        "source_refs": ["pricing", "legacy-billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "altaFlow: setup, operating limits and pricing",
+    "title_zh": "altaFlow：设置、运行边界及费用",
+    "description_en": "altaFlow, formerly airSlate WorkFlow, builds document processes with forms, recipient steps, conditions and automation bots. Its current offering connects document prepar",
+    "description_zh": "altaFlow 原名 airSlate WorkFlow，以表单、收件人步骤、条件及自动化机器人构建文档流程，当前产品将文档准备和完成环节与周边业务系统连接。",
+    "search_intent_en": "Evaluate altaFlow for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 altaFlow。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No workflow, signature, email, SMS, CRM connection or purchase was executed.",
+      "zh": "未执行流程、签名、邮件、短信、CRM 连接或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The new Documents billing collection was inaccessible. Exact chargeable-document rules, minimum commitment, retention, recovery and complete license remain unverified; legacy Credits rules were not applied to it.",
+      "zh": "新 Documents 计费资料集合不可访问。具体计费文档定义、最低承诺、保留、恢复及完整许可待核；未套用旧 Credits 规则。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

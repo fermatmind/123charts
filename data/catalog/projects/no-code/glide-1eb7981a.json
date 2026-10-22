@@ -1,0 +1,312 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "glide-1eb7981a",
+  "name": "Glide Classic",
+  "website_url": "https://www.glideapps.com/classic",
+  "domain": "www.glideapps.com",
+  "identity_domain": "glideapps.com",
+  "category": "no-code",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Glide Classic turns tabular data into business apps with visual components, data connections and workflows. This profile follows the original Glide platform, now explicitly labeled Classic in its documentation and product page.\n\nGlideOS is a separate product with separate subscriptions and accounts; its new credit plans should not be used as Classic pricing. For Classic, evaluate row ownership, workflow triggers and update consumption against the intended data source and user population.",
+  "description_zh": "Glide Classic 将表格数据转为业务应用，提供可视化组件、数据连接及工作流。本说明沿用原 Glide 平台，当前文档和产品页已明确标为 Classic。\n\nGlideOS 是独立产品，订阅及账户分开，其新积分方案不能用作 Classic 价格。Classic 应围绕目标数据源及用户群，评估记录归属、工作流触发和更新用量。",
+  "core_features": [
+    {
+      "name_en": "Server-enforced Row Owners",
+      "name_zh": "服务端执行的记录归属",
+      "explanation_en": "Row Owners prevents users from downloading rows they do not own.",
+      "explanation_zh": "Row Owners 阻止用户下载不归其所有的记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "owners",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Multiple workflow triggers",
+      "name_zh": "多种工作流触发",
+      "explanation_en": "Use interaction, schedule, email, webhook or manual triggers with run history.",
+      "explanation_zh": "支持交互、计划、邮件、webhook 或手动触发，并提供运行历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "workflow",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a private staff tool built on a small source table.",
+      "Inspect update use for a scheduled data-processing workflow."
+    ],
+    "zh": [
+      "评估基于小型数据表的私有员工工具。",
+      "检查计划数据处理工作流的更新用量。"
+    ],
+    "source_refs": ["home", "owners", "workflow"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Operations app builders", "Data-source administrators"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Classic explicitly and separate public fields from private owned rows.",
+        "zh": "明确选择 Classic，将公开字段与私有归属记录分开。",
+        "source_refs": ["home", "owners"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test a small workflow and verify role access, run errors and update allowance before enabling full-table processing.",
+        "zh": "测试小型工作流，启用全表处理前核对角色访问、运行错误及更新额度。",
+        "source_refs": ["workflow", "security", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Multiple Row Owner columns grant access through any matching owner.",
+        "zh": "多个 Row Owner 列中任一归属匹配即授予访问。",
+        "source_refs": ["owners"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "GlideOS data, account and billing are separate from Classic.",
+        "zh": "GlideOS 数据、账户及计费与 Classic 分开。",
+        "source_refs": ["separation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T14:52:04.946824Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Classic Free supports drafting; Business starts at $199/month equivalent billed yearly with 30 users and 5,000 updates. Additional users are $5 annually billed or $6 on monthly billing; extra updates are 2¢ each. Enterprise is custom. GlideOS has separate plans and pricing.",
+    "summary_zh": "Classic Free 用于草稿构建；Business 年付折合每月 $199，含 30 用户及 5,000 次更新。额外用户年付折合 $5、月付 $6，额外更新每次 2¢。Enterprise 定制报价，GlideOS 使用独立方案和价格。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/glideapps",
+      "read_at": "2026-10-22T08:49:37.626Z",
+      "excerpt_sha256": "f945b7a0f5c78c69031f56f35054cbbba7d2bafb25e16beef01aff9f4a6ba32f",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Glide Classic",
+      "title": "Glide Classic: No-code builder for business apps",
+      "url": "https://www.glideapps.com/classic",
+      "read_at": "2026-10-22T14:52:04.946824Z",
+      "excerpt_sha256": "e1af690441474ded1c9f813a9108c2e37d60619c19209879884b2bfe1343bebd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read the current Classic product page and data/layout/workflow model."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Glide Classic",
+      "title": "Glide Classic: Pricing & Plans",
+      "url": "https://www.glideapps.com/classic/pricing",
+      "read_at": "2026-10-22T14:52:37.966119Z",
+      "excerpt_sha256": "94f7e207659ef2010ca0539fa7ddfd4520986b53d5191ed4ec096cef46bb73d2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Classic pricing separately from GlideOS, business users, updates and trial."
+    },
+    {
+      "id": "owners",
+      "type": "official_documentation",
+      "site": "Glide Classic",
+      "title": "Row Owners | Glide Docs",
+      "url": "https://www.glideapps.com/docs/essentials/security-and-user-data/row-owners",
+      "read_at": "2026-10-22T14:53:06.693961Z",
+      "excerpt_sha256": "8badaea047139ac8c77838beea16a7f289e998e55b91cf7fcaa758f0a7757cdd",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read server-side row ownership, OR semantics and public/private table design."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "Glide Classic",
+      "title": "Security and User Data | Glide Docs",
+      "url": "https://www.glideapps.com/docs/essentials/security-and-user-data",
+      "read_at": "2026-10-22T14:52:37.966373Z",
+      "excerpt_sha256": "58b2b8f9ac00cbcddb6cdd440622048090e9c466e0916278d3510247067517c8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Classic security responsibilities and visibility-condition limits."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "Glide Classic",
+      "title": "Introduction to Workflows | Glide Docs",
+      "url": "https://www.glideapps.com/docs/automation/workflows",
+      "read_at": "2026-10-22T14:53:50.616799Z",
+      "excerpt_sha256": "7da2706099deb0a26e5673fa1dab07fdc785206c61bdf126e259c07a1389c68b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read triggers, history, schedule defaults/minimum interval and conversion restrictions."
+    },
+    {
+      "id": "separation",
+      "type": "official_documentation",
+      "site": "Glide Classic",
+      "title": "Pricing: Free, Pro, and Enterprise plans | Glide",
+      "url": "https://www.glideapps.com/pricing",
+      "read_at": "2026-10-22T14:51:33.925163Z",
+      "excerpt_sha256": "9ec5ab5eaffc7e80437426e5fb4a701dfbb878d44d2c7f13e347f4e4a1926974",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read explicit GlideOS/Classic separate-account, subscription and migration statements."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:53:50.616799Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "owners"],
+  "profile": {
+    "sections": [
+      {
+        "id": "platform-scope",
+        "title_en": "Keep Classic and GlideOS separate",
+        "title_zh": "区分 Classic 与 GlideOS",
+        "en": "The current main pricing FAQ states that GlideOS does not disrupt Classic apps, but uses separate accounts and cannot share their data. It also says seamless migration tooling is not currently available. Evaluate a move as a separate project rather than a Classic plan upgrade.",
+        "zh": "当前主价格页 FAQ 说明 GlideOS 不影响 Classic 应用，但使用独立账户且不能共享数据，目前没有无缝迁移工具。因此迁移应按独立项目评估，不能视为 Classic 方案升级。",
+        "source_refs": ["separation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-access",
+        "title_en": "Use ownership rather than visibility for private rows",
+        "title_zh": "私有记录使用归属控制而非显示条件",
+        "en": "Row Owners limits which rows a signed-in user can download. Multiple owner columns form an OR condition, so adding an administrator column broadens access. Because protection applies to the entire row, a public directory may need a separate table containing only public fields. Test with two accounts and inspect returned records.",
+        "zh": "Row Owners 限制登录用户可下载的记录。多个归属列按 OR 计算，因此增加管理员列会扩大访问范围。保护针对整行，公开目录可能需要仅含公开字段的独立表。应使用两个账户测试并检查返回记录。",
+        "source_refs": ["owners"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "security-boundary",
+        "title_en": "Visibility is presentation logic",
+        "title_zh": "显示条件属于呈现逻辑",
+        "en": "The Classic security guide explicitly separates visibility conditions from security controls and directs builders to sign-in, Row Owners, roles and protected columns. Review sensitive source data before attaching it to the app. A hidden tab or filtered component is insufficient evidence that unauthorized data was never downloaded.",
+        "zh": "Classic 安全指南明确区分显示条件与安全控制，并引导使用登录、Row Owners、角色和受保护列。将数据源接入应用前应检查敏感内容。隐藏标签页或过滤组件不足以证明未授权数据从未下载。",
+        "source_refs": ["security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trigger",
+        "title_en": "Choose the right workflow lifetime",
+        "title_zh": "选择合适的工作流触发方式",
+        "en": "Interaction workflows respond to app actions; scheduled workflows run on the backend, while webhook workflows accept external POST events. Run history exposes sent data and errors. Test on a small table first and inspect both a successful and failed run before enabling an automation across a full dataset.",
+        "zh": "交互工作流响应应用动作，计划工作流在后端运行，webhook 工作流接受外部 POST 事件。运行历史展示发送数据及错误。应先用小表测试，启用全量自动化前检查一次成功与一次失败运行。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "scheduling",
+        "title_en": "Check defaults and trigger conversion",
+        "title_zh": "检查默认计划与触发转换",
+        "en": "The schedule editor defaults to 9 AM daily with a loop limit of ten, and the guide says workflows cannot run more frequently than every five minutes. Interaction workflows cannot be converted to another trigger type. Review timing and processing scope rather than enabling an untouched default.",
+        "zh": "计划编辑器默认每天上午九点执行、循环上限十条，指南说明执行频率不能高于每五分钟一次。交互工作流不能转换为其他触发类型。启用前需核对时间及处理范围，避免直接沿用默认值。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "usage",
+        "title_en": "Budget users and updates independently",
+        "title_zh": "分别预算用户与更新用量",
+        "en": "Classic Business starts at $199/month billed yearly with 30 users and 5,000 updates. Additional-user prices depend on monthly versus annual billing; extra updates are listed at two cents. External synchronization, integrations and API activity can consume updates. Maker’s personal-user definition should not be generalized to all business email users.",
+        "zh": "Classic Business 年付折合每月 $199，包含 30 用户及 5,000 次更新。额外用户价格随月付／年付不同，额外更新标价每次两美分。外部同步、集成和 API 活动可能消耗更新量，Maker 的个人用户定义不能泛化到所有企业邮箱用户。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Glide Classic: setup, operating limits and pricing",
+    "title_zh": "Glide Classic：设置、运行边界及费用",
+    "description_en": "Glide Classic turns tabular data into business apps with visual components, data connections and workflows. This profile follows the original Glide platform, now explicit",
+    "description_zh": "Glide Classic 将表格数据转为业务应用，提供可视化组件、数据连接及工作流。本说明沿用原 Glide 平台，当前文档和产品页已明确标为 Classic。",
+    "search_intent_en": "Evaluate Glide Classic for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Glide Classic。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, spreadsheet connection, workflow, webhook, email or subscription was operated.",
+      "zh": "未操作应用、表格连接、工作流、webhook、邮件或订阅。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "License, actual connector behavior, data recovery and production-scale performance remain unverified.",
+      "zh": "许可、连接器真实行为、数据恢复及生产规模性能待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "cleverreach-ecfe69aa",
+  "name": "CleverReach",
+  "website_url": "https://www.cleverreach.com/",
+  "domain": "www.cleverreach.com",
+  "identity_domain": "cleverreach.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CleverReach is a hosted newsletter and email-automation service. Operators maintain recipient data, prepare a message and use either a campaign send or a modular workflow. Automation connects events, actions and flow controls; the meaning of each connection matters, particularly when recipients split into more than one path.\n\nIts current pricing separates a permanent Lite allowance from a conditional Pro trial and paid recipient tiers. This profile explains concrete module behavior, bounce scopes and privacy-related tracking limits. It has not measured deliverability or certified the compliance of any customer campaign.",
+  "description_zh": "CleverReach 是托管简报及邮件自动化服务。运营者维护收件人数据、准备邮件，再通过活动发送或模块化工作流沟通。自动化连接事件、动作和流程控制，尤其受众分流时，每个连接的含义都很重要。\n\n当前价格区分持续 Lite 额度、有资格条件的 Pro 试用及付费收件人档位。本文解释具体模块行为、退信统计范围和隐私设置对跟踪的限制，未测量投递率，也未认证任何客户活动的合规性。",
+  "core_features": [
+    {
+      "name_en": "Modular automation",
+      "name_zh": "模块自动化",
+      "explanation_en": "Connect events, actions and flow controls on a workflow canvas.",
+      "explanation_zh": "在流程画布连接事件、动作和流程控制。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Calendar audience loading",
+      "name_zh": "日历受众加载",
+      "explanation_en": "A calendar start needs a following load-recipient-list action to provide recipients.",
+      "explanation_zh": "日历启动后需加载收件人名单动作，才能提供受众。",
+      "source_ref": "modules",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Split versus copy",
+      "name_zh": "分流与复制",
+      "explanation_en": "Split randomly divides recipients; Copy sends them through both paths.",
+      "explanation_zh": "Split 随机分组，Copy 让收件人进入两条路径。",
+      "source_ref": "modules",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Global bounce management",
+      "name_zh": "全局退信管理",
+      "explanation_en": "Reports describe one campaign while list bounce status can reflect a global index.",
+      "explanation_zh": "活动报表针对单次发送，名单退信状态可能反映全局索引。",
+      "source_ref": "bounces",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Schedule a member update with an explicit loaded segment.",
+      "Evaluate mutually exclusive versus copied automation paths."
+    ],
+    "zh": [
+      "加载明确分组后安排会员更新。",
+      "评估互斥分流与复制路线的不同结果。"
+    ],
+    "source_refs": ["product", "automation", "pricing"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Newsletter operator",
+      "CRM integration maintainer",
+      "Lifecycle campaign builder"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a recipient source, event and message.",
+        "zh": "选择收件来源、事件和邮件。",
+        "source_refs": ["modules"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check privacy settings and actual module connections before activation.",
+        "zh": "启用前检查隐私设置与模块真实连接。",
+        "source_refs": ["failure"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare the selected recipient tier, automation allowance and paid tests.",
+        "zh": "比较所选收件档位、自动化额度和付费测试。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Copy does not create mutually exclusive recipient paths.",
+        "zh": "Copy 不会建立互斥的收件人路径。",
+        "source_refs": ["modules"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Anonymized engagement data can prevent recipient-level activity conditions.",
+        "zh": "匿名互动数据可能无法满足个人层面的互动判断。",
+        "source_refs": ["failure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Permanent Lite: 250 recipients/1,000 monthly emails/one workflow. Paid recipient tiers, prepaid option and extra services; prices exclude VAT and trial eligibility varies.",
+    "source_snapshot_zh": "持续 Lite：250 位收件人／每月 1,000 封／一个流程。另有付费收件档位、预付方式和附加服务；价格未含 VAT，试用有资格条件。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/cleverreach",
+      "read_at": "2026-10-22T08:46:59.908Z",
+      "excerpt_sha256": "cbbfc8475dc02ce0dca76070c56e969c887087bb46828594301ffba2db18723a",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "CleverReach",
+      "title": "Intuitive newsletter tool – GDPR-compliant",
+      "url": "https://www.cleverreach.com/en/",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "9019c12bf262b9a25f3e11b530cf0197533038e051350e25ef454fd1b41be4ee",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Newsletter service, recipient management, reporting, automation and separate agency/multi-account offerings."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CleverReach",
+      "title": "Pricing – CleverReach",
+      "url": "https://www.cleverreach.com/en/plans-and-pricing/",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "bfa9296aba895a83b118b9937c0e0225cec2ab8d66ed61e3c0edb706fa4afb86",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current official English matrix distinguishes Lite/Basic/Pro and eligibility-limited trial; conflicts with brief support pricing summary on A/B."
+    },
+    {
+      "id": "pricing-summary",
+      "type": "official_pricing",
+      "site": "CleverReach",
+      "title": "CleverReach pricing in detail – CleverReach Support",
+      "url": "https://support.cleverreach.com/hc/en-us/articles/115001183694-CleverReach-pricing-in-detail",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "362e8b15007a7c96b5a6eaa9d3fbd8a37f03371501846a3d79d3f144ddc9316f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Short support table lists A/B under Basic, unlike full current matrix; used only to document conflict."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "CleverReach",
+      "title": "Save time with Email Marketing Automation",
+      "url": "https://www.cleverreach.com/en/newsletter-tool/email-marketing-automation/",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "def96e996f22bf202925bad24d4952267dcefa54d97e8c8aed7233344d7c617f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Modular email automation with triggers, actions, flow controls and anchors; commerce depends on integration."
+    },
+    {
+      "id": "modules",
+      "type": "official_documentation",
+      "site": "CleverReach",
+      "title": "Automation: The multi-level workflow – CleverReach Support",
+      "url": "https://support.cleverreach.com/hc/en-us/articles/115000121133-Automation-The-multi-level-workflow",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "71d2b21af8f36026d2ca49a9733aaa09b23d44ba529ec493d9747a89e9ea9e6f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Calendar requires load-list action; split randomizes, copy sends every recipient through both branches."
+    },
+    {
+      "id": "bounces",
+      "type": "official_documentation",
+      "site": "CleverReach",
+      "title": "Automatic newsletter bounce management for higher delivery rates",
+      "url": "https://www.cleverreach.com/en/newsletter-tool/managing-newsletter-recipients/automated-bounce-management/",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "6a96723237920511b4de4b578ed97b5b6550fd8a92bfa1ab7135eeebee5b48f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Global bounce index, campaign versus list scopes and external-source cleanup prevent recurrent imports."
+    },
+    {
+      "id": "failure",
+      "type": "official_documentation",
+      "site": "CleverReach",
+      "title": "Warum wird meine THEA Automationsmail nicht wie gewohnt versendet? – CleverReach Support",
+      "url": "https://support.cleverreach.com/hc/de/articles/115000937454-Warum-wird-meine-THEA-Automationsmail-nicht-wie-gewohnt-versendet",
+      "read_at": "2026-10-22T10:14:17.087864Z",
+      "excerpt_sha256": "13492b3f27a6fe21ffa3b8cf3f9775b56cc48c5fa1e3f5a1238b7a15ecae65fb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "German THEA troubleshooting: missing links, inactive automation, unselected email and anonymization can affect activity branching."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:14:17.087864Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["product", "automation", "pricing"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Represent the recipient source explicitly",
+        "title_zh": "明确表示收件人来源",
+        "en": "The automation guide organizes workflows into triggers, actions and controls. Its module reference specifies that a calendar event must be followed by a load-recipient-list action; otherwise it has no audience to receive the following messages. A tag event and a form subscription are different starting mechanisms.\n\nFor an illustrative weekly member update, choose the calendar, load the intended member segment and attach the current email. Inspect both the schedule and loaded audience. A connected-looking canvas is not sufficient evidence that recipients have entered the flow.",
+        "zh": "自动化指南把工作流组织成触发器、动作和控制。模块参考明确要求日历事件后面跟随加载收件人名单动作，否则后续邮件没有受众。标签事件与表单订阅也是不同的启动方式。\n\n例如每周会员更新，可选择日历、加载目标会员分组，再关联当期邮件。应检查时间和加载受众两方面，画布看起来连好不能证明收件人已经进入。",
+        "source_refs": ["modules", "automation"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "branches",
+        "title_en": "A random split and a copy have different outcomes",
+        "title_zh": "随机分流与复制会产生不同结果",
+        "en": "The module reference distinguishes a random Split, which divides recipients, from Copy, which sends all recipients through both automation lines. An If control instead checks recipient field criteria. These operations cannot be treated as interchangeable branch shapes.\n\nTo test two messages on separate groups, verify that the intended split actually divides the audience. Using a copy can make the same person follow both paths. That can be useful for deliberate parallel actions, but it is the wrong assumption for mutually exclusive communications.",
+        "zh": "模块参考区分随机 Split 与 Copy：前者拆分收件人，后者让所有收件人经过两条自动化路线。If 则检查收件人字段条件。这些动作不能只因流程形状相近就互换。\n\n要在不同人群测试两封邮件，应确认分流确实拆分受众。使用 Copy 可能让同一人经过两条路径；这适合有意安排的多路动作，却不适合假定沟通结果互斥的场景。",
+        "source_refs": ["modules"],
+        "evidence_type": "documented_with_editorial_correctness_guidance"
+      },
+      {
+        "id": "tracking",
+        "title_en": "Activity conditions depend on observable tracking",
+        "title_zh": "互动条件依赖可观测跟踪",
+        "en": "The THEA troubleshooting article says missing entry points, inactive workflows, disconnected modules or an unselected message can stop expected sending. It also warns that anonymized open/click reporting does not retain who performed an action, so recipient-action conditions may follow the false branch.\n\nCheck the chosen privacy settings together with branch requirements. Do not switch off privacy controls solely to make a diagram work; determine whether an alternative field or business event supplies the needed decision. The vendor’s compliance language is not a legal finding by this profile.",
+        "zh": "THEA 排错文档说明，缺少起点、流程未启用、模块未真正连接或未选邮件，都可能造成未按预期发送。它还提醒匿名化打开／点击不保留是谁进行了操作，因此基于个人互动的条件可能进入 false 分支。\n\n应结合分支需求检查隐私设置，不应仅为跑通图形就关闭隐私控制。可以先判断其他字段或业务事件能否提供决策依据。厂商的合规表述不是本文的法律结论。",
+        "source_refs": ["failure"],
+        "evidence_type": "documented_with_editorial_privacy_guidance"
+      },
+      {
+        "id": "bounce",
+        "title_en": "A campaign bounce report is not the global list status",
+        "title_zh": "单次退信报表不是全局名单状态",
+        "en": "The bounce page distinguishes temporary and permanent delivery failures. Its reports cover the selected mailing; a recipient list can reflect the global bounce index across mailings. An address can therefore already be marked without your account having just sent to it.\n\nFor a CRM-fed newsletter, maintain the source system as well as the mailing list. The guide warns that removed bad addresses can be imported again from an unchanged external source. Investigate the original failure and synchronization rule before interpreting a reduced recipient count as data loss.",
+        "zh": "退信页面区分临时与永久投递失败。报表针对所选邮件活动，收件名单则可能反映跨活动的全局退信索引，因此地址可能在当前账户尚未向其发信前就被标记。\n\n对 CRM 提供受众的简报，应同时维护来源系统和邮件名单。指南提醒，如果外部来源不改，已移除的无效地址仍可能再次导入。应检查原始失败原因和同步规则，再判断收件人数减少是否属于数据丢失。",
+        "source_refs": ["bounces"],
+        "evidence_type": "documented_with_editorial_integration_guidance"
+      },
+      {
+        "id": "plans",
+        "title_en": "Permanent Lite and Pro trial are different offers",
+        "title_zh": "持续 Lite 与 Pro 试用是两种方案",
+        "en": "The current English matrix gives Lite 250 recipients, 1,000 monthly emails and one automation. Basic starts at €15/month for the displayed 500-recipient tier; Pro starts at €18. Both have unlimited newsletter sends within their recipient plans, but Pro adds unlimited automations and A/B testing.\n\nA brief support summary puts A/B under Basic, conflicting with the full matrix. Use the matrix for this draft and confirm account entitlements. The free Pro month is limited to new customers up to 5,000 recipients and excludes agency customers and the United States; it is not a universal extension of Lite.",
+        "zh": "当前英文套餐表给 Lite 250 位收件人、每月 1,000 封及一个自动化。页面展示的 500 位收件人档位中，Basic 每月 €15 起，Pro €18 起；两者在对应收件人套餐中都不限简报发送，但 Pro 增加不限自动化及 A/B 测试。\n\n简短支持价格表把 A/B 写在 Basic，与完整表冲突。本文采用完整表，并建议确认账户权限。Pro 免费首月仅面向最多 5,000 位收件人的新客户，排除代理商和美国，不是 Lite 的普遍延伸。",
+        "source_refs": ["pricing", "pricing-summary"],
+        "evidence_type": "documented_pricing_with_source_conflict"
+      },
+      {
+        "id": "cost-fit",
+        "title_en": "Match recipient tiers and testing costs to the real task",
+        "title_zh": "按真实任务匹配档位与测试费用",
+        "en": "The pricing page states that prices exclude applicable VAT and that annual payment is collected upfront; its monthly figure is an annual equivalent. It lists design/spam and accessibility tests as additional services, with included test quantities in Enterprise. Newsletter flat rates should not be read as a free transactional API entitlement: transactional sending is marked on request.\n\nCleverReach is worth evaluating for maintained recipient-based newsletters and explicit workflows. A single-system shop update may need less setup than a cross-system event flow. Agency and multi-account arrangements require their own offer. No source license, self-hosting entitlement or live connector behavior was verified.",
+        "zh": "价格页说明金额未含适用 VAT，年付提前收取，展示的月价为年价换算。设计／垃圾邮件及无障碍测试列为附加服务，Enterprise 含相应测试次数。简报包月不能理解为免费事务 API 权限，事务发送标为询价。\n\n需要维护收件人简报和明确流程时，可评估 CleverReach。单系统商店更新可能比跨系统事件流程少一些配置。代理商和多账户方案需各自报价；源码许可、自托管权利和真实连接器行为均未验证。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CleverReach: Workflow Modules, Bounce Management and Plan Limits",
+    "title_zh": "CleverReach：流程模块、退信管理与套餐限制",
+    "description_en": "Understand CleverReach calendar audiences, split versus copy, tracking privacy and Lite versus Pro entitlements.",
+    "description_zh": "了解 CleverReach 的日历受众、分流与复制、跟踪隐私及 Lite 与 Pro 权限。",
+    "primary_intent": "Evaluate recipient-based newsletters and a specific CleverReach automation.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Brief pricing support text conflicts with the current full matrix on Basic A/B testing; exact account entitlements and checkout totals need confirmation.",
+      "zh": "简短支持价格说明与现行完整表对 Basic 的 A/B 测试有冲突；实际账户权限和结算总额需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, tracking, bounce, workflow, purchase or connector test was executed. UI languages, deployment rights, source license and contract-specific data location remain unverified.",
+      "zh": "未实际测试账户、跟踪、退信、流程、购买或连接器；界面语言、部署权利、源码许可和具体合同数据位置仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

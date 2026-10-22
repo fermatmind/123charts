@@ -1,0 +1,436 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "provide-support-df100aca",
+  "name": "Provide Support",
+  "website_url": "https://www.providesupport.com/",
+  "domain": "www.providesupport.com",
+  "identity_domain": "providesupport.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Provide Support is hosted website live-chat software for a business’s human agents,with browser,desktop and mobile agent applications. Plans share the same base feature set and differ by the number of operator profiles created in the account. Unlimited chats and multiple website domains do not mean unlimited agent profiles,automatic staff coverage or that optional translation and custom-domain services are included.\n\nFor an illustrative support inquiry,a visitor opens website chat,and an account-wide distribution method offers the chat to an online agent,and staff can use canned replies,files or another agent’s help. Record retention is an explicit design choice:server transcripts are not saved by default. This profile is public-documentation research;no account,widget,app,routing,translation,payment,archive or export was executed.",
+  "description_zh": "Provide Support 为企业真人客服提供托管网站聊天软件，含浏览器、桌面及移动客服应用。各套餐基础功能相同，按账号中创建的客服档案数量区分。无限聊天及多网站域名不代表无限客服档案、自动有人值守，也不代表包含可选翻译或自定义域名服务。\n\n以假设支持咨询为例，访客打开网站聊天，账户级分配方法将聊天交给在线客服，人员可用快捷回复、文件或同事协助。记录留存需明确设计，默认不保存服务器聊天记录。本稿为公开文档研究，未执行账号、组件、应用、路由、翻译、支付、归档或导出。",
+  "core_features": [
+    {
+      "name_en": "Human website chat across agent apps",
+      "name_zh": "跨客服应用的真人网站聊天",
+      "explanation_en": "Install an account-specific website button and use browser,desktop or mobile apps for staff conversations.",
+      "explanation_zh": "安装账户专属网站按钮，使用浏览器、桌面或移动应用供人员会话。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Five account-wide distribution methods",
+      "name_zh": "五种账户级分配方法",
+      "explanation_en": "Choose all agents,random,load-balanced random,round-robin or load-balanced round-robin;no custom/per-department algorithm.",
+      "explanation_zh": "选择全员、随机、负载均衡随机、轮流或负载均衡轮流，不支持自定义／部门级算法。",
+      "explanation_scope": "product_specific",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Optional server transcript archive",
+      "name_zh": "可选服务器聊天归档",
+      "explanation_en": "Enable saving explicitly,then review and export basic data or full text using different formats.",
+      "explanation_zh": "明确启用保存后，可查看并以不同格式导出基础资料或完整文本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "archive",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Paid two-way translation",
+      "name_zh": "付费双向翻译",
+      "explanation_en": "Configure understood languages and translate visitor/agent messages;auto-detection depends on pre-chat text.",
+      "explanation_zh": "配置团队可懂语言后翻译访客／客服消息，自动检测依赖聊天前文本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "translation",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Human-led website support across several domains with a known profile count.",
+      "Teams prepared to own staffing,mail delivery and an explicit archive policy."
+    ],
+    "zh": [
+      "已知客服档案人数、跨多个域名的人工网站支持。",
+      "愿意负责值守、邮件交付及明确归档政策的团队。"
+    ],
+    "source_refs": ["product", "purchase", "archive"],
+    "basis": "Editorial fit,not a measured support outcome."
+  },
+  "technical_details": {
+    "Attachment persistence": {
+      "en": "Without server transcript saving,files are temporary and removed when the session ends. With saving enabled,terms list10MB/file and50MB total per transcript,unless custom limits apply.",
+      "zh": "未启用服务器聊天保存时，文件临时存在并在会话结束后删除；启用后条款列每文件10MB、每记录合计50MB，定制限制除外。",
+      "source_ref": "terms",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Website support owner",
+      "Chat account administrator",
+      "Records/privacy owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Count all created operator profiles,choose a plan and remove excess trial profiles before purchase.",
+        "zh": "统计所有已创建客服档案，选套餐，购买前移除试用中超额档案。",
+        "source_refs": ["pricing", "purchase", "profiles"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Install the unchanged account-generated button code,configure departments and the account-wide distribution method,and test busy/away/missed requests.",
+        "zh": "安装未改动的账户按钮代码，配置部门及账户分配方法，测试忙碌／离开／未接请求。",
+        "source_refs": ["product", "terms", "routing"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Decide whether to enable transcript/file storage,verify recipient mail delivery and test TXT versus XLSX exports with realistic retention needs.",
+        "zh": "决定是否启用聊天／文件保存，核对收件邮件交付，并按真实留存需求测试 TXT 与 XLSX 导出。",
+        "source_refs": ["archive", "terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Website/CMS chat button",
+        "source_ref": "product",
+        "scope": "Multiple domains included;use account-generated code and authorized website access."
+      },
+      {
+        "name": "Email transcripts and offline messages",
+        "source_ref": "product",
+        "scope": "Vendor claims encryptedserver-to-mailserver transport;mailboxstorage/accessanddeliverynotverified."
+      },
+      {
+        "name": "Automatic Chat Translation",
+        "source_ref": "translation",
+        "scope": "Separatelypurchased249/year;vendorcallsintegrationLibreOfficeAPI,actualprovider/dataflowunverified."
+      }
+    ],
+    "source_ref": "product"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Billing caps all created operator profiles,and one profile cannot be shared by multiple people simultaneously.",
+        "zh": "计费限制全部已创建客服档案，一个档案不能由多人同时共用。",
+        "source_refs": ["purchase", "terms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "No per-department distribution algorithm or custom call-distribution rule is supported in the reviewed manual.",
+        "zh": "已读手册不支持部门独立分配算法或自定义分配规则。",
+        "source_refs": ["routing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Default no-server-storage is conditional;enabling archive also retains attachments under documented limits.",
+        "zh": "默认不存服务器是有条件的，启用归档也会在所列限制内留附件。",
+        "source_refs": ["archive", "terms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Full-text transcript search and chat tagging are plans on the viewer page,not established delivered features.",
+        "zh": "聊天全文搜索及标签在查看器页属于计划，未建立已交付功能。",
+        "source_refs": ["archive"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.providesupport.com/terms-of-service",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "purchase", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Wholeaccountplanbycreatedoperatorprofiles,monthlyversusannualtotal;separatetranslationandcustom-domainservices.Exactcurrencycode,Enterpriseinputselection,taxandcheckoutunverified.",
+    "source_snapshot_en": "SmallBusiness1profile$24monthly/$156annually;Corporate3profiles$53monthly/$310annually.Allbasefeatures,brandingfree.Enterpriseconfigurable,morethan10profilesviaaccountquote/calculation.10daynocardtrialunlimitedtrialprofiles;notpermanentfree.Translation249/year;custom-domainchatlink49/year/domain.Firstpayment30daymoneyback.Autochargedefaultforcard/PayPal.",
+    "source_snapshot_zh": "Small Business 1档案月付$24／年付总额$156，Corporate 3档案月付$53／年付总额$310，含基础全部功能及免品牌标识。Enterprise 可配置，超过10档案在账号计算报价。10天无卡试用可建无限试用档案，不是永久免费。翻译249／年，自有域聊天链接每域49／年。首付30天退款，卡／PayPal 默认自动扣款。",
+    "checked_at": "2026-10-22T13:43:15.811225+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does unlimited chat mean unlimited staff profiles?",
+      "question_zh": "无限聊天是否等于无限人员档案？",
+      "answer_en": "No. The purchase guide caps total created profiles,and the terms prohibit multiple people simultaneously sharing one profile.",
+      "answer_zh": "不是。购买指南限制创建档案总数，条款禁止多人同时共用一个档案。",
+      "source_refs": ["purchase", "terms"]
+    },
+    {
+      "question_en": "Does disabling the pre-chat form preserve automatic language detection?",
+      "question_zh": "关闭聊天前表单还能自动识别语言吗？",
+      "answer_en": "The translation page detects from the firstpre-chat text.If there is no text field or form is disabled,an agent must select the visitor language manually.",
+      "answer_zh": "翻译页从聊天前首条文本识别，没有文本字段或关闭表单时需客服手动选择访客语言。",
+      "source_refs": ["translation"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/provide-support",
+      "read_at": "2026-10-22T09:06:03.279Z",
+      "excerpt_sha256": "c1b1f8583cb29c4df4fbcf19bfec0e1ccbedf9cd6092ee704a517e68e76b2b55",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Live Chat for Websites | Customer Support Software",
+      "title": "Live Chat for Websites | Customer Support Software",
+      "url": "https://www.providesupport.com/",
+      "read_at": "2026-10-22T13:41:44.565314+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a9fe0f324984e23f5346efb1e816a5fb2b4d13e114b8e7a2085f46f3affd0fa7",
+      "research_notes_en": "Hostedhumanlivechat,web/desktop/mobileapps,multipledomains,accountsnippet;trialexpirylocksagents,retainssettings;UIlanguageclaimsseparatedfromtranslation."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Live Chat Pricing - Prices for Live Chat Packages from Provide Support",
+      "title": "Live Chat Pricing - Prices for Live Chat Packages from Provide Support",
+      "url": "https://www.providesupport.com/live-chat-pricing",
+      "read_at": "2026-10-22T13:42:05.204991+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b1f944b31208db8eea2d330504af73a6e3dd4552ab9e0f9f1cadf20d8b5fd27a",
+      "research_notes_en": "1profile24monthly/156annually,3profiles53/310;10daytrialnocardunlimitedtrialprofiles;translation249yearandcustomdomainlink49/year/domain.Enterpriseinputseatcountnotread."
+    },
+    {
+      "id": "purchase",
+      "type": "official_documentation",
+      "site": "Purchase and Billing > How to purchase",
+      "title": "Purchase and Billing > How to purchase",
+      "url": "https://www.providesupport.com/manual/how_to_purchase.htm",
+      "read_at": "2026-10-22T13:42:03.370801+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "26e725b7e5f99919f41f16eb03abba9382a68b84d0179e817cc893be2a843fb8",
+      "research_notes_en": "Licensecapsallcreatedprofiles,notsimultaneouslogins;custommorethan10profiles;autocharge,disableviavendorsupportorPayPal;30dayfirstpaymentrefund."
+    },
+    {
+      "id": "profiles",
+      "type": "official_documentation",
+      "site": "System Setup and Customization > Control Panel > Managing operators and departments > Managing Operators",
+      "title": "System Setup and Customization > Control Panel > Managing operators and departments > Managing Operators",
+      "url": "https://www.providesupport.com/manual/operators_control_panel.htm",
+      "read_at": "2026-10-22T13:42:04.930338+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "719e85e1f0fbb1b42de87c59282c34a9f6cd2cbc3c2cd8121392e3183660c9e5",
+      "research_notes_en": "PersonalizedorGenericprofiles,trialanynumberthenadjusttoquota,departments,unlimitedperagentchats;manualsharewordinglimitedbytermsonesimultaneousperson."
+    },
+    {
+      "id": "routing",
+      "type": "official_documentation",
+      "site": "System Setup and Customization > Control Panel > Account customization > Technical customization > Chat Management",
+      "title": "System Setup and Customization > Control Panel > Account customization > Technical customization > Chat Management",
+      "url": "https://www.providesupport.com/manual/call_distribution.htm",
+      "read_at": "2026-10-22T13:42:04.213861+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ea24a5a65241998f6b49cfd65a0a3663efb6cc17c50f479c9158a608e14a74e9",
+      "research_notes_en": "5accountwidealgorithms,noperdepartment/customrules,roundrobinloginorder,loadbalanceleastchats;leftvisitorautoclose1–15minutesnotgeneralinactivity."
+    },
+    {
+      "id": "messaging",
+      "type": "official_documentation",
+      "site": "Operator Module > Web-based agent app > Using the browser app > Chatting > Messaging",
+      "title": "Operator Module > Web-based agent app > Using the browser app > Chatting > Messaging",
+      "url": "https://www.providesupport.com/manual/messaging_web-console.htm",
+      "read_at": "2026-10-22T13:42:20.929788+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e5020e60e351481311e4a944aefa94a8b0d91809a845ea15d94c6958cad5003b",
+      "research_notes_en": "Webapppermissionsforsentmessagedelete/last3edits,cannedresponsesadminversusnativeapp,unlimitedchats,transcriptmailandvisitordetails."
+    },
+    {
+      "id": "archive",
+      "type": "official_documentation",
+      "site": "Live Chat Transcripts Viewer | Provide Support",
+      "title": "Live Chat Transcripts Viewer | Provide Support",
+      "url": "https://www.providesupport.com/chat-transcripts-viewer",
+      "read_at": "2026-10-22T13:42:21.456872+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5460c2bf1fa5403927118281b626c50ce9d721534f7ad036d72e18f5e370652d",
+      "research_notes_en": "Serverstorageoptin,defaultdeleteaftertranscriptdelivery;singleTXT/HTML,bulkXLSXbasicdataorTXTfulltext;fulltextsearch/taggingonlyplanned."
+    },
+    {
+      "id": "translation",
+      "type": "official_documentation",
+      "site": "Automatic Chat Translation | Provide Support",
+      "title": "Automatic Chat Translation | Provide Support",
+      "url": "https://www.providesupport.com/automatic-chat-translation",
+      "read_at": "2026-10-22T13:43:15.811225+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "c61de297828f0a3bc70b0f1f811f1f1bc2aa917f7772c500d6cc865f5b13bfc1",
+      "research_notes_en": "Separate249/yearservice,firstprechattextdetects language;notextformdisabledrequiresmanualvisitorlanguage,original+translatedtext;providerlabelnotindependentlyverified."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Live Chat | Terms of Service | Provide Support",
+      "title": "Live Chat | Terms of Service | Provide Support",
+      "url": "https://www.providesupport.com/terms-of-service",
+      "read_at": "2026-10-22T13:42:21.644526+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "501467619cb29f1a50be962207c006f043ba46d361e842adbe28f57a18231831",
+      "research_notes_en": "Proprietaryembed/noresale,onepersonperprofilesimultaneously,defaultTLSdonotdisable;optintranscriptsalsopreservesattachments10MBeach50MBtotalpertranscriptunlesscustom."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:43:15.811225+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "pricing",
+    "routing",
+    "archive",
+    "terms"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "human-service",
+        "title_en": "Website chat software and the profile-based commercial unit",
+        "title_zh": "网站聊天软件与按档案计费单位",
+        "en": "Provide Support supplies customer-chat technology and agent applications,not a human workforce. Staff can use a browser or Windows,macOS,Linux,iOS and Android apps. Multiple domains and unlimited chats per agent are advertised within paid plans. The separate Virola corporate messenger linked in the navigation is not a feature bundle of this website-chat subscription.\n\nAll plans share the base feature set but cap the total operator profiles created,not merely concurrent logins. The trial allows any number of profiles;they must be adjusted before purchase. The manual permits generic profiles,but current terms say only one person may use a profile at a time and recommend operator monitoring for supervision. A manager cannot bypass a profile requirement by logging into a colleague’s profile simultaneously. Test the actual permission and audit implications before choosing shared shift identities.",
+        "zh": "Provide Support 供应客户聊天技术及客服应用，不供应人员。员工可用浏览器或 Windows、macOS、Linux、iOS、Android 应用。付费套餐宣传多域名及每客服无限聊天。导航链接的 Virola 企业通信产品不属于本网站聊天订阅功能包。\n\n套餐基础功能一致，但限制已创建客服档案总数，而非仅并发登录。试用可建任意档案，购买前需调整。手册允许通用档案，但当前条款要求每档案同一时间只由一人使用，监督建议用监控功能。经理不能通过同时登录同事档案绕过人数要求。选择跨班次共用身份前需测试实际权限及审计影响。",
+        "source_refs": ["product", "pricing", "purchase", "profiles", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing-example",
+        "title_en": "Account-wide routing does not provide custom department algorithms",
+        "title_zh": "账户分配不提供自定义部门算法",
+        "en": "For an illustrative technical question,agents can belong to a support department,but the distribution algorithm is chosen at account level. To All Operators offers the call to all online agents and the first acceptance claims it. Random chooses an agent;Load Balanced Random chooses among the least-loaded agents. Round-Robin follows operator login order,while Load Balanced Round-Robin also favors fewer current chats. The manual explicitly excludes per-department algorithms and custom distribution rules.\n\nUnlimited concurrent chats is a product limit statement,not evidence that one employee can answer unlimited requests competently. Define when staff switch Away and who watches missed requests. The documented auto-close timer is1–15minutes and closes a room only after the visitor leaves;unaccepted chats close automatically when that visitor leaves. It is not a universal inactivity-based resolution policy. Test an unanswered chat,a departed visitor and an operator still showing online after leaving the desk.",
+        "zh": "以假设技术咨询为例，客服可属于支持部门，但分配算法按账户选择。To All Operators 同时提供给全体在线客服，先接者认领；Random 随机选人，Load Balanced Random 在最少聊天人员中选。Round-Robin 按客服登录顺序轮流，Load Balanced Round-Robin 另优先聊天较少者。手册明确不支持部门独立算法或自定义分配规则。\n\n无限并发聊天是产品限制说明，不证明一位员工能胜任无限请求。需定义何时切 Away、谁监控未接请求。所列自动关闭计时为1–15分钟，且只在访客离开后关房；未接聊天在访客离开后自动关闭，不是通用闲置解决政策。应测试未答聊天、访客离开及客服离岗仍在线。",
+        "source_refs": ["routing", "profiles", "product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "archive-choice",
+        "title_en": "Enable saving deliberately and export the right record",
+        "title_zh": "有意启用保存，并导出正确记录",
+        "en": "The homepage says transcripts are not stored on servers,but the dedicated viewer and terms clarify the condition:storage is disabled by default. Without it,chat data exists during the session,can be mailed according to account settings,and is removed after completion/delivery. Enabling Chat Transcripts Saving explicitly consents to server storage and changes the lifecycle. Do not summarize this as either permanent no-storage or automatic archiving.\n\nThe terms also change attachment behavior. Without archive,session files are deleted when the chat ends;with it,files remain with the transcript,subject to10MB per file and50MB total per transcript unless custom limits apply. A customer’s screenshot can therefore follow a different retention path after one setting changes. Keep secure connections enabled:the terms state new accounts enable them by default and warn that disabling them exposes interception risk.\n\nThe viewer can export one transcript as TXT or HTML,and selected/all transcripts as XLSX or TXT. XLSX contains basic table data;TXT contains full conversation text,visitor details and post-chat survey results. Column filtering is documented,but full-text transcript search and tagging are listed as future plans. Attachment-complete export,retention duration and recovery were not established. Choose the correct export and retain a sample before depending on it.",
+        "zh": "首页称服务器不存聊天，但专用查看器与条款明确条件：默认关闭保存。未启用时，资料在会话中存在，可按账户设置发邮件，完成／交付后移除。启用 Chat Transcripts Saving 明确同意服务器保存并改变生命周期，不能概括为永不保存或自动归档。\n\n条款也改变附件行为：未归档时会话结束删除文件，归档后随记录保存，默认每文件10MB、每记录合计50MB，定制限制除外。一个设置变化就可能让客户截图走不同留存路径。需保持安全连接启用，条款称新账号默认开启，并警示关闭后有截获风险。\n\n查看器可将单记录导出 TXT 或 HTML，将选中／全部导出 XLSX 或 TXT。XLSX 是基础表资料，TXT 含完整聊天文本、访客资料及事后问卷。文档支持列筛选，但全文搜索和标签列为未来计划。含全部附件的导出、留存期限及恢复未建立。依赖前应选择正确导出并保留样本。",
+        "source_refs": ["product", "archive", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operator-controls",
+        "title_en": "Different app surfaces change everyday controls",
+        "title_zh": "不同应用界面影响日常控制",
+        "en": "The browser messaging manual supports file transfer,canned responses and transcript email. With permission,an agent can edit the three latest own messages or delete a sent message for all participants. A transcript is therefore not automatically an immutable audit trail;confirm whether changes and deletions are represented before regulated use.\n\nBrowser agents create/manage canned responses through the account Control Panel,whereas the manual says the native app can create them directly. Agent-app capability and control-panel authority are separate. The homepage lists Chinese among desktop/browser interface languages and more languages for the chat window;that is a surface-specific vendor claim,not proof of every mobile interface or translated response quality. Website installation requires the account’s own button code. Terms ask that proprietary embed code remain unchanged and direct special implementation needs to support.",
+        "zh": "浏览器消息手册支持传文件、快捷回复及发送聊天邮件。有权限时客服可编辑自己最近三条消息，或为所有参与者删除已发消息。因此记录不自动构成不可变审计轨迹，受监管使用前应确认修改／删除如何体现。\n\n浏览器客服通过账户 Control Panel 创建／管理快捷回复，手册称原生应用可直接创建。客服应用能力与控制台权限不同。首页将中文列入桌面／浏览器界面语言，聊天窗口另有更多语言；这是具体界面的厂商陈述，不证明所有移动界面或翻译质量。网站安装需自有账户按钮代码，条款要求专有嵌入代码原样使用，特殊实现需求联系支持。",
+        "source_refs": ["messaging", "product", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "translation",
+        "title_en": "Translation is a separate service with a pre-chat dependency",
+        "title_zh": "翻译是有聊天前依赖的独立服务",
+        "en": "Automatic Chat Translation costs249/year in addition to the base subscription. Administrators choose a target language and exclude languages the team already understands. Agents see source and translation,and visitors receive a notice that translation is on. The page’s translation-engine/API label was not independently verified,and no translation quality or external data-processing path was tested. Translation is not autonomous support reasoning or permission to execute account changes.\n\nAuto-detection uses the visitor’s first text from the pre-chat survey. If the form has no text field or is disabled,the agent must manually activate translation and choose the visitor language. Removing the form to reduce friction can therefore remove automatic detection. Test a short or ambiguous first message,a manually changed language and a critical order number. Keep the original text available for a bilingual person when meaning affects an irreversible action.",
+        "zh": "Automatic Chat Translation 在基础订阅之外每年249。管理员选择目标语言，并排除团队已懂语言。客服看到原文及译文，访客收到已启用翻译提示。页面的翻译引擎／API 名称未独立核实，也未测试翻译质量或外部资料处理路径。翻译不等于自主支持推理，更不授账户修改权限。\n\n自动检测取访客聊天前问卷首条文本。若表单无文本字段或被关闭，客服需手动激活翻译并选择访客语言。因此为减阻移除表单也可能移除自动检测。需测试简短或模糊首句、手动改语言及关键订单号。含义影响不可逆操作时，应保留原文供双语人员复核。",
+        "source_refs": ["translation", "pricing"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "commercial-fit",
+        "title_en": "Pay for profiles and distinguish trial,renewal and optional services",
+        "title_zh": "按档案付款，区分试用、续费及可选服务",
+        "en": "Small Business is24 monthly or156 for an annual subscription with one profile;Corporate is53 monthly or310 annually with three. Enterprise has a configurable selection,and packages above ten profiles are priced through the purchase workflow. The public-text extract did not establish the selected Enterprise seat count,so its displayed price is not used as a universal ten-seat quote. Currency code,tax and the account’s invoice were not verified. A custom-domain chat link is49/year/domain;this differs from placing the ordinary widget on multiple sites at no extra base charge.\n\nThe10-day no-card trial permits unlimited trial profiles. When it expires,agent logins lock while account settings remain for later activation;this is not sustained free service. The30-day money-back promise applies to the first payment. Card and PayPal autocharge are enabled by default;the purchase guide directs card-autocharge changes to vendor support and PayPal cancellation to PayPal. Upgrades credit the remaining balance and begin a new period according to the homepage. Exact later cancellation/refund terms require confirmation.\n\nThis fits a team running staffed website chat with a known profile count and an explicit record policy. A buyer needing autonomous AI answers,custom per-department routing,a full ticket lifecycle or an attachment-complete archive has not established those requirements through these sources. Browser access and downloadable apps do not make the hosted proprietary service open source or self-hosted.",
+        "zh": "Small Business 1档案月付24或年付总额156，Corporate 3档案月付53或年付总额310。Enterprise 有可配置选择，超过10档案通过购买流程计价。公开文本未建立 Enterprise 当前选择人数，因此不把显示价格当通用10座席报价。币种代码、税及账号发票未核实。自有域名聊天链接每域每年49，区别于普通组件放多个网站不增基础费。\n\n10天无卡试用可建无限试用档案。到期后客服登录被锁，设置保留供以后激活，并非持续免费服务。30天退款承诺适用首付款。卡及 PayPal 默认自动扣款；购买指南要求卡自动扣款变更联系厂商，PayPal 在 PayPal 取消。首页称升级会抵扣余额并开始新周期。后续准确取消／退款条件需确认。\n\n产品适合有已知档案人数、明确记录政策的人工网站聊天团队。需要自主 AI 回答、自定义部门路由、完整工单生命周期或含全部附件档案的买家，不能从这些来源认定满足。浏览器访问及可下载应用不使专有托管服务开源或可自托管。",
+        "source_refs": ["pricing", "purchase", "product", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Provide Support: Operator Profiles, Chat Routing, Archives and Costs",
+    "title_zh": "Provide Support：客服档案、聊天路由、归档及成本",
+    "description_en": "Evaluate Provide Support profile billing, account-wide routing, opt-in transcripts and file retention, TXT versus XLSX exports and paid translation.",
+    "description_zh": "评估 Provide Support 按档案计费、账户路由、选择启用的聊天与附件留存、TXT／XLSX 导出及付费翻译。",
+    "primary_intent": "Evaluate staffed website chat and conditional record retention.",
+    "secondary_questions": [
+      "Are all created profiles billed?",
+      "Are files retained by default?",
+      "Does XLSX export contain the conversation?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,widget,agentapp,routing,translation,payment,archive,maildelivery,export or restore tested. Enterprise input selection,currency/tax,actual subscription cancellation after first month,archive retention/deletion and attachment-complete portability,role enforcement,translation provider/dataflow and mobile UI languages unverified. No independent availability/security/translation-quality validation.",
+      "zh": "未测试账号、组件、客服应用、路由、翻译、支付、归档、邮件交付、导出或恢复。Enterprise 选项、币种／税、首月后实际订阅取消、归档留存／删除与完整附件迁移、角色执行、翻译提供商／资料路径及移动界面语言未核实，未独立验证可用性、安全或翻译质量。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

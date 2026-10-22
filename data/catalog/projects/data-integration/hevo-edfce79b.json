@@ -1,0 +1,381 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "hevo-edfce79b",
+  "name": "Hevo",
+  "website_url": "https://hevodata.com/",
+  "domain": "hevodata.com",
+  "identity_domain": "hevodata.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Hevo is a managed data-pipeline service for ingesting database, SaaS and file data into supported destinations, with transformation and warehouse modeling capabilities. A pipeline separates reading events from loading them, so an ingestion count alone does not establish delivery.\n\nThis profile distinguishes current Edge job/schema documentation from Standard and legacy features. Connector availability, source permissions, loading mode and commercial tier must be checked for the intended account.",
+  "description_zh": "Hevo 是托管数据流程服务，将数据库、SaaS 与文件数据提取到受支持目标，并提供转换及仓库建模能力。流程区分事件读取与加载，因此提取计数本身不能证明交付。\n\n本文区分当前 Edge 任务／结构文档与 Standard、旧功能。连接器、源权限、加载模式与商业档位需按实际账号核对。",
+  "core_features": [
+    {
+      "name_en": "Managed pipelines",
+      "name_zh": "托管流程",
+      "explanation_en": "Connect a source and destination with explicit object and load settings.",
+      "explanation_zh": "连接源与目标，明确对象和加载设置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "create",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Object-level run visibility",
+      "name_zh": "对象级运行可见性",
+      "explanation_en": "Compare ingested, loaded and failed events for Edge jobs.",
+      "explanation_zh": "对比 Edge 任务的提取、加载与失败事件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "jobs",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Schema evolution policy",
+      "name_zh": "结构演变策略",
+      "explanation_en": "Choose allowed changes and inspect incompatibilities before resync.",
+      "explanation_zh": "选择允许的变化，在重新同步前检查不兼容。",
+      "explanation_scope": "product_specific",
+      "source_ref": "schema",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Warehouse modeling",
+      "name_zh": "仓库建模",
+      "explanation_en": "Run SQL models or supported dbt Core projects on loaded data.",
+      "explanation_zh": "在已加载数据上运行 SQL 模型或受支持 dbt Core 项目。",
+      "explanation_scope": "product_specific",
+      "source_ref": "transform",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Replicate keyed orders and reconcile incremental updates.",
+      "Build a warehouse model from verified loaded tables."
+    ],
+    "zh": ["复制带键订单并对照增量更新。", "基于已核对的加载表构建仓库模型。"],
+    "source_refs": ["create", "transform"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data engineer",
+      "Analytics engineer",
+      "Pipeline operations owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm the exact Standard/Edge connector and plan.",
+        "zh": "确认具体 Standard／Edge 连接器及方案。",
+        "source_refs": ["pricing", "create"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a test destination, explicit key and schema policy.",
+        "zh": "采用测试目标、明确键和结构策略。",
+        "source_refs": ["create", "schema"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare loaded/failed/billable counters and source records.",
+        "zh": "对比加载／失败／计费计数及源记录。",
+        "source_refs": ["jobs"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Schema evolution can require a destructive resync; review destination dependencies first.",
+        "zh": "结构演变可能需要破坏性重新同步，应先检查目标依赖。",
+        "source_refs": ["schema"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Finite recovery windows do not establish zero data loss.",
+        "zh": "有限恢复窗口不能证明零数据丢失。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "event_volume_subscription_and_on_demand_overage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:37:35.813952Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Selected event volume and feature tier, with additional on-demand usage; dynamic card/volume pairing unresolved."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/hevo",
+      "read_at": "2026-10-22T08:49:26.500Z",
+      "excerpt_sha256": "232cea7a695aa7ea0ef181cfe307ddf6ae5ac669dce68c17e1b30ba2b415b03f",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Hevo Data | ETL, Data Integration & Data Pipeline Platform",
+      "url": "https://hevodata.com/",
+      "read_at": "2026-10-22T10:37:35.813952Z",
+      "excerpt_sha256": "e8aa94b0931b5ef666ee1f1cc2f8d16d850ba5f3cb32d85c8940cff1800e458d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed ingestion and modeling identity read; customer, savings and throughput claims not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Hevo",
+      "title": "Pipeline - ETL Tool Pricing | Hevo",
+      "url": "https://hevodata.com/pricing/pipeline/",
+      "read_at": "2026-10-22T10:37:38.767590Z",
+      "excerpt_sha256": "edbbd5ee682480108b472022190df4707effd07f2af14dc11992686828bec2c0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free/Starter/Professional/Business Critical, event definition and on-demand usage read; dynamic price selections not safely mapped."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Hevo System Architecture - Hevo Data",
+      "url": "https://docs.hevodata.com/introduction/sys-architecture/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:39:45.695463Z",
+      "excerpt_sha256": "eff3d2a90220f3c17de2dcf3ac742d429dc2991bc035264cee62b13f11f324a6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AWS public SaaS, ingestion/mapping/sink stages and legacy-only Workflows caveat read."
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Creating an Edge Pipeline - Hevo Data",
+      "url": "https://docs.hevodata.com/edge/pipelines/creating-a-pipeline/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:38:10.807955Z",
+      "excerpt_sha256": "09721d57e8cad0f61c099aa9fbf5a6a76f5a7baed315f49152298e4996d389f3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Edge creation guide reviewed: merge keys, append duplicates, failure policy and schema choices; cached older guide not treated as current-account default guarantee."
+    },
+    {
+      "id": "events",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Events (Edge) - Hevo Data",
+      "url": "https://docs.hevodata.com/edge/core-concepts/events/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:38:33.197815Z",
+      "excerpt_sha256": "dd120b5f171f48d86c2195a13897e456124aaad39b12bb338afc3a8b0e2a706f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Edge event ingestion/loading distinction and job history counts read."
+    },
+    {
+      "id": "jobs",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Viewing Pipeline Job Details (Edge) - Hevo Data",
+      "url": "https://docs.hevodata.com/edge/pipelines/pipeline-jobs/viewing-pipeline-job-details/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:39:42.483582Z",
+      "excerpt_sha256": "7cd66641849eae0b8ebede9d1be3627b9bd829145e5c9ce44bdd59cddb0dba70",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "August 2026 Edge run/object counters, partial failures, billable counts and resync job variants read."
+    },
+    {
+      "id": "schema",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Pipeline Schema Management - Hevo Data",
+      "url": "https://docs.hevodata.com/edge/pipelines/object-and-schema-management/pipeline-schema-management/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:38:36.309485Z",
+      "excerpt_sha256": "d2b711ec14dfc5a475578a498e512a6bea52c23c6b6300f6ea0415880f52a3a1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Edge schema policy, incompatible batches, rename behavior and destructive drop/load consequences read."
+    },
+    {
+      "id": "recovery",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Data Loss Prevention and Recovery - Hevo Data",
+      "url": "https://docs.hevodata.com/getting-started/data-loss-prevention-and-recovery/?utm_source=docs_sidebar",
+      "read_at": "2026-10-22T10:38:30.325018Z",
+      "excerpt_sha256": "551491f5d06df45543d0601b011a5235c80aeb59fbc58e8d4ae32dcbd2ffe350",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Standard recovery page source-dependent re-ingestion and three-day encrypted backup window read; not generalized to an unlimited Edge guarantee."
+    },
+    {
+      "id": "transform",
+      "type": "official_documentation",
+      "site": "Hevo",
+      "title": "Data Transformation Software to Build Analytics-Ready Models",
+      "url": "https://hevodata.com/product/transformations/",
+      "read_at": "2026-10-22T10:39:27.201467Z",
+      "excerpt_sha256": "1098009b8cda9ebf8e43054179769a94974e5f670e4b3fc4a3b5dbb276663fa1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Warehouse SQL and existing dbt Core project positioning read; legacy Workflows not inferred to be newly available."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:39:45.695463Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "architecture", "events"],
+  "profile": {
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "Qualify a source and its load mode",
+        "title_zh": "确认数据源及加载模式",
+        "en": "The Edge setup guide configures source access, destination, selected objects, keys and replication settings. Merge updates matching records and requires a usable key; append adds records and can create duplicates. The reviewed creation page is an older cached guide, so its defaults and minimum interval need current-account confirmation. For a proposed PostgreSQL orders trial, retain order_id, compare an initial load with an amount update, then check deletes separately. An analytics copy also needs a decision about retained history; it is not automatically a bidirectional application sync.",
+        "zh": "Edge 设置指南要求配置源访问、目标、所选对象、键及复制设置。Merge 更新匹配记录，需要可用键；Append 添加记录，可能产生重复。本次创建页为较早缓存指南，默认值及最小间隔仍需在当前账号确认。建议用 PostgreSQL 订单试验：保留 order_id，对比初次加载与金额更新，再单独检查删除。分析副本还需明确历史保留方式，不能自动当成应用双向同步。",
+        "source_refs": ["create"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "visibility",
+        "title_en": "Compare loaded and failed events after every job",
+        "title_zh": "逐次对比加载与失败事件",
+        "en": "Current Edge Job History shows the job ID, latency, ingested/loaded/failed counts and per-object stage details. “Completed with Failures” is distinct from “Completed”; a skipped job can mean another job is still running. Ingested count equals loaded plus failed count in the documented model. Inspect rejected types or decimal precision at the object level and reconcile the destination before accepting a partial run. Billing counters are shown separately, so operational event totals should not be substituted for billable usage.",
+        "zh": "当前 Edge Job History 提供任务 ID、延迟、提取／加载／失败计数及对象阶段详情。“Completed with Failures” 与 “Completed” 不同；跳过可能表示前一任务仍在运行。文档模型中，提取数等于加载数加失败数。应在对象层检查不支持类型或小数精度，并在接受部分运行前对照目标。计费计数单独显示，不能直接用运营事件总数代替收费使用量。",
+        "source_refs": ["jobs", "events"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "schema",
+        "title_en": "A rename is not necessarily a rename at the destination",
+        "title_zh": "重命名未必在目标中仍表现为重命名",
+        "en": "Edge schema policies allow compatible changes, block them, or allow only column changes. The detailed guide says a renamed column becomes a new destination column; old/new values may become null rather than preserving a seamless rename. Empty new objects can need manual schema refresh. Incompatible mappings can fail a batch. Drop and Load creates a backup then recreates and reloads the table, with documented risks to records no longer present at the source and extra compute/storage usage. Review downstream queries and backup recovery before using that action.",
+        "zh": "Edge 结构策略可允许兼容变化、阻止变化或只允许列变化。详细指南说明：重命名列会成为新的目标列，旧列／新列值可能变为 null，并非无缝改名。空的新对象可能需要手动刷新结构；不兼容映射可能使批次失败。Drop and Load 创建备份后重建、重载表，文档同时说明源中已不存在记录的风险，以及额外计算／存储用量。使用前应检查下游查询和备份恢复。",
+        "source_refs": ["schema"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Recovery depends on the source and a finite window",
+        "title_zh": "恢复取决于源及有限窗口",
+        "en": "The Standard recovery guide distinguishes re-queryable SaaS data from webhook pushes and retained database logs. It documents an encrypted three-day backup for webhook and log-based data. That is a finite recovery aid, not proof that data never gets lost, nor a verified policy for every Edge connector. A useful failure exercise would pause a disposable pipeline, let source changes accumulate and reconcile a resumed result inside the applicable retention period. No interruption or restore was executed here.",
+        "zh": "Standard 恢复指南区分可重新查询的 SaaS 数据、webhook 推送及有保留期限的数据库日志，并记录 webhook 和日志数据的三天加密备份。这是有限恢复手段，不能证明永不丢失，也不是每种 Edge 连接器均已核实的策略。可在可丢弃流程中暂停运行，让源变化累积，再在适用保留期内恢复并对账。本次未执行中断或恢复。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "modeling",
+        "title_en": "In-flight changes and warehouse models have different roles",
+        "title_zh": "传输中转换与仓库模型作用不同",
+        "en": "The architecture separates ingestion, optional pre-load transformation, schema mapping and staging/loading. SQL models and dbt Core projects operate on warehouse data for analytical joins and aggregates. Successful ingestion does not validate a model’s business rules. Existing users may see legacy Workflows; the architecture guide explicitly says users signing up from release 2.17 cannot create those Workflows. Confirm the current transformation product and entitlement rather than inferring availability from a historical navigation entry.",
+        "zh": "架构区分提取、可选加载前转换、结构映射及暂存／加载。SQL 模型与 dbt Core 项目在仓库数据上完成分析联接、聚合；提取成功并不能验证模型业务规则。既有用户可能看到旧 Workflows，但架构指南明确说明，从 2.17 版本起注册的用户无法创建此功能。应确认当前转换产品与权限，不能从历史导航项推断可用。",
+        "source_refs": ["architecture", "transform"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "Events and selected volume drive the quote",
+        "title_zh": "事件及所选用量决定费用",
+        "en": "The public page defines a billed event as a destination insert, update or delete, and says above-quota usage costs extra on demand. Free lists 1M events/month, limited connectors and five users. Annual starting prices shown are $265/month Starter and $750 Professional; interactive cards also expose $299/$849 monthly values without an unambiguous rendered selection. Do not pair every displayed amount with every volume option. Paid connector trials and exact resync/billable rules need confirmation; 14-day product trial access is not the same as ongoing Free scope.",
+        "zh": "公开页把目标插入、更新或删除定义为一个计费事件，超额用量另按需收费。Free 列每月 100 万事件、有限连接器及五个用户。年付起价显示 Starter 每月 $265、Professional $750；交互卡片还显示 $299／$849 月费，但渲染结果不能明确还原所选项，不能把每个金额任意配到每个用量。付费连接器试用与重新同步计费规则仍需确认；14 天产品试用权限不等于长期 Free 范围。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment",
+        "title_en": "Managed hosting still needs a pipeline owner",
+        "title_zh": "托管运行仍需流程负责人",
+        "en": "The architecture identifies a public SaaS service on AWS; SSH and private networking options are access methods, not evidence of a fully self-hosted license. Evaluate Hevo for maintained analytical replication and modeling when someone can own source privileges, event usage and rejected records. A strict offline requirement or an unverified reverse-ETL endpoint needs a separate assessment. No throughput, savings, regional contract, security certification evidence or UI language support was independently tested.",
+        "zh": "架构说明平台是运行在 AWS 的公共 SaaS；SSH 与私有网络选项是访问方式，不能证明提供完整自托管许可。若有人负责源权限、事件用量与拒绝记录，可评估 Hevo 用于持续分析复制及建模。严格离线要求或未核实反向 ETL 端点需另行评估。本次未独立测试吞吐、节省、地区合同、安全认证证据或界面语言支持。",
+        "source_refs": ["architecture", "pricing"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Hevo: Edge Jobs, Event Pricing, Schema Changes and Recovery",
+    "title_zh": "Hevo：Edge 任务、事件定价、结构变化与恢复",
+    "description_en": "Evaluate Hevo pipeline keys, partial failures, schema resync, finite recovery windows and event-volume billing.",
+    "description_zh": "评估 Hevo 流程键、部分失败、结构重新同步、有限恢复窗口与事件用量计费。",
+    "primary_intent": "Evaluate a Hevo pipeline and its operational and billing limits.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Rendered pricing selections, connector-specific free scope, overage rates and exact billable resync rules require confirmation.",
+      "zh": "渲染定价选项、具体免费连接器范围、超额费率及重新同步收费规则需进一步确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Older cached Edge creation guide defaults/intervals and Standard recovery behavior were not generalized to the current account; hands-on compatibility and source-code licensing remain unverified.",
+      "zh": "未把较早缓存 Edge 创建指南默认值／间隔及 Standard 恢复行为推广至当前账号；实际兼容及源码许可仍未核实。",
+      "source_refs": ["create", "recovery"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

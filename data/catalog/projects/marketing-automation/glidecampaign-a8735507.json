@@ -1,0 +1,421 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "glidecampaign-a8735507",
+  "name": "GlideCampaign",
+  "website_url": "https://glidecampaign.com/",
+  "domain": "glidecampaign.com",
+  "identity_domain": "glidecampaign.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "GlideCampaign combines website and form tools, contacts, communications and automation, with separate white-label selling options. Its useful evaluation unit is a lead moving from a form into a defined follow-up, rather than the entire all-in-one feature list. The same contact can be enrolled manually or through an event, and that difference affects how qualification should be checked.\n\nThe public documentation exposes concrete setup details but leaves important operating limits unresolved. In particular, email tracking depends on the sending provider, while the public pricing page and service terms use different language about limits. The profile below distinguishes documented setup from suggested tests. No account enrollment, message send, payment or reseller setup was executed.",
+  "description_zh": "GlideCampaign 将网站与表单工具、联系人、沟通及自动化结合，并提供独立的白标销售选项。评估时可用“一条线索从表单进入明确跟进”作为单位，不必把整张一体化功能清单都纳入。同一联系人可手动加入，也可通过事件进入，这一区别会影响资格检查方式。\n\n公开文档提供了具体设置细节，但仍留下重要操作边界：邮件跟踪依赖发件服务商，公开定价页与服务条款对用量限制的表述也不同。以下稿件区分文档设置与建议测试，未执行账户入场、发送消息、付款或经销商配置。",
+  "core_features": [
+    {
+      "name_en": "Manual and triggered enrollment",
+      "name_zh": "手动与触发入场",
+      "explanation_en": "Contacts can be manually enrolled even without satisfying a trigger.",
+      "explanation_zh": "联系人即使不满足触发条件，也能手动加入。",
+      "source_ref": "manual-entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Previous form dataset",
+      "name_zh": "此前表单数据集",
+      "explanation_en": "A flow can use the contact’s most recent submission from a selected form.",
+      "explanation_zh": "流程可使用联系人在选定表单上的最近一次提交。",
+      "source_ref": "form-data",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Provider-dependent tracking",
+      "name_zh": "依赖服务商的跟踪",
+      "explanation_en": "Email open/click/failure waiting requires a supported sending provider.",
+      "explanation_zh": "等待邮件打开、点击或失败事件需要受支持的发件服务商。",
+      "source_ref": "tracking",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate reseller scope",
+      "name_zh": "独立经销商范围",
+      "explanation_en": "A separate package lists sub-accounts, SaaS rebilling and a package builder.",
+      "explanation_zh": "单独套餐列出子账户、SaaS 转售计费与套餐构建器。",
+      "source_ref": "reseller-price",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: a small business evaluating form-to-contact follow-up with one supported email provider.",
+      "Editorial fit: an agency comparing platform access and separately scoped white-label resale."
+    ],
+    "zh": [
+      "编辑判断的适用场景：以受支持邮件服务商评估表单到联系人跟进的小型业务。",
+      "编辑判断的适用场景：比较平台使用权限与单独白标转售范围的代理商。"
+    ],
+    "source_refs": ["triggers", "manual-entry", "tracking", "service-limits"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Marketing operations specialist",
+      "Agency owner",
+      "Small-business CRM operator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "triggers"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a specific package and read its account service price list before estimating channel costs.",
+        "zh": "估算渠道成本前，选定具体套餐并读取账户服务价目表。",
+        "source_refs": ["service-prices", "service-limits"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Map a form dataset and inspect its saved opt-in status with internal records.",
+        "zh": "用内部记录映射表单数据集，并检查保存的 opt-in 状态。",
+        "source_refs": ["form-data", "opt-in"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test both trigger and manual entry paths with an explicit eligibility condition.",
+        "zh": "设置明确资格条件，分别测试触发与手动入场。",
+        "source_refs": ["triggers", "manual-entry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Choose a supported email provider before testing open/click/failure branches.",
+        "zh": "测试打开／点击／失败分支前，先选定支持的邮件服务商。",
+        "source_refs": ["tracking"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Custom SMTP/Gmail do not support the documented email engagement tracking mechanism.",
+        "zh": "自定义 SMTP／Gmail 不支持文档所述邮件互动跟踪机制。",
+        "source_refs": ["tracking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Unlimited access labels and applicable service/order limits need commercial reconciliation.",
+        "zh": "不限量使用标签与适用服务／订单上限需要商业核对。",
+        "source_refs": ["pricing", "service-limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Image-only settings and account-dependent fees were not read as verified values.",
+        "zh": "没有把图片专属设置或依赖账户的费用写成已验证数值。",
+        "source_refs": ["opt-in", "service-prices"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Public cards show Basic/Pro/Unlimited at $19/$39/$59 monthly, or $11/$23/$35 per month under Annual labels, and $549/$1,199/$1,699 one-time. A separate sub-account/rebilling Unlimited offer lists $299/month or $2,999/year. One-time does not establish lifetime service or zero usage charges. Account Price List and applicable order terms remain necessary; no normalized quote or permanent free tier is asserted.",
+    "source_snapshot_zh": "公开卡片显示 Basic／Pro／Unlimited 月付为 19／39／59 美元，Annual 标签下按月表示为 11／23／35 美元，另列一次性 549／1,199／1,699 美元。单独的子账户／转售计费 Unlimited 方案为每月 299 美元或每年 2,999 美元。一次性购买不代表终身服务或零用量费用。仍需账户 Price List 与适用订单条款；不生成标准化报价，也不宣称永久免费套餐。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/glidecampaign",
+      "read_at": "2026-10-22T08:55:39.930Z",
+      "excerpt_sha256": "509351290c674dcb23ebe5ce68b8eea54968e86d0ee91d2dc745d16915227639",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "GlideCampaign",
+      "title": "Pricing - GlideCampaign",
+      "url": "https://glidecampaign.com/pricing/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "92502e59f643ba3035338c27716496f1d89ad58cefc2a7f1dcb366b87cbb42c4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read annual card values and product scope. Unlimited labels are vendor claims, not an independently verified absence of usage charges."
+    },
+    {
+      "id": "price-terms",
+      "type": "official_pricing",
+      "site": "GlideCampaign",
+      "title": "Pricing - GlideCampaign",
+      "url": "https://glidecampaign.com/pricing/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "aa96312bed5fa22c4df5663a3f2b799dbe383fd2585b913a2a8ed9d1ee527e5c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read monthly and one-time card amounts. One-time purchase does not establish permanent hosting, maintenance or unrestricted communication costs."
+    },
+    {
+      "id": "reseller-price",
+      "type": "official_pricing",
+      "site": "GlideCampaign",
+      "title": "Pricing - GlideCampaign",
+      "url": "https://glidecampaign.com/pricing/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "3b3e5d7bb719d68ccdd86ff8c2bf217be26631ab46dd7df7c4a455fdff2df4da",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read separate sub-account/rebilling package and comparison table. Lower-priced Unlimited and reseller Unlimited are distinct displayed scopes."
+    },
+    {
+      "id": "triggers",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "How to Set or Change a Trigger in an Automation Flow - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/how-to-set-change-a-trigger-of-an-automation-flow/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "637e18aeb400c9bcebd5f85f46c4163dcabb3cf09dc80a6480a68ca75ec3c90d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read multiple trigger options, optional re-entry step and skipping when already active elsewhere; defaults and concurrent-event guarantees not specified."
+    },
+    {
+      "id": "manual-entry",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "How to Add Contacts to an Automation Flow - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/how-to-add-contacts-to-an-automation-flow/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "2439e6fdb60615f08166418945cc87915739a1e075d95e120df7dcd091bd65bc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read manual contact enrollment bypassing trigger qualification, from bulk Contacts and individual profiles."
+    },
+    {
+      "id": "form-data",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "Trigger a Flow Based on Previous Form Submission Data - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/how-to-trigger-a-flow-based-off-previous-form-submission-data/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "6999ad3fb7e014cf2fac70dcf997207d6739013c9d342e4da4c3d17f82d6fa8c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read latest prior form submission as dataset, explicit form choice, condition and manual Add to Automation; not replay of every historical submission."
+    },
+    {
+      "id": "tracking",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "Check if an Email Was Opened or Clicked - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/check-if-email-opened-clicked/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "d7fc3c747f935e0d3d6e36863a007964d6f23dda2f9d8061e7d7b69dda697cc7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read named send-step selection, shortener expiry zero and wait timeout. Guide explicitly excludes custom SMTP/Gmail tracking and lists SendGrid/Mailgun/SES."
+    },
+    {
+      "id": "opt-in",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "How to create opted-in contact by form submission? - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/how-to-create-opted-in-contact-by-form-submission/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "4490be653e23ca177cb5ae914971722ec8ab58c3d12e31e06c71daeb601ed260",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read form-level opt-in setting location; actual status options are image-only and no consent or delivery guarantee is inferred."
+    },
+    {
+      "id": "service-prices",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "How to check the Prices of Emails, MMS, SMS, Phone Numbers, Services, SMS Plan & Base Packages. - GlideCampaign",
+      "url": "https://glidecampaign.com/docs/how-to-check-the-prices-of-emails-mms-sms-phone-numbers-services-sms-plan-base-packages/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "8fd260edfc33cd93b44432f888f05a9041d20948aa78f3236679a001cbcbfd38",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read My Account -> Billing -> Price List for email/SMS/MMS/phone/service/base-package prices. No account price values read."
+    },
+    {
+      "id": "service-limits",
+      "type": "official_documentation",
+      "site": "GlideCampaign",
+      "title": "Terms of Services - GlideCampaign",
+      "url": "https://glidecampaign.com/terms-of-services/",
+      "read_at": "2026-10-22T11:28:41.923587Z",
+      "excerpt_sha256": "24eefb9282b2cf2146477b7f6c404b3e2913f72a9d92672c73ffc81cbfd60250",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Maximum Records definition including contact-per-step runs and conditional limit-based fee/send behavior. Applicability to a selected offer is unresolved; no legal advice or universal billing conclusion."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:28:41.923587Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "triggers",
+    "manual-entry",
+    "tracking",
+    "service-limits"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry",
+        "title_en": "Manual entry does not prove qualification",
+        "title_zh": "手动加入不代表已满足资格",
+        "en": "The trigger guide lists forms, tags, list additions and bookings, with optional re-entry controls. The manual enrollment guide explicitly allows adding contacts that did not meet a trigger. A hypothetical lead follow-up should therefore place its critical qualification check in the workflow as well as documenting the normal entry event. Test an automatically qualified record and a manually added ineligible record separately. Do not infer exactly-once execution from a trigger label or an optional re-entry setting.",
+        "zh": "触发器指南列出表单、标签、名单新增及预约，并提供可选重入控制。手动入场指南明确允许加入未满足触发条件的联系人。因此假设设计线索跟进，除了说明常规入场事件，还应在流程中检查关键资格。分别测试自动合格记录与手动加入的不合格记录。不能从触发器名称或可选重入设置推断严格只执行一次。",
+        "source_refs": ["triggers", "manual-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "historical-data",
+        "title_en": "Latest form data is not every historical submission",
+        "title_zh": "最近表单数据不等于全部历史提交",
+        "en": "The previous-form guide uses the most recent submission, selects a specific form as the dataset, then manually adds chosen contacts to the published flow. For an editorial evaluation, have one internal contact submit two different answers and verify which value reaches a Condition step. Keep the source form and field mapping in the workflow notes. This mechanism does not establish that importing contacts automatically replays all prior forms or preserves the context of every old submission.",
+        "zh": "此前表单指南使用最近一次提交，选择具体表单作为数据集，再将选定联系人手动加入已发布流程。建议让一位内部联系人先后提交不同答案，再验证 Condition 步骤读取哪个值。可在流程备注保留源表单及字段映射。该机制不能证明导入联系人会自动重放全部旧表单，也不能证明保存了每次历史提交的上下文。",
+        "source_refs": ["form-data"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "id": "opt-in",
+        "title_en": "Contact creation and opt-in are separate checks",
+        "title_zh": "区分创建联系人与接收选择",
+        "en": "The opt-in article directs the operator to the form builder’s settings to change form opt-in status. The actual option labels are in images, so this text-only research does not establish their defaults or a double-opt-in process. Before a real follow-up, inspect the form, saved contact status and unsubscribe behavior using an internal address. Manually adding a contact to automation is not evidence that the contact agreed to marketing messages.",
+        "zh": "接收选择文章要求在表单构建器设置中修改表单 opt-in 状态。具体选项标签位于图片中，因此本次文字研究不能确认默认值或双重确认程序。真实跟进前，应使用内部地址检查表单、保存后的联系人状态及退订行为。手动把联系人加入自动化，不代表其已同意营销消息。",
+        "source_refs": ["opt-in", "manual-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "tracking",
+        "title_en": "Pick the email transport before the engagement branch",
+        "title_zh": "互动分支之前先确定邮件通道",
+        "en": "The tracking guide requires a named Send Email step, a selected source email, shortener expiry set to zero and a Wait Timeout. It says tracking does not work with custom SMTP or Gmail and lists SendGrid, Mailgun and Amazon SES as supported providers. A flow can therefore be correctly connected yet lack the expected engagement event because of the provider choice. Test click, no-click and failure outcomes with the intended provider; no such send was performed here.",
+        "zh": "跟踪指南要求命名 Send Email 步骤、选择源邮件、将短链接过期值设为零，并配置 Wait Timeout。它说明自定义 SMTP 或 Gmail 不支持跟踪，列出的支持服务商为 SendGrid、Mailgun 与 Amazon SES。因此即使流程连线正确，也可能因服务商选择而没有预期互动事件。应使用计划采用的服务商测试点击、未点击及失败结果；本次未执行这种发送。",
+        "source_refs": ["tracking"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "packages",
+        "title_en": "Separate own-business access from resale",
+        "title_zh": "区分自身业务使用与转售",
+        "en": "The public page displays Basic, Pro and Unlimited access options, plus a separate Unlimited package listing sub-accounts, SaaS rebilling and a package builder. Sharing the name Unlimited does not make those scopes interchangeable. Evaluate a reseller scenario with a written responsibility map for client billing, communication costs, account access and support. The documentation does not establish independent ownership of the underlying software, export completeness or self-hosting rights.",
+        "zh": "公开页面显示 Basic、Pro、Unlimited 使用选项，另有列出子账户、SaaS 转售计费及套餐构建器的 Unlimited 套餐。名称相同并不代表范围相同。评估经销商场景时，应写清客户账单、通信费用、账户访问及支持责任。文档未确认底层软件的独立所有权、完整导出能力或自托管权利。",
+        "source_refs": ["pricing", "reseller-price"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Unlimited labels need an account-specific cost check",
+        "title_zh": "不限量标签仍需核对账户成本",
+        "en": "The billing help directs users to My Account > Billing > Price List for email, SMS, MMS, phone and service amounts. Separately, public terms define Maximum Records to include contacts and per-contact-per-step automation runs and discuss applicable limits that can change fees or stop activity. This does not prove every advertised package has the same cap. It does make the order form and actual service price list necessary to resolve the scope of the unlimited marketing claims.",
+        "zh": "计费帮助要求到 My Account > Billing > Price List 查看邮件、短信、彩信、电话及服务金额。另外，公开条款的 Maximum Records 定义包括联系人及每位联系人每一步自动化执行，并讨论可能改变费用或停止活动的适用上限。这不能证明所有宣传套餐有同样上限，但说明需要订单及实际服务价目表来核对“不限量”宣传的范围。",
+        "source_refs": ["service-prices", "service-limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "acceptance",
+        "title_en": "Use a small observable workflow for acceptance",
+        "title_zh": "用小型可观察流程验收",
+        "en": "A practical evaluation can start with one internal form submission, one explicit Condition and one message, followed by a provider-supported engagement wait. Add a second internal record through manual enrollment to inspect the qualification boundary. Record which step ran, which data it read and what the provider returned. Pause, queued-action recovery, retry backoff and event deduplication were not established in the reviewed pages, so none is presented as a proven safety mechanism.",
+        "zh": "实际评估可从一条内部表单提交、一个明确 Condition、一条消息开始，再连接受服务商支持的互动等待。第二条内部记录通过手动入场，检查资格边界。记录执行了哪个步骤、读取哪些数据、服务商返回什么。实读页面未确认暂停、排队动作恢复、重试退避或事件去重，因此不把它们写成已证明的保障机制。",
+        "source_refs": ["triggers", "manual-entry", "tracking"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "GlideCampaign: form-based automation, email tracking and white-label scope",
+    "title_zh": "GlideCampaign：表单自动化、邮件跟踪与白标范围",
+    "description_en": "Evaluate GlideCampaign manual entry, prior form data, provider-dependent tracking and service pricing beyond unlimited labels.",
+    "description_zh": "评估 GlideCampaign 手动入场、历史表单数据、服务商依赖跟踪及不限量标签以外的服务费用。",
+    "primary_intent": "Understand GlideCampaign automation setup and commercial boundaries",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact service fees, applicable record/run limits, one-time terms and reseller contract scope remain unverified.",
+      "zh": "具体服务费、适用记录／执行上限、一次性购买条款及经销商合同范围仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No enrollment, opt-in test, email delivery, payment or reseller setup was executed.",
+      "zh": "未执行入场、opt-in 测试、邮件投递、付款或经销商配置。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Pause/recovery, event deduplication, retry behavior, interface languages and self-hosting rights remain unknown.",
+      "zh": "暂停／恢复、事件去重、重试行为、界面语言及自托管权利仍未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

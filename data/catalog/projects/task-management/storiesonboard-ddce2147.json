@@ -1,0 +1,466 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "storiesonboard-ddce2147",
+  "name": "StoriesOnBoard",
+  "website_url": "https://storiesonboard.com/",
+  "domain": "storiesonboard.com",
+  "identity_domain": "storiesonboard.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "StoriesOnBoard organizes product knowledge around a user story map: user goals and steps form the journey, stories provide actionable detail, and release slices show what will be delivered together. Roadmaps and feedback management extend that planning context; issue-tracker integrations can connect it to execution systems.\n\nThe service now also exposes map context and write operations to AI agents through MCP. Product teams should distinguish the map’s planning semantics from a Kanban board, a code deployment or proof of customer value. This documentation review separates plan families, paid editors versus guests, synchronization direction and data recovery. It did not create a map or connect an external account.",
+  "description_zh": "StoriesOnBoard 围绕用户故事地图组织产品知识：用户目标和步骤构成旅程，故事提供可行动细节，发布切片说明哪些内容一起交付。路线图及反馈管理扩展规划上下文，工单系统集成可将其连接执行系统。\n\n服务还通过 MCP 向 AI Agent 提供地图上下文及写入操作。产品团队应区分地图规划含义、看板、代码部署及客户价值证据。本次文档研究分别核对方案家族、付费编辑者与 Guest、同步方向及恢复；没有创建地图或连接外部账户。",
+  "core_features": [
+    {
+      "name_en": "User journey and release slices",
+      "name_zh": "用户旅程与发布切片",
+      "explanation_en": "Place stories in journey context and group deliverable scope into releases.",
+      "explanation_zh": "把故事放在旅程上下文中，按发布组织可交付范围。",
+      "explanation_scope": "product_specific",
+      "source_ref": "releases",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Issue synchronization",
+      "name_zh": "工单同步",
+      "explanation_en": "Connected GitHub issue fields sync; milestone direction has separate rules.",
+      "explanation_zh": "已关联 GitHub 工单字段同步，里程碑方向另有规则。",
+      "explanation_scope": "product_specific",
+      "source_ref": "github",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "MCP map operations",
+      "name_zh": "MCP 地图操作",
+      "explanation_en": "Eligible plans expose reads and structural writes, including releases and cards.",
+      "explanation_zh": "符合条件方案提供读取及结构写入，覆盖发布和卡片。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Plan an order-status experience from finding an order to resolving a missing shipment; slice a complete first release before pushing selected stories to an issue tracker."
+    ],
+    "zh": [
+      "从查找订单到处理配送缺失规划订单状态体验；先切出完整首版，再把所选故事推送至工单系统。"
+    ],
+    "source_refs": ["create-map", "releases", "github"],
+    "basis": "Hypothetical product-planning example, not a customer case or executed import."
+  },
+  "technical_details": {
+    "Service": {
+      "en": "Hosted workspace with products/story maps and browser access; external integrations/MCP require additional authorization. No self-hosted source distribution established.",
+      "zh": "托管工作区包含产品／故事地图，以浏览器访问；外部集成／MCP 需额外授权。未确立自行托管源码发行版。",
+      "source_ref": "create-map",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Product manager shaping scope",
+      "Business analyst mapping journeys",
+      "Engineering lead aligning implementation stories"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the product and plan family, then define a small journey and map visibility before inviting collaborators.",
+        "zh": "选择产品及方案家族，定义小型旅程及地图可见范围后再邀请协作者。",
+        "source_refs": ["create-map", "pricing", "share-link"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Test a release slice, one integration, export and trash recovery using disposable cards before authorizing agent writes.",
+        "zh": "授权 Agent 写入前，用可丢弃卡片测试发布切片、一个集成、导出及回收站恢复。",
+        "source_refs": ["releases", "github", "export", "restore", "mcp"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "github",
+    "scope": "GitHub issue and milestone behavior reviewed; not all named tracker integrations assumed equivalent. MCP is separate from in-app AI allowance."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Workspace role determines paid editor status even when map access is viewer-only; Guest is not an additional editing seat.",
+        "zh": "即使地图只读，工作区角色仍决定付费编辑者身份；Guest 不等于额外编辑席位。",
+        "source_refs": ["pricing-browser", "roles"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Automatic release/milestone synchronization is from StoriesOnBoard to GitHub; the opposite direction is manual import.",
+        "zh": "发布／里程碑自动同步从 StoriesOnBoard 到 GitHub，反向需要手工导入。",
+        "source_refs": ["github"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "service_terms_read_source_rights_not_granted",
+    "is_open_source": null,
+    "url": "https://storiesonboard.com/terms-of-service.html",
+    "source_ref": "terms",
+    "scope": "Hosted service remains vendor-owned; user content ownership does not grant application source redistribution rights."
+  },
+  "pricing": {
+    "status": "official_browser_display_checkout_unverified",
+    "price_type": "subscription_first_editor_additional_editors_plan_family",
+    "officially_checked": true,
+    "source_ref": "pricing-browser",
+    "normalized_price": null,
+    "source_snapshot_en": "Story Mapping Basic: annual display first user$19 plus$9 per additional user/month; monthly$24 plus$11. Other mapping and full-platform plans differ.14daytrial; no checkout or currency-code/tax confirmation.",
+    "source_snapshot_zh": "Story Mapping Basic 年付展示首用户每月 $19、后续每人 $9；月付分别 $24、$11。其他地图及完整平台方案不同。试用14天；未结账或确认币种代码／税。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/storiesonboard",
+      "read_at": "2026-10-22T08:59:25.773Z",
+      "excerpt_sha256": "10cd4884a14915e4ab0cea8589bb3f409a7837c813fbe18d2c7bb6f7f63dc1dc",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "storiesonboard.com",
+      "title": "User Story Mapping Tool for Software Projects - StoriesOnBoard",
+      "url": "https://storiesonboard.com/",
+      "read_at": "2026-10-22T11:52:25.209955Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "587e32c21af603cfe1faca205f2a8ed4b353d8455d53ecef68fb04d63cf72a12",
+      "research_notes_en": "Current product context/story-map platform read; marketing accuracy, customer, security and speed claims not independently adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "storiesonboard.com",
+      "title": "Pricing - StoriesOnBoard",
+      "url": "https://storiesonboard.com/pricing.html",
+      "read_at": "2026-10-22T11:52:25.210791Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0d305866b34597a1fd455665e64da919954e034ae34dfc54a6139b7dc8df246c",
+      "research_notes_en": "Pricing page plan families/caps read; reader omits first-user labels visible in browser. Do not quote uniform9dollar rate."
+    },
+    {
+      "id": "pricing-browser",
+      "type": "official_pricing",
+      "site": "storiesonboard.com",
+      "title": "Pricing - StoriesOnBoard",
+      "url": "https://storiesonboard.com/pricing.html",
+      "read_at": "2026-10-22T11:52:25.211046Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "74b0653599d424230bae9be54f31e2cb8cbec936c8447697a02d4f0320685b43",
+      "research_notes_en": "Actual selected browser AX excerpts and screenshots confirm annual/monthly switches, first versus subsequent seats, separate platform prices and guest/token FAQs. No checkout."
+    },
+    {
+      "id": "create-map",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to create a user story map - NextGen | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/11379713-how-to-create-a-user-story-map-nextgen",
+      "read_at": "2026-10-22T11:52:25.211572Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "439c0a7c1b685f1a262cde769eb3faf464974dc7655fb5905783441556a055fd",
+      "research_notes_en": "NextGen map creation choices, product, estimation units, visibility and collaborator roles read."
+    },
+    {
+      "id": "share-link",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to share the story map via private or public link - NextGen | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/15856177-how-to-share-the-story-map-via-private-or-public-link-nextgen",
+      "read_at": "2026-10-22T11:52:25.211611Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4dd5039c8ed70e6fd5b84a4c3b90eaf372800bcdaa0dfe53bc7ccde4c28daceb",
+      "research_notes_en": "Admins control visibility/private link fields and revocation; public reader needs no signup. Link is not named-user authentication."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to export a story map into Excel - NextGen | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/8379904-how-to-export-a-story-map-into-excel-nextgen",
+      "read_at": "2026-10-22T11:52:25.211653Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3225787585fc278b46a9c3ef1cef585a74591549c8b7e18554475142cd41286e",
+      "research_notes_en": "Editor export, Standard minimum, backlog/map layouts and selectable archived release data read; not a tested round-trip backup."
+    },
+    {
+      "id": "old-restore",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to restore deleted cards from the trash bin | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/12089003-how-to-restore-deleted-cards-from-the-trash-bin",
+      "read_at": "2026-10-22T11:52:25.211679Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "60d8b68784c547651d3df76c5d71a313de35bc997d5cf9e6cceae0db688beb62",
+      "research_notes_en": "August2025 guide requires Classic for trash access. Retained only as older evidence superseded by May2026NextGen guide, not current universal rule."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "docs.storiesonboard.com",
+      "title": "StoriesOnBoard Model Context Protocol (MCP) Server Overview | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/14625286-storiesonboard-model-context-protocol-mcp-server-overview",
+      "read_at": "2026-10-22T11:52:25.211993Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a536d92bb45e9e21cdfa59cf72eb344231bc14fe809e87487b089cbce80f5ddd",
+      "research_notes_en": "Actual read/write tool details and Standard/Pro/Plus/Premium eligibility read; inconsistent seven/nine counts not adopted. Field omission versus empty clear and positional moves noted."
+    },
+    {
+      "id": "github",
+      "type": "official_integration",
+      "site": "docs.storiesonboard.com",
+      "title": "Connection overview between StoriesOnBoard and GitHub | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/8459319-connection-overview-between-storiesonboard-and-github",
+      "read_at": "2026-10-22T11:52:25.212048Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "99cf4b2945390c37a7f4dfb3516a277ce7ab51e48bc012364acef18e418f7a8c",
+      "research_notes_en": "Linked issue title/description/status sync differs from one-way automatic release-to-milestone sync; reverse milestone import manual."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "Workspaces, Story maps, User roles: Members, Administrators, Viewers | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/683251-workspaces-story-maps-user-roles-members-administrators-viewers",
+      "read_at": "2026-10-22T11:52:25.212077Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e5f6911f96ae0a6cfbdface4d4d74f98e466fec247610e5fee61ab7d2471a977",
+      "research_notes_en": "Older roles article checked against current pricing FAQ: workspace member/admin counts even with map viewer role; locked member charge requires role change."
+    },
+    {
+      "id": "restore",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to delete/restore card(s) - NextGen | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/12088804-how-to-delete-restore-card-s-nextgen",
+      "read_at": "2026-10-22T11:52:25.212349Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3fa347feb3bacb83e6b72c13ed0e11092ed47e8b2458ab058a3fa0c53f3aedf9",
+      "research_notes_en": "May29,2026NextGen guide documents Settings/Deleted cards restore, child deletion and irreversible purge, superseding older Classic-only instruction."
+    },
+    {
+      "id": "releases",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "Release Management – NextGen | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/7182246-release-management-nextgen",
+      "read_at": "2026-10-22T11:52:25.212381Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c095bdfcd92233133cc94b37efb5647cf5c3f3fcd8a2c6b0d491c34ee5e0740d",
+      "research_notes_en": "Release slicing, goals/dates and reports by card count or estimated effort read. No deployment executed."
+    },
+    {
+      "id": "attachment-share",
+      "type": "official_documentation",
+      "site": "docs.storiesonboard.com",
+      "title": "How to turn on/off attachment link sharing | StoriesOnBoard Help Center",
+      "url": "https://docs.storiesonboard.com/en/articles/17704733-how-to-turn-on-off-attachment-link-sharing",
+      "read_at": "2026-10-22T11:52:25.212405Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b8747657916ee19ee75969e4d077e6fbfaf1607130595107770cf426685abfe0",
+      "research_notes_en": "Current shared-link attachment read/download, revocation/archive behavior and cache caveat read; both public/private readers covered."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "storiesonboard.com",
+      "title": "StoriesOnBoard - Terms Of Service",
+      "url": "https://storiesonboard.com/terms-of-service.html",
+      "read_at": "2026-10-22T11:52:25.212851Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "069568c1f5bdbee32c4cf8c8d99d9704e29e0e58e68deaf516a10e9cad0a22a4",
+      "research_notes_en": "User content ownership/service operation license, public-map exposure, no prorated refund and distinct nonpayment/termination data rules read."
+    },
+    {
+      "id": "ai-terms",
+      "type": "official_documentation",
+      "site": "storiesonboard.com",
+      "title": "StoriesOnBoard - Terms Of Service",
+      "url": "https://storiesonboard.com/storiesonboard-ai-supplementary-terms.html",
+      "read_at": "2026-10-22T11:52:25.213124Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5b48b88dc5e5fb0b5a64dd6460522654c62a80804cba37feb0a26c69fa899486",
+      "research_notes_en": "AI supplement fair-use limits, feedback/explicit-permission training exceptions and independent fact-check duty read; no model quality claim."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:52:25.213124Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "create-map",
+    "releases",
+    "mcp",
+    "github"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "journey-slice",
+        "title_en": "Slice a usable journey rather than a pile of tickets",
+        "title_zh": "切出可用旅程，而不是一堆工单",
+        "en": "For a hypothetical order-status feature, map the user’s goal, locating an order, reading its state and requesting help. Put one end-to-end version into an initial release and leave richer notifications for a later slice. Record an observable acceptance condition for each story; a generated sentence is not evidence that the condition is correct.\n\nMap creation can start from scratch, Jira, imports, templates or AI. Select the intended product, estimation unit, visibility and collaborators deliberately. Release reports can summarize card count or estimated effort; neither number by itself establishes delivered customer value or completed deployment.",
+        "zh": "假设开发订单状态功能，可标明用户目标、查找订单、读取状态及请求帮助。把一版端到端体验放入首个发布，把更丰富通知留给后续切片。每个故事应写可观察验收条件；生成的句子不能证明条件正确。\n\n可从空白、Jira、导入、模板或 AI 创建地图，应明确选择产品、估算单位、可见范围及协作者。发布报告可汇总卡片数或估算工作量，但这些数字本身不证明客户价值或已完成部署。",
+        "source_refs": ["create-map", "releases"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "editors-guests",
+        "title_en": "A map viewer can still be a paid workspace editor",
+        "title_zh": "地图只读者仍可能是工作区付费编辑者",
+        "en": "The current pricing FAQ bills workspace members, admins and subscription admins as editors even if their role on a particular map is viewer. Guests can view and comment, but cannot add or modify map content. An older role guide also says locked-out members continue counting until their role becomes observer.\n\nBefore inviting a stakeholder, decide whether they need to change the map or only discuss it. Check workspace and map roles separately, and verify current offboarding/billing behavior. Free guest access is a permission boundary, not an unlimited pool of authors.",
+        "zh": "当前定价 FAQ 把工作区 Member、Admin 及 Subscription Admin 计为编辑者，即使其在某张地图只读。Guest 可查看和评论，但不能添加或修改地图内容。较早角色指南还称，被锁定成员在改为 Observer 前仍计费。\n\n邀请干系人前，应先确定其需修改地图还是仅参与讨论。工作区与地图角色应分别核对，并验证当前移除及计费行为。免费 Guest 是权限边界，不是无限作者席位。",
+        "source_refs": ["pricing-browser", "roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "link-attachments",
+        "title_en": "Shared links and attachment access have separate switches",
+        "title_zh": "共享链接与附件访问有独立开关",
+        "en": "Admins control public/private link sharing and which details a link reveals. A public map can be read without signup; a private link should not be assumed to authenticate a named person. The attachment-sharing guide adds a separate read/download switch and honors workspace domain/IP restrictions.\n\nDisabling attachment access stops existing file links, but already loaded browser images can remain until reload. Regenerating a private link retires earlier attachment links. Archiving stops links; restoring the map leaves sharing off. Review both map and file access with harmless content before distributing a link; revocation cannot retrieve files already downloaded elsewhere.",
+        "zh": "管理员控制公开／私有链接共享及链接显示的细节。公开地图无需注册即可读取；不能假设私有链接认证了具名人员。附件指南另提供只读／下载开关，并沿用工作区域名／IP 限制。\n\n关闭附件访问会停止原有文件链接，但浏览器已加载图像可能留到刷新。重建私有链接会废止旧附件链接；归档停止链接，恢复地图后共享仍关闭。分发前用无害内容检查地图及文件访问；撤销也不能取回已在其他位置下载的文件。",
+        "source_refs": ["share-link", "attachment-share"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "github-direction",
+        "title_en": "Two-way issue fields do not make every object bidirectional",
+        "title_zh": "工单字段双向不等于全部对象双向",
+        "en": "The GitHub overview documents synchronization of connected issue title, description and status. Labels can represent richer workflow states. Release-to-milestone synchronization is automatically from StoriesOnBoard to GitHub, with reverse import performed manually.\n\nFor a pilot, use one disposable issue and release. Check each direction independently, including which system owns status labels and milestone names. Do not propagate the homepage’s broad integration language to attachments, comments, every tracker or all deletion/conflict cases. If synchronization fails, keep the authoritative record identifiable rather than repeatedly pushing duplicates.",
+        "zh": "GitHub 概览记录已连接工单的标题、描述及状态同步，标签可表达更丰富流程状态。发布到里程碑的自动同步只从 StoriesOnBoard 到 GitHub，反向需手工导入。\n\n试点可用一个可丢弃工单及发布，分别检查每个方向，包括哪个系统管理状态标签及里程碑名称。不能把首页宽泛集成表述扩展到附件、评论、全部工单系统或所有删除／冲突情况。同步失败时，应保留明确权威记录，避免重复推送产生副本。",
+        "source_refs": ["github"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "agent-writes",
+        "title_en": "Treat MCP structural changes as real edits",
+        "title_zh": "把 MCP 结构调整视为真实编辑",
+        "en": "The MCP overview lists Standard, Pro, Plus and Premium eligibility. It supports reading map structure and metadata as well as creating cards/releases, editing fields and moving stories between parents or releases. Omitted fields and explicit empty values can have different update meanings. Its seven-tool and nine-tool summaries conflict with the longer inventory, so a fixed tool count is not asserted.\n\nReview the connected account and proposed scope before writes. In-app AI is a separate feature with allowances and supplementary terms: generated factual claims require checking, and data-training restrictions have feedback/permission exceptions. This review did not authorize a model or test a write, transaction, undo or simultaneous edit.",
+        "zh": "MCP 概览列出 Standard、Pro、Plus 及 Premium 可用。它可读取地图结构及元数据，也可创建卡片／发布、修改字段，把故事移动到其他父级或发布。省略字段与显式空值可能有不同更新含义。其七工具、九工具概述与更长清单冲突，因此不写固定工具数量。\n\n写入前应核对连接账户及拟议范围。内置 AI 是独立功能，有额度与附加条款：生成事实需核查，训练限制也有反馈／许可例外。本次未授权模型，未测试写入、事务、撤销或并发修改。",
+        "source_refs": ["mcp", "ai-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price-family",
+        "title_en": "Choose a plan family before calculating the bill",
+        "title_zh": "计算费用前先选方案家族",
+        "en": "The Story Mapping annual display is first-user plus additional-user pricing: Basic $19 + $9, Standard $26 + $12, Pro $45 + $15 per month. Monthly equivalents are $24 + $11, $33 + $15 and $56 + $19. For three Basic editors, the annual display implies 19 + 2 × 9 = $37/month equivalent, before unverified taxes and currency details.\n\nThe broader Product Management Platform is separate: Personal displays $16/month annually or $19 monthly, with one user and five guests; Plus/Premium use different rates and entitlements. AI allowances reset monthly even on annual subscriptions; trial tokens do not refill until paid. Confirm the actual family, paid-role count and checkout total rather than mixing plan names or treating a trial as sustained free use.",
+        "zh": "Story Mapping 年付展示首用户加后续用户计价：Basic 每月 $19 + $9，Standard $26 + $12，Pro $45 + $15；月付分别 $24 + $11、$33 + $15、$56 + $19。三位 Basic 编辑者按年付展示折合 19 + 2 × 9 = 每月 $37，税及币种细节尚未确认。\n\n更广 Product Management Platform 是另一套方案：Personal 年付折合每月 $16，月付 $19，含一名用户、五名 Guest；Plus／Premium 费率及权益不同。AI 额度即使年付也每月重置，试用 token 用尽后须付费才补充。应确认方案家族、付费角色数及结账总额，不能混用方案名或把试用视为持续免费。",
+        "source_refs": ["pricing", "pricing-browser"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "export-restore",
+        "title_en": "Export, trash restore and account retention are different",
+        "title_zh": "导出、回收站恢复及账户保留不同",
+        "en": "Excel export offers a detailed Backlog layout or visual Map layout; optional archived releases and editor rights matter. Documentation sets Standard as the minimum for this export path. An export is not a demonstrated complete account backup or round-trip reconstruction.\n\nA May 2026 guide restores cards through NextGen Settings → Deleted cards; an older August 2025 page still directs users to Classic. The newer instructions are the basis here, with interface confirmation still needed. Deleting a parent also trashes children, while permanent purge cannot be undone. Terms separately allow suspension after ten overdue days, potential deletion after three unpaid months, and data destruction within180days after termination. Preserve needed records before these states; retention is not a guaranteed recovery window.",
+        "zh": "Excel 导出提供详细 Backlog 或可视 Map 布局，可选归档发布，也需编辑权限；文档把该导出路径的最低方案设为 Standard。导出不等于已证明完整账户备份或往返重建。\n\n2026年5月指南通过 NextGen Settings → Deleted cards 恢复；较早2025年8月页面仍要求 Classic。本档案以更新说明为依据，具体界面仍需确认。删除父卡也会将子卡移入回收站，永久清除不能撤销。条款另允许逾期十天后暂停、三个月未付款后可能删除，以及终止后180天内销毁数据。进入这些状态前应保留所需记录；保留期不是保证恢复窗口。",
+        "source_refs": ["export", "restore", "old-restore", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "StoriesOnBoard: Story Maps, Editor Costs, Sync and Recovery",
+    "title_zh": "StoriesOnBoard：故事地图、编辑者费用、同步与恢复",
+    "description_en": "Evaluate release slicing, first-user pricing, guest roles, shared attachments, GitHub sync direction and MCP changes.",
+    "description_zh": "评估发布切片、首用户计价、Guest 角色、共享附件、GitHub 同步方向及 MCP 修改。",
+    "primary_intent": "Evaluate story-map planning and operational conditions.",
+    "secondary_questions": [
+      "Does every editor cost the displayed headline rate?",
+      "Are release milestones synchronized both ways?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No signup, invitation, map edit, import/export, restore, tracker authorization/sync, agent write, payment, cancellation or data recovery executed.",
+      "zh": "未执行注册、邀请、地图编辑、导入／导出、恢复、工单授权／同步、Agent 写入、付款、取消或数据恢复。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact currency/taxes/checkout totals, token quota allocation per user/workspace and overage prices, current offboarding billing, concurrency/deletion conflicts and full restore completeness unverified. Older Classic versus newer NextGen instructions need UI confirmation.",
+      "zh": "准确币种／税／结账总额、按用户或工作区分配 token 及超额价格、当前移除成员计费、并发／删除冲突及完整恢复未核实。旧 Classic 与新 NextGen 说明需界面确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Self-hosted distribution/source rights, all current UI languages and integration-specific parity beyond the reviewed GitHub path not established.",
+      "zh": "自行托管发行版／源码权利、全部当前界面语言，以及已核 GitHub 路径外各集成的一致性未确立。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

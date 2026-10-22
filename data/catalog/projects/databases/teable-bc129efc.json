@@ -1,0 +1,381 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "teable-bc129efc",
+  "name": "Teable",
+  "website_url": "https://teable.ai/",
+  "domain": "teable.ai",
+  "identity_domain": "teable.ai",
+  "category": "databases",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Teable combines spreadsheet-style structured data with collaboration, automations and AI-assisted fields and app building. Its current offering includes hosted Cloud and different self-hosted deployment paths. The deployment architecture and subscription determine which capabilities are available.\n\nThis profile examines a proposed shared business workspace: who can export or change data, when AI generation overwrites values and what an operator must retain for recovery. It distinguishes a basic standalone instance from the full AI platform. No instance, account, imported dataset, automation, model connection or paid seat was operated.",
+  "description_zh": "Teable 将电子表格式结构化数据与协作、自动化、AI 字段及应用构建组合起来。当前产品包含托管 Cloud 及多种自托管路径，部署架构与套餐共同决定可用能力。\n\n本文评估共享业务工作区：谁能导出或修改数据、AI 生成何时覆盖值，以及运维恢复需保留哪些组件，并区分基础独立实例与完整 AI 平台。本次未操作实例、账户、导入数据、自动化、模型连接或付费席位。",
+  "core_features": [
+    {
+      "name_en": "Structured business workspace",
+      "name_zh": "结构化业务工作区",
+      "explanation_en": "Combine related data, collaboration and workflows.",
+      "explanation_zh": "组合关联数据、协作及流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI field generation",
+      "name_zh": "AI 字段生成",
+      "explanation_en": "Generate values from same-row inputs with explicit update modes.",
+      "explanation_zh": "从同行输入生成值，并明确更新方式。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ai",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Space access roles",
+      "name_zh": "空间访问角色",
+      "explanation_en": "Inspect role-specific editing, sharing and export rights.",
+      "explanation_zh": "检查各角色编辑、共享及导出权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "access",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Deployment choices",
+      "name_zh": "部署路径选择",
+      "explanation_en": "Select hosted, standalone or full self-hosted architecture.",
+      "explanation_zh": "选择托管、独立实例或完整自托管架构。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deploy-choice",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate data export and sharing permissions for collaborators",
+      "Test AI overwrite modes before batch generation",
+      "Choose self-hosting architecture and rehearse a full recovery"
+    ],
+    "zh": [
+      "评估协作者导出及共享权限",
+      "批量生成前测试 AI 覆盖模式",
+      "选择自托管架构并演练完整恢复"
+    ],
+    "source_refs": ["access", "ai", "deploy-choice", "upgrade"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Business application builders",
+      "Data operations teams",
+      "Self-hosted platform administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select deployment architecture and inspect roles.",
+        "zh": "选择部署架构并检查角色。",
+        "source_refs": ["deploy-choice", "access"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use synthetic records to compare AI generation modes and credit use.",
+        "zh": "用虚构记录比较 AI 生成模式及额度消耗。",
+        "source_refs": ["ai", "workflow"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Back up the required components before an upgrade with schema changes.",
+        "zh": "含 schema 变化的升级前备份所需组件。",
+        "source_refs": ["upgrade", "license-host"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Viewer permissions include export/copy/print; Manager is exempt from the documented Authority Matrix restrictions.",
+        "zh": "Viewer 可导出／复制／打印，Manager 豁免文档所述 Authority Matrix 限制。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Full AI/app-building capabilities require more than the standalone deployment.",
+        "zh": "完整 AI／应用构建能力不只需要独立部署。",
+        "source_refs": ["deploy-choice"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Startup migrations mean reverting an image can require pre-upgrade data recovery.",
+        "zh": "启动迁移意味着镜像回退可能需要升级前数据恢复。",
+        "source_refs": ["upgrade"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "cloud_seats_space_quotas_and_self_host_license",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:40:11.954282Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Visible Cloud annual prices: Pro $13 and Business $20 per seat/month. Free has limited space capacity and one-time AI credits. Self-host seat scope differs; monthly checkout and final charges unverified.",
+    "summary_zh": "可见 Cloud 年付价格为 Pro 每席位月均 $13、Business $20。Free 有空间容量及一次性 AI 额度限制。自托管席位范围不同，月付结账及最终费用未核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/teable-ai",
+      "read_at": "2026-10-22T09:03:12.042Z",
+      "excerpt_sha256": "4b45653144be4910c4c2df9432c2cc82b9e8fefd57048eca68e309716a8184ea",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "Teable - The AI Spreadsheet for Business.",
+      "url": "https://teable.ai/",
+      "read_at": "2026-10-22T13:40:11.954282Z",
+      "excerpt_sha256": "d38888f74323f0cdf93bec72bd8197202817eff0db424351d4e692b9d0d7ad58",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AI business spreadsheet and commercial/open-source distinctions read; coming-soon compliance claims not adopted as certification."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Teable",
+      "title": "Pricing & Plans for Cloud and Self-Hosted | Teable",
+      "url": "https://teable.ai/pricing",
+      "read_at": "2026-10-22T13:41:31.271621Z",
+      "excerpt_sha256": "e48aa239c931f5f518b0e7b08cc408376b67a7f310e525116b958814bcd26631",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloud/yearly display, one-time free credits, per-space rows/automation and annual per-seat prices read; blank feature ticks/closed FAQ not inferred."
+    },
+    {
+      "id": "access",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "Space and project permission levels - Teable",
+      "url": "https://help.teable.ai/en/basic/space/space-permission",
+      "read_at": "2026-10-22T13:43:08.735478Z",
+      "excerpt_sha256": "8614d51343ce996a294783269498722b9440442cd9b8ca2e12e96f428e1a1d86",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Space role matrix read: viewer export/invites, editor writes and Manager exception to Authority Matrix."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "AI fields: summarize, classify and generate values - Teable",
+      "url": "https://help.teable.ai/en/basic/field/ai/ai-field",
+      "read_at": "2026-10-22T13:49:40.422262Z",
+      "excerpt_sha256": "c45411f05685bde0fde3eb4beab6d98e5016ce943e58cab0d2d6a5bc55df29c2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AI fields, same-row sources, config-only versus empty/all-column generation and automatic updates read."
+    },
+    {
+      "id": "workflow",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "AI generate - Teable",
+      "url": "https://help.teable.ai/en/basic/automation/actions/ai/ai-generate",
+      "read_at": "2026-10-22T13:49:40.422664Z",
+      "excerpt_sha256": "94f7d040365099624aa24b67a15da4dc0aaaab38520cc1109bc9c900e239d7c3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AI generate output/schema, capability-dependent attachments and model/token credit cost read."
+    },
+    {
+      "id": "license-host",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "Subscribe to and activate a self-hosted license - Teable",
+      "url": "https://help.teable.ai/en/deploy/activate",
+      "read_at": "2026-10-22T13:43:08.854826Z",
+      "excerpt_sha256": "388d7651ed8bdedd1e025aca9c9c5be82cb2584a8627a954a3eb81499f5e3a15",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Instance-level editor-or-higher seats, activation/renewal and PostgreSQL/Redis/attachment backup components read; no license key used."
+    },
+    {
+      "id": "upgrade",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "Upgrade a self-hosted instance: versions and backups - Teable",
+      "url": "https://help.teable.ai/en/deploy/upgrade",
+      "read_at": "2026-10-22T13:50:29.452942Z",
+      "excerpt_sha256": "24c5b1b1ab22c2dc41bec01a4b356b13433a64fe4b31484a4339cc4cb9444b8a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Immutable tags/platform coordination, automatic startup migrations and schema-sensitive rollback read."
+    },
+    {
+      "id": "deploy-choice",
+      "type": "official_documentation",
+      "site": "Teable",
+      "title": "Cloud or self-hosted: choose a deployment option - Teable",
+      "url": "https://help.teable.ai/en/deploy/choose",
+      "read_at": "2026-10-22T13:50:29.453112Z",
+      "excerpt_sha256": "72769c8c424a4e2978567c1c672c14b8647da38c91dab6bd48672faa2decec71",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloud, full self-host and standalone differences in AI/runtime/app-builder availability read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:50:29.453112Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "access"],
+  "profile": {
+    "sections": [
+      {
+        "id": "access",
+        "title_en": "Viewer access still permits data export",
+        "title_zh": "Viewer 仍可导出数据",
+        "en": "The space-role matrix allows all listed roles to export/copy/print project data and invite equal-or-lower roles. Editors can change records and share views; automation management is restricted more tightly. An Authority Matrix may constrain Creator-and-below roles, while Manager is exempt according to the guide. Treat the actual matrix and sharing paths as part of the access design, rather than assuming Viewer means data cannot leave the workspace.",
+        "zh": "空间角色矩阵允许所列全部角色导出／复制／打印项目数据及邀请同级或更低角色。Editor 可改记录及共享视图，自动化管理限制更严。指南称 Authority Matrix 可限制 Creator 及以下角色，而 Manager 豁免。访问设计需包括真实矩阵与共享路径，不能假定 Viewer 意味数据无法离开工作区。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-fields",
+        "title_en": "Generation modes have different overwrite behavior",
+        "title_zh": "生成模式的覆盖行为不同",
+        "en": "AI fields use other fields in the same row and expose field-type-specific actions. Saving configuration alone does not populate cells; filling empty cells preserves existing values, while generating the entire current-view column overwrites them. Auto-update can rerun generation when source content or configuration changes. Evaluate on synthetic rows and review changed values before using generated categories or scores for business decisions. Model output quality was not tested.",
+        "zh": "AI 字段使用同一行其他字段，并按字段类型提供动作。仅保存配置不填单元格，填充空值保留现有值，生成当前视图整列则覆盖已有结果。自动更新可在源内容或配置改变时再次生成。应先用虚构行评估并审查变化，再将分类／评分用于业务决策；本次未测试模型质量。",
+        "source_refs": ["ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Structured output still needs validation",
+        "title_zh": "结构化输出仍需验证",
+        "en": "The AI Generate action can return text or schema-directed JSON for later workflow steps. Attachments require an appropriate vision-capable model. The documentation measures credit usage by model and input/output tokens, so a loop over records can multiply consumption. Define accepted categories and error handling, and inspect the test panel before attaching a write or message action. A JSON example is not evidence of correct extraction or successful external delivery.",
+        "zh": "AI Generate 动作可返回文本或按 schema 生成的 JSON，供后续步骤使用；附件需匹配视觉能力模型。文档按模型及输入／输出 token 计信用额度，因此逐记录循环会放大消耗。连接写入／消息动作前应定义允许分类和错误处理并检查测试面板。JSON 示例不证明抽取正确或外部投递成功。",
+        "source_refs": ["workflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "architecture",
+        "title_en": "Standalone hosting omits the full AI runtime",
+        "title_zh": "独立部署不包含完整 AI 运行层",
+        "en": "The deployment comparison separates Cloud, full self-hosting and a standalone app-plus-PostgreSQL instance. Standalone supports tables, collaboration, API and automation, but the listed AI chat/agents, App Builder and sandboxes require the full platform or Cloud. Choose architecture before buying infrastructure or assuming a basic Compose startup reproduces the hosted experience. Domain, service and operational requirements depend on the actual chosen path.",
+        "zh": "部署对比将 Cloud、完整自托管及应用加 PostgreSQL 的独立实例分开。独立实例支持表、协作、API 及自动化，但所列 AI 聊天／Agent、App Builder 及沙盒要求完整平台或 Cloud。购买设施或假定基础 Compose 启动等于托管体验前，应先选架构。域名、服务及运行要求取决于所选路径。",
+        "source_refs": ["deploy-choice"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "seats",
+        "title_en": "Self-hosted paid seats are counted at instance scope",
+        "title_zh": "自托管付费席位按实例计算",
+        "en": "The activation guide counts Editor-and-higher users at instance level, with Viewer and Commenter free, rather than charging only one selected space. The Instance ID is stored in PostgreSQL and preserved by a full database migration. Automatic renewal requires license-server access; manual/offline handling is separate. Confirm the running instance, seat roles and renewal path before treating a self-hosted deployment as an unlimited free commercial platform.",
+        "zh": "激活指南按实例计算 Editor 及以上用户，Viewer 和 Commenter 免费，并非仅按某个空间计费。Instance ID 存于 PostgreSQL，完整数据库迁移可保留。自动续期需要访问许可服务器，手动／离线处理另有流程。将自托管当作不限量免费商业平台前，需确认实例、角色席位及续期路径。",
+        "source_refs": ["license-host"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "An image rollback may not reverse a schema migration",
+        "title_zh": "镜像回退未必能撤销 schema 迁移",
+        "en": "The upgrade guide documents automatic database migrations at startup and warns that returning to an earlier image may be unsafe after schema changes. Prefer a known release combination and retain a pre-upgrade recovery set. The activation guide identifies PostgreSQL data, Redis automation queues and attachment storage as distinct backup components. A SQL dump or container image alone is therefore not complete operational recovery. No upgrade or recovery was executed.",
+        "zh": "升级指南记载启动时自动迁移数据库，并提醒 schema 变化后退回旧镜像可能不安全。应采用已知发布组合并保留升级前恢复集。激活指南将 PostgreSQL 数据、Redis 自动化队列及附件存储列为不同备份组件，因此只有 SQL 导出或容器镜像不是完整运行恢复。本次未执行升级或恢复。",
+        "source_refs": ["upgrade", "license-host"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Annual seat rates and space quotas are different dimensions",
+        "title_zh": "年付席位价格与空间配额是不同维度",
+        "en": "The visible Cloud yearly view lists Pro at $13/seat/month and Business at $20, billed yearly. Free lists 1,000 rows per space, 100 monthly automation runs and 200 one-time bonus AI credits. Paid automation quotas and row/storage caps are per space, while credits also depend on seats. Custom SMTP avoids the built-in mail quota, but not automation/provider limits. Confirm monthly checkout, billable Cloud roles, taxes and add-ons before estimating a total.",
+        "zh": "可见 Cloud 年付视图列出 Pro 每席位每月 $13、Business $20，按年结算。Free 列每空间一千行、每月一百次自动化及一次性二百 AI 赠送额度。付费自动化、行数及存储按空间限制，信用额度也与席位有关。自定义 SMTP 可避开内置邮件配额，但仍受自动化／服务方限制。总价需再核月付结账、Cloud 计费角色、税及附加项。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Teable: setup, operating limits and pricing",
+    "title_zh": "Teable：设置、运行边界及费用",
+    "description_en": "Teable combines spreadsheet-style structured data with collaboration, automations and AI-assisted fields and app building. Its current offering includes hosted Cloud and ",
+    "description_zh": "Teable 将电子表格式结构化数据与协作、自动化、AI 字段及应用构建组合起来。当前产品包含托管 Cloud 及多种自托管路径，部署架构与套餐共同决定可用能力。",
+    "search_intent_en": "Evaluate Teable for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Teable。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No instance, account, import, permission, model, workflow, message, license activation, purchase, upgrade or recovery operation was executed.",
+      "zh": "未执行实例、账户、导入、权限、模型、流程、消息、许可激活、购买、升级或恢复操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual open-source license text was not read; whole-product license status remains unverified. Compliance labels marked coming soon were not adopted as completed certification. Cloud billable-role rules, data residency, AI privacy/model accuracy and real restore completeness require direct verification.",
+      "zh": "未读取实际开源许可文本，全产品许可状态待核；未将即将推出的合规标签当作已完成认证。Cloud 计费角色、数据驻留、AI 隐私／模型准确性及真实恢复完整性需直接核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

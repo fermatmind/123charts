@@ -1,0 +1,409 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "evoice-0d22010e",
+  "name": "eVoice",
+  "website_url": "https://www.evoice.com/",
+  "domain": "www.evoice.com",
+  "identity_domain": "evoice.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "eVoice is a virtual business-phone service providing a business number,extensions,automated call handling,voicemail,mobile access and usage reports. Current Elite and Elite Plus plans are phone-service offers;predictive campaign dialing and a built-in CRM were not established in the reviewed sources. Plus adds messaging,while recording,transcription,professional greetings and human Live Receptionist services have separate commercial scope.\n\nFor an illustrative small-business reception flow,choose a number and extensions,define time-based routing and screening,then route unanswered calls to voicemail or a separately purchased live team. SMS readiness is a separate step:local business texting needs approved registration,while voice remains available. Public prices and a conditional30-day money-back offer were read,but no account,call,registration,purchase,number port or export was tested.",
+  "description_zh": "eVoice是虚拟企业电话服务，提供企业号码、分机、自动电话处理、语音信箱、移动访问及用量报告。当前Elite及Elite Plus属于电话服务方案，已读来源未建立预测活动拨号或内置CRM。Plus增加消息，录音、转写、专业提示及真人Live Receptionist有独立商业范围。\n\n以假设小企业前台为例，选号码及分机，定义按时间路由及筛选，再将未接电话转信箱或单独购买真人团队。SMS可用需另一步：本地企业短信要求注册审核通过，语音仍可用。已读公开价格及有条件30天退款方案，未测试账户、电话、注册、购买、转号或导出。",
+  "core_features": [
+    {
+      "name_en": "Extensions and call schedules",
+      "name_zh": "分机及电话时间表",
+      "explanation_en": "Route a business number through extensions and time/day-specific handling rules.",
+      "explanation_zh": "通过分机及按日／时间规则处理企业号码来电。",
+      "explanation_scope": "product_specific",
+      "source_ref": "core",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Automated phone reception",
+      "name_zh": "自动电话前台",
+      "explanation_en": "Use greetings,screening,blocking,hold music and an auto-attendant.",
+      "explanation_zh": "使用提示、筛选、拦截、等待音乐及自动总机。",
+      "explanation_scope": "product_specific",
+      "source_ref": "core",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Optional human reception",
+      "name_zh": "可选真人接听",
+      "explanation_en": "Purchase a trained US-based reception team under separate per-minute conditions.",
+      "explanation_zh": "按单独每分钟条件购买受训美国真人接听团队。",
+      "explanation_scope": "product_specific",
+      "source_ref": "live",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Business messaging registration",
+      "name_zh": "企业消息注册",
+      "explanation_en": "Complete the relevant local-number or toll-free verification process before relying on outbound texting.",
+      "explanation_zh": "依赖外发短信前完成相关本地或免费号码认证。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sms-registration",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A small business separating a customer-facing phone number from personal devices.",
+      "A reception workflow combining automated routing with separately scoped human answering."
+    ],
+    "zh": [
+      "将对客号码与个人设备分开的小企业。",
+      "将自动路由与单独真人接听组合的前台流程。"
+    ],
+    "source_refs": ["core", "plans", "live"],
+    "basis": "Editorial fit;not observed reliability,customer satisfaction or outbound-sales performance."
+  },
+  "technical_details": {
+    "Conference-minute accounting": {
+      "en": "The agreement counts conference use per participant leg:four participants for ten minutes use forty minutes,not ten. Exact current package allowances still need confirmation.",
+      "zh": "协议按参会方线路计会议用量，四人十分钟用四十分钟而非十分钟；真实当前套餐额度仍需确认。",
+      "source_ref": "agreement",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business phone owner",
+      "Reception administrator",
+      "Mobile team lead"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "core"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm the current plan,number/extension allowance and paid extras;check number exit rights before advertising a new number.",
+        "zh": "确认当前套餐、号码／分机额度及付费附加项，对外使用新号码前检查退出权。",
+        "source_refs": ["plans", "agreement"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Define business-hour routing,extensions,screening and voicemail;test both an answered and an unanswered call on actual devices.",
+        "zh": "定义营业路由、分机、筛选及信箱，在真实设备测试已接和未接。",
+        "source_refs": ["core"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "If texting is needed,complete the appropriate verification and test delivery separately from voice. Enable required recording extras and download important files within the documented window.",
+        "zh": "如需短信，完成对应认证并与语音分开测试投递；启用所需录音附加项，在文档窗口内下载重要文件。",
+        "source_refs": [
+          "sms-registration",
+          "tollfree-sms",
+          "agreement",
+          "add-ons"
+        ],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": [],
+    "source_ref": "core"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The generic core-features page lists messaging,but the current plan page limits included unlimited messaging to Elite Plus.",
+        "zh": "通用核心功能页列消息，当前套餐页却仅Elite Plus含无限消息。",
+        "source_refs": ["core", "plans"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Call recording is an add-on;the agreement describes30-day storage and no recording for conference calls.",
+        "zh": "录音属附加项，协议描述保存30天且不适用会议电话。",
+        "source_refs": ["add-ons", "agreement"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Live Receptionist is a human service with published8am–8pmEST availability,per-minute billing and no money-back guarantee.",
+        "zh": "Live Receptionist是真人服务，公开时间8am–8pm EST，按分钟计费，无退款保证。",
+        "source_refs": ["live"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A paid messaging plan does not bypass local-number or toll-free registration and carrier delivery conditions.",
+        "zh": "付费消息套餐不绕过本地／免费号码注册及运营商投递条件。",
+        "source_refs": ["sms-registration", "tollfree-sms"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Published cancellation procedures require a cancellation number,and number portability differs by origin/type/jurisdiction.",
+        "zh": "公开取消程序要求取消编号，转号依号码来源／类型／地区而异。",
+        "source_refs": ["agreement"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.evoice.com/customer-agreement/",
+    "source_ref": "agreement",
+    "notes_en": "Vendor/service-provider ownership and no-resale service conditions;not an open-source phone server license.",
+    "notes_zh": "厂商／服务商拥有权及不可转售服务条件，不是开源电话服务器许可。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "plans",
+    "source_refs": ["plans", "agreement", "live", "sms-registration"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Dollar-display publishedserviceplans,not confirmedper-user unit. Monthly/annualterm and extras differ;actualaccountcurrency/allowances and totalcharges unverified.",
+    "source_snapshot_en": "Elite$14/month or$12/monthbilledannually;ElitePlus$21/month or$19/monthbilledannually. Plusincludesmessaging;both30daymoneybackofferconditionalunderagreement,notfree/no-cardtrial. Recording,livehumananswering,transcription/progreetingextra. Unlimiteddefined30000callminutes/monththen.039/min inagreement,otherusagecontrolsapply. Taxes/feesextra;10DLCguideupto20oneoff/most2monthlyclaims,LiveReceptionistperminute no refundguarantee. Includeduser/numbercount and totalcost notestablished.",
+    "source_snapshot_zh": "Elite每月$14或年付折月$12，Elite Plus每月$21或年付折月$19。Plus含消息，两者30天退款按协议有条件，不是免费／免卡试用。录音、真人接听、转写／专业提示另计。协议将无限定义为每月30000通话分钟，之后每分钟.039，另有用量控制。税费另计，10DLC指南称一次最多20／多数每月2，真人接听按分钟且无退款保证。所含用户／号码数及总成本未建立。",
+    "checked_at": "2026-10-22T15:00:45.958126+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is Live Receptionist an AI bot included with Elite?",
+      "question_zh": "Live Receptionist是Elite已含AI机器人吗？",
+      "answer_en": "No. It is a separately scoped trained human team,billed per-minute with published service hours.",
+      "answer_zh": "不是。它是单独范围的受训真人团队，按分钟计费且有公开服务时间。",
+      "source_refs": ["live", "plans"]
+    },
+    {
+      "question_en": "Is the30-day money-back guarantee a free trial?",
+      "question_zh": "30天退款保证是免费试用吗？",
+      "answer_en": "No. The agreement describes a refund of eligible base charges when cancellation conditions are met;optional fees and Live Receptionist have separate exclusions.",
+      "answer_zh": "不是。协议描述满足取消条件时退符合资格基础费用，附加费用及真人接听有单独排除。",
+      "source_refs": ["plans", "agreement", "live"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/evoice",
+      "read_at": "2026-10-22T08:55:29.425Z",
+      "excerpt_sha256": "4f565e44d52f854a7e48355799d9b27691b038f947fe202ce8fccb4cb56d5931",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "plans",
+      "type": "official_pricing",
+      "site": "Pricing | eVoice",
+      "title": "Pricing | eVoice",
+      "url": "https://www.evoice.com/pricing/",
+      "read_at": "2026-10-22T14:59:50.076287+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "0b0dc21d7fe2e42c209e77f7fc72b42924fb1788adafcca33737ba20b8a02426",
+      "research_notes_en": "CurrentElite14monthly/12annualmonthlydisplay,ElitePlus21/19;notlabeledperuser. 30daymoneybackconditional,nofreetrialinference. Recording/live/transcription/progreetingaddons. MessagingPlusonly despitebroadcorepage."
+    },
+    {
+      "id": "core",
+      "type": "official_documentation",
+      "site": "Core Features | Professional Virtual Phone Service | eVoice",
+      "title": "Core Features | Professional Virtual Phone Service | eVoice",
+      "url": "https://www.evoice.com/core-features/",
+      "read_at": "2026-10-22T15:00:45.958126+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "05efd4d2c0bc97f8a23dd2da358b04fd87735ad9fe582cd8c593389c7b0d717c",
+      "research_notes_en": "Multipleextensions,time/dayroutingschedules,screening,blocking,autoattendant,PDFinboundfax,mobileandusage;genericunlimitedmessaginglinequalifiedbyplansPlus."
+    },
+    {
+      "id": "add-ons",
+      "type": "official_documentation",
+      "site": "Add-On Features | Professional Phone Service | eVoice",
+      "title": "Add-On Features | Professional Phone Service | eVoice",
+      "url": "https://www.evoice.com/add-on-features/",
+      "read_at": "2026-10-22T15:00:44.966287+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a29e32235f85320329bfb162c8fc92cb7678cb21bf9f2810141622f4a42f22a5",
+      "research_notes_en": "Recording,trainedUS-basedhumanreceptionists,transcriptionandprofessionalvoicegreetinglistedasseparateextras;noamount. Audiofilevoicemaildescriptionnotfullcalltranscriptguarantee."
+    },
+    {
+      "id": "live",
+      "type": "official_documentation",
+      "site": "Live Receptionist | Premium Phone Answering Service | eVoice",
+      "title": "Live Receptionist | Premium Phone Answering Service | eVoice",
+      "url": "https://www.evoice.com/live-receptionist/",
+      "read_at": "2026-10-22T15:00:45.094920+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9367d7e161ff308fc2bf2b86d49f614db9ab5baeea5afa36d6219d9475773532",
+      "research_notes_en": "Actualhumanreceptionistservice,billedperminute,nomoneyback,customizationformthenapprox48htraining,8am–8pmEST;not24/7humancoverageorAIbot."
+    },
+    {
+      "id": "sms-registration",
+      "type": "official_documentation",
+      "site": "10dlc-faq - Try eVoice",
+      "title": "10dlc-faq - Try eVoice",
+      "url": "https://try.evoice.com/10dlc-faq/",
+      "read_at": "2026-10-22T15:00:30.226415+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a1ad3e77b37856f69233d07f2d5844006a455701192a9c45b543b5b2fdc3c970",
+      "research_notes_en": "Official2025updatedlocal10DLCguide saysoutboundSMSdisableduntilapproved,voice/inboundSMSunaffected,Canada-toUSalsoregister;upto20oneoffandmost2/monthvendorfeeclaimsnotindependentlyTCRverified."
+    },
+    {
+      "id": "tollfree-sms",
+      "type": "official_documentation",
+      "site": "Toll-Free SMS Messaging & Verification | eVoice",
+      "title": "Toll-Free SMS Messaging & Verification | eVoice",
+      "url": "https://www.evoice.com/toll-free-sms-faq/",
+      "read_at": "2026-10-22T15:00:31.281907+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b7d0564e092fa81c49bc24b111f92833fede11059f7bf7f2024dc106e7dd7ffd",
+      "research_notes_en": "SeparatetollfreeverificationFAQupdatedMay2024,pendinglimitsandconsentproofpernumber. Donotadoptoldthresholdsasguaranteedcurrent2026carrierpolicy."
+    },
+    {
+      "id": "agreement",
+      "type": "official_license",
+      "site": "Customer Agreement | eVoice",
+      "title": "Customer Agreement | eVoice",
+      "url": "https://www.evoice.com/customer-agreement/",
+      "read_at": "2026-10-22T15:00:28.846233+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7a58f89a2ff035016b9276b7d6825b6a3ead85eb9bd432253c0686514bc8eea4",
+      "research_notes_en": "Actualserviceagreement:unlimited30000minutes/monththen.039/min plus2xaverageusage right;conferenceperleg;recording*2announcement/30daystorage/noconference;cancelrequiresconfirmationnumber;portoutrestrictions/feesdifferbyoriginandjurisdiction;proprietaryownership."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:00:45.958126+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "plans",
+    "core",
+    "add-ons",
+    "live",
+    "sms-registration"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "phone-workflow",
+        "title_en": "Separate the business number from the reception workflow",
+        "title_zh": "将企业号码与接听流程分开配置",
+        "en": "eVoice provides a virtual business number with extensions,automated greetings,screening,blocking,routing schedules,voicemail,mobile access and usage reports. For an illustrative reception setup,assign colleagues their extensions,define working-hour rules and decide what happens when no one answers. A phone number alone does not establish that those destinations are staffed or the handset has reliable connectivity.\n\nThe current Elite/Elite Plus page is more specific than the broad core-feature list:included unlimited messaging belongs to Plus. The reviewed material does not establish a predictive campaign dialer,built-in CRM or a tested CRM API. Evaluate it as a business-phone service unless a specific commercial offer supplies additional evidence.",
+        "zh": "eVoice提供虚拟企业号码、分机、自动提示、筛选、拦截、路由时间表、信箱、移动访问及用量报告。以假设前台配置为例，为同事分配分机，定义工作时间规则，并决定无人接听时去哪里。号码本身不证明目标有人值守或设备连接可靠。\n\n当前Elite／Elite Plus页比宽泛核心清单更具体：已含无限消息属于Plus。已读资料未建立预测活动拨号、内置CRM或已测CRM API；除非具体商业方案提供证据，应按企业电话服务评估。",
+        "source_refs": ["core", "plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price-usage",
+        "title_en": "The published price is a service offer,not a verified per-seat total",
+        "title_zh": "公开价格是服务方案，不是已验每座席总价",
+        "en": "The pricing page shows Elite14monthly or12permonth billed annually,and Elite Plus21monthly or19permonth billed annually,in dollar display. It does not establish a per-user unit or a complete current number/seat allowance. Do not multiply a directory’s historical per-user amount into a team quote. Recording,voicemail transcription,professional greetings and human reception are extras,and taxes/fees are excluded.\n\nThe current agreement defines unlimited calling as up to30,000minutes/month,then0.039perminute in one-minute increments,and reserves additional unusual-usage controls. Conference use counts each participant leg:four participants for ten minutes consume forty minutes. Domestic eligibility does not establish free worldwide calling. Obtain the actual account allowance,international destination rates and optional-service fees before estimating total spend.\n\nThe30-day money-back offer is a conditional refund of eligible base charges after following the cancellation procedure,not proof of a no-card free trial. The agreement generally excludes optional-service fees,and Live Receptionist has its own no-guarantee condition.",
+        "zh": "定价页以美元符号显示Elite月付14或年付折月12、Elite Plus月付21或年付折月19，没有建立每用户单位或完整当前号码／座席额度。不能将目录历史每用户金额乘成团队报价。录音、信箱转写、专业提示及真人接听为额外项，税费未含。\n\n当前协议将无限通话定义为每月最多30000分钟，之后每分钟0.039、按整分钟计，另保留异常用量控制。会议按每参会方线路计，四人十分钟消耗四十分钟。国内资格不证明全球通话免费，需先取得真实账户额度、国际目的地费率及附加服务费再估总支出。\n\n30天退款是按取消程序退符合条件基础费用，不证明免卡免费试用。协议通常排除附加服务费，Live Receptionist另有无退款保证条件。",
+        "source_refs": ["plans", "agreement", "add-ons", "live"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recordings",
+        "title_en": "Recording is an extra with a short documented storage window",
+        "title_zh": "录音是附加项，并有较短文档存储窗口",
+        "en": "The add-on page offers call recording. The customer agreement describes starting/stopping an enabled recording with*2,an automatic announcement and storage for30days from recording,with download through the account. It says recording is not available for conference calls. A page promising convenient playback does not override that specific retention/feature condition.\n\nIf recordings are operationally required,confirm that the extra is enabled for the intended account,obtain required notices/permissions and test an actual file download before relying on it. A voicemail audio file is also different from a full-call transcript. No complete backup,bulk archive,restore or independently verified recording quality was established here.",
+        "zh": "附加项页面提供电话录音。客户协议描述启用后用*2开始／停止、自动播提示、从录制起保存30天及通过账户下载，另称会议电话不可录音。便捷回放宣传不能覆盖具体留存／功能条件。\n\n如运营需录音，应确认目标账户已启用附加项、取得所需告知／许可，并测试真实文件下载后再依赖。语音信箱音频也不同于整通电话转写。此次未建立完整备份、批量档案、恢复或独立录音质量核验。",
+        "source_refs": ["add-ons", "agreement"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "human-service",
+        "title_en": "Live Receptionist is a staffed premium service",
+        "title_zh": "Live Receptionist是有人值守的高级服务",
+        "en": "Live Receptionist uses trained US-based people to answer selected inbound calls,take messages,book appointments and handle agreed administrative tasks. The customer provides a customization form after signup;the page estimates around48hours to train the team after it is returned. That is an estimate,not tested activation.\n\nThe FAQ states per-minute billing and8am–8pmEST availability,with automated Virtual Receptionist handling outside those hours. It explicitly does not offer a money-back guarantee for this staffed service. Confirm the actual schedule,holiday coverage,minute allowance and escalation instructions;do not infer24/7human staffing from the automated-phone product. No live call or appointment was placed.",
+        "zh": "Live Receptionist使用受训美国真人接选定呼入、留言、预约及约定行政任务。注册后客户提供定制表，页面估计收到后约48小时培训，这是估计而非已测开通时间。\n\nFAQ说明按分钟计费、8am–8pm EST可用，时间外可由自动Virtual Receptionist处理，并明确真人服务无退款保证。需确认真实时间表、节假日、分钟额度及升级指令，不能从自动电话产品推断24小时真人值守。未拨真人电话或创建预约。",
+        "source_refs": ["live"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "sms",
+        "title_en": "Messaging needs approval independently of voice",
+        "title_zh": "消息需独立于语音取得批准",
+        "en": "The official local-number10DLC guide says outbound business SMS is disabled until registration is completed and approved;inbound SMS and voice are unaffected by that restriction. Canadian customers texting US recipients are also directed through registration. The page gives one-time and monthly fee examples,but those are vendor statements rather than independently checked current carrier charges. A paid Elite Plus subscription is not itself approval to send.\n\nToll-free numbers use a separate verification process. Its FAQ carries a May2024update and describes pending thresholds,per-number applications and evidence of opt-in. Those older thresholds are not adopted as guaranteed current2026limits. Verify the actual number type,status and supported use case in the applicable process before promising message delivery. No business documents,forms or messages were submitted.",
+        "zh": "官方本地号码10DLC指南称企业外发SMS在完成注册并获批前禁用，该限制不影响呼入短信及语音。向美国接收者发短信的加拿大客户同样需注册。页面有一次及月费示例，但属于厂商说明，未独立核对当前运营商费用。已付Elite Plus本身不等于获准发送。\n\n免费号码使用另一认证程序。其FAQ标2024年5月更新，描述待审阈值、逐号码申请及订阅同意证据，不将旧阈值当保证适用2026年。承诺投递前需确认真实号码类型、状态及适用程序支持用途。未提交企业文件、表单或消息。",
+        "source_refs": ["sms-registration", "tollfree-sms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exit-number",
+        "title_en": "Exit requires account confirmation and a number plan",
+        "title_zh": "退出需账户确认及号码方案",
+        "en": "The published agreement says cancellation is not effective until the customer receives a cancellation number from the assisted verification process. Retain that confirmation and reconcile the final bill rather than treating non-use as cancellation. The contract also distinguishes number origin and type:company-provided non-toll-free numbers have restrictive port-out wording,while ported-in/toll-free numbers have conditional procedures,fees and jurisdiction qualifications. Current applicability to a particular number needs confirmation before relying on future portability.\n\nNumber porting is not the same as account cancellation;the agreement says service fees continue until formally terminated and a terminated number may be reassigned. It also excludes voice emergency calling,so the service is not a replacement for every existing telephone use. No number was moved or cancelled. eVoice fits a team seeking ordinary business call handling with separately chosen extras;predictive outreach,complete archives,CRM automation,UI languages and full export/restore remain unverified.",
+        "zh": "公开协议称，辅助验证流程给出取消编号后取消才生效。应保留确认并核对最后账单，不能将不用服务当作取消。合同还按号码来源及类型区分：厂商提供非免费号码有严格转出表述，转入／免费号码有条件程序、费用及地区限定。依赖未来可携性前需确认特定号码当前适用条件。\n\n转号不同于取消账户，协议称正式终止前服务费继续，终止号码可能重新分配。它另排除语音紧急呼叫，因此不是原电话全部用途的替代。未迁移或取消号码。eVoice适合寻求普通企业电话处理并单选附加项的团队，预测外呼、完整档案、CRM自动化、界面语言及完整导出／恢复仍未核。",
+        "source_refs": ["agreement", "plans"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "eVoice: Elite Plans, Human Reception, SMS Approval and Recording Limits",
+    "title_zh": "eVoice：Elite套餐、真人接听、短信批准及录音限制",
+    "description_en": "Review eVoice phone-service pricing,conditional refunds,paid recording,Live Receptionist hours,10DLC registration and account/number exit conditions.",
+    "description_zh": "核对eVoice电话服务价格、有条件退款、付费录音、真人接听时间、10DLC注册及账户／号码退出条件。",
+    "primary_intent": "Evaluate virtual business-phone workflow and commercial limits.",
+    "secondary_questions": [
+      "Is the price per user?",
+      "Does messaging work before approval?",
+      "What happens to recordings and numbers on exit?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,call,registration,liveagent,appointment,payment,porting,export orrestoretested. Actualaccountcurrency,number/userallowances,international/recording/LiveReceptionistrates,currentTCR/carrierfees,tollfreependingrules,number-specificportingrights,SLA/dataregion/UIlanguages and completeportableexportunknown. Publishedagreementiscontractsource,notindependentlegal enforceabilityfinding;oldSMSthresholdsnotadoptedascurrentcarriertruth.",
+      "zh": "未测试账户、电话、注册、真人、预约、付款、转号、导出或恢复。真实账户币种、号码／用户额度、国际／录音／真人费率、当前TCR／运营商费、免费号码待审规则、具体号码可携权、SLA／资料地区／界面语言及完整可携导出未知。公开协议是合同来源，不是独立法律可执行性结论；旧SMS阈值未当当前运营商事实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

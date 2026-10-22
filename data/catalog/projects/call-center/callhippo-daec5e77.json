@@ -1,0 +1,488 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "callhippo-daec5e77",
+  "name": "CallHippo",
+  "website_url": "https://callhippo.com/",
+  "domain": "callhippo.com",
+  "identity_domain": "callhippo.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CallHippo is a cloud business-communications platform with business phone plans, higher-volume contact-centre plans, AI agents, an omnichannel inbox, WhatsApp and dialing products. These have separate commercial boundaries. Essential office calling is not an unlimited bulk-dialing license; its fair-use policy restricts automated/predictive dialing and allows call-centre usage to be repriced or migrated.\n\nA practical evaluation distinguishes inbound queue service from outbound attempt tracking. Inbound callers can accrue billable queue time even when nobody answers. Outbound Attempt Manager stages advance only through its own call action, and duplicate numbers in different lists can share attempt/completion effects. Public prices vary by product, region, team size, currency and term; selected USD US/CA prices were read in the rendered public page. No account,number,call,campaign,purchase,CRM or export was tested.",
+  "description_zh": "CallHippo 是云企业通信平台，提供商务电话套餐、较高呼叫量联络中心套餐、AI客服、全渠道收件箱、WhatsApp及拨号产品，各自商业边界不同。Essential办公通话不等于无限批量拨号许可；其公平使用条款限制自动／预测拨号，并可对联络中心式用量重新计价或迁移。\n\n实际评估需区分呼入排队服务和外呼尝试跟踪。无人接听时，呼入排队仍可能计费。外呼 Attempt Manager 只有通过自身拨打动作才推进阶段，不同名单内同号码还可能共享尝试／完成效果。公开价格取决于产品、地区、人数、币种及周期；此次在渲染后公开页面核对所选 USD、US/CA价格。未测试账户、号码、电话、活动、购买、CRM或导出。",
+  "core_features": [
+    {
+      "name_en": "Number-specific inbound queues",
+      "name_zh": "按号码配置呼入队列",
+      "explanation_en": "Set wait duration,hold treatment and optional callback request while accounting for billable queue time.",
+      "explanation_zh": "配置等待时长、等候处理及可选回电请求，同时考虑排队计费。",
+      "explanation_scope": "product_specific",
+      "source_ref": "queue",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Attempt Manager stages",
+      "name_zh": "Attempt Manager 尝试阶段",
+      "explanation_en": "Track supported click-to-call actions across attempt stages with documented cross-list number effects.",
+      "explanation_zh": "跟踪支持的点击拨号阶段，并考虑同号码跨名单影响。",
+      "explanation_scope": "product_specific",
+      "source_ref": "attempts",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Parallel campaign configuration",
+      "name_zh": "并行活动配置",
+      "explanation_en": "Map lists,assignees,from numbers,pacing and reattempt conditions in the entitled dialer product.",
+      "explanation_zh": "在有权益的拨号产品中映射名单、执行人、发信号码、节奏及重试条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "parallel",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Outbound number selection",
+      "name_zh": "外呼号码选择",
+      "explanation_en": "Smart DID compares available outbound numbers by destination-country connectivity and requires multiple numbers.",
+      "explanation_zh": "Smart DID 按目标国家连接表现比较可用外呼号码，需要多个号码。",
+      "explanation_scope": "product_specific",
+      "source_ref": "did",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A support team evaluating number-specific inbound queues and a clearly scoped office plan.",
+      "A sales/contact-centre operation selecting an authorized high-volume dialer and reconciling list attempts with CRM records."
+    ],
+    "zh": [
+      "评估按号码呼入队列及明确办公套餐范围的支持团队。",
+      "选择有授权高呼叫量拨号器，并核对名单尝试与CRM记录的销售／联络中心。"
+    ],
+    "source_refs": ["queue", "essential-year", "pro-year", "parallel"],
+    "basis": "Editorial fit;not measured pickup gains,spam avoidance or lawful-outreach certification."
+  },
+  "technical_details": {
+    "Dashboard versus dialer": {
+      "en": "The incoming-call guide requires the dialer to be open and active; dashboard login alone does not receive calls. Number assignment,hours,time zone,routing and credits also matter.",
+      "zh": "呼入指南要求拨号器打开且活跃，仅登录控制台不能接听；号码分配、时间／时区、路由及余额也有影响。",
+      "source_ref": "incoming",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Business phone administrator",
+      "Support queue owner",
+      "Outbound campaign supervisor",
+      "CRM operations owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "parallel"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Essential versus Pro Suite or a distinct dialer/AI product,region,team size,currency and commitment before comparing prices.",
+        "zh": "比价前选择 Essential、Pro Suite 或独立拨号／AI产品，再选地区、人数、币种及承诺周期。",
+        "source_refs": ["essential-year", "pro-year", "contract"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm number eligibility,assignment,dialer availability and inbound hours;test queue expiry and callback request ownership.",
+        "zh": "确认号码资格、分配、拨号器可用及呼入时间，测试队列到期及回电请求责任。",
+        "source_refs": ["incoming", "queue", "contract"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "For campaigns,clean country-coded data,map fields and test one contact through attempt,disposition and duplicate-list completion before increasing pacing.",
+        "zh": "活动先清理含国家码资料、映射字段，测试联系人从尝试、处置到重复名单完成，再提高拨号节奏。",
+        "source_refs": ["parallel", "attempts"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "HubSpot / Zoho CRM / Salesloft campaign import",
+        "source_ref": "parallel",
+        "scope": "Supported campaign/list imports and refresh described;HubSpot uses Contacts,not Deals. Mapping and entitlement required."
+      },
+      {
+        "name": "CRM IDs in Attempt Manager",
+        "source_ref": "attempts",
+        "scope": "CRM-upload records can link to contact IDs;not proof of automatic deduplication or every manual call synchronizing attempt stage."
+      }
+    ],
+    "source_ref": "parallel"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Basic is advertised Free but the rendered fair-use policy limits the free period to six months;number and usage costs are separate.",
+        "zh": "Basic 宣传 Free，但渲染后的公平使用条款将免费期限定六个月；号码及用量费用另计。",
+        "source_refs": ["essential-year"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Office unlimited plans restrict bulk auto/predictive dialing;confirm high-volume entitlement rather than applying office rates to a campaign.",
+        "zh": "办公无限套餐限制批量自动／预测拨号，需确认高量权益，不能用办公费率代替活动报价。",
+        "source_refs": ["essential-year", "contract", "pro-year"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Queue time is billable even if abandoned;the documented queue is unavailable on India numbers.",
+        "zh": "放弃前排队时间仍计费，文档中的队列不适用于印度号码。",
+        "source_refs": ["queue"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Dialing outside Attempt Manager does not advance its stages,and duplicate phone numbers can change together across lists.",
+        "zh": "从 Attempt Manager 外拨打不推进其阶段，同号码跨名单可一起变化。",
+        "source_refs": ["attempts"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Smart DID selects an outbound number,not an inbound agent;multiple numbers are required.",
+        "zh": "Smart DID 选择外呼号码而非呼入客服，且需多个号码。",
+        "source_refs": ["did"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://callhippo.com/terms/",
+    "source_ref": "contract",
+    "notes_en": "Limited nonexclusive revocable business subscription;IP remains vendor,one individual per login. Not an open-source or unrestricted resale license.",
+    "notes_zh": "有限、非独占、可撤销企业订阅，知识产权留厂商，每登录限一人；不是开源或无限转售许可。"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "essential-year",
+    "source_refs": [
+      "essential-year",
+      "essential-month",
+      "pro-year",
+      "pro-month",
+      "contract",
+      "queue",
+      "exemptions"
+    ],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Observed US/CA region,USD,1–4 users only;separate Essential/Pro Suite and annual/monthly commitments. No universal normalized minimum including number/usage costs.",
+    "source_snapshot_en": "Rendered Essential Starter/Professional/Ultimate:USD19/30/42 peruser/month with yearly selected;25/40/55 monthly. Pro Suite Bronze/Silver/Platinum:32/42/54 yearly-selected monthly display;40/55/70 monthly. Enterprise quote,minimum50users. Basic Free limited6months by FUP,pay numbers;10daynocardtrial advertised. Office unlimited limited manual domestic standardUS/CA with exclusions/FUP,not bulkdialer entitlement. Carrier,tax,number,AI/SMS/queue charges and actual other-region/team offers separate/unverified.",
+    "source_snapshot_zh": "渲染后 Essential Starter／Professional／Ultimate：选年付时每人每月显示USD19／30／42，月付25／40／55。Pro Suite Bronze／Silver／Platinum：选年付时折月32／42／54，月付40／55／70。Enterprise询价，最低50人。Basic的Free按FUP限六个月，号码收费；宣传十天免卡试用。办公无限通话限人工拨打国内标准US/CA并有例外／FUP，不是批量拨号权益。运营商、税、号码、AI／SMS／队列费用及其他地区／人数报价另计或未核。",
+    "checked_at": "2026-10-22T14:30:23.434847+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does Smart DID route the customer to an agent?",
+      "question_zh": "Smart DID 会把客户路由到客服吗？",
+      "answer_en": "The help article defines outbound From Number selection based on destination-country completion performance. It needs more than one number and is not an inbound skill queue.",
+      "answer_zh": "帮助文档定义的是按目标国家接通表现选择外呼 From Number，需要不止一个号码，不是呼入技能队列。",
+      "source_refs": ["did"]
+    },
+    {
+      "question_en": "Does a free Basic card establish ongoing free service?",
+      "question_zh": "Basic免费卡片能证明持续免费服务吗？",
+      "answer_en": "No. The rendered pricing FUP limits Basic to six months,then requires Starter to continue;numbers and usage are separate.",
+      "answer_zh": "不能。渲染后定价FUP将Basic限六个月，继续需Starter；号码及用量另计。",
+      "source_refs": ["essential-year"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/callhippo",
+      "read_at": "2026-10-22T08:41:57.912Z",
+      "excerpt_sha256": "b6a9c22e9d9fdcd2e71397623d9e8e3cf44061a9ff29e6b0706d2f9f92700d5e",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "CallHippo: AI-Driven Communication Automation Platform",
+      "title": "CallHippo: AI-Driven Communication Automation Platform",
+      "url": "https://callhippo.com/",
+      "read_at": "2026-10-22T14:28:18.228478+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ffdb3fd144b9525ac53a63c8a86802ffd1b7ef4669ba53e6bfbd144fe5d05a96",
+      "research_notes_en": "Current platform offers business phone,AI agents,omnichannel inbox,WhatsApp and parallel dialer as distinct products; no measured outcomes/adoption."
+    },
+    {
+      "id": "essential-year",
+      "type": "official_pricing",
+      "site": "CallHippo",
+      "title": "CallHippo Pricing Plans — rendered public selection",
+      "url": "https://callhippo.com/pricing/",
+      "read_at": "2026-10-22T14:29:58.334447+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "260db6cbff224dfd987e0a869e99080d7d6cb6915ee883963b45847df998d071",
+      "research_notes_en": "Browser verified US/CA,USD,1–4 users,yearly switch checked:Starter19/Professional30/Ultimate42 per user/month,Enterprise quote50minimum. Actual late-loaded values replace static18/1000minute/INR artifacts. Basic six-month free term,FUP manual office calling vs bulk call-center use."
+    },
+    {
+      "id": "essential-month",
+      "type": "official_pricing",
+      "site": "CallHippo",
+      "title": "CallHippo Pricing Plans — rendered public selection",
+      "url": "https://callhippo.com/pricing/",
+      "read_at": "2026-10-22T14:29:48.240090+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "5964ca97e33b96d00cbb6252b743b871d98fe7d11785e6c0f74f893f19527af3",
+      "research_notes_en": "Clicked Monthly and verified yearly=false,team1–4,US/CA USD:Starter25/Professional40/Ultimate55 peruser/month. No signup."
+    },
+    {
+      "id": "pro-year",
+      "type": "official_pricing",
+      "site": "CallHippo",
+      "title": "CallHippo Pricing Plans — rendered public selection",
+      "url": "https://callhippo.com/pricing/",
+      "read_at": "2026-10-22T14:30:11.485910+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "e31268556b35c6bc846ba3034ea8600f00977d5c0b4b708ca81bd63839611ef3",
+      "research_notes_en": "Selected Pro Suite and verified yearly=true,team1–4,US/CA USD:Bronze32/Silver42/Platinum54 peruser/month;Enterprisequote50minimum. Separate high-volume package,not Essential entitlements."
+    },
+    {
+      "id": "pro-month",
+      "type": "official_pricing",
+      "site": "CallHippo",
+      "title": "CallHippo Pricing Plans — rendered public selection",
+      "url": "https://callhippo.com/pricing/",
+      "read_at": "2026-10-22T14:30:23.434847+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility",
+      "excerpt_sha256": "bf31efe5162707f06c928976ad9f2415746796c8789930d08b23306e0757b777",
+      "research_notes_en": "Pro Suite Monthly:Bronze40/Silver55/Platinum70 peruser/month sameUS/CAUSD1–4selection. Otherregions/team sizes/AI/parallelproductquotesnotverified."
+    },
+    {
+      "id": "contract",
+      "type": "official_license",
+      "site": "Terms of Use | CallHippo",
+      "title": "Terms of Use | CallHippo",
+      "url": "https://callhippo.com/terms/",
+      "read_at": "2026-10-22T14:29:04.461298+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "ffc89171ddb491a6dd463060f509944d625de38db68cb87de6797f25b066461b",
+      "research_notes_en": "Service access limited revocable business subscription;namedonepersonlogin,resellerlimits;annualcommitmentfullterm,nonrefundexceptdefinedbreach,60secondrounding,carrierfeesextra;numberdeactivationandcontentdeletionwithin2yearsnotguaranteed2yearaccess."
+    },
+    {
+      "id": "queue",
+      "type": "official_documentation",
+      "site": "Call Queue: Overview Setup and Pricing - Help CallHippo",
+      "title": "Call Queue: Overview Setup and Pricing - Help CallHippo",
+      "url": "https://help.callhippo.com/call-queue/",
+      "read_at": "2026-10-22T14:29:40.506438+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "806a80d2e7ac9c23a6c9b1b0f14afca8dc68c0565ba9e0759ad447b0754f8be9",
+      "research_notes_en": "Queue enabled per number/selectedplans,notIndia;billableevenabandon,default300max1000seconds,timeoutvoicemail/disconnect,optional#callbackrequestnotautomaticcompletion."
+    },
+    {
+      "id": "attempts",
+      "type": "official_documentation",
+      "site": "How to Create a Progressive Dialer - Help CallHippo",
+      "title": "How to Create a Progressive Dialer - Help CallHippo",
+      "url": "https://help.callhippo.com/progressive-dialer/",
+      "read_at": "2026-10-22T14:29:40.434648+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "aeb5448385ff2dd401ad9c4a3e3791595c3074b0d5286a65ecb00bfbb0646789",
+      "research_notes_en": "RequiresAutoDialerentitlement;onlyAttemptManagerclick-to-calladvancesattempts,notmanual/inbound;refreshnecessary,duplicatenumbersacrosslistsshareattemptadvancementandcompletion."
+    },
+    {
+      "id": "parallel",
+      "type": "official_documentation",
+      "site": "What Is Parallel Dialer? How to Use It? - Help CallHippo",
+      "title": "What Is Parallel Dialer? How to Use It? - Help CallHippo",
+      "url": "https://help.callhippo.com/parallel-dialer/",
+      "read_at": "2026-10-22T14:29:05.934795+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "1fe795405a6d8f080218759eec497437a38633c1e63b2d3074cca6955a9d63fa",
+      "research_notes_en": "Manualtemplate/importHubSpotZohoSalesloft,fieldmapping,countrycodesmax10columns,HubSpotContactsonlynotDeals;agentdialeropen,attemptconditions/pacing/timezone/AMDoptions. No guaranteedconnectionsorlegalpermission."
+    },
+    {
+      "id": "did",
+      "type": "official_documentation",
+      "site": "What Is Smart DID Routing and How to Enable It? - Help CallHippo",
+      "title": "What Is Smart DID Routing and How to Enable It? - Help CallHippo",
+      "url": "https://help.callhippo.com/smart-did-routing/",
+      "read_at": "2026-10-22T14:29:40.764813+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "bb2074c009171468e97da1c8d051016619ae553e75482fb722b28f051bc7b7f8",
+      "research_notes_en": "SmartDIDselectsoutboundFromNumberbydestination-countrycompletionratio,requires>1number;notinboundagentselectionnor guaranteedlocalareacode."
+    },
+    {
+      "id": "incoming",
+      "type": "official_documentation",
+      "site": "Troubleshooting Steps for Incoming Calls on the Web Dialer - Help CallHippo",
+      "title": "Troubleshooting Steps for Incoming Calls on the Web Dialer - Help CallHippo",
+      "url": "https://help.callhippo.com/incoming-calls-not-working/",
+      "read_at": "2026-10-22T14:29:40.701356+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "70414be048f24a86f5f4c59d220f5c71da4e02f770aa2e6653cf6a2ff2b011ac",
+      "research_notes_en": "Dashboardlogininsufficient;dialermustbeopen/active,numberactiveassigned,businesshours/timezoneandrouting/creditchecks. No security settings changed."
+    },
+    {
+      "id": "exemptions",
+      "type": "official_documentation",
+      "site": "Exemption List · CallHippo",
+      "title": "Exemption List · CallHippo",
+      "url": "https://callhippo.com/exemption-list/",
+      "read_at": "2026-10-22T14:29:03.565837+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a7e65079a2d6b961ebf62598b8ca3159aef16a460f4348a504bc89a2c6da0139",
+      "research_notes_en": "Official unlimited-calling exemption list includes US/Canada toll-free and other country/type exclusions;notglobalunlimitedallnumbertypes."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:30:23.434847+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "platform",
+    "essential-year",
+    "queue",
+    "attempts"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "products",
+        "title_en": "Office calling and campaign dialing need different entitlements",
+        "title_zh": "办公通话与活动拨号需不同权益",
+        "en": "CallHippo’s product selector separates its AI business phone system,AI agents,omnichannel inbox,WhatsApp Business API and Parallel Dialer. Within the phone system,the rendered page distinguishes Essential for lower-volume calling and Pro Suite for higher-volume operations. A feature appearing elsewhere in the catalogue is not evidence of inclusion in a selected plan.\n\nThis distinction matters because the office fair-use policy restricts auto/predictive dialing and permits migration,repricing or suspension for call-centre-style bulk usage. It also limits outgoing calls to the same number to ten per hour and office parallel calls to30%of capacity. These restrictions coexist with separate marketed campaign tools;confirm the actual product and order form rather than treating the lowest office price as unlimited campaign permission. No guaranteed connection-rate or carrier spam outcome is adopted.",
+        "zh": "CallHippo产品选择器区分AI商务电话、AI客服、全渠道收件箱、WhatsApp Business API及Parallel Dialer。电话系统内部，渲染页将低量Essential与较高量Pro Suite分开。目录其他位置出现某功能不证明所选套餐包含。\n\n这一区别很实际：办公公平使用条款限制自动／预测拨号，并可对联络中心式批量用量迁移、重新计价或停用。它另限制同号码每小时最多十次外呼，办公并行通话限容量30%。这些限制与独立活动工具宣传同时存在，需确认实际产品及订单，不能把最低办公价格当无限活动许可。不采用保证接通提升或运营商防垃圾标记结果。",
+        "source_refs": ["platform", "essential-year", "contract"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing-state",
+        "title_en": "Read a selected rendered price,not an unscoped starting number",
+        "title_zh": "读取有选择条件的渲染价格",
+        "en": "For US/CA region,USD and1–4users,the browser-rendered Essential Starter,Professional and Ultimate cards show19/30/42peruser/month with yearly selected,and25/40/55with Monthly selected. Pro Suite Bronze,Silver and Platinum show32/42/54with yearly selected and40/55/70monthly. These are distinct plans with distinct commitments,not interchangeable minimums. Enterprise is quote-only with a50-user minimum in the observed selections. Other team sizes,regions,currencies and dedicated AI/Parallel Dialer offers were not normalized.\n\nThe static HTML initially showed different Starter/minute figures and mixed-currency add-on/enterprise values before scripts finished. The fully loaded selection replaced those values;the profile uses that observed state and leaves ambiguous add-on pricing unknown. A Free Basic card is qualified by a six-month free period in the rendered FUP,after which continued use requires Starter. Numbers still cost money. A ten-day no-card trial is advertised,but its actual number/usage limits were not tested.",
+        "zh": "US/CA地区、USD及1–4人条件下，浏览器渲染后的Essential Starter、Professional、Ultimate卡片在选年付时每人每月显示19／30／42，月付显示25／40／55。Pro Suite Bronze、Silver、Platinum选年付显示32／42／54，月付40／55／70。这是不同套餐及承诺，不能互换最低价。所见选择中Enterprise需询价且最低50人。其他人数、地区、币种及专用AI／Parallel Dialer报价未归一化。\n\n静态HTML在脚本完成前显示不同Starter／分钟数，以及混合币种的附加项／企业金额。完整加载后替换了这些值，档案使用已观察选择状态，将含糊附加项价格留未知。Free Basic卡片受渲染FUP六个月免费期限定，之后继续使用需Starter，号码仍收费。宣传十天免卡试用，但未测试真实号码／用量额度。",
+        "source_refs": [
+          "essential-year",
+          "essential-month",
+          "pro-year",
+          "pro-month"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "inbound",
+        "title_en": "A waiting caller can cost money without reaching a human",
+        "title_zh": "等待中的来电即使未接真人也可能收费",
+        "en": "Incoming calling requires an active dialer,not merely a logged-in dashboard. Check number activation and user/team assignment,hours and time zone,routing order and available credits before assuming a browser session can receive calls. These dependencies should be exercised with the actual number rather than inferred from account access.\n\nThe queue guide describes per-number enablement on selected plans,with no support for CallHippo India numbers. Default wait is300seconds,configurable up to1000. Queue time is billed as incoming-call time even when the caller abandons. At expiry,the call goes to voicemail or disconnects according to settings. Optional # registers a callback request;it does not establish that a human has completed a return call. Assign someone to review requests and verify the actual overflow route and cost under the selected plan.",
+        "zh": "接听呼入要求拨号器活跃，不能仅登录控制台。应检查号码激活及用户／团队分配、营业时间及时区、路由顺序和余额，不能假设浏览器账户在线就能接听；这些依赖需以真实号码验证。\n\n队列指南描述在选定套餐按号码启用，不支持CallHippo印度号码。默认等待300秒，最多1000秒。即使来电者放弃，排队仍按呼入时间计费。到期按配置转语音信箱或断开。可选#登记回电请求，不证明真人已完成回电。应指定人复核请求，并确认所选套餐下真实溢出路径及费用。",
+        "source_refs": ["incoming", "queue"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "outbound-data",
+        "title_en": "Attempt tracking depends on the action and the phone number",
+        "title_zh": "尝试跟踪依赖动作及电话号码",
+        "en": "For an illustrative follow-up campaign,load a list with approved contact data,choose assignees and a From Number,and define dispositions. Attempt Manager requires Auto Dialer entitlement. Its attempt stages advance only through its own click-to-call action;manual dialer calls and incoming calls do not advance them. Refresh the view after calls. Duplicate phone numbers in separate lists advance together,and marking one complete removes it across those lists. A campaign name therefore does not guarantee isolated retry history.\n\nThe Parallel Dialer guide separately documents template upload or supported CRM-list import,field mapping,country-coded numbers and up to ten columns. HubSpot imports Contacts rather than Deals. Configure fixed/automatic pacing,reattempt conditions and time-zone windows,then start only with agents’ dialers open. Machine detection and voicemail options are documented features,not tested perfect classifications. Map business identity and contact permission outside the dialing algorithm before scaling.",
+        "zh": "以假设跟进活动为例，加载获准联系人资料，选择执行人及From Number，定义处置。Attempt Manager需要Auto Dialer权益，其阶段只由自身点击拨号推进，手动拨号器电话及呼入不推进；通话后需刷新视图。不同名单内重复号码会一起推进，将其标完成也会跨名单移除。因此活动名称不保证独立重试历史。\n\nParallel Dialer指南另述模板上传或支持CRM名单导入、字段映射、含国家码号码及最多十列。HubSpot导入Contacts而非Deals。应配置固定／自动节奏、重试条件及时区窗口，客服拨号器打开后才启动。机器检测及语音留言是文档功能，不是已验完美分类。扩量前需在拨号算法之外确认业务身份及联系许可。",
+        "source_refs": ["attempts", "parallel"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "did",
+        "title_en": "Smart DID chooses a caller number,not an inbound agent",
+        "title_zh": "Smart DID选来显号码，而非呼入客服",
+        "en": "The help documentation defines Smart DID Routing as choosing the outbound From Number with the best completion performance for the destination country. More than one number must be available. It is distinct from inbound skills routing and does not guarantee a matching local area code or that a recipient will answer. The log marker can show that Smart DID was used,but does not prove which routing decision would have been better.\n\nThis is a useful boundary when reviewing the pricing page’s short routing labels:use the detailed outbound-number definition when designing campaigns,and confirm any separate inbound queue or CRM-owner routing requirement on its own merits. Multiple-number rental,identity eligibility and carrier treatment remain separate operational questions.",
+        "zh": "帮助文档将Smart DID Routing定义为按目标国家接通表现选择外呼From Number，需要不止一个可用号码。它与呼入技能路由不同，不保证本地区号匹配或接收者应答。日志标记可显示使用过Smart DID，不能证明另一种路由决策会怎样。\n\n审核定价页简短路由标签时应记住此边界：活动设计采用详细外呼号码定义，另行确认呼入队列或CRM归属人路由需求。多个号码租费、身份资格及运营商处理仍是独立运营问题。",
+        "source_refs": ["did"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract-exit",
+        "title_en": "Annual cancellation and export are contractual questions",
+        "title_zh": "年度取消及导出需按合同核对",
+        "en": "The service terms grant limited,revocable business access with one person per login;vendor IP remains proprietary. They distinguish flexible monthly billing from fixed annual commitments:early cancellation of a fixed term still leaves the full commitment payable,and license reductions are at renewal. Subscription charges are generally non-refundable,but the defined uncured vendor-breach termination has a proportional refund remedy. Order-form exceptions need review.\n\nCarrier fees and taxes are separate,and measured calls are rounded in full-minute increments. Office unlimited benefits exclude premium/toll-free and listed destinations;they are not a global calling budget. On termination,numbers are deactivated and unused calling credits generally cancelled. The terms say content is deleted within two years and export may be requested within that retention period;this is not a guarantee of two full years of self-service recording access. Obtain needed exports and a number-porting plan before exit. No full backup/restore,AI data-location review or porting test was performed.",
+        "zh": "服务条款授予有限、可撤销企业访问，每登录一人，厂商知识产权保持专有。它区分灵活月付与固定年度承诺：固定期提前取消仍需支付全部承诺，减少许可在续期时进行。订阅费用通常不退，但规定的厂商违约未补救终止可按比例退款，订单例外需另核。\n\n运营商费用及税另计，计量电话按整分钟进位。办公无限权益排除高费／免费号码及清单目的地，不是全球通话预算。终止后号码停用，未用通话余额通常取消。条款称内容在两年内删除，可在留存期间请求导出，这不保证整整两年自助录音访问。退出前应取得所需导出及号码转移方案。此次未做完整备份／恢复、AI资料位置审核或转号测试。",
+        "source_refs": ["contract", "exemptions", "essential-year"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CallHippo: Essential vs Pro Suite, Billable Queues and Attempt Tracking",
+    "title_zh": "CallHippo：Essential与Pro Suite、排队计费及尝试跟踪",
+    "description_en": "Read selected CallHippo USD prices,office fair-use limits,six-month Basic conditions,queue charges,duplicate-list attempt behavior and outbound Smart DID scope.",
+    "description_zh": "核对CallHippo所选USD价格、办公公平使用限制、Basic六个月条件、排队费用、重复名单尝试行为及外呼Smart DID范围。",
+    "primary_intent": "Evaluate actual calling workflow and plan boundaries.",
+    "secondary_questions": [
+      "Is Basic permanently free?",
+      "Does queue time cost money?",
+      "Which calls advance attempt stages?"
+    ],
+    "query_basis": "Editorial questions;no measured search demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,number,call,campaign,CRM,AI,payment,porting,export or restore tested. Other-region/currency/team-size pricing,AI/Parallel Dialer/add-on fees,actualminuteFUPquantities,triallimits,currentAI/dataretention,DPA/locations,numberregulatoryeligibility,exportcompletenessandUIlanguagesunverified. Dynamicpriceartifactsdistinguishedfromfullyloadedbrowserselections;product-specificentitlementmustresolveofficeFUPversusmarketeddialers.",
+      "zh": "未测试账户、号码、电话、活动、CRM、AI、付款、转号、导出或恢复。其他地区／币种／人数价格、AI／Parallel Dialer／附加项费用、实际分钟FUP量、试用限制、当前AI／资料留存、DPA／位置、号码监管资格、完整导出及界面语言未核。动态价格残留与完整加载浏览器选择已区分，需按产品权益解决办公FUP与拨号器宣传边界。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

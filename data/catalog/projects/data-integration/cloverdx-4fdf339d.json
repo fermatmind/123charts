@@ -1,0 +1,356 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "cloverdx-4fdf339d",
+  "name": "CloverDX",
+  "website_url": "https://www.cloverdx.com/",
+  "domain": "www.cloverdx.com",
+  "identity_domain": "cloverdx.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "CloverDX is a data integration platform combining engineering-led transformations, job orchestration and interfaces for business users. Developers use a desktop Designer to build graphs from connected processing components; Server supplies operational management and execution. Wrangler and Data Manager address different self-service preparation and stewardship tasks.\n\nThe official pricing FAQ explicitly says CloverDX does not provide a vendor-hosted SaaS plan. On-premises and self-hosted cloud deployments require an operating environment, while commercial capacity and user seats determine entitlement. This profile distinguishes the design environment, production runtime and business-user interfaces.",
+  "description_zh": "CloverDX 结合工程数据转换、任务编排与业务用户界面。开发者通过桌面 Designer 将处理组件连接成 graph，Server 提供运营管理与执行；Wrangler、Data Manager 分别处理自助准备及数据管理任务。\n\n官方定价 FAQ 明确表示没有厂商托管 SaaS 套餐。本地及自行托管的云部署需要运行环境，商业容量与用户席位决定权限。本文区分设计环境、生产运行时及业务用户界面。",
+  "core_features": [
+    {
+      "name_en": "Visual transformation graphs",
+      "name_zh": "可视化转换 Graph",
+      "explanation_en": "Connect reader, processing and writer components with edges carrying metadata.",
+      "explanation_zh": "用携带元数据的连线连接读取、处理及写入组件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tutorial",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Jobflow orchestration",
+      "name_zh": "Jobflow 编排",
+      "explanation_en": "Coordinate graphs, scripts, file operations and service calls with explicit execution results.",
+      "explanation_zh": "按明确执行结果协调 graph、脚本、文件操作及服务调用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "jobflow",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Core/Worker runtime",
+      "name_zh": "Core／Worker 运行时",
+      "explanation_en": "Separate management and scheduling from the JVM that executes jobs.",
+      "explanation_zh": "将管理调度与执行任务的 JVM 分开。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Data stewardship",
+      "name_zh": "数据管理与人工处理",
+      "explanation_en": "Review, correct and approve data for downstream processing.",
+      "explanation_zh": "审核、修正并批准数据，供后续处理。",
+      "explanation_scope": "product_specific",
+      "source_ref": "data-manager",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Transform typed CSV records into a controlled spreadsheet or downstream data set.",
+      "Route invalid records through domain review and approval before release."
+    ],
+    "zh": [
+      "将类型明确的 CSV 转成可控表格或后续数据集。",
+      "将无效记录先送领域人员审核批准，再继续处理。"
+    ],
+    "source_refs": ["tutorial", "data-manager"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data integration developer",
+      "Production Server administrator",
+      "Data steward"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose evaluation/deployment infrastructure and size developer/runtime capacity.",
+        "zh": "选择评估部署环境，估算开发及运行容量。",
+        "source_refs": ["pricing", "architecture"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build the small typed-file graph and inspect its actual output.",
+        "zh": "构建小型带类型文件 graph，检查实际输出。",
+        "source_refs": ["tutorial"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Add orchestration and exception review, then test end-to-end completion.",
+        "zh": "加入编排及异常审核，再测试端到端完成情况。",
+        "source_refs": ["jobflow", "data-manager"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "No vendor-hosted SaaS plan is offered according to the pricing FAQ.",
+        "zh": "定价 FAQ 明确没有厂商托管 SaaS 套餐。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Worker dependencies and production system database need deployment planning.",
+        "zh": "Worker 依赖及生产系统数据库需要部署规划。",
+        "source_refs": ["architecture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "commercial_DX_unit_capacity_and_seat_quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:24:07.891441Z",
+    "normalized_monthly_price": null,
+    "billing_basis": "DX Units allocated to Designer seats or Production Server cores, with separate Business Tools seats and support tiers; amount unknown."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/cloverdx",
+      "read_at": "2026-10-22T08:41:25.058Z",
+      "excerpt_sha256": "6c80bc14f963fc8cbd6d215622abdadeb2a065a8502ea1c9e0a594d61c917190",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "CloverDX",
+      "title": "CloverDX Data Integration Platform",
+      "url": "https://www.cloverdx.com/",
+      "read_at": "2026-10-22T10:24:07.891441Z",
+      "excerpt_sha256": "7100347d5bc4da90f1e1ab3a53506ebbeabce0853f8efa91f5494c1ce9e18424",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Designer/Server, Wrangler and Data Manager roles, opt-in AI and 45-day trial read; customer outcomes excluded."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CloverDX",
+      "title": "CloverDX Plans and Pricing: Get the Best Fit",
+      "url": "https://www.cloverdx.com/pricing",
+      "read_at": "2026-10-22T10:24:11.389570Z",
+      "excerpt_sha256": "502f6287cd2c80776936fc4a3f32216ec6ae8e36e936874e096c8c50f2bab82f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "DX Units, optional Business Tools seats, support tiers and explicit absence of vendor-hosted SaaS read; calculator amount not returned."
+    },
+    {
+      "id": "tutorial",
+      "type": "official_documentation",
+      "site": "CloverDX",
+      "title": "CloverDX Designer tutorial | CloverDX 7.6.1 Documentation",
+      "url": "https://doc.cloverdx.com/latest/developer/designer-tutorial.html",
+      "read_at": "2026-10-22T10:25:32.371504Z",
+      "excerpt_sha256": "32bb45f90d7611d7041a6eb277e9a61585b8fd01c7069306a44414055120917d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual tutorial body after navigation: CSV reader to spreadsheet writer, edge metadata and console execution."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "CloverDX",
+      "title": "CloverDX Server architecture | CloverDX 7.6.1 Documentation",
+      "url": "https://doc.cloverdx.com/latest/admin/architecture.html",
+      "read_at": "2026-10-22T10:26:12.183951Z",
+      "excerpt_sha256": "82f21b04b6c9c25ee0f480481837502f2966785b53b94a66a8e631f07d6cb835",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Production external relational database, separate Core/Worker JVMs and distinct classpaths reviewed."
+    },
+    {
+      "id": "jobflow",
+      "type": "official_documentation",
+      "site": "CloverDX",
+      "title": "Jobflows | CloverDX 7.6.1 Documentation",
+      "url": "https://doc.cloverdx.com/latest/developer/part-jobflow.html",
+      "read_at": "2026-10-22T10:28:06.183583Z",
+      "excerpt_sha256": "0342d60eb52cbbc252849d04996085b99a48b56306620bacd79ca98899a09c13",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Graph orchestration, success/error ports, tokens and synchronous/asynchronous execution reviewed."
+    },
+    {
+      "id": "data-manager",
+      "type": "official_documentation",
+      "site": "CloverDX",
+      "title": "Data Manager introduction | CloverDX 7.6.1 Documentation",
+      "url": "https://doc.cloverdx.com/latest/user/data-manager-introduction.html",
+      "read_at": "2026-10-22T10:28:19.949220Z",
+      "excerpt_sha256": "065dcea18d7f9754a234700bb21aec54bc15b72aaeac7b77c91fac02a037d34d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Review/edit/approve workflow, reference versus transactional data sets and downstream pickup reviewed."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:28:19.949220Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "tutorial", "architecture", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "components",
+        "title_en": "Assign each part of the platform a job",
+        "title_zh": "明确平台各部分职责",
+        "en": "Designer is a desktop development environment. A graph describes data transformation, while Server runs and manages production work. Wrangler gives business users preparation tools; Data Manager supports reviewing, editing and approving data. These are different interfaces over related processes, not proof that every user receives every feature with a basic developer seat. For a project, define who authors logic, who operates it and who can approve exception records before sizing seats and access.",
+        "zh": "Designer 是桌面开发环境，graph 描述数据转换，Server 执行并管理生产工作。Wrangler 为业务用户提供准备工具，Data Manager 支持审核、编辑与批准数据。这些是相关流程的不同界面，不能证明基础开发席位让所有人获得全部功能。项目应先明确逻辑作者、运营人员及异常记录批准者，再确定席位和权限。",
+        "source_refs": ["home", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "tutorial",
+        "title_en": "Metadata gives the lines on the canvas their meaning",
+        "title_zh": "元数据决定画布连线含义",
+        "en": "The Designer tutorial reads CSV records with FlatFileReader and writes an Excel file with SpreadsheetDataWriter. Components are connected through ports and edges; metadata describes the record structure flowing along an edge. For a proposed invoice-file adaptation, declare invoice_id, amount and due_date with the intended types rather than accepting inferred sample types blindly. Include a malformed date and a decimal amount, then inspect the produced file. The tutorial demonstrates a learning path, not a test run completed for this directory.",
+        "zh": "Designer 教程用 FlatFileReader 读取 CSV、SpreadsheetDataWriter 写出 Excel。组件通过端口和连线连接，元数据描述线上流动的记录结构。若改为发票文件评估，应按实际类型声明 invoice_id、amount、due_date，不能盲信小样本推断；应加入异常日期和小数金额，再检查输出文件。教程提供学习路径，本文没有实际运行。",
+        "source_refs": ["tutorial"],
+        "evidence_type": "documented_example_with_hypothetical_evaluation"
+      },
+      {
+        "id": "orchestration",
+        "title_en": "A graph handles records; a jobflow coordinates activities",
+        "title_zh": "Graph 处理记录，Jobflow 协调动作",
+        "en": "Jobflows combine graphs, scripts, service calls and file operations. Their tokens trigger activities, which differs from data records flowing between graph components. Synchronous child execution waits for completion; asynchronous execution can return a job ID before detailed results are ready. For an illustrative daily feed, validate the file before loading its records, then archive only after verified completion. Choosing asynchronous mode requires an explicit join or completion check before downstream work relies on the result.",
+        "zh": "Jobflow 组合 graph、脚本、服务调用与文件操作，以 token 触发动作，区别于 graph 组件间流动的业务记录。同步子任务等待完成，异步方式则可能先返回任务 ID，详细结果尚不可用。以每日文件为例，应先校验再加载，并在确认完成后归档；采用异步模式时，下游依赖结果之前需明确汇合或完成检查。",
+        "source_refs": ["jobflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quality",
+        "title_en": "Human review needs a route back into the pipeline",
+        "title_zh": "人工审核还要接回自动处理",
+        "en": "Data Manager can hold rows with validation issues so a domain expert can correct and approve them. A subsequent CloverDX job picks up approved rows and sends them to the destination; reference data sets support relatively stable lookup data. For an onboarding process, decide which validation errors can be corrected automatically and which need an approver. Our suggested acceptance follows one rejected row through correction, approval and downstream storage, ensuring the same business identifier remains traceable. Merely displaying an approval button does not establish that downstream work completed.",
+        "zh": "Data Manager 可保存校验异常行，由领域人员修正批准，再由后续 CloverDX job 获取已批准行并发送到目标；参考数据集则支持较稳定的查询数据。接入流程应区分可自动修正的问题与需批准的问题。建议跟踪一条拒绝行经过修正、批准及目标保存，确保业务标识可追溯。界面显示批准按钮本身不能证明后续工作完成。",
+        "source_refs": ["data-manager"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Error ports express handling, not automatic business rollback",
+        "title_zh": "错误端口表达处理逻辑，不会自动回滚业务",
+        "en": "Jobflow execution components normally route success to port 0 and failure to port 1. When no error edge handles a failed activity, the exception terminates processing and can propagate to the parent. Redirecting errors or continuing changes what a successful parent status means. Decide what data or files may already have changed and whether compensation is safe before rerunning. Our proposed test covers an invalid input and a failing destination separately; a successful retry must be confirmed in the destination rather than inferred from an accepted control token.",
+        "zh": "Jobflow 执行组件通常把成功路由到端口 0、失败到端口 1。失败动作没有错误连线处理时，异常会终止处理并可能向父任务传播。重定向错误或继续执行会改变父任务成功状态的含义。重跑前应明确数据或文件是否已改变、补偿是否安全。建议分别测试输入无效与目标失败，重试成功需对照目标，不能只根据控制 token 推定。",
+        "source_refs": ["jobflow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Production needs more than the Designer installation",
+        "title_zh": "生产运行不只有 Designer 安装",
+        "en": "Server architecture requires a compatible JDK, storage and a production external relational system database; the embedded Derby database is for evaluation. Core orchestrates work and exposes the console/APIs, while Worker executes jobs in a separate JVM on the host. Worker has its own classpath and JNDI configuration, so a database driver added only to Core is not automatically available to jobs. Plan operational backup, storage growth and version compatibility for the actual deployment. None of those procedures was executed here.",
+        "zh": "Server 需要兼容 JDK、存储及生产用外部关系系统数据库，内嵌 Derby 用于评估。Core 负责协调工作及控制台／API，Worker 在同一主机的独立 JVM 中执行任务。Worker 有自己的 classpath 与 JNDI 配置，只加到 Core 的数据库驱动不会自动供任务使用。应按实际部署安排备份、存储增长及版本兼容，本文未实际执行。",
+        "source_refs": ["architecture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "units",
+        "title_en": "Allocate DX Units between designers and production capacity",
+        "title_zh": "在开发席位与生产容量之间分配 DX Unit",
+        "en": "The pricing page defines one DX Unit as one Designer seat or one Production Server core. Business Tools seats are separate for active tool users, while data consumers do not need seats. Standard, Plus and Enhanced differ in non-production and support/service scope; round-the-clock support is an Enhanced feature. The calculator did not return a numeric annual estimate in the retrieved text, so no amount was established. The homepage advertises a 45-day evaluation on the user’s infrastructure. Self-hosted infrastructure and any selected AI-provider charges remain part of a real cost assessment.",
+        "zh": "定价页定义一个 DX Unit 对应一个 Designer 席位或一个 Production Server 核心。主动使用 Business Tools 的用户另有席位，数据消费者不需席位。Standard、Plus、Enhanced 的非生产及支持服务范围不同，全天候支持属于 Enhanced。读取文本中的计算器没有返回年度估算金额，因此本文未确认金额。首页宣传可在使用方基础设施运行的 45 天评估，自托管基础设施及所选 AI 供应商费用仍应纳入真实成本。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Fit depends on both engineering and data-steward ownership",
+        "title_zh": "适用性同时取决于工程与数据管理责任",
+        "en": "CloverDX merits evaluation when a team needs custom transformations, orchestration and a defined human exception path. It is a weaker fit for someone expecting a fully vendor-hosted app-to-app service without installation or runtime care. Test the complete graph/jobflow and any approval handoff with representative input. An old CloverETL or source-available component reference cannot establish the license of the current commercial platform; exact software license terms were not verified here. No throughput, production recovery or language-localization claim was tested.",
+        "zh": "当团队需要自定义转换、编排及明确人工异常路径时，CloverDX 值得评估。若期望无需安装维护的完整厂商托管应用交接服务，则适用性较弱。应使用代表性输入测试完整 graph／jobflow 及审批交接。旧 CloverETL 或某个源码可用组件的资料不能确定当前商业平台许可，本文未核实完整软件条款，也未测吞吐、生产恢复或界面本地化。",
+        "source_refs": ["home", "pricing", "jobflow"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CloverDX: Graphs, Jobflows, Human Review, Hosting and DX Units",
+    "title_zh": "CloverDX：Graph、Jobflow、人工审核、部署与 DX Unit",
+    "description_en": "Evaluate CloverDX’s Designer/Server split, edge metadata, orchestration, Data Manager approval and self-hosted capacity pricing.",
+    "description_zh": "评估 CloverDX 的 Designer／Server 分工、连线元数据、编排、Data Manager 审批及自托管容量计价。",
+    "primary_intent": "Evaluate a self-operated data integration and stewardship platform.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Numeric estimate, exact software/AI license, selected connector versions, infrastructure sizing, restore procedures, UI languages and purchase regions remain unverified or untested.",
+      "zh": "金额估算、具体软件／AI 许可、所选连接器版本、基础设施容量、恢复流程、界面语言及购买地区仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The latest documentation alias returned both 7.6.0 and 7.6.1 labels across cached/current reads; no deployed runtime version was tested.",
+      "zh": "latest 文档别名在缓存与当前读取中分别出现 7.6.0 和 7.6.1 标记，本文未测试任何部署运行版本。",
+      "source_refs": ["tutorial", "architecture"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

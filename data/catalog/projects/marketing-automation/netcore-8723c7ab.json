@@ -1,0 +1,437 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "netcore-8723c7ab",
+  "name": "Netcore",
+  "website_url": "https://netcorecloud.com/",
+  "domain": "netcorecloud.com",
+  "identity_domain": "netcorecloud.com",
+  "category": "marketing-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Netcore combines customer engagement, messaging and related data products. For marketing automation, its CE Journey Builder links a single trigger to actions, conditions and flow controls. Actions include channel messages, contact-attribute updates and removing a contact from a journey. The current official website and CE documentation redirect from netcorecloud.com to netcore.ai domains.\n\nA useful evaluation follows the specific CE data path rather than the entire platform’s promise: establish the entry event or audience, choose recurrence, supply usable event payloads, and inspect delayed messages and reports. This research distinguishes documented behavior from vendor outcome claims and does not treat messaging infrastructure, AI packs or every channel as an automatically purchased entitlement.",
+  "description_zh": "Netcore 将客户互动、消息及相关数据产品组合。针对营销自动化，CE Journey Builder 把一个入口与动作、条件及流程控制连接；动作包括渠道消息、联系人属性更新及移出旅程。当前官网和 CE 文档从 netcorecloud.com 跳转至 netcore.ai 域名。\n\n有效评估应追踪具体 CE 数据路径：确认入口事件或受众，选择重复规则，提供可用事件载荷，并检查延迟消息及报告。本文区分文档行为与供应商效果宣传，不将消息基础设施、AI 功能包或每个渠道视为自动获得的付费权限。",
+  "core_features": [
+    {
+      "name_en": "Single-trigger journey canvas",
+      "name_zh": "单入口旅程画布",
+      "explanation_en": "One trigger starts a journey containing actions, conditions and flow controls.",
+      "explanation_zh": "一个入口启动包含动作、条件及流程控制的旅程。",
+      "source_ref": "entry",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Event-aware waiting",
+      "name_zh": "事件感知等待",
+      "explanation_en": "A conditional wait calculates time from a date-time payload on a recent tracked event.",
+      "explanation_zh": "条件等待根据近期跟踪事件的日期时间载荷计算。",
+      "source_ref": "wait",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Contact and integration actions",
+      "name_zh": "联系人与集成动作",
+      "explanation_en": "The catalogue includes attribute updates, webhooks and explicit journey removal.",
+      "explanation_zh": "动作目录包含属性更新、webhook 及明确的旅程移出。",
+      "source_ref": "actions",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Resume or restart controls",
+      "name_zh": "继续或重新开始控制",
+      "explanation_en": "Reactivation can continue existing progress or start again for all contacts.",
+      "explanation_zh": "重新启用可继续已有进度，或让全部联系人重新开始。",
+      "source_ref": "resume",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Editorial fit: app/web lifecycle teams coordinating event-driven messages across provisioned channels.",
+      "Editorial fit: marketing operations teams evaluating dataset recurrence, appointment waits and CRM webhook handoffs."
+    ],
+    "zh": [
+      "编辑判断的适用场景：通过已开通渠道协调事件消息的应用／网站生命周期团队。",
+      "编辑判断的适用场景：评估数据集重复、预约等待及 CRM webhook 交接的营销运营团队。"
+    ],
+    "source_refs": ["create", "entry", "actions", "pricing"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Lifecycle marketer",
+      "Marketing operations specialist",
+      "Integration engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "create"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify one tracked identity and event payload, then choose the intended recurrence and audience.",
+        "zh": "验证一个跟踪身份及事件载荷，再选择重复规则与目标受众。",
+        "source_refs": ["triggers"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build an internal-cohort journey with explicit wait, DND and removal outcomes.",
+        "zh": "建立内部群体旅程，明确等待、DND 及移出结果。",
+        "source_refs": ["create", "wait", "actions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test repeated events and resume/restart decisions before using a historical audience.",
+        "zh": "使用历史受众前测试重复事件及继续／重新开始选择。",
+        "source_refs": ["triggers", "resume"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Reconcile message evidence, webhook acknowledgements and correctly filtered reports.",
+        "zh": "核对消息证据、webhook 确认及正确筛选的报告。",
+        "source_refs": ["webhook", "reports"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Completed status does not establish that all delayed messages have finished or been recalled.",
+        "zh": "完成状态不能确认全部延迟消息已结束或撤回。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Conditional wait fallback for missing/expired dates and live-edit migration semantics remain unverified.",
+        "zh": "条件等待对缺失／过期日期的回退及活动编辑迁移规则仍未核实。",
+        "source_refs": ["wait", "builder"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Webhook retries can end with an inactive endpoint; recovery replay and exactly-once delivery are not established.",
+        "zh": "Webhook 重试可能以端点非活动结束；未确认恢复重放及恰好一次投递。",
+        "source_refs": ["webhook"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Current Growth/Enterprise require a custom quote based on MTUs and feature configuration. Capability packs advertise a 30-day trial. No numerical subscription price or sustained-free CE entitlement verified. The page says 30% of platform fees is linked to business KPIs; actual definitions, commitments, channel/provider charges, packs and terms require the offer. Older third-party no-trial wording is superseded, not adopted.",
+    "source_snapshot_zh": "当前 Growth／Enterprise 按 MTU 及功能配置询价。功能包宣传 30 天试用。未核实数字订阅价或持续免费 CE 权限。页面说 30% 平台费与业务 KPI 关联；真实定义、承诺、渠道／服务商费用、功能包及条款需看报价。旧第三方“无试用”说法已被当前来源取代，不采用。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/netcore",
+      "read_at": "2026-10-22T09:06:26.062Z",
+      "excerpt_sha256": "767ed3fcbc67030ec7cdf68218aa6fc42102dcc2c301e31283eeab034ba3bfa0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "create",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Create Journey",
+      "url": "https://cedocs.netcore.ai/docs/create-a-journey",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "c7b2e1227e906a6871ac8200057742bc8e05e60a722fa2dd16352b4b408730ca",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current CE creation guide. No account or journey operated."
+    },
+    {
+      "id": "resume",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Resume or Restart Journey",
+      "url": "https://cedocs.netcore.ai/docs/redeploying-completed-journeys",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "57528b42791bad9cf5ffe708b27671bd7c935c761322b2b54692c4ffb4e55e7b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual original distinguishes resume and restart; not a measured no-duplicate guarantee."
+    },
+    {
+      "id": "entry",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Triggers",
+      "url": "https://cedocs.netcore.ai/docs/journey-triggers",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "d41bc1a305002a61381532caa11a093baef0f245aa1fcbccd470767af30166fc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Single-entry-node and activity definitions."
+    },
+    {
+      "id": "triggers",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Triggers",
+      "url": "https://cedocs.netcore.ai/docs/journey-triggers",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "1c415d1456e32799ee2c431dc076469899b26e294ab55689a42746212ed6bce4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual repeat, list/segment and payload rules. Same page as entry excerpt, not independent corroboration."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Journeys: Troubleshooting & FAQs",
+      "url": "https://cedocs.netcore.ai/docs/journeys-troubleshooting-faqs",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "da429d3b97daed00cb701de6081f81084ef37cf47b11eea869c495ad7f6e3778",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current FAQ includes delayed communication after journey completion and DND reporting limits."
+    },
+    {
+      "id": "wait",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Dynamic Wait Condition in Journeys",
+      "url": "https://cedocs.netcore.ai/docs/dynamic-wait-condition-in-journeys",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "5f78f91881032fd98182d623eca6f51815b830495549551b051cabc60ade3a53",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current attribute-aware wait uses latest tracked event within fixed 30-day lookback."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Netcore",
+      "title": "Plans that scale with you.",
+      "url": "https://netcore.ai/plan-and-pricing/",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "b10254efab0a3f87a4a26ff73538cca3ac9c644e1c9893e9ac563dea7bdd5f50",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current pricing after official root redirects to netcore.ai; old directory no-trial assertion not adopted."
+    },
+    {
+      "id": "webhook",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Webhooks",
+      "url": "https://cedocs.netcore.ai/docs/webhook",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "ff8b529aa2b19883218a68dbfbd91186b77673a7d57b70ab6415a909a346e31d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual batching/acknowledgement/retry/inactive FAQ, not general exactly-once guarantee."
+    },
+    {
+      "id": "builder",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Journey Builder",
+      "url": "https://cedocs.netcore.ai/docs/new-journey-builder",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "f1a51ec83b7471ff83d108c8a58d0120fcdb180b83da9c5f7e67eb9e383d0f78",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Journey 2.0 conversion and lifecycle definitions; older menu labels coexist with newer Engage guide."
+    },
+    {
+      "id": "actions",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Actions",
+      "url": "https://cedocs.netcore.ai/docs/journey-actions",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "3f07acca7c78121bb5757527317c8ca2134717a41658fd5bb2fa859c1262c5f1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual action catalogue; channel availability not tested."
+    },
+    {
+      "id": "reports",
+      "type": "official_documentation",
+      "site": "Netcore",
+      "title": "Reports",
+      "url": "https://cedocs.netcore.ai/docs/reports",
+      "read_at": "2026-10-22T12:10:23.507403Z",
+      "excerpt_sha256": "b42f47458ac13787cf73bc2099f00e1e150fe86325fd6449b1d44c8ba22dc59b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual report denominators and latest-status comparison guidance; date wording conflicts retained."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:10:23.507403Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["create", "entry", "actions", "pricing"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry-rules",
+        "title_en": "Choose a trigger and decide what repetition means",
+        "title_zh": "选择入口并明确重复含义",
+        "en": "Only one trigger node starts a journey. Activity recurrence can be every event, first event or an interval; weeks and months are rolling seven/30-day periods. The optional skip-if-already-in-journey rule treats people in wait/delay nodes as still present. Latest-event-only evaluation is a separate switch, documented as off by default. For an editorial repeat-purchase pilot, decide whether successive purchases deserve separate trips or replacement by the newest event before adding messages.",
+        "zh": "旅程只能有一个入口节点。行为入口可按每次、首次或间隔重复；周和月为滚动七／30 天。可选的已在旅程则跳过规则，将等待／延迟节点中的人视为仍在旅程。仅评估最新事件是独立开关，文档说默认关闭。编辑示例：复购试点应在添加消息前明确连续购买需要独立旅程，还是由最新事件替代。",
+        "source_refs": ["entry", "triggers"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "audience",
+        "title_en": "New Users can still include the initial segment",
+        "title_zh": "New Users 仍可能包含初始分群",
+        "en": "Segment/list triggers have scheduled checks and All Users versus New Users selection. The segment table explicitly says its first live run targets everyone already in the segment, then new entrants; the list table describes newly added users without that initial-population sentence. Selected user criteria cannot be changed after deployment. This distinction matters when connecting an existing audience. Inspect the intended initial cohort in a narrow test rather than interpreting New Users as a universal guarantee that historical contacts are excluded.",
+        "zh": "分群／列表入口提供定时检查及 All Users／New Users 选择。分群表明确说首次上线会覆盖分群已有全部用户，此后才处理新加入者；列表表只描述新加入用户，未写相同的首次总体规则。部署后不能修改所选用户条件。连接已有受众时，这一区别很重要。应在小范围测试中检查初始群体，不能将 New Users 理解为始终排除历史联系人的保证。",
+        "source_refs": ["triggers"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "wait-data",
+        "title_en": "The latest event supplies a conditional wait’s clock",
+        "title_zh": "条件等待使用最新事件的时钟",
+        "en": "Dynamic Wait offers a fixed duration or a per-user time calculated backward from a selected event’s date-time attribute. Conditional mode finds the latest tracked occurrence within the previous 30 days; that lookback is fixed. For an appointment reminder, compare two recent booking events and inspect which timestamp supplies the clock. Missing, outdated, malformed or already-past dates need an account-level test: the page does not establish universal fallback behavior for those cases. No reminder was sent in this research.",
+        "zh": "Dynamic Wait 提供固定时长，或根据所选事件日期时间属性向前倒推的个人时间。条件模式取最近 30 天内最新跟踪事件，这个回看窗口固定。预约提醒评估应比较两个近期预约事件，检查哪个时间戳提供时钟。缺失、过旧、格式错误或已过期日期需要账户测试；该页未确认这些情况的通用回退行为。本次未发送提醒。",
+        "source_refs": ["wait"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reactivation",
+        "title_en": "Resume and Restart select different audiences and timing",
+        "title_zh": "Resume 与 Restart 的受众及时机不同",
+        "en": "The reactivation guide opens a journey from Paused or Stopped, then requires Resume or Restart before activation. Resume continues prior progress; its daily dataset example resumes at the next iteration. Restart begins again immediately for all contacts, including people previously messaged, with new/all-user behavior still governed by the trigger. The vendor describes Resume as avoiding duplicate communication, but that is not an independent exactly-once finding. Preserve the prior state and use internal identities to evaluate either choice before a broad relaunch.",
+        "zh": "重新启用指南从 Paused 或 Stopped 打开旅程，在启用前选择 Resume 或 Restart。Resume 继续原进度；其每日数据集示例从下一次迭代继续。Restart 立即重新开始，包含曾收到消息的人，但新／全部用户行为仍受入口约束。供应商将 Resume 描述为避免重复通信，这不是独立验证的恰好一次结论。广泛重启前，应保留原状态，用内部身份评估两种选择。",
+        "source_refs": ["resume"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dnd-end",
+        "title_en": "A completed label does not recall delayed messages",
+        "title_zh": "完成标签不会撤回延迟消息",
+        "en": "The troubleshooting FAQ says messages held by DND can be delivered after a journey ends, and waiting/delay nodes can similarly outlive the Completed label. It also describes DND configuration changes taking 15 minutes to an hour and no dedicated DND-held count in that release’s reporting. Treat these as documented limits, not measured latency or a timeless UI guarantee. For a time-sensitive offer, inspect pending communication and actual account controls; changing the end date alone is not established as a message-recall mechanism.",
+        "zh": "排障 FAQ 说 DND 中的消息可在旅程结束后发送，等待／延迟节点也可能持续到显示 Completed 之后。它还描述 DND 配置变化需 15 分钟至一小时，并说该版本报告无专门 DND 等待数量。应将其视为文档限制，而非实测延迟或永久界面保证。限时优惠应检查待发送通信及实际账户控制；仅更改结束日期不能确认可撤回消息。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "webhook-recovery",
+        "title_en": "An integration needs acknowledgement and recovery handling",
+        "title_zh": "集成需要确认响应与恢复处理",
+        "en": "The webhook FAQ documents batches of at most 100 responses or a 30-second flush, whichever comes first. Failure includes no acknowledgement within nine seconds; up to five retries have no fixed interval. Exhaustion marks the webhook inactive, alerts configured recipients and stops further delivery until reactivation. For an editorial CRM handoff, capture one batch, acknowledge promptly and reconcile receiver records with journey evidence. Reactivation is not documented as automatic replay of every missed event, and neither ordering nor duplicate suppression was verified.",
+        "zh": "Webhook FAQ 描述每批最多 100 条响应或 30 秒即发送，以先到者为准。九秒内未确认属于失败；最多五次重试，没有固定间隔。用尽后 webhook 变为非活动，通知已配置收件人，并停止后续投递直至重新启用。编辑示例：CRM 交接应捕获一批、及时确认，并用旅程证据核对接收端记录。文档未说明重新启用会自动重放全部遗漏事件，也未核实顺序或去重。",
+        "source_refs": ["webhook"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "measurement",
+        "title_en": "Journey conversions and export statuses need context",
+        "title_zh": "旅程转化与导出状态需要上下文",
+        "en": "The Journey 2.0 guide says goals cannot be edited after deployment, attributes conversions to the latest click, reports them against send date and allows overlapping attribution across parallel journeys with the same goal. The Reports guide distinguishes event-based summary counts from a detailed row’s latest status: a Clicked recipient disappears from a Status=Sent-only filter despite having been sent the message. Compare like-for-like statuses and attribution windows before adding totals. Its denominator-change note inconsistently says May 19 and May 15, 2025; the precise cutover date remains unresolved.",
+        "zh": "Journey 2.0 指南说部署后不能编辑目标，按最近点击归因、按发送日期报告转化，并允许相同目标的并行旅程重复归因。Reports 指南区分按事件汇总的数量与明细行最新状态：已点击收件人虽收到消息，却不会出现在仅筛选 Status=Sent 的结果中。加总前应统一状态及归因窗口。其分母调整说明对日期分别写 2025 年 5 月 19 日及 15 日，确切切换日仍未解决。",
+        "source_refs": ["builder", "reports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Price the CE configuration rather than the entire brand",
+        "title_zh": "按 CE 配置确认费用",
+        "en": "The current pricing page offers Growth and Enterprise through custom quotes based on monthly tracked users and feature configuration, with capability packs and a 30-day pack trial. It advertises a KPI-linked portion of platform fees, without establishing a particular customer contract. Obtain the applicable KPI definition, channel consumption/provider fees, pack scope and renewal terms in the offer. Trial access is not sustained free use. No sales form was submitted and no current numerical subscription fee was verified.",
+        "zh": "当前价格页的 Growth 与 Enterprise 依据月跟踪用户及功能配置询价，另有功能包及 30 天功能包试用。页面宣传部分平台费与 KPI 关联，但不能确认具体客户合同。应在实际报价取得适用 KPI 定义、渠道消耗／服务商费用、功能包范围及续费条款。试用不等于持续免费。本次未提交销售表单，也未核实当前数字订阅费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Netcore CE: journey triggers, waits and restart behavior",
+    "title_zh": "Netcore CE：旅程入口、等待与重启行为",
+    "description_en": "Research Netcore journey recurrence, latest-event waits, DND completion, webhook recovery, reports and current custom-quote pricing.",
+    "description_zh": "研究 Netcore 旅程重复、最新事件等待、DND 完成状态、webhook 恢复、报告及当前询价。",
+    "primary_intent": "Evaluate Netcore customer engagement journey execution and data handoffs",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, SDK, journey activation, message sending, webhook receiver or commercial inquiry tested.",
+      "zh": "未测试账户、SDK、旅程启用、消息发送、webhook 接收端或商业咨询。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Exact plan entitlements, engine/UI availability, pricing terms, UI languages, regional access and self-hosting rights remain unknown.",
+      "zh": "具体套餐权限、引擎／界面可用性、价格条款、界面语言、地区访问及自托管权利仍未知。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Actual date fallback, migration of in-flight trips, stop/recall timing, replay and retention guarantees were not established.",
+      "zh": "未确认日期回退、进行中旅程迁移、停止／撤回时机、重放及保留保证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

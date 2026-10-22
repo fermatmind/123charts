@@ -1,0 +1,403 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "cube-js-141aab25",
+  "name": "Cube.js",
+  "website_url": "https://cube.dev/",
+  "domain": "cube.dev",
+  "identity_domain": "cube.dev",
+  "category": "ide",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "The official site for this legacy Cube.js catalog entry now presents Cube, an analytics platform built on a semantic layer. It centralizes measures, dimensions, joins and access rules for BI, embedded analytics and agents. A specialized model IDE is one part of that workflow; the earlier directory’s generic code-completion/debugger labels do not describe its main purpose.\n\nThe documentation separates the open-source Cube Core foundation from the broader hosted product. This profile evaluates model definitions, query access, caching and managed-plan charges without treating every current cloud feature or license as a Core entitlement. No model, warehouse connection or deployment was created.",
+  "description_zh": "这条旧名Cube.js目录记录对应官网目前介绍Cube：建立在语义层上的分析平台，为BI、嵌入分析及Agent集中定义指标、维度、关联与访问规则。专用模型IDE只是流程一环，旧目录通用补全／调试器标签不能代表主要用途。\n\n文档区分开源Cube Core基础与更广托管产品。本文研究模型定义、查询权限、缓存及托管方案费用，不将全部云功能或许可视为Core权益。本次未创建模型、仓库连接或部署。",
+  "core_features": [
+    {
+      "name_en": "Semantic metrics and views",
+      "name_zh": "语义指标及视图",
+      "explanation_en": "Define reusable measures/dimensions and curated query surfaces.",
+      "explanation_zh": "定义可复用指标／维度及经过整理的查询面。",
+      "explanation_scope": "product_specific",
+      "source_ref": "model",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Model development environments",
+      "name_zh": "模型开发环境",
+      "explanation_en": "Iterate on model branches before merging production changes.",
+      "explanation_zh": "在模型分支迭代后合入生产改动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ide",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Policy-based data access",
+      "name_zh": "基于策略的数据访问",
+      "explanation_en": "Combine member, row and masking policies with verified user context.",
+      "explanation_zh": "结合成员、行及遮罩策略与已验证用户上下文。",
+      "explanation_scope": "product_specific",
+      "source_ref": "access",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Pre-aggregation caching",
+      "name_zh": "预聚合缓存",
+      "explanation_en": "Configure rollups and refresh workers for query acceleration.",
+      "explanation_zh": "配置聚合表及刷新worker以加速查询。",
+      "explanation_scope": "product_specific",
+      "source_ref": "caching",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate consistent paying-user metrics across consumers",
+      "Test overlapping policies, missing identity and stale aggregation signals"
+    ],
+    "zh": [
+      "评估跨使用方一致的付费用户指标",
+      "测试重叠策略、缺失身份及过时聚合信号"
+    ],
+    "source_refs": ["model", "access", "context", "caching"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Analytics engineers",
+      "Data platform teams",
+      "Embedded analytics developers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define a small model and compare its metrics to known rows.",
+        "zh": "定义小模型，将指标与已知行比对。",
+        "source_refs": ["model"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test authorization and refresh behavior before exposing an API or embedded view.",
+        "zh": "暴露API或嵌入视图前测试授权及刷新行为。",
+        "source_refs": ["access", "context", "caching"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm connection topology and seat/worker costs independently.",
+        "zh": "分别确认连接拓扑及席位／worker费用。",
+        "source_refs": ["refresh", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The model IDE is specialized for analytics, not a verified general-purpose IDE.",
+        "zh": "模型IDE专用于分析，不是已核实通用IDE。",
+        "source_refs": ["intro", "ide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Policy unions and absent row restrictions can broaden access.",
+        "zh": "策略并集及缺少行限制可能扩大访问。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Cache freshness and refreshworker capacity are operational conditions.",
+        "zh": "缓存新鲜度及刷新worker容量属于运行条件。",
+        "source_refs": ["caching", "refresh"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_role_seats_plus_hourly_infrastructure",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:39:25.816997Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Starter40/Premium80 per developer/month; dedicated deployment/API/cache hourly rates and role seats separate; Free daily query limits, Enterprise quote.",
+    "summary_zh": "Starter40／Premium80每开发者每月；专用部署／API／缓存按小时及角色席位另计，Free每日查询限额，Enterprise询价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/cube-js",
+      "read_at": "2026-10-22T08:47:27.979Z",
+      "excerpt_sha256": "29c56906db60137e0db554305412e036645a3201b825253868c895dbdfe273b4",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Cube — The agentic analytics platform built on a semantic layer",
+      "url": "https://cube.dev/",
+      "read_at": "2026-10-22T12:39:25.816997Z",
+      "excerpt_sha256": "811ebf173a9860cb4ad1d5859eeafa2c34fe420303e6af3ba4e8c82ba3c2c1b7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current official site presents Cube agentic analytics/BI/embedded semantics; not a generic IDE. Legacy catalog Cube.js name retained without assuming all new SaaS components are part of Core."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Cube.js",
+      "title": "Cube Pricing",
+      "url": "https://cube.dev/pricing",
+      "read_at": "2026-10-22T12:39:45.763775Z",
+      "excerpt_sha256": "8e8e4d0734bf6d15e3e16720e89e46f9ee05608c9871e671346bef1b7ee877aa",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free, Starter40/developer,Premium80/developer monthly, role seats and separate hourly deployment/API/cache components read. Selfserve/monthly vs orderform/annual and daily query limits retained."
+    },
+    {
+      "id": "intro",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Introduction - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/introduction",
+      "read_at": "2026-10-22T12:39:45.869160Z",
+      "excerpt_sha256": "0180fe26edefb22106db8669db0c4517c252d828d80d9b6447c231f5317ace4a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current platform vs open-source CubeCore foundation, cubes/views, SemanticSQL and API/runtime scope read. Full component license not audited."
+    },
+    {
+      "id": "model",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Getting started - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/data-modeling/overview",
+      "read_at": "2026-10-22T12:40:48.393791Z",
+      "excerpt_sha256": "47459e795d31cdee88d47d5e6fae9d6f86c8644b379c3f216bc848a60a05ec7a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual users table example, base table, count/paying filters, calculated ratio and curated view read; no warehouse queried."
+    },
+    {
+      "id": "ide",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Develop in IDE - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/getting-started/develop-in-ide",
+      "read_at": "2026-10-22T12:41:48.379408Z",
+      "excerpt_sha256": "ad627e5ae811702f7c1dec5ce66bab7a3d735f8a2df43a0e12bc1cf33a9a8d87",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Branch-based model environments, commits/production merge and AI assistance read; model isolation not assumed to isolate underlying warehouse side effects."
+    },
+    {
+      "id": "access",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Access policies - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/data-modeling/data-access-policies",
+      "read_at": "2026-10-22T12:41:48.474965Z",
+      "excerpt_sha256": "dfbe64168f3e5be76de277607a19b1fd7d6c9f3a915044f33ed44048bf9730e9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Group-scoped member/row/masking rules and precise policy combination read: member union, per-member row union then query-member intersection; omission broadens scope."
+    },
+    {
+      "id": "context",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Security context - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/data-modeling/access-control/context",
+      "read_at": "2026-10-22T12:41:48.611693Z",
+      "excerpt_sha256": "5b001f82163df870203550961f2f76ad74371b4d2e4bc13760ca08be43a0161f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Verified JWT claims/JWKS/securityContext and example conditional user_id query rewrite read; missing-claim handling left as explicit evaluation, not a production vulnerability finding."
+    },
+    {
+      "id": "caching",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Overview - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/pre-aggregations",
+      "read_at": "2026-10-22T12:40:48.352939Z",
+      "excerpt_sha256": "adf959dbb68c96fadc89d9ef1960561b41826c11f073efa6a97c23c5e1b5a7fc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Default memory vs explicitly configured rollups, driver-dependent source write requirements, refresh keys and cache freshness semantics read; subsecond guarantee not adopted."
+    },
+    {
+      "id": "refresh",
+      "type": "official_documentation",
+      "site": "Cube.js",
+      "title": "Refreshing pre-aggregations - Cube Documentation",
+      "url": "https://docs.cube.dev/docs/pre-aggregations/refreshing-pre-aggregations",
+      "read_at": "2026-10-22T12:40:48.452358Z",
+      "excerpt_sha256": "63b4bc71b2df1a5f329795966a8b3d96384f7a146dc07a150af89f87abc3685f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual dedicated preaggregation connection prefix activation and no ordinarycredential fallback, driver_factory precedence, overloaded refreshworker error read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:41:48.611693Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "intro", "model", "ide"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Define the business measure before exposing a chart",
+        "title_zh": "暴露图表前先定义业务指标",
+        "en": "The modeling tutorial starts from a users table, defines a count measure and city/company dimensions, then adds a filtered paying count and a calculated ratio. A view exposes a curated subset to consumers. A proposed adoption dashboard should compare model results against known source rows and test empty/zero-denominator cases before reuse. Source SQL generation makes a definition reusable, not automatically correct for a company’s business meaning. Keep the metric definition and access scope explicit rather than asking every chart or agent to invent them.",
+        "zh": "建模教程从users表定义count指标及城市／公司维度，再添加付费用户过滤计数与计算比例，由view向使用者暴露经过整理的子集。建议采用看板先用已知源行比对模型结果，测试空数据／零分母后再复用。生成SQL让定义可复用，不会自动使其符合公司业务含义。需明确指标及权限范围，不能让各图表或Agent自行发明。",
+        "source_refs": ["model"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "ide",
+        "title_en": "A branch isolates model changes, not every connected system",
+        "title_zh": "分支隔离模型改动，不代表全部连接系统隔离",
+        "en": "The Cloud IDE uses Git branches for development and production model environments. Changes can be tested, committed and merged from that interface, with AI assistance for the model. Inspect generated queries and compare expected metrics before promotion. The model-environment description alone does not establish that source database credentials, pre-aggregation writes or data are isolated. Use appropriate development data and permissions; no branch, model commit or deployment was operated.",
+        "zh": "Cloud IDE以Git分支提供开发及生产模型环境，可在界面测试、提交及合并，并用AI辅助模型。提升前应检查生成查询并比对指标。模型环境描述不能单独证明源库凭据、预聚合写入或数据隔离。应使用合适开发数据及权限，本次未操作分支、模型提交或部署。",
+        "source_refs": ["ide", "caching"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Matching policies can broaden access",
+        "title_zh": "匹配策略可扩大访问范围",
+        "en": "Policies specify queryable members, row filters and masking for groups. The guide combines member grants by union; for each queried member, rows are unioned across granting policies, then intersected across the query’s members. Omitting a row restriction can therefore broaden the result rather than preserve another group’s narrow filter. Test single-group, overlapping-group and denied requests against the intended model. A working chart or hidden field is not proof of a complete data-access boundary, and no policy enforcement was tested here.",
+        "zh": "策略按组指定可查询成员、行过滤及遮罩。指南对成员授权取并集；每个查询成员的可见行先按授权策略取并集，再对查询中的成员取交集。因此省略行限制可能扩大结果，而非保留另一组窄过滤。需用单组、重叠组及拒绝请求测试预期模型；图表能用或字段隐藏不能证明完整数据边界，本次未实测策略执行。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "identity",
+        "title_en": "Verify required claims rather than trusting a sample filter",
+        "title_zh": "验证必需claim，不能直接信任示例过滤",
+        "en": "Cube derives security context from verified JWT claims and exposes it to query rewrite or model compilation. The documented user-specific rewrite adds a filter only when user_id exists. As an evaluation inference, a copied condition needs an explicit missing-claim test; the example by itself does not establish rejection when the claim is absent. Validate token issuance, required attributes and results for two tenants and a missing identity. This is documentation-based evaluation guidance, not a discovered customer-system vulnerability.",
+        "zh": "Cube从已验证JWT claim取得安全上下文，供查询改写或模型编译使用。文档按用户改写示例仅在user_id存在时加过滤。由此推断，复用该条件需明确测试缺失claim，示例本身不能证明缺失时会拒绝。需验证token签发、必需属性，以及两个租户与缺失身份的结果。这是文档评估建议，不是发现客户系统漏洞。",
+        "source_refs": ["context"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "freshness",
+        "title_en": "Caching needs a defined freshness signal",
+        "title_zh": "缓存需要明确新鲜度信号",
+        "en": "Cube distinguishes default in-memory results from explicitly configured pre-aggregations. Building rollups may require source-schema write access depending on the driver. Refresh keys control validity, and the guide recommends a production refresh worker; a query is not necessarily a new warehouse read. For a model using MAX(created_at) as a change signal, evaluate an update to an older row that leaves that maximum unchanged. Confirm the intended update signal and inspect whether a query hit memory, a rollup or raw data before claiming freshness or latency.",
+        "zh": "Cube区分默认内存结果与需明确配置的预聚合。按驱动不同，构建聚合表可能需源schema写权；refresh key控制有效性，指南建议生产刷新worker，查询不一定新读仓库。若模型用MAX(created_at)作变化信号，应评估更新旧行但不改变最大值的情况。确认预期变化信号，检查命中内存、聚合或原始数据后，才能判断新鲜度或延迟。",
+        "source_refs": ["caching"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "worker",
+        "title_en": "A dedicated aggregation connection needs its own credentials",
+        "title_zh": "独立聚合连接需完整独立凭据",
+        "en": "The refresh guide says setting a PRE_AGGREGATIONS connection variable switches the data source’s rollups to that connection; omitted settings use driver defaults rather than ordinary source credentials. A misspelled connection variable can still activate the prefix. Configure the connection completely and inspect warnings if a custom driver_factory takes precedence. A Refresh Scheduler Interval Error indicates an overloaded worker in the documented example, potentially from too many tenants/rollups. Check actual workload and worker topology instead of repeatedly retrying refreshes. No credentials or worker were configured.",
+        "zh": "刷新指南称设置PRE_AGGREGATIONS连接变量会将该数据源聚合切至独立连接，缺失设置采用驱动默认，而非普通源凭据；拼错连接变量仍可触发前缀。需完整配置，并检查自定义driver_factory优先时的警告。文档例中Refresh Scheduler Interval Error表示worker过载，可能因租户／聚合太多。应核查工作量及worker拓扑，而非反复重试。本次未配置凭据或worker。",
+        "source_refs": ["refresh"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Seats and hourly infrastructure are separate charges",
+        "title_zh": "席位及小时基础设施分别收费",
+        "en": "Pricing lists Free, Starter$40/developer/month and Premium$80/developer/month, with custom Enterprise. The table separately lists hourly dedicated deployment, extra API instances and Cube Store workers; Premium also prices explorer/viewer seats. Free lists1,000 daily queries, Starter differentiates shared/dedicated limits and Premium advertises unlimited queries. That wording does not remove infrastructure or warehouse cost. Self-serve billing is monthly with seat adjustments, while order forms govern annual commitments and overages. Confirm AI allowances, compute topology and role counts in the actual quote; Core availability is not a free hosted-platform grant.",
+        "zh": "定价列Free、Starter每开发者月$40、Premium$80、Enterprise询价，表中独立列每小时专用部署、额外API实例及Cube Store worker，Premium还计Explorer／Viewer席位。Free列每日1,000查询，Starter区分共享／专用额度，Premium宣传查询不限，不代表免基础设施或仓库费用。自助按月及席位调整，订单合同约定年付承诺与超额。实际报价需确认AI额度、算力拓扑及角色数量，Core可用不代表托管平台免费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Cube: semantic metrics, data policies and pre-aggregation operations",
+    "title_zh": "Cube：语义指标、数据策略及预聚合运行",
+    "description_en": "Review the Cube.js catalog identity, model IDE, policy combinations, refresh connections and seat/compute costs.",
+    "description_zh": "了解Cube.js目录身份、模型IDE、策略组合、刷新连接及席位／算力费用。",
+    "search_intent_en": "Evaluate Cube semantic layer correctness, access and operating scope.",
+    "search_intent_zh": "评估Cube语义层正确性、访问及运行范围。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No model, data source, JWT, policy, query, refreshworker, deployment or billing operation was executed.",
+      "zh": "未执行模型、数据源、JWT、策略、查询、刷新worker、部署或计费。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Legacy directory category/name are retained; current official Cube/Core boundaries replace unsupported generic IDE claims. Full Core/platform license coverage not audited.",
+      "zh": "保留旧目录类别／名称，以当前官方Cube／Core边界替换未证实通用IDE主张，未审完整Core／平台许可覆盖。",
+      "source_refs": ["intro", "home"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual checkout currency/tax, AI limits, infrastructure topology, driver/version behavior, SLA, latency and UI languages not independently verified.",
+      "zh": "实际结账币种／税、AI限制、基础设施拓扑、驱动／版本行为、SLA、延迟及界面语言未经独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Conditional missing-claim and unchanged freshness-key examples are proposed failure tests, not observed production behavior or validated vulnerabilities.",
+      "zh": "条件缺失claim及新鲜度key不变示例为建议失败测试，不是已观察生产行为或已验证漏洞。",
+      "source_refs": ["context", "caching"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

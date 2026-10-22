@@ -1,0 +1,434 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "nateq-08764ba5",
+  "name": "Nateq",
+  "website_url": "https://nateq.io/",
+  "domain": "nateq.io",
+  "identity_domain": "nateq.io",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Nateq is an Arabic-first customer-service platform combining chat, calls, email, WhatsApp, Instagram and Facebook with ticketing, knowledge and AI-assisted operations. Its current offering is priced by paid seats plus a prepaid usage wallet. Arabic/English conversations, dialect handling and right-to-left presentation are part of its documented positioning, not independent language-quality measurements.\n\nIts process model distinguishes fixed flows from prose procedures, with documented action approvals, saved-case checks and version behavior. Evaluation should test identity, policy limits, human handoff, wallet exhaustion and the actual public API scope. This is public-documentation research; no account, channel, model, API key, refund, call or purchase was tested.",
+  "description_zh": "Nateq 是阿拉伯语优先的客服平台，将聊天、通话、邮件、WhatsApp、Instagram及Facebook与工单、知识和AI辅助运营结合。当前方案按付费席位加预付用量钱包计价。阿拉伯语／英语会话、方言处理及从右至左呈现属于文档定位，不是独立语言质量测量。\n\n流程模型区分固定流程与自然语言程序，文档说明动作审批、保存案例检查及版本行为。评估应测试身份、政策限额、转人工、钱包耗尽及真实公开API范围。本文为公开文档研究，未测试账户、渠道、模型、API密钥、退款、通话或购买。",
+  "core_features": [
+    {
+      "name_en": "Six-channel service inbox",
+      "name_zh": "六渠道服务收件箱",
+      "explanation_en": "Bring supported chat, call, email and social channels into a shared customer context.",
+      "explanation_zh": "将支持的聊天、通话、邮件和社交渠道汇入共享客户上下文。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Procedures with configured approvals",
+      "name_zh": "带配置审批的自然语言程序",
+      "explanation_en": "Prose procedures complement fixed flows, with automatic, customer-confirmed or agent-approved write modes.",
+      "explanation_zh": "自然语言程序补充固定流程，写入可为自动、客户确认或坐席审批。",
+      "explanation_scope": "product_specific",
+      "source_ref": "procedures",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Scoped customer-data API",
+      "name_zh": "限定客户数据API",
+      "explanation_en": "Organization-scoped keys expose customer-facing resources, not every dashboard endpoint.",
+      "explanation_zh": "组织范围密钥开放面向客户资源，并非所有后台端点。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot Arabic/English order support with a low refund ceiling and human escalation.",
+      "Compare paid human seats with AI resolutions, voice and carrier/message charges."
+    ],
+    "zh": [
+      "以低退款上限和人工升级试点阿拉伯语／英语订单支持。",
+      "比较人工付费席位与AI解决、语音及运营商／消息费。"
+    ],
+    "source_refs": ["platform", "procedures", "pricing"],
+    "basis": "Editorial evaluation scenarios; no measured outcomes."
+  },
+  "technical_details": {
+    "Public API scope": {
+      "en": "Bearer API keys scope requests to one organization; sandbox and production are distinct. Account, billing, RBAC and AI-builder operations remain dashboard-only under developer documentation.",
+      "zh": "Bearer API密钥将请求限定至一个组织，沙箱和生产分开。开发文档将账户、计费、RBAC及AI构建操作保留在后台。",
+      "source_ref": "auth",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Arabic/English support lead",
+      "Service operations administrator",
+      "Integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "platform"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Connect one channel, verify customer identity mapping and import controlled support content.",
+        "zh": "连接一个渠道，验证客户身份映射并导入受控支持内容。",
+        "source_refs": ["platform", "auth"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Write a narrow procedure and save cases for missing identity, excess refund and unavailable human.",
+        "zh": "编写窄范围程序，保存身份缺失、超额退款及人工不可用案例。",
+        "source_refs": ["procedures"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm seat term, wallet cap/top-up and plan-end export before a live pilot.",
+        "zh": "真实试点前确认席位期限、钱包上限／补充及套餐结束导出。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "REST API",
+        "source_ref": "api",
+        "scope": "Customer-facing records under scoped server-side keys; broader marketing wording is not adopted."
+      },
+      {
+        "name": "Signed outgoing webhooks",
+        "source_ref": "hooks",
+        "scope": "HTTPS receiver must answer within10seconds; retry/backoff advertised, exact replay horizon unverified."
+      },
+      {
+        "name": "WhatsApp Business Account",
+        "source_ref": "terms",
+        "scope": "Customer connects own account; Meta bills message delivery directly, separately from Nateq AI usage."
+      }
+    ],
+    "source_ref": "api"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Unlimited seat capacity in higher tiers still means a price for each seat.",
+        "zh": "高档无限席位容量仍需逐席位付费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "At wallet zero or spending cap, AI and campaigns fall back or pause; human inbound calling behavior is described separately.",
+        "zh": "钱包归零或达到消费上限时，AI及活动回退或暂停，人工入站通话行为另有说明。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "The marketing API page says every UI capability, but developer documentation explicitly excludes management and AI-builder endpoints.",
+        "zh": "营销API页称覆盖所有界面能力，但开发文档明确排除管理及AI构建端点。",
+        "source_refs": ["api-marketing", "api", "auth"],
+        "evidence_type": "observed_documentation_difference"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://nateq.io/terms-of-service",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "price-expanded", "terms"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Paid seats plus prepaid metered usage and optional add-ons; current terms explicitly useUSDbankinvoicing. No defaultdiscountassumed.",
+    "source_snapshot_en": "Basic/Team/Business/Scale monthly19/36/61/94 perseat; annualequivalents15/29/49/75. Basicmax5,Scale min10. AI PAYG0.20/resolution or automatically cheapest bundle49/500,149/2000,379/6000,899/18000 with overage. Wallettopup50,defaultauto50below15oncecardsaved. Media0.02/min,extratranscription0.008/min,AIvoicefrom0.10/min.",
+    "source_snapshot_zh": "Basic／Team／Business／Scale每席位月付19／36／61／94，年付折月15／29／49／75。Basic最多5，Scale至少10。AI按次0.20或自动选最低组合49／500、149／2000、379／6000、899／18000并计超额。钱包50起，存卡后默认低于15自动补50。媒体每分钟0.02、额外转录0.008、AI语音0.10起。",
+    "checked_at": "2026-10-22T11:59:18.485692+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is each AI message billed as a resolution?",
+      "question_zh": "每条AI消息都计一次解决吗？",
+      "answer_en": "No. The expanded FAQ counts a conversation answered and closed without human assignment that remains closed and unassigned fifteen minutes later, once per conversation.",
+      "answer_zh": "不是，展开FAQ按AI回答并关闭、从未分配人工且15分钟后仍关闭和无人分配的会话计，每会话一次。",
+      "source_refs": ["price-expanded"]
+    },
+    {
+      "question_en": "Does having calling in every seat make all calls free?",
+      "question_zh": "每席位可通话就表示通话全免费吗？",
+      "answer_en": "No. The wallet lists media, AI voice and excess transcription, and own-trunk carrier charges are excluded from the estimator. WhatsApp delivery is billed separately by Meta.",
+      "answer_zh": "不是，钱包列媒体、AI语音及超额转录费，估算器不含自有中继运营商费；WhatsApp投递另由Meta收费。",
+      "source_refs": ["pricing", "terms"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/nateq",
+      "read_at": "2026-10-22T09:03:46.144Z",
+      "excerpt_sha256": "7be665f3b00e68f7d6438ccb0baad83a035a9e903d85ad79a8c90f8763d2dfb0",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Nateq | AI Customer Service Platform in Arabic & English",
+      "title": "Nateq | AI Customer Service Platform in Arabic & English",
+      "url": "https://nateq.io/",
+      "read_at": "2026-10-22T11:54:52.718524+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3ce424bed6d9b6129f32951444e6b9bd8c722040e58cc17b4c74b240d632b98d",
+      "research_notes_en": "Current Arabic-first six-channel platform; eventwire/demo outcomes are not measured production evidence."
+    },
+    {
+      "id": "platform",
+      "type": "official_documentation",
+      "site": "Customer Service Platform, Saudi & UAE: One AI Inbox | Nateq",
+      "title": "Customer Service Platform, Saudi & UAE: One AI Inbox | Nateq",
+      "url": "https://nateq.io/customer-service-platform",
+      "read_at": "2026-10-22T11:55:22.171157+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5bbea2aeb60b46e9a224051bd6bceb25bd20e59f42b2f25433976a080c91a257",
+      "research_notes_en": "Arabic/English and dialect/RTL positioning; oldusage-basedphrase differsfromcurrentseatpricing."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing — AI Customer Service Plans | Nateq",
+      "title": "Pricing — AI Customer Service Plans | Nateq",
+      "url": "https://nateq.io/pricing",
+      "read_at": "2026-10-22T11:55:25.801589+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "37fc7d58d7884ec3f3d77cd556a25a94652402e53c8eb7c7e38c1245bd9f692a",
+      "research_notes_en": "Current seatcards, wallet, zero-balancefallback, auto-topup,trial/read-only30days,charges and add-ons."
+    },
+    {
+      "id": "price-expanded",
+      "type": "official_pricing",
+      "site": "Pricing — AI Customer Service Plans | Nateq",
+      "title": "Pricing — AI Customer Service Plans | Nateq",
+      "url": "https://nateq.io/pricing",
+      "read_at": "2026-10-22T11:59:18.485692+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "9204c9d8739e6f1d013bed97743f027abc55d1efe14733de19cc64b26242b2bb",
+      "research_notes_en": "ActualexpandedAIdefinition/bundleFAQ and monthlytoggle read; selected exactbrowserAX excerpts saved. Not a payment/account test."
+    },
+    {
+      "id": "procedures",
+      "type": "official_documentation",
+      "site": "Support Process Automation and Playbooks | Nateq",
+      "title": "Support Process Automation and Playbooks | Nateq",
+      "url": "https://nateq.io/workflow/process-automation",
+      "read_at": "2026-10-22T11:55:26.233521+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "26cdaf8acddf8b411e0707b8be4351a51387bbc5f2e5ea46b35f6ef159e9774a",
+      "research_notes_en": "October22 2026 proseprocedures versusfixedflows, fourcodegates vendorclaims, savedcasepublishblocking, frozenversions andapprovalmodes."
+    },
+    {
+      "id": "api-marketing",
+      "type": "official_documentation",
+      "site": "REST API Integration for Customer Service | Nateq",
+      "title": "REST API Integration for Customer Service | Nateq",
+      "url": "https://nateq.io/integrations/rest-api",
+      "read_at": "2026-10-22T11:55:23.028475+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6807d69dc210ec69bfb5c53e6da2a734c094e865e0a3bb64053d4c69748eccfd",
+      "research_notes_en": "BroadallUIcapabilityRESTclaim differsfrompublicdeveloperdocs scope."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "Nateq API - Developer Portal - Nateq",
+      "title": "Nateq API - Developer Portal - Nateq",
+      "url": "https://developers.nateq.io/",
+      "read_at": "2026-10-22T11:55:57.846299+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4effbf1e5daa04034455cc84a71d53a8a1b80a6aa91f31dc7e6976f18a7fe4f4",
+      "research_notes_en": "Publiccustomerdata API; account/billing/security/AIbuilder excluded. Visible documentation read; embedded site config not used."
+    },
+    {
+      "id": "auth",
+      "type": "official_documentation",
+      "site": "Authentication - Developer Portal - Nateq",
+      "title": "Authentication - Developer Portal - Nateq",
+      "url": "https://developers.nateq.io/authentication",
+      "read_at": "2026-10-22T11:56:13.908390+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cfcc788d98d52851ffe7af4a0410a3bdd09624667a67c00e88e2089243997e97",
+      "research_notes_en": "Organization-scopedBearerkeys, sandbox/production, scopes403 and forbiddennonpublicendpoints."
+    },
+    {
+      "id": "hooks",
+      "type": "official_documentation",
+      "site": "Webhooks Integration for Customer Service | Nateq",
+      "title": "Webhooks Integration for Customer Service | Nateq",
+      "url": "https://nateq.io/integrations/webhooks",
+      "read_at": "2026-10-22T11:55:25.718005+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "96374e8b123336ae666c3b1c0fdf5199b2158fae28d0551283e90bdc15b015c7",
+      "research_notes_en": "Signedwebhookpayloads, backoff, replaywindow,endpoint10secondrequirement; exactretrycount/horizonunverified."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service for the Nateq Platform | Nateq",
+      "title": "Terms of Service for the Nateq Platform | Nateq",
+      "url": "https://nateq.io/terms-of-service",
+      "read_at": "2026-10-22T11:55:23.736541+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "75e88f383245b668f5cecae07754358d0ff49cf9388802abc1cb0f9c4022f0e5",
+      "research_notes_en": "September2026proprietaryIP, wallet, paymentfailuregrace,planend/export30days andWhatsAppdirectMeta charges."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:59:18.485692+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "platform",
+    "pricing",
+    "procedures",
+    "api",
+    "auth"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "language-channel",
+        "title_en": "Validate the actual language and identity workflow",
+        "title_zh": "验证真实语言与身份流程",
+        "en": "Nateq positions itself for Arabic/English customer service across six channels, with dialect understanding and right-to-left interfaces. Product pages name Gulf, Egyptian, Levantine and Moroccan variants and mixed-language conversations. Those are vendor descriptions, not tested dialect accuracy or a complete verified UI-language list.\n\nFor an illustrative order-status conversation, compare a clear Arabic question, mixed-language wording and an ambiguous identity. Check that the correct customer/order is retrieved and that an uncertain answer reaches a human. A demonstration event wire, a Meta provider label or a shared customer record does not independently establish delivery speed, account authority or regional compliance.",
+        "zh": "Nateq定位为六渠道阿拉伯语／英语客服，包含方言理解及从右至左界面。产品页列海湾、埃及、黎凡特和摩洛哥变体及混合语言会话。这些是厂商描述，不是已测方言准确率或完整核实的界面语言表。\n\n以假设订单状态会话为例，应比较明确阿语问题、混合措辞及身份模糊情形，检查取到正确客户／订单，以及不确定回答是否转人工。演示事件流、Meta服务商标签或共享客户记录，不能独立证明投递速度、账户权限或地区合规。",
+        "source_refs": ["product", "platform"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "procedure",
+        "title_en": "Separate judgement, fixed steps and action authority",
+        "title_zh": "分开判断、固定步骤及动作权限",
+        "en": "The procedure page distinguishes prose instructions from a fixed flow canvas. A flow handles deterministic branches, delays and assignments; a procedure can reorder questions around what the customer already supplied. The vendor describes four code checks for identity, refund limits, sensitive output and message budgets. A missing refund ceiling means no refund authority under that description.\n\nWrite actions can run automatically, require customer confirmation within a timeout or wait for a human agent. These modes are different permissions, not interchangeable safeguards. Test an unverified social identity, an over-limit amount and a human who does not respond before enabling a real write. The public claims about enforcement were not audited or exercised here.",
+        "zh": "程序页区分自然语言指令与固定画布。固定流程处理确定分支、延迟及分配，自然语言程序可根据客户已提供内容调整问题次序。厂商描述身份、退款限额、敏感输出和消息预算四项代码检查，按该说明，未设退款上限即没有退款权。\n\n写入动作可自动运行、在超时内要求客户确认，或等待人工坐席。这些是不同权限，不能当成可互换保护。真实写入前应测试未验证社交身份、超额金额及人工未回应。公开执行检查主张此次未审计或运行。",
+        "source_refs": ["procedures"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "versions",
+        "title_en": "Test awkward cases and understand version lifetime",
+        "title_zh": "测试困难案例并理解版本生命周期",
+        "en": "The documented saved-case check compares expected outcomes, gate behavior and rendered message counts against a draft. A gate violation blocks publication. Published versions are frozen, and an existing conversation retains the version it started with; selecting an earlier version is described as an immediate rollback without rechecking it.\n\nA rollback in configuration therefore should not be assumed to rewind external refunds, data writes or messages already sent. Include the awkward conversational path, denial, timeout and escalation in saved cases. Verify which version a live conversation uses and how a correction affects it. The version and gate model is documented product behavior, not a guarantee a small test set covers every production outcome.",
+        "zh": "文档中的保存案例检查将预期结果、门控行为及渲染消息数与草稿比较；违反检查会阻止发布。已发布版本冻结，既有会话保留启动版本，选择旧版本被描述为不重复检查的立即回退。\n\n因此配置回退不能假定撤销已经执行的外部退款、写入或已发送消息。保存案例应包含困难会话路径、拒绝、超时及升级，并验证真实会话使用哪个版本、修正如何影响它。版本及检查模型属于文档行为，不能保证少量案例覆盖每个生产结果。",
+        "source_refs": ["procedures"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "Use the developer scope rather than the broad marketing claim",
+        "title_zh": "采用开发者范围而非宽泛营销主张",
+        "en": "The integration page says every interface capability is available over REST. The developer portal is narrower: API keys expose conversations, tickets, CRM records, templates, email, files and webhooks, while account, billing, user management, RBAC and AI-builder endpoints are dashboard-only. Missing scope returns403; non-public endpoints cannot be enabled merely by widening a key.\n\nKeys belong to an organization and distinguish sandbox from production. Signed webhooks advertise backoff and replay with a ten-second receiver requirement, but exact attempts, replay lifetime and duplicate semantics were not established. Use a limited server-side key and verify event identifiers, duplicate handling and error behavior before syncing an authoritative CRM. No key was created or request executed.",
+        "zh": "集成页称每个界面能力均可经REST使用，开发者门户范围更窄：API密钥开放会话、工单、CRM、模板、邮件、文件和webhook，而账户、计费、用户管理、RBAC和AI构建仅后台可用。缺少scope返回403，非公开端点不能仅靠扩大密钥权限启用。\n\n密钥属于组织，区分沙箱与生产。签名webhook宣传退避及重放，要求接收端10秒内响应，但准确次数、重放期限及重复语义未确认。同步权威CRM前应使用受限服务端密钥，验证事件标识、去重及错误行为。此次未创建密钥或执行请求。",
+        "source_refs": ["api-marketing", "api", "auth", "hooks"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bill",
+        "title_en": "A seat subscription does not include all metered work",
+        "title_zh": "席位订阅不包含全部计量工作",
+        "en": "The monthly seat prices are$19/$36/$61/$94 for Basic/Team/Business/Scale; annual equivalents are$15/$29/$49/$75. Basic caps at five seats and Scale starts at ten. Higher plans allowing unlimited seat count still charge each seat. The temporary first-year offer should not be assumed available or used as a permanent rate.\n\nAI resolutions use the cheapest monthly bundle automatically: pay-as-you-go$0.20, then$49/500,$149/2,000,$379/6,000 or$899/18,000, with listed overage. A resolution must remain closed and never human-assigned fifteen minutes after AI completion; it is not per message/token. Add AI voice, media$0.02/minute, excess transcription$0.008/minute, carrier/provider traffic and selected add-ons. A billing label is not independent proof the customer’s underlying problem was solved.",
+        "zh": "Basic／Team／Business／Scale每席位月付$19／$36／$61／$94，年付折月$15／$29／$49／$75。Basic最多5席位，Scale至少10席位。高档允许无限席位数量仍逐位收费，临时首年优惠不能假定仍有名额或作为永久价。\n\nAI解决自动选当月最低组合：按次$0.20，或$49／500、$149／2,000、$379／6,000、$899／18,000并计所列超额。AI完成15分钟后仍关闭且从未分配人工才计一次，不按消息／token。还需加AI语音、媒体每分钟$0.02、额外转录$0.008、运营商／服务商流量及附加项。计费标签不能独立证明客户底层问题已解决。",
+        "source_refs": ["pricing", "price-expanded", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure-exit",
+        "title_en": "Demonstrate wallet exhaustion and preserve an export",
+        "title_zh": "演示钱包耗尽并保留导出",
+        "en": "Once a card is saved, the pricing page says auto-top-up defaults to$50 when balance falls below$15; both values and an optional monthly cap are configurable. At zero or the cap, AI messages fall back to the team, AI calls transfer or end politely, new AI calls use a queue/IVR/voicemail and campaigns pause. Human inbound calls are described separately as continuing. These paths require an available operational owner, not just a balance alert.\n\nThe trial is fourteen days with$5 credit and up to ten seats; outbound trial calls require a card despite no-card signup. Terms describe read-only access and a frozen wallet at plan end, with thirty days to export before deletion. WhatsApp delivery is billed directly by Meta. No trial, fallback, export or recovery was performed.",
+        "zh": "存卡后，价格页称默认余额低于$15自动补$50，两个值及可选月消费上限可配置。余额归零或达上限时，AI消息转团队、AI通话转接或礼貌结束、新AI来电走队列／IVR／语音信箱，活动暂停；人工入站另称继续。这些路径需要可用运营负责人，不能只靠余额提醒。\n\n试用14天，含$5积分及最多10席；虽免卡注册，试用外呼仍需卡。条款描述套餐结束后只读、钱包冻结，30天内可导出再删除。WhatsApp投递由Meta直接计费。此次未执行试用、回退、导出或恢复。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Nateq: Arabic Support Procedures, API Scope and Seat-Plus-Usage Costs",
+    "title_zh": "Nateq：阿语支持程序、API范围及席位加用量成本",
+    "description_en": "Evaluate Nateq Arabic support, prose procedures, action approvals, scoped APIs, AI resolution definition, prepaid wallet fallback and plan-end exports.",
+    "description_zh": "评估Nateq阿语支持、自然语言程序、动作审批、限定API、AI解决定义、预付钱包回退及套餐结束导出。",
+    "primary_intent": "Evaluate Nateq workflow and total subscription/usage scope.",
+    "secondary_questions": [
+      "What is a billable AI resolution?",
+      "What stops when the wallet is empty?",
+      "Can API keys manage every setting?"
+    ],
+    "query_basis": "Editorial questions; no measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, dialect evaluation, procedure, version rollback, gate, key, webhook, AI, call, wallet or export tested. Full UI languages, exact fees by route, webhook retry/replay semantics, data-residency scope and restore completeness remain unverified.",
+      "zh": "未测试账户、方言、程序、版本回退、检查、密钥、webhook、AI、通话、钱包或导出。完整界面语言、按路由准确费用、webhook重试／重放语义、数据驻留范围及恢复完整性未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

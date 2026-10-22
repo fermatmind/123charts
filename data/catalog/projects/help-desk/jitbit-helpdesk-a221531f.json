@@ -1,0 +1,446 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "jitbit-helpdesk-a221531f",
+  "name": "Jitbit Helpdesk",
+  "website_url": "https://www.jitbit.com/helpdesk/",
+  "domain": "www.jitbit.com",
+  "identity_domain": "jitbit.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Jitbit Helpdesk is an email-first ticket system for IT support and customer service, offered as SaaS or a self-hosted .NET/SQL Server application. Requests from mail, portal and other configured channels become tickets with categories, ownership, private notes, knowledge and automation. Self-hosted deployment now includes Windows, Linux and Docker choices in the current manual.\n\nEvaluation should trace message delivery and access, rule-trigger chains, AI actions and a usable export. The price differs between hosted seat bundles, a perpetual on-premises license and a separately licensed self-hosted AI service. Public documentation was researched; no mailbox, account, deployment, AI call or restore was tested.",
+  "description_zh": "Jitbit Helpdesk 是面向IT支持及客户服务的邮件优先工单系统，可选SaaS或自托管.NET／SQL Server应用。邮件、门户及其他已配置渠道请求形成带分类、负责人、私有备注、知识和自动化的工单。当前手册的自托管方案包含Windows、Linux及Docker。\n\n评估应追踪消息投递与访问、规则触发链、AI动作及可用导出。托管席位包、永久本地许可、单独授权的自托管AI服务各有价格。本文研究公开文档，未测试邮箱、账户、部署、AI调用或恢复。",
+  "core_features": [
+    {
+      "name_en": "Email-first ticket workflow",
+      "name_zh": "邮件优先工单流程",
+      "explanation_en": "Parse mail into tickets or replies and track categories and owners.",
+      "explanation_zh": "将邮件解析为工单或回复，跟踪分类和负责人。",
+      "explanation_scope": "product_specific",
+      "source_ref": "email",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Ordered event automation",
+      "name_zh": "按顺序执行的事件自动化",
+      "explanation_en": "Triggers combine conditions and actions; rules can cause other events.",
+      "explanation_zh": "触发器组合条件与动作，规则可引发其他事件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rules",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "AI drafts and configured actions",
+      "name_zh": "AI草稿与配置动作",
+      "explanation_en": "Manual reply drafts differ from automatic rule-posted comments.",
+      "explanation_zh": "手动回复草稿与规则自动发布评论不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "ai-doc",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "SQL Server backup export",
+      "name_zh": "SQL Server备份导出",
+      "explanation_en": "Eligible hosted accounts can request published downloadable database backups.",
+      "explanation_zh": "符合条件的托管账户可申请发布可下载数据库备份。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate an IT mailbox with category-based technician access and follow-up ownership.",
+      "Compare hosted seat bundles with a self-hosted deployment and separately budgeted AI service."
+    ],
+    "zh": [
+      "评估按分类控制技术人员访问、明确跟进归属的IT邮箱。",
+      "比较托管席位包与自托管部署，并单独预算AI服务。"
+    ],
+    "source_refs": ["install", "email", "self-price", "cloud-price", "ai"],
+    "basis": "Editorial evaluation scenarios, not executed deployments or measured savings."
+  },
+  "technical_details": {
+    "Self-hosting": {
+      "en": "Current manual describes.NET10 and SQL Server on Windows/Linux/Docker. Operator owns database, service, credentials, upgrades and recovery.",
+      "zh": "当前手册描述Windows／Linux／Docker上的.NET10与SQL Server。运营者负责数据库、服务、凭据、升级及恢复。",
+      "source_ref": "install",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "IT support manager",
+      "Helpdesk administrator",
+      "Systems administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose hosted or self-hosted and map technician categories and requester access.",
+        "zh": "选择托管或自托管，映射技术人员分类及请求人访问。",
+        "source_refs": ["install", "cloud-price"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot mailbox routing, reply threading and intended subscribers with non-sensitive test data.",
+        "zh": "使用非敏感测试资料试点邮箱路由、回复串联及预期订阅者。",
+        "source_refs": ["email"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test rule chains, private AI drafts and a restore before enabling customer-facing automation.",
+        "zh": "启用面向客户自动化前，测试规则链、私有AI草稿及恢复。",
+        "source_refs": ["rules", "ai-doc", "backup"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Microsoft 365 OAuth, IMAP, POP3",
+        "source_ref": "email",
+        "scope": "Mailbox/provider authorization and incoming/outgoing setup required; EWS listed deprecated."
+      },
+      {
+        "name": "External HTTP tools",
+        "source_ref": "ai-doc",
+        "scope": "Configured POST endpoint, JSON parameters, auth headers; errors returned to AI, not proof of recovered action."
+      },
+      {
+        "name": "OpenAI/Azure/Bedrock generation for self-hosted AI",
+        "source_ref": "ai",
+        "scope": "Own provider key and external generation costs/data handling; local embeddings alone do not make generation local."
+      }
+    ],
+    "source_ref": "email"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Repeated mailbox connection failures may temporarily disable the account; a running portal does not prove email ingestion works.",
+        "zh": "连续邮箱连接失败可能暂时禁用账户，门户运行不表示邮件接入正常。",
+        "source_refs": ["email"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "AI triage runs in the background while other rules continue, so subsequent logic cannot assume immediate classification.",
+        "zh": "AI分诊后台运行，其他规则继续，因此后续逻辑不能假定分类已立即完成。",
+        "source_refs": ["ai-doc"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Older AI guide labels indexing SaaS-only; newer11.22 add-on explicitly enables self-hosted indexing. Confirm the installed version and add-on.",
+        "zh": "旧AI指南将索引标为SaaS专属，较新11.22附加服务明确支持自托管索引，需确认安装版本和附加服务。",
+        "source_refs": ["ai-doc", "ai"],
+        "evidence_type": "observed_documentation_version_difference"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.jitbit.com/tos/",
+    "source_ref": "terms",
+    "scope": "Published hosted service has proprietary restrictions; self-hosted source-code license is separately quoted, not public open-source permission."
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "cloud-price",
+    "source_refs": ["cloud-price", "self-price", "ai"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Hosted fixed seat bundles plus Enterprise extra agents; separate perpetual self-hosted license and optional AI license. Dollar code not established.",
+    "source_snapshot_en": "SaaS monthly29/69/129/249 for1/4/7/9agents; annual equivalents24.92/58.25/108.25/208.25; Enterprise extraagent29 displayed. Default self-hosted10agents2490 once,12months updates/support. AI add-on999 once; provider use extra. Renewal50% current price within statedwindow else80%.",
+    "source_snapshot_zh": "SaaS月29／69／129／249含1／4／7／9坐席，年付折月24.92／58.25／108.25／208.25；Enterprise显示额外坐席29。默认自托管10坐席2490一次，含12个月更新支持。AI附加999一次，服务商用量另计。规定窗口续约为现价50%，否则80%。",
+    "checked_at": "2026-10-22T11:43:02.646941+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does a perpetual license include lifetime updates?",
+      "question_zh": "永久许可包含终身更新吗？",
+      "answer_en": "No. The existing version continues, while updates and support are included for twelve months and then renew separately.",
+      "answer_zh": "不包含，已有版本继续运行，更新及支持包含12个月，此后单独续约。",
+      "source_refs": ["self-price"]
+    },
+    {
+      "question_en": "Are local embeddings the same as entirely local AI?",
+      "question_zh": "本地嵌入就代表AI完全本地吗？",
+      "answer_en": "No. The add-on supports local embeddings, but generated reply drafts can still call an external model using your provider key.",
+      "answer_zh": "不是，附加服务支持本地嵌入，但生成回复草稿仍可能使用自身密钥调用外部模型。",
+      "source_refs": ["ai"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/jitbit-helpdesk",
+      "read_at": "2026-10-22T08:56:29.422Z",
+      "excerpt_sha256": "90ce4e1e05f4f26af8efdc9a09985a3702f33a2de4c3491f6620c48db97d10c1",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Help Desk Software & Ticketing System — Jitbit",
+      "title": "Help Desk Software & Ticketing System — Jitbit",
+      "url": "https://www.jitbit.com/helpdesk/",
+      "read_at": "2026-10-22T11:42:47.932878+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7c617771222172be3310d68188972d16b28da589bc9262581cc4b8419d5a8999",
+      "research_notes_en": "Email-first ticketing and SaaS/on-prem choices; no speed/reliability/customer claims independently verified."
+    },
+    {
+      "id": "cloud-price",
+      "type": "official_pricing",
+      "site": "SaaS help desk - pricing & purchase",
+      "title": "SaaS help desk - pricing & purchase",
+      "url": "https://www.jitbit.com/saas-helpdesk/purchase/",
+      "read_at": "2026-10-22T11:42:47.770380+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cd6201af9e3299192bd5ed693a5fa8a36de48d85577e0053fbe337ff688ec9df",
+      "research_notes_en": "Seat bundles and monthly/annual price cards; unlimited AI credits not listed on Freelancer."
+    },
+    {
+      "id": "self-price",
+      "type": "official_pricing",
+      "site": "Self-hosted help desk - pricing & purchase",
+      "title": "Self-hosted help desk - pricing & purchase",
+      "url": "https://www.jitbit.com/helpdesk/purchase/",
+      "read_at": "2026-10-22T11:42:47.876128+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9c4f5bbdba771ea5c7e550462a5c46a380b83f99052a3f1e03c858211aaf7112",
+      "research_notes_en": "Default10agent perpetual quote, optionalAI999, renewal50/80percent terms and source license by contact."
+    },
+    {
+      "id": "install",
+      "type": "official_documentation",
+      "site": "On-premises installation manual - Jitbit Helpdesk Docs",
+      "title": "On-premises installation manual - Jitbit Helpdesk Docs",
+      "url": "https://www.jitbit.com/docs/onprem/",
+      "read_at": "2026-10-22T11:42:48.218162+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "80273bb705130ff23a625615e3c5fdf3e815dc882309b9e2f38c10bda09a9700",
+      "research_notes_en": "Current.NET10/SQLServer setup, roles, Windows/Linux/Docker, upgrade and defaultcredential cautions; no commands executed."
+    },
+    {
+      "id": "email",
+      "type": "official_documentation",
+      "site": "Helpdesk Email Settings - Jitbit Helpdesk Docs",
+      "title": "Helpdesk Email Settings - Jitbit Helpdesk Docs",
+      "url": "https://www.jitbit.com/docs/adminemail/",
+      "read_at": "2026-10-22T11:43:02.034347+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6d3d4640759eea99317886d092568fbb1a4e297b1eaf492fb6111bbdb6c69f0b",
+      "research_notes_en": "Mail polling, connection disablement, threadmatching, subscribers, autologin and private-field template exposure read."
+    },
+    {
+      "id": "rules",
+      "type": "official_documentation",
+      "site": "Helpdesk Automation Rules - Jitbit Helpdesk Docs",
+      "title": "Helpdesk Automation Rules - Jitbit Helpdesk Docs",
+      "url": "https://www.jitbit.com/docs/adminrules/",
+      "read_at": "2026-10-22T11:43:01.799186+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b597f0ddb9a648c6adff1903f97a6788d67879fdcd2a6d65974c09a52f5139a0",
+      "research_notes_en": "Order, chaining, once-only time triggers and asynchronous sentiment trigger."
+    },
+    {
+      "id": "ai",
+      "type": "official_documentation",
+      "site": "Self-Hosted AI Add-On for Jitbit Helpdesk",
+      "title": "Self-Hosted AI Add-On for Jitbit Helpdesk",
+      "url": "https://www.jitbit.com/helpdesk/ai-on-premise/",
+      "read_at": "2026-10-22T11:42:47.772610+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "601cb4b46f997c361ef1dc3192d084d9881c1a449dea81b33e790e564731d09c",
+      "research_notes_en": "New11.22 self-hosted AI add-on scope, local embeddings versus external generation and provider keys."
+    },
+    {
+      "id": "ai-doc",
+      "type": "official_documentation",
+      "site": "AI Assistant - Jitbit Helpdesk Docs",
+      "title": "AI Assistant - Jitbit Helpdesk Docs",
+      "url": "https://www.jitbit.com/docs/aiassistant/",
+      "read_at": "2026-10-22T11:43:02.447078+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7d6db289e23b99ebd1703bc52708964e9087b99ab02852a49e86c7f90510a10f",
+      "research_notes_en": "Selected main sections through external tools/MCP inspected: manual drafts, auto-post option, asynchronous triage, document indexing; older hosted-only scope conflicts with new add-on."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Help Desk Backup - Download Your Data Anytime",
+      "title": "Help Desk Backup - Download Your Data Anytime",
+      "url": "https://www.jitbit.com/saas-helpdesk/helpdesk-ftp-backup/",
+      "read_at": "2026-10-22T11:43:01.859138+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "0e8c57ea2d805bfc03f866035bd200d8ac40cdc461f46582aa16f3a9f98b3885",
+      "research_notes_en": "Downloadable backup enablement, plan availability, SQLServer2022 restore and frequency versus infrastructure backup."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of service - Jitbit",
+      "title": "Terms of service - Jitbit",
+      "url": "https://www.jitbit.com/tos/",
+      "read_at": "2026-10-22T11:43:02.646941+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d1928e97a173d0b96a973c446914ab2b32436e276e5ae40d84ea184fac3ce188",
+      "research_notes_en": "SaaS ownership restrictions, advance billing, cancellation period and refund window."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:43:02.646941+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "install",
+    "email",
+    "rules",
+    "self-price",
+    "cloud-price",
+    "ai",
+    "backup"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "deploy",
+        "title_en": "Match deployment to a real operations owner",
+        "title_zh": "让部署方式对应真实运维负责人",
+        "en": "Jitbit offers hosted ticketing and a self-hosted.NET/SQL Server application. Its current manual covers Windows, Linux and Docker and distinguishes requesters, company managers, category-authorized technicians and administrators. Administrator status alone does not mean new-ticket notification in every category.\n\nFor an illustrative internal access request, establish who can see that category and who receives assignment notices. Self-hosting also entails database operations, service startup, updates and recovery; a perpetual purchase does not perform them. The installation guide warns about initial default credentials and upgrade impacts on custom source changes. No install commands or supplied example credentials were used here.",
+        "zh": "Jitbit提供托管工单及自托管.NET／SQL Server应用。当前手册涵盖Windows、Linux和Docker，并区分请求人、公司经理、获分类授权的技术人员及管理员。管理员身份本身不表示会收到每个分类的新工单通知。\n\n以假设内部访问申请为例，应确定谁能看分类、谁接收分配通知。自托管还包含数据库运维、服务启动、更新及恢复，购买永久许可不会完成这些工作。安装指南警告初始默认凭据及升级对自定义源码的影响。此次未运行安装命令或使用示例凭据。",
+        "source_refs": ["install", "product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "mail-path",
+        "title_en": "Separate a healthy inbox page from healthy mail ingestion",
+        "title_zh": "区分收件页面正常与邮件接入正常",
+        "en": "The mail guide describes one-to-five-minute polling and may temporarily disable a mailbox after five consecutive connection errors. It also documents SaaS forwarding to the built-in support address. These are distinct intake paths, so a visible portal and an empty queue do not establish delivery success.\n\nThreading uses the ticket number in the subject and can fall back to message-reference headers. Subscribers and notification choices determine who receives updates. Customer autologin links last three days and can expose access when forwarded. Individual custom-field masks may include non-public fields even though the general field list excludes them. Test intended recipients, private fields, forwarded notices and reply threading before adopting a production mailbox.",
+        "zh": "邮件指南描述1至5分钟轮询，并可能在连续5次连接错误后暂时禁用邮箱，也说明SaaS可转发至内置支持地址。这是不同接入链路，因此门户可见或队列为空不能证明投递成功。\n\n串联使用主题中的工单号，也可回退检查邮件引用头。订阅者及通知选项决定谁接收更新。客户自动登录链接有效3天，转发后可能暴露访问；单独自定义字段占位符即使在通用字段列表排除私有字段时，仍可能包含非公开内容。接入生产邮箱前应测试预期收件人、私有字段、转发通知和回复串联。",
+        "source_refs": ["email"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "rule-chain",
+        "title_en": "Treat automation as an event chain",
+        "title_zh": "将自动化当作事件链",
+        "en": "Rules have triggers, conditions and actions, execute in displayed order and can stop subsequent rules. A category-changing action fires category-change rules; loop protection is documented but is not proof that a complex chain is harmless. Time-based triggers run once per ticket under the guide’s described behavior. Approval-granted triggers do not fire on rejection.\n\nAI triage is asynchronous: other rules continue while category, priority and sentiment are computed. If routing depends on the result, use the documented sentiment-detected event rather than assuming the next creation rule sees a completed AI call. Keep an initial pilot narrow and inspect repeated replies, changed due dates and public-message actions. This research did not execute any chain.",
+        "zh": "规则有触发器、条件和动作，按显示顺序执行，可终止后续规则。修改分类的动作会触发分类变更规则；虽有循环保护说明，也不能证明复杂链无害。文档所述时间触发器每工单运行一次，批准事件不会因拒绝而触发。\n\nAI分诊为异步：计算分类、优先级和情绪时，其他规则继续。若路由依赖该结果，应使用文档中的情绪检测完成事件，而非假定下一条创建规则看到已完成AI调用。首轮试点应窄，检查重复回复、到期日变化及公开消息动作。本研究未执行任何链。",
+        "source_refs": ["rules", "ai-doc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-boundary",
+        "title_en": "Distinguish reviewed drafts from automatic actions",
+        "title_zh": "区分审阅草稿与自动动作",
+        "en": "Manual AI reply generation lets a technician insert or edit the draft before sending. The automation action instead posts a generated comment, with a technicians-only option that changes its audience. External tools can call configured HTTP APIs, so a reply feature is not universally a read-only assistant. Errors reaching the model do not establish automatic retry or rollback.\n\nThe newer self-hosted AI add-on requires11.22 or later and runs an AI service plus Qdrant. Local embeddings keep that embedding step local; OpenAI embeddings send text externally, and generative replies use a provider key. Its new indexing support supersedes older hosted-only wording for eligible installs. Confirm credentials, endpoint authority, provider billing and the installed add-on before accepting a blanket data-isolation claim.",
+        "zh": "手动AI回复生成允许技术人员发送前插入或编辑草稿；自动化动作则发布生成评论，“仅技术人员”选项会改变受众。外部工具可调用已配置HTTP API，因此回复功能并非普遍只读助手。错误传给模型不表示有自动重试或回滚。\n\n较新自托管AI附加服务需11.22及以上，并运行AI服务和Qdrant。本地嵌入使该嵌入步骤留在本地；OpenAI嵌入会外发文字，生成回复则使用服务商密钥。其新索引支持对符合条件安装取代旧托管专属表述。接受全面数据隔离声明前，应确认凭据、端点权限、服务商计费及所装附加服务。",
+        "source_refs": ["ai-doc", "ai"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Keep recurring bundles and perpetual rights separate",
+        "title_zh": "分开比较订阅包与永久权利",
+        "en": "Hosted monthly plans are$29/$69/$129/$249 for one/four/seven/nine agents. Annual monthly equivalents are$24.92/$58.25/$108.25/$208.25. Enterprise displays$29 per extra agent; the precise annual add-seat calculation should be quoted. Unlimited AI credits appear from Startup, not on the Freelancer card.\n\nThe default self-hosted selector shows ten agents at$2,490 once with twelve months of updates/support. Continued use is perpetual, while timely renewal costs fifty percent of the current plan price, rising to eighty percent after the stated sixty-day grace period. The$999 self-hosted AI add-on is separate, as are external provider usage and infrastructure. A separately quoted source-code license is not public open-source permission. Currency code and other slider prices were not established.",
+        "zh": "托管月套餐为$29／$69／$129／$249，分别含1／4／7／9坐席；年付折月$24.92／$58.25／$108.25／$208.25。Enterprise显示额外坐席$29，准确年付加席计算需报价。无限AI积分从Startup起列出，Freelancer卡未列。\n\n自托管默认选择器显示10坐席一次$2,490，含12个月更新／支持。继续使用为永久，及时续约为现价50%，超过规定60天宽限后为80%。自托管AI附加$999另计，外部服务商用量及基础设施也另计。单独询价源码许可不等于公开开源授权。币种代码及其他滑块价格未确认。",
+        "source_refs": ["cloud-price", "self-price", "ai", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backup-exit",
+        "title_en": "Demonstrate an export that can actually be restored",
+        "title_zh": "演示确实能恢复的导出",
+        "en": "The downloadable backup offer is included from Company upward and can be added to lower plans for a fee. Support first enables a publishing job; fresh downloads appear daily or weekly depending on the plan. This customer-download cadence differs from the more frequent infrastructure backups advertised on the same page.\n\nThe documented artifact is a zipped SQL Server database backup, with SQL Server2022 or later required for restore. The vendor lists tickets, replies, accounts, knowledge, fields and linked attachments, but no restore was performed here. Check actual attachment availability, backup age, database size/edition constraints and compatible application licensing before treating the export as a complete exit. Hosted terms also make cancellation and refund timing separate questions.",
+        "zh": "可下载备份从Company起包含，低档可付费加购。支持先启用发布任务，再按套餐每日或每周提供新下载。面向客户的下载频率与同页宣传的更频繁基础设施备份不同。\n\n文档产物为压缩SQL Server数据库备份，恢复需SQL Server2022及以上。厂商列工单、回复、账户、知识、字段及关联附件，但此次未执行恢复。将导出视为完整退出方案前，应检查真实附件可用性、备份时间、数据库大小／版本约束及兼容应用许可。托管条款还分别规定取消与退款时间。",
+        "source_refs": ["backup", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Jitbit Helpdesk: Mail, Rule Chains, AI and Deployment Costs",
+    "title_zh": "Jitbit Helpdesk：邮件、规则链、AI及部署成本",
+    "description_en": "Evaluate Jitbit mail ingestion, notification access, asynchronous AI triage, self-hosted AI data paths, seat bundles and restorable database exports.",
+    "description_zh": "评估Jitbit邮件接入、通知访问、异步AI分诊、自托管AI数据链路、席位包及可恢复数据库导出。",
+    "primary_intent": "Evaluate Jitbit operations and hosted/self-hosted costs.",
+    "secondary_questions": [
+      "Can a mailbox silently stop ingestion?",
+      "Does local AI always avoid external calls?",
+      "Are updates perpetual?"
+    ],
+    "query_basis": "Editorial questions; no measured keyword demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, mailbox, rules, AI, install, export restore or purchase executed. Full UI language list, currency code, additional self-hosted selector quotes, backup restoration completeness and regional access remain unverified.",
+      "zh": "未执行账户、邮箱、规则、AI、安装、导出恢复或购买。完整界面语言、币种代码、其他自托管选择器报价、备份恢复完整性及地区访问未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

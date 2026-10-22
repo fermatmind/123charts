@@ -1,0 +1,240 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "rootstock-erp-1702fbc4",
+  "name": "Rootstock ERP",
+  "website_url": "https://www.rootstock.com/",
+  "domain": "www.rootstock.com",
+  "identity_domain": "rootstock.com",
+  "category": "erp",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Rootstock is manufacturing ERP on Salesforce, connecting sales/order information with production, inventory and financial work. Its order product integrates with Salesforce Sales Cloud, while manufacturing maintains BOMs, routings, work orders and capacity.\n\nA Salesforce-native label does not establish that every Salesforce application, quality extension or license is included. This profile follows current order and production descriptions and the official contact route. No organization, extraction job, work order or financial posting was tested.",
+  "description_zh": "Rootstock 是构建于 Salesforce 的制造 ERP，连接销售订单、生产、库存及财务。订单产品与 Salesforce Sales Cloud 相连，制造侧维护物料路线、工单及产能。\n\nSalesforce 原生标签不证明所有 Salesforce 应用、质量扩展和许可均包含。本文依据当前订单生产说明和官方联系入口，未测试组织、提取任务、工单或财务过账。",
+  "core_features": [
+    {
+      "name_en": "Salesforce quote/order connection",
+      "name_zh": "Salesforce 报价订单连接",
+      "explanation_en": "Orders may be entered directly or created from Salesforce opportunities/quotes for different product types.",
+      "explanation_zh": "可直接录入订单，或从 Salesforce 商机报价创建不同产品类型订单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "orders",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Work-order and capacity management",
+      "name_zh": "工单与产能管理",
+      "explanation_en": "Production tracks release, material picking, hours/quantities, receipt, backflushing and cost.",
+      "explanation_zh": "生产跟踪释放、领料、工时数量、接收、倒冲和成本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "production",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "PO document extraction",
+      "name_zh": "采购单资料提取",
+      "explanation_en": "Document Extract describes mapped email intake, required fields and confidence checks before export.",
+      "explanation_zh": "Document Extract 介绍映射邮箱接收、必填项和导出前置信度检查。",
+      "explanation_scope": "product_specific",
+      "source_ref": "orders",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["orders", "production"],
+    "basis": "Illustrative uses, not customer results."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [],
+    "roles_status": "editorial_inference"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": []
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented",
+    "items": []
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "unknown",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T10:26:18Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Contracted Rootstock/Salesforce modules, users, services and AI/extraction scope not established.",
+    "source_snapshot_en": "Official inquiry route read; no numeric amount, currency or included platform entitlement established.",
+    "source_snapshot_zh": "已读官方咨询入口；未确立数字金额、币种及包含平台权限。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/rootstock-erp",
+      "read_at": "2026-10-22T08:55:56.581Z",
+      "excerpt_sha256": "a33241082d71bda7125787c50af8f3bac71a94dc43f321f72beffab6580c617f",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "orders",
+      "type": "official_documentation",
+      "site": "Rootstock ERP",
+      "title": "Sales Order Management Software | Rootstock",
+      "url": "https://www.rootstock.com/cloud-erp/sales-order-processing-software/",
+      "read_at": "2026-10-22T10:26:13Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "69c7b49c471c3c4223ecd83f66349ff1c51814b5f5a00134b734309670baeb81",
+      "research_notes_en": "Salesforce order conversion, product types, RMA and Document Extract controls; no operational or accuracy test."
+    },
+    {
+      "id": "production",
+      "type": "official_documentation",
+      "site": "Rootstock ERP",
+      "title": "Production Management Software | Planning & Scheduling",
+      "url": "https://www.rootstock.com/cloud-erp/production-management-software/",
+      "read_at": "2026-10-22T10:26:23Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "a9a5702ea59a6bc8be688d3b8571609ff02ada956d29aea5ad907f0f1ef84ded",
+      "research_notes_en": "Work-order lifecycle, capacity, materials and separate quality/compliance integrations."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Rootstock ERP",
+      "title": "Contact Us | Rootstock Software",
+      "url": "https://www.rootstock.com/contact/",
+      "read_at": "2026-10-22T10:26:18Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "2b42ff58d6e95ffa00886074de32d6a8cf7d08386123622c7e695ea46392d1c7",
+      "research_notes_en": "Official contact/demo route read; no numeric rate, trial or entitlement inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:26:23Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
+  ],
+  "description_source_refs": ["orders", "production"],
+  "profile": {
+    "sections": [
+      {
+        "id": "order",
+        "title_en": "Trace the customer requirement into operational records",
+        "title_zh": "把客户要求追踪到业务记录",
+        "en": "The order page covers stock, kits, configured and nonphysical products; quote conversion, customer pricing, purchase-order sourcing and RMA processes. For a hypothetical configured assembly, follow the customer specification into the order, intended work order and purchased components, then compare delivered quantity and billing.\n\nInspect a partial replacement or return separately. These are proposed acceptance cases. A quote accepted in CRM does not itself prove materials were available, production completed or cash collected. Exact product mappings and permissions require a configured organization.",
+        "zh": "订单页覆盖现货、套件、配置产品和非实物产品，以及报价转换、客户定价、采购供货和 RMA。可假设一件配置组装品，把客户要求追踪到订单、目标工单及采购组件，再对照交付数量和账单。\n\n部分换货退货应另查。以上为建议验收，CRM 接受报价并不证明物料齐全、生产完工或已经收款；产品映射和权限需在配置组织核对。",
+        "source_refs": ["orders", "production"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "production",
+        "title_en": "Check actual material and capacity against the plan",
+        "title_zh": "用实际物料产能对照计划",
+        "en": "The production page describes work-center capacity by labor/machine hours, alternate routings, material availability and work-order stages through receipt/backflushing/costing. It also describes mixing make-to-order, make-to-stock and engineer-to-order across facilities.\n\nTest one missing component and one overloaded work center before trusting a delivery date. Compare recorded hours, material use and finished quantity with cost. Quality/compliance integrations such as ComplianceQuest are separately mentioned; do not present that as built-in certification or an included third-party contract. No schedule or cost was executed here.",
+        "zh": "生产页介绍按人工机器小时计算工作中心产能、替代路线、齐料检查，以及工单接收倒冲成本等阶段，并介绍跨设施混用按订单、按库存及按工程生产。\n\n信任交期前应测试缺一个组件和工作中心超负载，再对照工时、耗料、完工量和成本。页面另提 ComplianceQuest 等质量合规集成，不能当成内置认证或已包含第三方合同；本文未运行排程或成本。",
+        "source_refs": ["production"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capture",
+        "title_en": "Extraction is a proposed order, not proof of correct authorization",
+        "title_zh": "提取结果不能证明订单已正确授权",
+        "en": "Document Extract is described as converting PDFs, scans and email attachments into structured data, using known contacts, mapped inboxes, required-field checks and confidence thresholds. The source document can remain attached to Salesforce objects for traceability.\n\nEvaluate an ambiguous part number, changed price and repeated email, then inspect what is blocked and who can approve export. These are recommendations, not tests performed or accuracy guarantees. The page’s claim of eliminating manual entry was not independently adopted. Configure extraction permissions alongside the business approval process.",
+        "zh": "Document Extract 介绍把 PDF、扫描件和邮件附件转成结构数据，使用已知联系人、映射邮箱、必填校验及置信度阈值，并保留源单据附于 Salesforce 对象供追查。\n\n可用模糊物料号、变价和重复邮件评估，检查哪里阻止、谁能批准导出。这些是建议，不是已执行测试或准确保证；本文未独立采用消除手工录入的主张。提取权限应与业务审批共同配置。",
+        "source_refs": ["orders"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Specify ERP, platform and implementation scope",
+        "title_zh": "明确 ERP、平台及实施范围",
+        "en": "The official contact page offers a vendor inquiry/demo route. The pages read did not establish a numeric subscription, Salesforce prerequisites, included users/modules, trial duration or Document Extract allowance. Monthly price and currency remain unknown.\n\nRequest the actual Salesforce and Rootstock entitlements, manufacturing/order modules, extraction/AI terms, integrations, migration, support and environments in writing. Prepare BOM/routing versions, item mappings, opening stock/WIP and role ownership. Rootstock deserves investigation when Salesforce-centered manufacturing justifies this work; an independent invoice-only need may not. License rights, local statutory coverage, data export and recovery remain unverified; no quote or account was obtained.",
+        "zh": "官方联系页提供厂商咨询演示入口，已读页面未确立数字订阅价、Salesforce 前提、包含用户模块、试用期限或 Document Extract 额度，月费及币种保持未知。\n\n应书面明确 Salesforce 与 Rootstock 权限、制造订单模块、提取 AI 条款、集成迁移、支持和环境，并准备物料路线版本、物品映射、期初库存在制及角色责任。以 Salesforce 为中心且需要制造时可调查，独立简单开票可能无需此工作。许可权利、法定覆盖、导出恢复仍未核实，未取得报价账户。",
+        "source_refs": ["pricing", "orders", "production"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Actual Salesforce prerequisites, contracted modules, AI/extraction limits, implementation and license terms require vendor confirmation.",
+      "zh": "实际 Salesforce 前提、合同模块、AI 提取限制、实施和许可条款需厂商确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "No organization, document extraction, order, manufacturing cost, local filing, export or restore was tested.",
+      "zh": "未测试组织、单据提取、订单、制造成本、当地申报、导出或恢复。",
+      "source_refs": [],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "Rootstock ERP: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "Rootstock ERP：功能、流程、费用与限制",
+    "description_en": "Rootstock is manufacturing ERP on Salesforce, connecting sales/order information with production, inventory and financial work. Its order product integrates with Salesforce Sales Cloud, while manufacturing maintains BOMs, routings, work orders and capacity.",
+    "description_zh": "Rootstock 是构建于 Salesforce 的制造 ERP，连接销售订单、生产、库存及财务。订单产品与 Salesforce Sales Cloud 相连，制造侧维护物料路线、工单及产能。",
+    "primary_intent": "Evaluate Rootstock ERP for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "Check actual material and capacity against the plan",
+      "Extraction is a proposed order, not proof of correct authorization",
+      "Specify ERP, platform and implementation scope"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
+  }
+}

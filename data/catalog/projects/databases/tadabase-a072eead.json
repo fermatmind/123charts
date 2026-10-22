@@ -1,0 +1,387 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "tadabase-a072eead",
+  "name": "Tadabase",
+  "website_url": "https://tadabase.io/",
+  "domain": "tadabase.io",
+  "identity_domain": "tadabase.io",
+  "category": "databases",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Tadabase’s classic platform builds database-backed web apps with data tables, pages, forms and user roles. Its documentation connects those components with several kinds of automation. The resulting application still needs an intentional data model, permissions and recovery plan.\n\nThis profile evaluates the classic tadabase.io product and its documented subscription. A homepage banner for a newer AI offering links to a different domain; that free-plan message is not merged into the classic fourteen-day trial. No app, account, record, automation, invitation, backup or restore was operated.",
+  "description_zh": "Tadabase 经典平台用数据表、页面、表单及用户角色构建数据库驱动的网页应用，文档通过多种自动化连接这些组件。生成的应用仍需主动设计数据模型、权限及恢复方案。\n\n本文评估 tadabase.io 经典产品及其文档套餐。首页较新 AI 产品横幅指向另一域名，不将其免费方案信息与经典产品十四天试用合并。本次未操作应用、账户、记录、自动化、邀请、备份或恢复。",
+  "core_features": [
+    {
+      "name_en": "Structured app data",
+      "name_zh": "结构化应用数据",
+      "explanation_en": "Define tables, fields and records for an application.",
+      "explanation_zh": "为应用定义表、字段及记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "model",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Role-based app access",
+      "name_zh": "基于角色的应用访问",
+      "explanation_en": "Assign custom roles, including multiple roles per user.",
+      "explanation_zh": "分配自定义角色，同一用户可拥有多个角色。",
+      "explanation_scope": "product_specific",
+      "source_ref": "roles",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Distinct automation triggers",
+      "name_zh": "多种自动化触发",
+      "explanation_en": "Choose table, form, action or scheduled behavior deliberately.",
+      "explanation_zh": "明确选择表、表单、动作或定时行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automation",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Page revision history",
+      "name_zh": "页面版本历史",
+      "explanation_en": "Inspect and restore prior saved page designs.",
+      "explanation_zh": "检查并恢复此前保存的页面设计。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pages",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Model authentication users separately from business contacts",
+      "Compare form and table automation paths",
+      "Plan page recovery and a staged app restore"
+    ],
+    "zh": [
+      "将认证用户与业务联系人分开建模",
+      "比较表单及表自动化路径",
+      "规划页面恢复和分阶段应用恢复"
+    ],
+    "source_refs": ["model", "automation", "pages", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "No-code application builders",
+      "Business operations teams",
+      "Application administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Map related tables and authentication requirements.",
+        "zh": "规划关联表及认证要求。",
+        "source_refs": ["model", "roles"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test intended write paths and access controls with synthetic data.",
+        "zh": "用虚构数据测试预期写入路径及访问控制。",
+        "source_refs": ["automation", "security"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm plan-specific backup and staged activation requirements.",
+        "zh": "确认套餐备份及分阶段激活要求。",
+        "source_refs": ["backup", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Form-specific rules do not imply every write path runs the same behavior.",
+        "zh": "特定表单规则不代表每条写入路径行为相同。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Standard restore overwrites app data; staged restore needs separate permissions and a temporary database.",
+        "zh": "标准恢复覆盖应用数据，分阶段恢复需独立权限及临时数据库。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Page version history is not a complete application-data backup.",
+        "zh": "页面版本历史不是完整应用数据备份。",
+        "source_refs": ["pages"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "classic_app_capacity_subscription_with_trial",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:40:12.769361Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Classic Starter $50/month or displayed $42/month billed $504 annually; fourteen-day trial, no per-user charge advertised. Plan-specific backup, add-ons and final checkout remain separate.",
+    "summary_zh": "经典 Starter 月付 $50，或显示年付月均 $42、全年 $504；十四天试用，宣传不按用户收费。套餐备份、附加项及最终结账另核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/tadabase-io",
+      "read_at": "2026-10-22T09:00:07.158Z",
+      "excerpt_sha256": "4fdbc1f92aa138133ae7bf2ae5e4c4bd9d0af737dc85dcca9676420b343c1437",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "No-Code Online Database and Web App Builder | Tadabase",
+      "url": "https://tadabase.io/",
+      "read_at": "2026-10-22T13:40:12.769361Z",
+      "excerpt_sha256": "a671311f170d83d8d1eee10b4dc192a6973d7f2cc94bed3a1b1e756ddf2e64f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Classic no-code app scope read; new AI banner cross-domain plan not merged with classic subscription."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Tadabase",
+      "title": "Plans & Pricing - Flexible Options for Every Need | Tadabase",
+      "url": "https://tadabase.io/pricing",
+      "read_at": "2026-10-22T13:41:25.601713Z",
+      "excerpt_sha256": "580f21d579e9470e98bb98d3c899c4dcfc57553c1b2f4b70324e9285775849ea",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Classic fourteen-day trial, monthly versus annual amounts and app/record/storage tiers read; no checkout."
+    },
+    {
+      "id": "model",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Creating & Managing Da... | Getting Started",
+      "url": "https://docs.tadabase.io/getting-started/article/creating-managing-data-tables",
+      "read_at": "2026-10-22T13:44:10.825595Z",
+      "excerpt_sha256": "613db91c8880f7327cbdd906a420e5b154ad60ba86dc7d43b2773a7807e78879",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Table/field/record model and dedicated Users table versus business person tables read."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Roles | Manual",
+      "url": "https://docs.tadabase.io/manual/article/roles",
+      "read_at": "2026-10-22T13:44:10.940188Z",
+      "excerpt_sha256": "1476b91034ac01f242a1cbc04f5916e7400f72ea67d1f756d1664a26583d84ca",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Custom roles and multiple roles per user read; no real authorization result inferred."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Sharing and Security |",
+      "url": "https://docs.tadabase.io/sharing-and-security",
+      "read_at": "2026-10-22T13:50:11.836407Z",
+      "excerpt_sha256": "48c2838cfa9522cb38ed09da0644e4f5c9eac3c859bd02f165dc04695c482791",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Authentication/session/read-only/IP configuration read as operator controls, not independent certification."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Automation & Rules |",
+      "url": "https://docs.tadabase.io/automation-rules",
+      "read_at": "2026-10-22T13:50:11.836651Z",
+      "excerpt_sha256": "e8eec1360e92e4dce24223e6626f40e44c30125bbbc3d5b17d74154aa2fadf3c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Table versus form record rules, action links and schedule triggers read; no rules executed."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Backing up and Restori... | Backups and Restores",
+      "url": "https://docs.tadabase.io/backups-and-restores/article/backing-up-and-restoring-your-app",
+      "read_at": "2026-10-22T13:49:40.421174Z",
+      "excerpt_sha256": "1277a955465290dfe841204ffae92f39b815cc7ba1c00c68f5a790b36ad64ef6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Backup scope/excluded general settings/default omitted logs, standard destructive versus staged permission/activation distinctions read."
+    },
+    {
+      "id": "pages",
+      "type": "official_documentation",
+      "site": "Tadabase",
+      "title": "Page Versioning | Backups and Restores",
+      "url": "https://docs.tadabase.io/backups-and-restores/article/page-versioning",
+      "read_at": "2026-10-22T13:49:40.421682Z",
+      "excerpt_sha256": "16689e25a2fd85909919da46d600b22aa5ba2d802cc52e72692379bec73e13ee",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Page history and save-after-revert workflow read; not generalized to all app data."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:50:11.836651Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "model"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "A person record is not automatically a login account",
+        "title_zh": "人员记录不自动成为登录账户",
+        "en": "The data guide organizes applications as tables, fields and records, and recommends planning parent tables before dependent ones. The default Users table serves login and role functions. A separate Team Members or Customers table can describe people without granting them an app account. Model business relationships separately from authentication and check how a proposed workflow links them before importing real contact data.",
+        "zh": "数据指南按表、字段及记录组织应用，并建议先规划父表再建依赖表。默认 Users 表承担登录及角色功能。独立 Team Members 或 Customers 表可描述人员，但不因此授予应用账户。应将业务关联与认证分开，导入真实联系人前检查拟定流程如何连接两者。",
+        "source_refs": ["model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "roles",
+        "title_en": "Role membership requires a real access test",
+        "title_zh": "角色归属需要真实访问测试",
+        "en": "The roles guide allows custom groups and multiple roles on one user. Membership alone does not prove a user sees only the intended rows or fields. Define a representative user, expected pages and permitted actions, then inspect combined-role behavior in a test app. This profile did not create a role or verify authorization. Keep ordinary business records distinct from the Users authentication table.",
+        "zh": "角色指南允许自定义分组及单用户多角色。仅有归属不证明用户只看见预期行或字段。应明确代表性用户、预期页面及允许动作，再在测试应用中检查多角色组合行为。本文未创建角色或验证授权，普通业务记录应与 Users 认证表区分。",
+        "source_refs": ["roles", "model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "security",
+        "title_en": "Security controls need application configuration",
+        "title_zh": "安全控制需要应用配置",
+        "en": "The sharing guide presents login methods, email-based two-factor authentication, password policies, signup restrictions and session controls. It also describes app read-only mode and IP access settings. These are configurable features, not evidence that a particular application enabled them or passed a security assessment. Select controls for the actual app and plan, then test both valid access and denial paths; marketing compliance statements are not independent certification here.",
+        "zh": "共享指南介绍登录方式、邮件双因素认证、密码策略、注册限制及会话控制，也包括应用只读模式及 IP 访问设置。这些是可配置功能，不证明某应用已启用或通过安全评估。需按真实应用及套餐选择控制，并测试有效访问及拒绝路径；本文不把营销合规表述当作独立认证。",
+        "source_refs": ["security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "rules",
+        "title_en": "The write path determines which rule runs",
+        "title_zh": "写入路径决定运行哪类规则",
+        "en": "Table Rules react to record creation or edits at table level. Record Rules belong to a particular form submission, Action Rules require an action link/button, and Scheduled Tasks process records on a selected schedule. Do not assume an API or alternate form invokes the same form-specific rule. Evaluate one synthetic change through each intended entry path, including duplicate submissions and notification side effects. High-frequency scheduling is separately qualified by plan in the guide.",
+        "zh": "Table Rules 在表层响应记录新建／编辑；Record Rules 属于特定表单提交，Action Rules 需点击动作链接／按钮，Scheduled Tasks 按所选时间处理记录。不能假定 API 或其他表单触发相同表单规则。应让一次虚构变更经过每条预期入口，并检查重复提交及通知副作用。指南另以套餐限定高频调度。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Staged recovery has prerequisites and an activation step",
+        "title_zh": "分阶段恢复有前提和激活步骤",
+        "en": "The backup guide says standard restore replaces current app data and cannot be undone. Staged restore requires App Restore and Temporary Restore permissions plus a configured temporary database. Preparation leaves live data available; activation temporarily switches the app to the test database, and deactivation returns it. Confirm this behavior before exposing a staged exercise to users. General domain/header settings are stored separately, and logs are omitted by default. No restore or recovery timing was tested.",
+        "zh": "备份指南称标准恢复会替换当前应用数据且不能撤销。分阶段恢复要求 App Restore、Temporary Restore 权限及已配置临时数据库。准备时在线数据仍可用，激活会暂将应用切换到测试数据库，停用再返回。向用户开放演练前需确认该行为。一般域名／页头设置另存，日志默认不包含。本次未测试恢复或耗时。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "page-history",
+        "title_en": "Page rollback is a separate operation from data restore",
+        "title_zh": "页面回退与数据恢复是不同操作",
+        "en": "Page versioning keeps previous page edits with history details and optional comments. The documented revert selects an earlier version and requires saving the page again. That is useful for a mistaken interface edit, but does not establish recovery of database rows, attachments or external effects. Use page comments to record intent and choose the appropriate page or app recovery mechanism for the actual failure.",
+        "zh": "页面版本保存此前编辑、历史细节及可选说明。文档回退流程是选择旧版本后再次保存页面，可用于错误界面编辑，但不证明数据库行、附件或外部副作用能恢复。可通过页面说明记录意图，并按实际故障选择页面或应用恢复机制。",
+        "source_refs": ["pages"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Capacity tiers differ from per-user charging",
+        "title_zh": "容量层级不同于按用户收费",
+        "en": "The classic pricing page advertises no per-user fees. Monthly Starter is $50 for three apps, 30,000 records and 5 GB storage; the annual option displays $42/month with a $504 annual total. Higher tiers raise app, record and storage allowances. A fourteen-day no-card trial is not a continuing free classic plan. Check restoration entitlements, external services, add-ons, taxes and billing period before quoting a complete operating budget.",
+        "zh": "经典定价页称不按用户收费。月付 Starter 为 $50，含三应用、三万记录及 5 GB 存储；年付显示每月 $42、全年 $504。更高层提高应用、记录及存储额度。十四天免卡试用不等于经典产品持续免费方案。完整预算还需核恢复权益、外部服务、附加项、税及账期。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Tadabase: setup, operating limits and pricing",
+    "title_zh": "Tadabase：设置、运行边界及费用",
+    "description_en": "Tadabase’s classic platform builds database-backed web apps with data tables, pages, forms and user roles. Its documentation connects those components with several kinds ",
+    "description_zh": "Tadabase 经典平台用数据表、页面、表单及用户角色构建数据库驱动的网页应用，文档通过多种自动化连接这些组件。生成的应用仍需主动设计数据模型、权限及恢复方案。",
+    "search_intent_en": "Evaluate Tadabase for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Tadabase。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, import, user, role, rule, schedule, message, purchase, backup or restore was operated.",
+      "zh": "未操作应用、导入、用户、角色、规则、调度、消息、购买、备份或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Exact account entitlements, attachments/full recovery coverage, combined-role authorization, API limits and current UI languages require direct verification. New AI product cross-domain free-plan terms were not adopted for the classic product.",
+      "zh": "具体账户权益、附件／完整恢复覆盖、多角色授权、API 限额及当前界面语言需直接核实；未将跨域新 AI 产品免费条款用于经典产品。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Documentation is labeled version 1.1; actual current UI and recovery behavior were not observed.",
+      "zh": "文档标为 1.1，未观察当前真实界面及恢复行为。",
+      "source_refs": ["model", "backup"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

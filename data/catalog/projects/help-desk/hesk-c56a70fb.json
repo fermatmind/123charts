@@ -1,0 +1,365 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "hesk-c56a70fb",
+  "name": "HESK",
+  "website_url": "https://www.hesk.com/",
+  "domain": "www.hesk.com",
+  "identity_domain": "hesk.com",
+  "category": "help-desk",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "HESK is a PHP/MySQL help desk with support tickets and a built-in knowledge base. It offers a free self-hosted edition, optional branding-removal licenses and a separately hosted Hesk Cloud service. Free use and access to modifiable PHP do not make its restrictive EULA an open-source license.\n\nThe practical choice is who operates the server and mail path. Self-hosting leaves updates, database, backups, HTTPS and scheduled email fetching to the operator. Cloud handles those services but has plan-specific staff, attachment space and cloud-only modules. This is documentation research; no installation, mailbox, migration or restore was executed.",
+  "description_zh": "HESK 是使用 PHP／MySQL 的帮助台，提供支持工单及内置知识库。它有免费自托管版、可选去品牌许可，以及独立托管的 Hesk Cloud。免费使用及可修改 PHP 并不代表其限制性 EULA 属于开源许可。\n\n实际选择在于由谁运营服务器及邮件链路。自托管将更新、数据库、备份、HTTPS 和定时收邮件交给运营者；云服务处理这些事项，但套餐有员工数、附件空间及云专属模块限制。本文为文档研究，未执行安装、邮箱、迁移或恢复。",
+  "core_features": [
+    {
+      "name_en": "Ticket and knowledge-base workflow",
+      "name_zh": "工单与知识库流程",
+      "explanation_en": "Submit, assign and follow requests with self-service articles.",
+      "explanation_zh": "提交、分配及跟进请求，并提供自助文章。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Three email intake methods",
+      "name_zh": "三种邮件接入方法",
+      "explanation_en": "Choose local piping, IMAP polling or POP3 polling.",
+      "explanation_zh": "选择本地管道、IMAP轮询或POP3轮询。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mail",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate managed-cloud modules",
+      "name_zh": "独立托管云模块",
+      "explanation_en": "Cloud Pro/MAX advertise escalation, surveys and recurring tickets.",
+      "explanation_zh": "Cloud Pro／MAX宣传升级处理、调查及周期工单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cloud",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Run a self-hosted ticket portal where a team already owns PHP/MySQL operations.",
+      "Compare managed flat-fee support with a known staff count and attachment footprint."
+    ],
+    "zh": [
+      "已有PHP／MySQL运维负责人时运营自托管工单门户。",
+      "根据明确员工数及附件规模比较托管固定价支持。"
+    ],
+    "source_refs": ["download", "cloud"],
+    "basis": "Editorial fit and evaluation tasks; no measured benefit."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Self-hosted PHP/MySQL or Hesk Cloud; the download page lists3.7.13 released18October2026. Listed minimum runtimes are compatibility claims, not a recommendation to deploy obsolete software.",
+      "zh": "自托管PHP／MySQL或Hesk Cloud；下载页列3.7.13于2026年10月18日发布。最低运行环境是兼容声明，不能作为部署过时软件的建议。",
+      "source_ref": "download",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support administrator",
+      "PHP hosting operator",
+      "Small-team service owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "download"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose self-hosted or cloud and assign maintenance responsibility.",
+        "zh": "选择自托管或云，并指定维护责任。",
+        "source_refs": ["download", "cloud"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure staff, categories and notifications; use a controlled mailbox for intake testing.",
+        "zh": "配置员工、分类及通知，使用受控邮箱测试接入。",
+        "source_refs": ["download", "mail"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test a customer email reply and a staff web reply, then verify backup/export boundaries.",
+        "zh": "测试客户邮件回复及员工网页回复，再验证备份／导出边界。",
+        "source_refs": ["mail", "cloud"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "IMAP/POP3 mailboxes",
+        "source_ref": "mail",
+        "scope": "Provider authentication and scheduled fetching required; IMAP additionally requires PHP IMAP support."
+      },
+      {
+        "name": "Local mail-transfer piping",
+        "source_ref": "mail",
+        "scope": "Requires mail and helpdesk on the same server under the documented method."
+      }
+    ],
+    "source_ref": "mail"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Staff must log into the web interface to answer tickets; customer email replies are supported.",
+        "zh": "员工须登录网页答复工单，客户则可通过邮件回复。",
+        "source_refs": ["mail"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Cloud has flat prices but finite staff and storage limits; cloud-only modules do not export to self-hosted.",
+        "zh": "云方案虽为固定价，但员工及存储有限；云专属模块不能导出到自托管。",
+        "source_refs": ["cloud"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A paid self-hosted branding license adds no software features and excludes installation, mail setup and server maintenance.",
+        "zh": "自托管付费去品牌许可不增加软件功能，也不含安装、邮件设置和服务器维护。",
+        "source_refs": ["self-price"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.hesk.com/eula.php",
+    "source_ref": "license"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_and_paid",
+    "officially_checked": true,
+    "source_ref": "self-price",
+    "source_refs": ["self-price", "cloud", "download"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Free self-hosted software; optional one-time branding licenses; separate flat cloud subscriptions with staff/storage caps. Dollar symbol shown, code not independently established.",
+    "source_snapshot_en": "Website branding49.99 once/one installation/one year support; Advanced199.99 once/five installations/five years support. Cloud29.99monthly or299yearly/10staff10GB; Pro49.99 or499/50staff50GB; MAX99.99 or999/200staff200GB. Taxes extra; hosting cost separate for self-hosted.",
+    "source_snapshot_zh": "Website去品牌49.99一次／1安装／1年支持；Advanced199.99一次／5安装／5年支持。Cloud月29.99或年299／10员工10GB，Pro49.99或499／50员工50GB，MAX99.99或999／200员工200GB。税另计，自托管另需主机成本。",
+    "checked_at": "2026-10-22T11:40:44.200652+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is HESK open source because it is free?",
+      "question_zh": "HESK免费就代表开源吗？",
+      "answer_en": "No. Its EULA allows installation and limited modification, but requires redistribution permission and prohibits using the source to create derivative products. Branding removal requires a key.",
+      "answer_zh": "不是，EULA允许安装和受限修改，但再分发需许可，并禁止用源码创建衍生产品。去品牌需要密钥。",
+      "source_refs": ["license"]
+    },
+    {
+      "question_en": "Do cloud plans have unlimited staff?",
+      "question_zh": "云套餐有无限员工吗？",
+      "answer_en": "No. Current plan cards show ten, fifty or two hundred support agents. Unlimited tickets are a different allowance.",
+      "answer_zh": "没有，当前套餐卡列10、50或200名支持员工，无限工单是另一项额度。",
+      "source_refs": ["cloud"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/hesk",
+      "read_at": "2026-10-22T08:55:29.425Z",
+      "excerpt_sha256": "0fba1d88d0c27166a49310218d600e0e3ad6be42fbb484ba4c32c80fca67eaec",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Help Desk Software Hesk - a free PHP help desk",
+      "title": "Help Desk Software Hesk - a free PHP help desk",
+      "url": "https://www.hesk.com/",
+      "read_at": "2026-10-22T11:40:22.024133+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b0c60c7153d614a367f1b318f102ec20fa05da78edb21cedaa0a7e75370a005b",
+      "research_notes_en": "Ticket and knowledge-base product; latest PHP security notice is vendor maintenance statement, not an audit."
+    },
+    {
+      "id": "download",
+      "type": "official_documentation",
+      "site": "Download Free Help Desk Software Hesk",
+      "title": "Download Free Help Desk Software Hesk",
+      "url": "https://www.hesk.com/download.php",
+      "read_at": "2026-10-22T11:40:29.143437+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "047948faee5be7847934a5538ee5b80b10f46bd738b7b181ba0bf8064f813eb7",
+      "research_notes_en": "Self-hosted PHP/MySQL responsibility, current3.7.13 October18 2026 listing and requirements read."
+    },
+    {
+      "id": "mail",
+      "type": "official_documentation",
+      "site": "Converting emails into tickets (email piping, email to ticket)",
+      "title": "Converting emails into tickets (email piping, email to ticket)",
+      "url": "https://www.hesk.com/knowledgebase/index.php?article=48",
+      "read_at": "2026-10-22T11:40:29.150896+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "21d67fa4f1b4600f67aedc3e137b401127c1b760cba9e65a20318b97957071cd",
+      "research_notes_en": "Piping/IMAP/POP3 mechanics, scheduling, duplicate risk and staff web-only replies."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Hesk Software End User License Agreement",
+      "title": "Hesk Software End User License Agreement",
+      "url": "https://www.hesk.com/eula.php",
+      "read_at": "2026-10-22T11:40:44.200652+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "aa25004163d34d51651991e80c7928662a78c24e27dd2235878cf9f7a5445585",
+      "research_notes_en": "Free use/customization subject to restrictive proprietary EULA; redistribution permission and derivative-product prohibition."
+    },
+    {
+      "id": "self-price",
+      "type": "official_pricing",
+      "site": "Buy Help Desk Software Hesk",
+      "title": "Buy Help Desk Software Hesk",
+      "url": "https://www.hesk.com/buy.php",
+      "read_at": "2026-10-22T11:40:23.701460+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9ffc520671dc3ccff6f6a3dd33081a1565dd31ff778ccdf16878981912adaa36",
+      "research_notes_en": "Branding licenses one/five installations and support; no feature activation or hosting."
+    },
+    {
+      "id": "cloud",
+      "type": "official_pricing",
+      "site": "Remote Hosted Help Desk",
+      "title": "Remote Hosted Help Desk",
+      "url": "https://www.hesk.com/remote-help-desk.php",
+      "read_at": "2026-10-22T11:40:29.213178+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "84d1c3708316e3b1a918ca7c4f3e0fd28781fde4377ce9ad67e2df120785d17d",
+      "research_notes_en": "Cloud flat prices and staff/storage limits, enablement, export caveat and hosting options."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:40:44.200652+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "download", "license", "cloud"],
+  "profile": {
+    "sections": [
+      {
+        "id": "deployment",
+        "title_en": "Decide who owns the operational work",
+        "title_zh": "确定谁承担运维工作",
+        "en": "HESK separates a free PHP/MySQL installation from its managed cloud. The download page currently lists version3.7.13, released18October2026. Self-hosted operators handle installation, upgrades, HTTPS, scheduled jobs, mail and backups. A supported-version listing does not establish that every old compatible runtime is safe to deploy.\n\nFor an illustrative small support portal, first identify a server/database maintainer and a recovery owner. If neither exists, the cloud offer changes the responsibility boundary rather than simply removing a download step. The current homepage carries a PHP security-update notice, reinforcing that runtime patching is a real self-hosted task. No environment was inspected or patched here.",
+        "zh": "HESK区分免费PHP／MySQL安装版与托管云。下载页当前列3.7.13，于2026年10月18日发布。自托管运营者负责安装、升级、HTTPS、定时任务、邮件及备份。兼容版本列表不能证明每个旧运行环境都适合安全部署。\n\n以假设小型支持门户为例，应先指定服务器／数据库维护者及恢复负责人。若无人承担，云方案改变的是责任边界，而非只省掉下载。当前首页有PHP安全更新提示，说明运行环境修补确是自托管任务。此次未检查或修补任何环境。",
+        "source_refs": ["download", "product", "cloud"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "email",
+        "title_en": "Choose the intake path and inspect duplicate behavior",
+        "title_zh": "选择接入链路并检查重复行为",
+        "en": "Piping sends local mail directly into a PHP script and requires the mail server and helpdesk together under the documented approach; original mailbox copies are not retained by that path. IMAP can fetch unread mail from an external mailbox, mark it read and keep it for reference, but needs PHP IMAP support and a scheduled task. POP3 generally fetches all offered messages and can reprocess copies retained at the provider.\n\nPolling introduces a delay determined by the schedule, with five minutes given as an example rather than a delivery guarantee. Customers may reply by email; staff must use the web interface. Test threading, repeat fetches and outbound notifications with controlled messages before routing a production inbox.",
+        "zh": "文档中的管道方式将本地邮件直接送入PHP脚本，要求邮件服务器与帮助台同机，该链路不保留原邮箱副本。IMAP可从外部邮箱取未读邮件、标已读并保留备查，但需要PHP IMAP支持及定时任务。POP3通常接收服务商提供的全部邮件，保留副本可能导致重复处理。\n\n轮询延迟取决于调度，五分钟只是示例而非投递保证。客户可用邮件回复，员工必须用网页。转接生产邮箱前，应使用受控消息测试串联、重复抓取及出站通知。",
+        "source_refs": ["mail"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-boundary",
+        "title_en": "Free use is separate from redistribution rights",
+        "title_zh": "免费使用与再分发权分开判断",
+        "en": "The EULA grants installation/use and modifications for the user’s needs, subject to its conditions. It requires permission before redistribution, preserves copyright notices and prohibits using the source to create new derivative products. Removing the visible attribution requires a valid license key. This is a proprietary license classification, not a claim that HESK cannot be used commercially.\n\nOptional Website and Advanced licenses primarily remove branding and include limited support. They do not unlock new self-hosted modules or pay for server work. Keep local modifications documented so future upgrades can be reconciled; no source reuse, legal advice or permission to redistribute is implied by this profile.",
+        "zh": "EULA按其条件授予安装／使用和为自身需求修改的权利。再分发前需许可，版权声明须保留，并禁止使用源码创建新衍生产品。删除可见归属链接需有效许可密钥。这里将其归为专有许可，不代表HESK不能商用。\n\n可选Website和Advanced许可主要去品牌并提供有限支持，不解锁自托管新模块，也不支付服务器工作。应记录本地修改以便后续升级核对；本文不表示源码复用授权、法律意见或再分发许可。",
+        "source_refs": ["license", "self-price"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Compare license cost with hosting and cloud limits",
+        "title_zh": "比较许可、主机与云额度成本",
+        "en": "The one-time Website license is displayed at$49.99 for one installation and one year of support; Advanced is$199.99 for five installations and five years of support. The license does not expire, but the page guarantees compatibility at least within the same major version and says a future major version may require a new key. Taxes are additional.\n\nCloud is$29.99/month or$299/year for ten staff and10GB, Pro$49.99 or$499 for fifty staff and50GB, and MAX$99.99 or$999 for two hundred staff and200GB. These are flat plans, not unlimited seats. Tickets are unlimited, while attachment space is a soft limit that can require extra space or cleanup. Currency code and extra-space prices remain unverified.",
+        "zh": "Website一次许可显示$49.99，含1安装及1年支持；Advanced为$199.99，含5安装及5年支持。许可不失效，但页面至少保证同一主版本兼容，未来大版本可能需新密钥。税另计。\n\nCloud月$29.99或年$299，含10员工和10GB；Pro为$49.99或$499，含50员工和50GB；MAX为$99.99或$999，含200员工和200GB。这是固定价套餐，并非无限席位。工单不限，附件空间为软限制，可能需加购或清理。币种代码及额外空间价格未核实。",
+        "source_refs": ["self-price", "cloud"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cloud-exit",
+        "title_en": "Check managed modules and the route back out",
+        "title_zh": "检查托管模块及退出路径",
+        "en": "Hesk Cloud advertises managed updates, HTTPS, daily off-site backups and selectable US, Frankfurt or Sydney hosting. Pro and MAX add escalation, surveys and recurring tickets; those are not activated by a self-hosted branding license. Cloud email fetching is disabled by default to prevent accidentally importing a large existing mailbox, so support must enable it.\n\nThe vendor offers migration from self-hosted and an export of files/database when leaving cloud. Cloud-only features cannot be exported to self-hosted. A backup or export offer is not a demonstrated restore, complete automation transfer or residency guarantee for every subprocess. Confirm attachments, custom changes, retention and a usable restore before switching; this research performed none.",
+        "zh": "Hesk Cloud宣传托管更新、HTTPS、每日异地备份及可选美国、法兰克福或悉尼托管。Pro和MAX增加升级处理、调查及周期工单；自托管去品牌许可不会激活它们。云邮件抓取默认关闭，以防意外导入大量旧邮件，需支持启用。\n\n厂商提供自托管迁入及离开云时的文件／数据库导出，但云专属功能不能导出至自托管。备份或导出方案不等于已演示恢复、完整自动化迁移或每个子流程的驻留保证。切换前需确认附件、自定义修改、保留及可用恢复；本研究未执行这些操作。",
+        "source_refs": ["cloud", "self-price"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "HESK: Self-Hosted License, Email Intake and Cloud Limits",
+    "title_zh": "HESK：自托管许可、邮件接入与云限制",
+    "description_en": "Evaluate HESK proprietary free use, mail piping versus IMAP/POP3, optional branding licenses, flat cloud limits and export boundaries.",
+    "description_zh": "评估HESK专有免费使用、邮件管道与IMAP／POP3、可选去品牌许可、固定价云限制及导出边界。",
+    "primary_intent": "Evaluate HESK hosting, licensing and email workflow.",
+    "secondary_questions": [
+      "Is free HESK open source?",
+      "Can staff reply by email?",
+      "What cannot move out of cloud?"
+    ],
+    "query_basis": "Editorial questions; no measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No installation, mail, runtime, backup, restore, cloud purchase or migration tested. Full translated UI coverage, attachment upgrade price, provider authentication detail and exact data-retention terms not verified.",
+      "zh": "未测试安装、邮件、运行环境、备份、恢复、云购买或迁移。完整翻译界面覆盖、附件升级价、服务商认证细节及准确数据保留条款未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

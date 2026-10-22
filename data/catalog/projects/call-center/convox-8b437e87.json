@@ -1,0 +1,384 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "convox-8b437e87",
+  "name": "ConVox (Deepija Telecom)",
+  "website_url": "https://www.deepijatel.com/",
+  "domain": "www.deepijatel.com",
+  "identity_domain": "deepijatel.com",
+  "category": "call-center",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "ConVox is Deepija Telecom’s contact-centre software family for inbound,outbound and blended calling,with agent interfaces,IVR/routing,dispositions,recording and reporting. This profile concentrates on Hosted CCS,the agent app and dialing workflows. The broader site also sells CCaaS,CPaaS,QA AI,PBX and other products;their capabilities are not automatically one included package.\n\nFor an illustrative outbound list,assign a campaign and pacing,let an agent review or receive a call,complete wrap-up,then choose whether and when an unsuccessful record may be retried. Excess answered calls can queue if no agent is available. Hosted commercial documentation establishes subscriptions from two users,renewal choices,30-day cancellation notice and extra number charges,but no monetary price. No account,call,app,carrier,CRM,payment or export was tested.",
+  "description_zh": "ConVox 是Deepija Telecom联络中心软件系列，支持呼入、外呼及混合电话，提供客服界面、IVR／路由、处置、录音和报告。本档案聚焦Hosted CCS、客服应用及拨号流程；网站还销售CCaaS、CPaaS、QA AI、PBX等产品，不能自动合成一个全含套餐。\n\n以假设外呼名单为例，分配活动及节奏，让客服先看或接通电话、完成收尾，再决定失败记录是否及何时重试。无可用客服时，多接通电话可排队。托管商业文档确认从两用户订阅、续期选择、提前30天取消及号码额外费用，但没有金额。未测试账户、电话、应用、运营商、CRM、付款或导出。",
+  "core_features": [
+    {
+      "name_en": "Inbound/outbound blending",
+      "name_zh": "呼入／外呼混合",
+      "explanation_en": "Use assigned campaign modes and agent availability for incoming and outgoing work.",
+      "explanation_zh": "按所分配活动模式及客服可用性处理呼入和外呼。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hosted-commercial",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configurable predictive pacing",
+      "name_zh": "可配置预测拨号节奏",
+      "explanation_en": "Set pacing per campaign and plan for excess connected calls and retry dispositions.",
+      "explanation_zh": "按活动设节奏，并处理额外已接电话及重试处置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dialer",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Agent app and custom record screens",
+      "name_zh": "客服应用及自定义记录界面",
+      "explanation_en": "Use mobile agent workstations,configured CRM templates,call outcomes and callback lists.",
+      "explanation_zh": "使用移动客服工作台、配置CRM模板、电话结果及回电名单。",
+      "explanation_scope": "product_specific",
+      "source_ref": "agent-app",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Hosted contact-centre resources",
+      "name_zh": "托管联络中心资源",
+      "explanation_en": "Review the dedicated-VM Hosted CCS offering and its telecom/network arrangement.",
+      "explanation_zh": "评估专用VM的Hosted CCS及其电话／网络安排。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hosted-commercial",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "A small-to-large hosted voice operation evaluating a two-user entry point and a separately quoted telecom plan.",
+      "A campaign team needing multiple dial modes,disposition-based retries and mobile agent participation."
+    ],
+    "zh": [
+      "评估两用户起点及单独电话报价的小至大型托管语音运营。",
+      "需要多种拨号模式、按处置重试及移动客服参与的活动团队。"
+    ],
+    "source_refs": ["hosted-commercial", "dialer", "agent-app"],
+    "basis": "Editorial fit;not verified uptime,recording completeness,regulatory compliance or productivity gains."
+  },
+  "technical_details": {
+    "Pacing and overflow": {
+      "en": "Pacing is described as calls dialed per available agent,with maximum10 and campaign-specific settings. If answered calls exceed agent capacity,extra connected calls enter a configurable queue.",
+      "zh": "节奏描述为每可用客服拨出电话比例，最多10且按活动配置。已接电话超过客服容量时，额外接通电话进入可配置队列。",
+      "source_ref": "dialer",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Contact-centre administrator",
+      "Campaign supervisor",
+      "Remote agent lead",
+      "Telephony/CRM owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "hosted-commercial"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select Hosted CCS versus another ConVox deployment and obtain the actual subscription,number/carrier and hosting scope.",
+        "zh": "选Hosted CCS或其他ConVox部署，取得真实订阅、号码／运营商及托管范围。",
+        "source_refs": ["hosted-commercial", "ccaas"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Prepare one permitted lead list,agent access,CRM template,dial mode,pacing and disposition/retry rules.",
+        "zh": "准备一个获准线索名单、客服访问、CRM模板、拨号模式、节奏及处置／重试规则。",
+        "source_refs": ["dialer", "agent-app"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test wrap-up progression,no-answer,overflow,alternate-number retries and recording retrieval under the chosen device/network setup.",
+        "zh": "按所选设备／网络测试收尾推进、未接、溢出、备用号码重试及录音取回。",
+        "source_refs": ["dialer", "agent-app", "hosted-commercial"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Salesforce / LeadSquared / Zoho / Dynamics / Freshdesk",
+        "source_ref": "hosted-commercial",
+        "scope": "Hostedpage lists externalCRMconnections;exactversions,fieldmaps,permissions,fees and retrybehavior notverified."
+      },
+      {
+        "name": "Microsoft Power BI",
+        "source_ref": "hosted-commercial",
+        "scope": "MISreportintegrationadvertised;refresh,licensing,exportcompleteness and connectorimplementation unverified."
+      },
+      {
+        "name": "Custom ticketing / ERP APIs",
+        "source_ref": "ccaas",
+        "scope": "CCaaSpage describes openAPIpaths;not proof everyHosted/appplan includes all endpoints."
+      }
+    ],
+    "source_ref": "hosted-commercial"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Predictive pacing can create more connected calls than available agents;the documented queue is not a no-wait guarantee.",
+        "zh": "预测节奏可产生超过可用客服数的接通电话，文档队列不是无等待保证。",
+        "source_refs": ["dialer"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Progressive dialing follows completion of the prior call/wrap-up;preview lets the agent choose the record and click to call.",
+        "zh": "渐进拨号跟随上一通／收尾完成，预览则让客服选择记录并点击拨打。",
+        "source_refs": ["agent-app"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Number masking in the app FAQ means hiding the customer number on the agent screen;it does not establish altered carrier caller ID.",
+        "zh": "应用FAQ的号码遮罩指客服屏幕隐藏客户号码，不证明修改运营商来显。",
+        "source_refs": ["agent-app"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Dedicated VMs,multi-location backup,100% recording and uptime statements are vendor claims without a reviewed tenant test,SLA or certificate.",
+        "zh": "专用VM、多地备份、100%录音及可用率是厂商主张，未有租户测试、SLA或证书核验。",
+        "source_refs": ["hosted-commercial", "ccaas", "agent-app"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Broader CCaaS cloud/AI options do not establish identical deployment,AI entitlement or data location for every ConVox product.",
+        "zh": "广义CCaaS云／AI选项不证明每个ConVox产品部署、AI权益或资料位置相同。",
+        "source_refs": ["ccaas", "hosted-commercial"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "hosted-commercial",
+    "source_refs": ["hosted-commercial"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Official HostedCCScommercialconditions only;subscriptionfrom2users,renewalmonthly/quarterly/halfyearly/yearly,limited/unlimited/customcalling,extra numbers. No monetary rate or detailed usage contract established.",
+    "source_snapshot_en": "HostedCCSSaaSfrom2users to1000+;limited,unlimited and tailored calling plans. Toll-free/virtualnumbers charged extra,dedicatedDID possible. Renewalmonthly,quarterly,halfyearly or yearly;cancellation30daysnotice. Requested free demo is not a defined free trial or free plan. Actualamount,currency,minutes/destinations,taxes,numberfees and refunds unknown.",
+    "source_snapshot_zh": "Hosted CCS从2用户到1000+的SaaS，有限、无限及定制通话方案。免费／虚拟号码另收费，可提供专用DID。按月、季、半年或年续期，取消提前30天。需申请免费演示不等于有定义免费试用或免费套餐。真实金额、币种、分钟／目的地、税、号码费及退款未知。",
+    "checked_at": "2026-10-22T14:56:02.002301+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does setting a high predictive pacing ratio eliminate waiting?",
+      "question_zh": "较高预测节奏会消除等待吗？",
+      "answer_en": "No. The FAQ says extra connected calls can queue once agents are occupied. Pacing and the queue need staffing-aware tests.",
+      "answer_zh": "不会。FAQ称客服已占用时额外接通电话可排队，应按人员容量测试节奏及队列。",
+      "source_refs": ["dialer"]
+    },
+    {
+      "question_en": "Does number masking prove a different outbound caller ID?",
+      "question_zh": "号码遮罩能证明不同外呼来显吗？",
+      "answer_en": "The app FAQ describes masking the customer mobile number on the agent screen. That does not establish carrier caller-ID behavior.",
+      "answer_zh": "应用FAQ描述在客服屏幕遮住客户手机号，不建立运营商来显行为。",
+      "source_refs": ["agent-app"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/convox-omnichannel",
+      "read_at": "2026-10-22T08:51:01.757Z",
+      "excerpt_sha256": "4d5df3ea479fd99ba58a61d226be0fb6b0bbd71fab788c207c5a38522e52d907",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "hosted-commercial",
+      "type": "official_pricing",
+      "site": "Convox Hosted Call Center Solution - Deepijatel",
+      "title": "Convox Hosted Call Center Solution - Deepijatel",
+      "url": "https://www.deepijatel.com/cloud-services/convox-hosted-call-center-solution/",
+      "read_at": "2026-10-22T14:55:45.579838+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4b408850377100b1cba540dc8c597905a4f417da800c1ad4bfb29318bd95a46d",
+      "research_notes_en": "HostedCCSSaaSfrom2users,monthly/quarterly/halfyearly/yearlyrenewals,limited/unlimited/tailoredplans,30daycancelnotice,tollfree/virtualnumbersextra;noamount/minuteallowance. DedicatedVM,VPN,Android,dispositions,backups/uptime/100%recordingvendorclaims."
+    },
+    {
+      "id": "ccaas",
+      "type": "official_documentation",
+      "site": "CCaaS (Contact Center as a Service) Solutions, CCaaS Platforms",
+      "title": "CCaaS (Contact Center as a Service) Solutions, CCaaS Platforms",
+      "url": "https://www.deepijatel.com/product/ccaas-contact-center-as-a-service/",
+      "read_at": "2026-10-22T14:55:42.758221+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8902b406b299114086cc4a630fc74be6c04a50891709ca1461b6441bb6e19c92",
+      "research_notes_en": "BroaderCCaaSweb/mobileomnichannel,public/private/hybridhostingoptions,modularAIadd-ons;notidenticalentitlementsforallConVoxproductsorindependentlyverified99.95%uptime."
+    },
+    {
+      "id": "dialer",
+      "type": "official_documentation",
+      "site": "Predictive Dialer Software for Call Centers - Deepijatel",
+      "title": "Predictive Dialer Software for Call Centers - Deepijatel",
+      "url": "https://www.deepijatel.com/product/predictive-dialer/",
+      "read_at": "2026-10-22T14:55:43.340789+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a47f5b8bed38089f525bb85a3fdd63d365bc0a175a08d01aef8822bf5ff9e068",
+      "research_notes_en": "Per-campaignpacing1–10,adminchangesimmediate;excessconnectedcallscangoqueue,manual/autorechurnbyinterval/disposition,alternatenumberchasing. VendorTCPA/performanceclaimsnotindependentvalidation."
+    },
+    {
+      "id": "agent-app",
+      "type": "official_documentation",
+      "site": "ConVox Call Center App | Call Center Solution - Deepijatel",
+      "title": "ConVox Call Center App | Call Center Solution - Deepijatel",
+      "url": "https://www.deepijatel.com/product/contact-center-app/",
+      "read_at": "2026-10-22T14:56:02.002301+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8c5a0ad47a3c3b70003752f81b4addc202e73bf0ee4132039fa8aac1e253f18a",
+      "research_notes_en": "Mobileagentworkstation,inbuiltcustomCRMpop-up,recordingreportdownload,previewclickselect,progressivenextafterWrapUp/GoReady,callbacklist,numbermaskingonagentSCREEN. Securityand100%recordingclaimsnotaudited."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms of Use - Deepijatel",
+      "title": "Terms of Use - Deepijatel",
+      "url": "https://www.deepijatel.com/terms-of-use/",
+      "read_at": "2026-10-22T14:55:43.330736+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "26d5cd3fbb6f89c62de8b10abb7e2b96c946c2e0d98fea6b439312f809b3c533",
+      "research_notes_en": "Terms expressly govern websiteinformation/materials,not the actualhosted/onpremsoftwarelicense,SLA,refundorexitagreement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:56:02.002301+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "hosted-commercial",
+    "ccaas",
+    "dialer",
+    "agent-app"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-boundary",
+        "title_en": "Select a ConVox solution before combining the feature lists",
+        "title_zh": "先选ConVox方案，再组合功能清单",
+        "en": "ConVox is a Deepija Telecom product family rather than one unqualified feature bundle. Hosted CCS describes cloud-managed inbound,outbound and blended voice operations. The broader CCaaS page adds an omnichannel workspace and public/private/hybrid hosting options,while the site separately promotes CPaaS,QA AI,PBX and broadcasting. Do not transfer every adjacent product’s features or commercial terms into a Hosted CCS purchase.\n\nThe hosted page says customers receive dedicated VMs rather than a shared environment and can use remote agents through configured app/desktop/network paths. That is a deployment description,not independent proof of isolation,regional residency or full on-premise availability. Confirm the selected product,tenant,carrier and endpoint design before relying on a generic cloud or mobile label.",
+        "zh": "ConVox是Deepija Telecom产品系列，不是一个无限定全含功能包。Hosted CCS描述云管理呼入、外呼及混合语音运营，广义CCaaS页增加全渠道工作区及公有／私有／混合托管选项，网站还单独宣传CPaaS、QA AI、PBX及广播。不能把所有相邻产品功能及商业条款放入Hosted CCS购买。\n\n托管页称客户使用专用VM而非共享环境，可经配置应用／桌面／网络路径使用远程客服。这是部署说明，不是隔离、地区驻留或全本地可用的独立证明。依赖笼统云端／移动标签前需确认所选产品、租户、运营商及终端设计。",
+        "source_refs": ["hosted-commercial", "ccaas"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dialing-capacity",
+        "title_en": "Predictive pacing needs an overflow and retry design",
+        "title_zh": "预测节奏需要溢出及重试设计",
+        "en": "For an illustrative outbound list,a process administrator selects the campaign mode and dialing pace,then assigns agents. Predictive pacing is described as the number dialed per available agent,with1–10settings and a separate value per campaign. The administrator can change it and the page says changes apply immediately. A higher ratio is not evidence of a better customer outcome.\n\nThe FAQ explicitly states that excess connected calls enter a queue once agents are occupied;greetings/audio can play there. Configure that path and test a spike rather than adopting a claim that agents connect only to ready customers with no waiting. Failed records can be reattempted manually or by configured intervals,and the administrator can allow/disallow rechurn by disposition. Alternate-number chasing can continue beyond a primary number,so the eligibility and stop rule must cover the person and their permitted methods,not just one row.",
+        "zh": "以假设外呼名单为例，流程管理员选活动模式及拨号节奏，再分配客服。预测节奏描述为每可用客服拨出号码数，范围1–10，按活动单独设；管理员可修改，页面称立即生效。更高比例不证明客户结果更好。\n\nFAQ明确称客服占用时额外接通电话进入队列，可播放提示／音频。应配置该路径并测试高峰，不能采用客服与已准备客户无等待连接的保证。失败记录可手动或按间隔重试，管理员可按处置允许／禁止回收。备用号码追呼会越过主号码，因此资格及停止规则须覆盖人及获准方式，不只一行记录。",
+        "source_refs": ["dialer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "agent-outcomes",
+        "title_en": "Wrap-up,preview and callbacks are different actions",
+        "title_zh": "收尾、预览及回电是不同动作",
+        "en": "The app FAQ distinguishes progressive dialing after the previous call finishes or the agent moves from Wrap-up to Go ready,from preview dialing where the agent sees details and selectively clicks the dial link. The inbuilt custom CRM template can present process-specific fields when a call is delivered. Decide which outcome is required before the next attempt and where it must be stored.\n\nHosted dispositions can have sub-disposition and sub-sub-disposition levels. A callback list lets agents see scheduled follow-up work;it is not proof that every requested callback happens automatically. The app FAQ’s number masking means hiding a customer mobile number on the agent screen,which is a different control from presenting a different network caller ID. No privacy isolation or synchronization behavior was tested.",
+        "zh": "应用FAQ区分上一通结束或客服从Wrap-up转Go ready后推进的渐进拨号，与先看详情、选择点击拨号链接的预览。内建自定义CRM模板可在电话投递时展示流程字段，应确定下一次尝试前必填什么结果及保存何处。\n\n托管处置可有子处置及二级子处置，回电名单让客服查看安排跟进，不证明每次请求回电都自动发生。应用FAQ号码遮罩指客服屏幕隐藏客户手机号，与呈现不同网络来显是不同控制。此次未测试隐私隔离或同步行为。",
+        "source_refs": ["agent-app", "hosted-commercial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations-evidence",
+        "title_en": "Recording and redundancy claims need deployment-specific verification",
+        "title_zh": "录音及冗余主张需按部署验证",
+        "en": "Hosted CCS lists recording,supervisor monitoring,barge-in/coaching,CRM connections and MIS reporting with Power BI. The app FAQ says administrators download recordings from the recording report. Those are useful evaluation paths,but the repeated100%recording claim is not a tested guarantee that every carrier/device/failure case produces a retrievable file. Verify recording access,download,retention and a failed-call example in the chosen setup.\n\nThe hosted page describes multiple data centres,operators and bandwidth providers,site-to-site VPN and backup redundancy. Its no-downtime statements and the broader CCaaS99.95%availability claim were not checked against an actual SLA or outage exercise. Dedicated VM does not by itself establish that recordings,CRM data,AI processing and backups all stay in the same country. Map those locations and permissions separately.",
+        "zh": "Hosted CCS列录音、主管监控、插入／辅导、CRM连接及Power BI的MIS报告。应用FAQ称管理员从录音报告下载录音。这些是有用评估路径，但反复出现100%录音不等于已测每种运营商／设备／故障情形都有可取回文件。应在所选配置验证录音权限、下载、留存及失败电话示例。\n\n托管页描述多数据中心、运营商、带宽商、站点间VPN及备份冗余；无中断说法及广义CCaaS的99.95%可用率未按真实SLA或故障演练核对。专用VM本身不证明录音、CRM资料、AI处理及备份全在同国，需分别映射位置及权限。",
+        "source_refs": ["hosted-commercial", "agent-app", "ccaas"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-contract",
+        "title_en": "Commercial conditions are published without monetary rates",
+        "title_zh": "已公布商业条件，但没有金额",
+        "en": "The Hosted CCS page establishes a SaaS subscription starting from two users,scaling to1000and more. Its FAQ offers limited,unlimited and tailored calling plans,monthly/quarterly/half-yearly/yearly renewals and cancellation with30days’notice. Toll-free and virtual numbers cost extra,and dedicated DID numbers are possible. It does not specify actual amounts,currency,minute/destination allowances,number fees,taxes,refunds or a contractual response SLA. Do not normalize an unknown quote into a per-agent monthly price.\n\nThe site offers a requested free demo,but no reviewed duration or allowance makes it a free trial or sustained free plan. The Terms of Use page expressly concerns the website and its information;it does not establish the actual hosted-service or software license. License,exit/export rights and refund terms therefore remain unknown.\n\nConVox fits teams prepared to configure campaigns,telecom and agent outcomes while seeking hosted operations or a separately scoped CCaaS deployment. A team needing a public instant price,guaranteed complete recordings or autonomous AI included in every product needs additional evidence. Actual connector versions,AI/data regions,portable export/restore and UI languages were not established.",
+        "zh": "Hosted CCS页确认从两用户起、可到1000以上的SaaS订阅。FAQ提供有限、无限及定制通话方案，按月／季／半年／年续期，提前30天取消；免费及虚拟号码额外收费，可提供专用DID。未明金额、币种、分钟／目的地额度、号码费、税、退款或合同响应SLA，不能将未知报价归一化每客服月价。\n\n网站提供需申请免费演示，但未核时长或额度，不能当免费试用或长期免费方案。Terms of Use页明确约束网站及信息，不建立真实托管服务或软件许可，因此许可、退出／导出权及退款仍未知。\n\nConVox适合愿配置活动、电话及客服结果、寻求托管运营或单独CCaaS部署的团队。需要即时公开价格、保证完整录音或每产品已含自主AI的团队仍需证据。真实连接器版本、AI／资料地区、可携导出／恢复及界面语言未建立。",
+        "source_refs": ["hosted-commercial", "website-terms", "ccaas"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ConVox: Hosted CCS Terms, Predictive Pacing and Agent Workflows",
+    "title_zh": "ConVox：Hosted CCS条件、预测节奏及客服流程",
+    "description_en": "Review ConVox two-user hosted subscriptions,30-day cancellation notice,pacing/overflow,rechurn,agent app outcomes and unknown monetary/license terms.",
+    "description_zh": "核对ConVox两用户起托管订阅、提前30天取消、节奏／溢出、线索重试、客服应用结果及未知金额／许可。",
+    "primary_intent": "Evaluate ConVox contact-centre workflow and deployment-specific conditions.",
+    "secondary_questions": [
+      "What happens to excess connected calls?",
+      "What does number masking mean?",
+      "Which commercial terms are actually public?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,call,app,carrier,CRM,pacing,retry,recordingdownload,payment,export orrestoretested. Actualamount/currency,callingplanFUP/allowances,numberfee,tax,refund,SaaSlicense/SLA,connectorversions,backup/retention/regions,AIentitlementsandUIlanguagesunknown. DedicatedVM,100%recording,nooutage,securityandcomplianceclaimsnotindependentlyvalidated. BroadCCaaSoptionsnotsilentlyappliedtoeveryConVoxproduct.",
+      "zh": "未测试租户、电话、应用、运营商、CRM、节奏、重试、录音下载、付款、导出或恢复。真实金额／币种、通话方案FUP／额度、号码费、税、退款、SaaS许可／SLA、连接器版本、备份／留存／地区、AI权益及界面语言未知。专用VM、100%录音、无故障、安全及合规主张未独立验证；未将广义CCaaS选项静默套全部产品。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

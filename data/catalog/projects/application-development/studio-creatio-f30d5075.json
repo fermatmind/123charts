@@ -1,0 +1,391 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "studio-creatio-f30d5075",
+  "name": "Studio Creatio",
+  "website_url": "https://www.creatio.com/studio",
+  "domain": "www.creatio.com",
+  "identity_domain": "creatio.com",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Studio Creatio is the application-building and workflow-automation part of the Creatio platform. Its current site presents visual UI/data designers, business processes, reusable components and AI-assisted development. Sales, Marketing and Service are related CRM products with separate commercial scope; their complete features are not automatically attributed to a Studio purchase.\n\nA team can configure a records-based app, design pages over objects and add business processes. This profile follows app structure, permissions, process evidence and release compatibility through current Academy guides labeled Version10. Generated layouts and workflow diagrams still need application-specific testing, access configuration and a matching subscription.",
+  "description_zh": "Studio Creatio 是 Creatio 平台中的应用构建与流程自动化部分。当前官网介绍可视界面／数据设计器、业务流程、复用组件及 AI 辅助开发。Sales、Marketing 和 Service 是相关 CRM 产品，商业范围另有条件，不能将其完整功能自动归入 Studio 采购。\n\n团队可配置基于记录的应用，在对象上设计页面并添加业务流程。本文依据当前标注 Version10 的 Academy 指南研究应用结构、权限、流程证据及发布兼容。生成布局和流程图仍需具体应用测试、权限配置及对应订阅。",
+  "core_features": [
+    {
+      "name_en": "Records-based apps",
+      "name_zh": "基于记录的应用",
+      "explanation_en": "Create sections and list/form pages through the Application Hub.",
+      "explanation_zh": "通过 Application Hub 建立栏目及列表／表单页。",
+      "explanation_scope": "product_specific",
+      "source_ref": "apps",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Visual data/UI design",
+      "name_zh": "可视数据／界面设计",
+      "explanation_en": "Bind fields and inputs to page data sources with different model effects.",
+      "explanation_zh": "将字段及输入绑定页面数据源，两者对模型的影响不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "designer",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Process access controls",
+      "name_zh": "流程访问控制",
+      "explanation_en": "Configure launch rights and initiating-user data permission checks separately.",
+      "explanation_zh": "分别配置启动权及发起用户数据权限检查。",
+      "explanation_scope": "product_specific",
+      "source_ref": "access",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Process execution evidence",
+      "name_zh": "流程执行记录",
+      "explanation_en": "Inspect individual process instances and configured retention behavior.",
+      "explanation_zh": "检查独立流程实例及配置的保留行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "execution",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate an equipment-request app with role-scoped approvals",
+      "Inspect process history, cancellation effects and package compatibility"
+    ],
+    "zh": [
+      "评估具有角色权限的设备申请审批应用",
+      "检查流程历史、取消影响及包兼容"
+    ],
+    "source_refs": ["ui", "access", "execution", "cancel", "apps"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Business application builders",
+      "Workflow administrators",
+      "Creatio platform developers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create an isolated records app and verify the data binding.",
+        "zh": "创建隔离记录应用并验证数据绑定。",
+        "source_refs": ["ui", "designer"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test manual/automatic process permission failures and inspect the exact log instance.",
+        "zh": "测试手动／自动流程权限失败，检查对应日志实例。",
+        "source_refs": ["access", "execution"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review cancellation effects, target compatibility and the full quote.",
+        "zh": "核对取消影响、目标兼容及完整报价。",
+        "source_refs": ["cancel", "apps", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Page field removal does not necessarily remove model attributes.",
+        "zh": "页面移除字段不一定删除模型属性。",
+        "source_refs": ["designer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Manual launch permissions and data execution checks are distinct.",
+        "zh": "手动启动权限与数据执行检查不同。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Log expiry and cancellation do not establish permanent history or reversal of prior effects.",
+        "zh": "日志过期及取消不能证明永久历史或此前副作用回退。",
+        "source_refs": ["execution", "cancel"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "seat_or_custom_contract_minimum_purchase",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:16:21.213192Z",
+    "normalized_monthly_price": null,
+    "summary_en": "ObservedGBP Growth32 and Enterprise61/user/month, Unlimited custom; new-customer8300/year minimum and3-year standard term; taxes/AI/components quote-dependent.",
+    "summary_zh": "所读英镑Growth32、Enterprise61每用户每月，Unlimited询价；新客每年最低8300、标准三年，税／AI／组件依报价。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/studio-creatio",
+      "read_at": "2026-10-22T08:56:43.877Z",
+      "excerpt_sha256": "16c837280e2c672faa4ec33e2182684246dacc8a24ea357fc2b0724626c7dd8d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "AI-Powered No-code Platform to Automate Workflows | Creatio Studio",
+      "url": "https://www.creatio.com/studio",
+      "read_at": "2026-10-22T12:16:21.213192Z",
+      "excerpt_sha256": "379cea0534af6d8ecb7b3fed2395f7cfa3a80741c1c390df3a656d9deabf9b72",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Studio scope read: data/UI/business processes, composable apps and separate CRM products. AI/compliance marketing not treated as measured outcomes or granted compliance."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Studio Creatio",
+      "title": "Creatio Composable Pricing | Creatio",
+      "url": "https://www.creatio.com/products/pricing",
+      "read_at": "2026-10-22T12:20:38.703683Z",
+      "excerpt_sha256": "51ea781c3191f7a8ee5074d0eecd4facf5dd1a312c307abd0b35cd82a4f99cb1",
+      "verification": "official_documentation_read",
+      "transport": "browser_accessibility_reader",
+      "research_notes_en": "Actually rendered localized GBP view: Growth32/user/month, Enterprise61, Unlimited custom, new-customer8300/year minimum and3-year standard contract. No calculator0 total interpreted as free entitlement."
+    },
+    {
+      "id": "ui",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "Set up the app UI | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/customization-tools/ui-and-business-logic-customization/set-up-the-app/set-up-the-app-ui",
+      "read_at": "2026-10-22T12:18:09.678733Z",
+      "excerpt_sha256": "bc2efaabc3aa6ac3b7211c7812696a2fd0d578f2d5a5eb2274dfbdfe20c510a1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Version10 guide read: create app, sections, list/form/mini/typified and external-user pages; no app created."
+    },
+    {
+      "id": "designer",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "Overview of Freedom UI Designer and its elements | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/customization-tools/ui-and-business-logic-customization/UI-designer",
+      "read_at": "2026-10-22T12:18:09.732438Z",
+      "excerpt_sha256": "c7f48aba749772e816d483da5fd7b3f58d13f9636279c6bb7213e8b73fb5781b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Version10 data source/model field versus input distinction and removal behavior read; UI layout is not treated as data permission proof."
+    },
+    {
+      "id": "apps",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "Manage apps | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/customization-tools/app-management/apps-management",
+      "read_at": "2026-10-22T12:19:23.435244Z",
+      "excerpt_sha256": "5438966c1eeb86c1ffb85d9f608974b7008227463f58df54c827481c03eea6fe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual canonical redirect retained. App/template/package workflow, version/dependency checks, compilation concurrency warning, downgrade and archive/install guidance read."
+    },
+    {
+      "id": "access",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "Set up access permissions for business process | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/bpm-tools/business-process-administration/set-up-permissions-to-a-process",
+      "read_at": "2026-10-22T12:19:56.267786Z",
+      "excerpt_sha256": "9ade9cd28faddfa507dca99a283ad33ee8684c888fb8539e66a5e763ea1f715a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Manual process launch rights versus optional Use user permissions for elements data checks across launch methods; errors logged on insufficient access read."
+    },
+    {
+      "id": "execution",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "View process execution data | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/bpm-tools/business-process-administration/view-process-execution-data",
+      "read_at": "2026-10-22T12:19:56.231499Z",
+      "excerpt_sha256": "c4234ac961c3dbc40bf17a5ba6b76b9e940fc7b985417b9350470c0045229066",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Process instance/log identity and access permission read. Default30-day completed/canceled retention and originally-deployed-version-dependent archive/delete behavior retained."
+    },
+    {
+      "id": "cancel",
+      "type": "official_documentation",
+      "site": "Studio Creatio",
+      "title": "Cancel a process | Creatio Academy",
+      "url": "https://academy.creatio.com/guides/no-code-customization/bpm-tools/business-process-administration/cancel-process",
+      "read_at": "2026-10-22T12:19:56.292938Z",
+      "excerpt_sha256": "c1cc0446a840e338cf2a0ec0eed7a813c6d916f6bdf9e1d7f5c7eb60230fb8c3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Force cancellation, CanCancelProcess operation, sequential multi-instance Canceling-to-Canceled state read; no rollback or compensation claim inferred."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:20:38.703683Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "ui", "apps"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "Build one records app before expanding the workflow",
+        "title_zh": "先建立一个记录应用，再扩展流程",
+        "en": "The UI guide starts with app creation, sections and list/form pages, with optional mini pages, typified pages and external-user pages. A proposed equipment-request app could store requester, item and status, then show a form and an approval list. Configure the page’s data source and verify a saved record before adding an approval process. The Records & business processes template creates initial pages; it is a starting structure rather than proof of completed business rules, notifications or tenant isolation. No app or approval was run.",
+        "zh": "UI 指南从应用、栏目及列表／表单页开始，可选迷你页、分类页及外部用户页。建议设备申请应用存申请人、物品及状态，展示表单和审批列表。应配置页面数据源并验证保存记录，再添加审批流程。Records & business processes 模板生成初始页面，只是起始结构，不能证明业务规则、通知或租户隔离已完成。本次未运行应用或审批。",
+        "source_refs": ["ui", "apps"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "model",
+        "title_en": "Removing a field from the canvas need not remove its data",
+        "title_zh": "画布移除字段不一定删除其数据",
+        "en": "Freedom UI Designer connects a page to an object data source. Adding a field can add or modify model attributes; after saving, removing it from the canvas leaves the corresponding attribute. Inputs instead bind to a specified source without changing model structure. An input linked to a page-model attribute can become a field, while a field linked to a related object can become an input. Inspect both page binding and underlying object before cleanup or schema changes. Hiding a control is not evidence of data access denial.",
+        "zh": "Freedom UI Designer 将页面连接对象数据源。添加字段会增加或修改模型属性，保存后从画布移除仍保留对应属性；输入则绑定指定数据源，不改变模型结构。输入绑定页面模型属性可变成字段，字段绑定关联对象可变成输入。清理或改 schema 前需同时检查页面绑定及底层对象。隐藏控件不能证明拒绝数据访问。",
+        "source_refs": ["designer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permissions",
+        "title_en": "A process launch rule is not its data-permission check",
+        "title_zh": "流程启动规则不等于数据权限检查",
+        "en": "The process guide limits configurable run permissions to manually launched processes. By default users have the CanRunBusinessProcesses operation; specific process rules can grant access across versions. Separately, Use user permissions for elements enables checks of the initiating user’s read/add/modify/delete rights regardless of manual or automatic launch. Insufficient rights terminate execution with an error available in the process log, and a notification step can be added. Evaluate both launch paths with allowed and rejected roles; do not infer the checkbox state in a customer’s environment.",
+        "zh": "流程指南将可配置运行权限定于手动启动流程。用户默认有 CanRunBusinessProcesses 操作权，具体流程规则可跨版本授权。另一个 Use user permissions for elements 设置会按发起者读／增／改／删权检查，不论手动或自动启动。权限不足时执行报错终止，可在流程日志查看，也可加通知步骤。需以允许与拒绝角色评估两类启动，不能推断客户环境已启用该选项。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "logs",
+        "title_en": "Process logs have configurable retention and access",
+        "title_zh": "流程日志有可配置保留期及访问权",
+        "en": "Each launch creates a distinct process instance and log record. Viewing it requires CanManageProcessLogSection; the guide says records are not editable and preserve the initiating user’s culture rather than dynamically translating history. Completed/canceled instances default to30 days in the active list. Environments originally deployed as8.0.2 or earlier default to archiving old records;8.0.3 onward default to deleting them. Archives also have expiry settings. Record the actual environment settings before using this as long-term audit evidence, and inspect the instance/steps after a failure.",
+        "zh": "每次启动创建独立流程实例及日志记录。查看需 CanManageProcessLogSection；指南称记录不可编辑，并保留发起者文化设置，不动态翻译历史。完成／取消实例在活跃列表默认保留30天；最初部署为8.0.2及更早的环境默认归档，8.0.3起默认删除；归档也有过期设置。将其用于长期审计证据前需记录真实环境设置，失败后检查对应实例及步骤。",
+        "source_refs": ["execution"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cancel",
+        "title_en": "Cancellation is a state transition, not a documented undo",
+        "title_zh": "取消是状态变化，不是已证明的撤销",
+        "en": "Cancel Execution requires the CanCancelProcess operation and forcibly terminates a running instance. Multiple selected instances are canceled sequentially: they first show Canceling and later Canceled. That does not establish that previous database changes or external effects are compensated. For evaluation, interrupt a disposable request at different steps and inspect resulting records and notifications before designing a restart. The research did not execute cancellation or recovery and does not assume an exactly-once business outcome.",
+        "zh": "Cancel Execution 需 CanCancelProcess 操作权，强制终止运行实例。多选实例逐个取消，先显示 Canceling，再变为 Canceled；这不能证明此前数据库变更或外部副作用已补偿。评估应在不同步骤中断可丢弃申请，检查记录及通知，再设计重启。本次未执行取消或恢复，不假定业务恰好一次完成。",
+        "source_refs": ["cancel"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release",
+        "title_en": "Package installation needs compatible versions and dependencies",
+        "title_zh": "包安装需要兼容版本及依赖",
+        "en": "The Application Hub guide checks the target’s Creatio version and dependencies before installation and warns against concurrent compilation-related operations. An archive containing an older app may trigger skipping or a downgrade warning depending on the case. Review the installation log and documented configuration-restoration path after failure; an archive download is not proof of a complete database backup or runtime portability. Establish the application maintainer and inspect the target before moving a custom app. No package was exported, installed or restored.",
+        "zh": "Application Hub 指南在安装前检查目标 Creatio 版本与依赖，并警告不要同时进行多项需编译操作。含较旧应用的归档可能按情况触发跳过或降级警告。失败后需检查安装日志及文档配置恢复路径；下载归档不能证明完整数据库备份或运行时可移植。转移自定义应用前需明确 maintainer 并检查目标。本次未导出、安装或恢复包。",
+        "source_refs": ["apps"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Seat rates are constrained by minimum purchase and contract",
+        "title_zh": "席位单价还受最低采购及合同约束",
+        "en": "The actual rendered GBP view lists Growth Business & AI Studio at£32/user/month and Enterprise at£61; Unlimited combines the platform, AI and CRM products at a custom price. It states a£8,300/year minimum for new customers and a standard three-year contract, excluding applicable taxes. Products, AI packages, additional user types and support are separate configurator categories. A one-user rate therefore is not the verified minimum payable contract. Confirm included AI usage, services, hosting and app/component rights in the actual quote.",
+        "zh": "实际渲染的英镑视图列 Growth Business & AI Studio 每用户每月£32，Enterprise £61；Unlimited 将平台、AI及CRM组合询价。新客户最低采购每年£8,300，标准合同三年，税另计。产品、AI包、其他用户类型及支持是独立配置类别。因此单用户价不是已核实最低合同应付额。需在真实报价中确认AI用量、服务、托管及应用／组件权利。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Studio Creatio: app data, process permissions and contract scope",
+    "title_zh": "Studio Creatio：应用数据、流程权限及合同范围",
+    "description_en": "Review visual app configuration, permission failures, log retention, cancellation and compatible package delivery.",
+    "description_zh": "了解可视应用配置、权限失败、日志保留、取消及兼容包交付。",
+    "search_intent_en": "Evaluate Studio Creatio workflow governance and purchase requirements.",
+    "search_intent_zh": "评估 Studio Creatio 流程管理及采购要求。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No environment, app, process, permissions, installation, cancellation, quote or contract was operated.",
+      "zh": "未操作环境、应用、流程、权限、安装、取消、报价或合同。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Localized GBP rates and minimum/term are a read snapshot; actual AI allowances, hosting, services and app rights need quote confirmation.",
+      "zh": "本地化英镑价格及最低额／期限为读取快照，实际AI额度、托管、服务及应用权利需报价确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Guides labeledVersion10 include version-specific conditions; actual instance configuration, default permissions, deployment topology and full platform license remain unverified.",
+      "zh": "Version10指南含版本条件，真实实例配置、默认权限、部署拓扑及完整平台许可未核。",
+      "source_refs": ["access", "apps"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No independent compliance, SLA, throughput, log recovery, UI-language or business-result validation was performed.",
+      "zh": "未独立验证合规、SLA、吞吐、日志恢复、界面语言或业务结果。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

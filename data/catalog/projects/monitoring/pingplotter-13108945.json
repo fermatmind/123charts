@@ -1,0 +1,309 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "pingplotter-13108945",
+  "name": "PingPlotter",
+  "website_url": "https://www.pingplotter.com/",
+  "domain": "www.pingplotter.com",
+  "identity_domain": "pingplotter.com",
+  "category": "monitoring",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "PingPlotter diagnoses network paths by repeatedly measuring latency, packet loss and jitter. Desktop editions trace from a local computer; PingPlotter Cloud deploys agents to remote workstations, servers or cloud VMs and presents their observations in a central browser interface. These are different collection and subscription choices.\n\nUse the destination and the affected application as anchors for diagnosis. A poorly responding intermediate router alone is insufficient evidence of a broken link. Preserve relevant trace sessions before sharing an incident or moving the desktop installation.",
+  "description_zh": "PingPlotter 通过重复测量延迟、丢包和抖动诊断网络路径。桌面版从本机跟踪；PingPlotter Cloud 将代理部署到远端工作站、服务器或云 VM，在浏览器集中展示观察结果，两者的采集及订阅方式不同。\n\n诊断应以终点和受影响应用为参照。单个中间路由器响应较差，不足以证明链路故障。分享事件或迁移桌面安装前，应保留相关跟踪会话。",
+  "core_features": [
+    {
+      "name_en": "Remote observation points",
+      "name_zh": "远端观察点",
+      "explanation_en": "Cloud agents collect path measurements from the networks being investigated.",
+      "explanation_zh": "Cloud 代理从待调查网络内部采集路径测量。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Hop-to-destination comparison",
+      "name_zh": "跳点与终点比较",
+      "explanation_en": "Compare intermediate loss with downstream and destination behavior before attributing a fault.",
+      "explanation_zh": "归因前将中间跳点丢包与下游、终点表现比较。",
+      "explanation_scope": "product_specific",
+      "source_ref": "interpretation",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Selective trace retention",
+      "name_zh": "选择性跟踪保留",
+      "explanation_en": "Autosave can keep all targets, sessions beyond a duration, or explicitly selected targets.",
+      "explanation_zh": "自动保存可保留所有目标、达到时长的会话或明确选择的目标。",
+      "explanation_scope": "product_specific",
+      "source_ref": "storage",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Compare an affected endpoint with the local gateway during a reproducible connection problem.",
+      "Export a selected session and rehearse desktop backup/restore on disposable data."
+    ],
+    "zh": [
+      "在可复现连接问题期间比较受影响终点与本地网关。",
+      "导出选定会话，用可丢弃数据演练桌面备份／恢复。"
+    ],
+    "source_refs": ["interpretation", "storage", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Network support technicians",
+      "Remote workplace IT teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Desktop or Cloud, select an authorized target and record the affected application’s symptom times.",
+        "zh": "选择 Desktop 或 Cloud、获准目标，并记录应用症状时间。",
+        "source_refs": ["home", "interpretation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set session retention, verify PP2 export and review edition limits before subscribing.",
+        "zh": "设置会话保留、验证 PP2 导出，订阅前核对版本限制。",
+        "source_refs": ["storage", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Intermediate packet loss or unreachable probes alone do not establish application downtime.",
+        "zh": "仅中间丢包或探测不可达不能证明应用停机。",
+        "source_refs": ["interpretation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Moving the data folder requires an explicit copy; restore replaces existing files.",
+        "zh": "迁移数据目录需明确复制，恢复会替换现有文件。",
+        "source_refs": ["storage", "backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:34:42.863674Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free is a limited local edition. Paid starting rates are Standard $6.99/month, Professional $29/month and Cloud $90/month; perpetual/volume options and Cloud annual terms are separate.14-day Desktop and7-day Cloud trials are temporary. Exact checkout, taxes, Cloud agent quantities and feature entitlements remain unverified.",
+    "summary_zh": "Free 为受限本地版。付费起价为 Standard 每月 $6.99、Professional $29、Cloud $90；永久／批量及 Cloud 年付另有选项。桌面十四天和 Cloud 七天均为临时试用。最终结算、税费、Cloud 代理数量及功能权益待核。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/pingplotter",
+      "read_at": "2026-10-22T08:50:40.513Z",
+      "excerpt_sha256": "aeed55289bec36aaef5dc5ae9152753f6c96db1990b6525381c4a2a9f7494308",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "PingPlotter",
+      "title": "Welcome to PingPlotter Cloud!",
+      "url": "https://www.pingplotter.com/cloud/manual/?mtm_campaign=main-nav",
+      "read_at": "2026-10-22T15:34:42.864165Z",
+      "excerpt_sha256": "c28ab1e965489bf407a22d6f8e217791f80afdcb67e095ab7fdfb06653625b11",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Cloud agent/interface architecture and separate billing model."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "PingPlotter",
+      "title": "Buy and Compare Products | PingPlotter",
+      "url": "https://www.pingplotter.com/products/",
+      "read_at": "2026-10-22T15:34:42.863674Z",
+      "excerpt_sha256": "cde9c328f595c9a7d383e8b24335bfb138cc7d69db4abd1a42728499735f9de0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Standard/Professional/Cloud starting rates, limited Free edition and separate trial periods."
+    },
+    {
+      "id": "interpretation",
+      "type": "official_documentation",
+      "site": "PingPlotter",
+      "title": "Interpreting the PingPlotter Graph | Common Network Problems",
+      "url": "https://www.pingplotter.com/wisdom/common-network-problems/?mtm_campaign=main-nav",
+      "read_at": "2026-10-22T15:35:44.736564Z",
+      "excerpt_sha256": "aebfd721b6c59d124bd25cdc34927579764677dbe8c9ac0297477a27e29e5b1f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read endpoint correlation, intermediate-hop loss and blocked-ICMP interpretation."
+    },
+    {
+      "id": "storage",
+      "type": "official_documentation",
+      "site": "PingPlotter",
+      "title": "Auto-Save Options",
+      "url": "https://www.pingplotter.com/manual/advancedoptionsautosave/",
+      "read_at": "2026-10-22T15:36:26.228872Z",
+      "excerpt_sha256": "ecf760725150a4d6d42774a1340595411c9ef31ecc9d9b55f34dcb3ac2f4bd67",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read explicit autosave modes and manual migration of existing data/settings."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "PingPlotter",
+      "title": "Backing up PingPlotter Data",
+      "url": "https://www.pingplotter.com/manual/backing-up-pingplotter-data/",
+      "read_at": "2026-10-22T15:35:44.736780Z",
+      "excerpt_sha256": "62d539e1feb04483a854053e5ab3dac641cd6a2ebc2a6d96eaec850751904ca9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Windows service/application and macOS background/application backup paths and stopped-process restore."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:36:26.228872Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "interpretation", "storage"],
+  "profile": {
+    "sections": [
+      {
+        "id": "deployment",
+        "title_en": "Choose local or distributed collection",
+        "title_zh": "选择本地或分布式采集",
+        "en": "Cloud separates agents, cloud collection and the administrative interface. Agents use ping and traceroute and report from their own network perspective. Device-based subscriptions support monthly or annual terms. Plan placement around the affected location and required simultaneous agents; a local desktop trace does not reproduce every remote user’s path.",
+        "zh": "Cloud 区分代理、云端采集和管理界面。代理使用 ping／traceroute，从自身网络位置上报。按设备订阅支持月付或年付，应按受影响地点和同时使用的代理数量规划；本机跟踪不能重现所有远端用户路径。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "diagnosis",
+        "title_en": "An intermediate-hop warning needs context",
+        "title_zh": "中间跳点警告需要上下文",
+        "en": "The interpretation guide shows intermediate packet loss with a healthy destination and explains that some routers deprioritize ICMP responses. Loss continuing downstream is more relevant than an isolated hop. An unreachable result may reflect blocked probes rather than a failed website. Correlate timestamps with an observed application symptom; a graph pattern remains a diagnostic lead.",
+        "zh": "解释指南展示中间跳点丢包而终点正常的情况，并说明部分路由器降低 ICMP 响应优先级。延续到下游的丢包比孤立跳点更有意义。不可达也可能是探测被阻断，并非网站故障。应将时间戳与应用症状对应，图形模式仍只是诊断线索。",
+        "source_refs": ["interpretation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retention",
+        "title_en": "Make retention intentional",
+        "title_zh": "明确选择保留方式",
+        "en": "Desktop v5 autosave offers Always, After a configured duration, or Only when selected. The session manager can reopen, delete or export stored sessions as PP2 files. Changing the data-storage location does not copy old data/settings automatically. Verify the chosen session survives reopening and copy existing content explicitly during relocation.",
+        "zh": "桌面 v5 自动保存支持 Always、达到指定时长及 Only when selected。会话管理器可重开、删除或导出 PP2。改变存储位置不会自动复制旧数据／设置，应验证会话能重新打开，迁移位置时明确复制原内容。",
+        "source_refs": ["storage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Back up both execution contexts when needed",
+        "title_zh": "按运行方式备份所需目录",
+        "en": "The backup guide distinguishes Windows application/service data and macOS application/background-mode data. It calls for closing the app and stopping its service before copying or restoring the relevant PingPlotter 5 folders. Restoration replaces files in their original locations. Rehearse on a disposable installation and retain the pre-restore state.",
+        "zh": "备份指南区分 Windows 应用／服务及 macOS 应用／后台模式的数据。复制或恢复相关 PingPlotter 5 目录前须关闭应用并停止服务，恢复会替换原位置文件。应在可丢弃安装上演练，并保留恢复前状态。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editions",
+        "title_en": "Keep target limits and Cloud fees separate",
+        "title_zh": "分别核对目标上限与 Cloud 费用",
+        "en": "The comparison page lists Standard from $6.99/month for two targets on one computer, Professional from $29/month for local multi-target use, and Cloud from $90/month. Desktop trials last 14 days; Cloud’s trial lasts 7. A separate Free edition allows one connection without remote collection and lists 10-minute history. Blank comparison cells do not prove feature inclusion.",
+        "zh": "比较页列 Standard 每月 $6.99 起、单机两个目标，Professional 每月 $29 起、单机多目标，Cloud 每月 $90 起。桌面试用十四天，Cloud 七天。独立 Free 版允许一个连接、无远程采集，列有十分钟历史。空白比较单元格不能证明功能包含。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "PingPlotter: setup, operating limits and pricing",
+    "title_zh": "PingPlotter：设置、运行边界及费用",
+    "description_en": "PingPlotter diagnoses network paths by repeatedly measuring latency, packet loss and jitter. Desktop editions trace from a local computer; PingPlotter Cloud deploys agent",
+    "description_zh": "PingPlotter 通过重复测量延迟、丢包和抖动诊断网络路径。桌面版从本机跟踪；PingPlotter Cloud 将代理部署到远端工作站、服务器或云 VM，在浏览器集中展示观",
+    "search_intent_en": "Evaluate PingPlotter for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 PingPlotter。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No software, trace, remote agent, account, alert, export, restore or payment was operated.",
+      "zh": "未操作软件、跟踪、远端代理、账户、告警、导出、恢复或支付。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current Cloud RBAC, full legal license, measured diagnostic accuracy and tested recovery remain unverified.",
+      "zh": "当前 Cloud RBAC、完整法律许可、诊断准确率及实际恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "The pricing summary calls Professional targets unlimited, while its comparison row says100s. Exact effective capacity is not established.",
+      "zh": "价格摘要称 Professional 目标不限量，但比较行写 100s；实际有效容量尚未确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

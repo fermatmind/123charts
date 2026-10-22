@@ -1,0 +1,355 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "constant-contact-192dd0f7",
+  "name": "Constant Contact",
+  "website_url": "https://www.constantcontact.com/",
+  "domain": "www.constantcontact.com",
+  "identity_domain": "constantcontact.com",
+  "category": "email-marketing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Constant Contact is a hosted marketing service combining email campaigns, contact management and social tools, with automation depth varying by plan. Its Automation Path Builder uses a contact action or date to start messages, delays, branches and contact updates. SMS adds its own availability and registration requirements.\n\nA newsletter subscription, an active automation and a billing contact tier are different objects. This profile explains the practical consequences: custom paths are not in every plan, ending a path is different from disabling its trigger, and sending above an allowance can add charges rather than stopping the campaign. No account or message was tested.",
+  "description_zh": "Constant Contact 是结合邮件活动、联系人管理和社交工具的托管营销服务，自动化深度随套餐变化。Automation Path Builder 由联系人动作或日期启动，连接消息、等待、分支和联系人更新。短信还受独立的可用范围及注册要求约束。\n\n简报订阅、活跃自动化和计费联系人档位是不同对象。本文解释实际影响：并非每个套餐都含自定义路径，结束路径不同于关闭触发器，而超过发送额度可能产生额外费用，并不停止活动。本文未测试账户或消息。",
+  "core_features": [
+    {
+      "name_en": "Email campaigns",
+      "name_zh": "邮件活动",
+      "explanation_en": "Prepare branded messages with a drag-and-drop editor and send to maintained contacts.",
+      "explanation_zh": "用拖放编辑器制作品牌邮件，向维护好的联系人发送。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Automation paths",
+      "name_zh": "自动化路径",
+      "explanation_en": "Use templates or eligible custom paths to connect sends, timing, conditions and contact actions.",
+      "explanation_zh": "使用模板或套餐允许的自定义路径连接发送、时间、条件和联系人动作。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Contact actions",
+      "name_zh": "联系人动作",
+      "explanation_en": "An eligible path can update fields, add/remove tags or change list membership.",
+      "explanation_zh": "适用路径可更新字段、增删标签或修改名单成员。",
+      "source_ref": "automation",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Trigger and ending controls",
+      "name_zh": "触发与结束控制",
+      "explanation_en": "Disable entry while existing contacts finish, or end the path to stop its communications.",
+      "explanation_zh": "关闭进入让现有人完成，或结束路径以停止其中的沟通。",
+      "source_ref": "path-changes",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Create a class onboarding sequence with an explicit enrollment trigger.",
+      "Budget a newsletter including non-opener resends and billing-tier effects."
+    ],
+    "zh": [
+      "用明确报名触发条件建立课程入门序列。",
+      "为包含未打开者重发和档位影响的简报预算。"
+    ],
+    "source_refs": ["pricing", "automation", "path-changes", "send-metering"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business email operator",
+      "Course communications owner",
+      "Marketing automation maintainer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "pricing"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm permission and the contact state used by the trigger.",
+        "zh": "确认接收许可及触发器需要的联系人状态。",
+        "source_refs": ["permission", "automation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check active automation and custom-path entitlements, then activate a representative test.",
+        "zh": "检查活跃自动化及自定义路径权限，再启用代表性测试。",
+        "source_refs": ["automation"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect Billing usage and decide how to retire or change the path.",
+        "zh": "检查 Billing 用量，明确如何停用或修改路径。",
+        "source_refs": ["billing", "path-changes"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Deleting occupied steps can remove their contacts; editing does not halt entry.",
+        "zh": "删除有人占用的步骤可能移除其中联系人；编辑不会停止进入。",
+        "source_refs": ["path-changes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Some automation is excluded from send allowance, while schedulable resends and bounces count.",
+        "zh": "部分自动化不计发送额度，但可排程重发和退信计数。",
+        "source_refs": ["send-metering"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Monthly starting prices $12/$35/$80; annual equivalents $10.20/$29.75/$68. Contact tiers, add-ons and $0.002 eligible send overages affect total; trial is not permanent free service.",
+    "source_snapshot_zh": "月付起价 $12／$35／$80；年付月均 $10.20／$29.75／$68。联系人档位、附加项及每次适用超额发送 $0.002 影响总额；试用不是持续免费服务。",
+    "normalized_price": null
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/constant-contact",
+      "read_at": "2026-10-22T08:48:02.964Z",
+      "excerpt_sha256": "f35b08cebd8de3b935c820ae7af98be141ff59ce9a04a6ff5e8ac318f4ba479c",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Constant Contact",
+      "title": "Marketing Pricing Plans | Constant Contact",
+      "url": "https://www.constantcontact.com/pricing",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "626d2e938ae4263f1985c62372a4c67dd95be6cb6644e1e56bcf45d3f7514117",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Lite/Standard/Premium prices distinguish annual equivalents from monthly; SMS US-only and separate Lead Gen & CRM family link."
+    },
+    {
+      "id": "automation",
+      "type": "official_documentation",
+      "site": "Constant Contact",
+      "title": "Getting started with the Automation Path Builder",
+      "url": "https://knowledgebase.constantcontact.com/email-digital-marketing/tutorials/KnowledgeBase/43904-Getting-started-with-the-Automation-Path-Builder?lang=en_US",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "b77cc212b2a991d6a7a6349f5720816dcd840e33501e0bfd2eb2a2d46b54527c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Active path limits, template versus custom eligibility, activation, data actions and SMS registration."
+    },
+    {
+      "id": "path-changes",
+      "type": "official_documentation",
+      "site": "Constant Contact",
+      "title": "Edit and manage an Automation Path",
+      "url": "https://knowledgebase.constantcontact.com/email-digital-marketing/tutorials/KnowledgeBase/44328-Edit-and-manage-an-Automation-Path?lang=en_US",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "5cd6c728a8e08655aaaf33b6b4f2de7060413be5cd57517e99fb4e5a3f810284",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Editing does not halt existing paths; disabling trigger versus irreversible End and step-deletion effects."
+    },
+    {
+      "id": "send-metering",
+      "type": "official_documentation",
+      "site": "Constant Contact",
+      "title": "Constant Contact’s email send allowance and overage fee",
+      "url": "https://knowledgebase.constantcontact.com/email-digital-marketing/articles/KnowledgeBase/46046-Constant-Contacts-email-send-allowance-and-overage-fee?lang=en_US",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "18b7356c9150aec45fec6b07b7c1f06cfd16c41190d3a181ff59a82693f499e5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Allowance uses upper contact-tier bound, bounces count, certain automated emails excluded and excess sends cost $0.002 each."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "Constant Contact",
+      "title": "How you're billed for Constant Contact",
+      "url": "https://knowledgebase.constantcontact.com/email-digital-marketing/articles/KnowledgeBase/51160-How-youre-billed-for-Constant-Contact?lang=en_US",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "54c5687cc909218329edff2871e2b62ea6983314f171f066e4802743e4295e58",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Highest active contact count sets tier, deletion does not lower tier, auto-renewal and fees without campaign sending."
+    },
+    {
+      "id": "permission",
+      "type": "official_documentation",
+      "site": "Constant Contact",
+      "title": "www.constantcontact.com",
+      "url": "https://www.constantcontact.com/legal/anti-spam",
+      "read_at": "2026-10-22T10:19:33.136351Z",
+      "excerpt_sha256": "76feb65845fa13e63edf0881569267250b4d692fc9d4db420f75599ddb677dd2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Affirmative permission must be specific to sender; purchased or scraped lists do not meet the vendor requirement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:19:33.136351Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": [
+    "pricing",
+    "automation",
+    "path-changes",
+    "send-metering"
+  ],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "journey",
+        "title_en": "Choose a real entry action and a maintained audience",
+        "title_zh": "选择真实进入动作与受维护受众",
+        "en": "The path guide says automation starts from a trigger and uses timing and messages; contact actions can also change fields, tags and lists. A welcome signup and adding someone to a particular list are different triggers, with different treatment of existing contacts.\n\nFor an illustrative class onboarding, identify whether a new signup or existing learner moving to an enrollment list should start the sequence. Prepare a consented test contact with the intended starting state. Choosing a template alone does not prove an already existing learner will enter.",
+        "zh": "路径指南说明自动化从触发条件开始，使用时间与消息，联系人动作还可修改字段、标签和名单。欢迎订阅与加入某个名单是不同触发方式，对现有联系人也有不同处理。\n\n例如课程入门，应先确定新订阅或已有学员移入报名名单，哪一种动作启动序列。准备处于预期初始状态且已许可接收的测试联系人。选择模板不能证明已有学员一定进入。",
+        "source_refs": ["automation"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "plans",
+        "title_en": "Custom paths and ecommerce require the appropriate plan",
+        "title_zh": "自定义路径与电商需要匹配套餐",
+        "en": "The official path guide allows unlimited drafts on Trial and Lite but only one active automation; Standard allows three active automations. Trial, Lite and Standard cannot build custom paths or use ecommerce-specific templates and steps. Premium provides those capabilities and full automation reporting.\n\nA complex shopping journey should therefore be costed as the required plan and integration, not as a basic welcome template. SMS requires registration even when included in Premium. The pricing page limits SMS availability to paid customers in the United States; this Chinese profile is not evidence of Chinese SMS availability.",
+        "zh": "路径指南允许 Trial 和 Lite 建立不限草稿，但只能有一个活跃自动化；Standard 可有三个。Trial、Lite 和 Standard 不能建立自定义路径或使用电商专用模板及步骤；Premium 提供这些能力及完整自动化报表。\n\n复杂购物路径应按所需套餐和集成预算，不能按基础欢迎模板估算。即使 Premium 含短信，也需注册；价格页将短信限制为美国付费客户。本文中文版本不代表支持中国短信业务。",
+        "source_refs": ["automation", "pricing"],
+        "evidence_type": "documented_plan_conditions"
+      },
+      {
+        "id": "edits",
+        "title_en": "Editing a live path is not a pause",
+        "title_zh": "修改活跃路径不是暂停",
+        "en": "The management guide says contacts already in a path continue moving while edits are made and new contacts can still enter. After reactivation they follow updated future steps, but changes to already passed steps do not retroactively apply. Deleting an occupied step can drop its contacts from the path.\n\nBefore changing the class onboarding sequence, inspect where learners are waiting. This profile has not tested editing, contact retention or transition recovery.",
+        "zh": "管理指南说明编辑期间现有人仍继续，新人也可能进入。重新启用后，他们跟随后续已更新步骤，但已经经过的步骤不会追溯修改；删除有人占用的步骤可能让这些人脱离路径。\n\n修改课程入门序列前，应检查学员等待的位置。本文未测试修改、联系人保留或切换恢复。",
+        "source_refs": ["path-changes"],
+        "evidence_type": "documented_with_editorial_change_guidance"
+      },
+      {
+        "id": "stop",
+        "title_en": "Disable trigger and End solve different problems",
+        "title_zh": "关闭触发器与 End 解决不同问题",
+        "en": "Disabling the trigger prevents new contacts from joining while allowing those already on the path to finish. End prevents new entry and stops email/SMS for existing contacts, and the guide marks ending as irreversible. Deleted draft or ended paths can be restored, which does not make ending itself reversible.\n\nWhen retiring a course version, decide whether current learners should finish or stop immediately. Review that decision separately from whether a path should disappear from the list. These are documented controls, not a guarantee of recalling messages already delivered.",
+        "zh": "关闭触发器会阻止新联系人加入，同时允许现有人完成；End 则阻止进入并停止现有人的邮件／短信，指南明确结束不可撤销。被删除的草稿或已结束路径可以恢复，不代表结束动作本身可逆。\n\n停用旧课程时，应决定当前学员继续完成还是立即停止，并与是否从列表中删除路径分开处理。这些是文档中的控制，不保证撤回已经投递的消息。",
+        "source_refs": ["path-changes"],
+        "evidence_type": "documented_with_editorial_retirement_guidance"
+      },
+      {
+        "id": "meter",
+        "title_en": "Use the tier ceiling and count campaign resends",
+        "title_zh": "按档位上限计算并计入活动重发",
+        "en": "The metering guide applies the plan multiplier to the highest contact number in the pricing tier, not simply the current address count. One email to one contact is one send; bounces still count. It excludes automated welcomes, cart reminders and automation series from this calculation, but includes schedulable campaigns and automatic non-opener resends.\n\nIf the billing view shows 5,000 included sends and eligible campaigns use 6,200, the hypothetical excess is 1,200 × $0.002 = $2.40. Use the Billing usage view: the guide says resends are not fully represented in Reporting counts. This is not a measured invoice.",
+        "zh": "用量指南将套餐倍数应用于联系人档位的上限，而非仅当前邮箱数。一封邮件发给一个联系人计一次，退信仍计数。该计算排除自动欢迎、弃购提醒及自动化序列，但包括可排程活动与未打开者自动重发。\n\n假设账单页含 5,000 次，适用活动用了 6,200 次，额外费用为 1,200 × $0.002 = $2.40。应查看 Billing 用量，因为指南说明 Reporting 计数未完整涵盖重发。这不是实测账单。",
+        "source_refs": ["send-metering"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "cost",
+        "title_en": "Separate annual equivalents, contact tiers and add-ons",
+        "title_zh": "区分年付月均、联系人档位和附加项",
+        "en": "The pricing FAQ gives monthly starting prices of $12 Lite, $35 Standard and $80 Premium, versus annual-payment equivalents of $10.20, $29.75 and $68. Contact tiers and add-ons affect the final amount. The billing guide uses the highest active contact count and says deleting contacts does not lower the tier; keeping an account active incurs charges even without sends.\n\nFree trial and a conditional money-back offer are separate from ongoing free service. The pricing page advertises refund terms, while the billing guide states prepayments are non-refundable. Confirm the exact offer and its exceptions before prepaying; no purchase or refund was tested.",
+        "zh": "价格 FAQ 给出月付起价 Lite $12、Standard $35、Premium $80，对应年付月均 $10.20、$29.75、$68。联系人档位与附加项影响最终金额。计费指南采用最高活跃联系人数量，并说明删除联系人不会降低档位；即使不发信，维持账户仍收费。\n\n免费试用、有条件退款与持续免费服务不同。价格页宣传退款条件，计费指南则说明预付款不可退。预付前应确认实际优惠及例外，本文未测试购买或退款。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_pricing_with_explicit_conditions"
+      },
+      {
+        "id": "fit",
+        "title_en": "Keep permission and product-family boundaries visible",
+        "title_zh": "保留接收许可和产品家族边界",
+        "en": "The anti-spam policy requires affirmative consent specific to the sender; purchased or scraped lists do not satisfy that requirement. A marketing account is therefore not a license to import arbitrary prospects and send bulk messages.\n\nConstant Contact is worth evaluating for a small team maintaining permissioned newsletters and plan-appropriate automations. The pricing footer separately links Lead Gen & CRM; its presence does not place every CRM capability inside the email subscription. Source licensing, self-hosting rights and exact integration behavior remain unverified, and marketing claims about inbox rate were not independently checked.",
+        "zh": "反垃圾政策要求针对发件人的明确同意，购买或抓取的名单不满足该要求。因此拥有营销账户不代表可以导入任意潜在客户批量发送。\n\n维护已许可简报和适合套餐的自动化的小团队，可评估 Constant Contact。价格页页脚单独链接 Lead Gen & CRM，不代表所有 CRM 能力已包含在邮件订阅内。源码许可、自托管权利和具体集成行为仍未核实，营销中的收件箱到达率也未经独立核查。",
+        "source_refs": ["permission", "pricing"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Constant Contact: Automation Paths, Contact Tiers and Send Overage",
+    "title_zh": "Constant Contact：自动化路径、联系人档位与超额发送",
+    "description_en": "Understand Constant Contact plan limits, path ending, tier-based sends and overage charges before choosing a newsletter workflow.",
+    "description_zh": "选择简报流程前了解 Constant Contact 套餐限制、路径结束、按档位计算的发送量和超额费用。",
+    "primary_intent": "Evaluate plan-specific Constant Contact automation and campaign operating costs.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Refund offer exceptions versus non-refundable prepayments, exact trial limits, regional checkout and contract terms need account-specific confirmation.",
+      "zh": "退款优惠例外与不可退预付规则、确切试用限制、地区结算及合同条款需账户专项确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, path, SMS registration, send, purchase or integration was executed. UI languages, source license, self-hosting and contract data location remain unverified.",
+      "zh": "未执行账户、路径、短信注册、发送、购买或集成；界面语言、源码许可、自托管和合同数据位置仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "molin-ai-c89b77d1",
+  "name": "Molin AI",
+  "website_url": "https://molin.ai/",
+  "domain": "molin.ai",
+  "identity_domain": "molin.ai",
+  "category": "ai-writing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Molin AI currently offers ecommerce shopping and support agents rather than a general writing service. It uses product and store knowledge to answer questions, suggest products, collect leads and, on eligible plans, perform order-related actions. The inherited AI-writing category does not describe this current operational scope.\n\nConnecting a store changes the consequences of an answer: reading an order status and cancelling or refunding it are different permissions. Product count, conversation capacity, seats and action entitlement all affect the plan, with some channels still labelled as future features.",
+  "description_zh": "Molin AI 目前提供电商购物与支持 Agent，而非通用写作，使用产品及商店知识回答、推荐、收集线索，并在符合套餐时操作订单。继承的 AI 写作分类不能代表现行运营范围。\n\n连接商店会改变回答后果：读取订单状态与取消或退款是不同权限。产品数、对话容量、席位和动作权益共同影响套餐，部分渠道仍标未来功能。",
+  "core_features": [
+    {
+      "name_en": "Product-aware shopping assistance",
+      "name_zh": "结合产品知识的购物辅助",
+      "explanation_en": "Answer and recommend using connected catalogue knowledge.",
+      "explanation_zh": "依据连接目录知识回答及推荐。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-scoped order actions",
+      "name_zh": "受套餐限制的订单操作",
+      "explanation_en": "Higher plans describe order updates, modification/cancellation and custom actions.",
+      "explanation_zh": "较高套餐介绍订单状态、修改/取消及自定义动作。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Answer a product/order-status question and hand off any unsupported change request."
+    ],
+    "zh": ["回答商品/订单状态，并把不支持的修改交给人工。"],
+    "source_refs": ["product"],
+    "basis": "Editorial task suggestions based on official documentation; no observed deployment."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Prospective workflow owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Connect a test catalogue with restricted permissions, test identity and order-status responses, then separately authorize any write action.",
+        "zh": "以限制权限连接测试目录，核对身份及订单状态，再单独授权写动作。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documentation_based_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Selection judgments and examples are documentation-based; no live workflow was tested.",
+        "zh": "选型判断与例子依据文档，未实测真实流程。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:29:59.863062+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Conversations, catalogue capacity and seats/action tiers; services and overage separate.",
+    "source_snapshot_en": "Free 25 conversations/month/500 products. Annual equivalents Startup $19/125 conversations/2,000 products; Growth $55/500/10,000; Scale $119/1,250/50,000, with $0.20 extra conversation shown. Seat $19/month wording needs reconciliation. Trial fourteen days; $1 first-month promo and paid setup/consultation separate.",
+    "source_snapshot_zh": "免费月 25 对话/500 产品；年付折合 Startup 月 $19/125 对话/2,000 产品，Growth $55/500/10,000，Scale $119/1,250/50,000，额外对话列 $0.20。席位月 $19 需澄清，14 天试用、首月 $1 及付费配置/咨询分别计算。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Molin AI",
+      "title": "Molin AI - Cut your customer support by 80% with AI",
+      "url": "https://molin.ai/",
+      "read_at": "2026-10-22T14:49:48.522983+00:00",
+      "excerpt_sha256": "5429df57279fd5501c7c309e1d5914f583ba86239f50f1dc5b97de1c05e8d056",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Current ecommerce shopping/support agent with product context, lead collection and order actions; historical ai-writing category no longer representative."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Molin AI",
+      "title": "Pricing | Molin AI",
+      "url": "https://molin.ai/pricing",
+      "read_at": "2026-10-22T14:49:50.637027+00:00",
+      "excerpt_sha256": "765950d4d7d53c038c20c1e754501c31c883231e52d316624e98d10c3335d963",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Free conversations/products; paid conversation/product tiers, separate seats, fourteen-day trial, first-month promotion, order permissions and paid expert services."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:29:59.863062+00:00",
+    "scope": "Public official documents read; no purchase, account setup, independent review, hands-on test, identity verification or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Official documentation describes vendor functionality, not independent evidence of reliability, adoption or outcomes.",
+    "Original English synthesis and corresponding Chinese draft; examples and fit judgments are editorial guidance.",
+    "Current public pricing is a dated snapshot; purchase conditions remain subject to vendor confirmation."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "orders",
+        "title_en": "Separate answers from actions that change an order",
+        "title_zh": "区分答复与改变订单的动作",
+        "en": "For an illustrative support request, first verify the customer and order before reading tracking information. A change, cancellation or refund needs a separate authorized action and result check. The homepage broadly advertises autonomous refunds, while the price matrix lists differing order actions by tier. Test an ineligible request and human handoff before connecting a live store. No order or refund was executed.",
+        "zh": "例如客服请求，应先确认客户与订单，再读物流信息。修改、取消或退款需独立授权动作及结果核对。首页泛称自动退款，价格表却按层级列不同订单能力，应先测试不合资格请求和转人工，再连接真实商店。本文未操作订单或退款。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity",
+        "title_en": "Count conversations, catalogue size and staff seats",
+        "title_zh": "分别计算对话、目录及员工席位",
+        "en": "Free lists twenty-five conversations/month and 500 products. Annual-billed cards show Startup $19/month with 125 conversations/2,000 products, Growth $55 with 500/10,000 and Scale $119 with 1,250/50,000. The page separately lists $19/month per seat and mixes per-user labels, so confirm whether those are included or additional. Scale shows $0.20 per extra conversation; the definition and reset must be checked.",
+        "zh": "免费月 25 对话、500 产品。年付卡片 Startup 月 $19、125 对话/2,000 产品，Growth $55、500/10,000，Scale $119、1,250/50,000。页面另列每席月 $19 并混用按用户标签，需确认包含或另加。Scale 展示额外对话 $0.20，计数定义和重置仍需核。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "channels",
+        "title_en": "Do not promote roadmap channels into current features",
+        "title_zh": "不要把路线图渠道当现有功能",
+        "en": "The homepage still labels some social/phone channels coming in Q3 2026, while the pricing matrix marks WhatsApp/email options coming soon and other social integrations as included. An elapsed date is not evidence of release. Confirm the exact channel, store connector, product refresh and action API. Premium trial is fourteen days; the first-month $1 promotion is separate from standard renewal. Optional expert setup is $500 and consultation $200/month for two hours.",
+        "zh": "首页仍将部分社交/电话标为 2026 第三季度将推出，价格表把 WhatsApp/邮件标“即将推出”，其他社交又列包含。日期已过不证明已发布，需核渠道、店铺连接、产品刷新和动作 API。Premium 试用 14 天，首月 $1 促销不同于常规续费；专家配置 $500，咨询每月 $200/两小时。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Use a bounded store pilot with failure ownership",
+        "title_zh": "用有边界的商店试点明确失败责任",
+        "en": "Molin merits investigation for catalogue assistance and repetitive ecommerce support when a human owns exceptions. It is not a verified writing-platform replacement. Check wrong-product recommendations, unavailable items, identity failures, repeated actions and conversation exports. Vendor sales/support savings and language counts were not independently tested. Contract privacy, retention, source license and self-hosted deployment remain unknown.",
+        "zh": "有人工处理异常的目录辅助和重复电商支持可研究 Molin，不是已验证写作平台替代。需核错商品推荐、缺货、身份失败、重复动作及对话导出。销售/客服节省和语言数量未独立测试，合同隐私、保留、源码许可及自托管仍未知。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    "Inherited ai-writing classification mismatches current ecommerce-agent identity; taxonomy review deferred.",
+    "No store, conversation, order, refund, channel, API or export was tested.",
+    "Seat/overage definitions, roadmap channels, actual quote, data/model terms, license and self-hosting remain unverified."
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Molin Ai: workflow, pricing and limits",
+    "title_zh": "Molin Ai：工作流程、定价与边界",
+    "description_en": "Molin AI currently offers ecommerce shopping and support agents rather than a general writing service. It uses product and store knowledge to answer questions, suggest products, collect leads and, on eligible plans, perf",
+    "description_zh": "Molin AI 目前提供电商购物与支持 Agent，而非通用写作，使用产品及商店知识回答、推荐、收集线索，并在符合套餐时操作订单。继承的 AI 写作分类不能代表现行运营范围。"
+  }
+}

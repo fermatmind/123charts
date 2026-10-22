@@ -1,0 +1,351 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "zoho-dataprep-14e0dae7",
+  "name": "Zoho DataPrep",
+  "website_url": "https://www.zoho.com/dataprep/",
+  "domain": "www.zoho.com",
+  "identity_domain": "zoho.com",
+  "category": "data-integration",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Zoho DataPrep is a hosted data preparation and pipeline product. Users bring in data, apply ordered cleaning/transformation rules and export prepared results to configured destinations. DataPrep 2.0 organizes this work as pipelines with stages and recorded execution jobs.\n\nIt is not the same product as Zoho Analytics or Zoho Flow. They can participate in an integration, but DataPrep’s preparation rules, destination acceptance and row-processing allowances remain separate concerns.",
+  "description_zh": "Zoho DataPrep 是托管数据准备与流程产品。用户导入数据，应用有顺序的清洗／转换规则，再把结果导出至配置目标。DataPrep 2.0 用包含阶段及执行任务记录的 pipeline 组织这些工作。\n\n它与 Zoho Analytics、Zoho Flow 是不同产品。其他产品可参与集成，但 DataPrep 的准备规则、目标接受条件及处理行额度仍需分别考虑。",
+  "core_features": [
+    {
+      "name_en": "Ordered reusable rulesets",
+      "name_zh": "有序可复用规则集",
+      "explanation_en": "Edit transformation rules and recompute dependent rules.",
+      "explanation_zh": "编辑转换规则并重新计算依赖规则。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rules",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Stage-level execution history",
+      "name_zh": "阶段级执行历史",
+      "explanation_en": "Inspect import, transform and export status and output.",
+      "explanation_zh": "检查导入、转换、导出状态与输出。",
+      "explanation_scope": "product_specific",
+      "source_ref": "jobs",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Documented quality rejection handling",
+      "name_zh": "有文档说明的质量拒绝处理",
+      "explanation_en": "Find invalid values with an erroneous-data sample when export fails.",
+      "explanation_zh": "导出失败时用错误数据采样查找非法值。",
+      "explanation_scope": "product_specific",
+      "source_ref": "faq",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Prepare repeatable customer extracts with ordered rules.",
+      "Inspect full-data quality failures before destination export."
+    ],
+    "zh": [
+      "用有序规则准备可重复客户导出。",
+      "导出到目标前检查全量数据质量失败。"
+    ],
+    "source_refs": ["rules", "faq"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data preparation analyst",
+      "Analytics engineer",
+      "Pipeline administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose one small source and a separate test destination.",
+        "zh": "选择一个小型源及独立测试目标。",
+        "source_refs": ["home"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Apply ordered rules and verify full-data invalid rows.",
+        "zh": "应用有序规则，检查全量非法行。",
+        "source_refs": ["rules", "faq"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect output, actual row usage and connection ownership before scheduling.",
+        "zh": "调度前检查输出、实际行用量及连接负责人。",
+        "source_refs": ["jobs", "meter", "faq"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Preview samples can miss invalid rows that fail the final export.",
+        "zh": "预览样本可能漏掉使最终导出失败的非法行。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Monthly rows, batch size, source/destination and technical limits are distinct constraints.",
+        "zh": "月度行数、批次、源目标及技术上限是不同约束。",
+        "source_refs": ["meter", "limits", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "processed_rows_users_sources_destinations_and_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "meter"],
+    "checked_at": "2026-10-22T10:49:14.651886Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Processed rows across source/processing stages, plan/user/source/destination allowances, separate batch-size and other add-ons; paid amount not reliably rendered."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/zoho-dataprep",
+      "read_at": "2026-10-22T09:04:14.528Z",
+      "excerpt_sha256": "56f17905c88626f41cb129cec70363cfe74f5cb2f35ccf69adecc8ad95ef4ed6",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Zoho DataPrep",
+      "title": "ETL, Data Prep & Reverse ETL in One Agentic AI Platform | Zoho DataPrep",
+      "url": "https://www.zoho.com/dataprep/",
+      "read_at": "2026-10-22T10:49:14.651886Z",
+      "excerpt_sha256": "5a9b11904cc8776d3265d87b976458a677fd0a27fa32c5b4f71f01828c07f8e9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "DataPrep visual data preparation/pipeline identity and AI assistance read; suggested transformations need evaluation, no AI accuracy claims adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Zoho DataPrep",
+      "title": "Zoho DataPrep Pricing | ETL & Reverse ETL Plans from Free",
+      "url": "https://www.zoho.com/dataprep/pricing.html",
+      "read_at": "2026-10-22T10:49:18.361466Z",
+      "excerpt_sha256": "a5ca24de173cedd322dd6dd0e13cf84386deea978ea8c079fda21eeaa1a42bd7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free 20K rows/manual only, Standard source/destination/user scope, Enterprise quote, audit retention and temporary 15-day trial read; paid amount not rendered."
+    },
+    {
+      "id": "meter",
+      "type": "official_pricing",
+      "site": "Zoho DataPrep",
+      "title": "Zoho DataPrep 2.0 Pricing FAQs",
+      "url": "https://help.zoho.com/portal/en/kb/dataprep-2-0/pricing-faqs/articles/zoho-dataprep-pricing-faq",
+      "read_at": "2026-10-22T10:50:35.991812Z",
+      "excerpt_sha256": "743434390cce646fd05bf59100d83226d299f91d66afa38ea38102f64b84715f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Stage-aware row counting, source/destination identity, separate batch size, invited/active user counting and storage reviewed."
+    },
+    {
+      "id": "rules",
+      "type": "official_documentation",
+      "site": "Zoho DataPrep",
+      "title": "Ruleset in Zoho DataPrep",
+      "url": "https://help.zoho.com/portal/en/kb/dataprep-2-0/data-transformation/ruleset/articles/ruleset-in-zoho-dataprep-22-5-2024",
+      "read_at": "2026-10-22T10:54:55.970795Z",
+      "excerpt_sha256": "cca3e675565747f3e3e23a776b318a3174737417d12fb93c23d7066b36f15b90",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Ordered rules, earlier-state edits/recomputation, parsing settings and reusable templates read."
+    },
+    {
+      "id": "jobs",
+      "type": "official_documentation",
+      "site": "Zoho DataPrep",
+      "title": "Jobs",
+      "url": "https://help.zoho.com/portal/en/kb/dataprep-2-0/getting-started/jobs/articles/jobs-17-6-2024",
+      "read_at": "2026-10-22T10:51:07.931740Z",
+      "excerpt_sha256": "b094e36d93f7f939c8fb5c23bc4f0394766eddd6e2d4a4a8706e9d3f361bf1ed",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Import/transform/export stage statuses, cached/not-run behavior, row/storage counters and output review read."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Zoho DataPrep",
+      "title": "What are the limitations of Zoho DataPrep?",
+      "url": "https://help.zoho.com/portal/en/kb/dataprep-2-0/settings/limitations/articles/technical-limitations",
+      "read_at": "2026-10-22T10:51:11.021277Z",
+      "excerpt_sha256": "cf5261f0d720f31daea91b152813437086b39a85a512da1b7becc3bd265202a1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Specific file/row/stage/trigger limits reviewed; 500 columns/250 schedules conflict with general FAQ wording."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Zoho DataPrep",
+      "title": "What is Zoho DataPrep?",
+      "url": "https://help.zoho.com/portal/en/kb/dataprep-2-0/faqs/articles/zoho-dataprep-faq",
+      "read_at": "2026-10-22T10:51:14.375488Z",
+      "excerpt_sha256": "b5fa40713e26aa83934ebe1e6bc8e3042ef7aaf12b0a39a0ca4288c77f2bf4b9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Bad-data export rejection, erroneous sample strategy and connection-owner reauthentication read; general 400-column/unlimited schedule claims conflict with limits page."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:54:55.970795Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "jobs", "faq"],
+  "profile": {
+    "sections": [
+      {
+        "id": "prepare",
+        "title_en": "Rule order is part of the data definition",
+        "title_zh": "规则顺序属于数据定义",
+        "en": "Each transformation is stored in an ordered ruleset. Selecting an earlier rule shows that sample state; inserting a rule recomputes later rules and can break dependencies, such as a later expression referencing a removed column. A proposed trial could trim customer identifiers, parse dates, deduplicate by an agreed key and join a reference table before export. Compare before/after counts and unmatched keys. Keep parsing settings and the reusable ruleset together so another input file does not silently change the meaning of a column.",
+        "zh": "每项转换保存在有序规则集中。选择较早规则会显示当时样本状态；插入规则会重算后续规则，可能破坏依赖，例如后续表达式引用已删除列。建议试验：修剪客户标识、解析日期、按约定键去重，再联接参考表后导出。应对比前后计数及未匹配键，并同时保存解析设置与可复用规则集，避免另一输入文件悄然改变列含义。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "quality",
+        "title_en": "A clean sample does not establish a clean full dataset",
+        "title_zh": "样本干净不能证明全量干净",
+        "en": "The FAQ describes export rejection when configured quality requirements are not met or the destination rejects invalid values. A preview may miss those rows; the erroneous-sample strategy surfaces problematic values for correction. Therefore acceptance needs both the preparation result and destination output, not only a preview or an AI suggestion. Test missing required fields, malformed dates and duplicate business identifiers on disposable data before scheduling the whole dataset. AI-assisted preparation is documented, but its accuracy was not measured here.",
+        "zh": "FAQ 说明：未达到配置质量要求或目标拒绝非法值时，导出会失败；预览可能漏掉这些行，可通过错误样本策略显示问题值并修正。因此验收需同时看准备结果与目标输出，不能只看预览或 AI 建议。定时处理全量前，可用可丢弃数据测试缺失必填值、非法日期和重复业务标识。文档提供 AI 辅助准备，本次未测其准确率。",
+        "source_refs": ["faq", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "jobs",
+        "title_en": "Read execution status at the stage level",
+        "title_zh": "按阶段读取执行状态",
+        "en": "A job records imports, transforms and exports with status, rows, storage and duration. “Not run” can be valid for a sectional/existing-data run, while “Cached” reuses previous data. Neither proves that fresh source data arrived in that execution. Inspect the output tab and destination details as well as the overall status, then reconcile exported keys and counts. The documentation offers retries and editing a failed pipeline; it does not establish exactly-once target delivery or atomic rollback across destinations.",
+        "zh": "Job 记录导入、转换、导出的状态、行数、存储及耗时。“Not run” 可出现在局部／既有数据运行中，“Cached” 使用先前数据，两者都不能证明该次收到新源数据。应检查输出页、目标详情及总体状态，再对照导出键和计数。文档提供重试及编辑失败流程，但不能据此证明目标恰好一次交付，或跨目标原子回滚。",
+        "source_refs": ["jobs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "count",
+        "title_en": "Processed rows include work before the final output",
+        "title_zh": "处理行包含最终输出之前的工作",
+        "en": "The pricing FAQ counts source stages even with no rules. Join/append/pivot operations count incoming parent rows; derived stages add processing when they have rules, while derived stages without rules do not. Re-running or editing can therefore cost more than counting final rows once. The usage counter resets monthly; downloading an existing job output adds no processing. Batch size is a separate per-operation constraint, so having monthly allowance does not establish that one large import fits. Use a small representative pipeline and inspect actual subscription usage before projecting cost.",
+        "zh": "定价 FAQ 将源后第一阶段计数，即使无规则也算；联接／追加／透视计算父阶段输入行，派生阶段有规则才增加处理，无规则不计。因此重跑或编辑的消耗可高于只计算一次最终行数。用量每月重置，下载既有任务输出不增加处理。批次大小是另一单次操作约束，有月度额度不代表一次大导入就能容纳。应先用小型代表流程检查实际订阅用量，再估算成本。",
+        "source_refs": ["meter"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans",
+        "title_en": "Free is manual; paid scope and storage remain bounded",
+        "title_zh": "Free 为手动，付费范围及存储也有边界",
+        "en": "Free lists 20K processed rows/month, one user and manual file/storage imports/exports, with no scheduling. Standard starts with three users, five sources and two destinations plus add-ons; Enterprise starts at ten users with custom row capacity. The page did not render a dependable paid amount for the selected volume/currency, so no numeric starting fee is inferred. The 15-day Standard trial is temporary. Audit retention is listed as one/two/six months for Free/Standard/Enterprise; that is not an unlimited backup or restore guarantee.",
+        "zh": "Free 列每月两万处理行、一用户、手动文件／存储导入导出，不含调度。Standard 从三用户、五源、两目标起，可加购；Enterprise 从十用户及定制行容量起。页面未渲染所选用量／币种的可靠付费金额，因此不推断数字起价。15 天 Standard 试用仅为临时使用。Free／Standard／Enterprise 审计保留分别为一／二／六个月，不等于无限备份或恢复保证。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Technical limits and ownership changes affect operation",
+        "title_zh": "技术限制与负责人变化影响运行",
+        "en": "The limits page lists local JSON/XML imports at 20MB, other local formats at 100MB, and four trigger-based jobs per pipeline/hour. It lists 500 columns/stage and 250 schedules/organization, while the general FAQ says 400 columns and unrestricted simultaneous schedules. Keep those conflicts unresolved pending account confirmation. If a scheduling user is removed or a connection is no longer shared, the FAQ calls for reauthentication. Include ownership transfer and a full-volume failure in evaluation instead of assuming an unchanged schedule will run forever.",
+        "zh": "限制页列本地 JSON／XML 导入 20MB，其他本地格式 100MB，以及每流程每小时四个触发任务。它还列每阶段 500 列、每组织 250 个调度，而通用 FAQ 写 400 列及同时调度不受限；需按实际账号确认，不能擅自消除冲突。若调度创建者被移除或连接不再共享，FAQ 要求重新认证。评估应包含负责人交接与全量失败，不能假定既有调度会永久运行。",
+        "source_refs": ["limits", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Assign ownership of quality and destination semantics",
+        "title_zh": "明确数据质量及目标语义负责人",
+        "en": "Evaluate DataPrep for repeatable cleaning and preparation into supported destinations when someone can approve transformations and reconcile outputs. It is a weaker fit when a full database replica, unrestricted event streaming or guaranteed automatic correction is assumed without connector evidence. Licensing, deployment beyond the described cloud service, exact AI/data-sharing conditions, region-specific price and measured recovery remain unverified. The examples here were not executed.",
+        "zh": "当有人能批准转换并对照输出时，可评估 DataPrep 用于向受支持目标重复清洗和准备数据。若无连接器证据却假设具备完整数据库复制、无限事件流或保证自动纠错，适用性较弱。本次未确认许可、文档云服务以外部署、具体 AI／数据共享条件、地区价格及实测恢复，本文示例未执行。",
+        "source_refs": ["home", "faq", "limits"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Zoho DataPrep: Rulesets, Quality Failures and Processed-Row Costs",
+    "title_zh": "Zoho DataPrep：规则集、质量失败与处理行费用",
+    "description_en": "Evaluate DataPrep 2.0 ordered rules, cached stages, invalid-data exports, stage-aware row counting and conflicting limits.",
+    "description_zh": "评估 DataPrep 2.0 有序规则、缓存阶段、非法数据导出、阶段行计数及冲突限制。",
+    "primary_intent": "Evaluate a repeatable Zoho DataPrep preparation pipeline and usage limits.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "General FAQ and technical limits disagree on columns and schedule scope. Current account behavior and paid amount need confirmation.",
+      "zh": "通用 FAQ 与技术限制在列数及调度范围上存在差异，需确认当前账号行为与付费金额。",
+      "source_refs": ["faq", "limits", "pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Connector-specific updates/deletes, AI privacy terms, license, UI languages, performance and recovery were not verified or tested.",
+      "zh": "连接器更新／删除、AI 隐私条款、许可、界面语言、性能及恢复未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

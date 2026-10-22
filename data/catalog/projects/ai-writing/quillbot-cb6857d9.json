@@ -1,0 +1,220 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "quillbot-cb6857d9",
+  "name": "QuillBot",
+  "website_url": "https://quillbot.com/",
+  "domain": "quillbot.com",
+  "identity_domain": "quillbot.com",
+  "category": "ai-writing",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "QuillBot supports text rewriting with modes, synonym controls and comparison features. The directly read help center distinguishes the free Paraphraser from Premium and documents plagiarism checking as a separate paid capability.\n\nA rewrite changes expression, while an integrity report highlights possible similarities. Neither establishes factual correctness or authorship. This profile uses accessible official help documents; the main product and price pages returned 403 and were not retried.",
+  "description_zh": "QuillBot 支持模式、同义词及版本比较改写。直接读取的帮助中心区分免费与 Premium，并将抄袭检查列为独立付费能力。\n\n改写改变表达，诚信报告提示相似，均不证明事实正确或作者身份。本文使用可访问官方帮助文档，主产品/价格页403未重试。",
+  "core_features": [
+    {
+      "name_en": "Mode-based paraphrasing",
+      "name_zh": "按模式改写",
+      "explanation_en": "Select an available mode and inspect phrasing changes.",
+      "explanation_zh": "选可用模式并检查措辞变化。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Separate plagiarism checking",
+      "name_zh": "独立抄袭检查",
+      "explanation_en": "Premium includes a monthly scan budget with report review.",
+      "explanation_zh": "Premium 有月检查预算及报告审核。",
+      "source_ref": "help-check",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Rewrite an authorized technical paragraph while preserving numbers and citations."
+    ],
+    "zh": ["改写授权技术段落并保护数字及引用。"],
+    "source_refs": ["product"],
+    "basis": "Editorial task suggestions based on official documentation; no observed deployment."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Prospective workflow owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Check the account’s actual limit, rewrite a short source paragraph and compare meaning before using any similarity report.",
+        "zh": "核账户真实上限，改短段并比含义，再使用相似报告。",
+        "source_refs": ["product", "help-check", "pricing"],
+        "evidence_type": "documentation_based_editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "not_verified",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Selection judgments and examples are documentation-based; no live workflow was tested.",
+        "zh": "选型判断与例子依据文档，未实测真实流程。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:47:49.238035+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Regional monthly/quarterly/annual subscription; separate paraphrase and scan allowances.",
+    "source_snapshot_en": "Free Paraphraser live help says hundred words/process and two modes. Premium monthly/quarterly/annual pricing varies by region, amount unverified; plagiarism budget 25,000 words/month plus packs. Main pricing HTTP 403.",
+    "source_snapshot_zh": "实读免费改写每次100词/两模式；Premium月/季/年按地区，金额未核；抄袭月25,000词可加购，主价格页403。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "QuillBot",
+      "title": "What is the difference between free and Premium in the Quillbot Paraphraser? – Quillbot Help Center",
+      "url": "https://help.quillbot.com/hc/en-us/articles/35855733045143-What-is-the-difference-between-free-and-Premium-in-the-Quillbot-Paraphraser",
+      "read_at": "2026-10-22T15:46:09.928262+00:00",
+      "excerpt_sha256": "39a6e9f82529e4764a56d5b12ce8aeed83cfd5969a7da361d16c77c8f5597b6d",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Live official help comparison read October 22 says free paraphrase hundred words, unlike search-cache 125; two free modes versus paid control."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "QuillBot",
+      "title": "What is the price of Quillbot Premium? – Quillbot Help Center",
+      "url": "https://help.quillbot.com/hc/en-us/articles/36491424881943-What-is-the-price-of-Quillbot-Premium",
+      "read_at": "2026-10-22T15:46:20.859362+00:00",
+      "excerpt_sha256": "1651b298dcee42052f17bed028ca06e8f9c6fd278b6e3a8af72bcc36915f2bad",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Official billing help lists monthly/quarterly/annual region-dependent plans without current amount; main price page 403 not retried."
+    },
+    {
+      "id": "help-check",
+      "type": "official_documentation",
+      "site": "QuillBot",
+      "title": "What is the difference between the free and Premium plans for Quillbot’s Plagiarism Checker? – Quillbot Help Center",
+      "url": "https://help.quillbot.com/hc/en-us/articles/35902624723991-What-is-the-difference-between-the-free-and-Premium-plans-for-Quillbot-s-Plagiarism-Checker",
+      "read_at": "2026-10-22T15:46:23.745725+00:00",
+      "excerpt_sha256": "0df10a9fb960495ee682a67c377489ddcaad407576689eb0a4134f6de5c468a4",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "research_notes_en": "Official checker help: paid-only plagiarism with monthly twenty-five-thousand-word budget and additional packs; separate from paraphrase allowance."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:47:49.238035+00:00",
+    "scope": "Public official documents read; no purchase, account setup, independent review, hands-on test, identity verification or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Official documentation describes vendor functionality, not independent evidence of reliability, adoption or outcomes.",
+    "Original English synthesis and corresponding Chinese draft; examples and fit judgments are editorial guidance.",
+    "Current public pricing is a dated snapshot; purchase conditions remain subject to vendor confirmation."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "meaning",
+        "title_en": "Compare the rewrite against the source claim",
+        "title_zh": "对照原始主张审核改写",
+        "en": "For an illustrative technical paragraph, protect numbers, uncertainty, attribution and product terms. Compare every proposed sentence before accepting it. More synonyms or a formal tone can alter precision; a smooth result may still misstate the evidence. Use only authorized source material and retain references rather than treating paraphrasing as a replacement for attribution.",
+        "zh": "例如技术段落，应保护数字、限定、归属和产品术语，逐句核建议。更多同义词或正式语气会改精度，顺畅也可能误述证据。应授权源材料并保引用，改写不能代替归属。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "allowance",
+        "title_en": "Use the live allowance with its source date",
+        "title_zh": "按实读日期使用当前额度",
+        "en": "The live help page states one hundred words per free paraphrase, with Standard and Fluency modes. Search cached text said 125, so that older number is not used as current. Premium adds unlimited word count, custom modes and side-by-side comparison; its history is described as up to fifty past paraphrases per month. Confirm actual account behavior and language-specific mode availability.",
+        "zh": "实读帮助称免费每次100词，Standard/Fluency；搜索缓存125不当现值。Premium 增不限词、自定义和并排比较，历史称每月最多50条，应核账户及语言模式差别。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "checking",
+        "title_en": "Do not transfer unlimited rewriting to plagiarism scans",
+        "title_zh": "不限改写不等于不限抄袭扫描",
+        "en": "The checker help lists no free access and a Premium scan budget of 25,000 words/month, with additional word packs available. Similarity needs interpretation: quotations and cited passages can be legitimate, while an unflagged unsupported claim remains unsupported. No detector score, originality or report completeness was measured.",
+        "zh": "检查帮助称免费不可用，Premium 月25,000词可加购。相似需解释，引文及已引用段落可合理，未标无来源主张仍无依据；检测分数、原创或报告完整均未测。",
+        "source_refs": ["help-check"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Confirm regional billing before subscribing",
+        "title_zh": "订阅前核地区账单",
+        "en": "The billing article lists monthly, quarterly and annual plans and says location/local currency can adjust price. No current amount was established from that article, and no checkout was accessed. Evaluate a small passage first. No paraphrase, subscription, scan, cancellation or export was executed; contract data handling, source license and self-hosting remain unverified.",
+        "zh": "账单文列月/季/年，价格可按地区和当地币调整，未确立现金额或访问结算。应先试短段；本文未改写、订阅、扫描、取消或导出，合同数据、源码许可及自托管未核。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    "Main product/pricing HTTP 403 not retried; accessible official help used. Live hundred-word allowance differs from search cached 125.",
+    "No rewrite, check, billing, exact price, privacy, license or self-hosting verified."
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Quillbot: workflow, pricing and limits",
+    "title_zh": "Quillbot：工作流程、定价与边界",
+    "description_en": "QuillBot supports text rewriting with modes, synonym controls and comparison features. The directly read help center distinguishes the free Paraphraser from Premium and documents plagiarism checking as a separate paid ca",
+    "description_zh": "QuillBot 支持模式、同义词及版本比较改写。直接读取的帮助中心区分免费与 Premium，并将抄袭检查列为独立付费能力。"
+  }
+}

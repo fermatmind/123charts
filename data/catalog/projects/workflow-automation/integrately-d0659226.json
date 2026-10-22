@@ -1,0 +1,372 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "integrately-d0659226",
+  "name": "Integrately",
+  "website_url": "https://integrately.com/",
+  "domain": "integrately.com",
+  "identity_domain": "integrately.com",
+  "category": "workflow-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Integrately is a hosted service for connecting app events to actions in other apps. It offers ready-made automations, an AI-assisted setup route and a configurable Automation Builder. Its main evaluation question is whether the exact trigger, destination operation and account permissions cover a repeatable business handoff.\n\nAn automation is the complete workflow; a task is a billable unit within it. Conditions, searches and data modifications can increase task use even when they are displayed inside an action. This documentation-based profile distinguishes the limited Free plan from paid features and the premium trial.",
+  "description_zh": "Integrately 是把应用事件连接到其他应用动作的托管服务，提供现成自动化、AI 辅助搭建入口及可配置的 Automation Builder。评估重点是具体触发器、目标操作与账户权限能否覆盖需要重复执行的业务交接。\n\nAutomation 指完整流程，Task 则是其中的计费单位。条件判断、查询及数据修改即使显示在动作内部，也可能增加任务消耗。本文依据文档研究，区分功能有限的 Free、付费功能及高级功能试用。",
+  "core_features": [
+    {
+      "name_en": "Ready-made and custom automations",
+      "name_zh": "现成与自定义自动化",
+      "explanation_en": "Choose an offered trigger/action pairing or configure your own flow.",
+      "explanation_zh": "选择提供的触发器与动作组合，或配置自己的流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "guide",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Field mapping",
+      "name_zh": "字段映射",
+      "explanation_en": "Map source values or earlier-step data to destination fields.",
+      "explanation_zh": "将源数据或前序步骤输出映射到目标字段。",
+      "explanation_scope": "product_specific",
+      "source_ref": "guide",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Webhook / API Integration",
+      "name_zh": "Webhook / API 集成",
+      "explanation_en": "Use documented incoming-event and send-data-to-URL scenarios.",
+      "explanation_zh": "使用文档列出的传入事件及向 URL 发送数据场景。",
+      "explanation_scope": "product_specific",
+      "source_ref": "webhook",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-dependent AutoRetry",
+      "name_zh": "依套餐提供的 AutoRetry",
+      "explanation_en": "Professional or higher can enable company-wide retry from the owner account.",
+      "explanation_zh": "Professional 及以上可由所有者启用公司范围的重试。",
+      "explanation_scope": "product_specific",
+      "source_ref": "retry",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Send defined spreadsheet intake records to a supported destination action.",
+      "Route records through conditions and budget their internal processing."
+    ],
+    "zh": [
+      "把字段明确的表格申请记录发送到受支持的目标动作。",
+      "按条件处理记录，并估算内部处理消耗。"
+    ],
+    "source_refs": ["sheets", "guide", "pricing"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "SaaS operations coordinator",
+      "CRM automation maintainer",
+      "Marketing operations specialist"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm both apps’ exact trigger/action and API permissions.",
+        "zh": "核对两个应用的具体触发器、动作及 API 权限。",
+        "source_refs": ["guide", "retry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Connect a test account, inspect automatic mapping and test required fields.",
+        "zh": "连接测试账户，检查自动映射并测试必填字段。",
+        "source_refs": ["guide"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Turn on the flow, inspect History and check quota and retry entitlements.",
+        "zh": "启用流程，检查 History、额度及重试权限。",
+        "source_refs": ["retry", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Failed actions may still be awaiting AutoRetry, so a silent inbox is not proof of successful delivery.",
+        "zh": "失败动作可能仍在等待 AutoRetry，未收到邮件不能证明交付成功。",
+        "source_refs": ["retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "An exhausted task allowance stops actions even while records accumulate.",
+        "zh": "任务额度耗尽会停止动作，即使记录继续积累。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "classification": "commercial_SaaS_application_use_license",
+    "name": "Integrately Terms Of Use",
+    "url": "https://integrately.com/home/terms",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "limited_free_and_task_based_paid_SaaS",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:00:29.731185Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Successful billable processing units; annual-billing examples are distinguished from monthly purchases."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/integrately",
+      "read_at": "2026-10-22T08:47:46.159Z",
+      "excerpt_sha256": "c3d59740079ad34bc794cb3d3351ab3f9381de814b1efc469f73c4d52df37dc3",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Integrately",
+      "title": "20 Million+ Ready Automations For 1500+ Apps | Integrately",
+      "url": "https://integrately.com/",
+      "read_at": "2026-10-22T10:00:29.731185Z",
+      "excerpt_sha256": "74cde1a1474dcc48312dec3aea8772f0762192990e77ce2332c268c2a35a18b1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Hosted app automation positioning and account-connection workflow reviewed; marketing rankings are not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Integrately",
+      "title": "Integrately Pricing - Integrate Your Apps In 1 Click",
+      "url": "https://integrately.com/pricing",
+      "read_at": "2026-10-22T10:00:32.913198Z",
+      "excerpt_sha256": "d68d217861e7b4591cf7815883c3e8134de4569670737f5d45021ecd31a54ff2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Annual-billing displayed prices, Free limits, task definition and exhausted-quota behavior read; comparative cost claims excluded."
+    },
+    {
+      "id": "guide",
+      "type": "official_documentation",
+      "site": "Integrately",
+      "title": "Integrate Your Apps In 1 Click With Integrately",
+      "url": "https://integrately.com/docs",
+      "read_at": "2026-10-22T10:01:06.693534Z",
+      "excerpt_sha256": "7c7fd7a9b996f3817e8eceedfd3655284cbf46b917fceebaf1aced6fe38c5ca3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read trigger/action setup, OAuth/API/webhook credentials, mapping and builder guidance in returned excerpt."
+    },
+    {
+      "id": "retry",
+      "type": "official_documentation",
+      "site": "Integrately",
+      "title": "Integrate Your Apps In 1 Click With Integrately",
+      "url": "https://integrately.com/docs",
+      "read_at": "2026-10-22T10:02:04.649069Z",
+      "excerpt_sha256": "45c069e1b4b2e03b5d157c2b8304219d426063faa9eb2e5eab2d73abb11845f6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read detailed AutoRetry schedule, plan requirement, owner setting, history behavior and troubleshooting sections."
+    },
+    {
+      "id": "sheets",
+      "type": "official_integration",
+      "site": "Integrately",
+      "title": "Google Sheets Integrations: 341K+ Ready Integrations ▶️",
+      "url": "https://integrately.com/integrations/google-sheets",
+      "read_at": "2026-10-22T10:04:13.221449Z",
+      "excerpt_sha256": "b771129de48d8d6e2177b8c26016a7cb03d269b58abb839646059c8a5ec1d226",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Google Sheets connector page and offered trigger/action scope reviewed; trial and sustained Free are separate."
+    },
+    {
+      "id": "webhook",
+      "type": "official_integration",
+      "site": "Integrately",
+      "title": "Webhook / API Integration Integrations: 3K+ Ready Integrations ▶️",
+      "url": "https://integrately.com/integrations/webhook-api",
+      "read_at": "2026-10-22T10:04:16.496700Z",
+      "excerpt_sha256": "1e077e97cb384804eeaf884a4b218bbf86cb95cdf1323731aaff86dffb2a4afe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Webhook/API Integration catalog exposes send-to-URL and incoming-operation scenarios; not a tested endpoint."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Integrately",
+      "title": "Terms Of Use",
+      "url": "https://integrately.com/home/terms",
+      "read_at": "2026-10-22T10:04:10.105360Z",
+      "excerpt_sha256": "5a70dc4aa154b91f152229da5b3a624faab6dd03a119cdfe6bad1b23a132a849",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "SaaS owner CompanyHub and limited application-use license reviewed; no source redistribution entitlement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:04:16.496700Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "guide", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "Start with one event and one target action",
+        "title_zh": "从一个事件和一个目标动作开始",
+        "en": "The setup guide lets you select a prepared automation or choose your own trigger/action pair. Account connection can use OAuth, API credentials or a webhook depending on the app. Our evaluation suggestion is to name each connection after its business account and use a destination where test writes are acceptable. A connector name alone does not establish that your app subscription allows API access, that the connected user can see the necessary record, or that a template’s defaults match your fields.",
+        "zh": "搭建指南允许选择现成自动化，也可自行选择触发器和动作。连接方式取决于应用，包括 OAuth、API 凭据或 webhook。建议按业务账户命名连接，并选择允许测试写入的目标。连接器名称本身不能证明源应用订阅已开放 API、连接用户能读取所需记录，或模板默认值符合实际字段。",
+        "source_refs": ["guide", "retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "example",
+        "title_en": "A spreadsheet handoff needs an explicit record contract",
+        "title_zh": "表格交接需要明确记录约定",
+        "en": "The Google Sheets integration catalog provides a starting point for row-based automations. For a hypothetical intake sheet, define request_id, email and requested_date, then inspect the exact row trigger and destination create operation in the builder. Map the request title and email deliberately rather than trusting automatic suggestions. Specify whether edits should update an existing destination or create another one, and keep an identifier to compare the source row with its result. This is a proposed evaluation; no connected spreadsheet or destination was tested.",
+        "zh": "Google Sheets 集成目录可作为逐行自动化的起点。以假设的申请表为例，可定义 request_id、email 与 requested_date，再到构建器核对具体行触发器及目标创建操作。应明确映射标题与邮箱，不能只依赖自动建议；还要规定编辑源行时应更新已有目标还是创建新记录，并保留能对照源行与结果的标识。本文提出评估方法，未连接或测试任何表格及目标系统。",
+        "source_refs": ["sheets", "guide"],
+        "evidence_type": "hypothetical_evaluation_example"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Builder capability is separate from plan entitlement",
+        "title_zh": "构建器能力与套餐权限分别核对",
+        "en": "Automation Builder supports additional apps, conditions, routes and field modifiers. Those capabilities should be matched to the purchased plan rather than inferred from an introductory demo. Free is shown with 100 tasks, five automations, a 15-minute update time and a single-step scope; webhooks are excluded. Paid tiers expand those boundaries. If a process must react faster than a polling interval, verify whether the particular app event uses a webhook and whether the account’s plan permits it. A diagram with two branches does not prove that both were exercised correctly.",
+        "zh": "Automation Builder 支持增加应用、条件、分支和字段修改，但应按购买套餐核对权限，不能从演示推定。Free 显示 100 个任务、五条自动化、15 分钟更新间隔及单步骤范围，不含 webhook；付费档位扩大这些边界。如果业务需要比轮询间隔更快的反应，应核对具体应用事件是否采用 webhook、账户套餐是否允许。画出两个分支也不代表它们都已被正确验证。",
+        "source_refs": ["guide", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "units",
+        "title_en": "Count internal processing as well as destination writes",
+        "title_zh": "目标写入与内部处理都要计数",
+        "en": "The pricing FAQ counts successful actions, conditions/branching, searches and data modifications, including inline ones; triggers and failed actions do not count. As a hypothetical budget, a record passing one condition, one inline cleanup and one create action consumes three tasks. One hundred equivalent successful records consume 300 tasks, before extra lookups or branches. The number of visible app cards therefore is not a reliable task estimate. Confirm consumption with the actual workflow history before projecting a monthly budget.",
+        "zh": "定价 FAQ 将成功动作、条件或分支、查询和数据修改计入任务，内联处理也计入；触发器及失败动作不计。假设每条记录经过一个条件、一次内联清理及一个创建动作，就是三个任务；一百条同类成功记录为 300 个任务，额外查询或分支尚未计入。因此可见应用卡片数量并不能可靠估算任务。预测月度预算前，应结合真实流程历史核对消耗。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "cost",
+        "title_en": "Read annual billing and quota exhaustion literally",
+        "title_zh": "按实际年付条件及额度耗尽行为理解费用",
+        "en": "At the read date the annual-billing display shows Starter at $19.99/month for 2,000 tasks and Professional at $39/month for 10,000; taxes are extra. A monthly equivalent under annual billing is not a month-to-month purchase price. The $5 banner is a first-month promotion. Premium access is also advertised as a 14-day trial. When tasks run out, records can accumulate while actions stop; history-based resumption requires more allowance or an upgrade. Confirm retention and resumption conditions before treating that backlog as durable delivery.",
+        "zh": "读取时，年付展示为 Starter 折合每月 $19.99、含 2,000 个任务；Professional 折合每月 $39、含 10,000 个任务，税费另计。年付月均金额不是逐月购买价格。$5 横幅属于首月促销，高级功能另宣传 14 天试用。任务耗尽后，记录可继续积累，但动作停止；需补充额度或升级后从历史恢复。把积压记录当可靠交付队列前，应进一步确认保留及恢复条件。",
+        "source_refs": ["pricing", "sheets"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retry",
+        "title_en": "AutoRetry delays the final error signal",
+        "title_zh": "AutoRetry 会延后最终错误信号",
+        "en": "The detailed guide requires Professional or higher and owner activation. It documents five retries over roughly 10.5 hours; while retrying, error emails and manual replay are suppressed. Changes can affect the next attempt. The guide also uses rounded ten-hour wording, so the documented schedule is more useful than a precise uptime promise. Our recommendation is to inspect History before replaying or changing a record, and distinguish transient connectivity failure from a bad required field. Repeated attempts cannot make a permanently invalid payload valid.",
+        "zh": "详细指南要求 Professional 及以上，由所有者开启；列出五次重试，跨度约 10.5 小时，期间不发送错误邮件，也不能手工重放。修改配置可能影响下一次尝试。指南另有约十小时的概括表述，因此具体时间表比把它当可用性承诺更有帮助。建议重放或修改记录前检查 History，区分暂时连接问题与必填字段错误。不断重试并不会让永久无效的负载自动变有效。",
+        "source_refs": ["retry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api",
+        "title_en": "A generic API path still needs endpoint-specific design",
+        "title_zh": "通用 API 入口仍需按端点设计",
+        "en": "The Webhook / API Integration catalog includes receiving operations and sending data to a URL. For an unsupported operation, establish the required method, authentication, body format and response mapping before relying on that route. As an evaluation exercise, send a non-sensitive sample with a stable request identifier to a test endpoint, then inspect the receiver and the automation history. Generic HTTP capability does not establish compatibility with every API, signed-request scheme or rate limit.",
+        "zh": "Webhook / API Integration 目录包含接收事件及向 URL 发送数据的场景。若通过该入口补足未支持的操作，应先明确方法、认证、请求体格式与响应映射。建议用稳定请求标识向测试端点发送非敏感样例，再对照接收端及自动化历史。通用 HTTP 能力不能证明兼容所有 API、签名方案或限流规则。",
+        "source_refs": ["webhook"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Hosted handoffs suit a team that can own mappings and exceptions",
+        "title_zh": "托管交接也需要有人维护映射与异常",
+        "en": "Integrately is worth evaluating for operations teams with supported SaaS apps and well-defined record transitions. It is less suitable when the required app operation, latency or exception handling falls outside the selected plan, or when the organization requires a self-operated runtime that has not been established here. The terms identify CompanyHub as the SaaS operator and grant limited application use, not a general source-code license. Do not confuse an API integration or an automation-embedding link with the right to distribute or self-host the service. Product speed, savings and customer-result claims were not tested.",
+        "zh": "当运营团队使用受支持 SaaS，并能明确记录如何交接时，Integrately 值得评估。如果所需应用操作、延迟或异常处理超出套餐范围，或组织要求本次未确认的自运营运行时，则适用性较弱。条款确认 CompanyHub 为 SaaS 运营方，授予有限应用使用权，而非通用源码许可。API 集成或自动化嵌入链接不等于有权分发或自托管整个服务。本文未验证产品速度、节省费用或客户成果。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Integrately: App Workflows, Task Counting, Free Limits and AutoRetry",
+    "title_zh": "Integrately：应用流程、任务计数、免费限制与 AutoRetry",
+    "description_en": "Understand Integrately setup, field mapping, inline task charges, annual prices and the conditions behind automatic retries.",
+    "description_zh": "理解 Integrately 的搭建、字段映射、内联任务消耗、年付价格及自动重试条件。",
+    "primary_intent": "Evaluate hosted app handoffs with realistic task and failure behavior.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app account was connected; task counters, backlog retention, live trigger latency, data residency, interface languages and regional payment conditions remain untested.",
+      "zh": "未连接应用账户；任务计数、积压保留、真实触发延迟、数据存储地区、界面语言及地区支付条件均未实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Rounded ten-hour and detailed 10.5-hour retry descriptions coexist in the guide; account behavior was not measured.",
+      "zh": "指南同时存在约十小时及详细约 10.5 小时的重试描述；未测量账户实际行为。",
+      "source_refs": ["retry"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

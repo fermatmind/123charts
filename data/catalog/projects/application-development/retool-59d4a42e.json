@@ -1,0 +1,364 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "retool-59d4a42e",
+  "name": "Retool",
+  "website_url": "https://retool.com/",
+  "domain": "retool.com",
+  "identity_domain": "retool.com",
+  "category": "application-development",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Retool is an application platform for building interfaces and logic connected to databases and APIs. Its current documentation separates AI-generated React-based Apps from Classic apps built in a drag-and-drop IDE, alongside Workflows and Agents. Choosing a product surface matters because its editing and publishing instructions differ.\n\nA team could evaluate a customer support console that reads customer records and invokes an approved update function. Retool supplies resources, builders and access controls; the team must still configure data access, test writes and select a plan with the required permissions. Documentation review does not establish that a generated app is correct or secure.",
+  "description_zh": "Retool 是连接数据库与 API、构建界面及逻辑的应用平台。当前文档区分 AI 生成的 React Apps 与使用拖放 IDE 的 Classic apps，另有 Workflows 和 Agents。不同产品界面的编辑与发布流程有所不同，需先确定范围。\n\n团队可评估读取客户记录、调用已批准更新函数的客服控制台。Retool 提供资源连接、构建器与权限控制；团队仍需配置数据访问、测试写操作，并选择具有所需权限的方案。文档研究不能证明生成应用正确或安全。",
+  "core_features": [
+    {
+      "name_en": "AI app builder",
+      "name_zh": "AI 应用构建器",
+      "explanation_en": "Prompt a React-based app, test its functions and review publication checks.",
+      "explanation_zh": "通过提示构建 React 应用，测试函数并检查发布条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "apps",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Classic components and queries",
+      "name_zh": "Classic 组件与查询",
+      "explanation_en": "Bind component properties to queries and react to events in the Classic IDE.",
+      "explanation_zh": "在 Classic IDE 中绑定组件属性与查询，并响应事件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "classic",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Reusable data resources",
+      "name_zh": "复用数据资源",
+      "explanation_en": "Configure each API/database as a resource used by app functions or queries.",
+      "explanation_zh": "将各 API／数据库配置为应用函数或查询使用的资源。",
+      "explanation_scope": "product_specific",
+      "source_ref": "resources",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Plan-dependent group access",
+      "name_zh": "按方案提供的组权限",
+      "explanation_en": "Business adds custom groups and environment-specific resource permissions.",
+      "explanation_zh": "Business 增加自定义组及按环境划分的资源权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "permissions",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a database/API-connected support console",
+      "Compare permissions and release behavior across Apps and Classic"
+    ],
+    "zh": [
+      "评估连接数据库／API 的客服控制台",
+      "比较 Apps 与 Classic 的权限及发布行为"
+    ],
+    "source_refs": ["apps", "classic", "permissions"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Internal-tools developers",
+      "Operations application teams",
+      "Data application developers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the builder and confirm organization enablement.",
+        "zh": "选定构建器并确认组织已启用。",
+        "source_refs": ["apps", "classic"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use disposable sample data and test a resource, read and write independently.",
+        "zh": "使用可丢弃示例数据，分别测试资源、读取及写入。",
+        "source_refs": ["resources", "apps"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify plan permissions, release checks and seat/usage costs.",
+        "zh": "核对方案权限、发布检查及席位／用量费用。",
+        "source_refs": ["permissions", "apps", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Free/Team group access cannot be customized.",
+        "zh": "Free／Team 组权限不能自定义。",
+        "source_refs": ["permissions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The tutorial mock API is unauthenticated and unsuitable for sensitive production data.",
+        "zh": "教程模拟 API 无认证，不适合敏感生产数据。",
+        "source_refs": ["resources"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "New Apps and Classic are distinct documented editing surfaces; feature parity is unverified.",
+        "zh": "新 Apps 与 Classic 是不同编辑界面，功能一致性未核实。",
+        "source_refs": ["apps", "classic"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium_seat_and_usage_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:01:30.782209Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free up to5 users; annual Team10/builder plus5/internal user monthly, Business50 plus15; AI/workflow/external usage and self-hosted terms separate.",
+    "summary_zh": "Free 最多5用户；年付 Team 每月每构建者10加内部用户5，Business50加15；AI／工作流／外部用量及自托管另计。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/retool",
+      "read_at": "2026-10-22T08:50:17.410Z",
+      "excerpt_sha256": "314a412f9f2374546bfbe28abdbb86090a5988441dde14b3d13ac03886003a65",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Build internal software better, with AI. | Retool",
+      "url": "https://retool.com/",
+      "read_at": "2026-10-22T12:01:30.782209Z",
+      "excerpt_sha256": "027043a7dd8c29f5eece6c1922adb807ea35e6abe0e76b2af01ce19d6ac0464f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current application-building product scope read; marketing speed/security claims not independently validated."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Retool",
+      "title": "Pricing | Retool",
+      "url": "https://retool.com/pricing",
+      "read_at": "2026-10-22T12:01:30.726395Z",
+      "excerpt_sha256": "4ad754b409303e5bab429ee8020e0f9ced742adf7599211f8616626c0fa19ffc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Annual-billing builder/internal rates, Free user cap, nonrolling AI credits, workflow run add-ons and external-user/self-hosted conditions read."
+    },
+    {
+      "id": "apps",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Apps quickstart | Retool Docs",
+      "url": "https://docs.retool.com/build/apps/quickstart",
+      "read_at": "2026-10-22T12:03:58.310117Z",
+      "excerpt_sha256": "89450ea48769e3cb21b2670e3b15ca04eb29d770564915f78c5b9dbfe859acac",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "New React-based AI Apps workflow, organization configuration, function approval and publish-conflict checks actually read; distinct from Classic."
+    },
+    {
+      "id": "classic",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Introduction to classic apps | Retool Docs",
+      "url": "https://docs.retool.com/classic-apps/concepts/intro",
+      "read_at": "2026-10-22T12:02:07.530187Z",
+      "excerpt_sha256": "c16a171e112d5f6da6330b05d7866f7fd2f1598cdd5944060ca1b7f00659f553",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Requested Apps quickstart redirected to Classic app concepts. Components, queries, dependency references/events read; canonical Classic URL retained."
+    },
+    {
+      "id": "resources",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Resources quickstart | Retool Docs",
+      "url": "https://docs.retool.com/data-sources/quickstart",
+      "read_at": "2026-10-22T12:07:27.570769Z",
+      "excerpt_sha256": "72506b8e56bfb79090c2a08950baaf635992fc604b334564222c7087cfd29139",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "REST sample resource creation/test and unauthenticated mock API warning read. Plan-dependent resource access checked."
+    },
+    {
+      "id": "permissions",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Permissions quickstart | Retool Docs",
+      "url": "https://docs.retool.com/permissions/quickstart",
+      "read_at": "2026-10-22T12:03:58.251966Z",
+      "excerpt_sha256": "ce990aa28721b0989109883c633e482ac6d7e8bb16528a1f0405479c871fd66f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Additive group permissions; fixed All Users/Admin on Free/Team; Business custom groups/object roles/environment access; Enterprise scopes read."
+    },
+    {
+      "id": "hosting",
+      "type": "official_documentation",
+      "site": "Retool",
+      "title": "Self-hosted deployments | Retool Docs",
+      "url": "https://docs.retool.com/self-hosted",
+      "read_at": "2026-10-22T12:03:58.333585Z",
+      "excerpt_sha256": "14c281b8534d98a359e545ec7813a7777caebdca737c73916c1892266a4b3944",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Retool-managed AWS versus self-managed operations; production Kubernetes/Helm and testing Docker scope read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:07:27.570769Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "apps", "classic", "resources"],
+  "profile": {
+    "sections": [
+      {
+        "id": "build",
+        "title_en": "Choose Apps or Classic before following a tutorial",
+        "title_zh": "先选 Apps 或 Classic，再按对应指南操作",
+        "en": "The new Apps quickstart requires an admin to enable the builder for the organization. Describe the data, components and allowed actions in the prompt, then make targeted edits in the canvas. Classic instead uses an IDE with visual components, queries and expressions such as {{ query.data }}. Its dependency graph propagates referenced values and can warn about circular dependencies. Neither description establishes identical feature support across both builders; evaluate conversion separately.",
+        "zh": "新 Apps 快速入门要求管理员为组织启用构建器。提示应说明数据、组件及允许操作，再在画布定点编辑。Classic 则通过 IDE 使用可视组件、查询及 {{ query.data }} 等表达式；依赖图传播引用值，并可提示循环依赖。两套描述不能证明构建器功能完全相同，转换需单独评估。",
+        "source_refs": ["apps", "classic"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data",
+        "title_en": "Test a resource before introducing production writes",
+        "title_zh": "引入生产写操作前先测试资源",
+        "en": "A resource stores the configured connection properties for a data source. The documented REST walkthrough creates a sample customer API, registers its base URL and tests a generated table/function; Classic apps use the REST query editor. The sample API is temporary and unauthenticated, explicitly unsuitable for sensitive data. For a proposed support console, first verify a read-only result, then add a narrow update operation and inspect both the response and stored record. No resource or customer data was created here.",
+        "zh": "资源保存数据源连接配置。REST 指南生成示例客户 API、登记基础 URL，再测试生成的表格／函数；Classic 使用 REST 查询编辑器。示例 API 临时且无认证，明确不适合敏感数据。建议客服控制台先确认只读结果，再添加范围明确的更新操作，同时检查响应与存储记录。本次未创建资源或客户数据。",
+        "source_refs": ["resources"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "publish",
+        "title_en": "Function approval and publication conflicts need review",
+        "title_zh": "需检查函数批准与发布冲突",
+        "en": "In the new builder, preview can ask approval for data-changing functions. Publication checks include approved functions and conflicts with another user’s changes or published version; the guide offers Integrate changes for a newer publication. Choosing a folder gives its Use-access users access to the published app. Test read, rejected write and intended write as the target user before sharing. Publication is an app-release step, not evidence that a business operation can be reversed.",
+        "zh": "新构建器预览可要求批准修改数据的函数。发布检查包括函数已批准，以及与其他用户改动或已发布版本冲突；遇较新发布可使用 Integrate changes。选择文件夹后，具备该文件夹 Use 权限的用户可访问发布应用。分享前应以目标用户测试读取、拒绝写及预期写。应用发布本身不能证明业务操作可撤销。",
+        "source_refs": ["apps"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Free and Team have fixed access groups",
+        "title_zh": "Free 与 Team 的权限组固定",
+        "en": "The permissions quickstart states that Free/Team members automatically join All Users, with Edit access to apps/workflows/agents and Own access to resources; these levels and memberships cannot be customized. Business adds custom groups, object roles and per-environment resource access. Group grants are additive: another group may broaden a user’s access. Evaluate two roles and direct resource access, not only whether a button is hidden. Enterprise adds sensitive organization scopes and finer admin separation.",
+        "zh": "权限快速入门说明 Free／Team 成员自动加入 All Users，对应用／工作流／Agent 有 Edit、对资源有 Own，不能自定义这些级别及成员关系。Business 增加自定义组、对象角色及按环境的资源权限。组授权是叠加关系，另一组可能扩大用户权限。应测试两种角色及直接资源访问，不能仅看按钮是否隐藏。Enterprise 增加敏感组织权限范围及更细管理员职责拆分。",
+        "source_refs": ["permissions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Separate builders, consumers and usage",
+        "title_zh": "区分构建者、使用者与用量",
+        "en": "The annual-billing view lists Team at $10 per builder/month plus $5 per internal user/month, and Business at $50 plus $15 respectively; Enterprise is custom. A builder created or edited an app/workflow in the billing cycle. Free allows up to five users and 250 pooled AI credits/month; Team has 1,000 and Business 3,000, with no rollover. Paid user capacity does not mean free seats. Workflows list 500 monthly runs on Free and 5,000 on Team/Business, with $75 per additional 5,000 runs/month. External access and self-hosted commercial terms need separate sizing.",
+        "zh": "年付视图列 Team 每构建者每月 $10、每内部用户 $5，Business 分别 $50 与 $15，Enterprise 询价。构建者指该计费周期创建或编辑应用／工作流的用户。Free 最多五用户，每月共享 250 AI 积分；Team 1,000、Business 3,000，均不结转。付费方案可容纳更多用户不代表席位免费。Workflows 列 Free 每月 500 次，Team／Business 5,000 次，额外每月 5,000 次 $75。外部访问及自托管商业条款需另行核算。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Self-managed hosting includes maintenance responsibility",
+        "title_zh": "自行托管包含维护责任",
+        "en": "Retool distinguishes its managed single-tenant AWS deployment from self-managed hosting. The latter makes the customer responsible for deployment, updates and operations; the guide specifies Kubernetes with Helm for production and a Linux VM with Docker for testing. Hosting choice does not establish an open-source license or eliminate subscription conditions. Teams needing infrastructure control should evaluate upgrades, backups, network access and recovery with their chosen plan. No instance, migration or recovery was operated.",
+        "zh": "Retool 区分代管的单租户 AWS 部署与客户自行托管。后者由客户负责部署、更新及运维；指南指定生产使用 Kubernetes／Helm，测试可用 Linux VM／Docker。托管选择不能证明开源许可，也不会消除订阅条件。需要基础设施控制的团队应结合方案评估升级、备份、网络访问及恢复。本次未操作实例、迁移或恢复。",
+        "source_refs": ["hosting"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Retool: Apps, Classic, resource access and seat pricing",
+    "title_zh": "Retool：Apps、Classic、资源权限及席位计价",
+    "description_en": "Review app-building workflows, function approvals, fixed versus custom permissions, hosting and usage costs.",
+    "description_zh": "了解应用构建流程、函数批准、固定与自定义权限、托管及用量费用。",
+    "search_intent_en": "Evaluate Retool internal app access and operating costs.",
+    "search_intent_zh": "评估 Retool 内部应用访问及运行费用。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No app, resource, write, permission, publication, subscription or self-hosted deployment was tested.",
+      "zh": "未实测应用、资源、写入、权限、发布、订阅或自托管。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual checkout, external-user tiers/definitions, AI overages and self-hosted eligibility require a current quote.",
+      "zh": "实际结账、外部用户梯度／定义、AI 超额及自托管资格需确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Full platform license, builder feature parity, current release compatibility, UI languages, recovery and performance were not independently verified.",
+      "zh": "完整平台许可、构建器功能一致性、当前版本兼容、界面语言、恢复及性能未经独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

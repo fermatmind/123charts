@@ -1,0 +1,474 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "smartsupp-b1532cf5",
+  "name": "Smartsupp",
+  "website_url": "https://www.smartsupp.com/",
+  "domain": "www.smartsupp.com",
+  "identity_domain": "smartsupp.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Smartsupp combines human live chat and connected-channel inboxes with rule-based Flows,AI Reply Assistant and the separately priced Mira AI shopping agent. Mira reads selected website content and a product feed to answer questions and recommend products. Reply Assistant helps a human write;it is not the same service or quota as an autonomous Mira conversation. Current plans also differ from older Standard/Pro subscriptions.\n\nFor an illustrative shop inquiry,Mira can answer a specific product-stock question from a configured XML feed,then collect contact details for human follow-up when needed. Availability is a recommendation preference rather than a stock-only filter,and the bot does not itself detect whether a human is online. Public limits and pricing documents contain several conflicts. This is public-documentation research without an account,widget,feed,AI answer,channel connection,payment or export test.",
+  "description_zh": "Smartsupp 将真人在线聊天及连接渠道收件箱，与规则型 Flows、AI Reply Assistant 及另付费的 Mira AI 购物助手结合。Mira 读取选定网站内容与产品 feed，回答问题并推荐商品。Reply Assistant 帮真人写作，不是与自主 Mira 对话相同的服务或额度。当前套餐也不同于旧 Standard／Pro 订阅。\n\n以假设网店咨询为例，Mira 可按已配置 XML feed 回答具体商品库存问题，需要时收集联系资料交真人跟进。可用性只是推荐偏好，不是仅现货过滤，机器人自身不检查真人是否在线。公开额度及价格文档存在多项冲突。本稿为公开文档研究，未测试账号、组件、feed、AI 回答、渠道连接、支付或导出。",
+  "core_features": [
+    {
+      "name_en": "Human multichannel inbox",
+      "name_zh": "真人多渠道收件箱",
+      "explanation_en": "Handle website and supported channels with plan-specific operators,email connections and history.",
+      "explanation_zh": "以套餐指定客服人数、邮件连接及历史处理网站和受支持渠道。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Mira product and policy knowledge",
+      "name_zh": "Mira 商品与政策知识",
+      "explanation_en": "Combine selected website pages,XML product feed,text and prioritized custom Q&A.",
+      "explanation_zh": "结合选定网站页面、XML 商品 feed、文本及高优先自定义问答。",
+      "explanation_scope": "product_specific",
+      "source_ref": "training",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Feed-based stock answers",
+      "name_zh": "基于 feed 的库存回答",
+      "explanation_en": "Answer specific product availability with documented tag mapping;recommendations may still include out-of-stock best matches.",
+      "explanation_zh": "按文档标签映射回答具体库存，最佳匹配的缺货商品仍可能被推荐。",
+      "explanation_scope": "product_specific",
+      "source_ref": "stock",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured human follow-up",
+      "name_zh": "配置真人跟进",
+      "explanation_en": "Collect name,email and reason for handover;offline follow-up goes to email rather than a guaranteed live agent.",
+      "explanation_zh": "收集姓名、邮箱及交接原因，离线走邮件跟进，不保证真人即时接待。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mira-faq",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Online shops able to maintain product feeds,policy pages and human follow-up.",
+      "Teams choosing between predictable Flow logic,human reply assistance and a separately metered shopping agent."
+    ],
+    "zh": [
+      "能维护商品 feed、政策页面及真人跟进的网店。",
+      "在确定性 Flow 逻辑、真人写作辅助与单独计量购物助手间选择的团队。"
+    ],
+    "source_refs": ["stock", "pricing", "mira-faq", "limits"],
+    "basis": "Editorial fit,not measured conversion or support savings."
+  },
+  "technical_details": {
+    "Stock mapping": {
+      "en": "Heureka DELIVERY_DATE0meansstock,1–7meanswithinweek,other/missingunavailable.Googleavailabilityin_stock/in stockmeansstock,out_of_stock/preorder/backorder/missingunavailable. Stockissoftpreference,notcatalogfilter.",
+      "zh": "Heureka DELIVERY_DATE 为0代表现货、1–7代表一周内，其余／缺失为不可用；Google availability 的 in_stock／in stock 为现货，out_of_stock／preorder／backorder／缺失为不可用。库存是软偏好，不是目录过滤。",
+      "source_ref": "stock",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Ecommerce support owner",
+      "Product feed maintainer",
+      "Team administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm current versus legacy plan,operator/websites/history and separate Mira/Flow/ReplyAssistant quotas before choosing an offer.",
+        "zh": "选择报价前确认当前／旧套餐、客服／网站／历史及独立 Mira／Flow／Reply Assistant 额度。",
+        "source_refs": ["packages", "pricing", "limits"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Install the account widget,set timezone and office hours,invite eligible operators and test department/assignment permissions.",
+        "zh": "安装账户组件、设置时区及营业时间，邀请合格客服并测试部门／分配权限。",
+        "source_refs": ["admin"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Connect approved feed/pages,test source conflicts and stock mappings,then exercise no-answer,offline and quota-exhaustion follow-up.",
+        "zh": "连接批准 feed／页面，测试来源冲突及库存映射，再测试未答、离线与额度耗尽跟进。",
+        "source_refs": ["training", "stock", "mira-faq", "limits"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "XML product feed",
+        "source_ref": "stock",
+        "scope": "Heureka/GoogleMerchantavailabilitymappingisproduct-specific;freshness,variantsandwriteactionsuntested."
+      },
+      {
+        "name": "WhatsApp Business",
+        "source_ref": "whatsapp",
+        "scope": "SmartsuppdocumentsMeta-sideconnection,24hreplyfieldrestrictionandoptionalemailreminder;donotadoptitsdisputedOctoberMeta-feeclaim,see batchnotes."
+      },
+      {
+        "name": "Email-based helpdesk follow-up",
+        "source_ref": "mira-faq",
+        "scope": "Mira sends chosenemailaddresscontactdetails/transcript;doesnotnativelycreatethird-partyticketsinreviewedFAQ."
+      },
+      {
+        "name": "MCP / API",
+        "source_ref": "pricing",
+        "scope": "CurrentPlus/Expertcardslistconnectorsandlimits;actualtokenpermissions,rateerrorsandcompleteexportuntested."
+      }
+    ],
+    "source_ref": "pricing"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Mira does not detect online agents;attempted handover and business hours do not guarantee an accepted live conversation.",
+        "zh": "Mira 不检测在线客服，尝试交接及营业时间不保证有人接收即时聊天。",
+        "source_refs": ["mira-faq"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Stock is a soft recommendation preference;out-of-stock products can still be recommended,and generalin-stockcatalogqueriesareunsupported.",
+        "zh": "库存是推荐软偏好，缺货仍可推荐，且不支持通用现货目录查询。",
+        "source_refs": ["stock"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Custom Q&A is contextual guidance in the training manual,despite word-for-word claims on the pricing page.",
+        "zh": "训练手册将自定义问答作为上下文指导，价格页却声称逐字回答。",
+        "source_refs": ["training", "pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Price/help disagree on Mira product/capacity limits and Flow allowances;verify actual entitlement before contracting.",
+        "zh": "价格／帮助在 Mira 商品／容量上限及 Flow 额度上不一致，签约前核对实际权益。",
+        "source_refs": ["pricing", "packages", "limits"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://help.smartsupp.com/en/articles/12647835-terms-of-service",
+    "source_ref": "terms"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "packages", "limits", "billing", "terms"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "USDannual-displayedbasepricesplusindependentMirausage;othercurrenciesandmonthlyratesdiffer. ActualFlowallowance,productcap,currentAItrialbonusandcontractunresolved.",
+    "source_snapshot_en": "USDannualmonthlydisplaySolo17(1operator),Plus25(3),Expert83(5+),Ultimatefrom280;VATextra.Free1operator25conversations/month14dayhistory.Paidlivechatunlimited,history1/1/3years.Mira16/monthannual100conversations,price/limitsupto5000,help-packagesays1000;products30000pricevs50000help. Replyassists50/250/500monthly.Mirafollowsbasesubscriptionterm,noone-monthAIonannualbase.14dayExperttrialnocard,15dayfirstpaymentrefundperbilling.",
+    "source_snapshot_zh": "美元年付折合月价 Solo17（1客服）、Plus25（3）、Expert83（5起）、Ultimate280起，VAT另计。Free 1客服、每月25会话、14天历史；付费真人聊天无限，历史1／1／3年。Mira 年付月价16含100次，价格／额度页可至5000，套餐帮助却写1000；商品价格页30000，帮助50000。Reply Assist每月50／250／500。Mira 跟随基础订阅周期，年付基础不可只买1月 AI。14天 Expert 无卡试用，计费帮助列首付15天退款。",
+    "checked_at": "2026-10-22T13:58:40.336335+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Are Mira and Reply Assistant included in the same allowance?",
+      "question_zh": "Mira 与 Reply Assistant 共用额度吗？",
+      "answer_en": "No. Reply assists help a human,Mira has its own session quota,and classicFlows have a separate counter. The exact Flow allowance conflicts across public pages.",
+      "answer_zh": "不是。Reply Assist 辅助真人，Mira 独立按会话计量，经典 Flows 另有计数，准确 Flow 额度在公开页间冲突。",
+      "source_refs": ["pricing", "limits"]
+    },
+    {
+      "question_en": "Can Mira recommend only in-stock items automatically?",
+      "question_zh": "Mira 会自动只推荐现货吗？",
+      "answer_en": "The stock guide says availability is a soft preference,not a filter. Direct product-stock questions work from the feed,but broad “show allin-stockitems” queries are not supported there.",
+      "answer_zh": "库存指南称可用性是软偏好，不是过滤。可按 feed 回答具体商品库存，但不支持“列出全部现货”等宽泛查询。",
+      "source_refs": ["stock"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/smartsupp",
+      "read_at": "2026-10-22T09:07:23.027Z",
+      "excerpt_sha256": "4ec8afccefe6f03d02bd6e48097942395352f4e78b84884eea3be66a1aaf3bdd",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Smartsupp | Increase sales with Live chat, Chatbot and AI tools",
+      "title": "Smartsupp | Increase sales with Live chat, Chatbot and AI tools",
+      "url": "https://www.smartsupp.com/",
+      "read_at": "2026-10-22T13:54:57.868668+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8a0391b273ec17b983fa003d8b3b43f9b3c58d5fed2d90737554b6d0834b7772",
+      "research_notes_en": "Currentlivechat,connectedchannels,Flows,ReplyAssistantandMiraAIshoppingdistinctroles;80%andconversionclaimsnotindependent."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Smartsupp packages price list for chatting",
+      "title": "Smartsupp packages price list for chatting",
+      "url": "https://www.smartsupp.com/pricing/",
+      "read_at": "2026-10-22T13:55:23.260139+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "3adb785fbbe728df45cee3d8fa1513753a19ee5f2366b02cfdc419564d745ca1",
+      "research_notes_en": "USDannual17/25/83andUltimatefrom280,Free25/history14d;Mira16annual100sessionsscaleto5000,30000products;Q&AwordforwordandunlimitedFlowsconflicthelp."
+    },
+    {
+      "id": "packages",
+      "type": "official_documentation",
+      "site": "Which package should I choose? | Smartsupp Help Center",
+      "title": "Which package should I choose? | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647877-which-package-should-i-choose",
+      "read_at": "2026-10-22T13:58:10.692101+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "525aacfb54882e46b256a27ed5c025e430ad0a5b7e02813348601864a4bbf1f3",
+      "research_notes_en": "Currentpackages/trialExpert14d,legacyStandard/Protransitionendpaidperiod,baseplan+Mira,groupsExpert;helpMira50000products/1000maxconflictcurrentprice."
+    },
+    {
+      "id": "admin",
+      "type": "official_documentation",
+      "site": "Admin onboarding: your first 30 days with Smartsupp | Smartsupp Help Center",
+      "title": "Admin onboarding: your first 30 days with Smartsupp | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/16596031-admin-onboarding-your-first-30-days-with-smartsupp",
+      "read_at": "2026-10-22T13:56:18.466132+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "aecba21c49b9a96c6418787f48011de4bcca3c2fcb9ff411d730708f69912bc9",
+      "research_notes_en": "Timezone,widgetinstallation,7dayinvitations,1/3/5+operators,officehoursfromSolo,groups/limitedaccess/teamstatsExpert,legacylimitsdifferent."
+    },
+    {
+      "id": "mira-faq",
+      "type": "official_documentation",
+      "site": "Mira AI Shopping Assistant FAQ | Smartsupp Help Center",
+      "title": "Mira AI Shopping Assistant FAQ | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647226-mira-ai-shopping-assistant-faq",
+      "read_at": "2026-10-22T13:55:23.472703+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b338355d1187167f37721724a0688f006fa9253a922889f104b7cbc3ecf83cbb",
+      "research_notes_en": "20scrapes,productfeedimages/OGfallback,nodirectconversationlearning,configuredhandoverdoesnotdetectagentonline,emailfallbacknotnativeexternalhelpdeskticket,billingfollowssubscription."
+    },
+    {
+      "id": "training",
+      "type": "official_documentation",
+      "site": "How to start train Mira AI | Smartsupp Help Center",
+      "title": "How to start train Mira AI | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647700-how-to-start-train-mira-ai",
+      "read_at": "2026-10-22T13:56:47.934902+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "38c2a80d90537b209c7b40b8d35259ea927cd1ef74748771811c7321df64079c",
+      "research_notes_en": "30Q&A,20pages,5texts10000char;customresponsesprioritybutcontextnotverbatim,webupdatesmonthly/fortnightly/offsubscriberonly,perassistantresponseenable."
+    },
+    {
+      "id": "stock",
+      "type": "official_documentation",
+      "site": "Mira AI - stock availability | Smartsupp Help Center",
+      "title": "Mira AI - stock availability | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647697-mira-ai-stock-availability",
+      "read_at": "2026-10-22T13:56:46.363332+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "48cf4dff3d4ef2ab046262014b8a6d9cd85858fa578db30e3546d9e272e57d7e",
+      "research_notes_en": "XMLfeedrequired,Heureka0stock/1–7week/otherunavailable,Googlein_stockvsothersunavailable,availabilitysoftpreferencenotfilter,directspecificstockqueriesonly."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "How do conversation limits work? | Smartsupp Help Center",
+      "title": "How do conversation limits work? | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/16641029-how-do-conversation-limits-work",
+      "read_at": "2026-10-22T13:58:35.573328+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "fce65e5377dfaf4efe7694de7f04b4da2f4a14999c97f190cbbcb76b2e89520c",
+      "research_notes_en": "Livechat/Flows/Mirathreecounters;Free25andblock,Flowmonthlyallowancecontradictsunlimitedpricing,Mira100to5000calendarreset,sessionsendminutesafterleave,quotarunoutMira stops."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "Billing | Smartsupp Help Center",
+      "title": "Billing | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647239-billing",
+      "read_at": "2026-10-22T13:58:40.336335+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9903e169bdf65a78299e63310262af4c7e84b69b4b4d84486904684f1dfc4933",
+      "research_notes_en": "CurrentStripe/olderBraintree,upgradeimmediateproration/downgradeendterm,noextraagentrefundcredit,auto-renew,newunpaidinvoiceblocksplanchange,15dayfirstrefund."
+    },
+    {
+      "id": "whatsapp",
+      "type": "official_documentation",
+      "site": "WhatsApp integration | Smartsupp Help Center",
+      "title": "WhatsApp integration | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647876-whatsapp-integration",
+      "read_at": "2026-10-22T13:55:22.638955+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "7379ce71e1fb70d5393e77771350504b1eed5edcbd790f91dc3307c293e5b740",
+      "research_notes_en": "ConfiguredWhatsApp24hreplywindowandnoappfallback,emailcaptureoptionaloffoldernumbers;October2026Meta-service-feeclaimNOTadopted,contradictedbyplatformauthoritysavedbatchnotes."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Terms of Service | Smartsupp Help Center",
+      "title": "Terms of Service | Smartsupp Help Center",
+      "url": "https://help.smartsupp.com/en/articles/12647835-terms-of-service",
+      "read_at": "2026-10-22T13:55:53.206011+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "59430d387d06f4873019f9631b98c6304141b476a616bc494aba3986cf82efa4",
+      "research_notes_en": "Proprietaryuse/reservedrights,B2Bservice,auto-renew,emailnonrenew3daydeadline,firstpaymentrefundexceptionelsegenerallynonrefund,agreementterminationcaneraseYourData."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:58:40.336335+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "pricing",
+    "packages",
+    "stock",
+    "mira-faq"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Choose among a human inbox,Flows and a shopping agent",
+        "title_zh": "在人工作业、Flows 及购物助手之间选择",
+        "en": "Smartsupp offers live chat and supported messaging/email channels for human operators,rule-based Flows,AI Reply Assistant and Mira AI. The Reply Assistant drafts,improves or translates text while a human remains responsible;Mira autonomously answers visitor questions and recommends products. Paying for Expert does not automatically include a Mira subscription. Current pricing positions AI plans around website support and directs other channels to customer-care plans;do not treat one Mira purchase as proof of deployment on every connected channel.\n\nThe14-day no-card trial exposes Expert functions. Free is a continuing but limited human-chat plan with one operator,25 conversations monthly and14-day history. Standard/Pro legacy accounts have different limits and a support-assisted move to new pricing after their paid period. Select the account’s real plan rather than inferring entitlements from a fresh-trial screen or a translated page.",
+        "zh": "Smartsupp 为真人提供在线聊天及受支持消息／邮件渠道，另有规则型 Flows、AI Reply Assistant 及 Mira AI。Reply Assistant 帮草拟、润色或翻译，真人仍负责；Mira 自主回答访客及推荐商品。购买 Expert 不自动包含 Mira。当前价格将 AI 方案定位网站支持，其他渠道指向客户服务套餐，不能认为一份 Mira 自动部署所有已连渠道。\n\n14天无卡试用开放 Expert 功能。Free 是持续但有限的真人聊天套餐，1客服、每月25会话、14天历史。旧 Standard／Pro 有不同上限，并在付费期结束后由支持协助迁往新价。应核对账号实际套餐，不能从新试用页面或某译文推断权益。",
+        "source_refs": ["product", "pricing", "packages", "mira-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "knowledge",
+        "title_en": "Refresh the source,not just the assistant’s tone",
+        "title_zh": "刷新来源，而不只是调整助手语气",
+        "en": "Mira learns from selected website pages and a product feed;the FAQ says it does not directly learn from conversations. The training guide allows30 custom Q&A pairs,20 scraped pages and five text sources of10,000characters each by default,with higher limits on request. An administrator can correct a reply in a conversation and save that correction as a Q&A. Per-assistant and per-question switches determine whether custom responses are used.\n\nCustom responses take priority over website/feed content,but the training guide says they are contextual guidance,not copy-paste output,and irrelevant test answers may be ignored. This conflicts with the pricing table’s word-for-word claim. A changed policy should therefore be tested rather than assumed verbatim. Website scrape updates can be monthly,fortnightly or off,and automatic refresh requires a Mira subscription;automatic does not mean immediate. Product-feed refresh behavior is a separate untested path. Never train a public shopping assistant with internal secrets just because a text-source field exists.",
+        "zh": "Mira 从选定网页及商品 feed 学习，FAQ称不直接从会话学习。训练指南默认允许30组自定义问答、20抓取页及5个各10,000字符文本来源，可申请更高上限。管理员可在会话纠正回复并存成问答，各助手及各问题开关决定是否使用自定义回答。\n\n自定义回答优先于网站／feed，但训练指南说它们是上下文指导，不是复制粘贴输出，且无关测试答案可能被忽略。这与价格表逐字回答主张冲突。政策变化后应测试，不能假设逐字输出。网页抓取更新可按月、两周或关闭，自动刷新要求 Mira 订阅；自动不等于即时。产品 feed 刷新是另一路径，未实测。不能仅因有文本输入就把内部秘密交给公开购物助手。",
+        "source_refs": ["training", "mira-faq", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "stock-example",
+        "title_en": "Stock answers are product-specific,and recommendations are not stock-filtered",
+        "title_zh": "库存回答针对具体商品，推荐并非现货过滤",
+        "en": "For an illustrative “Is washer XX available?” question,Mira needs an XML product feed with availability fields. Heureka DELIVERY_DATE0 means in stock and1–7 means available within a week;other or missing values mean not immediately available. Google Merchant availability uses in_stock/in stock for available,and out_of_stock,preorder,backorder or missing values for unavailable. A missing tag is therefore not evidence of actual warehouse depletion.\n\nRecommendation ranking primarily follows relevance. Stock is a soft tie preference,not an exclusion filter:the best-matching out-of-stock item can still be recommended. The current guide supports direct product-specific questions but not broad requests to list all available washers. Size fields can be mentioned after the feed refreshes. Test a missing availability tag,backorder,size variant and feed outage before promising live inventory accuracy or order acceptance. These recommendations do not reserve stock or execute a verified purchase.",
+        "zh": "以假设“XX洗衣机有货吗”为例，Mira 需要含可用性字段的 XML feed。Heureka DELIVERY_DATE 为0代表现货、1–7代表一周内可供，其余或缺失是不能立即供应。Google Merchant 的 in_stock／in stock 表示可供，out_of_stock、preorder、backorder 或缺失表示不可供。因此缺标签不证明仓库真实无货。\n\n推荐首先按相关性，库存仅作接近匹配的软偏好，不是排除过滤；最佳匹配缺货商品仍能被推荐。当前指南支持具体商品问题，不支持广泛列出全部现货洗衣机。feed 刷新后可提及尺码。承诺实时库存或接单前应测试缺标签、预订、尺码变体及 feed 故障。推荐不保留库存，也不执行已核验购买。",
+        "source_refs": ["stock"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "handover",
+        "title_en": "Attempted human handover still needs actual coverage",
+        "title_zh": "尝试转真人仍需真实值守",
+        "en": "Mira’s FAQ says it does not detect whether an operator is online and by default tries to hand over whenever it cannot answer. Business-hours configuration determines the outcome. The visitor is asked for name,email and reason;offline follow-up can be saved and emailed to a selected address. The reviewed FAQ explicitly says this does not create a third-party Freshdesk/Zendesk ticket. A notification or transcript is not proof an agent accepted responsibility.\n\nFully AI-handled conversations move to Resolved → Mira AI after the visitor leaves;handovers appear in Open → All immediately. The label Resolved is workflow state,not independently verified customer success. The onboarding guide makes office hours available from Solo and groups/limited access/team statistics from Expert,with a correct timezone required. Test a human request after hours,an online but absent operator,a bounced email and the Never handover setting. Keep an owner for missed requests rather than using the24/7 AI slogan as a human-response promise.",
+        "zh": "Mira FAQ称它不检测客服是否在线，默认无法回答就尝试交接，营业时间配置决定结果。访客被问姓名、邮箱及原因，离线跟进可保存并发至选定邮箱。已读 FAQ明确这不创建第三方 Freshdesk／Zendesk 工单。通知或记录不证明客服已接责任。\n\n完全由 AI 处理的会话在访客离开后进入 Resolved → Mira AI，交接则立即进入 Open → All。Resolved 是流程状态，不是独立核实的客户成功。入门指南称 Solo 起有营业时间、Expert 起有部门／有限访问／团队统计，并需正确时区。应测试营业外要真人、人员在线却离岗、邮件退信及 Never handover 开关，为遗漏请求指定人，不能用24小时 AI 口号承诺真人回应。",
+        "source_refs": ["mira-faq", "admin"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "counters",
+        "title_en": "Three counters fail differently when exhausted",
+        "title_zh": "三种计数器耗尽后行为不同",
+        "en": "The limits guide separates human live chat,classicFlows and Mira sessions. Current paid live chat is unlimited;Free blocks new conversations after25until next month. Mira starts at100monthly and can be raised to5,000. A unique visitor session counts once however many messages it contains;it ends a few minutes after the visitor leaves,and a later return can count again. No exact session timeout was established.\n\nFlow and Mira counters reset on the first calendar day of each month,even for annual plans. When Mira quota runs out,it stops answering and shows a red dashboard alert;human live chat continues subject to its own base-plan limits. A top-up is prorated to the remaining subscription period according to the FAQ.\n\nThe current price page advertises unlimited Flow conversations for paid workflow tiers,but the dedicated limits guide still describes a monthly Flow allowance and top-up purchases. The package guide also says Mira scales only to1,000and knows50,000products,while current price/limits pages say5,000sessions and30,000products. Do not merge the most generous numbers into a fictional plan. Confirm the dashboard allowance before expecting automatic coverage.",
+        "zh": "额度指南分列真人聊天、经典 Flows 及 Mira 会话。当前付费真人聊天无限，Free 用完25后阻止新会话至下月。Mira 从每月100起，可升5,000。每独立访客会话不论消息数算一次，访客离开几分钟后结束，之后回访可再计，准确超时未建立。\n\nFlow 与 Mira 均每月1日重置，年付也如此。Mira 耗尽后停止回答并显示红色后台提醒，真人聊天继续但仍受基础套餐自身限制。FAQ称补量按剩余订阅期比例计价。\n\n当前价格页宣传付费工作流层 Flow 会话无限，专用额度指南仍讲月配额及加购。套餐指南还说 Mira 最高1,000次且识50,000商品，当前价格／额度页则写5,000会话及30,000商品。不能拼最宽松数字造出不存在的套餐，依赖自动覆盖前应核对后台额度。",
+        "source_refs": ["limits", "pricing", "packages", "mira-faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "channels-costs",
+        "title_en": "Channel availability and AI billing are separate commitments",
+        "title_zh": "渠道可用性与 AI 计费是不同承诺",
+        "en": "In USD annual-displayed prices,Solo/Plus/Expert are17/25/83per month with1/3/5+operators;Ultimate starts280and is custom. Connected emails are3/10/50and paid history1/1/3years. Mira is a separate16/month annual add-on for100sessions,with400sessions illustrated at64/month. Reply Assist allowances are50/250/500monthly and are separate. VAT is extra. The add-on follows the base subscription period;an annual base does not permit purchasing only one month of Mira. Published10free AI conversations and onboarding bonus wording should be confirmed rather than assumed to repeat monthly.\n\nThe WhatsApp guide documents a24-hour reply field restriction in Smartsupp and no fallback to the personal/business mobile app for that API number. An optional pre-expiry email-capture reminder is off by default on older connected numbers. This differs from website Automatic Messages. The guide also contains an October2026Meta fee claim that was not adopted:the cross-check against current platform authority is recorded in batch notes. Verify provider-side permissions,payment and actual delivery separately;an integration marked connected does not demonstrate that a message was delivered.",
+        "zh": "美元年付折合月价 Solo／Plus／Expert 为17／25／83，含1／3／5起客服，Ultimate280起定制。连接邮箱3／10／50，付费历史1／1／3年。Mira 独立年付月价16含100会话，400次示例每月64。Reply Assist 每月50／250／500，另计。VAT额外。附加项跟随基础订阅周期，年付基础不能只买一月 Mira。公开10次免费 AI 及入门奖励措辞需确认，不能假设每月重复。\n\nWhatsApp 指南描述 Smartsupp 内24小时回复字段限制，API号码不能回退个人／企业手机应用。可选到期前邮件采集提醒在旧连接号码默认关闭，与网站 Automatic Messages 不同。该指南还含一项未采用的2026年10月 Meta 收费主张，当前平台权威交叉核对记录在批次笔记。应另核对提供商权限、付款及真实送达，集成显示已连不证明消息送达。",
+        "source_refs": ["pricing", "mira-faq", "whatsapp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract-and-fit",
+        "title_en": "Plan changes do not prove a complete retained archive",
+        "title_zh": "改套餐不证明完整档案仍可用",
+        "en": "The current billing guide prorates upgrades immediately while decreases/downgrades take effect at renewal without unused-seat credit. Failed-payment invoices block plan changes until settled. Older and newer checkout surfaces differ,and a paid bank transaction does not itself activate the correct workspace. Terms provide automatic renewal and allow email non-renewal notice no later than three days before term end. The billing guide provides a15-day first-payment refund exception;later unused fees are generally non-refundable.\n\nStopping renewal and terminating the whole agreement are different. Terms say subscription end can continue as Free,but the billing guide also warns of blocked accounts on expiry;actual post-expiry access and history need confirmation. Agreement termination can immediately remove access and permit erasure of customer data. A contacts export or API feature is not a tested complete transcript/attachment restore. Confirm archive retrieval before exit.\n\nSmartsupp fits a shop maintaining product data,policy knowledge and actual human follow-up. It is not established as a stock reservation system,unlimited autonomous multi-channel workforce or an open-source self-hosted service. The terms reserve platform rights and grant limited use;provider processing,DPA,data location and full UI languages remain outside this completed document check.",
+        "zh": "当前计费指南升级立即按比例收费，减人数／降级在续费时生效，不给未用座席抵扣。支付失败未付发票在结清前阻止改套餐。新旧结账界面不同，银行已付款也不自然激活正确工作区。条款规定自动续费，邮件不续费须最迟期末前三日送达。计费指南列首付款15天退款例外，后续未用费通常不退。\n\n停止续费与终止整个协议不同。条款称订阅结束可继续 Free，但计费指南又警示到期账户被阻止，实际到期后访问和历史需确认。协议终止可立即移除访问并允许清除客户资料。联系人导出或 API 功能不是已测试完整聊天／附件恢复，退出前需确认档案取回。\n\nSmartsupp 适合维护商品资料、政策知识及真实人工跟进的网店。未建立其为库存预留系统、无限自主多渠道人员或开源自托管服务。条款保留平台权利并授有限使用；提供商处理、DPA、资料位置及完整界面语言仍不属于已完成的文档核查。",
+        "source_refs": ["billing", "terms", "pricing", "stock"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Smartsupp: Mira AI Stock Answers, Human Handover and Separate Limits",
+    "title_zh": "Smartsupp：Mira AI 库存回答、真人交接及独立额度",
+    "description_en": "Evaluate Smartsupp knowledge refresh,feed stock mappings,handover coverage,three usage counters,current plan conflicts and separate Mira/ReplyAssistant costs.",
+    "description_zh": "评估 Smartsupp 知识刷新、feed 库存映射、交接值守、三种计数、当前套餐冲突及 Mira／Reply Assistant 独立费用。",
+    "primary_intent": "Evaluate ecommerce AI and human support with realistic stock and quota limits.",
+    "secondary_questions": [
+      "Does Mira detect online agents?",
+      "Are out-of-stock recommendations excluded?",
+      "Which quota stops the AI?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,widget,feed,AI,handoff,channel,payment,export or restore tested. Mira30000/50000productsand1000/5000sessionsconflicts,Flowallowance,verbatimQ&Aclaim,trialbonus,exactsessiontimeout,postexpiryaccess,fullportability/DPA/providerflow/location/UIlanguagesunresolved. DisputedMetaOctoberfeeclaimnotadopted;rawplatformcounter-evidenceinbatchnotes.",
+      "zh": "未测试账号、组件、feed、AI、交接、渠道、支付、导出或恢复。Mira30000／50000商品及1000／5000会话冲突、Flow额度、逐字问答主张、试用奖励、准确会话超时、到期后访问、完整迁移／DPA／提供商路径／位置／界面语言未解决。未采用有争议Meta十月收费主张，平台反证原页保存在批次笔记。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

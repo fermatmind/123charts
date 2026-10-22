@@ -1,0 +1,475 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "timestripe-d8ee818d",
+  "name": "Timestripe",
+  "website_url": "https://timestripe.com/",
+  "domain": "timestripe.com",
+  "identity_domain": "timestripe.com",
+  "category": "task-management",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Timestripe organizes work around goals that can also hold notes, files, subgoals and scheduled time. Its Horizons connect daily actions to longer periods, while boards hold material and Spaces separate personal or team work. The same model extends to shared planning, recurring routines and a documented API/CLI.\n\nIts distinctive question is how a long-term objective becomes today’s work. That does not establish instant device synchronization, arbitrary recurrence with subgoals or a bidirectional calendar. Public pages also disagree about lifetime purchase and encryption availability. This documentation profile preserves those practical limits alongside the plan display.",
+  "description_zh": "Timestripe 围绕目标组织工作，目标也可容纳笔记、文件、子目标及排定时间。Horizons 把每日行动连接到更长周期，看板容纳材料，Spaces 分隔个人或团队工作；同一模型还覆盖共享规划、重复习惯及文档化的 API／CLI。\n\n它的特色问题是如何把长期目标变成今天的行动，但这不证明设备即时同步、任意带子目标重复或双向日历。公开页对终身购买及加密可用性也有不同说法。本档案结合套餐显示保留这些实际限制。",
+  "core_features": [
+    {
+      "name_en": "Horizons planning",
+      "name_zh": "Horizons 跨周期规划",
+      "explanation_en": "Place larger goals on longer horizons and schedule concrete work on shorter ones.",
+      "explanation_zh": "把较大目标放入长期周期，在较短周期安排具体工作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "getting-started",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Spaces and boards",
+      "name_zh": "Spaces 与看板",
+      "explanation_en": "Separate areas of work, keep goal containers and assign team work.",
+      "explanation_zh": "分隔工作范围、保存目标容器并分配团队任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "team-product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Goal content and subgoals",
+      "name_zh": "目标内容与子目标",
+      "explanation_en": "Keep notes, links, files and smaller linked goals with the work.",
+      "explanation_zh": "随工作保存笔记、链接、文件及关联的小目标。",
+      "explanation_scope": "product_specific",
+      "source_ref": "getting-started",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "API and CLI access",
+      "name_zh": "API 与 CLI 访问",
+      "explanation_en": "Authenticated interfaces can read and change account work; CLI documents a read-only mode.",
+      "explanation_zh": "经认证的界面可读取或修改账户工作，CLI 文档提供只读模式。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cli",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Connect a longer training objective to a weekly review and a small recurring preparation checklist."
+    ],
+    "zh": ["把长期培训目标连接到每周复核及小型重复准备清单。"],
+    "source_refs": ["getting-started", "repeat"],
+    "basis": "Original proposed evaluation, not a tested workspace or customer case."
+  },
+  "technical_details": {
+    "Clients and API": {
+      "en": "Public team page links Web, iOS, Android and Chrome extension. APIv3 has authenticated CRUD and pagination; local CLI access does not establish self-hosting.",
+      "zh": "公开团队页列 Web、iOS、Android 及 Chrome 扩展；APIv3 有认证的增删改查及分页，本地 CLI 访问不证明自托管。",
+      "source_ref": "team-product",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Individual linking daily work to longer goals",
+      "Small team planning in Spaces",
+      "User evaluating goal automation"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "getting-started"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Create one harmless longer goal and next action; compare Horizons, board placement and calendar output before migrating.",
+        "zh": "用一个无害长期目标及下一步行动，先比较 Horizons、看板位置及日历输出，再迁移。",
+        "source_refs": ["getting-started", "calendar"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Check shared-link editing, device sync and a deleted-goal restore before using sensitive team work.",
+        "zh": "用于敏感团队工作前，核对共享链接编辑、设备同步及已删除目标恢复。",
+        "source_refs": ["faq-general", "space-guide"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_tested",
+    "items": [],
+    "source_ref": "calendar",
+    "scope": "SelectedSpace Google/Apple all-day calendar output documented. NoGooglebidirectional or completeconnectorcoverage demonstrated. API/CLI read, not operated."
+  },
+  "limitations": {
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "A goal with subgoals cannot repeat under the FAQ; mobile synchronization is described as delayed.",
+        "zh": "FAQ 称含子目标的目标不能重复，移动同步被描述为存在延迟。",
+        "source_refs": ["faq-limits", "faq-general"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Lifetime offer and encryption statements conflict across official pages; checkout and implementation scope remain unverified.",
+        "zh": "官方页对终身方案及加密描述冲突，结账及实现范围仍未核实。",
+        "source_refs": [
+          "pricing",
+          "faq-billing",
+          "encryption-page",
+          "faq-limits"
+        ],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": [],
+    "scope": "Public pricing actually displayed English and Chinese; signed-in application language completeness not verified."
+  },
+  "license": {
+    "status": "service_terms_read_source_rights_not_established",
+    "is_open_source": null,
+    "url": "https://timestripe.com/terms/",
+    "source_ref": "terms",
+    "scope": "Service purchase/copyright terms read; no application-source redistribution or supported self-hosting grant established. CLI is a separate client."
+  },
+  "pricing": {
+    "status": "official_browser_display_with_offer_conflicts",
+    "price_type": "free_basic_and_paid_pro_billing_terms",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Dollar selector:Basic0;monthly19;yearly9/mo;fiveyear7/mo displayed. ISOcurrency, billedtotals,taxes, teamseatquote and currentlifetimeprice unverified. Lifetime/refund scope conflict preserved.",
+    "source_snapshot_zh": "美元符号选择器：Basic0；月付19；年付折合每月9；五年折合每月7。ISO币种、账单总额、税、团队席位报价及当前终身价格未核实，保留终身／退款范围冲突。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/timestripe",
+      "read_at": "2026-10-22T09:07:48.715Z",
+      "excerpt_sha256": "56bafaefc27db750ccae00035503d090d04e1c396cd36056ef08d78933d0c10d",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "team-product",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "Team Planning Software for Goals and Tasks | Timestripe",
+      "url": "https://timestripe.com/for-teams/",
+      "read_at": "2026-10-22T12:24:23.184075Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "166055781b5dfa41189ff4fe06bd088254a91e858b5bba5a788ea81c24cc0a37",
+      "research_notes_en": "Read common goal object, Horizons, Spaces, boards, TeamView and progress-feed claims. Real-time marketing not accepted as measured synchronization."
+    },
+    {
+      "id": "faq-limits",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/faq/",
+      "read_at": "2026-10-22T12:24:23.184390Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a6c54634ad86203ad38c188f1d7ccfe5aef598bea9d6634c6119640b2ff273e5",
+      "research_notes_en": "Actual FAQ body: no Google two-way, all-day events, no repeating parent with subgoals, recovery and current data-not-encrypted statement."
+    },
+    {
+      "id": "faq-billing",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/faq/",
+      "read_at": "2026-10-22T12:24:23.184415Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "861df6aa72ab54a771fd0fda2694a389e0e2bbbe7b146acadf1f2e3d8a669d37",
+      "research_notes_en": "Read no-lifetime statement, team quote path, renewal/cancel, retained old data and restricted refund language; conflicts with pricing accordion."
+    },
+    {
+      "id": "space-guide",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/use-cases/team-collaboration/",
+      "read_at": "2026-10-22T12:24:23.184443Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b6e1083a049cc0006b25af0c79fe871b60e3fbb101c381880a3f8d0d94de0cab",
+      "research_notes_en": "Read Space invite MagicLink, assignment and owner member removal; no invented granular role matrix."
+    },
+    {
+      "id": "faq-general",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/faq/",
+      "read_at": "2026-10-22T12:24:23.185000Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fcdf362e1033296a4a21bcb90d51bc23e0a3a8f57ae614a7996c2255ada0569f",
+      "research_notes_en": "Read collaborative link editing, delayed mobile/desktop sync and DeletedGoals restore procedure."
+    },
+    {
+      "id": "calendar",
+      "type": "official_integration",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/tutorials/how-to-integrate-timestripe-with-google-and-apple-calendars/",
+      "read_at": "2026-10-22T12:24:23.185034Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2067e4f4dc2168933aaeaee44b214cb134edff472ed5e33899074c290684623c",
+      "research_notes_en": "Read selectedSpace calendar integration showing goals as all-day events; no demonstrated two-way sync."
+    },
+    {
+      "id": "repeat",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/learning-center/tutorials/how-to-set-up-routines-diaries-reminders-with-recurrent-tasks/",
+      "read_at": "2026-10-22T12:24:23.185058Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fd39b7c96d86fc4f8b7445e808c181dfef2504e46a8f0357c9f755a371481a96",
+      "research_notes_en": "Read actual published tutorial transcript: repeated goal with notes/times, week/month/year routines."
+    },
+    {
+      "id": "cli",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "timestripe.com",
+      "url": "https://timestripe.com/magazine/blog/how-to-connect-ai-agents-to-timestripe/",
+      "read_at": "2026-10-22T12:24:23.185080Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2ecdf8e24f8ae1e5ac9ca987a1e8a4dc1e7c6fb05f1205a42fc07d5d01c386f8",
+      "research_notes_en": "Read CLI scope, standard versus read-only access, token revocation and account prerequisite. No installer, login or command executed."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "Timestripe Privacy Policy",
+      "url": "https://timestripe.com/privacy/",
+      "read_at": "2026-10-22T12:24:23.185100Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0ae46683b3c2bdbe0d05ebe78e7d30a1e3ee5e9584bfae4d4027c2ca788d6019",
+      "research_notes_en": "Read website-only scope, account/contact data and cookies; no inferred complete app/AI processing or residency guarantee."
+    },
+    {
+      "id": "getting-started",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "Getting Started — Timestripe",
+      "url": "https://timestripe.com/boards/kqd4b5Rq/getting-started/",
+      "read_at": "2026-10-22T12:24:23.185482Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "835783b2dfc178adaf4a13201f2a04ea2dc7c7cf03bd9a36a421d2ff83294bba",
+      "research_notes_en": "Read goal container, long/day Horizons, subgoal links, board container and task scheduling; examples were not executed."
+    },
+    {
+      "id": "encryption-page",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "How Timestripe encryption works",
+      "url": "https://timestripe.com/encryption/",
+      "read_at": "2026-10-22T12:24:23.185861Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "52b6ffc0b69182cac19c2a419445eec8d82056c5801fffbbc475dc78230b9367",
+      "research_notes_en": "Read browser encryption/key-picture design page; current FAQ says data not encrypted, so implementation/availability unresolved."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "timestripe.com",
+      "title": "Timestripe Terms",
+      "url": "https://timestripe.com/terms/",
+      "read_at": "2026-10-22T12:24:23.185921Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "78f865ecdf902503e925fd1f0cf9bc976b48d059cb1d294da4635a7ba033a1f9",
+      "research_notes_en": "Read refund process and recurring debits cancellation; site text/images remain supplier property. Does not grant application source or self-hosting rights."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "timestripe.com",
+      "title": "Pricing — Timestripe",
+      "url": "https://timestripe.com/pricing/",
+      "read_at": "2026-10-22T12:24:23.186138Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "38b0011347c4926d7653579807efaaecb93ec09568bc609e8c517d07a22d24ae",
+      "research_notes_en": "English public selector and expanded FAQ actually read:Basic/monthly/yearly/5year, caps, recurring renewals, expiry retention, one-time offer and narrower refund wording. Currency symbol$ shown; checkout/ISOcurrency unverified."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "timestripe.com",
+      "title": "Timestripe API",
+      "url": "https://timestripe.com/api/",
+      "read_at": "2026-10-22T12:24:23.186407Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "ee4fc965d874fd29f0f2e4940cf081d580b13ab7cafff0cc39b197bc76d75648",
+      "research_notes_en": "Read v3OpenAPI, API-key settings/OAuthclient contact, authenticated board CRUD and pagination fields. Example response not live data or a complete backup."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:24:23.186407Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "team-product",
+    "getting-started",
+    "faq-general",
+    "faq-limits",
+    "pricing",
+    "encryption-page",
+    "faq-billing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "long-to-short",
+        "title_en": "Turn one longer objective into a concrete next action",
+        "title_zh": "把一个长期目标转成下一步行动",
+        "en": "For a proposed training project, place the larger outcome on a longer Horizon, link a smaller preparation goal and schedule one actionable review this week. Store the brief in the goal’s notes and keep unscheduled material on a board. The value to evaluate is whether the relationship remains visible when choosing daily work.\n\nThe official getting-started board treats goals as content containers and boards as organizers. A date or time schedules the work; it does not automatically prove feasibility, priority or completion of the larger outcome. This is an editorial walkthrough, not a workspace created for this research.",
+        "zh": "假设安排培训项目，可把较大成果放到长期 Horizon，关联较小准备目标，再在本周安排一个可执行复核。简报存入目标笔记，未排期材料留在看板。应评估的是：选择每日工作时能否仍看见这种关系。\n\n官方入门看板把目标作为内容容器、看板作为组织方式。日期或时间用于排程，不自动证明可行性、优先级或较大成果已完成。本例是编辑演示思路，未在本研究创建工作区。",
+        "source_refs": ["getting-started"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "team-visibility",
+        "title_en": "A shared Space and a link-editable board are different choices",
+        "title_zh": "共享 Space 与持链接可编辑看板是不同选择",
+        "en": "The team page groups goals, documents, discussions and boards inside a Space and describes a view grouped by person. The collaboration tutorial uses a Space invitation link and gives the owner a member-removal control.\n\nSeparately, the FAQ says a board can be made collaborative so anyone with its link can edit. Choose that audience deliberately before adding client material. A public-looking reference board and an internal team plan should not be assumed to have the same access rules. Granular roles, invitation expiration and what previously copied data survives removal were not established.",
+        "zh": "团队页把目标、文档、讨论和看板放入 Space，并描述按人分组的视图。协作教程使用 Space 邀请链接，并给予所有者移除成员控件。\n\n另一方面，FAQ 称看板开启协作后，持链接者即可编辑。添加客户材料前应明确选择受众，不应假定公开参考看板与内部团队计划有相同访问规则。细粒度角色、邀请到期及移除成员后已复制数据的保留情况尚未确立。",
+        "source_refs": ["team-product", "space-guide", "faq-general"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routine",
+        "title_en": "A repeatable routine needs the right internal structure",
+        "title_zh": "重复流程需要合适的内部结构",
+        "en": "The routines tutorial describes repeating a goal with explanatory notes and optionally a time, including weekly, monthly and yearly patterns. The FAQ adds a significant limitation: a goal containing subgoals cannot be set to repeat, and suggests note checkboxes instead.\n\nA proposed recurring preparation checklist should therefore test whether its internal items are simple checkboxes or separately managed subgoals. Those models have different assignment and tracking needs. A repeated diary entry can provide a fresh writing prompt; it is not evidence that every nested project structure can be cloned on schedule. Missed-cycle, timezone and late-completion behavior remain untested.",
+        "zh": "重复教程描述带说明笔记、可选时间的重复目标，包括每周、每月及每年模式。FAQ 增加重要限制：包含子目标的目标不能设置重复，建议改用笔记检查框。\n\n因此，重复准备清单应先核对内部条目是简单检查框还是需单独管理的子目标，两种结构有不同分配和追踪需求。重复日记可以提供新的写作入口，但不证明所有嵌套项目结构都可按时克隆。错过周期、时区及延迟完成行为未实测。",
+        "source_refs": ["repeat", "faq-limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "calendar-and-sync",
+        "title_en": "Calendar visibility is not a universal two-way sync",
+        "title_zh": "日历可见不等于通用双向同步",
+        "en": "The calendar tutorial sends selected Spaces’ goals to Google or Apple calendars as all-day events. The FAQ explicitly says Google two-way synchronization is not available in its described implementation. Its roadmap wording is not a release confirmation.\n\nThe FAQ also warns that web-to-mobile updates can take time and recommends avoiding simultaneous use for faster synchronization. Compare one harmless dated goal on both devices and in the target calendar before depending on a shared schedule. Refresh intervals, simultaneous-edit conflicts and a current delivery-time guarantee were not verified.",
+        "zh": "日历教程把选定 Spaces 的目标以全天事件显示到 Google 或 Apple 日历。FAQ 明确称其所述实现没有 Google 双向同步，路线图文字不是发布证明。\n\nFAQ 也提醒网页到移动端更新可能需要时间，并建议避免同时使用以加快同步。依赖共享日程前，可在两台设备及目标日历比较一个无害带日期目标。刷新间隔、同时编辑冲突及当前送达时间保证尚未核实。",
+        "source_refs": ["calendar", "faq-general", "faq-limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api-and-agent",
+        "title_en": "Start external automation with an identified read scope",
+        "title_zh": "外部自动化先明确读取范围",
+        "en": "The public API reference exposes authenticated board reads and mutations, API-key settings, OAuth-client registration by contact and paginated results. Its sample response is illustrative, not account evidence. A consumer must follow pagination rather than assume the first response contains every board.\n\nThe CLI guide supports standard access and a read-only login mode; it also describes logging out or revoking a token in API settings. For a proposed agent workflow, first identify the intended Space and goal, inspect what would change, then use only the permissions required. The guide’s claim that agents ask before acting is not a universal enforcement guarantee for every client configuration. No CLI, agent connection or authenticated request was executed.",
+        "zh": "公开 API 参考提供经认证的看板读取和修改、API key 设置、联系注册 OAuth 客户端及分页结果。示例响应是说明内容，不是账户证据；调用方需处理分页，不能假定第一次响应包含全部看板。\n\nCLI 指南支持标准访问及只读登录模式，也描述退出登录或在 API 设置撤销 token。假设接入 Agent，应先明确目标 Space 和目标条目，检查预期修改，再仅使用所需权限。指南所称 Agent 操作前会询问，不是对所有客户端配置的统一强制保证。未执行 CLI、Agent 连接或认证请求。",
+        "source_refs": ["api", "cli"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans-and-expiry",
+        "title_en": "Compare the billing period and what happens after expiry",
+        "title_zh": "比较账期及到期后的行为",
+        "en": "In the public page’s dollar-symbol display, Basic is free; Pro shows $19 monthly, $9 per month on yearly billing and $7 per month for a five-year Strategists’ deal. Those are displayed equivalents, not verified checkout totals or a team seat quote. Basic limits include three custom boards and small per-Horizon/per-list allowances.\n\nThe expanded pricing FAQ says cancelling automatic renewal keeps Pro active to period end; old data remains editable after expiry, while Basic limits apply to new data. A headline advertises a thirty-day guarantee, but the detailed answer names quarterly and yearly plans. The lifetime accordion offers a one-time purchase while the separate FAQ says no lifetime offer. Confirm the exact offer and refund coverage rather than generalizing either statement to every term.",
+        "zh": "公开页的美元符号显示中，Basic 免费；Pro 月付 $19，年付折合每月 $9，五年 Strategists’ 方案折合每月 $7。这些是显示的折算价格，不是经核实的结账总额或团队席位报价。Basic 有三个自定义看板及较小的每 Horizon／每列表额度。\n\n展开的价格 FAQ 称，取消自动续订后 Pro 持续到本账期结束；到期后已有数据仍可编辑，Basic 限制适用于新数据。标题宣传三十天保证，详细答案却点名季度及年度方案。终身方案折叠项提供一次性购买，而另一 FAQ 称没有终身方案。应确认准确要约及退款范围，不能把任一表述泛化到所有账期。",
+        "source_refs": ["pricing", "faq-billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-and-rights",
+        "title_en": "Check recovery and unresolved security claims before sensitive use",
+        "title_zh": "敏感用途前先检查恢复与未解决的安全声明",
+        "en": "Deleted Goals has a documented restore path, but retention duration and complete workspace export/reimport were not established. Do not treat the existence of an API or downloaded CLI as a tested disaster-recovery plan. Keep a separately inspected copy of essential material before a migration.\n\nThe current FAQ says data is not encrypted, while another official page describes browser encryption using a password/key picture. Their current scope and compatibility are unresolved; this research does not certify end-to-end encryption. The privacy page is framed around website activity, and the terms describe service purchase and site-content copyright. Neither establishes an application-source license or self-hostable backend. Timestripe merits evaluation for linked long/short-term planning when those data and collaboration conditions fit.",
+        "zh": "Deleted Goals 有文档化恢复路径，但保留时长及完整工作区导出／再导入尚未确立。存在 API 或可下载 CLI 不能当作已测灾难恢复方案；迁移前应保存经单独检查的重要材料副本。\n\n当前 FAQ 称数据未加密，另一官方页却描述使用密码／密钥图片的浏览器加密；其当前范围和兼容性未解决，本研究不认证端到端加密。隐私页围绕网站活动，条款描述服务购买及网站内容版权，两者都没有确立应用源码许可或自托管后端。数据及协作条件适合时，可评估 Timestripe 的长短期关联规划。",
+        "source_refs": [
+          "faq-general",
+          "faq-limits",
+          "encryption-page",
+          "privacy",
+          "terms"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Timestripe: Horizons, Shared Links, Recurrence and Plan Conditions",
+    "title_zh": "Timestripe：Horizons、共享链接、重复及套餐条件",
+    "description_en": "Evaluate linked goals, delayed device sync, all-day calendar output, repeat limits, API access and conflicting lifetime terms.",
+    "description_zh": "评估关联目标、设备同步延迟、全天日历输出、重复限制、API 访问及冲突的终身条款。",
+    "primary_intent": "Evaluate Timestripe long/short-term planning with collaboration and data limits.",
+    "secondary_questions": [
+      "Can a goal containing subgoals repeat?",
+      "Does canceling Pro restrict existing data?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, board/goal edit, invitation, role/removal, recurring task, device sync, calendar connection, API/CLI authentication, restore, export, payment or cancellation was tested.",
+      "zh": "未测试账户、看板／目标编辑、邀请、角色／移除、重复任务、设备同步、日历连接、API／CLI 认证、恢复、导出、付款或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "ISOcurrency/checkout totals/taxes, team prices, lifetime availability and refund coverage need confirmation; pricing accordion conflicts with FAQ and detailed terms differ from the simple guarantee.",
+      "zh": "ISO币种／结账总额／税、团队价格、终身可用性及退款范围需确认；价格折叠项与 FAQ 冲突，详细条款不同于简短保证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Encryption page versus FAQ scope unresolved. Full app/AI data handling, storage residency, export/import fidelity, deleted-goal retention, simultaneous edits and external integration failure/retry behavior unverified.",
+      "zh": "加密页与 FAQ 范围未解决。完整应用／AI 数据处理、存储地区、导出／导入保真度、已删目标保留、同时编辑及外部集成失败／重试行为未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

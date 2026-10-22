@@ -1,0 +1,410 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "activepieces-04caf877",
+  "name": "Activepieces",
+  "website_url": "https://www.activepieces.com/",
+  "domain": "www.activepieces.com",
+  "identity_domain": "activepieces.com",
+  "category": "workflow-automation",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Activepieces builds automations from an event or schedule followed by actions. Its flow builder passes data between steps, letting a team turn an incoming request into an API call, a transformed record and a notification. The product family also includes AI agents and tables; an ordinary flow can be designed around explicit steps.\n\nCloud hosting and self-hosting are distinct operating choices. The core has an MIT license, while enterprise features require commercial terms. This profile explains the documented workflow and deployment boundaries; it does not report an installed system or a measured business result.",
+  "description_zh": "Activepieces 通过事件或定时触发器启动自动化，再执行后续动作。流程构建器在步骤之间传递数据，可把传入请求处理为 API 调用、转换后的记录及通知。产品家族还包括 AI Agent 和表格；普通流程可以按明确步骤设计。\n\n云托管与自托管对应不同的运营责任。核心采用 MIT 许可，企业功能则受商业条款约束。本文解释文档中的流程及部署边界，未安装系统，也未测量业务收益。",
+  "core_features": [
+    {
+      "name_en": "Trigger and action flows",
+      "name_zh": "触发器与动作流程",
+      "explanation_en": "Start on a schedule, webhook or service event, then run the chosen actions.",
+      "explanation_zh": "通过定时、webhook 或应用事件启动，再执行选定动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "build",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Parent-step data references",
+      "name_zh": "上游步骤数据引用",
+      "explanation_en": "Select earlier outputs for later inputs, including individual JSON properties.",
+      "explanation_zh": "选择前序输出作为后续输入，可引用具体 JSON 属性。",
+      "explanation_scope": "product_specific",
+      "source_ref": "data",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Published flow changes",
+      "name_zh": "发布流程变更",
+      "explanation_en": "Editing does not immediately change the published flow.",
+      "explanation_zh": "编辑不会立即改变已发布流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "publish",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Run-level inspection",
+      "name_zh": "逐次运行检查",
+      "explanation_en": "Inspect each step’s recorded input, output and execution status.",
+      "explanation_zh": "检查各步骤记录的输入、输出及执行状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "debug",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Route a webhook request into a documented API operation and notification.",
+      "Build a scheduled fetch-and-report sequence."
+    ],
+    "zh": [
+      "把 webhook 请求处理为已核对的 API 操作与通知。",
+      "建立定时获取数据及生成报告的流程。"
+    ],
+    "source_refs": ["build", "data"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
+  },
+  "technical_details": {},
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Operations workflow maintainer",
+      "Integration developer",
+      "Self-hosted platform administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "build"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Cloud or the required self-hosted edition and document who operates it.",
+        "zh": "选择 Cloud 或所需自托管版本，确定运营负责人。",
+        "source_refs": ["install", "license"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test the trigger, inspect output properties and map one downstream action.",
+        "zh": "测试触发器、检查输出属性，并映射一个后续动作。",
+        "source_refs": ["data"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Publish, send a fresh event and inspect the corresponding run and destination record.",
+        "zh": "发布后发送新事件，检查对应运行及目标记录。",
+        "source_refs": ["publish", "debug"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "connector_scope_requires_evaluation",
+    "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Cloud active execution and webhook response deadlines differ; long work needs an appropriate asynchronous design.",
+        "zh": "Cloud 活跃执行时限与 webhook 响应时限不同；长任务需要合适的异步设计。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Self-hosted database backups without the encryption key cannot restore usable connections.",
+        "zh": "自托管数据库备份若缺失加密密钥，无法恢复可用连接。",
+        "source_refs": ["install"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "classification": "MIT_core_with_commercial_enterprise_features",
+    "name": "MIT (core); Commercial License (enterprise/cloud features)",
+    "url": "https://www.activepieces.com/docs/about/license",
+    "source_ref": "license"
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "free_core_and_credit_based_commercial_plans",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T09:56:21.742416Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Credits plus plan entitlements; Free reset wording requires confirmation."
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Does self-hosting grant all enterprise features?",
+      "question_zh": "自托管会获得所有企业功能吗？",
+      "answer_en": "No. Deployment location and enterprise feature licensing are separate.",
+      "answer_zh": "不会。部署位置与企业功能许可是两个独立条件。",
+      "source_refs": ["license"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/activepieces",
+      "read_at": "2026-10-22T08:36:20.995Z",
+      "excerpt_sha256": "f7899f75871c9c8ce6eee138c5f2231aaed03051d2121c056ceb74b6414db8be",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Activepieces",
+      "title": "Pricing | Activepieces",
+      "url": "https://www.activepieces.com/pricing",
+      "read_at": "2026-10-22T09:56:21.742416Z",
+      "excerpt_sha256": "c5dab914b80a815d1d6571be65b71d5e58be1382201209f2d523fb9e254114e6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Monthly plan table and credit FAQ read; daily versus monthly Free reset wording conflicts on the same page."
+    },
+    {
+      "id": "build",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Building Flows - Activepieces",
+      "url": "https://www.activepieces.com/docs/flows/building-flows",
+      "read_at": "2026-10-22T09:57:02.846223Z",
+      "excerpt_sha256": "2fce6c11f3cb4f6a7d6123b2038f8fa30e39c066d88baa1cc50950d00f6003e3",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Trigger types and downstream actions define the deterministic flow model."
+    },
+    {
+      "id": "data",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Passing Data - Activepieces",
+      "url": "https://www.activepieces.com/docs/flows/passing-data",
+      "read_at": "2026-10-22T09:57:05.855453Z",
+      "excerpt_sha256": "ea3c578daa9a8e7be925a7267c5bdfa8cc14fa408388b195f6794c9c624247a4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Parent outputs, testing steps, dynamic inputs and JSON-path references reviewed."
+    },
+    {
+      "id": "publish",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Publishing Flows - Activepieces",
+      "url": "https://www.activepieces.com/docs/flows/publishing-flows",
+      "read_at": "2026-10-22T09:57:08.776124Z",
+      "excerpt_sha256": "a5169e55ec964553fdc2c3838d41d8b062f518a8a1c74a9f49d136ae8c84febe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Edits require publishing; sensitive projects have a distinct approval permission."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Debugging Runs - Activepieces",
+      "url": "https://www.activepieces.com/docs/flows/debugging-runs",
+      "read_at": "2026-10-22T09:57:11.688712Z",
+      "excerpt_sha256": "d63e13af331f82b92ba1dfc568a9c38ac559ae6e7c19d1d8ac249f6ba84ccc10",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Runs view exposes step success/failure and input/output; no retry guarantee inferred."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Limits - Activepieces",
+      "url": "https://www.activepieces.com/docs/install/reference/limits",
+      "read_at": "2026-10-22T09:57:14.757846Z",
+      "excerpt_sha256": "c51b59c09de771fc45d42ca819a7b42dfe7ab8e647cb13e9701fefaf19a4555a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloud active timeout, retention, webhook and log limits read with self-hosted configuration differences."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Activepieces",
+      "title": "License - Activepieces",
+      "url": "https://www.activepieces.com/docs/about/license",
+      "read_at": "2026-10-22T09:57:18.171014Z",
+      "excerpt_sha256": "b8c712d44a843049ee27d45aad8b87198f35670884d502b6266f9c2f4d2444fc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official license explanation distinguishes MIT core from commercially licensed enterprise/cloud features."
+    },
+    {
+      "id": "install",
+      "type": "official_documentation",
+      "site": "Activepieces",
+      "title": "Self Host Activepieces - Activepieces",
+      "url": "https://www.activepieces.com/docs/install/options/docker-compose",
+      "read_at": "2026-10-22T09:57:21.061569Z",
+      "excerpt_sha256": "858b6014d5c2f95f719da27bdad10d196e308813275a1257e8cf92b619c16a00",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Compose v2, resource requirements, four containers, public webhook URL and database/key backup responsibilities read."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:57:21.061569Z"
+  },
+  "localization": {
+    "en": {
+      "status": "original_primary_source_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["build", "data", "pricing", "license"],
+  "profile": {
+    "sections": [
+      {
+        "id": "purpose",
+        "title_en": "A repeatable sequence with a defined starting event",
+        "title_zh": "从明确事件开始的可重复流程",
+        "en": "The trigger determines when a flow starts: for example a scheduled interval, a webhook or an app event. Actions then execute the chosen work, including code or communication with another service. Define what counts as one business request before choosing the trigger; a schedule itself may produce no business data. A scheduled report therefore needs an action that fetches the records to report on.",
+        "zh": "触发器决定流程何时开始，例如定时计划、webhook 或应用事件；动作随后执行代码或与其他服务交互。选择触发器前，应先定义什么算一项业务请求。定时触发器本身可能不产生业务数据，因此定时报表还需要获取待报告记录的动作。",
+        "source_refs": ["build", "data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "example",
+        "title_en": "Follow the record, not just the connection line",
+        "title_zh": "沿着数据记录检查流程",
+        "en": "As an illustrative design, receive a webhook with request_id, email and amount, send selected fields to an HTTP endpoint, then include the returned reference in a notification. The Data to Insert panel exposes parent-step outputs. Expand the output and check its shape before selecting a property; a whole object is different from its email string. Later steps can reference outputs from more than their immediate predecessor. This example is a proposed design, not a tested app integration.",
+        "zh": "以假设流程为例：webhook 接收 request_id、email 和 amount，将所需字段发送到 HTTP 端点，再把返回的编号放进通知。Data to Insert 面板展示上游步骤输出；选择属性前，应展开检查结构，完整对象与其中的 email 字符串不同。后续步骤能引用的不只紧邻前一步的输出。本例是设计建议，未实测具体应用集成。",
+        "source_refs": ["data", "pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_example"
+      },
+      {
+        "id": "building",
+        "title_en": "Test each step before mapping the next one",
+        "title_zh": "映射下一步之前先测试当前步骤",
+        "en": "The data guide requires testing added steps so their output becomes available for mapping. An untested trigger or action is marked Test me. Some dropdown inputs need switching to dynamic mode to accept an earlier output. JSON paths provide another reference route, but a syntactically valid path does not establish that a live record contains the property. Our suggested check is to include a missing email and an unexpected amount format alongside a normal sample.",
+        "zh": "数据指南要求测试新加步骤，让输出可供后续映射；未测试的触发器或动作会显示 Test me。某些下拉输入需要切换到动态模式，才能使用上游输出，也可通过 JSON 路径引用。路径语法正确并不证明真实记录包含该属性。建议除正常样例外，还检查 email 缺失、amount 格式异常两种输入。",
+        "source_refs": ["data"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release",
+        "title_en": "Saving an edit and running an edit are different moments",
+        "title_zh": "保存编辑与启用编辑是两个时点",
+        "en": "Edits become operational through Publish rather than immediately replacing the running version. In a project marked Sensitive, the interface requests approval from a user with the documented sensitive-flow publishing permission. Do not assume that this governance arrangement is included in every edition. In evaluation, change a harmless output, publish deliberately, and verify which version handled a fresh event.",
+        "zh": "编辑需要经过 Publish 才会生效，不会立即替换运行中的版本。标为 Sensitive 的项目会请求具有对应流程发布权限的用户批准；不能据此推定所有版本都包含这套治理能力。评估时可修改一个无害输出，明确发布，再确认新事件由哪个版本处理。",
+        "source_refs": ["publish"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operations",
+        "title_en": "Use run details to locate failure before repeating writes",
+        "title_zh": "重复写入前用运行详情定位失败",
+        "en": "Runs opens a read-only view of a specific execution. Step status and the Run Details inputs and outputs help distinguish a bad mapping from a failure farther downstream. This documentation explains inspection, not a promise that repeating an external write is safe. Retain the business identifier, inspect the destination and establish duplicate handling before rerunning an operation that may already have created a record.",
+        "zh": "Runs 会以只读视图打开某次执行，步骤状态及 Run Details 的输入输出可帮助区分映射错误与下游故障。该文档说明的是检查方法，不保证重复外部写入安全。重新执行可能已创建记录的操作前，建议保留业务标识、检查目标状态，并约定重复数据处理方式。",
+        "source_refs": ["debug"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity",
+        "title_en": "Cloud limits matter even when the canvas accepts the flow",
+        "title_zh": "画布能保存流程，不代表它符合 Cloud 容量限制",
+        "en": "The limits page lists a 10-minute active run timeout, 30-day execution-data retention and a 30-second synchronous webhook response timeout for Cloud. Approval and delay pauses do not count toward active execution time. A synchronous webhook that fails responds with HTTP 500; a flow that produces no response within the waiting window can yield HTTP 408. Cloud also limits incoming webhook payloads to 5 MB and cumulative run logs to 25 MB. Oversized logs end the run with LOG_SIZE_EXCEEDED. Self-hosted defaults and environment overrides are separate, so copying Cloud numbers into a self-hosted capacity plan would be misleading.",
+        "zh": "限制页列出的 Cloud 条件包括：流程活跃执行超时 10 分钟、执行数据保留 30 天、同步 webhook 响应等待 30 秒；审批与延迟暂停不计入活跃执行时间。同步 webhook 流程失败会返回 HTTP 500；等待窗口内没有产生响应的流程可能返回 HTTP 408。Cloud 的传入 webhook 负载上限为 5 MB，累计运行日志上限为 25 MB；日志过大时运行以 LOG_SIZE_EXCEEDED 结束。自托管默认值及环境变量覆盖是另一套条件，不能直接照搬 Cloud 数字规划。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Budget credits and resolve the Free reset discrepancy",
+        "title_zh": "估算积分，并核清免费额度刷新矛盾",
+        "en": "At the read date the monthly table lists Free with 1,000 credits, Plus at $20 with 10,000, and Team at $200 with 50,000. Plus/Team overage is $0.007 per credit. A non-AI run costs one credit regardless of steps; AI adds consumption, and bringing provider keys shifts model charges to that provider. Hypothetically, 100 non-AI runs use 100 base credits, not 100 multiplied by their action count. Free is advertised without a time limit, but its table and one FAQ say daily reset while another says monthly. Confirm reset behavior before relying on the free allocation. Ultimate and enterprise control require a quote; Embed is a separate commercial offering.",
+        "zh": "读取时，月付表列出 Free 含 1,000 积分、Plus 为 $20 含 10,000 积分、Team 为 $200 含 50,000 积分；Plus/Team 超额为每积分 $0.007。非 AI 运行不论步骤数，基础消耗为一次一个积分；AI 另有消耗，自带供应商密钥则把模型费用转到对应供应商。假设 100 次非 AI 运行，基础消耗是 100 积分，而非再乘动作数。Free 宣称无时间限制，但表格及一处 FAQ 写每日刷新，另一处写每月；依赖免费额度前应核实。Ultimate、企业控制需询价；Embed 是另一个商业选项。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation_and_source_conflict"
+      },
+      {
+        "id": "hosting",
+        "title_en": "Self-hosting includes the database, queue and encryption key",
+        "title_zh": "自托管还要负责数据库、队列与加密密钥",
+        "en": "The Compose guide requires Compose v2 and at least 2 vCPU/4 GB RAM. It describes separate app, worker, PostgreSQL and Redis containers. Webhooks need a URL reachable by third parties; a local editor alone does not supply that. The database lives in a Docker volume rather than just the installation folder. Preserve the encryption key as well as database backups: the guide warns that stored connections cannot be decrypted without AP_ENCRYPTION_KEY. Review breaking changes and capacity before upgrades. None of these install or restore procedures was executed for this profile.",
+        "zh": "Compose 指南要求 Compose v2，至少 2 vCPU、4 GB RAM，包含独立的 app、worker、PostgreSQL 与 Redis 容器。webhook 需要第三方能访问的 URL，仅有本地编辑器并不满足条件。数据库存储在 Docker volume，而非仅在安装目录。除数据库备份外还要保存加密密钥：指南警告，没有 AP_ENCRYPTION_KEY 就无法解密已保存连接。升级前需核对破坏性变更及容量。本文未执行这些安装或恢复步骤。",
+        "source_refs": ["install"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Scope the MIT claim to the core",
+        "title_zh": "MIT 结论只适用于核心",
+        "en": "The official license page assigns MIT to the core and a commercial license to enterprise/cloud features. Enterprise code in the documented ee directories requires an Activepieces license on a self-hosted instance. The repository being visible therefore does not make every feature available under MIT. Keep three decisions separate: where the software runs, which edition’s features are required, and whether customer-facing embedding is in scope. This directory record classifies the core as open source and explicitly retains the commercial boundary.",
+        "zh": "官方许可页将 MIT 分配给核心，将企业及云版本相关功能分配给商业许可。自托管使用文档所指 ee 目录中的企业代码也需要 Activepieces 许可。源码可见并不代表每项功能都采用 MIT。应分别决定部署位置、所需版本功能，以及是否涉及面向客户的嵌入。本档案将核心标为开源，同时保留商业部分边界。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Choose a maintainer as well as a connector",
+        "title_zh": "选择连接器，也要确定维护人",
+        "en": "Activepieces merits evaluation when a team wants inspectable trigger/action logic and can maintain app credentials, field mappings and operational limits. It is less suitable as an unattended handoff if nobody can investigate failed runs or operate the self-hosted stores. Before adopting, follow one representative record from input through the destination and confirm the actual operation exposed by each piece. A catalog of apps is not proof that every API endpoint or account tier is supported.",
+        "zh": "当团队希望明确检查触发器与动作逻辑，并能维护应用凭据、字段映射及运行限制时，Activepieces 值得评估。如果无人排查失败运行或维护自托管存储，则不适合作为无人负责的交接系统。采用前，应跟踪一条代表性记录从输入到目标系统的全过程，并核对各 piece 实际提供的操作；应用目录不能证明所有 API 端点或账户等级都受支持。",
+        "source_refs": ["build", "debug", "install"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Activepieces: Flow Design, Credits, Self-Hosting and MIT Core",
+    "title_zh": "Activepieces：流程设计、积分、自托管与 MIT 核心",
+    "description_en": "Understand Activepieces data mapping, publishing, Cloud limits, credit billing and the commercial boundary around its open-source core.",
+    "description_zh": "理解 Activepieces 的数据映射、发布、Cloud 限制、积分计费及开源核心之外的商业边界。",
+    "primary_intent": "Evaluate a maintained flow automation deployment.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Free credit-reset timing conflicts within the official pricing page; actual account behavior was not tested.",
+      "zh": "官方定价页的免费积分刷新周期存在矛盾；未测试账户实际行为。",
+      "source_refs": ["pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Connector permissions, runtime version, performance, recovery reliability, UI languages and regional purchase availability were not tested.",
+      "zh": "未测试连接器权限、运行版本、性能、恢复可靠性、界面语言及地区购买可用性。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

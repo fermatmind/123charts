@@ -1,0 +1,428 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "laserfiche-49a2e171",
+  "name": "Laserfiche",
+  "website_url": "https://www.laserfiche.com/",
+  "domain": "www.laserfiche.com",
+  "identity_domain": "laserfiche.com",
+  "category": "documents",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "Laserfiche is a content platform combining document repositories, metadata, capture, records management and process automation. It offers Cloud subscriptions and a distinct self-hosted Laserfiche 12 product. The researched operational examples below are explicitly Cloud-scoped unless identified as Laserfiche 12. Version history, record retention and recycle-bin recovery preserve different information and require separate configuration and entitlements.",
+  "description_zh": "Laserfiche 是结合文档库、元数据、采集、档案管理及流程自动化的内容平台，提供 Cloud 订阅和独立的自行部署 Laserfiche 12。下文操作实例除明确标注 Laserfiche 12 外，均以 Cloud 文档为范围。版本历史、档案保留和回收站恢复保存的信息不同，需要分别配置并确认权益。",
+  "core_features": [
+    {
+      "name_en": "Content and metadata versions",
+      "name_zh": "内容及元数据版本",
+      "explanation_en": "Enabled Cloud versioning preserves pages/files and fields, but not name, location or security state.",
+      "explanation_zh": "启用 Cloud 版本跟踪可保留页面文件及字段，但不保留名称、位置或安全状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "versions",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Configured record lifecycle",
+      "name_zh": "经配置的档案生命周期",
+      "explanation_en": "Cutoff instructions determine when retention begins; metadata retention is separate from file retention.",
+      "explanation_zh": "截止指令决定何时开始保留期，保留元数据不同于保留文件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "records",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Hybrid Smart Fields on LF12",
+      "name_zh": "LF12 混合式 Smart Fields",
+      "explanation_en": "Active self-hosted subscription connects a local AI service to Laserfiche Cloud.",
+      "explanation_zh": "有效自行部署订阅将本地 AI 服务连接至 Laserfiche Cloud。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hybrid-ai",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a synthetic property-inspection case across version history, record lifecycle, access and recovery."
+    ],
+    "zh": ["通过模拟物业检查案卷评估版本历史、档案生命周期、权限与恢复。"],
+    "source_refs": ["documents", "records", "delete"],
+    "basis": "Proposed acceptance exercise; not legal retention advice or customer evidence."
+  },
+  "technical_details": {
+    "Deployment": {
+      "en": "Cloud and separate self-hosted LF12; LF12 Smart Fields has a Cloud service dependency.",
+      "zh": "Cloud 与独立自行部署 LF12；LF12 Smart Fields 依赖 Cloud 服务。",
+      "source_ref": "hybrid-ai",
+      "status": "documentation_read"
+    },
+    "API": {
+      "en": "REST APIs for repository/lookup integration on Cloud/selfhost; exact server and rights must be scoped.",
+      "zh": "Cloud／自行部署的库及查找表 REST 集成；需明确服务器及权限。",
+      "source_ref": "developer",
+      "status": "documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Records manager",
+      "Repository administrator",
+      "Case-process owner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "records"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Cloud or exact self-hosted version, then define a synthetic case, rights, version scope, cutoff event and recovery output before obtaining an order-specific quote.",
+        "zh": "先选 Cloud 或准确自行部署版本，再定义模拟案卷、权限、版本范围、截止事件及恢复产物，取得专属报价。",
+        "source_refs": ["selfhost", "rights", "records", "pricing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "documented_not_connected",
+    "items": [],
+    "source_ref": "developer",
+    "scope": "REST repository/lookup integrations documented; authentication, current endpoints, quotas and retry behavior require exact deployment. No connection executed."
+  },
+  "limitations": {
+    "status": "documented_scope_limits",
+    "items": [
+      {
+        "en": "Versioning excludes names/security/location; feature rights are client-enforced; single version deletion bypasses recovery; LF12 Smart Fields extracts firsttenpages.",
+        "zh": "版本跟踪不含名称安全位置；功能权限由客户端执行；单版本删除绕过恢复；LF12 Smart Fields 提取前十页。",
+        "source_refs": ["versions", "rights", "hybrid-ai-details"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "specific_product_license_not_verified",
+    "is_open_source": null,
+    "url": null,
+    "source_ref": "terms",
+    "scope": "General terms defer to product-specific license. Their generic open-source mention is not a product source grant."
+  },
+  "pricing": {
+    "status": "official_annual_cards_read_order_unverified",
+    "price_type": "minimum_users_annual_cloud_plus_services",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "USD annual Cloud cards Professional875/user/year minimum5, Business1115minimum25, Business+500minimum500. Exact current order and add-ons unverified.",
+    "source_snapshot_zh": "美元年度 Cloud 卡片：Professional 每用户875最低5人，Business1115最低25人，Business+500最低500人；准确订单及附加费未核实。"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/laserfiche",
+      "read_at": "2026-10-22T09:05:52.502Z",
+      "excerpt_sha256": "10dc7a79317ddb69fc7dbb9f3cd76b04f441ac8614f42b325d45d95bb71829ea",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "www.laserfiche.com",
+      "title": "Laserfiche | Document Management, Process Automation",
+      "url": "https://www.laserfiche.com/",
+      "read_at": "2026-10-22T16:10:48.051093Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4fc85e4c6fd82ab686f9281410498b435957ef83c70d5615002ee4329462c7cf",
+      "research_notes_en": "Actual content-platform/document/automation scope; rankings, speed and customer outcomes not independently checked."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.laserfiche.com",
+      "title": "See Pricing Plans for Laserfiche",
+      "url": "https://www.laserfiche.com/products/pricing/",
+      "read_at": "2026-10-22T16:10:48.052684Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "11b2c5147a3d9b22a14f73ae259165c00e14716143a085ebd6fbd89e2b9c6e06",
+      "research_notes_en": "Actual first USD Cloud annual cards: Professional875/user/year minimum5, Business1115minimum25, Business+500minimum500; quotas and implementation exclusions. Monthly equivalents rounded, no checkout or exact order confirmed."
+    },
+    {
+      "id": "documents",
+      "type": "official_documentation",
+      "site": "www.laserfiche.com",
+      "title": "Document and Records Management | Laserfiche",
+      "url": "https://www.laserfiche.com/products/document-and-records-management/",
+      "read_at": "2026-10-22T16:10:48.053587Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fc8f9b19b25d30bb357eed3aaf70100b1a12cf180990174cdf9179f44846929c",
+      "research_notes_en": "Actual centralized repository, metadata, document/record tasks and integration positioning; not all deployments/tiers identical."
+    },
+    {
+      "id": "selfhost",
+      "type": "official_documentation",
+      "site": "www.laserfiche.com",
+      "title": "Laserfiche 12",
+      "url": "https://www.laserfiche.com/products/lf12/",
+      "read_at": "2026-10-22T16:10:48.056706Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e2a9d5b9810cc506d35601c4f4a9dc93d541ebdc1a24a95210b84db3f1a03912",
+      "research_notes_en": "Actual Laserfiche12 self-hosted product, AI subscription condition and distinct admin/install resources; not Cloud-equivalence or full-local-AI claim."
+    },
+    {
+      "id": "activity",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Monitoring Repository Activity",
+      "url": "https://doc.laserfiche.com/laserfiche/en-us/content/admin-activity.htm",
+      "read_at": "2026-10-22T16:10:48.059276Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5334fb83d950a216515eada65e2dca8831f97a37ee53cc0b113da920b69ee73d",
+      "research_notes_en": "Actual Cloud checkout versus transient lock, possible loss on administrative release, configurable default30dayrecycle."
+    },
+    {
+      "id": "rights",
+      "type": "official_documentation",
+      "site": "docs.laserfiche.com",
+      "title": "Feature Rights and Privileges",
+      "url": "https://docs.laserfiche.com/laserfiche/en-us/content/sec-privileges.htm",
+      "read_at": "2026-10-22T16:10:48.059318Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "855504d5a6c24ee74b0c586866a5fb6fe31cb74897c99252c94b19c5984c8751",
+      "research_notes_en": "Actual Cloud feature rights client-enforced, not a substitute for entry/field security; admin privileges and immediate historical-version deletion."
+    },
+    {
+      "id": "delete",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Deleting Documents and Folders",
+      "url": "https://doc.laserfiche.com/laserfiche/en-us/content/doc-deletion.htm",
+      "read_at": "2026-10-22T16:10:48.059342Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4513c8a7682f83d28cebefd3231549c53acb17e9ee7282ecd656478964c1e888",
+      "research_notes_en": "Actual Cloud restore-to-parent rules, page-parent purge exception and trash counts against storage."
+    },
+    {
+      "id": "records",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Records Management Administration",
+      "url": "https://doc.laserfiche.com/laserfiche/en-us/content/rm-administration.htm",
+      "read_at": "2026-10-22T16:10:48.059387Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "c54c2820c143aee0fb4d3595e6a9d51765ec43d2208f6c0e38e0ad1456f48d4d",
+      "research_notes_en": "Actual Cloud records prerequisites, cutoff/retention timing, metadata-only retention excluding versionhistory; not legal retention recommendation."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Versions",
+      "url": "https://doc.laserfiche.com/laserfiche/en-us/content/meta-versions.htm",
+      "read_at": "2026-10-22T16:10:48.059536Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3b6cb328a93e9aea10d313bd65d4c5a912036e9dea264841c3edbcc8a68c4886",
+      "research_notes_en": "Actual Cloud enabled versioning, covered/excluded properties, reversion as new version and permanent historical-version deletion."
+    },
+    {
+      "id": "hybrid-ai-details",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Laserfiche AI",
+      "url": "https://doc.laserfiche.com/laserfiche.documentation/12/userguide/en-us/content/admin-laserfiche-ai.htm",
+      "read_at": "2026-10-22T16:10:48.059573Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "20d2ad63fc7ad517a20cc1a910de27a8f69537e6d421e4eaafc1ededa512b0c6",
+      "research_notes_en": "Actual LF12 hybrid SmartFields permissions, firsttenpage extraction limit, queue and vendor no-training statement; not inherited Cloudwide guarantee."
+    },
+    {
+      "id": "developer",
+      "type": "official_documentation",
+      "site": "developer.laserfiche.com",
+      "title": "Getting Started | Laserfiche Developer Documentation",
+      "url": "https://developer.laserfiche.com/docs/getting-started/guide_getting-started/",
+      "read_at": "2026-10-22T16:10:48.059603Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6c9b66e406852f070721198c50f040987bb67b4c713f5f075f6d407ef5eb8c70",
+      "research_notes_en": "Actual REST API for Cloud and selfhost, repository/lookup scope and authentication resources; no endpoint called."
+    },
+    {
+      "id": "hybrid-ai",
+      "type": "official_documentation",
+      "site": "doc.laserfiche.com",
+      "title": "Laserfiche AI",
+      "url": "https://doc.laserfiche.com/laserfiche.documentation/12/userguide/en-us/content/admin-laserfiche-ai.htm",
+      "read_at": "2026-10-22T16:10:48.059717Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6b4ba671ea27a92e540948c0797e44d52a865b18fe0e609c3aa3eb0ccbac732a",
+      "research_notes_en": "Actual LF12 active-subscription-only Smart Fields uses Cloud account/datacenter/API key plus local service and connection key; not offline-only."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "www.laserfiche.com",
+      "title": "Terms of Use | Laserfiche",
+      "url": "https://www.laserfiche.com/legal/terms-of-use/",
+      "read_at": "2026-10-22T16:10:48.059778Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4ce22694d7275a798b2a3760fab6444b05db26af80b4afe4bd77501b18cfb83e",
+      "research_notes_en": "Actual Jan2026 general terms defer to applicable software licenses, restrict default internal use/modification/redistribution; full specific EULA not established."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:10:48.059778Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "overview",
+    "selfhost",
+    "versions",
+    "records",
+    "delete"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "deployment-and-case",
+        "title_en": "Select the deployment before defining the case file",
+        "title_zh": "定义案卷前先选部署",
+        "en": "Laserfiche combines a repository with capture, metadata, automation and records capabilities. The current site separately presents Cloud subscriptions and self-hosted Laserfiche 12. Cloud help explicitly redirects non-Cloud users to the version-specific guide. A Cloud allowance, recovery default or AI feature must not be silently assigned to an existing on-premises installation.\n\nFor an editorial evaluation, use a fictional property-inspection case containing an application, inspection report and amended plan. Give each document a case identifier, type and inspection date. Define whether the task is staff review, public-record delivery or long-term retention: those require different permissions and outputs. A searchable folder is not evidence that an application was approved or a retention obligation was met. This is a proposed acceptance exercise, not a customer implementation, public-record disclosure or performance test.",
+        "zh": "Laserfiche 将文档库与采集、元数据、自动化及档案能力组合。当前网站分别介绍 Cloud 订阅和自行部署 Laserfiche 12，Cloud 帮助明确引导非 Cloud 用户读取专版指南。不能把云额度、恢复默认值或 AI 功能直接赋给现有本地安装。\n\n编辑建议使用虚构物业检查案卷，包含申请、检查报告及修订图纸，设案卷标识、文档类型和检查日期。明确任务是内部审阅、公众档案交付还是长期保留，各自要求不同权限与产物。文件夹可搜索不证明申请获批或满足保留义务。这是建议验收练习，不是客户实施、公众披露或性能测试。",
+        "source_refs": ["overview", "documents", "selfhost", "activity"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "versions-and-saved-state",
+        "title_en": "Version tracking preserves selected state, not every property",
+        "title_zh": "版本跟踪保留部分状态而非所有属性",
+        "en": "Cloud documents must be placed under version control before history is tracked; it cannot then be disabled. History includes image/text pages, electronic files, annotations, templates and fields. It excludes names, repository locations, security settings, tags and links. Reverting creates a new version matching the selected older state and retains intermediate versions. It does not roll back excluded security or location changes.\n\nFor the fictional inspection report, change a field and file, then separately change its location. A planned verification should compare the reverted content and metadata with the still-current access and placement. Individual historical versions can be permanently deleted and do not enter the recycle bin. Versioning therefore is not an immutable or complete repository backup. Administrative checkout or lock release can also lose a user’s pending changes; releasing a stuck item should not be described as recovering those edits. No history, checkout or lock was changed.",
+        "zh": "Cloud 文档需先启用版本控制才跟踪历史，启用后不能关闭。历史包含图像正文页、电子文件、批注、模板及字段，不含名称、库位置、安全设置、标签及链接。回退会创建匹配目标旧状态的新版本，并保留中间版本，但不会回退排除在外的安全和位置变更。\n\n虚构检查报告可先改字段和文件，再单独移动位置；建议核对回退内容元数据与仍然当前的权限及位置。单个历史版本可永久删除且不进入回收站，因此版本跟踪不是不可变或完整库备份。管理员解除签出或锁也可能丢失用户待保存修改，不能称为恢复这些修改。本研究未修改历史、签出或锁。",
+        "source_refs": ["versions", "activity", "rights"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permissions-and-integration",
+        "title_en": "A hidden command does not replace entry-level authorization",
+        "title_zh": "隐藏命令不替代条目级授权",
+        "en": "Cloud feature rights govern client actions such as print/export or delete, while access rights govern particular documents and folders. The guide explicitly warns that a custom API client may not enforce feature rights. Removing a web delete command therefore does not establish that a user or integration lacks Delete Entry access. Field security and powerful administrative privileges must be considered separately.\n\nFor the proposed case, distinguish a public-record reader, inspector and repository administrator, then inspect the effective document/field rights of the actual integration identity. The REST API is available for Cloud and self-hosted instances, but that does not establish one configuration, API quota or credential model for both. Use a synthetic case identifier and reconcile an imported document and its fields after a test operation; a repository identifier alone does not demonstrate the business mapping is correct. Exact retry, duplicate and partial-import behavior remain unverified. No credentials were created and no API or permission change was made.",
+        "zh": "Cloud 功能权限控制打印导出、删除等客户端动作，访问权限则控制特定文档和文件夹。指南明确提醒自定义 API 客户端可能不执行功能权限，因此网页删除命令消失不证明用户或集成没有 Delete Entry 权限。还需分别考虑字段安全和强管理权限。\n\n建议案卷应区分公众档案读者、检查员与库管理员，再检查实际集成身份的有效文档及字段权限。REST API 同时支持 Cloud 和自行部署，不表示两者具有相同配置、额度及凭据模型。可用模拟案卷标识，并在测试操作后核对导入文档和字段；获得库条目编号不证明业务映射正确。具体重试、重复及部分导入行为未核实。本研究未创建凭据，也未调用 API 或变更权限。",
+        "source_refs": ["rights", "developer"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "record-retention",
+        "title_en": "Start retention from the intended cutoff event",
+        "title_zh": "从正确截止事件开始保留期",
+        "en": "Cloud records management requires configured definitions and the relevant privileges as well as ordinary content access. Retention begins after cutoff. The guide distinguishes cycle-based time cutoff from elapsed-interval cutoff: a monthly cycle does not mean the same date calculation as one month after filing. An event or superseding relationship can produce another cutoff path. The organization must choose the rule matching its actual policy; this profile supplies no legal retention duration.\n\nThe retention configuration can remove images, text and electronic files while retaining metadata, records state and other attributes; version history is excluded from that retained metadata. A surviving row can therefore document disposition without containing the original record. For the fictional case, write down which event starts the clock, what must be retained and what output demonstrates the intended state. Test on disposable synthetic content and have the responsible records owner confirm the policy mapping. No cutoff, schedule, hold, transfer or disposition action was executed.",
+        "zh": "Cloud 档案管理需要先配置定义，取得相关特权及普通内容访问权限。保留期在 cutoff 后开始，指南区分按周期的时间截止和经过固定时长的间隔截止：月周期与登记后经过一个月并非同一日期算法。事件或被替代关系还可触发其他截止路径。机构需按实际政策选规则，本档案不提供法律保留期限。\n\n保留配置可删除图像、正文及电子文件，同时保留元数据、档案状态等属性，但所留元数据不含版本历史。记录行仍在可能只是处置证据，不含原档案。建议案卷应写明计时事件、必留内容及证明目标状态的产物，使用可丢弃模拟内容测试，并由档案负责人确认政策映射。本研究未执行截止、保留表、冻结、移交或处置。",
+        "source_refs": ["records"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deletion-and-recovery",
+        "title_en": "Recovery depends on the object that was deleted",
+        "title_zh": "恢复取决于删除对象",
+        "en": "Cloud recycle-bin items continue to consume storage. The documented default purge age is thirty days, but administrators can change or disable it; users normally see their own deleted items while Manage Entry Access expands administration. Confirm the actual repository setting rather than offering every user a fixed recovery guarantee.\n\nWhole documents and folders normally restore to their original location. If a document’s former parent folder was purged, restoration can recreate that folder without bringing its other former contents back. A deleted page is different: purging its parent document also purges the page. Historical-version deletion is another path that bypasses the bin entirely. For the synthetic case, make the recovery target explicit: one document, a page, or the complete case and its relationships. A recovered object is not proof that the entire case, current security and downstream copies were reconstructed. Backup retention, full-tenant restoration and contract-specific export after termination were not established. No deletion or restore was performed.",
+        "zh": "Cloud 回收站内容仍占存储。文档默认清理年龄为三十天，但管理员可修改或关闭；普通用户通常看到自己删除的内容，Manage Entry Access 扩大管理范围。应核对实际库设置，不承诺所有用户固定恢复保证。\n\n完整文档及文件夹通常恢复至原位置；若文档原父文件夹已永久清理，恢复可重建文件夹，却不会带回其中其他旧内容。删除的单页不同：父文档永久清理后，该页也会清理。历史版本删除则完全绕过回收站。模拟案卷应明确恢复目标是一个文档、一页，还是完整案卷及关系。某对象恢复不证明案卷、当前安全及下游副本完整重建。备份保留、全租户恢复及合同终止后导出未确立。本研究未删除或恢复。",
+        "source_refs": ["activity", "delete", "versions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "hybrid-smart-fields",
+        "title_en": "Self-hosted Smart Fields still has a Cloud dependency",
+        "title_zh": "自行部署 Smart Fields 仍依赖 Cloud",
+        "en": "The Laserfiche 12 AI guide describes Smart Fields for active subscription systems, excluding non-subscription Rio/Avante accounts. It requires a limited Cloud account in a selected datacenter and a local AI service between that account and the repository web client. A Cloud API key and a separate local connection key have different purposes. Self-hosted repository storage therefore does not establish offline-only AI processing.\n\nThe same LF12 guide states a first-ten-pages extraction scope. For an amended inspection packet, a critical condition on page eleven may be absent from extraction. Define an expected field and compare representative source pages before enabling automatic extraction. Generated values require content review; no extraction accuracy or reliable judgment was measured. Vendor no-training and security-respect statements are documented claims, not a complete independent audit of provider retention or the customer’s agreement. No Cloud account, key, AI service, prompt or extraction was created.",
+        "zh": "Laserfiche 12 AI 指南将 Smart Fields 限于有效订阅系统，不含非订阅 Rio／Avante 账户。它需要选定数据中心的有限 Cloud 账户，以及位于该账户与库网页客户端之间的本地 AI 服务。Cloud API 密钥与独立本地连接密钥用途不同，因此库自行部署不证明 AI 仅离线处理。\n\n同一 LF12 指南规定只从前十页提取，修订检查材料第十一页的重要条件可能未被提取。开启自动提取前，应定义预期字段并对照代表性来源页面；生成值仍需内容审阅，本研究未测准确率或判断可靠性。厂商不训练及尊重权限声明是文档主张，不替代对提供方保留政策或客户协议的完整独立审计。本研究未创建 Cloud 账户、密钥、AI 服务、提示或提取。",
+        "source_refs": ["hybrid-ai", "hybrid-ai-details"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quote-and-license",
+        "title_en": "Use annual totals with minimum seats and distinct allowances",
+        "title_zh": "按最低席位与独立额度计算年度费用",
+        "en": "The reviewed USD annual Cloud cards list Professional at $875 per user per year with five users minimum, Business at $1,115 with twenty-five minimum, and Business+ at $500 with five hundred minimum. Their displayed monthly equivalents are rounded. Five Professional users would therefore imply a $4,375 annual base illustration using the annual figure, before excluded implementation/professional services and unverified taxes or add-ons. This is not a binding quote. Storage, repository counts, annual AI units and monthly API calls are separate allowances, not unlimited platform usage.\n\nCloud Starter and self-hosted LF12 are presented separately. Confirm current edition, licenses, AI/API expansion, region, support, recovery, renewal and exit in the order. General January 2026 terms defer to the applicable software license; a generic reference to open-source software does not identify a source license for this complete product. Full product-specific licensing and current trial/free availability remain unknown. No software was downloaded, agreement accepted, quote requested or payment made.",
+        "zh": "已读美元年度 Cloud 卡片列 Professional 每用户每年 $875、最低五人；Business 为 $1,115、最低二十五人；Business+ 为 $500、最低五百人，显示的月均数有取整。因此按年度数字，五名 Professional 用户的基础假设算例为每年 $4,375，另排除实施及专业服务，税和附加项目未核实；这不是约束性报价。存储、库数量、年度 AI units 及每月 API 调用分别计算，不表示无限用量。\n\nCloud Starter 和自行部署 LF12 另列。订单需确认版本、许可、AI／API 扩额、地区、支持、恢复、续费及退出。2026 年一月通用条款将软件交给适用专属许可，笼统提到开源软件不等于为完整产品指明源码许可。产品专属完整许可、当前试用及免费可用性仍未知。本研究未下载软件、接受协议、询价或支付。",
+        "source_refs": ["pricing", "terms"],
+        "evidence_type": "documented_with_hypothetical_cost_example"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Laserfiche: Cloud Versioning, Records and Hybrid AI Conditions",
+    "title_zh": "Laserfiche：Cloud 版本、档案及混合 AI 条件",
+    "description_en": "Evaluate Laserfiche Cloud versus LF12, version scope, access rights, cutoff retention, recycle-bin recovery and annual minimum-seat costs.",
+    "description_zh": "评估 Laserfiche Cloud 与 LF12、版本范围、访问权限、截止保留、回收站恢复及年度最低席位费用。",
+    "search_intent_status": "editorial_inference_not_measured"
+  },
+  "research_gaps": [
+    {
+      "en": "No account/installation/import, process, record action, privilege change, API, AI, key, download, backup, deletion, restore, contact, agreement or payment operation performed.",
+      "zh": "未执行账户安装导入、流程、档案动作、特权变更、API、AI、密钥、下载、备份、删除、恢复、联系、协议或支付。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Full product-specific license, current trial/free eligibility, specific billing/renewal/exit agreement, AI/model subprocessor retention, complete export/backup restore, workflow failure/replay and exact deployment settings unverified. Vendor security/outcomes not independently audited.",
+      "zh": "完整专属许可、当前试用免费资格、具体计费续费退出协议、AI 模型分处理保留、完整导出备份恢复、流程失败重放及精确部署设置未核实，厂商安全和成效未独立审计。",
+      "source_refs": ["terms", "pricing", "hybrid-ai", "developer"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Cloud operation topics are not silently applied to LF12; limited LF12 AI account is not general free Cloud eligibility. Pricing monthly equivalents rounded; annual cards used without claiming checkout verification.",
+      "zh": "Cloud 操作主题不默默套用 LF12，有限 LF12 AI 账户不表示通用免费 Cloud 资格。价格月均有取整，采用年度卡片且不声称已核对结账。",
+      "source_refs": ["pricing", "selfhost", "hybrid-ai"],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}

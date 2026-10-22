@@ -1,0 +1,454 @@
+{
+  "schema_version": "123charts-software-research-v1",
+  "slug": "iadvize-86e8146b",
+  "name": "iAdvize",
+  "website_url": "https://www.iadvize.com/en/",
+  "domain": "www.iadvize.com",
+  "identity_domain": "iadvize.com",
+  "category": "live-chat",
+  "secondary_categories": [],
+  "status": "draft",
+  "primary_language": "en",
+  "available_locales": ["en", "zh"],
+  "research_status": "primary_source_researched",
+  "description_en": "iAdvize currently centers its offer on an AI Shopping Assistant for e-commerce: storefront prompts,product guidance,a shopping panel,cart actions and shopper analysis. A separate Support Desk lets human agents take over with conversation context. This is a catalog- and usage-based shopping workflow rather than just a generic live-chat seat.\n\nFor an illustrative product recommendation,maintain a valid variant catalog,target the appropriate page,let the shopper choose and verify a real cart update or explicit failure. Human routing and unanswered questions need their own operational handling. October2026help articles provide concrete limits that qualify broader product claims. This is public-documentation research plus rendered price-toggle inspection;no catalog import,conversation,cart,tenant,subscription or export was executed.",
+  "description_zh": "iAdvize当前核心是电商AI Shopping Assistant，包含店面提示、商品引导、购物面板、购物车动作及购物者分析。独立Support Desk允许真人带上下文接管。它按商品目录和用量组织购物流程，而不只是通用聊天席位。\n\n以假设商品推荐为例，应维护有效变体目录、定向正确页面，让购物者选择，并验证真实购物车更新或明确失败。真人路由及未答问题需另有运营处理。2026年10月帮助文档提供限制，限定更宽的产品主张。本稿研究公开文档并查看渲染计费开关，未导入目录、对话、购物车、租户、订阅或导出。",
+  "core_features": [
+    {
+      "name_en": "Storefront AI shopping panel",
+      "name_zh": "店面AI购物面板",
+      "explanation_en": "Offer guided product discovery,quick replies and configured shopping actions.",
+      "explanation_zh": "提供商品引导发现、快捷回复及配置购物动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Variant-aware product knowledge",
+      "name_zh": "识别变体的商品知识",
+      "explanation_en": "Import purchasable variant rows with unique IDs and shared item_group_id.",
+      "explanation_zh": "导入有唯一ID及共享item_group_id的可购买变体行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "catalog",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Integrated add-to-cart callback",
+      "name_zh": "集成加购回调",
+      "explanation_en": "Custom stores implement cart logic and report success/failure;catalog IDs must match the store.",
+      "explanation_zh": "自定义店铺实现购物车逻辑并报告成败，目录ID须匹配店铺。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cart",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Contextual human takeover",
+      "name_zh": "带上下文真人接管",
+      "explanation_en": "Support Desk receives prior questions,products and answers when an assistant conversation transfers.",
+      "explanation_zh": "助手对话转接时，Support Desk收到此前问题、商品及答案。",
+      "explanation_scope": "product_specific",
+      "source_ref": "desk",
+      "status": "official_documentation_read"
+    }
+  ],
+  "use_cases": {
+    "status": "editorial_guidance",
+    "en": [
+      "Pilot product selection and variant/cart handling on a controlled storefront page.",
+      "Diagnose unanswered product questions through knowledge and conversation analysis."
+    ],
+    "zh": [
+      "在受控店面页试点商品选择及变体／购物车处理。",
+      "通过知识及对话分析排查未答商品问题。"
+    ],
+    "source_refs": ["cart", "catalog", "quality"],
+    "basis": "Editorial scenarios,not independently measured conversion or revenue."
+  },
+  "technical_details": {
+    "Knowledge indexing": {
+      "en": "Product details truncate above2000characters each;above32000total product-information characters the product is not indexed. Local CSV refresh is manual;URL refresh defaults daily03:00 account timezone and is configurable.",
+      "zh": "每商品详情字段超过2000字符截断，商品资料总量超过32000字符不索引。本地CSV手动更新，URL默认账户时区每日03:00刷新且可配置。",
+      "source_ref": "catalog",
+      "status": "official_documentation_read"
+    }
+  },
+  "target_audience": {
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "E-commerce experience owner",
+      "Product feed administrator",
+      "Customer-service integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
+  },
+  "getting_started": {
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Preparevalidcatalogvariants,helpfulcontent,correctsite tagandapprovedAIbehavior.",
+        "zh": "准备有效目录变体、帮助内容、正确站点标签及获准AI行为。",
+        "source_refs": ["catalog", "display", "product"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Requestcartactivation;connectnativeapporimplementthecallbackagainstthestoreactualcart.",
+        "zh": "请求启用购物车功能，连接原生应用或按店铺真实购物车实现回调。",
+        "source_refs": ["cart"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Testmissingvariant,outofstock,failedcartcall,consent,languageandhumanunavailability.",
+        "zh": "测试变体缺失、无库存、购物车调用失败、同意、语言及真人不可用。",
+        "source_refs": ["cart", "display"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Reviewno-answersandrefreshsources;confirmconversation/SKUandhumanadd-oncostbeforelaunch.",
+        "zh": "复核未答并刷新来源，上线前确认会话／SKU及真人附加费用。",
+        "source_refs": ["quality", "pricing", "desk"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
+  },
+  "integrations": {
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Shopify / PrestaShop add-to-cart",
+        "source_ref": "cart",
+        "scope": "Technicalcartintegrationautomaticaftervendorfeatureactivationandapp/moduleinstallation;version/checkoutnotexecuted."
+      },
+      {
+        "name": "Custom store callback",
+        "source_ref": "cart",
+        "scope": "on(addToCart:clicked)receivesproductId;storeperformsrealwriteandresolve/rejectsfailure."
+      },
+      {
+        "name": "CSV URL / SFTP catalog",
+        "source_ref": "catalog",
+        "scope": "Scheduledfeedretrievalwithschema/mappingrequirements;localfileimportdoesnotautomaticallyrefresh."
+      }
+    ],
+    "source_ref": "cart"
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Missingidproductsarenotimported;poorcompletioncanwarnwithoutblocking,andhelpfulcontentdoesnotsubstituteaproductcatalog.",
+        "zh": "缺ID商品不导入，完整度不足可警告但不阻断，帮助内容不能替代商品目录。",
+        "source_refs": ["catalog", "quality"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Customadd-to-cartneedsrealstorelogic;withoutcallbackthebuttonisnotshown,andfalse/rejectionreportsfailure.",
+        "zh": "自定义加购需真实店铺逻辑，无回调不显示按钮，false／拒绝会报告失败。",
+        "source_refs": ["cart"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Queue0onlyoffershumanchatwithanavailableagent;apositivequeuemayofferchatwhileagentsareoffline.",
+        "zh": "队列0仅在真人可用时提供聊天，正队列可在客服离线时仍提供聊天。",
+        "source_refs": ["display"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "SupportDeskpricecurrencyconflicts:$80/user/monthonpricingversus€80/agent/monthonitsproductFAQ.",
+        "zh": "Support Desk币种冲突，价格页每用户每月$80，产品FAQ每客服每月€80。",
+        "source_refs": ["pricing", "desk"],
+        "evidence_type": "documented"
+      }
+    ]
+  },
+  "supported_languages": {
+    "status": "not_verified",
+    "items": []
+  },
+  "license": {
+    "status": "not_verified",
+    "is_open_source": null,
+    "url": null
+  },
+  "pricing": {
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "price-render", "desk"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "AIShoppingAssistantmonthlyconversationsandcatalogSKUs;humanSupportDeskadd-onperuser.Currencyconflictandfinalorderunverified.",
+    "source_snapshot_en": "MonthlyEssentials385/Starter690/Growth1770dollars;yearlydisplay290/520/1330permonth.Conversationallowance500/1000/3000,SKUs1000/10000/50000.Humanadd-on$80versusproductFAQ€80peruser/month.Overagerate,trial,freeplanandannualcheckouttotalunverified.",
+    "source_snapshot_zh": "月付Essentials385／Starter690／Growth1770美元符号金额，年付展示月价290／520／1330；会话500／1000／3000，SKU1000／10000／50000。真人附加每用户每月价格页$80，产品FAQ€80。超额费、试用、免费档及年付结账总额未核实。",
+    "checked_at": "2026-10-22T13:08:47.415196+00:00"
+  },
+  "alternatives": {
+    "status": "not_reviewed",
+    "items": []
+  },
+  "faq": [
+    {
+      "question_en": "Is recommending a product enough to enable add-to-cart?",
+      "question_zh": "推荐了商品就能加购吗？",
+      "answer_en": "No. The feature needs activation,compatiblecatalogIDsandnativeapp/moduleorrealstorecallback. Successmustreflecttheactualcartoperation.",
+      "answer_zh": "不能。功能需启用、兼容目录ID及原生应用／模块或真实店铺回调，成功应反映实际购物车操作。",
+      "source_refs": ["cart"]
+    },
+    {
+      "question_en": "Does an unanswered product question always mean an outage?",
+      "question_zh": "商品问题未回答一定是故障吗？",
+      "answer_en": "No. Missingcatalog,unclearknowledgeorblockedhallucinationriskcanproduceano-answer.Inspectanalysisandaffectedtopics;allsuddenfailuresneedstatus/supportchecks.",
+      "answer_zh": "不一定。缺目录、知识不清或幻觉风险阻止回答都可未答，应检查分析及话题；突然全面失败则查状态／支持。",
+      "source_refs": ["quality"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "directory-detail",
+      "type": "competitor_detail",
+      "site": "SaaSworthy",
+      "url": "https://www.saasworthy.com/product/iadvize",
+      "read_at": "2026-10-22T08:59:29.383Z",
+      "excerpt_sha256": "bb8e6a6fad638f6718968724a3740a2cea2be3f49f8a9255c149a180790b5409",
+      "verification": "directory_reported",
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Discover our AI shopping assistant that is trained to sell.",
+      "title": "Discover our AI shopping assistant that is trained to sell.",
+      "url": "https://www.iadvize.com/en/ai-shopping-assistant",
+      "read_at": "2026-10-22T13:06:28.713479+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e643ad3ffe8197ee24b74f251ee5273464a405dd5bfbe503202d89cfef5b0a98",
+      "research_notes_en": "Currentshoppingassistant,starters,panel,AIBuilderandhumanworkflowpositioning;outcomescaseclaimsnotindependent."
+    },
+    {
+      "id": "desk",
+      "type": "official_documentation",
+      "site": "A streamlined interface for your human agents to assist shoppers",
+      "title": "A streamlined interface for your human agents to assist shoppers",
+      "url": "https://www.iadvize.com/en/support-desk",
+      "read_at": "2026-10-22T13:06:28.112158+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "280e2d09f77280484092ffb1b6adc07a8f74a8acfdcad057c8b1dc7d13bb2a1d",
+      "research_notes_en": "Humansupportcontext,writing/co-browse/embeddedapps;FAQeuro80conflictspricingdollar80,Enterprisepositioning."
+    },
+    {
+      "id": "catalog",
+      "type": "official_documentation",
+      "site": "The CSV file for your product catalog – Help Center iAdvize",
+      "title": "The CSV file for your product catalog – Help Center iAdvize",
+      "url": "https://help.iadvize.com/hc/en-gb/articles/24107415197330-The-CSV-file-for-your-product-catalog",
+      "read_at": "2026-10-22T13:06:58.542376+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "fb69dcda8f5d4d2b605e9354ccfd12472e41cb56df010f9a4a688d9c60447f40",
+      "research_notes_en": "ActualOct20 2026CSVschema,warningvsblocking,sync,variantids,parentrowand2000/32000characterindexlimits;newerthansearchsnippet."
+    },
+    {
+      "id": "cart",
+      "type": "official_documentation",
+      "site": "Add-To-Cart from a conversation with your Assistant – Help Center iAdvize",
+      "title": "Add-To-Cart from a conversation with your Assistant – Help Center iAdvize",
+      "url": "https://help.iadvize.com/hc/en-gb/articles/25165287553298-Add-To-Cart-from-a-conversation-with-your-Assistant",
+      "read_at": "2026-10-22T13:07:01.835661+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "4a8a113518761931e1f28a79626fe6b38ff4a62d7e3b7c14d2495d12ad3fe6e0",
+      "research_notes_en": "Oct20 2026requestactivation,nativeShopify/PrestaShop,variantavailability,customcallbackresolve/rejectandfailurestates."
+    },
+    {
+      "id": "display",
+      "type": "official_documentation",
+      "site": "iAdvize doesn’t appear on my website: what to check – Help Center iAdvize",
+      "title": "iAdvize doesn’t appear on my website: what to check – Help Center iAdvize",
+      "url": "https://help.iadvize.com/hc/en-gb/articles/19957434389010-iAdvize-doesn-t-appear-on-my-website-what-to-check",
+      "read_at": "2026-10-22T13:07:04.170213+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8f4fc363e0b5bdff7b7e8dce989736224e071dfec8f36f64de5fef3b941e4382",
+      "research_notes_en": "Oct20 2026tagLIGHT/FULL,target/routing,queue0vsasync,consent,startersgeneration24h,URL/selectorandlanguageconstraints."
+    },
+    {
+      "id": "quality",
+      "type": "official_documentation",
+      "site": "Improve your Shopping Assistant – Help Center iAdvize",
+      "title": "Improve your Shopping Assistant – Help Center iAdvize",
+      "url": "https://help.iadvize.com/hc/en-gb/articles/20009527585170-Improve-your-Shopping-Assistant",
+      "read_at": "2026-10-22T13:06:59.098760+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9ef303ddf33fc639b238bae360733947352bcb0d3cbbf7d415bf9f974c732e61",
+      "research_notes_en": "Oct20 2026no-answeranalysis,catalogvsHelpfulContent,weeklytopicvolumeanddefault03:00refresh;noanswerisnotproofoutage."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "iAdvize | AI Shopping Assistant Pricing and Plans",
+      "title": "iAdvize | AI Shopping Assistant Pricing and Plans",
+      "url": "https://www.iadvize.com/en/pricing",
+      "read_at": "2026-10-22T13:01:39.435671+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "74fec79e7f6ed1398e1662ff61bb11ac4746feb8cbde5cd6c970aeceb19b6fc7",
+      "research_notes_en": "Currentconversation/SKUpackagesand80dollaruseradd-on;upgradeassistnotdefinedoverageprice."
+    },
+    {
+      "id": "price-render",
+      "type": "official_pricing",
+      "site": "iAdvize",
+      "title": "iAdvize rendered price cards",
+      "url": "https://www.iadvize.com/en/pricing",
+      "read_at": "2026-10-22T13:08:47.415196+00:00",
+      "verification": "official_documentation_read",
+      "transport": "rendered_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "0a55dd932bede7761ab502be390754dbb93497fc9b085819231fc94f786f3ab3",
+      "research_notes_en": "Exact selected AX card excerpt saved; screenshots before/after billing toggle visually confirmed yearly290/520/1330 and monthly385/690/1770. No checkout."
+    },
+    {
+      "id": "stack",
+      "type": "official_documentation",
+      "site": "Discover the technology stack powering our AI Shopping Assistant",
+      "title": "Discover the technology stack powering our AI Shopping Assistant",
+      "url": "https://www.iadvize.com/en/technology-stack",
+      "read_at": "2026-10-22T13:06:28.601415+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "109a596cd48412d369f3e96feb7fe6dd774a1a5aef275457b193af8396fb9717",
+      "research_notes_en": "VendormultimodelOpenAI/Gemini,search/infrastructure/SSOclaims;certification/tenantisolationnotindependentlyverified."
+    },
+    {
+      "id": "website-terms",
+      "type": "official_documentation",
+      "site": "Terms and Conditions of Use",
+      "title": "Terms and Conditions of Use",
+      "url": "https://www.iadvize.com/en/terms-and-conditions",
+      "read_at": "2026-10-22T13:06:27.474875+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "2e4d32668cfe817df494e2781c59ee99419aad12b29bc869a061b2d259667a28",
+      "research_notes_en": "June10 2026websitecontent/AI-disclosureterms,notpurchasedSaaSlicense,cancellationorexportagreement."
+    }
+  ],
+  "official_check": {
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:08:47.415196+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
+  },
+  "localization": {
+    "en": {
+      "status": "editorial_draft"
+    },
+    "zh": {
+      "status": "translated_from_english_editorial_draft",
+      "untranslated_feature_labels": []
+    }
+  },
+  "review_notes": [
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "desk",
+    "catalog",
+    "cart",
+    "display",
+    "quality"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "shopping-scope",
+        "title_en": "Evaluate a shopping assistant and a separate human desk",
+        "title_zh": "评估购物助手及独立真人工作台",
+        "en": "The current offer connects storefront prompts,product discovery,conversational recommendations and a Shopping Panel. AI Builder sets behavior,knowledge and design;engagement strategies decide placement. Support Desk adds human writing assistance,co-browsing and embedded tools,with prior product discussion and answers carried into a transfer. It is not evidence that all legacy contact-center functions are included in the base assistant subscription.\n\nFor an illustrative size recommendation,the meaningful result is the right purchasable variant,accurate stock and an actual cart change or owned human follow-up. Vendor revenue lifts and ROI testimonials are not independent experiments in this profile. The public technology page describes multiple model providers and hosted infrastructure,but certificates,tenant isolation and operational reliability were not independently verified.",
+        "zh": "当前方案连接店面提示、商品发现、对话推荐及Shopping Panel。AI Builder设置行为、知识和外观，互动策略决定位置。Support Desk增加真人写作辅助、共浏览及嵌入工具，转接带先前商品讨论和回答，不证明所有旧联络中心功能都在基础助手订阅中。\n\n以假设尺码推荐为例，有意义结果是正确可购变体、准确库存及真实购物车变化或有归属的真人跟进。厂商收入增幅及ROI评价不是本稿独立实验。技术页描述多模型和托管基础设施，但认证、租户隔离及可靠性未独立验证。",
+        "source_refs": ["product", "desk", "stack"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "catalog",
+        "title_en": "Maintain a usable catalog,not only an uploaded file",
+        "title_zh": "维护可用目录，而不只是上传文件",
+        "en": "The actual October20,2026CSV guide requires mapping id,title,description and link;rows without an id are not imported. Low completion can warn while allowing continuation. Variants need unique IDs and a shared item_group_id;synthetic parent rows that are not purchasable variants can break variant selection or cart behavior. A PDF URL in a detail column is not read as PDF knowledge.\n\nA detail field truncates above2000characters;total product information above32000characters prevents indexing. Local-file refresh is manual,whereas URL feeds default to daily03:00in the account timezone with configurable schedules. Inspect an imported item and each intended variant after an update. A valid file or first-row preview alone does not prove every product is indexed or current.",
+        "zh": "2026年10月20日实际CSV指南要求映射id、title、description及link，缺id行不导入；完整度低可警告同时允许继续。变体需唯一ID和共享item_group_id，不可购买的虚构父行可能破坏变体选择或加购。详情列PDF网址不会作为PDF知识读取。\n\n详情字段超过2000字符截断，商品总资料超过32000字符不索引。本地文件手动刷新，URL源默认账户时区每天03:00且可配置。更新后应检查导入项及每个目标变体，有效文件或首行预览不证明全部商品已索引或最新。",
+        "source_refs": ["catalog"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cart-execution",
+        "title_en": "A cart confirmation must follow a real store action",
+        "title_zh": "购物车确认应跟随真实店铺动作",
+        "en": "The current cart guide says activation is requested through the vendor. Shopify and PrestaShop integrations supply the technical connection after their app/module is installed;custom platforms implement addToCart:clicked with a productId matching their store. The store must do its own checks/write and resolve true,resolve false or reject. A positive callback leads to confirmation;failure leads to a customer error state.\n\nOnly catalog variants are offered. Out-of-stock selections are disabled;ambiguous variants with identical attributes can bypass the selection panel and add the recommended item directly. Test an unavailable variant,a stale price/stock record,a failed backend and a duplicate click. A demonstration using success=true is placeholder logic,not proof that checkout changed. Mobile SDK availability and current platform versions need their own integration review.",
+        "zh": "当前购物车指南称需向厂商请求启用。Shopify及PrestaShop安装应用／模块后供应技术连接，自定义平台需实现addToCart:clicked，并让productId匹配店铺。店铺须实际检查／写入，返回true、false或拒绝。正回调展示确认，失败则向客户显示错误。\n\n只提供目录已有变体，缺货项禁用；属性完全相同的模糊变体可跳过选择面板，直接加入推荐项。应测试不可用变体、陈旧价格／库存、后端失败及重复点击。success=true演示是占位逻辑，不证明购物车变化。移动SDK及当前平台版本需另行审查。",
+        "source_refs": ["cart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "visibility",
+        "title_en": "Diagnose display and human availability separately",
+        "title_zh": "分别排查显示及真人可用性",
+        "en": "The current troubleshooting guide distinguishes tag loading,targeting,routing,consent and Assistant status. LIGHT means the tag loaded but no targeting rule has triggered;FULL allows checking the project ID. A positive queue threshold can offer human chat even while agents are offline,whereas zero requires an available agent. A bot’s transfer-availability setting adds another condition.\n\nFor starters,the first URL visit can show a generic question entry while suggestions generate,usually within24hours. Local/private pages do not generate them,and language mismatch or an invalid/offscreen CSS selector can prevent display. Changing a storefront layout can invalidate placement without breaking the tag itself. Pilot the actual public page,language,consent state and staffed/unavailable route;do not infer an outage from one missing widget or from no generated suggestions on localhost.",
+        "zh": "当前故障指南区分标签加载、定向、路由、同意及助手状态。LIGHT表示标签已载但未触发规则，FULL可查项目ID。正队列阈值可在客服离线时仍提供真人聊天，零则需可用客服；机器人的转接可用性设置又增加条件。\n\nStarters首次访问URL时可能只显示通用提问入口，建议问题通常24小时内生成。本地／私有页面不生成，语言不匹配或CSS选择器无效／未进入视野也可阻止显示。店面布局变化可破坏位置而标签仍正常。应试点真实公开页、语言、同意状态及有人／无人路线，不因单次组件缺失或localhost无建议就推断故障。",
+        "source_refs": ["display"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quality-loop",
+        "title_en": "Treat no-answers as a diagnostic signal",
+        "title_zh": "将未答视为诊断信号",
+        "en": "The October20answer-analysis guide describes inspecting topic response rates and individual conversations to see interpretation,knowledge and custom behavior. Missing or contradictory knowledge,blocked hallucination risk and a missing product catalog can cause no-answer. Helpful content alone does not replace the catalog for product questions. The weekly improvement suggestions need at least fifty conversations and show up to five topics.\n\nAdding a manual answer creates Helpful Content that applies across products;it does not update a particular catalog item. Fix product-specific facts in the feed and refresh the source. If all topics suddenly stop answering,the guide recommends checking status and sending a few affected conversation IDs to support. These procedures do not prove zero hallucinations or that a higher response rate improves sales;review factual correctness and unresolved handoffs too.",
+        "zh": "10月20日回答分析指南描述查看话题回应率及单条对话中的理解、知识和自定义行为。缺失／矛盾知识、阻止幻觉风险及缺商品目录都可导致未答，帮助内容不能替代商品问答目录。每周改进建议需至少50会话，最多展示5话题。\n\n手动补答案形成对所有商品适用的Helpful Content，不会改特定目录项。商品专属事实应修feed并刷新来源。若所有话题突然停答，指南建议查状态并提供少量受影响会话ID给支持。这不证明零幻觉或回应率提高就增长销售，仍应检查事实及未完成交接。",
+        "source_refs": ["quality"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-contract",
+        "title_en": "Separate conversations,SKUs and human add-on costs",
+        "title_zh": "分别计算会话、SKU及真人附加费用",
+        "en": "Rendered monthly prices are$385/$690/$1770for Essentials/Starter/Growth;yearly mode displays$290/$520/$1330per month. Allowances are500/1000/3000monthly conversations and1000/10000/50000SKUs. The pricing FAQ counts a conversation when a shopper message receives an assistant response;session-traffic recommendations are not the same as the billable unit. No exact overage rate or automatic cap behavior is established.\n\nSupport Desk is extra:pricing shows$80per user/month,but its English product FAQ says€80per agent/month. Resolve currency and entitlement in the actual quote. The June2026Terms of Use cover website content and site interaction,not the purchased SaaS license. Commercial license,renewal,refund,export,retention and restore conditions remain unverified. Neither a demo link nor a self-service onboarding label establishes a free trial or sustained-free tier.",
+        "zh": "渲染月付Essentials／Starter／Growth为$385／$690／$1770，年付模式展示月价$290／$520／$1330。额度每月500／1000／3000会话及1000／10000／50000SKU。价格FAQ将购物者发消息并获助手回应计会话，推荐网站会话流量不是同一计费单位。准确超额单价及自动触顶行为未确定。\n\nSupport Desk另计，价格页每用户每月$80，但英语产品FAQ每客服每月€80，需在实际报价解决币种和权益。2026年6月Terms of Use针对网站内容及互动，并非购买SaaS许可。商业许可、续约、退款、导出、留存及恢复仍未核实。演示链接或自助上线标签都不建立免费试用或持续免费档。",
+        "source_refs": ["pricing", "price-render", "desk", "website-terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "iAdvize: AI Shopping Catalogs,Cart Callbacks,Human Routing and Pricing",
+    "title_zh": "iAdvize：AI购物目录、加购回调、真人路由及价格",
+    "description_en": "Research iAdvize variant feeds,real cart actions,widget visibility,no-answer analysis,conversation/SKU tiers and Support Desk currency conflicts.",
+    "description_zh": "研究iAdvize变体feed、真实购物车动作、组件显示、未答分析、会话／SKU档及Support Desk币种冲突。",
+    "primary_intent": "Evaluate iAdvize AI shopping workflows and integration limits.",
+    "secondary_questions": [
+      "Why is add-to-cart missing?",
+      "Why does the widget not display?",
+      "What counts as a conversation?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,feed,widget,conversation,cartcallback,humanroute,checkout,exportorrestoretested. Commerciallicense/DPA,finalcurrency/add-onentitlement,overage/capbehavior,SDKversions,fullUIlanguages,retentionandrecordportabilityremainunverified.",
+      "zh": "未测试租户、feed、组件、对话、购物车回调、真人路线、结账、导出或恢复。商业许可／DPA、最终币种／附加权益、超额／触顶、SDK版本、完整界面语言、留存及记录迁移未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
+}
