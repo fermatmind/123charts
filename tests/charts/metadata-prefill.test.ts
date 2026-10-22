@@ -6,6 +6,7 @@ import {
   completeDraftDescriptions,
 } from "../../lib/charts/metadata-prefill";
 import { draftSchema } from "../../lib/charts/rules";
+import { parseOwnerProfile } from "../../lib/charts/owner-profile";
 import type { Draft } from "../../lib/charts/types";
 
 function draft(): Draft {
@@ -278,4 +279,102 @@ test("legacy drafts retain their contents and optional provenance stays schema-b
     }).success,
     false,
   );
+});
+
+function importJSON(
+  d: Draft,
+  state: MetadataPrefill,
+  profile: Record<string, unknown>,
+) {
+  const patch = parseOwnerProfile(
+    JSON.stringify({
+      schema_version: "123charts-owner-profile-v1",
+      website_url: d.website_url,
+      profile,
+      sources: [],
+    }),
+    d.website_url,
+  );
+  for (const key of Object.keys(patch)) state.edit(key as keyof Draft);
+  return { ...d, ...patch };
+}
+
+test("partial owner JSON survives save and reload while omitted automatic fields follow the new URL", () => {
+  let d = draft();
+  let state = new MetadataPrefill(d.website_url);
+  d = { ...d, ...state.apply(state.begin(), n8n, d) };
+  d = importJSON(d, state, {
+    description_zh: "本地导入的简介",
+    task: "Local JSON persistence test",
+    conditions: "",
+    supported_languages: [],
+  });
+  d = saved(d, state);
+  state = new MetadataPrefill(d.website_url, true, d.metadata_prefill);
+  d = {
+    ...d,
+    ...state.changeURL("https://activepieces.com", d),
+    website_url: "https://activepieces.com",
+  };
+  assert.equal(d.name, "");
+  assert.equal(d.description_en, "");
+  assert.equal(d.description_zh, "本地导入的简介");
+  d = { ...d, ...state.apply(state.begin(), activepieces, d) };
+  d = saved(d, state);
+  assert.equal(d.name, "Activepieces");
+  assert.equal(d.description_en, activepieces.description);
+  assert.equal(d.description_zh, "本地导入的简介");
+  assert.equal(d.task, "Local JSON persistence test");
+  assert.deepEqual(d.supported_languages, []);
+  assert.equal(d.conditions, "");
+});
+
+test("complete imported profile is protected across URL switches and repeated extraction after reload", () => {
+  let d = draft();
+  let state = new MetadataPrefill(d.website_url);
+  d = { ...d, ...state.apply(state.begin(), n8n, d) };
+  const profile = {
+    name: "Local JSON test",
+    description_en: "Imported text",
+    description_zh: "导入文字",
+    price_type: "unknown",
+    supported_languages: [],
+  };
+  d = saved(importJSON(d, state, profile), state);
+  state = new MetadataPrefill(d.website_url, true, d.metadata_prefill);
+  d = {
+    ...d,
+    ...state.changeURL("https://activepieces.com", d),
+    website_url: "https://activepieces.com",
+  };
+  for (let i = 0; i < 2; i++) {
+    d = { ...d, ...state.apply(state.begin(), activepieces, d) };
+    d = saved(d, state);
+    state = new MetadataPrefill(d.website_url, true, d.metadata_prefill);
+  }
+  for (const [field, value] of Object.entries(profile))
+    assert.deepEqual(d[field as keyof Draft], value);
+  assert.equal(d.metadata_prefill?.automatic.name, undefined);
+  assert.equal(d.metadata_prefill?.automatic.description_en, undefined);
+  assert.equal(d.metadata_prefill?.automatic.description_zh, undefined);
+});
+
+test("JSON imported during extraction wins, including empty fields after saving and restoring", () => {
+  let d = draft();
+  let state = new MetadataPrefill(d.website_url);
+  const request = state.begin();
+  d = importJSON(d, state, {
+    description_en: "",
+    description_zh: "导入时明确留空英文",
+    supported_languages: [],
+  });
+  d = { ...d, ...state.apply(request, n8n, d) };
+  assert.equal(d.name, "n8n");
+  assert.equal(d.description_en, "");
+  d = saved(d, state);
+  state = new MetadataPrefill(d.website_url, true, d.metadata_prefill);
+  d = { ...d, ...state.apply(state.begin(), n8n, d) };
+  assert.equal(d.description_en, "");
+  assert.equal(d.description_zh, "导入时明确留空英文");
+  assert.deepEqual(d.supported_languages, []);
 });

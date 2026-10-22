@@ -37,6 +37,7 @@ test("owner AI import keeps only typed draft fields and preserves source evidenc
     "price_verified",
     "peers",
     "slug",
+    "metadata_prefill",
   ])
     assert.throws(() =>
       parseOwnerProfile(
