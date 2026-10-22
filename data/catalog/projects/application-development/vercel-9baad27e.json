@@ -10,162 +10,122 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Vercel is a product in the Application development category. Its directory profile covers Web Development, Version Control, Testing Management, Software Development, Mobile Development, Debugging, Collaboration, Code Assistance.\n\nAdditional listed capabilities include Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Individuals. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $20.00. Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: track changes to files and support revision workflows; organize test cases, execution and results; inspect program execution to investigate faults; provide contextual help during software development; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Vercel 属于应用开发软件。第三方资料列出的功能包括网站开发、版本控制、测试管理、软件开发、移动应用开发、代码调试、协作、编程辅助。\n\n资料还列出访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 个人用户。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $20.00. 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：跟踪文件变更并支持版本修订流程；组织测试用例、执行过程与结果；检查程序执行过程以定位故障；在软件开发过程中提供上下文辅助；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Vercel is a managed application delivery and runtime platform. Its current site includes agent infrastructure as well as web-app deployment, content delivery and server-side functions. This profile evaluates the Git-to-deployment path, environments, operational rollback and cost controls; it does not merge v0, every AI product and the underlying open-source frameworks into one entitlement.\n\nA developer can import a repository, configure its framework/root/build settings and environment variables, then obtain deployments linked to commits and branches. A successful build alone does not prove application behavior, data isolation or a safe recovery path. No repository was connected and no deployment was made for this research.",
+  "description_zh": "Vercel 是托管应用交付及运行平台。当前官网同时介绍 Agent 基础设施、网页应用部署、内容分发及服务端函数。本文研究 Git 到部署、环境、运行回滚及费用控制，不把 v0、全部 AI 产品与底层开源框架合并为一项服务权益。\n\n开发者可导入仓库，配置框架／根目录／构建及环境变量，再取得对应提交与分支的部署。构建成功不能单独证明应用行为、数据隔离或恢复安全。本次未连接仓库或执行部署。",
   "core_features": [
     {
-      "name_en": "Web Development",
-      "name_zh": "网站开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Git deployments",
+      "name_zh": "Git 部署",
+      "explanation_en": "Create deployments from repository pushes or an explicit Git reference.",
+      "explanation_zh": "根据仓库推送或明确 Git 引用建立部署。",
+      "explanation_scope": "product_specific",
+      "source_ref": "git",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Environment-specific configuration",
+      "name_zh": "分环境配置",
+      "explanation_en": "Separate local, preview and production values, with paid custom environments.",
+      "explanation_zh": "区分本地、预览及生产配置，付费方案提供自定义环境。",
+      "explanation_scope": "product_specific",
+      "source_ref": "environments",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Request-driven functions",
+      "name_zh": "请求驱动函数",
+      "explanation_en": "Run API routes and webhooks with runtime and region choices.",
+      "explanation_zh": "按运行时及区域选择运行 API 路由与 webhook。",
+      "explanation_scope": "product_specific",
+      "source_ref": "functions",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Software Development",
-      "name_zh": "软件开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Mobile Development",
-      "name_zh": "移动应用开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Debugging",
-      "name_zh": "代码调试",
-      "explanation_en": "Inspect program execution to investigate faults.",
-      "explanation_zh": "检查程序执行过程以定位故障。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collaboration",
-      "name_zh": "协作",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Code Assistance",
-      "name_zh": "编程辅助",
-      "explanation_en": "Provide contextual help during software development.",
-      "explanation_zh": "在软件开发过程中提供上下文辅助。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Production rollback",
+      "name_zh": "生产回滚",
+      "explanation_en": "Reassign production domains to an eligible previous deployment.",
+      "explanation_zh": "将生产域名重新指向符合条件的旧部署。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rollback",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Track changes to files and support revision workflows",
-      "Organize test cases, execution and results",
-      "Inspect program execution to investigate faults",
-      "Provide contextual help during software development",
-      "Restrict information and actions according to permissions"
+      "Evaluate commit-linked app previews and production configuration",
+      "Rehearse compatible build rollback and delayed spend controls"
     ],
     "zh": [
-      "跟踪文件变更并支持版本修订流程",
-      "组织测试用例、执行过程与结果",
-      "检查程序执行过程以定位故障",
-      "在软件开发过程中提供上下文辅助",
-      "根据权限限制信息访问和操作"
+      "评估对应提交的应用预览与生产配置",
+      "演练兼容构建回滚及有延迟的费用控制"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["git", "environments", "rollback", "spend"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $20.00. Offers Free-forever and Custom plan.",
-      "zh": "提供免费试用 起价为 $20.00. 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Individuals",
-      "zh": "小型、中型与大型组织 个人用户",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Individuals",
-    "organization_sizes_zh": "小型、中型与大型组织 个人用户",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Web application developers",
+      "Platform engineers",
+      "Application operations teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Import a disposable repository and inspect root/build/runtime choices.",
+        "zh": "导入可丢弃仓库，检查根目录／构建／运行时。",
+        "source_refs": ["git"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Account for first-production deployment and separate data credentials.",
+        "zh": "考虑首次生产部署例外并隔离数据凭据。",
+        "source_refs": ["environments"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test errors, rollback domain behavior and resource billing independently.",
+        "zh": "分别测试错误、回滚域名行为及资源计费。",
+        "source_refs": ["functions", "rollback", "spend", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "First deployment uses Production even when preview was targeted.",
+        "zh": "首次部署即使目标为预览也使用 Production。",
+        "source_refs": ["environments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Rollback can retain stale configuration and does not establish database reversal.",
+        "zh": "回滚可能保留过时配置，不能证明数据库回退。",
+        "source_refs": ["rollback"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Budget checks lag and production pausing does not stop every charge.",
+        "zh": "预算检查有延迟，暂停生产不会停止所有费用。",
+        "source_refs": ["spend"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -177,37 +137,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $20.00. Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $20.00. 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "free_noncommercial_plus_subscription_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:16:21.167167Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Hobby0 personal/noncommercial; Pro20USD/month headline plus metered usage beyond included20credit; Enterprise quote, seats/add-ons/tax scope requires sizing.",
+    "summary_zh": "Hobby0限个人非商业；Pro标题每月20美元，超20抵扣的用量另计；Enterprise询价，席位／附加项／税需核算。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Vercel do?",
-      "question_zh": "Vercel 用来做什么？",
-      "answer_en": "Vercel is a product in the Application development category. Its directory profile covers Web Development, Version Control, Testing Management, Software Development, Mobile Development, Debugging, Collaboration, Code Assistance.",
-      "answer_zh": "Vercel 属于应用开发软件。第三方资料列出的功能包括网站开发、版本控制、测试管理、软件开发、移动应用开发、代码调试、协作、编程辅助。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Web Development, Version Control, Testing Management, Software Development, Mobile Development, Debugging, Collaboration, Code Assistance, Access Control",
-      "answer_zh": "网站开发、版本控制、测试管理、软件开发、移动应用开发、代码调试、协作、编程辅助、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -217,25 +161,210 @@
       "read_at": "2026-10-22T08:58:48.827Z",
       "excerpt_sha256": "2ac02217a4af2e7ed8014ea20a4948eb655f964c8eec7b3c582d4cd616a743da",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Agentic Infrastructure - Vercel",
+      "url": "https://vercel.com/",
+      "read_at": "2026-10-22T12:16:21.167167Z",
+      "excerpt_sha256": "faf5ac2a69c21cc1e61f85233fad91a42453ec90ecbf71a354d349afdab96312",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current platform includes app delivery and agent infrastructure; profile deliberately focuses on Git deployment, environments, functions and recovery, not a verified feature matrix for every adjacent product."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Vercel",
+      "title": "Vercel Pricing: Hobby, Pro, and Enterprise plans",
+      "url": "https://vercel.com/pricing",
+      "read_at": "2026-10-22T12:16:44.533610Z",
+      "excerpt_sha256": "9710cf29ae7a8332d2747cfd003416b3f943c9d67154c70f4026c5029c4e0f96",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Hobby0 personal/noncommercial, Pro20/month headline with20 included usage credit, Enterprise quote, tax exclusion and multiple meters read. Marketing budget cap compared with detailed delayed/nonuniversal spend controls."
+    },
+    {
+      "id": "git",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Deploying Git Repositories with Vercel",
+      "url": "https://vercel.com/docs/git",
+      "read_at": "2026-10-22T12:17:28.076894Z",
+      "excerpt_sha256": "4436d4af6a5259a713c71377569c08a03bfa1582d9daf35e8f71dfc4d15d943b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Repo import settings, branch/commit deployment identity and private-repo author/team requirements read."
+    },
+    {
+      "id": "environments",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Environments",
+      "url": "https://vercel.com/docs/deployments/environments",
+      "read_at": "2026-10-22T12:17:28.056360Z",
+      "excerpt_sha256": "868bb58924a156f687331fbf3c02278095bae8620c7466e542b0d056e789ce0b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Local/Preview/Production and paid custom environments; first deployment always production, including failed first attempts; preview variables not available to first production read."
+    },
+    {
+      "id": "functions",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Vercel Functions",
+      "url": "https://vercel.com/docs/functions",
+      "read_at": "2026-10-22T12:19:23.531546Z",
+      "excerpt_sha256": "40e0209d0bfd46b27669fad1356d10e62e364f7f8ab3cffa4afe17ad87878392",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Request-driven functions, regional placement, waitUntil202 example and distinction from durable workflow state read; no code deployed."
+    },
+    {
+      "id": "rollback",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Performing an Instant Rollback on a Deployment",
+      "url": "https://vercel.com/docs/instant-rollback",
+      "read_at": "2026-10-22T12:17:27.957130Z",
+      "excerpt_sha256": "3da4e7b07aca3047732036e687ce6b2cfcc71089c8b62bec87b7e74469f3e845",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Eligible prior production builds, stale configuration/env, external-system behavior and disabling auto-domain-assignment after rollback read."
+    },
+    {
+      "id": "spend",
+      "type": "official_documentation",
+      "site": "Vercel",
+      "title": "Spend Management",
+      "url": "https://vercel.com/docs/spend-management",
+      "read_at": "2026-10-22T12:17:28.173652Z",
+      "excerpt_sha256": "145ba650301079903d7d250b42e39015007f9b1ad668e7509919768511dcd6dc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Metered scope excludes seats/add-ons; checks every few minutes, pausing all production causes503, storage/AI/v0 can continue, manual per-project resumption read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:19:23.531546Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "git", "environments"],
+  "profile": {
+    "sections": [
+      {
+        "id": "git",
+        "title_en": "Track a deployment back to its configuration and commit",
+        "title_zh": "追溯部署配置及提交",
+        "en": "Import a repository, choose the root directory and framework preset, review build output settings and supply environment variables. Subsequent branch pushes can create previews; the configured production branch creates production deployments. For private organization/group repositories, author membership and linked Git identities can affect whether a commit deploys; Hobby cannot deploy those private organization repositories. When evaluating a small application, compare the expected SHA and returned deployment before testing a read/write route. Branch names alone do not identify an immutable build.",
+        "zh": "导入仓库后选择根目录、框架预设，检查构建输出并提供环境变量。后续分支推送可生成预览，配置的生产分支生成生产部署。私有组织／群组仓库的提交能否部署受作者成员资格及 Git 身份关联影响；Hobby 不能部署这些私有组织仓库。评估小应用时，应先比对预期 SHA 与部署，再测试读写路由；分支名不能唯一标识不可变构建。",
+        "source_refs": ["git"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "first",
+        "title_en": "The first deployment is a documented production exception",
+        "title_zh": "首次部署有生产环境例外",
+        "en": "The current environment guide says a new project’s first deployment is always Production, even from a nonproduction branch or a CLI preview target. It uses Production variables, not Preview-only values. An errored/canceled first deployment still counts; later deployments follow ordinary preview rules. Deleting every deployment resets the first-deployment condition. Use isolated data credentials for evaluation. A staged production build also uses production configuration, so a generated URL is not proof that its database or external effects are isolated.",
+        "zh": "当前环境指南明确：新项目首次部署始终为 Production，即使来自非生产分支或 CLI 预览目标，也使用 Production 变量，而非仅配置于 Preview 的值。首次出错／取消仍计数，后续才按通常预览规则；删除所有部署会重置首次条件。评估应使用隔离数据凭据。暂存生产构建同样使用生产配置，生成 URL 不能证明数据库及外部副作用隔离。",
+        "source_refs": ["environments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Request completion and durable work are different scopes",
+        "title_zh": "请求完成与持久任务范围不同",
+        "en": "Functions serve request-driven APIs, webhooks and streamed responses, with regional placement near data sources. The documentation’s waitUntil example returns HTTP202 while follow-up work runs. An accepted response therefore is not an independently observed completion receipt. For work that must preserve progress across pauses or deployments, the page points to Workflows or eve. Choose the runtime/limits for the actual application and test failures in both the request and downstream operation; no duration or recovery guarantee is inferred from automatic scaling.",
+        "zh": "Functions 用于请求驱动 API、webhook 及流式响应，可将区域靠近数据源。文档 waitUntil 示例在后续工作运行时返回 HTTP202，因此接受响应不是已独立观察的完成凭证。需跨暂停或部署保留进度时，页面指向 Workflows 或 eve。应按真实应用选择运行时／限制，分别测试请求与下游操作失败；自动扩缩容不能证明时限或恢复保证。",
+        "source_refs": ["functions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recover",
+        "title_en": "Rollback restores a build, not external state",
+        "title_zh": "回滚恢复构建，不能据此恢复外部状态",
+        "en": "Instant Rollback points production domains to an eligible previous production build; ordinary previews are not eligible. Hobby can return to the immediately previous deployment, while paid plans have broader eligible history. The old configuration and environment values can be stale, and databases/APIs may have changed independently. After rollback, automatic assignment of production domains is disabled, so a later push does not automatically replace it until a deployment is promoted to undo rollback. Test recovery with compatible data changes; no rollback was exercised.",
+        "zh": "Instant Rollback 将生产域名指向符合条件的旧生产构建，普通预览不符合。Hobby 可回到紧邻的旧部署，付费方案可选更广历史。旧配置及环境值可能过时，数据库／API 可能已独立变化。回滚后会关闭生产域名自动分配，后续推送不会自动替换，直至通过提升部署撤销回滚。需结合兼容数据变更测试恢复；本次未执行回滚。",
+        "source_refs": ["rollback"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "A plan price is not the entire runtime bill",
+        "title_zh": "方案价不等于完整运行账单",
+        "en": "The current USD view lists Hobby $0/month for personal noncommercial use, Pro $20/month with a $20 included usage credit, and custom Enterprise. Taxes are extra. Functions, storage and other resources have separate meters; AI products and add-ons need their own sizing. Hobby has usage caps and cannot buy additional usage, while Pro supports on-demand usage. Treat the headline as an entry point, then confirm seats, applicable resource rates and integrations against a representative workload; no all-in monthly figure was calculated.",
+        "zh": "当前美元页面列 Hobby 每月 $0，限个人非商业用途；Pro 每月 $20，含 $20 用量抵扣；Enterprise 询价，税另计。函数、存储等资源分别计量，AI 产品及附加项需单独核算。Hobby 有用量上限，不能增购；Pro 支持按需用量。应以标题价为起点，按代表工作量确认席位、资源费率及集成，不据此计算完整月账单。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Spend alerts are not an instantaneous universal cap",
+        "title_zh": "费用提醒不是即时通用硬上限",
+        "en": "Spend Management applies to metered team resources, excluding seats, integrations and separate add-ons. Setting a budget alone does not stop usage. Optional pausing stops every project’s production traffic and returns503, but checks occur every few minutes. AI Gateway keys, v0 and stored resources can continue accruing charges. Raising the budget does not automatically resume projects; each needs resumption. These detailed conditions qualify the pricing page’s broad stop-before-over-budget wording. Decide how to handle lost availability and residual charges before relying on automatic pausing.",
+        "zh": "Spend Management 针对团队计量资源，不含席位、集成及独立附加项；仅设置预算不会停止用量。可选暂停会停止所有项目生产流量并返回503，但每几分钟才检查。AI Gateway key、v0 及保留存储仍可能计费，提高预算也不会自动恢复项目，需逐项恢复。这些详细条件限定定价页广义的超预算前停止宣传。依赖自动暂停前需明确不可用及残余费用处理。",
+        "source_refs": ["spend", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Vercel: first deployments, rollback and spend controls",
+    "title_zh": "Vercel：首次部署、回滚及费用控制",
+    "description_en": "Review Git deployment identity, production-variable exceptions, request functions and delayed billing controls.",
+    "description_zh": "了解 Git 部署身份、生产变量例外、请求函数及有延迟的账单控制。",
+    "search_intent_en": "Evaluate Vercel app release behavior and operating costs.",
+    "search_intent_zh": "评估 Vercel 应用发布行为与运行费用。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No connection, deployment, runtime call, rollback, budget change or service was operated.",
+      "zh": "未操作连接、部署、运行调用、回滚、预算或服务。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual seats, regional resource rates, spend checks, checkout and product entitlements require workload-specific verification.",
+      "zh": "实际席位、区域费率、费用检查、结账及产品权益需按工作量验证。",
+      "source_refs": ["pricing", "spend"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Open-source frameworks/SDKs do not establish a license for the whole hosted platform; license, SLA, data recovery and UI languages not verified.",
+      "zh": "开源框架／SDK 不能证明完整托管平台许可，完整许可、SLA、数据恢复及界面语言未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Pricing stop-before-budget wording is broader than detailed delayed checks and residual charges; no hard spending cap inferred.",
+      "zh": "定价超预算前停止宣传宽于详细延迟检查及残余费用，不推断硬费用上限。",
+      "source_refs": ["pricing", "spend"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
