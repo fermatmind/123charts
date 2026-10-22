@@ -9,115 +9,97 @@
   "secondary_categories": [],
   "status": "draft",
   "primary_language": "en",
-  "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "getmcpads is a product in the Marketing analytics category. Its directory profile covers Spend Analysis, Campaign Performance Tracking, AI-Powered Insights, Data Source, Ad hoc Reports.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are Medium Business Small Business Freelancers. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $29.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.",
-  "description_zh": "getmcpads 属于营销分析软件。第三方资料列出的功能包括支出分析、营销活动效果跟踪、AI 辅助分析、数据源、临时报表。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为中型企业 小型企业 自由职业者。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $29.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。",
+  "available_locales": [
+    "en",
+    "zh"
+  ],
+  "research_status": "primary_source_researched",
+  "description_en": "Get MCP Ads is a hosted MCP gateway connecting advertising and analytics accounts to compatible AI assistants. It lets a media buyer query performance, inspect creatives and prepare account changes using official platform APIs, with per-account sharing. It serves work on your own connected accounts rather than competitive ad-spend estimation.\n\nThe operational boundary is read versus write. Free is read-only, while paid changes preview first and require a separate confirming call. New advertising objects are created paused or as LinkedIn drafts. These controls are documented behavior, not a guarantee that a model will choose the correct account, amount or campaign.",
+  "description_zh": "Get MCP Ads 是托管 MCP 网关，把广告及分析账户接入兼容的 AI 助手。媒体投放人员可通过官方平台 API 查询表现、查看素材和准备账户变更，并逐账户选择共享范围。它处理你自己的连接账户，不是竞品广告支出估算工具。\n\n操作边界在于读取与写入：Free 只读，付费变更先预览，再通过独立确认调用应用。新广告对象以暂停状态或 LinkedIn 草稿创建。这些是文档行为，不能保证模型选对账户、金额或活动。",
   "core_features": [
     {
-      "name_en": "Spend Analysis",
-      "name_zh": "支出分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Scoped advertising queries",
+      "name_zh": "限定账户的广告查询",
+      "explanation_en": "Connect platforms and explicitly select accounts before exposing data to an assistant.",
+      "explanation_zh": "连接平台后明确选择账户，再向助手提供数据。",
+      "source_ref": "home",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
     },
     {
-      "name_en": "Campaign Performance Tracking",
-      "name_zh": "营销活动效果跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Preview and confirm writes",
+      "name_zh": "预览并确认写入",
+      "explanation_en": "A write without confirm:true changes nothing; a subsequent confirmed call applies it.",
+      "explanation_zh": "未含 confirm:true 的写入不改变数据，后续确认调用才应用。",
+      "source_ref": "writes",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
     },
     {
-      "name_en": "AI-Powered Insights",
-      "name_zh": "AI 辅助分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Source",
-      "name_zh": "数据源",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Ad hoc Reports",
-      "name_zh": "临时报表",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Checkpointed bulk launcher",
+      "name_zh": "带检查点的批量创建",
+      "explanation_en": "Approves a specific campaign revision; uncertain outcomes are read back rather than blindly resent.",
+      "explanation_zh": "批准特定活动修订；结果不确定时读回平台，而非盲目重发。",
+      "source_ref": "writes",
+      "status": "official_documentation_read",
+      "explanation_scope": "product_specific"
     }
   ],
   "use_cases": {
     "status": "editorial_inference",
-    "en": [],
-    "zh": [],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "en": [
+      "Investigate a CPA change, then preview a budget edit"
+    ],
+    "zh": [
+      "先调查 CPA 变化，再预览预算修改"
+    ],
+    "basis": "Editorial task and fit judgments grounded in the attached primary sources; no observed deployment."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $29.0.",
-      "zh": "提供免费试用 起价为 $29.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Medium Business Small Business Freelancers",
-      "zh": "中型企业 小型企业 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Research scope": {
+      "en": "Public documentation and commercial access reviewed; examples are proposed evaluation workflows.",
+      "zh": "核对公开文档与商业入口；示例是建议的评估流程。",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Medium Business Small Business Freelancers",
-    "organization_sizes_zh": "中型企业 小型企业 自由职业者",
+    "status": "editorial_inference",
+    "organization_sizes_en": "Select by workflow, volume and governance needs; no universal size claim.",
+    "organization_sizes_zh": "按流程、用量与治理需求选择，不宣称适合所有规模。",
     "specific_roles": [],
     "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "editorial_guidance",
+    "steps": [
+      {
+        "en": "Connect a source, tick only the accounts to share and add https://mcp.getmcpads.com/mcp to a compatible assistant. MCP Apps support is required for visual experiences. Platform credentials and account permissions must exist independently; the service does not create missing pixels or identities. Evaluate a read-only question first, then a harmless paused proposal. The reviewed gateway is hosted; no self-hosted server license was established. It fits conversational account operations, while a fixed dashboard may be simpler for an unchanging report.",
+        "zh": "连接来源、只勾选要共享的账户，再把 https://mcp.getmcpads.com/mcp 加入兼容助手。可视化体验要求支持 MCP Apps。平台凭据与账户权限需要预先具备，服务不会补造缺失像素或身份。先评估只读问题，再评估无害的暂停提案。本次所读网关为托管服务，未确认自托管服务器许可。它适合对话式账户操作，固定不变的报表则可能用普通看板更简单。",
+        "source_refs": [
+          "home",
+          "writes"
+        ]
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "see_profile_for_documented_scope",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "home"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "The gateway documents refusal of amounts above 1,000,000 units to catch double conversion. Campaign deletion is not exposed; pausing or archiving is available, while library-item deletion is separate. Bulk launches resume from saved checkpoints, and uncertain outcomes are read back before another send. Targeting edits, duplication and uploads vary by platform API, so inspect get_capabilities rather than generalizing from a Meta example. A preview reduces risk but still needs a human to check meaning.",
+        "zh": "网关文档说明会拒绝超过 1,000,000 单位的金额，以捕获重复换算。它不提供广告活动删除，可暂停或归档；素材库项目删除另算。批量任务可从检查点恢复，不确定结果先读回再决定是否发送。定向编辑、复制和上传取决于平台 API，应检查 get_capabilities，不能把 Meta 示例推广到所有平台。预览可以降低风险，但仍需人工检查语义。",
+        "source_refs": [
+          "writes"
+        ]
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -129,65 +111,151 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $29.0.",
-    "source_snapshot_zh": "提供免费试用 起价为 $29.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_snapshot_en": "The monthly USD view lists Free $0 with one account, one seat and 200 requests/month. One question usually needs one to three requests. Pro is $29/month with four accounts; Team $99 with twelve accounts, a maximum of thirty, and five seats. Both charge $10/month per additional account and list unlimited requests, subject to platform constraints. Enterprise is quoted. Paid trials last seven days, require a card and charge at the end unless canceled. Free use is ongoing and read-only; the paid trial temporarily exposes a different scope.",
+    "source_snapshot_zh": "美元月付视图列 Free 为 0 美元，含一个账户、一个席位及每月 200 次请求，一个问题通常需一至三次请求。Pro 每月 29 美元、含四个账户；Team 每月 99 美元、含十二个账户、最多三十个、五个席位。两档额外账户均每个每月 10 美元，列无限请求但仍受平台限制。Enterprise 询价。付费试用七天、需要信用卡，若未取消则到期收费。Free 是持续只读免费，付费试用临时开放的范围不同。",
+    "source_ref": "pricing"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does getmcpads do?",
-      "question_zh": "getmcpads 用来做什么？",
-      "answer_en": "getmcpads is a product in the Marketing analytics category. Its directory profile covers Spend Analysis, Campaign Performance Tracking, AI-Powered Insights, Data Source, Ad hoc Reports.",
-      "answer_zh": "getmcpads 属于营销分析软件。第三方资料列出的功能包括支出分析、营销活动效果跟踪、AI 辅助分析、数据源、临时报表。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Spend Analysis, Campaign Performance Tracking, AI-Powered Insights, Data Source, Ad hoc Reports",
-      "answer_zh": "支出分析、营销活动效果跟踪、AI 辅助分析、数据源、临时报表"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
-      "id": "directory-detail",
-      "type": "competitor_detail",
-      "site": "SaaSworthy",
-      "url": "https://www.saasworthy.com/product/getmcpads",
-      "read_at": "2026-10-22T08:56:40.436Z",
-      "excerpt_sha256": "81f0a398f02e700310dce420eef1fe0352ac1ece7d1fcedba5d3b4bd5fd66393",
-      "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "id": "home",
+      "type": "official_documentation",
+      "site": "getmcpads",
+      "title": "Get MCP Ads: MCP server for Google Ads, Meta and GA4",
+      "url": "https://www.getmcpads.com/",
+      "read_at": "2026-10-22T15:51:27.333939+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_http_html_text",
+      "excerpt_sha256": "38210a929330fde86a6fb2488b06142b12adf58b4003b0a20bc46a6e54cfdc1f",
+      "research_notes_en": "Read hosted MCP setup, scoped access and free-versus-trial distinctions."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "getmcpads",
+      "title": "Pricing · Get MCP Ads",
+      "url": "https://www.getmcpads.com/pricing",
+      "read_at": "2026-10-22T15:52:17.746925+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_http_html_text",
+      "excerpt_sha256": "0b4a781fcb41b14c4fc01b6e540becf8977a416f49137175c5a2b1b96c96a8d0",
+      "research_notes_en": "Read monthly USD account and request quotas, extra-account charge and seven-day card-required trial."
+    },
+    {
+      "id": "writes",
+      "type": "official_documentation",
+      "site": "getmcpads",
+      "title": "Safe Writes: preview before apply · Get MCP Ads",
+      "url": "https://www.getmcpads.com/docs/concepts/writes",
+      "read_at": "2026-10-22T15:52:21.876966+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_http_html_text",
+      "excerpt_sha256": "99a32a9577e45e5ca0a4262481628b6f5ba7694d6bd1659ff1a7e8f886301572",
+      "research_notes_en": "Read exact confirm:true semantics, currency conversions, refusals, paused creation and checkpoint recovery."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:57:50.523586+00:00",
+    "scope": "Public primary-source documentation only. No account execution, purchase, identity claim, price approval, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English synthesis with section-aligned Chinese translation. Vendor documentation is not an independent performance test.",
+    "Hypothetical workflows and suitability judgments are editorial guidance. No directional alternative relationship has been approved.",
+    "Evidence text and SHA-256 metadata retained in .scratch/deep-research/batch-12/getmcpads-35e769a1/; no source text copied into public descriptions."
+  ],
+  "description_source_refs": [
+    "home"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Investigate a CPA change, then preview a budget edit",
+        "title_zh": "先调查 CPA 变化，再预览预算修改",
+        "en": "For a proposed weekly review, ask for two equal seven-day windows from a selected account. Compare spend, conversions and cost per acquisition with the same attribution window and currency. A higher CPA is not by itself evidence of creative fatigue; inspect where the movement occurred. If a budget edit is justified, request its preview, verify account and amount, then authorize the separate apply step. The documentation example converts 75 account-currency units into 75,000,000 Google Ads micros. This is an example, not an executed edit.",
+        "zh": "建议的周报流程是从选定账户查询两个等长的七天区间，采用相同归因窗口和币种比较支出、转化与获客成本。CPA 上升本身不证明素材疲劳，应进一步查看变化来源。确需调整预算时先请求预览，核对账户和金额，再授权独立应用步骤。文档示例把 75 个账户币种单位转换为 Google Ads 的 75,000,000 微单位；这只是例子，未实际修改。",
+        "source_refs": [
+          "home",
+          "writes"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Requests, accounts and trials",
+        "title_zh": "请求数、账户数与试用",
+        "en": "The monthly USD view lists Free $0 with one account, one seat and 200 requests/month. One question usually needs one to three requests. Pro is $29/month with four accounts; Team $99 with twelve accounts, a maximum of thirty, and five seats. Both charge $10/month per additional account and list unlimited requests, subject to platform constraints. Enterprise is quoted. Paid trials last seven days, require a card and charge at the end unless canceled. Free use is ongoing and read-only; the paid trial temporarily exposes a different scope.",
+        "zh": "美元月付视图列 Free 为 0 美元，含一个账户、一个席位及每月 200 次请求，一个问题通常需一至三次请求。Pro 每月 29 美元、含四个账户；Team 每月 99 美元、含十二个账户、最多三十个、五个席位。两档额外账户均每个每月 10 美元，列无限请求但仍受平台限制。Enterprise 询价。付费试用七天、需要信用卡，若未取消则到期收费。Free 是持续只读免费，付费试用临时开放的范围不同。",
+        "source_refs": [
+          "pricing",
+          "home"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Recovery and source-specific capabilities",
+        "title_zh": "恢复与各来源能力边界",
+        "en": "The gateway documents refusal of amounts above 1,000,000 units to catch double conversion. Campaign deletion is not exposed; pausing or archiving is available, while library-item deletion is separate. Bulk launches resume from saved checkpoints, and uncertain outcomes are read back before another send. Targeting edits, duplication and uploads vary by platform API, so inspect get_capabilities rather than generalizing from a Meta example. A preview reduces risk but still needs a human to check meaning.",
+        "zh": "网关文档说明会拒绝超过 1,000,000 单位的金额，以捕获重复换算。它不提供广告活动删除，可暂停或归档；素材库项目删除另算。批量任务可从检查点恢复，不确定结果先读回再决定是否发送。定向编辑、复制和上传取决于平台 API，应检查 get_capabilities，不能把 Meta 示例推广到所有平台。预览可以降低风险，但仍需人工检查语义。",
+        "source_refs": [
+          "writes"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup",
+        "title_en": "Authorize a platform and connect a compatible client",
+        "title_zh": "授权平台并连接兼容客户端",
+        "en": "Connect a source, tick only the accounts to share and add https://mcp.getmcpads.com/mcp to a compatible assistant. MCP Apps support is required for visual experiences. Platform credentials and account permissions must exist independently; the service does not create missing pixels or identities. Evaluate a read-only question first, then a harmless paused proposal. The reviewed gateway is hosted; no self-hosted server license was established. It fits conversational account operations, while a fixed dashboard may be simpler for an unchanging report.",
+        "zh": "连接来源、只勾选要共享的账户，再把 https://mcp.getmcpads.com/mcp 加入兼容助手。可视化体验要求支持 MCP Apps。平台凭据与账户权限需要预先具备，服务不会补造缺失像素或身份。先评估只读问题，再评估无害的暂停提案。本次所读网关为托管服务，未确认自托管服务器许可。它适合对话式账户操作，固定不变的报表则可能用普通看板更简单。",
+        "source_refs": [
+          "home",
+          "writes"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    {
+      "en": "No hands-on account test, current UI-language inventory, contractual data residency or recovery SLA was verified.",
+      "zh": "未实测账户、核实当前界面语言清单、合同数据驻留或恢复 SLA。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and Chinese translation; examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "getmcpads: workflows, access, costs and limits",
+    "title_zh": "getmcpads：流程、使用条件、费用与限制",
+    "description_en": "Get MCP Ads is a hosted MCP gateway connecting advertising and analytics accounts to compatible AI assistants. It lets a media buyer query performance, ins",
+    "description_zh": "Get MCP Ads 是托管 MCP 网关，把广告及分析账户接入兼容的 AI 助手。媒体投放人员可通过官方平台 API 查询表现、查看素材和准备账户变更，并逐账户选择共享范围。它",
+    "primary_intent": "Understand the documented product and evaluate a concrete task.",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or GEO outcome measured.",
+    "canonical_url": null
+  }
 }
