@@ -86,6 +86,23 @@
     "projects/events/eventene-4e0bfd36.json",
     "projects/events/eventify-8364767f.json",
     "projects/events/eventogy-51477e82.json",
+    "projects/events/eventpro-software-e8574729.json",
+    "projects/events/eventsair-8d1f3a26.json",
+    "projects/events/eventsforce-f93ef522.json",
+    "projects/events/eventsquid-273dd656.json",
+    "projects/events/eventtia-8d5564c9.json",
+    "projects/events/eventx-57d0591b.json",
+    "projects/events/expoplatform-ac38a612.json",
+    "projects/events/gevme-5385aba5.json",
+    "projects/events/glue-up-77186990.json",
+    "projects/events/groupize-611bf69b.json",
+    "projects/events/happenee-bfabdad7.json",
+    "projects/events/inevent-b4d06f29.json",
+    "projects/events/inwink-a329f193.json",
+    "projects/events/meetinghand-1e77f19f.json",
+    "projects/events/mixily-77fe675e.json",
+    "projects/events/pheedloop-ba057512.json",
+    "projects/events/planning-pod-b1887e02.json",
     "projects/surveys/qualaroo-b1ee0fc3.json",
     "projects/surveys/questionpro-3ba12d3d.json",
     "projects/surveys/quicktapsurvey-485f1c45.json",
@@ -101,24 +118,7 @@
   ],
   "remaining_paths": [
     "projects/events/bizzabo-7df2f9e9.json",
-    "projects/events/eventpro-software-e8574729.json",
-    "projects/events/eventsair-8d1f3a26.json",
-    "projects/events/eventsforce-f93ef522.json",
-    "projects/events/eventsquid-273dd656.json",
-    "projects/events/eventtia-8d5564c9.json",
-    "projects/events/eventx-57d0591b.json",
-    "projects/events/expoplatform-ac38a612.json",
-    "projects/events/gevme-5385aba5.json",
-    "projects/events/glue-up-77186990.json",
-    "projects/events/groupize-611bf69b.json",
-    "projects/events/happenee-bfabdad7.json",
-    "projects/events/inevent-b4d06f29.json",
-    "projects/events/inwink-a329f193.json",
     "projects/events/meetingbox-4f4bb20d.json",
-    "projects/events/meetinghand-1e77f19f.json",
-    "projects/events/mixily-77fe675e.json",
-    "projects/events/pheedloop-ba057512.json",
-    "projects/events/planning-pod-b1887e02.json",
     "projects/ai-writing/bagel-ai-498e9f66.json",
     "projects/ai-writing/copy-ai-a88ee061.json",
     "projects/ai-writing/humanize-ai-text-6aafc22f.json",
@@ -157,6 +157,10 @@
     {
       "path": "projects/ai-writing/quillbot-cb6857d9.json",
       "reason": "Official homepage and pricing returned HTTP 403; not retried or bypassed. Entry remains structured_candidate."
+    },
+    {
+      "path": "projects/events/meetingbox-4f4bb20d.json",
+      "reason": "Official homepage returned only 59 characters/application shell; public web reader returned zero lines; guessed pricing returned 404. No substantive primary text established; remains structured_candidate."
     }
   ],
   "evidence_directory": ".scratch/deep-research/",
@@ -184,6 +188,10 @@
     {
       "check": "Python tests, scratch-only owned record structure/reference validation, changed JSON Prettier, git diff --check",
       "result": "7 tests passed; all 68 owned records passed, 20 now researched. Global validator inherited cross-domain failure remains."
+    },
+    {
+      "check": "Python catalog tests; scratch-restricted original record logic; changed JSON Prettier; diff check",
+      "result": "7 tests passed; 68 owned records passed including 37 researched. Full records-only remains inherited Benchmark Email cross-domain blocker."
     }
   ],
   "commits": [
@@ -201,8 +209,21 @@
       "sha": "61769de",
       "completed_count": 12,
       "pushed": true
+    },
+    {
+      "sha": "bf595e9",
+      "completed_count": 20,
+      "pushed": true
     }
   ],
-  "completed_count": 20,
-  "remaining_count": 48
+  "completed_count": 37,
+  "remaining_count": 31,
+  "identity_updates": [
+    {
+      "path": "projects/events/groupize-611bf69b.json",
+      "from": "groupize.com",
+      "to": "groupize.ai",
+      "basis": "Observed official homepage redirect; current product and terms served at groupize.ai."
+    }
+  ]
 }
