@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T11:45:37.188781+00:00",
+  "updated_at": "2026-10-22T11:54:19.511897+00:00",
   "assigned": 204,
-  "completed_count": 28,
+  "completed_count": 30,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -34,9 +34,11 @@
     "projects/help-desk/happyfox-e2c9254e.json",
     "projects/help-desk/helpdesk-74f8a6b9.json",
     "projects/help-desk/hesk-c56a70fb.json",
-    "projects/help-desk/jitbit-helpdesk-a221531f.json"
+    "projects/help-desk/jitbit-helpdesk-a221531f.json",
+    "projects/help-desk/kayako-4565eb5f.json",
+    "projects/help-desk/kustomer-1a7d26c7.json"
   ],
-  "incomplete_count": 176,
+  "incomplete_count": 174,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -46,8 +48,6 @@
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/due-work-6947a910.json",
     "projects/help-desk/freshdesk-2ae83506.json",
-    "projects/help-desk/kayako-4565eb5f.json",
-    "projects/help-desk/kustomer-1a7d26c7.json",
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
     "projects/help-desk/nateq-08764ba5.json",
@@ -564,6 +564,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch28 completed,176 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch30 completed,174 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -654,10 +664,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "1c75a13",
       "completed": [
         "projects/help-desk/hesk-c56a70fb.json",
         "projects/help-desk/jitbit-helpdesk-a221531f.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/kayako-4565eb5f.json",
+        "projects/help-desk/kustomer-1a7d26c7.json"
       ],
       "status": "ready_to_commit"
     }
