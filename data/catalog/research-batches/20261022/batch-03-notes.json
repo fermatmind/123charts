@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T11:51:21.108802+00:00",
+  "updated_at": "2026-10-22T12:06:37.208906+00:00",
   "status": "in_progress",
-  "completed_count": 37,
+  "completed_count": 39,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -41,9 +41,11 @@
     "projects/marketing-automation/iterable-f69b5922.json",
     "projects/marketing-automation/klaviyo-2f8370a2.json",
     "projects/marketing-automation/listrak-ea8b16f2.json",
-    "projects/marketing-automation/mapp-cloud-d1b89f6d.json"
+    "projects/marketing-automation/mapp-cloud-d1b89f6d.json",
+    "projects/marketing-automation/marketing-360-9ff6dc56.json",
+    "projects/marketing-automation/moengage-503b6470.json"
   ],
-  "remaining_count": 164,
+  "remaining_count": 162,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -52,9 +54,7 @@
     "projects/email-marketing/mailify-7607e263.json",
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
-    "projects/marketing-automation/marketing-360-9ff6dc56.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
-    "projects/marketing-automation/moengage-503b6470.json",
     "projects/marketing-automation/netcore-8723c7ab.json",
     "projects/marketing-automation/omnisend-c5c1ed4f.json",
     "projects/marketing-automation/ontraport-f023b750.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/marketing-360-9ff6dc56.json",
+  "next_project": "projects/marketing-automation/netcore-8723c7ab.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -326,6 +326,11 @@
         "aritic-cio-docs.json",
         "aritic-price-doc.json"
       ]
+    },
+    {
+      "path": "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
+      "status": "not_completed",
+      "reason": "Current product and pricing originals read, but no official operational workflow documentation discovered; source-access evidence and hashes recorded in source_access_notes. Not counted complete."
     }
   ],
   "compatibility_issues": [
@@ -522,6 +527,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-06",
+      "completed_projects": 39,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 39 drafts; own scope, draft states, official/pricing source types, actual excerpt SHA-256, recursive references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged validator line 166 rejects authentic Benchmark Help Scout domain; actual helpscoutdocs.com versus expected benchmarkemail.com. Shared validator unchanged."
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -564,6 +591,11 @@
       "commit": "26f6492",
       "completed_count": 35,
       "scope": "InfluencerSoft, Iterable, Klaviyo; preserves legacy-offer, real-test and re-entry rollout caveats"
+    },
+    {
+      "commit": "f212df8",
+      "completed_count": 37,
+      "scope": "Listrak, Mapp Cloud; authentic source conflicts and entitlements preserved"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -582,8 +614,8 @@
     },
     "marketing-automation": {
       "assigned": 27,
-      "completed": 16,
-      "uncompleted_with_source_gaps": 1,
+      "completed": 18,
+      "uncompleted_with_source_gaps": 2,
       "status": "in_progress"
     }
   },
@@ -627,6 +659,40 @@
     {
       "project": "mapp-cloud-d1b89f6d",
       "note": "English pricing actual USD cards read. Current versioned edit page differs from linked v1 creation page. Later Whiteboard details repeatedly timed out; no search-extract-only quiet-hour claims. Mapp Connect event examples use different field spellings."
+    },
+    {
+      "project": "marketing-optimizer-31b4a5a3",
+      "note": "Current official product/distribution/lead-management/pricing pages readable. No publicly discoverable official operational documentation found after targeted searches for trigger/workflow/API/knowledge-base. Marketing overview is insufficient to substantiate execution/re-entry/failure behavior; not counted as deep research complete. /pricing/ first returned older rendering, later redirected to /pricing; no cause inferred. Current free card distinct from FAQ no trial; not adopted from third-party $49 listings.",
+      "evidence": [
+        {
+          "source": "Pricing Plans for Marketing Optimizer Software (https://www.marketingoptimizer.com/pricing)",
+          "excerpt_sha256": "41298ee1108937e3b4ede2e52fb142b139bbf8b23dc60eec11925e01163787aa",
+          "read_at": "2026-10-22T11:56:50.803506+00:00"
+        },
+        {
+          "source": "Automate Sales and Marketing with Marketing Optimizer (https://www.marketingoptimizer.com/marketing-automation)",
+          "excerpt_sha256": "db1cb65be98d9744948f7cf74b9a1a4ab5fd694ca7110fefb29ee287357b8665",
+          "read_at": "2026-10-22T11:56:50.804260+00:00"
+        },
+        {
+          "source": "Best Lead Distribution Software | Marketing Optimizer (https://www.marketingoptimizer.com/lead-distribution)",
+          "excerpt_sha256": "09684ef799f8b87c2992b429c37061423ba75eb48e471290f2a47b7c2d2084ad",
+          "read_at": "2026-10-22T11:56:50.804697+00:00"
+        },
+        {
+          "source": "Best Lead Management System and CRM | Marketing Optimizer (https://www.marketingoptimizer.com/lead-management)",
+          "excerpt_sha256": "904d7542560d4c87896585d974f47c272c00cce3bebc07b1cd1887375f130a38",
+          "read_at": "2026-10-22T11:56:50.805090+00:00"
+        }
+      ]
+    },
+    {
+      "project": "marketing-360-9ff6dc56",
+      "note": "Migrated current help originals read. Trigger guide conflicts on repeat-entry frequency, Condition row repeats Email description; gaps retained. Exact plans/pricing target repeatedly timed out in web and ordinary verified HTTPS; historical hosting renewal guide is not a current package price."
+    },
+    {
+      "project": "moengage-503b6470",
+      "note": "Old help article originals returned 404. Official current llms index publishes new Markdown endpoints; ordinary HTTPS with TLS verification returned 200. Current editing guide explicitly carries entry count across versions and offers migration, unlike older cached search. No stale reset rule adopted. General status page old-version wording differs from the specific edit page; preserved as granularity conflict. MAU FUP base not silently equated with MTU pricing wording."
     }
   ]
 }
