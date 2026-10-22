@@ -10,173 +10,157 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Linkody is a product in the Search optimization category. Its directory profile covers User Management, Revenue Management, Rank Tracking, Link Management, Keyword Tracking, Google Analytics Integration, Content Management, Competitor Analysis.\n\nAdditional listed capabilities include Auditing, Dashboard. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $11.20.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: manage application users and their access settings; track reported search positions over time; monitor recorded search positions for selected queries; organize content through creation, revision and publication; compare selected publicly available product or marketing signals; bring selected indicators and records into one view. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Linkody 属于搜索优化软件。第三方资料列出的功能包括用户管理、收入管理、排名跟踪、链接管理、关键词跟踪、Google Analytics 集成、内容管理、竞品分析。\n\n资料还列出审计、仪表盘。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $11.20.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：管理应用用户及其访问设置；跟踪一段时间内记录到的搜索位置；监测选定查询词的已记录搜索位置；组织内容的创建、修订和发布；比较选定的公开产品或营销信息；在同一视图中汇集选定指标和记录。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Linkody discovers and monitors backlinks for owned domains and tracked competitors, records link expectations and status changes, and turns those observations into reports. It also provides prospect tracking, competitor intersections, client/team roles and a paid REST API. Its useful unit is a monitored link with a source, destination and observation history, rather than an assurance about ranking value.\n\nEvaluation should distinguish weekly discovery, roughly daily link checks and the slower index-status refresh. Recent archive and CSV documentation adds important operational boundaries: they affect what counts as monitored data and how records are updated. This original bilingual draft follows those controls through client delivery and account exit, without registering, importing data, contacting publishers, submitting disavow files or measuring link coverage and accuracy.",
+  "description_zh": "Linkody 为自有域及所跟竞品发现、监控外链，记录预期属性及状态变化，再生成报告。另有潜在线索、竞品交集、客户／团队角色及付费 REST API。适用单位是具有来源、目标及观察历史的监控链接，不是排名价值保证。\n\n评估需分每周发现、约每日链接检查及较慢索引状态刷新。近期归档及 CSV 文档补充关键边界：它们影响监控数据范围及记录更新方式。本原创双语稿沿这些控制到客户交付及账户退出，未注册、导数据、联系发布者、提交拒绝链接文件或测覆盖／准确性。",
   "core_features": [
     {
-      "name_en": "User Management",
-      "name_zh": "用户管理",
-      "explanation_en": "Manage application users and their access settings.",
-      "explanation_zh": "管理应用用户及其访问设置。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Expected-link monitoring",
+      "name_zh": "预期链接监控",
+      "explanation_en": "Compare the found target, anchor and rel with specified expectations.",
+      "explanation_zh": "将所发现目标、锚及 rel 与预期比。",
+      "source_ref": "statuses",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Revenue Management",
-      "name_zh": "收入管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Discovery exclusions",
+      "name_zh": "发现排除",
+      "explanation_en": "Test normalized URL rules before excluding future discoveries.",
+      "explanation_zh": "排除未来发现前测试标准化 URL 规则。",
+      "source_ref": "exclusions",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Rank Tracking",
-      "name_zh": "排名跟踪",
-      "explanation_en": "Track reported search positions over time.",
-      "explanation_zh": "跟踪一段时间内记录到的搜索位置。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Reversible link archive",
+      "name_zh": "可恢复链接归档",
+      "explanation_en": "Stop checks and free a monitored slot while retaining a record.",
+      "explanation_zh": "停检查、释放监控名额并留记录。",
+      "source_ref": "archive",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Link Management",
-      "name_zh": "链接管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Keyword Tracking",
-      "name_zh": "关键词跟踪",
-      "explanation_en": "Monitor recorded search positions for selected queries.",
-      "explanation_zh": "监测选定查询词的已记录搜索位置。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Google Analytics Integration",
-      "name_zh": "Google Analytics 集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Content Management",
-      "name_zh": "内容管理",
-      "explanation_en": "Organize content through creation, revision and publication.",
-      "explanation_zh": "组织内容的创建、修订和发布。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Competitor Analysis",
-      "name_zh": "竞品分析",
-      "explanation_en": "Compare selected publicly available product or marketing signals.",
-      "explanation_zh": "比较选定的公开产品或营销信息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Auditing",
-      "name_zh": "审计",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Client domain access",
+      "name_zh": "客户域访问",
+      "explanation_en": "Client reads assigned domains; Observer reads all account data.",
+      "explanation_zh": "Client 读所选域，Observer 读全账户。",
+      "source_ref": "roles",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Manage application users and their access settings",
-      "Track reported search positions over time",
-      "Monitor recorded search positions for selected queries",
-      "Organize content through creation, revision and publication",
-      "Compare selected publicly available product or marketing signals",
-      "Bring selected indicators and records into one view"
+      "Monitor agreed backlink attributes and investigate source versus destination errors.",
+      "Import a dated client list while preserving selected metadata.",
+      "Curate prospects and competitor gaps with deliberate archive/discovery scope."
     ],
     "zh": [
-      "管理应用用户及其访问设置",
-      "跟踪一段时间内记录到的搜索位置",
-      "监测选定查询词的已记录搜索位置",
-      "组织内容的创建、修订和发布",
-      "比较选定的公开产品或营销信息",
-      "在同一视图中汇集选定指标和记录"
+      "监控约定外链属性并查来源／目标错误。",
+      "保选定元数据地导定日期客户表。",
+      "按明确归档／发现范围整理线索及竞品缺口。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["overview", "discovery-method", "archive", "csv"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $11.20.",
-      "zh": "提供免费试用 起价为 $11.20.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "SEO account analyst",
+        "zh": "SEO 客户分析人员"
+      },
+      {
+        "en": "Outreach operations lead",
+        "zh": "外联运营负责人"
+      },
+      {
+        "en": "Agency client reporting lead",
+        "zh": "机构客户报告负责人"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select owned domains and competitors within the shared domain quota.",
+        "zh": "在共享域配额内选自有及竞品域。",
+        "source_refs": ["quotas"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test Global versus Per Domain CSV routing and blank-field updates.",
+        "zh": "测试 Global／Per Domain 路由及空字段更新。",
+        "source_refs": ["csv"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set expected attributes and investigate source/landing errors before overriding a status.",
+        "zh": "设预期属性，覆盖状态前查来源／目标错。",
+        "source_refs": ["statuses", "landing", "faq"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test discovery rules and inspect archive/backlog effects before cleanup.",
+        "zh": "清理前测发现规则及审归档／积压效果。",
+        "source_refs": ["exclusions", "archive"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Set assigned-domain access and the owner’s recipient list separately.",
+        "zh": "分别设分配域访问及 Owner 接收表。",
+        "source_refs": ["roles", "notifications"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Export needed records and distinguish cancellation from deletion.",
+        "zh": "导所需记录并分取消与删除。",
+        "source_refs": ["account", "pdf"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Weekly discovery differs from daily link checks and fourteen-day index refresh.",
+        "zh": "每周发现不同于每日检查及十四日索引刷新。",
+        "source_refs": ["discovery-method", "faq", "links-report"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "CSV Update existing links can erase metadata with blank fields.",
+        "zh": "CSV 更新已有链会用空字段清元数据。",
+        "source_refs": ["csv"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Archived links still affect discovery/intersections and are absent from the API.",
+        "zh": "归档仍影响发现／交集且 API 不返回。",
+        "source_refs": ["archive"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Domain replacement has a thirty-day restriction; cancellation Free/deactivated wording differs.",
+        "zh": "域替换限三十天，取消后 Free／失效措辞不同。",
+        "source_refs": ["quotas", "account", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -188,37 +172,20 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $11.20.",
-    "source_snapshot_zh": "提供免费试用 起价为 $11.20.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "EUR monthly: Webmaster €13.90 (2 domains/500 links/1 user), Advanced €22.90 (5/2,000/1), Pro €45.90 (20/5,000/3), Agency €90.90 (50/20,000/5), Agency XL €138.90 (100/50,000/10). Annual cards display monthly equivalents €10.50/€17.20/€34.40/€68.20/€104.20 and three months free; annual invoice totals not derived from rounded displays. Thirty-day no-card trial excludes CSV/PDF export; no verified sustained-free monitoring tier. Exact tax, regional checkout, refund/proration and post-cancel Free entitlements unknown. No normalized price.",
+    "source_snapshot_zh": "EUR 月付：Webmaster €13.90（二域／五百链／一用户）、Advanced €22.90（五／二千／一）、Pro €45.90（二十／五千／三）、Agency €90.90（五十／二万／五）、Agency XL €138.90（百／五万／十）。年卡显示月等值 €10.50／17.20／34.40／68.20／104.20 及三月免费，不按舍入展示推年账单。三十天免卡试用不含 CSV／PDF 导出，未核持续免费监控层。准确税、区域结账、退款／按比例调整及取消后 Free 权益未知，不设标准化价。",
+    "normalized_price": null,
+    "source_refs": ["pricing", "account", "quotas"]
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Linkody do?",
-      "question_zh": "Linkody 用来做什么？",
-      "answer_en": "Linkody is a product in the Search optimization category. Its directory profile covers User Management, Revenue Management, Rank Tracking, Link Management, Keyword Tracking, Google Analytics Integration, Content Management, Competitor Analysis.",
-      "answer_zh": "Linkody 属于搜索优化软件。第三方资料列出的功能包括用户管理、收入管理、排名跟踪、链接管理、关键词跟踪、Google Analytics 集成、内容管理、竞品分析。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "User Management, Revenue Management, Rank Tracking, Link Management, Keyword Tracking, Google Analytics Integration, Content Management, Competitor Analysis, Auditing, Dashboard",
-      "answer_zh": "用户管理、收入管理、排名跟踪、链接管理、关键词跟踪、Google Analytics 集成、内容管理、竞品分析、审计、仪表盘"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -228,25 +195,474 @@
       "read_at": "2026-10-22T08:49:54.123Z",
       "excerpt_sha256": "abb43947a5bb86c302d740bfac27813adbf519ecccbfc55f1fa34920db7613de",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Backlink Monitoring Tool - Track Your Link Building | Linkody",
+      "url": "https://www.linkody.com/",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "1a912d597384b088285704f67f2a12c848bf6d6d00435db39c2dafd869c0a484",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current backlink monitoring, competitor analysis and API identity."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Linkody",
+      "title": "Plans & pricing - Linkody",
+      "url": "https://www.linkody.com/en/plans",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "4abeabef9d21fed4e57042b7f2232b264925f702413e88458bc454a22f1cf12a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "EUR monthly/annual-equivalent cards; export excluded from trial and shared site quota."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Managing users and roles | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11164027-managing-users-and-roles",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "4e8840863665ec40173165a8b1593b9c3e3cc77cb2b5bcd4efb557d46a819931",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "July2026 assigned-domain roles, owner-only account table versus Manager prose, identity handover and separate billing email."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Terms & privacy - Linkody",
+      "url": "https://www.linkody.com/en/company/terms",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "63e8781d34623e07779930e1ee19fbb7e41b56d0ddccbcad8b27bd05de0e6bcc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Data ownership/deletion and dated privacy text; no legal assessment or present processor/location verification."
+    },
+    {
+      "id": "quotas",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Understanding how quotas work | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11718323-understanding-how-quotas-work",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "fb4150920e8daf9137e57069ef532fd18a6ae10e9d35946c369ffa9fdadbf504",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Domains include competitors, competitor links free, user includes self, thirty-day replacement restriction."
+    },
+    {
+      "id": "api",
+      "type": "official_integration",
+      "site": "Linkody",
+      "title": "API Access and Integration | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11485382-api-access-and-integration",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "7eaeb5a1c6ebe5283c9aeb51137fd8d4f05bdab6bcf167e322fa935831bd6510",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Paid REST JSON token auth supports mutations and full data access; full reference rendered no body."
+    },
+    {
+      "id": "first-steps",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "First steps with Linkody | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11070911-first-steps-with-linkody",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "aab1ab645fee787e526f1b8c6df15578c6455738782e9ad95c24e61543d06818",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Automatic discovery and limited trial sample; not guaranteed backlink completeness."
+    },
+    {
+      "id": "discovery-method",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "How Linkody finds backlinks | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11070871-how-linkody-finds-backlinks",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "bed8b4eca1e136e4d01771b3f26fa8ec1b8e0a2ef094037f20778dea52f74d00",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Three independent providers unnamed, initial live verification and weekly discovery."
+    },
+    {
+      "id": "domain-settings",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Domain settings | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11052512-domain-settings",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "38b8d8c687ad3834fa7f01216f3d513448e243d0f15ff28271c74b643d836335",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Old redirected domain and budget recorded costs; no automatic payment/revenue interpretation."
+    },
+    {
+      "id": "statuses",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Understanding metrics and statuses in Linkody reports | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11719451-understanding-metrics-and-statuses-in-linkody-reports",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "a5b03888dc3193dba388c59516b89798badad526d5fbbde9f4ea72866a107f56",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Documented response/link statuses, Ahrefs public DR retrieval and fourteen-day index refresh."
+    },
+    {
+      "id": "prospects",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Understanding prospect links | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11070086-understanding-prospect-links",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "7c8c5bbc0512bf85c64bf116e62ae17cc8b018ce5ef828c370ac9d93927a179c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Expected links, domain-level matching and advisory workflow labels."
+    },
+    {
+      "id": "account",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Managing your account | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11164476-managing-your-account",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "7d268f49b61f00609bed3aef2fe72b7f1f16e92ed333780997458a33a58daa1f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Downgrade support, paid-end deactivation versus pricing Free wording, irreversible account deletion."
+    },
+    {
+      "id": "exclusions",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Link discovery | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/16096599-link-discovery",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "03841b0166571414d4caef31b661c5ccc1f39eadc70325d62ddf9ff45840f760",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "July future-only normalized URL rules, OR matching, preview and fifty-rule cap."
+    },
+    {
+      "id": "notifications",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Email notification settings | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11485048-email-notification-settings",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "1496aaef186e3a0a6108add255ff68083d0f9d9662ce2aa5f5f0198fe9070e8a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current owner-only recipients, replacement of login address, weekly discovery despite daily report cadence."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Linkody FAQ | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11013905-linkody-faq",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "4232b69d0e432de700cd07af13da17b7edad3905c4c41a48279de92105657eb2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Manual OK override hand icon, crawler-block LNF, selection rules and archive distinction."
+    },
+    {
+      "id": "csv",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Importing links via CSV | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11070203-importing-links-via-csv",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "65351e2bae317804c5093d9d2f6bff7c37776afaf4a7386f0151da3f0f4b242a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current Global/PerDomain imports, empty-field erasure, default per-source cap, first100 errors and restart."
+    },
+    {
+      "id": "disavow",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "How to disavow links with Linkody | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11470891-how-to-disavow-links-with-linkody",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "e9ce5c9d489bf659ee0469ecb7a074d86aaef4c7b43a4849bb011c447be002b2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Internal rules, TXT export and separate verified Google upload; no upload performed."
+    },
+    {
+      "id": "landing",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Monitoring your landing pages | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11477926-monitoring-your-landing-pages",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "e8305790ef222081b4e7b714afdb10079e40e6be4321d2b432c7513f5fa69351",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Target HTTP failure versus source link, grouping and owner-side remedies."
+    },
+    {
+      "id": "changelog",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Tracking link changes with the Changelog Report | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11477985-tracking-link-changes-with-the-changelog-report",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "6f70622efe6f922422ac924487a780be12874c754e18c2fc8e6d4471a0c59c85",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Latest body explicitly limits status changes to six months; archived changes hidden until restore."
+    },
+    {
+      "id": "intersect",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Using the Link Intersect Report to find link opportunities | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11478161-using-the-link-intersect-report-to-find-link-opportunities",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "c24624d0c812fc15d243bab767b8d14ec71a2969c4b21cb60ff6dee69e2edc88",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Archived links count as already owned; current Sharing binary, grouping and prospect creation."
+    },
+    {
+      "id": "pdf",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "PDF Report Settings | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11485305-pdf-report-settings",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "1f4c45ee3bf14e4e1ddf5c12ab0a59ec0bd076a2da491cca890a2c21112cfdec",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Logo formats, default and optional report fields."
+    },
+    {
+      "id": "archive",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Archiving links | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/17666500-archiving-links",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "f441eed1addb4d8b2d288a6d1f0356338825c72fa29befa953e5cba7d7c4ba70",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current archive exclusion/slot/history/API404/restoration backlog and rediscovery behavior."
+    },
+    {
+      "id": "links-report",
+      "type": "official_documentation",
+      "site": "Linkody",
+      "title": "Understanding the Links Report | Help Center",
+      "url": "https://www.linkody.com/helpcenter/en/articles/11047143-understanding-the-links-report",
+      "read_at": "2026-10-22T15:33:29.737281Z",
+      "excerpt_sha256": "173061093b2bbb0ca78b089b66ba4ba25c9deb3a2736d6988959a940b346f312",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Individual manually configured targets, fourteen-day index caveat and view-filtered CSV."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:33:29.737281Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "discovery-method", "archive", "csv"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "coverage",
+        "title_en": "Automatic discovery is not an exhaustive backlink census",
+        "title_zh": "自动发现不是完整外链普查",
+        "en": "Adding a domain starts a search across three unnamed independent providers; the guide says initially only verified live results are added. Further discovery runs weekly. Automatic discovery normally selects one link per referring domain, but the Links Report and CSV guide allow deliberately imported rows for different target pages. The FAQ’s broad one-link wording therefore needs this scope distinction. Trial results are further restricted to recently discovered links and a limited sample. Editorial comparison: match referring-domain counts, date and import settings before comparing totals with another provider. A larger table is not by itself evidence of better current coverage or stronger search performance.",
+        "zh": "加域会向三个未具名独立提供者搜索，指南称初次只加验证存活结果，之后每周发现。自动发现通常每来源域一链，但 Links Report／CSV 可明确导不同目标页多行，因此 FAQ 宽泛一链措辞需限范围。试用另限近期发现及样本。编辑比较：与其他提供者比总量前匹配来源域数、日期及导入设置。表更大本身不证明当前覆盖更佳或搜索效果更强。",
+        "source_refs": [
+          "discovery-method",
+          "first-steps",
+          "faq",
+          "links-report",
+          "csv"
+        ],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "csv",
+        "title_en": "Global import routes each row by an exact owned-domain name",
+        "title_zh": "全局导入按准确自有域名路由各行",
+        "en": "From All domains, Global is the default import mode and requires Linkody format plus a Site column matching an owned domain, with www and bare domains distinguished. Third-party GSC/Ahrefs/Moz formats use Per Domain instead. Update existing links replaces supplied metadata; blank fields erase previous values except date added. The default same-source-domain cap is one, counted within the file, not existing inventory. Invalid rows can be skipped while others import, with the first hundred errors logged and a quota stop possible. Editorial migration: test a small file, inspect routing and retained fields, then correct logged failures; a successful import count does not mean every row or prior note survived.",
+        "zh": "All domains 的 Global 默认模式需 Linkody 格式加 Site 列，准确匹配自有域，www 与裸域区分。GSC／Ahrefs／Moz 格式改用 Per Domain。Update existing links 替换元数据，空值清旧字段但保 date added。同来源域默认一链限额只算文件，不算已有库存。错误行可跳而其他继续、只记前百错，并可能因额度停止。编辑迁移：小文件测试、审路由及保留字段，再修错误；导入计数成功不代表每行或旧备注存活。",
+        "source_refs": ["csv"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "status-recovery",
+        "title_en": "LNF, wrong attributes and an unreachable page need different checks",
+        "title_zh": "LNF、属性错误及页面不可达需不同检查",
+        "en": "OK compares a link with its expected target, anchor and rel. LNF means not found; WLP, WA and WR flag mismatched expectations; source HTTP errors, invalid HTML and unreachable pages are different states. The FAQ notes that crawler blocking can produce LNF even when a browser displays the link. Manual Set to OK creates a hand-marked override that can be reset and rechecked. Editorial investigation: preserve the observed response and expected values before changing the status. An overridden green label is not a fresh crawler observation, and a crawler access failure does not independently establish deliberate removal by the publisher.",
+        "zh": "OK 按预期目标、锚及 rel 比；LNF 未找到，WLP／WA／WR 为预期不符，来源 HTTP 错、无效 HTML、不可达另列。FAQ 称爬虫被阻也可在浏览器见链时返 LNF。手动 Set to OK 加手形覆盖，可重置重查。编辑调查：改状态前留响应及预期。覆盖绿色不是真新爬虫观察，访问失败不独立证明发布者故意删链。",
+        "source_refs": ["statuses", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "measurement",
+        "title_en": "Different fields refresh at different intervals",
+        "title_zh": "不同字段刷新间隔不同",
+        "en": "Link checks are described as roughly every twenty-four hours, while new-link discovery is weekly. The Links Report documents a single index-status check per page, automatic fourteen-day refresh and possible false negatives. Ahrefs DR is fetched from public data without requiring the user’s Ahrefs account; DA, PA, Spam Score and Tranco are separate provider metrics. Editorial priority: inspect the last check date and raw source/target behavior before acting on a status or score. These fields do not constitute a Google quality certification, and an old or negative index result alone does not measure the backlink’s causal contribution to traffic or revenue.",
+        "zh": "链接约二十四小时检查，新链发现每周。Links Report 记逐页单次索引检查、十四天自动刷新及可能假阴性。Ahrefs DR 从公开数据取、不需用户 Ahrefs 账户，DA／PA／Spam Score／Tranco 是不同提供者指标。编辑优先级：按状态或分数行动前审最后检查日及原来源／目标行为。这些字段不是 Google 质量认证，旧或负索引结果单独不测链接对流量／收入的因果贡献。",
+        "source_refs": ["faq", "discovery-method", "links-report", "statuses"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "archive",
+        "title_en": "Archiving changes discovery and historical report scope",
+        "title_zh": "归档会改变发现及历史报告范围",
+        "en": "Archiving stops checks and removes a link from ordinary outputs and monitored quota. Its record remains, still occupying the referring-domain discovery position and counting as owned in competitor intersections. Past graph totals can change; Changelog retains six months of changes. Competitor links cannot be archived. Editorial cleanup: preserve the archive date and required report context before explaining historical totals. A lower count after cleanup does not establish a new removal by the publisher.",
+        "zh": "归档停检查、移出普通输出及监控配额。记录仍在，仍占来源域发现位置，竞品交集仍算已拥有。过往图数可变，Changelog 留六个月变化，竞品链不能归档。编辑清理：解释历史总量前保归档日及所需报告语境。清理后数更低不确定发布者新删链。",
+        "source_refs": ["archive", "changelog", "intersect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "restore",
+        "title_en": "Freeing a slot may reveal a hidden link before allowing a restore",
+        "title_zh": "释放名额可能先显隐藏链，再允许恢复",
+        "en": "Unarchiving needs available owner capacity and restores oldest items first when only some fit. Hidden over-limit discoveries can take newly freed places. Restored links queue a fresh check. Archived IDs return API404; API archive/restore is unavailable. Deleting loses history and permits later rediscovery. Editorial recovery: inspect the hidden backlog and partial-restore message before repeating a selection. An archived ID’s404 is not proof of an outage, and its old status is not a new verification.",
+        "zh": "恢复需 Owner 可用容量，仅容部分时先最早项。超限隐藏发现可占新腾位，恢复链排新检查。归档 ID 返 API404，API 无归档／恢复。删除丢历史、可再发现。编辑恢复：重复选项前审隐藏积压及部分恢复消息。归档 ID404 不证明故障，旧状态不是新验证。",
+        "source_refs": ["archive"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "prospects",
+        "title_en": "An outreach label does not confirm that a link exists",
+        "title_zh": "联络标签不确认链接存在",
+        "en": "Prospects can be created from the links or competitor/intersection reports. A page URL targets one page; a domain-only prospect can convert when any page on that domain is discovered linking. Candidate, Requested, Pending and Declined are reference labels and do not alter processing. The Intersect view sorts pages by distinct tracked competitors, offers page/domain grouping and a default Prospects filter; All pages also includes pages already linking. Editorial opportunity review: verify topical relevance and the actual page before proposing outreach. Conversion of a broad domain prospect does not prove that the requested placement or intended landing page was obtained.",
+        "zh": "可从链接、竞品／交集建 prospect。页 URL 定一页，纯域线索在发现域下任何页链接时可转换；Candidate／Requested／Pending／Declined 只是记录标签、不改处理。Intersect 按独立跟踪竞品数排序，可按页／域分组，默认 Prospects，All pages 也含已有链。编辑机会核查：提联络前审主题适配及真实页面。广域线索转换不证明请求位置或预期落地页已获得。",
+        "source_refs": ["prospects", "intersect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exclusions",
+        "title_en": "Discovery rules reject new matches without cleaning old records",
+        "title_zh": "发现规则拒新匹配，不清旧记录",
+        "en": "The July guide supplies account-level automatic discovery plus domain-specific controls. Its up-to-fifty URL rules match contains/exact/begins/ends conditions with case-insensitive normalization that ignores protocol and www; any matching rule rejects a future discovery. Existing records remain. The magnifier previews existing matches and sample URLs without deleting them, and a test field checks a proposed URL. Editorial configuration: test both an intended exclusion and a valid nearby URL before saving. A broad contains rule can narrow future coverage silently; toggling discovery or adding a rule does not document removal of historical inventory or a search-engine disavow action.",
+        "zh": "七月指南有账户自动发现及逐域控制。最多五十 URL 规则按 contains／exact／begins／ends 匹配，忽略大小写、协议及 www，任意匹配拒未来发现；旧记录保留。放大镜预览旧匹配及样例而不删除，测试框核给定 URL。编辑配置：保存前测目标排除及邻近有效 URL。宽 contains 可静默缩未来覆盖，关发现或加规则不证明删历史库存或向搜索引擎拒绝链接。",
+        "source_refs": ["exclusions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "targets",
+        "title_en": "A landing-page error is on the receiving site",
+        "title_zh": "落地页错误发生在接收站点",
+        "en": "Landing Pages groups target URLs with HTTP errors and shows how many backlinks point to each. The guide distinguishes restoring an unintentionally removed page, fixing server errors and selecting a relevant redirect. The old-domain setting separately treats links to a specified redirected domain as pointing to the new domain. Domain budgets sum manually recorded acquisition costs and highlight overspending; they are not payment processing or measured return. Editorial repair: establish the intended target and owner-side response first, then recheck the link. A source link can remain present while the receiving page fails, so asking the publisher to replace it may not address the actual fault.",
+        "zh": "Landing Pages 按目标 HTTP 错分组并显示指向链数。指南区分恢复误删页、修服务器及选相关重定向；旧域设置另把指定重定向域的链当指向新域。域预算汇人工录入获取成本、标超支，不是付款处理或实测回报。编辑修复：先确定预期目标及所有者侧响应，再重查链。来源链可仍在而接收页失败，要求发布者换链未必解决真实故障。",
+        "source_refs": ["landing", "domain-settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "report-delivery",
+        "title_en": "Inviting a user does not subscribe them to email reports",
+        "title_zh": "邀请用户不订阅邮件报告",
+        "en": "Email notifications offer monitored changes, newly discovered own links and competitor discoveries, each daily/weekly/off. Daily delivery does not accelerate the weekly discovery scan. Reports are sent around 01:00 UTC, with Monday weekly delivery. Only the owner edits up to three recipients; a custom list replaces the login address, and users are not added automatically. Monitored reports can be change-only or always sent. PDFs separately support logo and selected fields such as last check date; trial export is excluded. Editorial client delivery: verify recipient list, report scope and observation age before distribution. No new email can be normal when there was no qualifying change.",
+        "zh": "邮件分监控变化、自有新链、竞品发现，可日／周／关。日发送不加快每周发现，约 UTC 01:00 发、周报星期一。仅 Owner 改最多三接收者，定制表替换登录邮箱，邀请用户不自动加。监控报可仅变化或始终发。PDF 另选 logo 及最后检查日等字段，试用不含导出。编辑客户交付：分发前审收件表、范围及观察年龄，无合资格变化时没新邮件可正常。",
+        "source_refs": ["notifications", "pdf", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "team",
+        "title_en": "Client and Observer have different data boundaries",
+        "title_zh": "Client 与 Observer 数据边界不同",
+        "en": "Owner/Manager can manage users; Link Builder changes links and competitors for assigned domains, Client reads assigned domains, and Observer reads all data. Both read-only roles can view archives. The role prose calls Manager almost equivalent to Owner, while the table reserves account settings for Owner; recipient settings explicitly remain Owner-only. Ownership is not assigned through the Users role picker: the guide changes the original login identity, with invoice email managed separately. Editorial handover: establish access to the replacement identity and verify domain scope and billing contact before disabling an old login. A general read-only role name is not sufficient evidence of client isolation.",
+        "zh": "Owner／Manager 可管用户；Link Builder 改分配域链接／竞品，Client 读分配域，Observer 读全部；只读角色也可见归档。正文称 Manager 近 Owner，表却将账户设置留 Owner，收件设置明确仅 Owner。所有权不是 Users 角色选择，指南改原登录身份，发票邮箱独立。编辑交接：禁旧登录前确保新身份访问，核域范围及账单联系。通用只读角色名不足证明客户隔离。",
+        "source_refs": ["roles", "archive", "notifications"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "api-disavow",
+        "title_en": "The API and disavow export each have a separate authority boundary",
+        "title_zh": "API 与拒绝链接导出各有独立权限边界",
+        "en": "Paid subscriptions include a JSON REST API using X-AUTH-TOKEN. It can create, update and delete links/domains; its token grants full data access. The full public API reference returned no readable body here, so exact rate limits, pagination and token restrictions remain unverified. Disavow is a different workflow: maintain page/domain rules, export TXT, then separately upload through a verified Google property. An internal rule is not evidence that Google received it. Editorial integration: start from an intended operation and compare its result with the target record; a vendor risk metric alone is not a sufficient editorial basis for requesting external disavow.",
+        "zh": "付费订阅有 X-AUTH-TOKEN 的 JSON REST，可建改删链接／域，token 授完整数据。完整公开 API 参考未返回可读正文，准确速率、分页及 token 限制未核。Disavow 是另一流程：管页／域规则、导 TXT，再以已验证 Google 属性独立上传。内部规则不证明 Google 收到。编辑集成：从明确动作起、比结果及目标记录；仅厂商风险分不足作编辑请求外部拒绝链接依据。",
+        "source_refs": ["api", "disavow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "quota-exit",
+        "title_en": "Deleting a domain does not bypass the thirty-day replacement rule",
+        "title_zh": "删除域不绕过三十天替换规则",
+        "en": "Domains include owned sites plus competitors, links exclude competitor links, and user capacity includes the owner. A deleted domain frees a slot, but the quota guide requires thirty days from addition before replacing it with another. Downgrades require support. Cancellation retains access to the paid-period end; account help then says deactivated with no data deleted, whereas pricing says conversion to Free. Those statements do not establish ongoing free monitoring or a fixed retention deadline. Account deletion is separately irreversible. Editorial exit: export required records while entitled, confirm renewal/end behavior and distinguish cancelling payment, reducing capacity and permanently deleting the account.",
+        "zh": "域数含自有及竞品，链接不含竞品链，用户含 Owner。删域腾位，但配额指南要求加域起三十天才可换其他域。降级需支持。取消保访问到已付期末，账户帮助称之后失效但不删数据，价格称转 Free，不能确定持续免费监控或固定保留期限。删账户另为不可逆。编辑退出：有权益时导所需记录、核续费／截止，分取消付款、缩容量及永久删账户。",
+        "source_refs": ["quotas", "account", "pricing", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Linkody: CSV imports, archive effects and client monitoring",
+    "title_zh": "Linkody：CSV 导入、归档效果及客户监控",
+    "description_en": "Review Linkody discovery cadence, link expectations, import updates, archive behavior, client roles and subscription exit.",
+    "description_zh": "核 Linkody 发现周期、链接预期、导入更新、归档行为、客户角色及订阅退出。",
+    "primary_intent": "Evaluate Linkody backlink monitoring and client delivery",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "One-per-domain FAQ wording needs the documented manual multi-target import distinction; Manager settings prose/table and Free/deactivated cancellation descriptions differ.",
+      "zh": "FAQ 每域一链需区分文档手动多目标导入，Manager 设置正文／表格及取消 Free／失效描述不同。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Full API reference body unavailable; endpoint-level rates, pagination, token scoping and recovery unverified.",
+      "zh": "完整 API 参考正文不可读，逐端点速率、分页、token 范围及恢复未核。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Actual quota enforcement, trial-to-paid flow, refund/proration, retention duration and complete UI languages unknown; no permissive source-code license established.",
+      "zh": "真实配额执行、试用转付费、退款／比例调整、保留期限及完整界面语言未知，未确定宽松源码许可。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, data import, archive/restore, API call, email delivery, outreach, Google disavow upload, purchase or cancellation performed; no coverage, accuracy or ranking impact measured.",
+      "zh": "未开户、导入、归档／恢复、API、发邮件、外联、Google 拒绝链接上传、购买或取消，未测覆盖、准确性及排名效果。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
