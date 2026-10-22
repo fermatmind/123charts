@@ -10,141 +10,85 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "MyCena is a product in the Password management category. Its directory profile covers Password Reset, Password Generator, Secure Password Sharing, Multifactor Authentication, Backup/Restore, Password Encryption, Mobiles Password Management, Websites Password Management.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available MyCena Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: create passwords using configured requirements. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "MyCena 属于密码管理软件。第三方资料列出的功能包括密码重置、密码生成、安全密码共享、多因素验证、备份与恢复、密码加密、移动设备密码管理、网站密码管理。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 MyCena 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：按指定要求生成密码。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "MyCena is an enterprise credential-control system: an organization generates credentials centrally, distributes them encrypted and injects them when a user connects. The intended workflow reduces employees’ need to see or type application passwords, rather than giving each employee an ordinary personal password vault.\n\nThe current FAQ positions MyCena alongside identity providers and privileged-access tools. Evaluate the actual systems and protocols in scope; claims of universal prevention, regulatory satisfaction or insurance savings on the website are not independently established by this research.",
+  "description_zh": "MyCena 是企业凭据控制系统，由组织集中生成凭据，加密分发，并在用户连接时注入。其目标是减少员工查看、输入应用密码的需要，而非向每人提供普通个人密码保险库。\n\n当前 FAQ 将 MyCena 定位为身份提供商及特权访问工具的补充。应评估实际纳管系统和协议，官网的普遍防护、满足监管或保险节省主张，本文均未独立证实。",
   "core_features": [
     {
-      "name_en": "Password Reset",
-      "name_zh": "密码重置",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Credential injection",
+      "name_zh": "凭据注入",
+      "explanation_en": "Centrally issued credentials are injected into in-scope application authentication.",
+      "explanation_zh": "集中签发凭据被注入已纳管应用认证。",
+      "source_ref": "faq",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Password Generator",
-      "name_zh": "密码生成",
-      "explanation_en": "Create passwords using configured requirements.",
-      "explanation_zh": "按指定要求生成密码。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Password Sharing",
-      "name_zh": "安全密码共享",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multifactor Authentication",
-      "name_zh": "多因素验证",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup/Restore",
-      "name_zh": "备份与恢复",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Password Encryption",
-      "name_zh": "密码加密",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Mobiles Password Management",
-      "name_zh": "移动设备密码管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Websites Password Management",
-      "name_zh": "网站密码管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Continuity policy",
+      "name_zh": "连续性政策",
+      "explanation_en": "Offline access depends on administrator-defined system scope and conditions.",
+      "explanation_zh": "离线访问取决于管理员定义的系统范围及条件。",
+      "source_ref": "faq",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Create passwords using configured requirements"],
-    "zh": ["按指定要求生成密码"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Scope a test web and remote login, then compare revocation with actual application logs.",
+      "Agree offline continuity, exact package inclusions and a written quote."
+    ],
+    "zh": [
+      "选测试网页和远程登录，对照实际应用日志核对撤权。",
+      "约定离线连续性、准确套餐权益和书面报价。"
+    ],
+    "source_refs": ["faq", "pricing"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available MyCena Offers Custom plan.",
-      "zh": "未提供免费试用 MyCena 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise access administrator",
+      "IT security operations lead"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Scope a test web and remote login, then compare revocation with actual application logs.",
+        "zh": "选测试网页和远程登录，对照实际应用日志核对撤权。",
+        "source_refs": ["faq"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Agree offline continuity, exact package inclusions and a written quote.",
+        "zh": "约定离线连续性、准确套餐权益和书面报价。",
+        "source_refs": ["faq", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Legacy/custom authentication needs assessment; continuity and price depend on the defined contract scope.",
+        "zh": "遗留／自定义认证需评估；连续性和价格取决于合同范围。",
+        "source_refs": ["faq", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -156,37 +100,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available MyCena Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 MyCena 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:46:49.529872+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "enterprise_quote",
+    "billing_basis": "FAQ per-user annual GBP references; confirm package and channel contract.",
+    "source_snapshot_en": "FAQ: Foundation GBP500/user/year, Resilience GBP800, Governance GBP1000; package page quote-led with optional add-ons; channel terms differ.",
+    "source_snapshot_zh": "FAQ：Foundation每用户年500英镑、Resilience800、Governance1000；套餐页引导询价并有可选附加项；渠道条款不同。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does MyCena do?",
-      "question_zh": "MyCena 用来做什么？",
-      "answer_en": "MyCena is a product in the Password management category. Its directory profile covers Password Reset, Password Generator, Secure Password Sharing, Multifactor Authentication, Backup/Restore, Password Encryption, Mobiles Password Management, Websites Password Management.",
-      "answer_zh": "MyCena 属于密码管理软件。第三方资料列出的功能包括密码重置、密码生成、安全密码共享、多因素验证、备份与恢复、密码加密、移动设备密码管理、网站密码管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Password Reset, Password Generator, Secure Password Sharing, Multifactor Authentication, Backup/Restore, Password Encryption, Mobiles Password Management, Websites Password Management",
-      "answer_zh": "密码重置、密码生成、安全密码共享、多因素验证、备份与恢复、密码加密、移动设备密码管理、网站密码管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -196,25 +125,117 @@
       "read_at": "2026-10-22T08:47:37.751Z",
       "excerpt_sha256": "d5d921b5999af415c9f3e9b8557ba6b784cf9f0a6a2e604919014202efb2f09e",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "MyCena",
+      "title": "MyCena Credential Control",
+      "url": "https://mycena.co/",
+      "read_at": "2026-10-22T15:14:25.001301+00:00",
+      "excerpt_sha256": "611a0d315a5fb8eb0eec7b91eb8c30c4791d1fdc32e2ad5b831efd07f987550d",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Enterprise credential control rather than ordinary personal password storage."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "MyCena",
+      "title": "Credential Control FAQ",
+      "url": "https://mycena.co/faq/",
+      "read_at": "2026-10-22T15:43:39.389785+00:00",
+      "excerpt_sha256": "7bc3457ec72d361742323cc776f9146c97b16722afd9fb4d163a7627d96bf924",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Protocol assessment, SSO complement, policy-bound continuity and FAQ package prices. Marketing outcome claims not treated as evidence."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "MyCena",
+      "title": "MyCena Packages",
+      "url": "https://mycena.co/pricing/",
+      "read_at": "2026-10-22T15:29:02.568900+00:00",
+      "excerpt_sha256": "c0e4246a2e771fa4c519a5a0ee52af849f9aa844a448b851a9be56bff3f17d5f",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Tier scope and optional add-ons; unreadable matrix inclusion icons not inferred."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:46:49.529872+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Central issuance and click-to-connect",
+        "title_zh": "集中签发与点击连接",
+        "en": "The FAQ describes authenticating to MyCena, selecting a connection and locally injecting the encrypted distributed credential at login. It lists HTTPS applications, RDP, SSH and other enterprise protocols. Systems with custom authentication require a pre-deployment compatibility assessment, so a protocol name is not a guarantee that every legacy application works.\n\nA focused proof of value could provision a test user for one web application and one remote connection, verify the user experience and observe revocation on both systems. Check existing sessions separately from future authentication and compare the audit trail with application logs. This is an evaluation design; none of these actions were executed here.",
+        "zh": "FAQ 描述先认证至 MyCena，选择连接，再在登录时本地注入已加密分发的凭据，列出 HTTPS 应用、RDP、SSH 等企业协议。自定义认证系统需要部署前兼容评估，因此列出协议不保证每个遗留应用都可用。\n\n聚焦验证可为测试用户配置一个网页应用及远程连接，核对体验并观察两处撤权；将现有会话与后续认证分别检查，并对照审计记录和应用日志。此为评估设计，本文未执行。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "continuity",
+        "title_en": "Agree scope and continuity before rollout",
+        "title_zh": "推出前约定范围和连续性",
+        "en": "MyCena says it supplements SSO rather than replacing providers such as Okta or Entra. The FAQ describes endpoint installation, credential migration, administrator training and validation as deployment work. Its two-week timeline assumes a typical environment; complex legacy estates or large rollouts can take longer. Treat this as a vendor estimate.\n\nOffline access is governed by a configured continuity policy: administrators define which systems remain accessible and on what conditions. It is not unlimited offline access to every application. Test a planned service interruption in a non-production environment and agree break-glass ownership, provisioning and revocation coverage before relying on it.",
+        "zh": "MyCena 表示补充 SSO，而非替代 Okta、Entra 等提供商。FAQ 将终端安装、凭据迁移、管理员培训及验证列为部署工作。两周时间以典型环境为前提，复杂遗留系统或大规模推广可能更久，只能视为厂商估计。\n\n离线访问受配置的连续性政策约束，由管理员定义可访问系统及条件，并非无限离线访问所有应用。依赖前应在非生产环境测试计划性中断，并约定应急访问归属、配置和撤权覆盖。",
+        "source_refs": ["faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Package names do not settle the contract",
+        "title_zh": "套餐名称不能替代合同",
+        "en": "The package page lists Foundation, Resilience and Governance with increasing integration and reporting scope, and optional rotation/add-ons. Its readable comparison loses inclusion icons, so individual matrix rows cannot reliably be assigned to tiers. The FAQ separately quotes Foundation GBP 500, Resilience GBP 800 and Governance GBP 1,000 per user/year; channel pricing differs. Confirm these FAQ figures and entitlements with sales rather than presenting a universally available checkout tariff.\n\nFor a hypothetical ten-user Foundation scope, the FAQ rate would imply GBP 5,000/year before any additional charges. That is an arithmetic illustration, not a quote or ROI result. Infrastructure architecture, legal software license, final tax and support terms were not verified.",
+        "zh": "套餐页列 Foundation、Resilience、Governance，逐步增加集成及报告范围，轮换等可为可选附加项。可读矩阵丢失勾选图标，不能可靠地将每一行归入套餐。FAQ 另列每用户年费 Foundation 500、Resilience 800、Governance 1,000 英镑，渠道计费不同。须向销售确认 FAQ 数字和权益，不能当作普遍可购买的结账价。\n\n假设 Foundation 范围十用户，按 FAQ 费率算为每年 5,000 英镑，未含额外费用。这只是算术示例，不是报价或 ROI 结果。未核基础设施架构、法律软件许可、最终税费及支持条款。",
+        "source_refs": ["pricing", "faq"],
+        "evidence_type": "documented_with_hypothetical_calculation"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "No deployment, revocation/session, offline or encryption audit; regulations and insurance outcome claims not independently checked.",
+      "zh": "未测试部署、撤权／会话、离线或审计加密；未独立核查法规和保险结果主张。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "MyCena: Uses, Workflow, Pricing and Limits",
+    "title_zh": "MyCena：用途、流程、价格与限制",
+    "description_en": "MyCena is an enterprise credential-control system: an organization generates credentials centrally, distributes them encrypted and injects them when a user connects. The intended workflow reduces employees’ need to see or type application passwords, rather than giving each employ",
+    "description_zh": "MyCena 是企业凭据控制系统，由组织集中生成凭据，加密分发，并在用户连接时注入。其目标是减少员工查看、输入应用密码的需要，而非向每人提供普通个人密码保险库。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

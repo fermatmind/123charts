@@ -10,167 +10,128 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Klaviyo is a product in the Marketing automation category. Its directory profile covers Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking).\n\nAdditional listed capabilities include Multivariate Testing, Lead Scoring. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $20.0. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: track prospective customers through qualification and follow-up; schedule a sequence of emails around defined timing or events; prioritize prospective customers using defined attributes and activity. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Klaviyo 属于营销自动化软件。第三方资料列出的功能包括网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析。\n\n资料还列出多变量测试、线索评分。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $20.0. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：跟踪潜在客户的筛选、分配与跟进；按时间或事件安排一组连续邮件；按线索属性和互动记录确定跟进优先级。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Klaviyo connects customer profiles and activity data to marketing flows. A flow can respond to list or segment membership, commerce events or dates, then schedule messages and other actions along branching paths. The fit is particularly concrete when a team can supply reliable checkout, order and product data rather than only a static mailing list.\n\nIts useful distinctions are operational: event filters differ from profile checks, a skipped action is not necessarily a permanent exit, and message-frequency protection is separate from flow re-entry. Current documentation also describes a new re-entry interface with a rollout caveat. This profile follows those documented distinctions and leaves account availability and live behavior untested.",
+  "description_zh": "Klaviyo 将客户档案和行为数据连接到营销流程。流程可响应列表或分群成员变化、商业事件或日期，再沿分支安排消息及其他动作。当团队能提供可靠的结账、订单及商品数据，而不只是静态邮件名单时，其适用方式更具体。\n\n操作上的关键区别包括：事件筛选不同于档案检查，跳过动作不一定代表永久退出，消息频率保护也独立于流程重入。当前文档还描述了正在推出的新重入界面。本文遵循这些文档区别，未验证特定账户可用性及运行行为。",
   "core_features": [
     {
-      "name_en": "Website Visitor Tracking",
-      "name_zh": "网站访客跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Commerce-event flows",
+      "name_zh": "商业事件流程",
+      "explanation_en": "Integration or API events can trigger a targeted flow.",
+      "explanation_zh": "集成或 API 事件可触发定向流程。",
+      "source_ref": "trigger",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Lead Nurturing",
-      "name_zh": "线索培育",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Repeated eligibility checks",
+      "name_zh": "重复资格检查",
+      "explanation_en": "Profile filters can skip an action and evaluate again later.",
+      "explanation_zh": "档案筛选可跳过动作，并在后续重新判断。",
+      "source_ref": "filters",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Lead Management",
-      "name_zh": "潜在客户管理",
-      "explanation_en": "Track prospective customers through qualification and follow-up.",
-      "explanation_zh": "跟踪潜在客户的筛选、分配与跟进。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Message review queue",
+      "name_zh": "消息审核队列",
+      "explanation_en": "Manual messages wait for review while the profile continues downstream.",
+      "explanation_zh": "Manual 消息等待审核，但档案仍继续后续流程。",
+      "source_ref": "status",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Landing Pages",
-      "name_zh": "落地页",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Email Drip Campaigns",
-      "name_zh": "序列邮件",
-      "explanation_en": "Schedule a sequence of emails around defined timing or events.",
-      "explanation_zh": "按时间或事件安排一组连续邮件。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Channel Management",
-      "name_zh": "渠道管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Campaign Segmentation",
-      "name_zh": "营销活动分群",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Analytics (ROI Tracking)",
-      "name_zh": "投资回报分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multivariate Testing",
-      "name_zh": "多变量测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Lead Scoring",
-      "name_zh": "线索评分",
-      "explanation_en": "Prioritize prospective customers using defined attributes and activity.",
-      "explanation_zh": "按线索属性和互动记录确定跟进优先级。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Historical-profile scheduling",
+      "name_zh": "历史档案排程",
+      "explanation_en": "Past profiles enter according to the flow type and timeline.",
+      "explanation_zh": "历史档案按流程类型及时间线加入排程。",
+      "source_ref": "backfill",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Track prospective customers through qualification and follow-up",
-      "Schedule a sequence of emails around defined timing or events",
-      "Prioritize prospective customers using defined attributes and activity"
+      "Editorial fit: a commerce marketer connecting checkout, order and product activity to lifecycle messaging.",
+      "Editorial fit: a team able to maintain event timing, review queues and product-specific usage budgets."
     ],
     "zh": [
-      "跟踪潜在客户的筛选、分配与跟进",
-      "按时间或事件安排一组连续邮件",
-      "按线索属性和互动记录确定跟进优先级"
+      "编辑判断的适用场景：将结账、订单和商品行为连接到生命周期消息的商业营销人员。",
+      "编辑判断的适用场景：能维护事件计时、审核队列及具体产品用量预算的团队。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["trigger", "filters", "reentry"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $20.0. Offers Free-forever plan.",
-      "zh": "未提供免费试用 起价为 $20.0. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Ecommerce marketer",
+      "Lifecycle marketer",
+      "Marketing operations specialist"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "trigger"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify one business event and the actual account’s re-entry interface.",
+        "zh": "验证一个业务事件及实际账户的重入界面。",
+        "source_refs": ["trigger", "reentry"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect an internal path’s action statuses and review queue before making it Live.",
+        "zh": "设为 Live 前检查内部路径动作状态及审核队列。",
+        "source_refs": ["status"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Trace one known skip reason and a late event rather than relying on aggregate counts.",
+        "zh": "追踪一个已知跳过原因及延迟事件，不能只依赖汇总数。",
+        "source_refs": ["skips", "movement"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Compare billable profiles and sends with the selected product limits.",
+        "zh": "将计费档案数及发送量与所选产品额度比较。",
+        "source_refs": ["billing", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Opens and clicks are not available as direct metric flow triggers; use only supported triggering events.",
+        "zh": "打开与点击不能直接作为指标流程入口，应使用受支持事件。",
+        "source_refs": ["trigger"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Re-entry controls are described with an account-rollout caveat; actual availability was not checked.",
+        "zh": "重入控制附有账户推出范围提示，未检查实际可用性。",
+        "source_refs": ["reentry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A successful preview does not establish live deliverability, integration freshness or consent eligibility.",
+        "zh": "成功预览不能确认真实可投递性、集成新鲜度或同意资格。",
+        "source_refs": ["skips", "movement"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -182,37 +143,19 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $20.0. Offers Free-forever plan.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $20.0. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Official free plan: up to 250 active profiles, 500 email sends/month, $5 of mobile messages/month (region/carrier dependent) and $5 of Composer usage/month; full email support is limited to the first 60 days. Paid pricing depends on selected products and usage; no configured paid quote was established. The extracted page’s unexplained Total $1 is not adopted as a price. Email support, mobile allowance and other product meters must be checked separately.",
+    "source_snapshot_zh": "官方免费套餐：最多 250 个活跃档案、每月 500 封邮件、每月 5 美元移动消息额度（取决于地区／运营商），以及每月 5 美元 Composer 用量；完整邮件支持限前 60 天。付费价格取决于所选产品与用量，未确认配置后的付费报价。不采用提取页面中无解释的 Total $1 作为价格。邮件支持、移动额度及其他产品计量需分别检查。",
+    "normalized_price": null
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Klaviyo do?",
-      "question_zh": "Klaviyo 用来做什么？",
-      "answer_en": "Klaviyo is a product in the Marketing automation category. Its directory profile covers Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking).",
-      "answer_zh": "Klaviyo 属于营销自动化软件。第三方资料列出的功能包括网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking), Multivariate Testing, Lead Scoring",
-      "answer_zh": "网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析、多变量测试、线索评分"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -222,25 +165,285 @@
       "read_at": "2026-10-22T08:59:49.703Z",
       "excerpt_sha256": "6867b4a6e2d0e67783b5ed3079c3f08e368d228f9f7fbe5cea670d658bbf82e5",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Klaviyo",
+      "title": "Klaviyo Pricing | Start Free with Email & SMS",
+      "url": "https://www.klaviyo.com/pricing",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "4c4cf469fbcc1ca527b2a881b9e8efbd6db1aed0782527e2bb9ae69a54aed74a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual free-plan limits, mobile dollar allowance and support period. Extract also displays Total $1 without configured choices; not adopted as a paid offer."
+    },
+    {
+      "id": "reentry",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "How to create a segment- or list-triggered flow | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/360003040052",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "e1c91e186c6c3d7606392796bad4434256589d4713fcdac34ff7b7b1f6d9c32c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read October 2026 re-entry defaults, migration mapping and rollout caveat. Do not retain obsolete unconditional once-only list-flow claims."
+    },
+    {
+      "id": "trigger",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Understanding flow triggers and filters | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002779051",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "be234afe31cad3a907c88f37863c390f83ea7e6e5a6957c7fde7b23ffc45d065",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read metric versus custom-object trigger-filter timing, integration/API events and unavailable open/click triggers."
+    },
+    {
+      "id": "filters",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Understanding flow triggers and filters | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002779051",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "a221f1eb54a94ecba60149edb9ae384c1a8b7c71044d4737753f2c97fb4b6d69",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read profile filters at entry and before actions, skip without permanent exit and possible later qualification. Same original as trigger, not independent confirmation."
+    },
+    {
+      "id": "status",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Getting started with flows | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002774932",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "37b38aa620effe64f9b69388f28ef43ef46980409c4ef7e6468bfd145ce1c7df",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read draft/manual/live behavior, continued downstream progression and historical Needs Review remaining manual after switching Live."
+    },
+    {
+      "id": "backfill",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Understanding how adding past profiles works in Klaviyo | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002779231",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "6825ee83dffd282afaf04a603abde3c6ae0670313c681c6192c6aa11a1126bfe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read historical snapshot lag, metric timeline positioning and bypass of organic re-entry criteria. No historical-profile operation performed."
+    },
+    {
+      "id": "extension",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Understanding how adding past profiles works in Klaviyo | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002779231",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "6365d620765a3e35b973375d144a60529088bd5f7abb0d325185078b71a025a4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read terminal delay not holding profiles, adding actions and existing schedule unchanged after delay edits. Same backfill original as backfill excerpt."
+    },
+    {
+      "id": "movement",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Understanding how contacts move through a flow | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/360017706091",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "4a8090fc22f09113d48e0b0843e840c3b846bafe7c472dba6f4126202bd8f775",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read late-event window, send-time current content and already-waiting delay behavior."
+    },
+    {
+      "id": "skips",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Troubleshooting why a flow message skipped a profile | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/1260805003210",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "cbe8b4c1f9bfdb3ef77ee5dea47512878e03bd10f58a389a6be71e7902c725a7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read recipient-specific skipped reasons, including legitimate post-order filtering and account/channel/data failures."
+    },
+    {
+      "id": "frequency",
+      "type": "official_documentation",
+      "site": "Klaviyo",
+      "title": "Troubleshooting why a profile is scheduled in a flow multiple times | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115002779491",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "9c4ebfb90f556914727fa82a4406399e62790231f0e84ea687e19f49a6a1677c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read channel-specific Smart Sending, entry-frequency distinction and obsolete screenshot warning."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "Klaviyo",
+      "title": "How Klaviyo billing works | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115000976672",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "3bfacf30cde316ee82edb14b1940c330c02c59612556dacbb2ba3d7566ee838e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read self-serve active-email profile basis, suppression versus deletion, 72-hour display lag and separate send/profile compliance controls. Contract accounts excluded from this guide."
+    },
+    {
+      "id": "billing-limits",
+      "type": "official_pricing",
+      "site": "Klaviyo",
+      "title": "How Klaviyo billing works | Klaviyo Help Center",
+      "url": "https://help.klaviyo.com/hc/en-us/articles/115000976672",
+      "read_at": "2026-10-22T11:43:28.872220Z",
+      "excerpt_sha256": "be5bfbb0948faff92f5dbfae30b77485dd82598b84defe922f4e667cc1dce919",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read paid profile enforcement at next renewal versus free sending block and optional send-capacity preferences. Same billing original; not independent confirmation."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:43:28.872220Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["trigger", "filters", "reentry"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "entry",
+        "title_en": "Use the current re-entry control, with rollout checks",
+        "title_zh": "使用当前重入控制，并检查推出范围",
+        "en": "The updated list/segment guide offers no re-entry, re-entry on renewed qualification, or re-entry after an interval. New list and segment flows default to no re-entry; metric and date flows default to allowing it. Existing behavior is mapped into the new settings, and some accounts may not yet show the control. Manual segment-rule edits, profile/list merges and duplicate activity while membership is unchanged do not establish a new qualifying entry. Check the actual account before following an older once-only tutorial.",
+        "zh": "更新后的列表／分群指南提供禁止重入、重新符合条件时重入、间隔后重入三种选择。新列表及分群流程默认禁止重入，指标事件及日期流程默认允许。旧行为会映射到新设置，部分账户可能尚未显示控制。手动改分群规则、合并档案／列表，以及成员身份未变时的重复活动，不构成新资格入口。沿用旧版仅一次教程前，应检查实际账户。",
+        "source_refs": ["reentry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "filters",
+        "title_en": "A skipped promotion can be followed by a later message",
+        "title_zh": "跳过一次促销后仍可能收到后续消息",
+        "en": "Metric trigger filters examine the initiating event at entry; the guide distinguishes custom-object trigger filters, which are checked at every step. Profile filters are checked at entry and before actions. Failing a later profile check skips that action but does not remove the person permanently; later qualification can permit a later message. In an editorial abandoned-checkout example, use a purchase-since-entry condition deliberately and test a customer who orders between messages. Do not equate a skipped card with an ended journey.",
+        "zh": "指标事件入口筛选在加入时检查起始事件；指南另行区分自定义对象入口筛选，后者每步检查。档案筛选在加入及动作前检查。后续档案检查失败会跳过该动作，并不永久移除该人；之后合格仍可能收到后续消息。编辑示例：弃单流程应明确使用加入后是否购买的条件，并测试两封邮件之间完成订单的客户。不能把一张消息卡被跳过理解为旅程结束。",
+        "source_refs": ["trigger", "filters"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "status",
+        "title_en": "Manual review does not freeze the following steps",
+        "title_zh": "人工审核不会冻结后续步骤",
+        "en": "Draft messages are skipped, rather than holding recipients. Manual messages accumulate in Needs Review, but people keep moving and can receive later Live messages before that review is finished. Changing Manual to Live affects automatic sending going forward; existing Needs Review items still require handling. For an editorial two-message pilot, make the whole intended path explicit and inspect both review queues and downstream sends. A single Manual card is not a complete-flow test barrier.",
+        "zh": "Draft 消息会被跳过，不会留住收件人。Manual 消息进入 Needs Review，但人仍会继续，并可能在审核完成前收到后续 Live 消息。Manual 改为 Live 会影响后续自动发送，既有 Needs Review 仍需处理。编辑示例：两封邮件试点应明确整条路径的状态，同时检查审核队列及后续发送。单张 Manual 卡并非整条流程的测试屏障。",
+        "source_refs": ["status"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Adding past profiles is a separate admission path",
+        "title_zh": "添加历史档案是独立的加入路径",
+        "en": "Historical scheduling uses a periodically refreshed snapshot that may omit activity from the preceding 30 minutes. Metric flows position people relative to the original event and require a time delay; organic re-entry criteria are not checked for this operation. Previously skipped messages are not simply replayed, though new steps may qualify. An editorial recovery evaluation should identify the exact omitted population and timeline before applying this operation; it is not a universal resend button.",
+        "zh": "历史排程使用定期刷新的快照，可能遗漏此前 30 分钟的活动。指标流程按原事件时刻定位人员，并需包含时间延迟；此操作不检查自然加入的重入条件。此前跳过的消息不会简单重播，但新增步骤可能符合条件。编辑判断的恢复评估应先明确遗漏人群及时间线，再应用此操作；它并非通用重发按钮。",
+        "source_refs": ["backfill"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "editing",
+        "title_en": "A final delay does not keep a finished audience waiting",
+        "title_zh": "末尾延迟不会留住已结束受众",
+        "en": "A delay at the end of a path without a following action does not hold people there. Adding a message later can therefore require adding past profiles. People still progressing toward a newly appended step can be scheduled normally. Separately, changing a delay does not reschedule recipients already waiting for that action. Before extending a running welcome series, inspect which people are in transit, already scheduled or finished; these groups do not receive identical treatment.",
+        "zh": "路径末尾没有后续动作的延迟不会把人留在那里，因此以后再添加消息可能需要添加历史档案。仍在向新追加步骤前进的人则可正常排程。另外，修改延迟不会重新安排已等待该动作的收件人。扩展运行中的欢迎系列前，应检查哪些人还在途、已排程或已结束，这几组不会得到相同处理。",
+        "source_refs": ["extension"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "data-latency",
+        "title_en": "Late events and edited content change the evaluation",
+        "title_zh": "延迟事件与已编辑正文会改变评估",
+        "en": "For integrations that do not sync immediately, the documented admission window is the later of four hours and the first time delay. An event arriving beyond both can be skipped. Messages use current content at send time, including items previously awaiting manual review. In a controlled pilot, retain the actual event timestamp and ingestion timestamp, and check the final rendered content. A message preview created before a later edit does not freeze what an already queued recipient receives.",
+        "zh": "对不会立即同步的集成，文档加入窗口取四小时与首个时间延迟的较晚者，超过两者才到达的事件可能被跳过。发送使用当时的当前正文，包括此前等待人工审核的消息。受控试点应保留真实事件时间与采集时间，并检查最终渲染内容。更早创建的预览不会冻结已排队收件人最终收到的版本。",
+        "source_refs": ["movement"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "delivery",
+        "title_en": "Separate expected filtering from delivery defects",
+        "title_zh": "区分预期筛选与投递缺陷",
+        "en": "Recipient activity exposes skipped reasons for each message. A post-order filter can correctly suppress an abandoned-cart reminder; missing consent, invalid sender, template syntax, unavailable coupons or exhausted limits need different diagnoses. Smart Sending is another independent reason: its documented defaults are 16 hours for email and 24 hours for SMS, with separate channel windows. It limits messages rather than admissions. Investigate the exact reason and profile before weakening a filter or disabling frequency protection.",
+        "zh": "每条消息的 Recipient activity 提供跳过原因。购买后筛选可能正确地抑制弃单提醒；缺少同意、发件人无效、模板语法、优惠券不可用或额度耗尽则需要不同排查。Smart Sending 是另一个独立原因：文档默认邮件 16 小时、SMS 24 小时，各渠道窗口独立。它限制消息而非加入次数。放宽筛选或关闭频率保护前，应调查准确原因及档案。",
+        "source_refs": ["skips", "frequency"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Billable active profiles are not the same as subscribers",
+        "title_zh": "计费活跃档案不等于订阅者",
+        "en": "The self-serve billing guide counts emailable profiles regardless of consent status; email suppression removes them from that count after processing, while SMS-only unsubscription does not. Cleanup displays can lag up to 72 hours. Paid profile compliance can raise the next cycle’s tier independently of send-limit preferences; free accounts over their profile allowance are blocked instead. Advanced KDP uses total profiles, including suppressed ones. Estimate the specific product meter before treating suppression or a send-cap setting as a universal cost control.",
+        "zh": "自助计费指南按可发邮件档案计数，不论是否同意；邮件抑制处理完成后会移出该计数，仅退订 SMS 则不会。清理后的显示可能延迟最多 72 小时。付费档案合规可独立于发信额度偏好提升下周期档位；免费账户超过档案额度则会被阻止发送。Advanced KDP 使用含抑制档案的总档案数。将抑制或发信上限设为通用成本控制前，应按具体产品计量估算。",
+        "source_refs": ["billing", "billing-limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Klaviyo: flow re-entry, manual review and profile billing",
+    "title_zh": "Klaviyo：流程重入、人工审核与档案计费",
+    "description_en": "Evaluate Klaviyo flow filters, re-entry rollout, historical scheduling, message states and active-profile billing from official documentation.",
+    "description_zh": "依据官方文档评估 Klaviyo 流程筛选、重入推出范围、历史排程、消息状态及活跃档案计费。",
+    "primary_intent": "Understand Klaviyo automation flow behavior and billing boundaries",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, integration sync, flow activation, message send, historical scheduling or purchase was performed.",
+      "zh": "未操作账户、同步集成、启用流程、发信、历史排程或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Current paid quote, contract terms, mobile-country eligibility, UI languages and self-hosting rights remain unverified.",
+      "zh": "当前付费报价、合同条款、移动渠道国家资格、界面语言及自托管权利仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Runtime performance, retry/replay recovery and rollout availability were not tested.",
+      "zh": "未实测运行性能、重试／重播恢复或推出可用性。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

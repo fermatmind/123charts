@@ -2,262 +2,112 @@
   "schema_version": "123charts-software-research-v1",
   "slug": "adobe-workfront-fc4d9f64",
   "name": "Adobe Workfront",
-  "website_url": "https://www.workfront.com/",
-  "domain": "www.workfront.com",
-  "identity_domain": "workfront.com",
+  "website_url": "https://business.adobe.com/products/workfront/main.html",
+  "domain": "business.adobe.com",
+  "identity_domain": "adobe.com",
   "category": "project-management",
   "secondary_categories": [],
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Adobe Workfront is a product in the Project management category. Its directory profile covers AI Assistant, Timeline View, Project Templates, Idea Management, Custom Workflows, Kanban Board, Compliance Management, Recurring Task Management.\n\nAdditional listed capabilities include Time & Expense Tracking, Status Tracking, Resource Management, Requirement Management, Project Planning, Project Portfolio Management, Percent-Complete Tracking, Milestone Tracking. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; move work items through defined process stages; allocate people, time and other project resources; track significant project checkpoints; track reported issues and their resolution process; plan budgets and compare spending with allocations. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Adobe Workfront 属于项目管理软件。第三方资料列出的功能包括AI 助手、时间轴视图、项目模板、创意管理、自定义工作流、看板、合规管理、周期任务管理。\n\n资料还列出工时与费用跟踪、状态跟踪、资源管理、需求管理、项目规划、项目组合管理、完成百分比跟踪、里程碑跟踪。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；让工作项在预设流程阶段间流转；分配人员、时间和其他项目资源；跟踪项目中的重要检查节点；跟踪已报告的问题及其解决过程；制定预算并比较实际支出与分配额度。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Adobe Workfront organizes enterprise work from intake through project execution and content review. Its practical unit is a managed project containing tasks, assignments and dates, while incoming requests can be converted into projects. This makes it relevant when a marketing or operations team needs a repeatable path from a submitted brief to accountable delivery.\n\nThe main evaluation is how your organization will model work, permissions and approvals. A dependency line does not automatically block a task, and document approval is separate from proof approval. This profile explains those distinctions from Adobe documentation; it does not report a hands-on implementation. The original catalog slug is retained; its official website now points directly to Adobe’s Workfront product page.",
+  "description_zh": "Adobe Workfront 用于管理企业工作，从需求受理到项目执行，再到内容审阅。实际执行以项目为单位，项目包含任务、分派和日期；收到的请求可以转换成项目。对于希望把提交的简报按固定流程交付、并明确责任人的营销或运营团队，这种方式值得评估。\n\n选型重点在于组织怎样定义工作、权限和审批。画出任务依赖并不自动阻止后续任务启动，文档审批也与校样审批分开。本文依据 Adobe 文档解释这些差别，没有实际实施测试。档案保留原有 slug，官网地址直接指向 Adobe 的 Workfront 产品页。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Request-to-project conversion",
+      "name_zh": "请求转项目",
+      "explanation_en": "Convert an incoming issue/request into a project using a selected template.",
+      "explanation_zh": "将收到的问题／请求按所选模板转换为项目。",
+      "explanation_scope": "product_specific",
+      "source_ref": "request-conversion",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Timeline View",
-      "name_zh": "时间轴视图",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Enforced dependencies",
+      "name_zh": "强制依赖",
+      "explanation_en": "An enforced predecessor can block successor progress until the predecessor completes.",
+      "explanation_zh": "强制前置关系可阻止后续任务推进，直到前置任务完成。",
+      "explanation_scope": "product_specific",
+      "source_ref": "enforced-predecessors",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Project Templates",
-      "name_zh": "项目模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Idea Management",
-      "name_zh": "创意管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Custom Workflows",
-      "name_zh": "自定义工作流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Kanban Board",
-      "name_zh": "看板",
-      "explanation_en": "Move work items through defined process stages.",
-      "explanation_zh": "让工作项在预设流程阶段间流转。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compliance Management",
-      "name_zh": "合规管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Recurring Task Management",
-      "name_zh": "周期任务管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Time & Expense Tracking",
-      "name_zh": "工时与费用跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Status Tracking",
-      "name_zh": "状态跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Resource Management",
-      "name_zh": "资源管理",
-      "explanation_en": "Allocate people, time and other project resources.",
-      "explanation_zh": "分配人员、时间和其他项目资源。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Requirement Management",
-      "name_zh": "需求管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Planning",
-      "name_zh": "项目规划",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Portfolio Management",
-      "name_zh": "项目组合管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Percent-Complete Tracking",
-      "name_zh": "完成百分比跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Milestone Tracking",
-      "name_zh": "里程碑跟踪",
-      "explanation_en": "Track significant project checkpoints.",
-      "explanation_zh": "跟踪项目中的重要检查节点。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "IT Project Management",
-      "name_zh": "IT 项目管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Issue Management",
-      "name_zh": "问题管理",
-      "explanation_en": "Track reported issues and their resolution process.",
-      "explanation_zh": "跟踪已报告的问题及其解决过程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Budget Management",
-      "name_zh": "预算管理",
-      "explanation_en": "Plan budgets and compare spending with allocations.",
-      "explanation_zh": "制定预算并比较实际支出与分配额度。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Proof review details",
+      "name_zh": "校样审阅详情",
+      "explanation_en": "Inspect proof status and feedback separately from document approvals.",
+      "explanation_zh": "将校样状态和反馈与文档审批分开检查。",
+      "explanation_scope": "product_specific",
+      "source_ref": "proof-details",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Move work items through defined process stages",
-      "Allocate people, time and other project resources",
-      "Track significant project checkpoints",
-      "Track reported issues and their resolution process",
-      "Plan budgets and compare spending with allocations"
-    ],
-    "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "让工作项在预设流程阶段间流转",
-      "分配人员、时间和其他项目资源",
-      "跟踪项目中的重要检查节点",
-      "跟踪已报告的问题及其解决过程",
-      "制定预算并比较实际支出与分配额度"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": ["Turn an approved campaign brief into assigned delivery work."],
+    "zh": ["将获批活动简报转为已分派的交付工作。"],
+    "source_refs": ["request-conversion"],
+    "basis": "Proposed workflow, not observed adoption."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Access model": {
+      "en": "Effective capability depends on access level and permissions on the individual object.",
+      "zh": "有效能力同时取决于访问级别和具体对象权限。",
+      "source_ref": "access",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Marketing operations coordinator",
+      "Project administrator",
+      "Creative review coordinator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select one request and a matching project template; compare the converted fields.",
+        "zh": "选择一条请求和匹配的项目模板，比对转换后的字段。",
+        "source_refs": ["request-conversion"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Verify one enforced dependency and one approval as an ordinary participant.",
+        "zh": "以普通参与者身份验证一条强制依赖和一次审批。",
+        "source_refs": ["enforced-predecessors", "proof-details"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "vendor_described_not_executed",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "product",
+    "scope": "Adobe integration families are described; connector permissions, exact actions and failure handling were not verified."
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented",
+    "items": [
+      {
+        "en": "Unenforced predecessors do not prevent independent task progress.",
+        "zh": "未强制的前置关系不会阻止任务独立推进。",
+        "source_refs": ["enforced-predecessors"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Document and proof approvals do not link together.",
+        "zh": "文档审批与校样审批不会相互联动。",
+        "source_refs": ["proof-details"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -269,37 +119,19 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "custom_quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Select, Prime and Ultimate use sales quotations; no payable amount established.",
+    "source_snapshot_zh": "Select、Prime、Ultimate 需向销售询价；未确立可支付金额。",
+    "normalized_price": null
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Adobe Workfront do?",
-      "question_zh": "Adobe Workfront 用来做什么？",
-      "answer_en": "Adobe Workfront is a product in the Project management category. Its directory profile covers AI Assistant, Timeline View, Project Templates, Idea Management, Custom Workflows, Kanban Board, Compliance Management, Recurring Task Management.",
-      "answer_zh": "Adobe Workfront 属于项目管理软件。第三方资料列出的功能包括AI 助手、时间轴视图、项目模板、创意管理、自定义工作流、看板、合规管理、周期任务管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Timeline View, Project Templates, Idea Management, Custom Workflows, Kanban Board, Compliance Management, Recurring Task Management, Time & Expense Tracking, Status Tracking, Resource Management, Requirement Management, Project Planning, Project Portfolio Management, Percent-Complete Tracking, Milestone Tracking, IT Project Management, Issue Management, Budget Management",
-      "answer_zh": "AI 助手、时间轴视图、项目模板、创意管理、自定义工作流、看板、合规管理、周期任务管理、工时与费用跟踪、状态跟踪、资源管理、需求管理、项目规划、项目组合管理、完成百分比跟踪、里程碑跟踪、IT 项目管理、问题管理、预算管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -309,25 +141,239 @@
       "read_at": "2026-10-22T09:09:08.771Z",
       "excerpt_sha256": "03b6f1872496ce240ad5e7fc44e18a1c4f1e269fccad9a6fe9cb8ea81f33f6e1",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "request-conversion",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Convert an issue or request to a project | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront-learn/tutorials-workfront/manage-work/issues-requests/create-a-project-from-a-request",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8eab8b1cee4e21c82ce9dd3c40ae5a22148408ac4385adc081005b4cde3369d4",
+      "research_notes_en": "A request can become a project using a template; request information and the resolution relationship need deliberate handling."
+    },
+    {
+      "id": "enforced-predecessors",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Enforce Predecessors | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront/using/manage-work/tasks/use-task-predecessors/enforced-predecessors",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a74c6f94cf509de6edccfad7039bf29604685d5a03b7998775e27751758d190f",
+      "research_notes_en": "Dependencies affect dates; enforcing a relationship is required to block work. Editing also requires appropriate license, access and object permissions."
+    },
+    {
+      "id": "constraints",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Task Constraint Overview | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront/using/manage-work/tasks/task-constraints/task-constraint-overview",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "002135d51227b8d634220bf5cebf13a018c86c0d80b98d6cdbbb77b8d1b2447b",
+      "research_notes_en": "Task constraints can force dates and interact with predecessor relationships; defaults depend on project and administrative settings."
+    },
+    {
+      "id": "access",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Access Levels Overview | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront/using/administration-and-setup/add-users/access-levels/access-level-overview",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "76a54b6557750b61f7a544b8b7609b3ee8af62719dffd33edd0001b7e0df13b3",
+      "research_notes_en": "Current access levels differ from legacy models; effective object access is the intersection of access-level capabilities and shared-object permissions."
+    },
+    {
+      "id": "proof-details",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Understand proof details | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront-learn/tutorials-workfront/workfront-proof/review-and-approve-work-for-proof/proof-details-overview",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "0cceaf0e568ef91e60bdbb226e9c72fad017f0d3981ba40aa9202a54a7b4bae4",
+      "research_notes_en": "Document approval and proof approval are separate; proof comments and ordinary file comments appear in different contexts."
+    },
+    {
+      "id": "request-queues",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "Answers to common questions about request queues | Adobe Workfront",
+      "url": "https://experienceleague.adobe.com/en/docs/workfront-learn/tutorials-workfront/manage-work/request-queues/request-queue-faq",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "69249bdeff893168e81b4d5f54de4dfec279764c037c25ac7e183969133e2d9d",
+      "research_notes_en": "Queue eligibility controls request visibility; forms supporting both Issue and Project preserve values during conversion."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Adobe",
+      "title": "business.adobe.com",
+      "url": "https://business.adobe.com/products/workfront/pricing.html",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5de8291e6a14f66e89ebe4224b04f9336fc6ca099c269fd662057a9dbe68e99e",
+      "research_notes_en": "Three current package columns use sales quotations; portfolio management starts at Prime, while Planning and Fusion have separate packaging conditions."
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Adobe",
+      "title": "business.adobe.com",
+      "url": "https://business.adobe.com/products/workfront/main.html",
+      "read_at": "2026-10-22T09:58:47.763455Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "eb0ae6d5fe6003f63bbe8faf68005528e0656c129371e8bd23b4456777da1afd",
+      "research_notes_en": "Adobe positions Workfront around enterprise and marketing work; Planning, AI functions and integrations must be evaluated by their individual scope."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:58:47.763455Z",
+    "scope": "Public Adobe documentation only; no purchase, account operation, performance test or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Official product identity is established by the Adobe Workfront landing page; website domain normalized to adobe.com while the original slug is retained. The old workfront.com URL was not used as successful redirect evidence.",
+    "English original and corresponding Chinese were written from attached primary sources. Examples and selection advice are editorial; no customer outcomes were measured.",
+    "Public reader text may be cached; read_at records retrieval, not the vendor update date.",
+    "All publication, owner identity and alternatives approvals remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "request-conversion",
+    "enforced-predecessors",
+    "proof-details"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "intake-example",
+        "title_en": "From campaign request to delivery project",
+        "title_zh": "从活动请求到交付项目",
+        "en": "Consider a hypothetical product-launch brief with a requested date and deliverables. A coordinator can convert the request into a project and select a launch template. Adobe documents copying the name and description and carrying custom forms over. The original request can remain linked so that its resolution waits for project completion.\n\nDecide whether the requester should see the resulting project and retain a traceable link to the brief. For a trial implementation, compare the source fields with the resulting project before assigning live work. This is a proposed evaluation flow, not an observed customer deployment.",
+        "zh": "假设收到一份产品发布简报，包含期望日期和交付物。协调人员可以将请求转换成项目，并选择发布模板。Adobe 文档说明，名称和描述会复制，定制表单也会带入。原请求可以继续关联项目，使请求在项目完成后才得到解决。\n\n应明确请求者是否可查看新项目，并保留与简报之间可追溯的关系。试点时，先比对来源字段和生成项目，再分派真实工作。这是建议的评估流程，并非已观察到的客户实施。",
+        "source_refs": ["request-conversion"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "request-access",
+        "title_en": "Why a requester may not see the queue",
+        "title_zh": "请求者为何看不到队列",
+        "en": "Request queues have an eligibility setting that determines who can add requests. Giving a person project-view access can also make the queue project appear in that person’s project list, depending on the selected eligibility rule. Treat intake visibility as a design choice.\n\nFor information that must survive conversion, Adobe’s queue FAQ specifies a custom form supporting both Issue and Project object types. An evaluation should include a requester outside the coordinating team and an optional field left blank; verify visibility and field preservation separately.",
+        "zh": "请求队列通过资格设置决定谁可以提交请求。根据所选规则，赋予项目查看权还可能让队列项目出现在该用户的项目列表中，因此受理入口的可见范围需要专门设计。\n\n对于转换后必须保留的信息，队列 FAQ 指明应让定制表单同时支持 Issue 和 Project 对象类型。建议使用一位协调团队之外的请求者，并保留一个空的可选字段，分别检查可见范围和字段传递。",
+        "source_refs": ["request-queues"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dependency-blocking",
+        "title_en": "Scheduling a dependency versus enforcing it",
+        "title_zh": "排期依赖与强制依赖",
+        "en": "Suppose artwork review must finish before production begins. A predecessor relationship influences the dates, but Adobe says dependent work may start and finish independently unless that relationship is enforced. For an enforced Finish-Start relationship, the successor remains New with zero percent complete until the predecessor finishes.\n\nThe documentation lists task/project edit access and Manage permissions among the requirements. Test the restriction with an ordinary assignee rather than relying on an administrator’s view. Decide whether an exception should change the dependency or follow another documented process; a diagram alone is not an execution lock.",
+        "zh": "假设必须先完成设计审阅才能开始制作。前置关系会影响日期，但 Adobe 说明，未设为强制时，后续工作仍可独立开始和结束。强制的 Finish-Start 关系要求后续任务保持 New、完成比例为零，直到前置任务完成。\n\n文档将任务／项目编辑访问权和 Manage 对象权限列为要求。应使用普通受派人员测试限制，而不能只看管理员视角。发生例外时，应决定修改依赖还是采用其他有文档依据的流程；依赖图本身并不是执行锁。",
+        "source_refs": ["enforced-predecessors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "date-constraints",
+        "title_en": "Why changing a task date can affect the plan",
+        "title_zh": "修改任务日期为何影响排期",
+        "en": "Task constraints determine allowed start and completion timing. A fixed-date constraint can interact with predecessor scheduling. Adobe recommends considering a constraint without specified dates when using predecessor relationships. Defaults also depend on whether the project schedules from its start or completion date and on administrative start-date preferences.\n\nFor a pilot, move one upstream task and inspect the successor’s dates and constraint type. A date that stays fixed may reflect the chosen constraint rather than a broken dependency. Establish which dates are contractual commitments and which should move with the plan.",
+        "zh": "任务约束决定允许的开始和完成时间。固定日期约束可能影响前置关系的排期。Adobe 建议，在采用前置关系时考虑不要求指定日期的约束。默认约束还取决于项目从开始日期还是完成日期排期，以及管理员设置的开始日期偏好。\n\n试点时可以移动一个上游任务，检查后续任务的日期和约束类型。日期不动可能是约束所致，而非依赖失效。应先明确哪些日期属于合同承诺，哪些日期应随计划移动。",
+        "source_refs": ["constraints"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "approval-model",
+        "title_en": "Choose the approval process explicitly",
+        "title_zh": "明确选择审批流程",
+        "en": "Adobe distinguishes document approvals from proof review and approval: the two processes are separate and do not link together. Proof details expose the owner, progress, comments, state and due date, subject to proofing permissions. Comments made on the file outside the proof viewer do not appear inside that viewer.\n\nFor a campaign asset, decide where the authoritative feedback and decision belong. Evaluate one revision with both a reviewer and a coordinator; check that each can locate the correct version and decision. Do not interpret an approval in the document panel as proof that the proof workflow has finished.",
+        "zh": "Adobe 明确区分文档审批与校样审阅审批，两者是独立流程，不会相互联动。校样详情可展示负责人、进度、评论、状态和到期日，能否查看取决于校样权限。在校样查看器之外对文件发表的评论，不会显示在查看器内部。\n\n对于活动素材，应明确权威反馈和审批结论放在哪里。建议让审阅者与协调人员共同检查一次修订，确认双方都能找到正确版本和结论。文档面板里的审批，不能直接当作校样流程已经完成的证据。",
+        "source_refs": ["proof-details"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "permissions",
+        "title_en": "User access and object sharing are both required",
+        "title_zh": "用户访问级别与对象共享必须同时满足",
+        "en": "The current documentation lists System Administrator, Standard, Light, Contributor and External access levels and separately points to legacy models. Effective access combines the user’s general capability with permissions on the particular object; sharing Manage permission cannot lift an access-level restriction.\n\nBefore onboarding a team, map who creates projects, who executes tasks and who only reviews. Then verify those roles on one shared project. Do not budget or design a workflow by treating all named users as interchangeable licenses. Contract-specific license counts and older entitlements need confirmation with Adobe.",
+        "zh": "当前文档列出 System Administrator、Standard、Light、Contributor 和 External 访问级别，并另行链接旧版模型。有效访问权同时受用户的一般能力和具体对象权限约束；共享 Manage 权限不能突破访问级别的限制。\n\n接入团队前，应明确谁创建项目、谁执行任务、谁只负责审阅，并在一个共享项目上验证。预算和流程设计不能把所有有姓名的用户都当成同一种许可证。具体合同的许可证数量与旧版权益仍需向 Adobe 确认。",
+        "source_refs": ["access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial-boundary",
+        "title_en": "Packages, add-ons and the cost question",
+        "title_zh": "套餐、附加模块与费用",
+        "en": "The pricing page presents Select, Prime and Ultimate with a sales-pricing request rather than a public payable amount. Portfolio management is absent from Select and included in Prime and Ultimate. Workfront Planning is marked Contact sales for all three; Fusion and Data Connect are included in Ultimate and marked Contact sales in the lower packages. AI capability rows indicate partial inclusion.\n\nAsk for a quote covering your license mix, required modules and implementation work. No normalized seat price, free tier or trial entitlement is established here. A hypothetical ten-person team cannot obtain a defensible total by multiplying an invented seat rate.",
+        "zh": "定价页列出 Select、Prime、Ultimate，并要求联系销售获取价格，没有公开可直接支付的金额。Select 不含项目组合管理，Prime 和 Ultimate 包含。三个套餐的 Workfront Planning 均标为联系销售；Fusion 与 Data Connect 在 Ultimate 中包含，较低套餐标为联系销售。AI 能力一行仅表示部分包含。\n\n应按许可证组合、必需模块和实施工作取得报价。本文没有确立统一席位单价、免费套餐或试用权益。假设团队有十个人，也不能用虚构席位单价相乘来估算可信总价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit-and-scope",
+        "title_en": "What to establish before adoption",
+        "title_zh": "采用前应确认什么",
+        "en": "Workfront’s intake, project and review model suggests a shortlist role for teams coordinating repeatable cross-functional delivery. A personal checklist is a narrower need; whether Workfront’s administration is justified depends on the workflow. These are editorial fit judgments, not comparative rankings.\n\nThe vendor also promotes AI collaborators, Planning and Adobe integrations. Their existence does not establish that your contract includes each module or that an AI-generated output is approved. Start with one brief-to-delivery project, nominate an administrator, and specify which system owns final assets. Self-hosting rights, data residency, API failure recovery and contractual service commitments were not established in this research.",
+        "zh": "从受理、项目和审阅模型看，Workfront 值得由需要协调重复性跨职能交付的团队列入候选。个人清单的需求更窄，是否值得承担管理配置成本，应结合工作流判断。这是编辑选型建议，不是比较排名。\n\n厂商也宣传 AI 协作者、Planning 和 Adobe 集成，但这不表示合同包含每个模块，也不表示 AI 输出已获批准。建议先做一条从简报到交付的项目，指定管理员，并明确最终素材由哪个系统管理。本次研究没有确立自托管权利、数据驻留、API 失败恢复方式或合同服务承诺。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Adobe Workfront: Request Intake, Dependencies, Approvals and Packages",
+    "title_zh": "Adobe Workfront：请求受理、任务依赖、审批与套餐",
+    "description_en": "Understand how Workfront converts requests into projects, enforces dependencies and separates proof approvals, with official package boundaries.",
+    "description_zh": "了解 Workfront 如何将请求转为项目、强制执行依赖并区分校样审批，附官方套餐边界。",
+    "primary_intent": "Evaluate a brief-to-delivery workflow.",
+    "secondary_questions": [
+      "Does a dependency block work?",
+      "Are proof and document approvals linked?"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume or ranking measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "License contract, self-hosting rights, data location, UI languages and regional purchasing were not established.",
+      "zh": "尚未确立许可证合同、自托管权利、数据位置、界面语言及地区购买条件。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account or integration was executed; notification timing, API failure recovery and real project configuration require testing.",
+      "zh": "未操作账户或运行集成；通知时间、API 失败恢复和实际项目配置仍需测试。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source reading, original English synthesis and corresponding Chinese translation; hypothetical examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

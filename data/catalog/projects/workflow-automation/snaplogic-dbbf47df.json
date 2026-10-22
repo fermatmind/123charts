@@ -10,105 +10,116 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "SnapLogic is a product in the Integrations and automation category. Its directory profile covers API Management, Pre-built Connectors, Security and Privacy Compliance, Data Mapping.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: relate fields between different structures or systems. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "SnapLogic 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、预置连接器、安全与隐私合规、数据映射。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：建立不同数据结构或系统之间的字段对应关系。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "SnapLogic is an enterprise integration platform whose Designer composes pipelines from configurable components called Snaps. Pipelines read, transform and route data across files, applications and other endpoints, while a Snaplex provides the execution engine. Cloudplex is vendor managed; Groundplex is customer managed and can reach private endpoints.\n\nThe wider platform includes AutoSync, API Management and AI products with separate subscription or add-on scope. This profile concentrates on designing and operating integration pipelines, including the difference between a completed execution and complete delivery of all input records.",
+  "description_zh": "SnapLogic 是企业集成平台，Designer 通过称为 Snap 的可配置组件组成 pipeline。Pipeline 在文件、应用及其他端点之间读取、转换和路由数据，由 Snaplex 提供执行引擎。Cloudplex 由厂商管理，Groundplex 由客户管理并可访问私有端点。\n\n更广的产品平台还包括 AutoSync、API Management 及 AI 产品，涉及不同订阅或附加范围。本文聚焦集成 pipeline 的设计运营，尤其区分执行完成与全部输入记录完整交付。",
   "core_features": [
     {
-      "name_en": "API Management",
-      "name_zh": "API 管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Snap-based pipelines",
+      "name_zh": "基于 Snap 的 Pipeline",
+      "explanation_en": "Arrange configured Snaps in a visual integration pipeline.",
+      "explanation_zh": "在可视化集成流程中组织配置好的 Snap。",
+      "explanation_scope": "product_specific",
+      "source_ref": "designer",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Pre-built Connectors",
-      "name_zh": "预置连接器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Account and view configuration",
+      "name_zh": "账户与视图配置",
+      "explanation_en": "Provide endpoint authorization and configure input/output/error views.",
+      "explanation_zh": "提供端点授权，并配置输入、输出和错误视图。",
+      "explanation_scope": "product_specific",
+      "source_ref": "settings",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Security and Privacy Compliance",
-      "name_zh": "安全与隐私合规",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Cloudplex and Groundplex execution",
+      "name_zh": "Cloudplex 与 Groundplex 执行",
+      "explanation_en": "Select vendor-managed or customer-managed execution infrastructure.",
+      "explanation_zh": "选择厂商管理或客户管理的执行基础设施。",
+      "explanation_scope": "product_specific",
+      "source_ref": "snaplex",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Data Mapping",
-      "name_zh": "数据映射",
-      "explanation_en": "Relate fields between different structures or systems.",
-      "explanation_zh": "建立不同数据结构或系统之间的字段对应关系。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Error pipelines",
+      "name_zh": "错误 Pipeline",
+      "explanation_en": "Route error documents for dedicated handling while valid records can continue.",
+      "explanation_zh": "将错误文档路由到专门流程处理，同时允许有效记录继续。",
+      "explanation_scope": "product_specific",
+      "source_ref": "error-guide",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Relate fields between different structures or systems"],
-    "zh": ["建立不同数据结构或系统之间的字段对应关系"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Filter and route file records while reconciling accepted and rejected outputs.",
+      "Connect application or data endpoints on the appropriate Snaplex."
+    ],
+    "zh": [
+      "过滤并路由文件记录，同时核对接受与拒绝的输出。",
+      "在适当 Snaplex 上连接应用或数据端点。"
+    ],
+    "source_refs": ["first", "error-guide", "snaplex"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise data integration engineer",
+      "Application integration team",
+      "Groundplex administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "integrations"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm development environment, required Snap Packs and runtime access.",
+        "zh": "确认开发环境、所需 Snap Pack 及运行时访问。",
+        "source_refs": ["integrations", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build the CSV tutorial before adding authenticated external endpoints.",
+        "zh": "先完成 CSV 教程，再加入需要认证的外部端点。",
+        "source_refs": ["first", "settings"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure error routing and reconcile records against execution statistics and destination state.",
+        "zh": "配置错误路由，结合执行统计和目标状态核对记录。",
+        "source_refs": ["error-guide", "executions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Discard-and-continue can result in partial or no useful output despite continued execution.",
+        "zh": "丢弃并继续可能造成部分处理，甚至没有有效输出，即使执行仍继续。",
+        "source_refs": ["error-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Groundplex operation requires administration and deployment planning.",
+        "zh": "运行 Groundplex 需要管理及部署规划。",
+        "source_refs": ["snaplex"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -120,37 +131,20 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "quote_based_package_and_endpoint_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:12:57.741927Z",
+    "normalized_monthly_price": null,
+    "billing_basis": "Selected package/endpoints plus premium Snap Packs, capacity and add-ons; no public amount established."
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does SnapLogic do?",
-      "question_zh": "SnapLogic 用来做什么？",
-      "answer_en": "SnapLogic is a product in the Integrations and automation category. Its directory profile covers API Management, Pre-built Connectors, Security and Privacy Compliance, Data Mapping.",
-      "answer_zh": "SnapLogic 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、预置连接器、安全与隐私合规、数据映射。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "API Management, Pre-built Connectors, Security and Privacy Compliance, Data Mapping",
-      "answer_zh": "API 管理、预置连接器、安全与隐私合规、数据映射"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -160,25 +154,256 @@
       "read_at": "2026-10-22T08:59:22.189Z",
       "excerpt_sha256": "801e8111759cd2d43836d76222df39617fb24c554ee23409fb7915883ae4700c",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "SnapLogic",
+      "title": "SnapLogic Pricing | Integration & AI Platform Packages",
+      "url": "https://www.snaplogic.com/pricing",
+      "read_at": "2026-10-22T10:12:57.741927Z",
+      "excerpt_sha256": "67ee488afc424e3c329f56ee4915fcc25c2f0dfc7a0a6e1e2badeb6ac9208b22",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Package/endpoint pricing, unlimited data-movement claim, core/premium Snap Packs and add-on scope read; quote amount unknown."
+    },
+    {
+      "id": "integrations",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Get started",
+      "url": "https://docs.snaplogic.com/introduction/integration-get-started.html",
+      "read_at": "2026-10-22T10:13:46.746683Z",
+      "excerpt_sha256": "50569ab45ea900d69bf6a84e483a570bbc5f662f3f0e10dbc593646dfaa57b27",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Environment separation, Designer versus APIM/AutoSync subscriptions and pipeline responsibilities read."
+    },
+    {
+      "id": "designer",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Designer Interface",
+      "url": "https://docs.snaplogic.com/designer/designer-about.html",
+      "read_at": "2026-10-22T10:13:44.073845Z",
+      "excerpt_sha256": "cf62693a3ef9b50baf0fa729fbeeee5e9470a020ba8b637607f6470440440d7b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Canvas, environment selection and assigned Snaplex are visible design controls."
+    },
+    {
+      "id": "first",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Create your first pipeline",
+      "url": "https://docs.snaplogic.com/introduction/first-pipeline.html",
+      "read_at": "2026-10-22T10:14:14.186343Z",
+      "excerpt_sha256": "2b2b0b893b66c665f20a3c9c7b77abb9d5a45a9ce0c925c3ca0ffbb01473ba22",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "First-pipeline text uses CSV filtering and two outputs without external connection."
+    },
+    {
+      "id": "compose",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Compose the pipeline",
+      "url": "https://docs.snaplogic.com/design-integrations/compose-pipeline.html",
+      "read_at": "2026-10-22T10:14:41.382062Z",
+      "excerpt_sha256": "076d39f5ba59cee18546bf475654475f63f4f0b6eb873af5212e01065d4ff7dc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Pipeline composition tutorial read; sample validation is not evidence of live endpoint behavior."
+    },
+    {
+      "id": "settings",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Snap settings dialog",
+      "url": "https://docs.snaplogic.com/snaps/snap-settings-dialog.html",
+      "read_at": "2026-10-22T10:14:58.940918Z",
+      "excerpt_sha256": "35e9269bc00140f2a57b0de473e8e305dc395c5aecdee1fb98fbf581ff9a3cec",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Required fields, Account, expressions and document/binary view distinctions reviewed."
+    },
+    {
+      "id": "snaplex",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Snaplexes",
+      "url": "https://docs.snaplogic.com/snaplexes/snaplexes-about.html",
+      "read_at": "2026-10-22T10:13:50.079939Z",
+      "excerpt_sha256": "18a9786cd7b6dde04f7a497000680195608d5708b1b88b25920e1adfb676628c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Cloudplex versus Groundplex operational ownership and data/control plane distinction read."
+    },
+    {
+      "id": "error-guide",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Error handling",
+      "url": "https://docs.snaplogic.com/design-integrations/error-handling.html",
+      "read_at": "2026-10-22T10:14:55.489697Z",
+      "excerpt_sha256": "64675663823222bb3b5d6fb7d389834d4c02ece9827808c242991e9982a24706",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Stop, discard and error-route behavior read; completion status is not whole-record success."
+    },
+    {
+      "id": "monitor",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Monitor",
+      "url": "https://docs.snaplogic.com/monitor/monitor-about.html",
+      "read_at": "2026-10-22T10:13:52.742234Z",
+      "excerpt_sha256": "8a6d05bd77e5bf4d9ad0a3aa2d5111513116cfcf675cc93f867bd3f68862a138",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Pipeline execution, infrastructure and feature-scoped monitoring reviewed."
+    },
+    {
+      "id": "executions",
+      "type": "official_documentation",
+      "site": "SnapLogic",
+      "title": "Pipeline executions",
+      "url": "https://docs.snaplogic.com/monitor/analyze-execution.html",
+      "read_at": "2026-10-22T10:14:44.414756Z",
+      "excerpt_sha256": "01c3858946ad40f412ca34fece4327e9f21258a654ff90826cf408ae15751e62",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Execution identifiers, history filters and 45-day historical view boundary read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:14:58.940918Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": [
+    "integrations",
+    "designer",
+    "snaplex",
+    "error-guide"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "design",
+        "title_en": "Pipelines describe work; environments and Snaplexes place it",
+        "title_zh": "Pipeline 定义工作，环境与 Snaplex 决定运行位置",
+        "en": "Designer assembles Snaps on a canvas, selects an environment and shows the configured Snaplex. The getting-started guide recommends separate development and production environments. Treat those as part of the integration design: which credentials are available, which endpoints are reachable, and which runtime handles the load. Creating a pipeline does not by itself configure its task invocation or prove that a production environment has the same subscriptions and permissions as development.",
+        "zh": "Designer 在画布中组织 Snap，选择环境，并显示配置的 Snaplex。入门指南建议开发与生产使用不同环境。环境应作为设计的一部分：可使用哪些凭据、能访问哪些端点、由哪个运行时承担负载。建立 pipeline 本身不会自动完成任务调用配置，也不能证明生产与开发的订阅和权限相同。",
+        "source_refs": ["designer", "integrations"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "example",
+        "title_en": "Learn routing with a CSV before adding external writes",
+        "title_zh": "加入外部写入前先用 CSV 理解路由",
+        "en": "The first-pipeline tutorial deliberately avoids external connections. It uploads a sample CSV, filters out one department and splits the remaining employees by location into two files. This makes the data-routing rules visible without relying on SaaS credentials. For a proposed adaptation, use employee_id, department and location; compare the input count with excluded records and both output counts. Include a missing location and an unexpected department value. These are suggested evaluation cases, not tests performed for this profile.",
+        "zh": "首条 pipeline 教程有意不连接外部系统：上传样例 CSV，排除一个部门，再按地点把剩余员工分到两个文件。这样无需 SaaS 凭据即可观察路由规则。若改为业务评估，可使用 employee_id、department 与 location，对照输入数量、排除数量及两个输出数量，并加入地点缺失、部门值异常的记录。这些是建议测试案例，本文未实际执行。",
+        "source_refs": ["first", "compose"],
+        "evidence_type": "documented_example_with_hypothetical_evaluation"
+      },
+      {
+        "id": "configuration",
+        "title_en": "Authorization and data shape are separate settings",
+        "title_zh": "授权与数据结构分开配置",
+        "en": "A Snap’s Account tab holds the authorization details it needs for external resources. Its Views tab controls input, output and error interfaces; document and binary views are represented differently. Required settings and expressions also affect configuration. Before connecting an external destination, check the exact Snap’s documentation rather than assuming all Snaps accept the same payload or expose the same number of outputs. Our suggested test inspects one representative document at each boundary and checks the destination’s actual stored record.",
+        "zh": "Snap 的 Account 页保存访问外部资源所需的授权信息，Views 页控制输入、输出与错误接口；文档数据和二进制数据视图采用不同表示。必填设置及表达式同样影响配置。连接外部目标前，应检查具体 Snap 文档，不能假定所有 Snap 接受相同负载或提供相同输出数量。建议沿各边界检查一条代表性文档，并对照目标实际保存记录。",
+        "source_refs": ["settings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "A self-managed data plane is an operating commitment",
+        "title_zh": "自管数据执行层需要承担运营责任",
+        "en": "Snaplexes execute pipelines and tasks as the platform’s data plane. SnapLogic provisions Cloudplex; users provision Groundplex on their own premises or cloud. Groundplex can reach private endpoints and allows more configuration, but needs production planning and administration. Cloudplex scale-out depends on vendor provisioning. Groundplex load balancing also remains a customer configuration concern for the documented inbound workloads. Running a Groundplex does not establish that the platform control plane has been installed on premises, nor that its software carries an unrestricted open-source license.",
+        "zh": "Snaplex 是执行 pipeline 及任务的数据层。Cloudplex 由 SnapLogic 开通，Groundplex 则由使用方部署到本地或云中。Groundplex 可访问私有端点、支持更多配置，但需要生产规划与管理；Cloudplex 扩容依赖厂商开通节点。对于文档所述入站负载，Groundplex 的负载均衡也需要客户配置。运行 Groundplex 不等于把平台控制层安装到本地，更不能证明软件采用无限制开源许可。",
+        "source_refs": ["snaplex"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "errors",
+        "title_en": "Completion can hide discarded or separately routed records",
+        "title_zh": "完成状态可能包含丢弃或另行处理的记录",
+        "en": "By default a Snap stops the pipeline on error. Discard Error Data and Continue drops problematic records; Route Error Data to Error View lets processing continue with separate error data. An error pipeline can handle those documents while valid input continues. Therefore a completed main pipeline alone cannot certify that every record reached its target. Our recommendation is to reconcile input, accepted, rejected and deliberately filtered records, and define who repairs rejected data. Merely connecting an error output to a file is not a demonstrated recovery process.",
+        "zh": "Snap 默认遇错停止 pipeline。Discard Error Data and Continue 会丢弃有问题记录；Route Error Data to Error View 允许继续处理，并单独产生错误数据。错误 pipeline 可处理这些文档，同时有效输入继续。因此主流程完成本身不能证明每条记录都到达目标。建议核对输入、接受、拒绝及有意过滤的记录，并明确谁修复拒绝数据；仅把错误输出接到文件并不能证明恢复流程有效。",
+        "source_refs": ["error-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "monitoring",
+        "title_en": "Retain identifiers that lead back to a specific execution",
+        "title_zh": "保留能定位具体执行的标识",
+        "en": "Monitor distinguishes pipeline execution details from Snaplex infrastructure health. Execution rows provide a runtime identifier, RUUID, for troubleshooting, along with document counts and links to Snap statistics and logs. The current execution guide describes a 45-day historical view, so do not assume the interface is a permanent business audit store. A support process should connect an affected business record to its pipeline and runtime. Availability of API metrics depends on APIM subscription; an integration-only environment should not be described as having all API monitoring features.",
+        "zh": "Monitor 区分 pipeline 执行详情与 Snaplex 基础设施健康。执行记录提供用于排查的运行标识 RUUID、文档计数及 Snap 统计和日志入口。当前执行指南描述的历史查看窗口为 45 天，不能把界面当永久业务审计存储。支持流程应能从受影响业务记录定位 pipeline 与运行。API metrics 还依赖 APIM 订阅，不能把仅集成环境描述为拥有全部 API 监控功能。",
+        "source_refs": ["monitor", "executions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Unlimited movement is not an unlimited feature entitlement",
+        "title_zh": "无限数据移动不等于全部功能无限开放",
+        "en": "The pricing page describes Essential, Professional and Enterprise One packages, selected endpoints, and unlimited pipelines/data movement rather than per-record pricing. It says the platform price is the same for Cloudplex and Groundplex. Core Snap Packs are included while premium packs are purchased separately; AgentCreator, APIM, Ultra workflows, AutoSync and other advanced items have add-on scope. No dollar price was established from the read page, which requests customized pricing. Obtain endpoint, runtime capacity, premium-pack and add-on details in the quote. Infrastructure required for a self-managed Groundplex remains an evaluation cost, even when platform pricing does not change by deployment type.",
+        "zh": "定价页描述 Essential、Professional、Enterprise One 套餐、所选端点，以及无限 pipeline／数据移动，而非逐记录计费，并说明 Cloudplex 与 Groundplex 的平台价格相同。核心 Snap Pack 包含在基础套餐，高级 Pack 需另购；AgentCreator、APIM、Ultra 工作流、AutoSync 等高级项目有附加范围。所读页面要求定制报价，未确认美元金额。应在报价中明确端点、运行容量、高级 Pack 及附加项；即使平台价格不随部署类型变化，自管 Groundplex 所需基础设施仍应计入评估成本。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "boundaries",
+        "title_en": "Designer, AutoSync, API services and AI need distinct evaluation",
+        "title_zh": "分别评估 Designer、AutoSync、API 与 AI",
+        "en": "Designer supports authored pipeline logic. AutoSync provides a configuration-driven ingestion/synchronization experience for selected endpoints under its subscription. APIM exposes integrations as APIs under another documented subscription. AI assistance and AgentCreator belong to the wider platform but do not remove the need to verify mappings, data policies and execution behavior. SnapLogic merits evaluation for a team managing enterprise data flows with runtime and support ownership. It is a weaker fit when nobody can maintain pipeline semantics or investigate partial delivery. No performance, recovery, language support or business return was tested.",
+        "zh": "Designer 用于自行编写 pipeline 逻辑；AutoSync 按订阅为选定端点提供配置式摄取与同步；APIM 通过另一项文档所述订阅把集成暴露为 API。AI 辅助与 AgentCreator 属于更广的平台，也不能免除映射、数据政策及运行行为核对。当团队有运行与支持负责人时，SnapLogic 值得用于企业数据流评估；如果无人维护逻辑或调查部分交付，适用性较弱。本文未测试性能、恢复、语言支持或业务回报。",
+        "source_refs": ["integrations", "pricing"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "SnapLogic: Pipelines, Snaplexes, Error Records and Package Pricing",
+    "title_zh": "SnapLogic：Pipeline、Snaplex、错误记录与套餐定价",
+    "description_en": "Understand SnapLogic pipeline design, Cloudplex versus Groundplex, partial record failures, monitoring and product subscription boundaries.",
+    "description_zh": "理解 SnapLogic 流程设计、Cloudplex 与 Groundplex、部分记录失败、监控及产品订阅边界。",
+    "primary_intent": "Evaluate enterprise pipeline operations and data completeness.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Quote amounts, capacity/SLA terms, exact premium-pack entitlements, software license, UI languages and regional purchasing conditions remain unverified.",
+      "zh": "报价金额、容量／SLA 条件、高级 Pack 的具体权限、软件许可、界面语言及地区购买条件仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No pipeline was run; endpoint authentication, performance, restoration and error reconciliation were not tested.",
+      "zh": "未运行 pipeline；未实测端点认证、性能、恢复及错误记录对账。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

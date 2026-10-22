@@ -10,117 +10,100 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Sophos Central is a product in the Network monitoring category. Its directory profile covers SLA Monitoring, Server Monitoring, Real Time Analytics, Diagnostic Tools, Resource Management.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: track selected server status and resource signals; allocate people, time and other project resources. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Sophos Central 属于网络监控软件。第三方资料列出的功能包括服务水平协议监测、服务器监控、实时分析、诊断工具、资源管理。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：跟踪服务器状态及资源使用信号；分配人员、时间和其他项目资源。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Sophos Central is a cloud management platform whose current administrator documentation uses the Sophos Fusion name. The dashboard manages licensed security products, users and devices; protection products may require installed software. Management access does not itself establish every endpoint, server, firewall or investigation entitlement.\n\nEvaluation should follow the actual licensed product and an administrator’s role. Policy priority determines which complete settings apply, while access to sensitive reports and some operational actions extends beyond a simple settings-edit/read distinction. Plan MFA recovery and license renewal alongside device onboarding.",
+  "description_zh": "Sophos Central 是云端管理平台，当前管理文档已使用 Sophos Fusion 名称。仪表盘管理已授权安全产品、用户和设备，防护产品可能需安装软件。管理访问本身不证明全部终端、服务器、防火墙或调查权益。\n\n评估应对应实际许可产品及管理员角色。策略优先级决定整套设置的应用，敏感报告访问和部分操作也不能仅按“可编辑／只读设置”区分。设备接入时应同时规划 MFA 恢复与许可续期。",
   "core_features": [
     {
-      "name_en": "SLA Monitoring",
-      "name_zh": "服务水平协议监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Licensed-product dashboard",
+      "name_zh": "已授权产品仪表盘",
+      "explanation_en": "Manage products, users, devices and the account from the shared administrative dashboard.",
+      "explanation_zh": "在共用管理仪表盘管理产品、用户、设备及账户。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Server Monitoring",
-      "name_zh": "服务器监控",
-      "explanation_en": "Track selected server status and resource signals.",
-      "explanation_zh": "跟踪服务器状态及资源使用信号。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Ordered protection policies",
+      "name_zh": "有序防护策略",
+      "explanation_en": "The first applicable policy supplies its settings; Base remains the fallback.",
+      "explanation_zh": "第一个适用策略提供其设置，Base 始终作为回退。",
+      "explanation_scope": "product_specific",
+      "source_ref": "policies",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Real Time Analytics",
-      "name_zh": "实时分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Diagnostic Tools",
-      "name_zh": "诊断工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Resource Management",
-      "name_zh": "资源管理",
-      "explanation_en": "Allocate people, time and other project resources.",
-      "explanation_zh": "分配人员、时间和其他项目资源。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Multiple MFA methods",
+      "name_zh": "多种 MFA 方法",
+      "explanation_en": "Current documentation requires administrators to register at least two methods.",
+      "explanation_zh": "当前文档要求管理员登记至少两种 MFA 方法。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mfa",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Track selected server status and resource signals",
-      "Allocate people, time and other project resources"
+      "Verify a limited administrator’s log visibility and operational permissions in a test tenant.",
+      "Compare intended versus applied policies and rehearse MFA recovery before a broader rollout."
     ],
-    "zh": ["跟踪服务器状态及资源使用信号", "分配人员、时间和其他项目资源"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "在测试租户核对受限管理员日志可见性及操作权限。",
+      "扩大部署前比较预期与实际应用策略，并演练 MFA 恢复。"
+    ],
+    "source_refs": ["roles", "policies", "mfa"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Security operations administrators",
+      "Endpoint management teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory licensed products and renewal contacts, then create a role-appropriate test account with two MFA methods.",
+        "zh": "清点许可产品及续期联系人，再准备匹配角色且有两种 MFA 方法的测试账户。",
+        "source_refs": ["expiry", "roles", "mfa"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a small device group to verify policy priority and the actual assigned settings.",
+        "zh": "用小型设备组验证策略优先级及实际分配设置。",
+        "source_refs": ["policies"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Read-only settings do not imply that sensitive logs are hidden or every operational action is denied.",
+        "zh": "只读设置不代表隐藏敏感日志或禁止所有操作。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Expired product licenses can remove protection even if management access exists.",
+        "zh": "产品许可到期可能失去防护，即使仍可访问管理界面。",
+        "source_refs": ["expiry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -132,37 +115,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:31:12.929033Z",
+    "normalized_monthly_price": null,
+    "summary_en": "The management platform is included when using Sophos products and has no separate purchase/license according to the FAQ. Protection and investigation capabilities depend on product licenses; the public route offers customized quotes, not a universal numeric price. Exact products, quantities, term, region and renewal costs remain unverified.",
+    "summary_zh": "FAQ 说明使用 Sophos 产品时包含管理平台，无需单独购买／许可。防护与调查能力依具体产品许可，公开入口为定制报价，未给统一数字价。具体产品、数量、期限、地区及续期成本待核。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Sophos Central do?",
-      "question_zh": "Sophos Central 用来做什么？",
-      "answer_en": "Sophos Central is a product in the Network monitoring category. Its directory profile covers SLA Monitoring, Server Monitoring, Real Time Analytics, Diagnostic Tools, Resource Management.",
-      "answer_zh": "Sophos Central 属于网络监控软件。第三方资料列出的功能包括服务水平协议监测、服务器监控、实时分析、诊断工具、资源管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "SLA Monitoring, Server Monitoring, Real Time Analytics, Diagnostic Tools, Resource Management",
-      "answer_zh": "服务水平协议监测、服务器监控、实时分析、诊断工具、资源管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -172,25 +139,198 @@
       "read_at": "2026-10-22T08:59:11.382Z",
       "excerpt_sha256": "7579f0d02e21f9e349cd1641067008d55b21dd69f149d9cc48525285ecd841b3",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "Sophos Fusion Admin",
+      "url": "https://docs.sophos.com/central/customer/help/en-us/index.html",
+      "read_at": "2026-10-22T15:35:13.206677Z",
+      "excerpt_sha256": "95a43c98ef9707104d7f54195268e5f4ef28fec34767a0f28052f8bfb03742bc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current Sophos Fusion Admin platform/dashboard versus installed product distinction."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Sophos Central",
+      "title": "Sophos Central: Stronger, Simpler Cybersecurity",
+      "url": "https://www.sophos.com/en-us/products/sophos-central",
+      "read_at": "2026-10-22T15:31:12.929033Z",
+      "excerpt_sha256": "4ddc98b1a6da68910e8c040f173e8669b6268c236446309f898c050d45456b03",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual FAQ: management included with Sophos products, not separately licensed; gradual Central-to-Fusion transition."
+    },
+    {
+      "id": "roles",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "Administration roles - Sophos Fusion Admin",
+      "url": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/Roles/AdministrationRoles/index.html",
+      "read_at": "2026-10-22T15:38:55.655761Z",
+      "excerpt_sha256": "ae5b81ef7c2444f04520195ce39cd4250c757adf5f5be76957aa72225a45ea75",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual predefined/custom role scope, Help Desk actions and sensitive-log access."
+    },
+    {
+      "id": "policies",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "About Policies - Sophos Fusion Admin",
+      "url": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/Policies/AboutPolicies/index.html",
+      "read_at": "2026-10-22T15:39:53.869943Z",
+      "excerpt_sha256": "cb773f154b0f4fcaf1d5e539d78c4ae85bb44991430a83b41e1895a340e7617b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read first-applicable policy priority, full policy settings and Base fallback."
+    },
+    {
+      "id": "mfa",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "Sophos Fusion MFA Requirements - Sophos Fusion Admin",
+      "url": "https://docs.sophos.com/central/customer/help/en-us/ManageYourAccount/ModernAuthentication/ModernAuthRegisterTwoMethods/index.html",
+      "read_at": "2026-10-22T15:38:19.542337Z",
+      "excerpt_sha256": "c50721429bf414134cca1e38b618fa25a630068fe91377bd057dc2a1329f9392",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual2-method MFA requirement and administrator-assisted reset."
+    },
+    {
+      "id": "expiry",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "Renewals and license expiry - Sophos Fusion Admin",
+      "url": "https://docs.sophos.com/central/customer/help/en-us/LicensingGuide/LicenseManagement/renewal/index.html",
+      "read_at": "2026-10-22T15:38:19.542045Z",
+      "excerpt_sha256": "fdaced4afc65b3f4d965baa2641496d3fa492c45bc5a032958b20ecbdd93fc2a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read product entitlement/protection loss on license expiry."
+    },
+    {
+      "id": "quote",
+      "type": "official_documentation",
+      "site": "Sophos Central",
+      "title": "Sophos Central Endpoint and Firewall Management Platform",
+      "url": "https://www.sophos.com/en-us/products/sophos-central/get-pricing",
+      "read_at": "2026-10-22T15:34:40.036645Z",
+      "excerpt_sha256": "a3c22359f3269c5b2beb517a8c502b3e5f41841934d3a95c955f66e5102c698d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read customized quote route, not a public numeric rate card."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:39:53.869943Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "roles", "policies"],
+  "profile": {
+    "sections": [
+      {
+        "id": "identity",
+        "title_en": "Read Central and Fusion as a documented transition",
+        "title_zh": "按文档说明理解 Central／Fusion 过渡",
+        "en": "The product FAQ says Central is becoming Fusion and that the new name will arrive gradually. Current Fusion Admin help separates the management dashboard from installed protection products. Retain the existing Central identity while noting the transition; neither branding nor access to a console proves that all product licenses are included.",
+        "zh": "产品 FAQ 说明 Central 正更名为 Fusion，新名逐步推出。当前 Fusion Admin 帮助区分管理仪表盘与已安装防护产品。此处保留 Central 身份并注明过渡；品牌或控制台访问不能证明包含全部产品许可。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "roles",
+        "title_en": "Read-only settings can still expose sensitive evidence",
+        "title_zh": "只读设置仍可能接触敏感证据",
+        "en": "Predefined roles cannot be edited or deleted; a Super Admin can add product-restricted custom roles. Help Desk can inspect sensitive logs, clear alerts, update agents and scan computers despite read-only settings. The Read-only role can also inspect sensitive logs/reports. Test visibility and allowed actions using the intended role, not its label alone.",
+        "zh": "预设角色不可编辑或删除，Super Admin 可创建限制产品范围的自定义角色。Help Desk 虽为只读设置，仍可查看敏感日志、清除告警、更新代理及扫描计算机；Read-only 也可查看敏感日志／报告。应按目标角色测试可见内容与允许动作，不能只看名称。",
+        "source_refs": ["roles"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "priority",
+        "title_en": "A policy is selected as a complete set",
+        "title_zh": "策略按完整设置选择",
+        "en": "For each feature, the first applicable policy in top-down order is used. Settings cannot be split across several policies for one user. User and device policies can compete for the same computer, with the higher policy taking priority. Base remains at the bottom and cannot be disabled or deleted. Verify the device’s applied-policy view before expanding a pilot.",
+        "zh": "每项功能按从上到下第一个适用策略执行，同一用户不能从多个策略拼接设置。用户与设备策略可能同时匹配同一计算机，此时较高策略优先。Base 始终位于底部且不可停用／删除。扩大试点前应核对设备实际应用策略。",
+        "source_refs": ["policies"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "authentication",
+        "title_en": "Keep a usable second authentication route",
+        "title_zh": "保留可用的第二认证途径",
+        "en": "The current MFA guide requires at least two methods and challenges administrators on every sign-in. Supported methods are passkeys and TOTP authenticator apps; using independent devices is recommended where possible. Loss of all enrolled methods requires contacting a Super Admin or Partner Super Admin for reset. Rehearse recovery with an authorized test account.",
+        "zh": "当前 MFA 指南要求至少两种方法，管理员每次登录均需验证；支持 passkey 与 TOTP 验证器，条件允许时建议分布在独立设备。全部方法不可用时需联系 Super Admin 或 Partner Super Admin 重置。应使用获准测试账户演练恢复。",
+        "source_refs": ["mfa"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "renewal",
+        "title_en": "Console inclusion does not extend expired protection",
+        "title_zh": "控制台包含不延长过期防护",
+        "en": "The renewal guide says valid active licenses must be maintained for Sophos products. Without a replacement license after expiry, entitlement and protection are lost. It directs renewal or reinstatement through the partner or Sophos contact. Track product dates and ownership separately from administrator login availability; no post-expiry protection test was performed.",
+        "zh": "续期指南要求 Sophos 产品始终持有有效许可。到期未续后将失去产品权益及防护，需通过合作伙伴或 Sophos 联系人续期／恢复。应将产品日期及负责人同管理员能否登录分开跟踪，本次未测试到期后的防护。",
+        "source_refs": ["expiry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Management inclusion is conditional on product use",
+        "title_zh": "管理包含以产品使用为条件",
+        "en": "The FAQ says Central is included automatically when using Sophos products and is not a separate purchase/license. The pricing route requests a customized quote. That supports an included management layer, not free endpoint/firewall protection or one universal price. Match each requested capability to its actual product and license.",
+        "zh": "FAQ 说明使用 Sophos 产品时自动包含 Central，无需单独购买／许可；定价入口要求定制报价。这证明包含管理层，不能证明终端／防火墙防护免费或统一价格。每项所需能力均应对应实际产品及许可。",
+        "source_refs": ["pricing", "quote"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Sophos Central: setup, operating limits and pricing",
+    "title_zh": "Sophos Central：设置、运行边界及费用",
+    "description_en": "Sophos Central is the cloud management platform that the vendor is gradually renaming Sophos Fusion. Current administrator documentation already uses Fusion. The dashboar",
+    "description_zh": "Sophos Central 是厂商正逐步更名为 Sophos Fusion 的云端管理平台，当前管理文档已使用 Fusion。仪表盘管理已授权安全产品、用户和设备，防护产品可能需",
+    "search_intent_en": "Evaluate Sophos Central for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Sophos Central。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant, device, policy, security action, API credential, MFA reset, license or purchase was operated.",
+      "zh": "未操作租户、设备、策略、安全动作、API 凭据、MFA 重置、许可或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Tenant-specific branding rollout, full contract, detection quality, enforcement timing and recovery remain unverified.",
+      "zh": "特定租户更名进度、完整合同、检测质量、策略生效时延及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

@@ -10,171 +10,104 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Kong is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.\n\nAdditional listed capabilities include Testing Management, Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: define interface structure and request-response contracts; bring selected indicators and records into one view; track changes to files and support revision workflows; organize test cases, execution and results; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Kong 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。\n\n资料还列出测试管理、访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：定义接口结构和请求响应约定；在同一视图中汇集选定指标和记录；跟踪文件变更并支持版本修订流程；组织测试用例、执行过程与结果；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Kong Gateway proxies API traffic through configured Routes and Gateway Services, with plugins for behavior such as authentication, transformation and rate limiting. Konnect provides a managed control plane for gateway configuration, observability and other API-platform capabilities.\n\nThe Kong catalog name covers a wider company portfolio. This profile focuses on Gateway and Konnect API Management, separating customer-operated data planes, fully managed gateways and a fully self-hosted Enterprise offering. AI and event products have their own scope and meters.",
+  "description_zh": "Kong Gateway 通过配置的 Route 和 Gateway Service 代理 API 流量，并用插件实现认证、转换及限流等行为。Konnect 为网关配置、可观测及其他 API 平台能力提供托管控制面。\n\nKong 目录名称覆盖更广公司产品。本文聚焦 Gateway 与 Konnect API Management，区分客户运行数据面、全托管网关及完整自托管 Enterprise；AI 和事件产品另有范围与计价。",
   "core_features": [
     {
-      "name_en": "Analytics",
-      "name_zh": "数据分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Routes and Gateway Services",
+      "name_zh": "Route 与 Gateway Service",
+      "explanation_en": "Match incoming traffic to the configured upstream service.",
+      "explanation_zh": "将入站流量匹配至配置的上游服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "route",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Traffic Control",
-      "name_zh": "流量控制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Topology-aware rate limiting",
+      "name_zh": "依拓扑配置限流",
+      "explanation_en": "Choose node-local or shared counter storage with different consistency/operating costs.",
+      "explanation_zh": "选择节点本地或共享计数存储，一致性及运维成本不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rate",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Threat Protection",
-      "name_zh": "威胁防护",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Developer Portal",
-      "name_zh": "开发者门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Lifecycle Management",
-      "name_zh": "API 生命周期管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Design",
-      "name_zh": "API 设计",
-      "explanation_en": "Define interface structure and request-response contracts.",
-      "explanation_zh": "定义接口结构和请求响应约定。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Control/data-plane separation",
+      "name_zh": "控制／数据面分离",
+      "explanation_en": "Distribute configuration while data planes serve traffic.",
+      "explanation_zh": "分发配置，由数据面提供流量服务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hybrid",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Define interface structure and request-response contracts",
-      "Bring selected indicators and records into one view",
-      "Track changes to files and support revision workflows",
-      "Organize test cases, execution and results",
-      "Restrict information and actions according to permissions"
+      "Route one backend with client-specific policies.",
+      "Evaluate distributed counters and disconnected data-plane recovery."
     ],
-    "zh": [
-      "定义接口结构和请求响应约定",
-      "在同一视图中汇集选定指标和记录",
-      "跟踪文件变更并支持版本修订流程",
-      "组织测试用例、执行过程与结果",
-      "根据权限限制信息访问和操作"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": ["以客户专属策略路由一个后端。", "评估分布式计数及数据面断连恢复。"],
+    "source_refs": ["route", "rate", "communication"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineer",
+      "Gateway operator",
+      "Backend service developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Konnect or fully self-managed deployment and exact plugins.",
+        "zh": "选择 Konnect 或完整自运维部署，明确插件。",
+        "source_refs": ["pricing", "hybrid"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure one Service/Route with explicit policy scope.",
+        "zh": "配置一个 Service／Route，明确策略范围。",
+        "source_refs": ["service", "route"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify timeout, limit and cached-configuration failure behavior.",
+        "zh": "核对超时、限流及缓存配置失败行为。",
+        "source_refs": ["service", "rate", "communication"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Local counters are not automatically a strict cluster-wide quota.",
+        "zh": "本地计数不会自动形成严格集群额度。",
+        "source_refs": ["rate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Cached traffic service depends on configuration and license remaining usable.",
+        "zh": "缓存流量服务依赖配置与许可仍可用。",
+        "source_refs": ["communication"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -186,37 +119,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "Konnect_solution_control_plane_requests_bandwidth_and_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T11:06:40.085550Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "API Management Plus entry plus topology/resource/transaction usage; Enterprise and fully self-hosted Gateway quote separately."
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Kong do?",
-      "question_zh": "Kong 用来做什么？",
-      "answer_en": "Kong is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.",
-      "answer_zh": "Kong 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control, Testing Management, Access Control",
-      "answer_zh": "数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制、测试管理、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,25 +143,239 @@
       "read_at": "2026-10-22T08:46:16.022Z",
       "excerpt_sha256": "77d986925441860a4429f0d5cb0a3c69038ebaaec1bcba41c75d222e531b8694",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Kong, The AI Connectivity Company | Kong Inc.",
+      "url": "https://konghq.com/",
+      "read_at": "2026-10-22T11:06:40.085550Z",
+      "excerpt_sha256": "0a663e3988cf12ae6c3b55aa18718128138bf0fae2d80d8500628320aa1e20de",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Kong company/platform breadth read; this profile scopes Gateway and Konnect API management, not every AI/event product."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Kong",
+      "title": "Kong Pricing for API and AI Connectivity Platform | Konnect | Kong Inc.",
+      "url": "https://konghq.com/pricing",
+      "read_at": "2026-10-22T11:06:43.460477Z",
+      "excerpt_sha256": "289519a85d07904a8042b0f5f954251a0c78c02214617c4fc4c40f2acbdd84b0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "API Management Plus $25 entry plus control-plane/requests/bandwidth/portal usage and separate fully self-hosted Enterprise quote read; AI tab not conflated."
+    },
+    {
+      "id": "konnect",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Konnect | Kong Docs",
+      "url": "https://developer.konghq.com/konnect/",
+      "read_at": "2026-10-22T11:07:35.298129Z",
+      "excerpt_sha256": "24a010ea0ab44b917ee89e170298b7ce84eaff00f83813d4f25ff531728855dc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Managed control-plane administration, roles, organization usage and automatic Konnect license provisioning read."
+    },
+    {
+      "id": "service",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Gateway Services - Kong Gateway | Kong Docs",
+      "url": "https://developer.konghq.com/gateway/entities/service/",
+      "read_at": "2026-10-22T11:08:15.784412Z",
+      "excerpt_sha256": "ed738695b758d42a9a84cebfe086dfec952410dbbecccab5aeb82ea99a389bea",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Upstream service connectivity, connect/read/write timeout differences and method-dependent retries reviewed."
+    },
+    {
+      "id": "route",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Routes - Kong Gateway | Kong Docs",
+      "url": "https://developer.konghq.com/gateway/entities/route/",
+      "read_at": "2026-10-22T11:08:18.920529Z",
+      "excerpt_sha256": "700d96017d47219ad4d7f6f6b31d81a141c75a1f9156e18004710e0abb91f3d6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Route matching and per-route policies distinguished from service-wide policy scope."
+    },
+    {
+      "id": "rate",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Rate Limiting - Plugin | Kong Docs",
+      "url": "https://developer.konghq.com/plugins/rate-limiting/",
+      "read_at": "2026-10-22T11:08:22.557641Z",
+      "excerpt_sha256": "6d4c231a33b0ac81b51bc1f528ac00d9ed131f3135d551d7b80c2cd932899a35",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Local/cluster/Redis counters, topology restrictions and non-portable existing usage state read."
+    },
+    {
+      "id": "hybrid",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Hybrid mode - Kong Gateway | Kong Docs",
+      "url": "https://developer.konghq.com/gateway/hybrid-mode/",
+      "read_at": "2026-10-22T11:07:25.198370Z",
+      "excerpt_sha256": "090c8eec1b2c81851341e424f4e336811baa582da36d961dc38002b59d69968c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Control/configuration separation and CP/DP deployment/version constraints reviewed."
+    },
+    {
+      "id": "communication",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Kong Gateway Control Plane and Data Plane communication - Kong Gateway | Kong Docs",
+      "url": "https://developer.konghq.com/gateway/cp-dp-communication/",
+      "read_at": "2026-10-22T11:07:31.951958Z",
+      "excerpt_sha256": "cca8439f214ba803d1ca8017b5ed23dbfa2bc0e6f0b7f0ce1c93702cb323b22f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "mTLS configuration/telemetry, cached config during disconnect, buffer loss, expired license and empty-cache startup behavior read."
+    },
+    {
+      "id": "licensing",
+      "type": "official_documentation",
+      "site": "Kong",
+      "title": "Licenses - Kong Gateway | Kong Docs",
+      "url": "https://developer.konghq.com/gateway/entities/license/",
+      "read_at": "2026-10-22T11:07:28.547787Z",
+      "excerpt_sha256": "a5bbccdc0f83386dbab9e2e01196d8f82ed1c857dcfde7a22cd746ea5170c50a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Self-managed Enterprise license deployment mechanics read; not a reviewed open-source repository license."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:08:22.557641Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "konnect", "service", "route", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "routing",
+        "title_en": "A Route selects the public contract; a Service selects the upstream",
+        "title_zh": "Route 选择公开契约，Service 选择上游",
+        "en": "A Gateway Service describes upstream connectivity. Routes match criteria such as host, path and method, then policies can apply to a route or broader scope. A proposed trial could route a read-only test order endpoint and apply an external-client limit without limiting an internal route. Verify path rewriting, allowed methods and an unmatched request. Merely creating a service does not establish that every intended request matches the right route or bypasses are prevented.",
+        "zh": "Gateway Service 描述上游连接，Route 匹配主机、路径、方法等条件，策略可绑定于 Route 或更广范围。建议试验：路由一个只读测试订单端点，对外部客户路径限流而不限制内部路径；核对路径重写、允许方法及未匹配请求。创建服务本身不能证明所有请求均匹配正确路径，也不能证明已避免旁路。",
+        "source_refs": ["service", "route"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "rate",
+        "title_en": "A per-node limit is different from a shared quota",
+        "title_zh": "逐节点限制不同于共享额度",
+        "en": "The Rate Limiting plugin stores local counters in each node, cluster counters in the gateway database, or shared counters in Redis. Cluster mode is not supported with hybrid/Konnect. Local limits can diverge as traffic spreads across nodes; Redis adds a dependency. Existing database usage counters cannot simply be moved to Redis. Choose based on the required accuracy and topology, then test distributed requests and storage failure. A plugin name alone does not establish a strict global billing quota.",
+        "zh": "Rate Limiting 插件把本地计数放在各节点、cluster 计数放在网关数据库，或以 Redis 共享。Hybrid／Konnect 不支持 cluster 模式。流量分散到多节点时，本地限制可能偏离；Redis 则增加依赖。既有数据库用量计数不能直接移到 Redis。应按准确度及拓扑选择，再测试分布式请求和存储失败；插件名称本身不能证明严格全局计费额度。",
+        "source_refs": ["rate"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retry",
+        "title_en": "Timeouts and retries depend on the failure and HTTP method",
+        "title_zh": "超时及重试取决于失败类型与 HTTP 方法",
+        "en": "The Service guide distinguishes connection setup, upstream reads and request-body writes. Connection failure returns 502 and uses configured retries. Read/write timeouts return 504; documented retry behavior differs for idempotent methods and POST/PATCH unless non-idempotent retry is enabled. The write timer measures gaps between writes, not total upload duration. Test one slow read and one state-changing request in a disposable backend, checking whether work already happened before any replay. A gateway cannot infer business idempotence from a method name alone.",
+        "zh": "Service 指南区分建连、上游读取及请求体写入。建连失败返回 502，并使用配置重试。读／写超时返回 504；幂等方法与 POST／PATCH 的文档重试行为不同，除非启用非幂等重试。写计时器测连续写入间隔，不是上传总时长。应在可丢弃后端测试慢读及修改状态请求，重放前检查工作是否已生效。网关不能仅凭方法名称推断业务幂等。",
+        "source_refs": ["service"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "hybrid",
+        "title_en": "A managed control plane does not operate every data plane",
+        "title_zh": "托管控制面不代表代运维所有数据面",
+        "en": "Hybrid separates configuration/admin work from proxy traffic. Konnect manages its control plane/database, while self-managed data-plane nodes remain in customer infrastructure; Dedicated Cloud Gateways offer another option. Configuration and usage telemetry travel over encrypted connections, and version compatibility matters. Plan node upgrades, connectivity and certificates for the chosen setup. Do not apply a fully managed deployment claim to every hybrid node or assume every self-managed feature is available in Konnect.",
+        "zh": "Hybrid 将配置／管理与代理流量分开。Konnect 管理控制面／数据库，自运维数据面节点仍在客户基础设施；Dedicated Cloud Gateway 则是另一选项。配置及用量遥测经加密连接传递，版本兼容也重要。应按所选部署安排节点升级、连通和证书，不能把全托管部署表述套给每个 hybrid 节点，也不能假设自托管每项功能在 Konnect 均可用。",
+        "source_refs": ["hybrid", "konnect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Cached configuration helps, but it has prerequisites",
+        "title_zh": "缓存配置有帮助，也有前提",
+        "en": "A disconnected data plane continues using its cached configuration and receives the newest configuration on reconnect rather than replaying every intermediate change. Telemetry can be dropped when its buffer fills. The guide also warns that expired licenses stop a node and deleting configuration cache can make it start empty. Therefore control-plane separation is not an unlimited offline or no-loss guarantee. Evaluate an already-configured node’s disconnect/restart behavior and preserve configuration recovery procedures; none was exercised here.",
+        "zh": "断开连接的数据面继续使用缓存配置，重连时接收最新配置，而非重放每个中间变更。遥测缓冲满后会丢弃数据。指南另警告：许可到期会使节点停止，删除配置缓存可能导致空配置启动。因此控制面分离不是无限离线或零丢失保证。应评估已配置节点断连／重启，并准备配置恢复，本次未实测。",
+        "source_refs": ["communication"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Konnect and self-managed licensing follow different paths",
+        "title_zh": "Konnect 与自运维许可路径不同",
+        "en": "Konnect documentation says connected gateway licenses are provisioned through its control plane. Self-managed Enterprise nodes use a purchased license and deployment-specific distribution; files or environment variables require node-level setup, unlike an Admin API license path. License mechanics do not establish a source-code license for the full platform or include every plugin. Exact open-source component terms and commercial entitlements remain unreviewed here, so the whole Kong portfolio is not labeled uniformly open source.",
+        "zh": "Konnect 文档说明，所连接网关许可通过控制面配置。自运维 Enterprise 节点使用采购许可及依部署方式而异的分发；文件或环境变量需逐节点设置，不同于 Admin API 许可路径。许可机制不能证明完整平台源码许可，也不代表包含每个插件。本次未审阅开源组件具体条款及商业权限，因此不把全部 Kong 产品统一标成开源。",
+        "source_refs": ["konnect", "licensing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "The entry subscription is not the whole gateway bill",
+        "title_zh": "入门订阅不是完整网关账单",
+        "en": "API Management Plus starts at $25/month plus usage. Its current table lists serverless control planes at $25/month, hybrid at $200/month and dedicated cloud at $500/month, plus dedicated bandwidth $0.15/GB. One million monthly API requests are included; additional million-request units are $200, subject to the Plus limit. Portals and other capabilities add meters; verify combination/inclusion rules in the quote. Enterprise is custom annual, and fully self-hosted Gateway Enterprise is separate. The 30-day trial does not establish sustained free operation.",
+        "zh": "API Management Plus 每月 $25 起，另计用量。当前表列 serverless 控制面每月 $25、hybrid $200、专用云 $500，专用云带宽另每 GB $0.15。含每月一百万 API 请求，额外每百万 $200，并受 Plus 上限约束。门户等能力另有计价，实际报价需确认组合／包含规则。Enterprise 为年度定制，完整自托管 Gateway Enterprise 独立。30 天试用不能证明持续免费运行。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Operate the route, policy and backend as one service",
+        "title_zh": "一并管理路由、策略与后端",
+        "en": "Evaluate Kong when a team can own upstream APIs, gateway policies, deployment and consumer access. It is a weaker fit when a portal/catalog alone is expected to secure unreachable or bypassed backends. Begin with one route and verify authorized/rejected traffic, timeouts, counters and configuration recovery. Throughput, latency, regional contract, UI languages and real failover were not tested, and vendor performance claims are not adopted as independent measurements.",
+        "zh": "当团队能负责上游 API、网关策略、部署及消费者访问时，可评估 Kong。若期待仅靠门户／目录就保护不可达或可绕过后端，适用性较弱。应先用一个路由核对授权／拒绝、超时、计数及配置恢复。本次未测吞吐、延迟、地区合同、界面语言或实际故障转移，厂商性能表述也未作为独立测量。",
+        "source_refs": ["route", "rate", "communication"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Kong Gateway and Konnect: Routes, Rate Limits, Recovery and Costs",
+    "title_zh": "Kong Gateway 与 Konnect：路由、限流、恢复及费用",
+    "description_en": "Evaluate Kong Service/Route scope, method-aware retries, distributed counters, cached configuration and Konnect usage meters.",
+    "description_zh": "评估 Kong Service／Route 范围、按方法重试、分布式计数、缓存配置及 Konnect 用量计价。",
+    "primary_intent": "Evaluate the exact Kong API Gateway and Konnect deployment.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact combined invoice, source-code/component licenses, plugin compatibility, version matrix, regional contracts and UI languages require confirmation.",
+      "zh": "具体组合账单、源码／组件许可、插件兼容、版本矩阵、地区合同及界面语言需确认。",
+      "source_refs": ["pricing", "licensing"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Live route/security tests, quotas under load, failover, restart recovery and latency were not executed.",
+      "zh": "未执行实际路由／安全、负载额度、故障转移、重启恢复或延迟测试。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

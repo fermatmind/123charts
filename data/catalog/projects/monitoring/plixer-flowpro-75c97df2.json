@@ -10,105 +10,100 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Plixer FlowPro is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, Server Monitoring, Real Time Analytics, Baseline Manager.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: track selected server status and resource signals. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Plixer FlowPro 属于网络监控软件。第三方资料列出的功能包括网站流量报表、服务器监控、实时分析、基线管理。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：跟踪服务器状态及资源使用信号。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Plixer FlowPro is a packet-inspection and telemetry module used with Scrutinizer and the Plixer One platform. It adds DNS metadata, selective packet capture and network-event observations to centralized analysis. Distributed sensors collect locally and forward enriched information to Scrutinizer; the sensor and analysis platform must be evaluated together.\n\nThe reviewed guide requires planned registration and interfaces. Older appliances need redeployment for 20.2.0. Verify the intended transition before changing an existing sensor.",
+  "description_zh": "Plixer FlowPro 是配合 Scrutinizer 与 Plixer One 使用的包检查及遥测模块，将 DNS 元数据、选择性抓包和网络事件观察加入集中分析。分布式传感器本地采集并转发至 Scrutinizer，需同时评估传感器与分析平台。\n\n实读指南要求规划登记和接口；旧设备升级至 20.2.0 需重新部署。改变现有传感器前应核对切换流程。",
   "core_features": [
     {
-      "name_en": "Web Traffic Reporting",
-      "name_zh": "网站流量报表",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "DNS telemetry enrichment",
+      "name_zh": "DNS 遥测增强",
+      "explanation_en": "Combine DNS behavior with flow volume, duration and host context in Scrutinizer.",
+      "explanation_zh": "在 Scrutinizer 中结合 DNS 行为、流量、时长及主机上下文。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Server Monitoring",
-      "name_zh": "服务器监控",
-      "explanation_en": "Track selected server status and resource signals.",
-      "explanation_zh": "跟踪服务器状态及资源使用信号。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Selective capture and events",
+      "name_zh": "选择性抓包与事件",
+      "explanation_en": "The documentation separates targeted packet capture from threat-feed/custom-rule detections.",
+      "explanation_zh": "文档区分定向抓包与情报源／自定义规则检测。",
+      "explanation_scope": "product_specific",
+      "source_ref": "overview",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Real Time Analytics",
-      "name_zh": "实时分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Baseline Manager",
-      "name_zh": "基线管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Registered observation points",
+      "name_zh": "登记的观察点",
+      "explanation_en": "Monitoring interfaces and their observation points are configured separately from management access.",
+      "explanation_zh": "监控接口及观察点与管理访问分别配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Track selected server status and resource signals"],
-    "zh": ["跟踪服务器状态及资源使用信号"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Verify expected DNS metadata and selective evidence on an authorized lab mirror.",
+      "Plan a20.2.0 redeployment while preserving the old appliance until new events arrive."
+    ],
+    "zh": [
+      "在获准实验镜像上验证预期 DNS 元数据及选择性证据。",
+      "规划 20.2.0 重新部署，在新事件到达前保留旧设备。"
+    ],
+    "source_refs": ["home", "overview", "deployment"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Network security analysts",
+      "Scrutinizer platform administrators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm package entitlement, register the probe and plan observation interfaces.",
+        "zh": "确认套餐权益，登记探针并规划观察接口。",
+        "source_refs": ["pricing", "deployment"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate telemetry/rules and retain the migration inventory.",
+        "zh": "验证遥测／规则并保留迁移清单。",
+        "source_refs": ["overview", "deployment"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A registered probe can still lack the intended mirrored traffic or NIDS rules.",
+        "zh": "已登记探针仍可能缺少预期镜像流量或 NIDS 规则。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Platform starting prices do not establish a standalone FlowPro total.",
+        "zh": "平台套餐起价不证明独立 FlowPro 总成本。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -120,37 +115,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:31:11.775803Z",
+    "normalized_monthly_price": null,
+    "summary_en": "US annual-billed platform rates start at $1,083/month for Scrutinizer and $2,708/month for Plixer One. FlowPro is an add-on versus included respectively. A free30-day Plixer demo is separate from production entitlement. Sensor quantities, add-on price, international rates, hardware and final support scope require a proposal.",
+    "summary_zh": "美国平台年付折月起价为 Scrutinizer $1,083、Plixer One $2,708，FlowPro 分别为附加项／包含。免费三十天 Plixer 演示与生产权益分开。传感器数量、附加价、国际价格、硬件及最终支持范围需报价。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Plixer FlowPro do?",
-      "question_zh": "Plixer FlowPro 用来做什么？",
-      "answer_en": "Plixer FlowPro is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, Server Monitoring, Real Time Analytics, Baseline Manager.",
-      "answer_zh": "Plixer FlowPro 属于网络监控软件。第三方资料列出的功能包括网站流量报表、服务器监控、实时分析、基线管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Web Traffic Reporting, Server Monitoring, Real Time Analytics, Baseline Manager",
-      "answer_zh": "网站流量报表、服务器监控、实时分析、基线管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -160,25 +139,153 @@
       "read_at": "2026-10-22T08:55:04.117Z",
       "excerpt_sha256": "69687e8ebc4cc270c947346af10377ed727617931133bb9ccfe94a5535eebc36",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Plixer FlowPro",
+      "title": "FlowPro: DNS Analytics & Deep Packet Inspection",
+      "url": "https://www.plixer.com/products/flowpro/",
+      "read_at": "2026-10-22T15:25:34.841866Z",
+      "excerpt_sha256": "59129e462f28986778fd87a8bfcb4eeb45f270a819357b5e50f6af4aa29ce2c1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual current DNS telemetry, selective packet capture and Scrutinizer analysis positioning."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Plixer FlowPro",
+      "title": "Plixer Pricing: Network Observability Plans",
+      "url": "https://www.plixer.com/pricing/",
+      "read_at": "2026-10-22T15:31:11.775803Z",
+      "excerpt_sha256": "bbe98dd616590bd521de45409b323b61f9b41256ba9c436ad449aacc2f982397",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual US Scrutinizer/Plixer One annual-billed bundle prices and FlowPro inclusion/add-on row."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Plixer FlowPro",
+      "title": "FlowPro Online Documentation — FlowPro Docs 20.2.0 documentation",
+      "url": "https://docs.plixer.com/projects/flowpro/en/latest/",
+      "read_at": "2026-10-22T15:35:39.196859Z",
+      "excerpt_sha256": "42dad45643e57f17410ef998657a2f4aef387143b152563fab554fca4590498f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read version 20.2.0 documentation overview and distinction between metadata, detections and selective capture."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "Plixer FlowPro",
+      "title": "Deployment Guides — FlowPro Docs 20.2.0 documentation",
+      "url": "https://docs.plixer.com/projects/flowpro/en/latest/flowProDeploymentGuides.html",
+      "read_at": "2026-10-22T15:37:59.112160Z",
+      "excerpt_sha256": "4c00336e9d2b6d1bc5dd4312586e1217c257b1fe9fbaadd6d91a51b1008f1f07",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual20.2.0 probe registration, observation interfaces, storage sizing and redeployment migration. Earlier request returned429; no blocked resource content inferred."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:37:59.112160Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "overview"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "A sensor feeds a wider investigation",
+        "title_zh": "传感器为更广调查提供输入",
+        "en": "FlowPro collects DNS telemetry at distributed locations; Scrutinizer supplies centralized analysis and longer-term context. Selective packet capture can provide evidence for follow-up in forensic tools. Validate expected DNS and flow metadata using authorized synthetic traffic. Vendor detection examples do not establish measured accuracy or guarantee that every encrypted application is identified.",
+        "zh": "FlowPro 在分布地点采集 DNS 遥测，Scrutinizer 提供集中分析及较长期上下文。选择性抓包可供取证工具继续调查。应使用获准模拟流量验证预期 DNS 与流元数据；厂商检测示例不证明准确率，也不保证识别所有加密应用。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "registration",
+        "title_en": "Register the probe before deployment",
+        "title_zh": "部署前登记探针",
+        "en": "License and register probes in Scrutinizer before deployment, matching the management IP to setup. Without default NIDS rules or custom replacements, the probe sends basic IPFIX observations. A registered probe does not prove detection coverage.",
+        "zh": "部署前在 Scrutinizer 授权并登记探针，管理 IP 与设置匹配。未使用默认 NIDS 或自定义替代规则时，探针仅发送基础 IPFIX 观察。登记成功不证明检测覆盖。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "visibility",
+        "title_en": "Management access does not supply mirrored traffic",
+        "title_zh": "管理访问不会自动提供镜像流量",
+        "en": "Virtual appliances need monitoring interfaces beyond the management adapter and configured observation points. Verify the SPAN/ERSPAN path with known traffic. The overview distinguishes selective capture from metadata forwarding, so evaluate both outputs separately.",
+        "zh": "虚拟设备除管理适配器外，还需监控接口及已配置观察点。应以已知流量验证 SPAN／ERSPAN 路径。概览区分选择性抓包与元数据转发，两类输出应分别评估。",
+        "source_refs": ["deployment", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "upgrade",
+        "title_en": "Rehearse the 20.2.0 redeployment",
+        "title_zh": "演练 20.2.0 重新部署",
+        "en": "Version 20.1.1 and older appliances require redeployment for 20.2.0 on Oracle Linux9. Preserve network/collector settings, interface pairings and local rules; update registration if the management IP changes. Confirm new flow/events before retiring the old appliance. Historical packet recovery was not established.",
+        "zh": "20.1.1 及更旧设备升级 20.2.0／Oracle Linux 9 需重新部署。应保留网络／采集器设置、接口配对和本地规则；管理 IP 改变时更新登记。停用旧设备前确认新流／事件，历史抓包恢复未确认。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Separate platform package and sensor costs",
+        "title_zh": "区分平台套餐与传感器成本",
+        "en": "The US price page lists Scrutinizer from $1,083/month billed annually ($12,996) and Plixer One from $2,708/month billed annually ($32,496). FlowPro is an add-on for Scrutinizer and included in Plixer One. These are platform package figures, not a standalone FlowPro sensor quote; both purchasing options list100,000 FPS and different included exporter counts.",
+        "zh": "美国价格页列 Scrutinizer 每月 $1,083 起、年付 $12,996，Plixer One 每月 $2,708 起、年付 $32,496。FlowPro 在前者为附加项，在后者包含。这是平台套餐金额，并非独立传感器报价；两者列 100,000 FPS，包含 exporter 数量不同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Plixer FlowPro: setup, operating limits and pricing",
+    "title_zh": "Plixer FlowPro：设置、运行边界及费用",
+    "description_en": "Plixer FlowPro is a packet-inspection and telemetry module used with Scrutinizer and the Plixer One platform. It adds DNS metadata, selective packet capture and network-e",
+    "description_zh": "Plixer FlowPro 是配合 Scrutinizer 与 Plixer One 使用的包检查及遥测模块，将 DNS 元数据、选择性抓包和网络事件观察加入集中分析。分布式传感",
+    "search_intent_en": "Evaluate Plixer FlowPro for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Plixer FlowPro。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No appliance, capture, certificate, credentials, rules, upgrade or purchase was operated.",
+      "zh": "未操作设备、抓包、证书、凭据、规则、升级或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Detailed selective-capture/functionality page returned429 and was not retried. Full license, retention behavior, access control, throughput and recovery are unverified.",
+      "zh": "详细选择性抓包／功能原页返回 429，未重试。完整许可、保留行为、访问控制、吞吐及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

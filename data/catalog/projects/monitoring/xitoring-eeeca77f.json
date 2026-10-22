@@ -10,131 +10,91 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Xitoring is a product in the Network monitoring category. Its directory profile covers Uptime Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Bandwidth Monitoring, Resource Management.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $1.0. Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: check whether selected services respond as expected; track selected server status and resource signals; allocate people, time and other project resources. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Xitoring 属于网络监控软件。第三方资料列出的功能包括可用性监测、服务器监控、实时分析、IP 地址监测、带宽监测、资源管理。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $1.0. 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：检查指定服务是否按预期响应；跟踪服务器状态及资源使用信号；分配人员、时间和其他项目资源。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Xitoring combines external uptime checks with agent-based server metrics and incident notifications. An HTTP check asks whether an endpoint responds as configured; Xitogent collects CPU, memory, disk and network measurements from a Linux or Windows host. These are complementary views: a running process does not establish that customers can reach the service.\n\nThe platform is relevant to operators who want endpoint availability and host context in one dashboard. This profile examines setup, HTTP conditions, alert confirmation and plan boundaries from official documentation; no monitoring agent or account was tested.",
+  "description_zh": "Xitoring 把外部可用性检查、代理采集的服务器指标及事件通知放在一起。HTTP 检查判断端点是否按配置响应；Xitogent 从 Linux 或 Windows 主机采集 CPU、内存、磁盘和网络指标。两种视角互为补充：进程仍在运行，不能证明客户能够访问服务。\n\n它适合希望在同一面板查看端点可用性与主机状态的运维人员。本文依据官方文档分析安装、HTTP 条件、告警确认及套餐边界，未实际测试代理或账户。",
   "core_features": [
     {
-      "name_en": "Uptime Monitoring",
-      "name_zh": "可用性监测",
-      "explanation_en": "Check whether selected services respond as expected.",
-      "explanation_zh": "检查指定服务是否按预期响应。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Server metrics",
+      "name_zh": "服务器指标",
+      "explanation_en": "Xitogent collects host resource metrics.",
+      "explanation_zh": "Xitogent 采集主机资源指标。",
+      "source_ref": "setup",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Server Monitoring",
-      "name_zh": "服务器监控",
-      "explanation_en": "Track selected server status and resource signals.",
-      "explanation_zh": "跟踪服务器状态及资源使用信号。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "HTTP conditions",
+      "name_zh": "HTTP 条件检查",
+      "explanation_en": "Configure endpoint requests and response conditions.",
+      "explanation_zh": "配置端点请求及响应条件。",
+      "source_ref": "http",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Real Time Analytics",
-      "name_zh": "实时分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "IP Address Monitoring",
-      "name_zh": "IP 地址监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Bandwidth Monitoring",
-      "name_zh": "带宽监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Resource Management",
-      "name_zh": "资源管理",
-      "explanation_en": "Allocate people, time and other project resources.",
-      "explanation_zh": "分配人员、时间和其他项目资源。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Incident policy",
+      "name_zh": "事件策略",
+      "explanation_en": "Separate failure and recovery confirmation settings.",
+      "explanation_zh": "分别设置故障与恢复确认。",
+      "source_ref": "policy",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Check whether selected services respond as expected",
-      "Track selected server status and resource signals",
-      "Allocate people, time and other project resources"
+      "Register one representative host and verify incoming metrics.",
+      "Configure an HTTP condition and test the assigned notification route."
     ],
     "zh": [
-      "检查指定服务是否按预期响应",
-      "跟踪服务器状态及资源使用信号",
-      "分配人员、时间和其他项目资源"
+      "登记一台代表性主机并确认指标到达。",
+      "配置 HTTP 条件并测试所指定的通知路径。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["setup", "http"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $1.0. Offers Free-forever and Custom plan.",
-      "zh": "未提供免费试用 起价为 $1.0. 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Infrastructure operator", "SaaS operations owner"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Register one representative host and verify incoming metrics.",
+        "zh": "登记一台代表性主机并确认指标到达。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure an HTTP condition and test the assigned notification route.",
+        "zh": "配置 HTTP 条件并测试所指定的通知路径。",
+        "source_refs": ["http", "setup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Adaptive uptime fault tolerance may delay alerts; server triggers have separate behavior.",
+        "zh": "可用性检查的自适应容忍机制可能延迟告警；服务器触发器行为另有规定。",
+        "source_refs": ["fault"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -146,37 +106,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $1.0. Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $1.0. 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T14:43:19.768707+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "subscription",
+    "billing_basis": "Plan family; monitor and host allowances, notification capacity and access features.",
+    "source_snapshot_en": "Synthetic Solo USD 4.99/month; homepage advertises Synthetic + Server from USD 24.99/month. 14-day trial; Free limits unresolved.",
+    "source_snapshot_zh": "合成监控 Solo 每月 4.99 美元；首页列合成加服务器系列起价每月 24.99 美元。14 天试用；Free 完整限制未确认。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Xitoring do?",
-      "question_zh": "Xitoring 用来做什么？",
-      "answer_en": "Xitoring is a product in the Network monitoring category. Its directory profile covers Uptime Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Bandwidth Monitoring, Resource Management.",
-      "answer_zh": "Xitoring 属于网络监控软件。第三方资料列出的功能包括可用性监测、服务器监控、实时分析、IP 地址监测、带宽监测、资源管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Uptime Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Bandwidth Monitoring, Resource Management",
-      "answer_zh": "可用性监测、服务器监控、实时分析、IP 地址监测、带宽监测、资源管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -186,25 +131,189 @@
       "read_at": "2026-10-22T09:04:25.114Z",
       "excerpt_sha256": "886cdce20c402d1699f44c5d2bd5c529e65e10de2b715674b7611c413407d185",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "Xitoring product overview",
+      "url": "https://xitoring.com/",
+      "read_at": "2026-10-22T14:41:00.131391+00:00",
+      "excerpt_sha256": "7448939078a895041cee7ec0b33df6151d9737b599726abe163c19772789d510",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Distinguishes external monitoring from Linux/Windows agent monitoring."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "Monitor Your First Server",
+      "url": "https://xitoring.com/docs/workflows/monitor-first-server/",
+      "read_at": "2026-10-22T14:41:17.214366+00:00",
+      "excerpt_sha256": "ff591dfa4bf93de4e228f54a1175c364ac7b803d00add6a7d65af25addc875e8",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Registration, installation, discovery, trigger and notification testing; not executed."
+    },
+    {
+      "id": "http",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "HTTP(S) Check",
+      "url": "https://xitoring.com/docs/uptime-monitoring/http/",
+      "read_at": "2026-10-22T14:41:17.175752+00:00",
+      "excerpt_sha256": "f0404c151db7635b1dd9c31024579c326c281696f2424cc54697868ad55f6851",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Request configuration, response conditions and fault-tolerance controls."
+    },
+    {
+      "id": "fault",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "Auto Fault Tolerance",
+      "url": "https://xitoring.com/docs/uptime-monitoring/auto-fault-tolerance/",
+      "read_at": "2026-10-22T14:41:18.002517+00:00",
+      "excerpt_sha256": "ce777b4a046ed033b34c81d4a75725bdd578b3f3326f95509184adcd3280c3a5",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Adaptive uptime alert buffering can delay notification; not for server triggers."
+    },
+    {
+      "id": "policy",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "Incident Policy",
+      "url": "https://xitoring.com/docs/incidents/incidents-policy/",
+      "read_at": "2026-10-22T14:41:16.851136+00:00",
+      "excerpt_sha256": "ccf9bb4197bf53d86e9d705031856a1c433f67cc96273a48e10ce2469b8132fc",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Custom incident policy separates down/resolve timing and confirming nodes."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "Xitoring",
+      "title": "Xitogent debug",
+      "url": "https://xitoring.com/docs/xitogent/xitogent-debug/",
+      "read_at": "2026-10-22T14:41:19.023038+00:00",
+      "excerpt_sha256": "d37d26ab1bbc4b7933e874bf7f21f12973b34cdc90a469c445f51826ff39a01d",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Debug information includes configuration and sensitive data."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Xitoring",
+      "title": "Xitoring pricing",
+      "url": "https://xitoring.com/pricing",
+      "read_at": "2026-10-22T14:41:17.562313+00:00",
+      "excerpt_sha256": "7d4127bbbfc51c6915d46074f441482eb1896db55d54fe6b36a2c710a79f7b6c",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Synthetic quota tiers, trial, API conditions and monitor-limit behavior."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:43:19.768707+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "From a host to useful alerts",
+        "title_zh": "从主机到可用告警",
+        "en": "Register a server, review discovery and update options, then install the account-specific Xitogent agent. The tutorial requires Linux or Windows access through SSH or RDP. Confirm that graphs receive data before enabling the relevant detected integrations. Discovery can miss nonstandard ports or containerized services; inspect the results rather than assuming every dependency was found.\n\nFor a web host with Nginx and MySQL, an evaluation should compare host metrics with an external availability check, assign a notification role, and use the documented test-trigger function. Check the receiving channel itself. This is an evaluation design, not a completed deployment.",
+        "zh": "先登记服务器，检查自动发现和更新选项，再安装账户对应的 Xitogent 代理。教程要求能通过 SSH 或 RDP 访问 Linux 或 Windows。确认图表收到数据后，启用实际需要的已发现集成。非标准端口或容器服务可能漏检，应核对发现结果，不能假定所有依赖都已找到。\n\n例如，对运行 Nginx 和 MySQL 的主机，可对照主机指标与外部可用性检查，指定通知角色，再使用文档提供的测试触发器。还要到接收频道检查消息。这是评估设计，未实际部署。",
+        "source_refs": ["setup"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "http",
+        "title_en": "Choose the endpoint and success condition",
+        "title_zh": "明确端点与成功条件",
+        "en": "An HTTP(S) check can target a hostname, route and custom port. Methods include GET, POST, PUT and PATCH, with parameters and custom headers for the required request. Configure the expected status or response text, interval and notification role.\n\nFor example, checking /health for a known healthy response is more specific than probing only the home page. Choose a read-only endpoint for repeated checks unless repeated writes are intentional. A passing health route only proves the configured condition; it does not test a complete purchase or login journey.",
+        "zh": "HTTP(S) 检查可指定主机、路径和自定义端口，支持 GET、POST、PUT、PATCH，以及参数和自定义请求头。需要配置预期状态码或响应文字、检查间隔和通知角色。\n\n例如，用 /health 检查约定的健康响应，比只请求首页更具体。重复探测应选择只读端点，除非确实需要反复写入。健康接口通过只证明设定条件成立，并不等于完整购买或登录流程通过。",
+        "source_refs": ["http"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "incidents",
+        "title_en": "Detection interval is not notification latency",
+        "title_zh": "检查频率不等于通知延迟",
+        "en": "Incident Policy separates fast, precise, global and custom reporting. Custom settings distinguish down confirmation from recovery confirmation, including fault-tolerance time and confirming-node counts. Consequently, a one-minute check interval is not a promise of a one-minute alert.\n\nAuto Fault Tolerance can increase the buffer during repeated state changes and later reduce it after stability. The documentation confines this to uptime checks, not server triggers. The tradeoff is fewer repeated alerts but potentially later notification of a sustained outage. Review the current policy and activity history when explaining an unexpected delay.",
+        "zh": "Incident Policy 提供快速、精确、全局及自定义报告策略。自定义设置分别控制故障与恢复确认，包括容忍时间和确认节点数。因此，一分钟检查一次并不保证一分钟内发出告警。\n\nAuto Fault Tolerance 可在状态反复变化时增大缓冲时间，稳定后再逐步缩短。文档限定该功能用于可用性检查，不用于服务器触发器。其取舍是减少重复告警，但持续故障的通知可能更晚。解释异常延迟时，应查看实际策略和活动历史。",
+        "source_refs": ["policy", "fault"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Budget for monitors, hosts and notification capacity",
+        "title_zh": "按检查项、主机与通知额度预算",
+        "en": "The retrieved synthetic plan lists Solo at USD 4.99 per month for 20 monitors, one-minute intervals, 20 SMS or phone calls and one status page. Higher tiers change capacity and access features. The homepage advertises Synthetic + Server from USD 24.99 per month; that is a different plan family. REST API access is conditional on plan.\n\nPaid plans have a 14-day trial without a credit card. The pricing FAQ mentions a Free downgrade, but the retrieved view does not provide its complete limits. It also says existing checks keep running at the monitor limit while adding more is blocked. Confirm the selected family, quotas and checkout terms before budgeting; no universal payable monthly price is set here.",
+        "zh": "本次读取的合成监控 Solo 为每月 4.99 美元，含 20 个检查项、一分钟间隔、20 条短信或电话通知以及一个状态页。更高套餐改变容量和权限。首页另列 Synthetic + Server 起价每月 24.99 美元，属于另一套餐系列。REST API 的使用也受套餐限制。\n\n付费套餐提供无需信用卡的 14 天试用。定价 FAQ 提到可降级到 Free，但读取页面未给出其完整额度；达到检查项上限时，既有检查继续运行，新增会被阻止。预算前需确认所选系列、额度及结账条款，本文不填写通用实付月价。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Investigate missing data before treating it as healthy",
+        "title_zh": "缺少数据时先排查采集链路",
+        "en": "If graphs stop arriving, examine the agent service, logs and outbound connection rather than interpreting the absence of incidents as success. Xitogent debug reports service and process state, log output and configuration information. Its documentation explicitly warns that this output contains sensitive data; inspect it before sharing through the appropriate support channel.\n\nShortlist Xitoring for availability checks with server context and an operator who will maintain thresholds and notifications. If you require proof of business transactions or application correctness, define additional tests: host metrics and HTTP conditions alone do not establish those outcomes. Self-hosted control-plane deployment and a software license grant were not verified.",
+        "zh": "图表停止更新时，应检查代理服务、日志及出站连接，不能把没有事件当作正常。Xitogent debug 会报告服务与进程状态、日志和配置。文档明确提醒这些输出含敏感数据；通过合适支持渠道共享前应先检查。\n\n需要可用性检查及服务器背景信息，并有人维护阈值和通知时，可考虑 Xitoring。如果需要证明业务交易或应用逻辑正确，应另行定义测试：主机指标和 HTTP 条件不足以证明这些结果。本文未确认可自托管控制面或具体软件许可授权。",
+        "source_refs": ["debug", "http", "setup"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "The full Free and server-plan matrix, tax treatment and final checkout amount were not verified.",
+      "zh": "未确认 Free 和服务器套餐完整矩阵、税费及最终结账金额。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Agent overhead, notification delivery, interface languages, data residency, license and self-hosting were not tested or confirmed.",
+      "zh": "未实测代理开销或通知送达；未确认界面语言、数据驻留、许可和自托管。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Xitoring: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Xitoring：用途、流程、价格与限制",
+    "description_en": "Xitoring combines external uptime checks with agent-based server metrics and incident notifications. An HTTP check asks whether an endpoint responds as configured; Xitogent collects CPU, memory, disk and network measurements from a Linux or Windows host. These are complementary v",
+    "description_zh": "Xitoring 把外部可用性检查、代理采集的服务器指标及事件通知放在一起。HTTP 检查判断端点是否按配置响应；Xitogent 从 Linux 或 Windows 主机采集 CPU、内存、磁盘和网络指标。两种视角互为补充：进程仍在运行，不能证明客户能够访问服务。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

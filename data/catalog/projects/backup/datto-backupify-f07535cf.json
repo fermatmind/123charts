@@ -10,153 +10,85 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Datto Backupify is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.\n\nAdditional listed capabilities include Backup Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Not available.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Datto Backupify 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密。\n\n资料还列出备份排程。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为未提供。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Backupify provides cloud-to-cloud backup for Microsoft 365 and Google Workspace. It protects supported SaaS data and offers search, export and granular restoration. This is different from backing up a user’s local computer or rebuilding its operating system.\n\nThe Microsoft 365 product page covers Exchange Online, OneDrive for Business, SharePoint Online and Teams; the Google offering has its own scope. This profile examines a tenant-level recovery workflow rather than borrowing every feature from the wider Datto family.",
+  "description_zh": "Backupify 为 Microsoft 365 和 Google Workspace 提供云到云备份，可搜索、导出和细粒度恢复受支持 SaaS 数据，与备份用户本地电脑或重建操作系统不同。\n\nMicrosoft 365 产品页涵盖 Exchange Online、OneDrive for Business、SharePoint Online 和 Teams；Google 产品另有范围。本文分析租户层面恢复流程，不把 Datto 整个产品家族功能搬入。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Scheduled SaaS backup",
+      "name_zh": "定时 SaaS 备份",
+      "explanation_en": "Microsoft 365 automated and on-demand protection.",
+      "explanation_zh": "Microsoft 365 自动及按需保护。",
+      "source_ref": "m365",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compression Tools",
-      "name_zh": "压缩工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Granular recovery",
+      "name_zh": "细粒度恢复",
+      "explanation_en": "Search, restore or export supported files and messages.",
+      "explanation_zh": "搜索、恢复或导出受支持文件和消息。",
+      "source_ref": "m365",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Confirm protected users, workloads, permissions and retention in a test tenant.",
+      "Restore a message and historical document and inspect destination permissions."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "在测试租户确认用户、工作负载、权限和保留。",
+      "恢复邮件和历史文档，检查目标权限。"
+    ],
+    "source_refs": ["m365"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Not available",
-      "zh": "未提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Microsoft 365 administrator",
+      "Google Workspace administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm protected users, workloads, permissions and retention in a test tenant.",
+        "zh": "在测试租户确认用户、工作负载、权限和保留。",
+        "source_refs": ["m365"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Restore a message and historical document and inspect destination permissions.",
+        "zh": "恢复邮件和历史文档，检查目标权限。",
+        "source_refs": ["m365"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Three scheduled captures daily are not a zero-data-loss or end-to-end recovery guarantee.",
+        "zh": "每日三次调度捕获不是零数据丢失或端到端恢复保证。",
+        "source_refs": ["m365"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -168,37 +100,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:06:21.733919+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "custom",
+    "billing_basis": "Per protected user per month/year; quote-specific archived-user and retention terms.",
+    "source_snapshot_en": "User-based quote; no public numeric rate verified.",
+    "source_snapshot_zh": "按用户询价；未确认公开数字费率。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Datto Backupify do?",
-      "question_zh": "Datto Backupify 用来做什么？",
-      "answer_en": "Datto Backupify is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.",
-      "answer_zh": "Datto Backupify 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -208,25 +125,123 @@
       "read_at": "2026-10-22T08:48:20.790Z",
       "excerpt_sha256": "f5eddd4ab33ce93c23dd086a455aa3acc409c0d5784c67cb55c800c6bfa8a16d",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Datto Backupify",
+      "title": "Backupify cloud-to-cloud overview",
+      "url": "https://www.backupify.com/",
+      "read_at": "2026-10-22T15:04:05.357371+00:00",
+      "excerpt_sha256": "3de48658ced19142549416907751837afb380dfff85370b8183e568db57141a3",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Microsoft 365 and Google Workspace boundary, vendor storage and retention description."
+    },
+    {
+      "id": "m365",
+      "type": "official_documentation",
+      "site": "Datto Backupify",
+      "title": "Backupify for Microsoft 365",
+      "url": "https://www.backupify.com/microsoft-365-backup/",
+      "read_at": "2026-10-22T15:04:18.609748+00:00",
+      "excerpt_sha256": "91b3968aa1d875b800fa736e7c83d326b17c379d4f4de34a4097df75888f21ed",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Automated/on-demand protection and granular non-destructive restore claims; not tested."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Datto Backupify",
+      "title": "Backupify Pricing",
+      "url": "https://www.backupify.com/pricing/",
+      "read_at": "2026-10-22T15:04:17.827899+00:00",
+      "excerpt_sha256": "09dc808a6a4b54cca9c3e3b902e1d3e191e62e290ebce83e412f0e2d26bd92e0",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Per-user monthly/yearly quote, no numeric rate."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:06:21.733919+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "From protected users to a restored item",
+        "title_zh": "从受保护用户到恢复单项",
+        "en": "The official Microsoft 365 page describes three automatic backups daily, on-demand runs and configurable retention. Administrators can search and restore individual items, choose the original or another user, or download data. It describes non-overwriting recovery, but exact object-specific duplicate and permission behavior still needs a test.\n\nFor a pilot, connect an authorized test tenant, confirm the intended users and workloads are protected, complete a backup, then recover a disposable deleted message and an earlier document version. Verify folder context, content and permissions in the destination. A configured tenant is not proof that each object was captured.",
+        "zh": "官方 Microsoft 365 页说明每日三次自动备份、按需执行及可配置保留期。管理员可搜索恢复单项、选择原用户或其他用户，也可下载；其说明恢复不覆盖现有数据，但准确到对象的重复和权限行为仍需测试。\n\n试点可连接授权测试租户，确认目标用户及工作负载已受保护，完成备份后恢复一封可丢弃已删邮件和一个旧文档版本，并在目标核对目录、内容及权限。租户已配置不能证明每个对象均已捕获。",
+        "source_refs": ["m365"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "boundary",
+        "title_en": "Read retention and security as conditions",
+        "title_zh": "把保留和安全说明连同条件阅读",
+        "en": "The homepage describes Datto private-cloud storage, encryption and flexible retention with an infinite default that can be customized. This is a vendor description, not a contractual promise for every order or an independent audit. The Microsoft 365 page also discusses inactive-user archiving and administrator monitoring.\n\nDefine retention and offboarding before deleting a production account. Check the actual archived user can still be searched and restored, and ask how protected-seat charges change. A backup schedule does not establish zero data loss between captures, and product security language does not certify a customer’s compliance.",
+        "zh": "首页说明 Datto 私有云存储、加密及可配置保留，并称默认无限保留。这是厂商描述，不是每个订单的合同承诺或独立审计。Microsoft 365 页还涉及离职用户归档和管理员监控。\n\n删除生产账户前，应先定义保留和离职处理；核对归档用户仍可搜索恢复，并询问受保护席位费用如何变化。备份调度不能证明两次捕获间零数据丢失，产品安全文案也不能认证客户已合规。",
+        "source_refs": ["product", "m365"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Quote protected users and recovery scope",
+        "title_zh": "按受保护用户和恢复范围询价",
+        "en": "The pricing page states a per-user monthly/yearly basis and requests a quote; no public numeric amount is supplied. Obtain terms for active and archived users, minimum purchase, retention, storage, support and cancellation. Leave amount fields empty instead of importing a directory’s historical starting rate.\n\nShortlist Backupify when independent recovery of the supported SaaS objects is the task. It does not establish coverage for all Microsoft services or all Google objects. Required consent scopes, API throttling, retry behavior, supported regions, legal licensing and actual restore speed were not verified, so a representative restore remains necessary before rollout.",
+        "zh": "定价页说明按用户按月／年计费并要求询价，没有公开数字金额。需取得活跃与归档用户、最低购买量、保留、存储、支持及取消条款，金额留空，不沿用目录历史起价。\n\n需要独立恢复所支持 SaaS 对象时，可考虑 Backupify，不能据此证明所有 Microsoft 服务或 Google 对象均被覆盖。所需授权范围、API 限流、重试、区域、法律许可和真实恢复速度未确认，上线前仍需代表性恢复。",
+        "source_refs": ["pricing", "product", "m365"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Consent scopes, object limitations, retries and regional/contract terms need authoritative setup documentation.",
+      "zh": "授权范围、对象限制、重试及区域／合同条件需权威接入文档。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No tenant connection, restore, licensing purchase or security audit was performed.",
+      "zh": "未连接租户、恢复、购买许可或开展安全审计。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Datto Backupify: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Datto Backupify：用途、流程、价格与限制",
+    "description_en": "Backupify provides cloud-to-cloud backup for Microsoft 365 and Google Workspace. It protects supported SaaS data and offers search, export and granular restoration. This is different from backing up a user’s local computer or rebuilding its operating system.",
+    "description_zh": "Backupify 为 Microsoft 365 和 Google Workspace 提供云到云备份，可搜索、导出和细粒度恢复受支持 SaaS 数据，与备份用户本地电脑或重建操作系统不同。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

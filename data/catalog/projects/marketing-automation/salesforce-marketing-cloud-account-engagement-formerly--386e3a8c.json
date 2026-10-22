@@ -10,167 +10,128 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Salesforce Marketing Cloud Account Engagement (formerly Pardot) is a product in the Marketing automation category. Its directory profile covers Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking).\n\nAdditional listed capabilities include Multivariate Testing, Lead Scoring. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $1250.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: track prospective customers through qualification and follow-up; schedule a sequence of emails around defined timing or events; prioritize prospective customers using defined attributes and activity. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Salesforce Marketing Cloud Account Engagement (formerly Pardot) 属于营销自动化软件。第三方资料列出的功能包括网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析。\n\n资料还列出多变量测试、线索评分。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $1250.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：跟踪潜在客户的筛选、分配与跟进；按时间或事件安排一组连续邮件；按线索属性和互动记录确定跟进优先级。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Salesforce Marketing Cloud Account Engagement, formerly Pardot, supports B2B lead nurturing and qualification. Its Engagement Studio programs use recipient lists and conditional steps: triggers listen for behavior, rules evaluate criteria and actions perform operations on prospects. This profile focuses on that documented engine.\n\nCurrent commercial packaging uses Account Engagement+ editions and access to Marketing Cloud Next alongside the existing environment. That access does not make Engagement Studio, Salesforce Flow and Marketing Cloud Engagement Journey Builder interchangeable. The existing Pardot website redirects to Salesforce’s broader B2B page, so evaluation should identify the actual engine, business unit, assets and edition before adopting an automation recipe.",
+  "description_zh": "Salesforce Marketing Cloud Account Engagement（原 Pardot）支持 B2B 线索培育及筛选。其 Engagement Studio 使用收件人列表及条件步骤：Trigger 监听行为，Rule 检查条件，Action 对潜在客户执行操作。本文聚焦这个有文档的引擎。\n\n当前商业组合使用 Account Engagement+ 档位，并在原环境旁提供 Marketing Cloud Next 访问。这不能让 Engagement Studio、Salesforce Flow 与 Marketing Cloud Engagement Journey Builder 相互等同。原 Pardot 官网跳转至 Salesforce 更广泛 B2B 页面，因此采用自动化方案前，应明确真实引擎、业务单元、素材及档位。",
   "core_features": [
     {
-      "name_en": "Website Visitor Tracking",
-      "name_zh": "网站访客跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "List-fed B2B nurture programs",
+      "name_zh": "列表驱动 B2B 培育流程",
+      "explanation_en": "New prospects added to recipient lists start a program from its beginning.",
+      "explanation_zh": "新加入收件人列表的潜在客户从流程起点开始。",
+      "source_ref": "overview",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Lead Nurturing",
-      "name_zh": "线索培育",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Trigger/rule/action branching",
+      "name_zh": "入口／规则／动作分支",
+      "explanation_en": "Behavior listeners, criteria checks and operations create different prospect paths.",
+      "explanation_zh": "行为监听、条件检查及操作构成不同潜在客户路径。",
+      "source_ref": "build",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Lead Management",
-      "name_zh": "潜在客户管理",
-      "explanation_en": "Track prospective customers through qualification and follow-up.",
-      "explanation_zh": "跟踪潜在客户的筛选、分配与跟进。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Interactive logic testing",
+      "name_zh": "交互式逻辑测试",
+      "explanation_en": "The Test tab simulates prospect paths and dates before Start.",
+      "explanation_zh": "Test 在 Start 前模拟潜在客户路径及日期。",
+      "source_ref": "build",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Landing Pages",
-      "name_zh": "落地页",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Email Drip Campaigns",
-      "name_zh": "序列邮件",
-      "explanation_en": "Schedule a sequence of emails around defined timing or events.",
-      "explanation_zh": "按时间或事件安排一组连续邮件。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Channel Management",
-      "name_zh": "渠道管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Campaign Segmentation",
-      "name_zh": "营销活动分群",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Analytics (ROI Tracking)",
-      "name_zh": "投资回报分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multivariate Testing",
-      "name_zh": "多变量测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Lead Scoring",
-      "name_zh": "线索评分",
-      "explanation_en": "Prioritize prospective customers using defined attributes and activity.",
-      "explanation_zh": "按线索属性和互动记录确定跟进优先级。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Version-aware program reporting",
+      "name_zh": "分版本流程报告",
+      "explanation_en": "Reports expose completed-step metrics, queued prospects and a version selector.",
+      "explanation_zh": "报告提供已完成步骤指标、排队潜在客户及版本选择。",
+      "source_ref": "report",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Track prospective customers through qualification and follow-up",
-      "Schedule a sequence of emails around defined timing or events",
-      "Prioritize prospective customers using defined attributes and activity"
+      "Editorial fit: B2B marketing operations teams needing list-fed nurture, qualification branches and coordinated sales follow-up.",
+      "Editorial prerequisite: access to the actual business unit, appropriate role, recipient/asset model and a verified connector path; no connector was tested."
     ],
     "zh": [
-      "跟踪潜在客户的筛选、分配与跟进",
-      "按时间或事件安排一组连续邮件",
-      "按线索属性和互动记录确定跟进优先级"
+      "编辑判断的适用场景：需要列表培育、筛选分支及销售协作跟进的 B2B 营销运营团队。",
+      "编辑判断的前提：具备真实业务单元、适当角色、收件人／素材模型及经验证连接路径；本次未测试连接器。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["overview", "pricing", "identity"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $1250.0.",
-      "zh": "未提供免费试用 起价为 $1250.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "B2B marketing operations specialist",
+      "Account Engagement administrator",
+      "Sales operations partner"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "overview"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify the Account Engagement business unit and prepare recipient lists and assets.",
+        "zh": "确认 Account Engagement 业务单元并准备收件人列表及素材。",
+        "source_refs": ["overview", "build"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Choose trigger windows, program recurrence and repeat-template behavior explicitly.",
+        "zh": "明确选择 Trigger 窗口、流程重复及模板重复行为。",
+        "source_refs": ["trigger-failure", "repeat", "warnings"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Simulate both paths and dates in Test, then plan a separate internal live check.",
+        "zh": "在 Test 模拟两条路径及日期，再安排独立内部实际检查。",
+        "source_refs": ["build", "test"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect queue, completion metrics, version and actual edition/credit terms.",
+        "zh": "检查排队、完成指标、版本及真实档位／额度条款。",
+        "source_refs": ["report", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Events during a pause or outside the current loop/window do not satisfy a trigger; template URL edits do not update click criteria automatically.",
+        "zh": "暂停期间或当前轮次／窗口之外的事件不能满足 Trigger；模板 URL 编辑不会自动更新点击条件。",
+        "source_refs": ["trigger-failure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Detailed list-removal/suppression, timezone-change and date-pause exceptions could not be verified from the actual Help originals and are not asserted.",
+        "zh": "真实 Help 原页未能验证列表移除／抑制、时区变化及指定日期暂停例外，因此不作断言。",
+        "source_refs": ["overview", "timing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "No connector latency, action retry/idempotency, production delivery or rollback/recall guarantee established.",
+        "zh": "未确认连接器延迟、动作重试／幂等、生产投递或回滚／撤回保证。",
+        "source_refs": ["test"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -182,37 +143,19 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $1250.0.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $1250.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Current USD/organization/month, billed annually: Growth+ $1,250; Plus+ $2,750; Advanced+ $4,400; Premium+ $15,000. Contact blocks: 10,000 for first three, 75,000 for Premium+. Annual contract required. SMS/WhatsApp and potentially data/credit consumption require separate scope; Marketing Cloud Next access needs provisioning. Public figures are informational, not a purchased quote; no normalized total or sustained free entitlement assigned.",
+    "source_snapshot_zh": "当前美元／组织／月、年付：Growth+ $1,250；Plus+ $2,750；Advanced+ $4,400；Premium+ $15,000。联系人额度前三项 10,000、Premium+ 75,000，需年度合同。短信／WhatsApp 以及可能的数据／额度消耗需另确认范围，Marketing Cloud Next 访问需要开通。公开金额为参考，并非已购买报价；不生成标准化总价或持续免费权限。",
+    "normalized_price": null
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Salesforce Marketing Cloud Account Engagement (formerly Pardot) do?",
-      "question_zh": "Salesforce Marketing Cloud Account Engagement (formerly Pardot) 用来做什么？",
-      "answer_en": "Salesforce Marketing Cloud Account Engagement (formerly Pardot) is a product in the Marketing automation category. Its directory profile covers Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking).",
-      "answer_zh": "Salesforce Marketing Cloud Account Engagement (formerly Pardot) 属于营销自动化软件。第三方资料列出的功能包括网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Website Visitor Tracking, Lead Nurturing, Lead Management, Landing Pages, Email Drip Campaigns, Channel Management, Campaign Segmentation, Analytics (ROI Tracking), Multivariate Testing, Lead Scoring",
-      "answer_zh": "网站访客跟踪、线索培育、潜在客户管理、落地页、序列邮件、渠道管理、营销活动分群、投资回报分析、多变量测试、线索评分"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -222,25 +165,261 @@
       "read_at": "2026-10-22T09:08:35.724Z",
       "excerpt_sha256": "5136c1653b854f3623168aaebaea44b08c043ae42822c80e9706d8f8b7d2b20f",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Marketing Cloud Account Engagement Pricing | Salesforce",
+      "url": "https://www.salesforce.com/marketing/b2b-automation/pricing/",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "027f0ccf02447f7b4343b43562d9c60263b28efe8eff4855f62a4c53dbbd2b24",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual current Account Engagement+ cards and annual billing; empty table cells not treated as feature entitlements."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Engagement Studio Overview | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=sf.pardot_engagement_studio_overview.htm&language=en_US&type=5",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "ca31abc485959a366cd33ead653d18307148c1ef36d414565ffc164bdba12592",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual Engagement Studio body after long navigation, including lists, steps, pause and saved versions."
+    },
+    {
+      "id": "repeat",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Let Prospects Repeat Engagement Programs | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=sf.pardot_engagement_studio_repeating_programs_parent.htm&language=en_US&type=5",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "5bc292ff36647e3ea32a63c9ece22f5b21dbea3c2aec9deb62589f530923ef54",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual repeatable-program body; generic 10-program cap not treated as an edition-specific quota because edition considerations original returned only loading shell."
+    },
+    {
+      "id": "test",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Test and Start Engagement Programs | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=mktg.pardot_test_engagement_programs.htm&language=en_US&type=5",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "557ca5570fdf10499389a249ca6ce244ee004063e1b5e9fd98cb6a861beaa68e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual Test/Start guide with role requirements and dismissible warnings."
+    },
+    {
+      "id": "report",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Engagement Program Reporting | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=mktg.pardot_engagement_program_reporting.htm&language=en_US&type=5",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "4d8f80e97dab9f3b9e8a850190b572570c2955c735dac24412771b6c8db19d65",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual report body: completed-step metrics, queue, date filter and all-version CSV."
+    },
+    {
+      "id": "trigger-failure",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Account Engagement Engagement Studio Triggers are Not Detecting Activity | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=000383237&language=en_US&type=1",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "0beec9cb7650ba70383ce9f2c34df045387bcb413a40068b5c02a38b49018ade",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual knowledge article body on missed events, current-loop scope and unchanged click-link criteria."
+    },
+    {
+      "id": "timing",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Engagement Studio Time and Pauses",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/pardot-engagement-studio-lightning/work-with-time-and-pauses-in-engagement-studio-lightning",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "fd032939999f94d62ae69a377f74b42edddc1ccb0b29313293706a1a8f9c19ad",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual English Trailhead timing lesson; ordinary relative waits distinguished from unverified timezone/date-specific pause exceptions."
+    },
+    {
+      "id": "build",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Create Engagement Programs in Pardot Lightning App",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/pardot-engagement-studio-lightning/create-an-engagement-studio-program-lightning",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "641fcf9dfef23a6b680b2975ff109604e600ac131ec4ffc0dd94521cbc831726",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual English lesson describes simulated prospect testing and end-node behavior; Spring 2019 example is not a current launch date."
+    },
+    {
+      "id": "warnings",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "Account Engagement Engagement Studio Warnings | Salesforce Help",
+      "url": "https://help.salesforce.com/s/articleView?id=000381461&language=en_US&type=1",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "73cc576cc6b1a1daa1215fb429d6200c20a858ebc8b6333b16a359718f2ba9e4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual knowledge article on repeat-template account setting and dismissible scheduled-send warnings."
+    },
+    {
+      "id": "identity",
+      "type": "official_documentation",
+      "site": "Salesforce Marketing Cloud Account Engagement (formerly Pardot)",
+      "title": "B2B Marketing Automation Platform | Salesforce",
+      "url": "https://www.salesforce.com/marketing/b2b-automation/?redirect=pardot.com",
+      "read_at": "2026-10-22T12:33:38.101381Z",
+      "excerpt_sha256": "b9ed90847e3b4e1de05ac5ff7ddec82bdcf2ede5e0e69d9e21dacc94a1ee19d8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Existing pardot.com URL redirects to Salesforce B2B page whose FAQ identifies Account Engagement separately from Marketing Cloud Next. Does not grant all broad landing-page capabilities to Engagement Studio."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:33:38.101381Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["overview", "pricing", "identity"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "design",
+        "title_en": "Build around a recipient list and a specific business outcome",
+        "title_zh": "围绕收件人列表及具体业务目标设计",
+        "en": "A program requires at least one recipient list and can accept multiple lists. New prospects join from the beginning without resetting others. For an editorial B2B product-evaluation sequence, define the intended list, exclusions, message assets and sales-notification outcome before building branches. The official lesson separates build, test, report and activity views and requires assets before launch. Reaching an End prevents further progress; adding more content later is not established as automatic delivery to everyone who already finished.",
+        "zh": "流程至少需要一个收件人列表，可使用多个列表。新人员从起点加入，不重置其他人。编辑示例：B2B 产品评估序列应在建立分支前明确目标列表、排除范围、消息素材及销售通知结果。官方课程区分 Build、Test、Report、Activity，启动前需要准备素材。到达 End 后不能继续，之后添加内容不能确认会自动发送给全部已完成者。",
+        "source_refs": ["overview", "build"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "timing",
+        "title_en": "Choose a full wait versus an early-success window",
+        "title_zh": "选择完整等待或提前成功窗口",
+        "en": "For an action or rule, an immediate step runs/evaluates on arrival, while a wait delays it. A trigger with Up to a maximum of can take Yes as soon as the behavior occurs; a fixed wait does not mean the same early advancement. Business-hour settings govern email sending per program. Date-scheduled email steps are skipped by late arrivals. For an event invitation, test an early click, no click and arrival after the date rather than assuming every prospect receives every scheduled email.",
+        "zh": "动作／规则立即步骤在到达时执行／评估，等待则延后。Trigger 的 Up to a maximum of 可在行为发生时提前走 Yes，固定等待并不具有相同提前前进含义。营业时间按流程约束邮件发送。迟到者会跳过指定日期的邮件步骤。活动邀请应测试提前点击、未点击及日期之后才到达者，不能假设所有潜在客户都收到每封计划邮件。",
+        "source_refs": ["timing", "warnings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "event-window",
+        "title_en": "A visible click is not always an eligible trigger event",
+        "title_zh": "可见点击不一定是合格触发事件",
+        "en": "The failure article says triggers inspect activity during a running program and within the node’s configured period. Earlier activity, activity during a pause, later activity after processing, or a click from an earlier repeat loop does not satisfy that trigger. A no-wait click check after Send Email can immediately take No before the person has time to react. Also, changing a URL in an email template does not automatically update the Email Click node’s selected link. Inspect the event time, program state, loop and exact selected link before treating a branch as defective.",
+        "zh": "故障文章说 Trigger 检查运行期间、节点指定窗口内的行为。更早行为、暂停期间行为、节点已处理后的行为或上一轮点击，都不能满足该 Trigger。Send Email 后无等待的点击检查可能在对方来得及反应前立即走 No。另外，模板中改变 URL 不会自动更新 Email Click 节点所选链接。判断分支故障前，应检查事件时间、流程状态、轮次及准确链接。",
+        "source_refs": ["trigger-failure"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "repeat",
+        "title_en": "Program repetition and repeated template sending are separate",
+        "title_zh": "流程重复与模板重复发送是两项设置",
+        "en": "A started repeatable program cannot be converted back to one-time, although re-entry delay and total-entry limits can be edited. Updated limits apply to current prospects as well, including those waiting at End. Separately, the account setting allowing email templates to be sent more than once affects repeated outreach. Re-entry alone therefore does not establish another send of the same template. The generic repeat guide’s quota should be checked against the actual edition rather than assuming every account has the same cap; the edition-specific original did not load here.",
+        "zh": "已启动的可重复流程不能改回一次性，但可编辑重入延迟及总次数。新限制也适用于当前潜在客户，包括 End 等待者。另外，账户级“允许模板向同一潜在客户发送多次”影响重复发送，因此可重入不代表同一模板一定再次发送。通用重复指南额度应与实际档位核对，不能假设所有账户上限相同；本次档位专门原页未加载。",
+        "source_refs": ["repeat", "warnings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pause-edit",
+        "title_en": "Pause before edits, then inspect the affected prospect positions",
+        "title_zh": "编辑前暂停，再检查受影响位置",
+        "en": "Engagement Studio requires pausing before editing, saves a prior version on pause/restart and generally applies step changes to prospects landing there afterward. The overview and timing lesson describe ordinary wait periods pausing with the program and resuming with remaining time. This is narrower than a blanket guarantee for timezone changes, date-based sends or removing waits; the detailed Help originals for those exceptions were unavailable. For a live adjustment, map waiting prospects, simulate the new path and confirm the special timing case in the account before restarting.",
+        "zh": "Engagement Studio 要求编辑前暂停，暂停／重启会保存上一版本，步骤修改通常影响之后到达者。概览及时间课程描述普通等待随流程暂停，恢复后继续剩余时间。这不能扩展为时区变化、指定日期发送或删除等待的一概保证；这些例外的详细 Help 原页本次不可用。活动修改应先核对等待位置、模拟新路径，并在账户确认特殊计时情况后重启。",
+        "source_refs": ["overview", "timing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "validation",
+        "title_en": "The Test path is a simulation; warnings can still permit launch",
+        "title_zh": "Test 路径是模拟，警告仍可能允许启动",
+        "en": "The official lesson describes Test as simulating a prospect, choosing join/action dates and reviewing a test log and assets. It differs from proving production identity, synchronization and delivery. The test guide requires Administrator or Marketing role, and the warning article says warnings are dismissible and do not prevent Start; missing a warning on a running program is therefore not a successful validation result. For an editorial acceptance plan, exercise both branches and late-date timing, inspect repeat-template settings, then separately validate a narrow internal live recipient group. None was executed here.",
+        "zh": "官方课程把 Test 描述为模拟潜在客户，选择加入／行为日期并检查日志及素材。这不同于验证生产身份、同步及投递。测试指南要求 Administrator 或 Marketing 角色，警告文章说警告可关闭且不会阻止 Start；运行流程未显示警告不能视为验证成功。编辑验收建议：检查两条分支、迟到日期及模板重复设置，再另行验证小范围内部真实收件人。本次未执行。",
+        "source_refs": ["build", "test", "warnings"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "Completion metrics omit people still waiting",
+        "title_zh": "完成指标不包含仍在等待者",
+        "en": "Step tooltips summarize prospects who completed that step; report cards separately show queued prospects. A date filter covers activity that occurred in the period, so a report can show opens with zero sends when the email was sent earlier. CSV export includes all program versions, while the view can select a version. Repeat-program counts include repeated completions rather than unique people. Align the time range, version and denominator before judging a missing send or adding counts as if they represented distinct prospects.",
+        "zh": "步骤提示汇总已完成该步骤者，报告卡另显示排队者。日期筛选覆盖期间发生的行为，所以邮件更早发出时，报告可显示打开但发送为零。CSV 包含全部版本，界面则可选择某版。重复流程计数包括多次完成，并非独立人数。判断缺失发送或将数量当作不同潜在客户加总前，应统一时间、版本及分母。",
+        "source_refs": ["report", "repeat"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Account Engagement+ access still has provisioning and usage boundaries",
+        "title_zh": "Account Engagement+ 访问仍有开通及用量边界",
+        "en": "Current USD prices are per organization, per month and billed annually: Growth+ $1,250, Plus+ $2,750, Advanced+ $4,400 and Premium+ $15,000. The first three include 10,000 contacts; Premium+ includes 75,000. Marketing Cloud Next access uses permission-set licensing/provisioning, while SMS/WhatsApp remain add-ons. Confirm the actual environment, prerequisite data services, credits and contract instead of pricing an Engagement Studio pilot as if every Salesforce marketing product were included. No sustained-free Account Engagement entitlement was verified.",
+        "zh": "当前美元价格按组织／月、年付：Growth+ $1,250、Plus+ $2,750、Advanced+ $4,400、Premium+ $15,000。前三项含 10,000 联系人，Premium+ 含 75,000。Marketing Cloud Next 访问通过权限集许可／开通，短信／WhatsApp 仍为附加项。应确认真实环境、前置数据服务、额度及合同，不能把 Engagement Studio 试点当作已包含全部 Salesforce 营销产品。未核实持续免费 Account Engagement 权限。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Salesforce Account Engagement: Engagement Studio timing and repeats",
+    "title_zh": "Salesforce Account Engagement：Engagement Studio 计时与重复",
+    "description_en": "Research Account Engagement nurture lists, trigger windows, repeat-template controls, simulated tests, versioned reports and current annual pricing.",
+    "description_zh": "研究 Account Engagement 培育列表、Trigger 窗口、模板重复控制、模拟测试、分版本报告及当前年付价格。",
+    "primary_intent": "Evaluate Salesforce Account Engagement Engagement Studio rather than other Salesforce journey engines",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No Salesforce org, connector, prospect, list, template, program, message or purchase operated.",
+      "zh": "未操作 Salesforce 组织、连接器、潜在客户、列表、模板、流程、消息或购买。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Wait/FAQ/edition-detail originals timed out or returned CSS/loading shells; ordinary HTTPS returned a generic shell. Search excerpts were discovery only, including edition-specific repeat caps and suppression exceptions.",
+      "zh": "等待／FAQ／档位详细原页超时或返回 CSS／加载壳；普通 HTTPS 返回通用壳。搜索摘录仅用于发现，包括档位重复上限及抑制例外。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Actual license/provisioning/credits, connector behavior, regional availability, UI languages and self-hosting rights remain unverified.",
+      "zh": "真实许可／开通／额度、连接器行为、地区可用性、界面语言及自托管权利未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

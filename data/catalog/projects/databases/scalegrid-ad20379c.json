@@ -10,171 +10,115 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "ScaleGrid is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.\n\nAdditional listed capabilities include Data Migration, Creation (Development), Backup. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $10.0. Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: move supported records between systems; create additional copies of selected data. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "ScaleGrid 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。\n\n资料还列出数据迁移、创建与开发、数据备份。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $10.0. 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在系统之间迁移受支持的记录；为选定数据创建额外副本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "ScaleGrid manages several database engines through dedicated hosting and bring-your-own-cloud deployments. It is an operations service around the selected engine, cloud and topology, rather than a single interchangeable database product. The relevant configuration determines access, replicas, backups and the cost boundary.\n\nThis profile follows the official PostgreSQL documentation to examine a proposed deployment, application connection and recovery exercise. It separates included infrastructure from management-only fees and keeps older account/version guidance qualified. No cloud account, invitation, cluster, firewall rule or restore was operated.",
+  "description_zh": "ScaleGrid 通过专用主机及自带云账户部署管理多种数据库引擎。它是围绕所选引擎、云及拓扑的运维服务，不是一个可随意互换的单一数据库产品。具体配置决定访问、复制、备份及费用边界。\n\n本文按官方 PostgreSQL 文档评估拟建部署、应用连接及恢复演练，区分包含基础设施的收费与仅管理费，并限定旧账户／版本指南的适用范围。本次未操作云账户、邀请、集群、防火墙规则或恢复。",
   "core_features": [
     {
-      "name_en": "Virtualization",
-      "name_zh": "虚拟化",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Managed deployment choices",
+      "name_zh": "托管部署选择",
+      "explanation_en": "Select dedicated infrastructure or management in your own cloud account.",
+      "explanation_zh": "选择专用基础设施或在自己的云账户中托管管理。",
+      "explanation_scope": "product_specific",
+      "source_ref": "setup",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Relational Interface",
-      "name_zh": "关系型数据界面",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Primary and replica endpoints",
+      "name_zh": "主库及副本端点",
+      "explanation_en": "Use documented DNS roles for write and read connections.",
+      "explanation_zh": "按文档 DNS 角色选择写入及读取连接。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connect",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Queries",
-      "name_zh": "查询",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Performance Analysis",
-      "name_zh": "性能分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Monitoring",
-      "name_zh": "监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Database Conversion",
-      "name_zh": "数据库转换",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Search",
-      "name_zh": "数据搜索",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Replication",
-      "name_zh": "数据复制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Migration",
-      "name_zh": "数据迁移",
-      "explanation_en": "Move supported records between systems.",
-      "explanation_zh": "在系统之间迁移受支持的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Creation (Development)",
-      "name_zh": "创建与开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup",
-      "name_zh": "数据备份",
-      "explanation_en": "Create additional copies of selected data.",
-      "explanation_zh": "为选定数据创建额外副本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Backup inspection server",
+      "name_zh": "备份检查服务器",
+      "explanation_en": "Inspect a backup in a new standalone deployment with separate charges.",
+      "explanation_zh": "在另行计费的新独立部署中检查备份。",
+      "explanation_scope": "product_specific",
+      "source_ref": "peek",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Move supported records between systems",
-      "Create additional copies of selected data"
+      "Compare dedicated and BYOC ownership/cost",
+      "Plan primary/replica application connections",
+      "Budget a separate backup inspection exercise"
     ],
-    "zh": ["在系统之间迁移受支持的记录", "为选定数据创建额外副本"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "比较专用及 BYOC 归属／费用",
+      "规划主库／副本应用连接",
+      "为独立备份检查演练预算"
+    ],
+    "source_refs": ["pricing", "connect", "peek"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $10.0. Offers Custom plan.",
-      "zh": "提供免费试用 起价为 $10.0. 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Database administrators",
+      "Cloud infrastructure teams",
+      "Application operators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify engine, cloud, topology and full fee scope.",
+        "zh": "明确引擎、云、拓扑及完整收费范围。",
+        "source_refs": ["setup", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate endpoint, TLS and firewall choices in a disposable setup.",
+        "zh": "在可丢弃设置中验证端点、TLS 及防火墙选项。",
+        "source_refs": ["byoc", "connect"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Confirm recovery target and quote the temporary restore server.",
+        "zh": "确认恢复目标并为临时恢复服务器询价。",
+        "source_refs": ["backup", "peek"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "BYOC infrastructure charges are separate from management.",
+        "zh": "BYOC 基础设施费用与管理费分开。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Replication, firewall and encryption choices do not imply universal zero-loss availability.",
+        "zh": "复制、防火墙及加密选择不代表普遍零丢失可用性。",
+        "source_refs": ["byoc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Backup inspection has standard resource charges and selective reimport needs operator validation.",
+        "zh": "备份检查按标准资源计费，局部回填需运维验证。",
+        "source_refs": ["peek"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -186,37 +130,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $10.0. Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $10.0. 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "managed_database_resources_and_support",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:40:18.133940Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Dedicated infrastructure-inclusive versus BYOC management-only pricing; seven-day trial. Cluster total requires the actual configurator/quote; support minimums and additional backup/peek resources can add fees.",
+    "summary_zh": "专用包含基础设施，BYOC 仅管理费；七天试用。集群总额需实际配置器／报价，支持最低费及额外备份／Peek 资源可能增加费用。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does ScaleGrid do?",
-      "question_zh": "ScaleGrid 用来做什么？",
-      "answer_en": "ScaleGrid is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.",
-      "answer_zh": "ScaleGrid 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration, Creation (Development), Backup",
-      "answer_zh": "虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移、创建与开发、数据备份"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,25 +154,237 @@
       "read_at": "2026-10-22T08:57:58.394Z",
       "excerpt_sha256": "0df9b58f9c2dd12d8c1196ff466ddbd53313329afb06a66c123142ca77ff5a3a",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "Database Hosting: Fully Managed Cloud Services | ScaleGrid",
+      "url": "https://scalegrid.io/",
+      "read_at": "2026-10-22T13:40:18.133940Z",
+      "excerpt_sha256": "b25122db4043174657af3fc242272e61f8cfed20f443a7b9f758f155fdbdc819",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current managed database family read; no independently measured uptime or savings."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ScaleGrid",
+      "title": "Database Hosting Pricing - Choose Your Plan | ScaleGrid",
+      "url": "https://scalegrid.io/pricing/",
+      "read_at": "2026-10-22T13:41:19.265796Z",
+      "excerpt_sha256": "4f69dcadc30f812f09068215a5945d2f95f6ccf8625bcba40532a6c6cf01c29a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Trial, dedicated-versus-BYOC charge scope, five backups and support minimums read; configurator numeric cluster fees unavailable."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "Create a PostgreSQL Deployment",
+      "url": "https://help.scalegrid.io/docs/postgresql-new-cluster",
+      "read_at": "2026-10-22T13:42:57.937636Z",
+      "excerpt_sha256": "c200ff468e5f5066a4d7c3aface2f55a59f16193ea8415f4242d4ef16a8ee375",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "PostgreSQL hosting choice and dated version list read; no cluster created."
+    },
+    {
+      "id": "byoc",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "New PostgreSQL Deployment: Bring Your Own Cloud",
+      "url": "https://help.scalegrid.io/docs/postgresql-new-cluster-bring-your-own-cloud",
+      "read_at": "2026-10-22T13:42:58.427808Z",
+      "excerpt_sha256": "9327a4ffed68db48bc896e442f1011af5305a4f14d212104fe364cba895b9ae8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Topology/voter, sync choice, SSL/disk encryption/pooling options and required firewall read."
+    },
+    {
+      "id": "connect",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "Connecting to PostgreSQL",
+      "url": "https://help.scalegrid.io/docs/postgresql-connecting-to",
+      "read_at": "2026-10-22T13:44:05.938262Z",
+      "excerpt_sha256": "233cd2dd330feb19de5c48223decdd7304aaa553428a8357054ce01372193ffb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Master DNS versus replica records and connection placeholders read; no credentials or DB operation."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "Backups for PostgreSQL",
+      "url": "https://help.scalegrid.io/docs/postgresql-backups",
+      "read_at": "2026-10-22T13:50:02.719883Z",
+      "excerpt_sha256": "e5e0784d967ab29491b996c55bbb2e523e44242d55cb934015eadf434051ff63",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Instance snapshot scope, cloud-specific methods and encryption restore caveat read."
+    },
+    {
+      "id": "peek",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "PostgreSQL Peek at Backup/Selective Restores",
+      "url": "https://help.scalegrid.io/docs/postgresql-backups-selective-restore",
+      "read_at": "2026-10-22T13:50:28.261604Z",
+      "excerpt_sha256": "f66d5d8d09afc7e2559e9fe2527189df3445e837f4685a3764cfffee9d434cf6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Backup peek creates a separately billed standalone server; selective export/import still operator-owned."
+    },
+    {
+      "id": "team",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "Team Accounts",
+      "url": "https://help.scalegrid.io/docs/account-team-accounts",
+      "read_at": "2026-10-22T13:44:06.059993Z",
+      "excerpt_sha256": "718e6c597d0427a53a3172ad6f2edd8026d19822366185d4a6f4c6ab1f462572",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Team accounts and legacy destructive prerequisite for existing accounts read, not executed or recommended."
+    },
+    {
+      "id": "faq",
+      "type": "official_documentation",
+      "site": "ScaleGrid",
+      "title": "ScaleGrid Platform FAQ",
+      "url": "https://help.scalegrid.io/docs/scalegrid-platform-faq",
+      "read_at": "2026-10-22T13:42:58.945967Z",
+      "excerpt_sha256": "a416538355484eed01ae4a31564f5a18318258148e6f3ea7b7d5e64055b39db7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "BYOC account/VPC responsibilities, migration tier qualification and standard nonproduction charges read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:50:28.261604Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "setup"],
+  "profile": {
+    "sections": [
+      {
+        "id": "hosting",
+        "title_en": "Hosting choice changes the bill and responsibilities",
+        "title_zh": "主机方式改变账单及责任",
+        "en": "Dedicated hosting pricing includes machine, disk and network resources, whereas BYOC lists a management charge and leaves cloud infrastructure billing with the customer. PostgreSQL setup guides distinguish these paths before provisioning. Confirm the cloud, region, engine version and support tier for the actual quote; an older documentation version list is not proof of current patch support. No account or resource was created.",
+        "zh": "专用主机价格包含机器、磁盘及网络资源，BYOC 列出管理费，云基础设施仍由客户另付。PostgreSQL 设置指南在创建前区分两条路径。实际报价需明确云、区域、引擎版本及支持层级，旧文档版本清单不证明当前补丁支持。本次未创建账户或资源。",
+        "source_refs": ["pricing", "setup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "topology",
+        "title_en": "Replica counts and durability settings need separate decisions",
+        "title_zh": "副本数量与持久性设置需分别选择",
+        "en": "The BYOC guide distinguishes standalone and replicated clusters, including two data nodes plus a voter versus three data nodes. A voter does not make a third data copy. Synchronous and asynchronous replication choices affect durability tradeoffs. The guide also presents SSL, disk encryption and pooling as choices, with a mandatory firewall for its internet-exposed path. Review the real network and failure design rather than assuming every BYOC deployment is private or identically protected.",
+        "zh": "BYOC 指南区分单节点与复制集群，包括两数据节点加投票节点、或三数据节点；投票节点不代表第三份数据。同步／异步复制也影响持久性取舍。指南将 SSL、磁盘加密及连接池列为选项，并为该公网路径要求防火墙。应核对真实网络及故障设计，不能假定所有 BYOC 都默认私有或保护相同。",
+        "source_refs": ["byoc"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "connect",
+        "title_en": "Primary routing is different from distributing reads",
+        "title_zh": "主库路由不同于分散读取",
+        "en": "The connection guide describes a master DNS name that follows the primary and separate replica addresses for read-only use. Generic replica DNS returns an IP set; it is not evidence that every client balances each query. Verify driver behavior, TLS settings and failover reconnection with an application account. Connection templates contain password placeholders and should not be treated as a ready production configuration.",
+        "zh": "连接指南描述跟随主库的 master DNS，以及供只读使用的副本地址。通用副本 DNS 返回 IP 集合，不证明每个客户端逐查询均衡。应使用应用账户核对驱动行为、TLS 设置及故障后重连。连接模板包含密码占位符，不是可直接使用的生产配置。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "backup",
+        "title_en": "A snapshot has engine and cloud boundaries",
+        "title_zh": "快照受引擎及云方式约束",
+        "en": "PostgreSQL backups cover the instance’s databases, users and settings. The page documents cloud-specific snapshot methods, with pg_basebackup for DigitalOcean, and describes an encrypted-backup restore constraint tied to the source machines. This is not an arbitrary-time recovery guarantee. Confirm the chosen cloud’s restore target, encryption handling and recovery objective before adopting the service. No snapshot or recovery result was observed.",
+        "zh": "PostgreSQL 备份覆盖实例数据库、用户及设置。页面列出各云快照方式，其中 DigitalOcean 使用 pg_basebackup，并说明加密备份恢复与源机器相关的限制。这不等于任意时间点恢复保证。采用服务前应确认所选云的恢复目标、加密处理及恢复目标，本次未观察快照或恢复结果。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "peek",
+        "title_en": "Inspecting a backup creates another billed deployment",
+        "title_zh": "检查备份会创建另一个计费部署",
+        "en": "Peek at Backup creates a new standalone server from the selected backup without replacing the main deployment. Standard pricing applies to that server. A partial recovery still requires inspecting the recovered data and deliberately exporting/reloading selected objects with awareness of the live schema. Budget the temporary resource and validate dependencies before reinserting anything; the peek itself is not an automatic safe merge into current data.",
+        "zh": "Peek at Backup 从所选备份创建新独立服务器，不替换主部署；该服务器适用标准价格。局部恢复仍需检查恢复数据，并理解在线 schema 后主动导出／导入所选对象。应为临时资源预算，回填前验证依赖；Peek 本身不是向当前数据自动安全合并。",
+        "source_refs": ["peek"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "team",
+        "title_en": "Team access guidance includes a legacy account caveat",
+        "title_zh": "团队访问指南包含旧账户条件",
+        "en": "Team accounts provide shared management access. However, the cited guide tells existing invitees to remove deployments and contact support about their existing tenant before joining. That destructive legacy prerequisite needs current provider clarification; it should not become routine onboarding advice. Confirm supported account migration and actual role permissions without deleting resources or sending an invitation during evaluation.",
+        "zh": "团队账户提供共享管理访问，但引用指南要求已有账户的受邀者先删除部署，再联系支持处理原租户。这项旧的破坏性前提需向当前服务方确认，不应成为常规入组建议。评估时需确认受支持账户迁移及实际角色权限，无需删除资源或发送邀请。",
+        "source_refs": ["team"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Support and nonproduction resources can add charges",
+        "title_zh": "支持及非生产资源可能另收费",
+        "en": "The pricing page offers a seven-day trial and included Starter support. Standard support is 20% of monthly contract value with a $70/month minimum; Production is 30% with a $100 minimum. Dedicated plans include up to five backups, with more available for an extra fee. The FAQ applies standard pricing to staging. Cluster amounts were not exposed by the public configurator, so this record does not invent a normalized monthly deployment price.",
+        "zh": "定价页提供七天试用及包含的 Starter 支持。Standard 支持为月合同额 20%、最低每月 $70，Production 为 30%、最低 $100。专用方案最多包含五份备份，额外备份另收费。FAQ 对 staging 采用标准价格。公开配置器未显示集群金额，因此本文不编造归一化部署月费。",
+        "source_refs": ["pricing", "faq"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ScaleGrid: setup, operating limits and pricing",
+    "title_zh": "ScaleGrid：设置、运行边界及费用",
+    "description_en": "ScaleGrid manages several database engines through dedicated hosting and bring-your-own-cloud deployments. It is an operations service around the selected engine, cloud a",
+    "description_zh": "ScaleGrid 通过专用主机及自带云账户部署管理多种数据库引擎。它是围绕所选引擎、云及拓扑的运维服务，不是一个可随意互换的单一数据库产品。具体配置决定访问、复制、备份及费用边界",
+    "search_intent_en": "Evaluate ScaleGrid for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 ScaleGrid。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, invitation, cloud credential, cluster, network, failover, backup, migration or billing operation was performed.",
+      "zh": "未执行账户、邀请、云凭据、集群、网络、故障切换、备份、迁移或计费操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current engine patches, exact cluster totals/currency/taxes, team-account migration and encrypted restore portability require direct provider verification. No engine licensing determination is made for the whole managed service.",
+      "zh": "当前引擎补丁、集群总额／币种／税、团队账户迁移及加密恢复可移植性需服务方核实，不将引擎许可推及全部托管服务。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Generic multi-engine FAQ failover examples were not generalized to PostgreSQL.",
+      "zh": "未将通用多引擎 FAQ 故障切换示例泛化为 PostgreSQL。",
+      "source_refs": ["faq"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

@@ -6,6 +6,7 @@ import { getDomain } from "tldts";
 import {
   validateOfficialSourceDomain,
   validateResearchedPricing,
+  sourceHasType,
 } from "./record-validation.mjs";
 
 const root = path.resolve(
@@ -27,6 +28,9 @@ let featureCount = 0;
 let untranslated = 0;
 let directoryFeatures = 0;
 let documentedFeatures = 0;
+let communityFollowUpCount = 0;
+let unresearchedCommunityCount = 0;
+let lifecycleOnlyCount = 0;
 const researchedProjects = [];
 const officialTypes = new Set([
   "official_documentation",
@@ -73,6 +77,29 @@ for (const category of taxonomy) {
       ),
     );
     const researched = row.research_status === "primary_source_researched";
+    if (row.lifecycle_research && !researched) lifecycleOnlyCount += 1;
+    if (row.community_follow_up) {
+      const followUp = row.community_follow_up;
+      assert.equal(followUp.status, "needs_community_input");
+      assert.ok(followUp.reason_en && followUp.reason_zh);
+      assert.ok(
+        followUp.missing_information_en.length > 0 &&
+          followUp.missing_information_zh.length > 0,
+      );
+      assert.ok(Number.isFinite(Date.parse(followUp.observed_at)));
+      assert.ok(
+        Array.isArray(followUp.source_refs) &&
+          followUp.source_refs.every((id) => sourceIds.has(id)),
+      );
+      assert.ok(
+        followUp.attempted_urls.every((url) =>
+          ["https:", "http:"].includes(new URL(url).protocol),
+        ),
+      );
+      assert.equal(followUp.publication_eligibility, "not_granted");
+      communityFollowUpCount += 1;
+      if (!researched) unresearchedCommunityCount += 1;
+    }
     const documentedSource = (id) =>
       row.sources.find((s) => s.id === id && officialTypes.has(s.type));
     assert.ok(
@@ -94,8 +121,8 @@ for (const category of taxonomy) {
     if (researched) documentedFeatures += row.core_features.length;
     else directoryFeatures += row.core_features.length;
     assert.ok(
-      row.description_en.trim() && row.description_en.includes("\n\n"),
-      `${row.name}: malformed candidate introduction (not a quality assessment)`,
+      typeof row.description_en === "string" && row.description_en.trim(),
+      `${row.name}: missing introduction (full researched content is checked below)`,
     );
     assert.match(row.description_zh, /[\u4e00-\u9fff]/);
     assert.equal(row.primary_language, "en");
@@ -106,9 +133,11 @@ for (const category of taxonomy) {
       assert.ok(Number.isFinite(Date.parse(row.official_check.checked_at)));
       validateResearchedPricing(row);
       if (row.license.is_open_source !== null) {
-        assert.equal(
-          documentedSource(row.license.source_ref)?.type,
-          "official_license",
+        assert.ok(
+          sourceHasType(
+            documentedSource(row.license.source_ref),
+            "official_license",
+          ),
         );
       }
       assert.ok(row.description_source_refs.length > 0);
@@ -162,6 +191,11 @@ for (const category of taxonomy) {
     for (const source of row.sources) {
       if (officialTypes.has(source.type)) {
         assert.ok(researched);
+        assert.ok(
+          !source.additional_types ||
+            (Array.isArray(source.additional_types) &&
+              source.additional_types.every((type) => officialTypes.has(type))),
+        );
         const sourceUrl = new URL(source.url);
         assert.equal(sourceUrl.protocol, "https:");
         validateOfficialSourceDomain(row, relative, source, sourceAuthorities);
@@ -198,6 +232,22 @@ assert.equal(collection.collection_complete, true);
 assert.deepEqual(counts, collection.counts_by_category);
 assert.equal(untranslated, 0, `${untranslated} untranslated feature labels`);
 if (!recordsOnly) {
+  assert.equal(
+    collection.research_progress.community_follow_up_count,
+    communityFollowUpCount,
+  );
+  assert.equal(
+    collection.research_progress.unresearched_community_follow_up_count,
+    unresearchedCommunityCount,
+  );
+  assert.equal(
+    collection.research_progress.researched_fact_recheck_count,
+    communityFollowUpCount - unresearchedCommunityCount,
+  );
+  assert.equal(
+    collection.research_progress.lifecycle_only_count,
+    lifecycleOnlyCount,
+  );
   assert.equal(collection.feature_entries, featureCount);
   assert.equal(
     collection.research_progress.primary_source_researched,
@@ -230,6 +280,9 @@ console.log(
     documentation_reported_features: documentedFeatures,
     primary_source_researched: researchedProjects.length,
     remaining_structured_candidates: index.length - researchedProjects.length,
+    community_follow_up: communityFollowUpCount,
+    unresearched_community_follow_up: unresearchedCommunityCount,
+    lifecycle_only: lifecycleOnlyCount,
     untranslated_feature_labels: untranslated,
     summary_validation: recordsOnly ? "deferred_to_coordinator" : "included",
     validation_scope:

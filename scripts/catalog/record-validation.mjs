@@ -1,15 +1,38 @@
 import assert from "node:assert/strict";
 import { getDomain } from "tldts";
 
+const primaryTypes = [
+  "official_documentation",
+  "official_pricing",
+  "official_license",
+  "official_integration",
+];
+
+export function sourceHasType(source, type) {
+  return (
+    primaryTypes.includes(source?.type) &&
+    primaryTypes.includes(type) &&
+    (source.type === type || source.additional_types?.includes(type))
+  );
+}
+
 // Documentation research and price verification are independent states.
 export function validateResearchedPricing(row) {
   const pricing = row.pricing;
   assert.equal(typeof pricing.officially_checked, "boolean");
   if (pricing.officially_checked) {
-    assert.equal(pricing.status, "official_documentation_read");
-    assert.equal(
-      row.sources.find((s) => s.id === pricing.source_ref)?.type,
-      "official_pricing",
+    assert.ok(
+      typeof pricing.status === "string" &&
+        pricing.status.length > 0 &&
+        !["not_verified", "unknown", "directory_reported"].includes(
+          pricing.status,
+        ),
+    );
+    assert.ok(
+      sourceHasType(
+        row.sources.find((s) => s.id === pricing.source_ref),
+        "official_pricing",
+      ),
       `${row.name}: verified pricing requires an official pricing source`,
     );
   } else {
@@ -33,7 +56,9 @@ export function validateOfficialSourceDomain(
   });
   if (sourceDomain === row.identity_domain) return;
   assert.equal(registry.schema_version, "123charts-source-authorities-v1");
-  const authority = registry.projects[projectPath];
+  const recorded = registry.projects[projectPath];
+  const authorities = Array.isArray(recorded) ? recorded : [recorded];
+  const authority = authorities.find((a) => a?.source_domain === sourceDomain);
   assert.ok(authority, `${row.name}: unrecorded official source ${source.url}`);
   assert.equal(authority.identity_domain, row.identity_domain);
   assert.equal(authority.source_domain, sourceDomain);
@@ -56,13 +81,30 @@ export function validateOfficialSourceDomain(
       "https_redirect",
       "named_product_on_vendor_domain",
       "legacy_sdk_migration",
+      "documented_primary_source_relationship",
+      "official_repository",
+      "technical_standard",
     ].includes(basis.kind),
   );
   const proof = row.sources.find((s) => s.id === basis.source_ref);
-  assert.equal(proof?.type, "official_documentation");
+  assert.ok(
+    [
+      "official_documentation",
+      "official_pricing",
+      "official_license",
+      "official_integration",
+    ].includes(proof?.type),
+  );
   assert.equal(proof.url, basis.url);
   assert.equal(proof.excerpt_sha256, basis.excerpt_sha256);
   assert.ok(basis.summary_en && basis.summary_zh);
+  if (basis.kind === "technical_standard") {
+    assert.equal(source.type, "official_documentation");
+    assert.notEqual(row.pricing.source_ref, source.id);
+    assert.ok(
+      !row.core_features.some((feature) => feature.source_ref === source.id),
+    );
+  }
   assert.equal(
     getDomain(new URL(proof.url).hostname, { allowPrivateDomains: true }),
     sourceDomain,

@@ -10,176 +10,76 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Cirrus Insight is a product in the Sales engagement category. Its directory profile covers Email/Call Sequencing, CRM Integration, Call List Management, Inbox Integration, Sales Activity Automation, Team Management, Performance Analytics (Sales), Email Automation.\n\nAdditional listed capabilities include Workflow Management, Call Monitoring, Content Management. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $7.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: trigger email workflows from conditions or events; define steps and route work through a process; organize content through creation, revision and publication. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Cirrus Insight 属于销售跟进软件。第三方资料列出的功能包括邮件与电话跟进序列、CRM 集成、呼叫名单管理、收件箱集成、销售活动自动化、团队管理、销售绩效分析、邮件自动化。\n\n资料还列出工作流管理、通话监控、内容管理。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows)。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $7.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：依据条件或事件触发邮件流程；定义处理步骤并组织工作流转；组织内容的创建、修订和发布。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Cirrus Insight connects email, calendar and tasks with Salesforce. Its sync documentation describes configurable matching to related objects and controls for what gets captured. This is particularly relevant to sales operations that needs activities in Salesforce reporting, rather than a separate database of outreach metrics. Near-Time Sync is a specific feature, not a promise that every integration is instantaneous.\n\nFor an illustrative pilot, connect Salesforce credentials and the intended email environment, choose email/calendar/task capture rules, and verify one external meeting against the correct contact and opportunity. Smart Link matches to related records, while historical sync is a separate service to inquire about. Document who may change matching rules before broad deployment; an incorrectly attached meeting can distort account reporting even when the sync itself succeeds.",
+  "description_zh": "Cirrus Insight 把邮箱、日历与任务连接到 Salesforce。同步文档描述可配置的关联对象匹配与采集范围控制。它尤其适合需要在 Salesforce 报表中读取活动的销售运营，而不只是查看另一套触达统计。Near-Time Sync 是具体功能，不能视为所有集成都即时完成的承诺。\n\n可按以下建议试点：连接 Salesforce 凭据与目标邮箱环境，选择邮件、日历、任务的采集规则，并核对一个外部会议是否关联到正确联系人和商机。Smart Link 用于匹配关联记录，历史同步则是需另行询问的服务。全面部署前应记录谁可修改匹配规则；即使同步成功，关联错误的会议仍会扭曲账户报表。",
   "core_features": [
     {
-      "name_en": "Email/Call Sequencing",
-      "name_zh": "邮件与电话跟进序列",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Salesforce activity sync",
+      "name_zh": "Salesforce 活动同步",
+      "explanation_en": "Capture email, calendar and task activity with configured rules.",
+      "explanation_zh": "按配置规则采集邮件、日历与任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "CRM Integration",
-      "name_zh": "CRM 集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Call List Management",
-      "name_zh": "呼叫名单管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Inbox Integration",
-      "name_zh": "收件箱集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Sales Activity Automation",
-      "name_zh": "销售活动自动化",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Team Management",
-      "name_zh": "团队管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Performance Analytics (Sales)",
-      "name_zh": "销售绩效分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Email Automation",
-      "name_zh": "邮件自动化",
-      "explanation_en": "Trigger email workflows from conditions or events.",
-      "explanation_zh": "依据条件或事件触发邮件流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Workflow Management",
-      "name_zh": "工作流管理",
-      "explanation_en": "Define steps and route work through a process.",
-      "explanation_zh": "定义处理步骤并组织工作流转。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Call Monitoring",
-      "name_zh": "通话监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Content Management",
-      "name_zh": "内容管理",
-      "explanation_en": "Organize content through creation, revision and publication.",
-      "explanation_zh": "组织内容的创建、修订和发布。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Smart Link",
+      "name_zh": "智能关联",
+      "explanation_en": "Match activity to related Salesforce records.",
+      "explanation_zh": "把活动匹配到关联的 Salesforce 记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sync",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Trigger email workflows from conditions or events",
-      "Define steps and route work through a process",
-      "Organize content through creation, revision and publication"
-    ],
-    "zh": [
-      "依据条件或事件触发邮件流程",
-      "定义处理步骤并组织工作流转",
-      "组织内容的创建、修订和发布"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": ["Configure matching before importing activity"],
+    "zh": ["先配置匹配，再导入活动"],
+    "source_refs": ["sync"],
+    "basis": "Illustrative evaluation workflow; not an executed test or customer result."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $7.0.",
-      "zh": "提供免费试用 起价为 $7.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Evaluation scope": {
+      "en": "Official public documentation research. Account setup, integrations and delivery were not executed.",
+      "zh": "研究官方公开资料；未实际注册、运行集成或验证交付。",
+      "source_ref": "sync",
+      "status": "documentation_reviewed"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
     "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "source_ref": "sync"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "For an illustrative pilot, connect Salesforce credentials and the intended email environment, choose email/calendar/task capture rules, and verify one external meeting against the correct contact and opportunity. Smart Link matches to related records, while historical sync is a separate service to inquire about. Document who may change matching rules before broad deployment; an incorrectly attached meeting can distort account reporting even when the sync itself succeeds.",
+        "zh": "可按以下建议试点：连接 Salesforce 凭据与目标邮箱环境，选择邮件、日历、任务的采集规则，并核对一个外部会议是否关联到正确联系人和商机。Smart Link 用于匹配关联记录，历史同步则是需另行询问的服务。全面部署前应记录谁可修改匹配规则；即使同步成功，关联错误的会议仍会扭曲账户报表。",
+        "source_refs": ["sync"]
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "see_documented_profile",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "sync"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_and_editorial",
+    "items": [
+      {
+        "en": "The sync page describes child organizations for separate email tenants and one-way or bidirectional options. Verify direction, exclusions and related-object behavior before rollout, then compare source activity and Salesforce state if records go missing or duplicate. This is evaluation advice; exact retry guarantees were not verified. The reviewed service is managed online; source-code licensing and self-hosting were not confirmed. It suits Salesforce-centered workflows, while a team without Salesforce should first establish whether the required product scope fits.",
+        "zh": "同步页描述了为不同邮箱租户建立子组织，以及单向或双向选项。上线前应验证方向、排除规则与关联对象行为；记录缺失或重复时应对照源活动与 Salesforce 状态。这是评估建议，尚未核实精确重试保证。本次资料描述托管在线服务，未确认源代码许可与自托管。它适合以 Salesforce 为中心的流程；不使用 Salesforce 的团队应先核实所需功能是否适配。",
+        "source_refs": ["sync", "product"]
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -191,65 +91,144 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $7.0.",
-    "source_snapshot_zh": "提供免费试用 起价为 $7.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:58:42.040268+00:00",
+    "normalized_monthly_price": null,
+    "source_snapshot_en": "The pricing page currently presents modular per-user monthly prices, with different headcounts per feature rather than one uniform edition. Examples include $39/user/month for sequences and $12/user/month for Email Blast. Confirm the exact module names, billing term and required user counts in a quote. A free-trial entry exists, but no ongoing free plan was established. Older bundled-edition prices should not be substituted for this current modular view.",
+    "source_snapshot_zh": "当前定价页按模块展示每用户月价，允许各功能使用不同人数，而非统一购买一个版本。例如序列为每用户每月 39 美元，Email Blast 为 12 美元。报价时仍需确认准确模块名称、账期与必需人数。官网有免费试用入口，但尚未证实长期免费套餐，不能用旧版捆绑套餐价格代替当前模块报价。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Cirrus Insight do?",
-      "question_zh": "Cirrus Insight 用来做什么？",
-      "answer_en": "Cirrus Insight is a product in the Sales engagement category. Its directory profile covers Email/Call Sequencing, CRM Integration, Call List Management, Inbox Integration, Sales Activity Automation, Team Management, Performance Analytics (Sales), Email Automation.",
-      "answer_zh": "Cirrus Insight 属于销售跟进软件。第三方资料列出的功能包括邮件与电话跟进序列、CRM 集成、呼叫名单管理、收件箱集成、销售活动自动化、团队管理、销售绩效分析、邮件自动化。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Email/Call Sequencing, CRM Integration, Call List Management, Inbox Integration, Sales Activity Automation, Team Management, Performance Analytics (Sales), Email Automation, Workflow Management, Call Monitoring, Content Management",
-      "answer_zh": "邮件与电话跟进序列、CRM 集成、呼叫名单管理、收件箱集成、销售活动自动化、团队管理、销售绩效分析、邮件自动化、工作流管理、通话监控、内容管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
-      "id": "directory-detail",
-      "type": "competitor_detail",
-      "site": "SaaSworthy",
-      "url": "https://www.saasworthy.com/product/cirrus-insight",
-      "read_at": "2026-10-22T08:43:00.959Z",
-      "excerpt_sha256": "50e99c5d2100ee20fb8a28bf71de0ef61d837c59919190bc085291636dfe9f03",
-      "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Cirrus Insight",
+      "title": "AI-Powered Sales & CRM Tools | Cirrus Insight",
+      "url": "https://www.cirrusinsight.com/",
+      "read_at": "2026-10-22T15:51:25.196460+00:00",
+      "excerpt_sha256": "6d7d0cc767662d4c66410c3b509e47926486bec4cf7ae15d5a67bd1963f0cf4a",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/cirrus-insight-a53721aa/product.txt",
+      "research_notes_en": "Read inbox and CRM positioning and trial entry."
+    },
+    {
+      "id": "sync",
+      "type": "official_documentation",
+      "site": "Cirrus Insight",
+      "title": "Salesforce Email Sync For Outlook & Gmail",
+      "url": "https://www.cirrusinsight.com/features/salesforce-email-sync",
+      "read_at": "2026-10-22T15:52:23.991948+00:00",
+      "excerpt_sha256": "d7075485c208231f59f1d14d8864ec9ae0f96a08f3b26f3bd8213600acb3874b",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/cirrus-insight-a53721aa/sync.txt",
+      "research_notes_en": "Read related-object matching, historical sync and multi-tenant configuration."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Cirrus Insight",
+      "title": "Pricing | Cirrus Insight",
+      "url": "https://www.cirrusinsight.com/pricing",
+      "read_at": "2026-10-22T15:52:24.756588+00:00",
+      "excerpt_sha256": "eb3d3fa62ff93f7e1b349143ba24915a7cde6813f222a803a3480ec2add5d2db",
+      "verification": "official_documentation_read",
+      "transport": "public_https_requests",
+      "evidence_path": ".scratch/deep-research/batch-13/cirrus-insight-a53721aa/pricing.txt",
+      "research_notes_en": "Read modular per-user pricing and separate feature headcounts."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:58:42.040268+00:00",
+    "scope": "Primary public pages only; no identity claim, pricing approval, independent review, hands-on testing or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "research_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_research_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original bilingual documentary synthesis. Provider claims are not independently measured outcomes.",
+    "Draft retained; alternatives not reviewed. Pricing snapshot is not an approved quote."
+  ],
+  "description_source_refs": ["sync"],
+  "profile": {
+    "title_en": "Cirrus Insight: workflow, access and evaluation conditions",
+    "title_zh": "Cirrus Insight：流程、使用条件与选型",
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Salesforce activity capture from the inbox",
+        "title_zh": "从收件箱采集 Salesforce 活动",
+        "en": "Cirrus Insight connects email, calendar and tasks with Salesforce. Its sync documentation describes configurable matching to related objects and controls for what gets captured. This is particularly relevant to sales operations that needs activities in Salesforce reporting, rather than a separate database of outreach metrics. Near-Time Sync is a specific feature, not a promise that every integration is instantaneous.",
+        "zh": "Cirrus Insight 把邮箱、日历与任务连接到 Salesforce。同步文档描述可配置的关联对象匹配与采集范围控制。它尤其适合需要在 Salesforce 报表中读取活动的销售运营，而不只是查看另一套触达统计。Near-Time Sync 是具体功能，不能视为所有集成都即时完成的承诺。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "workflow",
+        "title_en": "Configure matching before importing activity",
+        "title_zh": "先配置匹配，再导入活动",
+        "en": "For an illustrative pilot, connect Salesforce credentials and the intended email environment, choose email/calendar/task capture rules, and verify one external meeting against the correct contact and opportunity. Smart Link matches to related records, while historical sync is a separate service to inquire about. Document who may change matching rules before broad deployment; an incorrectly attached meeting can distort account reporting even when the sync itself succeeds.",
+        "zh": "可按以下建议试点：连接 Salesforce 凭据与目标邮箱环境，选择邮件、日历、任务的采集规则，并核对一个外部会议是否关联到正确联系人和商机。Smart Link 用于匹配关联记录，历史同步则是需另行询问的服务。全面部署前应记录谁可修改匹配规则；即使同步成功，关联错误的会议仍会扭曲账户报表。",
+        "source_refs": ["sync"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Features can have different seat counts",
+        "title_zh": "不同功能可购买不同席位数",
+        "en": "The pricing page currently presents modular per-user monthly prices, with different headcounts per feature rather than one uniform edition. Examples include $39/user/month for sequences and $12/user/month for Email Blast. Confirm the exact module names, billing term and required user counts in a quote. A free-trial entry exists, but no ongoing free plan was established. Older bundled-edition prices should not be substituted for this current modular view.",
+        "zh": "当前定价页按模块展示每用户月价，允许各功能使用不同人数，而非统一购买一个版本。例如序列为每用户每月 39 美元，Email Blast 为 12 美元。报价时仍需确认准确模块名称、账期与必需人数。官网有免费试用入口，但尚未证实长期免费套餐，不能用旧版捆绑套餐价格代替当前模块报价。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "limits",
+        "title_en": "Treat multi-tenant setup and recovery as configuration work",
+        "title_zh": "多租户部署与恢复需要配置验证",
+        "en": "The sync page describes child organizations for separate email tenants and one-way or bidirectional options. Verify direction, exclusions and related-object behavior before rollout, then compare source activity and Salesforce state if records go missing or duplicate. This is evaluation advice; exact retry guarantees were not verified. The reviewed service is managed online; source-code licensing and self-hosting were not confirmed. It suits Salesforce-centered workflows, while a team without Salesforce should first establish whether the required product scope fits.",
+        "zh": "同步页描述了为不同邮箱租户建立子组织，以及单向或双向选项。上线前应验证方向、排除规则与关联对象行为；记录缺失或重复时应对照源活动与 Salesforce 状态。这是评估建议，尚未核实精确重试保证。本次资料描述托管在线服务，未确认源代码许可与自托管。它适合以 Salesforce 为中心的流程；不使用 Salesforce 的团队应先核实所需功能是否适配。",
+        "source_refs": ["sync", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Cirrus Insight: workflow, pricing and limits",
+    "title_zh": "Cirrus Insight：流程、费用与限制",
+    "description_en": "Cirrus Insight connects email, calendar and tasks with Salesforce. Its sync documentation describes configurable matching to related objects and controls f",
+    "description_zh": "Cirrus Insight 把邮箱、日历与任务连接到 Salesforce。同步文档描述可配置的关联对象匹配与采集范围控制。它尤其适合需要在 Salesforce 报表",
+    "primary_intent": "Understand the documented product and evaluate a concrete workflow.",
+    "secondary_questions": [],
+    "query_basis": "Editorial questions; no search volume, ranking or traffic measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account or integration was tested. UI languages, regional availability, data residency, source-code licensing and contractual terms require confirmation for the intended purchase.",
+      "zh": "未实测账户或集成。界面语言、地区可用性、数据驻留、源代码许可及具体采购合同条款仍需确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; examples are hypothetical and evaluation advice is marked.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

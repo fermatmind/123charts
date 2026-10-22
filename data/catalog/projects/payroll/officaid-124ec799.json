@@ -2,7 +2,7 @@
   "schema_version": "123charts-software-research-v1",
   "slug": "officaid-124ec799",
   "name": "Officaid",
-  "website_url": "https://officaid.com/",
+  "website_url": "https://officaid.com/sg/en/",
   "domain": "officaid.com",
   "identity_domain": "officaid.com",
   "category": "payroll",
@@ -10,83 +10,63 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Officaid is a product in the Payroll category. Its directory profile covers Tax Management, Multi-Currency.\n\nDeployment is listed as Not available. The listed organization sizes are Not available. Support channels are listed as Not available.\n\nThe directory's pricing snapshot states: Free Trial Available. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: organize tax-related records and calculations; work with records denominated in multiple currencies. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Officaid 属于薪资管理软件。第三方资料列出的功能包括税务管理、多币种。\n\n资料所列运行方式为未提供。资料所列适用组织规模为未提供。资料所列支持方式为未提供。\n\n第三方定价快照显示：提供免费试用。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：整理税务相关记录与计算；处理以不同币种计价的记录。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Officaid is a connected business platform combining finance, team/payroll, sales and contact management. The reviewed Singapore edition includes payroll calculations, payslips, contribution workflows and salary-expense recording rather than a standalone global managed-payroll service.\n\nIts help center makes a useful distinction: processing payroll creates calculations and payslips, generating a file prepares a separate submission, and marking a salary paid records a payment already made outside Officaid. Those stages should remain separate in evaluation and daily use.",
+  "description_zh": "Officaid 是连接财务、团队工资、销售和联系人管理的业务平台。所读新加坡版本提供工资计算、工资单、缴费流程及工资费用记账，并非独立的全球代管工资服务。\n\n其帮助中心明确区分：处理工资生成计算及工资单，生成文件准备独立提交，标记工资已付则记录已在 Officaid 外完成的付款。评估和日常使用都应保留这些阶段差异。",
   "core_features": [
     {
-      "name_en": "Tax Management",
-      "name_zh": "税务管理",
-      "explanation_en": "Organize tax-related records and calculations.",
-      "explanation_zh": "整理税务相关记录与计算。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Profile-driven payroll calculation",
+      "name_zh": "由档案驱动的工资计算",
+      "explanation_en": "Payroll uses active employee details, effective salary history, allowances, deductions and contribution-relevant data.",
+      "explanation_zh": "工资使用活跃员工资料、按生效日期的薪资历史、津贴、扣款和缴费相关信息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "processing",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Currency",
-      "name_zh": "多币种",
-      "explanation_en": "Work with records denominated in multiple currencies.",
-      "explanation_zh": "处理以不同币种计价的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "CPF file preparation",
+      "name_zh": "CPF 文件准备",
+      "explanation_en": "Generate selected employees’ CPF EZPay file with submission identifiers and validate missing NRIC/FIN before download.",
+      "explanation_zh": "按选定员工生成 CPF EZPay 文件及提交编号，下载前检查缺失 NRIC/FIN。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cpf",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "External payment recording",
+      "name_zh": "外部付款记账",
+      "explanation_en": "Mark As Paid records an already-made payment and books a salary expense; the help explicitly says no money is sent.",
+      "explanation_zh": "Mark As Paid 记录已完成付款并记工资费用，帮助明确说明不会汇款。",
+      "explanation_scope": "product_specific",
+      "source_ref": "payments",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Organize tax-related records and calculations",
-      "Work with records denominated in multiple currencies"
-    ],
-    "zh": ["整理税务相关记录与计算", "处理以不同币种计价的记录"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["processing"],
+    "basis": "Illustrative uses, not customer results."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available",
-      "zh": "提供免费试用",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Not available",
-      "zh": "未提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Not available",
-      "zh": "未提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Not available",
-      "zh": "未提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Not available",
-    "organization_sizes_zh": "未提供",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "roles_status": "editorial_inference"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "documented",
     "items": []
   },
   "supported_languages": {
@@ -99,37 +79,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available",
-    "source_snapshot_zh": "提供免费试用",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T11:17:50Z",
+    "normalized_monthly_price": null,
+    "currency": "SGD",
+    "summary_en": "Monthly SGD50 for five +SGD6/extra; yearly SGD360 for five +SGD5/extra/month equivalent. All modules advertised, 14-day trial; tax and employee-change billing not verified.",
+    "summary_zh": "月付前五人 50 新元加超额每人 6；年付五人 360 加超额人均月等值 5。宣传全模块、14 天试用，税及人数变更计费未核实。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Officaid do?",
-      "question_zh": "Officaid 用来做什么？",
-      "answer_en": "Officaid is a product in the Payroll category. Its directory profile covers Tax Management, Multi-Currency.",
-      "answer_zh": "Officaid 属于薪资管理软件。第三方资料列出的功能包括税务管理、多币种。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Tax Management, Multi-Currency",
-      "answer_zh": "税务管理、多币种"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -139,25 +103,158 @@
       "read_at": "2026-10-22T08:46:31.264Z",
       "excerpt_sha256": "13649fab9e3f9a25071ce9d6ed8fe1fe8412ee0c115e5a5a395f53756cfc09d9",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "processing",
+      "type": "official_documentation",
+      "site": "Officaid",
+      "title": "Processing Payroll - Payroll | Officaid Help Center",
+      "url": "https://officaid.com/sg/en/help/team/payroll/processing-payroll",
+      "read_at": "2026-10-22T11:17:51Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "39323720cd1931edd0cb9dbf7da164200927d4e6108fbad86c93e511e3e98a2b",
+      "research_notes_en": "Read profile prerequisites, actual payroll path, effective-date proration, missing employees and reprocessing conditions."
+    },
+    {
+      "id": "payments",
+      "type": "official_documentation",
+      "site": "Officaid",
+      "title": "Managing Salary Payments - Payroll | Officaid Help Center",
+      "url": "https://officaid.com/sg/en/help/team/payroll/managing-salary-payments",
+      "read_at": "2026-10-22T11:24:47Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "8b57669a5ce72307d76335f729f33770586519aa1c9fa8beb2fdeee1fe1b73a3",
+      "research_notes_en": "Read explicit no-money-sent Mark As Paid, expense booking, reconciliation and undo behavior."
+    },
+    {
+      "id": "cpf",
+      "type": "official_documentation",
+      "site": "Officaid",
+      "title": "Generating CPF Files - Payroll | Officaid Help Center",
+      "url": "https://officaid.com/sg/en/help/team/payroll/generating-cpf-files",
+      "read_at": "2026-10-22T11:17:53Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "aace3ba487ceaa18031313bc8a1458b35d9e0f47421be08c2eafaa705fd24ff2",
+      "research_notes_en": "Read file creation prerequisites, missing-ID failure, manual portal payment and distinction from separate Corppass/API workflow."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Officaid",
+      "title": "Officaid Pricing | SGD 30 per month for your first 5 employees",
+      "url": "https://officaid.com/sg/en/pricing",
+      "read_at": "2026-10-22T11:17:50Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "723a3142df608cd8aae345891734a8b63b7d383765b206b6ee6fc76a1b97693a",
+      "research_notes_en": "Read all-module claim, monthly versus yearly employee formulas, base-only savings, 14-day trial and no setup fee."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:24:47Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
+  ],
+  "description_source_refs": ["processing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "preparation",
+        "title_en": "Missing payroll rows start with the employee profile",
+        "title_zh": "工资列表缺人先查员工档案",
+        "en": "The processing guide requires Active status, join date, birth date, employment type, base salary and salary-update date, plus applicable allowances and deductions. Nationality, pass type and ethnicity inform contribution calculations; bank details are required for Bank Transfer, not Cash. An employee missing from the payroll list may have incomplete required fields. For a pilot, use a clearly fictional employee record and inspect the effective salary in Salary Progress before selecting a period and processing the employee. Profile completeness is a software dependency, not proof the statutory calculation is correct.",
+        "zh": "处理指南要求 Active 状态、入职日期、生日、雇佣类型、基本工资及工资更新日，并配置适用津贴和扣款。国籍、准证及族群用于缴费计算，银行转账需要银行资料，现金不需要。工资列表缺少员工时，可能是必填资料未完整。试运行应使用明确虚构员工，检查 Salary Progress 中的生效工资，再选期间处理。资料完整是软件前置条件，不证明法定计算正确。",
+        "source_refs": ["processing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "calculation",
+        "title_en": "Processing generates a payslip, not a payment",
+        "title_zh": "处理工资生成明细而非付款",
+        "en": "Team → Payroll lets the operator select a month/year, apply it, choose employees and process selected payroll with confirmation. It reads salary history, adds active allowances, applies deductions and generates the payslip. The guide says mid-month salary changes are prorated by effective date. Processing a period again shows “Payroll already processed”; small changes use payslip editing, while full recalculation is documented through deleting the existing payslip and processing again. That documented route needs an audit and recovery demonstration before operational use. No deletion, recalculation or payroll was executed here.",
+        "zh": "Team → Payroll 可选月份年份、应用、勾选员工并确认批量处理，读取工资历史、加津贴扣款后生成明细。指南称月中调薪按生效日期分摊。再次处理同期间会提示已处理；小改动可编辑工资单，完整重算则描述为删除原工资单后重新处理。投入运营前需演示此路径的审计和恢复，本研究未删除、重算或处理工资。",
+        "source_refs": ["processing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "payment",
+        "title_en": "Marking paid does not send funds",
+        "title_zh": "标记已付不会发送资金",
+        "en": "The Payments tab separates bank-transfer and cash employees. Mark As Paid asks the operator to confirm employees were already paid outside Officaid, select the account/date and record the payment; it explicitly sends no money. The operation also books a salary expense, so bank reconciliation should match that existing expense rather than create another. The guide describes undoing the mark as removing the expense and returning the payslip to unpaid, not reversing an actual bank transfer. A useful acceptance case checks the payslip, payment status, expense and bank match together to avoid duplicate accounting.",
+        "zh": "Payments 页区分银行转账和现金员工。Mark As Paid 要求确认已在 Officaid 外付款、选择账户日期并记录，明确不会发送资金，同时会记工资费用。因此银行对账应匹配已有费用，不能再创建一笔。指南称撤销标记会移除费用并把工资单恢复未付，而非撤销真实银行转账。验收应一起检查工资单、付款状态、费用和银行匹配，避免重复记账。",
+        "source_refs": ["payments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cpf",
+        "title_en": "A CPF file still requires portal submission",
+        "title_zh": "CPF 文件仍需门户提交",
+        "en": "The CPF guide supports selecting contributions, entering the company submission number and date, reviewing employees and downloading an EZPay file. Missing NRIC/FIN prevents file creation and identifies affected employees for correction or exclusion. Manual upload, review and payment then occur in the CPF portal, after which the operator records paid status in Officaid. The page also points to a separate API route with Corppass prerequisites; that route was not read as an executed integration or assumed included behavior. File generation alone does not prove successful filing or payment. Local contribution rates and regulatory acceptance were not independently verified.",
+        "zh": "CPF 指南支持选择缴费、输入企业提交编号及日期、审核员工并下载 EZPay 文件。缺少 NRIC/FIN 时不会生成文件，并列明人员供补全或排除。之后在 CPF 门户手动上传、核对和付款，再回 Officaid 记录已付。页面还链接需 Corppass 的独立 API 路径，本研究未将它视为已执行集成或已证实包含的行为。生成文件不证明提交或付款成功，本地费率及监管接受情况未独立验证。",
+        "source_refs": ["cpf"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price-fit",
+        "title_en": "Calculate employees and billing commitment",
+        "title_zh": "按员工数及计费承诺计算",
+        "en": "The Singapore pricing page says all platform modules are included. Monthly billing is SGD50 for the first five employees plus SGD6 for each extra; annual billing is SGD30 monthly equivalent for five, billed SGD360 yearly, plus SGD5 per extra employee monthly equivalent. For eight employees the stated formula is SGD68 monthly or SGD45 equivalent/SGD540 yearly before any tax or separately applicable service charges. The 40% saving refers to the base, not every headcount total. A 14-day trial and no setup fee are advertised. Officaid may suit Singapore teams wanting payroll linked with finance and other operations; exact tax totals, annual employee-change billing, permissions, hosting, retention, exports and recovery remain unverified. No tenant, payment, bank file or CPF filing was tested.",
+        "zh": "新加坡价格页称所有平台模块均包含。月付前五员工 50 新元，超额每人每月 6；年付前五人月度等值 30、全年支付 360，超额人均月度等值 5。八人按公布公式为月付 68，或月度等值 45、全年 540 新元，未计税或另适用服务费。40% 优惠指基础费，不是每种人数的总额。官方宣传 14 天试用和无设置费。需要工资与财务等运营相连的新加坡团队可评估 Officaid；含税总价、年度人数变更计费、权限、托管、保留、导出和恢复仍未核实，未测试租户、付款、银行文件或 CPF 申报。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "No profile, payslip edit/delete, bank file, payment, CPF file or submission was executed.",
+      "zh": "未操作档案、编辑删除工资单、银行文件、付款、CPF 文件或提交。",
+      "source_refs": ["processing", "payments", "cpf"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "Actual statutory calculation, bank/CPF acceptance, audit retention, exports and recovery remain unverified.",
+      "zh": "实际法定计算、银行和 CPF 接受、审计保留、导出及恢复尚未核实。",
+      "source_refs": ["processing", "cpf"],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "Officaid: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "Officaid：功能、流程、费用与限制",
+    "description_en": "Officaid is a connected business platform combining finance, team/payroll, sales and contact management. The reviewed Singapore edition includes payroll calculations, payslips, contribution workflows and salary-expense recording rather than a standalone global",
+    "description_zh": "Officaid 是连接财务、团队工资、销售和联系人管理的业务平台。所读新加坡版本提供工资计算、工资单、缴费流程及工资费用记账，并非独立的全球代管工资服务。",
+    "primary_intent": "Evaluate Officaid for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "Processing generates a payslip, not a payment",
+      "Marking paid does not send funds",
+      "A CPF file still requires portal submission"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
+  }
 }

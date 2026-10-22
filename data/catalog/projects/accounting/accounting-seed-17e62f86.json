@@ -10,235 +10,63 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Accounting Seed is a product in the Accounting category. Its directory profile covers Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, Project Accounting, Multi-Currency, General Ledger.\n\nAdditional listed capabilities include Fixed Asset Management, Expense Tracking, CPA Firms, Collections, Cash Management, Billing and Invoicing, Bank Reconciliation, Accounts Receivable. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: prepare payroll records and payment calculations; organize tax-related records and calculations; work with records denominated in multiple currencies; organize accounting entries in a central ledger; record expenses and organize supporting information; track cash positions and related transactions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Accounting Seed 属于会计与记账软件。第三方资料列出的功能包括薪资管理、税务管理、支出管理、收入确认、采购、项目会计、多币种、总账。\n\n资料还列出固定资产管理、费用跟踪、会计师事务所适用、款项催收、现金管理、账单与开票、银行对账、应收账款。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：整理薪资记录并计算工资支付；整理税务相关记录与计算；处理以不同币种计价的记录；在总账中组织会计分录；记录费用并整理相关凭证；跟踪现金状况和相关交易。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Accounting Seed is accounting software built natively on Salesforce, with receivables, payables, general ledger, banking and reporting. The central choice is whether financial work should share the Salesforce environment used by the rest of the business.\n\nProject accounting, multi-company/currency and Orders & Inventory extend that scope. Their presence in the product family does not establish entitlement in a particular contract. This documentation review did not configure a Salesforce organization or process money.",
+  "description_zh": "Accounting Seed 是原生构建在 Salesforce 上的会计软件，覆盖应收、应付、总账、银行和报表。选型关键在于：企业是否希望财务工作与其他业务共同使用 Salesforce 环境。\n\n项目会计、多公司与多币种，以及 Orders & Inventory 模块扩展了其范围。产品家族具备某项能力，并不证明具体合同已经包含它。本文未配置 Salesforce 组织或处理真实资金。",
   "core_features": [
     {
-      "name_en": "Payroll Management",
-      "name_zh": "薪资管理",
-      "explanation_en": "Prepare payroll records and payment calculations.",
-      "explanation_zh": "整理薪资记录并计算工资支付。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Salesforce-native accounting",
+      "name_zh": "Salesforce 原生会计",
+      "explanation_en": "Core financial records and reporting run in Salesforce rather than relying only on a separate CRM sync.",
+      "explanation_zh": "核心财务记录和报表在 Salesforce 中运行，不只是与独立 CRM 同步。",
+      "explanation_scope": "product_specific",
+      "source_ref": "core",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Tax Management",
-      "name_zh": "税务管理",
-      "explanation_en": "Organize tax-related records and calculations.",
-      "explanation_zh": "整理税务相关记录与计算。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Project financial tracking",
+      "name_zh": "项目财务跟踪",
+      "explanation_en": "Associate project time, expenses and revenue for project reporting.",
+      "explanation_zh": "把项目工时、费用和收入关联起来用于项目报表。",
+      "explanation_scope": "product_specific",
+      "source_ref": "projects",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Spend Management",
-      "name_zh": "支出管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Revenue Recognition",
-      "name_zh": "收入确认",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Purchasing",
-      "name_zh": "采购",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Accounting",
-      "name_zh": "项目会计",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-Currency",
-      "name_zh": "多币种",
-      "explanation_en": "Work with records denominated in multiple currencies.",
-      "explanation_zh": "处理以不同币种计价的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "General Ledger",
-      "name_zh": "总账",
-      "explanation_en": "Organize accounting entries in a central ledger.",
-      "explanation_zh": "在总账中组织会计分录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Fixed Asset Management",
-      "name_zh": "固定资产管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Expense Tracking",
-      "name_zh": "费用跟踪",
-      "explanation_en": "Record expenses and organize supporting information.",
-      "explanation_zh": "记录费用并整理相关凭证。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "CPA Firms",
-      "name_zh": "会计师事务所适用",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collections",
-      "name_zh": "款项催收",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cash Management",
-      "name_zh": "现金管理",
-      "explanation_en": "Track cash positions and related transactions.",
-      "explanation_zh": "跟踪现金状况和相关交易。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Billing and Invoicing",
-      "name_zh": "账单与开票",
-      "explanation_en": "Prepare invoices and track billing records.",
-      "explanation_zh": "制作发票并跟踪账单记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Bank Reconciliation",
-      "name_zh": "银行对账",
-      "explanation_en": "Compare accounting records with bank transactions.",
-      "explanation_zh": "将会计记录与银行交易进行核对。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Accounts Receivable",
-      "name_zh": "应收账款",
-      "explanation_en": "Track amounts owed by customers.",
-      "explanation_zh": "跟踪客户尚未支付的款项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Accounts Payable",
-      "name_zh": "应付账款",
-      "explanation_en": "Track amounts owed to suppliers and other payees.",
-      "explanation_zh": "跟踪应向供应商等收款方支付的款项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Multiple ledgers and currencies",
+      "name_zh": "多账簿与多币种",
+      "explanation_en": "Entities may have different base currencies and financials can be consolidated.",
+      "explanation_zh": "不同实体可采用不同本位币，并合并财务数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "multi",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Prepare payroll records and payment calculations",
-      "Organize tax-related records and calculations",
-      "Work with records denominated in multiple currencies",
-      "Organize accounting entries in a central ledger",
-      "Record expenses and organize supporting information",
-      "Track cash positions and related transactions"
-    ],
-    "zh": [
-      "整理薪资记录并计算工资支付",
-      "整理税务相关记录与计算",
-      "处理以不同币种计价的记录",
-      "在总账中组织会计分录",
-      "记录费用并整理相关凭证",
-      "跟踪现金状况和相关交易"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["core"],
+    "basis": "Illustrative uses, not customer results."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "roles_status": "editorial_inference"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "documented",
     "items": []
   },
   "supported_languages": {
@@ -251,37 +79,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "custom_quote",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T09:57:43Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Request pricing for the selected Salesforce-native accounting and additional modules.",
+    "source_snapshot_en": "The official pricing page requests contact details; no public monetary quote established.",
+    "source_snapshot_zh": "官方定价页要求提交联系资料，未确立公开金额报价。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Accounting Seed do?",
-      "question_zh": "Accounting Seed 用来做什么？",
-      "answer_en": "Accounting Seed is a product in the Accounting category. Its directory profile covers Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, Project Accounting, Multi-Currency, General Ledger.",
-      "answer_zh": "Accounting Seed 属于会计与记账软件。第三方资料列出的功能包括薪资管理、税务管理、支出管理、收入确认、采购、项目会计、多币种、总账。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, Project Accounting, Multi-Currency, General Ledger, Fixed Asset Management, Expense Tracking, CPA Firms, Collections, Cash Management, Billing and Invoicing, Bank Reconciliation, Accounts Receivable, Accounts Payable",
-      "answer_zh": "薪资管理、税务管理、支出管理、收入确认、采购、项目会计、多币种、总账、固定资产管理、费用跟踪、会计师事务所适用、款项催收、现金管理、账单与开票、银行对账、应收账款、应付账款"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -291,25 +104,200 @@
       "read_at": "2026-10-22T08:36:55.580Z",
       "excerpt_sha256": "6f36e1e1577cd0d4926a096b8c15c1f31477be4065ef8c95f327991034d125ff",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "core",
+      "type": "official_documentation",
+      "site": "Accounting Seed",
+      "title": "Accounting Core Software | Accounting Seed",
+      "url": "https://www.accountingseed.com/product/accounting-core/",
+      "read_at": "2026-10-22T09:57:40Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "30998fd16ccf1d05888f63b092cb72d889c6fc3180c2de94298f3d5765990ce2",
+      "research_notes_en": "Salesforce-native core, accounting modules and banking/reporting scope."
+    },
+    {
+      "id": "projects",
+      "type": "official_documentation",
+      "site": "Accounting Seed",
+      "title": "Project Accounting Software | Accounting Seed",
+      "url": "https://www.accountingseed.com/product/project-accounting/",
+      "read_at": "2026-10-22T09:57:46Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "fc8f0a2d6ba416a6afb098efba51bb278c75bf7252bbc5dab4c0e18beacb6699",
+      "research_notes_en": "Project time, expense, revenue and budget reporting; no customer-result claims adopted."
+    },
+    {
+      "id": "multi",
+      "type": "official_documentation",
+      "site": "Accounting Seed",
+      "title": "Multi-Company & Multi-Currency Accounting Software",
+      "url": "https://www.accountingseed.com/product/multi-currency-company-accounting-software/",
+      "read_at": "2026-10-22T09:57:49Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "f8774a9508292d2ffcc08a83d7c00713e4658b05b7f3c68a34e31f98ecdb8aeb",
+      "research_notes_en": "Entity ledgers, base/transaction currencies and consolidation scope."
+    },
+    {
+      "id": "orders",
+      "type": "official_documentation",
+      "site": "Accounting Seed",
+      "title": "Salesforce Inventory Management System - Accounting Seed",
+      "url": "https://www.accountingseed.com/product/orders-inventory/",
+      "read_at": "2026-10-22T10:00:37Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "ef035e567af138bc0d7c25248d73c5126d4f7cf635cd21bb9a8dca491bb32db9",
+      "research_notes_en": "Order allocation, locations, purchase/sales flow and inventory modules."
+    },
+    {
+      "id": "receipt",
+      "type": "official_documentation",
+      "site": "Accounting Seed",
+      "title": "Create a Cash Receipt",
+      "url": "https://support.accountingseed.com/hc/s/article/Create-a-Cash-Receipt",
+      "read_at": "2026-10-22T10:01:14Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "167e6359ad30fb63ac5b137c90bfa7314b67de2015c734e6a88c099add53fd60",
+      "research_notes_en": "Operational help read through public web reader; settings distinguish saving, approval, posting and applying receipts."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Accounting Seed",
+      "title": "Pricing Plans and Costs | Accounting Seed",
+      "url": "https://www.accountingseed.com/pricing/",
+      "read_at": "2026-10-22T09:57:43Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "f44e1e964578cab7166c3dd8816ed98de028e818e083cc8f922fe769574ea8e3",
+      "research_notes_en": "Public page routes to Get pricing; no monetary amount or contract entitlements inferred."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:01:14Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
+  ],
+  "description_source_refs": ["core"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Start with the Salesforce operating model",
+        "title_zh": "先判断 Salesforce 运营模式是否合适",
+        "en": "Accounting Seed places accounting in the Salesforce platform. Its core page covers receivables, payables, general ledger, banking and reporting. That architecture can suit a business already organizing customers and operations in Salesforce, provided its finance and administration teams can maintain the configuration. Native records do not eliminate integration work for every external bank, payment provider or legacy system.\n\nBefore choosing it, map customer ownership, account permissions and the financial chart to your existing organization. A business seeking a small independent invoice tool should compare the setup and ongoing Salesforce obligations before evaluating the wider feature list. This is an editorial fit judgment, not a claim of lower total cost.",
+        "zh": "Accounting Seed 把会计工作放在 Salesforce 平台中。核心页覆盖应收、应付、总账、银行及报表。如果企业已用 Salesforce 管理客户和运营，并且财务与管理员能维护配置，这种架构值得评估。数据原生存放并不意味着所有外部银行、支付服务商或旧系统都无需集成。\n\n选用前，应把客户归属、账户权限及财务科目映射到现有组织。若只需要独立的小型开票工具，应先比较实施及持续维护 Salesforce 的责任，再看完整功能表。这是适用性判断，不是总体成本更低的结论。",
+        "source_refs": ["core"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "receipt",
+        "title_en": "Saving, posting and applying a receipt are different steps",
+        "title_zh": "保存、过账和核销收款单是不同步骤",
+        "en": "The cash-receipt guide requires a configured ledger/default accounts and an active customer record. A receipt needs the customer, receipt date, amount and reference; optional project information can preserve business context. Approved receipts post through enabled Auto-Post, a scheduled job or a manual action. A saved record therefore needs its posting status checked before application to a billing.\n\nFor a hypothetical customer deposit, trace one reference from the receipt through posting and application, checking the unapplied balance. Do not label a deposit as earned revenue merely because cash arrived. A posted receipt cannot be edited until unposted. This workflow was read, not executed; actual accounting treatment belongs to the responsible accountant.",
+        "zh": "收款单指南要求先配置账簿和默认科目，并准备处于有效状态的客户记录。收款单需填客户、收款日期、金额和参考号，也可附项目资料。已批准的收款单可由启用的自动过账、计划任务或手工操作过账；所以保存后要检查过账状态，再应用到应收账单。\n\n以假设的客户预付款为例，用一个参考号追踪收款单、过账和核销，并检查未核销余额。不能因为现金到账，就把预付款认定为已赚取收入。已过账收款单须先取消过账才能编辑。本文只阅读了流程，未执行；实际会计处理由负责会计判断。",
+        "source_refs": ["receipt"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "projects",
+        "title_en": "Project reporting needs linked time and cost",
+        "title_zh": "项目报表需要关联工时与成本",
+        "en": "The project-accounting page describes recording employee time and expenses and viewing project revenue, cash flow and budget-versus-actual information. A useful evaluation is one engagement with billable work and a reimbursable expense: confirm both attach to the intended project and appear under the reporting basis your team uses.\n\nA project dashboard is only useful if the source records carry the right project and period. Define who approves time, which expenses are billable and how recognized revenue differs from invoices or receipts. The page establishes product scope, but not a universal billing policy or proof that the software configured those decisions for you.",
+        "zh": "项目会计页介绍员工登记工时和费用，以及查看项目收入、现金流、预算与实际对照。可用一个含可计费工作和可报销费用的项目评估：确认两者都关联到正确项目，并按团队采用的报表基础呈现。\n\n项目仪表盘依赖源记录携带正确项目和期间。应先明确谁批准工时、哪些费用可转向客户，以及已确认收入与发票和收款的区别。该页能够证明产品范围，不能替代通用计费政策，也不能证明系统已经替用户配置了这些决定。",
+        "source_refs": ["projects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entities",
+        "title_en": "Currency and entity structure are configuration decisions",
+        "title_zh": "币种和实体结构需要配置",
+        "en": "The multi-company page describes several entities in one environment, entity-specific base currencies, transactions in other currencies and consolidation with currency translation. Shared information can include customers, vendors, the chart of accounts, projects and periods.\n\nFor two entities invoicing in different currencies, evaluate both the individual ledgers and consolidated output, including the period and exchange-rate policy. Shared reference records do not make legal entities interchangeable. The research did not verify local statutory reports, tax-filing coverage, intercompany elimination rules or residency requirements. A multi-currency feature alone cannot establish those conditions.",
+        "zh": "多公司页面介绍同一环境中的多个实体、各实体本位币、外币交易，以及合并时的币种折算；客户、供应商、科目表、项目和期间等资料可以共享。\n\n若两个实体使用不同币种开票，应同时评估各自账簿与合并结果，包括期间和汇率政策。共享基础资料并不意味着法律实体可以混用。本次未核实当地法定报表、税务申报覆盖、内部交易抵销规则或数据驻留要求；单有多币种功能不能证明这些条件。",
+        "source_refs": ["multi"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "inventory",
+        "title_en": "Orders & Inventory is an additional scope to specify",
+        "title_zh": "Orders & Inventory 需要单独明确范围",
+        "en": "The Orders & Inventory page describes inventory allocation to sales orders, packing/shipping, purchase orders created from sales orders, kitting and serialized or non-serialized inventory across locations. These are operational records connected with financial work.\n\nA seller can evaluate reserving an item for an order and checking the warehouse, shipment and financial effects together. Confirm the precise module and implementation deliverables in the quote. Do not turn a core accounting inquiry into an assumption that every warehouse or manufacturing requirement is covered, and do not import product claims from unrelated Salesforce applications.",
+        "zh": "Orders & Inventory 页面介绍按销售订单分配库存、包装发运、从销售订单创建采购订单、套件，以及跨地点的序列号和非序列号库存。这些属于与财务工作相连的运营记录。\n\n销售企业可检查为订单预留物品时，仓库、发运和财务结果能否对应。报价中应写清具体模块和实施交付项。不能因为咨询了核心会计，就认定所有仓储或制造需求均被覆盖，也不能把其他 Salesforce 应用的能力移入本产品。",
+        "source_refs": ["orders"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "A pricing inquiry does not establish a subscription amount",
+        "title_zh": "询价入口不能证明订阅金额",
+        "en": "The official pricing page read on 22 October 2026 offers a pricing request rather than a public currency amount. It separates essential accounting, advanced capabilities and AI accounting. No per-user minimum, license package or implementation amount was established by that page.\n\nAsk for the actual Salesforce license requirements, user roles, entity count, automation scope, bank/payment charges, implementation, migration and support in one written quote. Those are evaluation questions rather than disclosed fees. A free demo or an online product tour is not evidence of an ongoing free production license. Normalized monthly price remains unknown.",
+        "zh": "2026 年 10 月 22 日读取的官方定价页提供询价表单，没有公开货币金额；页面区分基础会计、高级能力和 AI 会计，但未确立每用户最低价格、许可组合或实施金额。\n\n书面报价应明确实际 Salesforce 许可要求、用户角色、实体数、自动化范围、银行与支付费用、实施、迁移及支持。这些是评估问题，不是已披露收费项。免费演示或在线产品导览不能证明存在持续免费的生产许可，因此月费归一值保持未知。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "acceptance",
+        "title_en": "Evaluate controls with exception records",
+        "title_zh": "用异常记录检查控制流程",
+        "en": "For an evaluation, ask the implementer to demonstrate an unapproved receipt, a mismatched customer and an attempted edit after posting. Compare user permissions and posting configuration with the intended approval process. The receipt guide contains a release-specific prepayment note, so confirm the installed release before treating that newer path as available.\n\nThe research did not test recovery, migration totals, bank connectivity or AI accuracy. The marketing pages show example AI responses; these are not evidence that an agent will correctly post or authorize a particular transaction. Obtain product access and scope-specific acceptance evidence before operational reliance.",
+        "zh": "评估时可让实施人员演示未批准收款单、客户不匹配，以及过账后尝试编辑，并将用户权限和过账配置与预期审批流程对照。收款单指南含与版本相关的预付款说明，采用该较新路径前需确认已安装版本。\n\n本文未测试恢复、迁移总额、银行连接或 AI 准确性。营销页面展示的 AI 回答样例不能证明 Agent 会正确过账或授权特定交易；运营依赖前仍需取得产品访问及针对本次范围的验收证据。",
+        "source_refs": ["receipt", "core"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Installed-release behavior, Salesforce license prerequisites, contracted modules, implementation cost and tax/reporting coverage remain unverified.",
+      "zh": "已安装版本表现、Salesforce 许可前提、合同模块、实施费用及税务报表覆盖未核实。",
+      "source_refs": ["core", "pricing", "receipt"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "No live organization, receipts, AI operation, migration or recovery was tested.",
+      "zh": "未测试真实组织、收款单、AI 操作、迁移或恢复。",
+      "source_refs": [],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "Accounting Seed: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "Accounting Seed：功能、流程、费用与限制",
+    "description_en": "Accounting Seed is accounting software built natively on Salesforce, with receivables, payables, general ledger, banking and reporting. The central choice is whether financial work should share the Salesforce environment used by the rest of the business.",
+    "description_zh": "Accounting Seed 是原生构建在 Salesforce 上的会计软件，覆盖应收、应付、总账、银行和报表。选型关键在于：企业是否希望财务工作与其他业务共同使用 Salesforce 环境。",
+    "primary_intent": "Evaluate Accounting Seed for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "Saving, posting and applying a receipt are different steps",
+      "Project reporting needs linked time and cost",
+      "Currency and entity structure are configuration decisions"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
+  }
 }

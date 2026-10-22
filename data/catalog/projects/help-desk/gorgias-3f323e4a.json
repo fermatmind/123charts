@@ -10,234 +10,140 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Gorgias is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.\n\nAdditional listed capabilities include Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation), Self Service Portal. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $50.0. Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; coordinate conversations across supported channels; create, assign and track service requests; organize reusable answers and documentation; exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Gorgias 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。\n\n资料还列出问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒、自助服务门户。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $50.0. 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；协调受支持渠道中的沟通记录；创建、分配并跟踪服务请求；整理可复用的答案与说明文档；与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Gorgias combines an ecommerce helpdesk with an AI Agent, keeping store data, customer conversations, rules and human support in one workspace. Helpdesk can support several ecommerce platforms, while the current AI Agent setup and handover guides specifically require a connected Shopify store. Store context and action permissions therefore need to be scoped separately from a generic omnichannel inbox claim.\n\nIts commercial unit is mainly support usage, with ticket fees, automated-interaction fees and optional Voice/SMS charges rather than a single unlimited per-agent subscription. Some events can count toward more than one product. This profile explains rule execution, AI handoff and billable-event boundaries; no store, ticket, action, test conversation or bill was executed.",
+  "description_zh": "Gorgias 将电商帮助台与 AI Agent 结合，在一个工作空间内保存商店数据、客户对话、规则及人工支持。Helpdesk 可支持多种电商平台，而当前 AI Agent 配置和交接指南明确要求连接 Shopify 商店，因此商店背景和动作权限需与泛化多渠道收件箱声明分别明确。\n\n其商业单位主要是支持用量，分工单费、自动化互动费及可选 Voice／SMS 费用，并非单一无限每坐席订阅。某些事件可同时计入多个产品。本文解释规则执行、AI 交接及计费事件边界，未实际运行商店、工单、动作、测试对话或账单。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Ecommerce inbox and store context",
+      "name_zh": "电商收件箱及商店背景",
+      "explanation_en": "Use customer/order context and supported store actions alongside support conversations.",
+      "explanation_zh": "在支持对话旁使用客户／订单背景及支持的商店动作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Incident Management",
-      "name_zh": "事件管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Ordered multi-store rules",
+      "name_zh": "有顺序的多商店规则",
+      "explanation_en": "Create event-triggered conditions/actions that apply across stores unless explicitly filtered.",
+      "explanation_zh": "建立事件触发条件／动作，若未明确筛选，规则跨商店适用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rules",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Social Media Integration",
-      "name_zh": "社交媒体集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Knowledge, skills and connected actions",
+      "name_zh": "知识、技能及连接动作",
+      "explanation_en": "AI Agent uses at least one knowledge source; actions must be included in skills or guidance to run.",
+      "explanation_zh": "AI Agent 至少需一个知识来源，动作必须加入技能或指导才可运行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "setup",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Channel Communication",
-      "name_zh": "多渠道沟通",
-      "explanation_en": "Coordinate conversations across supported channels.",
-      "explanation_zh": "协调受支持渠道中的沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Macros (Templated Responses)",
-      "name_zh": "快捷回复模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Storage",
-      "name_zh": "文档存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customizable Branding",
-      "name_zh": "品牌自定义",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Ticket Management",
-      "name_zh": "工单管理",
-      "explanation_en": "Create, assign and track service requests.",
-      "explanation_zh": "创建、分配并跟踪服务请求。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Surveys and Feedback",
-      "name_zh": "问卷与反馈",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Known Issue Management",
-      "name_zh": "已知问题管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Knowledge Base",
-      "name_zh": "知识库",
-      "explanation_en": "Organize reusable answers and documentation.",
-      "explanation_zh": "整理可复用的答案与说明文档。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contract (SLA Management)",
-      "name_zh": "服务水平协议管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Community Forums",
-      "name_zh": "社区论坛",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Routing",
-      "name_zh": "自动分流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts (Escalation)",
-      "name_zh": "升级处理提醒",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Self Service Portal",
-      "name_zh": "自助服务门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Configured human handover",
+      "name_zh": "可配置人工交接",
+      "explanation_en": "Separate escalation topics, ignored tickets and channel-specific confirmation, email capture and failure messaging.",
+      "explanation_zh": "区分升级主题、忽略工单及各渠道确认、邮箱收集和失败消息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "handoff",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Coordinate conversations across supported channels",
-      "Create, assign and track service requests",
-      "Organize reusable answers and documentation",
-      "Exchange messages with visitors or customers in real time"
+      "Evaluate a Shopify order-status or cancellation skill with an actual store-permission boundary.",
+      "Route multistore tickets and inspect both the human takeover and resulting billable events."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "协调受支持渠道中的沟通记录",
-      "创建、分配并跟踪服务请求",
-      "整理可复用的答案与说明文档",
-      "与访客或客户实时交换消息"
+      "评估 Shopify 订单状态或取消技能及真实商店权限边界。",
+      "路由多商店工单，并检查人工接手和对应计费事件。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["setup", "rules", "handoff", "billing"],
+    "basis": "Editorial evaluation tasks, not observed customer outcomes or executed transactions."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $50.0. Offers Custom plan.",
-      "zh": "提供免费试用 起价为 $50.0. 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "AI prerequisites and rules": {
+      "en": "Current AI setup guide requires an active subscription, Shopify connection and Lead/Admin/Owner role. Rules have account-wide store/channel scope unless conditions narrow them; up to70 rules described.",
+      "zh": "当前 AI 配置指南要求活跃订阅、Shopify 连接及 Lead／Admin／Owner 角色。规则默认跨账户商店／渠道，需条件缩小范围，文档描述最多70条规则。",
+      "source_ref": "setup",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Ecommerce support lead",
+      "Shopify operations manager",
+      "Helpdesk administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify the connected Shopify store, app permissions and selected AI subscription/role.",
+        "zh": "核对已连接 Shopify 商店、应用权限及所选 AI 订阅／角色。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Add a knowledge source, configure one skill and attach only the actions and store scope intended for that skill.",
+        "zh": "加入知识来源、配置一个技能，并只附加该技能预期动作及商店范围。",
+        "source_refs": ["setup", "rules"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test answers and handover, then separately verify authorized action results, queue ownership and billing/usage.",
+        "zh": "测试回答及交接，再分别验证获授权动作结果、队列归属及账单／用量。",
+        "source_refs": ["setup", "handoff", "billing"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Shopify",
+        "source_ref": "setup",
+        "scope": "Explicit AI Agent prerequisite; previously connected apps may need permissions updated. Actions require inclusion in skill/guidance."
+      },
+      {
+        "name": "WooCommerce, BigCommerce and Magento Helpdesk integrations",
+        "source_ref": "pricing",
+        "scope": "Helpdesk comparison lists these platforms with plan conditions. Does not establish the same AI Agent setup path or every write capability."
+      },
+      {
+        "name": "Voice and SMS",
+        "source_ref": "billing",
+        "scope": "Separately subscribed usage products; a single customer ticket can generate independent Voice/SMS billable events."
+      }
+    ],
+    "source_ref": "setup"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "When chat is offline, or online email capture is required, a shopper who supplies no email causes AI Agent to close the ticket. That is not evidence the underlying issue was solved.",
+        "zh": "聊天离线或在线要求邮箱时，客户不提供邮箱会使 AI Agent 关闭工单，不能证明底层问题已解决。",
+        "source_refs": ["handoff"],
+        "evidence_type": "documented_with_editorial_interpretation"
+      },
+      {
+        "en": "Rules without store/channel conditions apply across integrations; mixing AND/OR requires nested IF rather than one mixed IF statement.",
+        "zh": "无商店／渠道条件的规则跨集成适用；AND／OR 混合需嵌套 IF，不能放同一个混合 IF。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -249,12 +155,17 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $50.0. Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $50.0. 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "billing"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Helpdesk ticket allowance plus selected AI automated-interaction allowance/usage and Voice/SMS add-ons; monthly/annual, legacy and extra-usage conditions vary. Dollar billing currency not explicitly established.",
+    "source_snapshot_en": "Helpdesk-only monthly cards: Starter$10/50 tickets/3seats, Basic$60/300, Pro$360/2,000, Advanced$900/5,000; latter three table seat limits500. Annual equivalents$50/$300/$750 for Basic/Pro/Advanced. AI-added monthly bundles$40/$90/$550/$1,430 with30/30/190/530 automated interactions. These are separate selectable options, not contradictory universal prices.",
+    "source_snapshot_zh": "仅Helpdesk月付卡：Starter$10／50工单／3席位，Basic$60／300，Pro$360／2,000，Advanced$900／5,000；后三档表中席位限制500。Basic／Pro／Advanced年付折月$50／$300／$750。含AI月付组合$40／$90／$550／$1,430，含30／30／190／530自动化互动。属于分别可选项，非相互冲突通用价格。",
+    "checked_at": "2026-10-22T11:26:57.638982+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -262,22 +173,25 @@
   },
   "faq": [
     {
-      "question_en": "What does Gorgias do?",
-      "question_zh": "Gorgias 用来做什么？",
-      "answer_en": "Gorgias is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.",
-      "answer_zh": "Gorgias 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。"
+      "question_en": "Can one AI-resolved ticket incur two fees?",
+      "question_zh": "一张 AI 解决工单可产生两种费用吗？",
+      "answer_en": "Under the detailed current model, a ticket fully resolved by AI Agent without human takeover can incur both Helpdesk and automation fees. Legacy models and non-AI automation paths differ.",
+      "answer_zh": "详细当前模式中，AI Agent 完全解决且无人接手的工单可同时产生 Helpdesk 和自动化费。旧模式及非 AI 自动化路径不同。",
+      "source_refs": ["billing"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management, Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation), Self Service Portal, Live Chat",
-      "answer_zh": "AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理、问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒、自助服务门户、在线聊天"
+      "question_en": "Will merging tickets always reduce the usage count?",
+      "question_zh": "合并工单总能减少计费用量吗？",
+      "answer_en": "No. The billing guide keeps relevant billable events: merging two billable Voice tickets still counts two Voice tickets, and Email+Voice can retain both product charges.",
+      "answer_zh": "不能。账单指南保留相关计费事件：两张可计费 Voice 合并仍计两张 Voice，Email＋Voice 可保留两个产品费用。",
+      "source_refs": ["billing"]
     },
     {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Are Playground conversations billed?",
+      "question_zh": "Playground 对话收费吗？",
+      "answer_en": "The setup guide says test conversations are not billed, do not affect reporting and do not send real shopper messages. That does not establish that every configured external action is safely simulated.",
+      "answer_zh": "配置指南称测试对话不收费、不影响报表且不向真实客户发消息，但不能据此确定每个配置外部动作都安全模拟。",
+      "source_refs": ["setup"]
     }
   ],
   "sources": [
@@ -289,25 +203,198 @@
       "read_at": "2026-10-22T08:48:57.001Z",
       "excerpt_sha256": "33f2440e1fdabc034245caf214096ddc400a439b4b7622a45cee57ee1fbe2ef2",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "The Conversational AI platform for Ecommerce | Gorgias",
+      "title": "The Conversational AI platform for Ecommerce | Gorgias",
+      "url": "https://www.gorgias.com/",
+      "read_at": "2026-10-22T11:26:42.034936+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "56d227397835388d082b6689085aa0eb7096c8b77b3ae537cd8abf8919d93510",
+      "research_notes_en": "Ecommerce Helpdesk plus AI Agent, shared Shopify context and store actions. Outcome, partnership, scale and uptime claims not independently verified."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Gorgias Pricing - AI-Powered Ecommerce CX Platform Plans",
+      "title": "Gorgias Pricing - AI-Powered Ecommerce CX Platform Plans",
+      "url": "https://www.gorgias.com/pricing",
+      "read_at": "2026-10-22T11:26:57.198518+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "44a00d1674b6e858048b96141917cedbb0b8dd18b7ebe68cb3c9b8fcd9808d60",
+      "research_notes_en": "Current page contains monthly/annual and AI-added/Helpdesk-only cards, ticket quotas, seat limits and different AI unit rates. No single normalized price across options."
+    },
+    {
+      "id": "billing",
+      "type": "official_pricing",
+      "site": "How you're billed for using Gorgias | Gorgias Help Center",
+      "title": "How you're billed for using Gorgias | Gorgias Help Center",
+      "url": "https://helpcenter.gorgias.com/en-US/how-youre-billed-for-using-gorgias-199385",
+      "read_at": "2026-10-22T11:26:57.636655+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e987b152b9b69e49a024138718a1c397e85b522b5147db2c33816f4c2b706462",
+      "research_notes_en": "September9 2026 detailed fee events: ticket reply, AI/nonAI automation,72hour human-intervention window, channel splits/merges, overage and legacy conditions."
+    },
+    {
+      "id": "rules",
+      "type": "official_documentation",
+      "site": "Create rules to take automatic actions on tickets | Gorgias Help Center",
+      "title": "Create rules to take automatic actions on tickets | Gorgias Help Center",
+      "url": "https://helpcenter.gorgias.com/en-US/create-rules-to-take-automatic-actions-on-tickets-81746",
+      "read_at": "2026-10-22T11:26:57.638982+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8a6de2a831f1265315f90607c7dbd2b34bbd42564debc4d53be1e8fc29e03dab",
+      "research_notes_en": "July22 2026 rule guide:70rules, cross-store/channel default, nested logic and trigger/top-to-bottom execution priority."
+    },
+    {
+      "id": "handoff",
+      "type": "official_documentation",
+      "site": "Customize how AI Agent hands over to your team | Gorgias Help Center",
+      "title": "Customize how AI Agent hands over to your team | Gorgias Help Center",
+      "url": "https://helpcenter.gorgias.com/en-US/customize-how-ai-agent-hands-over-to-your-team-6008591",
+      "read_at": "2026-10-22T11:26:57.609407+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6b4725008a6c5cbadfb1a9bad24e4e801addad65ef9f139797e5c967d41c0708",
+      "research_notes_en": "October8 2026 Shopify-scoped handover settings: mandatory signals, exclusion versus escalation, chat confirmation/email capture, offline/error paths and ai_handover routing."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "Set up and go live with AI Agent | Gorgias Help Center",
+      "title": "Set up and go live with AI Agent | Gorgias Help Center",
+      "url": "https://helpcenter.gorgias.com/en-US/set-up-and-go-live-with-ai-agent-500219",
+      "read_at": "2026-10-22T11:26:57.593446+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "bace0dadbc2c9e9622f74af31e6884fee61e29cac003fc3e9ef0bf7d84eae1a7",
+      "research_notes_en": "September9 2026 AI Agent setup: active subscription, connected Shopify, Lead/Admin/Owner, at least one knowledge source, skills/actions, nonbilled Playground conversations and monitoring. Test real-action semantics not fully established."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:26:57.638982+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "setup",
+    "handoff",
+    "billing",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "knowledge-action",
+        "title_en": "A skill defines the task; an action changes a connected app",
+        "title_zh": "技能定义任务，动作改动连接应用",
+        "en": "Current AI Agent setup requires an active subscription, connected Shopify and a Lead/Admin/Owner role. At least one knowledge source is required to enable it. Skills define how to handle a type of conversation, such as a return or cancellation, while actions must be explicitly included in a skill or guidance before AI Agent can run them. An action is not required simply to answer from knowledge.\n\nFor a hypothetical cancellation skill, verify the order, customer identity, policy eligibility and app permission before checking the provider-side cancellation result. Test conversations are documented as unbilled and isolated from shopper messaging/reporting, but the read guide does not establish universal simulation of every external write. No action was executed here.",
+        "zh": "当前 AI Agent 配置要求活跃订阅、已连接 Shopify 及 Lead／Admin／Owner 角色，启用前至少需一个知识来源。技能定义退货或取消等类型对话的处理方式，动作必须明确加入技能或指导后才能运行；仅按知识回答不要求配置动作。\n\n以假设取消技能为例，应先核对订单、客户身份、政策资格及应用权限，再检查服务商侧取消结果。文档说明测试对话不收费且与客户消息／报表隔离，但未确定所有外部写入都统一模拟。本文未执行动作。",
+        "source_refs": ["setup"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "rule-order",
+        "title_en": "Rules run across stores unless you narrow their scope",
+        "title_zh": "规则默认跨商店运行，需主动缩小范围",
+        "en": "The rule guide permits up to seventy rules and says active rules apply across connected stores/channels. A returns auto-reply intended for one shop therefore needs an integration or channel condition. Trigger priority starts with ticket creation, then new message, ticket update, assignment, snooze ending and satisfaction response; rules within a trigger run top to bottom.\n\nMixed AND/OR logic requires nested IF blocks, and ELSE represents the false outcome. Evaluate overlapping rules, a tag updated by another rule, an unsolicited automatic reply and a second store’s ticket. Rule ordering can change later conditions and customer-visible actions; it is not a visual preference. Complete loop/error recovery behavior was not tested or established from these pages.",
+        "zh": "规则指南允许最多70条，并说明启用规则跨已连接商店／渠道适用。因此只面向一家店的退货自动回复需添加集成或渠道条件。触发优先级从工单创建开始，依次为新消息、工单更新、分配、暂缓结束及满意度响应，同一触发器内自上而下。\n\nAND／OR 混合逻辑需嵌套 IF，ELSE 表示假结果。应评估重叠规则、被另一规则更新的标签、非预期自动回复及第二家店工单。顺序可影响后续条件和客户可见动作，并非显示偏好。本文未测试或确定完整循环／错误恢复行为。",
+        "source_refs": ["rules"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "human-handoff",
+        "title_en": "Escalation, exclusion and failed handoff are different states",
+        "title_zh": "升级、排除及交接失败是不同状态",
+        "en": "The October guide describes built-in handover signals, configured topics and insufficient answer quality. Excluding a ticket with the Prevent AI Agent from answering rule instead applies ai_ignore and routes it to an ignore view. That is different from an AI conversation handed to a team. Per-store configuration matters.\n\nChat normally asks for confirmation unless the shopper explicitly requests a person. Online/offline/error instructions differ; offline chat always requests email, and required-email capture can close a ticket if none is supplied. Handover failure has a fallback message. A reported close therefore does not prove resolution or successful human follow-up. Set an accountable handover team using ai_handover rules and available-agent assignment, then inspect actual ownership.",
+        "zh": "10月指南描述内置交接信号、配置主题及回答质量不足。用 Prevent AI Agent from answering 规则排除工单则添加 ai_ignore 并进入忽略视图，与 AI 对话转交团队不同，按商店配置也重要。\n\n聊天通常先请求确认，客户明确要求人工时例外。在线／离线／错误指令不同；离线总会要求邮箱，强制邮箱场景下未提供可导致关单。交接失败有兜底消息。因此关单不证明解决或人工成功跟进。应通过 ai_handover 规则和可用人员分配明确负责团队，再检查实际归属。",
+        "source_refs": ["handoff"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billable",
+        "title_en": "A reply and an automated outcome are separate billing events",
+        "title_zh": "回复与自动化结果是独立计费事件",
+        "en": "The September billing guide counts a Helpdesk ticket after any reply from a human, AI Agent or rule, regardless of the number of subsequent messages. An inbound request with no helpdesk reply, internal note or assignment alone does not count. Under the described current AI model, a completely AI-resolved ticket can also incur an automation fee; AI-to-human handover instead incurs the ticket fee. Non-AI Flows/Order Management/article paths can incur only an automation fee.\n\nThe guide uses a seventy-two-hour no-human-intervention condition for an automated interaction. This is a billing definition, not independent evidence of customer satisfaction. Proactive search messages and AI FAQ clicks have distinct fee cases. Voice and SMS subscribe and count separately, and a single thread can contain a Helpdesk, Voice and SMS billable event. Verify actual usage in Billing & usage against representative tickets.",
+        "zh": "9月账单指南将人工、AI Agent 或规则发出任何回复后的 Helpdesk 工单计费，不随后续消息数增加。只有接收未回复、内部备注或分配本身不计。所述当前 AI 模式中，AI 完全解决还可产生自动化费，AI 转人工则产生工单费；非 AI 的 Flow／Order Management／文章路径可只产生自动化费。\n\n指南用72小时无人工介入条件定义自动化互动，这是计费定义，不是独立客户满意证据。主动搜索消息与 AI FAQ 点击有不同费用情形。Voice 和 SMS 独立订阅计量，一条线程可含 Helpdesk、Voice及SMS计费事件。应将 Billing & usage 与代表性工单对账。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "history",
+        "title_en": "Splitting and merging do not erase all billable history",
+        "title_zh": "拆分及合并不能抹除全部计费历史",
+        "en": "A reply after sufficient inactivity can create a new ticket that becomes billable if the helpdesk replies. The guide specifies more than ten days for email and more than three days for several other channels, regardless of open/closed status. A shopper returning to the same apparent issue is not necessarily the same billing event.\n\nMerging a billable email with an unanswered email leaves one billable ticket, but two billable Voice tickets remain two Voice events. Email merged with Voice can retain one of each product fee. Accounts created before May 28, 2025 may remain on a legacy model unless specified AI/Shopping Assistant upgrades changed it. Do not apply the new double-fee example to every historic contract, or assume merging reverses an invoice.",
+        "zh": "充分闲置后的回复可创建新工单，帮助台再回复后可计费。指南规定邮件超过10天，其他若干渠道超过3天，不因开放／关闭状态改变。客户回到看似同一问题，不一定属于同一计费事件。\n\n可计费邮件与未答邮件合并留下1张可计费工单，但两张可计费 Voice 仍保留2个 Voice事件；Email与Voice合并可各留1个产品费。2025年5月28日前账户可能保留旧模式，除非指定 AI／Shopping Assistant 升级改变计费。不能把新双费示例用于全部历史合同，也不能假定合并会撤销账单。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "package-fit",
+        "title_en": "Compare the selected package and expected usage, not one headline",
+        "title_zh": "比较所选组合及预期用量，而非单一标题",
+        "en": "The current page contains separate monthly/annual and Helpdesk-only/AI-added cards. Helpdesk-only monthly prices shown are $10 for fifty tickets, $60 for three hundred, $360 for two thousand and $900 for five thousand. The AI-added monthly examples are $40/$90/$550/$1,430, with separate interaction allowances. Annual equivalents and overage differ. Starter has three seats and the other displayed tiers five hundred; usage pricing is not unlimited seats.\n\nChoose the actual toggle/package, confirm currency, AI unit rate, extra-ticket packs, Voice/SMS eligibility and renewal together. Over-limit usage can generate overage charges. A free signup/trial button does not establish a sustained-free helpdesk. Ecommerce teams with Shopify data and clear policies have concrete evaluation tasks; exact license, regional availability, data retention, exports/restore and UI language coverage remain unverified. No ROI, automation rate, revenue attribution or zero-downtime claim was independently tested.",
+        "zh": "当前页面有分别的月付／年付和仅Helpdesk／含AI卡。仅Helpdesk月付显示50工单$10、300工单$60、2,000工单$360、5,000工单$900；含AI月付示例$40／$90／$550／$1,430，并有独立互动额度。年付折月及超额不同。Starter为3席位，其他显示档500席位，按用量定价不等于席位无限。\n\n应选择真实开关／组合，一起确认币种、AI单价、额外工单包、Voice／SMS资格及续订。超额用量可收费，免费注册／试用按钮不能证明持续免费帮助台。已有Shopify数据和明确政策的电商团队有具体评估任务；准确许可、地区可用性、数据保留、导出／恢复和界面语言仍未核实。ROI、自动化率、收入归因和零停机主张未独立测试。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Gorgias: Ecommerce AI Handoff, Rules and Billable Ticket Events",
+    "title_zh": "Gorgias：电商 AI 交接、规则及工单计费事件",
+    "description_en": "Understand Gorgias Shopify AI prerequisites, multistore rule order, failed handoff, ticket plus automation charges, channel splits/merges and legacy billing.",
+    "description_zh": "了解 Gorgias Shopify AI 前提、多商店规则顺序、交接失败、工单加自动化费、渠道拆分／合并和旧计费模式。",
+    "primary_intent": "Evaluate Gorgias ecommerce support execution and usage billing.",
+    "secondary_questions": [
+      "Can AI resolution incur two fees?",
+      "Does merging reduce billing?",
+      "What happens if a shopper leaves no handover email?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No store connection, rule, AI, handover, external action, billing or migration tested. Actual package/currency, legacy status, quotas, actions, phone/SMS eligibility, license, regions, UI languages, export/restore and retention need selected-account confirmation.",
+      "zh": "未测试商店连接、规则、AI、交接、外部动作、账单或迁移。实际组合／币种、旧模式、额度、动作、电话／SMS资格、许可、地区、界面语言、导出／恢复及保留需所选账户确认。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Helpdesk supports several commerce platforms; current AI setup/handover guides are Shopify-specific. Billing overview channel scope is narrower than newer AI setup deployment list, so current channel eligibility must be verified.",
+      "zh": "Helpdesk支持多电商平台，当前AI配置／交接指南针对Shopify；账单概览渠道范围比更新AI配置部署列表窄，应确认当前渠道资格。",
+      "source_refs": ["pricing", "billing", "setup", "handoff"],
+      "evidence_type": "observed_documentation_conditions"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

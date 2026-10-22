@@ -10,328 +10,151 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Capsule is a product in the CRM category. Its directory profile covers AI Assistant, Advanced Automation, Real-time Data Sync, Omnichannel Customer Engagement, Predictive Analytics, IoT Integration, Customer Segmentation, Opportunity Management.\n\nAdditional listed capabilities include Sales Force Automation, Customization, Territory Management, Reporting (Analytics), Order Management, Collaboration Tools, Lead Management, Quotes (Proposals). These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as Online.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; combine conditions and actions in multi-step automated processes; propagate changes between connected data sources; coordinate customer interactions across communication channels; use historical information to estimate future outcomes; connect supported device data to software workflows. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Capsule 属于客户关系管理软件。第三方资料列出的功能包括AI 助手、进阶自动化、实时数据同步、多渠道客户互动、预测分析、物联网集成、客户分群、销售机会管理。\n\n资料还列出销售流程自动化、自定义设置、销售区域管理、报表与分析、订单管理、协作工具、潜在客户管理、报价与方案。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为在线支持。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；组合条件和动作处理多步骤自动流程；在已连接的数据源之间同步变更；协调不同沟通渠道中的客户互动；根据历史信息估计后续结果；将受支持设备的数据接入软件流程。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Capsule is a CRM that connects people and organization records with sales opportunities, tasks and delivery projects. The sales pipeline tracks work toward a won or lost decision; Projects carries client work beyond the sale. Custom fields, tags and interaction history supply context around these records.\n\nA useful reason to evaluate Capsule is keeping the commercial handoff and the subsequent work together. That does not make every project or marketing requirement part of the base CRM: automated workflows depend on the plan, and Transpond is a marketing add-on. This profile follows a representative contact-to-opportunity-to-project path and explains documentation-specific setup and failure conditions. It contains no account trial, independent review or verified revenue outcome.",
+  "description_zh": "Capsule 将个人和组织记录与销售机会、任务及交付项目连接起来。销售管线跟踪业务走向成交或流失的过程，Projects 则承接成交后的客户工作。自定义字段、标签和互动历史为这些记录提供背景。\n\n若希望把商业交接和后续工作放在一起，Capsule 值得评估。但这不表示基础 CRM 覆盖所有项目或营销需求：自动化工作流受套餐限制，Transpond 属于营销附加项。本文沿着联系人、机会到项目的代表性路径，说明文档中的配置及失败条件；未实际试用、独立审稿或验证收入成果。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "People and organization context",
+      "name_zh": "个人与组织背景",
+      "explanation_en": "Use contact history, tags and custom fields to keep the relevant customer information together.",
+      "explanation_zh": "用联系人历史、标签和自定义字段汇集相关客户信息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "contacts",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Advanced Automation",
-      "name_zh": "进阶自动化",
-      "explanation_en": "Combine conditions and actions in multi-step automated processes.",
-      "explanation_zh": "组合条件和动作处理多步骤自动流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Opportunity pipeline",
+      "name_zh": "机会管线",
+      "explanation_en": "Track opportunities through custom stages and a Won/Lost outcome.",
+      "explanation_zh": "让机会按自定义阶段推进至成交或流失。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sales",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Real-time Data Sync",
-      "name_zh": "实时数据同步",
-      "explanation_en": "Propagate changes between connected data sources.",
-      "explanation_zh": "在已连接的数据源之间同步变更。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Linked delivery projects",
+      "name_zh": "关联交付项目",
+      "explanation_en": "Associate project tasks with customer contacts and reuse Tracks for repeatable work.",
+      "explanation_zh": "把项目任务关联到客户联系人，并用 Tracks 复用重复工作步骤。",
+      "explanation_scope": "product_specific",
+      "source_ref": "projects",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Omnichannel Customer Engagement",
-      "name_zh": "多渠道客户互动",
-      "explanation_en": "Coordinate customer interactions across communication channels.",
-      "explanation_zh": "协调不同沟通渠道中的客户互动。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Predictive Analytics",
-      "name_zh": "预测分析",
-      "explanation_en": "Use historical information to estimate future outcomes.",
-      "explanation_zh": "根据历史信息估计后续结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "IoT Integration",
-      "name_zh": "物联网集成",
-      "explanation_en": "Connect supported device data to software workflows.",
-      "explanation_zh": "将受支持设备的数据接入软件流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customer Segmentation",
-      "name_zh": "客户分群",
-      "explanation_en": "Group customers using shared characteristics or behavior.",
-      "explanation_zh": "按客户特征或行为进行分组。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Opportunity Management",
-      "name_zh": "销售机会管理",
-      "explanation_en": "Track potential deals and their current stage.",
-      "explanation_zh": "跟踪潜在交易及其所处销售阶段。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Sales Force Automation",
-      "name_zh": "销售流程自动化",
-      "explanation_en": "Automate recurring sales activities and record updates.",
-      "explanation_zh": "自动处理重复销售活动及记录更新。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customization",
-      "name_zh": "自定义设置",
-      "explanation_en": "Adapt fields, views or workflows to a specific process.",
-      "explanation_zh": "按业务流程调整字段、视图或工作流。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Territory Management",
-      "name_zh": "销售区域管理",
-      "explanation_en": "Assign sales coverage using territories or account groups.",
-      "explanation_zh": "按区域或客户群分配销售覆盖范围。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Reporting (Analytics)",
-      "name_zh": "报表与分析",
-      "explanation_en": "Summarize records and activity in reports and metrics.",
-      "explanation_zh": "将业务记录和活动汇总为报表与指标。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Order Management",
-      "name_zh": "订单管理",
-      "explanation_en": "Track orders and their progress through fulfillment.",
-      "explanation_zh": "跟踪订单及履约进展。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collaboration Tools",
-      "name_zh": "协作工具",
-      "explanation_en": "Support shared work and communication between participants.",
-      "explanation_zh": "支持多人共同工作和沟通。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Lead Management",
-      "name_zh": "潜在客户管理",
-      "explanation_en": "Track prospective customers through qualification and follow-up.",
-      "explanation_zh": "跟踪潜在客户的筛选、分配与跟进。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Quotes (Proposals)",
-      "name_zh": "报价与方案",
-      "explanation_en": "Prepare customer quotations and commercial proposals.",
-      "explanation_zh": "制作面向客户的报价和商业方案。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "List Management",
-      "name_zh": "名单管理",
-      "explanation_en": "Organize and maintain lists used in operational workflows.",
-      "explanation_zh": "整理和维护业务流程使用的名单。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customer Support",
-      "name_zh": "客户支持",
-      "explanation_en": "Organize customer questions and service interactions.",
-      "explanation_zh": "整理客户问题与服务沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Marketing Automation",
-      "name_zh": "营销自动化",
-      "explanation_en": "Coordinate triggered marketing activities and recurring campaigns.",
-      "explanation_zh": "组织按条件触发的营销活动与周期性推广。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Referral Tracking",
-      "name_zh": "推荐来源跟踪",
-      "explanation_en": "Record referral sources and related customer activity.",
-      "explanation_zh": "记录客户推荐来源及相关活动。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Management",
-      "name_zh": "项目管理",
-      "explanation_en": "Coordinate project tasks, responsibilities and progress.",
-      "explanation_zh": "协调项目任务、负责人和进度。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Lead Scoring",
-      "name_zh": "线索评分",
-      "explanation_en": "Prioritize prospective customers using defined attributes and activity.",
-      "explanation_zh": "按线索属性和互动记录确定跟进优先级。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Product Catalog",
-      "name_zh": "产品目录",
-      "explanation_en": "Maintain structured product and service information.",
-      "explanation_zh": "维护结构化产品与服务资料。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Call Logging",
-      "name_zh": "通话记录",
-      "explanation_en": "Record calls and related notes for later follow-up.",
-      "explanation_zh": "记录通话及备注以便后续跟进。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contact Management",
-      "name_zh": "联系人管理",
-      "explanation_en": "Store and organize people, organizations and their contact details.",
-      "explanation_zh": "集中保存和整理联系人、组织及其联系方式。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Management",
-      "name_zh": "文档管理",
-      "explanation_en": "Organize documents and control their access and revisions.",
-      "explanation_zh": "整理文档并管理访问权限与版本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Stage-triggered workflow automation",
+      "name_zh": "阶段触发工作流",
+      "explanation_en": "Use opportunity or project transitions to start configured actions; plan and setup conditions apply.",
+      "explanation_zh": "用机会或项目阶段变化启动已配置动作，需满足套餐和配置条件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "automation-overview",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Combine conditions and actions in multi-step automated processes",
-      "Propagate changes between connected data sources",
-      "Coordinate customer interactions across communication channels",
-      "Use historical information to estimate future outcomes",
-      "Connect supported device data to software workflows"
+      "Track a service quotation and retain its customer context.",
+      "Start a delivery project and repeatable checklist after a sale."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "组合条件和动作处理多步骤自动流程",
-      "在已连接的数据源之间同步变更",
-      "协调不同沟通渠道中的客户互动",
-      "根据历史信息估计后续结果",
-      "将受支持设备的数据接入软件流程"
+      "跟踪服务报价并保留客户背景。",
+      "成交后启动交付项目和可复用任务清单。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["sales", "projects"],
+    "basis": "Illustrative tasks based on documentation, not observed deployments."
   },
   "technical_details": {
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Service model": {
+      "en": "Browser-accessed hosted service under customer terms; client apps and API are described by the support site.",
+      "zh": "根据客户条款通过浏览器访问托管服务；支持站点另说明客户端及 API。",
+      "source_ref": "terms",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Small-business sales owner",
+      "Client delivery coordinator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Prepare separate person and organization rows and review the import field preview.",
+        "zh": "分别准备个人和组织行，核对导入字段预览。",
+        "source_refs": ["imports"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Define a sales milestone and the project checklist needed after winning.",
+        "zh": "定义销售里程碑及成交后所需项目清单。",
+        "source_refs": ["sales", "projects"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "An administrator should test a workflow, inspect the result and then activate it; remove test records from reporting when finished.",
+        "zh": "管理员应测试工作流、核对结果后再启用，并在完成后清理影响报表的测试记录。",
+        "source_refs": ["automation-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Transpond marketing add-on",
+        "source_ref": "marketing",
+        "scope": "Activated from Capsule; confirm marketing entitlement and sending capacity separately."
+      }
+    ],
+    "source_ref": "marketing"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented",
+    "items": [
+      {
+        "en": "Workflow Automation is available on Growth, Advanced and Ultimate; administrators create or update configurations.",
+        "zh": "Workflow Automation 在 Growth、Advanced 和 Ultimate 提供；配置创建及修改由管理员完成。",
+        "source_refs": ["automation-guide"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "A Track-completion follow-up can be skipped if the record leaves the configured milestone before the Track completes.",
+        "zh": "如果 Track 完成前记录离开配置的里程碑，完成后的后续动作可能不执行。",
+        "source_refs": ["automation-guide"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "source_ref": "terms",
+    "url": "https://capsulecrm.com/terms/"
   },
   "pricing": {
-    "status": "unknown",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": null,
-    "source_snapshot_zh": null,
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Paid plans advertised per user/month with annual or monthly payment; marketing add-on separate.",
+    "source_snapshot_en": "Free: up to two users and 250 contacts. Paid plans Starter, Growth, Advanced and Ultimate offer 14-day trials. Retrieved paid seat amounts were not rendered.",
+    "source_snapshot_zh": "Free：最多2用户、250联系人。付费套餐 Starter、Growth、Advanced、Ultimate 提供14天试用；读取文本未渲染付费席位金额。",
+    "checked_at": "2026-10-22T10:05:30.878491Z"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -339,22 +162,18 @@
   },
   "faq": [
     {
-      "question_en": "What does Capsule do?",
-      "question_zh": "Capsule 用来做什么？",
-      "answer_en": "Capsule is a product in the CRM category. Its directory profile covers AI Assistant, Advanced Automation, Real-time Data Sync, Omnichannel Customer Engagement, Predictive Analytics, IoT Integration, Customer Segmentation, Opportunity Management.",
-      "answer_zh": "Capsule 属于客户关系管理软件。第三方资料列出的功能包括AI 助手、进阶自动化、实时数据同步、多渠道客户互动、预测分析、物联网集成、客户分群、销售机会管理。"
+      "question_en": "Does a paid trial establish ongoing free access to automations?",
+      "question_zh": "付费套餐试用是否代表自动化可持续免费使用？",
+      "answer_en": "No. Compare the retained plan with the workflow entitlement. The ongoing Free plan is distinct from the 14-day paid-plan trial.",
+      "answer_zh": "不能。应按长期保留的套餐核对工作流权益；持续 Free 套餐与14天付费套餐试用不同。",
+      "source_refs": ["pricing"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Advanced Automation, Real-time Data Sync, Omnichannel Customer Engagement, Predictive Analytics, IoT Integration, Customer Segmentation, Opportunity Management, Sales Force Automation, Customization, Territory Management, Reporting (Analytics), Order Management, Collaboration Tools, Lead Management, Quotes (Proposals), List Management, Customer Support, Marketing Automation, Referral Tracking, Project Management, Lead Scoring, Product Catalog, Call Logging, Contact Management, Document Management",
-      "answer_zh": "AI 助手、进阶自动化、实时数据同步、多渠道客户互动、预测分析、物联网集成、客户分群、销售机会管理、销售流程自动化、自定义设置、销售区域管理、报表与分析、订单管理、协作工具、潜在客户管理、报价与方案、名单管理、客户支持、营销自动化、推荐来源跟踪、项目管理、线索评分、产品目录、通话记录、联系人管理、文档管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Is a test workflow completely separate from reports?",
+      "question_zh": "测试工作流是否完全独立于报表？",
+      "answer_en": "No. The guide says test Opportunities count in sales or activity reports; remove them when evaluation ends.",
+      "answer_zh": "不是。指南说明测试机会会计入销售或活动报表，评估完成后应清理。",
+      "source_refs": ["automation-guide"]
     }
   ],
   "sources": [
@@ -366,25 +185,265 @@
       "read_at": "2026-10-22T08:47:49.313Z",
       "excerpt_sha256": "60e2053ccf85956cd900109bbd3cb54d892fc320120808f10d25ad3cbbb08d49",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "CRM Made Simple | Capsule CRM",
+      "title": "CRM Made Simple | Capsule CRM",
+      "url": "https://capsulecrm.com/",
+      "read_at": "2026-10-22T10:04:19.993097Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "52a29d8d1ac82a7998519ca066b7b522c9598cb46cb6d971d69844f0241757e4",
+      "research_notes_en": "CRM combines customer history, sales and delivery; no testimonial performance or integration-count claims adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Capsule CRM Pricing | Compare plans & start free | Capsule CRM",
+      "title": "Capsule CRM Pricing | Compare plans & start free | Capsule CRM",
+      "url": "https://capsulecrm.com/signup/",
+      "read_at": "2026-10-22T10:04:34.050659Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8ad3b16119876473fca826fc6e91e789d9578c68930c6dfad195ff771f4a17d4",
+      "research_notes_en": "Free supports two users/250 contacts; named paid plans and 14-day trials. Numeric paid seat prices absent in retrieved text. Growth introduces workflow automations and access controls."
+    },
+    {
+      "id": "contacts",
+      "type": "official_documentation",
+      "site": "Contact Management | Build better relationships | Capsule CRM",
+      "title": "Contact Management | Build better relationships | Capsule CRM",
+      "url": "https://capsulecrm.com/features/contact-management-software/",
+      "read_at": "2026-10-22T10:04:34.050659Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2056dbe3b0c65a6b2031953eb88b1b3c7299210f19fbc50c031dd364305ab4c2",
+      "research_notes_en": "Contact history, custom fields and tags; not proof of automatic recording of every outside interaction."
+    },
+    {
+      "id": "sales",
+      "type": "official_documentation",
+      "site": "Sales Pipeline | Manage Your Sales Process | Capsule CRM",
+      "title": "Sales Pipeline | Manage Your Sales Process | Capsule CRM",
+      "url": "https://capsulecrm.com/features/sales-pipeline/",
+      "read_at": "2026-10-22T10:04:56.927689Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "aa822fdcb6b090655d6726f1ac80f7559cec7e1c46fd21d42a46b87556a56f49",
+      "research_notes_en": "Opportunity stages, Won/Lost, list/Kanban/dashboard views and forecast reports."
+    },
+    {
+      "id": "projects",
+      "type": "official_documentation",
+      "site": "Project Management | Deliver Work Better | Capsule CRM",
+      "title": "Project Management | Deliver Work Better | Capsule CRM",
+      "url": "https://capsulecrm.com/features/project-management-crm/",
+      "read_at": "2026-10-22T10:04:56.927689Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2f47da9855cf8dca5d7dc8eb546f079780fff69188749a16a48737a6c516992b",
+      "research_notes_en": "Delivery projects link to contacts, tasks and reusable Tracks; automated sales-to-delivery creation is described."
+    },
+    {
+      "id": "automation-overview",
+      "type": "official_documentation",
+      "site": "Automations | Do More With Less | Capsule CRM",
+      "title": "Automations | Do More With Less | Capsule CRM",
+      "url": "https://capsulecrm.com/features/workflow-automation/",
+      "read_at": "2026-10-22T10:04:56.927689Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "a5cbaa50fcca4634a5d437f0e141880c23b890152959dd514c17d7126d8972c5",
+      "research_notes_en": "Opportunity/project stage changes can trigger work; configuration should be tested and activated."
+    },
+    {
+      "id": "automation-guide",
+      "type": "official_documentation",
+      "site": "Getting started with Workflow Automation | Capsule CRM",
+      "title": "Getting started with Workflow Automation | Capsule CRM",
+      "url": "https://capsulecrm.com/support/workflow-automation/getting-started-with-workflow-automation/",
+      "read_at": "2026-10-22T10:05:30.863346Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "5b4b4cc241e46fddeb62029df6daddbe1b6fa40f6be56683a073536edf00d72a",
+      "research_notes_en": "Growth+ availability; admins create/update; Track completion conditions, mailbox dependency, test records affect reports, failure history and stage re-entry retrigger."
+    },
+    {
+      "id": "imports",
+      "type": "official_documentation",
+      "site": "Importing Contacts | Capsule CRM",
+      "title": "Importing Contacts | Capsule CRM",
+      "url": "https://capsulecrm.com/support/importing-and-migrating-data/importing-contacts/",
+      "read_at": "2026-10-22T10:05:30.870695Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "65575afafba903c8aab56ed766a397e4b2f299a7438ddbcdde992c974f59c16b",
+      "research_notes_en": "Separate person/organization rows, field mapping and preview, duplicate choices, multiselect overwrite differs from append-only tags."
+    },
+    {
+      "id": "marketing",
+      "type": "official_documentation",
+      "site": "Transpond marketing by Capsule | Capsule CRM",
+      "title": "Transpond marketing by Capsule | Capsule CRM",
+      "url": "https://capsulecrm.com/transpond/",
+      "read_at": "2026-10-22T10:05:08.360985Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "caa9bab3076b5acb2e40007d4a1afbc43a192b1d3b8c1ff34702ab62178436bc",
+      "research_notes_en": "Transpond is an activatable marketing add-on, not every marketing feature is part of base CRM."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Customer Terms | Capsule CRM",
+      "title": "Customer Terms | Capsule CRM",
+      "url": "https://capsulecrm.com/terms/",
+      "read_at": "2026-10-22T10:05:30.878491Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "9da3665557128037162c7aed678efaa099c46bf09cc1c0d1c0b511d07eb8ceaf",
+      "research_notes_en": "Hosted service terms retain supplier IP and no source-code entitlement; renewals, free-account upgrade billing and export/cancellation constraints."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:05:30.878491Z",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "contacts",
+    "sales",
+    "projects",
+    "marketing",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "customer-model",
+        "title_en": "Keep the customer separate from the deal",
+        "title_zh": "区分客户与交易",
+        "en": "Capsule describes storing interactions on contact records and tailoring them with tags and custom fields. A customer relationship may therefore outlive any one sales opportunity. For a hypothetical consulting firm, keep the buying organization and its people as customer records, then associate a particular piece of work with an opportunity.\n\nChoose a small set of fields that explain the next action: source, service interest and accountable owner, for example. Decide which information belongs to the organization and which belongs to a person. The contact feature page does not prove that messages outside connected channels will appear automatically; check capture behavior for the actual mailbox or integration.",
+        "zh": "Capsule 描述在联系人记录上保存互动，并用标签和自定义字段调整信息。客户关系可以跨越多次销售机会。以假设的咨询公司为例，可把采购组织及其成员保留为客户记录，再为某项具体工作建立关联机会。\n\n建议先选能解释下一动作的少量字段，例如来源、服务意向和负责人，并区分哪些信息属于组织、哪些属于个人。联系人功能页不能证明连接渠道之外的消息会自动出现，应验证实际邮箱或集成的采集方式。",
+        "source_refs": ["contacts"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "sales-flow",
+        "title_en": "An opportunity is a decision process",
+        "title_zh": "机会表示决策过程",
+        "en": "The sales feature describes customizable milestones, Kanban movement, list views and Won/Lost outcomes. An illustrative sequence for a consulting quotation might be qualification, discovery and proposal, followed by the outcome. These names are an editorial example, not required Capsule defaults.\n\nA milestone should mean a decision or completed condition, not merely that someone dragged a card. Before relying on forecasts, define what values and expected dates mean and inspect a deliberately stalled opportunity. A forecast is an interpretation of the data entered, not evidence that future revenue is guaranteed.",
+        "zh": "销售功能页说明可自定义里程碑、拖动看板、使用列表视图以及标记成交／流失。咨询报价可假设按资格判断、需求了解、提案及最终结果推进。这些名称是编辑示例，不是 Capsule 必须采用的默认阶段。\n\n里程碑应表示决策或完成条件，而不只是有人拖动卡片。依赖预测前，应定义金额和预计日期的含义，并检查刻意停滞的机会。预测是对录入数据的解释，不能保证未来收入。",
+        "source_refs": ["sales"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "delivery",
+        "title_en": "Carry the sale into a delivery project",
+        "title_zh": "让成交进入交付项目",
+        "en": "Projects links work to customer contacts and provides task assignment and list or Kanban views. Reusable Tracks describe repeatable steps; the product pages describe starting delivery from a won opportunity. For an example onboarding process, define an introduction task, requirements review and a delivery sign-off, then give each an owner.\n\nSeparate project creation from project completion. Having the next record and checklist ready does not establish that the client received the service. If your delivery requires resource scheduling, time billing or complex dependencies, treat those as requirements to verify rather than importing every capability associated with the phrase project management.",
+        "zh": "Projects 把工作关联到客户联系人，提供任务分配以及列表或看板视图。可复用的 Tracks 表达重复步骤，产品页说明能从成交机会启动交付。以客户入门为例，可定义介绍沟通、需求复核和交付签收，并分别指定负责人。\n\n应区分创建项目和完成项目。下条记录及清单已就绪，不代表客户已经收到服务。如果交付还需资源排期、工时计费或复杂依赖，应把它们列作待核需求，不能由“项目管理”一词推断全部具备。",
+        "source_refs": ["projects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "automation-behavior",
+        "title_en": "Trigger movement and Track completion",
+        "title_zh": "阶段变化与 Track 完成",
+        "en": "The workflow overview describes opportunity and project transitions triggering tasks, email and updates. Use those defined transitions rather than treating an arbitrary field edit as a universal trigger. A useful example is assigning a contract milestone to its responsible colleague and applying the relevant task Track.\n\nThe detailed guide adds an important condition: a completion action attached to a Track only runs while the record remains in the milestone where that action was set up. If a user advances the record early, completing the old checklist need not close or move it. Test that exception as well as the straight-through path before relying on the handoff.",
+        "zh": "工作流总览描述由机会和项目阶段变化触发任务、邮件及更新。应基于已定义转换来设计，而不能把任意字段编辑都视为通用触发器。例如，可把合同阶段分配给负责同事，并应用相应任务 Track。\n\n详细指南补充了重要条件：Track 的完成动作，只会在记录仍处于设置该动作的里程碑时执行。如果用户提前推进记录，完成旧清单不一定再触发关闭或移动。依赖交接前，除了顺利路径，也应测试这个异常。",
+        "source_refs": ["automation-overview", "automation-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Understand test records and failed actions",
+        "title_zh": "理解测试记录与失败动作",
+        "en": "The guide requires a mailbox connection for user-sent automated email. It records action failures on the record's Automations tab and emails the Super Administrator. After fixing the record, its documented retrigger path is moving it out of and back into the relevant milestone. Inspect prior effects before doing that.\n\nTesting creates Opportunities or Projects inside the pipeline or board; test Opportunities contribute to reports. Remove test data after evaluation. These details make a disposable-data pilot important. No retry timing, external transactional guarantee or live recovery was measured in this research.",
+        "zh": "指南说明，以用户身份自动发送邮件时需要该用户已连接邮箱。动作失败会记录在记录的 Automations 页签，并通过邮件通知超级管理员。修正记录后，文档列出的再次触发方式是先移出、再移回相关里程碑；这样做之前应检查此前已产生的效果。\n\n测试会在管线或看板内创建机会或项目，测试机会会进入报表，评估后应清理测试数据。因此建议使用可丢弃数据试点。本文未测量重试时机、外部事务保证或实际恢复。",
+        "source_refs": ["automation-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migration",
+        "title_en": "Import mapping can change existing values",
+        "title_zh": "导入映射可能改变现有值",
+        "en": "The import guide distinguishes person and organization rows. A named person row creates a person; an organization column links that person to the organization. If the organization needs its own address or other details, prepare an organization row with the person-name fields blank. Review the mapped sample before importing.\n\nDuplicate handling offers creating new contacts, ignoring duplicates or updating them. An especially important distinction is that overwriting a multi-select custom field replaces current values, whereas imported tags append. Test a contact that already has data before bulk updates. A correct row count does not establish correct relationships or preserved fields.",
+        "zh": "导入指南区分个人行和组织行。带个人姓名的行创建个人，组织列用于把该人关联到组织。如果组织需要独立地址等信息，应另准备组织行，并让个人姓名字段留空。导入前核对映射样例。\n\n重复处理可选择新建、忽略或更新。一个重要区别是：覆盖多选自定义字段会替换当前值，而导入标签会追加。批量更新前应测试已有数据的联系人。行数正确不能证明关联正确或原字段得到保留。",
+        "source_refs": ["imports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-boundaries",
+        "title_en": "Free capacity, paid plans and marketing costs",
+        "title_zh": "免费容量、付费套餐与营销费用",
+        "en": "The current signup page lists Free for at most two users and 250 contacts, distinct from a 14-day trial of Starter, Growth, Advanced or Ultimate. Workflow Automations and access controls are listed with Growth. A downgrade must fit the destination plan's limits; a trial configuration is not evidence that those features persist on Free.\n\nPaid CRM plans are presented per user/month with monthly or annual payment options, but the retrieved text did not contain their numeric seat amounts. The Marketing add-on is separately offered. Budget seat count, the intended plan and marketing capacity together, and obtain the selected currency/cadence at checkout. No stale comparison-page price is substituted for a missing current amount.",
+        "zh": "当前注册页列出 Free 最多2用户和250联系人，与 Starter、Growth、Advanced、Ultimate 的14天试用不同。Workflow Automations 和访问控制列在 Growth 中；降级必须满足目标套餐限制，试用时可用不代表免费版能继续保留。\n\n付费 CRM 套餐以每用户每月展示，并提供按月或按年付款，但读取文本未包含具体席位金额。Marketing 附加项另外提供。应把席位数、目标套餐和营销容量一起预算，再在结账时确认币种及周期；本文不使用过时对比页价格填补当前金额缺失。",
+        "source_refs": ["pricing", "marketing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "terms-deployment",
+        "title_en": "Hosted service terms and practical fit",
+        "title_zh": "托管条款与实际适配",
+        "en": "The customer terms describe browser access to a hosted service, retain supplier intellectual property and do not grant source-code access. Paid subscriptions renew until cancelled; the terms distinguish immediate billing when upgrading an existing Free account from a fresh paid-plan trial. Keep those routes separate when budgeting an evaluation.\n\nCapsule merits a closer look when the same team needs customer context, a sales process and a relatively direct delivery handoff. It needs more investigation for demanding external orchestration or procurement requirements. This research did not establish exact API quotas, data-location choices, regional signup/payment availability or an account-specific AI entitlement. No availability benchmark or independent quality rating is claimed.",
+        "zh": "客户条款描述通过浏览器访问托管服务，软件知识产权由供应商保留，也不授予源代码访问权。付费订阅持续续订至取消；条款将已有 Free 账户升级时立即计费，与新开付费套餐试用区分开。预算评估成本时应分清入口。\n\n当同一团队需要客户背景、销售流程及较直接的交付交接时，Capsule 值得进一步考察。复杂外部编排或采购要求则需更具体核查。本文未确认准确 API 额度、数据位置选择、地区注册／付款或具体账户的 AI 权益，也不提供可用性基准或独立质量评分。",
+        "source_refs": ["terms", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Capsule CRM: Contacts, Sales-to-Project Workflows and Limits",
+    "title_zh": "Capsule CRM：联系人、成交后项目流程与限制",
+    "description_en": "Understand Capsule contacts, opportunities, Projects, Track conditions, import behavior and plan boundaries from official documentation.",
+    "description_zh": "依据官方文档了解 Capsule 联系人、机会、Projects、Track 条件、导入行为及套餐边界。",
+    "primary_intent": "Evaluate Capsule for a contact-to-sales-to-delivery workflow.",
+    "secondary_questions": [
+      "What happens when a Track finishes in another milestone?",
+      "Do automation tests affect reports?",
+      "Which plan enables workflows?"
+    ],
+    "query_basis": "Editorial intent hypotheses, no demand or ranking measurement.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Paid seat amounts did not render in the public text. API quotas, data-location options, regional signup/payment availability and account-specific AI limits remain unconfirmed.",
+      "zh": "公开文本未渲染付费席位金额；API 额度、数据位置选项、地区注册／付款可用性和具体账户 AI 限制仍未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No account, import, workflow, email or report was run. Procurement-specific data processing and AI terms need separate review.",
+      "zh": "未实际运行账户、导入、工作流、邮件或报表；具体采购所需的数据处理及 AI 条款仍需另行审阅。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

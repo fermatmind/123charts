@@ -10,153 +10,94 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Asigra Cloud Backup is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.\n\nAdditional listed capabilities include Backup Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Asigra Cloud Backup 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密。\n\n资料还列出备份排程。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Asigra is a backup vendor whose current site distinguishes Tigris Secure Backup, the Backup2Cloud service for MSPs, and SaaSAssure for SaaS applications. The old “Asigra Cloud Backup” catalog name should be interpreted through that product family rather than as a single universal cloud plan.\n\nTigris focuses on enterprise backup and recovery with controls intended to protect the backup system itself. Backup2Cloud delivers a hosted service powered by Tigris. This profile separates documented mechanisms from security outcomes that were not independently tested.",
+  "description_zh": "Asigra 是备份厂商，当前官网区分 Tigris Secure Backup、面向 MSP 的 Backup2Cloud 服务，以及面向 SaaS 应用的 SaaSAssure。目录中的旧称“Asigra Cloud Backup”应结合这套产品家族理解，不能当作一个通用云套餐。\n\nTigris 面向企业备份和恢复，提供保护备份系统自身的控制；Backup2Cloud 则是由 Tigris 支撑的托管服务。本文区分文档记载的机制与未经独立实测的安全效果。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Agentless workload backup",
+      "name_zh": "无代理工作负载备份",
+      "explanation_en": "Tigris documents network-based protection without endpoint agents.",
+      "explanation_zh": "Tigris 说明通过网络保护，无需端点代理。",
+      "source_ref": "tigris",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Backup and restore scanning",
+      "name_zh": "备份及恢复扫描",
+      "explanation_en": "Inspect malware and active content under configured policies.",
+      "explanation_zh": "按配置策略检查恶意软件及活动内容。",
+      "source_ref": "security",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Compression Option",
-      "name_zh": "压缩选项",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Recovery validation",
+      "name_zh": "恢复验证",
+      "explanation_en": "Simulate recovery in memory and inspect backup integrity.",
+      "explanation_zh": "在内存中模拟恢复并检查备份完整性。",
+      "source_ref": "recovery",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Inventory workloads and choose Tigris deployment or Backup2Cloud service before requesting a quote.",
+      "Agree and perform a representative restore exercise including access and approval controls."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "先清点工作负载并选择 Tigris 部署或 Backup2Cloud 服务，再询价。",
+      "约定并执行包含访问及审批控制的代表性恢复演练。"
+    ],
+    "source_refs": ["tigris", "baas", "pricing", "security", "recovery"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "MSP backup service owner",
+      "Enterprise backup administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Inventory workloads and choose Tigris deployment or Backup2Cloud service before requesting a quote.",
+        "zh": "先清点工作负载并选择 Tigris 部署或 Backup2Cloud 服务，再询价。",
+        "source_refs": ["tigris", "baas", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Agree and perform a representative restore exercise including access and approval controls.",
+        "zh": "约定并执行包含访问及审批控制的代表性恢复演练。",
+        "source_refs": ["security", "recovery"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Content reconstruction can change restored active content; backup validation is not a full application restart.",
+        "zh": "内容重建可能改变恢复的活动内容；备份验证不等于完整应用重启。",
+        "source_refs": ["security", "recovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -168,37 +109,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T14:50:37.776098+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "custom",
+    "billing_basis": "Backup2Cloud: protected source-data subscription; Tigris software quote separate.",
+    "source_snapshot_en": "Representative-led pricing; no numeric rate verified.",
+    "source_snapshot_zh": "联系代表询价；未确认数字费率。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Asigra Cloud Backup do?",
-      "question_zh": "Asigra Cloud Backup 用来做什么？",
-      "answer_en": "Asigra Cloud Backup is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.",
-      "answer_zh": "Asigra Cloud Backup 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -208,25 +134,177 @@
       "read_at": "2026-10-22T08:37:03.952Z",
       "excerpt_sha256": "25f0e3510b69222052b8496a681becfe1b2c3aadb92173a9c27b0dd498e20dc3",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Asigra Cloud Backup",
+      "title": "Asigra product family",
+      "url": "https://www.asigra.com/",
+      "read_at": "2026-10-22T14:44:57.888964+00:00",
+      "excerpt_sha256": "4966f4c2e0ccb9822bc15c0e9af323678ebc169b34c107ba60ad55ed4bb59544",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Tigris, Backup2Cloud and SaaSAssure have distinct scopes."
+    },
+    {
+      "id": "tigris",
+      "type": "official_documentation",
+      "site": "Asigra Cloud Backup",
+      "title": "Tigris Ultra Secure Backup",
+      "url": "https://www.asigra.com/tigris",
+      "read_at": "2026-10-22T14:46:57.813990+00:00",
+      "excerpt_sha256": "cccf9372a2fb4611d6b9ec9837971f448bcd309cec8d69276a9547e9faa5d290",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Agentless architecture, Docker deployment and workload overview."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "Asigra Cloud Backup",
+      "title": "Tigris Deep Six Security Architecture",
+      "url": "https://www.asigra.com/tigris/advanced-ransomware-security",
+      "read_at": "2026-10-22T14:47:41.782029+00:00",
+      "excerpt_sha256": "b2941836a85a8bd14427851b5378386842920eaf08ca859cdee1d235dfd3a872",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Scanning, CDR, MFA, multiperson approval and soft deletion mechanisms; vendor claims not independently tested."
+    },
+    {
+      "id": "recovery",
+      "type": "official_documentation",
+      "site": "Asigra Cloud Backup",
+      "title": "Tigris Recovery Optimizer",
+      "url": "https://www.asigra.com/tigris/recovery-optimizer",
+      "read_at": "2026-10-22T14:47:40.677140+00:00",
+      "excerpt_sha256": "89df252cc75606db3920e6b55b2dc110f6f9925dcae796cf04120412b4916f8f",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Healing requests rebackup; memory-based validation differs from full recovery."
+    },
+    {
+      "id": "baas",
+      "type": "official_documentation",
+      "site": "Asigra Cloud Backup",
+      "title": "Asigra Backup-as-a-Service",
+      "url": "https://www.asigra.com/backup-as-a-service",
+      "read_at": "2026-10-22T14:46:55.365167+00:00",
+      "excerpt_sha256": "7056c6cd5b09cec504eff387e3eeeb6bb19fd06fe85e9197cc9834f65b2ff9fe",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "MSP hosted service, protected-source-data billing and configurable retention."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Asigra Cloud Backup",
+      "title": "Contact Asigra",
+      "url": "https://www.asigra.com/company/contact",
+      "read_at": "2026-10-22T14:46:54.272627+00:00",
+      "excerpt_sha256": "55ac6d1df81da2175f2502ca6c329f2bd0299659a3ed996263e85a9b00dd4853",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Sales and registered-customer support access; no numeric quote."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:50:37.776098+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "architecture",
+        "title_en": "Choose the deployment and workload first",
+        "title_zh": "先选部署方式与工作负载",
+        "en": "Tigris documents an agentless network architecture, Docker deployment, centralized management and protection for operating systems, virtual machines and databases. Agentless does not remove the need to establish access to each source and verify supported versions.\n\nBackup2Cloud is explicitly aimed at MSPs delivering backup to clients and lists supported operating systems, applications and hypervisors. Its hosted management and storage model should not be projected onto every Tigris deployment. SaaSAssure is a separate SaaS-backup offering, so a Tigris feature list alone is not evidence of a particular SaaS connector.",
+        "zh": "Tigris 说明采用无端点代理的网络架构，可通过 Docker 部署、集中管理，并保护操作系统、虚拟机和数据库。无代理不等于无需建立来源访问，也不免除版本兼容性核查。\n\nBackup2Cloud 明确面向向客户交付备份的 MSP，列出了操作系统、应用和虚拟化平台范围。其托管管理与存储方式不能套用到每一种 Tigris 部署。SaaSAssure 是另一款 SaaS 备份产品，因此 Tigris 功能表不能证明某个 SaaS 连接器存在。",
+        "source_refs": ["tigris", "baas", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "security",
+        "title_en": "What the backup security controls actually change",
+        "title_zh": "备份安全控制具体改变什么",
+        "en": "Asigra describes malware scanning both when backing up and restoring. Content Disarm and Reconstruction can report active content during backup and filter, block or remove it during recovery according to policy. That means the restored document may be intentionally sanitized rather than byte-identical.\n\nMFA protects access and sensitive actions; multiperson approval requires additional people for configured destructive operations. Soft Delete retains a recoverable copy behind an apparent deletion. These are vendor-documented controls, not evidence that every attack is prevented. Evaluate approvals, key custody and sanitized-file usability with representative data.",
+        "zh": "Asigra 说明备份与恢复时均进行恶意软件扫描。Content Disarm and Reconstruction 可在备份时报告活动内容，恢复时按策略过滤、阻止或删除。因此恢复文档可能经过净化，并非逐字节相同。\n\nMFA 保护访问及敏感操作；多人审批为配置的破坏性操作增加其他审批人；Soft Delete 在表面删除后保留可恢复副本。这些是厂商说明的控制，并不能证明阻止所有攻击。应使用代表性数据评估审批、密钥保管及净化后文件是否可用。",
+        "source_refs": ["security"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Validation and healing have different jobs",
+        "title_zh": "验证与修复承担不同职责",
+        "en": "The recovery page describes Autonomic Healing as checking stored backup files and requesting a new backup during the next run when corruption is detected. It is not a promise to reconstruct data whose original is already unavailable. Restore Validation runs a recovery simulation in memory; incremental-forever and granular recovery address retaining changes and recovering selected files.\n\nFor example, evaluate a protected database and a document share separately: verify a chosen historical file and separately prove the database opens consistently after recovery. An in-memory validation is useful evidence but should not be equated with a full production application restart.",
+        "zh": "恢复页面说明 Autonomic Healing 会检查备份文件，发现损坏后要求下次任务重新备份；这不能理解为原始数据已不存在时仍保证重建。Restore Validation 在内存中模拟恢复；持续增量和细粒度恢复则处理变化保留及指定文件恢复。\n\n例如，应分别评估数据库和文档共享：验证某个历史文件，再单独证明数据库恢复后可一致地打开。内存验证有参考价值，但不等于完整生产应用已重新启动。",
+        "source_refs": ["recovery"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Price the service that will actually be delivered",
+        "title_zh": "按实际交付服务询价",
+        "en": "Backup2Cloud describes a pay-as-you-go subscription based on protected source data and directs prospective MSPs to a representative. The public contact page supplies the sales route; no current numeric rate was established. Do not borrow a price from the unrelated Tigris object-storage vendor. Request a quote specifying workloads, protected capacity, retention, storage location and recovery obligations.\n\nThe service lists configurable retention and storage-region choices, but contract-specific residency, deletion and support obligations still need confirmation. Tigris software licensing and Backup2Cloud subscription terms are separate purchasing questions. No free-forever plan or permissive open-source grant was verified.",
+        "zh": "Backup2Cloud 说明按受保护来源数据量计费，并引导潜在 MSP 联系代表。公开联系页提供询价渠道，本次未确认数字费率。不能借用另一家无关 Tigris 对象存储厂商的价格。询价应注明工作负载、受保护容量、保留期、存储地点和恢复责任。\n\n服务列有可配置保留期和区域选择，但合同对应的数据驻留、删除及支持义务仍需确认。Tigris 软件许可与 Backup2Cloud 订阅是不同采购问题。本文未确认持续免费套餐或宽松开源授权。",
+        "source_refs": ["baas", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "A useful pilot is a recovery exercise",
+        "title_zh": "有用的试点应包含恢复演练",
+        "en": "Shortlist the family when an enterprise or MSP needs workload backup with explicit backup-admin controls and can manage the operational prerequisites. A person seeking simple file sharing should first check whether that is the actual requirement. Before rollout, inventory workload versions, define who may restore or delete data, select the deployment model, and agree the recovery test and commercial scope.\n\nPublic implementation documents and downloads are linked through the support portal; registered-customer access is described on the contact page. This research did not sign in, install software or run a malicious-file test. Detailed connector prerequisites and failure procedures remain a procurement and pilot gap.",
+        "zh": "企业或 MSP 需要工作负载备份及明确的备份管理员控制，并能管理运维前提时，可考虑这套产品。若只是希望共享文件，应先确认实际需求。推广前应清点工作负载版本、定义谁能恢复或删除、选择部署方式，并约定恢复测试和商务范围。\n\n联系页说明实施资料和下载通过支持门户提供，并涉及注册客户访问。本次未登录、安装或开展恶意文件测试。具体连接前提和失败处理流程仍是采购及试点需要补齐的事项。",
+        "source_refs": ["pricing", "tigris"],
+        "evidence_type": "editorial_fit_judgment_based_on_documentation"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Detailed source prerequisites, connector versions, failure handling and actual restore consistency need a pilot.",
+      "zh": "具体来源前提、连接器版本、失败处理及真实恢复一致性需要试点验证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Numeric pricing, legal license rights, selected storage region, interface languages and security effectiveness remain unverified.",
+      "zh": "数字报价、法律许可、所选存储区域、界面语言及安全效果未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Asigra Cloud Backup: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Asigra Cloud Backup：用途、流程、价格与限制",
+    "description_en": "Asigra is a backup vendor whose current site distinguishes Tigris Secure Backup, the Backup2Cloud service for MSPs, and SaaSAssure for SaaS applications. The old “Asigra Cloud Backup” catalog name should be interpreted through that product family rather than as a single universal",
+    "description_zh": "Asigra 是备份厂商，当前官网区分 Tigris Secure Backup、面向 MSP 的 Backup2Cloud 服务，以及面向 SaaS 应用的 SaaSAssure。目录中的旧称“Asigra Cloud Backup”应结合这套产品家族理解，不能当作一个通用云套餐。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

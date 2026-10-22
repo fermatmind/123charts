@@ -10,254 +10,135 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "BoldDesk is a product in the Help desk category. Its directory profile covers Multi-brand Help desk, AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding.\n\nAdditional listed capabilities include Ticket Management, Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation). These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $12.0. Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; coordinate conversations across supported channels; create, assign and track service requests; organize reusable answers and documentation; use supported language options in relevant workflows; exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "BoldDesk 属于客户服务台软件。第三方资料列出的功能包括多品牌客服台、AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义。\n\n资料还列出工单管理、问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $12.0. 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；协调受支持渠道中的沟通记录；创建、分配并跟踪服务请求；整理可复用的答案与说明文档；在相关流程中使用受支持的语言选项；与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "BoldDesk is a hosted help desk combining ticket queues, customer conversations, knowledge base content, routing rules, SLA targets and reporting. Requests become assigned records with a status and response/resolution deadlines. Voice is described through dialer integrations rather than as an independent built-in telephone carrier.\n\nThe current pricing page, dated October 20, 2026, bundles AI credits and human agents. Some help articles retain legacy plan and paid AI-seat conditions, so the contracted entitlement needs confirmation. This profile separates ticket lifecycle, SLA timing, duplicate merging and AI drafting; no portal, migration, ticket action, AI output or bill was tested.",
+  "description_zh": "BoldDesk 是托管帮助台，组合工单队列、客户对话、知识库、路由规则、SLA 目标及报表。请求成为有负责人、状态和响应／解决期限的记录。语音通过拨号器集成提供，不能视为独立内置电话运营商。\n\n当前定价页标注2026年10月20日，将 AI credits 与人工坐席打包。部分帮助文章仍保留旧套餐及付费 AI 席位条件，因此需确认合同权限。本文区分工单生命周期、SLA 计时、重复合并和 AI 草稿；未测试门户、迁移、工单动作、AI 输出或账单。",
   "core_features": [
     {
-      "name_en": "Multi-brand Help desk",
-      "name_zh": "多品牌客服台",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Assigned omnichannel ticket queue",
+      "name_zh": "带负责人多渠道工单队列",
+      "explanation_en": "Capture customer requests with status, priority and routing; phone channels use documented dialer integrations.",
+      "explanation_zh": "以状态、优先级及路由接收客户请求，电话渠道采用文档所述拨号器集成。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Response and resolution SLA rules",
+      "name_zh": "响应及解决 SLA 规则",
+      "explanation_en": "Calculate first/next response and resolution targets in calendar or business hours, with specific pause states.",
+      "explanation_zh": "按日历或营业时间计算首次／后续响应及解决目标，并有明确暂停状态。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sla",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Incident Management",
-      "name_zh": "事件管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Configured automatic ticket merging",
+      "name_zh": "可配置自动工单合并",
+      "explanation_en": "Use a time window, requester/subject matching, status criteria and retained-ticket direction; current account eligibility needs confirmation.",
+      "explanation_zh": "按时间窗口、请求人／主题匹配、状态条件及保留方向合并，需确认当前账户资格。",
+      "explanation_scope": "product_specific",
+      "source_ref": "merge",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Social Media Integration",
-      "name_zh": "社交媒体集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-Channel Communication",
-      "name_zh": "多渠道沟通",
-      "explanation_en": "Coordinate conversations across supported channels.",
-      "explanation_zh": "协调受支持渠道中的沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Macros (Templated Responses)",
-      "name_zh": "快捷回复模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Storage",
-      "name_zh": "文档存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customizable Branding",
-      "name_zh": "品牌自定义",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Ticket Management",
-      "name_zh": "工单管理",
-      "explanation_en": "Create, assign and track service requests.",
-      "explanation_zh": "创建、分配并跟踪服务请求。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Surveys and Feedback",
-      "name_zh": "问卷与反馈",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Known Issue Management",
-      "name_zh": "已知问题管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Knowledge Base",
-      "name_zh": "知识库",
-      "explanation_en": "Organize reusable answers and documentation.",
-      "explanation_zh": "整理可复用的答案与说明文档。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contract (SLA Management)",
-      "name_zh": "服务水平协议管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Community Forums",
-      "name_zh": "社区论坛",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Routing",
-      "name_zh": "自动分流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts (Escalation)",
-      "name_zh": "升级处理提醒",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Self Service Portal",
-      "name_zh": "自助服务门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-language Support",
-      "name_zh": "多语言支持",
-      "explanation_en": "Use supported language options in relevant workflows.",
-      "explanation_zh": "在相关流程中使用受支持的语言选项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Human-facing AI Assist",
+      "name_zh": "面向人工的 AI Assist",
+      "explanation_en": "Draft, summarize and translate for an agent to review, distinct from customer-facing AI Agent behavior.",
+      "explanation_zh": "为人工坐席生成待复核草稿、总结和翻译，与面向客户的 AI Agent 行为不同。",
+      "explanation_scope": "product_specific",
+      "source_ref": "assist",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Coordinate conversations across supported channels",
-      "Create, assign and track service requests",
-      "Organize reusable answers and documentation",
-      "Use supported language options in relevant workflows",
-      "Exchange messages with visitors or customers in real time"
+      "Replace a shared mailbox with explicit ticket ownership and business-hour response targets.",
+      "Evaluate duplicate follow-ups and AI-assisted drafting without losing customer context."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "协调受支持渠道中的沟通记录",
-      "创建、分配并跟踪服务请求",
-      "整理可复用的答案与说明文档",
-      "在相关流程中使用受支持的语言选项",
-      "与访客或客户实时交换消息"
+      "用明确工单归属及营业时间响应目标替换共享邮箱。",
+      "保留客户背景的同时评估重复跟进和 AI 辅助草稿。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["product", "sla", "merge", "assist"],
+    "basis": "Editorial evaluation tasks, not measured customer benefits."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $12.0. Offers Custom plan.",
-      "zh": "提供免费试用 起价为 $12.0. 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "SLA and records": {
+      "en": "SLA policies can map to tickets by conditions; clock selection and status affect due time. Auto-Merge installation uses a BoldDesk API key and only considers tickets created after installation.",
+      "zh": "SLA 策略可按条件映射工单，时钟选择及状态影响期限。Auto-Merge 安装使用 BoldDesk API key，仅考虑安装后创建工单。",
+      "source_ref": "merge",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support operations manager",
+      "Support agent",
+      "Help desk administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose a support channel, ticket owner, priority and working calendar before importing or routing real requests.",
+        "zh": "导入或路由真实请求前，选择支持渠道、负责人、优先级及工作日历。",
+        "source_refs": ["product", "sla"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Pilot first reply, customer waiting, on-hold, reopened and duplicate-ticket cases with synthetic data.",
+        "zh": "用合成数据试点首次回复、等待客户、暂停、重新打开及重复工单。",
+        "source_refs": ["sla", "merge"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Confirm current AI entitlements and measure credit use on representative drafts and actions.",
+        "zh": "确认当前 AI 权限，使用代表性草稿及动作测量积分消耗。",
+        "source_refs": ["pricing", "assist", "merge"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Twilio, Aircall, Ringover, Exotel and Ozonetel",
+        "source_ref": "product",
+        "scope": "Product FAQ lists dialer integrations that log calls and create tickets; provider setup, coverage and charges not established."
+      },
+      {
+        "name": "BoldDesk API / Auto-Merge Marketplace app",
+        "source_ref": "merge",
+        "scope": "API-key installation and app rules; not proof of universal feature inclusion in every current contract."
+      }
+    ],
+    "source_ref": "product"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "On-Hold and Waiting for Customer pause the SLA and suppress reminders/escalations. Faster reported SLA time is not automatically shorter elapsed customer waiting time.",
+        "zh": "On-Hold 与 Waiting for Customer 暂停 SLA 并停止提醒／升级；SLA 报表时间更短不必然表示客户实际等待更短。",
+        "source_refs": ["sla"],
+        "evidence_type": "documented_with_editorial_interpretation"
+      },
+      {
+        "en": "Auto-Merge does not retrospectively process pre-install tickets; merging into a closed ticket reopens it. License/plan wording needs account-specific confirmation.",
+        "zh": "Auto-Merge 不回溯处理安装前工单；合并到已关闭工单会重新打开，许可／套餐措辞需按账户确认。",
+        "source_refs": ["merge", "pricing"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -269,12 +150,17 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $12.0. Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $12.0. 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "assist", "merge"],
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "AI credit tier with included humans, monthly or annual upfront; added human seats and optional credit top-ups. Legacy AI entitlement wording conflicts with current pricing.",
+    "source_snapshot_en": "October 20 2026 page: 1,000 monthly credits and 5 humans cost $99/month billed yearly ($1,188/year) or $116 monthly. Extra humans $20/agent/month; top-ups $40/1,000 credits. Monthly credits reset; top-ups expire next renewal. No automatic overage charges stated.",
+    "source_snapshot_zh": "2026年10月20日页面：每月1,000积分及5人工坐席，年付折每月99美元（每年1,188美元），月付116美元。额外人工每坐席每月20美元，补充每1,000积分40美元。月度积分重置，补充积分于下次续期到期；声明无自动超额收费。",
+    "checked_at": "2026-10-22T11:05:12.240911+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -282,22 +168,18 @@
   },
   "faq": [
     {
-      "question_en": "What does BoldDesk do?",
-      "question_zh": "BoldDesk 用来做什么？",
-      "answer_en": "BoldDesk is a product in the Help desk category. Its directory profile covers Multi-brand Help desk, AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding.",
-      "answer_zh": "BoldDesk 属于客户服务台软件。第三方资料列出的功能包括多品牌客服台、AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义。"
+      "question_en": "Is one credit one resolved ticket?",
+      "question_zh": "一个积分等于一张解决工单吗？",
+      "answer_en": "No. The pricing page describes 1–2 credits for simple drafting/answers, 3–5 for a skill or connected-system task, and 8–12 for multi-step work. Credits track complexity rather than resolution.",
+      "answer_zh": "不是。定价页描述简单草稿／回答1–2积分、单技能或连接系统任务3–5积分、多步骤工作8–12积分，按复杂度而非解决结果计量。",
+      "source_refs": ["pricing"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Multi-brand Help desk, AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management, Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation), Self Service Portal, Multi-language Support, Live Chat",
-      "answer_zh": "多品牌客服台、AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理、问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒、自助服务门户、多语言支持、在线聊天"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Will On-Hold tickets keep escalating?",
+      "question_zh": "On-Hold 工单会继续升级吗？",
+      "answer_en": "The SLA guide says On-Hold and Waiting for Customer pause timers and stop SLA reminders and escalations. Define when the team may use these states.",
+      "answer_zh": "SLA 指南说明 On-Hold 及 Waiting for Customer 暂停计时并停止 SLA 提醒和升级，应定义团队何时可使用这些状态。",
+      "source_refs": ["sla"]
     }
   ],
   "sources": [
@@ -309,25 +191,171 @@
       "read_at": "2026-10-22T08:36:33.887Z",
       "excerpt_sha256": "ff773381ef83b45825e8afb4be180b97ea3713c62d1c54f1cf0a99ba4d2ac1a3",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI Ticket Management System for Customer Support | BoldDesk",
+      "title": "AI Ticket Management System for Customer Support | BoldDesk",
+      "url": "https://www.bolddesk.com/ticket-management-system",
+      "read_at": "2026-10-22T11:05:12.240911+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e815f82d73f27b6c6d897683fc7103e91e5eb8b6e8d6afef41266fb4b1f7b050",
+      "research_notes_en": "Direct current product page describes unified ticket lifecycle and dialer integrations; it now matches AI-included pricing, while earlier web-reader content differed. Outcome, security and migration promises not tested."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "BoldDesk Pricing: Pay for AI Work, Human Agents Included",
+      "title": "BoldDesk Pricing: Pay for AI Work, Human Agents Included",
+      "url": "https://www.bolddesk.com/pricing",
+      "read_at": "2026-10-22T11:05:12.186624+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "575c677f405aca3314966bacb646136a35b5ab9de2d2cbda75dcd21152a4eb00",
+      "research_notes_en": "Dated October 20 2026 AI credit tiers with included humans, annual/monthly USD rates, complexity-based credits, no automatic overage, renewal-expiring top-ups. Supersedes old seat-only page snapshots."
+    },
+    {
+      "id": "sla",
+      "type": "official_documentation",
+      "site": "Service Level Agreement SLA in BoldDesk Guide",
+      "title": "Service Level Agreement SLA in BoldDesk Guide",
+      "url": "https://support.bolddesk.com/kb/article/86/what-is-service-level-agreement-sla",
+      "read_at": "2026-10-22T11:05:12.216541+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b5f52abcc852f2e7161738037f0078ef0f445a84afba1de15c1bf71c59b1324c",
+      "research_notes_en": "First/next response and resolution metrics, business/calendar hours, pause states, reminders/escalations and repeat-resolution reporting."
+    },
+    {
+      "id": "merge",
+      "type": "official_documentation",
+      "site": "Auto-Merge Tickets App in BoldDesk: Install & Configure",
+      "title": "Auto-Merge Tickets App in BoldDesk: Install & Configure",
+      "url": "https://support.bolddesk.com/kb/article/20155/how-to-install-configure-and-manage-auto-merge-tickets-in-bolddesk",
+      "read_at": "2026-10-22T11:05:12.211366+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "9733222bb1045abb8e2aef27d5fed79e32ee0c8ea62a79871140a5a04f457460",
+      "research_notes_en": "Auto-Merge app: Copilot license, legacy/Enterprise matrix, API-key setup, 168-hour window, max 10 matches, only post-install tickets and closed-ticket reopen."
+    },
+    {
+      "id": "assist",
+      "type": "official_documentation",
+      "site": "Getting Started with BoldDesk AI Assist",
+      "title": "Getting Started with BoldDesk AI Assist",
+      "url": "https://support.bolddesk.com/kb/article/22417/getting-started-with-bolddesk-ai-assist",
+      "read_at": "2026-10-22T11:05:12.226102+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "6b7521b3971f22f41aeec78724133ba6f3f90a8264c9beb0d6fe1db319d35d0a",
+      "research_notes_en": "AI Assist formerly Copilot drafts for humans and has assigned-seat/legacy-plan language, conflicting with current broad included-AI pricing. Not the customer-facing AI Agent."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:05:12.240911+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "pricing", "sla", "merge", "assist"],
+  "profile": {
+    "sections": [
+      {
+        "id": "queue",
+        "title_en": "Give the request an owner and a visible next state",
+        "title_zh": "为请求指定负责人及可见下一状态",
+        "en": "BoldDesk captures email, chat, social and portal requests into a tracked queue. The product describes New, assignment to Open, work in waiting states, and Solved/Closed. A practical support workflow starts with who owns a new request and what information is needed before replying; a shared inbox alone does not define that responsibility.\n\nChoose a representative request such as an order-status question, attach the relevant customer record, assign it and inspect the complete thread after a follow-up. A phone request depends on a dialer integration. The advertised broad channel list does not establish a carrier number, regional coverage or provider fees, and the vendor’s migration or resolution-speed promises were not tested.",
+        "zh": "BoldDesk 将邮件、聊天、社交及门户请求放入可跟踪队列。产品描述 New、分配后 Open、等待状态中的处理，以及 Solved／Closed。实用支持流程应先明确新请求负责人及回复所需信息，共享邮箱本身不能定义责任。\n\n可选订单状态咨询等代表性请求，关联客户记录、分配并在追问后检查完整线程。电话请求依赖拨号器集成。广泛渠道列表不能确定运营商号码、地区覆盖或服务商费用；迁移及解决速度宣传未测试。",
+        "source_refs": ["product"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "sla-clock",
+        "title_en": "SLA time depends on calendar, priority and status",
+        "title_zh": "SLA 时间取决于日历、优先级及状态",
+        "en": "The SLA guide separates first response, next response and resolution. Policies can map by ticket conditions and priority, using either calendar hours or business hours. It gives a minimum ten-minute target and requires resolution time greater than response time. Before treating a report as a customer commitment, agree the working schedule and which policy applies.\n\nOn-Hold and Waiting for Customer pause the clock and suppress reminders/escalations. Resolution due can be changed with a reason; next-response due can be cleared with a reason, while first-response due cannot. Repeated resolutions count as separate events in the documented average. Inspect a reopened ticket and compare elapsed time with SLA-counted time; a changed status can improve the metric without completing the underlying customer task.",
+        "zh": "SLA 指南区分首次响应、后续响应和解决。策略按工单条件及优先级映射，采用日历或营业时间。文档给出最短10分钟目标，并要求解决时间大于响应时间。把报表当客户承诺前，应约定工作日历及适用策略。\n\nOn-Hold 与 Waiting for Customer 暂停时钟并停止提醒／升级。解决期限可填原因后改动，后续响应期限可填原因后清除，首次响应期限不能清除。文档中的平均值把重复解决计为不同事件。应检查重新打开工单并比较实际经过时间和 SLA 计时；状态改动可改善指标，却未完成底层客户任务。",
+        "source_refs": ["sla"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "merge",
+        "title_en": "Inspect retained messages, visibility and reopening during a merge",
+        "title_zh": "合并时检查保留消息、可见性及重新打开",
+        "en": "Auto-Merge requires installation with an API key and configured rules. The guide allows a window up to 168 hours, requester/subject matching, selected ticket statuses and extra field conditions. Administrators choose whether the new or old ticket remains primary and configure public/private notes, copied CCs, source links, notification suppression and first/latest message inclusion.\n\nIt considers only tickets created after installation and merges at most ten matching duplicates per ticket. Merging into a closed ticket reopens it. Test similar subjects describing different incidents, a shared customer email and copied CCs before enabling broad rules. The guide does not establish a complete undo procedure. Its Enterprise/Copilot eligibility table also differs from current all-feature pricing, so confirm the actual account entitlement rather than treating documentation labels as interchangeable.",
+        "zh": "Auto-Merge 需使用 API key 安装并配置规则。指南允许最长168小时窗口、请求人／主题匹配、选定状态及额外字段条件。管理员选择保留新或旧工单，并配置公开／私有备注、复制抄送、来源链接、禁发通知及首条／最新消息包含方式。\n\n它只考虑安装后创建的工单，每张最多合并10条匹配重复工单；合并到已关闭工单会重新打开。启用广泛规则前，应测试相似主题但不同事故、共用客户邮箱和复制抄送。指南未确定完整撤销程序，其 Enterprise／Copilot 资格表也与当前全功能定价不同，应确认真实账户权限。",
+        "source_refs": ["merge", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-role",
+        "title_en": "Drafting for an agent and acting for a customer have different consequences",
+        "title_zh": "为坐席起草与代客户执行有不同后果",
+        "en": "AI Assist, formerly AI Copilot, is documented as reply suggestions, summaries, translations and knowledge-grounded assistance for human agents. It is distinct from the customer-facing AI Agent. The pricing page additionally markets skills, API/MCP actions and human approvals; a drafting feature alone does not prove a configured refund or account-change action is authorized.\n\nFor evaluation, compare a draft to the source article and ticket history, inspect a missing-answer case and review any proposed external action. The public material did not establish a universal accuracy level, escalation rule or connector authorization behavior. Some help text still requires purchased and assigned AI Assist seats on legacy/Enterprise plans; this conflicts with the newer included-AI offer and should be resolved for the selected account.",
+        "zh": "AI Assist（原 AI Copilot）被描述为供人工坐席使用的回复建议、总结、翻译和知识库辅助，与面向客户的 AI Agent 不同。定价页还宣传技能、API／MCP 动作和人工审批；存在草稿功能本身不能证明退款或账户改动动作已经配置并获授权。\n\n评估应把草稿与来源文章及工单历史对照，检查无答案情形并复核拟执行外部动作。公开材料未确定统一准确度、升级规则或连接器授权行为。部分帮助文字仍要求旧／Enterprise 套餐购买并分配 AI Assist 席位，与较新包含 AI 的报价冲突，需按所选账户解决。",
+        "source_refs": ["assist", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "credit-cost",
+        "title_en": "Budget complexity credits and human fallback",
+        "title_zh": "预算复杂度积分及人工兜底",
+        "en": "The October 20 pricing page lists 1,000 monthly AI credits with five humans at $99/month billed yearly, $1,188/year, or $116 monthly. It lists extra humans at $20/month and top-ups at $40 per 1,000 credits. These are dated USD observations, not a universal quote. Simple work uses 1–2 credits, a focused skill 3–5 and multi-step work 8–12; one credit is not a ticket or successful resolution.\n\nThe page says alerts arrive at 80% and 100%, no automatic overage is charged, and human service continues when credits are exhausted. Monthly credits reset; top-ups are used afterward and expire at the next renewal. Custom volumes can have annual pooling. Measure representative work instead of using the vendor calculator’s illustrative industry outcomes as customer evidence. License text, hosting region, export/restore coverage, full UI language list, channel charges and regional purchasing remain unverified.",
+        "zh": "10月20日定价页列出每月1,000 AI 积分及5个人工坐席，年付折每月99美元、全年1,188美元，或月付116美元；额外人工每月20美元，每1,000补充积分40美元。这是有日期的美元观察，不是通用报价。简单工作消耗1–2积分、聚焦技能3–5、多步骤8–12；一个积分不等于工单或成功解决。\n\n页面称80%和100%时提醒，无自动超额收费，积分耗尽后人工服务继续。月度积分重置，补充积分随后使用并于下次续期到期；定制量可年度共用。应测量代表性工作，不能把计算器假设行业效果当客户证据。许可文本、托管地区、导出／恢复覆盖、完整界面语言列表、渠道费用和地区购买未核实。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "BoldDesk: Ticket SLAs, Auto-Merge and AI Credit Pricing",
+    "title_zh": "BoldDesk：工单 SLA、自动合并与 AI 积分定价",
+    "description_en": "Understand BoldDesk ticket ownership, paused SLA clocks, merge conditions, AI Assist versus AI Agent, and current credit-based pricing with legacy documentation conflicts.",
+    "description_zh": "了解 BoldDesk 工单归属、SLA 暂停、合并条件、AI Assist 与 AI Agent 差异，以及当前积分定价和旧文档冲突。",
+    "primary_intent": "Evaluate BoldDesk support operations and AI usage cost.",
+    "secondary_questions": [
+      "Which statuses pause SLA escalation?",
+      "Does Auto-Merge process old tickets?",
+      "What happens when AI credits run out?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand, ranking or SEO/GEO effect.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant, migration, merge, SLA transition, AI response/action, integration or purchase tested. License, regions, export/restore, full UI language coverage, provider fees and regional access remain unverified.",
+      "zh": "未测试租户、迁移、合并、SLA 转换、AI 回复／动作、集成或购买；许可、地区、导出／恢复、完整界面语言、服务商费用及地区访问未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Current October 20 AI-included pricing and directly read product page differ from legacy AI Assist/Auto-Merge eligibility and earlier web-reader snapshots. Confirm selected account rights and contract conditions.",
+      "zh": "当前10月20日包含 AI 的定价及直接读回产品页，与旧 AI Assist／Auto-Merge 资格说明及较早网页读取器快照不同，需确认所选账户权限和合同。",
+      "source_refs": ["pricing", "product", "assist", "merge"],
+      "evidence_type": "observed_documentation_inconsistency"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

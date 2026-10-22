@@ -1,7 +1,7 @@
 {
   "schema_version": "123charts-software-research-v1",
   "slug": "oracle-database-2e28444d",
-  "name": "Oracle Database",
+  "name": "Oracle AI Database",
   "website_url": "https://www.oracle.com/database/",
   "domain": "www.oracle.com",
   "identity_domain": "oracle.com",
@@ -10,213 +10,154 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Oracle Database is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.\n\nAdditional listed capabilities include Data Migration, Creation (Development), Backup. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: move supported records between systems; create additional copies of selected data. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Oracle Database 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。\n\n资料还列出数据迁移、创建与开发、数据备份。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在系统之间迁移受支持的记录；为选定数据创建额外副本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Oracle’s current database site presents Oracle AI Database, with the26ai release, multiple commercial deployments and a separate Free edition. The platform combines relational data with capabilities such as JSON and vector-related development, but a family overview is not a license or deployment specification for every feature. This record retains the original Oracle Database identity while using current official branding.\n\nThis profile focuses on evaluating a26ai Free installation, selecting its intended pluggable-database service and understanding migration and recovery boundaries. It distinguishes the capped Free product from a non-production Enterprise download, managed Autonomous services and commercial options. No installer, server, SQL, account, import or backup was executed.",
+  "description_zh": "Oracle 当前数据库官网采用 Oracle AI Database 品牌，介绍26ai版本、多种商业部署及独立 Free 版本。平台结合关系数据和 JSON、向量等开发能力，但家族概述不是所有功能的许可或部署规格。本文保留原 Oracle Database 产品身份，采用当前官网品牌。\n\n本文聚焦26ai Free 安装评估、选择预期可插拔数据库服务，以及迁移／恢复边界，区分有上限的 Free、非生产 Enterprise 下载、托管 Autonomous 服务及商业选件。本次未执行安装、服务器、SQL、账户、导入或备份。",
   "core_features": [
     {
-      "name_en": "Virtualization",
-      "name_zh": "虚拟化",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Database development platform",
+      "name_zh": "数据库开发平台",
+      "explanation_en": "Use the selected Oracle edition for its documented data and application capabilities.",
+      "explanation_zh": "按所选 Oracle 版本的文档使用数据及应用能力。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Relational Interface",
-      "name_zh": "关系型数据界面",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "CDB and PDB services",
+      "name_zh": "CDB 及 PDB 服务",
+      "explanation_en": "Connect to the intended root or pluggable database through its service.",
+      "explanation_zh": "通过对应服务连接预期根容器或可插拔数据库。",
+      "explanation_scope": "product_specific",
+      "source_ref": "connect",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Queries",
-      "name_zh": "查询",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Data Pump migration",
+      "name_zh": "Data Pump 迁移",
+      "explanation_en": "Export/import supported source versions per PDB with explicit logs and privileges.",
+      "explanation_zh": "按 PDB 导出／导入受支持源版本，并核对日志及权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "migration",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Performance Analysis",
-      "name_zh": "性能分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Monitoring",
-      "name_zh": "监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Database Conversion",
-      "name_zh": "数据库转换",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Search",
-      "name_zh": "数据搜索",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Replication",
-      "name_zh": "数据复制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Migration",
-      "name_zh": "数据迁移",
-      "explanation_en": "Move supported records between systems.",
-      "explanation_zh": "在系统之间迁移受支持的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Creation (Development)",
-      "name_zh": "创建与开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup",
-      "name_zh": "数据备份",
-      "explanation_en": "Create additional copies of selected data.",
-      "explanation_zh": "为选定数据创建额外副本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Backup and recovery tooling",
+      "name_zh": "备份及恢复工具",
+      "explanation_en": "Distinguish physical recovery strategy from logical object exports.",
+      "explanation_zh": "区分物理恢复策略与逻辑对象导出。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Move supported records between systems",
-      "Create additional copies of selected data"
+      "Evaluate a small26ai Free application against capacity and service requirements",
+      "Plan a supported XE/Free Data Pump migration with object-level validation",
+      "Separate migration exports from a physical backup/recovery strategy"
     ],
-    "zh": ["在系统之间迁移受支持的记录", "为选定数据创建额外副本"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "按容量及服务要求评估小型26ai Free应用",
+      "规划受支持 XE／Free Data Pump 迁移并验证对象",
+      "区分迁移导出和物理备份／恢复策略"
+    ],
+    "source_refs": ["pricing", "connect", "migration", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Database developers",
+      "Oracle database administrators",
+      "Teams evaluating small Oracle deployments"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Identify exact edition/license and use a compatible disposable host.",
+        "zh": "确定具体版本类别／许可，使用兼容可丢弃主机。",
+        "source_refs": ["pricing", "license", "install"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify application service/PDB selection separately from administrative authentication.",
+        "zh": "独立于管理认证核对应用服务／PDB 选择。",
+        "source_refs": ["connect"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Validate import logs, object coverage and physical restore requirements before cutover.",
+        "zh": "切换前验证导入日志、对象覆盖及物理恢复要求。",
+        "source_refs": ["migration", "backup"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Free has CPU/database-memory/user-data caps; Enterprise download rights are separately described as non-production.",
+        "zh": "Free 有 CPU／数据库内存／用户数据上限，Enterprise 下载权另说明为非生产。",
+        "source_refs": ["pricing", "downloads"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Local administrative authentication and a network PDB connection test different paths.",
+        "zh": "本地管理认证和网络 PDB 连接测试的是不同路径。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Supported XE/Free migration does not use an inferred in-place DBUA upgrade or blanket-ignore import errors.",
+        "zh": "受支持 XE／Free 迁移不能推定原地 DBUA 升级，也不能一律忽略导入错误。",
+        "source_refs": ["migration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_restricted_free_license_read",
+    "is_open_source": false,
+    "name": "Oracle Free Use Terms and Conditions",
+    "scope_en": "26aiFree linked license, subject to applicable existing agreements and separately licensed technology; not a complete Oracle family contract.",
+    "scope_zh": "26ai Free 链接许可，受已有适用协议及独立许可技术影响，非 Oracle 全家族合同。",
+    "url": "https://www.oracle.com/downloads/licenses/oracle-free-license.html",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "capped_free_database_commercial_editions_separate",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:18:28.062434Z",
+    "normalized_monthly_price": null,
+    "summary_en": "26aiFree:2CPU,2GBdatabaseRAM,12GBuserdata underFreeUseTerms; infrastructure/operations extra. Commercial editions/managed services/options quoted separately and not verified here.",
+    "summary_zh": "26ai Free：两 CPU、2GB 数据库内存、12GB 用户数据，适用免费使用条款；设施／运维另计。商业版本／托管服务／选件单独报价，本次未核。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Oracle Database do?",
-      "question_zh": "Oracle Database 用来做什么？",
-      "answer_en": "Oracle Database is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.",
-      "answer_zh": "Oracle Database 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration, Creation (Development), Backup",
-      "answer_zh": "虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移、创建与开发、数据备份"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,25 +167,231 @@
       "read_at": "2026-10-22T08:48:24.207Z",
       "excerpt_sha256": "ebfd8cd56ea51eb624f2d38425f21276e5fb83aaddb9220b52079adfde7e7053",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "AI Database | Oracle",
+      "url": "https://www.oracle.com/database/",
+      "read_at": "2026-10-22T13:18:28.062434Z",
+      "excerpt_sha256": "f1311a6bc7ea34e469b685b7216d0c6b3241d8d069169e95b7379813b9ce33d0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CurrentOracleAI Databasebranding/productfamilyscope read, noAIaccuracy/customeroutcomes claim."
+    },
+    {
+      "id": "downloads",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "Database Software Downloads",
+      "url": "https://www.oracle.com/database/technologies/oracle-database-software-downloads.html",
+      "read_at": "2026-10-22T13:19:02.603997Z",
+      "excerpt_sha256": "bf68a5e7f33dee3b85d03997966c6926090ed702b5d7f6dde3be9744ab457c6e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Freeedition develop/deploy/distributemarketing vsEnterprisefree nonproductionprototype/test downloadexplicitly distinguished; no paidEnterprisequote."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Oracle AI Database",
+      "title": "Oracle AI Database Free | Oracle",
+      "url": "https://www.oracle.com/database/free/",
+      "read_at": "2026-10-22T13:20:27.070108Z",
+      "excerpt_sha256": "82a7dd25940f0842c32db3654374ad26bf9460e066cef80b9bc858d78f5bca43",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Explicit26aiFree2CPU/2GBdatabaseRAM/12GBuserdata andfreeusetermslink; notentirehostrequirementsnorallpaidoptions."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "Oracle AI Database",
+      "title": "Oracle Free License",
+      "url": "https://www.oracle.com/downloads/licenses/oracle-free-license.html",
+      "read_at": "2026-10-22T13:37:02.175547Z",
+      "excerpt_sha256": "38c1403a17ce40d1e5fc7bc150cdf32b84f6b53fdc1bee69e3f144ed516dc8f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ActualFreeUseTerms rights/internalbusiness/unmodifiedredistribution/nofee,restrictionsandSeparateTerms read; nolegalcomplianceassessment."
+    },
+    {
+      "id": "install",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "Installing Oracle AI Database Free",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/xeinl/installing-oracle-database-free.html",
+      "read_at": "2026-10-22T13:37:00.722076Z",
+      "excerpt_sha256": "94562c3d04519f3d6cfa2e9d3668b49f3782d852ff7ef00b0c00766c02e47795",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Linux26aiRPM/prerequisites/9GBopt,nosymlink,FREE/ FREEPDB1listener1521,adminaccounts/config/logs read. No install/deinstall commands run."
+    },
+    {
+      "id": "connect",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "Connecting to Oracle AI Database Free",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/xeinw/connecting-oracle-database-xe.html",
+      "read_at": "2026-10-22T13:37:00.362140Z",
+      "excerpt_sha256": "7616c379cba2e061025966d4e7f93b6cb77ccab8b00ba12f22dc116609683531",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ActualWindowsguide;OSauthSYSDBAroot independentlistener vsnetworkserviceFREEPDB1/PDB,listenerstatus read; OScommandspathsnotgeneralized."
+    },
+    {
+      "id": "migration",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "Moving from Previous Versions of Oracle Database XE or Free to Oracle AI Database Free",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/xeinl/moving-previous-versions-oracle-database-xe-database-free.html",
+      "read_at": "2026-10-22T13:37:02.071262Z",
+      "excerpt_sha256": "ff0743fc1c4ea28732530b9e1f475b3a04fb3891e3ed21cf534f326bd36d0a46",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ActualLinuxXE21cto26aiFree/DataPumpperPDB/noDBUA/noDBCAplug; expected listed errors scopednotallfailures, read."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Oracle AI Database",
+      "title": "Introduction to Backup and Recovery",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/bradv/introduction-backup-recovery.html",
+      "read_at": "2026-10-22T13:37:00.208707Z",
+      "excerpt_sha256": "312628819cb7b4aa819dd0808ed1012c4fdf97cc97d27896aafa60124595776f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Physicalfiles/RMANversuslogicalDataPumpbackup,operatorstrategyandoptionentitlements distinguished; notallfeatureslicensedforallFreeinstances."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:37:02.175547Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": [
+    "home",
+    "downloads",
+    "pricing",
+    "install",
+    "connect"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "edition",
+        "title_en": "Free and a free Enterprise download have different rights",
+        "title_zh": "Free 与免费 Enterprise 下载的权利不同",
+        "en": "Oracle’s download page says Free can develop, deploy and distribute small applications. The Enterprise download description instead identifies development, prototyping and testing in a non-production environment. Autonomous cloud services and commercial database options are separate choices. Select the actual package, edition, contract and host requirements before evaluating capabilities. Do not infer production entitlement from the absence of a download charge or from a feature being visible in documentation.",
+        "zh": "下载页称 Free 可用于小应用开发、部署及分发；Enterprise 下载说明则指定非生产的开发、原型及测试。Autonomous 云服务和商业选件是不同选择。评估能力前需选定具体包、版本类别、合同及主机要求，不能因下载不收费或文档出现某功能就推定生产权利。",
+        "source_refs": ["downloads", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity",
+        "title_en": "Database limits are not the host’s complete resource budget",
+        "title_zh": "数据库限额不是主机完整资源预算",
+        "en": "The26ai Free page caps database use at two CPUs,2GB RAM and12GB of user data. Those are edition limits, not a statement that the host only needs2GB total RAM or12GB disk. The Linux installation guide separately describes roughly9GB under /opt and specific package/preinstallation requirements. Use a disposable compatible host; the guide requires handling existing XE/Free installations before installation, so it is not a safe instruction to overwrite a populated system. No existing installation was changed.",
+        "zh": "26ai Free 页将数据库使用限制为两 CPU、2GB 内存及12GB 用户数据。这是版本限额，不代表主机总内存仅需2GB或磁盘12GB。Linux 安装指南另说明 /opt 约9GB及具体包／预安装要求。应使用兼容可丢弃主机；指南要求安装前处理已有 XE／Free，不是可覆盖有数据系统的安全指令，本次未改已有安装。",
+        "source_refs": ["pricing", "install"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "connection",
+        "title_en": "A local SYSDBA session does not prove a PDB client connection",
+        "title_zh": "本地 SYSDBA 会话不证明 PDB 客户端连接成功",
+        "en": "The connection guide distinguishes OS-authenticated SYSDBA access to CDB$ROOT from a network connection through a running listener. Default FREE connects to the root; FREEPDB1 targets the default PDB. An application should verify host, port, service, account and current container instead of treating any successful administrative login as the right database. This cited guide is for Windows; use platform-specific install/authentication instructions elsewhere. No listener, service or account was probed.",
+        "zh": "连接指南区分操作系统认证的 CDB$ROOT SYSDBA 访问，以及通过运行中 listener 的网络连接。默认 FREE 连接根容器，FREEPDB1 指向默认 PDB。应用需验证主机、端口、服务、账户及当前容器，不能把管理员登录成功等同接到正确数据库。该引用指南面向 Windows，其他平台需用相应安装／认证说明；本次未探测 listener、服务或账户。",
+        "source_refs": ["connect"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "migrate",
+        "title_en": "Free migration is an export/import workflow",
+        "title_zh": "Free 迁移采用导出／导入流程",
+        "en": "The Linux migration guide handles21c XE and earlier Free data through Data Pump exports and imports for each PDB. It disallows DBUA upgrades and using DBCA to plug previous-version PDBs into Free;18c XE first moves through21c XE. Review dump directories, privileges, source/target services and logs, and validate objects and row totals before cutover. The guide lists specific expected import messages; that is not permission to ignore unrelated errors. No source was removed or migration run.",
+        "zh": "Linux 迁移指南按 PDB 用 Data Pump 导出／导入21c XE及较早 Free 数据，不允许 DBUA 升级或用 DBCA 将旧 PDB 插入 Free；18c XE需先迁21c XE。切换前需核导出目录、权限、源／目标服务、日志、对象及行数。指南列举特定预期导入消息，不代表可以忽略其他错误，本次未删除源或运行迁移。",
+        "source_refs": ["migration"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Logical exports supplement physical recovery",
+        "title_zh": "逻辑导出补充物理恢复",
+        "en": "The backup guide distinguishes physical files—data files, control files and archived redo—from logical objects exported with Data Pump. It calls physical backup the foundation and describes RMAN as the preferred common interface. A migration dump alone is not a full host-loss recovery strategy. Choose the actual edition/options, retention, backup location and restore objective, then rehearse in a separate environment. A capability mentioned in the broad recovery manual is not evidence that every Free installation includes every optional backup service.",
+        "zh": "备份指南区分数据文件、控制文件、归档 redo 等物理文件，以及 Data Pump 导出的逻辑对象，将物理备份作为基础、RMAN 作为首选统一接口。迁移导出文件并非完整主机丢失恢复策略。需选定版本／选件、保留期、备份位置及恢复目标，再在独立环境演练。广义恢复手册提到能力，不证明每个 Free 安装包含全部可选备份服务。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "terms",
+        "title_en": "Free Use Terms still impose conditions",
+        "title_zh": "免费使用条款仍有条件",
+        "en": "The linked Free Use Terms permit internal use of unmodified programs for development/testing and internal business operations, plus redistribution without an additional end-user program fee, subject to conditions. They restrict modification/reverse engineering and require notices; separately licensed technology has its own terms. This supports a capped free proprietary product, not an unrestricted open-source grant. Existing Oracle contracts can govern instead. Review the actual distribution/use case; this profile does not assess contractual compliance or quote a paid Enterprise license.",
+        "zh": "链接的 Free Use Terms 允许在条件下内部使用未修改程序作开发／测试及内部业务，并可不另向终端用户收程序费地分发；限制修改／逆向、要求声明，独立许可技术另适用条款。这支持有上限的免费专有产品，不是无限开源授权，已有 Oracle 合同也可能优先适用。需按实际分发／用途审查，本文不评估合同合规或提供付费 Enterprise 报价。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "operate",
+        "title_en": "Creating a database does not complete operations",
+        "title_zh": "创建数据库不等于运行准备完成",
+        "en": "The Linux configuration flow creates FREE/FREEPDB1 and administrative accounts, then starts the database and listener. It identifies database files and diagnostic/creation logs, and offers explicit encryption settings rather than proving they were enabled. For a proposed small app, use separate application access, verify the intended PDB and inspect a failed startup’s actual logs. Keep required files, passwords and a restore procedure under the operator’s control. No installation success, security posture or availability result is claimed here.",
+        "zh": "Linux 配置流程创建 FREE／FREEPDB1 及管理员账户，随后启动库和 listener，列出数据文件、诊断／创建日志及明确加密配置，而不是证明加密已启用。建议小应用使用独立访问、核预期 PDB，并在启动失败时查真实日志。运维方需管理必要文件、密码及恢复流程；本次不声称安装成功、安全或可用性结果。",
+        "source_refs": ["install"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Oracle AI Database:26ai Free limits, PDB connections and migration",
+    "title_zh": "Oracle AI Database：26ai Free 限制、PDB 连接及迁移",
+    "description_en": "Review Free versus Enterprise downloads, service selection, Data Pump migration and physical recovery boundaries.",
+    "description_zh": "了解 Free／Enterprise 下载、服务选择、Data Pump 迁移及物理恢复边界。",
+    "search_intent_en": "Evaluate Oracle26ai Free setup, rights and operating responsibilities.",
+    "search_intent_zh": "评估 Oracle26ai Free 设置、权利及运行责任。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No install, deinstall, account, listener, SQL, Data Pump, RMAN, restore, migration or cloud resource was operated.",
+      "zh": "未操作安装、卸载、账户、listener、SQL、Data Pump、RMAN、恢复、迁移或云资源。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual paid editions/options/cloud pricing, per-feature licensing, application compatibility, recovery objectives and performance/security not independently verified.",
+      "zh": "实际付费版本／选件／云金额、各功能许可、应用兼容、恢复目标及性能／安全未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Linux installation and Windows connection examples are platform-specific. Full setup requirements, actual support/patch entitlement, migration completeness and UI languages require verification for the selected deployment.",
+      "zh": "Linux 安装及 Windows 连接示例具有平台限定；完整设置要求、真实支持／补丁权益、迁移完整性及界面语言需按所选部署核实。",
+      "source_refs": ["install", "connect"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

@@ -10,159 +10,151 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Aircode is a product in the IDEs category. Its directory profile covers Code Completion, Real-time Collaboration, Debugger, Source code editor, Chat (Messaging).\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $8.00. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: suggest code while it is being written; exchange messages within the supported workspace. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Aircode 属于集成开发环境软件。第三方资料列出的功能包括代码补全、实时协作、调试器、源代码编辑器、聊天消息。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $8.00. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在编写过程中提供代码补全建议；在受支持的工作空间中交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "AirCode is a browser-based Node.js backend development and hosting service. Developers write functions, debug requests and publish HTTP endpoints, with a database and file storage exposed through its API. It can support a small webhook or API implementation, but a browser editor and a managed runtime do not by themselves supply application authentication or correct business logic.\n\nIts quickstart follows a function from params to a debug response and then a deployed URL. This profile extends that path to database writes, environment changes, historical deployments and resource failures. Several official pricing/limit values disagree, so they remain qualification gaps rather than an invented single capacity specification.",
+  "description_zh": "AirCode 是浏览器内 Node.js 后端开发及托管服务。开发者编写函数、调试请求并发布 HTTP 端点，通过 API 使用数据库及文件存储。它可用于小型 webhook 或 API，但浏览器编辑器及托管运行时本身不能证明已有应用认证或正确业务逻辑。\n\n入门指南从 params、调试响应走到已部署 URL。本文继续研究数据库写入、环境变量、历史部署与资源失败。多处官方定价／限制数值不一致，保留为条件缺口，不编造统一容量规格。",
   "core_features": [
     {
-      "name_en": "Code Completion",
-      "name_zh": "代码补全",
-      "explanation_en": "Suggest code while it is being written.",
-      "explanation_zh": "在编写过程中提供代码补全建议。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Browser function development",
+      "name_zh": "浏览器函数开发",
+      "explanation_en": "Write a Node.js handler and inspect JSON params, response and logs.",
+      "explanation_zh": "编写 Node.js 处理器，检查 JSON 参数、响应及日志。",
+      "explanation_scope": "product_specific",
+      "source_ref": "quick",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Real-time Collaboration",
-      "name_zh": "实时协作",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Managed database API",
+      "name_zh": "托管数据库 API",
+      "explanation_en": "Save/query records through aircode.db tables.",
+      "explanation_zh": "经 aircode.db 表保存／查询记录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "data",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Debugger",
-      "name_zh": "调试器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Versioned deployment",
+      "name_zh": "版本化部署",
+      "explanation_en": "Publish edits and redeploy an earlier function/environment version.",
+      "explanation_zh": "发布编辑内容，重新部署旧函数／环境版本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deploy",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Source code editor",
-      "name_zh": "源代码编辑器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Chat (Messaging)",
-      "name_zh": "聊天消息",
-      "explanation_en": "Exchange messages within the supported workspace.",
-      "explanation_zh": "在受支持的工作空间中交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Request-based debugging",
+      "name_zh": "基于请求的调试",
+      "explanation_en": "Use documented online request captures to reproduce supported request data.",
+      "explanation_zh": "用文档请求捕获重现受支持的请求数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "debug",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Suggest code while it is being written",
-      "Exchange messages within the supported workspace"
+      "Evaluate a small Node.js request-tracking API",
+      "Inspect replay effects, deployment state and quota failure behavior"
     ],
-    "zh": ["在编写过程中提供代码补全建议", "在受支持的工作空间中交换消息"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "评估小型 Node.js 申请跟踪 API",
+      "检查重放影响、部署状态及额度失败行为"
+    ],
+    "source_refs": ["quick", "data", "debug", "deploy", "limits"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $8.00. Offers Free-forever plan.",
-      "zh": "未提供免费试用 起价为 $8.00. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Node.js developers",
+      "Webhook integration developers",
+      "Small backend teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Verify the current account runtime and conflicting plan values.",
+        "zh": "确认当前账户运行时及冲突的方案数值。",
+        "source_refs": ["runtime", "pricing", "limits"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a disposable handler and record; inspect both response and stored data.",
+        "zh": "使用可丢弃处理器／记录，同时检查响应及存储数据。",
+        "source_refs": ["quick", "data"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Test failure/replay and confirm published environment/version.",
+        "zh": "测试失败／重放，并确认发布环境及版本。",
+        "source_refs": ["debug", "env", "deploy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Deployment is required for online code/environment/deletion changes.",
+        "zh": "代码／环境／删除改动需部署后在线生效。",
+        "source_refs": ["deploy", "env"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Timeout, bandwidth and retention values disagree across official pages.",
+        "zh": "官方各页超时、带宽及保留值不一致。",
+        "source_refs": ["pricing", "runtime", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Free/Professional overage can stop service for the current cycle.",
+        "zh": "Free／Professional超额可停止当前周期服务。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "published_service_terms_read",
+    "is_open_source": false,
+    "url": "https://docs.aircode.io/legal/terms-of-service",
+    "source_ref": "terms",
+    "scope_en": "Managed platform service rights, separate from user code and linked open-source examples.",
+    "scope_zh": "托管平台服务权，与用户代码及链接开源示例分开。"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $8.00. Offers Free-forever plan.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $8.00. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium_subscription_account_resource_limits",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T12:31:14.504047Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free0, Professional20/month displayed, Team custom; account-wide usage and conflicting timeout/bandwidth/retention values need confirmation.",
+    "summary_zh": "展示Free0、Professional每月20、Team询价；账户用量及冲突的超时／带宽／保留值需确认。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Aircode do?",
-      "question_zh": "Aircode 用来做什么？",
-      "answer_en": "Aircode is a product in the IDEs category. Its directory profile covers Code Completion, Real-time Collaboration, Debugger, Source code editor, Chat (Messaging).",
-      "answer_zh": "Aircode 属于集成开发环境软件。第三方资料列出的功能包括代码补全、实时协作、调试器、源代码编辑器、聊天消息。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Code Completion, Real-time Collaboration, Debugger, Source code editor, Chat (Messaging)",
-      "answer_zh": "代码补全、实时协作、调试器、源代码编辑器、聊天消息"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -172,25 +164,246 @@
       "read_at": "2026-10-22T08:36:02.862Z",
       "excerpt_sha256": "dd345db8fed876510b58d2e69af407a7e04a402905a0ae2aad3289598a9a1ebc",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "AirCode - Build your GPTs in a coffee break",
+      "url": "https://aircode.io/",
+      "read_at": "2026-10-22T12:31:14.504047Z",
+      "excerpt_sha256": "0aa550132d6fe899446101834d8e7e7440eebe19d59edfd31c875ceb49e080de",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Browser Node.js function/database/storage product scope read; marketing GPT actions and Grasp links not merged into platform licensing/entitlement."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Aircode",
+      "title": "Pricing - AirCode",
+      "url": "https://aircode.io/pricing",
+      "read_at": "2026-10-22T12:31:37.965899Z",
+      "excerpt_sha256": "6cacce5fd2f27dd788b4fc253c18e0975557bea72a2ea67e64218d8030e057fb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Free0 forever, Professional20/month displayed, Team custom and account monthly meters read. Card/table version-history conflicts and price-vs-limit bandwidth/timeout differences retained."
+    },
+    {
+      "id": "quick",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Quick Start | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/getting-started/",
+      "read_at": "2026-10-22T12:31:38.012056Z",
+      "excerpt_sha256": "dab0d69ad13a706e92f2ac51c7c4daddec15a9123fd30d5ca4799c24f7f9f0f9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "New app/function, params/response/log debug and deployed endpoint sequence read; no account/app created."
+    },
+    {
+      "id": "data",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Database Quickstart | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/getting-started/database",
+      "read_at": "2026-10-22T12:32:21.622445Z",
+      "excerpt_sha256": "69cb1168cb21d0ec9017c592641f527e7f7e5bd322ea9bdab865b890843a8ae5",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "aircode.db.table/save/where/find and automatic table/_id/timestamp behavior read; no isolation/transaction guarantee inferred."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Debug Online | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/guide/functions/debug",
+      "read_at": "2026-10-22T12:32:21.557953Z",
+      "excerpt_sha256": "cfa91f5cb9f230f3d2b4170ac97f189a21f7261d3bb5087243851209a1bbc932",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Fixed/current entry, JSON params/headers, response/log, simulated methods and actual request cache/15day statement read; not all-plan capture guarantee."
+    },
+    {
+      "id": "deploy",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Deployment | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/guide/functions/deployment",
+      "read_at": "2026-10-22T12:32:21.652864Z",
+      "excerpt_sha256": "cea705d01155543b7684411522883526f8b44e961ed3d72f05e7c26067d6e98c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Edited/deleted status pending deployment, failure logs and historical-version redeployment with selected environment creating a new version read."
+    },
+    {
+      "id": "env",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Environment Variable | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/guide/functions/env",
+      "read_at": "2026-10-22T12:32:21.685742Z",
+      "excerpt_sha256": "e3f619e9f90a6fc779247e8d618651f2997b9c484da9e5eb0492a5a45b85e191",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "String environment variables affect debug immediately but production only after deployment read."
+    },
+    {
+      "id": "runtime",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Function Runtime | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/reference/server/functions-runtime",
+      "read_at": "2026-10-22T12:32:21.587229Z",
+      "excerpt_sha256": "4e91053b48ce408143a7a86efbb0cbc9a5a56d564e1b4fe58750f2131028de81",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Published Node14/16 options, timeout504 and5-90 range/default60, settings deploy behavior read; actual currently provisioned runtime unverified."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Aircode",
+      "title": "Resource Limits | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/about/limits",
+      "read_at": "2026-10-22T12:32:57.892126Z",
+      "excerpt_sha256": "ca5993e60fe5a52a67090851e375ce2672682b3050e65584557f2f204c1a92a1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Account-wide monthly limits, Free/Pro service stop on overage, Team overage,512MB/20concurrency/QPS, logs and cold-start estimates read. Conflicts with pricing table kept."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "Aircode",
+      "title": "AirCode Terms of Service | AirCode Docs | AirCode Docs",
+      "url": "https://docs.aircode.io/legal/terms-of-service",
+      "read_at": "2026-10-22T12:32:57.976313Z",
+      "excerpt_sha256": "b33ca6d9b69564fe0ac65ff11557334809efd7ea29d58f25c72646d138634061",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Published Sep2022 service license, content/platform ownership separation, discretionary hobby termination and deletion on termination read; not a current negotiated contract."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:32:57.976313Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "quick", "data", "limits"],
+  "profile": {
+    "sections": [
+      {
+        "id": "flow",
+        "title_en": "Build and inspect one data-writing endpoint",
+        "title_zh": "构建并检查一个写数据端点",
+        "en": "Create an app and function, accept JSON params, return a small result and inspect the debug response and console. A proposed request tracker could use aircode.db.table to save a request record, then query it by a known condition. The data guide says save can create a missing table and generates IDs/timestamps. Verify the stored record and repeated-request behavior before deploying; duplicate prevention, authentication and multi-record transactions were not established by this example. No endpoint or database was executed here.",
+        "zh": "创建应用与函数，接收 JSON 参数、返回小结果，检查调试响应与控制台。建议申请跟踪器用 aircode.db.table 保存申请记录，再按已知条件查询。数据指南称 save 可建立不存在的表，并生成 ID／时间戳。部署前需核对存储记录及重复请求行为；该示例不能证明去重、认证或多记录事务。本次未执行端点或数据库。",
+        "source_refs": ["quick", "data"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "debug",
+        "title_en": "A replayed request can reproduce its side effects too",
+        "title_zh": "重放请求也可能重现副作用",
+        "en": "Debugging can follow the edited function or use a fixed entry for a multi-function flow. Params are JSON and header values are strings; responses include status/body/timing. The online-request option replaces test inputs with a recent request. Its page describes caching the last five supported JSON requests encrypted for15 days, while plans set different capture allowances. Use disposable payloads and check downstream writes when replaying. Capturing a real webhook is not evidence of safe replay or unchanged authorization, and the feature was not tested.",
+        "zh": "调试可跟随当前函数，或固定多函数流程入口。Params 为 JSON、header 值为字符串，响应含状态／正文／时间。在线请求选项会以近期请求替换测试输入；页面称最近五个受支持 JSON 请求加密缓存15天，方案另设捕获额度。重放应使用可丢弃载荷并检查下游写入。捕获真实 webhook 不能证明可安全重放或授权未变，本次未测试该功能。",
+        "source_refs": ["debug", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "release",
+        "title_en": "Edits and deletions wait for a deployment",
+        "title_zh": "编辑及删除需部署后生效",
+        "en": "The deployment guide distinguishes new, deployed, modified and locally deleted functions. Editing, renaming or deleting an online function does not immediately change production; publishing the deletion removes its endpoint. Environment-variable values are strings and likewise require deployment for online effect. Historical redeployment uses the selected version/environment and creates another deployment version. Inspect deployment logs after failure and verify the resulting endpoint. No database restoration or reversal of external effects is established by redeploying older code.",
+        "zh": "部署指南区分新建、已部署、已修改及本地删除函数。编辑、改名或删除在线函数不会立即改变生产，发布删除后端点才移除。环境变量值为字符串，也需部署才在线生效。历史重新部署使用所选版本／环境，并创建新部署版本。失败后应检查部署日志并验证端点结果。重新部署旧代码不能证明数据库恢复或外部副作用回退。",
+        "source_refs": ["deploy", "env"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "runtime",
+        "title_en": "Confirm the actual runtime and timeout for the account",
+        "title_zh": "确认账户实际运行时及超时",
+        "en": "The runtime page lists Node.js14/16 and describes a504 response when execution exceeds timeout, with a stated60-second default and5–90-second setting range. The pricing matrix instead lists30/90/900 seconds for Free/Professional/Team. These are unresolved documented differences, not measured service limits. Check the runtime exposed to a current account and dependency compatibility before adoption. Test a slow upstream request with explicit error handling; automatic scaling and a marketing consistent-environment claim do not prove that debug and production always behave identically.",
+        "zh": "运行时页列 Node.js14／16，称超过执行时限返回504，默认60秒、可设5–90秒；定价矩阵却列 Free／Professional／Team 为30／90／900秒。这是未解决的文档差异，不是实测限制。采用前需确认当前账户实际运行时及依赖兼容，并以明确错误处理测试慢上游。自动扩缩容及环境一致宣传不能证明调试与生产始终相同。",
+        "source_refs": ["runtime", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capacity",
+        "title_en": "Unlimited requests still have other resource boundaries",
+        "title_zh": "请求不限仍有其他资源边界",
+        "en": "Pricing displays Free $0 forever with three apps,100,000 requests,1GB database and2GB files, and Professional $20/month with ten apps,100 execution hours and500GB bandwidth. Team is custom. The limits guide says monthly meters aggregate all account applications; Free/Professional access stops after overage, while Team may pay for more usage. It lists20 concurrent calls per app and other payload/log limits. Its Professional bandwidth is100GB rather than pricing’s500GB, and file/log/history values also differ. Confirm enforceable allowances and billing-cycle state instead of inferring unlimited execution from request wording.",
+        "zh": "定价展示 Free 永久$0，含三应用、十万请求、1GB数据库及2GB文件；Professional 每月$20，含十应用、百执行小时及500GB带宽；Team询价。限制指南称月度计量合并账户所有应用，Free／Professional超额后停止访问，Team可按超额计费；另列每应用20并发及载荷／日志限制。其Professional带宽为100GB，与定价500GB不同，文件／日志／历史值也有差异。需确认生效额度及计费周期，不能由请求不限推断执行不限。",
+        "source_refs": ["pricing", "limits"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "continuity",
+        "title_en": "Hosted-service rights and retained content need an exit plan",
+        "title_zh": "托管服务权及保留内容需要退出方案",
+        "en": "The published terms are dated September2022. They grant limited service use within account capacity, distinguish user content from platform ownership and reserve discretion to terminate hobby projects and delete content after account termination. The homepage’s linked open-source projects do not license the whole managed platform. Evaluate external copies of code/data and a compatible replacement runtime before relying on the service. Current provisionability, restore behavior, UI languages and actual performance remain untested.",
+        "zh": "已公布条款日期为2022年9月，按账户容量授予有限服务使用权，区分用户内容与平台所有权，并保留停用业余项目及终止账户后删内容的裁量。首页链接的开源项目不能授权整个托管平台。依赖服务前需评估外部代码／数据副本及兼容替代运行时。当前能否开通、恢复行为、界面语言及实际性能未测试。",
+        "source_refs": ["terms", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "AirCode: Node.js functions, deployment state and quota conflicts",
+    "title_zh": "AirCode：Node.js函数、部署状态及额度冲突",
+    "description_en": "Review database writes, request debugging, environment deployment and unresolved official resource limits.",
+    "description_zh": "了解数据库写入、请求调试、环境部署及未一致的官方资源限制。",
+    "search_intent_en": "Evaluate AirCode backend development and operational limits.",
+    "search_intent_zh": "评估 AirCode 后端开发及运行限制。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, function, request, data, deployment, quota overage or recovery was executed.",
+      "zh": "未执行账户、函数、请求、数据、部署、额度超限或恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Pricing vs limits disagree on Professional bandwidth500/100GB, Free file operations100K/200K, timeout30/90/900 versus60default5–90, and history/log retention. Effective account rules unresolved.",
+      "zh": "定价与限制的Professional带宽500／100GB、Free文件操作十万／二十万、超时30／90／900与默认60可设5–90，以及历史／日志保留不同，账户生效规则未厘清。",
+      "source_refs": ["pricing", "runtime", "limits"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Runtime docs name14/16; current provisioning, supported dependencies and maintenance state not verified.",
+      "zh": "运行时文档列14／16，当前开通、依赖支持及维护状态未核。",
+      "source_refs": ["runtime"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Pricing billing-toggle state, Team quote, real-request capture scope, backups, transactional/auth behavior, UI languages and actual recovery need evaluation.",
+      "zh": "定价周期切换状态、Team报价、真实请求捕获范围、备份、事务／认证行为、界面语言及恢复需评估。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

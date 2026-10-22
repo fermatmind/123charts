@@ -10,142 +10,107 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Bandwidth is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Developer Portal, API Design, Dashboard, Testing Management, Access Control.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: define interface structure and request-response contracts; bring selected indicators and records into one view; organize test cases, execution and results; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Bandwidth 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、开发者门户、API 设计、仪表盘、测试管理、访问控制。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：定义接口结构和请求响应约定；在同一视图中汇集选定指标和记录；组织测试用例、执行过程与结果；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Bandwidth supplies communications APIs, including SMS/MMS messaging and programmable voice. Developers connect applications to its communications network, configure phone numbers and handle asynchronous events. It is not a general API design, gateway or developer-portal management product.\n\nA successful API submission is only one stage of communication. Messaging acceptance, delivery receipts, callback acknowledgement and the application’s own business action need separate checks. This profile focuses on those integration boundaries rather than promising carrier or handset delivery.",
+  "description_zh": "Bandwidth 提供包括 SMS／MMS 与可编程语音的通信 API。开发者将应用接入通信网络，配置号码并处理异步事件。它不是通用 API 设计、网关或开发者门户管理产品。\n\nAPI 提交成功只是通信的一阶段，消息接受、交付回执、回调确认及应用自己的业务动作需分别检查。本文聚焦这些集成边界，不承诺运营商或手机交付。",
   "core_features": [
     {
-      "name_en": "Analytics",
-      "name_zh": "数据分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Asynchronous SMS/MMS API",
+      "name_zh": "异步 SMS／MMS API",
+      "explanation_en": "Submit messages with an application and number, then correlate callback results.",
+      "explanation_zh": "用应用及号码提交消息，再关联回调结果。",
+      "explanation_scope": "product_specific",
+      "source_ref": "send",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Traffic Control",
-      "name_zh": "流量控制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Retrying delivery callbacks",
+      "name_zh": "带重试的交付回调",
+      "explanation_en": "Acknowledge array events promptly and handle duplicates.",
+      "explanation_zh": "及时确认数组事件并处理重复。",
+      "explanation_scope": "product_specific",
+      "source_ref": "webhooks",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Developer Portal",
-      "name_zh": "开发者门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Design",
-      "name_zh": "API 设计",
-      "explanation_en": "Define interface structure and request-response contracts.",
-      "explanation_zh": "定义接口结构和请求响应约定。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "BXML voice control",
+      "name_zh": "BXML 语音控制",
+      "explanation_en": "Return XML instructions to JSON call-event requests.",
+      "explanation_zh": "对 JSON 通话事件请求返回 XML 指令。",
+      "explanation_scope": "product_specific",
+      "source_ref": "voice",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Define interface structure and request-response contracts",
-      "Bring selected indicators and records into one view",
-      "Organize test cases, execution and results",
-      "Restrict information and actions according to permissions"
+      "Prototype a test-number message and reconcile callbacks.",
+      "Evaluate a BXML call-control handler with fixtures."
     ],
     "zh": [
-      "定义接口结构和请求响应约定",
-      "在同一视图中汇集选定指标和记录",
-      "组织测试用例、执行过程与结果",
-      "根据权限限制信息访问和操作"
+      "以测试号码验证消息并对照回调。",
+      "用固定样例评估 BXML 通话处理器。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["quickstart", "voice"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Communications application developer",
+      "Messaging operations engineer",
+      "Voice integration engineer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "docs"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose Build trial or a full account and configure the right endpoint.",
+        "zh": "选择 Build 试用或完整账号，配置对应端点。",
+        "source_refs": ["trial"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Associate an application/number and prepare separate callbacks.",
+        "zh": "关联应用／号码，准备独立回调。",
+        "source_refs": ["quickstart"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Reconcile acceptance, final status, duplicates and billable usage.",
+        "zh": "对照接受、最终状态、重复事件及计费用量。",
+        "source_refs": ["messaging", "webhooks", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "API acceptance and callback acknowledgement are not proof of customer receipt or business processing.",
+        "zh": "API 接受和回调确认不能证明客户接收或业务处理完成。",
+        "source_refs": ["messaging", "webhooks"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The free trial permits only self-messaging under tight limits.",
+        "zh": "免费试用只允许在严格限制下给自己发信。",
+        "source_refs": ["trial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -157,37 +122,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "communications_usage_by_route_channel_and_feature",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:59:44.997447Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "US route/channel message and minute examples with separate features; taxes/fees excluded, full quote required."
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Bandwidth do?",
-      "question_zh": "Bandwidth 用来做什么？",
-      "answer_en": "Bandwidth is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Developer Portal, API Design, Dashboard, Testing Management, Access Control.",
-      "answer_zh": "Bandwidth 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、开发者门户、API 设计、仪表盘、测试管理、访问控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Analytics, Traffic Control, Developer Portal, API Design, Dashboard, Testing Management, Access Control",
-      "answer_zh": "数据分析、流量控制、开发者门户、API 设计、仪表盘、测试管理、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -197,25 +146,218 @@
       "read_at": "2026-10-22T08:38:05.623Z",
       "excerpt_sha256": "6f6ef2b928893502d7f6cf4e43b64ea87f4c8bd799aacfe67b37d5908c5e31a7",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Home | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/",
+      "read_at": "2026-10-22T10:59:44.997447Z",
+      "excerpt_sha256": "bd0496ee1afec67da2304f5f15b4e176fe4ba3b58c3e937eb2404952ba09506d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Official developer entrypoint for communications services read; general API-management category narrowed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Bandwidth",
+      "title": "Pricing | Bandwidth",
+      "url": "https://www.bandwidth.com/pricing/",
+      "read_at": "2026-10-22T10:59:10.199383Z",
+      "excerpt_sha256": "abc8dd8fb640cfe5531a9745664811f3e6f1e920dce29081dede67401580ffa4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Public US messaging/voice examples, excluded fees/taxes and complete-quote requirement read."
+    },
+    {
+      "id": "messaging",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Messaging | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/messaging/",
+      "read_at": "2026-10-22T11:00:30.616055Z",
+      "excerpt_sha256": "20e5706d5f79a0f8001234906b4357ed07b013157fe9a1e4a0c64eece0c16963",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "HTTP 202 queue acceptance, carrier handoff description, segmentation and metadata-only history read."
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Quick Start Guide | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/messaging/quickStart/",
+      "read_at": "2026-10-22T11:00:37.646346Z",
+      "excerpt_sha256": "a04a8156a2334d410d06a258dafdcce14ba694b015b7d011e422f48662f715a9",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Account/application prerequisites and separate inbound/outbound callback setup read."
+    },
+    {
+      "id": "send",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Send Messages | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/messaging/createMessage/",
+      "read_at": "2026-10-22T11:01:39.121215Z",
+      "excerpt_sha256": "20469430546302fc969c4af70744cba83268f4e1248f07506386d7fdfb84c5fe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Message payload IDs/tag/content retention and conflicting bearer/basic auth prose reviewed."
+    },
+    {
+      "id": "webhooks",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Webhooks | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/messaging/webhooks/",
+      "read_at": "2026-10-22T11:00:33.877044Z",
+      "excerpt_sha256": "feca54acc9bf1f3d5ede2c64cad0a2c6ba586f06d74574b3410c7002b712de36",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Array callbacks, 2xx acknowledgement, 10-second timeout, 24-hour retry and at-least-once duplicate delivery read."
+    },
+    {
+      "id": "trial",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "Start a free trial of 10DLC SMS | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/messaging/build-free-trial/",
+      "read_at": "2026-10-22T11:01:36.159115Z",
+      "excerpt_sha256": "3475d89d7bc40a8e432698fd474aeba2b7789e4d05a047bfbeeced2eb2520064",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Build 30-day self-messaging trial restrictions, credit/rate limits, distinct endpoint and 10DLC upgrade steps read."
+    },
+    {
+      "id": "voice",
+      "type": "official_documentation",
+      "site": "Bandwidth",
+      "title": "About | Bandwidth API Docs",
+      "url": "https://dev.bandwidth.com/docs/voice/programmable-voice/bxml/",
+      "read_at": "2026-10-22T11:02:16.312782Z",
+      "excerpt_sha256": "8656a2c4fdea4705edb3a980681d13280dbce7975cfc26445f3533700dd2398a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Programmable voice BXML callback/instruction model, 64KB document limit and invalid-BXML failure read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:02:16.312782Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["docs", "messaging", "quickstart", "voice"],
+  "profile": {
+    "sections": [
+      {
+        "id": "message",
+        "title_en": "Connect a number, application and callback receiver",
+        "title_zh": "连接号码、应用与回调接收端",
+        "en": "The messaging quickstart requires an account and messaging application with inbound/outbound callback URLs. Requests include the sender, recipient, application ID and text; returned message IDs and an optional non-sensitive tag help correlation. A proposed evaluation could send an appointment test to an authorized test phone, store the request ID and reconcile callbacks with that one appointment. Do not send another message merely because an outbound status callback arrived; that can create a reply loop. No message was sent during this research.",
+        "zh": "消息入门要求账号及配置入站／出站回调 URL 的 messaging application。请求包含发送者、接收者、应用 ID 与文本，返回消息 ID 及可选非敏感 tag 用于关联。建议评估时向获准测试手机发送预约测试，保存请求 ID，并将回调对应到该预约。不能仅因收到出站状态回调就再发一条消息，否则可能形成回复循环。本次未发送消息。",
+        "source_refs": ["quickstart", "send", "webhooks"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "acceptance",
+        "title_en": "HTTP 202 is queue acceptance",
+        "title_zh": "HTTP 202 表示进入队列",
+        "en": "The Messaging overview says 202 means the message entered Bandwidth’s queue. It describes Message Delivered as downstream-carrier handoff, while the Build trial guide describes handset receipt. Do not erase that wording difference or equate either with a person reading the message. Store final event status and failure reason, and confirm the receipt semantics for the selected channel/account. Message history retains metadata rather than text, so an application needing a content audit must define its own appropriate storage.",
+        "zh": "Messaging 概览说明 202 表示消息进入 Bandwidth 队列；它将 Message Delivered 描述为交给下游运营商，而 Build 试用指南描述手机接收。不能消除这项措辞差异，也不能把任何一项等同于人已读。应保存最终事件状态及失败原因，并按所选渠道／账号确认回执语义。消息历史保留元数据而非文本，需要内容审计的应用应自行明确适当存储。",
+        "source_refs": ["messaging", "trial", "send"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "callbacks",
+        "title_en": "Callback delivery is at least once and time-bounded",
+        "title_zh": "回调至少一次交付且有时间边界",
+        "en": "The webhook guide sends event arrays, expects a 2xx acknowledgement within ten seconds and retries for up to 24 hours. Duplicate events are possible. A receiver should correlate message/event identity and make its own state transitions idempotent; acknowledgement alone does not establish that downstream business processing finished. Test a duplicate callback and receiver outage with fixtures before production. The messaging overview uses slightly different HTTP-response retry wording, so follow current webhook guidance and verify edge responses rather than guessing.",
+        "zh": "Webhook 指南发送事件数组，要求十秒内返回 2xx，最多重试 24 小时，可能重复事件。接收端应对应消息／事件身份，使自己的状态变更具备幂等性；确认回调本身不能证明后续业务处理完成。生产前可用固定样例测试重复回调及接收端中断。Messaging 概览对 HTTP 响应重试措辞略有差异，应按当前 webhook 指南并核实边界响应，不能猜测。",
+        "source_refs": ["webhooks", "messaging"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "trial",
+        "title_en": "Build is a constrained trial, not customer messaging access",
+        "title_zh": "Build 是受限试用，不是面向客户的发信权限",
+        "en": "The current Build guide offers a 30-day credit-backed trial to the verified mobile number only, SMS in the US/Canada, one ASCII segment with a trial prefix, six messages/minute and 200/day. It uses a different endpoint from the full account. Upgrading requires the full account and relevant 10DLC brand/campaign setup before customer traffic. Treat the trial as an onboarding test; it cannot establish production routing, MMS, broader recipients or sustained free use.",
+        "zh": "当前 Build 指南提供 30 天、消耗试用 credit 的试用，仅可发给已验证手机号；限美加 SMS、带试用前缀的一段 ASCII，每分钟六条、每日 200 条，端点也不同于完整账号。升级需完整账号及相关 10DLC 品牌／活动设置，之后才能面向客户流量。试用适合接入测试，不能证明生产路由、MMS、广泛收件人或永久免费使用。",
+        "source_refs": ["trial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "voice",
+        "title_en": "Voice webhooks also request the next instruction",
+        "title_zh": "语音 webhook 还会请求下一步指令",
+        "en": "Programmable voice uses BXML verbs for actions such as speaking, bridging or hanging up. JSON call-event requests generally expect an XML BXML response, unlike a messaging notification that simply needs acknowledgement. A phone number must be associated with an application and a reachable BXML endpoint. Invalid BXML can fail the call, and the guide limits a document to 64KB. Evaluate call-control latency and errors separately from SMS delivery; no call or recording was made here.",
+        "zh": "可编程语音使用 BXML 动词控制播报、桥接或挂断等操作。JSON 通话事件请求通常期待 XML BXML 响应，不同于只需确认的消息通知。号码需关联应用及可访问 BXML 端点。非法 BXML 会使通话失败，指南将文档限制为 64KB。通话控制延迟与错误需独立于 SMS 交付评估，本次未通话或录音。",
+        "source_refs": ["voice"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Quote message, number, carrier and feature charges together",
+        "title_zh": "一并确认消息、号码、运营商及功能费用",
+        "en": "The public US page lists outbound 10DLC SMS $0.004/message and MMS $0.015, toll-free SMS $0.007 and MMS $0.020. Example voice rates are $0.0100/minute local outbound and $0.0055 inbound, with recording/transcription/streaming separately priced. Taxes and fees are excluded and full product pricing requires a quote. SMS length/encoding affects segment count, so confirm billed segment rules, number rental and registration/carrier fees for the actual route; these headline rates are not an all-in international quote.",
+        "zh": "公开美国定价列出站 10DLC SMS 每条 $0.004、MMS $0.015，免费号码 SMS $0.007、MMS $0.020。语音示例本地出站每分钟 $0.0100、入站 $0.0055，录音／转写／流媒体另计。税费不含，完整产品价格需报价。SMS 长度／编码影响分段，应按实际路由确认计费分段、号码租费及注册／运营商费用；这些标题费率不是国际全包报价。",
+        "source_refs": ["pricing", "messaging"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "This requires a communications application owner",
+        "title_zh": "需要通信应用负责人",
+        "en": "Evaluate Bandwidth for an application that needs programmable messaging or call control and can operate public callbacks, account/number configuration and delivery reconciliation. It is a weaker fit if the requirement is only to publish an existing REST API behind a gateway. Source-code/service license, current authentication details, jurisdiction-specific messaging rules and production throughput require further confirmation. The send guide mixes bearer examples with older basic-auth prose; use the current account’s exact API reference before implementation.",
+        "zh": "当应用需要可编程消息或通话控制，且能负责公共回调、账号／号码配置及交付对账时，可评估 Bandwidth。如果只需把既有 REST API 发布到网关后，适用性较弱。源码／服务许可、当前认证细节、地区消息规则与生产吞吐仍需确认。发送指南的 bearer 示例与旧 basic-auth 文字混杂，实现前应按当前账号查明实际 API 参考。",
+        "source_refs": ["docs", "send", "voice"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Bandwidth: Messaging APIs, Delivery Callbacks, Voice and Usage Costs",
+    "title_zh": "Bandwidth：消息 API、交付回调、语音与用量费用",
+    "description_en": "Evaluate Bandwidth message acceptance, duplicate callbacks, Build trial limits, BXML voice control and US usage-rate scope.",
+    "description_zh": "评估 Bandwidth 消息接受、重复回调、Build 试用限制、BXML 语音控制及美国用量费率范围。",
+    "primary_intent": "Evaluate Bandwidth as a communications API provider.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Homepage returned 403; public pricing/developer pages were read without bypass. Auth prose and delivery-receipt wording conflict across docs; current account semantics require confirmation.",
+      "zh": "首页返回 403，已读取可用定价／开发页，未绕过限制。文档认证文字及交付回执措辞存在差异，需确认当前账号语义。",
+      "source_refs": ["send", "messaging", "trial"],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual segment/number/carrier/registration charges, regional rules, license, UI languages, throughput and callback recovery remain unverified or untested.",
+      "zh": "实际分段／号码／运营商／注册费用、地区规则、许可、界面语言、吞吐及回调恢复仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

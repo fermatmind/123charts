@@ -10,144 +10,82 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Cloudback is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $10.00. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Cloudback 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、自动存储、云存储、远程访问、安全数据存储、加密、备份排程。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $10.00. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Cloudback automates backups of development-platform data. Its current site distinguishes GitHub repositories, GitLab projects, Azure DevOps repositories and Linear workspaces, including platform-specific metadata rather than only Git source files.\n\nIt is relevant when recovering code alone would leave issues, reviews or planning information missing. The important selection questions are what is captured, what can be recreated through the destination API, where archives live and how subscription units are counted. This research did not authorize any platform account or run a backup.",
+  "description_zh": "Cloudback 自动备份开发平台数据。当前官网区分 GitHub 仓库、GitLab 项目、Azure DevOps 仓库和 Linear 工作区，包含各平台元数据，不只是 Git 源代码。\n\n如果只恢复代码仍会缺失 issue、评审或计划资料，可以考虑它。选型重点是采集哪些对象、目标 API 能重建什么、压缩包存在哪里，以及如何统计订阅单位。本次未授权平台账户或运行备份。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Development-platform backups",
+      "name_zh": "开发平台备份",
+      "explanation_en": "Back up supported repositories or workspaces and platform metadata.",
+      "explanation_zh": "备份受支持仓库或工作区及平台元数据。",
+      "source_ref": "product",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Archive and restore options",
+      "name_zh": "备份包及恢复选项",
+      "explanation_en": "Download archives or restore to supported destination platforms.",
+      "explanation_zh": "下载备份包或恢复到受支持目标平台。",
+      "source_ref": "pricing",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Choose one platform and authorize only a representative test resource with an explicit storage destination.",
+      "Recover code plus metadata into a disposable destination and inspect missing fields and secrets."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "选择一个平台，为代表性测试资源授权并明确存储目标。",
+      "把代码和元数据恢复到可丢弃目标，检查缺失字段及密钥。"
+    ],
+    "source_refs": ["docs", "product", "pricing"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $10.00. Offers Free-forever plan.",
-      "zh": "提供免费试用 起价为 $10.00. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Engineering platform team", "Repository administrator"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose one platform and authorize only a representative test resource with an explicit storage destination.",
+        "zh": "选择一个平台，为代表性测试资源授权并明确存储目标。",
+        "source_refs": ["docs", "product"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Recover code plus metadata into a disposable destination and inspect missing fields and secrets.",
+        "zh": "把代码和元数据恢复到可丢弃目标，检查缺失字段及密钥。",
+        "source_refs": ["pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Metadata recovery has API and secret-token limitations; roadmap platforms are not available coverage.",
+        "zh": "元数据恢复受 API 和密钥限制，路线图平台不属于当前覆盖。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -159,37 +97,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $10.00. Offers Free-forever plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $10.00. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:00:44.152169+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "freemium",
+    "billing_basis": "Pooled units; repository/project units versus Linear member-based units; storage choice separate.",
+    "source_snapshot_en": "USD 10/month per 10 units, USD 75 per 100, USD 500 per 1000; Free one repository <=100MB.",
+    "source_snapshot_zh": "每月 10 美元／10 单位、75 美元／100 单位、500 美元／1000 单位；免费一个不超过 100MB 仓库。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Cloudback do?",
-      "question_zh": "Cloudback 用来做什么？",
-      "answer_en": "Cloudback is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling.",
-      "answer_zh": "Cloudback 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、自动存储、云存储、远程访问、安全数据存储、加密、备份排程。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Web Access, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、网页访问、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -199,25 +122,141 @@
       "read_at": "2026-10-22T08:45:11.539Z",
       "excerpt_sha256": "9b321e088b0a7dbdea3b9a73944aad4138c11027cb3acd44dbaa724f500db2ef",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Cloudback",
+      "title": "Cloudback platform overview",
+      "url": "https://cloudback.it/",
+      "read_at": "2026-10-22T14:55:18.927069+00:00",
+      "excerpt_sha256": "cfdccab2a79fe7c228d1788341003f53dd2f001bfb6a814ba9b8ee08bec28fc7",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Supported development platforms, metadata and storage positioning."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Cloudback",
+      "title": "Getting Started | Cloudback Docs",
+      "url": "https://docs.cloudback.it/",
+      "read_at": "2026-10-22T14:55:22.161480+00:00",
+      "excerpt_sha256": "5072f386a44611dc7332b6b5ecc80a13b720331df86a5f6051528ffac2d02602",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Platform-specific setup paths read successfully initially; later request returned 403 and was not bypassed."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Cloudback",
+      "title": "Cloudback Pricing and Feature Matrix",
+      "url": "https://cloudback.it/pricing",
+      "read_at": "2026-10-22T14:55:22.588563+00:00",
+      "excerpt_sha256": "ba8693df5a8690ff541c57fe8c9193a58b3fdaf6d84d5495a5e191116b2ad703",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Unit definitions, free repository limit, restore restrictions and managed/customer storage distinction."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:00:44.152169+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Protect a repository and its surrounding work",
+        "title_zh": "保护仓库及相关协作资料",
+        "en": "The Getting Started documentation directs users to a platform-specific installation path. Do not assume one authorization covers every organization, project or workspace. Begin with a nonproduction repository, review requested access, select its destination storage, and verify that a completed backup contains the expected code and metadata.\n\nFor a repository with a release asset and an issue discussion, compare both the Git history and the surrounding objects. A local clone alone answers a different recovery question. This is a suggested acceptance exercise; detailed installation permissions were not tested.",
+        "zh": "入门文档引导用户按平台选择安装路径，不能假定一次授权涵盖每个组织、项目或工作区。可从非生产仓库开始，检查所需访问、选择目标存储，并确认完成的备份含预期代码和元数据。\n\n例如，仓库含发布附件和 issue 讨论时，应同时比较 Git 历史及相关对象。仅有本地 clone 解决的是另一种恢复问题。这是建议验收练习，本文未测试具体安装权限。",
+        "source_refs": ["docs", "product"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "restoration",
+        "title_en": "An archive and a reconstructed platform are different outcomes",
+        "title_zh": "备份包与重建平台是不同结果",
+        "en": "Official material describes downloadable ZIP archives and restoring into new repositories or projects. GitHub-to-GitLab conversion is a separate capability from a same-platform restore. Metadata export does not imply that every destination API can recreate the same identities or relationships.\n\nThe current pricing matrix specifically excludes webhook secret tokens and identifies pull-request restrictions involving forks or no commit differences. Recreate missing secrets deliberately and validate relationships after restore. A representative recovery should check a branch, tag, issue discussion and release attachment rather than only whether a repository exists.",
+        "zh": "官方资料说明可下载 ZIP 包，并恢复到新仓库或项目；GitHub 与 GitLab 间转换有别于同平台恢复。导出元数据不能证明目标 API 能重建相同身份和关系。\n\n当前定价矩阵明确排除 webhook 密钥，并说明涉及 fork 或分支间没有提交差异的 pull request 限制。需明确补回缺失密钥，恢复后核对关系。代表性恢复应检查分支、标签、issue 讨论及发布附件，不能只看仓库是否存在。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "storage",
+        "title_en": "Keep archive location and keys explicit",
+        "title_zh": "明确备份包位置和密钥",
+        "en": "The site describes customer storage integrations; the pricing matrix also lists managed regional storage. Consequently, the homepage phrase suggesting the vendor does not store data is not enough to determine your actual architecture. Confirm which configured backend receives each archive and whether replication and retention meet the requirement.\n\nIf using customer-controlled encryption keys, document how an authorized operator recovers data when the normal administrator is unavailable. A service can create archives successfully while an organization loses the means to decrypt them. This is an operational evaluation point, not an observed Cloudback failure.",
+        "zh": "官网说明可接入客户存储，定价矩阵也列出厂商管理的区域存储。因此，首页表示厂商不存储数据的说法不足以确定实际架构。需确认每个压缩包的目标后端，以及复制和保留是否满足需求。\n\n使用客户控制密钥时，应明确常用管理员不在场时授权人员如何恢复。服务可能成功生成备份包，但组织仍失去解密手段。这是运维评估要点，并非观察到的 Cloudback 故障。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Units vary by protected platform",
+        "title_zh": "单位随保护平台变化",
+        "en": "The retrieved plan page lists USD 10 monthly per 10 units, USD 75 per 100 units and USD 500 per 1,000 units. GitHub repositories, Azure DevOps repositories and GitLab projects each consume one unit. Linear uses member-based units: two per member for the first 25, then one per additional member. The free plan covers one repository up to 100 MB.\n\nA hypothetical 30-member Linear workspace consumes 55 units before any repositories. Do not budget it as one workspace unit. Confirm packaging, selected storage costs, tax and checkout terms; a normalized payable price is left unset.",
+        "zh": "本次套餐页列每月 10 美元／10 单位、75 美元／100 单位、500 美元／1,000 单位。GitHub 仓库、Azure DevOps 仓库和 GitLab 项目各占一单位；Linear 按成员计算，前 25 人各两单位，之后每人一单位。免费方案保护一个不超过 100 MB 的仓库。\n\n假设 Linear 工作区有 30 人，尚未加仓库已需 55 单位，不能按一个工作区一单位预算。套餐组合、所选存储费、税费及结账条款仍需确认，本文不填写通用实付金额。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_hypothetical_calculation"
+      },
+      {
+        "id": "fit",
+        "title_en": "Decide which recovery would make the team operational",
+        "title_zh": "按团队重新开展工作所需结果选型",
+        "en": "Cloudback is a candidate for development teams needing independent backups of supported platform data and metadata. It is not evidence of coverage for every SaaS application. The current site marks Bitbucket and cross-cloud restore as roadmap items rather than available functionality.\n\nDefine whether success means reading an archive, continuing work in a new repository or reconstructing a workspace with dependencies intact. Those require different tests. Detailed docs were partially accessible initially, but a later documentation request returned HTTP 403; no bypass was attempted. Exact object-level recovery semantics remain a pilot gap.",
+        "zh": "需要独立备份受支持平台数据及元数据的开发团队，可考虑 Cloudback，不能据此推断所有 SaaS 应用均被覆盖。当前官网把 Bitbucket 和跨云恢复列为路线图，不是已可用功能。\n\n需定义成功是读取压缩包、在新仓库继续工作，还是完整重建工作区依赖；对应测试不同。文档最初可部分读取，后续请求返回 HTTP 403，未绕过限制。准确到对象的恢复语义仍需试点补齐。",
+        "source_refs": ["product", "docs", "pricing"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Later docs access returned HTTP 403; exact authorization, object-level restore behavior and failure handling were not verified.",
+      "zh": "后续文档访问返回 HTTP 403；准确授权、对象恢复行为及失败处理未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No backup or restore was run; final bill, key recovery, storage region and legal licensing were not confirmed.",
+      "zh": "未运行备份或恢复；最终账单、密钥恢复、存储区域及法律许可未确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Cloudback: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Cloudback：用途、流程、价格与限制",
+    "description_en": "Cloudback automates backups of development-platform data. Its current site distinguishes GitHub repositories, GitLab projects, Azure DevOps repositories and Linear workspaces, including platform-specific metadata rather than only Git source files.",
+    "description_zh": "Cloudback 自动备份开发平台数据。当前官网区分 GitHub 仓库、GitLab 项目、Azure DevOps 仓库和 Linear 工作区，包含各平台元数据，不只是 Git 源代码。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

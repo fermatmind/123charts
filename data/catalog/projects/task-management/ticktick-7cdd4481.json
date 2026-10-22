@@ -10,222 +10,147 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "TickTick is a product in the Task management category. Its directory profile covers Time Tracking, Task Tracking, Task Scheduling, Task Assigning, Reporting (Analytics), Recurring Task Management, Progress Tracking, Gantt Charts.\n\nAdditional listed capabilities include Alerts, Collaboration Tools, Percent-Complete Tracking. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $2.99.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: record time spent on selected work; summarize records and activity in reports and metrics; show task timing and dependencies on a timeline; notify users when defined conditions are met; support shared work and communication between participants. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "TickTick 属于任务管理软件。第三方资料列出的功能包括工时跟踪、任务跟踪、任务排程、任务分配、报表与分析、周期任务管理、进度跟踪、甘特图。\n\n资料还列出警报提醒、协作工具、完成百分比跟踪。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $2.99.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：记录在指定工作上花费的时间；将业务记录和活动汇总为报表与指标；在时间轴上展示任务安排及依赖关系；在满足预设条件时通知用户；支持多人共同工作和沟通。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "TickTick is a task and time-planning service combining lists, calendar views, reminders, recurring work, focus records and habits. It can organize personal work and selected shared lists; task duration, calendar integration and member permissions have distinct behavior rather than one universal scheduling rule.\n\nCurrent official documentation also covers a built-in AI Assistant and authenticated MCP/CLI access. Those paths can read or change real account data. This profile explains their conditions alongside current annual pricing, recurrence, retained calendar copies and the limits of documented backup, without claiming a hands-on test.",
+  "description_zh": "TickTick 是任务与时间规划服务，组合列表、日历视图、提醒、重复任务、专注记录及习惯。它可组织个人工作和选定共享列表；任务时长、日历集成与成员权限各有行为，不能归为一个通用排程规则。\n\n当前官方文档还覆盖内置 AI Assistant 及经认证的 MCP／CLI 访问，这些路径可读取或修改真实账户数据。本档案结合现行年费、重复规则、日历保留副本及文档备份边界说明条件，不声称经过上手测试。",
   "core_features": [
     {
-      "name_en": "Time Tracking",
-      "name_zh": "工时跟踪",
-      "explanation_en": "Record time spent on selected work.",
-      "explanation_zh": "记录在指定工作上花费的时间。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Recurring tasks",
+      "name_zh": "重复任务",
+      "explanation_en": "Choose fixed due-date, completion-based or selected-date repetition.",
+      "explanation_zh": "选择固定到期日、按完成日期或指定日期重复。",
+      "explanation_scope": "product_specific",
+      "source_ref": "repeat",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Task Tracking",
-      "name_zh": "任务跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Google task/calendar integration",
+      "name_zh": "Google 任务／日历集成",
+      "explanation_en": "Synchronize selected dated tasks and calendar events with documented exclusions.",
+      "explanation_zh": "在文档排除条件下同步选定带时间任务及日历事件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "google-calendar",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Task Scheduling",
-      "name_zh": "任务排程",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Shared-list permissions",
+      "name_zh": "共享列表权限",
+      "explanation_en": "Set member editing, commenting or read-only access within a list.",
+      "explanation_zh": "在列表内设置成员编辑、评论或只读权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sharing",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Task Assigning",
-      "name_zh": "任务分配",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Reporting (Analytics)",
-      "name_zh": "报表与分析",
-      "explanation_en": "Summarize records and activity in reports and metrics.",
-      "explanation_zh": "将业务记录和活动汇总为报表与指标。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Recurring Task Management",
-      "name_zh": "周期任务管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Progress Tracking",
-      "name_zh": "进度跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Gantt Charts",
-      "name_zh": "甘特图",
-      "explanation_en": "Show task timing and dependencies on a timeline.",
-      "explanation_zh": "在时间轴上展示任务安排及依赖关系。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts",
-      "name_zh": "警报提醒",
-      "explanation_en": "Notify users when defined conditions are met.",
-      "explanation_zh": "在满足预设条件时通知用户。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collaboration Tools",
-      "name_zh": "协作工具",
-      "explanation_en": "Support shared work and communication between participants.",
-      "explanation_zh": "支持多人共同工作和沟通。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Percent-Complete Tracking",
-      "name_zh": "完成百分比跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Authenticated task automation",
+      "name_zh": "经认证的任务自动化",
+      "explanation_en": "MCP and CLI expose real task/list operations to authorized external tools.",
+      "explanation_zh": "MCP 和 CLI 向获授权外部工具开放真实任务／列表操作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Record time spent on selected work",
-      "Summarize records and activity in reports and metrics",
-      "Show task timing and dependencies on a timeline",
-      "Notify users when defined conditions are met",
-      "Support shared work and communication between participants"
+      "Plan a weekly deliverable with a duration, checklist and fixed review cycle; evaluate one shared list separately."
     ],
-    "zh": [
-      "记录在指定工作上花费的时间",
-      "将业务记录和活动汇总为报表与指标",
-      "在时间轴上展示任务安排及依赖关系",
-      "在满足预设条件时通知用户",
-      "支持多人共同工作和沟通"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": ["用时长、检查表及固定复核周期规划每周交付，另行评估一个共享列表。"],
+    "source_refs": ["task-details", "repeat", "sharing"],
+    "basis": "Proposed evaluation; no account work or customer evidence."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $2.99.",
-      "zh": "未提供免费试用 起价为 $2.99.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Automation prerequisites": {
+      "en": "MCP requires a compatible StreamableHTTP client and OAuth/Bearer authentication. CLI requires Node.js and account authentication; local install is not self-hosting.",
+      "zh": "MCP 需要兼容 StreamableHTTP 的客户端及 OAuth／Bearer 认证；CLI 需要 Node.js 及账户认证，本地安装不等于自托管。",
+      "source_ref": "mcp",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Individual planning recurring work",
+      "Collaborators sharing a selected list",
+      "User evaluating authenticated task automation"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Start with a test list, due date and one recurrence; inspect the calendar and actual-device reminder.",
+        "zh": "先用测试列表、到期日及一个重复规则，检查日历与真实设备提醒。",
+        "source_refs": ["repeat", "faq-details"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Before connecting a calendar or AI tool, confirm data scope, sample read-back and a separately checked backup.",
+        "zh": "连接日历或 AI 工具前，确认数据范围、样本读回及经单独检查的备份。",
+        "source_refs": ["google-calendar", "mcp", "backup"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "documented_not_tested",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "google-calendar",
+    "scope": "Google event subscription and list integration differ;URLfeeds do not establish writeback. MCP/CLI authenticated mutation paths documented, not connected."
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "Disconnecting Google integration leaves previously synced content in both services; remapping requires reconnection.",
+        "zh": "断开 Google 集成后双方保留已有同步内容，更改映射需重连。",
+        "source_refs": ["google-calendar"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "FAQ attachment limits differ from pricing and Task Details; Google calendar-count statements and AI Windows availability are inconsistent. Confirm account/version behavior.",
+        "zh": "FAQ 附件限制与价格页／Task Details 不同；Google 日历数量及 AI Windows 可用性描述也不一致，需核对账户／版本行为。",
+        "source_refs": [
+          "faq-details",
+          "task-details",
+          "google-calendar",
+          "ai-assistant"
+        ],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
-    "items": []
+    "items": [],
+    "scope": "Public pages offer several language choices; full signed-in client localization not verified."
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "proprietary_service_terms_read",
+    "is_open_source": false,
+    "url": "https://ticktick.com/tos",
+    "source_ref": "terms",
+    "scope": "Application-use rights with redistribution/modification restrictions; third-party component notices are not an application source license."
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $2.99.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $2.99.",
-    "source_ref": "directory-detail"
+    "status": "official_public_annual_price_checkout_unverified",
+    "price_type": "free_and_premium_subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Public Premium USD49.99/year;Free0. Monthly/store/region/tax checkout and exactAIquota/add-on charges not verified. Renewals and cancellation vary by payment channel.",
+    "source_snapshot_zh": "公开 Premium 为每年49.99美元，Free为0。月付／商店／地区／税的结账及准确 AI 额度／附加费用未核实，续订和取消按支付渠道处理。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does TickTick do?",
-      "question_zh": "TickTick 用来做什么？",
-      "answer_en": "TickTick is a product in the Task management category. Its directory profile covers Time Tracking, Task Tracking, Task Scheduling, Task Assigning, Reporting (Analytics), Recurring Task Management, Progress Tracking, Gantt Charts.",
-      "answer_zh": "TickTick 属于任务管理软件。第三方资料列出的功能包括工时跟踪、任务跟踪、任务排程、任务分配、报表与分析、周期任务管理、进度跟踪、甘特图。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Time Tracking, Task Tracking, Task Scheduling, Task Assigning, Reporting (Analytics), Recurring Task Management, Progress Tracking, Gantt Charts, Alerts, Collaboration Tools, Percent-Complete Tracking",
-      "answer_zh": "工时跟踪、任务跟踪、任务排程、任务分配、报表与分析、周期任务管理、进度跟踪、甘特图、警报提醒、协作工具、完成百分比跟踪"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -235,25 +160,330 @@
       "read_at": "2026-10-22T09:07:19.314Z",
       "excerpt_sha256": "f0f7a2fbcd78b524abc384000bf48229e73df6ebdf0e7b19a3f422f2ac9f8ba0",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "ticktick.com",
+      "title": "TickTick: A To-Do List and Calendar to keep you organized",
+      "url": "https://ticktick.com/",
+      "read_at": "2026-10-22T12:19:00.678189Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e38d0f44de1ee029631bf8009497b7725645b58a4731c3bf105f0f42e819fb4d",
+      "research_notes_en": "Read task/calendar/focus/habit scope and current AI voice/audio/MCP/CLI claims; testimonials not adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ticktick.com",
+      "title": "Upgrade - TickTick",
+      "url": "https://ticktick.com/upgrade",
+      "read_at": "2026-10-22T12:19:00.678443Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6da25ee6697f26499f97761e70b2a2bf7381ef888da6a857f6a76e5009bfefe8",
+      "research_notes_en": "Read USD49.99 annual Premium, free/paid capacities and payment-channel cancellation/refund FAQ; no checkout."
+    },
+    {
+      "id": "repeat",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "Set Up Recurring Tasks",
+      "url": "https://help.ticktick.com/articles/7055782206349770752",
+      "read_at": "2026-10-22T12:19:00.678783Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "8f61fe74ffd8f8731741b4f679b9d66be32224a7df67a2e3bdda556db91c4be8",
+      "research_notes_en": "Read due-date versus completion-based repeat and per-occurrence editing; suspicious end-condition example not adopted."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "Data Backup and Import",
+      "url": "https://help.ticktick.com/articles/7055781405648748544",
+      "read_at": "2026-10-22T12:19:00.678974Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "5b86671ca60b33b45ce012749988ae019a6a419243cd4ed75f3516ce328ccce8",
+      "research_notes_en": "Read web backup/import and platform-specific migration choices; complete data fidelity not established."
+    },
+    {
+      "id": "sharing",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "How Teams Can Collaborate",
+      "url": "https://help.ticktick.com/articles/7055781688281923584",
+      "read_at": "2026-10-22T12:19:00.679138Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "bea951b7e4907a81742d3e7d23951005703e2e1afbd6595d5f8e8f47e08fefe4",
+      "research_notes_en": "Read assignment, edit/comment/read-only controls, notification preferences and list-owner Premium rule."
+    },
+    {
+      "id": "google-calendar",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "Google Calendar",
+      "url": "https://help.ticktick.com/articles/7055781593733922816",
+      "read_at": "2026-10-22T12:19:00.679379Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "fd3e525417c05702c75dd5f012a2281db8347727c5d28fc837007360bafbabde",
+      "research_notes_en": "Read subscription versus task integration, dated-task scope, excluded event types, disconnect retention and remapping; calendar-count statements conflict."
+    },
+    {
+      "id": "url-calendar",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "URL",
+      "url": "https://help.ticktick.com/articles/7209387325833347072",
+      "read_at": "2026-10-22T12:19:00.679754Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "b4dd31cf1b3210ba7ff3e8df796064af91dbf90b59f6d5a852a2c48985b3976b",
+      "research_notes_en": "Read URL calendar feed subscription procedure; no write-back guarantee stated."
+    },
+    {
+      "id": "task-details",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "Task Details",
+      "url": "https://help.ticktick.com/articles/7055782408586526720",
+      "read_at": "2026-10-22T12:19:00.680357Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "f766d5db9d2d826541b6ca3cd91174cde457bd83b000f427e3a865a1ea2476eb",
+      "research_notes_en": "Read date/duration, priorities, checklist progress, attachments, activities, templates and focus entry."
+    },
+    {
+      "id": "ai-assistant",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "AI Assistant",
+      "url": "https://help.ticktick.com/articles/7503016104470511616",
+      "read_at": "2026-10-22T12:19:00.680687Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "71106ceb58d92f4c669e2b10f752e572652c65b0ad9d3a493d1cdb74fc653a5f",
+      "research_notes_en": "Read built-in AI action/chat scope, shared monthly quota and current platform statements; desktop says Windows not yet supported, despite OS FAQ mentioning Windows10."
+    },
+    {
+      "id": "mcp",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "TickTick MCP",
+      "url": "https://help.ticktick.com/articles/7438129581631995904",
+      "read_at": "2026-10-22T12:19:00.680995Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "d1b55bab438c078a3a0d216ea591ff4bce9dd59531a691dcfcf6ab9b977289ac",
+      "research_notes_en": "Read StreamableHTTP/OAuth or Bearer, actual query/mutation tools,14day range and20task batch caps, limited feature scope and misinterpretation failure advice."
+    },
+    {
+      "id": "cli",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "TickTick CLI",
+      "url": "https://help.ticktick.com/articles/7465251130025443328",
+      "read_at": "2026-10-22T12:19:00.681190Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_article",
+      "excerpt_sha256": "999ea805f01f4cb86a1f6ed9497c52355d0126ec615d205f0e28e9e912ff5148",
+      "research_notes_en": "Read Node prerequisite, OAuth/manual-token methods and task/list commands; no installation or authorization performed."
+    },
+    {
+      "id": "faq-details",
+      "type": "official_documentation",
+      "site": "help.ticktick.com",
+      "title": "🔍 FAQ",
+      "url": "https://help.ticktick.com/articles/7055792921664028672",
+      "read_at": "2026-10-22T12:19:00.681401Z",
+      "verification": "official_documentation_read",
+      "transport": "public_https_documentation_payload_selected_excerpts",
+      "excerpt_sha256": "f65b43a9d26980e9ee596586d3720b99e78e7f1ac74b14221d067a1aca80816b",
+      "research_notes_en": "Selected actual FAQ body excerpts cover future recurrence, mobile constant reminder, notification failure and conflicting older attachment caps; not a claim to have read every FAQ."
+    },
+    {
+      "id": "privacy",
+      "type": "official_documentation",
+      "site": "ticktick.com",
+      "title": "Privacy - TickTick",
+      "url": "https://ticktick.com/privacy",
+      "read_at": "2026-10-22T12:19:00.681858Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "6ad4ee073cbc50c75c2bede2e91841000fa4253026290628b2261683316c2cdd",
+      "research_notes_en": "Read AI inputs/context and third-party processing, account-deletion archive retention and source ownership; vendor privacy claims not independently audited."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "ticktick.com",
+      "title": "Terms - TickTick",
+      "url": "https://ticktick.com/tos",
+      "read_at": "2026-10-22T12:19:00.681895Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "765028e5e6c4e9175dace07b16c2f3ef30dcf4ed827abd69aec54b8acd39714d",
+      "research_notes_en": "Read personal service-use license and restrictions on copying/modifying/distributing software; business use addressed; not an app open-source grant."
+    },
+    {
+      "id": "subscription",
+      "type": "official_documentation",
+      "site": "ticktick.com",
+      "title": "Subscription Terms - TickTick",
+      "url": "https://ticktick.com/terms/subscription",
+      "read_at": "2026-10-22T12:19:00.682153Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "32b6130d48daef46b473bb9541877dd8df0f4293f80dc64a935c2acb7e59897d",
+      "research_notes_en": "Read recurring prepaid renewals, cancellation, fee changes and fourteen-day refund statement."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:19:00.682153Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": [
+    "product",
+    "task-details",
+    "sharing",
+    "ai-assistant",
+    "mcp",
+    "pricing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "daily-plan",
+        "title_en": "Give a task a date, then decide whether it occupies time",
+        "title_zh": "先给任务定日期，再决定是否占用时段",
+        "en": "For a proposed weekly review, put a report in a work list, give it a priority and date, and add a start/end duration only if it should reserve a time block. A due date and a duration serve different planning needs. A four-item checklist can show one quarter complete after one item is checked; that percentage measures item count rather than effort or business value.\n\nTask details also support comments, templates, notes and starting a focus session. These help describe and repeat the process, but a timer record or completed checklist does not prove the report was accepted. Agree on an external acceptance condition. No sample task was created here.",
+        "zh": "假设做每周复盘，可把报告放入工作列表，设置优先级和日期；只有确需占用时间块时才设置开始／结束时段。到期日与时长解决不同规划需求。四项检查表勾选一项可显示完成四分之一，该比例反映条目数量，不代表工时或业务价值。\n\n任务详情还支持评论、模板、笔记及开始专注。这些有助于描述和复用流程，但计时记录或检查表完成不证明报告已验收，应另行约定验收条件。本研究没有创建样本任务。",
+        "source_refs": ["task-details"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "repeat-rules",
+        "title_en": "A delayed completion can change the next occurrence",
+        "title_zh": "延迟完成可能改变下一次时间",
+        "en": "A fixed weekly review and maintenance performed three days after its previous completion need different repeat rules. TickTick documents due-date repetition, completion-date repetition and explicitly selected dates. With completion-based repetition, finishing late shifts the next interval from that actual completion.\n\nCalendar editing can target Only this Recurrence. Showing future cycles is not permission to complete them out of order: the FAQ says the current recurrence must be handled first, including skipping it when appropriate. Test a late completion and one changed occurrence before adopting a long-running routine. One explanatory example about repeat-end conditions is ambiguous, so it is not used to infer scheduling semantics.",
+        "zh": "固定每周复核与上次完成三天后维护，需要不同重复规则。TickTick 文档区分按到期日、按完成日期及指定日期重复；按完成日期重复时，延迟完成会使下次间隔从实际完成时间计算。\n\n日历编辑可选 Only this Recurrence，仅改本次。显示未来周期不代表可乱序完成：FAQ 称需先处理当前周期，必要时跳过。长期采用前应核对延迟完成和单次变更。结束重复条件的一处说明例子含糊，未据此推断排程语义。",
+        "source_refs": ["repeat", "faq-details"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "calendar-types",
+        "title_en": "Google integration changes data; a URL feed has a different scope",
+        "title_zh": "Google 集成会修改数据，URL 订阅范围不同",
+        "en": "The Google guide distinguishes displaying Google events in TickTick from integrating TickTick lists as tasks/events. Authorized Google subscription supports event edits that sync back; integration maps selected lists and calendars, sending tasks with time attributes outward and today/future Google events inward as tasks. The guide names mobile v7200 and desktop/web v5500 as minimum versions for integration.\n\nWorking Location, Out of Office and previously created past-dated Google events are excluded from the described bidirectional scope. Disconnecting retains previously synchronized content on both sides. Changing the mapped list/calendar requires disconnecting and reconnecting. Plan that change with a small test calendar to avoid confusing retained copies with active sync. The URL-calendar guide describes viewing a feed and reminders; it does not establish equivalent editing or write-back.",
+        "zh": "Google 指南区分在 TickTick 显示 Google 事件与把 TickTick 列表集成为任务／事件。获授权的 Google 订阅支持把事件编辑同步回去；集成则映射选定列表及日历，向外发送带时间属性的任务，向内把今天／未来 Google 事件转为任务。指南将移动端 v7200、桌面／网页 v5500 列为集成最低版本。\n\nWorking Location、Out of Office 及此前建立的过去日期 Google 事件不属于所述双向范围。取消集成后，双方保留已有同步内容；更改映射列表／日历需先断开再连接。可用小型测试日历验证，避免把保留副本误认作活动同步。URL 日历指南描述查看订阅内容及提醒，没有确立同等编辑或回写。",
+        "source_refs": ["google-calendar", "url-calendar"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "shared-work",
+        "title_en": "Share the intended list and choose each member’s access",
+        "title_zh": "共享目标列表并选择各成员权限",
+        "en": "The collaboration guide limits sharing to the chosen list, with assignment, comments and task activity. A member can be given edit, comment or read-only access. Notification preferences and which assigned tasks appear in smart lists are additional controls; read access does not imply that every change generates the desired reminder.\n\nFor the documented larger shared-list allowance, only its owner must be Premium. Non-Premium participants do not thereby acquire Premium features. A team evaluating shared approvals should try both the owner and a restricted participant and confirm which tasks each sees. This supports small shared processes; administrative governance for an entire organization was not established by the read list guide.",
+        "zh": "协作指南将共享范围限定为所选列表，支持分配、评论及任务活动。成员可获编辑、评论或只读权限。提醒偏好、哪些已分配任务进入智能列表是额外控制；有读取权不表示每次修改都会触发所需提醒。\n\n对文档规定的较大共享列表额度，只有所有者需为 Premium，非 Premium 参与者不会因此取得付费功能。评估共享审批的团队应分别核对所有者和受限参与者的可见任务。它可支持小型共享流程，但所读列表指南没有确立整个组织的管理治理。",
+        "source_refs": ["sharing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reminders-exit",
+        "title_en": "Check reminder delivery and keep a separately inspected backup",
+        "title_zh": "核对提醒送达，并检查独立备份",
+        "en": "The reminder FAQ directs users to system notification permissions and Android background restrictions when alerts fail. Constant Reminder is described as mobile-only. Treat a notification as something to verify on the actual device, rather than a guaranteed alarm service.\n\nThe web Backup & Import guide describes generating a backup, importing a saved backup and migrating supported applications. Import choices differ by platform. Before a large migration, compare a small exported set with the destination, including repeat rules, attachments and shared items. The read material does not prove that every feature or collaboration history round-trips. Keep the original copy until that comparison is satisfactory.",
+        "zh": "提醒 FAQ 在告警失败时要求检查系统通知权限及 Android 后台限制，Constant Reminder 被描述为仅移动端功能。应在真实设备核对通知，不把它当作保证送达的警报服务。\n\n网页 Backup & Import 指南描述生成备份、导入已有备份及迁移受支持应用，各平台导入选项不同。大量迁移前，可比较一小组导出内容与目标，包括重复规则、附件及共享条目。所读资料不证明每项功能及协作历史都能往返还原；比较满意前应保留原副本。",
+        "source_refs": ["faq-details", "backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-assistant",
+        "title_en": "AI actions share a quota and a data boundary",
+        "title_zh": "AI 操作共享额度与数据边界",
+        "en": "The AI Assistant guide covers suggestions and direct account actions, saved conversations and a shared monthly AI quota. Exhausting that quota temporarily disables AI features until the next reset. The desktop instructions currently name macOS and Web and say Windows is not yet supported; an OS FAQ mentions Windows versions, so cross-platform availability should be checked rather than generalized.\n\nThe privacy policy says activated AI interactions can include text, audio, transcripts, conversation context and relevant existing account data, with third-party AI processing. Its no-training statement is the vendor’s policy, not an independent audit. For a planning request, first inspect which tasks and dates the assistant intends to change. Exact quota quantities, add-on costs and access for a particular account were not confirmed.",
+        "zh": "AI Assistant 指南覆盖建议和直接账户操作、保存的对话及共享月度 AI 额度。额度用完后 AI 功能暂不可用，直到下次重置。桌面说明当前列 macOS 和 Web，并称尚不支持 Windows；另一处系统 FAQ 提及 Windows 版本，因此需核对具体平台，不能泛化。\n\n隐私政策称，主动使用 AI 时，输入可能包括文本、音频、转录、对话上下文及相关已有账户数据，由第三方 AI 处理。不用于训练是厂商政策声明，不是独立审计。规划请求应先检查助手准备修改的任务和日期；准确额度数量、附加费用及某账户资格尚未确认。",
+        "source_refs": ["ai-assistant", "privacy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mcp-cli",
+        "title_en": "External automation can mutate real tasks",
+        "title_zh": "外部自动化可修改真实任务",
+        "en": "Official MCP documentation specifies Streamable HTTP with OAuth or Bearer authentication. It lists real read and mutation capabilities, including task creation, completion, moves and deletion to Trash; its date-range query and one completion batch have explicit bounds. The CLI requires Node.js and offers authenticated terminal operations. Neither interface covers every advanced TickTick feature.\n\nA useful acceptance sequence is to identify one test task by its returned ID, inspect its list and date, perform one intended change, then read it again. Natural-language misunderstanding, wrong tool choice and incorrect parameters are documented failure causes. Authentication success does not establish correct intent, automatic retries or exactly-once writes. No token, installation, connection or tool call was performed in this research.",
+        "zh": "官方 MCP 文档规定 Streamable HTTP，使用 OAuth 或 Bearer 认证，列出真实读取及修改能力，包括任务创建、完成、移动及移入回收站；日期范围查询和单次批量完成有明确限制。CLI 需要 Node.js，提供经认证的终端操作。两个界面都不覆盖全部高级 TickTick 功能。\n\n建议验收顺序是：按返回 ID 识别一个测试任务，检查列表和日期，执行一次预期修改，再读回。文档将自然语言误解、选错工具及参数错误列为失败原因。认证成功不证明意图正确、自动重试或恰好一次写入。本研究未创建 token、安装、连接或调用工具。",
+        "source_refs": ["mcp", "cli"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "plans-license",
+        "title_en": "Use the current annual price and the payment-channel rules",
+        "title_zh": "采用现行年费并核对支付渠道规则",
+        "en": "The current public page shows Free and Premium at US$49.99 per year. Free has nine lists with ninety-nine tasks/notes per list; Premium raises those capacities and adds planning features. Annual billing is not a separately verified monthly subscription quote. The page routes Apple refunds/cancellation through Apple and describes a fourteen-day refund window for the named direct/Google channels. Premium expiry retains data while removing paid capabilities.\n\nThe general terms grant use of the service software and restrict redistribution or modification; a separate component-license notice does not make the application open source. Use TickTick when personal planning or selected list collaboration matches the work. Evaluate alternatives against explicit requirements if organization-wide governance, a self-hosted backend or independently demonstrated recovery is essential. No alternative relationship is approved by this editorial comparison.",
+        "zh": "当前公开页显示 Free 和每年 US$49.99 的 Premium。Free 有九个列表，每列表九十九个任务／笔记；Premium 提升容量并增加规划功能。年付价格不是另行核实的月付报价。页面要求 Apple 退款／取消走 Apple，并为所列直接／Google 渠道描述十四天退款窗口。Premium 到期保留数据，付费能力停止。\n\n一般条款授予服务软件使用权并限制再分发或修改，独立组件许可声明不会使应用成为开源。个人规划或选定列表协作符合工作方式时可评估 TickTick；若必须有组织级治理、自托管后端或独立验证的恢复，则按这些具体要求比较工具。本编辑判断没有批准任何替代关系。",
+        "source_refs": ["pricing", "subscription", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "TickTick: Recurrence, Google Sync, AI Limits and Current Pricing",
+    "title_zh": "TickTick：重复规则、Google 同步、AI 限制及现价",
+    "description_en": "Examine completion-based repeats, retained calendar copies, list permissions, backups and authenticated task automation.",
+    "description_zh": "核对按完成日期重复、日历保留副本、列表权限、备份及经认证的任务自动化。",
+    "primary_intent": "Evaluate TickTick task/time planning and collaboration conditions.",
+    "secondary_questions": [
+      "Does Google integration differ from a URL calendar feed?",
+      "What happens to AI features after the quota is exhausted?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured search demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No sign-in, task/share/calendar mutation, notification/timer, AI request, MCP/CLI install/auth/tool action, backup/import, purchase or cancellation tested.",
+      "zh": "未测试登录、任务／共享／日历修改、提醒／计时、AI 请求、MCP／CLI 安装／认证／调用、备份／导入、购买或取消。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact monthly/store/region/tax prices, AI quantities/costs and account eligibility unverified. Attachment caps differ between FAQ and current detail/pricing pages; Google calendar count and AI Windows support text conflict.",
+      "zh": "准确月付／商店／地区／税价格、AI 数量／费用及账户资格未核实。FAQ 与当前详情／价格页附件上限不同；Google 日历数量及 AI Windows 支持文字冲突。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Offline conflicts, sync latency/deletion propagation, recurring edge cases, full backup fidelity, Trash retention and restore coverage not established. Vendor privacy/security statements are not independent assurance.",
+      "zh": "离线冲突、同步延迟／删除传播、重复边界情形、完整备份保真度、回收站保留及恢复范围未确立。厂商隐私／安全声明不属于独立保证。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
