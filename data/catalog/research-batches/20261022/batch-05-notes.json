@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 28,
+  "completed_count": 32,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -33,19 +33,19 @@
     "projects/erp/synergix-erp-software-d56131cd.json",
     "projects/erp/syspro-23a939b4.json",
     "projects/erp/tech-cloud-erp-a9f105ce.json",
-    "projects/erp/uneecops-ae54d954.json"
+    "projects/erp/uneecops-ae54d954.json",
+    "projects/human-resources/bamboohr-3dda835b.json",
+    "projects/human-resources/brighthr-bd59f7d4.json",
+    "projects/human-resources/ceipal-workforce-93d9d9bf.json",
+    "projects/human-resources/ceridian-dayforce-fa330344.json"
   ],
-  "remaining_count": 169,
+  "remaining_count": 165,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
-    "projects/human-resources/bamboohr-3dda835b.json",
-    "projects/human-resources/brighthr-bd59f7d4.json",
-    "projects/human-resources/ceipal-workforce-93d9d9bf.json",
-    "projects/human-resources/ceridian-dayforce-fa330344.json",
     "projects/human-resources/collectivwork-a05b064e.json",
     "projects/human-resources/darwinbox-d5078c7f.json",
     "projects/human-resources/epay-hcm-442cb6fd.json",
@@ -279,6 +279,22 @@
     {
       "slug": "tech-cloud-erp-a9f105ce",
       "finding": "Pro+ custom/contact card conflicts with Premium INR 0 in table; customization rows also differ. Explicitly not marked as a free enterprise tier."
+    },
+    {
+      "slug": "bamboohr-3dda835b",
+      "finding": "Core/Pro cards and FAQ have different amounts; small-employer flat rates and US-only payroll/benefits add-ons documented."
+    },
+    {
+      "slug": "brighthr-bd59f7d4",
+      "finding": "UK monthly amounts are inside fixed-term contracts; online purchase 36 months, insurance excluded."
+    },
+    {
+      "slug": "ceipal-workforce-93d9d9bf",
+      "finding": "Payroll-data report preparation distinguished from full payroll tax service; staffing assignment records separated from ATS."
+    },
+    {
+      "slug": "ceridian-dayforce-fa330344",
+      "finding": "Old Ceridian product URL redirects to Dayforce; updated identity, conditional Wallet access and generic WFM market range separated from actual pricing."
     }
   ],
   "validation": [
@@ -330,6 +346,16 @@
       "diff_check": "passed",
       "source_text_hashes": "97 actual read-text hashes verified",
       "scope": "Structure/reference/provenance; no independent review or hands-on tests."
+    },
+    {
+      "at": "2026-10-22T10:54:18.298960+00:00",
+      "completed_count": 32,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 35 researched including 3 baseline",
+      "prettier": "four HR profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "110 actual read-text hashes verified",
+      "scope": "Structure/reference/provenance; no independent review or hands-on tests."
     }
   ],
   "checkpoints": [
@@ -356,6 +382,12 @@
       "completed_count": 24,
       "branch_push": "succeeded",
       "scope": "Ten additional ERP profiles, including provider and subscription boundaries."
+    },
+    {
+      "commit": "5b8d845",
+      "completed_count": 28,
+      "branch_push": "succeeded",
+      "scope": "Four final readable ERP profiles; Plex source access unresolved."
     }
   ],
   "independent_review": false,
@@ -382,6 +414,13 @@
       "note": "Acumatica, BizAutomation, Deskera, ERPNext complete; remaining homepages fetched for identity discovery, not treated as finished profiles.",
       "unresolved": 1,
       "unresolved_slugs": ["plex-manufacturing-cloud-c05cc280"]
+    },
+    {
+      "category": "human-resources",
+      "assigned": 19,
+      "completed": 4,
+      "status": "in_progress",
+      "note": "BambooHR, BrightHR, Ceipal Workforce and Dayforce researched. Other entries remain pending, not counted as completed."
     }
   ]
 }
