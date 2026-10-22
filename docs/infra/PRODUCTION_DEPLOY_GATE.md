@@ -1,5 +1,7 @@
 # PR205 Production Deploy Gate v0
 
+> Historical PR205 snapshot, not the current deployment procedure. The candidate repository name below is preserved as recorded; the current repository is [fermatmind/123charts](https://github.com/fermatmind/123charts), renamed on 2026-10-22 with its history retained. This rename does not deploy the application or authorize server operations.
+
 Result: `READY_FOR_PRODUCTION_DEPLOY_APPROVAL`
 
 PR205 is a non-deploy production approval gate. It records the exact candidate

@@ -122,7 +122,7 @@ tail -100 /var/log/nginx/access.log
 
 ## Pull Latest Code
 
-Preferred method uses the server-local read-only GitHub deploy key for this repo. The key is stored only on the server and registered in GitHub as read-only access for `fermatmind/88CN`.
+Preferred method uses the server-local read-only GitHub deploy key for this repo. The key is stored only on the server and registered in GitHub as read-only access for `fermatmind/123charts`.
 
 ```bash
 cd /var/www/123charts

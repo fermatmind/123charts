@@ -1,5 +1,7 @@
 # OPS-0 Repo State Audit
 
+> Historical audit snapshot. The repository and remote below record their names at the time of this audit. Since 2026-10-22, the current repository is [fermatmind/123charts](https://github.com/fermatmind/123charts), with SSH remote `git@github.com:fermatmind/123charts.git`. Historical commits and audit results are unchanged.
+
 ## Result
 
 PASS_WITH_RISK.
