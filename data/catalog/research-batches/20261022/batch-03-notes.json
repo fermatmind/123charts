@@ -1,24 +1,24 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T10:09:23.805656+00:00",
+  "updated_at": "2026-10-22T10:20:04.985902+00:00",
   "status": "in_progress",
-  "completed_count": 5,
+  "completed_count": 9,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
     "projects/email-marketing/brevo-93ab009c.json",
     "projects/email-marketing/cakemail-2bba73b0.json",
-    "projects/email-marketing/campaign-monitor-215a6d14.json"
-  ],
-  "remaining_count": 196,
-  "remaining_project_paths": [
-    "projects/email-marketing/campaigner-0f5623c4.json",
+    "projects/email-marketing/campaign-monitor-215a6d14.json",
     "projects/email-marketing/campayn-pricing-reviews-and-c588def9.json",
     "projects/email-marketing/cleverreach-ecfe69aa.json",
     "projects/email-marketing/constant-contact-192dd0f7.json",
+    "projects/email-marketing/emailoctopus-db8173ed.json"
+  ],
+  "remaining_count": 192,
+  "remaining_project_paths": [
+    "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
-    "projects/email-marketing/emailoctopus-db8173ed.json",
     "projects/email-marketing/emma-0245b375.json",
     "projects/email-marketing/getresponse-f25d3a2f.json",
     "projects/email-marketing/icontact-546f315f.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "email-marketing",
-  "next_project": "projects/email-marketing/campayn-pricing-reviews-and-c588def9.json",
+  "next_project": "projects/email-marketing/getresponse-f25d3a2f.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -224,6 +224,56 @@
         "https://www.campaigner.com/features/"
       ],
       "evidence_local": ".scratch/deep-research/batch-03/campaigner.json"
+    },
+    {
+      "path": "projects/email-marketing/easysendy-fde60466.json",
+      "status": "not_completed",
+      "reason": "Official root contains numerous unrelated gambling links and repetitive unrelated articles. Pricing page is readable but contradicts itself on Free drip/autoresponder entitlements. Product continuity, current plan details and documentation integrity need confirmation. This is observed content contamination; cause and operator are not attributed.",
+      "evidence": [
+        {
+          "title_and_url": "Home - EasySendy Pro (https://easysendy.com/)",
+          "read_at": "2026-10-22",
+          "excerpt_sha256": "2b1c84db118ee433b67890ddd42e91bede9fccedddc24a615548384cc8b4e821",
+          "scratch_file": "/Users/rainie/Desktop/123charts.com/123charts-research-03/.scratch/deep-research/batch-03/email-next-help.json",
+          "chunk_index": 3
+        },
+        {
+          "title_and_url": "Email Campaigns - EasySendy Pro (https://easysendy.com/pricing/email-campaigns/)",
+          "read_at": "2026-10-22",
+          "excerpt_sha256": "8e914afdff86ba18c15638ab3e6de52dca4cf059fe3e89aa5c1ca0742f31e216",
+          "scratch_file": "/Users/rainie/Desktop/123charts.com/123charts-research-03/.scratch/deep-research/batch-03/easysendy-check.json",
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "path": "projects/email-marketing/emma-0245b375.json",
+      "status": "not_completed",
+      "reason": "Official current pricing and automation marketing pages readable. Required detailed help pages for audience subscriptions, automation publishing, contact status and editor lifecycle returned repeated 400 timeout/502 errors; search extracts not substituted for full source reads.",
+      "evidence": [
+        {
+          "title_and_url": "Emma email pricing | Emma (https://myemma.com/pricing)",
+          "read_at": "2026-10-22",
+          "excerpt_sha256": "7e234b6fd145c3d7e231c17d5da0fe761f99cf64079760d4a9a6eb8a925efd53",
+          "scratch_file": "/Users/rainie/Desktop/123charts.com/123charts-research-03/.scratch/deep-research/batch-03/octopus-emma.json",
+          "chunk_index": 2
+        },
+        {
+          "title_and_url": "Email marketing automation | Emma (https://myemma.com/product/email-marketing/automation/)",
+          "read_at": "2026-10-22",
+          "excerpt_sha256": "d9cb295c2cdfcfbf1ba4d14f2ea9aa52193d21f794aacbe07fc4ee259f6d4621",
+          "scratch_file": "/Users/rainie/Desktop/123charts.com/123charts-research-03/.scratch/deep-research/batch-03/emma-flow.json",
+          "chunk_index": 3
+        }
+      ],
+      "failed_source_urls": [
+        "https://help.myemma.com/s/article/Subscriptions",
+        "https://help.myemma.com/s/article/Editing-automated-mailings",
+        "https://help.myemma.com/s/article/View-or-change-a-contact-s-status",
+        "https://help.myemma.com/s/article/How-the-drag-and-drop-editor-works",
+        "https://help.myemma.com/s/article/What-will-happen-to-my-legacy-templates"
+      ],
+      "scratch_files": ["emma-flow.json", "emma-docs.json"]
     }
   ],
   "compatibility_issues": [
@@ -260,9 +310,37 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "email-marketing-02",
+      "completed_projects": 9,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: same documented Benchmark Help Scout cross-domain check at line 166"
+        },
+        {
+          "command": "Prettier on changed project JSON and notes",
+          "result": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
-  "checkpoints": [],
+  "checkpoints": [
+    {
+      "commit": "8e140ac",
+      "completed_count": 5,
+      "scope": "AWeber, Benchmark Email, Brevo, Cakemail, Campaign Monitor"
+    }
+  ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
   "content_method": {
     "author": "Codex (AI assistant)",
