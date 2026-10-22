@@ -3,7 +3,7 @@
   "batch_id": "batch-09",
   "branch": "data/catalog-deep-batch-09",
   "baseline": "bd42969277b018e67c2acff09376a79745904e69",
-  "updated_at": "2026-10-22T14:51:12.855174+00:00",
+  "updated_at": "2026-10-22T14:57:46.568601+00:00",
   "assigned": 72,
   "assigned_project_paths": [
     "projects/contracts/contract-insight-f736ebe9.json",
@@ -85,25 +85,25 @@
     "overlapping_in_progress_paths": [],
     "ack": "/Users/rainie/Desktop/123charts.com/123charts-research-04/.scratch/handoff-to-batch-09-ack.json"
   },
-  "completed_count": 8,
+  "completed_count": 14,
   "completed_projects": [
     "projects/contracts/contract-insight-f736ebe9.json",
     "projects/contracts/contract-logix-c22d6003.json",
     "projects/contracts/contractbook-25475164.json",
+    "projects/contracts/contractsafe-16064bce.json",
     "projects/contracts/contractworks-ac47e70a.json",
     "projects/contracts/contractzen-0272f8be.json",
     "projects/contracts/corridor-contracts-365-93238f49.json",
     "projects/contracts/gatekeeper-36a46245.json",
-    "projects/contracts/icertis-d8a6dfd5.json"
-  ],
-  "remaining_projects": [
-    "projects/contracts/contractsafe-16064bce.json",
+    "projects/contracts/icertis-d8a6dfd5.json",
     "projects/contracts/inhubber-fcf7dd9c.json",
     "projects/contracts/intelagree-a2cd3a52.json",
     "projects/contracts/ironclad-97d552c5.json",
     "projects/contracts/juro-999ba87a.json",
+    "projects/contracts/linksquares-4f37c99a.json"
+  ],
+  "remaining_projects": [
     "projects/contracts/legitt-ai-93e548f7.json",
-    "projects/contracts/linksquares-4f37c99a.json",
     "projects/contracts/malbek-contrax-ce068950.json",
     "projects/contracts/outlaw-462cef08.json",
     "projects/contracts/revnue-db35b5c9.json",
@@ -162,7 +162,13 @@
     "projects/inventory/sellraze-d4ef211f.json",
     "projects/inventory/shipmonk-e0f0f98d.json"
   ],
-  "blocked_projects": [],
+  "blocked_projects": [
+    {
+      "path": "projects/contracts/legitt-ai-93e548f7.json",
+      "reason": "Official homepage returned HTTP 403; not retried or bypassed; remains structured_candidate pending accessible essential official evidence.",
+      "evidence": ".scratch/deep-research/legitt-ai-93e548f7/product.json"
+    }
+  ],
   "evidence_directory": "/Users/rainie/Desktop/123charts.com/123charts-research-09/.scratch/deep-research",
   "validation": [
     {
@@ -185,12 +191,26 @@
       "error": "scripts/catalog/validate.mjs:166: diliforce.com != contractzen.com",
       "source_attribution": "Original https://www.contractzen.com/ redirects to https://www.diliforce.com/; new pricing footer says Diliforce by ContractZen Ltd; login still points to my.contractzen.com",
       "coordinator_action": "Assess genuine migrated-domain compatibility; no shared validator or fabricated URL changes in this branch."
+    },
+    {
+      "batch": "contracts-03",
+      "completed_count": 14,
+      "python_unittest": "7 passed",
+      "records_only": "blocked at known ContractZen official migration domain assertion (diliforce.com != contractzen.com)",
+      "prettier": "passed on changed files",
+      "diff_check": "passed",
+      "source_hash_recompute": "passed",
+      "bilingual_content_check": "Compared package boundaries, units, prices, language limits and source references per project."
     }
   ],
   "commits": [
     {
       "sha": "98b7e128a549fa47cbf545af7352de931daa9b63",
       "completed_count": 3
+    },
+    {
+      "sha": "bd45b9ac7b71628395299a824cae863925999f1c",
+      "completed_count": 8
     }
   ],
   "content_method": {
