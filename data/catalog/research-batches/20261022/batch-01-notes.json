@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T11:48:31.501442+00:00",
+  "updated_at": "2026-10-22T11:52:42.601352+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 34,
+  "completed_count": 35,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -39,9 +39,10 @@
     "projects/api-management/tyk-api-management-platform-a2eb5232.json",
     "projects/api-management/wso2-api-manager-aef076cc.json",
     "projects/application-development/8base-6c4e6a63.json",
-    "projects/application-development/appwrite-dc893cb3.json"
+    "projects/application-development/appwrite-dc893cb3.json",
+    "projects/application-development/atoms-69978950.json"
   ],
-  "remaining_count": 165,
+  "remaining_count": 164,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -54,7 +55,6 @@
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
-    "projects/application-development/atoms-69978950.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
     "projects/application-development/five-94ffc3fa.json",
     "projects/application-development/flutter-8fb65a3e.json",
@@ -277,6 +277,10 @@
     {
       "project": "Appwrite",
       "detail": "No base subscription cards or full quota matrix in either public reader or rendered browser; only actual database compute pricing and billing conditions used. Table OR row grants, proper-scoped server bypass, conflict behavior and backup key dependency documented. Generic row-create wording conflicts with helper restriction."
+    },
+    {
+      "project": "Atoms",
+      "detail": "Build credits and live Cloud/AI balance separate. Pricing FAQ downgrade rollover differs from detailed help reset; account allowances/expiry unresolved. Export/private-sharing are Pro; migration selection and pause-billing conditions explicit."
     }
   ],
   "verification": [
@@ -286,7 +290,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 37 primary-source researched globally (3 baseline + 34 assigned), 1000 records checked"
+      "result": "passed: 38 primary-source researched globally (3 baseline + 35 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -343,16 +347,21 @@
       "commit": "9e28a87",
       "completed_count": 32,
       "scope": "Treblle, Tyk, WSO2 API Manager; all API category entries investigated; pushed"
+    },
+    {
+      "commit": "c79b975",
+      "completed_count": 34,
+      "scope": "8base and Appwrite; 3Pillar access/scope gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Atoms, Clustered Cloud, Five",
+    "next": "Flutter, Gadget, GitHub",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
-    "application-development": "2 of 16 complete; 1 investigated but incomplete with official access/scope gap; 13 not yet processed"
+    "application-development": "3 of 16 complete; 3 investigated but incomplete with access/authority gaps; 10 unprocessed"
   },
   "identity_changes": [
     {
@@ -443,6 +452,14 @@
     {
       "project_path": "projects/application-development/3pillar-global-f439406e.json",
       "reason": "Official homepage returned HTTP 403. No bypass was attempted, and search did not establish sufficient readable official service workflow, engagement/pricing or product-license evidence. The directory software labels are not upgraded to verified SaaS capabilities. Current delivery remains incomplete."
+    },
+    {
+      "project_path": "projects/application-development/clustered-cloud-06d4f73a.json",
+      "reason": "Official homepage and pricing were inaccessible through the public reader, and targeted official-domain search found no readable documentation. Current product identity, availability, workflow and fees remain unverified. No bypass or closure inference; not complete."
+    },
+    {
+      "project_path": "projects/application-development/five-94ffc3fa.json",
+      "reason": "Current five.co home/pricing were read and distinguish AI tokens, developer/end-user seats and deployment. Official docs link to help.five.org/3.0; actual introduction read there. Required detailed sources cross the registered-domain boundary from five.co to five.org, which current shared validator cannot encode. Actual URLs retained in batch evidence; no false same-domain URL, product merger or validator edit. Not complete pending authority support."
     }
   ],
   "availability_updates": [
@@ -528,6 +545,20 @@
       "excerpt_sha256": "ab8596eda7ac5b74153628efbaca030b0ca458efe89425f6de0cde0d8599c921",
       "read_at": "2026-10-22T11:18:59.435363+00:00",
       "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+    },
+    {
+      "capture": "five-docs",
+      "actual_url": "https://help.five.org/3.0/",
+      "excerpt_sha256": "4c09d79633ca435b3c8f19b2fabb4f21c66b16feb1d61982bc9769912f618988",
+      "read_at": "2026-10-22T11:49:40.265928+00:00",
+      "use": "Actual official docs read; same-domain schema cannot encode five.org for five.co identity. Incomplete record, not counted complete."
+    },
+    {
+      "capture": "five-start",
+      "actual_url": "https://help.five.org/3.0/docs/intro/",
+      "excerpt_sha256": "b23ebc4f6a9a6498ca356ddcb201516689dabbce328337b83ea87bfd0b567ef9",
+      "read_at": "2026-10-22T11:50:18.533504+00:00",
+      "use": "Actual official docs read; same-domain schema cannot encode five.org for five.co identity. Incomplete record, not counted complete."
     }
   ]
 }
