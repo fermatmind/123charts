@@ -1,13 +1,14 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T15:53:11.011796+00:00",
-  "status": "investigated_with_source_gaps",
+  "updated_at": "2026-10-22T16:11:18.811692+00:00",
+  "status": "gap_followup_in_progress",
   "assigned": 140,
-  "completed_count": 105,
+  "completed_count": 109,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
+    "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/ibm-api-connect-706d1c65.json",
     "projects/api-management/kong-545842db.json",
     "projects/api-management/krakend-424ce5fb.json",
@@ -21,6 +22,7 @@
     "projects/application-development/8base-6c4e6a63.json",
     "projects/application-development/appwrite-dc893cb3.json",
     "projects/application-development/atoms-69978950.json",
+    "projects/application-development/five-94ffc3fa.json",
     "projects/application-development/flutter-8fb65a3e.json",
     "projects/application-development/gadget-45bb707c.json",
     "projects/application-development/github-3aeb0024.json",
@@ -94,11 +96,13 @@
     "projects/no-code/thunkable-f8dd9a5a.json",
     "projects/no-code/twixl-3aeda0b9.json",
     "projects/software-testing/blazemeter-68e03014.json",
+    "projects/software-testing/browserstack-1cef6efc.json",
     "projects/software-testing/cloudqa-813805b6.json",
     "projects/software-testing/cypress-io-8ab7255e.json",
     "projects/software-testing/katalon-studio-936c5275.json",
     "projects/software-testing/mabl-862d84c3.json",
     "projects/software-testing/maxim-fc490bdd.json",
+    "projects/software-testing/rainforest-qa-369dc230.json",
     "projects/software-testing/ranorex-2d42ee7a.json",
     "projects/software-testing/sauce-labs-3c05b615.json",
     "projects/software-testing/testmu-ai-formerly-lambdatest-a4cc807d.json",
@@ -112,16 +116,14 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 35,
+  "remaining_count": 31,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
-    "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
-    "projects/application-development/five-94ffc3fa.json",
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/foghub-ed0b9582.json",
@@ -141,12 +143,10 @@
     "projects/no-code/checkbox-930acc8a.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
     "projects/no-code/skuid-27f544e2.json",
-    "projects/software-testing/browserstack-1cef6efc.json",
     "projects/software-testing/kaneai-9a395c49.json",
     "projects/software-testing/opkey-1686a4e2.json",
     "projects/software-testing/pcloudy-6e6266d2.json",
     "projects/software-testing/perfecto-8aeabe24.json",
-    "projects/software-testing/rainforest-qa-369dc230.json",
     "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/zaptest-4360971f.json"
   ],
@@ -435,19 +435,15 @@
   "verification": [
     {
       "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed:7 tests; catalog parser/utility tests unchanged during subsequent record-only edits"
+      "result": "passed:7 tests"
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/108 global researched (3 baseline +105 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/112 global researched (3 baseline +109 assigned)/0 untranslated labels; structure/references only"
     },
     {
-      "command": "Local raw-excerpt SHA-256 and canonical URL comparison for final6 records",
-      "result": "passed: all referenced original capture hashes match; source URLs match actual fetch/redirect metadata"
-    },
-    {
-      "command": "Ownership and draft-state checks",
-      "result": "passed:105 completed +35 incomplete =140 retained;59 transferred excluded;0 uninvestigated; all remain draft without independent review or hands-on claims"
+      "command": "Community annotations and ownership",
+      "result": "31 still-incomplete retained records labeled needs_community_input; statuses/prices unchanged.140 retained and59 transferred excluded. Gap follow-up remains in progress."
     }
   ],
   "checkpoints": [
@@ -615,6 +611,11 @@
       "commit": "28a0ef5",
       "completed_count": 99,
       "scope": "OpUtils, Netify, Pandora FMS; Panopta gap; pushed"
+    },
+    {
+      "commit": "1a54a2b",
+      "completed_count": 105,
+      "scope": "Retained140 investigated;35 source gaps; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
@@ -623,11 +624,11 @@
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
     "next": "No uninvestigated retained projects.35 investigated candidates remain incomplete;59 transferred projects are excluded from this batch.",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
-    "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
+    "api-management": "13 of17 complete; Sentinet unknown-price documentation and other official alternatives under follow-up.",
+    "application-development": "14 of16 complete; Five manual vendor tutorials read with historical/current-version limits explicit.",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
-    "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
+    "software-testing": "13 of19 complete; BrowserStack support entitlements and Rainforest actual billing/terms added.",
     "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps.",
     "monitoring": "12 of16 retained complete; all16 investigated. IntelliMagic, LiveNX, Panopta and Sinefa remain incomplete with original-access, pricing/authority or lifecycle gaps."
   },
@@ -761,10 +762,6 @@
       "reason": "Official homepage, pricing and an official comparison article discovered through search all returned HTTP 404. Search snippets suggest advertising AI rather than the original API-product positioning, but unreadable pages are not adopted as current evidence. Current identity, availability and pricing remain unverified; not complete."
     },
     {
-      "project_path": "projects/api-management/dreamfactory-6a420d79.json",
-      "reason": "Official home/pricing read; current marketing emphasizes an AI data gateway. The documentation reader rejected text/markdown as unsupported; a normal direct public HTTP request then returned 403 and no bypass was attempted. Documentation, role/connector behavior and actual license remain insufficiently established for a deep profile. Pricing claims alone do not count complete."
-    },
-    {
       "project_path": "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
       "reason": "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation."
     },
@@ -779,10 +776,6 @@
     {
       "project_path": "projects/application-development/clustered-cloud-06d4f73a.json",
       "reason": "Official homepage and pricing were inaccessible through the public reader, and targeted official-domain search found no readable documentation. Current product identity, availability, workflow and fees remain unverified. No bypass or closure inference; not complete."
-    },
-    {
-      "project_path": "projects/application-development/five-94ffc3fa.json",
-      "reason": "Current five.co home/pricing were read and distinguish AI tokens, developer/end-user seats and deployment. Official docs link to help.five.org/3.0; actual introduction read there. Required detailed sources cross the registered-domain boundary from five.co to five.org, which current shared validator cannot encode. Actual URLs retained in batch evidence; no false same-domain URL, product merger or validator edit. Not complete pending authority support."
     },
     {
       "project_path": "projects/ide/codeanywhere-7879974b.json",
@@ -805,10 +798,6 @@
       "reason": "Official harperdb.io homepage redirects to harper.fast, now Harper application/data runtime and Fabric. Current pricing on harper.fast and actual installation documentation on docs.harperdb.io were read. The current home/pricing and essential docs cross registered domains, which the same-domain source rule cannot encode without changing shared authority/schema. No false URLs or validator edits. The installation docs distinguish harper from Elastic2.0 pro/Fabric, and development samples/default credentials are not production acceptance. Current complete profile remains pending authority support."
     },
     {
-      "project_path": "projects/software-testing/browserstack-1cef6efc.json",
-      "reason": "Official home, documentation index and the Local Testing architecture page were read. The pricing root timed out twice; a discovered official product/annual pricing URL exceeded the web reader size limit, and a normal public HTTP read also timed out. No usable actual pricing body or free-use grant was established; snippets are discovery only, and no price is adopted."
-    },
-    {
       "project_path": "projects/software-testing/kaneai-9a395c49.json",
       "reason": "The legacy lambdatest.com/kane-ai and pricing routes explicitly redirect to testmuai.com. This batch already contains a TestMu AI platform record with identity_domain testmuai.com; the shared schema requires unique registered domains and same-domain official sources. Completing this KaneAI subproduct record would either duplicate identity or require false legacy URLs. Neither was done; the coordinator must resolve product-versus-platform identity support."
     },
@@ -823,10 +812,6 @@
     {
       "project_path": "projects/software-testing/perfecto-8aeabe24.json",
       "reason": "Official perfecto.io home and pricing routes explicitly redirect to perforce.com product and quote pages, while current overview/release/operating documentation remains on help.perfecto.io. Those originals were read, but the shared same-registered-domain source rule cannot represent the current authority chain without false URLs or a shared schema change. The record remains incomplete; no domain rewrite or validator edit was performed."
-    },
-    {
-      "project_path": "projects/software-testing/rainforest-qa-369dc230.json",
-      "reason": "Official pricing redirects to a sales landing page. That actual page has no readable fee table, free-use grant or concrete commercial entitlement. Official Visual Editor, quickstart, generation/results/environment and self-heal guides were read, but the current full fee/profile authority remains incomplete. A sales landing page was not relabeled as a pricing grant and no sales contact/account was submitted."
     },
     {
       "project_path": "projects/software-testing/testim-5d3d2647.json",
@@ -1395,16 +1380,14 @@
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 35,
+  "retained_remaining_count": 31,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
-    "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
-    "projects/application-development/five-94ffc3fa.json",
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/foghub-ed0b9582.json",
@@ -1424,12 +1407,10 @@
     "projects/no-code/checkbox-930acc8a.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
     "projects/no-code/skuid-27f544e2.json",
-    "projects/software-testing/browserstack-1cef6efc.json",
     "projects/software-testing/kaneai-9a395c49.json",
     "projects/software-testing/opkey-1686a4e2.json",
     "projects/software-testing/pcloudy-6e6266d2.json",
     "projects/software-testing/perfecto-8aeabe24.json",
-    "projects/software-testing/rainforest-qa-369dc230.json",
     "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/zaptest-4360971f.json"
   ],
@@ -1509,5 +1490,123 @@
     "scope": "Original completed records remain maintained by batch-01; current remaining scope is retained paths only. Transfer is ownership change, not research completion."
   },
   "investigated_count": 140,
-  "uninvestigated_count": 0
+  "uninvestigated_count": 0,
+  "gap_followup_round": {
+    "started_at": "2026-10-22T16:11:18.661181+00:00",
+    "initial_incomplete_count": 35,
+    "initial_incomplete_projects": [
+      "projects/api-management/apigee-edge-d4c9d902.json",
+      "projects/api-management/blobr-e9fe1f36.json",
+      "projects/api-management/dreamfactory-6a420d79.json",
+      "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+      "projects/api-management/restcase-40145ac2.json",
+      "projects/application-development/3pillar-global-f439406e.json",
+      "projects/application-development/clustered-cloud-06d4f73a.json",
+      "projects/application-development/five-94ffc3fa.json",
+      "projects/data-integration/ainsys-7195d835.json",
+      "projects/data-integration/dexi-io-da3a3a46.json",
+      "projects/data-integration/foghub-ed0b9582.json",
+      "projects/data-integration/panoply-452887ff.json",
+      "projects/data-integration/rivery-2d3c66b2.json",
+      "projects/databases/faunadb-10fce5b0.json",
+      "projects/databases/harperdb-cloud-7836805e.json",
+      "projects/ide/codeanywhere-7879974b.json",
+      "projects/ide/codesandbox-90aac520.json",
+      "projects/ide/eclipse-che-06fa6676.json",
+      "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
+      "projects/monitoring/livenx-0f555bbe.json",
+      "projects/monitoring/panopta-5788d04c.json",
+      "projects/monitoring/sinefa-16ac53d6.json",
+      "projects/no-code/app2-dev-e78be706.json",
+      "projects/no-code/appenate-1052b9a0.json",
+      "projects/no-code/checkbox-930acc8a.json",
+      "projects/no-code/obviously-ai-6c7ff423.json",
+      "projects/no-code/skuid-27f544e2.json",
+      "projects/software-testing/browserstack-1cef6efc.json",
+      "projects/software-testing/kaneai-9a395c49.json",
+      "projects/software-testing/opkey-1686a4e2.json",
+      "projects/software-testing/pcloudy-6e6266d2.json",
+      "projects/software-testing/perfecto-8aeabe24.json",
+      "projects/software-testing/rainforest-qa-369dc230.json",
+      "projects/software-testing/testim-5d3d2647.json",
+      "projects/software-testing/zaptest-4360971f.json"
+    ],
+    "document_research_completed": [
+      "projects/api-management/dreamfactory-6a420d79.json",
+      "projects/application-development/five-94ffc3fa.json",
+      "projects/software-testing/browserstack-1cef6efc.json",
+      "projects/software-testing/rainforest-qa-369dc230.json"
+    ],
+    "lifecycle_corrections": [
+      "projects/ide/codeanywhere-7879974b.json",
+      "projects/monitoring/sinefa-16ac53d6.json"
+    ],
+    "pending_community_input": [
+      "projects/api-management/apigee-edge-d4c9d902.json",
+      "projects/api-management/blobr-e9fe1f36.json",
+      "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+      "projects/api-management/restcase-40145ac2.json",
+      "projects/application-development/3pillar-global-f439406e.json",
+      "projects/application-development/clustered-cloud-06d4f73a.json",
+      "projects/data-integration/ainsys-7195d835.json",
+      "projects/data-integration/dexi-io-da3a3a46.json",
+      "projects/data-integration/foghub-ed0b9582.json",
+      "projects/data-integration/panoply-452887ff.json",
+      "projects/data-integration/rivery-2d3c66b2.json",
+      "projects/databases/faunadb-10fce5b0.json",
+      "projects/databases/harperdb-cloud-7836805e.json",
+      "projects/ide/codeanywhere-7879974b.json",
+      "projects/ide/codesandbox-90aac520.json",
+      "projects/ide/eclipse-che-06fa6676.json",
+      "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
+      "projects/monitoring/livenx-0f555bbe.json",
+      "projects/monitoring/panopta-5788d04c.json",
+      "projects/monitoring/sinefa-16ac53d6.json",
+      "projects/no-code/app2-dev-e78be706.json",
+      "projects/no-code/appenate-1052b9a0.json",
+      "projects/no-code/checkbox-930acc8a.json",
+      "projects/no-code/obviously-ai-6c7ff423.json",
+      "projects/no-code/skuid-27f544e2.json",
+      "projects/software-testing/kaneai-9a395c49.json",
+      "projects/software-testing/opkey-1686a4e2.json",
+      "projects/software-testing/pcloudy-6e6266d2.json",
+      "projects/software-testing/perfecto-8aeabe24.json",
+      "projects/software-testing/testim-5d3d2647.json",
+      "projects/software-testing/zaptest-4360971f.json"
+    ],
+    "unprocessed": [
+      "projects/api-management/apigee-edge-d4c9d902.json",
+      "projects/api-management/blobr-e9fe1f36.json",
+      "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+      "projects/api-management/restcase-40145ac2.json",
+      "projects/application-development/3pillar-global-f439406e.json",
+      "projects/application-development/clustered-cloud-06d4f73a.json",
+      "projects/data-integration/ainsys-7195d835.json",
+      "projects/data-integration/dexi-io-da3a3a46.json",
+      "projects/data-integration/foghub-ed0b9582.json",
+      "projects/data-integration/panoply-452887ff.json",
+      "projects/data-integration/rivery-2d3c66b2.json",
+      "projects/databases/faunadb-10fce5b0.json",
+      "projects/databases/harperdb-cloud-7836805e.json",
+      "projects/ide/codeanywhere-7879974b.json",
+      "projects/ide/codesandbox-90aac520.json",
+      "projects/ide/eclipse-che-06fa6676.json",
+      "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
+      "projects/monitoring/livenx-0f555bbe.json",
+      "projects/monitoring/panopta-5788d04c.json",
+      "projects/monitoring/sinefa-16ac53d6.json",
+      "projects/no-code/app2-dev-e78be706.json",
+      "projects/no-code/appenate-1052b9a0.json",
+      "projects/no-code/checkbox-930acc8a.json",
+      "projects/no-code/obviously-ai-6c7ff423.json",
+      "projects/no-code/skuid-27f544e2.json",
+      "projects/software-testing/kaneai-9a395c49.json",
+      "projects/software-testing/opkey-1686a4e2.json",
+      "projects/software-testing/pcloudy-6e6266d2.json",
+      "projects/software-testing/perfecto-8aeabe24.json",
+      "projects/software-testing/testim-5d3d2647.json",
+      "projects/software-testing/zaptest-4360971f.json"
+    ],
+    "scope": "Retained batch-01 paths only. No transferred work, main, PR, runtime or deployment."
+  }
 }
