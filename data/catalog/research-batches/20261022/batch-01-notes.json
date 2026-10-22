@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T15:12:27.408422+00:00",
+  "updated_at": "2026-10-22T15:19:47.735352+00:00",
   "status": "in_progress",
   "assigned": 140,
-  "completed_count": 93,
+  "completed_count": 96,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
@@ -68,6 +68,9 @@
     "projects/ide/jdoodle-2d99703c.json",
     "projects/ide/koding-f68c354d.json",
     "projects/ide/repl-it-d6a66c85.json",
+    "projects/monitoring/auvik-b64b0099.json",
+    "projects/monitoring/azure-network-watcher-24299f39.json",
+    "projects/monitoring/mackerel-c90a8e8c.json",
     "projects/no-code/adalo-471bff37.json",
     "projects/no-code/airslate-workflow-5369295c.json",
     "projects/no-code/anything-09e116dc.json",
@@ -100,7 +103,7 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 47,
+  "remaining_count": 44,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -120,11 +123,8 @@
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
     "projects/ide/eclipse-che-06fa6676.json",
-    "projects/monitoring/auvik-b64b0099.json",
-    "projects/monitoring/azure-network-watcher-24299f39.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
-    "projects/monitoring/mackerel-c90a8e8c.json",
     "projects/monitoring/manageengine-oputils-072c08c2.json",
     "projects/monitoring/netify-3befc7dc.json",
     "projects/monitoring/pandora-fms-d5ecb72a.json",
@@ -411,7 +411,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/96 global researched (3 baseline +93 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/99 global researched (3 baseline +96 assigned)/0 untranslated labels; structure/references only"
     }
   ],
   "checkpoints": [
@@ -564,6 +564,11 @@
       "commit": "c1e86c4",
       "completed_count": 90,
       "scope": "Jestor, OnSpace, Quickbase; Obviously AI/Skuid gaps; pushed"
+    },
+    {
+      "commit": "a7d6a7b",
+      "completed_count": 93,
+      "scope": "Softr, Thunkable, Twixl; no-code retained scope fully investigated; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
@@ -577,7 +582,8 @@
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
     "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
-    "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps."
+    "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps.",
+    "monitoring": "3 of16 retained complete; IntelliMagic/LiveNX incomplete;11 remaining under investigation."
   },
   "identity_changes": [
     {
@@ -790,6 +796,14 @@
     {
       "project_path": "projects/no-code/skuid-27f544e2.json",
       "reason": "The legacy Skuid homepage redirects to a Nintex app-development URL that is inaccessible through the public reader; legacy pricing is also inaccessible. Acquisition discovery is not a current product/plan migration contract. Current identity, deep operating documentation, fees and license remain unresolved. No Nintex family entitlement or duplicate identity was inferred; not counted complete."
+    },
+    {
+      "project_path": "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
+      "reason": "The assigned IntelliMagic SAN product page is inaccessible and the old root timed out including one normal retry. IBM migration/support material appeared in discovery, but the original migration notice remained inaccessible after a normal retry. Current SAN-specific product identity, complete technical authority, license and fees were not established; search snippets are not adopted facts. Not counted complete."
+    },
+    {
+      "project_path": "projects/monitoring/livenx-0f555bbe.json",
+      "reason": "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete."
     }
   ],
   "availability_updates": [
@@ -1226,10 +1240,45 @@
       "excerpt_sha256": "d21efce7c42f655b3fb1c930619e57bde43e223efc9231f0101ff44aefda4b28",
       "read_at": "2026-10-22T14:59:13.407974+00:00",
       "use": "Actual official original read; operational documentation inaccessible, incomplete record."
+    },
+    {
+      "capture": "livenx-entry-0",
+      "actual_url": "https://www.liveaction.com/products/livenx/",
+      "excerpt_sha256": "cb18c0970e0d7c99496ca444f4e4b77adb52ba6b968a78f2cca29dc12e73ba6a",
+      "read_at": "2026-10-22T15:13:02.259885+00:00",
+      "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
+    },
+    {
+      "capture": "livenx-price-doc-0",
+      "actual_url": "https://www.liveaction.com/request-a-quote/?utm_campaign=livenx&utm_medium=heroclick&utm_source=website",
+      "excerpt_sha256": "66cc4c285ba3141a897c4571a51accb364f1629a916c26db8f01df563cdbe51c",
+      "read_at": "2026-10-22T15:13:33.040780+00:00",
+      "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
+    },
+    {
+      "capture": "livenx-doc-root-0",
+      "actual_url": "https://docs.bluecatnetworks.com/",
+      "excerpt_sha256": "6b6165c68cf66aee36ee3c97d5a2d34ee8f245316fef3b5e79113801437cb112",
+      "read_at": "2026-10-22T15:14:35.075739+00:00",
+      "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
+    },
+    {
+      "capture": "livenx-current-guide-0",
+      "actual_url": "https://docs.bluecatnetworks.com/r/en-US/LiveNX-Quick-Start-Guide/25.3.0",
+      "excerpt_sha256": "4ee5164731aca72d5d65859fcdc0d2e173561eacc98c7263c62e4d510ee2801d",
+      "read_at": "2026-10-22T15:15:13.129863+00:00",
+      "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
+    },
+    {
+      "capture": "livenx-license-architecture-0",
+      "actual_url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Get-LiveNX-license/25.3.0?contentId=LIsfKcmvzEcr4T8E8wlmcQ",
+      "excerpt_sha256": "cef26e9baafefa8f49d044637369ab4b2fd057c0c55bf41d71d79dc1b3ec2429",
+      "read_at": "2026-10-22T15:19:09.138238+00:00",
+      "use": "Actual official original read for incomplete LiveNX identity/pricing authority; no product test."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 47,
+  "retained_remaining_count": 44,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -1249,11 +1298,8 @@
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
     "projects/ide/eclipse-che-06fa6676.json",
-    "projects/monitoring/auvik-b64b0099.json",
-    "projects/monitoring/azure-network-watcher-24299f39.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
-    "projects/monitoring/mackerel-c90a8e8c.json",
     "projects/monitoring/manageengine-oputils-072c08c2.json",
     "projects/monitoring/netify-3befc7dc.json",
     "projects/monitoring/pandora-fms-d5ecb72a.json",

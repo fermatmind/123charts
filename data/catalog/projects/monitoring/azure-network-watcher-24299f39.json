@@ -10,105 +10,97 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Azure Network Watcher is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, SLA Monitoring, Diagnostic Tools, Resource Management.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $0.3.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: allocate people, time and other project resources. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Azure Network Watcher 属于网络监控软件。第三方资料列出的功能包括网站流量报表、服务水平协议监测、诊断工具、资源管理。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $0.3.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：分配人员、时间和其他项目资源。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Azure Network Watcher is a set of monitoring and diagnostic tools for Azure infrastructure networks. It covers topology, connection checks, packet capture and flow logs for IaaS resources; the overview explicitly excludes general PaaS monitoring and web analytics.\n\nIts tools have different evidence and cost models. A point-in-time reachability test differs from continuous monitoring, packet capture requires a VM extension, and flow logs are stored and processed by related Azure services. Choose the diagnostic question first, then verify collection, retention and billing for that path.",
+  "description_zh": "Azure Network Watcher 是面向 Azure 基础设施网络的监控和诊断工具集，涵盖拓扑、连接检查、抓包及 IaaS 流量日志。概览明确排除通用 PaaS 监控和网站分析。\n\n各工具的证据及费用模型不同。时点可达性测试不同于持续监控，抓包需要 VM 扩展，流量日志还依赖相关 Azure 服务存储和处理。应先明确诊断问题，再核对该路径的采集、保留和计费。",
   "core_features": [
     {
-      "name_en": "Web Traffic Reporting",
-      "name_zh": "网站流量报表",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Connection diagnostics",
+      "name_zh": "连接诊断",
+      "explanation_en": "Inspect reachability, latency, probes and hop-specific issue context at a point in time.",
+      "explanation_zh": "在特定时点检查可达性、延迟、探测及逐跳问题上下文。",
+      "explanation_scope": "product_specific",
+      "source_ref": "troubleshoot",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "SLA Monitoring",
-      "name_zh": "服务水平协议监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "VM packet capture",
+      "name_zh": "VM 抓包",
+      "explanation_en": "Use the Network Watcher VM extension for bounded or preview continuous captures.",
+      "explanation_zh": "通过 Network Watcher VM 扩展进行有限时长或预览版连续抓包。",
+      "explanation_scope": "product_specific",
+      "source_ref": "capture",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Diagnostic Tools",
-      "name_zh": "诊断工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Resource Management",
-      "name_zh": "资源管理",
-      "explanation_en": "Allocate people, time and other project resources.",
-      "explanation_zh": "分配人员、时间和其他项目资源。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Virtual network flow logs",
+      "name_zh": "虚拟网络流量日志",
+      "explanation_en": "Collect Layer4 flow metadata in JSON and send it to Azure Storage.",
+      "explanation_zh": "将四层流量元数据记录为 JSON 并发送到 Azure Storage。",
+      "explanation_scope": "product_specific",
+      "source_ref": "flow",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Allocate people, time and other project resources"],
-    "zh": ["分配人员、时间和其他项目资源"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Diagnose an isolated VM connection with a known denied port.",
+      "Compare a small VNet flow record with a bounded packet capture."
+    ],
+    "zh": [
+      "诊断隔离 VM 上已知被拒端口的连接。",
+      "比较少量 VNet 流记录与有限范围抓包。"
+    ],
+    "source_refs": ["troubleshoot", "flow", "capture"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $0.3.",
-      "zh": "未提供免费试用 起价为 $0.3.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Azure network engineers", "Cloud operations teams"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define source/destination and the diagnostic question, then check regional scope, permission and extension prerequisites.",
+        "zh": "明确来源／目标及诊断问题，再核对区域范围、权限和扩展前提。",
+        "source_refs": ["home", "capture", "troubleshoot"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use synthetic traffic and bounded retention, inspect output and estimate all related charges before wider collection.",
+        "zh": "使用模拟流量及有限保留，检查输出并估算全部相关费用后再扩大采集。",
+        "source_refs": ["flow", "capture", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Continuous capture is preview and deletes older buffered files.",
+        "zh": "连续抓包是预览功能，会删除缓冲中的旧文件。",
+        "source_refs": ["capture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "A point-in-time connection result is not an application uptime history.",
+        "zh": "时点连接结果不是应用可用性历史。",
+        "source_refs": ["troubleshoot"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -120,37 +112,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $0.3.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $0.3.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "usage_based",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:13:35.751338Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Official pricing documents included units such as 5GB/month for listed flow-log collection and 1,000 diagnostic checks/month, with usage and related-service charges. Dynamic dollar cells were unresolved, so no numeric unit rate or zero-cost claim is assigned. Region, offer and contract determine the actual quote.",
+    "summary_zh": "官方价格为所列流量日志采集列出每月 5GB、诊断检查每月 1,000 次等包含量，并有用量及相关服务费用。动态美元金额未解析，未指定数字单价，也未声称零成本。真实报价取决于区域、优惠和合同。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Azure Network Watcher do?",
-      "question_zh": "Azure Network Watcher 用来做什么？",
-      "answer_en": "Azure Network Watcher is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, SLA Monitoring, Diagnostic Tools, Resource Management.",
-      "answer_zh": "Azure Network Watcher 属于网络监控软件。第三方资料列出的功能包括网站流量报表、服务水平协议监测、诊断工具、资源管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Web Traffic Reporting, SLA Monitoring, Diagnostic Tools, Resource Management",
-      "answer_zh": "网站流量报表、服务水平协议监测、诊断工具、资源管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -160,25 +136,174 @@
       "read_at": "2026-10-22T08:37:15.689Z",
       "excerpt_sha256": "52a398dce2d40a4d093c98e00a7c7d18eb7763ebe71758305dba61ba75a51954",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Azure Network Watcher",
+      "title": "Azure Network Watcher Overview | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+      "read_at": "2026-10-22T15:13:35.751338Z",
+      "excerpt_sha256": "50c0930a034972a6b602a299b81a745cd497fb346e70585d8808538b95e3397e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read IaaS scope, automatic regional enablement, diagnostics, quotas and NSG flow-log retirement."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Azure Network Watcher",
+      "title": "Pricing - Network Watcher | Microsoft Azure",
+      "url": "https://azure.microsoft.com/en-us/pricing/details/network-watcher/",
+      "read_at": "2026-10-22T15:14:07.266558Z",
+      "excerpt_sha256": "735c2627aa7ffd2786ca581bf5535376881fb06c16b0d63464d7ca32cc33073a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual pricing table/footnotes; dynamic dollar amounts unresolved and not interpreted as zero."
+    },
+    {
+      "id": "capture",
+      "type": "official_documentation",
+      "site": "Azure Network Watcher",
+      "title": "Packet Capture Overview - Azure Network Watcher | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview",
+      "read_at": "2026-10-22T15:14:35.633298Z",
+      "excerpt_sha256": "06b6b0a4401a7907af57d2cf68ee811c7cbb9400135ceb16e0318aab8a837286",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read extension prerequisite, ring-buffer preview, duration and storage/SAS conditions."
+    },
+    {
+      "id": "flow",
+      "type": "official_documentation",
+      "site": "Azure Network Watcher",
+      "title": "Virtual Network Flow Logs - Azure Network Watcher | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview",
+      "read_at": "2026-10-22T15:14:35.633485Z",
+      "excerpt_sha256": "112cac348bdc0343d45ecaec4e43022a1337c0b735f920e5efd5e36d6520a18c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read VNet flow-log data, duplicate NSG logging warning and transport metadata."
+    },
+    {
+      "id": "troubleshoot",
+      "type": "official_documentation",
+      "site": "Azure Network Watcher",
+      "title": "Connection Troubleshoot Overview - Azure Network Watcher | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+      "read_at": "2026-10-22T15:15:35.626322Z",
+      "excerpt_sha256": "c1b7fbd30134cc7c0ed9e3031dad0f8e078ab74fdd68bf31574e69bee131312d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read point-in-time diagnostics, supported sources, response fields and error categories."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:15:35.626322Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "pricing", "capture"],
+  "profile": {
+    "sections": [
+      {
+        "id": "tool-selection",
+        "title_en": "Use the diagnostic that answers the question",
+        "title_zh": "选择能回答问题的诊断工具",
+        "en": "Connection troubleshoot reports a current reachability result and diagnostic context such as DNS, routing, firewall or listener issues. It is not a historical availability record. Compare its source, destination, port and protocol with the real application path before treating Reachable as evidence that the application itself is healthy.",
+        "zh": "Connection troubleshoot 返回当前可达性及 DNS、路由、防火墙或监听等上下文，并非历史可用性记录。应将来源、目标、端口和协议与真实应用路径比较，不能仅凭 Reachable 判断应用本身健康。",
+        "source_refs": ["troubleshoot"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capture-prerequisites",
+        "title_en": "Set capture scope and storage deliberately",
+        "title_zh": "明确抓包范围与存储",
+        "en": "Packet capture requires AzureNetworkWatcherExtension. Filters can restrict protocol/IP/port, and data can be saved locally or to blob storage. The guide says storage SAS access requires key access enabled; otherwise captures are local-only. Check that prerequisite against the approved storage policy rather than changing it implicitly during diagnosis.",
+        "zh": "抓包需要 AzureNetworkWatcherExtension，可按协议／IP／端口过滤，保存到本地或 blob。指南说明存储 SAS 需要启用密钥访问，否则只能本地保存。应对照获准存储策略核对前提，不能在诊断中隐式修改。",
+        "source_refs": ["capture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "capture-preview",
+        "title_en": "Continuous capture overwrites old files",
+        "title_zh": "连续抓包会覆盖旧文件",
+        "en": "Continuous capture is explicitly preview. It rotates files and deletes the oldest at the configured count, running for the requested duration or at most seven days. It is a recent-data buffer, not indefinite retention. Estimate traffic volume and preserve needed evidence before rotation discards it.",
+        "zh": "连续抓包明确为预览功能，按配置轮转文件并在达到数量上限时删除最旧文件，运行所选时长、最多七天。它是近期数据缓冲，不是无限保留。应估算流量，并在轮转丢弃前保存所需证据。",
+        "source_refs": ["capture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "flow-migration",
+        "title_en": "Plan the NSG flow-log transition",
+        "title_zh": "规划 NSG 流量日志迁移",
+        "en": "The overview says new NSG flow-log creation is no longer supported and retirement is September30,2027. Existing Storage records follow retention even when NSG flow-log resources are removed. Use virtual network flow logs for the replacement path and avoid parallel NSG/VNet recording on the same workloads unless duplicate data and charges are intended.",
+        "zh": "概览说明已不支持新建 NSG flow logs，将于 2027 年九月三十日退役。NSG 日志资源删除后，已有 Storage 记录仍按保留策略处理。替代路径应核对虚拟网络流量日志，避免对相同工作负载同时采集 NSG／VNet 而产生重复数据及费用。",
+        "source_refs": ["home", "flow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "flow-data",
+        "title_en": "Distinguish flow records from packet payloads",
+        "title_zh": "区分流记录与数据包内容",
+        "en": "VNet flow logs operate at Layer4 and record interfaces, tuples, direction, state, encryption status and throughput. They are not a substitute for packet payload capture. Their network-level scope can include gateway traffic and increase volume, so validate the workload coverage and storage output with a small known flow.",
+        "zh": "VNet flow logs 在四层记录接口、连接元组、方向、状态、加密状态及吞吐，不替代数据包内容抓取。网络级范围可包含网关流量并增加数据量，应先用已知小流量核对覆盖及存储输出。",
+        "source_refs": ["flow"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Count checks and related services",
+        "title_zh": "计算检查次数及相关服务",
+        "en": "The pricing table exposes free quantities for logs and diagnostic checks, but dynamic monetary cells were unresolved placeholders. Packet capture on scale sets counts individual instances as checks; storage and analytics have additional metering. Automatic regional enablement is free in the overview, which does not make every diagnostic operation free.",
+        "zh": "价格表列日志及诊断检查的免费数量，但动态金额单元格仅返回未解析占位符。扩展集抓包按各实例计算检查，存储和分析另有计量。概览说明自动按区域启用免费，并不表示所有诊断操作免费。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Azure Network Watcher: setup, operating limits and pricing",
+    "title_zh": "Azure Network Watcher：设置、运行边界及费用",
+    "description_en": "Azure Network Watcher is a set of monitoring and diagnostic tools for Azure infrastructure networks. It covers topology, connection checks, packet capture and flow logs f",
+    "description_zh": "Azure Network Watcher 是面向 Azure 基础设施网络的监控和诊断工具集，涵盖拓扑、连接检查、抓包及 IaaS 流量日志。概览明确排除通用 PaaS 监控和网",
+    "search_intent_en": "Evaluate Azure Network Watcher for a documented workflow, access model and operating budget.",
+    "search_intent_zh": "按有文档依据的流程、访问模型及运行预算评估 Azure Network Watcher。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No Azure account, resource, extension, traffic, capture, firewall rule, storage policy, log migration or billing setting was operated.",
+      "zh": "未操作 Azure 账户、资源、扩展、流量、抓包、防火墙规则、存储策略、日志迁移或账单设置。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual permission enforcement, regional/SKU availability, monetary rates, full license and tested retention/recovery remain unverified.",
+      "zh": "权限实际执行、区域／SKU 可用性、金额、完整许可及保留／恢复实测待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
