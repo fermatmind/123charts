@@ -10,7 +10,7 @@ const DATA_REPO = path.resolve(ROOT, "../88cn-index-data");
 const TMP_OUTPUT_ROOT = "/tmp";
 const DEFAULT_OUT = path.join(
   TMP_OUTPUT_ROOT,
-  `88cn-alpha-snapshot-${new Date().toISOString().replace(/[:.]/g, "-")}`
+  `123charts-alpha-snapshot-${new Date().toISOString().replace(/[:.]/g, "-")}`
 );
 const SNAPSHOT_VERSION = "pr84-dry-run-v0";
 const ALLOWED_FORMATS = new Set(["ndjson", "csv"]);
@@ -94,8 +94,8 @@ function assertSafeOutDir(outPath) {
   if (!isUnderAllowedTmpRoot) {
     fail("output must be under the OS temp directory");
   }
-  if (!path.basename(resolved).startsWith("88cn-alpha-snapshot-")) {
-    fail("output directory name must start with 88cn-alpha-snapshot-");
+  if (!path.basename(resolved).startsWith("123charts-alpha-snapshot-")) {
+    fail("output directory name must start with 123charts-alpha-snapshot-");
   }
   if (!relativeToRepo.startsWith("..") && !path.isAbsolute(relativeToRepo)) {
     fail("repo output paths are not allowed");

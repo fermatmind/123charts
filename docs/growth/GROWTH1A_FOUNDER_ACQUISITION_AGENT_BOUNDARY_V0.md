@@ -22,16 +22,16 @@ later roadmap task explicitly changes that scope.
 ## Safe Inputs
 
 Future local-only founder acquisition draft work may reference only reviewed,
-public, non-contact project signals already present in the 88CN repo:
+public, non-contact project signals already present in the 123Charts repo:
 
 - public project name;
-- 88CN public project path;
+- 123Charts public project path;
 - public report path;
 - category, stack, vertical, collection, task, or alternatives route context;
-- public project one-line description already reviewed in 88CN;
+- public project one-line description already reviewed in 123Charts;
 - public project official site URL when already present in reviewed local data;
 - published report title, slug, kind, and date;
-- public-signal readiness notes already approved in 88CN docs.
+- public-signal readiness notes already approved in 123Charts docs.
 
 Every input must be treated as editorial context for a human reviewer, not as a
 permission to contact a founder.
@@ -57,7 +57,7 @@ Unknown data must remain absent or use neutral wording such as `not reviewed`.
 Within the current docs-only roadmap scope, GROWTH1B may document a future
 artifact contract for:
 
-- finite project review queue grouped by public 88CN route context;
+- finite project review queue grouped by public 123Charts route context;
 - public project summary card template;
 - outreach draft template for human review;
 - manual review checklist;
@@ -73,8 +73,8 @@ local path by default.
 
 Local drafts must:
 
-- describe 88CN as a public AI project discovery and growth-signal surface;
-- cite only public 88CN routes or reviewed public project facts;
+- describe 123Charts as a public AI project discovery and growth-signal surface;
+- cite only public 123Charts routes or reviewed public project facts;
 - avoid private contact fields and personal account targeting;
 - avoid invented traffic, adoption, ranking, funding, endorsement, customer, or
   search-visibility claims;

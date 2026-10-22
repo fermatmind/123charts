@@ -2,7 +2,7 @@
 
 ## Result
 
-PR91 defines the future Laravel gateway boundary for 88CN B2B Alpha Data Feed
+PR91 defines the future Laravel gateway boundary for 123Charts B2B Alpha Data Feed
 access. It is docs/contracts/spec only.
 
 Machine-readable contract:

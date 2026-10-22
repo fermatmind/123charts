@@ -62,4 +62,4 @@ Unknown data must be displayed as:
 
 ## Competitor Copy Ban
 
-Do not pixel-copy competitor UI, copy competitor descriptions, reuse competitor screenshots, reuse competitor logos, use competitor databases as production content sources, or disguise competitor descriptions as 88CN editorial content.
+Do not pixel-copy competitor UI, copy competitor descriptions, reuse competitor screenshots, reuse competitor logos, use competitor databases as production content sources, or disguise competitor descriptions as 123Charts editorial content.

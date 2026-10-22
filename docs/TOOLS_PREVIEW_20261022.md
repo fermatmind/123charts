@@ -4,7 +4,7 @@
 
 - 中文预览：http://127.0.0.1:3100/zh?dataset=real
 - 英文预览：http://127.0.0.1:3100/en?dataset=real
-- 现有3100服务工作目录：`/Users/rainie/Desktop/123charts.com/88CN`
+- 现有3100服务工作目录：`/Users/rainie/Desktop/123charts.com/123charts`
 - 数据与统计写入：本地Supabase `http://127.0.0.1:54321`。预览保持noindex。
 
 ## 实现

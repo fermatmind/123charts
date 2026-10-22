@@ -12,7 +12,7 @@ const requiredNoticeHeadings = [
   '### Commit SHA',
   '### Files copied',
   '### Files adapted',
-  '### Usage in 88CN',
+  '### Usage in 123Charts',
   '### Review owner',
   '### Date added',
   '### Risk notes',

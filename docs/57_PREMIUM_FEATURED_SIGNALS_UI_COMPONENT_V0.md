@@ -8,7 +8,7 @@ PR50 adds a human-visible Featured Signals UI layer for reviewed public projects
 
 - A labeled UI placement surface for projects that are already reviewed and public.
 - A server-flagged component that returns `null` unless explicitly enabled.
-- A founder-facing and reader-facing visual module that links to internal 88CN project pages.
+- A founder-facing and reader-facing visual module that links to internal 123Charts project pages.
 - A narrow admin explanation page documenting the boundary before PR51.
 
 ## What Featured Signals Are Not

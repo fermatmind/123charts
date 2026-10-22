@@ -32,7 +32,7 @@ Audit targets must be public URL only:
 
 ## Local Dry-Run First
 
-Any future implementation must support a local dry-run mode before any write-capable mode exists. Dry-run output must default outside the repo, such as `/tmp/88cn-audit-dry-run`, and must not be committed unless a later task explicitly allows committed fixtures.
+Any future implementation must support a local dry-run mode before any write-capable mode exists. Dry-run output must default outside the repo, such as `/tmp/123charts-audit-dry-run`, and must not be committed unless a later task explicitly allows committed fixtures.
 
 Dry-run output must include:
 

@@ -18,7 +18,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: siteTitle("Admin"),
-  description: siteDescription("88CN admin panel."),
+  description: siteDescription("123Charts admin panel."),
   ...noIndex(),
 };
 
@@ -47,7 +47,7 @@ export default async function AdminPage() {
           </span>
         </div>
         <h1 className="mb-2 text-2xl font-bold tracking-tight text-terminal-fg">
-          88CN Admin
+          123Charts Admin
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-xs">
           <span className="text-terminal-dim">

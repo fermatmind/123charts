@@ -6,7 +6,7 @@ Worker recommendation is never publication.
 
 Worker review-ready payload is never publication.
 
-Only manual 88CN admin review can produce `published_projection`.
+Only manual 123Charts admin review can produce `published_projection`.
 
 Only `published_projection` can enter frontend, search, sitemap, Public API, or
 MCP surfaces.
@@ -18,7 +18,7 @@ MCP surfaces.
 3. Worker `publish_recommended` does not create a public page.
 4. Worker `review_ready` does not create a public page.
 5. Worker quarantine, audit, evidence, and trace data remain admin-only.
-6. 88CN admin review is the only path to `published_projection`.
+6. 123Charts admin review is the only path to `published_projection`.
 7. `published_projection` remains the only public data source for project
    frontend, search, sitemap, Public API, and MCP surfaces.
 
@@ -75,6 +75,6 @@ Validated import artifacts may move records to `review_queue_pending` or
 
 ## Human Final Gate
 
-The final publication gate is a human 88CN admin action. Any future automation
+The final publication gate is a human 123Charts admin action. Any future automation
 must stop before `published_projection_created` unless a separate explicit
 human-approved task defines a safe admin workflow and rollback path.

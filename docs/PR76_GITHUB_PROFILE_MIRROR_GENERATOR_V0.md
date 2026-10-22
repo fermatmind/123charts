@@ -17,13 +17,13 @@ scripts/generate-github-profile-mirror.mjs
 Required invocation:
 
 ```text
-node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror --no-write-external
+node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror --no-write-external
 ```
 
 Optional single-project invocation:
 
 ```text
-node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror --no-write-external --slug aurora-code
+node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror --no-write-external --slug aurora-code
 ```
 
 The generator refuses to run unless all of these are true:
@@ -91,12 +91,12 @@ Because the train-level roadmap has `auto_merge_allowed=false` and PR76 reports 
 Task-specific validation:
 
 ```text
-node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror --no-write-external
+node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror --no-write-external
 ```
 
 Expected behavior:
 
-- writes sanitized markdown files under `/tmp/88cn-github-profile-mirror`;
+- writes sanitized markdown files under `/tmp/123charts-github-profile-mirror`;
 - reports `externalWrite: false`;
 - reports `dataRepoMutation: false`;
 - exits non-zero for non-local source, missing dry-run, missing `--no-write-external`, or output outside the system temp directory.

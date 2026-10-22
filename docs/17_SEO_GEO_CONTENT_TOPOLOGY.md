@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Define the content architecture that forms 88CN's natural traffic skeleton. Phase 1 does not rely on traditional SEO blog content. Instead, structured project asset pages, category hubs, curated collections, data reports, and founder value pages create a topology of discoverable, indexable, interlinked content that naturally attracts search traffic.
+Define the content architecture that forms 123Charts's natural traffic skeleton. Phase 1 does not rely on traditional SEO blog content. Instead, structured project asset pages, category hubs, curated collections, data reports, and founder value pages create a topology of discoverable, indexable, interlinked content that naturally attracts search traffic.
 
 ## Content Type Map
 
@@ -100,7 +100,7 @@ Reports are data-media style, not blog posts:
 
 The founders page and Genesis Badge page provide the why:
 
-- **Founders Page** — Explains the value of a structured public profile, source confidence improvement, and verified signal tracking. Explicitly states what 88CN does NOT promise (no traffic guarantees, no ranking promises, no backlink obligations).
+- **Founders Page** — Explains the value of a structured public profile, source confidence improvement, and verified signal tracking. Explicitly states what 123Charts does NOT promise (no traffic guarantees, no ranking promises, no backlink obligations).
 - **Genesis Badge Page** — Explains badge eligibility criteria, attributes, and limitations. Explicitly states no ranking guarantees, no SEO benefits, no forced backlinks.
 
 ## Pending/Preview Indexing Policy

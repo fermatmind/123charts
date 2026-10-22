@@ -24,7 +24,7 @@ export function success<T>(
   return NextResponse.json(
     {
       ok: true,
-      service: "88cn-web",
+      service: "123charts-web",
       data,
       request_id: requestId,
     },
@@ -38,7 +38,7 @@ export function errorResponse(
 ): NextResponse<ErrorEnvelope> {
   const body: ErrorEnvelope = {
     ok: false,
-    service: "88cn-web",
+    service: "123charts-web",
     error: {
       ...problem,
       request_id: problem.request_id ?? requestId,

@@ -26,7 +26,7 @@ export const demoCategories: DemoCategory[] = [
       "Projects in this category show the strongest dev momentum among indexed categories, with consistent GitHub activity, frequent releases, and active community contributions. Open-source agent frameworks tend to have faster iteration cycles than managed services.",
     faqs: [
       {
-        q: "What qualifies as an AI agent project on 88CN?",
+        q: "What qualifies as an AI agent project on 123Charts?",
         a: "Projects that provide frameworks, platforms, or tools for building autonomous or semi-autonomous AI agents. This includes agent orchestration, multi-agent systems, agent evaluation, and agent hosting platforms.",
       },
       {
@@ -57,12 +57,12 @@ export const demoCategories: DemoCategory[] = [
       "AI coding projects with open-source codebases show rapid iteration. Code review tools and test generation utilities tend to have shorter release cycles, while IDE-integrated assistants update on a slower cadence tied to editor plugin release processes.",
     faqs: [
       {
-        q: "Does 88CN track proprietary AI coding tools?",
-        a: "88CN indexes projects based on publicly available information. Proprietary tools with public product pages and documentation can be included, but Signal Scores for proprietary projects may have lower source confidence due to limited public development signals.",
+        q: "Does 123Charts track proprietary AI coding tools?",
+        a: "123Charts indexes projects based on publicly available information. Proprietary tools with public product pages and documentation can be included, but Signal Scores for proprietary projects may have lower source confidence due to limited public development signals.",
       },
       {
-        q: "How does 88CN evaluate code generation quality?",
-        a: "88CN does not evaluate code generation quality directly. Signal Scores reflect product readiness, dev momentum, and market presence from public signals. Quality assessment is left to editorial review and community feedback.",
+        q: "How does 123Charts evaluate code generation quality?",
+        a: "123Charts does not evaluate code generation quality directly. Signal Scores reflect product readiness, dev momentum, and market presence from public signals. Quality assessment is left to editorial review and community feedback.",
       },
     ],
     methodologyNote:
@@ -85,10 +85,10 @@ export const demoCategories: DemoCategory[] = [
     faqs: [
       {
         q: "What licenses qualify as open source for this category?",
-        a: "88CN considers MIT, Apache-2.0, BSD, and GPL-family licenses as open source. Projects with custom or restrictive source-available licenses may be included but noted as having license constraints.",
+        a: "123Charts considers MIT, Apache-2.0, BSD, and GPL-family licenses as open source. Projects with custom or restrictive source-available licenses may be included but noted as having license constraints.",
       },
       {
-        q: "Does 88CN track open-source model releases?",
+        q: "Does 123Charts track open-source model releases?",
         a: "The index primarily tracks tools, frameworks, and infrastructure rather than individual model releases. Model releases may be included when they are part of a broader open-source project with ongoing development activity.",
       },
     ],
@@ -112,11 +112,11 @@ export const demoCategories: DemoCategory[] = [
     faqs: [
       {
         q: "What hardware is required for local LLM projects?",
-        a: "Hardware requirements vary by project and model size. 88CN does not provide hardware recommendations. Project documentation and community resources are the best source for hardware guidance.",
+        a: "Hardware requirements vary by project and model size. 123Charts does not provide hardware recommendations. Project documentation and community resources are the best source for hardware guidance.",
       },
       {
-        q: "How does 88CN evaluate local LLM project quality?",
-        a: "88CN assesses Product Readiness (documentation, ease of setup), Dev Momentum (repository activity, release frequency), and Trust Confidence (license clarity, community health). Actual model quality is not evaluated by the index.",
+        q: "How does 123Charts evaluate local LLM project quality?",
+        a: "123Charts assesses Product Readiness (documentation, ease of setup), Dev Momentum (repository activity, release frequency), and Trust Confidence (license clarity, community health). Actual model quality is not evaluated by the index.",
       },
     ],
     methodologyNote:
@@ -138,12 +138,12 @@ export const demoCategories: DemoCategory[] = [
       "Vector database projects and embedding pipeline tools show the fastest dev momentum in the RAG category. Retrieval framework projects have slightly slower cadence but broader integration surface as they add connector ecosystems.",
     faqs: [
       {
-        q: "What types of RAG tools does 88CN track?",
-        a: "88CN tracks vector databases, embedding tools, document parsing and chunking tools, retrieval frameworks, and end-to-end RAG platforms. The category focuses on developer tools and infrastructure rather than end-user RAG applications.",
+        q: "What types of RAG tools does 123Charts track?",
+        a: "123Charts tracks vector databases, embedding tools, document parsing and chunking tools, retrieval frameworks, and end-to-end RAG platforms. The category focuses on developer tools and infrastructure rather than end-user RAG applications.",
       },
       {
         q: "How is vector database performance evaluated?",
-        a: "88CN does not benchmark vector database performance. Performance claims from project documentation and third-party benchmarks are noted but not independently verified by 88CN.",
+        a: "123Charts does not benchmark vector database performance. Performance claims from project documentation and third-party benchmarks are noted but not independently verified by 123Charts.",
       },
     ],
     methodologyNote:

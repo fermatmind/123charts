@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "registry": "88CN PR Train Batch Registry",
+  "registry": "123Charts PR Train Batch Registry",
   "policy": {
     "default_auto_merge_allowed": true,
     "stable_auto_merge_allowed": true,
@@ -4511,12 +4511,12 @@
         "codex-ops",
         "codex-qa"
       ],
-      "purpose": "Confirm the 88CN full automation Agent strategy, boundaries, task split, and AGENT1 entry conditions",
+      "purpose": "Confirm the 123Charts full automation Agent strategy, boundaries, task split, and AGENT1 entry conditions",
       "notes": [
         "AGENT0R result is AGENT0R_READY_FOR_WORKER_AGENT_IMPLEMENTATION.",
         "The next task is AGENT1 in 88cn-scout-worker, but AGENT1 is contract/CLI/dry-run only.",
-        "AGENT-INTEGRATION0 remains the first convergence point with 88CN review queue.",
-        "No worker task before AGENT-INTEGRATION0 may write 88CN review queue, published_projection, sitemap, production DB, or index-data."
+        "AGENT-INTEGRATION0 remains the first convergence point with 123Charts review queue.",
+        "No worker task before AGENT-INTEGRATION0 may write 123Charts review queue, published_projection, sitemap, production DB, or index-data."
       ],
       "status": "validation_passed",
       "completed_tasks": [
@@ -4604,14 +4604,14 @@
       "notes": [
         "This batch is registered by AGENT0R so next_recommended_train resolves to a real train.",
         "It is not completed by AGENT0R and should run in 88cn-scout-worker only after the user explicitly moves to AGENT1.",
-        "AGENT-INTEGRATION0 remains the first future task allowed to connect worker output back to the 88CN review queue."
+        "AGENT-INTEGRATION0 remains the first future task allowed to connect worker output back to the 123Charts review queue."
       ],
       "status": "planned",
       "completed_tasks": []
     },
     {
       "id": "AGENT_INTEGRATION_REVIEW_QUEUE_CONTRACT",
-      "title": "88CN review queue import contract for worker artifacts",
+      "title": "123Charts review queue import contract for worker artifacts",
       "phase": "agent-integration-review-queue",
       "tasks": [
         "AGENT-INTEGRATION0"
@@ -4672,7 +4672,7 @@
       ],
       "human_checkpoints": [],
       "required_preconditions": [
-        "88CN main is clean and synced",
+        "123Charts main is clean and synced",
         "88cn-scout-worker is inspected read-only at final worker SHA 31153adb2a125b16c33858f507ce762247a2a3ff",
         "contract work stays inside docs/agent, contracts/agent, fixtures/agent-integration, scripts/agent, docs/status, and ops metadata",
         "no import, publish, runtime, crawler, Redis/queue, Supabase/staging/production write, published_projection write, sitemap/frontend mutation, deploy, cloud action, data repo mutation, or worker repo mutation occurs"
@@ -4681,7 +4681,7 @@
         "codex-ops",
         "codex-qa"
       ],
-      "purpose": "Define the official handoff contract from completed 88cn-scout-worker artifacts into 88CN admin review queue candidates.",
+      "purpose": "Define the official handoff contract from completed 88cn-scout-worker artifacts into 123Charts admin review queue candidates.",
       "notes": [
         "This is a contract/boundary/validator task only.",
         "Worker output may recommend review or publish, but it cannot publish.",
@@ -4694,7 +4694,7 @@
     },
     {
       "id": "AGENT_INTEGRATION_REVIEW_PAYLOAD_COMPATIBILITY",
-      "title": "Worker review payload compatibility with 88CN import contract",
+      "title": "Worker review payload compatibility with 123Charts import contract",
       "phase": "agent-integration-review-payload-compatibility",
       "tasks": [
         "AGENT-INTEGRATION1"
@@ -4760,15 +4760,15 @@
         }
       ],
       "required_preconditions": [
-        "AGENT-INTEGRATION0 contract is merged into 88CN main",
+        "AGENT-INTEGRATION0 contract is merged into 123Charts main",
         "88cn-scout-worker is checked in its own clean worktree before AGENT-INTEGRATION1 starts",
-        "no 88CN repo mutation, data repo mutation, runtime worker, crawler, Redis/queue, external write, DB write, published_projection write, sitemap/frontend mutation, deploy, or cloud action occurs"
+        "no 123Charts repo mutation, data repo mutation, runtime worker, crawler, Redis/queue, external write, DB write, published_projection write, sitemap/frontend mutation, deploy, or cloud action occurs"
       ],
       "allowed_roles": [
         "codex-ops",
         "codex-qa"
       ],
-      "purpose": "Plan the next worker-repo compatibility task against the 88CN review queue import contract.",
+      "purpose": "Plan the next worker-repo compatibility task against the 123Charts review queue import contract.",
       "notes": [
         "Registered by AGENT-INTEGRATION0 so next_recommended_train resolves to a real planned train.",
         "This planned train is not completed by AGENT-INTEGRATION0.",

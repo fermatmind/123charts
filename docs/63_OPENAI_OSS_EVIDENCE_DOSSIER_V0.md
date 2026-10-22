@@ -8,7 +8,7 @@ The packet contains repo-grounded facts only. It does not include private data, 
 
 ## Project Summary
 
-88CN is the Free AI Project Growth Index. Phase 1 creates a public growth-signal index for free AI projects with project discovery, founder claim workflows, editorial review, explainable scoring, and staged public-data import.
+123Charts is the Free AI Project Growth Index. Phase 1 creates a public growth-signal index for free AI projects with project discovery, founder claim workflows, editorial review, explainable scoring, and staged public-data import.
 
 Current Phase 1 boundaries are:
 
@@ -45,7 +45,7 @@ The following repo files define the current evidence base:
 
 ## Governance Controls
 
-88CN currently uses a policy-first operating model:
+123Charts currently uses a policy-first operating model:
 
 - roadmap tasks declare allowed paths, forbidden paths, validations, deployment mode, human checkpoint status, payment status, and MCP status
 - `agent:scope:check` limits active work to the registered task scope

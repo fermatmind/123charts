@@ -2,11 +2,11 @@
 
 ## Result
 
-OPS2 defines a controlled tool and plugin registry for future 88CN Codex tasks. It does not install plugins, configure real MCP servers, modify product code, or deploy.
+OPS2 defines a controlled tool and plugin registry for future 123Charts Codex tasks. It does not install plugins, configure real MCP servers, modify product code, or deploy.
 
-## Why 88CN Cannot Let Codex Freely Download Plugins
+## Why 123Charts Cannot Let Codex Freely Download Plugins
 
-88CN has production deployment, admin review, public API, future MCP, and payment-adjacent boundaries. Unreviewed tools can read local files, browser sessions, private credentials, cloud accounts, or production data. Free-form plugin installation would make PR review incomplete because a hidden tool could change state outside the Git diff.
+123Charts has production deployment, admin review, public API, future MCP, and payment-adjacent boundaries. Unreviewed tools can read local files, browser sessions, private credentials, cloud accounts, or production data. Free-form plugin installation would make PR review incomplete because a hidden tool could change state outside the Git diff.
 
 OPS2 makes tool access explicit, reviewable, and phase-bound.
 
@@ -70,7 +70,7 @@ MCP servers are denied by default. OPS2 commits example config only:
 - `ops/mcp/config.example.toml`
 - `.codex/config.example.toml`
 
-Future 88CN MCP may read only from the Public API allowlist and must not query Supabase directly.
+Future 123Charts MCP may read only from the Public API allowlist and must not query Supabase directly.
 
 ## Why Real `.codex/config.toml` Cannot Be Committed
 

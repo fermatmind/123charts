@@ -69,6 +69,6 @@ export const CLAIM_METHODS = [
   {
     title: "Manual Review",
     description:
-      "Contact the 88CN team for manual identity verification and claim review.",
+      "Contact the 123Charts team for manual identity verification and claim review.",
   },
 ] as const;

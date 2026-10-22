@@ -2,7 +2,7 @@
 
 ## Purpose
 
-OPS-4A creates the first machine-readable PR Train Batch Registry for 88CN. Future Codex runs can select a bounded train by `BATCH_ID` instead of receiving long manual prompts with repeated rules.
+OPS-4A creates the first machine-readable PR Train Batch Registry for 123Charts. Future Codex runs can select a bounded train by `BATCH_ID` instead of receiving long manual prompts with repeated rules.
 
 The registry lives in:
 
@@ -13,7 +13,7 @@ The registry lives in:
 
 ## Why OPS-4A Is Spec-Only
 
-OPS-4A is intentionally limited to registry, template, skill-card, and documentation files. Another Codex session may be running PR36-PR41 in the main `/Users/rainie/Desktop/88CN` worktree, so this PR avoids the files most likely to conflict with an active train.
+OPS-4A is intentionally limited to registry, template, skill-card, and documentation files. Another Codex session may be running PR36-PR41 in the main `/Users/rainie/Desktop/123charts.com/123charts` worktree, so this PR avoids the files most likely to conflict with an active train.
 
 OPS-4A does not modify product code, task state, package scripts, agent scripts, deployment files, data repo files, schemas, migrations, or public UI.
 
@@ -85,7 +85,7 @@ OPS-4A was prepared in a separate worktree:
 
 ```bash
 git fetch origin --prune
-git worktree add /Users/rainie/Desktop/88CN-ops4a origin/main -b codex/ops4a-pr-train-batch-registry-spec
+git worktree add /Users/rainie/Desktop/123charts.com/123charts-ops4a origin/main -b codex/ops4a-pr-train-batch-registry-spec
 ```
 
 Future parallel OPS tasks should use the same isolation pattern and work only inside the task-specific worktree.

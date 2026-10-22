@@ -23,7 +23,7 @@ PR78 does not:
 
 ## Google Indexing API Prohibition
 
-Google Indexing API is forbidden for normal 88CN project, report, category, stack, collection, vertical, alternatives, profile, and intent pages.
+Google Indexing API is forbidden for normal 123Charts project, report, category, stack, collection, vertical, alternatives, profile, and intent pages.
 
 The default path for discoverability remains reviewed sitemap inclusion only. Any future exception would require a separate human decision outside PR78 and must not be introduced by this train.
 

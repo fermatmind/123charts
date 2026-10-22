@@ -26,10 +26,10 @@ Aliyun Hong Kong.
 | OS | Ubuntu 24.04.4 LTS |
 | Node version | v22.22.3 |
 | npm version | 10.9.8 |
-| PM2 status | `88cn-web` online |
+| PM2 status | `123charts-web` online |
 | Nginx status | active |
-| TLS status | active for `88cn.com` |
-| DNS status | public `88cn.com` HTTPS smoke passed |
+| TLS status | active for `123charts.com` |
+| DNS status | public `123charts.com` HTTPS smoke passed |
 | Supabase env status | NOT CONFIGURED |
 
 ## Source Deployment
@@ -38,11 +38,11 @@ Aliyun Hong Kong.
 | --- | --- | --- |
 | Deployment method | PASS | Aliyun Cloud Assistant was used because direct SSH remained unreliable. |
 | Source retrieval | PASS | A temporary GitHub source archive channel was used; sensitive URL and credential material were not committed or recorded. |
-| Source path | PASS | Source deployed to `/var/www/88cn`. |
+| Source path | PASS | Source deployed to `/var/www/123charts`. |
 | Deployed commit | PASS | `0483d30` |
 | Dependency install | PASS | `npm ci` completed on the server. |
 | Production build | PASS | `npm run build:production` completed. |
-| PM2 restart | PASS | `88cn-web` restarted and saved. |
+| PM2 restart | PASS | `123charts-web` restarted and saved. |
 
 ## Server Validation Checklist
 
@@ -76,19 +76,19 @@ Aliyun Hong Kong.
 
 | Endpoint | Result |
 | --- | --- |
-| `https://88cn.com/api/healthz` | 200 |
-| `https://88cn.com/sitemap.xml` | 200 |
-| `https://88cn.com/robots.txt` | 200 |
-| `https://88cn.com/` | 200 |
-| `https://88cn.com/projects` | 200 |
-| `https://88cn.com/projects/aurora-code` | 200 |
-| `https://88cn.com/submit` | 200 |
-| `https://88cn.com/claim/aurora-code` | 200 |
-| `https://88cn.com/admin` | 200, sign-in required |
-| `https://88cn.com/admin/submissions` | 200, sign-in required |
-| `https://88cn.com/admin/claims` | 200, sign-in required |
-| `https://88cn.com/api/projects/aurora-code` | 200 |
-| `https://88cn.com/api/projects/unknown-slug` | 404 Problem Details |
+| `https://123charts.com/api/healthz` | 200 |
+| `https://123charts.com/sitemap.xml` | 200 |
+| `https://123charts.com/robots.txt` | 200 |
+| `https://123charts.com/` | 200 |
+| `https://123charts.com/projects` | 200 |
+| `https://123charts.com/projects/aurora-code` | 200 |
+| `https://123charts.com/submit` | 200 |
+| `https://123charts.com/claim/aurora-code` | 200 |
+| `https://123charts.com/admin` | 200, sign-in required |
+| `https://123charts.com/admin/submissions` | 200, sign-in required |
+| `https://123charts.com/admin/claims` | 200, sign-in required |
+| `https://123charts.com/api/projects/aurora-code` | 200 |
+| `https://123charts.com/api/projects/unknown-slug` | 404 Problem Details |
 
 ## API And Header Checklist
 
@@ -121,7 +121,7 @@ Aliyun Hong Kong.
 
 ## Browser QA
 
-Screenshots were captured from live `88cn.com` pages:
+Screenshots were captured from live `123charts.com` pages:
 
 - `../screenshots/qa/pr23-live-home.png`
 - `../screenshots/qa/pr23-live-submit.png`

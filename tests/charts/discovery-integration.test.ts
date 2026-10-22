@@ -27,8 +27,8 @@ const ck = (r: any) => {
   if (r.error) throw Error(r.error.message);
   return r.data;
 };
-const accounts = JSON.parse(await fs.readFile(".local/accounts.json", "utf8"));
-const baseURL = "http://127.0.0.1:3100";
+const accounts = JSON.parse(await fs.readFile(process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json", "utf8"));
+const baseURL = process.env.CHARTS_TEST_BASE_URL || "http://127.0.0.1:3100";
 async function login(role?: string) {
   const c = await request.newContext({
     baseURL,
@@ -281,6 +281,7 @@ test(
       r = await founder.post("/api/charts/share", {
         data: { id: report.id, enabled: true },
       });
+      assert.equal(r.status(), 200, await r.text());
       const token = (await r.json()).share_token;
       assert.equal(
         (await guest.get("/api/charts/shared/" + token)).status(),

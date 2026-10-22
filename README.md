@@ -1,10 +1,11 @@
 # 123Charts
 
-**Discover Websites, Explore Alternatives.** 免费分类发现与替代方案平台。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；本轮仅本地开发。
+**Discover great tools. Find better alternatives.** 全球工具分类与替代榜单。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；本轮仅本地开发。
 
 ## 本地启动
 
 ```bash
+cd /Users/rainie/Desktop/123charts.com/123charts
 npm install
 npm run local:setup
 npm run dev:local
@@ -61,3 +62,7 @@ Supabase SQL 是唯一 schema，继续使用 SDK，不引入第二套 ORM。`pro
 提交只创建私有预览；审核通过才公开。资料修订审核中保留旧版，隐藏项目审核后仍隐藏。首次公开时间由数据库保护。关系始终是 anchor ← candidate，不自动反向成立。
 
 规范接口：`/api/v1/submissions`、`/api/v1/reviews/[id]/decision`、`/api/v1/events/outbound`。官网 GET 只做 302 跳转，真实点击由客户端异步 POST 记录；链接预取不计数。审核事务完成后刷新实际使用的缓存 tag；私有 outbox 支持失败重试和提交版本隔离。
+
+## 本地上线准备
+
+更名与兼容例外见 [BRAND_MIGRATION.md](docs/BRAND_MIGRATION.md)。三节点独立自托管配置、备份恢复和上线前置条件见 [deploy/README.md](deploy/README.md)；本轮不执行远端部署。

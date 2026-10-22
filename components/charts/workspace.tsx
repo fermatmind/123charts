@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import {
   ArrowRight,
   Plus,
@@ -28,7 +28,6 @@ import {
 } from "./context";
 export function AuthPage() {
   const { data, t, href, api, busy, notify } = useCharts(),
-    router = useRouter(),
     params = useSearchParams();
   const [signup, setSignup] = useState(false),
     [email, setEmail] = useState(""),
@@ -65,19 +64,17 @@ export function AuthPage() {
         new URL(returnTo, window.location.origin).origin ===
           window.location.origin
       ) {
-        router.push(returnTo);
-        router.refresh();
+        window.location.assign(returnTo);
         return;
       }
       const next = params.get("next");
-      router.push(
+      window.location.assign(
         href(
           next && ["submit", "following", "admin"].includes(next)
             ? `/${next}`
             : "/dashboard",
         ),
       );
-      router.refresh();
     } catch {}
   }
   return (

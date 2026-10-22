@@ -64,7 +64,7 @@ CSV arrays must use pipe-delimited strings after value-level escaping. PR82 only
 | `public_source_links` | No | Reviewed public official links |
 | `machine_readability_summary` | No | Public metadata coverage summary |
 | `last_reviewed_at` | No | Public review timestamp |
-| `public_profile_url` | Yes | Public 88CN profile URL |
+| `public_profile_url` | Yes | Public 123Charts profile URL |
 | `public_changelog_summary` | No | Public changelog summary only if already public |
 
 ## Denied Fields

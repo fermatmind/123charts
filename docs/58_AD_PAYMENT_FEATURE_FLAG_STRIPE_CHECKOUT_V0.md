@@ -38,7 +38,7 @@ Each flag defaults disabled unless its value is exactly `true`.
 
 - HTTP `503`
 - `application/problem+json`
-- Problem type `https://88cn.com/problems/commercial-flow-disabled`
+- Problem type `https://123charts.com/problems/commercial-flow-disabled`
 - Detail: `Commercial checkout is not enabled for this environment.`
 
 The route performs no Stripe call, no database mutation, no order mutation, no project mutation, no campaign activation, and no external network call.

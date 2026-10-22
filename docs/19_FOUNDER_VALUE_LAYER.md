@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Define the messaging, positioning, and content structure for founder-facing pages on 88CN. The founder value layer explains why AI project founders should create and claim profiles on 88CN, what value they receive, and — critically — what they should not expect.
+Define the messaging, positioning, and content structure for founder-facing pages on 123Charts. The founder value layer explains why AI project founders should create and claim profiles on 123Charts, what value they receive, and — critically — what they should not expect.
 
 ## Pages
 
@@ -17,7 +17,7 @@ Primary founder recruitment page. Explains the value proposition for AI project 
 **Key messages:**
 
 1. **Create a Clean, Structured Public Profile**
-   A free AI project profile on 88CN provides a consistent, search-indexed public page with project name, description, category, public sources, and growth signal indicators.
+   A free AI project profile on 123Charts provides a consistent, search-indexed public page with project name, description, category, public sources, and growth signal indicators.
 
 2. **Improve Source Confidence**
    Claiming a project and linking verified public sources improves the source confidence level. Higher confidence means more reliable signal data.
@@ -111,10 +111,10 @@ Genesis Badge explainer page. Describes the badge concept, eligibility criteria,
 
 The planned founder journey (not yet implemented):
 
-1. **Discovery** — Founder discovers their project on 88CN
+1. **Discovery** — Founder discovers their project on 123Charts
 2. **Submit** — If not yet indexed, founder submits project for editorial review
 3. **Claim** — Founder claims existing profile through verification (domain email, DNS TXT, GitHub, manual review)
-4. **Verify** — 88CN editorial team reviews and verifies claim
+4. **Verify** — 123Charts editorial team reviews and verifies claim
 5. **Manage** — Founder updates public project information
 6. **Track** — Founder monitors Signal Score and growth signals over time
 

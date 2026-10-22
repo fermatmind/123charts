@@ -1,6 +1,6 @@
 # Founder Submission Onboarding v0
 
-PR48 adds a founder-ready onboarding surface at `/founding-slots`. The page explains how founders can prepare a structured project submission, how reviewed publication works, and how claim, correction, and removal requests fit into the 88CN workflow.
+PR48 adds a founder-ready onboarding surface at `/founding-slots`. The page explains how founders can prepare a structured project submission, how reviewed publication works, and how claim, correction, and removal requests fit into the 123Charts workflow.
 
 ## Included
 

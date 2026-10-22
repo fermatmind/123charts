@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { LEGACY } from "@/lib/legacy-identifiers";
 import { getOrCreateRequestId } from "@/lib/api/request-id";
 import { success, errorResponse } from "@/lib/api/response";
 import {
@@ -14,7 +15,7 @@ import {
   recordConversionMetric,
 } from "@/lib/metrics/conversion-metrics";
 
-const WRITE_KEY_HEADER = "x-88cn-metrics-key";
+const WRITE_KEY_HEADER = "x-123charts-metrics-key";
 
 export async function POST(request: NextRequest) {
   const requestId = getOrCreateRequestId();
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (request.headers.get(WRITE_KEY_HEADER) !== writeKey) {
+  if ((request.headers.get(WRITE_KEY_HEADER) ?? request.headers.get(LEGACY.metricsHeader)) !== writeKey) {
     return errorResponse(
       forbidden("Metrics write route requires an internal server key.", instance, requestId),
       requestId

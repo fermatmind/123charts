@@ -23,7 +23,7 @@ export async function generateMetadata(props: CategoryPageProps): Promise<Metada
   return {
     title: siteTitle(`${category.title} AI Projects`),
     description: siteDescription(
-      `Browse ${category.title} AI projects on 88CN. ${category.overview.slice(0, 120)}`
+      `Browse ${category.title} AI projects on 123Charts. ${category.overview.slice(0, 120)}`
     ),
     robots: { index: true, follow: true },
   };

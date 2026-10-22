@@ -16,7 +16,7 @@ PR #23 verified the live Aliyun Hong Kong deployment after the intake firewall w
 | Server IP | REDACTED |
 | Secrets | REDACTED |
 | Deployed commit | `0483d30` |
-| Source path | `/var/www/88cn` |
+| Source path | `/var/www/123charts` |
 | Supabase env status | NOT CONFIGURED |
 | Nginx config applied | YES |
 | Nginx config test | PASS |

@@ -11,7 +11,7 @@ PR182A converts PR182's project contract into a concrete staging schema migratio
 
 Decision: `READY_FOR_PR182B_WITH_HUMAN_CHECKPOINT`.
 
-88CN is ready to draft and review a staging-only Supabase schema apply task for `project_entities`, `repo_assets`, `web_assets`, `source_evidences`, `audit_observations`, `review_decisions`, `published_projections`, `project_collection_links`, and `project_alternative_candidates`, but PR182B must remain behind an explicit human checkpoint. PR182A does not create a migration file, connect to Supabase, apply a migration, write staging or production data, import seed rows, expose a public surface, or mutate `88cn-index-data`.
+123Charts is ready to draft and review a staging-only Supabase schema apply task for `project_entities`, `repo_assets`, `web_assets`, `source_evidences`, `audit_observations`, `review_decisions`, `published_projections`, `project_collection_links`, and `project_alternative_candidates`, but PR182B must remain behind an explicit human checkpoint. PR182A does not create a migration file, connect to Supabase, apply a migration, write staging or production data, import seed rows, expose a public surface, or mutate `88cn-index-data`.
 
 ## Scope
 
@@ -45,7 +45,7 @@ Read:
 - `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md`
 - `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `ops/tasks/current.json`
 - `ops/tasks/roadmap.json`
@@ -60,7 +60,7 @@ No `.env` files were read. No secrets were printed. No Supabase connection was a
 
 | Question | Answer |
 | --- | --- |
-| Does 88CN currently have Supabase migration infrastructure? | Yes. `supabase/migrations` exists with migrations `001_init.sql` through `012_changelog_entries.sql`. |
+| Does 123Charts currently have Supabase migration infrastructure? | Yes. `supabase/migrations` exists with migrations `001_init.sql` through `012_changelog_entries.sql`. |
 | Are there existing migration conventions? | Yes. Existing migrations use numbered files, `create table if not exists` in later migrations, `public.set_updated_at()` triggers, `gen_random_uuid()` IDs, `timestamptz`, check constraints, indexes, comments, and RLS policies. |
 | Are there existing project tables? | Yes. `public.projects`, `project_sources`, snapshots, scores, external imports, editorial drafts, scouted profiles, lifecycle snapshots, changelog entries, and related admin tables exist. |
 | Are there existing published project records? | The repository contains public route fixtures and existing published project surfaces, but PR182A did not connect to Supabase and did not query live records. |

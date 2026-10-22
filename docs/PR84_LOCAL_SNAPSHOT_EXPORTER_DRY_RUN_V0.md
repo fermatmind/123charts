@@ -4,7 +4,7 @@
 
 Validation target: PR84 adds a local-only dry-run exporter for the future Alpha Data Feed.
 
-The exporter writes only to `/tmp/88cn-alpha-snapshot-*` and requires explicit `--dry-run`. It rejects repo output paths, data repo output paths, external destinations, unsafe temp names, and non-local sources.
+The exporter writes only to `/tmp/123charts-alpha-snapshot-*` and requires explicit `--dry-run`. It rejects repo output paths, data repo output paths, external destinations, unsafe temp names, and non-local sources.
 
 ## Files
 
@@ -22,7 +22,7 @@ node scripts/export-alpha-feed-snapshot.mjs --dry-run
 Explicit output:
 
 ```bash
-node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/88cn-alpha-snapshot-test
+node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/123charts-alpha-snapshot-test
 ```
 
 Optional flags:
@@ -69,7 +69,7 @@ The exporter rejects:
 
 - missing `--dry-run`;
 - output outside `/tmp`;
-- output directory names that do not start with `88cn-alpha-snapshot-`;
+- output directory names that do not start with `123charts-alpha-snapshot-`;
 - output inside this repository;
 - output inside `/Users/rainie/Desktop/88cn-index-data`;
 - external destinations such as URL-style outputs;

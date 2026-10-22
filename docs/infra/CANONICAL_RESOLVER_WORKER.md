@@ -62,7 +62,7 @@ Worker repo:
 - `node_modules` absent
 - `git diff --check`
 
-88CN:
+123Charts:
 
 - `npm run agent:scope:check -- PR195`
 - `npm run agent:redact:check`
@@ -77,6 +77,6 @@ Worker repo:
 
 ## Next
 
-Continue to `PR196 / HTTP_AUDIT_WORKER` only after worker PR #2 and this 88CN tracking PR merge.
+Continue to `PR196 / HTTP_AUDIT_WORKER` only after worker PR #2 and this 123Charts tracking PR merge.
 
 Do not start PR199.

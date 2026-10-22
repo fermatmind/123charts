@@ -1,4 +1,4 @@
-# OPS-INFRA2X 88CN Staging / Worker Placement Decision v0
+# OPS-INFRA2X 123Charts Staging / Worker Placement Decision v0
 
 Status: validation passed
 Task: OPS-INFRA2X
@@ -7,7 +7,7 @@ Date: 2026-06-20
 
 ## Result
 
-OPS-INFRA2X converts the OPS-INFRA0X inventory, OPS-INFRA0Y cloud/FermatMind read-only completion, and OPS-INFRA1X shared-server isolation runbook into a concrete conditional placement decision for future 88CN staging/admin, scout worker, audit worker, and queue/monitoring/backup workloads.
+OPS-INFRA2X converts the OPS-INFRA0X inventory, OPS-INFRA0Y cloud/FermatMind read-only completion, and OPS-INFRA1X shared-server isolation runbook into a concrete conditional placement decision for future 123Charts staging/admin, scout worker, audit worker, and queue/monitoring/backup workloads.
 
 Result: `GO_SCOUT_IMPL0_WITH_CONDITIONAL_PLACEMENT`.
 
@@ -29,7 +29,7 @@ Shared hardware is allowed. Shared risk is not allowed.
 
 In scope:
 
-- Placement decision matrix for future 88CN public web, staging/admin, scout worker, audit worker, and queue/monitoring/backup/spare roles.
+- Placement decision matrix for future 123Charts public web, staging/admin, scout worker, audit worker, and queue/monitoring/backup/spare roles.
 - Server boundary decisions for `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, and Shanghai Aliyun candidate aliases.
 - Human confirmation list before any real placement or implementation.
 - `SCOUT_IMPL0` handoff checklist.
@@ -74,10 +74,10 @@ OPS-INFRA1X is the immediate policy source of truth.
 
 Key facts carried forward:
 
-- `HK-ALIYUN-01` is 88CN public web only.
-- `FAP-API-ALIYUN-01` is FermatMind API/Ops/queue production and is do-not-touch for 88CN worker placement.
-- `FAP-WEB-NODE1` is FermatMind production web and is do-not-touch for 88CN worker placement.
-- Tencent resources are sunsetting / migration source only and must not receive new 88CN workloads.
+- `HK-ALIYUN-01` is 123Charts public web only.
+- `FAP-API-ALIYUN-01` is FermatMind API/Ops/queue production and is do-not-touch for 123Charts worker placement.
+- `FAP-WEB-NODE1` is FermatMind production web and is do-not-touch for 123Charts worker placement.
+- Tencent resources are sunsetting / migration source only and must not receive new 123Charts workloads.
 - `SH-ALIYUN-02` is a 2 vCPU / 4 GiB class private-IP-only Shanghai candidate; ownership/capacity needs human confirmation.
 - `SH-ALIYUN-03` is a 2 vCPU / 1 GiB class private-IP-only Shanghai candidate; ownership/capacity needs human confirmation.
 - `SH-ALIYUN-04` is a 2 vCPU / 1 GiB class private-IP-only Shanghai candidate; ownership/capacity needs human confirmation.
@@ -89,20 +89,20 @@ Because no private read-only SSH was authorized for OPS-INFRA2X, this report doe
 
 | future_workload | recommended_server_alias | decision_status | reason | required_before_use | forbidden_colocation |
 | --- | --- | --- | --- | --- | --- |
-| 88CN public web | `HK-ALIYUN-01` | KEEP_CURRENT_PUBLIC_WEB_ONLY | Current public web host is already dedicated to public Next.js web, sitemap/robots, Nginx public vhost, PM2 `88cn-web`, and live smoke. | Keep public-web-only boundary; do not add worker/queue/staging load. | Scout worker, audit worker, crawler, large batch jobs, Redis queue, heavy report generation, staging admin, FermatMind production. |
-| 88CN staging admin / internal preview | `SH-ALIYUN-02` | CONDITIONAL_CANDIDATE_SH_ALIYUN_02 | Strongest observed non-production Shanghai candidate at 2 vCPU / 4 GiB class; private-IP-only posture can fit internal staging if later access path is approved. | OPS-INFRA1X isolation, human owner confirmation, capacity confirmation or read-only scan, separate Linux user, app root, PM2 name, env path, logs, no FermatMind production conflict. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, shared app/env/log roots. |
-| 88CN scout worker | `SH-ALIYUN-03` | CONDITIONAL_LOW_CONCURRENCY_SCOUT_CANDIDATE | 2 vCPU / 1 GiB class can only be considered for low-concurrency local/staging scout dry-run, not production crawler load. | OPS-INFRA1X isolation, explicit concurrency cap, memory limit, logrotate, queue namespace, owner/capacity confirmation, no public route effect, no Supabase production write. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, public web roots, FermatMind production. |
-| 88CN audit worker | `SH-ALIYUN-02` if unused by staging admin; otherwise new/upgraded Aliyun worker host; `SH-ALIYUN-04` only for tiny dry-run/spare | CONDITIONAL_AUDIT_PLACEMENT_NEEDS_CAPACITY_CONFIRMATION | Audit worker is higher risk than scout; observed 1 GiB candidates are not approved for heavy audit. | AUDIT_IMPL0 capacity model, egress politeness policy, per-domain cooldown, global rate limit, worker memory limit, log cap, blocked_by_waf failure taxonomy, no WAF bypass, no proxy evasion, owner/capacity confirmation. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, heavy audit on 1 GiB candidates. |
+| 123Charts public web | `HK-ALIYUN-01` | KEEP_CURRENT_PUBLIC_WEB_ONLY | Current public web host is already dedicated to public Next.js web, sitemap/robots, Nginx public vhost, PM2 `123charts-web`, and live smoke. | Keep public-web-only boundary; do not add worker/queue/staging load. | Scout worker, audit worker, crawler, large batch jobs, Redis queue, heavy report generation, staging admin, FermatMind production. |
+| 123Charts staging admin / internal preview | `SH-ALIYUN-02` | CONDITIONAL_CANDIDATE_SH_ALIYUN_02 | Strongest observed non-production Shanghai candidate at 2 vCPU / 4 GiB class; private-IP-only posture can fit internal staging if later access path is approved. | OPS-INFRA1X isolation, human owner confirmation, capacity confirmation or read-only scan, separate Linux user, app root, PM2 name, env path, logs, no FermatMind production conflict. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, shared app/env/log roots. |
+| 123Charts scout worker | `SH-ALIYUN-03` | CONDITIONAL_LOW_CONCURRENCY_SCOUT_CANDIDATE | 2 vCPU / 1 GiB class can only be considered for low-concurrency local/staging scout dry-run, not production crawler load. | OPS-INFRA1X isolation, explicit concurrency cap, memory limit, logrotate, queue namespace, owner/capacity confirmation, no public route effect, no Supabase production write. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, public web roots, FermatMind production. |
+| 123Charts audit worker | `SH-ALIYUN-02` if unused by staging admin; otherwise new/upgraded Aliyun worker host; `SH-ALIYUN-04` only for tiny dry-run/spare | CONDITIONAL_AUDIT_PLACEMENT_NEEDS_CAPACITY_CONFIRMATION | Audit worker is higher risk than scout; observed 1 GiB candidates are not approved for heavy audit. | AUDIT_IMPL0 capacity model, egress politeness policy, per-domain cooldown, global rate limit, worker memory limit, log cap, blocked_by_waf failure taxonomy, no WAF bypass, no proxy evasion, owner/capacity confirmation. | `HK-ALIYUN-01`, `FAP-API-ALIYUN-01`, `FAP-WEB-NODE1`, Tencent resources, heavy audit on 1 GiB candidates. |
 | Queue / monitoring / backup / spare | `SH-ALIYUN-04` | CONDITIONAL_QUEUE_MONITORING_BACKUP_CANDIDATE | 1 GiB memory requires caution; candidate is suitable only after confirming ownership/capacity and applying Redis/log/backup isolation. | OPS-INFRA1X Redis/log/backup isolation, human owner/capacity confirmation, retention/logrotate policy, backup path isolation, no production Redis until implementation approval. | FAP Redis, Tencent Redis, public web host, shared queue names, shared dead-letter/retry queues, logs/backups containing secrets or PII. |
 
 ## Server Boundary Matrix
 
 | server_alias | current_role | allowed_future_role | forbidden_role | decision |
 | --- | --- | --- | --- | --- |
-| `HK-ALIYUN-01` | 88CN public web | 88CN public web only | Scout worker, audit worker, crawler, queue, heavy report generation, staging admin, FermatMind colocation | Keep as public web only. Worker and staging/admin placement forbidden. |
-| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | FermatMind production only | 88CN scout/audit worker, 88CN queue, 88CN Redis, 88CN cron, 88CN deploy path, 88CN staging admin | Do-not-touch. No 88CN worker placement. |
-| `FAP-WEB-NODE1` | FermatMind production public web | FermatMind production web only | 88CN worker, 88CN queue, crawler, staging admin | Do-not-touch. No 88CN worker placement. |
-| Tencent resources | FermatMind migration-source / sunsetting resources and managed dependencies | Migration source / sunsetting only | Any new 88CN workload | No new 88CN workload. |
+| `HK-ALIYUN-01` | 123Charts public web | 123Charts public web only | Scout worker, audit worker, crawler, queue, heavy report generation, staging admin, FermatMind colocation | Keep as public web only. Worker and staging/admin placement forbidden. |
+| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | FermatMind production only | 123Charts scout/audit worker, 123Charts queue, 123Charts Redis, 123Charts cron, 123Charts deploy path, 123Charts staging admin | Do-not-touch. No 123Charts worker placement. |
+| `FAP-WEB-NODE1` | FermatMind production public web | FermatMind production web only | 123Charts worker, 123Charts queue, crawler, staging admin | Do-not-touch. No 123Charts worker placement. |
+| Tencent resources | FermatMind migration-source / sunsetting resources and managed dependencies | Migration source / sunsetting only | Any new 123Charts workload | No new 123Charts workload. |
 | `SH-ALIYUN-02` | Candidate Shanghai Aliyun instance | Conditional staging/admin candidate; possible audit candidate only if not used by staging and capacity is confirmed | Any live role before human confirmation and implementation approval | Conditional candidate only. |
 | `SH-ALIYUN-03` | Candidate Shanghai Aliyun instance | Conditional low-concurrency scout dry-run candidate | Heavy audit, public web, production crawler, any live role before confirmation | Conditional low-concurrency scout candidate only. |
 | `SH-ALIYUN-04` | Candidate Shanghai Aliyun instance | Conditional queue/monitoring/backup/spare; tiny audit dry-run only if separately approved | Heavy audit, public web, production Redis without approval, any live role before confirmation | Conditional queue/monitoring/backup candidate only. |
@@ -116,19 +116,19 @@ Because no private read-only SSH was authorized for OPS-INFRA2X, this report doe
 | `SH-ALIYUN-04` ownership/capacity | It is only 2 vCPU / 1 GiB class and may be insufficient for queue/monitoring/backup without memory/disk confirmation. | Queue/monitoring/backup/spare use; any tiny audit dry-run. | Any Redis/queue/log backup role. |
 | Private read-only SSH if exact placement is required | Needed to confirm OS, users, PM2/Supervisor, Nginx, Redis, cron, disk, logs, backups, and headroom. | Final placement readiness. | Before claiming `PLACEMENT_READY_*` or starting implementation that touches servers. |
 | Tencent sunset/migration timing | Tencent is sunsetting and production dependencies remain visible. | Any migration sequencing decision and no-new-workload enforcement. | Before any migration or expiry-sensitive operations. |
-| FermatMind do-not-touch override if ever requested | FAP production web/API/DB/Redis are critical; sharing would create high risk. | Any 88CN use of FermatMind production hosts or managed dependencies. | Human approval plus isolation proof; not authorized by OPS-INFRA2X. |
+| FermatMind do-not-touch override if ever requested | FAP production web/API/DB/Redis are critical; sharing would create high risk. | Any 123Charts use of FermatMind production hosts or managed dependencies. | Human approval plus isolation proof; not authorized by OPS-INFRA2X. |
 
-## 88CN Public Web Decision
+## 123Charts Public Web Decision
 
 Decision: `KEEP_CURRENT_PUBLIC_WEB_ONLY`.
 
-`HK-ALIYUN-01` remains the 88CN public web host only. It may continue serving public web, Nginx public vhost, PM2 `88cn-web`, sitemap/robots, and live smoke. It must not receive scout worker, audit worker, crawler, large batch job, Redis queue, heavy report generation, or staging/admin load.
+`HK-ALIYUN-01` remains the 123Charts public web host only. It may continue serving public web, Nginx public vhost, PM2 `123charts-web`, sitemap/robots, and live smoke. It must not receive scout worker, audit worker, crawler, large batch job, Redis queue, heavy report generation, or staging/admin load.
 
 ## Staging Admin Placement Decision
 
 Decision: `CONDITIONAL_CANDIDATE_SH_ALIYUN_02`.
 
-`SH-ALIYUN-02` is the preferred conditional candidate for 88CN staging admin / internal preview because it is the strongest observed non-production Shanghai candidate. It is not placement-ready without human ownership/capacity confirmation and OPS-INFRA1X isolation application.
+`SH-ALIYUN-02` is the preferred conditional candidate for 123Charts staging admin / internal preview because it is the strongest observed non-production Shanghai candidate. It is not placement-ready without human ownership/capacity confirmation and OPS-INFRA1X isolation application.
 
 Required before use:
 
@@ -199,7 +199,7 @@ Rules:
 - No production Redis until OPS-INFRA2X and later implementation approval.
 - If Redis/queue is needed later, prefer managed Redis or isolated Redis with prefix policy.
 - No shared FAP Redis.
-- No Tencent Redis for new 88CN workloads.
+- No Tencent Redis for new 123Charts workloads.
 - Monitoring/log backup must not store secrets or PII.
 
 Required before use:
@@ -212,23 +212,23 @@ Required before use:
 ## Do-Not-Touch Summary
 
 - `HK-ALIYUN-01`: public web only; no worker, crawler, queue, heavy report generation, or staging/admin.
-- `FAP-API-ALIYUN-01`: FermatMind API/Ops/queue production; no 88CN worker or deploy-path sharing.
-- `FAP-WEB-NODE1`: FermatMind production public web; no 88CN worker.
-- Tencent resources: migration-source / sunsetting only; no new 88CN workload.
-- `TENCENT-MYSQL-PROD`: no direct 88CN use or writes.
-- `TENCENT-REDIS-PROD`: no direct 88CN use or writes.
+- `FAP-API-ALIYUN-01`: FermatMind API/Ops/queue production; no 123Charts worker or deploy-path sharing.
+- `FAP-WEB-NODE1`: FermatMind production public web; no 123Charts worker.
+- Tencent resources: migration-source / sunsetting only; no new 123Charts workload.
+- `TENCENT-MYSQL-PROD`: no direct 123Charts use or writes.
+- `TENCENT-REDIS-PROD`: no direct 123Charts use or writes.
 - `88cn-index-data`: no raw scout/audit/queue/PII storage.
 
 ## Tencent Sunsetting Summary
 
-Tencent Cloud resources remain migration-source / sunsetting only. OPS-INFRA2X does not place staging, worker, queue, monitoring, backup, Redis, or managed DB workload on Tencent. Any future Tencent work must be a human-approved migration/sunset task, not a new 88CN workload task.
+Tencent Cloud resources remain migration-source / sunsetting only. OPS-INFRA2X does not place staging, worker, queue, monitoring, backup, Redis, or managed DB workload on Tencent. Any future Tencent work must be a human-approved migration/sunset task, not a new 123Charts workload task.
 
 ## SCOUT_IMPL0 Handoff Checklist
 
 | question | OPS_INFRA2X_answer | impact_on_SCOUT_IMPL0 |
 | --- | --- | --- |
 | Can `SCOUT_IMPL0` proceed? | Yes, as readiness/repo-split decision only. | It may evaluate implementation boundaries without starting workers or staging writes. |
-| Should repo split be evaluated? | Yes. | `SCOUT_IMPL0` should decide whether scout/audit implementation belongs in 88CN, a worker package, or another repo boundary. |
+| Should repo split be evaluated? | Yes. | `SCOUT_IMPL0` should decide whether scout/audit implementation belongs in 123Charts, a worker package, or another repo boundary. |
 | Can staging sandbox write be considered? | Only as a future conditional path. | No staging write is authorized by OPS-INFRA2X. |
 | Is worker placement final or conditional? | Conditional. | `SCOUT_IMPL0` must not start a worker; implementation must wait for human confirmation and approved placement. |
 | Is Redis required now? | No. | No Redis/queue is authorized by OPS-INFRA2X. |
@@ -263,7 +263,7 @@ Tencent Cloud resources remain migration-source / sunsetting only. OPS-INFRA2X d
 
 | Check | Result |
 | --- | --- |
-| 88CN preflight sync | PASS |
+| 123Charts preflight sync | PASS |
 | data repo preflight sync | PASS |
 | `npm run verify:day0` | PASS |
 | `npm run policy:scan` | PASS |

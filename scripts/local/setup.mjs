@@ -91,10 +91,6 @@ fs.writeFileSync(
 
   { mode: 0o600 },
 );
-fs.mkdirSync(".local/fonts", { recursive: true });
-const systemFont = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf";
-if (fs.existsSync(systemFont))
-  fs.copyFileSync(systemFont, ".local/fonts/preview-unicode.ttf");
 // A healthy gateway process can briefly precede ready Auth/Storage upstreams after recreation.
 let upstreamsReady = false;
 for (let attempt = 0; attempt < 40; attempt++) {

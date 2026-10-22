@@ -13,7 +13,7 @@ PR129 is the PR-numbered execution wrapper for TRAFFIC6B. The authoritative impl
 | Generator script | `scripts/generate-report-distribution-pack.mjs` |
 | Library | `lib/traffic-distribution/report-pack.mjs` |
 | Package script | `report-distribution-pack:generate` |
-| Default output | `/tmp/88cn-report-distribution-pack` |
+| Default output | `/tmp/123charts-report-distribution-pack` |
 | External writes | false |
 | Email / DM / social send | false |
 | Platform login / CRM write | false |

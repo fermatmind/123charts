@@ -2,7 +2,7 @@
 
 # 123Charts V1 — local product authority
 
-The user-approved local plan replaces the earlier 88CN product positioning and implementation-agent role restrictions. The repository's existing Git history and adjacent projects are preserved.
+The user-approved local plan replaces the earlier 123Charts product positioning and implementation-agent role restrictions. The repository's existing Git history and adjacent projects are preserved.
 
 ## Product contract
 

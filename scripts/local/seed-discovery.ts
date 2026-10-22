@@ -23,7 +23,7 @@ function ck(r: any) {
   return r.data;
 }
 await fs.mkdir(".local", { recursive: true });
-const accountsPath = ".local/accounts.json";
+const accountsPath = process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json";
 let accounts: any;
 try {
   accounts = JSON.parse(await fs.readFile(accountsPath, "utf8"));

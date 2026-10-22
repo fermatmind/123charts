@@ -12,7 +12,7 @@ Upgrade `/submit` and `/claim/[slug]` from static placeholders to functional for
 
 Submit and claim are the two entry points for project data:
 
-1. **Submit** — Founders and community members add projects to the 88CN index. Without submit, the index cannot grow beyond hand-curated demo data.
+1. **Submit** — Founders and community members add projects to the 123Charts index. Without submit, the index cannot grow beyond hand-curated demo data.
 2. **Claim** — Founders verify ownership, enabling source confidence improvement, structured profile updates, and Genesis Badge eligibility. Without claim, all projects remain "Not verified."
 
 These two endpoints create the pipeline from public submission → editorial review → publication, which is the core growth loop for Phase 1.
@@ -46,7 +46,7 @@ Accepts project submission data. Returns 201 on success.
 ```json
 {
   "ok": true,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "data": { "message": "Project submitted for review." },
   "request_id": "..."
 }
@@ -66,7 +66,7 @@ Accepts founder claim data. Returns 201 on success.
   "claimant_email": "jane@example.com",
   "claimant_role": "Founder",
   "claim_method": "github_repo",
-  "proof_url": "https://github.com/org/repo/blob/main/.well-known/88cn-claim",
+  "proof_url": "https://github.com/org/repo/blob/main/.well-known/123charts-claim",
   "proof_note": "Please verify via the GitHub proof file."
 }
 ```
@@ -75,7 +75,7 @@ Accepts founder claim data. Returns 201 on success.
 ```json
 {
   "ok": true,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "data": { "message": "Claim submitted for review." },
   "request_id": "..."
 }
@@ -135,13 +135,13 @@ Each submission and claim write is recorded in `notification_events`:
 
 ## Why No Stripe
 
-88CN Phase 1 is a free index. There are:
+123Charts Phase 1 is a free index. There are:
 - No paid listings
 - No sponsored placements
 - No premium profiles
 - No transaction processing
 
-Stripe integration is not planned for Phase 1. If 88CN introduces optional paid services in a future phase, Stripe integration will be a separate PR with its own security review.
+Stripe integration is not planned for Phase 1. If 123Charts introduces optional paid services in a future phase, Stripe integration will be a separate PR with its own security review.
 
 ## Why No Turnstile (Yet)
 
@@ -156,10 +156,10 @@ When Turnstile is added:
 
 Per AGENTS.md and `docs/10_DATA_CONTRACT.md`:
 
-- 88CN uses public signals only
+- 123Charts uses public signals only
 - Submission forms must not collect revenue screenshots, Stripe data, analytics exports, or API keys
 - The public data contract limits collected data to: project name, website, category, one-liner, and public URLs
-- Private data collection would create data security obligations that 88CN is not designed to handle
+- Private data collection would create data security obligations that 123Charts is not designed to handle
 
 ## RLS Dependency
 

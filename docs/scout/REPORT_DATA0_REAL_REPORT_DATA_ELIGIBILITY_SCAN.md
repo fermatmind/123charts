@@ -38,8 +38,8 @@ Reviewed local and committed inputs:
 - `docs/scout/AUDIT_WORKER0_HTTP_FIRST_AUDIT_WORKER_BOUNDARY_CAPACITY_MODEL.md`
 - `docs/scout/AUDIT_WORKER1_SEED_100_SMALL_BATCH_AUDIT_DRY_RUN.md`
 - `docs/scout/AUDIT_WORKERQ_AUDIT_WORKER_RUNTIME_QA.md`
-- `/tmp/88cn-pr171-staging-sandbox-local-write-dry-run.json`
-- `/tmp/88cn-pr174-small-batch-audit-fixture-dry-run.json`
+- `/tmp/123charts-pr171-staging-sandbox-local-write-dry-run.json`
+- `/tmp/123charts-pr174-small-batch-audit-fixture-dry-run.json`
 
 The `/tmp` artifacts remain uncommitted local evidence only.
 
@@ -88,7 +88,7 @@ The following are not eligible for report claims:
 Local manifest:
 
 ```text
-/tmp/88cn-pr174-small-batch-audit-fixture-dry-run.json
+/tmp/123charts-pr174-small-batch-audit-fixture-dry-run.json
 ```
 
 Observed fields:

@@ -15,7 +15,7 @@ The migration is ready for a staging Supabase apply, but this run did not apply 
 
 ## Human Checkpoint
 
-The `/goal 88CN 20k-50k Scale Buildout Continuous PR Train PR184-PR207 v0` message explicitly granted PR184 authorization for scoped Supabase staging schema apply only.
+The `/goal 123Charts 20k-50k Scale Buildout Continuous PR Train PR184-PR207 v0` message explicitly granted PR184 authorization for scoped Supabase staging schema apply only.
 
 Authorization boundary recorded:
 
@@ -67,7 +67,7 @@ Tables created:
 
 Namespace decision:
 
-- The migration uses `public` tables, matching existing 88CN migration conventions.
+- The migration uses `public` tables, matching existing 123Charts migration conventions.
 - The tables are staging/backstage contract tables, not public frontend tables.
 - Public exposure is blocked by RLS and by the absence of anon policies.
 

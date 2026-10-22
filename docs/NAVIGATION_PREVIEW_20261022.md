@@ -6,7 +6,7 @@
 
 在原有 Next.js 项目中优化公共前台，沿用深色表面、细分隔线和蓝色操作强调。首页结构为紧凑页头、统一搜索、精选/个人常用、小范围新发现、分类网站地图和有效替代入口。名称是官网动作，其他操作独立；基础目录稳定，轮换只用于有限发现区。
 
-3100 的服务进程工作目录已核对为 `/Users/rainie/Desktop/123charts.com/88CN`，继续复用原服务。`APP_URL=http://127.0.0.1:3100`、Supabase `http://127.0.0.1:54321`、`CHARTS_LOCAL_PREVIEW=true`。没有生产数据写入、push、部署或线上配置修改。
+3100 的服务进程工作目录已核对为 `/Users/rainie/Desktop/123charts.com/123charts`，继续复用原服务。`APP_URL=http://127.0.0.1:3100`、Supabase `http://127.0.0.1:54321`、`CHARTS_LOCAL_PREVIEW=true`。没有生产数据写入、push、部署或线上配置修改。
 
 - 首页精选明确标注编辑选择，不是热度。分类每组最多八项，新发现四项；显示内容来自原有公开资料，保留全部审核与关系状态。
 - 统一 `SiteUnit`：名称和图标通过既有出站引擎直达官网；简介进档案，有有效关系才显示找替代，否则显示查看同类。
@@ -53,12 +53,12 @@ git diff --check
 
 ## 截图
 
-- [改版前桌面](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-before-desktop.png)
-- [改版后桌面](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-after-desktop.png)
-- [改版前手机](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-before-mobile.png)
-- [改版后手机](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-after-mobile.png)
-- [英文手机](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-mobile-english.png)
-- [真实关系的替代页](/Users/rainie/Desktop/123charts.com/88CN/output/playwright/nav-alternatives.png)
+- [改版前桌面](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-before-desktop.png)
+- [改版后桌面](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-after-desktop.png)
+- [改版前手机](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-before-mobile.png)
+- [改版后手机](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-after-mobile.png)
+- [英文手机](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-mobile-english.png)
+- [真实关系的替代页](/Users/rainie/Desktop/123charts.com/123charts/output/playwright/nav-alternatives.png)
 
 截图在本机 output 目录保存，未推送。
 

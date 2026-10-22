@@ -1,3 +1,4 @@
+import { publicIndexing } from "./runtime-config";
 import { brand } from "./brand";
 import { orderAlternativeChoices } from "./navigation";
 import { redirect, notFound } from "next/navigation";
@@ -75,7 +76,7 @@ async function generateMetadata({
       : `${query.intent === "alternatives" ? "Alternatives" : "Results"} for “${query.q.slice(0, 150)}”`;
   const route = path.join("/");
   const canonical = `/${lang}${route ? "/" + route : ""}`;
-  const local = process.env.CHARTS_LOCAL_PREVIEW !== "false";
+  const local = !publicIndexing(process.env);
   const publicPath =
     !path[0] ||
     [

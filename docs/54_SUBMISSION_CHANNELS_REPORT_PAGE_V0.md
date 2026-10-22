@@ -14,7 +14,7 @@ PR47 adds a public founder field report at `/reports/ai-project-submission-chann
 
 ## Boundary Rules
 
-- Use only original 88CN guidance.
+- Use only original 123Charts guidance.
 - Prefer curated, reviewed, high-signal surfaces.
 - Link to `/submit`, `/geo-checker`, and public profile flows.
 - Keep sitemap inclusion intentional through the published report registry.

@@ -41,7 +41,7 @@ Result:
 ```text
 sourceReports: 4
 files: 7
-outputDirectory: /tmp/88cn-report-distribution-pack
+outputDirectory: /tmp/123charts-report-distribution-pack
 ```
 
 ### Local Output
@@ -49,19 +49,19 @@ outputDirectory: /tmp/88cn-report-distribution-pack
 Command:
 
 ```sh
-npm run report-distribution-pack:generate -- --out /tmp/88cn-report-distribution-pack-pr130
+npm run report-distribution-pack:generate -- --out /tmp/123charts-report-distribution-pack-pr130
 ```
 
 Generated files:
 
 ```text
-/tmp/88cn-report-distribution-pack-pr130/README.md
-/tmp/88cn-report-distribution-pack-pr130/links.json
-/tmp/88cn-report-distribution-pack-pr130/manifest.json
-/tmp/88cn-report-distribution-pack-pr130/drafts/ai-project-submission-channels-2026.md
-/tmp/88cn-report-distribution-pack-pr130/drafts/early-ai-project-machine-readability-2026.md
-/tmp/88cn-report-distribution-pack-pr130/drafts/open-source-ai-agent-momentum-june-2026.md
-/tmp/88cn-report-distribution-pack-pr130/drafts/weekly-ai-project-signals-2026-06-21.md
+/tmp/123charts-report-distribution-pack-pr130/README.md
+/tmp/123charts-report-distribution-pack-pr130/links.json
+/tmp/123charts-report-distribution-pack-pr130/manifest.json
+/tmp/123charts-report-distribution-pack-pr130/drafts/ai-project-submission-channels-2026.md
+/tmp/123charts-report-distribution-pack-pr130/drafts/early-ai-project-machine-readability-2026.md
+/tmp/123charts-report-distribution-pack-pr130/drafts/open-source-ai-agent-momentum-june-2026.md
+/tmp/123charts-report-distribution-pack-pr130/drafts/weekly-ai-project-signals-2026-06-21.md
 ```
 
 Manifest probe:
@@ -98,7 +98,7 @@ Safety flags:
 Command:
 
 ```sh
-npm run report-distribution-pack:generate -- --out /Users/rainie/Desktop/88CN/tmp-pack
+npm run report-distribution-pack:generate -- --out /Users/rainie/Desktop/123charts.com/123charts/tmp-pack
 ```
 
 Result:
@@ -110,7 +110,7 @@ report-distribution-pack failed: Report distribution pack output must stay outsi
 ## Validation Commands
 
 - `npm run report-distribution-pack:generate -- --dry-run`
-- `npm run report-distribution-pack:generate -- --out /tmp/88cn-report-distribution-pack-pr130`
+- `npm run report-distribution-pack:generate -- --out /tmp/123charts-report-distribution-pack-pr130`
 - repo-internal output rejection probe
 - `npm run verify:day0`
 - `npm run policy:scan`

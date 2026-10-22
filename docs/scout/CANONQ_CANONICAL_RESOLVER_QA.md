@@ -31,8 +31,8 @@ Reviewed committed files:
 
 Reviewed local-only generated files:
 
-- `/tmp/88cn-pr167-canonical-resolver-dry-run.jsonl`
-- `/tmp/88cn-pr167-canonical-resolver-manifest.json`
+- `/tmp/123charts-pr167-canonical-resolver-dry-run.jsonl`
+- `/tmp/123charts-pr167-canonical-resolver-manifest.json`
 
 ## Local Output QA
 

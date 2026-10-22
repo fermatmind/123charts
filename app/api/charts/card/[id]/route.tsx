@@ -80,7 +80,7 @@ export async function GET(
       .single(),
   );
   const font = await fs.readFile(
-    path.join(process.cwd(), ".local/fonts/preview-unicode.ttf"),
+    path.join(process.cwd(), "public/fonts/NotoSansSC-Regular.ttf"),
   );
   return new ImageResponse(
     <div

@@ -35,7 +35,7 @@ state, or emit metering events.
 
 ```json
 {
-  "type": "https://88cn.com/problems/api-keys-disabled",
+  "type": "https://123charts.com/problems/api-keys-disabled",
   "title": "API key access is disabled",
   "status": 503,
   "detail": "Alpha Data Feed API key access is not enabled for this environment.",
@@ -86,7 +86,7 @@ Both responses returned:
 
 ```json
 {
-  "type": "https://88cn.com/problems/api-keys-disabled",
+  "type": "https://123charts.com/problems/api-keys-disabled",
   "title": "API key access is disabled",
   "status": 503,
   "detail": "Alpha Data Feed API key access is not enabled for this environment.",
@@ -123,7 +123,7 @@ were removed before commit and were not committed.
 
 ## Negative Tests
 
-`scripts/check-api-key-shell.mjs` uses temp fixtures under `/tmp/88cn-pr88-*`
+`scripts/check-api-key-shell.mjs` uses temp fixtures under `/tmp/123charts-pr88-*`
 and verifies these unsafe probes fail closed:
 
 - fake flag default true;

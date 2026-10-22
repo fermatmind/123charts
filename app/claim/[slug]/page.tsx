@@ -18,7 +18,7 @@ export async function generateMetadata(props: ClaimPageProps): Promise<Metadata>
   return {
     title: siteTitle(`Claim ${name}`),
     description: siteDescription(
-      `Claim the ${name} free AI project profile on 88CN. Verify ownership through domain email, DNS TXT, GitHub repository, or manual review.`
+      `Claim the ${name} free AI project profile on 123Charts. Verify ownership through domain email, DNS TXT, GitHub repository, or manual review.`
     ),
     ...noIndex(),
   };

@@ -82,9 +82,9 @@ PARTIAL_PRIVATE_ONLY_HOSTS_PREPARED
 
 Current sidecar facts:
 
-- `SH-ALIYUN-02 / 88cn-sh-admin`: Workbench-only partially prepared.
-- `SH-ALIYUN-03 / 88cn-sh-scout`: Workbench-only partially prepared.
-- `SH-ALIYUN-04 / 88cn-sh-ops`: Workbench-only partially prepared.
+- `SH-ALIYUN-02 / 123charts-sh-admin`: Workbench-only partially prepared.
+- `SH-ALIYUN-03 / 123charts-sh-scout`: Workbench-only partially prepared.
+- `SH-ALIYUN-04 / 123charts-sh-ops`: Workbench-only partially prepared.
 - local SSH remains private-only or timed out.
 - runtime, worker, queue, Redis, crawler, audit, Nginx reload, PM2 start, deploy, staging/production write, data repo mutation, FermatMind/Tencent mutation, and secret/env read did not occur.
 
@@ -117,7 +117,7 @@ Worker repo local checks:
 - `git diff --check` passed before commit.
 - `git status --short --branch` after push showed clean `main...origin/main`.
 
-88CN PR193 validations:
+123Charts PR193 validations:
 
 - `npm run verify:day0`
 - `npm run policy:scan`

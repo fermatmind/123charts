@@ -14,15 +14,15 @@ This is docs, product-boundary, route-spec, and implementation-handoff work only
 
 ## Source Inputs
 
-- [TRAFFIC1_DEMAND_SIDE_SEARCH_INTENT_TAXONOMY.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_DEMAND_SIDE_SEARCH_INTENT_TAXONOMY.md)
-- [TRAFFIC1_DEMAND_SIDE_ROUTE_FAMILY_POLICY.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_DEMAND_SIDE_ROUTE_FAMILY_POLICY.md)
-- [TRAFFIC1_ROUTE_INDEXABILITY_AND_SITEMAP_POLICY.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_ROUTE_INDEXABILITY_AND_SITEMAP_POLICY.md)
-- [TRAFFIC1_CHINESE_SEARCH_INTENT_MAPPING.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_CHINESE_SEARCH_INTENT_MAPPING.md)
-- [TRAFFIC1_DEMAND_SIDE_COPY_BOUNDARY.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_DEMAND_SIDE_COPY_BOUNDARY.md)
-- [TRAFFIC1_ROUTE_TAXONOMY_MATRIX.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC1_ROUTE_TAXONOMY_MATRIX.md)
-- [TRAFFIC0R_COMPETITOR_PAGE_PATTERN_SEO_DEEP_SCAN.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC0R_COMPETITOR_PAGE_PATTERN_SEO_DEEP_SCAN.md)
-- [CHINA_GLOBAL_SEO_GAP_MAP.md](/Users/rainie/Desktop/88CN/docs/traffic/CHINA_GLOBAL_SEO_GAP_MAP.md)
-- [PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md](/Users/rainie/Desktop/88CN/docs/traffic/PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md)
+- [TRAFFIC1_DEMAND_SIDE_SEARCH_INTENT_TAXONOMY.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_DEMAND_SIDE_SEARCH_INTENT_TAXONOMY.md)
+- [TRAFFIC1_DEMAND_SIDE_ROUTE_FAMILY_POLICY.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_DEMAND_SIDE_ROUTE_FAMILY_POLICY.md)
+- [TRAFFIC1_ROUTE_INDEXABILITY_AND_SITEMAP_POLICY.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_ROUTE_INDEXABILITY_AND_SITEMAP_POLICY.md)
+- [TRAFFIC1_CHINESE_SEARCH_INTENT_MAPPING.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_CHINESE_SEARCH_INTENT_MAPPING.md)
+- [TRAFFIC1_DEMAND_SIDE_COPY_BOUNDARY.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_DEMAND_SIDE_COPY_BOUNDARY.md)
+- [TRAFFIC1_ROUTE_TAXONOMY_MATRIX.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC1_ROUTE_TAXONOMY_MATRIX.md)
+- [TRAFFIC0R_COMPETITOR_PAGE_PATTERN_SEO_DEEP_SCAN.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC0R_COMPETITOR_PAGE_PATTERN_SEO_DEEP_SCAN.md)
+- [CHINA_GLOBAL_SEO_GAP_MAP.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/CHINA_GLOBAL_SEO_GAP_MAP.md)
+- [PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md)
 
 TRAFFIC1 is the source of truth. TRAFFIC2 does not contradict TRAFFIC1: `/landscape` is a positioning and navigation hub, not a generic directory, ranking page, paid placement page, or data-feed endpoint.
 
@@ -30,7 +30,7 @@ TRAFFIC1 is the source of truth. TRAFFIC2 does not contradict TRAFFIC1: `/landsc
 
 `/landscape` is a positioning and navigation hub for reviewed AI project landscape surfaces, source-linked public signals, machine-readability evidence, and future demand-side discovery routes.
 
-It should help users understand how 88CN organizes reviewed AI projects by category, stack, source links, lifecycle status, public readiness signals, reports, and future finite demand-side routes.
+It should help users understand how 123Charts organizes reviewed AI projects by category, stack, source links, lifecycle status, public readiness signals, reports, and future finite demand-side routes.
 
 ## What /landscape Is Not
 
@@ -57,9 +57,9 @@ It should help users understand how 88CN organizes reviewed AI projects by categ
 
 ## Page Goal
 
-The future page should establish 88CN's demand-side navigation position:
+The future page should establish 123Charts's demand-side navigation position:
 
-- explain that 88CN organizes reviewed public AI project signals;
+- explain that 123Charts organizes reviewed public AI project signals;
 - guide users to existing safe surfaces such as projects, reports, geo-checker, stacks, collections, verticals, and alternatives;
 - preview source-linked public signal types without exposing private fields;
 - prepare the path for TRAFFIC2B implementation and later finite task/sector work;
@@ -67,7 +67,7 @@ The future page should establish 88CN's demand-side navigation position:
 
 ## Page Information Architecture
 
-Detailed layout policy lives in [TRAFFIC2_LANDSCAPE_PAGE_SPEC.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC2_LANDSCAPE_PAGE_SPEC.md). Required sections:
+Detailed layout policy lives in [TRAFFIC2_LANDSCAPE_PAGE_SPEC.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC2_LANDSCAPE_PAGE_SPEC.md). Required sections:
 
 1. Hero: "Explore reviewed AI projects by category, stack, source links, and public readiness signals."
 2. Audience split: builders, founders, researchers, project owners.
@@ -90,7 +90,7 @@ Future `/landscape` implementation may read only:
 
 It must not read private, pending, quarantined, rejected, unreviewed, admin-only, payment, API credential, buyer-interest, raw database, private telemetry, or internal scoring internals that are not public-safe.
 
-Detailed data policy lives in [TRAFFIC2_LANDSCAPE_DATA_REQUIREMENTS.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC2_LANDSCAPE_DATA_REQUIREMENTS.md).
+Detailed data policy lives in [TRAFFIC2_LANDSCAPE_DATA_REQUIREMENTS.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC2_LANDSCAPE_DATA_REQUIREMENTS.md).
 
 ## Allowed Fields
 
@@ -254,7 +254,7 @@ Forbidden copy:
 - official endorsement without source evidence;
 - fake counts.
 
-Detailed copy and CTA policy lives in [TRAFFIC2_LANDSCAPE_COPY_AND_CTA_POLICY.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC2_LANDSCAPE_COPY_AND_CTA_POLICY.md).
+Detailed copy and CTA policy lives in [TRAFFIC2_LANDSCAPE_COPY_AND_CTA_POLICY.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC2_LANDSCAPE_COPY_AND_CTA_POLICY.md).
 
 ## Monetization Boundary
 
@@ -300,7 +300,7 @@ If reviewed data is sparse:
 
 Safe copy:
 
-> 88CN currently shows a reviewed sample of public AI project signals. Counts are not global market estimates.
+> 123Charts currently shows a reviewed sample of public AI project signals. Counts are not global market estimates.
 
 ## Noindex Fallback
 
@@ -320,7 +320,7 @@ The exact next task is:
 
 TRAFFIC2B AI Project Landscape Landing Implementation v0.
 
-TRAFFIC2B should implement the route only after this boundary is merged. Handoff details live in [TRAFFIC2_LANDSCAPE_IMPLEMENTATION_HANDOFF.md](/Users/rainie/Desktop/88CN/docs/traffic/TRAFFIC2_LANDSCAPE_IMPLEMENTATION_HANDOFF.md).
+TRAFFIC2B should implement the route only after this boundary is merged. Handoff details live in [TRAFFIC2_LANDSCAPE_IMPLEMENTATION_HANDOFF.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/TRAFFIC2_LANDSCAPE_IMPLEMENTATION_HANDOFF.md).
 
 ## TRAFFIC2B Recommended Allowed Paths
 

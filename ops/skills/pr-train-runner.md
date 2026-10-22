@@ -109,7 +109,7 @@ Recommended pattern:
 
 ```bash
 git fetch origin --prune
-git worktree add /path/to/88CN-<task> origin/main -b codex/<task-branch>
+git worktree add /path/to/123charts-<task> origin/main -b codex/<task-branch>
 ```
 
 Work only inside the new worktree. Do not write to another active train's worktree.

@@ -2,7 +2,7 @@
 
 ## Role Split
 
-88CN uses separate agent roles to reduce accidental release, fabricated data, and unsafe edits.
+123Charts uses separate agent roles to reduce accidental release, fabricated data, and unsafe edits.
 
 ## Codex Computer Use
 

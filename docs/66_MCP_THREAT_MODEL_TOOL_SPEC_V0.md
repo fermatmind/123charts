@@ -2,7 +2,7 @@
 
 ## Purpose
 
-PR59 defines the Model Context Protocol boundary for future 88CN tooling. It records the threat model, safe tool names, strict input schemas, allowlisted outputs, and PR60 implementation preconditions.
+PR59 defines the Model Context Protocol boundary for future 123Charts tooling. It records the threat model, safe tool names, strict input schemas, allowlisted outputs, and PR60 implementation preconditions.
 
 PR59 does not implement or expose an MCP server endpoint.
 
@@ -129,7 +129,7 @@ Example safe tool:
 ```json
 {
   "name": "get_ai_project_profile",
-  "description": "Return an allowlisted public profile for one published AI project from 88CN.",
+  "description": "Return an allowlisted public profile for one published AI project from 123Charts.",
   "inputSchema": {
     "type": "object",
     "additionalProperties": false,

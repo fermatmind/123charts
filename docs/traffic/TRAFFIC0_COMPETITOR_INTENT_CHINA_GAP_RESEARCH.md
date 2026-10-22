@@ -8,7 +8,7 @@ Role: codex-research / codex-build
 
 ## Scope
 
-TRAFFIC0 analyzes public-page demand intent behind international AI tool discovery sites and Chinese AI tool directories, then maps those patterns into an 88CN traffic roadmap.
+TRAFFIC0 analyzes public-page demand intent behind international AI tool discovery sites and Chinese AI tool directories, then maps those patterns into an 123Charts traffic roadmap.
 
 This is research, roadmap, and strategy work only. It does not implement product routes, generate SEO pages, write `/landscape`, deploy, run live smoke, mutate Supabase, contact users, collect PII, create accounts, submit forms, post externally, or mutate `/Users/rainie/Desktop/88cn-index-data`.
 
@@ -45,12 +45,12 @@ Chinese:
 
 ## International Competitor Matrix
 
-| Site | Public observation | Primary intent | Audience | SEO structure | Language | Monetization / trust signals | Weakness / gap for 88CN |
+| Site | Public observation | Primary intent | Audience | SEO structure | Language | Monetization / trust signals | Weakness / gap for 123Charts |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | There's An AI For That | Official site was not reliably accessible in this run through the text browser. Secondary public pages position it as a task-first AI tracker: "AI for X" discovery, task matching, and frequent additions. | task_intent, founder_submit_intent | C-end AI tool user, tool founder | task pages, tool pages, possible submit flow | English-first | community visibility, task framing, large database claims | Strong task intent, but weak evidence of reviewed public-signal status, source confidence, founder claim distinction, open-source/commercial split, or machine-readability audit. |
 | Toolify | Homepage exposes latest, most-saved, most-used, browser-extension, app, GPT, ranking, region/source/revenue ranking, submit, advertise, and multi-language links. | category_intent, ranking_intent, founder_submit_intent | C-end AI user, marketer/operator, tool founder | category pages, ranking pages, tool profiles, submit/advertise pages | Multi-language UI | sponsor cards, advertise path, ranking lists, large category count, traffic/revenue-oriented ranking labels | Broad inventory and language coverage, but it reads as a large AI directory rather than reviewed AI project landscape. Public-signal provenance and editorial state are not the core product. |
-| Futurepedia | Homepage combines AI tools, resources, education, categories, YouTube/course ecosystem, editorial guidelines, submit/update pages, and paid listing options. | category_intent, education_intent, founder_submit_intent | professional AI user, operator, tool founder | category pages, resource pages, tool pages, submit/update, editorial guidelines | English | editorial guidelines, human review language, paid listing tiers, advertiser disclosure, education ecosystem | Strong trust posture and professional education angle. Gap for 88CN is bilingual founder/outbound orientation, machine-readable public-signal snapshots, and explicit lifecycle states. |
-| SaaSHub | Software marketplace and alternatives pages are built around product research, comparisons, alternatives, reviews, verification, and featured products. | alternative_intent, buyer_research_intent | software buyer, operator, tool founder | alternatives pages, category pages, product pages, comparison pages | English | featured listings, verify/product promotion, reviews, marketplace positioning | Strong alternatives/comparison intent. 88CN should borrow canonical comparison discipline, but avoid broad N-by-N comparison generation and superiority claims. |
+| Futurepedia | Homepage combines AI tools, resources, education, categories, YouTube/course ecosystem, editorial guidelines, submit/update pages, and paid listing options. | category_intent, education_intent, founder_submit_intent | professional AI user, operator, tool founder | category pages, resource pages, tool pages, submit/update, editorial guidelines | English | editorial guidelines, human review language, paid listing tiers, advertiser disclosure, education ecosystem | Strong trust posture and professional education angle. Gap for 123Charts is bilingual founder/outbound orientation, machine-readable public-signal snapshots, and explicit lifecycle states. |
+| SaaSHub | Software marketplace and alternatives pages are built around product research, comparisons, alternatives, reviews, verification, and featured products. | alternative_intent, buyer_research_intent | software buyer, operator, tool founder | alternatives pages, category pages, product pages, comparison pages | English | featured listings, verify/product promotion, reviews, marketplace positioning | Strong alternatives/comparison intent. 123Charts should borrow canonical comparison discipline, but avoid broad N-by-N comparison generation and superiority claims. |
 | AlternativeTo | Homepage positions the product as crowd-sourced alternatives and app recommendations, with categories, user opinions, likes, platforms, licenses, and alternatives. | alternative_intent, category_intent | software evaluator, C-end user, technical buyer | alternatives pages, app pages, category pages, news/lists | English | user opinions, likes, platform/license tags, crowd-sourced model | Strong community recommendation data, but not AI-project-specific and not oriented around public-signal evidence, founder claims, or Chinese outbound founders. |
 | AIxploria | Homepage exposes full list, categories, tutorials, new/free tools, submit, rankings, many language links, and a large category taxonomy. | category_intent, ranking_intent, education_intent | C-end AI user, learner, tool founder | category pages, top lists, tutorials, news, submit/update pages | Broad multilingual UI | ranking/top lists, submit/update, media kit, advertise, news/tutorials | Strong multilingual directory pattern. Gap is reviewed project status, source links, machine-readable snapshots, founder lifecycle, and disciplined finite route boundaries. |
 | FutureTools | Public pages emphasize a curated AI tool database, AI news, videos, newsletter, and a submit-a-tool form reviewed by Matt Wolfe. | category_intent, education_intent, founder_submit_intent | AI tool user, creator audience, founder | tool database, newly added, glossary, news, submit page | English | curator/personality brand, newsletter, creator trust | Strong creator-distribution model; less evidence of public-signal data layer, bilingual global SEO, or founder claim workflow. |
@@ -58,26 +58,26 @@ Chinese:
 
 ## Chinese Competitor Matrix
 
-| Site | Public observation | Primary intent | Audience | SEO structure | Language | Monetization / trust signals | Weakness / gap for 88CN |
+| Site | Public observation | Primary intent | Audience | SEO structure | Language | Monetization / trust signals | Weakness / gap for 123Charts |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | AI工具集 / ai-bot.cn | About page presents a one-stop AI tools navigation site with categories such as writing, image, video, office, agents, chat, coding, design, audio, search, dev platforms, learning, model evaluation, detection, prompts, and daily AI news. It documents paid product inclusion options and update cadence. | category_intent, education_intent, founder_submit_intent | Chinese AI user, beginner, founder | category pages, latest projects, tutorials, news, paid inclusion | Chinese | update cadence, ICP filing, paid inclusion, content/tutorial surfaces | The market is not empty. Gap is not "directory exists"; gap is reviewed bilingual landscape, public-signal provenance, status/lifecycle separation, and global outbound founder framing. |
-| AIBase / top.aibase.com | Product library exposes large product/service count, discovery, GPTS, ranking, submit, and AI navigation links; examples include product summaries, tags, update timestamps, and AI product matching. | category_intent, ranking_intent, founder_submit_intent | Chinese AI user, operator, founder | product pages, discovery, rankings, topic pages | Chinese | update timestamp, large product count, submit path, AI news/product ecosystem | Strong domestic product database. Gap is 88CN's intended global bilingual public-signal layer, source-confidence discipline, and open-source/commercial/founder lifecycle segmentation. |
+| AIBase / top.aibase.com | Product library exposes large product/service count, discovery, GPTS, ranking, submit, and AI navigation links; examples include product summaries, tags, update timestamps, and AI product matching. | category_intent, ranking_intent, founder_submit_intent | Chinese AI user, operator, founder | product pages, discovery, rankings, topic pages | Chinese | update timestamp, large product count, submit path, AI news/product ecosystem | Strong domestic product database. Gap is 123Charts's intended global bilingual public-signal layer, source-confidence discipline, and open-source/commercial/founder lifecycle segmentation. |
 | AI导航网 / ainav.cn | Homepage and snippets position it as a 1000+ domestic/international AI tools navigation site across drawing, chat, video, music, image, audio, office, coding, open platforms, and more. | category_intent | Chinese C-end AI user | category pages, tool listing pages, tag pages | Chinese | broad domestic navigation, long-running directory framing | Useful C-end directory intent, but less evidence of machine-readable project landscape, founder submit/claim/correction lifecycle, or bilingual global SEO architecture. |
 | AIGC导航 / aigc.cn | Homepage exposes dense category blocks for writing, drawing, video, office, digital human, design, voice, music, papers, resume, face swap, detection, prompts, fiction, coding, text-to-speech, plus official certification/anti-fraud links. | category_intent, education_intent | Chinese C-end AI user, operator | category pages, tool blocks, news/activity/course pages | Chinese | ICP filing, reporting/anti-fraud links, official-certification framing | Strong domestic breadth and trust links. Gap is global discoverability, project lifecycle status, source links, public-signal data model, and non-directory positioning. |
 | 发现AI / faxianai.com | Public pages position it as a professional one-stop AI navigation site with tool, product, online-tool, tutorial, and business-contact surfaces. | category_intent, education_intent | Chinese AI user, operator | navigation pages, tool pages, topic pages | Chinese | contact/business cooperation, curated navigation | Broad discovery surface; does not appear centered on bilingual project landscape or structured public-signal snapshots. |
 | ToolifyAi Chinese / toolifyai.cn | Homepage and submit page position it as a Chinese AI tools navigation site with thousands of domestic and international tools, daily updates, learning/development resources, login/register UI, and submit flow. | category_intent, founder_submit_intent | Chinese AI user, tool founder | directory, submit, login/register, categories | Chinese | ICP filing, registered trademark language, submit path | Strong volume and domestic directory framing; gap is reviewed data provenance, lifecycle state, no-login public signal, and global bilingual SEO strategy. |
-| 360AI导航 / ai.hao.360.com | Public snippets position it as 360 navigation's AI site collecting tools, tutorials, resources, public accounts, self-media, books, films, and categories across creative/productivity use cases. | category_intent, education_intent | Chinese mainstream C-end user | portal/navigation pages, discovery pages | Chinese | 360 brand trust, curated resource portal | High mainstream trust, but portal breadth may dilute founder/project/research use cases. 88CN should not compete as a generic portal. |
-| 鱼皮AI导航 / ai.codefather.cn | Public pages position it as AI tools, prompts, learning courses, project tutorials, AI news, and programmer-oriented learning resources. | education_intent, category_intent | Chinese AI builder, programmer, learner | guide/course/resource pages, tool navigation | Chinese | creator/community trust, programming education tie-in | Strong builder education lane. Gap for 88CN is project landscape, public growth signals, founder claim/correction, and machine-readable signal datasets. |
+| 360AI导航 / ai.hao.360.com | Public snippets position it as 360 navigation's AI site collecting tools, tutorials, resources, public accounts, self-media, books, films, and categories across creative/productivity use cases. | category_intent, education_intent | Chinese mainstream C-end user | portal/navigation pages, discovery pages | Chinese | 360 brand trust, curated resource portal | High mainstream trust, but portal breadth may dilute founder/project/research use cases. 123Charts should not compete as a generic portal. |
+| 鱼皮AI导航 / ai.codefather.cn | Public pages position it as AI tools, prompts, learning courses, project tutorials, AI news, and programmer-oriented learning resources. | education_intent, category_intent | Chinese AI builder, programmer, learner | guide/course/resource pages, tool navigation | Chinese | creator/community trust, programming education tie-in | Strong builder education lane. Gap for 123Charts is project landscape, public growth signals, founder claim/correction, and machine-readable signal datasets. |
 | aibase.com | Observed through AIBase ecosystem surfaces rather than a separate full-site pass. | category_intent, education_intent | Chinese AI user, operator | product/news/ecosystem pages | Chinese | AIBase brand/ecosystem | Treat as same ecosystem unless later manual visual research separates the domains. |
 
 ## Intent Taxonomy
 
 1. task_intent: user asks "what AI helps me do X?" Dominant in TAAFT-like surfaces and useful for finite `/tasks` pages.
 2. category_intent: user browses writing, image, video, coding, agents, office, search, education, and other categories. Dominant in Toolify, Futurepedia, AIxploria, AI工具集, AIBase, AIGC导航, AI导航网, 360AI导航.
-3. alternative_intent: user compares known product A to alternatives. Dominant in SaaSHub and AlternativeTo; already partially represented in 88CN alternatives.
-4. landscape_intent: user wants a market map, sector view, stack view, or discovery map rather than a tool pile. This is the clearest 88CN opportunity.
+3. alternative_intent: user compares known product A to alternatives. Dominant in SaaSHub and AlternativeTo; already partially represented in 123Charts alternatives.
+4. landscape_intent: user wants a market map, sector view, stack view, or discovery map rather than a tool pile. This is the clearest 123Charts opportunity.
 5. founder_submit_intent: founder wants visibility, correction, profile, or listing review. Present across submit/update pages, but often mixed with paid inclusion or promotion.
-6. buyer_research_intent: evaluator wants evidence, fields, source confidence, data freshness, and exportable snapshots. Weakly served by generic directories; strong opportunity for 88CN.
+6. buyer_research_intent: evaluator wants evidence, fields, source confidence, data freshness, and exportable snapshots. Weakly served by generic directories; strong opportunity for 123Charts.
 7. education_intent: user wants tutorials, news, how-to content, or courses. Strong in Futurepedia, FutureTools, AI工具集, AIGC导航, 鱼皮AI导航.
 8. ranking_intent: user wants top, most-used, latest, trending, monthly, region, source, or category ranking. High SEO pull but high trust risk if counts are unverified.
 
@@ -98,15 +98,15 @@ What is missing is more specific:
 - public-signal snapshots usable by researchers without private fields
 - clear separation between paid exposure and signal scoring
 
-AI工具集 and AIBase are strong examples of domestic AI discovery inventory. Their gap versus 88CN is not that they lack AI tools; it is that their public surfaces read as domestic AI navigation/product library ecosystems. 88CN's defensible direction is bilingual, source-linked, finite, founder-and-researcher-aware project intelligence.
+AI工具集 and AIBase are strong examples of domestic AI discovery inventory. Their gap versus 123Charts is not that they lack AI tools; it is that their public surfaces read as domestic AI navigation/product library ecosystems. 123Charts's defensible direction is bilingual, source-linked, finite, founder-and-researcher-aware project intelligence.
 
-## 88CN Positioning Update
+## 123Charts Positioning Update
 
-88CN should not position itself as another AI tools directory.
+123Charts should not position itself as another AI tools directory.
 
 Recommended positioning:
 
-88CN is a bilingual AI project landscape and machine-readable public-signal layer for AI founders, builders, C-end evaluators, and data researchers.
+123Charts is a bilingual AI project landscape and machine-readable public-signal layer for AI founders, builders, C-end evaluators, and data researchers.
 
 Implications:
 
@@ -119,7 +119,7 @@ Implications:
 
 ## Route Opportunity Map
 
-| Competitor pattern | Intent | 88CN route opportunity | Boundary |
+| Competitor pattern | Intent | 123Charts route opportunity | Boundary |
 | --- | --- | --- | --- |
 | TAAFT-like AI for X | task_intent | `/tasks`, `/tasks/[slug]`, `/zh-CN/tasks`, `/zh-CN/tasks/[slug]` | Finite allowlist only; no unlimited pSEO; reviewed projects only; real public signal data only. |
 | Toolify-like directory breadth | category_intent, ranking_intent | `/landscape`, `/landscape/sectors`, `/verticals`, `/stacks`, `/collections`, `/zh-CN/landscape`, `/zh-CN/landscape/sectors` | Reviewed sample counts; no fake global counts; no unbounded categories; no ranking promise. |
@@ -136,22 +136,22 @@ Implications:
 2. If not empty, what exactly is missing?
    A reviewed bilingual AI project landscape with public-signal provenance, lifecycle states, source links, open-source/commercial split, machine-readability checks, and outbound-founder orientation.
 
-3. What is the gap between ai-bot.cn / AIBase and 88CN?
-   AI工具集 and AIBase are strong discovery/product-library systems. 88CN should differentiate through verified public signals, finite project landscapes, founder claim/correction flows, machine-readable fields, bilingual global SEO architecture, and researcher-ready evidence.
+3. What is the gap between ai-bot.cn / AIBase and 123Charts?
+   AI工具集 and AIBase are strong discovery/product-library systems. 123Charts should differentiate through verified public signals, finite project landscapes, founder claim/correction flows, machine-readable fields, bilingual global SEO architecture, and researcher-ready evidence.
 
-4. Is bilingual global SEO a real opportunity for 88CN?
+4. Is bilingual global SEO a real opportunity for 123Charts?
    Yes, but only if executed as finite reviewed routes with source-backed project data. Generic Chinese AI navigation is crowded; bilingual global AI project landscape is less directly served.
 
-5. Which routes should 88CN build first?
+5. Which routes should 123Charts build first?
    TRAFFIC1 taxonomy first, then a bounded `/landscape` planning/build task, then sector density and task-to-project discovery.
 
-6. Which routes should 88CN avoid?
+6. Which routes should 123Charts avoid?
    Avoid unlimited task pages, auto-generated category spam, ranking pages based on unverified counts, broad "top AI tools" clones, broad N-by-N alternatives, login-gated submission growth loops, and any route implying guaranteed traffic or exposure.
 
-7. Should 88CN prioritize Chinese C-end traffic before founder acquisition?
+7. Should 123Charts prioritize Chinese C-end traffic before founder acquisition?
    Not as a generic C-end directory. Prioritize demand-side route planning that serves C-end users while preserving founder and researcher differentiation.
 
-8. Should 88CN build `/landscape` before i18n?
+8. Should 123Charts build `/landscape` before i18n?
    Yes. Build the English finite landscape taxonomy first or at least define it before broad i18n. Chinese routes should translate a stable landscape strategy rather than multiply ambiguity.
 
 9. Should TRAFFIC0 precede BETA1 if no testers are ready?
@@ -163,10 +163,10 @@ Implications:
 ## SEO Risk Analysis
 
 - Route volume risk: task/category pages can become low-trust if generated without reviewed project data.
-- Claim risk: ranking, traffic, citation, and exposure claims can violate 88CN public language boundaries.
+- Claim risk: ranking, traffic, citation, and exposure claims can violate 123Charts public language boundaries.
 - Data integrity risk: unverified counts, stale tools, source-less descriptions, or copied competitor descriptions would weaken trust.
 - Canonical risk: alternatives pages can explode into N-by-N duplicates without a canonical allowlist.
-- China-localization risk: direct translation of English routes may miss domestic search language, while generic AI navigation language makes 88CN indistinguishable.
+- China-localization risk: direct translation of English routes may miss domestic search language, while generic AI navigation language makes 123Charts indistinguishable.
 - Monetization risk: founder-submit pages must not read as pay-for-placement or outcome-guarantee pages.
 - Public-signal risk: Alpha Feed language must remain public-only and non-live until later approved tasks.
 

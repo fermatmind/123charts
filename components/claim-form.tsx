@@ -129,7 +129,7 @@ export default function ClaimForm({
           name="proof_url"
           label="Proof URL"
           type="url"
-          placeholder="https://github.com/your-org/repo/blob/main/.well-known/88cn-claim"
+          placeholder="https://github.com/your-org/repo/blob/main/.well-known/123charts-claim"
         />
         <Field
           name="proof_note"
@@ -186,7 +186,7 @@ export default function ClaimForm({
       </div>
 
       <p className="text-[11px] text-terminal-dim leading-relaxed">
-        Claims are reviewed by the 88CN editorial team. No ranking guarantees.
+        Claims are reviewed by the 123Charts editorial team. No ranking guarantees.
         No link placement promises. Verification is for public signal accuracy only.
       </p>
     </form>

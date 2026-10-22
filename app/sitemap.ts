@@ -1,3 +1,4 @@
+import { publicIndexing } from "@/lib/charts/runtime-config";
 import type { MetadataRoute } from "next";
 import { bootstrap } from "@/lib/charts/server";
 import {
@@ -7,9 +8,9 @@ import {
 } from "@/lib/charts/discovery";
 export const dynamic = "force-dynamic";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  if (process.env.CHARTS_LOCAL_PREVIEW !== "false") return [];
+  if (!publicIndexing(process.env)) return [];
   const data = await bootstrap("real", "public");
-  const base = "https://123charts.com";
+  const base = new URL(process.env.APP_URL || "https://123charts.com").origin;
   const paths = [
     "",
     "/categories",

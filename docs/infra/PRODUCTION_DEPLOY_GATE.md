@@ -31,11 +31,11 @@ Production deploy remains blocked until the human approves this exact SHA with
 one of the following phrases:
 
 ```text
-I APPROVE 88CN PRODUCTION DEPLOY FOR EXACT SHA 4f5792564d78966556189f18e40c97cff2b9ad23
+I APPROVE 123Charts PRODUCTION DEPLOY FOR EXACT SHA 4f5792564d78966556189f18e40c97cff2b9ad23
 ```
 
 ```text
-我批准 88CN 按 exact SHA 4f5792564d78966556189f18e40c97cff2b9ad23 执行生产部署
+我批准 123Charts 按 exact SHA 4f5792564d78966556189f18e40c97cff2b9ad23 执行生产部署
 ```
 
 Approval for any other SHA, branch name, relative ref, or unstated ref is not
@@ -45,7 +45,7 @@ sufficient.
 
 Before any later production deploy for the candidate SHA, verify all items:
 
-- Local 88CN repo is clean and `main == origin/main` at the exact approved SHA.
+- Local 123Charts repo is clean and `main == origin/main` at the exact approved SHA.
 - PR204 is merged and `SECURITY_FIREWALL_READY_NO_DEPLOY` is recorded.
 - PR205 is merged and `READY_FOR_PRODUCTION_DEPLOY_APPROVAL` is recorded.
 - `npm run verify:day0` passes.
@@ -174,7 +174,7 @@ Production deploy remains blocked by any of the following:
 
 - Missing exact SHA approval phrase.
 - Candidate SHA differs from the approved phrase.
-- Dirty local 88CN, worker, or data repo.
+- Dirty local 123Charts, worker, or data repo.
 - Failing preflight validation.
 - Public leak detected.
 - Public API/MCP unexpectedly enabled.

@@ -1,3 +1,4 @@
+import { publicIndexing } from "./lib/charts/runtime-config";
 import { NextRequest, NextResponse } from "next/server";
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
@@ -71,7 +72,7 @@ export function proxy(request: NextRequest) {
     pathname.split("/")[1] === "zh" ? "zh" : "en",
   );
   const response = NextResponse.next({ request: { headers: requestHeaders } });
-  if (process.env.CHARTS_LOCAL_PREVIEW !== "false")
+  if (!publicIndexing(process.env))
     response.headers.set("X-Robots-Tag", "noindex, follow");
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");

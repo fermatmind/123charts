@@ -16,7 +16,7 @@ Future implementation, if separately approved, must emit a local-only manifest e
 ```json
 {
   "dry_run_version": "audit2_batch_audit_v0",
-  "output_directory": "/tmp/88cn-audit2-batch-dry-run",
+  "output_directory": "/tmp/123charts-audit2-batch-dry-run",
   "input_count": 0,
   "eligible_count": 0,
   "skipped_count": 0,

@@ -9,7 +9,7 @@ and PR210 merged. It does not deploy.
 
 ## Scope
 
-- Repo: `88CN`
+- Repo: `123Charts`
 - Task: `PR211 / CONTENT27_DEPLOY_GATE_REFRESH`
 - Purpose: refresh the deploy gate for the 27 published projection rows now
   present on current `main`.
@@ -126,13 +126,13 @@ Final PR211 validation after the metadata refresh:
 Chinese:
 
 ```text
-我批准 88CN 按 exact SHA ed4fbecc6de357701d0a54d9aa9b3b5f9a190e79 执行生产部署
+我批准 123Charts 按 exact SHA ed4fbecc6de357701d0a54d9aa9b3b5f9a190e79 执行生产部署
 ```
 
 English:
 
 ```text
-I APPROVE 88CN PRODUCTION DEPLOY FOR EXACT SHA ed4fbecc6de357701d0a54d9aa9b3b5f9a190e79
+I APPROVE 123Charts PRODUCTION DEPLOY FOR EXACT SHA ed4fbecc6de357701d0a54d9aa9b3b5f9a190e79
 ```
 
 ## Deploy Blockers

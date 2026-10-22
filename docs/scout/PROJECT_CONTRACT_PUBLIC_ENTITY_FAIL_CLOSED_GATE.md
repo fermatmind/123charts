@@ -7,7 +7,7 @@ Date: 2026-06-21
 
 ## Result
 
-PR182 defines the permanent 88CN backstage project data contract and fail-closed publication gate.
+PR182 defines the permanent 123Charts backstage project data contract and fail-closed publication gate.
 
 Result: `GO_CONTROL_PANEL_WITH_PROJECT_CONTRACT_READY`.
 

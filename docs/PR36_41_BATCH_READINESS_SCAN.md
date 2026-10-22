@@ -12,7 +12,7 @@ PR36-PR41 remain registered as full roadmap task objects. They can proceed in se
 
 | Repository | Path | Branch | Commit |
 | --- | --- | --- | --- |
-| 88CN | `/Users/rainie/Desktop/88CN` | `codex/pr35-live-qa-rerun` | current branch |
+| 123Charts | `/Users/rainie/Desktop/123charts.com/123charts` | `codex/pr35-live-qa-rerun` | current branch |
 | 88cn-index-data | `/Users/rainie/Desktop/88cn-index-data` | `main` | not modified |
 
 Base main at time of rerun: `0894e4e`
@@ -23,10 +23,10 @@ Base main at time of rerun: `0894e4e`
 | --- | --- | --- |
 | `npm run agent:smoke:live` | PASS | `/api/healthz`, `/`, `/projects`, `/submit`, `/geo-checker`, `/sitemap.xml`, `/robots.txt`, and `/admin` returned 200 |
 | PR35-specific live smoke | PASS | `EXTRA_PATHS='/reports/early-ai-project-machine-readability-2026' REQUIRED_SITEMAP_PATHS='/reports/early-ai-project-machine-readability-2026' scripts/agent/smoke-live.sh` passed |
-| Live PR34 report page | PASS | `https://88cn.com/reports/early-ai-project-machine-readability-2026` returned 200 |
-| Live sitemap PR34 report entry | PASS | `https://88cn.com/sitemap.xml` includes `https://88cn.com/reports/early-ai-project-machine-readability-2026` |
-| Live sitemap status | PASS | `https://88cn.com/sitemap.xml` returned 200 |
-| Report title | PASS | `Early AI Project Machine-Readability Report 2026 | 88CN | 88CN` |
+| Live PR34 report page | PASS | `https://123charts.com/reports/early-ai-project-machine-readability-2026` returned 200 |
+| Live sitemap PR34 report entry | PASS | `https://123charts.com/sitemap.xml` includes `https://123charts.com/reports/early-ai-project-machine-readability-2026` |
+| Live sitemap status | PASS | `https://123charts.com/sitemap.xml` returned 200 |
+| Report title | PASS | `Early AI Project Machine-Readability Report 2026 | 123Charts | 123Charts` |
 
 The previous 404 and missing sitemap entry were deployment freshness issues. They are resolved.
 
@@ -46,12 +46,12 @@ PASS locally.
 
 | Task | Title | Type | Role | Repo | Depends on | Deployment | Human checkpoint | Ready after PR35 pass |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| PR36 | Founder Intent Report Archive + Index Hardening v0 | product | codex-build | 88CN | PR35 | none | false | YES |
-| PR37 | Founder Intent Report Archive QA + Live Smoke | qa | codex-qa | 88CN | PR36 | live-smoke-only | true | YES, after PR36 |
-| PR38 | Brand Voice and Public Copy Guard v0 | ops | codex-build | 88CN | PR37 | none | false | YES, after PR37 |
-| PR39 | Brand Voice and Public Copy Guard QA | qa | codex-qa | 88CN | PR38 | none | false | YES, after PR38 |
-| PR40 | Genesis Badge Founder Explainer v1 | product | codex-build | 88CN | PR39 | none | false | YES, after PR39 |
-| PR41 | Genesis Badge Founder Explainer QA + Live Smoke | qa | codex-qa | 88CN | PR40 | live-smoke-only | true | YES, after PR40 |
+| PR36 | Founder Intent Report Archive + Index Hardening v0 | product | codex-build | 123Charts | PR35 | none | false | YES |
+| PR37 | Founder Intent Report Archive QA + Live Smoke | qa | codex-qa | 123Charts | PR36 | live-smoke-only | true | YES, after PR36 |
+| PR38 | Brand Voice and Public Copy Guard v0 | ops | codex-build | 123Charts | PR37 | none | false | YES, after PR37 |
+| PR39 | Brand Voice and Public Copy Guard QA | qa | codex-qa | 123Charts | PR38 | none | false | YES, after PR38 |
+| PR40 | Genesis Badge Founder Explainer v1 | product | codex-build | 123Charts | PR39 | none | false | YES, after PR39 |
+| PR41 | Genesis Badge Founder Explainer QA + Live Smoke | qa | codex-qa | 123Charts | PR40 | live-smoke-only | true | YES, after PR40 |
 
 `ops/tasks/roadmap.json` contains complete task objects for PR36-PR41 with title, type, role, repo, phase, dependencies, allowed paths, forbidden paths, validations, data plane notes, deployment notes, human checkpoint flag, and Definition of Done.
 
@@ -65,9 +65,9 @@ Refresh-specific validation:
 | `npm run third-party:check` | PASS |
 | `npm run agent:smoke:live` | PASS |
 | `EXTRA_PATHS='/reports/early-ai-project-machine-readability-2026' REQUIRED_SITEMAP_PATHS='/reports/early-ai-project-machine-readability-2026' scripts/agent/smoke-live.sh` | PASS |
-| `curl https://88cn.com/reports/early-ai-project-machine-readability-2026` | PASS, 200 |
-| `curl https://88cn.com/sitemap.xml` | PASS, 200 |
-| `curl https://88cn.com/sitemap.xml` report entry check | PASS |
+| `curl https://123charts.com/reports/early-ai-project-machine-readability-2026` | PASS, 200 |
+| `curl https://123charts.com/sitemap.xml` | PASS, 200 |
+| `curl https://123charts.com/sitemap.xml` report entry check | PASS |
 
 ## Data Repository Gate Validation
 

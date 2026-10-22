@@ -1,3 +1,4 @@
+import { publicIndexing } from "@/lib/charts/runtime-config";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | 123Charts",
   },
   description: brand.en.description,
-  robots: { index: false, follow: true },
+  robots: { index: publicIndexing(process.env), follow: true },
 };
 export default async function RootLayout({
   children,

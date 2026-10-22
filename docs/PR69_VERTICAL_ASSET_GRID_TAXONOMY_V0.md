@@ -30,7 +30,7 @@ A vertical can become `published` only when all conditions are met:
 - `sitemapEligible` is true;
 - at least two local reviewed project records have `status: "published"`;
 - every included project has at least one public source link;
-- inclusion rationale is written by 88CN, not generated from freeform query text;
+- inclusion rationale is written by 123Charts, not generated from freeform query text;
 - page copy states project-discovery scope;
 - regulated-language constraints are present when the domain touches legal, finance, healthcare, compliance, security, or investment-adjacent topics.
 

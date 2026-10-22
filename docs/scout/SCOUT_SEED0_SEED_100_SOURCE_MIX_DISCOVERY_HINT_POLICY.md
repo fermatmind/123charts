@@ -15,7 +15,7 @@ Meaning:
 
 - Seed 100 can proceed to PR164 only as a local-only identity hint normalization task;
 - Seed50R `/tmp` artifacts may be used as research input only;
-- no Seed50R preview row is an official 88CN project record;
+- no Seed50R preview row is an official 123Charts project record;
 - no candidate is public, reviewed, audited, indexed, published, or Growth-ready;
 - no data repo mutation, Supabase write, staging write, production write, audit trigger, crawler, public route, sitemap, Public API, MCP, report page, or distribution surface is authorized.
 
@@ -62,9 +62,9 @@ Reviewed source inputs:
 
 Optional Seed50R research input was present and read only as research input:
 
-- `/tmp/88cn-seed50-source-research.md`
-- `/tmp/88cn-seed50-candidate-hints-preview.jsonl`
-- `/tmp/88cn-seed50-rejected-or-weak-hints.jsonl`
+- `/tmp/123charts-seed50-source-research.md`
+- `/tmp/123charts-seed50-candidate-hints-preview.jsonl`
+- `/tmp/123charts-seed50-rejected-or-weak-hints.jsonl`
 
 Seed50R artifact summary:
 
@@ -148,7 +148,7 @@ Field rules:
 - `source_type`: one allowlisted value.
 - `discovered_at`: date of discovery or review.
 - `confidence`: `strong`, `medium`, or `weak`.
-- `manual_note`: original 88CN reviewer note only; no copied third-party description.
+- `manual_note`: original 123Charts reviewer note only; no copied third-party description.
 
 ## Forbidden Fields
 
@@ -210,7 +210,7 @@ Rules:
 - require repository-owner evidence, official docs, official website, or clear project identity;
 - do not use repository name similarity alone for canonical identity;
 - do not infer traction or quality from stars, forks, watchers, issues, contributors, or activity unless a later task explicitly authorizes that metric;
-- do not copy README descriptions into 88CN public copy;
+- do not copy README descriptions into 123Charts public copy;
 - preserve repository URL as identity evidence only;
 - forks, mirrors, wrappers, and template repos must be marked for canonical review.
 
@@ -260,7 +260,7 @@ Forbidden:
 - claims that a project is ready for overseas growth without reviewed evidence;
 - public publication before review.
 
-Manual notes must use original 88CN wording and must not imply ranking, investment value, guaranteed traffic, guaranteed indexing, or public endorsement.
+Manual notes must use original 123Charts wording and must not imply ranking, investment value, guaranteed traffic, guaranteed indexing, or public endorsement.
 
 ## Confidence Levels
 

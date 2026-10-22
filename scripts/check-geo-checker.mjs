@@ -25,7 +25,7 @@ for (const f of files) {
 }
 
 // 2. Nginx includes /api/geo-checker
-const nginxPath = path.join(ROOT, "deploy/nginx/88cn.conf.example");
+const nginxPath = path.join(ROOT, "deploy/nginx/123charts.conf.example");
 if (fs.existsSync(nginxPath)) {
   if (!fs.readFileSync(nginxPath, "utf8").includes("geo-checker")) {
     fail("Nginx config missing /api/geo-checker rate limit");

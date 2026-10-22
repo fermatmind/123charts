@@ -22,7 +22,7 @@ Evidence:
 - GitHub PR: `#224`
 - Title: `docs: add OPS-SERVER0R capacity readiness scan`
 - Merge commit: `55a4336266e508f0d88a95ce4b1ef803b63cf4ae`
-- Report: `docs/infra/OPS_SERVER0R_88CN_SERVER_CAPACITY_READINESS_SCAN.md`
+- Report: `docs/infra/OPS_SERVER0R_123charts_SERVER_CAPACITY_READINESS_SCAN.md`
 
 OPS-SERVER0R satisfies PR186's read-only capacity checklist:
 
@@ -35,9 +35,9 @@ PR187 therefore consumes OPS-SERVER0R as input and does not re-run server invent
 
 ## Source Inputs
 
-- `docs/infra/OPS_SERVER0R_88CN_SERVER_CAPACITY_READINESS_SCAN.md`
+- `docs/infra/OPS_SERVER0R_123charts_SERVER_CAPACITY_READINESS_SCAN.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/scout/BULK_IMPORT_CONTRACT.md`
 - `docs/TASK_STATUS.md`
 - `ops/tasks/roadmap.json`
@@ -57,48 +57,48 @@ Any future host preparation must satisfy all of these boundaries:
 - one queue namespace per worker family;
 - no public web host worker colocation;
 - no FermatMind production host colocation;
-- no Tencent placement for new 88CN workload;
+- no Tencent placement for new 123Charts workload;
 - no raw private values in docs, PR bodies, logs, scripts, or status files.
 
 ## Role Matrix
 
 | Alias | Current status | Allowed role | Forbidden role | PR187 decision |
 | --- | --- | --- | --- | --- |
-| `HK-ALIYUN-01` | 88CN public web host by prior deploy and OPS-SERVER0R evidence | Public web only | Staging admin, scout/import worker, canonical worker, audit worker, queue, Redis, crawler, heavy report generation, FermatMind colocation | Keep public web only. |
+| `HK-ALIYUN-01` | 123Charts public web host by prior deploy and OPS-SERVER0R evidence | Public web only | Staging admin, scout/import worker, canonical worker, audit worker, queue, Redis, crawler, heavy report generation, FermatMind colocation | Keep public web only. |
 | `SH-ALIYUN-02` | Conditional Shanghai candidate, 2 vCPU / 4 GiB class, disk/live services unknown | Staging/admin/internal preview candidate after confirmation | Public web, production worker, heavy audit before capacity proof, FermatMind production | Candidate for PR188 only after human approval and reversible prep plan. |
 | `SH-ALIYUN-03` | Conditional Shanghai candidate, 2 vCPU / 1 GiB class, disk/live services unknown | Low-concurrency scout/import/canonical dry-run worker candidate after confirmation | Heavy audit, public web, production crawler, shared FermatMind queue | Candidate for PR189 low-concurrency worker only after human approval and strict caps. |
 | `SH-ALIYUN-04` | Conditional Shanghai candidate, 2 vCPU / 1 GiB class, disk/live services unknown | Queue/monitoring/backup/spare or tiny audit dry-run candidate after confirmation | Heavy audit, public web, production Redis without separate approval | Candidate only with capacity confirmation and queue/log isolation. |
-| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | FermatMind only | Any 88CN workload | Do-not-touch. |
-| `FAP-WEB-NODE1` | FermatMind public frontend production | FermatMind only | Any 88CN workload | Do-not-touch. |
-| Tencent resources | FermatMind migration-source / sunsetting resources | Migration-source only | New 88CN workload | Do-not-touch for new placement. |
+| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | FermatMind only | Any 123Charts workload | Do-not-touch. |
+| `FAP-WEB-NODE1` | FermatMind public frontend production | FermatMind only | Any 123Charts workload | Do-not-touch. |
+| Tencent resources | FermatMind migration-source / sunsetting resources | Migration-source only | New 123Charts workload | Do-not-touch for new placement. |
 
 ## User And Directory Plan
 
 Recommended future users:
 
 ```text
-88cn-web
-88cn-admin
-88cn-worker
-88cn-audit
+123charts-web
+123charts-admin
+123charts-worker
+123charts-audit
 ```
 
 Recommended future app roots:
 
 ```text
-/opt/apps/88cn-web
-/opt/apps/88cn-admin
+/opt/apps/123charts-web
+/opt/apps/123charts-admin
 /opt/apps/88cn-scout-worker
-/opt/apps/88cn-audit-worker
+/opt/apps/123charts-audit-worker
 ```
 
 Recommended future log roots:
 
 ```text
-/var/log/88cn/web
-/var/log/88cn/admin
-/var/log/88cn/scout-worker
-/var/log/88cn/audit-worker
+/var/log/123charts/web
+/var/log/123charts/admin
+/var/log/123charts/scout-worker
+/var/log/123charts/audit-worker
 ```
 
 Rules:
@@ -107,17 +107,17 @@ Rules:
 - Future prep must not place worker temp files under a public web root.
 - Future prep must not share release symlinks across roles.
 - Future prep must not share env files across roles.
-- Future prep must not place 88CN files under FermatMind app roots.
+- Future prep must not place 123Charts files under FermatMind app roots.
 
 ## Process Plan
 
 Recommended future PM2 names:
 
 ```text
-88cn-web
-88cn-staging-admin
+123charts-web
+123charts-staging-admin
 88cn-scout-worker
-88cn-audit-worker
+123charts-audit-worker
 ```
 
 Rules:
@@ -127,8 +127,8 @@ Rules:
 - PM2 logs must be role-local.
 - Worker apps require `max_memory_restart`.
 - Worker apps require explicit concurrency caps.
-- Restart/reload commands must target only the named 88CN app.
-- A 88CN rollback must never restart FermatMind apps or queues.
+- Restart/reload commands must target only the named 123Charts app.
+- A 123Charts rollback must never restart FermatMind apps or queues.
 
 PR187 does not add PM2 files or run PM2.
 
@@ -165,9 +165,9 @@ Default: no queue or Redis is created by PR187.
 If a later approved PR introduces queue/Redis, it must use separate namespaces:
 
 ```text
-88cn:scout:*
-88cn:audit:*
-88cn:report:*
+123charts:scout:*
+123charts:audit:*
+123charts:report:*
 ```
 
 Rules:
@@ -176,14 +176,14 @@ Rules:
 - no shared retry queue;
 - no shared dead-letter queue;
 - no shared consumer group;
-- no Tencent Redis for new 88CN workload;
+- no Tencent Redis for new 123Charts workload;
 - no production Redis without a separate approval and rollback plan.
 
 ## Required Human Confirmations Before PR188 / PR189 Actions
 
 Before PR188 / STAGING_ADMIN_HOST_PREP can perform server prep:
 
-- confirm `SH-ALIYUN-02` ownership and that it is free for 88CN staging/admin;
+- confirm `SH-ALIYUN-02` ownership and that it is free for 123Charts staging/admin;
 - confirm disk class/usage and OS family;
 - confirm live PM2/Nginx/Supervisor/cron occupancy or approve read-only SSH inventory;
 - confirm internal access path;

@@ -1,6 +1,6 @@
 # 13 Cost Guards
 
-88CN must be able to reduce spend and write volume before a cost spike becomes an outage.
+123Charts must be able to reduce spend and write volume before a cost spike becomes an outage.
 
 ## Cost Kill Switches
 

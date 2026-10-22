@@ -83,7 +83,7 @@ SCOUT_IMPL3 preserves the no-publish posture from PR147 and PR148:
 
 `PR150 / SCOUT_IMPLQ` should QA the completed PR146-PR149 persistence train and verify:
 
-- PR146 kept implementation in the 88CN control repo and did not create a worker repo/package;
+- PR146 kept implementation in the 123Charts control repo and did not create a worker repo/package;
 - PR147 defined private-by-default sandbox persistence boundaries;
 - PR148 selected local/docs/tmp-only storage;
 - PR149 did not perform staging or production writes;

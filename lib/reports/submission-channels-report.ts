@@ -4,7 +4,7 @@ export const SUBMISSION_CHANNELS_REPORT_PATH = `/reports/${SUBMISSION_CHANNELS_R
 export const SUBMISSION_CHANNELS_REPORT_TITLE =
   "AI Project Submission Channels for Founders";
 export const SUBMISSION_CHANNELS_REPORT_SUBTITLE =
-  "A restrained field guide to reviewed launch surfaces, founder-owned materials, and 88CN profile flows.";
+  "A restrained field guide to reviewed launch surfaces, founder-owned materials, and 123Charts profile flows.";
 
 export interface SubmissionChannel {
   name: string;
@@ -78,10 +78,10 @@ export const submissionChannels: SubmissionChannel[] = [
       "Avoid generic repetition. Community posts should add context rather than repeat the same pitch.",
   },
   {
-    name: "88CN project profile flow",
-    category: "88CN surface",
+    name: "123Charts project profile flow",
+    category: "123Charts surface",
     useCase:
-      "Use 88CN to submit a project, check machine-readable basics, and later claim a reviewed public profile.",
+      "Use 123Charts to submit a project, check machine-readable basics, and later claim a reviewed public profile.",
     readinessSignals: [
       "Project submission",
       "AI Search Readiness Checker",
@@ -89,7 +89,7 @@ export const submissionChannels: SubmissionChannel[] = [
       "Founder claim path",
     ],
     boundary:
-      "88CN review is editorial and signal-based. It does not promise external placement or business results.",
+      "123Charts review is editorial and signal-based. It does not promise external placement or business results.",
   },
 ];
 
@@ -106,7 +106,7 @@ export const submissionChannelSteps: SubmissionChannelStep[] = [
     href: "/geo-checker",
   },
   {
-    title: "Submit to 88CN review",
+    title: "Submit to 123Charts review",
     body:
       "Send a structured project submission for admin review. Submitted projects do not publish automatically.",
     href: "/submit",

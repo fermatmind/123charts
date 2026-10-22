@@ -78,7 +78,7 @@ Do not use:
 
 Approved:
 
-> 88CN currently shows a reviewed sample of public AI project signals. Counts are not global market estimates.
+> 123Charts currently shows a reviewed sample of public AI project signals. Counts are not global market estimates.
 
 Rules:
 

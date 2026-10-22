@@ -1,4 +1,4 @@
-# OPS-SERVER0R 88CN Server Capacity Readiness Scan v0
+# OPS-SERVER0R 123Charts Server Capacity Readiness Scan v0
 
 ## 1. Result
 
@@ -21,7 +21,7 @@ This was a read-only readiness scan. It did not deploy, migrate, restart, reload
 
 ## 3. Method
 
-- Read local 88CN infra/scout docs.
+- Read local 123Charts infra/scout docs.
 - Read local FermatMind `fap-web` and `fap-api` deploy/runtime docs and configs without opening `.env` files.
 - Attempted Chrome extension control; it failed before browser control due to local runtime metadata error.
 - Used Computer Use as a read-only fallback for Chrome.
@@ -34,7 +34,7 @@ This was a read-only readiness scan. It did not deploy, migrate, restart, reload
 - `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md`
 - `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123Charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/scout/PROJECT_CONTRACT_MIGRATION_CHECKPOINT.md`
 - `docs/scout/PROJECT_CONTRACT_PUBLIC_ENTITY_FAIL_CLOSED_GATE.md`
 - `/Users/rainie/Desktop/GitHub/fap-web/ecosystem.config.cjs`
@@ -73,13 +73,13 @@ Tencent, prior OPS-INFRA0Y evidence reused:
 
 | Alias | Current / known role | Candidate role | Status | Decision |
 | --- | --- | --- | --- | --- |
-| `HK-ALIYUN-01` | 88CN public web | public web only | running by console/doc evidence | Keep public web only. |
+| `HK-ALIYUN-01` | 123Charts public web | public web only | running by console/doc evidence | Keep public web only. |
 | `SH-ALIYUN-02` | Shanghai launch-advisor candidate, strongest non-production class | staging/admin/internal preview | conditional | Needs owner/capacity and read-only SSH confirmation. |
 | `SH-ALIYUN-03` | Shanghai launch-advisor candidate, low memory class | low-concurrency scout/import/canonical worker | conditional | Only tiny/low-concurrency worker after confirmation. |
 | `SH-ALIYUN-04` | Shanghai launch-advisor candidate, low memory class | queue/monitoring/backup/spare or tiny audit dry-run | conditional | Not enough for heavy audit without upgrade/new host. |
-| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | do-not-touch | running by prior evidence | No 88CN workload. |
-| `FAP-WEB-NODE1` | FermatMind public frontend production | do-not-touch | repo/runtime evidence | No 88CN workload. |
-| Tencent resources | FermatMind migration-source / managed dependencies | sunsetting only | prior evidence | No new 88CN workload. |
+| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | do-not-touch | running by prior evidence | No 123Charts workload. |
+| `FAP-WEB-NODE1` | FermatMind public frontend production | do-not-touch | repo/runtime evidence | No 123Charts workload. |
+| Tencent resources | FermatMind migration-source / managed dependencies | sunsetting only | prior evidence | No new 123Charts workload. |
 
 ## 7. HK-ALIYUN-01 capacity summary
 
@@ -88,14 +88,14 @@ Tencent, prior OPS-INFRA0Y evidence reused:
 - Disk: not confirmed from this run; prior report did not record exact disk class for this alias.
 - Network: 1 Mbps public bandwidth class from prior OPS-INFRA0Y.
 - OS family: unknown until SSH or safe instance detail inspection.
-- PM2: repo evidence says 88CN public web uses PM2 app `88cn-web`.
+- PM2: repo evidence says 123Charts public web uses PM2 app `123charts-web`.
 - Nginx: repo evidence says public reverse proxy / vhost pattern.
-- Redis: no current 88CN public web Redis requirement found.
+- Redis: no current 123Charts public web Redis requirement found.
 - Supervisor/systemd/cron: live state unknown; do not infer without SSH.
 - Logs/backup: live state unknown; must be checked before adding more load.
-- Current app roots: 88CN public web root is known by deployment docs, but live root not revalidated by SSH in this task.
+- Current app roots: 123Charts public web root is known by deployment docs, but live root not revalidated by SSH in this task.
 - Current process ownership: unknown without SSH.
-- Candidate role: 88CN public web only.
+- Candidate role: 123Charts public web only.
 - Do-not-touch reason: public latency and production stability; no scout/audit/queue/crawler/heavy report generation/staging admin/FermatMind colocation.
 
 Recommendation: keep current public web role only. Capacity is acceptable for current public web continuation, not for worker expansion.
@@ -150,17 +150,17 @@ Recommendation: conditional spare/monitoring/backup candidate only. Do not place
 
 ## 11. FermatMind do-not-touch matrix
 
-| Resource | Current role | Do-not-touch reason | 88CN rule |
+| Resource | Current role | Do-not-touch reason | 123Charts rule |
 | --- | --- | --- | --- |
-| `FAP-WEB-NODE1` | FermatMind production frontend, PM2 `fap-web`, Nginx proxy | High criticality public frontend | No 88CN worker, queue, crawler, or staging/admin. |
-| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | API, queue, deploy, Nginx, Supervisor, DB/Redis dependency | No 88CN worker, Redis, queue, cron, deploy path, or staging/admin. |
-| FermatMind production DB | Managed production DB dependency | P0 data integrity risk | No 88CN direct dependency or writes. |
-| FermatMind production Redis | Managed cache/queue dependency | P0 queue/cache isolation risk | No 88CN direct use, no shared queue, no shared prefix. |
-| FermatMind PM2/Supervisor/Nginx/cron/release roots | Production runtime surfaces | Restart/reload/cross-deploy risk | No 88CN control path or colocated deploy script. |
+| `FAP-WEB-NODE1` | FermatMind production frontend, PM2 `fap-web`, Nginx proxy | High criticality public frontend | No 123Charts worker, queue, crawler, or staging/admin. |
+| `FAP-API-ALIYUN-01` | FermatMind API/Ops/queue production | API, queue, deploy, Nginx, Supervisor, DB/Redis dependency | No 123Charts worker, Redis, queue, cron, deploy path, or staging/admin. |
+| FermatMind production DB | Managed production DB dependency | P0 data integrity risk | No 123Charts direct dependency or writes. |
+| FermatMind production Redis | Managed cache/queue dependency | P0 queue/cache isolation risk | No 123Charts direct use, no shared queue, no shared prefix. |
+| FermatMind PM2/Supervisor/Nginx/cron/release roots | Production runtime surfaces | Restart/reload/cross-deploy risk | No 123Charts control path or colocated deploy script. |
 
 ## 12. Tencent sunsetting matrix
 
-| Resource | Prior observed state | Expiry / sunset | 88CN decision |
+| Resource | Prior observed state | Expiry / sunset | 123Charts decision |
 | --- | --- | --- | --- |
 | Tencent Lighthouse app host 1 | running, FermatMind app host | 2026-08 | migration source / sunsetting only |
 | Tencent Lighthouse app host 2 | running, FermatMind app host | 2026-08 | migration source / sunsetting only |
@@ -168,7 +168,7 @@ Recommendation: conditional spare/monitoring/backup candidate only. Do not place
 | Tencent MySQL production | running managed MySQL 8.0 class | 2026-09 | production do-not-touch; migration source only |
 | Tencent Redis production | running managed Redis 7.0 class | 2026-08 | production do-not-touch; migration source only |
 
-No Tencent resource should receive new 88CN workload.
+No Tencent resource should receive new 123Charts workload.
 
 ## 13. CPU / memory / disk / network summary
 
@@ -187,10 +187,10 @@ Disk for Aliyun ECS candidates remains a blocker for final readiness because wor
 
 ## 14. PM2 / Nginx / Redis / Supervisor / cron summary
 
-- 88CN public web: PM2 app `88cn-web` and Nginx public vhost are expected from repo/deploy evidence. Live process list not checked.
-- 88CN Redis: no current public web Redis requirement found. Future Redis/queue requires isolation and approval.
-- fap-web: PM2 app `fap-web`, Node 24 runtime expectation, Nginx proxy, and autoheal cron/runbook exist in repo docs. Do-not-touch for 88CN.
-- fap-api: deploy config uses Nginx, PHP-FPM, Supervisor as official queue worker owner, and Redis/database queue drivers. Do-not-touch for 88CN.
+- 123Charts public web: PM2 app `123charts-web` and Nginx public vhost are expected from repo/deploy evidence. Live process list not checked.
+- 123Charts Redis: no current public web Redis requirement found. Future Redis/queue requires isolation and approval.
+- fap-web: PM2 app `fap-web`, Node 24 runtime expectation, Nginx proxy, and autoheal cron/runbook exist in repo docs. Do-not-touch for 123Charts.
+- fap-api: deploy config uses Nginx, PHP-FPM, Supervisor as official queue worker owner, and Redis/database queue drivers. Do-not-touch for 123Charts.
 - Tencent Redis/MySQL: production FermatMind managed dependencies, migration-source only.
 - Cron: fap-web autoheal docs and fap-api scheduler/queue runbooks exist, but live cron was not inspected.
 
@@ -199,8 +199,8 @@ Live PM2, Nginx, Redis, Supervisor, systemd, and cron occupancy remains `NEED_RE
 ## 15. Logs / backup summary
 
 - OPS-INFRA1X requires separate role-scoped logs and backup paths before workers start.
-- Recommended future logs include `/var/log/88cn/web/`, `/var/log/88cn/admin/`, `/var/log/88cn/scout-worker/`, and `/var/log/88cn/audit-worker/`.
-- Recommended backup separation includes `/backups/88cn/` and `/backups/fap/`.
+- Recommended future logs include `/var/log/123charts/web/`, `/var/log/123charts/admin/`, `/var/log/123charts/scout-worker/`, and `/var/log/123charts/audit-worker/`.
+- Recommended backup separation includes `/backups/123charts/` and `/backups/fap/`.
 - This scan did not inspect live `/var/log`, backup paths, snapshots, or logrotate state.
 - Aliyun ECS overview showed backup/snapshot widgets, but no instance-level live backup policy was verified in this run.
 
@@ -210,7 +210,7 @@ Verdict: logs and backups are not placement-ready until read-only SSH or safe cl
 
 Recommended placement model remains:
 
-- `HK-ALIYUN-01`: keep 88CN public web only.
+- `HK-ALIYUN-01`: keep 123Charts public web only.
 - `SH-ALIYUN-02`: conditional staging/admin/internal preview candidate.
 - `SH-ALIYUN-03`: conditional low-concurrency scout/import/canonical worker candidate.
 - `SH-ALIYUN-04`: conditional queue/monitoring/backup/spare candidate; tiny audit dry-run only if separately approved.
@@ -227,16 +227,16 @@ For 20k-50k project scale, this should be treated as a phased readiness model, n
 - `LOW_MEMORY_WORKER_RISK`: 1 GiB worker candidates can OOM under audit/report workloads.
 - `PUBLIC_WEB_COLOCATION_RISK`: adding workers to `HK-ALIYUN-01` can harm public latency and stability.
 - `FERMATMIND_COLLISION_RISK`: PM2/Nginx/Supervisor/Redis/cron/deploy roots must not cross with FermatMind.
-- `TENCENT_SUNSET_RISK`: Tencent resources expire around August/September and must not become new 88CN dependencies.
+- `TENCENT_SUNSET_RISK`: Tencent resources expire around August/September and must not become new 123Charts dependencies.
 - `LOG_BACKUP_UNKNOWN`: no live proof of logrotate, backup retention, or restore ownership.
 
 ## 18. Required human confirmations
 
 - Approve read-only SSH inventory if exact live server capacity is required.
-- Confirm Aliyun Shanghai launch-advisor instance ownership and whether the three candidates are free for 88CN roles.
+- Confirm Aliyun Shanghai launch-advisor instance ownership and whether the three candidates are free for 123Charts roles.
 - Confirm Aliyun disk class/usage and OS family for `HK-ALIYUN-01`, `SH-ALIYUN-02`, `SH-ALIYUN-03`, and `SH-ALIYUN-04`.
 - Confirm Tencent sunset/migration order before August/September expiries.
-- Confirm no unobserved Tencent or Aliyun products contain retained FermatMind/88CN dependencies.
+- Confirm no unobserved Tencent or Aliyun products contain retained FermatMind/123Charts dependencies.
 - Confirm no FermatMind production host may be reused without explicit isolation proof and human approval.
 
 ## 19. Recommended next tasks
@@ -268,17 +268,17 @@ Both require explicit human approval before any server or cloud mutation.
 - Did not install packages.
 - Did not write server files or upload files.
 - Did not run migrations, crawlers, workers, or audits.
-- Did not modify 88CN, 88cn-index-data, fap-web, fap-api, or FermatMind repos.
+- Did not modify 123Charts, 88cn-index-data, fap-web, fap-api, or FermatMind repos.
 - Did not commit, push, or open a PR.
 
 ## Final console values
 
 Result: OPS_SERVER0R_PARTIAL_NEEDS_READONLY_SSH
-Report path: /tmp/88cn-ops-server0r-capacity-readiness-scan.md
+Report path: /tmp/123charts-ops-server0r-capacity-readiness-scan.md
 Servers covered: HK-ALIYUN-01, SH-ALIYUN-02, SH-ALIYUN-03, SH-ALIYUN-04, FermatMind do-not-touch resources, Tencent sunsetting resources
 Cloud console observed: yes, partial; Aliyun ECS overview observed in this run, Tencent current run did not reach resource inventory and prior OPS-INFRA0Y console evidence was reused
 Read-only SSH used: no
-HK-ALIYUN-01 recommendation: keep 88CN public web only
+HK-ALIYUN-01 recommendation: keep 123Charts public web only
 SH-ALIYUN-02 recommendation: conditional staging/admin/internal preview candidate after read-only SSH and owner/capacity confirmation
 SH-ALIYUN-03 recommendation: conditional low-concurrency scout/import/canonical dry-run candidate only
 SH-ALIYUN-04 recommendation: conditional queue/monitoring/backup/spare candidate; no heavy audit without stronger capacity

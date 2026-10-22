@@ -10,7 +10,7 @@ const sections = [
   {
     icon: Database,
     title: "Public Signal Snapshots",
-    body: "A future feed can package reviewed project names, categories, public links, lifecycle state, and aggregate signal context from 88CN public profiles.",
+    body: "A future feed can package reviewed project names, categories, public links, lifecycle state, and aggregate signal context from 123Charts public profiles.",
   },
   {
     icon: Layers3,

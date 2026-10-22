@@ -45,7 +45,7 @@ If a source blocks access, returns rate-limit or access-control signals, require
 | Project name | `official_primary`, `public_repository`, or human note | Preserve exact public spelling; do not infer legal entity. |
 | Canonical URL | `official_primary` or human note | Must be normalized later by SCOUT4. |
 | Category hint | Official source, repository topic, or human note | Treat as provisional until review. |
-| One-line internal note | Original 88CN wording only | No copied third-party descriptions. |
+| One-line internal note | Original 123Charts wording only | No copied third-party descriptions. |
 | Public repository URL | Repository-controlled source | Do not infer ownership from name similarity alone. |
 | Public docs URL | Official docs or official site link | Keep as source URL, not proof of readiness. |
 | Launch URL | Official launch source | Third-party launch pages are secondary unless linked from official assets. |

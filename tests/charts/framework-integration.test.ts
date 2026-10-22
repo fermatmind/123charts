@@ -7,8 +7,8 @@ import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import { loadEnv } from "../../scripts/local/env.mjs";
 loadEnv();
-const baseURL = "http://127.0.0.1:3100";
-const accounts = JSON.parse(await fs.readFile(".local/accounts.json", "utf8"));
+const baseURL = process.env.CHARTS_TEST_BASE_URL || "http://127.0.0.1:3100";
+const accounts = JSON.parse(await fs.readFile(process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json", "utf8"));
 const db = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!,

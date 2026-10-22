@@ -6,7 +6,7 @@ Use this card before adding telemetry or external reporting.
 
 - Telemetry is opt-in by default.
 - CI telemetry is disabled by default.
-- Publishing requires `publish_to_88cn=true`.
+- Publishing requires `publish_to_123charts=true`.
 - Telemetry must not include secrets, environment values, logs, private repo data, founder private data, or raw request bodies.
 - MCP telemetry can contain aggregate counters only.
 - Telemetry must never change product behavior.

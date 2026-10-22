@@ -111,7 +111,7 @@ Sitemap review result:
 | `node scripts/check-curated-collections.mjs` | PASS | Package has no npm alias; direct checker passed with 3 published collections. |
 | `node scripts/check-vertical-asset-grids.mjs` | PASS | Package has no npm alias; direct checker passed with 3 published grids. |
 | `node scripts/check-alternatives-canonical.mjs` | PASS | Package has no npm alias; direct checker passed with 3 published routes. |
-| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror-pr80 --no-write-external` | PASS | Generated 6 markdown files under `/tmp`; external write and data repo mutation were false. |
+| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror-pr80 --no-write-external` | PASS | Generated 6 markdown files under `/tmp`; external write and data repo mutation were false. |
 | `npm run lint` | PASS | Covered by `agent:gate`. |
 | `npm run typecheck` | PASS | Covered by `agent:gate`. |
 | `npm run build` | PASS | Covered by `agent:gate`; 65 static pages generated. |
@@ -170,7 +170,7 @@ Sitemap review result:
 The PR76 generator was run with:
 
 ```bash
-node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror-pr80 --no-write-external
+node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror-pr80 --no-write-external
 ```
 
 Result:
@@ -180,7 +180,7 @@ Result:
 - `externalWrite: false`
 - `dataRepoMutation: false`
 - generated files: 6
-- output location: `/tmp/88cn-github-profile-mirror-pr80`
+- output location: `/tmp/123charts-github-profile-mirror-pr80`
 
 No generated mirror files were committed.
 

@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_REPO = path.resolve(ROOT, "../88cn-index-data");
 const EXPORTER = path.join(ROOT, "scripts/export-alpha-feed-snapshot.mjs");
-const OUT_DIR = path.join("/tmp", `88cn-alpha-snapshot-check-${process.pid}`);
+const OUT_DIR = path.join("/tmp", `123charts-alpha-snapshot-check-${process.pid}`);
 const errors = [];
 const deniedFragments = [
   "email",
@@ -112,8 +112,8 @@ if (success.status !== 0) {
 }
 
 expectFailure(["--out", OUT_DIR], "missing --dry-run");
-expectFailure(["--dry-run", "--out", path.join(ROOT, "88cn-alpha-snapshot-repo")], "repo output");
-expectFailure(["--dry-run", "--out", path.join(DATA_REPO, "88cn-alpha-snapshot-data")], "data repo output");
+expectFailure(["--dry-run", "--out", path.join(ROOT, "123charts-alpha-snapshot-repo")], "repo output");
+expectFailure(["--dry-run", "--out", path.join(DATA_REPO, "123charts-alpha-snapshot-data")], "data repo output");
 expectFailure(["--dry-run", "--out", "https://example.com/snapshot"], "external destination");
 expectFailure(["--dry-run", "--out", path.join(os.tmpdir(), "unsafe-alpha-snapshot")], "unsafe tmp name");
 expectFailure(["--dry-run", "--out", OUT_DIR, "--source", "remote"], "remote source");

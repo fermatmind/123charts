@@ -65,7 +65,7 @@ Worker repo:
 - `node_modules` absent
 - `git diff --check`
 
-88CN:
+123Charts:
 
 - `npm run agent:scope:check -- PR196`
 - `npm run agent:redact:check`
@@ -80,6 +80,6 @@ Worker repo:
 
 ## Next
 
-Continue to `PR197 / QUEUE_RETRY_DEAD_LETTER` only after worker PR #3 and this 88CN tracking PR merge.
+Continue to `PR197 / QUEUE_RETRY_DEAD_LETTER` only after worker PR #3 and this 123Charts tracking PR merge.
 
 Do not start PR199.

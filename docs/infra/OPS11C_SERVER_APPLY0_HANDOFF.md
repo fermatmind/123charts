@@ -7,9 +7,9 @@ Date: 2026-06-21
 
 OPS11C records the local OPS-SERVER-APPLY0 sidecar reports in `/private/tmp`:
 
-- `/private/tmp/88cn-server-apply0-aliyun-architecture-prep.md`
-- `/private/tmp/88cn-server-apply0-ssh-alias-summary.md`
-- `/private/tmp/88cn-server-apply0-rollback-plan.md`
+- `/private/tmp/123charts-server-apply0-aliyun-architecture-prep.md`
+- `/private/tmp/123charts-server-apply0-ssh-alias-summary.md`
+- `/private/tmp/123charts-server-apply0-rollback-plan.md`
 
 OPS-SERVER-APPLY0 result:
 
@@ -37,9 +37,9 @@ OPS_SERVER_APPLY0_PARTIAL_PRIVATE_ONLY_HOSTS_PREPARED
 
 | Server class | Alias | OPS11C interpretation |
 | --- | --- | --- |
-| SH-ALIYUN-02 | `88cn-sh-admin` | Staging/admin prep is Workbench-only partially prepared. |
-| SH-ALIYUN-03 | `88cn-sh-scout` | Scout/import/canonical prep is Workbench-only partially prepared. |
-| SH-ALIYUN-04 | `88cn-sh-ops` | Ops/queue-monitoring/backup-spare prep is Workbench-only partially prepared. |
+| SH-ALIYUN-02 | `123charts-sh-admin` | Staging/admin prep is Workbench-only partially prepared. |
+| SH-ALIYUN-03 | `123charts-sh-scout` | Scout/import/canonical prep is Workbench-only partially prepared. |
+| SH-ALIYUN-04 | `123charts-sh-ops` | Ops/queue-monitoring/backup-spare prep is Workbench-only partially prepared. |
 
 The Shanghai hosts remain private-only from the local workstation path. Future direct SSH still needs a separately approved bastion, VPN, EIP, or equivalent access path. Workbench-only prep does not mean runtime readiness.
 
@@ -62,7 +62,7 @@ Allowed next work:
 
 - create or verify the private `fermatmind/88cn-scout-worker` repository;
 - add no-runtime documentation, contracts, fixtures, and README skeleton files;
-- record the worker repo URL, branch, commit, or PR in the 88CN handoff doc;
+- record the worker repo URL, branch, commit, or PR in the 123Charts handoff doc;
 - keep the worker repo positioned as a boundary and contract skeleton only.
 
 Still blocked after OPS11C:

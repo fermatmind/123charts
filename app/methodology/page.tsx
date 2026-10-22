@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: siteTitle("Methodology"),
   description: siteDescription(
-    "How 88CN builds public project pages from reviewed projections, official source links, and timestamped public signals."
+    "How 123Charts builds public project pages from reviewed projections, official source links, and timestamped public signals."
   ),
 };
 
@@ -49,8 +49,8 @@ export default function MethodologyPage() {
     <DiscoveryShell className="space-y-8">
       <ConsolePageHeader
         eyebrow="Public methodology"
-        title="How 88CN builds public pages"
-        description="88CN is a reviewed public signal directory. The interface is built to make source checking fast while keeping non-public workspace material out of the public product."
+        title="How 123Charts builds public pages"
+        description="123Charts is a reviewed public signal directory. The interface is built to make source checking fast while keeping non-public workspace material out of the public product."
       />
 
       <div className="grid gap-3 sm:grid-cols-3">

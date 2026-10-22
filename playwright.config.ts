@@ -8,7 +8,7 @@ export default defineConfig({
   outputDir: "output/playwright/results",
   reporter: [["list"]],
   use: {
-    baseURL: "http://127.0.0.1:3100",
+    baseURL: process.env.CHARTS_TEST_BASE_URL || "http://127.0.0.1:3100",
     channel: "chrome",
     headless: true,
     actionTimeout: 15000,

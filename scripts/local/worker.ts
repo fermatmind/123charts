@@ -3,18 +3,19 @@ import { ensureDiscoveryCycle } from "./discovery-cycle";
 import { discover } from "../../lib/charts/discovery";
 import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
-import { createHash } from "node:crypto";
+import fs from "node:fs/promises";
+import { workerConfiguration } from "../../lib/charts/runtime-config";
 import nodemailer from "nodemailer";
 import { loadEnv } from "./env.mjs";
 import { suggestCategory } from "../../lib/charts/rules";
 import { safeHtml, extractMetadata } from "../../lib/charts/safe-fetch";
-loadEnv();
-const endpoint = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 if (
-  !endpoint ||
-  !["127.0.0.1", "localhost"].includes(new URL(endpoint).hostname)
+  process.env.CHARTS_RUNTIME !== "production" &&
+  process.env.CHARTS_RUNTIME !== "staging"
 )
-  throw new Error("Worker requires a local database.");
+  loadEnv();
+const configuration = workerConfiguration(process.env);
+const endpoint = configuration.endpoint;
 const db = createClient(endpoint, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
   realtime: { transport: WebSocket as any },
   auth: { persistSession: false },
@@ -60,7 +61,7 @@ async function digest(owner?: string) {
             title_zh: `项目动态：${p.name}`,
             body_en: p.description_en,
             body_zh: p.description_zh,
-            href: `/projects/${p.slug}`,
+            href: `/products/${p.slug}`,
             dedupe_key: key,
           },
           { onConflict: "dedupe_key", ignoreDuplicates: true },
@@ -126,11 +127,7 @@ async function digest(owner?: string) {
       .order("created_at", { ascending: false })
       .limit(100),
   );
-  const mail = nodemailer.createTransport({
-    host: "127.0.0.1",
-    port: Number(process.env.CHARTS_SMTP_PORT ?? 54325),
-    secure: false,
-  });
+  const mail = nodemailer.createTransport(configuration.mail);
   for (const n of notifications) {
     const follow = check(
       await db
@@ -143,7 +140,7 @@ async function digest(owner?: string) {
     if (!follow.length) continue;
     let subscribed = false;
     const location = new URL(n.href, "http://127.0.0.1:3100");
-    if (location.pathname.startsWith("/projects/")) {
+    if (/^\/(projects|products)\//.test(location.pathname)) {
       const p = check(
         await db
           .from("charts_projects")
@@ -194,11 +191,11 @@ async function digest(owner?: string) {
     } = await db.auth.admin.getUserById(n.owner_id);
     if (!user?.email) continue;
     await mail.sendMail({
-      from: "123Charts <updates@123charts.local>",
+      from: configuration.from,
       to: user.email,
       subject: `${n.title_en} / ${n.title_zh}`,
-      messageId: `<${n.id}@123charts.local>`,
-      text: `${n.body_en}\n\n${n.body_zh}\n\nhttp://127.0.0.1:3100/en${n.href}\nManage subscriptions: http://127.0.0.1:3100/en/following`,
+      messageId: `<${n.id}@${new URL(configuration.publicUrl).hostname}>`,
+      text: `${n.body_en}\n\n${n.body_zh}\n\n${configuration.publicUrl}/en${n.href}\nManage subscriptions: ${configuration.publicUrl}/en/following`,
     });
     check(
       await db
@@ -238,7 +235,7 @@ async function processJob(job: any) {
   }
   throw new Error("Unknown job type.");
 }
-console.log("123Charts local worker ready.");
+console.log("123Charts worker ready.");
 let lastScheduled = 0;
 while (!stopping) {
   try {
@@ -254,18 +251,14 @@ while (!stopping) {
       );
       if (cachePending.length) {
         const time = String(Date.now());
-        await fetch(
-          (process.env.APP_URL || "http://127.0.0.1:3100") +
-            "/api/v1/cache/flush",
-          {
-            method: "POST",
-            headers: {
-              "x-charts-time": time,
-              "x-charts-signature": workerSignature(time),
-            },
-            signal: AbortSignal.timeout(6000),
+        await fetch(configuration.webUrl + "/api/v1/cache/flush", {
+          method: "POST",
+          headers: {
+            "x-charts-time": time,
+            "x-charts-signature": workerSignature(time),
           },
-        ).catch(() => {});
+          signal: AbortSignal.timeout(6000),
+        }).catch(() => {});
       }
       await recommendations().catch((e) =>
         console.error("Recommendation scheduling:", e.message),
@@ -275,6 +268,12 @@ while (!stopping) {
       );
     }
     const jobs = check(await db.rpc("charts_claim_job"));
+    if (process.env.CHARTS_WORKER_HEALTH_FILE)
+      await fs.writeFile(
+        process.env.CHARTS_WORKER_HEALTH_FILE,
+        String(Date.now()),
+        { mode: 0o600 },
+      );
     const job = jobs?.[0];
     if (!job) {
       await snooze(1200);

@@ -1,4 +1,4 @@
-# 88CN PR #21 Production Redeploy + Admin Review QA
+# 123Charts PR #21 Production Redeploy + Admin Review QA
 
 Date: 2026-06-16
 
@@ -18,8 +18,8 @@ Production redeploy and smoke QA for the current `main` branch after PR #20.
 - npm version: `10.9.8`
 - PM2 status: online; redeploy command completed with exit code 0
 - Nginx status: active; HTTPS traffic served through Nginx
-- TLS status: active for `https://88cn.com`
-- DNS status: active for `88cn.com`
+- TLS status: active for `https://123charts.com`
+- DNS status: active for `123charts.com`
 - Supabase env status: NOT CONFIGURED for required runtime/admin keys; values were not inspected
 
 ## Smoke Test Checklist

@@ -15,7 +15,7 @@ This PR is a readiness and repo-split decision. It does not implement scout runt
 
 | Question | Decision | Reason |
 | --- | --- | --- |
-| Can implementation remain in 88CN for docs/contracts/local dry-run? | Yes. | The next steps are boundary, storage checkpoint, local dry-run, and QA. They can remain in the 88CN control repo as docs/status metadata until an actual worker/runtime is approved. |
+| Can implementation remain in 123Charts for docs/contracts/local dry-run? | Yes. | The next steps are boundary, storage checkpoint, local dry-run, and QA. They can remain in the 123Charts control repo as docs/status metadata until an actual worker/runtime is approved. |
 | Should future worker runtime move to a future `88cn-scout-worker` repo or package? | Yes, evaluate later. | A real worker would have separate runtime, queue, egress, logs, capacity, and deployment risk. It should not be mixed into public web without a later checkpointed worker decision. |
 | Is new repo creation needed now? | No. | PR146 is decision-only. New repo/package creation would require a later human checkpoint and explicit implementation task. |
 | Is staging sandbox write allowed now? | No. | OPS-INFRA2X did not authorize staging writes. PR149 can only default to local-only unless a later checkpoint is satisfied. |
@@ -27,7 +27,7 @@ This PR is a readiness and repo-split decision. It does not implement scout runt
 
 ## Repo Split Decision
 
-Decision: `KEEP_BOUNDARY_WORK_IN_88CN_NOW`.
+Decision: `KEEP_BOUNDARY_WORK_IN_123Charts_NOW`.
 
 Rationale:
 

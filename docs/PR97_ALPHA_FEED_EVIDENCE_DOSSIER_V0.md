@@ -2,7 +2,7 @@
 
 ## Purpose
 
-PR97 summarizes repo-verifiable evidence for the 88CN Alpha Feed boundary after
+PR97 summarizes repo-verifiable evidence for the 123Charts Alpha Feed boundary after
 PR95 and PR96. The dossier is evidence-only. It does not launch a data product,
 runtime feed, buyer collection flow, customer access flow, payment path, API
 credential runtime, metering runtime, Laravel runtime, Supabase sync, external
@@ -10,7 +10,7 @@ delivery, deployment, or data repository write.
 
 ## Scope
 
-This dossier uses only files already present in the 88CN repository and the
+This dossier uses only files already present in the 123Charts repository and the
 local validation commands run for PR97. It summarizes completed PR81 through
 PR96 boundary, snapshot, cleansing, API credential, metering, Laravel gateway,
 sync, landing, and buyer-interest work.
@@ -36,9 +36,9 @@ PR97 does not:
 - mutate `/Users/rainie/Desktop/88cn-index-data`;
 - start PR98.
 
-## What Alpha Feed Means In 88CN
+## What Alpha Feed Means In 123Charts
 
-88CN Alpha Feed is a future public-signal data product concept. At this stage it
+123Charts Alpha Feed is a future public-signal data product concept. At this stage it
 is not a live paid feed, not a financial product, not investment advice, not a
 regulated offering, not a pooled investment vehicle, not a private-data broker,
 and not a promise of ranking, traffic, revenue, citations, financing, or
@@ -83,7 +83,7 @@ source links, published status, public profile URL, machine-readability summary,
 last reviewed timestamp, and public changelog summary.
 
 PR84 implements only a local dry-run exporter and PR86 records a dry-run QA pass
-with five published demo records written under `/tmp/88cn-alpha-snapshot-*`.
+with five published demo records written under `/tmp/123charts-alpha-snapshot-*`.
 That evidence demonstrates field-shape and local-output behavior only. It does
 not claim market adoption, buyer demand, external search performance, or
 production feed availability.
@@ -113,7 +113,7 @@ PR97 validation includes `npm run agent:redact:check`.
 ## Snapshot And Cleansing Evidence
 
 PR84 provides a local-only dry-run exporter that requires `--dry-run`, writes
-only under `/tmp/88cn-alpha-snapshot-*`, rejects repository output paths, rejects
+only under `/tmp/123charts-alpha-snapshot-*`, rejects repository output paths, rejects
 the data repository path, rejects URL-style external destinations, and rejects
 non-local sources.
 

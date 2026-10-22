@@ -4,7 +4,7 @@ This plan is based on research snapshots downloaded to `.scratch/upstream/`. Tho
 
 ## Snapshot Summary
 
-| Upstream repo | Commit SHA | License judgment | 88CN use judgment |
+| Upstream repo | Commit SHA | License judgment | 123Charts use judgment |
 | --- | --- | --- | --- |
 | `gijsverheijke/directorystarter` | `93c2f79a4721afdb1a84c6f6fe184dd372b17b10` | MIT detected in `LICENSE.md` | Strong reference for directory routing, listing submission, Supabase access shape, and sitemap structure. |
 | `Durgesh-Vaigandla/AI-tools-database` | `95053fc0a2f596c9445472409db181a6d684e3af` | MIT detected in `LICENSE` | Strong reference for public JSON schema, category split, validation, aggregation, and docs workflow. |
@@ -18,14 +18,14 @@ This plan is based on research snapshots downloaded to `.scratch/upstream/`. Tho
 - Purpose: directory scaffold reference for listings, categories, search, submit, dashboard, Supabase helpers, and sitemap.
 - License: MIT, eligible for future direct fork or module extraction with notice.
 - Can directly copy: none in this PR. Future isolated extraction may consider small utility patterns or schema concepts only after separate PR and `third_party/NOTICE.md` update.
-- Must rewrite: public UI, route copy, listing pages, submit flow, dashboard flow, Supabase table names, RLS policies, and sitemap logic to match 88CN lifecycle rules.
+- Must rewrite: public UI, route copy, listing pages, submit flow, dashboard flow, Supabase table names, RLS policies, and sitemap logic to match 123Charts lifecycle rules.
 - Reference only: visual layout, category taxonomy, listing descriptions, and any project content.
 
 ### Durgesh-Vaigandla/AI-tools-database
 
 - Purpose: data repo schema, validation, category split, aggregation scripts, docs, and GitHub workflow reference.
 - License: MIT, eligible for future module extraction with notice.
-- Can directly copy: none in this PR. Future separate PR may adapt validation structure after rewriting fields for 88CN.
+- Can directly copy: none in this PR. Future separate PR may adapt validation structure after rewriting fields for 123Charts.
 - Must rewrite: schema fields, category set, validation error wording, aggregation output, and all data rows.
 - Reference only: tool lists, descriptions, category labels, docs site output, and contributor wording.
 
@@ -45,14 +45,14 @@ This plan is based on research snapshots downloaded to `.scratch/upstream/`. Tho
 - Must rewrite: all chat API routes, embedding provider integration, prompt text, UI components, database access, and environment contract.
 - Reference only: vector search architecture, rate-limit shape, and retrieval flow.
 
-## 88CN Mapping
+## 123Charts Mapping
 
-| Upstream concept | 88CN target |
+| Upstream concept | 123Charts target |
 | --- | --- |
 | `listings` | `projects` |
 | `submit` | `project_submissions` |
 | `dashboard` | founder dashboard / admin review |
-| `approved` / `pending` | 88CN lifecycle states |
+| `approved` / `pending` | 123Charts lifecycle states |
 | `data/tools/*.json` | `88cn-index-data data/projects/*.json` |
 | `schema.json` | `project.schema.json` |
 | `scripts/validate.js` | `validate-project.js` |
@@ -62,15 +62,15 @@ This plan is based on research snapshots downloaded to `.scratch/upstream/`. Tho
 
 ### Day 1
 
-- Create 88CN-owned `project.schema.json` from product requirements, not by copying upstream schema directly.
-- Create validation command shape inspired by AI-tools-database, with 88CN fields and lifecycle constraints.
+- Create 123Charts-owned `project.schema.json` from product requirements, not by copying upstream schema directly.
+- Create validation command shape inspired by AI-tools-database, with 123Charts fields and lifecycle constraints.
 - Define data repo layout for `data/projects/*.json`, `data/categories.json`, and source metadata.
 - Keep public page rendering snapshot-only.
 
 ### Day 2
 
-- Create 88CN-owned app scaffold only after governance approval.
-- Build project listing, category, search, and submit route contracts using 88CN names.
+- Create 123Charts-owned app scaffold only after governance approval.
+- Build project listing, category, search, and submit route contracts using 123Charts names.
 - Implement published-only sitemap rules and no-store preview/admin/submit policies.
 - Keep external refresh off the request path.
 
@@ -84,10 +84,10 @@ This plan is based on research snapshots downloaded to `.scratch/upstream/`. Tho
 ## Risk List
 
 - MIT and Apache-2.0 permit reuse, but provenance must still be recorded before any production copy.
-- Directory UI patterns can drift into pixel-level copying; 88CN must create its own visual system.
-- Upstream data rows and descriptions are not 88CN editorial content and must not be bulk imported as published pages.
-- Upstream schemas use tool-directory assumptions; 88CN needs project lifecycle, claim, and review fields.
-- Upstream status names do not match 88CN lifecycle states exactly.
-- Admin and submit flows may assume auth, email, and database policies that are unsafe for 88CN without redesign.
+- Directory UI patterns can drift into pixel-level copying; 123Charts must create its own visual system.
+- Upstream data rows and descriptions are not 123Charts editorial content and must not be bulk imported as published pages.
+- Upstream schemas use tool-directory assumptions; 123Charts needs project lifecycle, claim, and review fields.
+- Upstream status names do not match 123Charts lifecycle states exactly.
+- Admin and submit flows may assume auth, email, and database policies that are unsafe for 123Charts without redesign.
 - Semantic search adds external API, embedding, vector storage, and cost risk; it stays future phase only.
 - Raw upstream payloads must remain in `.scratch` and out of Git.

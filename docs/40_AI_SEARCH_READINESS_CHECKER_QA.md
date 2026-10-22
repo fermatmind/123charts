@@ -4,7 +4,7 @@
 
 PARTIAL on the deployed `main` snapshot; REMEDIATION PASS on this PR branch.
 
-The feature is deployed live and the main happy path works locally and on `88cn.com`, including `/geo-checker`, `POST /api/geo-checker`, sitemap inclusion, security headers, PM2 restart, and Nginx syntax validation.
+The feature is deployed live and the main happy path works locally and on `123charts.com`, including `/geo-checker`, `POST /api/geo-checker`, sitemap inclusion, security headers, PM2 restart, and Nginx syntax validation.
 
 The original live QA found two P2 issues:
 
@@ -47,7 +47,7 @@ Base URL: `http://localhost:3000`
 | Case | Expected | Observed |
 | --- | --- | --- |
 | `GET /geo-checker` | 200 HTML | PASS |
-| Valid public URL sample: `https://88cn.com` | 200 JSON with score and checks | PASS, score 40, 11 checks |
+| Valid public URL sample: `https://123charts.com` | 200 JSON with score and checks | PASS, score 40, 11 checks |
 | `https://example.com` | 200 JSON with score and checks | Local workstation DNS could not resolve this host; alternate public URL sample passed |
 | HTTP scheme | 400 Problem Details | PASS |
 | Script scheme | 400 Problem Details | PASS |
@@ -63,7 +63,7 @@ Base URL: `http://localhost:3000`
 | Empty body | 400 Problem Details | PASS |
 | Invalid JSON | 400 Problem Details | PASS |
 
-Error responses used `application/problem+json` and included the required fields inside the existing 88CN error envelope.
+Error responses used `application/problem+json` and included the required fields inside the existing 123Charts error envelope.
 
 ## Local Browser QA Summary
 
@@ -85,7 +85,7 @@ Screenshots:
 
 Observed:
 
-- `/geo-checker` keeps the 88CN black, cool-gray, silver-white terminal style.
+- `/geo-checker` keeps the 123Charts black, cool-gray, silver-white terminal style.
 - Result cards are data-oriented and readable.
 - Mobile viewport did not show obvious horizontal overflow.
 - `/sitemap.xml` contains `/geo-checker`.
@@ -116,16 +116,16 @@ GitHub access method: read-only deploy key generated on the server. The private 
 | Server `npm ci` | PASS |
 | Server gates | PASS |
 | Server `npm run build:production` | PASS, 42/42 pages |
-| PM2 status | `88cn-web` online |
+| PM2 status | `123charts-web` online |
 | Nginx status | `nginx -t` PASS, reloaded |
-| TLS status | HTTPS active for `88cn.com` |
+| TLS status | HTTPS active for `123charts.com` |
 | `/api/geo-checker` Nginx rate-limit applied | YES |
 
 Nginx rate-limit note: the `/api/geo-checker` location was added to the live Nginx configuration and validated with `nginx -t`. The real configuration file is not committed.
 
 ## Live Route Smoke Results
 
-Base URL: `https://88cn.com`
+Base URL: `https://123charts.com`
 
 | Route | Result |
 | --- | --- |
@@ -150,7 +150,7 @@ Headers verified on `/geo-checker`:
 
 | Case | Expected | Observed |
 | --- | --- | --- |
-| Valid public URL sample: `https://88cn.com` | 200 JSON with score and checks | PASS, score 40, 11 checks |
+| Valid public URL sample: `https://123charts.com` | 200 JSON with score and checks | PASS, score 40, 11 checks |
 | HTTP scheme | 400 Problem Details | PASS |
 | Localhost target | 400 Problem Details | PASS |
 | URL with embedded credentials | 400 Problem Details | FAIL on deployed snapshot; fixed locally in this PR branch |
@@ -196,7 +196,7 @@ Screenshots:
 Observed:
 
 - `/geo-checker` renders the form, score, check cards, missing items, and next steps.
-- The live result state used `https://88cn.com` and returned score 40 with 11 checks.
+- The live result state used `https://123charts.com` and returned score 40 with 11 checks.
 - The CTA points to the project submission path.
 - Mobile viewport is readable and did not show obvious horizontal overflow.
 - `/admin` does not expose admin data when Supabase admin access is unavailable.
@@ -235,9 +235,9 @@ Follow-up remediation in this PR branch removed that restricted public-copy term
 
 ## Known Limitations
 
-- Local workstation DNS could not resolve `https://example.com`, so local valid-url testing used `https://88cn.com` as the public URL sample.
+- Local workstation DNS could not resolve `https://example.com`, so local valid-url testing used `https://123charts.com` as the public URL sample.
 - Live rate-limit testing was intentionally low intensity.
-- The Nginx 429 response is generated before the application layer and does not use the 88CN Problem Details envelope.
+- The Nginx 429 response is generated before the application layer and does not use the 123Charts Problem Details envelope.
 - This QA did not inspect or record secret values.
 
 ## Next Recommended Action

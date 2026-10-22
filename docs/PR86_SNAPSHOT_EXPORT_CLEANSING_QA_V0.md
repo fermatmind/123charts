@@ -20,7 +20,7 @@ schemas, package metadata, runtime routes, API surfaces, or the data repository.
 Command:
 
 ```bash
-node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/88cn-alpha-snapshot-pr86-qa --source local --no-external-write
+node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/123charts-alpha-snapshot-pr86-qa --source local --no-external-write
 ```
 
 Observed manifest summary:
@@ -30,7 +30,7 @@ Observed manifest summary:
   "snapshot_version": "pr84-dry-run-v0",
   "dry_run": true,
   "source": "local",
-  "output_dir": "/tmp/88cn-alpha-snapshot-pr86-qa",
+  "output_dir": "/tmp/123charts-alpha-snapshot-pr86-qa",
   "record_count": 5,
   "formats": ["csv", "ndjson"],
   "written_files": ["snapshot.ndjson", "snapshot.csv"],
@@ -60,7 +60,7 @@ The generated NDJSON rows were checked for:
 | Manifest `dry_run` is true | PASS |
 | Manifest source is local | PASS |
 | Manifest row count matches NDJSON rows | PASS |
-| CSV and NDJSON files exist under `/tmp/88cn-alpha-snapshot-pr86-qa` | PASS |
+| CSV and NDJSON files exist under `/tmp/123charts-alpha-snapshot-pr86-qa` | PASS |
 | Every row has `published_status: "published"` | PASS |
 | Every row uses only PR82 allowlisted fields | PASS |
 | Denied private/admin/payment/customer/metering/raw/internal fields are absent | PASS |
@@ -104,7 +104,7 @@ customer output, external write, and data repository mutation disabled.
 
 | Repository | Check | Result |
 | --- | --- | --- |
-| `/Users/rainie/Desktop/88CN` | QA branch had no product-code changes before docs/status updates | PASS |
+| `/Users/rainie/Desktop/123charts.com/123charts` | QA branch had no product-code changes before docs/status updates | PASS |
 | `/Users/rainie/Desktop/88cn-index-data` | `git status --short --branch` stayed clean on `main...origin/main` | PASS |
 
 ## Non-Goals Confirmed

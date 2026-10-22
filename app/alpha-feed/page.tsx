@@ -13,11 +13,11 @@ import {
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Alpha Feed Boundary | 88CN",
+  title: "Alpha Feed Boundary | 123Charts",
   description:
-    "A static boundary page for future Alpha Feed public signal snapshots from 88CN reviewed public metadata.",
+    "A static boundary page for future Alpha Feed public signal snapshots from 123Charts reviewed public metadata.",
   alternates: {
-    canonical: "https://88cn.com/alpha-feed",
+    canonical: "https://123charts.com/alpha-feed",
   },
   robots: { index: true, follow: true },
 };
@@ -196,7 +196,7 @@ export default function AlphaFeedPage() {
           </div>
           <p className="text-xs leading-relaxed text-terminal-dim">
             Future Alpha Feed interest is shown as a disabled preview only.
-            88CN is not collecting private contact details, company details,
+            123Charts is not collecting private contact details, company details,
             buyer messages, customer signup requests, payment details, API key
             requests, or live feed access requests here.
           </p>

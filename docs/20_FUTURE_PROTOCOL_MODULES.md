@@ -30,7 +30,7 @@ Record planned future modules that are NOT part of Day 1 or Day 2 scope. These a
 
 **Phase:** After public API stabilizes.
 
-**Description:** An MCP server implementation that allows AI applications to query 88CN project data through the Model Context Protocol. Enables AI tools to access structured project information, Signal Scores, and category data.
+**Description:** An MCP server implementation that allows AI applications to query 123Charts project data through the Model Context Protocol. Enables AI tools to access structured project information, Signal Scores, and category data.
 
 **Dependencies:**
 - Working read-only public API
@@ -142,7 +142,7 @@ Record planned future modules that are NOT part of Day 1 or Day 2 scope. These a
 2. Each module requires a separate design document and PR.
 3. Modules must not introduce banned language or patterns.
 4. Modules must not bypass editorial review gates.
-5. MCP server must not write to 88CN databases. Read-only only.
+5. MCP server must not write to 123Charts databases. Read-only only.
 6. AI PR Reviewer is advisory only — must not auto-merge or auto-close PRs.
 7. Localization must maintain all data integrity and language bans across locales.
 

@@ -10,7 +10,7 @@ Any future sync must be one-way, idempotent, minimal-payload, and derived only f
 
 ## Purpose
 
-This PR defines the checkpoint boundary for future one-way asynchronous event delivery from reviewed public 88CN data into a future Laravel gateway or Redis cache layer.
+This PR defines the checkpoint boundary for future one-way asynchronous event delivery from reviewed public 123Charts data into a future Laravel gateway or Redis cache layer.
 
 Machine-readable contract:
 

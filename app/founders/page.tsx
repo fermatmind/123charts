@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: siteTitle("For Founders"),
   description: siteDescription(
-    "Why founders should create a free AI project profile on 88CN. Clean structured public profiles, source confidence improvement, and verified signal tracking."
+    "Why founders should create a free AI project profile on 123Charts. Clean structured public profiles, source confidence improvement, and verified signal tracking."
   ),
   robots: { index: true, follow: true },
 };
@@ -25,7 +25,7 @@ const VALUES = [
     icon: FileText,
     title: "Create a Clean, Structured Public Profile",
     description:
-      "A free AI project profile on 88CN gives your project a structured public page. The profile includes your project name, description, category, public sources, and growth signal indicators in one consistent format for potential users and collaborators.",
+      "A free AI project profile on 123Charts gives your project a structured public page. The profile includes your project name, description, category, public sources, and growth signal indicators in one consistent format for potential users and collaborators.",
   },
   {
     icon: Shield,
@@ -37,13 +37,13 @@ const VALUES = [
     icon: Edit3,
     title: "Add Public Project Details",
     description:
-      "Claimed projects can maintain up-to-date public information including product description, category classification, public links, and growth milestones. This ensures your project is accurately represented in the 88CN index and discovered through relevant category and collection pages.",
+      "Claimed projects can maintain up-to-date public information including product description, category classification, public links, and growth milestones. This ensures your project is accurately represented in the 123Charts index and discovered through relevant category and collection pages.",
   },
   {
     icon: TrendingUp,
-    title: "Become Tracked by 88CN",
+    title: "Become Tracked by 123Charts",
     description:
-      "A claimed project can move from a basic listing into a more complete public signal profile. Tracked by 88CN means the profile is organized around reviewed public sources, lifecycle state, and visible growth-signal dimensions.",
+      "A claimed project can move from a basic listing into a more complete public signal profile. Tracked by 123Charts means the profile is organized around reviewed public sources, lifecycle state, and visible growth-signal dimensions.",
   },
   {
     icon: Award,
@@ -55,7 +55,7 @@ const VALUES = [
     icon: Ban,
     title: "What We Do Not Promise",
     description:
-      "88CN does not promise external outcomes from listing, claiming, or badge display. The index is a public discovery tool based on reviewed growth signals. Project profiles and badges are informational.",
+      "123Charts does not promise external outcomes from listing, claiming, or badge display. The index is a public discovery tool based on reviewed growth signals. Project profiles and badges are informational.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function FoundersPage() {
   const webPageLD = webPageJSONLD(
     pageUrl,
     "For Founders",
-    "Why founders should create a free AI project profile on 88CN."
+    "Why founders should create a free AI project profile on 123Charts."
   );
 
   return (
@@ -85,7 +85,7 @@ export default function FoundersPage() {
           For Founders
         </h1>
         <p className="text-sm text-terminal-dim leading-relaxed max-w-lg mx-auto">
-          Why claim your AI project on 88CN, how public signal profiles work,
+          Why claim your AI project on 123Charts, how public signal profiles work,
           and what optional badge display does and does not mean.
         </p>
       </div>
@@ -111,7 +111,7 @@ export default function FoundersPage() {
             founders will be able to:
           </p>
           <ol className="list-decimal list-inside space-y-1 ml-1">
-            <li>Locate their project on 88CN (if already indexed)</li>
+            <li>Locate their project on 123Charts (if already indexed)</li>
             <li>
               Submit a new project for editorial review (if not yet indexed)
             </li>

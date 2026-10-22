@@ -1,4 +1,4 @@
-# 88CN Frontend Page Architecture v0
+# 123Charts Frontend Page Architecture v0
 
 Result: `FRONTEND_UI_DESIGN_SYSTEM_READY`
 
@@ -54,8 +54,8 @@ Public pages must not display:
 
 | Item | Blueprint |
 | --- | --- |
-| Purpose | Establish 88CN as a reviewed AI project discovery index and move users quickly into search, projects, collections, submit, and methodology. |
-| Target user intent | Find a project, browse reviewed AI tools, understand why 88CN data is different, or submit a project. |
+| Purpose | Establish 123Charts as a reviewed AI project discovery index and move users quickly into search, projects, collections, submit, and methodology. |
+| Target user intent | Find a project, browse reviewed AI tools, understand why 123Charts data is different, or submit a project. |
 | Visible data fields | Aggregate counts from published projections only, finite collection links, recent reviewed project cards, public signal examples, review freshness language. |
 | Forbidden data fields | Raw seed counts, private review counts, raw audit counts, unpublished candidates, queue sizes, internal confidence, private artifacts, worker state. |
 | Layout sections | Compact brand/search hero, finite collection shortcuts, recently reviewed public project strip, methodology trust strip, submit CTA, footer. |
@@ -113,7 +113,7 @@ Scale requirements:
 
 Detail rules:
 
-- official links must be visually separate from 88CN editorial summary;
+- official links must be visually separate from 123Charts editorial summary;
 - signal chips cannot look like score cards or endorsement badges;
 - related alternatives must remain finite and reviewed;
 - no hidden internal confidence or score weights appear in HTML.
@@ -155,7 +155,7 @@ Detail rules:
 | Item | Blueprint |
 | --- | --- |
 | Purpose | Explain the public projection, signal chip, review timestamp, official source, collection, and sitemap/indexing policies. |
-| Target user intent | Understand what 88CN verifies, what it does not verify, how public profiles are reviewed, and how to request correction. |
+| Target user intent | Understand what 123Charts verifies, what it does not verify, how public profiles are reviewed, and how to request correction. |
 | Visible data fields | Policy descriptions, allowed public fields, neutral unknown states, signal chip definitions, last-reviewed meaning, sitemap eligibility rules. |
 | Forbidden data fields | Internal confidence model, raw audit logic, private reviewer process, raw evidence examples, private artifacts, worker details, unpublished project examples. |
 | Layout sections | Overview, published projection contract, signal chip meaning, official source policy, finite collection policy, no-leak policy, correction/claim path. |

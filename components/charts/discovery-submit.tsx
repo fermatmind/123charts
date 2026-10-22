@@ -1,4 +1,5 @@
 "use client";
+import { draftFingerprint } from "@/lib/charts/draft-state";
 import { OwnerProfileAssist } from "./owner-profile-assist";
 import Link from "next/link";
 import { brand } from "@/lib/charts/brand";
@@ -92,7 +93,7 @@ export function DiscoverySubmit() {
     (!metadataJob || ["pending", "running"].includes(metadataJob.state));
   const metadataFailed =
     metadataRequestFailed || metadataJob?.state === "failed";
-  const savedJSON = useRef(existing ? JSON.stringify(existing.draft) : "");
+  const savedJSON = useRef(existing ? draftFingerprint(existing.draft) : "");
   const [languageInput, setLanguageInput] = useState(
     (draft.supported_languages || []).join(", "),
   );
@@ -110,7 +111,7 @@ export function DiscoverySubmit() {
   const activeMetadata = useRef<PrefillRequest | null>(null);
   const saveLock = useRef<Promise<Application> | null>(null);
   const idRef = useRef(id);
-  const dirty = JSON.stringify(draft) !== savedJSON.current;
+  const dirty = draftFingerprint(draft) !== savedJSON.current;
   const editable =
     !existing || ["draft", "needs_info"].includes(existing.status);
   async function save() {
@@ -118,9 +119,13 @@ export function DiscoverySubmit() {
       throw Error(t("Approved owner claim required", "请先通过管理身份认领"));
     if (saveLock.current) {
       const saved = await saveLock.current;
-      if (JSON.stringify(current.current) !== savedJSON.current) return save();
+      if (draftFingerprint(current.current) !== savedJSON.current)
+        return save();
       return saved;
     }
+    const unchanged = data.applications.find((a) => a.id === idRef.current);
+    if (unchanged && draftFingerprint(current.current) === savedJSON.current)
+      return unchanged;
     const value = { ...current.current, metadata_prefill: prefill.snapshot() };
     current.current = value;
     setDraft(value);
@@ -133,7 +138,7 @@ export function DiscoverySubmit() {
     }).then((a) => {
       idRef.current = a.id;
       setId(a.id);
-      savedJSON.current = JSON.stringify(value);
+      savedJSON.current = draftFingerprint(value);
       setSaved(new Date().toLocaleTimeString());
       // Keep the saved revision on refresh without discarding in-progress edits.
       if (
@@ -171,7 +176,7 @@ export function DiscoverySubmit() {
   }, [draft, dirty, editable, data.user, canEditProject]);
   useEffect(() => {
     const fn = (e: BeforeUnloadEvent) => {
-      if (JSON.stringify(current.current) !== savedJSON.current) {
+      if (draftFingerprint(current.current) !== savedJSON.current) {
         e.preventDefault();
       }
     };
@@ -881,7 +886,7 @@ export function DiscoverySubmit() {
             onClick={async () => {
               try {
                 let a = await save();
-                if (JSON.stringify(current.current) !== savedJSON.current)
+                if (draftFingerprint(current.current) !== savedJSON.current)
                   a = await save();
                 await api("submit", { id: a.id });
                 setSubmitted(true);

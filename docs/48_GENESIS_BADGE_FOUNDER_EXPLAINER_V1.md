@@ -4,13 +4,13 @@
 
 PR40 refreshes the founder-facing Genesis Badge explanation without adding any backend flow, claim mutation, payment path, sitemap change, or API change.
 
-The page now describes the badge as an optional public signal display rather than a commercial certification. It also introduces the visible status language `Tracked by 88CN` and `Founder Claimed`.
+The page now describes the badge as an optional public signal display rather than a commercial certification. It also introduces the visible status language `Tracked by 123Charts` and `Founder Claimed`.
 
 ## What Changed
 
 | Surface | Change |
 | --- | --- |
-| `/genesis` | Reframed the hero around optional signal display and added small status chips for `Tracked by 88CN` and `Founder Claimed`. |
+| `/genesis` | Reframed the hero around optional signal display and added small status chips for `Tracked by 123Charts` and `Founder Claimed`. |
 | `/founders` | Reframed founder value copy around structured profiles, source confidence, and reviewed public signal profiles. |
 | `GenesisBadgeExplainer` | Reworked badge attributes to emphasize optional display, reviewed public sources, founder verification, and no obligation loop. |
 | `docs/TASK_STATUS.md` | Recorded PR39 completion and PR40 readiness for PR41 QA. |

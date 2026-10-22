@@ -26,7 +26,7 @@ Workbench/SSH command to run later.
 Step 2, deploy only after explicit SHA confirmation:
 
 ```text
-我确认部署 88CN origin/main SHA <target-sha> 到生产服务器，不启用任何新 env/payment/secret flag。
+我确认部署 123Charts origin/main SHA <target-sha> 到生产服务器，不启用任何新 env/payment/secret flag。
 ```
 
 If the requested target SHA differs from the current `origin/main` SHA, stop and
@@ -42,7 +42,7 @@ ask for a fresh confirmation. Do not infer approval from an older message.
 - Deploy the target SHA with the production deploy script, not with ad hoc shell steps:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>
 ```
 
@@ -55,7 +55,7 @@ scripts/agent/deploy-production.sh --confirm --commit <target-sha>
 - For PR-specific pages or sitemap entries, pass them explicitly:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 EXTRA_PATHS="/reports/example-report /new-public-page" \
 REQUIRED_SITEMAP_PATHS="/reports/example-report" \
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>

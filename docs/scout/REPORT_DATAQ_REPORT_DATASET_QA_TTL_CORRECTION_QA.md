@@ -62,7 +62,7 @@ QA verdict: pass. TTL and correction language is documented as a future publicat
 
 Allowed claims verified:
 
-- 88CN can describe private-by-default staging and audit governance boundaries.
+- 123Charts can describe private-by-default staging and audit governance boundaries.
 - Current evidence can describe sample-size, fixture-mode, and no-runtime constraints.
 - Current evidence can describe the absence of public report, sitemap, public JSON, Public API/MCP, data repo export, staging write, production write, and deploy.
 - English and Chinese drafts are internal aggregate wording decisions.

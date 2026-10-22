@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Define rules for schema.org structured data markup on 88CN public pages. Structured data improves search engine understanding of page content and enables rich result eligibility without traditional SEO content tactics.
+Define rules for schema.org structured data markup on 123Charts public pages. Structured data improves search engine understanding of page content and enables rich result eligibility without traditional SEO content tactics.
 
 ## Supported Schema Types
 
@@ -19,11 +19,11 @@ Define rules for schema.org structured data markup on 88CN public pages. Structu
 
 ## Forbidden Markup
 
-The following schema.org properties and types must not be used on 88CN pages:
+The following schema.org properties and types must not be used on 123Charts pages:
 
 - `AggregateRating` — No fake ratings. No community ratings system exists in Phase 1.
 - `Review` — No fake reviews. No review system exists in Phase 1.
-- `Offer` — No offers, pricing, or commercial transactions exist on 88CN.
+- `Offer` — No offers, pricing, or commercial transactions exist on 123Charts.
 - `Organization` with fake attributes — Do not fabricate organization data.
 - Any property that implies fabricated metrics (fake `interactionStatistic`, fake `member` counts, fake `subscriber` numbers)
 

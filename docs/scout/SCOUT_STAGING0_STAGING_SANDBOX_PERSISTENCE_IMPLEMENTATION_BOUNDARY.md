@@ -7,7 +7,7 @@ Date: 2026-06-20
 
 ## Result
 
-PR169 defines the staging sandbox persistence boundary for future 88CN scout data.
+PR169 defines the staging sandbox persistence boundary for future 123Charts scout data.
 
 Result: `GO_SCOUT_STAGING1`.
 

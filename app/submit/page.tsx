@@ -13,7 +13,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: siteTitle("Submit a Project"),
   description: siteDescription(
-    "Submit a free AI project profile to 88CN for editorial review."
+    "Submit a free AI project profile to 123Charts for editorial review."
   ),
   ...noIndex(),
 };

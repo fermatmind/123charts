@@ -10,7 +10,7 @@ TRAFFIC5A defines the canonical pair policy and expansion limits for PR126. The 
 
 - Task ID: PR125 / TRAFFIC5A
 - Role: codex-research
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Product code changes: none
 - Deployment: none

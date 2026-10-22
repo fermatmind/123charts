@@ -2,7 +2,7 @@
 
 ## Summary
 
-PR42 adds an admin-only editorial draft pipeline for 88CN. Editorial notes can be stored and reviewed, but the workflow is draft-only and does not publish project pages.
+PR42 adds an admin-only editorial draft pipeline for 123Charts. Editorial notes can be stored and reviewed, but the workflow is draft-only and does not publish project pages.
 
 ## Data Model
 

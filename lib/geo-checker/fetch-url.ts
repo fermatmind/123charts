@@ -4,7 +4,7 @@ import type { FetchResult } from "./types";
 const TIMEOUT_MS = 5000;
 const MAX_BODY_SIZE = 256 * 1024;
 const MAX_REDIRECTS = 2;
-const USER_AGENT = "88CN-ReadinessChecker/0.1 (+https://88cn.com/geo-checker)";
+const USER_AGENT = "123Charts-ReadinessChecker/0.1 (+https://123charts.com/geo-checker)";
 
 export async function fetchUrl(rawUrl: string): Promise<{ ok: true; result: FetchResult } | { ok: false; error: string; status: number }> {
   const guardResult = ssrfGuard(rawUrl);

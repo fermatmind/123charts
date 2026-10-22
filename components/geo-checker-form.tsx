@@ -174,7 +174,7 @@ export default function GeoCheckerForm() {
           {/* CTA */}
           <div className="rounded-lg border border-terminal-border bg-terminal-surface p-4 text-center">
             <p className="mb-2 text-xs text-terminal-dim">
-              Create a free structured AI project profile on 88CN.
+              Create a free structured AI project profile on 123Charts.
             </p>
             <Link
               href="/submit"

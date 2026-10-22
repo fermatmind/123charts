@@ -48,11 +48,11 @@ This data basis supports an aggregate readiness-process draft only. It does not 
 
 ## Draft Thesis
 
-The current 88CN worker, staging, audit, and report-data train is ready to describe pipeline readiness, not project readiness outcomes.
+The current 123Charts worker, staging, audit, and report-data train is ready to describe pipeline readiness, not project readiness outcomes.
 
 Allowed aggregate narrative:
 
-- 88CN has defined and QA'd private-by-default staging and audit-worker boundaries.
+- 123Charts has defined and QA'd private-by-default staging and audit-worker boundaries.
 - The current staging and audit artifacts are local-only and fixture-only.
 - Current sample counts are bounded and transparent: 40 source rows, 5 staging dry-run sample rows, and 20 audit fixture rows.
 - No external HTTP audit, browser fallback, worker runtime, queue, Redis, staging write, production write, public surface, report surface, Public API, MCP, sitemap, or data repo export occurred.

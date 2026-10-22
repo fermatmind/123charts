@@ -206,7 +206,7 @@ Existing deployment artifacts:
 - `scripts/agent/deploy-production.sh`
 - `scripts/agent/smoke-local.sh`
 - `scripts/agent/smoke-live.sh`
-- `deploy/nginx/88cn.conf.example`
+- `deploy/nginx/123charts.conf.example`
 - `deploy/pm2/ecosystem.config.cjs`
 - `deploy/scripts/build-production.sh`
 - `deploy/scripts/check-runtime.sh`

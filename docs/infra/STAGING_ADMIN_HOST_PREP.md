@@ -11,7 +11,7 @@ PR188 cannot truthfully complete `STAGING_ADMIN_HOST_READY` in this run.
 
 Result: `BLOCKED_STAGING_ADMIN_ACCESS_MISSING`.
 
-The `/goal 88CN 20k-50k Scale Buildout Continuous PR Train PR184-PR207 v0` message grants the PR188 human checkpoint for scoped staging/admin host preparation, but the local execution environment does not currently provide the required confirmed access and target facts to perform reversible server prep.
+The `/goal 123Charts 20k-50k Scale Buildout Continuous PR Train PR184-PR207 v0` message grants the PR188 human checkpoint for scoped staging/admin host preparation, but the local execution environment does not currently provide the required confirmed access and target facts to perform reversible server prep.
 
 ## What Was Verified
 
@@ -42,13 +42,13 @@ This remediation does not create or edit any deploy artifact.
 PR188 needs all of the following before real host prep can proceed:
 
 - exact staging/admin target host alias;
-- confirmation that the host is free for 88CN staging/admin use;
+- confirmation that the host is free for 123Charts staging/admin use;
 - approved connection method, such as SSH or an approved cloud-console workflow;
 - confirmation of OS family, disk usage, live process occupancy, logs, backup state, and service owners;
 - exact list of reversible actions allowed in the run;
 - rollback plan for every created user, directory, config file, PM2 process, or Nginx change;
 - confirmation that no FermatMind production resource is touched;
-- confirmation that no Tencent resource receives new 88CN workload.
+- confirmation that no Tencent resource receives new 123Charts workload.
 
 ## No-Action Confirmation
 

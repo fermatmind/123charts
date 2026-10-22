@@ -1,6 +1,6 @@
 # Local V1 acceptance — 2026-10-21
 
-Scope: the user-approved 123Charts local V1, in the existing 88CN checkout. No GitHub write, push, DNS change, server deployment or production database operation was performed.
+Scope: the user-approved 123Charts local V1, in the existing 123Charts checkout. No GitHub write, push, DNS change, server deployment or production database operation was performed.
 
 ## Verified
 

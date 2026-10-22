@@ -6,7 +6,7 @@
 
 ## Summary
 
-Created the 88CN Day 1 Next.js App Router scaffold with TypeScript, Tailwind CSS, and shadcn/ui visual conventions.
+Created the 123Charts Day 1 Next.js App Router scaffold with TypeScript, Tailwind CSS, and shadcn/ui visual conventions.
 
 ## Architecture Decisions
 
@@ -73,12 +73,12 @@ Created the 88CN Day 1 Next.js App Router scaffold with TypeScript, Tailwind CSS
 - No production secrets or API keys
 - No crawler, no external API integration
 - No third-party project data imported
-- No upstream code copied into production (all code written by 88CN)
+- No upstream code copied into production (all code written by 123Charts)
 - No `shadcn-ui` CLI init (manual shadcn-like setup only)
 
 ### Third-Party Notice
 
-No third-party code, files, templates, or datasets have been copied into 88CN production as of Day 1. All source files are original 88CN code. `third_party/NOTICE.md` remains unchanged from Day 0.6.
+No third-party code, files, templates, or datasets have been copied into 123Charts production as of Day 1. All source files are original 123Charts code. `third_party/NOTICE.md` remains unchanged from Day 0.6.
 
 ## Verification
 

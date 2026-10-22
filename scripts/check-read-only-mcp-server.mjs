@@ -146,7 +146,7 @@ function validate(root, options = {}) {
   if (fs.existsSync(problemPath)) {
     const problem = read(problemPath);
     for (const phrase of [
-      "https://88cn.com/problems/mcp-disabled",
+      "https://123charts.com/problems/mcp-disabled",
       "MCP server is disabled",
       "The MCP server is not enabled for this environment.",
       "status: 503",
@@ -359,7 +359,7 @@ function writeFixture(root, overrides = {}) {
     "lib/mcp/feature-flags.ts":
       'export function isMcpServerEnabled(value = process.env.MCP_SERVER_ENABLED) { return value === "true"; }\nexport function isMcpLocalOnly(value = process.env.MCP_LOCAL_ONLY) { return value !== "false"; }\n',
     "lib/mcp/problem.ts":
-      'export function mcpDisabledProblem(instance) { return { type: "https://88cn.com/problems/mcp-disabled", title: "MCP server is disabled", status: 503, detail: "The MCP server is not enabled for this environment.", instance }; }\n',
+      'export function mcpDisabledProblem(instance) { return { type: "https://123charts.com/problems/mcp-disabled", title: "MCP server is disabled", status: 503, detail: "The MCP server is not enabled for this environment.", instance }; }\n',
     "lib/mcp/tools.ts":
       'export const MCP_TOOL_SPECS = [{ name: "get_ai_project_profile", inputSchema: { type: "object", additionalProperties: false, properties: { slug: { type: "string" } } }, output_fields: ["slug", "name"] }];\n',
     "ops/contracts/public-api-boundary.json": JSON.stringify(
@@ -410,7 +410,7 @@ function writeFixture(root, overrides = {}) {
 }
 
 function expectFailure(name, overrides, expectedText, options = {}) {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "88cn-pr60-"));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "123charts-pr60-"));
   try {
     writeFixture(root, overrides);
     const errors = validate(root, options);

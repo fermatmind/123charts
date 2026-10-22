@@ -10,7 +10,7 @@ TRAFFIC4B implements the PR122-approved finite `/tasks/[slug]` route for one fir
 
 - Task ID: PR123 / TRAFFIC4B
 - Role: codex-build
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Product route: `/tasks/[slug]`
 - Deployment: none

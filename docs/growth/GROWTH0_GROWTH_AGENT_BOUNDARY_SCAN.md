@@ -56,7 +56,7 @@ Growth agents may:
 - generate channel checklists and manual posting instructions;
 - generate weekly review templates;
 - generate redacted aggregate summaries;
-- generate local-only queues under `/tmp/88cn-growth-*` or ignored local paths;
+- generate local-only queues under `/tmp/123charts-growth-*` or ignored local paths;
 - suggest follow-up drafts without sending or scheduling them;
 - summarize merged PRs, QA findings, and manually supplied aggregate metrics.
 
@@ -92,7 +92,7 @@ Any design requiring those behaviors is `BLOCKED_GROWTH_BOUNDARY_RISK`.
 | Class | Storage | Allowed examples |
 | --- | --- | --- |
 | A: repo-safe committed data | Git repo | growth policies, redacted templates, fake examples, aggregate counts, channel checklists, draft prompts, QA reports, manual review instructions |
-| B: local-only temporary data | `/tmp/88cn-growth-*` or ignored local paths | draft outreach packets, draft distribution packs, manually supplied non-private leads, manual review queues, temporary scoring outputs |
+| B: local-only temporary data | `/tmp/123charts-growth-*` or ignored local paths | draft outreach packets, draft distribution packs, manually supplied non-private leads, manual review queues, temporary scoring outputs |
 | C: human-owned private data | never committed | real people tied to contact details, private messages, raw call notes, unredacted screenshots, CRM exports, private buyer conversations, private company metrics |
 | D: forbidden for Codex | must not collect or use | browser cookies, logged-in sessions, passwords, access credentials, private contact enrichment, scraped contact details, paid platform data, private analytics exports |
 
@@ -119,7 +119,7 @@ Forbidden future work:
 - creating GitHub Issues;
 - writing CRM records.
 
-Safe inputs are 88CN public project data, a manually supplied seed list, public
+Safe inputs are 123Charts public project data, a manually supplied seed list, public
 project URLs, public GitHub repository URLs, and locally generated geo-checker
 results. Unsafe inputs are private contact-finder tools, logged-in platform
 scrapes, CRM exports, browser sessions, and paid enrichment sources.

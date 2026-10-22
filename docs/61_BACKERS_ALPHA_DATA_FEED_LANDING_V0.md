@@ -12,7 +12,7 @@ Route:
 
 - `/backers`
 
-The page is static and intentionally indexable. It links only to existing public 88CN surfaces:
+The page is static and intentionally indexable. It links only to existing public 123Charts surfaces:
 
 - `/projects`
 - `/reports`

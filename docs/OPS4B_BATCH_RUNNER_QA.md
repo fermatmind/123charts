@@ -18,7 +18,7 @@ OPS4BQ is registered in `ops/tasks/roadmap.json` with:
 
 - role: `codex-qa`
 - type: `qa`
-- repo: `88CN`
+- repo: `123Charts`
 - deployment: `none`
 - allowed paths limited to QA docs, task status, sidecar/build reports, and `ops/tasks/current.json`
 - forbidden paths blocking product code, scripts, package files, roadmap edits, train registry edits, deployment code, public assets, secrets, and data repo writes
@@ -70,7 +70,7 @@ OPS4BQ updated only allowed paths.
 
 ## Negative Test Matrix
 
-Temporary fixtures were created under `/tmp/88cn-ops4bq-*` and removed after the run.
+Temporary fixtures were created under `/tmp/123charts-ops4bq-*` and removed after the run.
 
 | Negative test | Result |
 | --- | --- |

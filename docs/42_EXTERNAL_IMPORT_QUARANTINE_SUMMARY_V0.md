@@ -2,7 +2,7 @@
 
 ## Result
 
-PR31 adds an explicit quarantine summary layer for external project imports from the open data repository into 88CN admin staging.
+PR31 adds an explicit quarantine summary layer for external project imports from the open data repository into 123Charts admin staging.
 
 This is a consumer-side safety layer. It does not publish imported records, does not change sitemap behavior, does not expose import rows through public APIs, and does not perform runtime website availability checks.
 

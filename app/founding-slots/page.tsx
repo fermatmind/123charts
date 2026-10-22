@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: siteTitle("Founder Submission Onboarding"),
   description: siteDescription(
-    "Founder-ready onboarding for submitting, claiming, correcting, and removing 88CN AI project profiles through reviewed public-source workflows."
+    "Founder-ready onboarding for submitting, claiming, correcting, and removing 123Charts AI project profiles through reviewed public-source workflows."
   ),
   robots: { index: true, follow: true },
 };
@@ -29,7 +29,7 @@ export default function FoundingSlotsPage() {
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-terminal-dim">
           A practical onboarding surface for founders preparing public-source
           submissions, reviewed profile claims, corrections, and removal
-          requests on 88CN.
+          requests on 123Charts.
         </p>
         <div className="mt-5 flex flex-wrap gap-3 text-[11px] font-mono uppercase tracking-widest text-terminal-dim">
           <span>Mode: public-source review</span>

@@ -74,9 +74,9 @@ OPS-INFRA2X remains the placement source of truth.
 
 | Target | Status | PR173 decision |
 | --- | --- | --- |
-| `HK-ALIYUN-01` | 88CN public web only | Audit worker, crawler, queue, staging/admin, and heavy jobs are forbidden. |
-| FermatMind production web/API/DB/Redis | Do-not-touch for 88CN workers | No shared worker, queue, Redis, DB, or API use. |
-| Tencent resources | Migration-source/sunsetting | No new 88CN audit workload placement. |
+| `HK-ALIYUN-01` | 123Charts public web only | Audit worker, crawler, queue, staging/admin, and heavy jobs are forbidden. |
+| FermatMind production web/API/DB/Redis | Do-not-touch for 123Charts workers | No shared worker, queue, Redis, DB, or API use. |
+| Tencent resources | Migration-source/sunsetting | No new 123Charts audit workload placement. |
 | `SH-ALIYUN-02` | Conditional staging/admin candidate; possible audit candidate only if unused and capacity confirmed | Not placement-ready in PR173. Future audit use requires owner/capacity confirmation and isolation proof. |
 | `SH-ALIYUN-03` | Conditional low-concurrency scout candidate | Not approved for audit worker placement. |
 | `SH-ALIYUN-04` | Conditional queue/monitoring/backup/spare candidate with 1 GiB-class caution | Tiny fixture/spare consideration only after explicit approval; no heavy audit. |

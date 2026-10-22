@@ -39,7 +39,7 @@ The reviewed range did not change `app/**`, `components/**`, `lib/**`, `scripts/
 Local PR174 manifest:
 
 ```text
-/tmp/88cn-pr174-small-batch-audit-fixture-dry-run.json
+/tmp/123charts-pr174-small-batch-audit-fixture-dry-run.json
 ```
 
 Manifest checks:

@@ -21,13 +21,13 @@ export function reportJsonLd({
     dateModified: datePublished,
     author: {
       "@type": "Organization",
-      name: "88CN",
-      url: "https://88cn.com",
+      name: "123Charts",
+      url: "https://123charts.com",
     },
     publisher: {
       "@type": "Organization",
-      name: "88CN",
-      url: "https://88cn.com",
+      name: "123Charts",
+      url: "https://123charts.com",
     },
     about: [
       "AI project machine-readability",

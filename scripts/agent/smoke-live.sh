@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_URL="${BASE_URL:-https://88cn.com}"
+BASE_URL="${BASE_URL:-https://123charts.com}"
 CURL_BIN="${CURL:-$(command -v curl)}"
 EXTRA_PATHS="${EXTRA_PATHS:-}"
 REQUIRED_SITEMAP_PATHS="${REQUIRED_SITEMAP_PATHS:-}"

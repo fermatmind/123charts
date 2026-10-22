@@ -1,4 +1,4 @@
-# 88CN Frontend UI Design System v0
+# 123Charts Frontend UI Design System v0
 
 Result: `FRONTEND_UI_DESIGN_SYSTEM_READY`
 
@@ -6,7 +6,7 @@ Scope: public frontend design architecture only. This document does not implemen
 
 ## Product Position
 
-88CN is the Free AI Project Growth Index. The public frontend should help readers scan reviewed AI project profiles quickly while making the data boundary obvious: public pages expose only reviewed `published_projection` rows and public-safe collection metadata.
+123Charts is the Free AI Project Growth Index. The public frontend should help readers scan reviewed AI project profiles quickly while making the data boundary obvious: public pages expose only reviewed `published_projection` rows and public-safe collection metadata.
 
 Current production MVP context:
 
@@ -36,7 +36,7 @@ Public competitor pages were reviewed only for information architecture patterns
 - AIBase combines AI tools, rankings, model/news surfaces, and multilingual navigation.
 - AI工具集 uses dense Chinese-language navigation and large grouped tool catalogs.
 
-88CN may borrow browsing efficiency patterns such as strong search, dense cards, clear category entry points, and fast mobile scanning. 88CN must not copy competitor wording, categories, descriptions, screenshots, logos, subjective ordering, score language, or commercial promises. 88CN's differentiation is the reviewed public signal layer, official source links, timestamped review, machine-readable readiness, finite collections, and no fake ranking.
+123Charts may borrow browsing efficiency patterns such as strong search, dense cards, clear category entry points, and fast mobile scanning. 123Charts must not copy competitor wording, categories, descriptions, screenshots, logos, subjective ordering, score language, or commercial promises. 123Charts's differentiation is the reviewed public signal layer, official source links, timestamped review, machine-readable readiness, finite collections, and no fake ranking.
 
 Reference sites:
 
@@ -100,7 +100,7 @@ Unknown data must be rendered as one of the approved neutral states:
 2. **Fail closed**: missing, stale, rejected, quarantined, or unreviewed data produces 404, noindex, or empty state rather than a partial public leak.
 3. **Search first**: the primary browsing affordance is search plus finite filters, not broad generated landing pages.
 4. **High-density but calm**: pages should show many reviewed projects without feeling like an ad directory.
-5. **Official links are first-class**: official site, docs, and GitHub links should be visually clear and separated from 88CN commentary.
+5. **Official links are first-class**: official site, docs, and GitHub links should be visually clear and separated from 123Charts commentary.
 6. **Signal chips are evidence labels**: chips summarize reviewed public signals; they are not hidden weights, endorsement, or paid placement.
 7. **Finite collections only**: collection pages are curated, reviewed, and sitemap-eligible only when the collection registry says so.
 8. **No leaderboard default**: default listing sort should be stable and neutral. No fake ranking, popularity implication, or subjective "best" ordering.

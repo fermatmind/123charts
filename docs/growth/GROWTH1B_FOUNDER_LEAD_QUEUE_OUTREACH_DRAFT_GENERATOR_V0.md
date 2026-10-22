@@ -20,9 +20,9 @@ write Supabase, mutate `/Users/rainie/Desktop/88cn-index-data`, or deploy.
 
 ## Input Contract
 
-A compliant local draft packet may read only reviewed public 88CN context:
+A compliant local draft packet may read only reviewed public 123Charts context:
 
-- project slug and public 88CN project path;
+- project slug and public 123Charts project path;
 - public project name and reviewed one-line summary;
 - category, stack, vertical, collection, task, or alternatives route context;
 - public report title, slug, kind, date, and path;
@@ -57,7 +57,7 @@ approved, it must write under `/tmp` or another ignored local path by default.
   "projectSlug": "aurora-code",
   "projectPath": "/projects/aurora-code",
   "projectName": "Aurora Code",
-  "reviewedSummary": "Reviewed public one-line project summary from 88CN.",
+  "reviewedSummary": "Reviewed public one-line project summary from 123Charts.",
   "routeContext": [
     "/landscape",
     "/tasks/evaluate-ai-builder-infrastructure"
@@ -103,7 +103,7 @@ external use outside Codex.
 ```text
 Draft only - human review required.
 
-88CN has a public project page for {project_name}:
+123Charts has a public project page for {project_name}:
 {project_path}
 
 The page is based on reviewed public signals and can be checked for accuracy or
@@ -135,7 +135,7 @@ instruction.
 
 Before any human uses a draft externally:
 
-- confirm the project is public and reviewed in 88CN;
+- confirm the project is public and reviewed in 123Charts;
 - confirm the project path and any report paths are correct;
 - remove any private contact, account, CRM, customer, analytics, or billing
   detail;

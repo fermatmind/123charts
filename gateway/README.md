@@ -1,4 +1,4 @@
-# 88CN Laravel Gateway Disabled Scaffold
+# 123Charts Laravel Gateway Disabled Scaffold
 
 ## Status
 
@@ -11,7 +11,7 @@ Laravel runtime files.
 ## Purpose
 
 PR92 creates a static boundary scaffold for a possible future Laravel gateway
-serving sanitized 88CN B2B Alpha Feed data. The scaffold is a contract and
+serving sanitized 123Charts B2B Alpha Feed data. The scaffold is a contract and
 example only. It does not create a Laravel application.
 
 The future gateway may only be considered after a later human checkpoint. It

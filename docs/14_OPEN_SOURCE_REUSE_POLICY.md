@@ -1,6 +1,6 @@
 # 14 Open Source Reuse Policy
 
-88CN may learn from public projects, but copying requires a license, provenance, and review trail.
+123Charts may learn from public projects, but copying requires a license, provenance, and review trail.
 
 ## Reuse Levels
 
@@ -51,7 +51,7 @@ Explicitly forbidden:
 - copying project descriptions
 - copying screenshots or logos
 - copying paid-only scripts
-- bulk importing third-party data directly as published 88CN pages
+- bulk importing third-party data directly as published 123Charts pages
 
 ## Current Upstream Candidates
 
@@ -81,4 +81,4 @@ Explicitly forbidden:
 
 ## Review Rule
 
-No upstream code, schema, template, or dataset may be copied into 88CN until `third_party/NOTICE.md` has a complete entry for that source.
+No upstream code, schema, template, or dataset may be copied into 123Charts until `third_party/NOTICE.md` has a complete entry for that source.

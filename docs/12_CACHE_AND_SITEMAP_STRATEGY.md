@@ -1,6 +1,6 @@
 # 12 Cache And Sitemap Strategy
 
-88CN public discovery must be indexable only after review and cheap to serve at scale.
+123Charts public discovery must be indexable only after review and cheap to serve at scale.
 
 ## Indexing Rules
 

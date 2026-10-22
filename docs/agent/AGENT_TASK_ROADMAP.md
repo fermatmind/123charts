@@ -1,4 +1,4 @@
-# 88CN Agent Task Roadmap
+# 123Charts Agent Task Roadmap
 
 Result: `AGENT0R_READY_FOR_WORKER_AGENT_IMPLEMENTATION`
 
@@ -20,11 +20,11 @@ production write allowed: no
 | AGENT4 / Canonical Entity Agent | `88cn-scout-worker` | create canonical candidates and ambiguity states | source verified candidates | `canonical_candidate`, `canonical_review_needed` | deterministic matching, duplicate evidence, uncertainty states | name-only merge, public slug write | yes | no | AGENT3 | no |
 | AGENT5 / HTTP Audit Agent | `88cn-scout-worker` | generate bounded audit observations | canonical candidates and approved fixtures | `audit_observed` artifacts | fixture-first audit checks, bounded observations after approval | live crawl runtime, browser fallback, WAF bypass, proxy evasion | yes | no | AGENT4 | no |
 | AGENT6 / Quarantine Classifier Agent | `88cn-scout-worker` | classify ambiguity/failure/privacy risk | audit/canonical/source states | `quarantined`, `rejected`, retry classes | failure taxonomy and admin-safe labels | public negative claims from unreviewed data | yes | no | AGENT5 | no |
-| AGENT7 / Review Queue Packager Agent | `88cn-scout-worker` | package sanitized review-ready payloads | verified/quarantined/canonical records | `review_ready` packages | local package creation and redaction proof | writing 88CN review queue, projection, sitemap | yes | no | AGENT6 | no |
+| AGENT7 / Review Queue Packager Agent | `88cn-scout-worker` | package sanitized review-ready payloads | verified/quarantined/canonical records | `review_ready` packages | local package creation and redaction proof | writing 123Charts review queue, projection, sitemap | yes | no | AGENT6 | no |
 | AGENT8 / Publish Recommendation Engine | `88cn-scout-worker` | recommend publish decisions with transparent reasons | review-ready packages and audit observations | `publish_recommended` decisions | recommendation and reason codes | final publish, ranking, paid/organic mixing | yes | no | AGENT7 | no |
 | AGENT9 / Report Draft Generator | `88cn-scout-worker` | draft aggregate methodology and reports | reviewed aggregate data | local report drafts | aggregate drafts and methodology notes | public report release or external posting | yes | no | AGENT8 | no |
 | AGENTQ / Agent No-Auto-Publish QA | `88cn-scout-worker` | prove the worker cannot publish automatically | worker code, fixtures, negative tests | QA report and failure gates | static checks and negative tests | disabling publication safeguards | yes | no | AGENT1 | no |
-| AGENT-INTEGRATION0 / Worker Output to 88CN Review Queue | `88CN` | first approved handoff into admin review queue | sanitized review-ready worker package | 88CN review queue records | approved admin queue integration | projection/sitemap/public write | yes | no | AGENT7, AGENTQ | no |
+| AGENT-INTEGRATION0 / Worker Output to 123Charts Review Queue | `123Charts` | first approved handoff into admin review queue | sanitized review-ready worker package | 123Charts review queue records | approved admin queue integration | projection/sitemap/public write | yes | no | AGENT7, AGENTQ | no |
 | BULK200_AGENT_DRY_RUN | `88cn-scout-worker` | capacity rehearsal for 200 records | fixtures/local approved manifests | local artifacts and review load estimate | local dry-run only | production writes and auto-publish | yes | no | AGENTQ | no |
 | BULK1000_AGENT_DRY_RUN | `88cn-scout-worker` | capacity rehearsal for 1000 records | fixtures/local approved manifests | local artifacts and bottleneck report | local dry-run only | production writes and auto-publish | yes | no | BULK200_AGENT_DRY_RUN | no |
 
@@ -47,5 +47,5 @@ AGENT0R
   -> BULK1000_AGENT_DRY_RUN
 ```
 
-`AGENT-INTEGRATION0` is the first task that may connect worker output back to the `88CN` admin review queue, and only after a separate explicit approval.
+`AGENT-INTEGRATION0` is the first task that may connect worker output back to the `123Charts` admin review queue, and only after a separate explicit approval.
 

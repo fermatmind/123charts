@@ -49,7 +49,7 @@ PASS.
 ```json
 {
   "current_task": "OPS1Q",
-  "current_repo": "88CN",
+  "current_repo": "123Charts",
   "current_role": "codex-qa",
   "status": "complete"
 }
@@ -135,7 +135,7 @@ PASS.
 Temporary worktree:
 
 ```text
-/tmp/88cn-ops1q-redact-probe
+/tmp/123charts-ops1q-redact-probe
 ```
 
 Probe behavior:
@@ -161,7 +161,7 @@ PASS.
 Temporary worktree:
 
 ```text
-/tmp/88cn-ops1q-scope-probe
+/tmp/123charts-ops1q-scope-probe
 ```
 
 Probe behavior:

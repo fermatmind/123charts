@@ -2,11 +2,11 @@
 
 ## Result
 
-OPS1 adds a repo-native execution layer for 88CN agents. It does not change product behavior, public pages, database schema, API routes, or deployment configuration.
+OPS1 adds a repo-native execution layer for 123Charts agents. It does not change product behavior, public pages, database schema, API routes, or deployment configuration.
 
-## Why 88CN Needs Agent OS
+## Why 123Charts Needs Agent OS
 
-88CN now has several parallel lanes: product builds, read-only QA, live smoke checks, data repo ingestion, and later assistant-facing read surfaces. Without a local operating layer, each PR has to restate boundaries from scratch. Agent OS makes the boundary machine-readable so future work can run with less drift.
+123Charts now has several parallel lanes: product builds, read-only QA, live smoke checks, data repo ingestion, and later assistant-facing read surfaces. Without a local operating layer, each PR has to restate boundaries from scratch. Agent OS makes the boundary machine-readable so future work can run with less drift.
 
 ## Roles
 
@@ -32,7 +32,7 @@ The redaction checker fails closed because leaked credentials and server details
 
 ## Telemetry Opt-In
 
-Telemetry is opt-in only. CI does not publish telemetry by default. Publishing requires `publish_to_88cn=true`. The telemetry contract bans secrets, environment values, logs, private repo data, and raw private payloads.
+Telemetry is opt-in only. CI does not publish telemetry by default. Publishing requires `publish_to_123charts=true`. The telemetry contract bans secrets, environment values, logs, private repo data, and raw private payloads.
 
 ## Cache Tag Matrix
 

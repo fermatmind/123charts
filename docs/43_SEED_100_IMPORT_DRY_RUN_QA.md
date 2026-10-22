@@ -4,7 +4,7 @@
 
 PASS_AFTER_REMEDIATION
 
-PR32 verified that Seed 100 data from `fermatmind/88cn-index-data` can be consumed by the PR31 external import classification layer without entering public 88CN surfaces.
+PR32 verified that Seed 100 data from `fermatmind/88cn-index-data` can be consumed by the PR31 external import classification layer without entering public 123Charts surfaces.
 
 PR36 remediation closes the original P2/P3 repeatability findings. PR33 can proceed.
 
@@ -12,7 +12,7 @@ PR36 remediation closes the original P2/P3 repeatability findings. PR33 can proc
 
 | Repo | Commit | Worktree |
 | --- | --- | --- |
-| 88CN | `86d6611` | Clean before QA writes |
+| 123Charts | `86d6611` | Clean before QA writes |
 | 88cn-index-data | `1fb09e3` | Clean after validation |
 
 PR31 merge commit confirmed on main: `86d6611`.
@@ -36,7 +36,7 @@ Data repo path: `/Users/rainie/Desktop/88cn-index-data`
 
 ## Main Repo Validation
 
-Main repo path: `/Users/rainie/Desktop/88CN`
+Main repo path: `/Users/rainie/Desktop/123charts.com/123charts`
 
 | Check | Result |
 | --- | --- |
@@ -158,7 +158,7 @@ Screenshots:
 Sitemap fetched from:
 
 ```bash
-curl -s http://localhost:3100/sitemap.xml > /tmp/88cn-pr32-sitemap.xml
+curl -s http://localhost:3100/sitemap.xml > /tmp/123charts-pr32-sitemap.xml
 ```
 
 Sampled 21 slugs: first 10 data repo slugs, last 10 data repo slugs, and `example-ai-project`.

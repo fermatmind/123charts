@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 88CN Rsync Deploy Script — Example
+# 123Charts Rsync Deploy Script — Example
 # Copy to deploy/scripts/deploy-rsync.sh and customize for your server
 # Usage: bash deploy/scripts/deploy-rsync.sh
 set -euo pipefail
@@ -9,16 +9,16 @@ set -euo pipefail
 # ============================================================
 SERVER_USER="deploy"
 SERVER_HOST="your-server-ip-or-hostname"
-SERVER_PATH="/var/www/88cn"
+SERVER_PATH="/var/www/123charts"
 SSH_KEY="$HOME/.ssh/id_rsa"  # or id_ed25519
 # ============================================================
 
 cd "$(dirname "$0")/../.."
 
-echo "[88CN] Building locally..."
+echo "[123Charts] Building locally..."
 npm run build
 
-echo "[88CN] Rsync to $SERVER_USER@$SERVER_HOST:$SERVER_PATH..."
+echo "[123Charts] Rsync to $SERVER_USER@$SERVER_HOST:$SERVER_PATH..."
 rsync -avz --delete \
   --exclude=".git" \
   --exclude="node_modules" \
@@ -30,16 +30,16 @@ rsync -avz --delete \
   -e "ssh -i $SSH_KEY" \
   ./ "$SERVER_USER@$SERVER_HOST:$SERVER_PATH"
 
-echo "[88CN] Running production install on server..."
+echo "[123Charts] Running production install on server..."
 ssh -i "$SSH_KEY" "$SERVER_USER@$SERVER_HOST" \
   "cd $SERVER_PATH && npm ci --omit=dev && npm run build"
 
-echo "[88CN] Restarting PM2 on server..."
+echo "[123Charts] Restarting PM2 on server..."
 ssh -i "$SSH_KEY" "$SERVER_USER@$SERVER_HOST" \
   "cd $SERVER_PATH && bash deploy/scripts/restart-pm2.sh"
 
-echo "[88CN] Running health check..."
+echo "[123Charts] Running health check..."
 ssh -i "$SSH_KEY" "$SERVER_USER@$SERVER_HOST" \
   "cd $SERVER_PATH && bash deploy/scripts/check-runtime.sh"
 
-echo "[88CN] Deploy complete."
+echo "[123Charts] Deploy complete."

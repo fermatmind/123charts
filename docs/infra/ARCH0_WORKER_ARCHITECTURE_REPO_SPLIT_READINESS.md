@@ -13,7 +13,7 @@ Result: `GO_WORKER0_REPO_SPLIT_READINESS`.
 
 The next step should be `PR160 / WORKER0 - 88cn-scout-worker Boundary + Bootstrap Readiness v0`.
 
-This task does not create a worker repo, package, dependency, migration, queue, server process, staging write, production write, or public surface. It only decides that the worker/runtime boundary should be designed before 88CN moves from local-only and fixture-only artifacts toward real staging data production.
+This task does not create a worker repo, package, dependency, migration, queue, server process, staging write, production write, or public surface. It only decides that the worker/runtime boundary should be designed before 123Charts moves from local-only and fixture-only artifacts toward real staging data production.
 
 ## Scope
 
@@ -63,7 +63,7 @@ Reviewed source inputs:
 - `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md`
 - `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `docs/SIDECAR_ISSUES.md`
 - `ops/tasks/current.json`
@@ -92,7 +92,7 @@ Current state:
 - Tencent remains migration-source/sunsetting only.
 - `/Users/rainie/Desktop/88cn-index-data` remains curated reviewed public-safe data only.
 
-This means 88CN needs a staging/worker architecture before second-round Growth, public report distribution, or public report publication can be considered.
+This means 123Charts needs a staging/worker architecture before second-round Growth, public report distribution, or public report publication can be considered.
 
 ## Repo Split Decision Analysis
 
@@ -105,7 +105,7 @@ Answers:
 3. A physical repo/package split is not created now. It becomes required before real server worker/runtime, queue consumers, or external audit jobs.
 4. Splitting reduces public-web blast radius, dependency drift, process ownership ambiguity, queue/log mixing, and accidental route/API leakage.
 5. Splitting increases release coordination, contract-versioning work, CI setup, local development setup, and cross-repo governance overhead.
-6. 88CN must retain public web, docs/policy, admin review surfaces, future approved report UI, sitemap/robots, public API/MCP policy, and final publication gates.
+6. 123Charts must retain public web, docs/policy, admin review surfaces, future approved report UI, sitemap/robots, public API/MCP policy, and final publication gates.
 7. `88cn-index-data` must never receive raw scout payloads, crawl dumps, audit logs, queue state, PII/private data, staging-only rows, worker temp output, correction queues, or operational secrets.
 
 The route is not "create repo now"; it is "define the boundary before the next implementation step".
@@ -117,7 +117,7 @@ The route is not "create repo now"; it is "define the boundary before the next i
 | Security isolation | Stronger. Worker, crawler, queue, logs, and staging tooling can be separated from public web. | Weaker. Public web repo carries more runtime-adjacent surfaces and review burden. |
 | Deployment complexity | Higher. Requires contract, CI, ownership, release, and local setup decisions. | Lower initially. Existing repo conventions and gates apply. |
 | Testability | Stronger for worker-specific fixtures and no-public-surface tests once boundary is defined. | Easier for quick local checks, but worker and public web tests can become coupled. |
-| Repo governance | Clearer ownership for worker/runtime code after boundary approval. | Simpler short term, but higher risk of scope creep in 88CN public web repo. |
+| Repo governance | Clearer ownership for worker/runtime code after boundary approval. | Simpler short term, but higher risk of scope creep in 123Charts public web repo. |
 | Future worker runtime | Better fit. Worker process, queue consumers, and audit runners can be isolated. | Poorer fit before strict package/process boundaries exist. |
 | Supabase migration risk | Easier to checkpoint separately from public web release. | Higher chance migrations arrive alongside web/admin changes. |
 | Redis/queue risk | Easier to namespace and isolate from web runtime. | Higher chance queue concepts leak into web repo defaults. |
@@ -197,7 +197,7 @@ Redis/queue becomes needed only when:
 Rules:
 
 - Do not share Redis with FermatMind by default.
-- Do not use Tencent Redis for new 88CN workloads.
+- Do not use Tencent Redis for new 123Charts workloads.
 - Use explicit queue namespace and key prefixes if Redis/queue is later approved.
 - Keep default before Redis as local dry-run, file queue, or explicit staging-only queue contract.
 - Queue creation requires human checkpoint.
@@ -243,13 +243,13 @@ Forbidden:
 
 Carry forward OPS-INFRA2X:
 
-- `HK-ALIYUN-01`: current 88CN public web only.
+- `HK-ALIYUN-01`: current 123Charts public web only.
 - `SH-ALIYUN-02`: conditional staging/admin candidate pending ownership/capacity confirmation.
 - `SH-ALIYUN-03`: conditional low-concurrency scout candidate pending ownership/capacity confirmation and worker limits.
 - `SH-ALIYUN-04`: conditional queue/monitoring/backup/spare candidate with caution.
-- `FAP-API-ALIYUN-01`: FermatMind production API/Ops/queue; do-not-touch for 88CN workers.
-- `FAP-WEB-NODE1`: FermatMind production web; do-not-touch for 88CN workers.
-- Tencent resources: migration-source/sunsetting only; no new 88CN workload.
+- `FAP-API-ALIYUN-01`: FermatMind production API/Ops/queue; do-not-touch for 123Charts workers.
+- `FAP-WEB-NODE1`: FermatMind production web; do-not-touch for 123Charts workers.
+- Tencent resources: migration-source/sunsetting only; no new 123Charts workload.
 
 Private read-only SSH is still a separate human authorization if exact live process, disk, memory, PM2/Supervisor, Redis, cron, log, or backup facts are required.
 
@@ -279,7 +279,7 @@ Chosen result: `GO_WORKER0_REPO_SPLIT_READINESS`.
 
 Reason:
 
-- future runtime should not live inside the 88CN public web repo without a boundary decision;
+- future runtime should not live inside the 123Charts public web repo without a boundary decision;
 - staging data production requires worker/storage contracts that are not yet defined;
 - OPS-INFRA2X placement is conditional and public web isolation is non-negotiable;
 - a worker repo/package boundary can be designed without creating the repo now;

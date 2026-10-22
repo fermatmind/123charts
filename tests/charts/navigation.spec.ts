@@ -5,8 +5,8 @@ import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import { loadEnv } from "../../scripts/local/env.mjs";
 loadEnv();
-const base = "http://127.0.0.1:3100";
-if (process.env.NEXT_PUBLIC_SUPABASE_URL !== "http://127.0.0.1:54321")
+const base = process.env.CHARTS_TEST_BASE_URL || "http://127.0.0.1:3100";
+if (!["localhost", "127.0.0.1"].includes(new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).hostname))
   throw Error("Local-only browser acceptance required");
 const db = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -507,7 +507,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await expect(page).toHaveURL(/login/);
   await expect(page).toHaveURL(/returnTo/);
   const accounts = JSON.parse(
-    await fs.readFile(".local/accounts.json", "utf8"),
+    await fs.readFile(process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json", "utf8"),
   );
   await signIn(page, accounts.founder.email, accounts.founder.password);
   await page
@@ -637,7 +637,7 @@ test("owner: basic listing, claim gate, AI JSON import persists in revision and 
 }) => {
   test.setTimeout(120000);
   const accounts = JSON.parse(
-    await fs.readFile(".local/accounts.json", "utf8"),
+    await fs.readFile(process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json", "utf8"),
   );
   const id = randomUUID(),
     suffix = id.slice(0, 8),

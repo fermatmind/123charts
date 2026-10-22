@@ -5,7 +5,12 @@ import { createClient } from "@supabase/supabase-js";
 import WebSocket from "ws";
 import { loadEnv } from "../../scripts/local/env.mjs";
 loadEnv();
-const accounts = JSON.parse(await fs.readFile(".local/accounts.json", "utf8"));
+const accounts = JSON.parse(
+  await fs.readFile(
+    process.env.CHARTS_TEST_ACCOUNTS_FILE || ".local/accounts.json",
+    "utf8",
+  ),
+);
 const db = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -56,6 +61,35 @@ test("browser draft recovery, three peers, review, shared comparison and factual
     await page.goto("/en/dashboard?dataset=demo");
     await page.goto(resume!);
     await expect(page.getByLabel("Tool name")).toHaveValue(name);
+    const unchangedBefore = await db
+      .from("charts_applications")
+      .select("draft,updated_at")
+      .eq("id", appId!)
+      .single();
+    if (unchangedBefore.error) throw unchangedBefore.error;
+    let redundantSaves = 0;
+    const watchSave = (r: any) => {
+      if (
+        r.url().endsWith("/api/v1/submissions") &&
+        r.method() === "POST" &&
+        r.postDataJSON()?.action === "draft"
+      )
+        redundantSaves++;
+    };
+    page.on("request", watchSave);
+    await page.reload();
+    await expect(page.getByLabel("Tool name")).toHaveValue(name);
+    await page.getByRole("button", { name: "Save draft", exact: true }).click();
+    await page.waitForTimeout(1800); // Includes the 1.3s autosave debounce.
+    page.off("request", watchSave);
+    expect(redundantSaves).toBe(0);
+    const unchangedAfter = await db
+      .from("charts_applications")
+      .select("draft,updated_at")
+      .eq("id", appId!)
+      .single();
+    if (unchangedAfter.error) throw unchangedAfter.error;
+    expect(unchangedAfter.data).toEqual(unchangedBefore.data);
     await page.getByRole("button", { name: "Continue", exact: true }).click();
     await page.getByLabel("Primary category").selectOption("knowledge-search");
     await page

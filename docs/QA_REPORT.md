@@ -34,7 +34,7 @@ PR198 verifies the PR194-PR197 worker pipeline remains no-runtime and local-only
 
 Worker repo evidence: `fermatmind/88cn-scout-worker#5`, worker commit `bd8af3c`.
 
-88CN handoff evidence: `docs/infra/WORKER_QA.md`.
+123Charts handoff evidence: `docs/infra/WORKER_QA.md`.
 
 ## PR192 Control Panel QA v0
 
@@ -252,7 +252,7 @@ None. PR80 forbids `screenshots/**`, so QA used source inspection, command outpu
 | `node scripts/check-curated-collections.mjs` | PASS |
 | `node scripts/check-vertical-asset-grids.mjs` | PASS |
 | `node scripts/check-alternatives-canonical.mjs` | PASS |
-| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror-pr80 --no-write-external` | PASS |
+| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror-pr80 --no-write-external` | PASS |
 | `npm run agent:gate` | PASS |
 
 ## Findings
@@ -277,7 +277,7 @@ PR80 can merge after required checks pass. After PR80 merge and cleanup, start O
 ## Summary
 
 - PR86 validates PR84 local-only dry-run snapshot export and PR85 data cleansing rules.
-- Positive dry-run generated 5 published-only records under `/tmp/88cn-alpha-snapshot-pr86-qa`.
+- Positive dry-run generated 5 published-only records under `/tmp/123charts-alpha-snapshot-pr86-qa`.
 - CSV and NDJSON fields matched the PR82 allowlist.
 - Denied private/admin/payment/customer/metering/raw/internal fields were absent.
 - Negative probes confirmed missing dry-run, repository output, data repository output, external destination, and remote source all fail closed.
@@ -289,7 +289,7 @@ PR80 can merge after required checks pass. After PR80 merge and cleanup, start O
 | Command | Result |
 | --- | --- |
 | `node scripts/check-alpha-feed-snapshot.mjs` | PASS |
-| `node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/88cn-alpha-snapshot-pr86-qa --source local --no-external-write` | PASS |
+| `node scripts/export-alpha-feed-snapshot.mjs --dry-run --out /tmp/123charts-alpha-snapshot-pr86-qa --source local --no-external-write` | PASS |
 | Snapshot manifest/NDJSON/CSV field inspection | PASS |
 | Missing `--dry-run` negative probe | PASS |
 | Repository output negative probe | PASS |
@@ -540,7 +540,7 @@ proceed to PR128 / TRAFFIC6A as a boundary-only report distribution pack task.
 | Command | Result |
 | --- | --- |
 | `npm run report-distribution-pack:generate -- --dry-run` | PASS |
-| `npm run report-distribution-pack:generate -- --out /tmp/88cn-report-distribution-pack-pr130` | PASS |
+| `npm run report-distribution-pack:generate -- --out /tmp/123charts-report-distribution-pack-pr130` | PASS |
 | repo-internal output rejection probe | PASS |
 | `npm run verify:day0` | PASS |
 | `npm run policy:scan` | PASS |

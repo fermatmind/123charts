@@ -20,7 +20,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: siteTitle("Reports"),
   description: siteDescription(
-    "88CN data reports on AI project growth signals. Weekly snapshots, category momentum analysis, and editorial insights based on public signals."
+    "123Charts data reports on AI project growth signals. Weekly snapshots, category momentum analysis, and editorial insights based on public signals."
   ),
   robots: { index: true, follow: true },
 };

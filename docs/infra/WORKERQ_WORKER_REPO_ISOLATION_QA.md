@@ -52,7 +52,7 @@ Reviewed source inputs:
 - `ops/trains/batches.json`
 - GitHub PR #199 state and changed files
 - GitHub PR #200 state and changed files
-- local git status for `/Users/rainie/Desktop/88CN`
+- local git status for `/Users/rainie/Desktop/123charts.com/123charts`
 - local git status for `/Users/rainie/Desktop/88cn-index-data`
 
 ## Merge Verification
@@ -108,7 +108,7 @@ Review:
 | No Redis/queue | PASS | No queue/runtime/server config changed. |
 | No new dependency | PASS | `package.json` and `package-lock.json` unchanged. |
 | No data repo mutation | PASS | `/Users/rainie/Desktop/88cn-index-data` is clean on `main...origin/main`. |
-| No FermatMind repo mutation | PASS | PR160-PR162 changed only `/Users/rainie/Desktop/88CN` docs/ops files. |
+| No FermatMind repo mutation | PASS | PR160-PR162 changed only `/Users/rainie/Desktop/123charts.com/123charts` docs/ops files. |
 | No public surface changes | PASS | No public route, sitemap, report registry, Public API, or MCP release was introduced. |
 | Seed 100 not started | PASS | PR163 remains the exact next task after WORKERQ. |
 
@@ -118,7 +118,7 @@ Repository search for worker-related top-level artifacts found only existing doc
 
 ```text
 docs/infra/ARCH0_WORKER_ARCHITECTURE_REPO_SPLIT_READINESS.md
-docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md
+docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md
 docs/infra/WORKER0_SCOUT_WORKER_BOUNDARY_CHAIN_READINESS.md
 docs/infra/WORKER1_WORKER_REPO_SKELETON_NO_RUNTIME_BOOTSTRAP.md
 docs/scout/AUDIT_IMPL0_WORKER_QUEUE_CAPACITY_BOUNDARY.md

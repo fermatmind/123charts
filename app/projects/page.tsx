@@ -14,7 +14,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: siteTitle("Projects"),
   description: siteDescription(
-    "Browse reviewed AI project profiles on 88CN with public source links and timestamped review signals."
+    "Browse reviewed AI project profiles on 123Charts with public source links and timestamped review signals."
   ),
 };
 

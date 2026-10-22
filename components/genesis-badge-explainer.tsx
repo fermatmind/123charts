@@ -97,7 +97,7 @@ export function GenesisBadgeExplainer({
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1 w-1 shrink-0 rounded-full bg-terminal-dim" />
             Badge criteria, eligibility, and display format are subject to
-            change as the 88CN index evolves.
+            change as the 123Charts index evolves.
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1 w-1 shrink-0 rounded-full bg-terminal-dim" />

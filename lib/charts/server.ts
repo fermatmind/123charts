@@ -1,3 +1,4 @@
+import { databaseEndpoint } from "./runtime-config";
 import { publicCatalog } from "./catalog";
 import { ensureDiscoveryCycle } from "../../scripts/local/discovery-cycle";
 import { publishCategory } from "./publishing";
@@ -9,17 +10,8 @@ import { cookies } from "next/headers";
 import type { Bootstrap, Dataset } from "./types";
 import { emptyBootstrap } from "./types";
 export function adminDb() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL,
-    key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key)
-    throw new Error(
-      "Local database is not configured. Run npm run local:setup.",
-    );
-  if (
-    process.env.CHARTS_LOCAL_PREVIEW !== "false" &&
-    !["localhost", "127.0.0.1"].includes(new URL(url).hostname)
-  )
-    throw new Error("Local preview refuses non-local database connections.");
+  const url = databaseEndpoint(process.env),
+    key = process.env.SUPABASE_SERVICE_ROLE_KEY!;
   return createClient(url, key, {
     realtime: { transport: WebSocket as any },
     auth: { persistSession: false, autoRefreshToken: false },
@@ -28,7 +20,7 @@ export function adminDb() {
 export async function sessionDb() {
   const jar = await cookies();
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    databaseEndpoint(process.env),
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       realtime: { transport: WebSocket as any },

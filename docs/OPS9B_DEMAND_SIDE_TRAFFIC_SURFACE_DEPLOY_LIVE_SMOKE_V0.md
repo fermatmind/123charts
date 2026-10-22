@@ -23,7 +23,7 @@ The deployment was executed only after explicit human approval naming the exact
 SHA:
 
 ```text
-我确认部署 88CN origin/main SHA 3234ef79f430569230aabc55b02060092013503d 到生产服务器，不启用任何新 env/payment/secret flag。
+我确认部署 123Charts origin/main SHA 3234ef79f430569230aabc55b02060092013503d 到生产服务器，不启用任何新 env/payment/secret flag。
 ```
 
 ## Precondition
@@ -84,8 +84,8 @@ runtime, MCP runtime, Laravel runtime, customer access, outreach tooling, or
 The deploy command run on the production host checkout was:
 
 ```bash
-cd /var/www/88cn
-BASE_URL=https://88cn.com scripts/agent/deploy-production.sh --confirm --commit 3234ef79f430569230aabc55b02060092013503d
+cd /var/www/123charts
+BASE_URL=https://123charts.com scripts/agent/deploy-production.sh --confirm --commit 3234ef79f430569230aabc55b02060092013503d
 ```
 
 The script completed the fixed-SHA checkout, dependency install, Day 0
@@ -96,11 +96,11 @@ Nginx reload, local smoke, live smoke, and final deployed-SHA assertion.
 
 | Area | Result | Evidence |
 | --- | --- | --- |
-| PM2 | PASS | `88cn-web` restarted and remained `online` |
+| PM2 | PASS | `123charts-web` restarted and remained `online` |
 | Nginx config | PASS | `nginx: configuration file /etc/nginx/nginx.conf test is successful` |
 | Local smoke from production host | PASS | `/api/healthz`, `/`, `/projects`, `/submit`, `/geo-checker`, `/sitemap.xml`, `/robots.txt`, `/admin` returned 200 |
-| Live smoke from production host | PASS | Same route set returned 200 through `https://88cn.com` |
-| External live smoke from local workstation | PASS | `BASE_URL=https://88cn.com scripts/agent/smoke-live.sh` returned `live smoke passed` |
+| Live smoke from production host | PASS | Same route set returned 200 through `https://123charts.com` |
+| External live smoke from local workstation | PASS | `BASE_URL=https://123charts.com scripts/agent/smoke-live.sh` returned `live smoke passed` |
 
 ## Baseline Public Route Smoke Matrix
 
@@ -186,7 +186,7 @@ Live `/robots.txt` returned 200 and includes:
 - `Disallow: /preview/`
 - `Disallow: /claim/`
 - `Disallow: /submit/`
-- `Sitemap: https://88cn.com/sitemap.xml`
+- `Sitemap: https://123charts.com/sitemap.xml`
 
 ## Security Header Summary
 

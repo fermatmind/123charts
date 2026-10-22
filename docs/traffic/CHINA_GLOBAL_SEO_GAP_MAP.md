@@ -2,11 +2,11 @@
 
 ## Thesis
 
-China has active AI tool directories. The gap for 88CN is not another generic `AI工具导航`; it is a bilingual AI project landscape focused on reviewed public signals, lifecycle/source links, open-source/commercial split, machine-readability evidence, and outbound-founder research.
+China has active AI tool directories. The gap for 123Charts is not another generic `AI工具导航`; it is a bilingual AI project landscape focused on reviewed public signals, lifecycle/source links, open-source/commercial split, machine-readability evidence, and outbound-founder research.
 
 ## Global Pattern Map
 
-| Global pattern | Evidence from sampled competitors | SEO value | Risk | 88CN response |
+| Global pattern | Evidence from sampled competitors | SEO value | Risk | 123Charts response |
 | --- | --- | --- | --- | --- |
 | "AI tools directory" homepage | Toolify, Futurepedia, FutureTools, AIxploria | High broad discovery | Crowded, generic, easy to copy poorly | Avoid positioning as generic directory. |
 | Category pages | Toolify categories, Futurepedia categories, AIxploria categories | Strong navigation and SEO | Can become thin or unbounded | Use finite route families with reviewed project thresholds. |
@@ -19,13 +19,13 @@ China has active AI tool directories. The gap for 88CN is not another generic `A
 
 ## China Pattern Map
 
-| Chinese pattern | Evidence from sampled competitors | SEO value | Risk | 88CN response |
+| Chinese pattern | Evidence from sampled competitors | SEO value | Risk | 123Charts response |
 | --- | --- | --- | --- | --- |
 | `AI工具导航` / `AI工具大全` | AI工具集, AI导航网, AIGC导航, ToolifyAi Chinese, 360AI导航 | Very broad | Crowded and generic | Avoid first-wave direct competition. |
 | Dense category blocks | AI工具集, AIGC导航, AI导航网, 发现AI | Navigation | Thin if unreviewed | Use project landscape categories only with reviewed projects. |
 | Submit / 收录 | AI工具集, AIBase, AI导航网, AIGC导航, ToolifyAi Chinese | Founder acquisition | Listing expectation and paid inclusion confusion | Use human-reviewed lifecycle states and no automatic listing promise. |
 | Rankings / 榜单 / hot lists | AIBase, 发现AI, AI导航网 | Acquisition | Fake/unclear count risk | Avoid unreviewed ranking. |
-| GEO / AI search readiness | AIBase GEO checker and promotion-effect framing | Strong founder demand | Outcome-promise risk | 88CN geo-checker must stay machine-readability/readiness focused. |
+| GEO / AI search readiness | AIBase GEO checker and promotion-effect framing | Strong founder demand | Outcome-promise risk | 123Charts geo-checker must stay machine-readability/readiness focused. |
 | Builder education / MCP | 鱼皮AI导航 | Strong builder fit | Can become tutorial site | Use builder route clusters tied to project/source evidence. |
 | Business cooperation / 广告合作 | AI工具集, AI导航网, AIBase, 鱼皮AI导航 | Monetization | Paid/organic confusion | Isolate Featured Signals from organic systems. |
 

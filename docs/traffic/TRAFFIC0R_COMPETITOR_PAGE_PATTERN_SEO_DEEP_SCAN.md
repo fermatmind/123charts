@@ -37,13 +37,13 @@ Public-page data captured for each sample:
 - JSON-LD presence where easy to inspect
 - sponsored/featured/advertise/submit signals where public
 - form/input presence as a public-page signal only
-- 88CN route and policy lesson
+- 123Charts route and policy lesson
 
 Detailed matrices are split into:
 
-- [COMPETITOR_PAGE_PATTERN_MATRIX.md](/Users/rainie/Desktop/88CN/docs/traffic/COMPETITOR_PAGE_PATTERN_MATRIX.md)
-- [CHINA_GLOBAL_SEO_GAP_MAP.md](/Users/rainie/Desktop/88CN/docs/traffic/CHINA_GLOBAL_SEO_GAP_MAP.md)
-- [PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md](/Users/rainie/Desktop/88CN/docs/traffic/PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md)
+- [COMPETITOR_PAGE_PATTERN_MATRIX.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/COMPETITOR_PAGE_PATTERN_MATRIX.md)
+- [CHINA_GLOBAL_SEO_GAP_MAP.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/CHINA_GLOBAL_SEO_GAP_MAP.md)
+- [PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md](/Users/rainie/Desktop/123charts.com/123charts/docs/traffic/PUBLIC_MONETIZATION_BOUNDARY_AUDIT.md)
 
 ## Public Observation Limits
 
@@ -54,7 +54,7 @@ Some sites were partially unavailable in Chrome:
 - `alternativeto.net`: sampled category page returned minimal content in Chrome. No bypass was attempted.
 - `aitoolsdirectory.com`: homepage and some pages returned partial/minimal text in Chrome, but advertise/blog signals were visible.
 
-These limits do not invalidate the broader conclusion from accessible competitors: generic AI tool directories and category/ranking surfaces are common; the 88CN gap remains a reviewed bilingual AI project landscape with source-linked public signals.
+These limits do not invalidate the broader conclusion from accessible competitors: generic AI tool directories and category/ranking surfaces are common; the 123Charts gap remains a reviewed bilingual AI project landscape with source-linked public signals.
 
 ## Competitor List
 
@@ -83,30 +83,30 @@ Chinese / China-facing:
 
 ## International Competitor Matrix
 
-| Site | Sampled page types | Primary intent | Page pattern | CTA / monetization signal | 88CN lesson |
+| Site | Sampled page types | Primary intent | Page pattern | CTA / monetization signal | 123Charts lesson |
 | --- | --- | --- | --- | --- | --- |
 | There Is An AI For That | Unavailable in Chrome for TRAFFIC0R | task_intent | Not re-observed due browser policy block | Not observed in this run | Treat TAAFT-like task pages as a pattern to map, but do not rely on this run for page-level evidence. |
-| Toolify | homepage, ranking/category, submit, revenue ranking, advertise minimal-render | category_intent, ranking_intent, submission_intent, sponsored_placement_intent | Large directory with top/monthly/category/source/revenue rankings, latest tools, category links, submit and advertise links | Sponsored labels and featured sections visible; submit page has form fields; revenue/ranking pages expose high-risk count/traffic framing | 88CN can learn route structure but should avoid unverified ranking/revenue/traffic framing. Keep public signals reviewed and paid UI separated from organic ordering. |
-| Futurepedia | homepage, all categories, AI agents category, tool detail, submit, editorial guidelines | category_intent, education_intent, founder_research_intent | Business-oriented category hierarchy plus tool detail pages with pricing/reviews/alternatives and editorial process page | Submit page frames paid reach; editorial guidelines provide trust surface; forms visible but not submitted | 88CN should borrow explicit editorial/review process clarity while avoiding paid reach as a core founder promise. |
-| FutureTools | homepage, newly added, tool detail, submit | category_intent, education_intent, submission_intent | Curated database with categories, newest ordering, creator/newsletter distribution, simple tool detail pages | Submit page form visible; less obvious sponsored separation in sampled pages | 88CN can use curation tone and newsletter/report packaging, but must add lifecycle, source links, and machine-readable signals. |
-| AIxploria | homepage, categories, latest, submit/featured, verified tools | category_intent, ranking_intent, education_intent, sponsored_placement_intent | Broad multilingual directory with categories, top/list/latest pages, verified category, and featured submit positioning | Submit page title frames "featured" and audience reach; no rel=sponsored found in sampled visible links | 88CN should not copy broad "best/top" directory language; use finite reviewed route families and label sample counts. |
+| Toolify | homepage, ranking/category, submit, revenue ranking, advertise minimal-render | category_intent, ranking_intent, submission_intent, sponsored_placement_intent | Large directory with top/monthly/category/source/revenue rankings, latest tools, category links, submit and advertise links | Sponsored labels and featured sections visible; submit page has form fields; revenue/ranking pages expose high-risk count/traffic framing | 123Charts can learn route structure but should avoid unverified ranking/revenue/traffic framing. Keep public signals reviewed and paid UI separated from organic ordering. |
+| Futurepedia | homepage, all categories, AI agents category, tool detail, submit, editorial guidelines | category_intent, education_intent, founder_research_intent | Business-oriented category hierarchy plus tool detail pages with pricing/reviews/alternatives and editorial process page | Submit page frames paid reach; editorial guidelines provide trust surface; forms visible but not submitted | 123Charts should borrow explicit editorial/review process clarity while avoiding paid reach as a core founder promise. |
+| FutureTools | homepage, newly added, tool detail, submit | category_intent, education_intent, submission_intent | Curated database with categories, newest ordering, creator/newsletter distribution, simple tool detail pages | Submit page form visible; less obvious sponsored separation in sampled pages | 123Charts can use curation tone and newsletter/report packaging, but must add lifecycle, source links, and machine-readable signals. |
+| AIxploria | homepage, categories, latest, submit/featured, verified tools | category_intent, ranking_intent, education_intent, sponsored_placement_intent | Broad multilingual directory with categories, top/list/latest pages, verified category, and featured submit positioning | Submit page title frames "featured" and audience reach; no rel=sponsored found in sampled visible links | 123Charts should not copy broad "best/top" directory language; use finite reviewed route families and label sample counts. |
 | SaaSHub | category and alternatives sampled but minimal-render in Chrome | alternative_intent, buyer_research_intent | Page pattern not visible in this run | Not observed from rendered page | Keep canonical alternatives discipline, but do not derive page details from blocked/minimal render. |
 | AlternativeTo | AI tools category sampled but minimal-render in Chrome | alternative_intent, category_intent | Page pattern not visible in this run | Not observed from rendered page | Alternatives remain valuable, but TRAFFIC1 should require canonical allowlists and public-signal comparison fields. |
-| AIToolsDirectory | homepage partial, submit partial, ads, blog | category_intent, submission_intent, sponsored_placement_intent | Lightweight directory/blog/advertise surfaces; advertise page visible | Advertise and premium placement links visible; submit page minimal in Chrome | 88CN should avoid mixing a paid placement product with organic discovery, sitemap, API, MCP, Signal Score, or Source Confidence. |
+| AIToolsDirectory | homepage partial, submit partial, ads, blog | category_intent, submission_intent, sponsored_placement_intent | Lightweight directory/blog/advertise surfaces; advertise page visible | Advertise and premium placement links visible; submit page minimal in Chrome | 123Charts should avoid mixing a paid placement product with organic discovery, sitemap, API, MCP, Signal Score, or Source Confidence. |
 
 ## Chinese Competitor Matrix
 
-| Site | Sampled page types | Primary intent | Page pattern | CTA / monetization signal | 88CN lesson |
+| Site | Sampled page types | Primary intent | Page pattern | CTA / monetization signal | 123Charts lesson |
 | --- | --- | --- | --- | --- | --- |
-| AI工具集 / ai-bot.cn | homepage, category, about/monetization | zh_cn_tool_discovery_intent, category_intent, submission_intent | Dense category navigation, latest/hot/update framing, AI writing/category pages, about page | About page exposes advertising/cooperation and inclusion/update language | China directory intent is active and mature; 88CN should not compete as a generic navigation site. |
-| AIBase / top.aibase.com | homepage, discover, ranking, tool detail, submit | zh_cn_tool_discovery_intent, ranking_intent, founder_research_intent, submission_intent | Product library with discovery, ranking, tool pages, submission page, topic/category links | Submit page invites product display; ranking pages visible; AIBase ecosystem includes business/partnership pages | Strong signal that Chinese demand includes product database, rankings, submission, and GEO checking. 88CN should use public-signal provenance rather than ranking claims. |
-| aibase.com | homepage, partnership, GEO checker | zh_cn_outbound_founder_intent, machine_readability_intent, sponsored_placement_intent | News/product/ecosystem plus GEO promotion-effect checker and business cooperation | Partnership page visible; GEO checker uses promotion-effect framing | 88CN's geo-checker should stay framed around machine readability and public readiness, not promotional outcome measurement. |
-| AI导航网 / ainav.cn | homepage, submit, business, tool detail | zh_cn_tool_discovery_intent, submission_intent, sponsored_placement_intent | WordPress-like navigation with submit/business pages, tool detail pages, many category anchors | Submit/business forms visible; one sampled detail page had rel=sponsored links | 88CN should preserve a stricter separation: Featured Signals can be visible UI only, not organic order, sitemap, API, MCP, scores, or source confidence. |
+| AI工具集 / ai-bot.cn | homepage, category, about/monetization | zh_cn_tool_discovery_intent, category_intent, submission_intent | Dense category navigation, latest/hot/update framing, AI writing/category pages, about page | About page exposes advertising/cooperation and inclusion/update language | China directory intent is active and mature; 123Charts should not compete as a generic navigation site. |
+| AIBase / top.aibase.com | homepage, discover, ranking, tool detail, submit | zh_cn_tool_discovery_intent, ranking_intent, founder_research_intent, submission_intent | Product library with discovery, ranking, tool pages, submission page, topic/category links | Submit page invites product display; ranking pages visible; AIBase ecosystem includes business/partnership pages | Strong signal that Chinese demand includes product database, rankings, submission, and GEO checking. 123Charts should use public-signal provenance rather than ranking claims. |
+| aibase.com | homepage, partnership, GEO checker | zh_cn_outbound_founder_intent, machine_readability_intent, sponsored_placement_intent | News/product/ecosystem plus GEO promotion-effect checker and business cooperation | Partnership page visible; GEO checker uses promotion-effect framing | 123Charts's geo-checker should stay framed around machine readability and public readiness, not promotional outcome measurement. |
+| AI导航网 / ainav.cn | homepage, submit, business, tool detail | zh_cn_tool_discovery_intent, submission_intent, sponsored_placement_intent | WordPress-like navigation with submit/business pages, tool detail pages, many category anchors | Submit/business forms visible; one sampled detail page had rel=sponsored links | 123Charts should preserve a stricter separation: Featured Signals can be visible UI only, not organic order, sitemap, API, MCP, scores, or source confidence. |
 | AIGC导航 / aigc.cn | homepage, submit, news, category | zh_cn_tool_discovery_intent, submission_intent, education_intent | Dense AI tool category navigation, submit instructions, news/category pages | Submit instructions public; contact links visible; no form submission performed | Good evidence for Chinese category demand; weak evidence for source-linked public-signal landscape. |
-| 发现AI / faxianai.com | homepage, tools, ranking, hotnews | zh_cn_tool_discovery_intent, ranking_intent, education_intent | Tools pages, ranking pages, hot news aggregation, product cards | Ranking/hotnews pages visible; external links often nofollow on hotnews | Generic ranking/news surfaces are easy to produce but risky for 88CN unless source and counts are reviewed. |
-| ToolifyAi Chinese / toolifyai.cn | homepage, submit, news | zh_cn_tool_discovery_intent, submission_intent, education_intent | Chinese AI tool navigation, news/articles, submit link, external outbound redirect pattern | Submit inputs visible; news/ad language visible | 88CN should prioritize more differentiated Chinese terms such as AI project map, project official-site check, and machine-readable public signals. |
-| 360AI导航 / ai.hao.360.com | homepage, tool detail pages | zh_cn_tool_discovery_intent, education_intent | Mainstream portal combining AI tools, news, curated details, category tabs | Login/feedback/collection links visible; detail pages include ad signal | Strong mainstream navigation surface, but portal breadth is not 88CN's path. 88CN should target founder/builder/researcher specificity. |
-| 鱼皮AI导航 / ai.codefather.cn | homepage, tools, MCP, education | zh_cn_tool_discovery_intent, education_intent, machine_readability_intent | AI tools, knowledge base, MCP/Skills, learning resources, news, community | Business cooperation link visible; JSON-LD WebSite/Organization visible on homepage | Strong builder/community education pattern. 88CN should serve builders with project landscape and public-signal evidence rather than generic tool teaching alone. |
+| 发现AI / faxianai.com | homepage, tools, ranking, hotnews | zh_cn_tool_discovery_intent, ranking_intent, education_intent | Tools pages, ranking pages, hot news aggregation, product cards | Ranking/hotnews pages visible; external links often nofollow on hotnews | Generic ranking/news surfaces are easy to produce but risky for 123Charts unless source and counts are reviewed. |
+| ToolifyAi Chinese / toolifyai.cn | homepage, submit, news | zh_cn_tool_discovery_intent, submission_intent, education_intent | Chinese AI tool navigation, news/articles, submit link, external outbound redirect pattern | Submit inputs visible; news/ad language visible | 123Charts should prioritize more differentiated Chinese terms such as AI project map, project official-site check, and machine-readable public signals. |
+| 360AI导航 / ai.hao.360.com | homepage, tool detail pages | zh_cn_tool_discovery_intent, education_intent | Mainstream portal combining AI tools, news, curated details, category tabs | Login/feedback/collection links visible; detail pages include ad signal | Strong mainstream navigation surface, but portal breadth is not 123Charts's path. 123Charts should target founder/builder/researcher specificity. |
+| 鱼皮AI导航 / ai.codefather.cn | homepage, tools, MCP, education | zh_cn_tool_discovery_intent, education_intent, machine_readability_intent | AI tools, knowledge base, MCP/Skills, learning resources, news, community | Business cooperation link visible; JSON-LD WebSite/Organization visible on homepage | Strong builder/community education pattern. 123Charts should serve builders with project landscape and public-signal evidence rather than generic tool teaching alone. |
 
 ## Page-Pattern Observations
 
@@ -130,19 +130,19 @@ Recurring Chinese patterns:
 
 ## Intent Taxonomy Observations
 
-| Intent | User job | Competitor pattern | 88CN differentiation | Safe for 88CN | Wave |
+| Intent | User job | Competitor pattern | 123Charts differentiation | Safe for 123Charts | Wave |
 | --- | --- | --- | --- | --- | --- |
 | task_intent | Find an AI project/tool for a concrete job | TAAFT-like task pages; category sites also expose task filters | Finite task pages mapped to reviewed projects and public signals | Yes, if allowlisted | First wave after taxonomy |
 | category_intent | Browse tools by domain | Toolify, Futurepedia, AIxploria, AI工具集, AIGC导航, 360AI导航 | Use category as navigation into reviewed project landscape, not generic directory | Yes, with reviewed sample counts | First wave |
 | alternative_intent | Compare known project/tool to options | SaaSHub/AlternativeTo style; Futurepedia detail pages include alternatives | Canonical public-signal comparisons only | Yes, if canonical | First/second wave |
-| landscape_intent | Understand sector/stack/project map | Weakly served by directories | 88CN primary positioning: project landscape and sector density | Yes | First wave |
+| landscape_intent | Understand sector/stack/project map | Weakly served by directories | 123Charts primary positioning: project landscape and sector density | Yes | First wave |
 | founder_research_intent | Check how a project appears publicly | Submit/update pages; GEO tools in China | Founder education plus machine-readability evidence | Yes | First wave |
 | buyer_research_intent | Evaluate public data fields and source trust | Weak in generic directories | Public-signal snapshots and Alpha Feed evidence later | Yes, docs/report first | Second wave |
-| machine_readability_intent | Check whether project profile is machine-readable | AIBase GEO checker and 88CN geo-checker adjacency | Public readiness and structured-data checks without outcome promises | Yes | First wave |
+| machine_readability_intent | Check whether project profile is machine-readable | AIBase GEO checker and 123Charts geo-checker adjacency | Public readiness and structured-data checks without outcome promises | Yes | First wave |
 | zh_cn_tool_discovery_intent | Find AI tools in Chinese | Many crowded directories | Avoid generic `AI工具导航` head-on; use project landscape differentiation | Yes, but not generic | Later/limited first wave |
-| zh_cn_outbound_founder_intent | Help Chinese founders prepare global project pages | Under-served in sampled pages | Strong 88CN opportunity | Yes | First wave after taxonomy |
+| zh_cn_outbound_founder_intent | Help Chinese founders prepare global project pages | Under-served in sampled pages | Strong 123Charts opportunity | Yes | First wave after taxonomy |
 | submission_intent | Submit/update/list a tool | Common across directories | Human-reviewed submit/claim/correction with lifecycle states | Yes, but no promises | First wave |
-| sponsored_placement_intent | Buy visible placement or exposure | Visible on many competitor surfaces | 88CN must isolate Featured Signals from organic systems | Only as separate boundary | Avoid in TRAFFIC1 |
+| sponsored_placement_intent | Buy visible placement or exposure | Visible on many competitor surfaces | 123Charts must isolate Featured Signals from organic systems | Only as separate boundary | Avoid in TRAFFIC1 |
 
 ## China Gap Analysis
 
@@ -156,18 +156,18 @@ Recurring Chinese patterns:
    They rarely present a reviewed bilingual AI project landscape with source-linked public signals, lifecycle status, open-source/commercial split, machine-readability evidence, and researcher-ready public-signal fields.
 
 4. What does AIBase / AI工具集 / AIGC导航 / 发现AI suggest about Chinese demand?
-   Demand exists for tool discovery, submission, ranking, GEO/checking, business cooperation, and education. The broadest directory terms are crowded; differentiated project intelligence terms are more suitable for 88CN.
+   Demand exists for tool discovery, submission, ranking, GEO/checking, business cooperation, and education. The broadest directory terms are crowded; differentiated project intelligence terms are more suitable for 123Charts.
 
-5. Is 88CN's opportunity "AI tools directory" or "AI project landscape"?
+5. Is 123Charts's opportunity "AI tools directory" or "AI project landscape"?
    AI project landscape.
 
-6. Should 88CN compete for `AI工具导航` directly?
-   Not as the first move. It is crowded and generic. 88CN should target `AI项目图谱`, `AI项目官网检测`, `AI项目机器可读性`, `AI工具出海`, open-source AI agent project, RAG project, and alternatives-style clusters.
+6. Should 123Charts compete for `AI工具导航` directly?
+   Not as the first move. It is crowded and generic. 123Charts should target `AI项目图谱`, `AI项目官网检测`, `AI项目机器可读性`, `AI工具出海`, open-source AI agent project, RAG project, and alternatives-style clusters.
 
-7. Which Chinese intent clusters should 88CN prioritize?
+7. Which Chinese intent clusters should 123Charts prioritize?
    Outbound-founder readiness, project landscape, official-site machine-readability check, open-source/commercial split, AI agent/coding/RAG project maps, and limited alternatives.
 
-8. Which Chinese intent clusters should 88CN avoid?
+8. Which Chinese intent clusters should 123Charts avoid?
    Generic `AI工具`, `AI工具导航`, `AI工具大全`, `AI工具集合`, unreviewed rankings, broad best/top claims, auto-translated tool pages, and paid placement blended into organic discovery.
 
 9. Should Chinese pages come before or after English landscape taxonomy?
@@ -299,11 +299,11 @@ Mandatory for future TRAFFIC tasks:
 | AI project JSON-LD checker | machine_readability_intent | `/geo-checker` explainer | checker/explainer | Low | First wave |
 | machine-readable AI project profile | buyer/founder research | `/reports` / profile docs | report/profile | Low | First wave |
 
-## 88CN Positioning Update
+## 123Charts Positioning Update
 
 Recommended English:
 
-88CN is a bilingual AI project landscape for reviewed public signals, active source links, and machine-readability evidence.
+123Charts is a bilingual AI project landscape for reviewed public signals, active source links, and machine-readability evidence.
 
 Simpler C-end English:
 
@@ -311,7 +311,7 @@ Find active AI projects by category, stack, source links, and public readiness s
 
 Recommended Chinese:
 
-88CN 是一个中英双语 AI 项目发现图谱，聚焦已审阅公开信号、活体来源链接和机器可读性证据。
+123Charts 是一个中英双语 AI 项目发现图谱，聚焦已审阅公开信号、活体来源链接和机器可读性证据。
 
 Simpler Chinese:
 

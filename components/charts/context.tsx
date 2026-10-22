@@ -96,8 +96,9 @@ export function ChartsProvider({
         });
         const result = await r.json();
         if (!r.ok) throw new Error(result.error ?? "Request failed");
-        await refresh();
-        if (route === "auth") router.refresh();
+        // Sign-in navigates to a server-rendered page; do not block it on a second full bootstrap.
+        if (route !== "auth" || input.action === "signout") await refresh();
+        if (route === "auth" && input.action === "signout") router.refresh();
         return result;
       } catch (e) {
         setMessage(
