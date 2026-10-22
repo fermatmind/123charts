@@ -2,8 +2,8 @@
   "batch_id": "batch-02",
   "branch": "data/catalog-deep-batch-02",
   "assigned_count": 196,
-  "completed_count": 7,
-  "remaining_count": 189,
+  "completed_count": 9,
+  "remaining_count": 187,
   "completed_project_paths": [
     "projects/project-management/adobe-workfront-fc4d9f64.json",
     "projects/project-management/aha-3a86a6eb.json",
@@ -11,13 +11,13 @@
     "projects/project-management/axosoft-a491b5fd.json",
     "projects/project-management/basecamp-67313466.json",
     "projects/project-management/clickup-9bd7bad2.json",
-    "projects/project-management/desklog-0b84b0c7.json"
+    "projects/project-management/desklog-0b84b0c7.json",
+    "projects/project-management/favro-9b3eaef9.json",
+    "projects/project-management/ganttpro-3108e1ab.json"
   ],
   "remaining_project_paths": [
     "projects/project-management/campr-96e6cd3e.json",
-    "projects/project-management/favro-9b3eaef9.json",
     "projects/project-management/flat-94cbd062.json",
-    "projects/project-management/ganttpro-3108e1ab.json",
     "projects/project-management/jile-e71b0871.json",
     "projects/project-management/kanban-tool-2eaedb30.json",
     "projects/project-management/makerkit-ae79aed7.json",
@@ -205,8 +205,8 @@
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
   "status": "in_progress",
-  "updated_at": "2026-10-22T10:18:23.837209+00:00",
-  "last_content_commit": "d7909cce9d88e925724a77ad107fc9557d8ec309",
+  "updated_at": "2026-10-22T10:23:30.229716+00:00",
+  "last_content_commit": "506d41de08bfafabb8cc551f6bf67006bd060112",
   "checkpoints": [
     {
       "projects": ["projects/project-management/adobe-workfront-fc4d9f64.json"],
@@ -269,6 +269,23 @@
         "ClickUp current reader text exposes conflicting old/new packaging, rates and automation quotas; normalized price unset.",
         "Desklog is time/activity measurement with projects and invoices. Distinguishes activity from output quality and disconnected network from logged-out status."
       ]
+    },
+    {
+      "projects": [
+        "projects/project-management/favro-9b3eaef9.json",
+        "projects/project-management/ganttpro-3108e1ab.json"
+      ],
+      "validations": {
+        "owned_excerpt_hash_and_reference_check": "9 records passed; all official source hashes reproduced from actual saved excerpts",
+        "records_only": "Known Basecamp help-domain assertion remains; shared validator unchanged",
+        "prettier": "passed",
+        "git_diff_check": "passed"
+      },
+      "notes": [
+        "Favro shared-card board statuses, archived/unplaced-card aggregation, external roles, user buckets and cancellation behavior checked.",
+        "GanttPRO dependency types, calendar/effort modes, progress calculation, baseline and performance conditions checked.",
+        "Flat remains uncounted: current homepage 404 and official pricing unavailable; documentation discovery alone does not verify current service."
+      ]
     }
   ],
   "open_issues": [
@@ -299,6 +316,16 @@
       "discovered_repository": "https://github.com/Campr-Project-Management/campr",
       "repository_scope": "Repository README is accessible and references historical cloud/on-premise options, but does not establish current cloud operation or pricing.",
       "followup": "Recheck official site if external state changes; do not infer discontinuation from third-party labels."
+    },
+    {
+      "path": "projects/project-management/flat-94cbd062.json",
+      "status": "not_counted_as_complete",
+      "reason": "flat.app homepage returned 404; /pricing and www host could not be read. Official docs remain discoverable, but current product availability, pricing and license conditions cannot be verified.",
+      "evidence_files": [
+        ".scratch/deep-research/flat-discovery.txt",
+        ".scratch/deep-research/flat-check.txt"
+      ],
+      "followup": "Retain candidate and recheck current official entry/pricing if external state changes. Do not infer closure from 404 alone."
     }
   ]
 }
