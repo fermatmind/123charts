@@ -2,8 +2,8 @@
   "batch_id": "batch-02",
   "branch": "data/catalog-deep-batch-02",
   "assigned_count": 196,
-  "completed_count": 21,
-  "remaining_count": 175,
+  "completed_count": 23,
+  "remaining_count": 173,
   "completed_project_paths": [
     "projects/project-management/adobe-workfront-fc4d9f64.json",
     "projects/project-management/aha-3a86a6eb.json",
@@ -25,14 +25,14 @@
     "projects/project-management/selfmanager-ai-bc664a2f.json",
     "projects/project-management/streamtime-434bfa07.json",
     "projects/project-management/trackpm-software-ba070864.json",
-    "projects/project-management/trello-2545d6f0.json"
+    "projects/project-management/trello-2545d6f0.json",
+    "projects/task-management/blitzit-aa284184.json",
+    "projects/task-management/compito-a26fbf01.json"
   ],
   "remaining_project_paths": [
     "projects/project-management/campr-96e6cd3e.json",
     "projects/project-management/flat-94cbd062.json",
     "projects/project-management/trackboard-d87e052d.json",
-    "projects/task-management/blitzit-aa284184.json",
-    "projects/task-management/compito-a26fbf01.json",
     "projects/task-management/flowist-2439bc2b.json",
     "projects/task-management/futuramo-b71c7c4e.json",
     "projects/task-management/gqueues-fc44a150.json",
@@ -205,8 +205,8 @@
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
   "status": "in_progress",
-  "updated_at": "2026-10-22T11:05:24.921366+00:00",
-  "last_content_commit": "c528f641256e0667907e98d056bfdb91befab235",
+  "updated_at": "2026-10-22T11:12:32.958619+00:00",
+  "last_content_commit": "80e7d5fd3ce45fa4ad87511d6bd5a6997eebe6fd",
   "checkpoints": [
     {
       "projects": ["projects/project-management/adobe-workfront-fc4d9f64.json"],
@@ -389,6 +389,23 @@
         "Trello mirrors require source-board access; focus time does not change deadline; unlimited runs retain operations cap; exports cannot re-create board. Official Trello navigation links Atlassian support/legal.",
         "Project-management category:21 researched;CAMPR,Flat,Trackboard remain blocked and not counted. Continue task-management."
       ]
+    },
+    {
+      "projects": [
+        "projects/task-management/blitzit-aa284184.json",
+        "projects/task-management/compito-a26fbf01.json"
+      ],
+      "validations": {
+        "owned_excerpt_hash_and_reference_check": "23 records passed",
+        "records_only": "Known Basecamp help-domain assertion; Trello Atlassian and Compito official GitHub sources also cross identity domain. Shared script unchanged.",
+        "python_catalog_tests": "7 passed earlier; no code changes",
+        "prettier": "passed",
+        "git_diff_check": "passed"
+      },
+      "notes": [
+        "Blitzit3.0 beta/2.x separate database, migration and recurring transition checked; timer precedence, editable time, time-weighted punctuality and optional Calendar source deletion distinguished. Refund/trial conflict unresolved.",
+        "Compito official landing page read via browser AX/screenshot after reader returned empty. GitHub linked both ways; README, actual MIT license, Compose, data schema and manifest read. No code copied or executed. Hosted pricing unknown; official landing-page price check is not confirmation of free hosting."
+      ]
     }
   ],
   "open_issues": [
@@ -423,6 +440,20 @@
       ],
       "resolution_owner": "coordinator",
       "action": "Retain real officially linked Atlassian sources and trello.com project identity; do not modify shared validator."
+    },
+    {
+      "project": "projects/task-management/compito-a26fbf01.json",
+      "kind": "official_source_domain_validator",
+      "error": "compito.adi.so officially links github.com/adisreyaj/compito; actual license/development materials reside on github.com outside adi.so identity.",
+      "official_sources": [
+        "https://github.com/adisreyaj/compito",
+        "https://github.com/adisreyaj/compito/blob/main/LICENSE.md",
+        "https://github.com/adisreyaj/compito/blob/main/docker-compose.yml",
+        "https://github.com/adisreyaj/compito/blob/main/prisma/schema.prisma",
+        "https://github.com/adisreyaj/compito/blob/main/package.json"
+      ],
+      "resolution_owner": "coordinator",
+      "action": "Preserve actual official repository URLs and adi.so identity; shared validator unchanged."
     }
   ],
   "evidence_directory": ".scratch/deep-research/",

@@ -10,129 +10,129 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Compito is a product in the Task management category. Its directory profile covers Task Tracking, Task Scheduling.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.",
-  "description_zh": "Compito 属于任务管理软件。第三方资料列出的功能包括任务跟踪、任务排程。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。",
+  "research_status": "primary_source_researched",
+  "description_en": "Compito is a source-available, MIT-licensed project/task application organized around organizations, projects and Kanban boards. Its official landing page links the maintainer’s GitHub repository, whose README documents multiple organizations, invited users and role-based access. This profile treats the repository as an inspectable application project rather than assuming the public demo includes a managed-service contract.\n\nA potential fit is a developer-operated team board where source access and a simple work hierarchy matter. That also leaves installation, identity configuration, dependency compatibility, permissions and recovery with the evaluator. The landing page and repository were read; no account, server or database was started.",
+  "description_zh": "Compito 是采用 MIT 许可、可读取源码的项目／任务应用，按组织、项目和 Kanban 看板组织工作。官网链接维护者的 GitHub 仓库，README 说明多组织、邀请用户及基于角色的访问。本文把仓库视为可检查的应用项目，不假设公开演示附带托管服务合同。\n\n如果开发者运营的团队看板重视源码访问及简单工作层级，可以列入候选；同时需自行评估安装、身份配置、依赖兼容、权限及恢复。此次读取了首页和仓库，没有创建账户、启动服务器或数据库。",
   "core_features": [
     {
-      "name_en": "Task Tracking",
-      "name_zh": "任务跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Organization/project boards",
+      "name_zh": "组织／项目看板",
+      "explanation_en": "Multiple organizations contain projects and boards.",
+      "explanation_zh": "多个组织分别包含项目和看板。",
+      "explanation_scope": "product_specific",
+      "source_ref": "readme",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Task Scheduling",
-      "name_zh": "任务排程",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Task records with assignments",
+      "name_zh": "带分派的任务记录",
+      "explanation_en": "Task schema associates board/project/org, assignees, comments and attachments.",
+      "explanation_zh": "任务结构关联看板／项目／组织、负责人、评论及附件。",
+      "explanation_scope": "product_specific",
+      "source_ref": "data-model",
+      "status": "official_documentation_read"
+    },
+    {
+      "name_en": "Role-based invitations",
+      "name_zh": "基于角色的邀请",
+      "explanation_en": "Published role/invitation model requires enforcement validation.",
+      "explanation_zh": "公开角色／邀请模型仍需验证权限执行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "readme",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [],
-    "zh": [],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Evaluate a developer-operated maintenance board with explicit membership checks and recovery evidence."
+    ],
+    "zh": ["评估开发者运营的维护看板，并明确检查成员权限及恢复证据。"],
+    "source_refs": ["readme", "compose", "data-model"],
+    "basis": "Proposed evaluation, not observed customer adoption."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Deployment": {
+      "en": "Source project with documented UI/API, PostgreSQL and Auth0 setup; no runtime started.",
+      "zh": "源码项目，文档涉及 UI／API、PostgreSQL 和 Auth0 配置；未启动运行环境。",
+      "source_ref": "readme",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Developer operating a team board"],
+    "roles_status": "editorial_inference",
+    "source_ref": "readme"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Review the exact source revision, license, runtime compatibility and identity setup before installation.",
+        "zh": "安装前核对具体源码版本、许可、运行环境兼容及身份配置。",
+        "source_refs": ["license", "development", "readme"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Validate a known task, unauthorized access and a full data/file restore before operational use.",
+        "zh": "运营使用前验证已知任务、未授权访问及完整数据／文件恢复。",
+        "source_refs": ["data-model", "compose"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "partially_documented_not_tested",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "readme",
+    "scope": "Auth0 is a documented setup dependency. No task synchronization or public API contract established."
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documentation_boundaries",
+    "items": [
+      {
+        "en": "Compose starts only the database, not a complete managed application.",
+        "zh": "Compose 只启动数据库，不是完整托管应用。",
+        "source_refs": ["compose"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Role/data models do not independently prove authorization or recoverability.",
+        "zh": "角色／数据模型不能独立证明授权执行或可恢复性。",
+        "source_refs": ["readme", "data-model"],
+        "evidence_type": "documentation_boundary"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_license_read",
+    "is_open_source": true,
+    "url": "https://github.com/adisreyaj/compito/blob/main/LICENSE.md",
+    "source_ref": "license",
+    "spdx_id": "MIT",
+    "scope": "Source software; notice preservation and no warranty. No code copied."
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_entry_checked_hosted_price_unknown",
+    "price_type": "open_source_self_operation_costs_hosted_unknown",
+    "officially_checked": true,
+    "source_ref": "official-entry",
+    "normalized_price": null,
+    "source_snapshot_en": "MIT code license without a software fee; hosted subscription and quota not specified on the read landing page. Infrastructure/identity/maintenance costs separate.",
+    "source_snapshot_zh": "MIT 代码许可不收软件许可费；所读首页未说明托管订阅及额度。基础设施／身份／维护成本另计。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Compito do?",
-      "question_zh": "Compito 用来做什么？",
-      "answer_en": "Compito is a product in the Task management category. Its directory profile covers Task Tracking, Task Scheduling.",
-      "answer_zh": "Compito 属于任务管理软件。第三方资料列出的功能包括任务跟踪、任务排程。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Task Tracking, Task Scheduling",
-      "answer_zh": "任务跟踪、任务排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -142,25 +142,191 @@
       "read_at": "2026-10-22T08:39:41.442Z",
       "excerpt_sha256": "f56c4b1e08fead2f3dcd6ebae60a6ed1a96c18627b5db07605980af15bd8f310",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "official-entry",
+      "type": "official_pricing",
+      "site": "compito.adi.so",
+      "title": "Compito - Tasks done right!",
+      "url": "https://compito.adi.so/",
+      "read_at": "2026-10-22T11:12:11.844405Z",
+      "verification": "official_documentation_read",
+      "transport": "in_app_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "ec339db081d2d96541944d53b478a5a8e3bae6694f6490256a302281162ac961",
+      "research_notes_en": "Actual official landing page read through browser accessibility and screenshot because public reader returned zero lines. Shows multi-org Kanban/RBAC and official repository link. No subscription amounts or hosted service entitlement shown; pricing remains unknown."
+    },
+    {
+      "id": "readme",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "GitHub - adisreyaj/compito: Compito is a simple and easy to use project management application with support for Multiple orgs. · GitHub",
+      "url": "https://github.com/adisreyaj/compito",
+      "read_at": "2026-10-22T11:12:11.845051Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "2454b787ea3ca8d43a7cd55efee68c9a04b8f7c27a2580d930c8e51fb3d73c43",
+      "research_notes_en": "Officially linked README describes org/project/board hierarchy, invitations and Auth0/local development steps. Not evidence that demo signup or current deployment works."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "github.com",
+      "title": "LICENSE.md",
+      "url": "https://github.com/adisreyaj/compito/blob/main/LICENSE.md",
+      "read_at": "2026-10-22T11:12:11.845400Z",
+      "verification": "official_documentation_read",
+      "transport": "github_connector_public_repository_file",
+      "excerpt_sha256": "d63b549cd0834df31cfda5a7e3b621daa44a82010af8f0eed8bfbc0ba2adab39",
+      "research_notes_en": "Actual MIT license read via GitHub connector; retain notice/permission conditions and no warranty. License does not provide hosted service."
+    },
+    {
+      "id": "compose",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "docker-compose.yml",
+      "url": "https://github.com/adisreyaj/compito/blob/main/docker-compose.yml",
+      "read_at": "2026-10-22T11:12:11.845581Z",
+      "verification": "official_documentation_read",
+      "transport": "github_connector_public_repository_file",
+      "excerpt_sha256": "3c9ff3aa31de79bd59e1f7ef953b08343cdf2e2d32632ef12cac30dabf4dcb17",
+      "research_notes_en": "Compose defines PostgreSQL only, exposes host5433 to container5432 and includes a sample password; not a complete production deployment."
+    },
+    {
+      "id": "data-model",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "schema.prisma",
+      "url": "https://github.com/adisreyaj/compito/blob/main/prisma/schema.prisma",
+      "read_at": "2026-10-22T11:12:11.845775Z",
+      "verification": "official_documentation_read",
+      "transport": "github_connector_public_repository_file",
+      "excerpt_sha256": "5dec6f2cd1875b9532239e4a53ad594636fd0cb4929164bc299a5a7e3ea49830",
+      "research_notes_en": "Prisma model contains org/project/board/task relations, assignees, priorities/dates, comments and attachment path. A schema is not proof of server authorization or immutable audit."
+    },
+    {
+      "id": "development",
+      "type": "official_documentation",
+      "site": "github.com",
+      "title": "package.json",
+      "url": "https://github.com/adisreyaj/compito/blob/main/package.json",
+      "read_at": "2026-10-22T11:12:11.845947Z",
+      "verification": "official_documentation_read",
+      "transport": "github_connector_public_repository_file",
+      "excerpt_sha256": "04575c67b5e2b657cbda0e8200fadafc6b9e4356427c674d7b8fa7811e604f3b",
+      "research_notes_en": "Current main manifest declares Angular13/Nest8/Prisma3-era dependencies and separate scripts; dependency support and install compatibility not tested."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:12:11.845947Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["official-entry", "readme", "license"],
+  "profile": {
+    "sections": [
+      {
+        "id": "work-hierarchy",
+        "title_en": "Select the organization before interpreting its boards",
+        "title_zh": "先确定组织，再理解其中看板",
+        "en": "The README places projects within an organization and boards within a project. A user may belong to multiple organizations and selects one when logging in. The home view surfaces accessible projects and recent/high-priority tasks. For a hypothetical maintenance project, keep one issue board and assign a clearly scoped task to a project member.\n\nBefore inviting external collaborators, inspect which organization is active and which project membership is intended. A board called Support in two organizations is not necessarily the same destination. Use a uniquely named sample and compare its organization, project, board and assignee after saving. This workflow is an evaluation proposal, not a live task or customer case.",
+        "zh": "README 将项目放在组织内、看板放在项目内。用户可属于多个组织，登录时选择其中一个；首页展示可访问项目及近期／高优先级任务。假设维护一个项目，可以使用一块问题看板，把范围明确的任务分派给项目成员。\n\n邀请外部协作者前，应检查当前组织和预期项目成员关系。两个组织中同名 Support 看板不一定是同一目标。建议用唯一命名样本，保存后核对组织、项目、看板及负责人。这是评估建议，不是真实任务或客户案例。",
+        "source_refs": ["readme", "data-model"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "task-record",
+        "title_en": "A card’s position and completion are distinct data",
+        "title_zh": "卡片位置与完成状态是不同数据",
+        "en": "The published Task model contains a list value, a separate completed flag, project/board/organization references, assignees, priority, optional dates, subtasks, comments and attachments. This shows the intended record shape; it does not establish how every UI action updates all fields.\n\nFor the sample, move the task and inspect its completion indicator separately. Correct an assignee or due date and reload it before relying on a filtered view. Request a demonstration of reopening and deletion behavior; no trash, retention period or reliable undo was established. The attachment model stores a path and related metadata, so a database copy alone should not be assumed to contain the actual uploaded files.",
+        "zh": "公开 Task 模型包含列表值、独立 completed 标记、项目／看板／组织引用、负责人、优先级、可选日期、子任务、评论及附件。这说明预期记录结构，不能确立每项界面操作如何更新全部字段。\n\n样本移动后应另查完成标记；修正负责人或到期日并重新加载后，再依赖筛选视图。应要求演示重开和删除行为；此次未确立回收站、保留期或可靠撤销。附件模型存储路径及相关元数据，因此不能假设单独数据库副本包含真实上传文件。",
+        "source_refs": ["data-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access-check",
+        "title_en": "Role labels need an actual authorization check",
+        "title_zh": "角色标签需要实际授权检查",
+        "en": "The official page advertises role-based access, and the README describes role-bearing invitations and administrator project/member changes. The database includes role permissions and organization/user associations. These facts do not prove that every API enforces tenant and project boundaries.\n\nAn operator should validate two test users with intentionally different memberships: confirm access to one known task, then attempt the corresponding unauthorized read and edit in a separate organization. Check pending invitations and removal as well. No invitations were sent and no cross-organization operation was attempted here; the existence of RBAC is documented, while its enforcement remains unverified.",
+        "zh": "官网宣传基于角色的访问，README 说明带角色的邀请，以及管理员修改项目／成员；数据库也包含角色权限及组织／用户关联。这些事实不能证明每个 API 都执行租户及项目边界。\n\n运营者应使用成员关系有意不同的两个测试用户：确认一项已知任务的授权访问，再检查另一组织对应的未授权读取及编辑，也检查待接受邀请与移除。此次未发送邀请或尝试跨组织操作；RBAC 有文档说明，但其执行仍未核实。",
+        "source_refs": ["official-entry", "readme", "data-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup-responsibility",
+        "title_en": "Local setup includes identity and application services",
+        "title_zh": "本地配置包含身份与应用服务",
+        "en": "The documented setup uses npm, a local PostgreSQL service, environment configuration, separate UI/API starts and Auth0 applications. The Compose file starts the database only; it maps host port5433 to container5432 and includes a sample password. Treat it as development material, not a ready production deployment.\n\nThe fetched manifest still declares Angular13 and Nest8-era dependencies. No install or supported-runtime matrix was verified. A developer should pin a reviewed revision, check toolchain compatibility, provision private credentials and validate persistence and restore before placing real work in it. Auth0, hosting, database storage, attachment storage, email and maintenance can each add operating cost or setup requirements even when the application code is licensed without a fee.",
+        "zh": "文档安装涉及 npm、本地 PostgreSQL、环境配置、分别启动 UI／API，以及 Auth0 应用。Compose 文件只启动数据库，把宿主 5433 端口映射到容器 5432，并含样例密码。它是开发材料，不是现成生产部署。\n\n此次取得的清单仍声明 Angular 13、Nest 8 时代依赖，未验证安装或受支持运行环境矩阵。开发者应固定已审查版本、检查工具链兼容、配置私有凭据，并在存入真实工作前验证持久化和恢复。即使应用代码许可免费，Auth0、托管、数据库、附件存储、邮件和维护仍各有运营成本或配置要求。",
+        "source_refs": ["readme", "compose", "development", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-cost",
+        "title_en": "Free code is separate from a hosted-service promise",
+        "title_zh": "免费代码与托管服务承诺分开",
+        "en": "The actual LICENSE.md grants MIT permissions, including modification and redistribution, with notice/permission preservation and no warranty. This is an open-source software license. It does not grant a hosted account, support response time, uptime commitment or unlimited third-party identity/storage service.\n\nNo commercial subscription schedule was visible on the official landing page, and no purchase, demo signup or hosted quota was checked. Hosted price and sustained-free entitlement therefore remain unknown. An evaluation budget should separate software licensing from the infrastructure and work needed to operate it. This research did not copy the application, install its dependencies or adopt its code into123Charts.",
+        "zh": "实际 LICENSE.md 授予 MIT 权利，包括修改和再分发，并要求保留版权／许可声明，且不提供担保。这是开源软件许可，不授予托管账户、支持响应时限、可用性承诺或不限量第三方身份／存储服务。\n\n官网首页未展示商业订阅价表，此次未购买、注册演示或检查托管额度。因此托管价格及持续免费权益仍未知。评估预算应区分软件许可与实际运行所需基础设施及工作。本次没有复制应用、安装依赖或把代码用于 123Charts。",
+        "source_refs": ["license", "official-entry"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit-recovery",
+        "title_en": "Evaluate it as an operated application project",
+        "title_zh": "按需自行运营的应用项目评估",
+        "en": "The source and simple board hierarchy can be useful for a developer willing to own the deployment. If the requirement is a vendor-managed service with proven recovery, compliance evidence, supported integrations and contractual support, those conditions still need evidence. Neither a public demo button nor an MIT label supplies them.\n\nBefore adopting it as the only task record, prepare a known task with a comment and attachment, capture the full data/storage dependencies and prove a restore in a separate environment. Also inspect an authentication failure and an unauthorized edit. Those are proposed acceptance checks, not tests completed here. Current maintainer support, working hosted registration and production readiness remain unverified.",
+        "zh": "对于愿意负责部署的开发者，源码和简单看板层级可能有用。如果需要厂商托管、已验证恢复、合规证据、受支持集成及合同支持，这些条件仍需证据；公开演示按钮或 MIT 标签不能提供这些保证。\n\n作为唯一任务记录前，应准备包含评论及附件的已知任务，列全数据／存储依赖，并在独立环境证明恢复，也检查身份认证失败及未授权编辑。这些是建议验收项，并非此次已完成测试。当前维护者支持、托管注册可用性和生产就绪状态仍未核实。",
+        "source_refs": ["readme", "license", "data-model", "compose"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Compito: Organization Boards, MIT License and Setup Responsibilities",
+    "title_zh": "Compito：组织看板、MIT 许可与运行配置责任",
+    "description_en": "Evaluate Compito organization/project/task structure, role conditions, Auth0/PostgreSQL setup and source versus hosted costs.",
+    "description_zh": "评估 Compito 组织／项目／任务结构、角色条件、Auth0／PostgreSQL 配置和源码与托管成本。",
+    "primary_intent": "Evaluate a source-based team task application.",
+    "secondary_questions": [
+      "Does MIT licensing include a hosted account?",
+      "What must an operator configure?"
+    ],
+    "query_basis": "Editorial hypotheses; no measured demand or ranking.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No source installation, account registration, UI/API run, permission enforcement, attachment upload, export or restore tested. No current production support or maintenance commitment established.",
+      "zh": "未测试源码安装、账户注册、UI／API 运行、权限执行、附件上传、导出或恢复；未确立当前生产支持或维护承诺。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Hosted pricing/free quotas, complete commercial/data-processing terms, email/storage configuration, current dependency security/support, UI languages and regional availability remain unverified. Linked author blog returned429 and was not bypassed.",
+      "zh": "托管价格／免费额度、完整商业／数据处理条款、邮件／存储配置、当前依赖安全／支持、界面语言及地区可用性仍未核实。链接的作者博客返回 429，未绕过。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
