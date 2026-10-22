@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T16:28:06.919126Z",
+  "updated_at": "2026-10-22T16:37:22.952436Z",
   "status": "in_progress_with_community_follow_up",
-  "completed_count": 78,
+  "completed_count": 79,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -82,9 +82,10 @@
     "projects/seo/meta-tags-ef1635d3.json",
     "projects/seo/morningscore-32e49955.json",
     "projects/seo/se-ranking-5396ce4a.json",
-    "projects/seo/searchatlas-ac4ea806.json"
+    "projects/seo/searchatlas-ac4ea806.json",
+    "projects/seo/semrush-37fd26b1.json"
   ],
-  "remaining_count": 26,
+  "remaining_count": 25,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -105,7 +106,6 @@
     "projects/seo/moz-pro-03167342.json",
     "projects/seo/rankwatch-8c1ed4a2.json",
     "projects/seo/searchmetrics-f6b88eb1.json",
-    "projects/seo/semrush-37fd26b1.json",
     "projects/seo/seo-scout-879b43ed.json",
     "projects/seo/seobility-c64ea383.json",
     "projects/seo/serpstat-3dae636f.json",
@@ -114,7 +114,7 @@
     "projects/seo/sitechecker-552374c5.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/semrush-37fd26b1.json",
+  "next_project": "projects/seo/seo-scout-879b43ed.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -1128,6 +1128,24 @@
           "result": "PASS:2primarysources plus recorded original redirect;no shutdown inferred;78complete+19community+7unprocessed+97transferred=201;2lifecyclecorrections overlapcommunity"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-17",
+      "completed_projects": 79,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS:79 drafts;scope/status/source types/hashes/references/bilingual sections"
+        },
+        {
+          "command": "Current ownership/count assertions;Prettier changed JSON;git diff --check",
+          "result": "PASS:79complete+19community+6unprocessed+97transferred=201;transferred untouched"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "NOT RERUN:coordinator owns shared domain/unknown-price integration;no full PASS claimed"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -1320,6 +1338,11 @@
       "commit": "84eba58",
       "completed_count": 78,
       "scope": "SearchAtlas13sections19officialsources;OTTOstates,DeepFreeze,creditsandclientdelivery"
+    },
+    {
+      "commit": "3e45c8a",
+      "completed_count": 78,
+      "scope": "Searchmetrics official acquisition/original redirect lifecycle;19communityfollowups;7unprocessed retained"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -1350,7 +1373,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 16,
+      "completed": 17,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 3
     }
@@ -2136,7 +2159,8 @@
     "projects/seo/meta-tags-ef1635d3.json",
     "projects/seo/morningscore-32e49955.json",
     "projects/seo/se-ranking-5396ce4a.json",
-    "projects/seo/searchatlas-ac4ea806.json"
+    "projects/seo/searchatlas-ac4ea806.json",
+    "projects/seo/semrush-37fd26b1.json"
   ],
   "lifecycle_correction_project_paths": [
     "projects/social-media/thread-creator-191779ac.json",
@@ -2164,7 +2188,6 @@
     "projects/seo/searchmetrics-f6b88eb1.json"
   ],
   "unprocessed_project_paths": [
-    "projects/seo/semrush-37fd26b1.json",
     "projects/seo/seo-scout-879b43ed.json",
     "projects/seo/seobility-c64ea383.json",
     "projects/seo/serpstat-3dae636f.json",
