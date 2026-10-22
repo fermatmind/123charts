@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 50,
+  "completed_count": 60,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -55,9 +55,19 @@
     "projects/payroll/adp-payroll-services-d799e460.json",
     "projects/payroll/check-stub-generator-2bf2c8ec.json",
     "projects/payroll/easystaff-payroll-ff1d7b0c.json",
-    "projects/payroll/fingercheck-f53cabaf.json"
+    "projects/payroll/fingercheck-f53cabaf.json",
+    "projects/payroll/justworks-fb09a484.json",
+    "projects/payroll/multiplier-85433577.json",
+    "projects/payroll/officaid-124ec799.json",
+    "projects/payroll/paycor-80c01962.json",
+    "projects/payroll/payroller-95be9350.json",
+    "projects/payroll/payslipmaker-uk-6b77a533.json",
+    "projects/payroll/poise-payroll-e0c5111a.json",
+    "projects/payroll/remote-com-d47d0821.json",
+    "projects/payroll/revelo-payroll-c9d4f38b.json",
+    "projects/payroll/wagepoint-2422ecb7.json"
   ],
-  "remaining_count": 147,
+  "remaining_count": 137,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
@@ -66,18 +76,8 @@
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
     "projects/human-resources/personio-91e7d61b.json",
     "projects/payroll/gusto-1f8d2cf2.json",
-    "projects/payroll/justworks-fb09a484.json",
-    "projects/payroll/multiplier-85433577.json",
-    "projects/payroll/officaid-124ec799.json",
     "projects/payroll/onpay-f1f2e940.json",
-    "projects/payroll/paycor-80c01962.json",
-    "projects/payroll/payroller-95be9350.json",
-    "projects/payroll/payslipmaker-uk-6b77a533.json",
-    "projects/payroll/poise-payroll-e0c5111a.json",
-    "projects/payroll/remote-com-d47d0821.json",
-    "projects/payroll/revelo-payroll-c9d4f38b.json",
     "projects/payroll/saarhr-00234398.json",
-    "projects/payroll/wagepoint-2422ecb7.json",
     "projects/website-builders/b12-f10bd206.json",
     "projects/website-builders/duda-d12ddf3f.json",
     "projects/website-builders/elementor-e3befe54.json",
@@ -263,6 +263,12 @@
       "status": "not_counted_complete",
       "url": "https://onpay.com/",
       "finding_en": "Official homepage direct read returned HTTP403; stopped origin and did not bypass."
+    },
+    {
+      "slug": "saarhr-00234398",
+      "status": "not_counted_complete",
+      "url": "https://w3ocn.com/",
+      "finding_en": "Direct source closed connection, ordinary public web reader could not access, browser returned ERR_EMPTY_RESPONSE. Search discovery found same-name SaarHR/Siscom material but current original-provider relationship not established; no identity replacement fabricated."
     }
   ],
   "notable_findings": [
@@ -365,6 +371,34 @@
     {
       "slug": "adp-payroll-services-d799e460",
       "finding": "RUN small-business matrix separate from mid/large/global. Quote varies with frequency; off-cycle fees and contractor year-end fees. Up-to-six-month promotion credits months 4–6,13–15 with Essential exception."
+    },
+    {
+      "slug": "justworks-fb09a484",
+      "finding": "Payroll base/person fees separated from PEO/EOR, paid-contractor units, time and benefits/HR add-ons; no implementation fee does not establish all extra services free."
+    },
+    {
+      "slug": "multiplier-85433577",
+      "finding": "Own-entity Global Payroll versus customer-employer NRE versus EOR clarified; global pricing no-entity card qualified by specific FAQ/NRE. Setup/statutory/mandatory additions retained."
+    },
+    {
+      "slug": "officaid-124ec799",
+      "finding": "Mark As Paid records outside payment and salary expense, sends no money. CPF file requires separate submission/payment; missing NRIC/FIN blocks file. Annual/base-only savings and reprocessing conditions documented."
+    },
+    {
+      "slug": "payroller-95be9350",
+      "finding": "Lite limited to mobile one-person payroll. Post-promo minimums, AUD/GST, upfront annual charge, Oct30 2026 eligibility, agent exclusions and schedule-change wording difference documented."
+    },
+    {
+      "slug": "remote-com-d47d0821",
+      "finding": "Service/employer models separated; no standard deposit permits conditional reserve; Management Plus indemnity aggregate applies over full term; FX is a disclosed cycle rate, not assumed zero-cost."
+    },
+    {
+      "slug": "revelo-payroll-c9d4f38b",
+      "finding": "Dedicated US$450 per engineer card lacks billing interval; not merged with broader all-in LatAm hiring rate or risk-free hiring trial."
+    },
+    {
+      "slug": "wagepoint-2422ecb7",
+      "finding": "Canada-only; Solo one run/group versus Unlimited. Payroll funds separate from fees, funding failure consequences and 8AM–8PM footer versus 8AM–5PM terms support-hour difference retained."
     }
   ],
   "validation": [
@@ -456,6 +490,16 @@
       "diff_check": "passed",
       "source_text_hashes": "163 actual read-text hashes verified",
       "scope": "Structure/reference/provenance; no independent review or hands-on product tests."
+    },
+    {
+      "at": "2026-10-22T11:40:44.438744+00:00",
+      "completed_count": 60,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 63 researched including 3 baseline",
+      "prettier": "ten payroll profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "193 actual read-text hashes verified",
+      "scope": "Structure/reference/provenance; no independent review or hands-on product tests."
     }
   ],
   "checkpoints": [
@@ -506,6 +550,12 @@
       "completed_count": 46,
       "branch_push": "succeeded",
       "scope": "Completed 18 readable HR records, retained Personio HTTP429 gap."
+    },
+    {
+      "commit": "0f4102b",
+      "completed_count": 50,
+      "branch_push": "succeeded",
+      "scope": "Four payroll profiles with actual fee and contract conditions."
     }
   ],
   "independent_review": false,
@@ -545,9 +595,15 @@
     {
       "category": "payroll",
       "assigned": 17,
-      "completed": 4,
-      "status": "in_progress",
-      "note": "ADP, Check Stub Generator, EasyStaff and Fingercheck researched. Gusto and OnPay origins stopped after HTTP403; other payroll profiles still pending."
+      "completed": 14,
+      "status": "all_17_attempted_3_not_counted_complete",
+      "note": "Fourteen profiles researched. Gusto and OnPay HTTP403 origins stopped. SaarHR original w3ocn.com produced no usable response in direct/public-web/browser reads; current same-name app/provider identity not sufficient to silently merge or replace.",
+      "unresolved": 3,
+      "unresolved_slugs": [
+        "gusto-1f8d2cf2",
+        "onpay-f1f2e940",
+        "saarhr-00234398"
+      ]
     }
   ]
 }
