@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T11:20:22.677943+00:00",
+  "updated_at": "2026-10-22T11:31:35.870066+00:00",
   "status": "in_progress",
-  "completed_count": 28,
+  "completed_count": 32,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -32,9 +32,13 @@
     "projects/marketing-automation/customer-io-fa47b32e.json",
     "projects/marketing-automation/delivra-69b8acb6.json",
     "projects/marketing-automation/drip-a44a121f.json",
-    "projects/marketing-automation/encharge-38434e71.json"
+    "projects/marketing-automation/encharge-38434e71.json",
+    "projects/marketing-automation/engagebay-541aecbf.json",
+    "projects/marketing-automation/etrigue-2a35b2e6.json",
+    "projects/marketing-automation/glidecampaign-a8735507.json",
+    "projects/marketing-automation/hey-oliver-f1f82d76.json"
   ],
-  "remaining_count": 173,
+  "remaining_count": 169,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -43,10 +47,6 @@
     "projects/email-marketing/mailify-7607e263.json",
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
-    "projects/marketing-automation/engagebay-541aecbf.json",
-    "projects/marketing-automation/etrigue-2a35b2e6.json",
-    "projects/marketing-automation/glidecampaign-a8735507.json",
-    "projects/marketing-automation/hey-oliver-f1f82d76.json",
     "projects/marketing-automation/influencersoft-1fcf1eb1.json",
     "projects/marketing-automation/iterable-f69b5922.json",
     "projects/marketing-automation/klaviyo-2f8370a2.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/engagebay-541aecbf.json",
+  "next_project": "projects/marketing-automation/influencersoft-1fcf1eb1.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -456,6 +456,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-03",
+      "completed_projects": 32,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark official Help Scout cross-domain incompatibility at scripts/catalog/validate.mjs:166; no shared validator changes or false PASS"
+        },
+        {
+          "command": "All 32 completed records source types, pricing source type, source hashes, references, bilingual sections and unapproved states",
+          "result": "PASS after correcting source classifications in Encharge, eTrigue and GlideCampaign; original read timestamps and hashes preserved"
+        },
+        {
+          "command": "Prettier changed JSON, assigned-file scope and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -483,6 +505,11 @@
       "commit": "a74c2a6",
       "completed_count": 25,
       "scope": "Act-On, ActiveCampaign, ActiveDEMAND, Customer.io; Aritic source integrity gap"
+    },
+    {
+      "commit": "5b90b89",
+      "completed_count": 28,
+      "scope": "Delivra, Drip, Encharge; source conflicts and exact-price gaps preserved"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -501,7 +528,7 @@
     },
     "marketing-automation": {
       "assigned": 27,
-      "completed": 7,
+      "completed": 11,
       "uncompleted_with_source_gaps": 1,
       "status": "in_progress"
     }
@@ -518,6 +545,14 @@
     {
       "project": "encharge-38434e71",
       "note": "Pricing body could not be read after initial nav excerpt: repeated web timeout, then ordinary HTTPS 403. No route change afterward; searched plan amounts are not adopted. Actual billing help original read supplies counting/event-cap mechanisms, with precise quote gap retained."
+    },
+    {
+      "project": "glidecampaign-a8735507",
+      "note": "Read actual documentation body after large repeated navigation. Public card unlimited labels remain bounded by unresolved order/service limits; no use of upstream platform documentation to invent GlideCampaign behavior."
+    },
+    {
+      "project": "hey-oliver-f1f82d76",
+      "note": "Many actual help articles display relative update ages around 2,000–2,500 days, unlike category pages claiming Updated today. Actual detailed Form Tracking page returned a verification loader; no bypass, no successful-read claim for that article."
     }
   ]
 }
