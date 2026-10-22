@@ -10,171 +10,100 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Apigee Edge is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.\n\nAdditional listed capabilities include Testing Management, Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: define interface structure and request-response contracts; bring selected indicators and records into one view; track changes to files and support revision workflows; organize test cases, execution and results; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Apigee Edge 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。\n\n资料还列出测试管理、访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：定义接口结构和请求响应约定；在同一视图中汇集选定指标和记录；跟踪文件变更并支持版本修订流程；组织测试用例、执行过程与结果；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Apigee Edge manages backend APIs through configurable API proxies. Its documentation distinguishes the client-facing ProxyEndpoint from the backend-facing TargetEndpoint, allowing policy and connection configuration on separate request/response legs. A proxy bundle’s configuration revision is distinct from the public API version seen by clients.\n\nThis record covers Edge Public Cloud and Private Cloud. It does not substitute current Apigee X/hybrid packaging or Google Cloud pay-as-you-go prices.",
+  "description_zh": "Apigee Edge 通过可配置 API 代理管理后端 API。文档区分面向调用方的 ProxyEndpoint 与面向后端的 TargetEndpoint，分别配置请求／响应两段的策略和连接。代理包配置 revision 与客户端看到的公开 API 版本不同。\n\n本档案限定 Edge Public Cloud 和 Private Cloud，不替换为当前 Apigee X／hybrid 打包或 Google Cloud 按量价格。",
   "core_features": [
     {
-      "name_en": "Analytics",
-      "name_zh": "数据分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Two endpoint boundaries",
+      "name_zh": "两个端点边界",
+      "explanation_en": "Configure the app-facing proxy separately from the backend target connection.",
+      "explanation_zh": "将应用侧代理与后端目标连接分别配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "proxy",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Traffic Control",
-      "name_zh": "流量控制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Configuration revisions",
+      "name_zh": "配置修订",
+      "explanation_en": "Track numbered proxy configurations independently of public API versions.",
+      "explanation_zh": "独立于公开 API 版本跟踪编号代理配置。",
+      "explanation_scope": "product_specific",
+      "source_ref": "deployment",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Threat Protection",
-      "name_zh": "威胁防护",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Developer Portal",
-      "name_zh": "开发者门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Lifecycle Management",
-      "name_zh": "API 生命周期管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Design",
-      "name_zh": "API 设计",
-      "explanation_en": "Define interface structure and request-response contracts.",
-      "explanation_zh": "定义接口结构和请求响应约定。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Public or Private Cloud",
+      "name_zh": "公有云或私有云",
+      "explanation_en": "Edge deployment modes assign different infrastructure and administrative responsibilities.",
+      "explanation_zh": "Edge 部署模式对应不同基础设施及管理责任。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Define interface structure and request-response contracts",
-      "Bring selected indicators and records into one view",
-      "Track changes to files and support revision workflows",
-      "Organize test cases, execution and results",
-      "Restrict information and actions according to permissions"
+      "Pilot an Edge proxy over a harmless backend with explicit request/response expectations.",
+      "Rehearse revision deployment and routing checks in a nonproduction environment."
     ],
     "zh": [
-      "定义接口结构和请求响应约定",
-      "在同一视图中汇集选定指标和记录",
-      "跟踪文件变更并支持版本修订流程",
-      "组织测试用例、执行过程与结果",
-      "根据权限限制信息访问和操作"
+      "使用无害后端试点 Edge 代理，并明确请求／响应预期。",
+      "在非生产环境演练 revision 部署及路由检查。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["proxy", "deployment"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Free-forever and Custom plan.",
-      "zh": "未提供免费试用 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform engineers",
+      "Existing Apigee Edge operators"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm Edge Public/Private Cloud and an authorized test environment before defining a proxy.",
+        "zh": "定义代理前确认 Edge Public／Private Cloud 及获准测试环境。",
+        "source_refs": ["home", "proxy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect deployed revision/state and both endpoint policies before a controlled rollout.",
+        "zh": "受控发布前检查部署 revision／状态及两端策略。",
+        "source_refs": ["deployment", "proxy"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Proxy revision rollback does not roll back backend data or public API semantics.",
+        "zh": "代理 revision 回退不回退后端数据或公开 API 语义。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Different basepaths can leave two revisions deployed after override.",
+        "zh": "不同 basepath 可能使 override 后保留两个已部署 revision。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -186,37 +115,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
+    "status": "not_verified",
     "price_type": "unknown",
     "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "Current Edge-specific commercial terms were not established. Google Cloud Apigee pay-as-you-go pricing was not transferred to Edge. The overview’s account categories and documentation licenses do not verify a current customer offer. Pricing stays not_verified/unknown with no normalized amount.",
+    "summary_zh": "未确认当前 Edge 专属商业条款，未套用 Google Cloud Apigee 按量价格。概览账户类别和文档许可不证明当前客户方案，价格保持 not_verified／unknown，不赋标准化金额。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Apigee Edge do?",
-      "question_zh": "Apigee Edge 用来做什么？",
-      "answer_en": "Apigee Edge is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.",
-      "answer_zh": "Apigee Edge 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control, Testing Management, Access Control",
-      "answer_zh": "数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制、测试管理、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,39 +139,132 @@
       "read_at": "2026-10-22T08:37:03.952Z",
       "excerpt_sha256": "764d92688502561e7c38a8ffa4a01d2595d055fdd183c641386ecfeccf2281fe",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "What is Apigee Edge?  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/get-started/what-apigee-edge",
+      "read_at": "2026-10-22T10:58:59.927031Z",
+      "excerpt_sha256": "bca613f746ada74f0c716255feed8f84a65401565ed83cb1a866c758fc1aa3b7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read original Edge overview and explicit distinction from current Apigee/hybrid; vendor page identifies Google affiliation."
+    },
+    {
+      "id": "proxy",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "Understanding APIs and API proxies  |  Apigee Edge  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies",
+      "read_at": "2026-10-22T16:19:08.662084Z",
+      "excerpt_sha256": "b85a985966fe91d570db461759f48d6448177d1f5f89fe9b5c76a389b0ba4ae0",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual Edge ProxyEndpoint/TargetEndpoint, policy and bundle model."
+    },
+    {
+      "id": "deployment",
+      "type": "official_documentation",
+      "site": "Apigee Edge",
+      "title": "Deploy API proxies using the API  |  Apigee Edge  |  Apigee Docs",
+      "url": "https://docs.apigee.com/api-platform/deploy/deploy-api-proxies-using-management-api",
+      "read_at": "2026-10-22T16:20:44.981605Z",
+      "excerpt_sha256": "2cdd0ce92c4e46ae85bb28a1450c16beee20f70b55cb45b293ae7b4fc72a884e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual revision/environment state, prior-revision rollback and override/delay/basepath caveat."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:20:44.981605Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
   ],
   "research_gaps": [
     {
-      "en": "Apigee Edge documentation on docs.apigee.com was read and distinguishes Public/Private Cloud from current Apigee/hybrid. Current Google Cloud pay-as-you-go pricing must not be applied to Edge without migration. The record identity is google.com, while necessary Edge documentation is on apigee.com; the same-registered-domain source rule cannot encode both. Candidate remains incomplete pending coordinator authority handling, not renamed to the broader product.",
-      "zh": "已读取 docs.apigee.com 的 Apigee Edge 文档，其区分 Public／Private Cloud 与当前 Apigee／hybrid。未迁移前不能把 Google Cloud 当前按需定价套给 Edge。档案身份域为 google.com，必要 Edge 文档却在 apigee.com；单注册域来源规则不能同时表达。保持候选未完成，待协调处理来源权威，不改名为更广产品。",
+      "en": "No organization, proxy, policy, management API, credential, deployment, rollback or purchase was operated.",
+      "zh": "未操作组织、代理、策略、管理 API、凭据、部署、回退或购买。",
       "source_refs": [],
-      "evidence_type": "official_authority_or_access_gap"
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current contract, available account types, complete software license, access enforcement, throughput and Private Cloud recovery remain unverified.",
+      "zh": "当前合同、可用账户类别、完整软件许可、实际访问执行、吞吐及 Private Cloud 恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
     }
   ],
   "content_method": {
     "author": "Codex (AI assistant)",
-    "method": "Official access/identity research attempted; candidate remains unfinalized and not counted complete.",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
     "independent_review": false,
     "hands_on_test": false
+  },
+  "description_source_refs": ["home", "proxy"],
+  "profile": {
+    "sections": [
+      {
+        "id": "product-boundary",
+        "title_en": "Choose the actual Edge deployment",
+        "title_zh": "选择实际 Edge 部署",
+        "en": "The overview describes vendor-operated Public Cloud and customer-operated Private Cloud, with feature differences. Private Cloud makes installation, upgrades and maintenance the customer’s responsibility. Determine the intended product/version before planning dependencies. The page’s general account categories do not establish a currently purchasable free offer or the terms of a particular customer contract.",
+        "zh": "概览区分厂商运行的 Public Cloud 与客户运行的 Private Cloud，且功能不同。Private Cloud 的安装、升级、维护由客户负责。应先确定产品／版本再规划依赖；页面的一般账户类别不证明当前可购买的免费方案或具体合同条款。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "request-flow",
+        "title_en": "Check both client and target policies",
+        "title_zh": "检查调用侧与目标侧策略",
+        "en": "ProxyEndpoint defines how clients reach the proxy and can attach security/quota policies. TargetEndpoint defines backend routing, protocol and connection security, with response processing. A proxy can be defined in the UI, imported as a bundle or managed through APIs. Test one harmless backend and compare allowed, denied and backend-failure responses rather than treating successful import as effective protection.",
+        "zh": "ProxyEndpoint 定义客户端访问及安全／配额策略；TargetEndpoint 定义后端路由、协议、连接安全和响应处理。代理可经 UI、导入包或管理 API 定义。应使用无害后端比较允许、拒绝及后端失败响应，不能将导入成功视为保护已生效。",
+        "source_refs": ["proxy"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "deployment-state",
+        "title_en": "Import, revision and deployment are separate",
+        "title_zh": "导入、修订与部署分开",
+        "en": "A proxy must be deployed to an environment before invocation. Inspect organization/environment/revision state when diagnosing failure. Deploying an earlier revision can restore proxy configuration, but does not restore backend data or public API semantics. Import success alone is insufficient.",
+        "zh": "代理部署到环境后才能调用。排错应检查组织／环境／revision 状态。重新部署旧 revision 可恢复代理配置，不恢复后端数据或公开 API 语义；仅导入成功不足。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "transition",
+        "title_en": "A rollout option has a basepath condition",
+        "title_zh": "切换选项有 basepath 条件",
+        "en": "Override retains the old revision while deploying the new one; delay allows older transactions to finish. Different basepaths can leave both revisions deployed. Rehearse routing and observed state; the documented seamless mode is not a measured zero-error guarantee.",
+        "zh": "Override 在部署新 revision 时保留旧版，delay 等待旧事务。不同 basepath 可能使两版均已部署。应演练路由及状态；文档无缝模式不是实测零错误保证。",
+        "source_refs": ["deployment"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Apigee Edge: workflows, operating limits and cost",
+    "title_zh": "Apigee Edge：流程、运行限制与费用",
+    "description_en": "Apigee Edge manages backend APIs through configurable API proxies. Its documentation distinguishes the client-facing ProxyEndpoint from the backend-facing TargetEndpoint,",
+    "description_zh": "Apigee Edge 通过可配置 API 代理管理后端 API。文档区分面向调用方的 ProxyEndpoint 与面向后端的 TargetEndpoint，分别配置请求／响应两",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of Apigee Edge.",
+    "search_intent_zh": "评估 Apigee Edge 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
   }
 }
