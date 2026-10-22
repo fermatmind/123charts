@@ -1,6 +1,8 @@
 # 123Charts
 
-**Discover great tools. Find better alternatives.** 全球工具分类与替代榜单。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；本轮仅本地开发。
+**Discover great tools. Find better alternatives.** 全球工具分类与替代榜单。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；当前运行范围为本地开发与预览，尚未部署。
+
+GitHub：[fermatmind/123charts](https://github.com/fermatmind/123charts)。现有仓库直接更名，保留提交、分支、标签、Issue 和 PR 历史；SSH remote 为 `git@github.com:fermatmind/123charts.git`。
 
 ## 本地启动
 
@@ -21,7 +23,7 @@ Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历�
 - 普通用户、管理员测试凭据：[.local/accounts.json](.local/accounts.json)，仅本机生成，勿提交。
 - `npm run local:stop` 停止本地应用、worker 和 Supabase，保留数据卷。
 
-所有服务绑定本机；所有本地页面 noindex。GitHub 与生产部署未操作。
+所有本地服务绑定本机；所有本地页面 noindex。代码已同步 GitHub；未执行生产部署。
 
 ## 当前体验
 
