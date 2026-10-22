@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T13:17:13.769988+00:00",
+  "updated_at": "2026-10-22T13:28:28.812955+00:00",
   "assigned": 204,
-  "completed_count": 49,
+  "completed_count": 50,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -55,9 +55,10 @@
     "projects/live-chat/helpshift-e6683d88.json",
     "projects/live-chat/hippo-b19ae80d.json",
     "projects/live-chat/iadvize-86e8146b.json",
-    "projects/live-chat/jivochat-4ca767bd.json"
+    "projects/live-chat/jivochat-4ca767bd.json",
+    "projects/live-chat/livechat-3865780d.json"
   ],
-  "incomplete_count": 155,
+  "incomplete_count": 154,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -73,7 +74,6 @@
     "projects/live-chat/coffee-chats-64c0b6c7.json",
     "projects/live-chat/contact-at-once-e618062d.json",
     "projects/live-chat/handlr-a71bc7cc.json",
-    "projects/live-chat/livechat-3865780d.json",
     "projects/live-chat/livehelpnow-826bb7ca.json",
     "projects/live-chat/natterly-b6f365e1.json",
     "projects/live-chat/olark-36188fbb.json",
@@ -776,6 +776,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch49 completed,155 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch50 completed,154 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -960,8 +970,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "0e41391",
       "completed": ["projects/live-chat/jivochat-4ca767bd.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/live-chat/livechat-3865780d.json"],
       "status": "ready_to_commit"
     }
   ],
