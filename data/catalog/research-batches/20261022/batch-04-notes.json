@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T12:37:09.144028+00:00",
+  "updated_at": "2026-10-22T12:42:21.596767+00:00",
   "assigned": 204,
-  "completed_count": 40,
+  "completed_count": 42,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -46,9 +46,11 @@
     "projects/help-desk/sugester-52e4a6d2.json",
     "projects/help-desk/supportbee-aecb6054.json",
     "projects/live-chat/apexchat-9bd3eff7.json",
-    "projects/live-chat/arena-live-chat-34ccee42.json"
+    "projects/live-chat/arena-live-chat-34ccee42.json",
+    "projects/live-chat/chatango-18c4f792.json",
+    "projects/live-chat/chatblazer-6045ee86.json"
   ],
-  "incomplete_count": 164,
+  "incomplete_count": 162,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -61,8 +63,6 @@
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
     "projects/live-chat/bold360-d1b9e7c2.json",
-    "projects/live-chat/chatango-18c4f792.json",
-    "projects/live-chat/chatblazer-6045ee86.json",
     "projects/live-chat/chatra-8550215c.json",
     "projects/live-chat/coffee-chats-64c0b6c7.json",
     "projects/live-chat/contact-at-once-e618062d.json",
@@ -665,6 +665,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch40 completed,164 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch42 completed,162 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -803,10 +813,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "55b4642",
       "completed": [
         "projects/live-chat/apexchat-9bd3eff7.json",
         "projects/live-chat/arena-live-chat-34ccee42.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/live-chat/chatango-18c4f792.json",
+        "projects/live-chat/chatblazer-6045ee86.json"
       ],
       "status": "ready_to_commit"
     }
