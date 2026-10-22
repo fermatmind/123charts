@@ -1,8 +1,9 @@
 #!/bin/bash
 set -euo pipefail
-container=supabase_db_123charts-local
+container="supabase_db_$(node --input-type=module -e 'import { readLocalConfig, inspectStack, localDockerSocket } from "./scripts/local/config.mjs"; localDockerSocket(); const c=readLocalConfig(); inspectStack(c); console.log(c.projectId);')"
+mkdir -p .local
 checkdb="charts_migration_check_$$"
-if docker exec "$container" psql -U postgres -d postgres -Atc "select datname from pg_database where datname='$checkdb'" | rg -q .; then
+if [[ -n "$(docker exec "$container" psql -U postgres -d postgres -Atc "select datname from pg_database where datname='$checkdb'")" ]]; then
   echo 'Dedicated migration check database already exists; stopping without changing it.'
   exit 1
 fi

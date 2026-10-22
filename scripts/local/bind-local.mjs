@@ -3,15 +3,15 @@
 // bindings, preserving their exact configuration and all existing volume mounts.
 import http from "node:http";
 import { execFileSync } from "node:child_process";
+import { readLocalConfig, inspectStack, localDockerSocket } from "./config.mjs";
+const config = readLocalConfig();
+const endpoint = localDockerSocket();
+inspectStack(config);
 const run = (args) =>
   execFileSync("docker", args, {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
   });
-const endpoint = JSON.parse(run(["context", "inspect"]))[0].Endpoints.docker
-  .Host;
-if (!endpoint.startsWith("unix://"))
-  throw new Error("Local setup requires a local Docker socket.");
 function api(method, url, body) {
   return new Promise((resolve, reject) => {
     const json = body ? JSON.stringify(body) : "";
@@ -47,7 +47,8 @@ function api(method, url, body) {
 const names = run(["ps", "-a", "--format", "{{.Names}}"])
   .trim()
   .split("\n")
-  .filter((n) => n.endsWith("_123charts-local"));
+  .filter((n) => n.endsWith("_" + config.projectId));
+let databaseRebound = false;
 for (const name of names.sort(
   (a, b) => (a.includes("_db_") ? -1 : 0) - (b.includes("_db_") ? -1 : 0),
 )) {
@@ -62,8 +63,10 @@ for (const name of names.sort(
   )
     continue;
   if (needsSmtp)
-    bindings["1025/tcp"] = [{ HostIp: "127.0.0.1", HostPort: "54325" }];
-  if (!info.NetworkSettings.Networks["charts-local"])
+    bindings["1025/tcp"] = [
+      { HostIp: "127.0.0.1", HostPort: String(config.ports.smtp) },
+    ];
+  if (!info.NetworkSettings.Networks[config.network])
     throw new Error(
       "Unexpected Docker network; local container was not modified.",
     );
@@ -119,6 +122,7 @@ for (const name of names.sort(
     }
     if (!ready) throw new Error(`Loopback container health failed: ${name}`);
     await api("DELETE", `/containers/${backup}`);
+    if (name === `supabase_db_${config.projectId}`) databaseRebound = true;
     console.log(`Bound ${name} to 127.0.0.1; volumes retained.`);
   } catch (error) {
     if (created) {
@@ -130,4 +134,16 @@ for (const name of names.sort(
     await api("POST", `/containers/${name}/start`);
     throw error;
   }
+}
+// Replacing PostgreSQL invalidates connections held by these services. Do not
+// advertise a ready application while Auth still has terminated pool entries.
+if (databaseRebound) {
+  for (const role of ["auth", "rest", "storage", "pg_meta"]) {
+    const name = `supabase_${role}_${config.projectId}`;
+    if (names.includes(name))
+      await api("POST", `/containers/${name}/restart?t=10`);
+  }
+  console.log(
+    "Reconnected this project's Auth, REST, Storage and metadata services after database rebinding.",
+  );
 }

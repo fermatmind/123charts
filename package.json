@@ -71,6 +71,7 @@
     "local:stop": "node scripts/local/stop.mjs",
     "worker:local": "tsx scripts/local/worker.ts",
     "test:charts": "tsx --test tests/charts/*.test.ts",
+    "test:unit": "tsx --test tests/charts/category-rules.test.ts tests/charts/discovery.test.ts tests/charts/draft-state.test.ts tests/charts/metadata-prefill.test.ts tests/charts/owner-profile.test.ts tests/charts/rules.test.ts tests/charts/runtime-config.test.ts tests/charts/safe-fetch.test.ts tests/charts/local-startup.test.ts",
     "test:browser": "playwright test tests/charts/browser.spec.ts tests/charts/navigation.spec.ts",
     "db:types": "supabase gen types typescript --local > lib/charts/database.types.ts",
     "format:check": "prettier --check components/charts lib/charts scripts/local tests/charts proxy.ts",
@@ -115,6 +116,6 @@
     "typescript": "^5.7.2"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=20.11.0"
   }
 }

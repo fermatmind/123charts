@@ -6,14 +6,22 @@ GitHub：[fermatmind/123charts](https://github.com/fermatmind/123charts)。现�
 
 ## 本地启动
 
+需要 Git、Node.js **20.11+**（建议 Node 24，仓库提供 `.nvmrc`）和已启动的 Docker Desktop / 本机 Docker Engine。首次安装 npm 依赖、下载 Supabase 镜像需要联网；不需要云端 Supabase、生产密钥或相邻仓库。
+
 ```bash
-cd /Users/rainie/Desktop/123charts.com/123charts
-npm install
+git clone https://github.com/fermatmind/123charts.git
+cd 123charts
+# 如使用 nvm：nvm install && nvm use
+npm ci
 npm run local:setup
 npm run dev:local
 ```
 
-Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历史文件存储和邮件收件箱。重复 setup/start 保留现有账户和资料；无数据库重置。核心演示无需 OCR 或远程流量接口。新官网资料提取需要联网，失败允许手填。
+`local:setup` 自动执行迁移、生成忽略的 `.env.local` 和随机测试账号，创建本地数据库、Auth、私有存储、邮件收件箱及 real/demo 样本；不要预先复制空密钥或生产环境配置。看到 `Ready` 后再运行 `dev:local`，后者同时启动 Web 和持久化任务 worker，终端需保持运行。重复初始化不 reset，后续启动通常只需 `npm run dev:local`。新官网资料提取需要联网，失败允许手填；核心演示无需 OCR 或远程流量接口。
+
+默认端口见下方。已有另一份克隆在运行时，请使用原目录，或先按[本地开发说明](docs/02_ZERO_STATE_BOOTSTRAP.md)设置独立项目名与端口；脚本会拒绝接管其他目录的数据库或占用中的预览端口。
+
+从新地址克隆的实际安装、初始化与重启结果见[本地启动验收记录](docs/LOCAL_STARTUP_CHECK_20261022.md)。
 
 - English: http://127.0.0.1:3100/en
 - 中文：http://127.0.0.1:3100/zh
@@ -42,16 +50,20 @@ Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历�
 
 ## 验证
 
+无需数据库写入的检查：
+
+运行构建前先用 `Ctrl+C` 停止当前目录的 Web/worker，避免开发和构建共用 `.next`；数据库可以继续运行。
+
 ```bash
-npm run test:charts
-npm run test:browser
-npm run test:db:charts
+npm run test:unit
 npm run lint
 npm run typecheck
 npm run build
-npm run db:types
-npm run format:check
 ```
+
+浏览器/API 集成检查会创建测试草稿及审核记录，只在独立、可丢弃的本地测试实例中执行。安装 Chrome 后，启动该实例，再运行 `npm run test:charts`、`npm run test:browser`；非默认预览地址需设置 `CHARTS_TEST_BASE_URL`。`npm run test:db:charts` 使用当前项目容器中的临时数据库验证空库迁移，不 reset 运行库。详细命令与停止方法见[本地开发说明](docs/02_ZERO_STATE_BOOTSTRAP.md)。
+
+`npm run db:types` 是维护命令，会重写生成类型；`npm run format:check` 检查整个指定目录，不是首次启动的必要步骤。
 
 `tests/charts/legacy/` 保存旧流量投稿与浏览器验收，已退出当前 MVP 验收入口。仍运行的历史纯函数及 SQL 回归仅保护原有不可变数据与权限，不表示相关功能属于当前 MVP。
 

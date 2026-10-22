@@ -1,7 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
+import { readLocalConfig, inspectStack, localDockerSocket } from "./config.mjs";
 process.chdir(path.resolve(import.meta.dirname, "../.."));
+localDockerSocket();
+inspectStack(readLocalConfig());
 if (fs.existsSync(".local/runtime.json")) {
   const runtime = JSON.parse(fs.readFileSync(".local/runtime.json", "utf8"));
   let valid = false;
