@@ -21,6 +21,7 @@ import {
 } from "@/lib/charts/discovery";
 import {
   localText,
+  maintainedText,
   languageNames,
   stableProjects,
   searchScore,
@@ -58,6 +59,105 @@ export function FavoriteButton({
     </button>
   );
 }
+/** An identity claim grants editing access; it does not certify any field. */
+export function ClaimProfileLink({
+  p,
+  compact = false,
+}: {
+  p: Project;
+  compact?: boolean;
+}) {
+  const { href, t } = useCharts();
+  if (p.owner_verified) return null;
+  return (
+    <Link
+      className="claim-profile-link"
+      href={href("/products/" + p.slug + "?claim=1") + "#owner-claim"}
+      aria-label={t("Claim and complete " + p.name, "认领并补充 " + p.name)}
+      title={t("Claim to complete project details", "认领后补充项目资料")}
+    >
+      {compact ? t("Claim", "认领") : t("Claim profile", "认领补充")}
+    </Link>
+  );
+}
+
+/** Preserve existing records on demand; never fill missing fields with a row of placeholders. */
+export function ProjectReference({
+  p,
+  comparison = false,
+}: {
+  p: Project;
+  comparison?: boolean;
+}) {
+  const { locale, t } = useCharts();
+  const recordedFocus = maintainedText(p.differentiator, locale);
+  const introduction = (
+    locale === "zh" ? p.description_zh : p.description_en
+  ).trim();
+  const focus = recordedFocus === introduction ? "" : recordedFocus;
+  const conditions = maintainedText(p.conditions, locale);
+  const language = languageNames(p.supported_languages, locale);
+  const languagesKnown =
+    language !== (locale === "zh" ? "待补充" : "Not recorded");
+  const priceKnown = p.price_verified && p.price_type !== "unknown";
+  if (
+    !focus &&
+    !conditions &&
+    !languagesKnown &&
+    !priceKnown &&
+    !p.is_open_source
+  )
+    return null;
+  return (
+    <details
+      className="site-conditions project-reference"
+      open={p.owner_verified || undefined}
+    >
+      <summary>
+        {conditions || priceKnown || p.is_open_source
+          ? t("Existing details & conditions", "已有资料与使用条件")
+          : t("Existing supplementary details", "已有补充资料")}
+      </summary>
+      <div className={comparison ? "candidate-facts" : "recorded-facts"}>
+        {focus && (
+          <div>
+            <small>{t("Focus & audience", "特点与适用对象")}</small>
+            <p>{focus}</p>
+          </div>
+        )}
+        {(priceKnown || conditions || p.is_open_source) && (
+          <div>
+            <small>{t("Pricing & usage conditions", "价格与使用条件")}</small>
+            {priceKnown && <p>{priceLabel(p, locale === "zh")}</p>}
+            {conditions && <p>{conditions}</p>}
+            {p.is_open_source && (
+              <p>
+                {p.open_source_url ? (
+                  <a
+                    href={p.open_source_url}
+                    target="_blank"
+                    rel="noopener nofollow"
+                  >
+                    {t("Open source · license", "开源 · 许可证")}
+                  </a>
+                ) : (
+                  t("Open source", "开源")
+                )}
+              </p>
+            )}
+          </div>
+        )}
+        {languagesKnown && (
+          <div>
+            <small>{t("Supported languages", "支持语言")}</small>
+            <p>{language}</p>
+          </div>
+        )}
+      </div>
+    </details>
+  );
+}
+
 export function SiteUnit({
   p,
   compact = false,
@@ -100,20 +200,15 @@ export function SiteUnit({
       </div>
       <div className="site-purpose">
         <span>
-          {localText(task, locale) ||
+          {(p.owner_verified ? localText(task, locale) : "") ||
             (locale === "zh" ? p.description_zh : p.description_en)}
         </span>
       </div>
       {!compact && (
         <div className="site-access">
-          <span>
-            {priceLabel(p, locale === "zh")}
-            {p.is_open_source ? " · " + t("Open source", "开源") : ""}
-          </span>
-          <small>
-            {t("Languages", "语言")} ·{" "}
-            {languageNames(p.supported_languages, locale)}
-          </small>
+          {p.price_verified && p.price_type !== "unknown" && (
+            <span>{priceLabel(p, locale === "zh")}</span>
+          )}
           <small>{p.domain}</small>
         </div>
       )}
@@ -130,6 +225,7 @@ export function SiteUnit({
             ? t("Alternatives", "找替代")
             : t("Similar", "查看同类")}
         </Link>
+        <ClaimProfileLink p={p} compact={compact} />
         {reason && (
           <small className="discovery-badge">
             {reason === "adopted_contribution"
@@ -140,21 +236,7 @@ export function SiteUnit({
           </small>
         )}
       </div>
-      {showConditions && !compact && (
-        <details className="site-conditions">
-          <summary>{t("Usage conditions & limits", "使用条件与限制")}</summary>
-          <p>
-            {localText(p.conditions, locale) ||
-              t(
-                "Conditions not recorded. Check the official website.",
-                "使用条件待补充，请查看官网。",
-              )}
-          </p>
-          {!p.price_verified && (
-            <small>{t("Pricing not yet confirmed", "价格尚未确认")}</small>
-          )}
-        </details>
-      )}
+      {showConditions && !compact && <ProjectReference p={p} />}
     </div>
   );
 }

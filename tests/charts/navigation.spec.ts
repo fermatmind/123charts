@@ -484,10 +484,10 @@ test("brand: positioning, transparent chart order, new listings and free submiss
     .locator(".directory-results .site-conditions")
     .first();
   await conditions.locator("summary").click();
-  await expect(conditions.locator("p")).toBeVisible();
+  await expect(conditions.locator("p").first()).toBeVisible();
   await expect(
     page.locator(".directory-results .site-access").first(),
-  ).toContainText("语言");
+  ).not.toContainText(/待确认|待补充/);
   const ids = await page
     .locator(".directory-results [data-product-id]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-product-id")));
@@ -873,4 +873,109 @@ test("owner: basic listing, claim gate, AI JSON import persists in revision and 
       ck(await db.from(table).delete().eq("project_id", id));
     ck(await db.from("charts_projects").delete().eq("id", id));
   }
+});
+
+test("listing: unclaimed projects show introductions and claim actions while real facts remain available", async ({
+  page,
+}) => {
+  const outbounds: string[] = [];
+  page.on("request", (r) => {
+    if (r.url().includes("/api/v1/events/outbound") && r.method() === "POST")
+      outbounds.push(r.url());
+  });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/zh?dataset=real");
+  const cursor = page
+    .locator("#favorites .site-unit")
+    .filter({ has: page.getByRole("link", { name: "Cursor", exact: false }) })
+    .first();
+  await expect(cursor).toContainText("提供代码库 AI 辅助功能的编辑器。");
+  const claim = cursor.getByRole("link", {
+    name: "认领并补充 Cursor",
+    exact: true,
+  });
+  await expect(claim).toBeVisible();
+  await page.screenshot({
+    path: "output/playwright/listing-home-desktop.png",
+    caret: "initial",
+    fullPage: false,
+  });
+  await claim.click();
+  await expect(page).toHaveURL(
+    /products\/cursor\?claim=1&dataset=real#owner-claim/,
+  );
+  await expect(
+    page.getByRole("heading", { name: "这是你的项目吗？", exact: true }),
+  ).toBeVisible();
+  expect(outbounds).toHaveLength(0);
+  await page.goto("/zh/categories/workflow-automation?dataset=real");
+  const row = page
+    .locator(".directory-results .site-unit")
+    .filter({ has: page.locator(".site-name strong", { hasText: "Huginn" }) });
+  await expect(row).toContainText("使用代理监测事件并自动执行任务的开源系统。");
+  await expect(
+    row.getByRole("link", { name: "认领并补充 Huginn", exact: true }),
+  ).toBeVisible();
+  expect(await row.innerText()).not.toMatch(/待确认|待补充|尚未核实/);
+  await expect(row.locator(".project-reference")).toHaveCount(0);
+  await page.screenshot({
+    path: "output/playwright/listing-category-desktop.png",
+    caret: "initial",
+    fullPage: false,
+  });
+  await page.goto("/zh/alternatives/activepieces?dataset=real");
+  const candidate = page.locator(".alternative-candidate");
+  await expect(candidate).toHaveCount(1);
+  await expect(candidate.locator(".site-purpose")).toHaveText(
+    "连接服务并自动执行任务的工作流构建器。",
+  );
+  await expect(candidate.locator(".site-access")).toContainText("免费试用");
+  await expect(
+    candidate.getByRole("link", { name: "认领并补充 n8n", exact: true }),
+  ).toBeVisible();
+  await expect(candidate.locator(".project-reference")).not.toHaveAttribute(
+    "open",
+    "",
+  );
+  expect(await candidate.innerText()).not.toMatch(/待确认|待补充|价格尚未确认/);
+  await candidate.locator(".project-reference summary").click();
+  await expect(candidate.locator(".candidate-facts")).toContainText("自部署");
+  await expect(candidate.locator(".candidate-facts")).toContainText("英语");
+  await candidate.locator(".project-reference summary").click();
+  await page.screenshot({
+    path: "output/playwright/listing-alternatives-desktop.png",
+    caret: "initial",
+    fullPage: false,
+  });
+  expect(outbounds).toHaveLength(0);
+  await page.goto("/zh?dataset=real");
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(
+    page
+      .locator("#favorites")
+      .getByRole("link", { name: "认领并补充 Cursor", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  console.log("Compact unclaimed home entries:", await visibleSites(page));
+  await page.screenshot({
+    path: "output/playwright/listing-home-mobile.png",
+    caret: "initial",
+    fullPage: false,
+  });
+  await page.goto("/en/alternatives/activepieces?dataset=real");
+  await expect(
+    page.getByRole("link", { name: "Claim and complete n8n", exact: true }),
+  ).toBeVisible();
+  expect(await page.locator(".alternative-candidate").innerText()).not.toMatch(
+    /Unconfirmed|Not recorded|not yet confirmed/,
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
 });

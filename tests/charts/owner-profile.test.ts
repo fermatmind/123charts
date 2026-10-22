@@ -1,4 +1,5 @@
 import test from "node:test";
+import { maintainedText } from "../../lib/charts/navigation";
 import assert from "node:assert/strict";
 import { parseOwnerProfile, ownerPrompt } from "../../lib/charts/owner-profile";
 import { draftSchema } from "../../lib/charts/rules";
@@ -76,4 +77,14 @@ test("owner prompts distinguish evidence, identity and platform decisions in bot
     assert.ok(prompt.includes("price_verified"));
     assert.ok(prompt.includes("unknown"));
   }
+});
+
+test("listing references omit placeholder copy but retain real limits and partial unknowns", () => {
+  const unknown =
+    "Detailed conditions have not been reviewed. Confirm pricing, hosting and usage limits with the official website. / 详细使用条件尚未核实，请向官网确认价格、托管及使用限制。";
+  assert.equal(maintainedText(unknown, "zh"), "");
+  assert.equal(maintainedText(unknown, "en"), "");
+  assert.equal(maintainedText("待确认", "zh"), "");
+  const fact = "Self-hosting is available; operating cost is unknown.";
+  assert.equal(maintainedText(fact, "en"), fact);
 });

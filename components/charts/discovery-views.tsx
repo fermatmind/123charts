@@ -1,7 +1,13 @@
 "use client";
 import { OwnerProfileAssist } from "./owner-profile-assist";
 import { brand } from "@/lib/charts/brand";
-import { FavoriteButton, SiteUnit, NavigationHome } from "./navigation-ui";
+import {
+  FavoriteButton,
+  SiteUnit,
+  NavigationHome,
+  ClaimProfileLink,
+  ProjectReference,
+} from "./navigation-ui";
 import {
   localText,
   stableProjects,
@@ -550,6 +556,7 @@ export function AlternativesPage({ slug }: { slug?: string }) {
           >
             {t("About the target", "目标简介")}
           </Link>
+          <ClaimProfileLink p={target} />
         </div>
       </header>
       {tasks.length > 1 && (
@@ -620,37 +627,10 @@ export function AlternativesPage({ slug }: { slug?: string }) {
             task={x.task}
             surface={"/alternatives/" + target.slug}
           />
-          <div className="candidate-facts">
-            <div>
-              <small>{t("Key difference", "特点与适用条件")}</small>
-              <p>
-                {localText(x.project.differentiator, locale) ||
-                  t("Details not yet confirmed", "特点待确认")}
-              </p>
-            </div>
-            <div>
-              <small>{t("Pricing & limits", "价格与限制")}</small>
-              <p>
-                {localText(x.project.conditions, locale) ||
-                  t(
-                    "Conditions not recorded. Check the official website.",
-                    "使用条件待补充，请查看官网。",
-                  )}
-              </p>
-              {!x.project.price_verified && (
-                <p className="muted">
-                  {t(
-                    "Pricing not yet confirmed. Check current official terms.",
-                    "价格尚未确认，请以官网当前说明为准。",
-                  )}
-                </p>
-              )}
-              <p>
-                {t("Supported languages", "支持语言")} ·{" "}
-                {languageNames(x.project.supported_languages, locale)}
-              </p>
-            </div>
-          </div>
+          <p className="candidate-task">
+            {t("Compared task", "比较任务")} · {localText(x.task, locale)}
+          </p>
+          <ProjectReference p={x.project} comparison />
           {order === "new" && (
             <p className="ordering-note">
               {t("First public listing", "首次公开收录")}：{" "}

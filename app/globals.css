@@ -3041,3 +3041,53 @@ textarea {
 .supplemental-profile .discovery-facts {
   margin: 12px 0;
 }
+/* Basic listing actions stay independent; extra records open only on request. */
+.site-links {
+  flex-wrap: wrap;
+  row-gap: 3px;
+}
+.site-links .claim-profile-link {
+  color: #9faeca;
+  white-space: nowrap;
+}
+.project-reference .recorded-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 20px;
+  padding: 10px 0;
+}
+.recorded-facts small {
+  color: #8e9db6;
+}
+.recorded-facts p {
+  margin: 5px 0;
+  line-height: 1.7;
+}
+.candidate-task {
+  font-size: 12px;
+  color: #a4b2c8;
+  margin: 8px 0;
+}
+.project-reference .candidate-facts {
+  margin: 10px 0;
+}
+.alternative-candidate .project-reference {
+  margin: 10px 0;
+}
+@media (max-width: 760px) {
+  .project-reference .recorded-facts {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .compact .site-links {
+    gap: 3px 8px;
+  }
+}
+.owner-listing-note {
+  scroll-margin-top: 100px;
+}
+@media (max-width: 760px) {
+  .owner-listing-note {
+    scroll-margin-top: 140px;
+  }
+}

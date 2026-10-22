@@ -98,3 +98,14 @@ export function languageNames(languages: string[] | undefined, locale: Locale) {
       .join(" / ") || (locale === "zh" ? "待补充" : "Not recorded")
   );
 }
+
+/** Hide known placeholder copy in listings, without discarding factual text that mentions limits. */
+export function maintainedText(
+  value: string | null | undefined,
+  locale: Locale,
+) {
+  const text = localText(value, locale).trim();
+  const placeholders =
+    /^(?:unknown|unconfirmed|not recorded|not yet confirmed|to be confirmed|待确认|待补充|尚未记录|详细使用条件尚未核实，请向官网确认价格、托管及使用限制[。]?|Detailed conditions have not been reviewed\. Confirm pricing, hosting and usage limits with the official website\.)$/i;
+  return placeholders.test(text) ? "" : text;
+}
