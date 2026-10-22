@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 14,
+  "completed_count": 24,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -19,14 +19,7 @@
     "projects/erp/acumatica-5008e175.json",
     "projects/erp/bizautomation-cloud-erp-01026293.json",
     "projects/erp/deskera-461bb8db.json",
-    "projects/erp/erpnext-3dc76f8a.json"
-  ],
-  "remaining_count": 183,
-  "remaining_project_paths": [
-    "projects/accounting/agenterbooks-a81dd04d.json",
-    "projects/accounting/halon-tax-351c6ed1.json",
-    "projects/accounting/merrchant-216509ee.json",
-    "projects/accounting/patriot-accounting-ab21270e.json",
+    "projects/erp/erpnext-3dc76f8a.json",
     "projects/erp/expand-erp-8736b85a.json",
     "projects/erp/genius-erp-6a89692c.json",
     "projects/erp/global-shop-solutions-erp-842abb80.json",
@@ -34,10 +27,17 @@
     "projects/erp/logic-erp-3f28cdf3.json",
     "projects/erp/mrpeasy-86e1c17e.json",
     "projects/erp/odoo-erp-c4a6a7fc.json",
-    "projects/erp/plex-manufacturing-cloud-c05cc280.json",
     "projects/erp/rootstock-erp-1702fbc4.json",
     "projects/erp/sage-business-cloud-x3-62b94b98.json",
-    "projects/erp/striven-erp-c0d1fa57.json",
+    "projects/erp/striven-erp-c0d1fa57.json"
+  ],
+  "remaining_count": 173,
+  "remaining_project_paths": [
+    "projects/accounting/agenterbooks-a81dd04d.json",
+    "projects/accounting/halon-tax-351c6ed1.json",
+    "projects/accounting/merrchant-216509ee.json",
+    "projects/accounting/patriot-accounting-ab21270e.json",
+    "projects/erp/plex-manufacturing-cloud-c05cc280.json",
     "projects/erp/synergix-erp-software-d56131cd.json",
     "projects/erp/syspro-23a939b4.json",
     "projects/erp/tech-cloud-erp-a9f105ce.json",
@@ -261,6 +261,14 @@
     {
       "slug": "erpnext-3dc76f8a",
       "finding": "Official current site is frappe.io/erpnext; GPLv3 software versus paid hosting/partner implementation and version-specific help boundaries documented."
+    },
+    {
+      "slug": "uneecops-ae54d954",
+      "finding": "Identity discovery: vendor site presents ERP implementation/licensing services across SAP products; full rewrite pending, do not treat provider as one standalone ERP."
+    },
+    {
+      "slug": "striven-erp-c0d1fa57",
+      "finding": "Under-five user surcharge changes cost; portal free tier is separate from internal ERP users."
     }
   ],
   "validation": [
@@ -292,6 +300,16 @@
       "diff_check": "passed",
       "source_text_hashes": "57 official entries matched actual locally saved read text SHA-256",
       "scope": "Structure/reference/provenance only; no hands-on or independent review."
+    },
+    {
+      "at": "2026-10-22T10:38:35+00:00",
+      "completed_count": 24,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 27 researched including 3 baseline",
+      "prettier": "all 24 completed JSONs and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "87 official entries matched actual read text SHA-256",
+      "scope": "Structure/reference/provenance only; no hands-on or independent review."
     }
   ],
   "checkpoints": [
@@ -306,6 +324,12 @@
       "completed_count": 10,
       "branch_push": "succeeded",
       "scope": "Accounting 14 attempted: 10 rewritten, four primary-evidence blockers not counted complete."
+    },
+    {
+      "commit": "11e8d56",
+      "completed_count": 14,
+      "branch_push": "succeeded",
+      "scope": "Four ERP products with deployment, workflow and pricing conditions."
     }
   ],
   "independent_review": false,
@@ -327,7 +351,7 @@
     {
       "category": "erp",
       "assigned": 19,
-      "completed": 4,
+      "completed": 14,
       "status": "in_progress",
       "note": "Acumatica, BizAutomation, Deskera, ERPNext complete; remaining homepages fetched for identity discovery, not treated as finished profiles."
     }
