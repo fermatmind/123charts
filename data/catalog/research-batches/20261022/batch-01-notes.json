@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T13:18:00.215097+00:00",
+  "updated_at": "2026-10-22T13:28:49.285582+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 59,
+  "completed_count": 61,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -64,9 +64,11 @@
     "projects/ide/repl-it-d6a66c85.json",
     "projects/databases/amazon-aurora-b19511d5.json",
     "projects/databases/artie-9c89f5bb.json",
-    "projects/databases/clickhouse-82bcf9f7.json"
+    "projects/databases/clickhouse-82bcf9f7.json",
+    "projects/databases/pgdash-8025223b.json",
+    "projects/databases/pinecone-7ac816b5.json"
   ],
-  "remaining_count": 140,
+  "remaining_count": 138,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -89,8 +91,6 @@
     "projects/databases/intersystems-iris-53e555c3.json",
     "projects/databases/mysql-e6032962.json",
     "projects/databases/oracle-database-2e28444d.json",
-    "projects/databases/pgdash-8025223b.json",
-    "projects/databases/pinecone-7ac816b5.json",
     "projects/databases/prisma-a31a52f0.json",
     "projects/databases/quintadb-97c5a126.json",
     "projects/databases/scalegrid-ad20379c.json",
@@ -377,6 +377,14 @@
     {
       "project": "ClickHouse",
       "detail": "Apache2statementin vendorSoftwaredefinition scopeonly; fulllicenseunread. Retrydeduplicationversion/logdependent, ReplacingMergeTree eventual; Cloudtrialnotforeverfree."
+    },
+    {
+      "project": "pgDash",
+      "detail": "Selfhostdoc saysallpersistentstatePostgreSQL butelsewherefilesystemvar/lib/pgdash fortimeseries; backupbothuntilverified. Teammemberscaneditnotif/alertrules,notfullyreadonly. Query/automationguideoldversionexamples retainedaslimits."
+    },
+    {
+      "project": "Pinecone",
+      "detail": "Databaseprofile separatesDocs/Vectors indexmodels; fixedwaitexample notreadinessguarantee. Exactplanquotas/checkoutnotverified; Namespace size0notempty andpaginationretained. Alertsnotspendcap; Assistant/Inference/Nexus notmerged."
     }
   ],
   "verification": [
@@ -386,11 +394,11 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000records/62globalresearched(3baseline+59assigned)/0untranslatedlabels; structureonly"
+      "result": "passed:1000records/64globalresearched(3baseline+61assigned)/0untranslatedlabels;structure/referencesonly"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
-      "result": "passed; changed-fileownershipchecked; no services/DB/deployment; temporarynode_modules symlinkremoved beforecommit"
+      "result": "passed; ownershipchecked;node_modulessymlinkremovedbeforecommit; no services/database/deployment"
     }
   ],
   "checkpoints": [
@@ -483,18 +491,23 @@
       "commit": "b4508e6",
       "completed_count": 56,
       "detail": "IDEcategoryall14investigated,11complete;7unittests/59globalresearched/format/diffscopechecks passed; pushed ownbranch."
+    },
+    {
+      "commit": "80fcbf3",
+      "completed_count": 59,
+      "detail": "Aurora/Artie/ClickHouse complete, Fauna/Harper investigatedincomplete;7tests/62globalresearched/format/diffscopepassed; pushedassignedbranch."
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "InterSystems IRIS, MySQL, Oracle Database, pgDash, Pinecone, Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
+    "next": "Finish InterSystems IRIS, MySQL, Oracle Database; then Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
-    "databases": "3 of15 complete; Fauna official originals inaccessible and Harper cross-domain authority incomplete;10notyetinvestigated."
+    "databases": "5of15complete; Fauna/Harper investigatedincomplete; IRIS/MySQL/Oracle primary-source investigationinprogress;5notyetinvestigated."
   },
   "identity_changes": [
     {
