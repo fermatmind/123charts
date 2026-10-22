@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T12:55:23.878606+00:00",
+  "updated_at": "2026-10-22T13:08:35.146024+00:00",
   "status": "in_progress",
-  "completed_count": 49,
+  "completed_count": 52,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -53,9 +53,12 @@
     "projects/marketing-automation/salesmanago-75557c66.json",
     "projects/social-media/blacktwist-13757d5a.json",
     "projects/social-media/contentstudio-164d0918.json",
-    "projects/social-media/emplifi-social-marketing-cloud-6b0d5978.json"
+    "projects/social-media/emplifi-social-marketing-cloud-6b0d5978.json",
+    "projects/social-media/facelift-cloud-32ac5c61.json",
+    "projects/social-media/hookle-5f78b2fa.json",
+    "projects/social-media/influence-0d1b3acb.json"
   ],
-  "remaining_count": 152,
+  "remaining_count": 149,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -66,10 +69,7 @@
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
     "projects/social-media/curatebase-7cc6bd94.json",
-    "projects/social-media/facelift-cloud-32ac5c61.json",
     "projects/social-media/funneldash-eec0f94e.json",
-    "projects/social-media/hookle-5f78b2fa.json",
-    "projects/social-media/influence-0d1b3acb.json",
     "projects/social-media/later-f96e5f04.json",
     "projects/social-media/lifast-eca10eb6.json",
     "projects/social-media/meetedgar-e5212894.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/facelift-cloud-32ac5c61.json",
+  "next_project": "projects/social-media/later-f96e5f04.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -336,6 +336,11 @@
       "path": "projects/social-media/curatebase-7cc6bd94.json",
       "status": "not_completed",
       "reason": "Current employee-advocacy homepage and May 2026 terms/privacy originals read, but pricing amount and official operational workflow/recovery documentation not discoverable. /pricing and /help inaccessible through reader, app root inaccessible; no sign-up or access bypass. Not counted complete."
+    },
+    {
+      "path": "projects/social-media/funneldash-eec0f94e.json",
+      "status": "not_completed",
+      "reason": "Original FunnelDash website redirects to Dash.fi corporate-card/finance platform; old official Messenger funnel/agency pricing remains on blog but current service continuity not established. Old Help Center redirects to Dash.fi with reader error. Identity/category mismatch requires coordinator handling; not replaced by unrelated current financial product and not counted complete."
     }
   ],
   "compatibility_issues": [
@@ -375,6 +380,15 @@
         "https://manago.ai/brand-story"
       ],
       "resolution": "Verified vendor redirect/rebrand; genuine current official URLs retained, legacy record identity preserved. Shared validator unchanged; no full PASS claim."
+    },
+    {
+      "project": "facelift-cloud-32ac5c61",
+      "actual_official_documentation_domain": "help.facelift-cloud.com",
+      "vendor_links_read": [
+        "https://facelift-bbt.com/en/pricing",
+        "https://help.facelift-cloud.com/en/articles/8212226-post-creation"
+      ],
+      "resolution": "Official Facelift product documentation uses the service domain; retained actual URLs despite shared same-registrable-domain rule. Full validator still stops at earlier Benchmark mismatch."
     }
   ],
   "validation": [
@@ -647,6 +661,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-02",
+      "completed_projects": 52,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 52 drafts; scope, unapproved states, accepted source/pricing types, excerpt hashes, recursive refs and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; shared validator unchanged, no full PASS claim"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -709,6 +745,11 @@
       "commit": "17144f1",
       "completed_count": 46,
       "scope": "Ortto, OutboundEngine, Salesforce Account Engagement, Manago AI; marketing automation 25/27 with two source gaps"
+    },
+    {
+      "commit": "547955c",
+      "completed_count": 49,
+      "scope": "BlackTwist, ContentStudio, Emplifi; Curatebase operational source gap"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -733,9 +774,9 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 3,
+      "completed": 6,
       "status": "in_progress",
-      "uncompleted_with_source_gaps": 1
+      "uncompleted_with_source_gaps": 2
     }
   },
   "source_access_notes": [
@@ -873,6 +914,39 @@
     {
       "project": "emplifi-social-marketing-cloud-6b0d5978",
       "note": "Assigned product URL redirects to current homepage. Current Teams separated from legacy profile roles; advanced approvals toggle conditional. Actual emergency doc excludes approval-in-progress, delegated Facebook, imminent YouTube and subsequent schedules, contrary broad marketing kill-switch wording. Source-derived body and excerpt hashes from actual originals."
+    },
+    {
+      "project": "funneldash-eec0f94e",
+      "note": "Actual current homepage and About are financial products; original blog pricing still offers Messenger funnels with a 2019 footer, multiple annual/promotional amounts and action-based guarantee. No current availability or shutdown date inferred. Original help link redirects to Dash.fi; no access bypass.",
+      "evidence": [
+        {
+          "source": "Dash.fi — Corporate card and finance platform for brands (https://funneldash.com/)",
+          "excerpt_sha256": "083c3c6dcb45517d896865073abfcd04b667dc6ea01a8bd0460bbfd4a35a2e59",
+          "read_at": "2026-10-22T13:08:35.146024+00:00"
+        },
+        {
+          "source": "Pricing - FunnelDash (https://blog.funneldash.com/pricing/)",
+          "excerpt_sha256": "a4a97056955c1b9f6b5ed45fec15e290228e3323c834acc3a16e60bd487807dc",
+          "read_at": "2026-10-22T13:08:35.146024+00:00"
+        },
+        {
+          "source": "About — Dash.fi (https://dash.fi/about)",
+          "excerpt_sha256": "84d70bab74c04c901d305e67d63ae7cd05e4b1142ce605985ab5578b4f82dff7",
+          "read_at": "2026-10-22T13:08:35.146024+00:00"
+        }
+      ]
+    },
+    {
+      "project": "facelift-cloud-32ac5c61",
+      "note": "Actual current quote-only plans and 2026 approval strategy/dashboard read alongside older operational pages. Default deadline rejection, optional autoapproval, force-approval permission, late immediate publishing, per-profile failure, final Planner status and organic emergency reset retained. Intercom/font licence boilerplate not attributed to product."
+    },
+    {
+      "project": "hookle-5f78b2fa",
+      "note": "Actual current Free/Solo/Plus transition documents read; Premium→Solo and Multi→Plus dated July/August 2026. Web pricing timeout; ordinary TLS-verified HTTPS 200 returned marketing shell without plan amounts. Current guide explicitly lists 12 UI languages incl. Chinese. Business move blocked with queued posts and false-failure native-check caveat retained."
+    },
+    {
+      "project": "influence-0d1b3acb",
+      "note": "Verified assigned influence.so identity, distinct from similarly named website social-proof and Brandwatch products. Public-reader root/docs unavailable; ordinary HTTPS 200 actual root and help bodies read/hashes saved. Localized root rendered SGD with repeated tier amounts; no normalized fee. No 403/429 bypass. AI rolling destination cap distinguished from UTC publication month and subscription-month IQ expiry."
     }
   ]
 }
