@@ -153,8 +153,8 @@ export function computeScore(
     recommendations.push("Ensure key product information is available in static HTML.");
   }
 
-  // Always recommend 88CN profile
-  recommendations.push("Create a free structured AI project profile on 88CN.");
+  // Always recommend 123Charts profile
+  recommendations.push("Create a free structured AI project profile on 123Charts.");
 
   // Grade
   totalScore = Math.min(100, Math.max(0, totalScore));

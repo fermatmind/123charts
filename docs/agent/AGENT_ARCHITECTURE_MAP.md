@@ -1,4 +1,4 @@
-# 88CN Agent Architecture Map
+# 123Charts Agent Architecture Map
 
 ## System Map
 
@@ -20,7 +20,7 @@ Discovery Sources
 review-ready payload                      [no-auto-publish gate]
   |
   v
-88CN Admin Review Queue                   [admin-only boundary]
+123Charts Admin Review Queue                   [admin-only boundary]
   |
   v
 manual review gate                        [manual publish gate]
@@ -41,7 +41,7 @@ Frontend / Search / Sitemap
 | --- | --- | --- |
 | worker-only boundary | `88cn-scout-worker` | never public |
 | no-auto-publish gate | worker/admin handoff | not public |
-| admin-only boundary | `88CN` admin | not public by itself |
+| admin-only boundary | `123Charts` admin | not public by itself |
 | manual publish gate | human reviewer | required before public |
 | public boundary | `published_projection` | public-safe reviewed records only |
 
@@ -50,7 +50,7 @@ Frontend / Search / Sitemap
 | Repo | Responsibilities | Must not do |
 | --- | --- | --- |
 | `88cn-scout-worker` | discovery, source resolution, canonical candidates, audit observations, quarantine, review package, publish recommendation, report draft | publish, mutate sitemap, mutate frontend, write production by default |
-| `88CN` | admin review, manual publish, projection, public frontend, search, sitemap, collections, deploy gate | expose raw worker evidence or bypass admin review |
+| `123Charts` | admin review, manual publish, projection, public frontend, search, sitemap, collections, deploy gate | expose raw worker evidence or bypass admin review |
 | `88cn-index-data` | reviewed public-safe snapshot after publication | store raw seed/evidence/audit/review payloads |
 
 ## Public Data Rule

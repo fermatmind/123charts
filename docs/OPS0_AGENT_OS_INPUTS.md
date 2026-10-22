@@ -4,7 +4,7 @@
 
 | Repo | Local path | GitHub |
 | --- | --- | --- |
-| Main app | `/Users/rainie/Desktop/88CN` | `fermatmind/88CN` |
+| Main app | `/Users/rainie/Desktop/123charts.com/123charts` | `fermatmind/88CN` |
 | Data repo | `/Users/rainie/Desktop/88cn-index-data` | `fermatmind/88cn-index-data` |
 
 ## Current Docs Numbering

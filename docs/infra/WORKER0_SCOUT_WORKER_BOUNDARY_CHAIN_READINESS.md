@@ -13,7 +13,7 @@ Result: `GO_WORKER1_WITH_PR160_PR179_CHAIN_REGISTERED`.
 
 Meaning:
 
-- the future worker/runtime boundary belongs outside the 88CN public web runtime boundary;
+- the future worker/runtime boundary belongs outside the 123Charts public web runtime boundary;
 - worker code must not live in `app/**`, `components/**`, public routes, sitemap code, Public API, MCP, or other public runtime paths;
 - `88cn-scout-worker` may become a future repo, package, or isolated workspace only behind a later human checkpoint;
 - `PR161 / WORKER1` may proceed next as a checkpointed no-runtime bootstrap task only;
@@ -73,7 +73,7 @@ Reviewed source inputs:
 - `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md`
 - `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `docs/SIDECAR_ISSUES.md`
 - `ops/tasks/current.json`
@@ -89,7 +89,7 @@ Decision: future worker runtime must be outside the public web runtime boundary.
 
 Boundary rules:
 
-- `88CN` remains the public web, policy, docs, admin review, and publication-gate control repo.
+- `123Charts` remains the public web, policy, docs, admin review, and publication-gate control repo.
 - Worker/runtime behavior must not be added to public web paths.
 - Worker code may initially be represented as docs and contracts only.
 - A future `88cn-scout-worker` physical repo, package, or isolated workspace requires a human checkpoint.
@@ -99,7 +99,7 @@ Boundary rules:
 Server boundary:
 
 - `HK-ALIYUN-01` remains public-web-only.
-- FermatMind production hosts remain do-not-touch for 88CN workers.
+- FermatMind production hosts remain do-not-touch for 123Charts workers.
 - Tencent resources remain migration-source / sunsetting only.
 - Shanghai Aliyun candidates remain conditional and require owner/capacity confirmation before any use.
 
@@ -114,7 +114,7 @@ This is an architecture blueprint only. No agent is implemented.
 | HTTP-first Audit Agent | Audit official public project sources. | robots-aware lightweight HTTP observations, sitemap/head/canonical/JSON-LD/schema/GitHub/docs signals. | Headless browser, login, form submission, WAF bypass, proxy evasion, cookies, session export, bulk crawling. |
 | Quarantine Classifier Agent | Classify failures and ambiguity. | Failure class, source URL, timestamp, retry eligibility, correction path. | Treating failures as permanent negative claims or public project-level judgments. |
 | Report Aggregator Agent | Produce anonymous aggregate statistics. | `sample_count`, missing-rate metrics, link-rate metrics, quarantine breakdown, timestamp, method, TTL/correction path. | Project-level public shaming, unreviewed project-detail publication, global market sizing, superiority claims. |
-| Growth Draft Agent | Draft distribution material from approved report data. | Local draft output under `/tmp/88cn-growth-drafts/` after report data approval. | Auto-send, auto-post, email send, DM send, GitHub issue creation, CRM write, platform login, external write. |
+| Growth Draft Agent | Draft distribution material from approved report data. | Local draft output under `/tmp/123charts-growth-drafts/` after report data approval. | Auto-send, auto-post, email send, DM send, GitHub issue creation, CRM write, platform login, external write. |
 
 Canonical resolver must handle:
 
@@ -192,7 +192,7 @@ Future Seed 100 source mix:
 | GitHub / awesome lists / open-source AI projects | 40% | Prefer official repos and official docs. |
 | Product launch sources / HN / public launch pages | 30% | Use as discovery hints; verify against official sources. |
 | AI directories | 20% | Discovery hints only; no copied descriptions, categories, score/order fields, or recommendation copy. |
-| Manually selected Chinese outbound AI projects | 10% | Require official source and original 88CN note before any public use. |
+| Manually selected Chinese outbound AI projects | 10% | Require official source and original 123Charts note before any public use. |
 
 Rules:
 

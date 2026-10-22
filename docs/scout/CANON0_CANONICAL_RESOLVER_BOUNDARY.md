@@ -7,7 +7,7 @@ Date: 2026-06-20
 
 ## Result
 
-PR166 defines the canonical resolver boundary for 88CN backstage identity work.
+PR166 defines the canonical resolver boundary for 123Charts backstage identity work.
 
 Result: `GO_CANON1`.
 

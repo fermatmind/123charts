@@ -18,7 +18,7 @@ This is not a public Chinese report page, sitemap entry, public JSON file, repor
 Allowed Chinese positioning:
 
 - `AI 项目准备度边界状态`
-- `本稿只描述 88CN 当前方法论、边界和限制。`
+- `本稿只描述 123Charts 当前方法论、边界和限制。`
 - `当前材料不足以发布项目级结论。`
 - `后续公开发布需要经过数据复核和公开页面检查点。`
 

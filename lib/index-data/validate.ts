@@ -1,4 +1,5 @@
 import type { IndexDataProject } from "./types";
+import { acceptsProjectSchema } from "../legacy-identifiers";
 
 const CATEGORY_SLUGS = new Set([
   "ai-agents", "ai-coding", "open-source-ai", "local-llm", "rag-tools",
@@ -27,8 +28,8 @@ export function validateIndexProject(project: IndexDataProject, sourcePath?: str
   }
 
   // Required fields
-  if (!project.schema_version || project.schema_version !== "88cn-project-v1") {
-    fail("schema_version", "Invalid or missing schema_version (expected 88cn-project-v1)");
+  if (!project.schema_version || !acceptsProjectSchema(project.schema_version)) {
+    fail("schema_version", "Invalid or missing schema_version (expected 123charts-project-v1)");
   }
   if (!project.name || project.name.length > 120) fail("name", "Missing or too long name");
   if (!project.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug)) fail("slug", "Invalid slug format");

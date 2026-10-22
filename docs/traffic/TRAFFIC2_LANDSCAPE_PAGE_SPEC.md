@@ -8,7 +8,7 @@ This is a future `/landscape` page architecture specification. It does not creat
 
 ## Hero
 
-Purpose: establish 88CN as a reviewed AI project landscape and route users into safe discovery surfaces.
+Purpose: establish 123Charts as a reviewed AI project landscape and route users into safe discovery surfaces.
 
 Approved message:
 

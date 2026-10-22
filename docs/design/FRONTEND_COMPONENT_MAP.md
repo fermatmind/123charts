@@ -1,4 +1,4 @@
-# 88CN Frontend Component Map v0
+# 123Charts Frontend Component Map v0
 
 Result: `FRONTEND_UI_DESIGN_SYSTEM_READY`
 
@@ -289,7 +289,7 @@ Rules:
 
 - no logo unless reviewed and licensed;
 - no screenshots from competitors or unapproved sources;
-- no claim that 88CN has verified private business performance.
+- no claim that 123Charts has verified private business performance.
 
 ## CollectionCard
 

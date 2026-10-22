@@ -52,16 +52,16 @@ Repository inputs:
 
 Local `/tmp` inputs inspected read-only:
 
-- `/tmp/88cn-seed50-source-research.md`: present, 185 lines
-- `/tmp/88cn-seed50-candidate-hints-preview.jsonl`: present, 40 rows
-- `/tmp/88cn-seed50-rejected-or-weak-hints.jsonl`: present, 12 rows
-- `/tmp/88cn-pr164-seed-identity-hints-local-pack.jsonl`: present, 40 rows
-- `/tmp/88cn-pr164-seed-identity-hints-rejected-or-weak.jsonl`: present, 12 rows
-- `/tmp/88cn-pr164-seed-identity-hints-manifest.json`: present
-- `/tmp/88cn-pr167-canonical-resolver-dry-run.jsonl`: present, 40 rows
-- `/tmp/88cn-pr167-canonical-resolver-manifest.json`: present
-- `/tmp/88cn-pr171-staging-sandbox-local-write-dry-run.json`: present
-- `/tmp/88cn-pr174-small-batch-audit-fixture-dry-run.json`: present
+- `/tmp/123charts-seed50-source-research.md`: present, 185 lines
+- `/tmp/123charts-seed50-candidate-hints-preview.jsonl`: present, 40 rows
+- `/tmp/123charts-seed50-rejected-or-weak-hints.jsonl`: present, 12 rows
+- `/tmp/123charts-pr164-seed-identity-hints-local-pack.jsonl`: present, 40 rows
+- `/tmp/123charts-pr164-seed-identity-hints-rejected-or-weak.jsonl`: present, 12 rows
+- `/tmp/123charts-pr164-seed-identity-hints-manifest.json`: present
+- `/tmp/123charts-pr167-canonical-resolver-dry-run.jsonl`: present, 40 rows
+- `/tmp/123charts-pr167-canonical-resolver-manifest.json`: present
+- `/tmp/123charts-pr171-staging-sandbox-local-write-dry-run.json`: present
+- `/tmp/123charts-pr174-small-batch-audit-fixture-dry-run.json`: present
 
 ## PR160-PR179 Completion Matrix
 

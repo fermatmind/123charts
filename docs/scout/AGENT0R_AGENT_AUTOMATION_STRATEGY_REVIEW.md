@@ -8,7 +8,7 @@ Date: 2026-06-21
 
 AGENT0R accepts the AUTO0R strategy with a narrower execution gate:
 
-- 88CN may start `AGENT1 / Worker CLI Contract Stabilization` in `88cn-scout-worker`.
+- 123Charts may start `AGENT1 / Worker CLI Contract Stabilization` in `88cn-scout-worker`.
 - `AGENT1` must be contract/CLI/dry-run only.
 - `AGENT1` must not start a runtime worker, crawler, Redis, queue runtime, HTTP audit runtime, browser fallback, staging write, production write, `published_projection` write, sitemap change, deploy, external outreach, or data repo mutation.
 
@@ -17,7 +17,7 @@ The strategic model is:
 ```text
 agent produces recommendation
 human performs final review
-88CN admin gate controls publication
+123Charts admin gate controls publication
 published_projection controls public frontend/search/sitemap
 ```
 
@@ -33,11 +33,11 @@ That rejected model remains forbidden.
 
 Local AUTO0R artifacts:
 
-- `/tmp/88cn-agent-auto0r-strategy-readiness-scan.md`
-- `/tmp/88cn-agent-auto0r-task-split.json`
-- `/tmp/88cn-agent-auto0r-architecture-map.md`
+- `/tmp/123charts-agent-auto0r-strategy-readiness-scan.md`
+- `/tmp/123charts-agent-auto0r-task-split.json`
+- `/tmp/123charts-agent-auto0r-architecture-map.md`
 
-88CN repo evidence:
+123Charts repo evidence:
 
 - `docs/infra/SCOUT_WORKER_REPO_BOOTSTRAP.md`
 - `docs/infra/WORKER_QA.md`
@@ -92,7 +92,7 @@ AGENT0R was prepared in a clean worktree from `origin/main` at:
 5c82ae0e3ed143e691e669891ae09c7da6875977
 ```
 
-Current 88CN state:
+Current 123Charts state:
 
 - CONTENT27 public MVP exists through `published_projection`.
 - `staging/projects-review-queue.jsonl` has 50 review queue rows.
@@ -125,7 +125,7 @@ The permanent publication rule:
 worker output -> review_ready -> human admin review -> published_projection -> frontend/sitemap/search
 ```
 
-No worker task before `AGENT-INTEGRATION0` may write `88CN` review queue. No worker task before a later human-reviewed publish task may write `published_projection`.
+No worker task before `AGENT-INTEGRATION0` may write `123Charts` review queue. No worker task before a later human-reviewed publish task may write `published_projection`.
 
 ## 5. Why AGENT1 Is The Correct Next Step
 
@@ -155,7 +155,7 @@ AGENT1 should not add:
 - browser automation;
 - Supabase client;
 - staging or production write;
-- 88CN repo mutation;
+- 123Charts repo mutation;
 - index-data mutation;
 - deploy or server configuration.
 
@@ -171,15 +171,15 @@ AGENT0R approves the AUTO0R split as the roadmap, with these execution gates:
 | `AGENT4` Canonical Entity Agent | `88cn-scout-worker` | candidates only, no public slug write |
 | `AGENT5` HTTP Audit Agent | `88cn-scout-worker` | fixture first, external HTTP only after approval |
 | `AGENT6` Quarantine Classifier Agent | `88cn-scout-worker` | admin-safe failure classification |
-| `AGENT7` Review Queue Packager | `88cn-scout-worker` | package only, no 88CN write |
+| `AGENT7` Review Queue Packager | `88cn-scout-worker` | package only, no 123Charts write |
 | `AGENT8` Publish Recommendation Engine | `88cn-scout-worker` | recommendation only |
 | `AGENT9` Report Draft Generator | `88cn-scout-worker` | local aggregate drafts only |
 | `AGENTQ` Agent No-Auto-Publish QA | `88cn-scout-worker` | negative tests and static checks |
-| `AGENT-INTEGRATION0` Worker Output to 88CN Review Queue | `88CN` | first approved handoff to admin queue |
+| `AGENT-INTEGRATION0` Worker Output to 123Charts Review Queue | `123Charts` | first approved handoff to admin queue |
 | `BULK200_AGENT_DRY_RUN` | `88cn-scout-worker` | local/staging rehearsal only |
 | `BULK1000_AGENT_DRY_RUN` | `88cn-scout-worker` | capacity rehearsal only |
 
-`AGENT-INTEGRATION0` remains the first convergence point with `88CN`. Before that point, worker tasks must not mutate `88CN`.
+`AGENT-INTEGRATION0` remains the first convergence point with `123Charts`. Before that point, worker tasks must not mutate `123Charts`.
 
 ## 7. Data State Decision
 
@@ -211,8 +211,8 @@ Mapping:
 | `canonical_review_needed`, `quarantined`, `rejected` | worker/admin | never public except aggregate QA counts |
 | `audit_pending`, `audit_observed`, `stale` | worker/admin | sanitized evidence only after review |
 | `review_ready`, `publish_recommended` | worker/admin | not public until human publish |
-| `published` | 88CN admin | eligible for projection, frontend, sitemap, snapshot |
-| `archived` | 88CN admin | no active sitemap unless a later archive policy allows it |
+| `published` | 123Charts admin | eligible for projection, frontend, sitemap, snapshot |
+| `archived` | 123Charts admin | no active sitemap unless a later archive policy allows it |
 
 Compatibility note: existing DB enum uses `audit_observation`. AGENT docs may use `audit_observed` as the process-state label, but implementation must preserve compatibility or add a migration only under a separate approval.
 
@@ -267,7 +267,7 @@ Future use:
 AGENT1 may start only if its opening prompt includes these exact constraints:
 
 ```text
-Repo: /Users/rainie/Desktop/88CN.com/88cn-scout-worker
+Repo: /Users/rainie/Desktop/123charts.com/88cn-scout-worker
 Mode: worker CLI contract stabilization only
 Runtime allowed: no
 Live network allowed: no
@@ -275,7 +275,7 @@ External HTTP audit runtime allowed: no
 Browser fallback allowed: no
 Redis/queue runtime allowed: no
 Supabase/staging/production write allowed: no
-88CN repo mutation allowed: no
+123Charts repo mutation allowed: no
 88cn-index-data mutation allowed: no
 published_projection mutation allowed: no
 sitemap mutation allowed: no
@@ -315,7 +315,7 @@ AGENT1_READY_FOR_DISCOVERY_HINT_AGENT
 | Direct worker to `published_projection` | Bypasses admin review and public no-leak gate |
 | Direct worker to sitemap | Creates automatic public indexing from unreviewed data |
 | Use `88cn-index-data` as raw intake | Violates public-safe snapshot boundary |
-| Add AGENT1 into `88CN` implementation | Wrong repo and risks mixing worker code into public web boundary |
+| Add AGENT1 into `123Charts` implementation | Wrong repo and risks mixing worker code into public web boundary |
 | Start queue/Redis now | Local dry-run queue is enough; runtime queue is Phase 3 |
 
 ## 12. Validation Requirements For AGENT0R
@@ -339,12 +339,12 @@ AGENT0R intentionally does not run build or start local dev servers. It does not
 ```text
 Result: AGENT0R_READY_FOR_WORKER_AGENT_IMPLEMENTATION
 Next task: AGENT1 / Worker CLI Contract Stabilization
-Next repo: /Users/rainie/Desktop/88CN.com/88cn-scout-worker
+Next repo: /Users/rainie/Desktop/123charts.com/88cn-scout-worker
 Can enter AGENT1 now: yes, with contract-only constraints
 Runtime allowed now: no
 Auto-publish allowed: no
 Server/DB writes allowed: no
-88CN public surface changes allowed by AGENT1: no
+123Charts public surface changes allowed by AGENT1: no
 Index-data mutation allowed by AGENT1: no
 ```
 

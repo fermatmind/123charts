@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Harden the 88CN public API surface against P1 contract violations, monetization field injection, and query-parameter-based indexing abuse. This PR fixes the validation ordering bug found in PR #13 QA and adds proactive defenses.
+Harden the 123Charts public API surface against P1 contract violations, monetization field injection, and query-parameter-based indexing abuse. This PR fixes the validation ordering bug found in PR #13 QA and adds proactive defenses.
 
 ## P1 Fix: API Validation Ordering
 
@@ -42,7 +42,7 @@ Both `/api/project-submissions` and `/api/project-claims` now follow this orderi
 
 ### Why Block Monetization Fields
 
-88CN Phase 1 is a free index. There are:
+123Charts Phase 1 is a free index. There are:
 - No paid listings
 - No sponsored placements
 - No premium tiers
@@ -51,7 +51,7 @@ Both `/api/project-submissions` and `/api/project-claims` now follow this orderi
 
 Accepting monetization fields in API payloads would:
 1. Create false expectations that paid features exist
-2. Risk storing payment-intent data that 88CN has no infrastructure to handle
+2. Risk storing payment-intent data that 123Charts has no infrastructure to handle
 3. Blur the boundary between the free index and future commercial features
 4. Create a potential attack surface for payment-related abuse
 
@@ -82,12 +82,12 @@ If any of these fields appear in a request body, the API returns **400 Bad Reque
 ```json
 {
   "ok": false,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "error": {
     "type": "...",
     "title": "Bad Request",
     "status": 400,
-    "detail": "Request contains disallowed fields for project-submissions: stripe_session_id, premium. 88CN does not accept monetization, payment, or commercial-tier fields.",
+    "detail": "Request contains disallowed fields for project-submissions: stripe_session_id, premium. 123Charts does not accept monetization, payment, or commercial-tier fields.",
     "instance": "/api/project-submissions",
     "request_id": "..."
   }
@@ -139,14 +139,14 @@ The correct approach is `X-Robots-Tag` (HTTP header) or `<meta name="robots">` (
 
 ## Why Not Stripe
 
-88CN Phase 1 is a free, public index. Stripe integration is not in scope because:
+123Charts Phase 1 is a free, public index. Stripe integration is not in scope because:
 
 1. There are no paid features to charge for
 2. Payment processing introduces PCI compliance obligations
 3. Stripe integration would require storing customer data, creating privacy obligations
 4. The business model for Phase 1 is growth-signal discovery, not transactions
 
-When (and if) 88CN introduces optional commercial features in a future phase, Stripe integration will be its own PR with full security review, PCI scope analysis, and data handling policies.
+When (and if) 123Charts introduces optional commercial features in a future phase, Stripe integration will be its own PR with full security review, PCI scope analysis, and data handling policies.
 
 ## Why This Is Not SEO Manipulation
 

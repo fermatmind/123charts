@@ -1,293 +1,68 @@
-# 88CN
+# 123Charts
 
-88CN is an open structured signal index for AI projects.
+**Discover great tools. Find better alternatives.** 全球工具分类与替代榜单。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；本轮仅本地开发。
 
-It helps early AI builders, researchers, and future agent systems understand public AI projects through reviewed project profiles, machine-readability checks, public source links, and structured metadata.
-
-88CN is not a generic AI tools directory, a paid machine-ranking system, an automated content farm, an investment platform, or a private-data collection product.
-
----
-
-## Name and positioning
-
-88CN is used as a compact infrastructure mark for the 88CN project.
-
-The name does not imply a regional gate, financial product, search ranking promise, or commercial placement guarantee. In this repository, 88CN refers to the open project index, review workflow, and structured signal system used to describe public AI projects.
-
-The meaning of the brand is built through code, reviewed data, public reports, and repeatable machine-readability checks.
-
----
-
-## What 88CN does
-
-88CN tracks public signals that make an AI project easier to verify, understand, and index:
-
-- official website
-- public documentation
-- GitHub repository
-- launch page
-- project category
-- technology stack
-- machine-readable metadata
-- founder-submitted corrections or claims
-- admin review status
-
-The first version of 88CN focuses on one practical problem:
-
-> Many early AI projects launch with weak machine-readable structure. Their websites may lack clean HTML, canonical metadata, JSON-LD, sitemap visibility, or clear public source links.
-
-88CN provides a structured workflow to detect, review, and improve those public project profiles.
-
----
-
-## Current project status
-
-88CN currently includes:
-
-- Next.js App Router web application
-- public project index pages
-- submit and claim workflows
-- admin review workflow
-- public-surface hardening
-- intake firewall and validation guards
-- AI Search Readiness Checker
-- external import integration for the open data repository
-- production deployment on 88cn.com
-- companion open data repository for public project metadata
-- initial Seed 100 project corpus in the open data repository
-
-The project is still in early alpha. Public data, project review rules, operational tooling, and machine-readability reports are being developed through small pull requests with strict review boundaries.
-
----
-
-## Repository ecosystem
-
-88CN is split into two repositories.
-
-### Main web repository
-
-`fermatmind/88CN`
-
-This repository contains:
-
-- the 88CN web application
-- project pages
-- submit and claim flows
-- admin review screens
-- API route contracts
-- public-surface checks
-- deployment and QA reports
-- machine-readability tooling
-- external import integration
-
-### Open data repository
-
-`fermatmind/88cn-index-data`
-
-This repository contains public cold data for AI projects:
-
-- project JSON files
-- taxonomy
-- schema validation
-- privacy checks
-- seed project manifest
-- contribution rules
-
-The open data repository does not contain private founder data, revenue data, API keys, analytics screenshots, payment data, or investor data.
-
----
-
-## Data model and review policy
-
-88CN separates public data from reviewed publication.
-
-A project may pass through several states:
-
-- submitted
-- pending review
-- quarantined
-- scouted
-- published
-- founder claimed
-- archived
-
-Only reviewed public project profiles may be published.
-
-Submitted, pending, quarantined, or unreviewed data must not be added to the public sitemap, public API, or future machine-readable agent payloads.
-
-Runtime failures from imported public data, such as DNS failure, timeout, redirect loops, or unreachable websites, should be recorded as quarantine signals rather than silently promoted into public project records.
-
----
-
-## Machine-readable profiles
-
-88CN project profiles are designed to be clear for both humans and machines.
-
-A published project profile may include:
-
-- normalized project name
-- canonical website URL
-- project category
-- public source links
-- technology tags
-- structured description
-- public metadata checks
-- review status
-
-88CN does not promise search placement, traffic, third-party indexing outcomes, AI citations, or inclusion in any external system.
-
----
-
-## AI Search Readiness Checker
-
-The AI Search Readiness Checker inspects public website structure and reports basic machine-readability signals such as:
-
-- title
-- meta description
-- canonical URL
-- readable HTML
-- JSON-LD presence
-- schema type detection
-- robots.txt availability
-- sitemap.xml availability
-- public source links
-
-The checker does not call LLM APIs, does not use private website credentials, does not execute browser JavaScript, and does not store private data.
-
----
-
-## Commercial boundary
-
-88CN may later support human-visible featured placements for reviewed projects.
-
-Any future featured placement must remain separate from the machine signal layer.
-
-Featured placement must not change:
-
-- project review status
-- Signal Score
-- Source Confidence
-- sitemap inclusion
-- public API ordering
-- future MCP payloads
-- organic ordering
-- editorial review result
-
-Paid visibility, if enabled, is a user-interface placement only.
-
----
-
-## What 88CN is not
-
-88CN is not:
-
-- an AI tools directory clone
-- a link-selling marketplace
-- a search-placement service
-- an automated pSEO content farm
-- an investment product
-- a fundraising platform
-- a crypto asset project
-- a private-data broker
-- a promise of traffic, ranking, AI citation, or external discovery outcomes
-
----
-
-## Local development
-
-Install dependencies:
+## 本地启动
 
 ```bash
+cd /Users/rainie/Desktop/123charts.com/123charts
 npm install
+npm run local:setup
+npm run dev:local
 ```
 
-Run local checks:
+Docker Desktop 需要运行。初始化创建本地 Supabase、Auth、私有历史文件存储和邮件收件箱。重复 setup/start 保留现有账户和资料；无数据库重置。核心演示无需 OCR 或远程流量接口。新官网资料提取需要联网，失败允许手填。
+
+- English: http://127.0.0.1:3100/en
+- 中文：http://127.0.0.1:3100/zh
+- 演示：http://127.0.0.1:3100/en?dataset=demo
+- 工作台：`/en/dashboard`；审核后台：`/en/admin`
+- 本地邮件：http://127.0.0.1:54324；数据库 Studio：http://127.0.0.1:54323
+- 普通用户、管理员测试凭据：[.local/accounts.json](.local/accounts.json)，仅本机生成，勿提交。
+- `npm run local:stop` 停止本地应用、worker 和 Supabase，保留数据卷。
+
+所有服务绑定本机；所有本地页面 noindex。GitHub 与生产部署未操作。
+
+## 当前体验
+
+1. 搜索用途、网站或分类，按价格、语言、开源筛选；`Cmd/Ctrl + K` 搜索。
+2. 浏览分类发现、新收录、持续免费和用途替代页。发现顺序使用每日稳定轮换，不宣称流量或人气排名。
+3. 注册或登录，三步提交官网、用途条件和 3–5 个同行；自动存草稿，小众例外可以说明原因和相关替代方式。无需截图。
+4. 审核员记录资料依据与价格核验结果，通过后交付公开档案、同类对照与收录卡；部分关系待审不阻塞项目公开，仅确认的定向关系进入替代入口。
+5. 独立认领管理身份后维护资料；后续更新不重复首次同行数量要求。项目页、筛选、替代比较和新卡片同步读取当前资料。
+6. 收藏网站、关注分类或替代页，查看展示和官网外跳记录。分享自愿，对照清单分享可撤销。
+
+## 数据说明
+
+默认 real 只显示真实研究条目，价格未复核则待确认。demo 只显示虚构案例，卡片与清单注明 DEMO。历史流量及截图留存，退出当前导航、投稿、审核和自动调度。初始化不重新制造流量数据。
+
+官网来源与逐项核对见 [DISCOVERY_MVP.md](docs/DISCOVERY_MVP.md)。历史收录日期未曾独立记录的条目明确标记为估计；新记录从首次公开时间开始保存，编辑不重置。
+
+## 验证
 
 ```bash
-npm run verify:day0
-npm run policy:scan
-npm run third-party:check
-npm run db:schema:check
-npm run public-surface:check
-npm run intake:check
-npm run external-import:check
-npm run geo-checker:check
+npm run test:charts
+npm run test:browser
+npm run test:db:charts
 npm run lint
 npm run typecheck
 npm run build
+npm run db:types
+npm run format:check
 ```
 
-Start the development server:
+`tests/charts/legacy/` 保存旧流量投稿与浏览器验收，已退出当前 MVP 验收入口。仍运行的历史纯函数及 SQL 回归仅保护原有不可变数据与权限，不表示相关功能属于当前 MVP。
 
-```bash
-npm run dev
-```
+## 本轮架构实现
 
----
+公共发现、个人空间、运营管理分别使用 `(public)`、`(dashboard)`、`(admin)` 路由组与权限布局。公共首屏不包含管理面板。
 
-## Current execution focus
+Supabase SQL 是唯一 schema，继续使用 SDK，不引入第二套 ORM。`products`、`competitor_relations`、`outbound_clicks`、`impressions` 是现有 `charts_projects`、`charts_relations`、`charts_events` 的规范只读投影，非重复数据表；分类使用 `charts_categories` / `catalog_categories`，避免覆盖旧业务的 `categories`。
 
-The current near-term roadmap is:
+提交只创建私有预览；审核通过才公开。资料修订审核中保留旧版，隐藏项目审核后仍隐藏。首次公开时间由数据库保护。关系始终是 anchor ← candidate，不自动反向成立。
 
-1. validate that the Seed 100 open data corpus can be consumed safely by the web application
-2. ensure seed projects do not auto-publish or leak into the sitemap
-3. quarantine runtime failures such as unreachable websites, DNS failures, timeouts, or redirect loops
-4. run a machine-readability audit over the seed corpus
-5. publish the first data-backed founder intent signal report
-6. connect the report to the AI Search Readiness Checker, submit flow, and claim flow
+规范接口：`/api/v1/submissions`、`/api/v1/reviews/[id]/decision`、`/api/v1/events/outbound`。官网 GET 只做 302 跳转，真实点击由客户端异步 POST 记录；链接预取不计数。审核事务完成后刷新实际使用的缓存 tag；私有 outbox 支持失败重试和提交版本隔离。
 
-The near-term goal is to produce a public, data-backed report that helps early AI founders understand how machine-readable their project websites are.
+## 本地上线准备
 
----
-
-## Contribution policy
-
-Contributions should be narrow, reviewable, and aligned with the project boundary.
-
-For project data contributions, use the companion data repository:
-
-```text
-fermatmind/88cn-index-data
-```
-
-For application code changes, keep pull requests small and scoped.
-
-Do not submit:
-
-- private founder data
-- emails or phone numbers
-- API keys
-- revenue or payment data
-- analytics screenshots
-- investment claims
-- traffic promises
-- copied descriptions from third-party directories
-
----
-
-## Security and privacy
-
-Do not commit secrets.
-
-Do not commit:
-
-- `.env.local`
-- `.env.production`
-- API keys
-- SSH keys
-- Supabase service role keys
-- Stripe secrets
-- OpenAI or Anthropic keys
-- server IPs
-- SSL certificates
-- temporary GitHub archive URLs
-
-Security-sensitive findings should be reported privately to the maintainer.
-
----
-
-## Maintainer
-
-88CN is currently maintained by FermatMind as a solo-founder, AI-native infrastructure project.
-
-The project is built through small, auditable pull requests with strict separation between build tasks, QA tasks, public data, admin review, deployment operations, and future commercial surfaces.
+更名与兼容例外见 [BRAND_MIGRATION.md](docs/BRAND_MIGRATION.md)。三节点独立自托管配置、备份恢复和上线前置条件见 [deploy/README.md](deploy/README.md)；本轮不执行远端部署。

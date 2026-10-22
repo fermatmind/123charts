@@ -33,10 +33,8 @@ export async function GET() {
   return success(list, requestId);
 }
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const requestId = getOrCreateRequestId();
   const instance = `/api/admin/submissions/${params.id}`;
 

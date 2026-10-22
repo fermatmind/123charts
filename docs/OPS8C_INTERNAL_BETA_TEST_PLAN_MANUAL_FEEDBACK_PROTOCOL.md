@@ -32,7 +32,7 @@ start I18N0, or start PR101.
 The internal beta should answer four questions without adding new runtime or
 collection behavior:
 
-1. Do target users understand what 88CN does in one sentence?
+1. Do target users understand what 123Charts does in one sentence?
 2. Which public routes create real founder, builder, or researcher value?
 3. Does the current positioning feel credible and bounded rather than spammy,
    overpromising, or commercially confusing?
@@ -96,7 +96,7 @@ Not allowed:
 
 | Task | Evidence to record | Success signal |
 | --- | --- | --- |
-| Open `/` and explain what 88CN is in one sentence. | Redacted sentence summary and understanding score. | Tester can describe 88CN without prompt correction. |
+| Open `/` and explain what 123Charts is in one sentence. | Redacted sentence summary and understanding score. | Tester can describe 123Charts without prompt correction. |
 | Visit `/reports/early-ai-project-machine-readability-2026`. | Pages tested and clearest/confusing phrase. | Tester understands machine-readability angle. |
 | Run `/geo-checker` on their own project or a known AI project. | Whether run completed; no private input committed. | Tester sees value in checking project discoverability. |
 | Visit `/submit`. | CTA expectation and submit/correct/remove intent. | Tester understands submit pathway without assuming publication is automatic. |
@@ -119,7 +119,7 @@ Not allowed:
 | Visit `/alternatives/aurora-code-vs-nucleus-ml`. | Comparison clarity. | Tester understands alternatives framing without defamation risk. |
 | Visit `/reports`. | Report discovery score. | Tester can identify a report worth opening. |
 | Run `/geo-checker`. | Completion and usefulness score. | Tester would use checker before evaluating or launching a project. |
-| Explain whether 88CN helps find or evaluate AI projects. | Demand-side value summary. | Tester names at least one practical discovery/evaluation job. |
+| Explain whether 123Charts helps find or evaluate AI projects. | Demand-side value summary. | Tester names at least one practical discovery/evaluation job. |
 
 ### Data Buyer / Researcher Tasks
 
@@ -140,14 +140,14 @@ open-ended opinion collection.
 
 ### Understanding
 
-- What do you think 88CN does?
+- What do you think 123Charts does?
 - Which page made that clearest?
 - Which phrase confused you?
 - Did it feel like a directory, a checker, a data layer, or something else?
 
 ### Value
 
-- What job would you use 88CN for?
+- What job would you use 123Charts for?
 - Would you use it to find AI projects?
 - Would you use it before launching an AI product?
 - Would you use it to check your own project website?
@@ -155,7 +155,7 @@ open-ended opinion collection.
 
 ### Trust
 
-- Does 88CN feel credible?
+- Does 123Charts feel credible?
 - Does anything look like SEO spam or backlink marketing?
 - Does any copy overpromise ranking, traffic, AI citation, commercial value, or exposure?
 - What would make you trust the data more?
@@ -262,7 +262,7 @@ Not allowed in repo:
 Recommended raw local folder:
 
 ```text
-/tmp/88cn-beta-feedback/
+/tmp/123charts-beta-feedback/
 ```
 
 This folder must remain local and uncommitted. OPS8C does not create a committed
@@ -278,7 +278,7 @@ CRM or any write-capable feedback collection surface.
 | Founder testers | 5 |
 | Builder/tool-user testers | 3 |
 | Data/research testers | 2 |
-| Users who understand 88CN in one sentence | 60% |
+| Users who understand 123Charts in one sentence | 60% |
 | Users willing to run geo-checker | 50% |
 | Founders willing to submit, claim, or correct | 20% |
 | Data/research testers asking for fields or sample format | 2 |
@@ -314,7 +314,7 @@ Stop or hold beta if any of these occur:
 - Admin/private data exposure.
 - Sitemap exposes a forbidden route.
 - Founder confusion is greater than 70%.
-- More than two testers interpret 88CN as a backlink marketplace.
+- More than two testers interpret 123Charts as a backlink marketplace.
 - Alpha Feed is interpreted as an investment product.
 - Payment or customer-access confusion is high.
 - Geo-checker produces unsafe or misleading output.
@@ -431,6 +431,6 @@ OPS8C does not start any of those tasks.
 
 BETA_PLAN_READY.
 
-88CN can proceed to BETA1 only as a human-run internal test using this manual,
+123Charts can proceed to BETA1 only as a human-run internal test using this manual,
 redacted protocol. The exact next recommended task is BETA1 Founder / Data Buyer
 Internal Test Run.

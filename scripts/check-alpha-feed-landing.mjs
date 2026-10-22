@@ -99,7 +99,7 @@ if (fs.existsSync(pagePath)) {
   if (/onSubmit\s*=|action\s*=/i.test(page)) {
     addFailure("Landing page must not define submit behavior");
   }
-  if (/mailto:|https?:\/\//i.test(page.replace("https://88cn.com/alpha-feed", ""))) {
+  if (/mailto:|https?:\/\//i.test(page.replace("https://123charts.com/alpha-feed", ""))) {
     addFailure("Landing page must not include external contact or service links");
   }
 }

@@ -2,13 +2,13 @@
 
 ## Summary
 
-PR46 adds the first aggregate conversion metrics boundary for 88CN. It creates an admin-only counter model, a guarded server-side write route, an admin summary page, and Day 30 / Day 60 / Day 100 pivot gate definitions.
+PR46 adds the first aggregate conversion metrics boundary for 123Charts. It creates an admin-only counter model, a guarded server-side write route, an admin summary page, and Day 30 / Day 60 / Day 100 pivot gate definitions.
 
 ## What Is Included
 
 - `conversion_metric_daily_counts`: daily aggregate counters for report views, AI Search Readiness Checker runs, project submissions, and project claims.
 - `conversion_pivot_gate_snapshots`: admin-only Day 30, Day 60, and Day 100 review snapshots.
-- `/api/metrics/conversion`: server-side write route guarded by `INTERNAL_METRICS_WRITE_KEY` and `x-88cn-metrics-key`.
+- `/api/metrics/conversion`: server-side write route guarded by `INTERNAL_METRICS_WRITE_KEY` and `x-123charts-metrics-key`.
 - `/admin/metrics`: admin-only summary view for aggregate counters and pivot gates.
 - `npm run conversion-metrics:check`: static boundary checker.
 

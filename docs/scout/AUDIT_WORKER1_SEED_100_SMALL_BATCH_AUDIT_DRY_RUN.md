@@ -35,7 +35,7 @@ The user said `继续`, so PR174 proceeds only as a fixture/local dry-run. This 
 
 Local input artifacts:
 
-- `/tmp/88cn-pr167-canonical-resolver-dry-run.jsonl`
+- `/tmp/123charts-pr167-canonical-resolver-dry-run.jsonl`
 - `docs/scout/AUDIT_WORKER0_HTTP_FIRST_AUDIT_WORKER_BOUNDARY_CAPACITY_MODEL.md`
 
 The PR167 local canonical resolver output remains an uncommitted `/tmp` artifact. It is not an official Seed 100 dataset, not audited records, not public records, and not report-eligible data.
@@ -45,7 +45,7 @@ The PR167 local canonical resolver output remains an uncommitted `/tmp` artifact
 Local dry-run manifest:
 
 ```text
-/tmp/88cn-pr174-small-batch-audit-fixture-dry-run.json
+/tmp/123charts-pr174-small-batch-audit-fixture-dry-run.json
 ```
 
 Dry-run summary:

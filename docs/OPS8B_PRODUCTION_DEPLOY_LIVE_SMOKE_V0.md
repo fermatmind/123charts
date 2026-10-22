@@ -52,8 +52,8 @@ The production deploy used the documented repository script through Aliyun
 Workbench:
 
 ```bash
-cd /var/www/88cn
-BASE_URL=https://88cn.com scripts/agent/deploy-production.sh --confirm --commit d68413fa456ae03b8ee9e83e66af9dc5ce7dfdd6
+cd /var/www/123charts
+BASE_URL=https://123charts.com scripts/agent/deploy-production.sh --confirm --commit d68413fa456ae03b8ee9e83e66af9dc5ce7dfdd6
 ```
 
 Server address, SSH details, session identifiers, and environment values are
@@ -74,22 +74,22 @@ redacted and are not recorded in this report.
 | Nginx config test | PASS |
 | Nginx reload | PASS |
 | Local smoke against loopback | PASS |
-| Generic live smoke against `https://88cn.com` | PASS |
+| Generic live smoke against `https://123charts.com` | PASS |
 | Final deployed SHA check | PASS |
 
 ## PM2 / Nginx / TLS / DNS Summary
 
 | Area | Evidence | Result |
 | --- | --- | --- |
-| PM2 | `88cn-web` process reported `online` after restart/save/status | PASS |
+| PM2 | `123charts-web` process reported `online` after restart/save/status | PASS |
 | Nginx | Config syntax test succeeded and reload command completed | PASS |
-| TLS | Public HTTPS requests to `https://88cn.com` completed successfully | PASS |
-| DNS | Public `https://88cn.com` resolved and served expected production routes | PASS |
+| TLS | Public HTTPS requests to `https://123charts.com` completed successfully | PASS |
+| DNS | Public `https://123charts.com` resolved and served expected production routes | PASS |
 | Sensitive details | Server address, SSH details, account data, tokens, cert paths, and env values are redacted | PASS |
 
 ## Public Route Live Smoke Matrix
 
-All public route checks used `https://88cn.com`.
+All public route checks used `https://123charts.com`.
 
 | Method | Route | Status | Content type | Leak scan | Result |
 | --- | --- | ---: | --- | --- | --- |

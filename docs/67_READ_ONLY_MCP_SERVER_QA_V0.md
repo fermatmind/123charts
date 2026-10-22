@@ -2,7 +2,7 @@
 
 ## Purpose
 
-PR60 adds a disabled-by-default, read-only MCP server shell for future 88CN tooling. It follows the PR59 MCP boundary and the PR58 Public API boundary.
+PR60 adds a disabled-by-default, read-only MCP server shell for future 123Charts tooling. It follows the PR59 MCP boundary and the PR58 Public API boundary.
 
 ## Current Status
 
@@ -43,7 +43,7 @@ Disabled Problem Details:
 
 ```json
 {
-  "type": "https://88cn.com/problems/mcp-disabled",
+  "type": "https://123charts.com/problems/mcp-disabled",
   "title": "MCP server is disabled",
   "status": 503,
   "detail": "The MCP server is not enabled for this environment.",
@@ -131,7 +131,7 @@ The checker validates feature flags, route disabled behavior, strict static tool
 
 ## Negative Tests
 
-The checker uses temporary fixtures under `/tmp/88cn-pr60-*` for:
+The checker uses temporary fixtures under `/tmp/123charts-pr60-*` for:
 
 - fake MCP file importing Supabase
 - fake MCP file importing payment code

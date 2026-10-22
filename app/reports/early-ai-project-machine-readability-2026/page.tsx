@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: siteDescription(FOUNDER_INTENT_REPORT_SUBTITLE),
   alternates: {
     canonical:
-      "https://88cn.com/reports/early-ai-project-machine-readability-2026",
+      "https://123charts.com/reports/early-ai-project-machine-readability-2026",
   },
   robots: { index: true, follow: true },
 };
@@ -133,16 +133,16 @@ export default function FounderIntentSignalReportPage() {
 
         <section className="rounded-md border border-terminal-border bg-terminal-surface p-5">
           <h2 className="text-sm font-semibold text-terminal-fg">
-            88CN Boundary Statement
+            123Charts Boundary Statement
           </h2>
           <div className="mt-3 space-y-3 text-xs leading-relaxed text-terminal-dim">
             <p>
-              88CN reports observed public machine-readability signals. It does
+              123Charts reports observed public machine-readability signals. It does
               not promise placement in external systems, third-party inclusion,
               or downstream discovery outcomes.
             </p>
             <p>
-              88CN does not sell machine-signal placement. If visual placement
+              123Charts does not sell machine-signal placement. If visual placement
               formats are introduced later, they remain separate from sitemap,
               API, MCP, Signal Score, and Source Confidence.
             </p>

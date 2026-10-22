@@ -78,7 +78,7 @@ The disabled route returns this Problem Details shape:
 
 ```json
 {
-  "type": "https://88cn.com/problems/data-buyer-interest-disabled",
+  "type": "https://123charts.com/problems/data-buyer-interest-disabled",
   "title": "Data buyer interest is disabled",
   "status": 503,
   "detail": "Alpha Feed buyer interest collection is not enabled for this environment."
@@ -112,7 +112,7 @@ file.
 
 ## Negative Tests
 
-The checker creates temporary `/tmp/88cn-pr96-*` fixtures and verifies that
+The checker creates temporary `/tmp/123charts-pr96-*` fixtures and verifies that
 these cases fail:
 
 - Fake Supabase import.

@@ -12,7 +12,7 @@ PR128 is the PR-numbered execution wrapper for TRAFFIC6A. The authoritative boun
 | Task type | research / boundary |
 | Runtime implementation | none |
 | Approved next implementation | local draft package generator only |
-| Default output destination for PR129 | `/tmp/88cn-report-distribution-pack` |
+| Default output destination for PR129 | `/tmp/123charts-report-distribution-pack` |
 | Supported channels | internal brief, newsletter draft, social draft, website snippet |
 | External writes | forbidden |
 | PII / CRM / browser session export | forbidden |

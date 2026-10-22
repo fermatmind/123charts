@@ -24,13 +24,13 @@ It does not read project websites, run browser automation, run external HTTP aud
 Preferred repaired zip was not present at preflight. The repaired private artifact directory was present and used as the source of truth:
 
 ```text
-/Users/rainie/Desktop/88cn-private-artifacts/seed-handoff/seed50-enrichment-repaired-20260621-020553/
+/Users/rainie/Desktop/123charts-private-artifacts/seed-handoff/seed50-enrichment-repaired-20260621-020553/
 ```
 
 For zip verification, the same repaired directory was copied outside git and zipped at:
 
 ```text
-/tmp/88cn-seed50-official-source-enrichment-repaired.zip
+/tmp/123charts-seed50-official-source-enrichment-repaired.zip
 ```
 
 The uploaded non-repaired zip was not used as source of truth.
@@ -40,7 +40,7 @@ The uploaded non-repaired zip was not used as source of truth.
 Private artifact directory:
 
 ```text
-/Users/rainie/Desktop/88cn-private-artifacts/seed-handoff/seed50-enrichment-repaired-20260621-020553/
+/Users/rainie/Desktop/123charts-private-artifacts/seed-handoff/seed50-enrichment-repaired-20260621-020553/
 ```
 
 The private artifact remains outside git. No seed JSONL, evidence JSONL, canonical JSONL, rejected JSONL, private manifest, `SHA256SUMS`, or zip file is committed.

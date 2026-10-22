@@ -55,8 +55,8 @@ Out of scope:
 
 Local inputs:
 
-- `/tmp/88cn-pr164-seed-identity-hints-local-pack.jsonl`
-- `/tmp/88cn-pr164-seed-identity-hints-manifest.json`
+- `/tmp/123charts-pr164-seed-identity-hints-local-pack.jsonl`
+- `/tmp/123charts-pr164-seed-identity-hints-manifest.json`
 - `docs/scout/CANON0_CANONICAL_RESOLVER_BOUNDARY.md`
 
 No external source was fetched.
@@ -67,8 +67,8 @@ Generated local-only output:
 
 | File | Rows | Committed | Purpose |
 | --- | ---: | --- | --- |
-| `/tmp/88cn-pr167-canonical-resolver-dry-run.jsonl` | 40 | No | Provisional normalized canonical candidate output. |
-| `/tmp/88cn-pr167-canonical-resolver-manifest.json` | 1 | No | Counts, flags, and dry-run summary. |
+| `/tmp/123charts-pr167-canonical-resolver-dry-run.jsonl` | 40 | No | Provisional normalized canonical candidate output. |
+| `/tmp/123charts-pr167-canonical-resolver-manifest.json` | 1 | No | Counts, flags, and dry-run summary. |
 
 The repository commits only this summary and status metadata.
 

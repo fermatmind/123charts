@@ -61,7 +61,7 @@ Out of scope:
 | `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md` | Initial infrastructure inventory and findings. |
 | `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md` | Cloud and FermatMind dependency read-only completion. |
 | `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md` | Isolation policy and runbook source. |
-| `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md` | Immediate infrastructure source of truth. |
+| `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md` | Immediate infrastructure source of truth. |
 | `docs/TASK_STATUS.md` | Current task status history. |
 | `ops/tasks/current.json` | Current task pointer. |
 | `ops/tasks/roadmap.json` | Roadmap task registry. |
@@ -74,10 +74,10 @@ OPS-INFRA2X result is `GO_SCOUT_IMPL0_WITH_CONDITIONAL_PLACEMENT`.
 
 | Area | Decision carried forward |
 | --- | --- |
-| `HK-ALIYUN-01` | Keep as 88CN public-web-only. No worker, crawler, queue, heavy report generation, or staging/admin load. |
-| `FAP-API-ALIYUN-01` | FermatMind production API/Ops/queue do-not-touch for 88CN worker placement. |
-| `FAP-WEB-NODE1` | FermatMind production web do-not-touch for 88CN worker placement. |
-| Tencent resources | Sunsetting / migration source only. No new 88CN workload. |
+| `HK-ALIYUN-01` | Keep as 123Charts public-web-only. No worker, crawler, queue, heavy report generation, or staging/admin load. |
+| `FAP-API-ALIYUN-01` | FermatMind production API/Ops/queue do-not-touch for 123Charts worker placement. |
+| `FAP-WEB-NODE1` | FermatMind production web do-not-touch for 123Charts worker placement. |
+| Tencent resources | Sunsetting / migration source only. No new 123Charts workload. |
 | `SH-ALIYUN-02` | Conditional staging/admin candidate; possible audit candidate only if unused by staging and capacity is confirmed. |
 | `SH-ALIYUN-03` | Conditional low-concurrency scout candidate only. |
 | `SH-ALIYUN-04` | Conditional queue/monitoring/backup/spare candidate with caution. |
@@ -190,7 +190,7 @@ Task-level additional requirements:
 
 SCOUT_IMPL0 should evaluate:
 
-- Whether scout/audit implementation remains in the 88CN control repo as docs/contracts only.
+- Whether scout/audit implementation remains in the 123Charts control repo as docs/contracts only.
 - Whether a future `88cn-scout-worker` package or repo is needed.
 - Whether a new repo would create data-governance or review-boundary risk.
 - Whether future worker code can stay isolated from public web and FermatMind production repos.
@@ -268,7 +268,7 @@ Carried forward as non-blocking constraints:
 
 | Command | Result |
 | --- | --- |
-| 88CN preflight sync | PASS |
+| 123Charts preflight sync | PASS |
 | OPS-INFRA2X merged into `origin/main` | PASS |
 | data repo preflight sync | PASS |
 | `npm run verify:day0` | PASS |

@@ -22,7 +22,7 @@ Future implementation, if separately approved, may read only local sandbox candi
 
 ## Future Dry-Run Output
 
-Output must default outside the repo, for example `/tmp/88cn-scout3-identity-dry-run`, and include:
+Output must default outside the repo, for example `/tmp/123charts-scout3-identity-dry-run`, and include:
 
 ```json
 {

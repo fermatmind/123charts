@@ -11,7 +11,7 @@ import { Boxes, CalendarCheck, Filter, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 
 interface StackClusterPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,9 +20,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: StackClusterPageProps): Promise<Metadata> {
+export async function generateMetadata(props: StackClusterPageProps): Promise<Metadata> {
+  const params = await props.params;
   const cluster = getStackClusterBySlug(params.slug);
 
   const projects = cluster ? getProjectsForStackCluster(cluster) : [];
@@ -46,7 +45,8 @@ export async function generateMetadata({
   };
 }
 
-export default function StackClusterPage({ params }: StackClusterPageProps) {
+export default async function StackClusterPage(props: StackClusterPageProps) {
+  const params = await props.params;
   const cluster = getStackClusterBySlug(params.slug);
 
   if (!cluster || cluster.status !== "published" || !cluster.sitemapEligible) {

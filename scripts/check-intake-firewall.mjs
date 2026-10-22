@@ -14,9 +14,9 @@ if (!fs.existsSync(path.join(ROOT, "docs/35_SUBMISSION_INTAKE_FIREWALL_V0.md")))
 }
 
 // 2. Nginx config checks
-const nginxPath = path.join(ROOT, "deploy/nginx/88cn.conf.example");
+const nginxPath = path.join(ROOT, "deploy/nginx/123charts.conf.example");
 if (!fs.existsSync(nginxPath)) {
-  fail("Missing deploy/nginx/88cn.conf.example");
+  fail("Missing deploy/nginx/123charts.conf.example");
 } else {
   const nginx = fs.readFileSync(nginxPath, "utf8");
   if (!nginx.includes("project-submissions")) fail("Nginx: missing project-submissions");

@@ -4,7 +4,7 @@ Use this template to start a bounded train from `ops/trains/batches.json`.
 
 ```text
 /goal <BATCH_ID> PR Train Execution
-You are Codex 5.5 High under the 88CN Agent Operating System.
+You are Codex 5.5 High under the 123Charts Agent Operating System.
 
 Inputs:
 - BATCH_ID: <BATCH_ID>

@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: siteTitle("Collections"),
   description: siteDescription(
-    "Browse finite 88CN collections assembled from reviewed published project projections."
+    "Browse finite 123Charts collections assembled from reviewed published project projections."
   ),
 };
 

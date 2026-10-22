@@ -19,7 +19,7 @@ The current SCOUT/AUDIT implementation train is ready to describe process readin
 
 Allowed aggregate narrative:
 
-- 88CN has defined private-by-default scouted sandbox boundaries.
+- 123Charts has defined private-by-default scouted sandbox boundaries.
 - Sandbox persistence remains local/docs/tmp-only.
 - Worker, queue, external audit, and report-publication boundaries are explicitly checkpointed.
 - No unreviewed scouted records have entered public frontend, sitemap, Public API, MCP, reports, distribution packs, Supabase, or the data repo.

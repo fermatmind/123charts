@@ -50,7 +50,7 @@ Reviewed source inputs:
 - `docs/scout/REPORT_IMPL2_CHINESE_OUTBOUND_REPORT_DRAFT.md`
 - `docs/scout/REPORT_IMPLQ_REPORT_QA_TTL_CORRECTION_QA.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `docs/SIDECAR_ISSUES.md`
 - `ops/tasks/current.json`
@@ -87,7 +87,7 @@ Completion answers:
 
 ## SCOUT_IMPL Outcome Review
 
-PR146 decided the repo split posture: boundary, contract, and local dry-run work can remain in the 88CN control repo for now. A future `88cn-scout-worker` package or repo is only a later checkpointed worker/runtime decision.
+PR146 decided the repo split posture: boundary, contract, and local dry-run work can remain in the 123Charts control repo for now. A future `88cn-scout-worker` package or repo is only a later checkpointed worker/runtime decision.
 
 SCOUT_IMPL findings:
 
@@ -201,7 +201,7 @@ Chosen lane: architecture / worker / staging pipeline readiness first.
 Next lane must decide the architecture before implementation:
 
 - whether to create `88cn-scout-worker`;
-- whether scout/audit/report pipeline code stays in 88CN or moves;
+- whether scout/audit/report pipeline code stays in 123Charts or moves;
 - staging-first architecture;
 - worker repo boundary;
 - queue/Redis boundary;

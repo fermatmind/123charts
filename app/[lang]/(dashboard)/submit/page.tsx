@@ -1,0 +1,4 @@
+import { frameworkPage, frameworkMetadata } from "@/lib/charts/pages";
+export const dynamic = "force-dynamic";
+export const generateMetadata = frameworkMetadata(["submit"]);
+export default frameworkPage(["submit"]);

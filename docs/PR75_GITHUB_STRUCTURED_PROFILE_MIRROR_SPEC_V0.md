@@ -8,9 +8,9 @@ Roadmap scope for PR75 is spec-only. This task does not add generator scripts, a
 
 ## Mirror Objective
 
-The GitHub profile mirror is a portable markdown summary of an 88CN project profile for founder-owned or maintainer-owned GitHub surfaces.
+The GitHub profile mirror is a portable markdown summary of an 123Charts project profile for founder-owned or maintainer-owned GitHub surfaces.
 
-The mirror may help humans inspect public project facts outside the 88CN web app. It must not become a source of truth, a publication trigger, an indexing automation, or a promise of search visibility, ranking movement, citation, traffic, funding, revenue, or adoption.
+The mirror may help humans inspect public project facts outside the 123Charts web app. It must not become a source of truth, a publication trigger, an indexing automation, or a promise of search visibility, ranking movement, citation, traffic, funding, revenue, or adoption.
 
 ## Source Boundary
 
@@ -18,8 +18,8 @@ Mirror inputs must come only from reviewed local records that are already safe f
 
 Allowed source classes:
 
-- 88CN project records with `status: "published"`, `status: "claimed"`, or `status: "owner_verified"`;
-- public project fields already shown on public 88CN project pages;
+- 123Charts project records with `status: "published"`, `status: "claimed"`, or `status: "owner_verified"`;
+- public project fields already shown on public 123Charts project pages;
 - official project URLs, public GitHub URLs, public docs URLs, public pricing URLs, and public launch URLs that have passed existing review;
 - published category, stack, collection, vertical, or alternatives metadata when the project is already eligible for that surface;
 - public verification labels such as `Public signals only`, `Not verified`, `Not enough data`, `Founder not claimed`, or `Source unavailable`.
@@ -30,7 +30,7 @@ Forbidden source classes:
 - private founder contact data, email addresses, phone numbers, direct messages, identity documents, or login credentials;
 - admin notes, review comments, moderation notes, source-confidence internals, reviewer identity, queue metadata, audit-event payloads, notification-event payloads, or internal scoring evidence;
 - payment state, checkout status, billing identifiers, orders, invoices, ad placement state, private backer interest, private watchlist records, private analytics, revenue evidence, customer lists, or screenshots;
-- external raw crawl output that has not passed 88CN review and publication policy;
+- external raw crawl output that has not passed 123Charts review and publication policy;
 - any data from `/Users/rainie/Desktop/88cn-index-data` unless a later task explicitly reads it in local-only mode without mutation and then applies the same reviewed-public allowlist.
 
 Unknown or unavailable values must render as one of the approved unknown labels rather than being inferred.
@@ -48,7 +48,7 @@ Required sections:
 
 ## Public Profile
 
-- 88CN profile: {public profile URL}
+- 123Charts profile: {public profile URL}
 - Official site: {official URL or approved unknown label}
 - Public GitHub: {public GitHub URL or approved unknown label}
 - Docs: {public docs URL or approved unknown label}
@@ -64,13 +64,13 @@ Required sections:
 - SEO foundation: {public summary or approved unknown label}
 - Trust confidence: {public summary or approved unknown label}
 
-## 88CN Editorial Note
+## 123Charts Editorial Note
 
 {Human-reviewed public editorial note or approved unknown label}
 
 ## Boundaries
 
-- Generated from reviewed public 88CN data only.
+- Generated from reviewed public 123Charts data only.
 - Does not include private founder, payment, admin, analytics, or review metadata.
 - Does not promise ranking, traffic, citation, funding, revenue, or adoption outcomes.
 ```
@@ -101,7 +101,7 @@ The generator must reject paths that escape the configured output directory. It 
 The default output root for PR76 should be a temporary path such as:
 
 ```text
-/tmp/88cn-github-profile-mirror
+/tmp/123charts-github-profile-mirror
 ```
 
 ## PR76 Local-Only Boundary
@@ -129,7 +129,7 @@ Forbidden generator behavior:
 - committing generated profile markdown into `/Users/rainie/Desktop/88cn-index-data`;
 - calling GitHub mutation APIs;
 - deploying GitHub Pages;
-- publishing or unpublishing 88CN project records;
+- publishing or unpublishing 123Charts project records;
 - triggering sitemap, IndexNow, Google Indexing API, Public API, MCP, payment, deploy, or server configuration changes.
 
 If PR76 requires any external repository write, data repository write, or generated profile commit outside explicit roadmap scope, it must stop with `HUMAN_CHECKPOINT_REQUIRED`.

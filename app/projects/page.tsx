@@ -14,20 +14,21 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: siteTitle("Projects"),
   description: siteDescription(
-    "Browse reviewed AI project profiles on 88CN with public source links and timestamped review signals."
+    "Browse reviewed AI project profiles on 123Charts with public source links and timestamped review signals."
   ),
 };
 
 interface ProjectsPageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     q?: string;
     category?: string;
     tag?: string;
     page?: string;
-  };
+  }>;
 }
 
-export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
+export default async function ProjectsPage(props: ProjectsPageProps) {
+  const searchParams = await props.searchParams;
   const result = searchPublishedProjectProjections({
     query: searchParams?.q,
     category: searchParams?.category,
@@ -195,7 +196,7 @@ export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
 }
 
 function paginationHref(
-  searchParams: ProjectsPageProps["searchParams"],
+  searchParams: Awaited<ProjectsPageProps["searchParams"]>,
   page: number
 ) {
   const params = new URLSearchParams();

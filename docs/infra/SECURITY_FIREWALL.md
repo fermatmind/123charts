@@ -10,7 +10,7 @@ worker runtime, cloud/server state, or the companion data repository.
 
 ## Preconditions
 
-- 88CN control repo is clean on `origin/main` at
+- 123Charts control repo is clean on `origin/main` at
   `4d43a2ad0b31150d67e9ad4fab30f4ab7d2657db` before PR204 edits.
 - PR203 / FRONTEND_QA is complete with
   `PASS_FRONTEND_QA_NO_LEAKAGE`.

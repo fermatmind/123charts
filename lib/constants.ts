@@ -1,7 +1,7 @@
-export const SITE_NAME = "88CN";
-export const SITE_TAGLINE = "The Free AI Project Growth Index";
+export const SITE_NAME = "123Charts";
+export const SITE_TAGLINE = "Discover. Compare. Decide.";
 export const SITE_DESCRIPTION =
-  "Discover, track and claim early AI projects with public growth signals.";
+  "Discover projects and compare websites with source-aware monthly charts.";
 
 export const NAV_LINKS = [
   { href: "/projects", label: "Projects" },
@@ -69,6 +69,6 @@ export const CLAIM_METHODS = [
   {
     title: "Manual Review",
     description:
-      "Contact the 88CN team for manual identity verification and claim review.",
+      "Contact the 123Charts team for manual identity verification and claim review.",
   },
 ] as const;

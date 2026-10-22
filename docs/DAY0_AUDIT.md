@@ -1,6 +1,6 @@
 # Day 0 Audit
 
-This audit checks whether the Day 0 repository wall covers the minimum governance requirements for 88CN before app work begins.
+This audit checks whether the Day 0 repository wall covers the minimum governance requirements for 123Charts before app work begins.
 
 | Requirement | Covered | Evidence | Notes |
 | --- | --- | --- | --- |

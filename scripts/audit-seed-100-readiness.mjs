@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const USER_AGENT = "88CN-ReadinessAudit/0.1 (+https://88cn.com/geo-checker)";
+const USER_AGENT = "123Charts-ReadinessAudit/0.1 (+https://123charts.com/geo-checker)";
 const DEFAULTS = {
   dataRepo: process.env.SEED_DATA_REPO || path.resolve(ROOT, "../88cn-index-data"),
   outDir: path.join(ROOT, "data/audits/seed-100-readiness"),
@@ -435,7 +435,7 @@ function writeDataset(outDir, items, summary) {
 
 function createSchema() {
   return {
-    schema_version: "88cn-seed-readiness-audit-v1",
+    schema_version: "123charts-seed-readiness-audit-v1",
     format: "ndjson",
     item_fields: [
       "slug",

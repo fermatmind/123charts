@@ -143,7 +143,7 @@ function checkProject(projectRoot, options = {}) {
 
   const requiredRouteFragments = [
     "application/problem+json",
-    "https://88cn.com/problems/data-buyer-interest-disabled",
+    "https://123charts.com/problems/data-buyer-interest-disabled",
     "Data buyer interest is disabled",
     "status: 503",
     "Alpha Feed buyer interest collection is not enabled for this environment.",
@@ -296,7 +296,7 @@ function runNegativeProbes() {
 
   const results = [];
   for (const probe of probes) {
-    const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "88cn-pr96-"));
+    const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "123charts-pr96-"));
     try {
       copyFixture(tempRoot);
       probe.mutate(tempRoot);

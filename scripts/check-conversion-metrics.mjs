@@ -48,7 +48,7 @@ for (const day of ['30', '60', '100']) {
 if (!apiRoute.includes('INTERNAL_METRICS_WRITE_KEY')) {
   errors.push('metrics write API must require INTERNAL_METRICS_WRITE_KEY');
 }
-if (!apiRoute.includes('x-88cn-metrics-key')) {
+if (!apiRoute.includes('x-123charts-metrics-key')) {
   errors.push('metrics write API must require internal header');
 }
 if (!apiRoute.includes('Unknown metrics payload fields are not accepted')) {

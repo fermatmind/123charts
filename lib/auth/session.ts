@@ -7,9 +7,9 @@ export async function createServerSupabase(): Promise<SupabaseClient | null> {
   const env = getSupabaseEnv();
   if (!env.isConfigured) return null;
 
-  let cookieStore: ReturnType<typeof cookies>;
+  let cookieStore: Awaited<ReturnType<typeof cookies>>;
   try {
-    cookieStore = cookies();
+    cookieStore = await cookies();
   } catch {
     return null;
   }

@@ -10,7 +10,7 @@ The main repo and data repo are synchronized with their remote `main` branches, 
 
 Repository: `fermatmind/88CN`
 
-Local path: `/Users/rainie/Desktop/88CN`
+Local path: `/Users/rainie/Desktop/123charts.com/123charts`
 
 Branch under audit: `codex/ops0-repo-state-audit`
 
@@ -270,7 +270,7 @@ Evidence:
 - `lib/geo-checker/ssrf-guard.ts` exists.
 - `lib/geo-checker/fetch-url.ts` has timeout, redirect, and body-limit logic.
 - `scripts/check-geo-checker.mjs` verifies no Supabase import and no AI API dependency in the checker files.
-- `deploy/nginx/88cn.conf.example` contains `/api/geo-checker`.
+- `deploy/nginx/123charts.conf.example` contains `/api/geo-checker`.
 - `app/sitemap.ts` includes `/geo-checker`.
 - `npm run geo-checker:check` passed.
 

@@ -12,7 +12,7 @@ const DATA_ROOT = path.resolve(
 );
 const PROJECTS_DIR = path.join(DATA_ROOT, "data", "projects");
 const SEED_MANIFEST = path.join(DATA_ROOT, "seed", "seed-100-manifest.json");
-const TMP_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "88cn-seed-dry-run-"));
+const TMP_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "123charts-seed-dry-run-"));
 const OUT_DIR = path.join(TMP_ROOT, "compiled");
 const requireFromScript = createRequire(import.meta.url);
 const errors = [];

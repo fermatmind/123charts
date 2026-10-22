@@ -7,25 +7,25 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 interface ClaimPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ClaimPageProps): Promise<Metadata> {
+export async function generateMetadata(props: ClaimPageProps): Promise<Metadata> {
+  const params = await props.params;
   const project = getProjectBySlug(params.slug);
   const name = project?.name ?? params.slug;
 
   return {
     title: siteTitle(`Claim ${name}`),
     description: siteDescription(
-      `Claim the ${name} free AI project profile on 88CN. Verify ownership through domain email, DNS TXT, GitHub repository, or manual review.`
+      `Claim the ${name} free AI project profile on 123Charts. Verify ownership through domain email, DNS TXT, GitHub repository, or manual review.`
     ),
     ...noIndex(),
   };
 }
 
-export default function ClaimPage({ params }: ClaimPageProps) {
+export default async function ClaimPage(props: ClaimPageProps) {
+  const params = await props.params;
   const project = getProjectBySlug(params.slug);
   const name = project?.name ?? params.slug;
 

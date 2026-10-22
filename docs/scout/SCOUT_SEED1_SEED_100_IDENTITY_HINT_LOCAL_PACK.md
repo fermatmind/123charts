@@ -44,11 +44,11 @@ Out of scope:
 
 Seed50R source files were read only as local research input:
 
-- `/tmp/88cn-seed50-source-research.md`
-- `/tmp/88cn-seed50-candidate-hints-preview.jsonl`
-- `/tmp/88cn-seed50-rejected-or-weak-hints.jsonl`
+- `/tmp/123charts-seed50-source-research.md`
+- `/tmp/123charts-seed50-candidate-hints-preview.jsonl`
+- `/tmp/123charts-seed50-rejected-or-weak-hints.jsonl`
 
-These inputs are not official 88CN records and are not public records.
+These inputs are not official 123Charts records and are not public records.
 
 ## Local Output
 
@@ -56,9 +56,9 @@ Generated local-only output:
 
 | File | Rows | Committed | Purpose |
 | --- | ---: | --- | --- |
-| `/tmp/88cn-pr164-seed-identity-hints-local-pack.jsonl` | 40 | No | Accepted local identity hints. |
-| `/tmp/88cn-pr164-seed-identity-hints-rejected-or-weak.jsonl` | 12 | No | Rejected or weak hints for later manual review. |
-| `/tmp/88cn-pr164-seed-identity-hints-manifest.json` | 1 | No | Counts, flags, and validation summary. |
+| `/tmp/123charts-pr164-seed-identity-hints-local-pack.jsonl` | 40 | No | Accepted local identity hints. |
+| `/tmp/123charts-pr164-seed-identity-hints-rejected-or-weak.jsonl` | 12 | No | Rejected or weak hints for later manual review. |
+| `/tmp/123charts-pr164-seed-identity-hints-manifest.json` | 1 | No | Counts, flags, and validation summary. |
 
 The repository commits only this summary and status metadata.
 

@@ -6,16 +6,16 @@
 
 ## Purpose
 
-Integrate `fermatmind/88cn-index-data` — the public structured AI project data repository — with 88cn-web. This PR establishes the trust-but-verify pipeline: read project JSON from the open repository, re-validate inside 88cn-web, normalize into import payloads, and stage them in `external_project_imports` for admin review.
+Integrate `fermatmind/88cn-index-data` — the public structured AI project data repository — with 123charts-web. This PR establishes the trust-but-verify pipeline: read project JSON from the open repository, re-validate inside 123charts-web, normalize into import payloads, and stage them in `external_project_imports` for admin review.
 
 ## 88cn-index-data Is Public, But Not Trusted
 
-`fermatmind/88cn-index-data` is a public, community-contributable repository. Anyone can open a PR to add project JSON files. While the repository has its own GitHub Actions validation, 88cn-web must **never blindly trust** external data.
+`fermatmind/88cn-index-data` is a public, community-contributable repository. Anyone can open a PR to add project JSON files. While the repository has its own GitHub Actions validation, 123charts-web must **never blindly trust** external data.
 
-All imports are re-validated inside 88cn-web before staging. This provides defense-in-depth:
+All imports are re-validated inside 123charts-web before staging. This provides defense-in-depth:
 
 1. **GitHub Action validates** in the open repo (first pass)
-2. **88cn-web validates** on import (second pass — trust but verify)
+2. **123charts-web validates** on import (second pass — trust but verify)
 3. **Admin reviews** the staged import (human review)
 4. **Admin publishes** only after all checks pass
 
@@ -77,7 +77,7 @@ Returns a `SyncResult` with counts and errors. Admin-only.
 
 GitHub webhooks would automatically trigger imports on every PR merge. This is intentionally avoided because:
 
-1. **Trust boundary** — External repo data should not auto-trigger writes to 88CN's database.
+1. **Trust boundary** — External repo data should not auto-trigger writes to 123Charts's database.
 2. **Admin control** — Admins decide when to sync and what to review.
 3. **Rate limiting** — Webhooks could be abused to trigger excessive API calls.
 4. **Simplicity** — Manual sync via admin UI is sufficient for Phase 1 volume.
@@ -96,11 +96,11 @@ AI review of imported projects is a future editorial pipeline feature. Current P
 
 ## Why No Third-Party Data Import
 
-88CN only imports from `fermatmind/88cn-index-data`. No Toolify, TAAFT, SaaSHub, Product Hunt scraping.
+123Charts only imports from `fermatmind/88cn-index-data`. No Toolify, TAAFT, SaaSHub, Product Hunt scraping.
 
 ## Why Dynamic Fields Are Not in the Open Repo
 
-Signal Score, Source Confidence, Editorial Notes, claim verification, and admin review metadata are computed or managed by the 88CN platform. They are not in `88cn-index-data` and are never imported.
+Signal Score, Source Confidence, Editorial Notes, claim verification, and admin review metadata are computed or managed by the 123Charts platform. They are not in `88cn-index-data` and are never imported.
 
 ## PR #26 QA Scope
 

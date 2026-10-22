@@ -56,7 +56,7 @@ async function readGitHub(): Promise<ReadResult> {
 
   const headers: Record<string, string> = {
     "Accept": "application/vnd.github.v3+json",
-    "User-Agent": "88cn-web/0.1",
+    "User-Agent": "123charts-web/0.1",
   };
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;

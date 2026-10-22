@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Define the first 88CN Supabase database schema. This schema covers all core entities, lifecycle states, score tracking, editorial pipeline, async refresh jobs, system controls, and RLS policies for Phase 1.
+Define the first 123Charts Supabase database schema. This schema covers all core entities, lifecycle states, score tracking, editorial pipeline, async refresh jobs, system controls, and RLS policies for Phase 1.
 
 ## Migration
 

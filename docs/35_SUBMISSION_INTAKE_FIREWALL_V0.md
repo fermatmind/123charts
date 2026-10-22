@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Establish the first-layer intake firewall for 88CN's public submission and claim endpoints. Before the submission gates open to the public internet, this firewall provides defense against spam, bots, monetization injection, and high-risk content — without introducing Redis, workers, Turnstile, Stripe, or any external service dependency.
+Establish the first-layer intake firewall for 123Charts's public submission and claim endpoints. Before the submission gates open to the public internet, this firewall provides defense against spam, bots, monetization injection, and high-risk content — without introducing Redis, workers, Turnstile, Stripe, or any external service dependency.
 
 ## Why 1M Submissions Cannot Go Directly to the Database
 
-If 88CN receives 1,000,000 submissions in a short period:
+If 123Charts receives 1,000,000 submissions in a short period:
 
 1. **Database write saturation** — Supabase (PostgreSQL) would be overwhelmed by insert volume. Each insert triggers constraints, indexes, and WAL writes.
 2. **Row-Level Security overhead** — Every insert through the anon key must pass through RLS policy evaluation.
@@ -33,7 +33,7 @@ These are intentionally deferred to a future PR when traffic volume justifies th
 
 | Layer | Mechanism | Location |
 |---|---|---|
-| **Nginx rate limit** | 5 req/min per IP for submit/claim | `deploy/nginx/88cn.conf.example` |
+| **Nginx rate limit** | 5 req/min per IP for submit/claim | `deploy/nginx/123charts.conf.example` |
 | **Body size guard** | 64KB max, Content-Length check + post-parse check | Both API routes |
 | **Forbidden monetization fields** | Explicit rejection of Stripe/payment/tier fields | `lib/validation/shared.ts` |
 | **Honeypot fields** | Hidden form fields — if filled, reject | Forms + API routes |
@@ -46,7 +46,7 @@ These are intentionally deferred to a future PR when traffic volume justifies th
 
 ## Why Web API Cannot Bear All Traffic Pressure
 
-88CN's architecture routes all traffic through a single Next.js Node.js process behind Nginx. This is appropriate for Phase 1 but has limits:
+123Charts's architecture routes all traffic through a single Next.js Node.js process behind Nginx. This is appropriate for Phase 1 but has limits:
 
 1. **Single-threaded event loop** — One Node.js process handles all API requests, page renders, and middleware
 2. **No request queuing** — Burst traffic spikes directly hit the API route handlers
@@ -217,7 +217,7 @@ Full intake pipeline order:
 9. Supabase env check
 10. Insert + audit + notify
 
-### deploy/nginx/88cn.conf.example
+### deploy/nginx/123charts.conf.example
 
 - Three `limit_req_zone` definitions (submit, claim, api)
 - Rate-limited locations for `/api/project-submissions` and `/api/project-claims`

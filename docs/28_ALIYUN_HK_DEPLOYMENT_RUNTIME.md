@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Document the 88CN production deployment architecture for Aliyun (Alibaba Cloud) Hong Kong region. Explains why HK hosting was chosen, how the deployment stack works, and what the manual deploy/rollback procedures are.
+Document the 123Charts production deployment architecture for Aliyun (Alibaba Cloud) Hong Kong region. Explains why HK hosting was chosen, how the deployment stack works, and what the manual deploy/rollback procedures are.
 
 ## Why Hong Kong Server
 
-88CN Phase 1 targets a global English-speaking audience for AI project discovery. Hosting options considered:
+123Charts Phase 1 targets a global English-speaking audience for AI project discovery. Hosting options considered:
 
 | Option | ICP Required | Latency to CN | Global Access | Verdict |
 |---|---|---|---|---|
@@ -39,7 +39,7 @@ Vercel remains a viable option for a future phase if team resources and budget a
 
 ## Why Monolithic Next.js
 
-88CN runs as a single Next.js application on a single Node.js process. Reasons:
+123Charts runs as a single Next.js application on a single Node.js process. Reasons:
 
 1. **Less coordination** — No separate frontend/backend repos, no API versioning, no CORS
 2. **Type sharing** — Types defined in `lib/` are used by both server and client components without a build step
@@ -48,7 +48,7 @@ Vercel remains a viable option for a future phase if team resources and budget a
 
 ## Why No Separate Backend
 
-88CN does not split into a separate API server because:
+123Charts does not split into a separate API server because:
 
 1. **Current scale** — No performance reason to split
 2. **Supabase handles data** — Heavy data operations go through Supabase, not the Next.js server
@@ -74,7 +74,7 @@ Vercel remains a viable option for a future phase if team resources and budget a
 
 2. **Pull latest code**
    ```bash
-   cd /var/www/88cn
+   cd /var/www/123charts
    git pull origin main
    ```
 
@@ -86,7 +86,7 @@ Vercel remains a viable option for a future phase if team resources and budget a
 
 4. **Restart application**
    ```bash
-   pm2 restart 88cn-web
+   pm2 restart 123charts-web
    # or first deploy:
    # pm2 start deploy/pm2/ecosystem.config.cjs
    # pm2 save
@@ -109,7 +109,7 @@ If a deployment causes issues:
 1. **SSH to server**
    ```bash
    ssh deploy@your-server-ip
-   cd /var/www/88cn
+   cd /var/www/123charts
    ```
 
 2. **Checkout previous commit**
@@ -126,7 +126,7 @@ If a deployment causes issues:
 
 4. **Restart**
    ```bash
-   pm2 restart 88cn-web
+   pm2 restart 123charts-web
    ```
 
 5. **Verify**
@@ -179,7 +179,7 @@ See `docs/30_PRODUCTION_RUNBOOK.md` for daily operations, monitoring, log access
 
 | File | Purpose |
 |---|---|
-| `deploy/nginx/88cn.conf.example` | Nginx reverse proxy configuration |
+| `deploy/nginx/123charts.conf.example` | Nginx reverse proxy configuration |
 | `deploy/pm2/ecosystem.config.cjs` | PM2 process configuration |
 | `deploy/scripts/build-production.sh` | Production build script |
 | `deploy/scripts/restart-pm2.sh` | PM2 restart/start script |

@@ -20,8 +20,8 @@ OPS-INFRA2X remains the placement source of truth.
 | Surface | Decision | Audit implication |
 | --- | --- | --- |
 | `HK-ALIYUN-01` | Public web only. | No audit worker, queue, crawler, or batch job. |
-| FermatMind production web/API/DB/Redis | Do not touch for 88CN workers. | No shared audit workload, no queue, no Redis use. |
-| Tencent resources | Migration-source/sunsetting; no new 88CN workload. | No audit worker placement. |
+| FermatMind production web/API/DB/Redis | Do not touch for 123Charts workers. | No shared audit workload, no queue, no Redis use. |
+| Tencent resources | Migration-source/sunsetting; no new 123Charts workload. | No audit worker placement. |
 | `SH-ALIYUN-02` | Conditional staging/admin candidate pending owner and capacity confirmation. | May only be considered by a later approved task. |
 | `SH-ALIYUN-03` | Conditional low-concurrency scout dry-run candidate pending owner/capacity confirmation and limits. | Candidate for fixture/local or very small dry-run only after approval. |
 | `SH-ALIYUN-04` | Conditional queue/monitoring/backup/spare candidate with caution. | Queue/monitoring needs separate approval; no Redis/queue creation now. |

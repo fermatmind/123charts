@@ -14,7 +14,7 @@ This is readiness, roadmap, and status work only. It does not implement TRAFFIC3
 
 ## Repository State
 
-- Main repository: `/Users/rainie/Desktop/88CN`
+- Main repository: `/Users/rainie/Desktop/123charts.com/123charts`
 - Current branch at preflight: `main`
 - Current main SHA: `75bacb4971dbd135b05223583a106098342ef4c4`
 - `main == origin/main`: yes

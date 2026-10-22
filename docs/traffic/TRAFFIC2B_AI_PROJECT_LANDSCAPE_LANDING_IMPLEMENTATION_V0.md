@@ -8,7 +8,7 @@ Role: codex-build
 
 ## Scope
 
-TRAFFIC2B implements the bounded `/landscape` route from the TRAFFIC2 handoff. The route is a reviewed public-signal navigation hub for existing 88CN public surfaces. It is not a broad directory clone, ranking page, commercial placement page, live endpoint, buyer capture form, or account enrollment flow.
+TRAFFIC2B implements the bounded `/landscape` route from the TRAFFIC2 handoff. The route is a reviewed public-signal navigation hub for existing 123Charts public surfaces. It is not a broad directory clone, ranking page, commercial placement page, live endpoint, buyer capture form, or account enrollment flow.
 
 ## Implemented Files
 
@@ -78,7 +78,7 @@ No `/landscape/sectors`, `/tasks`, `/zh-CN`, API, MCP, payment, customer, disabl
 
 The page uses reviewed-sample and public-signal language. It includes the required low-data wording:
 
-> 88CN organizes a reviewed sample of public AI project signals. Counts are not global market estimates.
+> 123Charts organizes a reviewed sample of public AI project signals. Counts are not global market estimates.
 
 The route copy avoids superlatives, ranking promises, traffic promises, model-answer promises, paid-inclusion claims, link-value promises, automatic listing language, and copied competitor descriptions.
 

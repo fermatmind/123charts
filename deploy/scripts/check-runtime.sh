@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 88CN Runtime Health Check
+# 123Charts Runtime Health Check
 # Run after deployment to verify the application is healthy
 # Usage: bash deploy/scripts/check-runtime.sh [APP_URL]
 set -u
@@ -26,7 +26,7 @@ check() {
   fi
 }
 
-echo "[88CN] Runtime Health Check — $APP_URL"
+echo "[123Charts] Runtime Health Check — $APP_URL"
 echo ""
 
 # Health endpoint
@@ -56,7 +56,7 @@ check "Claim (noindex)"     "$APP_URL/claim/aurora-code"  "200"
 check "Admin Login"         "$APP_URL/admin/login"        "200"
 
 echo ""
-echo "[88CN] Results: $PASS passed, $FAIL failed"
+echo "[123Charts] Results: $PASS passed, $FAIL failed"
 
 if [ "$FAIL" -gt 0 ]; then
   exit 1

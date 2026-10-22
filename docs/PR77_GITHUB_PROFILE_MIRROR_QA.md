@@ -16,18 +16,18 @@ PASS.
 | --- | --- | --- |
 | PR75 spec exists | `docs/PR75_GITHUB_STRUCTURED_PROFILE_MIRROR_SPEC_V0.md` defines reviewed-public source boundary, markdown contract, and PR76 local-only requirements. | PASS |
 | PR76 generator exists | `scripts/generate-github-profile-mirror.mjs` exists on `main` after PR76 merge. | PASS |
-| Local-only dry-run works | `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror-pr77 --no-write-external` generated 6 markdown files under `/tmp`. | PASS |
+| Local-only dry-run works | `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror-pr77 --no-write-external` generated 6 markdown files under `/tmp`. | PASS |
 | Output reports no external write | Generator JSON reported `externalWrite: false`. | PASS |
 | Output reports no data repo mutation | Generator JSON reported `dataRepoMutation: false`. | PASS |
-| Repo output path blocked | Generator rejected `/Users/rainie/Desktop/88CN/generated/github-profile-mirror` with non-zero exit. | PASS |
+| Repo output path blocked | Generator rejected `/Users/rainie/Desktop/123charts.com/123charts/generated/github-profile-mirror` with non-zero exit. | PASS |
 | Remote source blocked | Generator rejected `--source remote` with non-zero exit. | PASS |
 | Generated output not committed | `git ls-files generated/github-profile-mirror` returned no files, and `find generated/github-profile-mirror` returned no committed or working-tree files. | PASS |
 | Data repo clean | `/Users/rainie/Desktop/88cn-index-data` reported `## main...origin/main` with no dirty files. | PASS |
-| Worktree clean after dry-run | The 88CN worktree had no dirty files before PR77 documentation edits. | PASS |
+| Worktree clean after dry-run | The 123Charts worktree had no dirty files before PR77 documentation edits. | PASS |
 
 ## Output Privacy Review
 
-QA inspected `/tmp/88cn-github-profile-mirror-pr77` output.
+QA inspected `/tmp/123charts-github-profile-mirror-pr77` output.
 
 | Check | Result |
 | --- | --- |
@@ -45,14 +45,14 @@ The grep hits for `admin`, `payment`, and `analytics` were the expected boundary
 
 Reviewed sample output files:
 
-- `/tmp/88cn-github-profile-mirror-pr77/aurora-code.md`
-- `/tmp/88cn-github-profile-mirror-pr77/scribe-ai.md`
+- `/tmp/123charts-github-profile-mirror-pr77/aurora-code.md`
+- `/tmp/123charts-github-profile-mirror-pr77/scribe-ai.md`
 
 Both samples contained only:
 
 - project name;
 - reviewed public tagline;
-- 88CN public profile placeholder URL;
+- 123Charts public profile placeholder URL;
 - public official site;
 - public GitHub URL;
 - docs URL or approved unknown label;
@@ -66,9 +66,9 @@ Both samples contained only:
 
 | Command | Result |
 | --- | --- |
-| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/88cn-github-profile-mirror-pr77 --no-write-external` | PASS |
-| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /Users/rainie/Desktop/88CN/generated/github-profile-mirror --no-write-external` | PASS, rejected with non-zero exit |
-| `node scripts/generate-github-profile-mirror.mjs --dry-run --source remote --out /tmp/88cn-github-profile-mirror-pr77 --no-write-external` | PASS, rejected with non-zero exit |
+| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /tmp/123charts-github-profile-mirror-pr77 --no-write-external` | PASS |
+| `node scripts/generate-github-profile-mirror.mjs --dry-run --source local --out /Users/rainie/Desktop/123charts.com/123charts/generated/github-profile-mirror --no-write-external` | PASS, rejected with non-zero exit |
+| `node scripts/generate-github-profile-mirror.mjs --dry-run --source remote --out /tmp/123charts-github-profile-mirror-pr77 --no-write-external` | PASS, rejected with non-zero exit |
 | `npm run agent:scope:check -- PR77` | PASS |
 | `npm run policy:scan` | PASS |
 | `npm run verify:day0` | PASS |

@@ -4,7 +4,7 @@ Result: GO_TRAFFIC2
 
 ## Strategy
 
-Chinese AI discovery is active and crowded. TRAFFIC1 does not position 88CN as another generic `AI工具导航`. The first Chinese traffic surface should translate the stable 88CN strategy: a bilingual AI project landscape focused on reviewed public signals, active source links, lifecycle status, source-backed open-source/commercial labels, and machine-readability evidence.
+Chinese AI discovery is active and crowded. TRAFFIC1 does not position 123Charts as another generic `AI工具导航`. The first Chinese traffic surface should translate the stable 123Charts strategy: a bilingual AI project landscape focused on reviewed public signals, active source links, lifecycle status, source-backed open-source/commercial labels, and machine-readability evidence.
 
 ## First-Wave Candidates
 
@@ -32,7 +32,7 @@ Avoid building first-wave routes around:
 - `AI工具大全`
 - `AI工具集合`
 
-Reason: these clusters are broad, crowded, and pull 88CN toward volume-first directory behavior. They may be mentioned only in careful explanatory context, not used as the primary first-wave route promise.
+Reason: these clusters are broad, crowded, and pull 123Charts toward volume-first directory behavior. They may be mentioned only in careful explanatory context, not used as the primary first-wave route promise.
 
 ## Priority Keyword Cluster Mapping
 
@@ -44,7 +44,7 @@ Reason: these clusters are broad, crowded, and pull 88CN toward volume-first dir
 | AI项目竞品 | Alternatives/research. | `/zh-CN/alternatives/[slug]` | Comparison. | High risk unless canonical and source-backed. |
 | AI工具出海 | Outbound founder readiness. | `/zh-CN/founders`, `/zh-CN/geo-checker` | Founder guide/checker. | Do not promise rankings or citations. |
 | AI项目官网检测 | Machine readability. | `/zh-CN/geo-checker` | Checker. | Frame as public readiness. |
-| AI项目机器可读性 | Machine readability. | `/zh-CN/geo-checker` | Checker/explainer. | Good fit for 88CN differentiation. |
+| AI项目机器可读性 | Machine readability. | `/zh-CN/geo-checker` | Checker/explainer. | Good fit for 123Charts differentiation. |
 | AI项目结构化数据 | Structured data readiness. | `/zh-CN/geo-checker` | Checker/explainer. | Use detection language only. |
 | AI工具怎么被ChatGPT搜到 | AI search readiness education. | `/zh-CN/geo-checker` | Explainer/checker. | High wording risk; must not imply guaranteed citation. |
 | AI出海项目官网SEO | Outbound SEO readiness. | `/zh-CN/founders` | Founder guide. | Frame as source hygiene and public readiness. |

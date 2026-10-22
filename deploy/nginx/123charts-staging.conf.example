@@ -1,0 +1,55 @@
+# Separate OpenResty vhosts only; do not replace FermatMind nginx.conf.
+# Render PRIVATE_STAGING_IP / PRIVATE_STAGING_IP and mount TLS files before nginx -t.
+# Containerized OpenResty must reach the Web host's private bound interface.
+limit_req_zone $binary_remote_addr zone=charts_stage_api:10m rate=30r/s;
+limit_req_zone $binary_remote_addr zone=charts_stage_write:10m rate=20r/m;
+upstream charts_stage_web { server PRIVATE_STAGING_IP:3111; keepalive 16; }
+upstream charts_stage_supabase { server PRIVATE_STAGING_IP:8011; keepalive 16; }
+server {
+    listen 80;
+    server_name staging.123charts.com api-staging.123charts.com;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name staging.123charts.com;
+    ssl_certificate /etc/123charts-staging/tls/fullchain.pem;
+    ssl_certificate_key /etc/123charts-staging/tls/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    access_log /var/log/nginx/123charts-staging-access.log;
+    error_log /var/log/nginx/123charts-staging-error.log;
+    client_max_body_size 12m;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 65s;
+    # Never proxy-cache authenticated HTML or API responses.
+    location ~ ^/api/(v1/submissions|v1/reviews|charts/(auth|claim|draft|metadata)) {
+        limit_req zone=charts_stage_write burst=10 nodelay;
+        limit_req_status 429;
+        proxy_pass http://charts_stage_web;
+    }
+    location /api/ {
+        limit_req zone=charts_stage_api burst=40 nodelay;
+        proxy_pass http://charts_stage_web;
+    }
+    location / { proxy_pass http://charts_stage_web; }
+}
+server {
+    listen 443 ssl;
+    server_name api-staging.123charts.com;
+    ssl_certificate /etc/123charts-staging/tls/api-fullchain.pem;
+    ssl_certificate_key /etc/123charts-staging/tls/api-privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    client_max_body_size 12m;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    location ~ ^/(auth|rest|storage)/v1/ {
+        limit_req zone=charts_stage_api burst=40 nodelay;
+        proxy_pass http://charts_stage_supabase;
+    }
+    location / { return 404; }
+}

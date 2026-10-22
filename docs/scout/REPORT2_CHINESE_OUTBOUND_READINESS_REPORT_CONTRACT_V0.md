@@ -34,7 +34,7 @@ A future draft report must include:
 Future Chinese copy must:
 
 - keep timestamped observations;
-- use original 88CN wording, not copied third-party descriptions;
+- use original 123Charts wording, not copied third-party descriptions;
 - avoid permanent negative labels;
 - avoid investment, financing, ranking, or outcome-promise language;
 - clearly distinguish reviewed public signals from unknown fields;

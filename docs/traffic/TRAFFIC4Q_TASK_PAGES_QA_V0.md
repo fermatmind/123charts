@@ -10,7 +10,7 @@ TRAFFIC4Q verifies the PR123 finite task discovery implementation. Static source
 
 - Task ID: PR124 / TRAFFIC4Q
 - Role: Codex-QA
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Verification target: PR123 merge `3169e3d6f9e152fd9f3f7749547124395fd8ec51`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Product code changes: none

@@ -56,7 +56,7 @@ Worker repo:
 - `node_modules` absent
 - `git diff --check`
 
-## 88CN Validation
+## 123Charts Validation
 
 - `npm run agent:scope:check -- PR198`
 - `npm run agent:redact:check`

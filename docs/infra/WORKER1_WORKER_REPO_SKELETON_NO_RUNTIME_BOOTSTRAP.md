@@ -57,14 +57,14 @@ Reviewed source inputs:
 - `docs/infra/WORKER0_SCOUT_WORKER_BOUNDARY_CHAIN_READINESS.md`
 - `docs/infra/ARCH0_WORKER_ARCHITECTURE_REPO_SPLIT_READINESS.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `ops/tasks/current.json`
 - `ops/tasks/roadmap.json`
 - `ops/trains/current.json`
 - `ops/trains/batches.json`
 
-PR160 is the immediate source of truth. PR160 requires the worker/runtime boundary to remain outside the 88CN public web runtime boundary and makes PR161 a checkpointed no-runtime bootstrap task.
+PR160 is the immediate source of truth. PR160 requires the worker/runtime boundary to remain outside the 123Charts public web runtime boundary and makes PR161 a checkpointed no-runtime bootstrap task.
 
 ## Checkpoint Decision
 
@@ -86,7 +86,7 @@ This resolves PR161's human-checkpointed risk by choosing the safe docs-only bra
 | --- | --- | --- | --- |
 | Separate GitHub repo | A future `88cn-scout-worker` repository outside the public web repo. | Not created. Preferred long-term runtime isolation option if approved later. | Human checkpoint, repo owner, branch protection, CI contract, secret policy, deploy boundary. |
 | Isolated package/workspace | A future package under an approved workspace boundary. | Not created. Possible only if repo governance prefers a monorepo-style boundary. | Human checkpoint, package manager decision, dependency policy, public-web import guard. |
-| Docs/contracts only | Boundary docs and interface contracts inside 88CN. | Selected for PR161. | PR162 QA before Seed 100 starts. |
+| Docs/contracts only | Boundary docs and interface contracts inside 123Charts. | Selected for PR161. | PR162 QA before Seed 100 starts. |
 
 PR161 chooses docs/contracts only.
 
@@ -173,7 +173,7 @@ Public web may read only reviewed, published, public-safe records through existi
 Forbidden import direction:
 
 ```text
-88CN/app|components|lib/public -> 88cn-scout-worker/internal
+123Charts/app|components|lib/public -> 88cn-scout-worker/internal
 ```
 
 Allowed future direction after review:

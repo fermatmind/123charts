@@ -1,6 +1,6 @@
 # 10 Data Contract
 
-88CN expects a future split between the main web repository and a public index-data repository.
+123Charts expects a future split between the main web repository and a public index-data repository.
 
 ## Public JSON Scope
 

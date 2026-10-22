@@ -82,7 +82,7 @@ The checker fetches user-submitted URLs, which is a potential SSRF vector. Defen
 ## How It Supports Founder Cold Start
 
 1. **Identifies missing machine-readable signals** — Founders learn what their page lacks (JSON-LD, canonical, etc.)
-2. **Guides toward structured profile** — The CTA directs founders to create a free 88CN project profile
+2. **Guides toward structured profile** — The CTA directs founders to create a free 123Charts project profile
 3. **Zero friction** — No login, no database, no email required
 4. **Immediate results** — Single request, instant audit
 

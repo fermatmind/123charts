@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: siteTitle("Admin Login"),
-  description: siteDescription("88CN admin login."),
+  description: siteDescription("123Charts admin login."),
   ...noIndex(),
 };
 
@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
     <div className="mx-auto max-w-md px-4 py-24">
       <div className="mb-8 text-center">
         <h1 className="mb-2 text-xl font-bold tracking-tight text-terminal-fg">
-          88CN Admin
+          123Charts Admin
         </h1>
         <p className="text-xs text-terminal-dim">
           Sign in to access the admin panel.

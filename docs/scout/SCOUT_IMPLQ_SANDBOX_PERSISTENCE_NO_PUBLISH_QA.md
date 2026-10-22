@@ -58,7 +58,7 @@ Forbidden-path grep over the same range returned no matches for app, components,
 
 | Task | QA finding | Result |
 | --- | --- | --- |
-| PR146 | Repo-split decision kept boundary/docs/local dry-run work in the 88CN control repo and did not create a worker repo/package. | PASS |
+| PR146 | Repo-split decision kept boundary/docs/local dry-run work in the 123Charts control repo and did not create a worker repo/package. | PASS |
 | PR147 | Persistence boundary denied PII, private data, copied competitor text, raw crawl dumps, public slugs, sitemap flags, and lifecycle promotion. | PASS |
 | PR148 | Storage checkpoint selected local/docs/tmp-artifact-only and split any durable storage to later approval. | PASS |
 | PR149 | Dry-run boundary stayed local-only and did not execute staging or production writes. | PASS |

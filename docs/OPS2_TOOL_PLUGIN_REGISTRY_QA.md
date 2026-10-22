@@ -79,7 +79,7 @@ PASS.
 Temporary worktree:
 
 ```text
-/tmp/88cn-ops2q-tool-probe
+/tmp/123charts-ops2q-tool-probe
 ```
 
 Probe:
@@ -103,7 +103,7 @@ PASS.
 Temporary worktree:
 
 ```text
-/tmp/88cn-ops2q-mcp-probe
+/tmp/123charts-ops2q-mcp-probe
 ```
 
 Probe:
@@ -127,7 +127,7 @@ PASS.
 Temporary worktree:
 
 ```text
-/tmp/88cn-ops2q-plugin-probe
+/tmp/123charts-ops2q-plugin-probe
 ```
 
 Probe:

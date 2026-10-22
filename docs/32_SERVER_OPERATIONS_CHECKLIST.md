@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Operational checklist for the Aliyun Hong Kong 88CN host. Server identifiers, IPs, credentials, environment values, and certificate paths must stay outside git.
+Operational checklist for the Aliyun Hong Kong 123Charts host. Server identifiers, IPs, credentials, environment values, and certificate paths must stay outside git.
 
 ## Restore SSH Before Production Changes
 
@@ -35,16 +35,16 @@ If Node is older than 20, upgrade through the server package manager or another 
 ## Restart PM2
 
 ```bash
-cd /var/www/88cn
-pm2 restart 88cn-web
+cd /var/www/123charts
+pm2 restart 123charts-web
 pm2 status
 ```
 
 If the process has not been created yet:
 
 ```bash
-cd /var/www/88cn
-mkdir -p /var/log/88cn
+cd /var/www/123charts
+mkdir -p /var/log/123charts
 pm2 start deploy/pm2/ecosystem.config.cjs --env production
 pm2 save
 ```
@@ -63,7 +63,7 @@ After any Nginx change, confirm the intake firewall is still present without pri
 
 ```bash
 nginx -t
-grep -E 'limit_req_zone|client_max_body_size|project-submissions|project-claims|limit_req_status 429|Retry-After' /etc/nginx/sites-available/88cn.conf
+grep -E 'limit_req_zone|client_max_body_size|project-submissions|project-claims|limit_req_status 429|Retry-After' /etc/nginx/sites-available/123charts.conf
 systemctl reload nginx
 ```
 
@@ -89,33 +89,33 @@ If TLS is managed outside certbot, renew through the certificate provider, place
 Preferred rollback when the repo is a git checkout:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 git fetch origin
 git checkout <known-good-sha>
 npm ci
 npm run build
-pm2 restart 88cn-web
+pm2 restart 123charts-web
 ```
 
 Fallback rollback when the server source came from an archive:
 
 ```bash
 cd /var/www
-mv 88cn 88cn.failed.$(date +%Y%m%d%H%M%S)
+mv 123charts 123charts.failed.$(date +%Y%m%d%H%M%S)
 # Restore a previously archived release directory or re-extract a known-good source archive.
-cd /var/www/88cn
+cd /var/www/123charts
 npm ci
 npm run build
-pm2 restart 88cn-web
+pm2 restart 123charts-web
 ```
 
 ## View Logs
 
 ```bash
 pm2 status
-pm2 logs 88cn-web --lines 100
-tail -100 /var/log/88cn/error.log
-tail -100 /var/log/88cn/out.log
+pm2 logs 123charts-web --lines 100
+tail -100 /var/log/123charts/error.log
+tail -100 /var/log/123charts/out.log
 tail -100 /var/log/nginx/error.log
 tail -100 /var/log/nginx/access.log
 ```
@@ -125,7 +125,7 @@ tail -100 /var/log/nginx/access.log
 Preferred method uses the server-local read-only GitHub deploy key for this repo. The key is stored only on the server and registered in GitHub as read-only access for `fermatmind/88CN`.
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 git fetch origin
 git checkout main
 git pull --ff-only origin main
@@ -138,16 +138,16 @@ Fallback method only when GitHub SSH access is temporarily unavailable:
 1. Generate a short-lived GitHub source archive URL from an authenticated local workstation.
 2. Download it on the server without committing or recording the URL.
 3. Extract to a staging directory.
-4. Move the staged directory into `/var/www/88cn`.
+4. Move the staged directory into `/var/www/123charts`.
 5. Record only the deployed commit SHA in a server-local file.
 
 Do not write archive URLs, GitHub credential material, SSH private keys, `.env.production`, SSL certificates, or server IPs into git.
 
 ## Standard Production Deploy
 
-### 88CN Standard Production Deploy Template
+### 123Charts Standard Production Deploy Template
 
-Use this template for routine 88CN production deploys. It keeps local readiness,
+Use this template for routine 123Charts production deploys. It keeps local readiness,
 operator confirmation, and server execution separate.
 
 Step 1, local preparation only:
@@ -157,7 +157,7 @@ Step 1, local preparation only:
 ```
 
 ```bash
-cd /Users/rainie/Desktop/88CN
+cd /Users/rainie/Desktop/123charts.com/123charts
 npm run agent:deploy:prepare -- --prs <merge-sha> <merge-sha>
 ```
 
@@ -168,13 +168,13 @@ prints the exact Workbench/SSH command for the production host.
 Step 2, deploy only after the operator confirms the exact target SHA:
 
 ```text
-我确认部署 88CN origin/main SHA <target-sha> 到生产服务器，不启用任何新 env/payment/secret flag。
+我确认部署 123Charts origin/main SHA <target-sha> 到生产服务器，不启用任何新 env/payment/secret flag。
 ```
 
 Step 3, run the printed command in Aliyun Workbench or SSH:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>
 ```
 
@@ -186,7 +186,7 @@ Step 4, for current-PR-specific live QA, include extra public paths and sitemap
 requirements in the same server command:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 EXTRA_PATHS="/reports/example-report /new-public-page" \
 REQUIRED_SITEMAP_PATHS="/reports/example-report" \
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>
@@ -206,7 +206,7 @@ git rev-parse origin/main
 Then run the production deploy script on the server:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>
 ```
 
@@ -221,19 +221,19 @@ The script performs:
 - `npm run policy:scan`
 - `npm run third-party:check`
 - `npm run build:production`
-- `pm2 restart 88cn-web`
+- `pm2 restart 123charts-web`
 - `pm2 save`
 - `pm2 status`
 - `nginx -t`
 - `systemctl reload nginx`
 - local smoke against `http://127.0.0.1:3000`
-- live smoke against `https://88cn.com`
+- live smoke against `https://123charts.com`
 - final deployed SHA verification
 
 For PR-specific live QA, add extra paths and required sitemap URLs:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 EXTRA_PATHS="/reports/example-report /new-public-page" \
 REQUIRED_SITEMAP_PATHS="/reports/example-report" \
 scripts/agent/deploy-production.sh --confirm --commit <target-sha>
@@ -246,7 +246,7 @@ Keep server IPs, SSH private keys, `.env.production`, certificate files, and cre
 Use this only for diagnosis or when the deploy script is intentionally not running:
 
 ```bash
-cd /var/www/88cn
+cd /var/www/123charts
 node -v
 npm -v
 npm ci
@@ -277,16 +277,16 @@ curl -i http://127.0.0.1:3000/api/projects/unknown-slug
 Public checks after DNS and TLS are ready:
 
 ```bash
-curl -i https://88cn.com/api/healthz
-curl -i https://88cn.com/sitemap.xml
-curl -i https://88cn.com/robots.txt
-curl -i https://88cn.com/api/projects/aurora-code
-curl -i https://88cn.com/api/projects/unknown-slug
-curl -I https://88cn.com/
-curl -I https://88cn.com/projects
-curl -I https://88cn.com/submit
-curl -I https://88cn.com/claim/aurora-code
-curl -I https://88cn.com/admin
+curl -i https://123charts.com/api/healthz
+curl -i https://123charts.com/sitemap.xml
+curl -i https://123charts.com/robots.txt
+curl -i https://123charts.com/api/projects/aurora-code
+curl -i https://123charts.com/api/projects/unknown-slug
+curl -I https://123charts.com/
+curl -I https://123charts.com/projects
+curl -I https://123charts.com/submit
+curl -I https://123charts.com/claim/aurora-code
+curl -I https://123charts.com/admin
 ```
 
 Required checks:

@@ -51,7 +51,7 @@ This basis supports only a process-readiness Chinese draft. It does not support 
 
 Allowed Chinese narrative:
 
-- 88CN currently has a private-by-default staging and audit governance lane.
+- 123Charts currently has a private-by-default staging and audit governance lane.
 - Current evidence is local-only and fixture-only.
 - Current sample counts are bounded and transparent: 40 source rows, 5 staging dry-run sample rows, and 20 audit fixture rows.
 - No external HTTP audit, browser fallback, worker runtime, queue, Redis, staging write, production write, public surface, report surface, Public API, MCP, sitemap, or data repo export occurred.
@@ -82,7 +82,7 @@ This skeleton is wording guidance only. It must not be externally distributed wi
 
 The following wording is an internal draft only:
 
-> 88CN 当前可以描述的是 AI 项目数据管线与治理流程的准备状态，而不是任何单个项目的就绪度结论。现有证据来自本地 staging dry-run、fixture-only audit dry-run 和 no-publish QA：40 条本地来源行、5 条 staging dry-run 样本行、20 条 audit fixture 行。当前没有外部 HTTP 审计、浏览器 fallback、worker runtime、队列、Redis、staging 写入、production 写入、public surface、report surface、Public API、MCP、sitemap 或 data repo export。因此，本阶段只能形成 aggregate draft，不应形成项目级排名、评分、推荐、通过/未通过结论或外部分发稿件。
+> 123Charts 当前可以描述的是 AI 项目数据管线与治理流程的准备状态，而不是任何单个项目的就绪度结论。现有证据来自本地 staging dry-run、fixture-only audit dry-run 和 no-publish QA：40 条本地来源行、5 条 staging dry-run 样本行、20 条 audit fixture 行。当前没有外部 HTTP 审计、浏览器 fallback、worker runtime、队列、Redis、staging 写入、production 写入、public surface、report surface、Public API、MCP、sitemap 或 data repo export。因此，本阶段只能形成 aggregate draft，不应形成项目级排名、评分、推荐、通过/未通过结论或外部分发稿件。
 
 ## Translation Review Rules
 

@@ -203,7 +203,7 @@ function failureRows(items: AuditItem[]): IssueRow[] {
 export function getSeed100ReadinessReport(): Seed100ReadinessReport {
   const summary = readSummary();
   const items = readItems();
-  const baseUrl = process.env.APP_URL ?? "https://88cn.com";
+  const baseUrl = process.env.APP_URL ?? "https://123charts.com";
   const okProjects = summary.outcome_counts.ok ?? 0;
 
   return {

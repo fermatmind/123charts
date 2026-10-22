@@ -78,7 +78,7 @@ export default function LandscapePage() {
               and public readiness signals.
             </h1>
             <p className="mt-5 max-w-3xl text-sm leading-relaxed text-terminal-dim sm:text-base">
-              88CN organizes a reviewed sample of public AI project signals.
+              123Charts organizes a reviewed sample of public AI project signals.
               Counts are not global market estimates. Use this hub to move
               between project profiles, reports, machine-readability evidence,
               and founder review workflows.

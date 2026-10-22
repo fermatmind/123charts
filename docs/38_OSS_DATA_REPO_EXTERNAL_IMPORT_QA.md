@@ -8,7 +8,7 @@ PASS.
 
 - Data repo: https://github.com/fermatmind/88cn-index-data
 - Data repo commit: `24b54db`
-- 88CN main commit: `105883f`
+- 123Charts main commit: `105883f`
 - QA branch: `codex/oss-data-repo-external-import-qa`
 - Date: 2026-06-16
 
@@ -22,7 +22,7 @@ PASS.
 | Local `/admin/external-imports` | `../screenshots/qa/pr26-admin-external-imports.png` |
 | Local `/api/admin/external-imports` unauthorized response | `../screenshots/qa/pr26-admin-external-imports-unauthorized.png` |
 
-## 88CN Main Gate
+## 123Charts Main Gate
 
 PASS:
 
@@ -83,8 +83,8 @@ PASS:
 
 - Data repo docs reject email, phone, revenue, MRR, ARR, API keys, access tokens, private dashboards, analytics screenshots, private customer lists, and Stripe private fields.
 - `check-forbidden-fields.mjs` blocks forbidden keys and sensitive string patterns.
-- `README.md` states PR merge is not publication on 88cn.com.
-- `README.md` states 88CN does not promise traffic, ranking, funding, or AI search citation.
+- `README.md` states PR merge is not publication on 123charts.com.
+- `README.md` states 123Charts does not promise traffic, ranking, funding, or AI search citation.
 - Dynamic Signal Score, Source Confidence, Editorial Note, Claim status, Admin review metadata, and telemetry are excluded from the public data repo.
 - Dangerous SEO/backlink/ranking/investment language scan found no matches.
 
@@ -126,8 +126,8 @@ PASS:
 - No sitemap import or indexing mutation was observed.
 - `dry_run` defaults to `true` in the admin sync API.
 - The optional GitHub credential env var is server-only and does not use a `NEXT_PUBLIC_` prefix.
-- Imported project payloads are re-validated inside 88CN.
-- Forbidden fields are blocked again inside 88CN.
+- Imported project payloads are re-validated inside 123Charts.
+- Forbidden fields are blocked again inside 123Charts.
 - Import fingerprint and dedupe logic exist.
 - Migration `006_external_import_indexes.sql` is additive: fingerprint column plus indexes.
 

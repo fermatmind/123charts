@@ -8,7 +8,7 @@ Role: codex-build / codex-research
 
 ## Scope
 
-TRAFFIC3 defines sector-density and market-map policy for future 88CN landscape work. This task is docs, status, and roadmap work only.
+TRAFFIC3 defines sector-density and market-map policy for future 123Charts landscape work. This task is docs, status, and roadmap work only.
 
 It does not implement `/landscape/sectors`, create app routes, create components, create lib modules, modify sitemap runtime, create `/tasks`, create `/zh-CN`, generate SEO pages, deploy, run competitor research, scrape external websites, contact anyone, mutate Supabase, or mutate `/Users/rainie/Desktop/88cn-index-data`.
 
@@ -94,7 +94,7 @@ A sector is not:
 
 ## Sector vs Related Concepts
 
-| Concept | Meaning in 88CN | Sector distinction |
+| Concept | Meaning in 123Charts | Sector distinction |
 | --- | --- | --- |
 | Sector | High-level demand-side grouping by problem, buyer context, or product market area. | Used for market-map navigation and reviewed-sample density. |
 | Category | Broad product classification such as AI agents, AI coding, open-source AI, local LLM, or RAG tools. | Categories may be existing taxonomy labels; sectors are future curated market-map groupings and need stricter density language. |
@@ -176,7 +176,7 @@ Forbidden density fields:
 - guaranteed market gap;
 - fake density.
 
-Count labels must use "reviewed sample count", "published project count", "source-linked project count", or "limited reviewed sample". Never use "complete sector coverage" or wording that implies 88CN has counted the whole market.
+Count labels must use "reviewed sample count", "published project count", "source-linked project count", or "limited reviewed sample". Never use "complete sector coverage" or wording that implies 123Charts has counted the whole market.
 
 ## Allowed Fields
 
@@ -304,7 +304,7 @@ Forbidden sector language:
 - "you should build here";
 - financial, investment, startup, legal, compliance, medical, security, or other regulated advice.
 
-Sector copy must not imply that 88CN is recommending where to allocate capital, build, buy, or launch. It may say that a sector has a limited reviewed sample of source-linked public projects.
+Sector copy must not imply that 123Charts is recommending where to allocate capital, build, buy, or launch. It may say that a sector has a limited reviewed sample of source-linked public projects.
 
 ## Market-Map Risk Analysis
 

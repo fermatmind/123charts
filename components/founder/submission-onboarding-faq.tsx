@@ -51,9 +51,9 @@ const faqItems = [
       "Founders can use the claim flow to request factual corrections, owner verification, or removal review. The request is reviewed before public profile changes are made.",
   },
   {
-    question: "What does 88CN review?",
+    question: "What does 123Charts review?",
     answer:
-      "88CN reviews public source clarity, category fit, machine-readable basics, lifecycle state, and whether submitted facts can be checked from public sources.",
+      "123Charts reviews public source clarity, category fit, machine-readable basics, lifecycle state, and whether submitted facts can be checked from public sources.",
   },
 ];
 
@@ -61,7 +61,7 @@ const boundaries = [
   "Submissions are reviewed before publication.",
   "Public profiles rely on public sources only.",
   "Correction and removal requests stay in review until accepted.",
-  "88CN does not promise visibility outcomes, placement, or commercial results.",
+  "123Charts does not promise visibility outcomes, placement, or commercial results.",
 ];
 
 export function SubmissionOnboardingFaq() {

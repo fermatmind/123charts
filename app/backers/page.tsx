@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: siteTitle(BACKERS_ALPHA_FEED_TITLE),
   description: siteDescription(BACKERS_ALPHA_FEED_DESCRIPTION),
   alternates: {
-    canonical: `https://88cn.com${BACKERS_ALPHA_FEED_PATH}`,
+    canonical: `https://123charts.com${BACKERS_ALPHA_FEED_PATH}`,
   },
   robots: { index: true, follow: true },
 };

@@ -10,7 +10,7 @@ export function siteTitle(pageTitle?: string): string {
 export function siteDescription(override?: string): string {
   return (
     override ??
-    "Discover, track and claim early AI projects with public growth signals. Free AI project profiles and editorial listings on 88CN."
+    "Discover, track and claim early AI projects with public growth signals. Free AI project profiles and editorial listings on 123Charts."
   );
 }
 

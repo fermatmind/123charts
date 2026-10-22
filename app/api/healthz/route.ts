@@ -4,7 +4,7 @@ export async function GET() {
   return NextResponse.json(
     {
       ok: true,
-      service: "88cn-web",
+      service: "123charts-web",
       timestamp: new Date().toISOString(),
     },
     { status: 200 }

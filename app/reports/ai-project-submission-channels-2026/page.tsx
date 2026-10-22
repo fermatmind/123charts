@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   title: siteTitle(SUBMISSION_CHANNELS_REPORT_TITLE),
   description: siteDescription(SUBMISSION_CHANNELS_REPORT_SUBTITLE),
   alternates: {
-    canonical: `https://88cn.com${SUBMISSION_CHANNELS_REPORT_PATH}`,
+    canonical: `https://123charts.com${SUBMISSION_CHANNELS_REPORT_PATH}`,
   },
   robots: { index: true, follow: true },
 };
 
 export default function SubmissionChannelsReportPage() {
-  const canonicalUrl = `https://88cn.com${SUBMISSION_CHANNELS_REPORT_PATH}`;
+  const canonicalUrl = `https://123charts.com${SUBMISSION_CHANNELS_REPORT_PATH}`;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -184,7 +184,7 @@ export default function SubmissionChannelsReportPage() {
 
         <section className="rounded-md border border-terminal-border bg-terminal-elevated p-5">
           <h2 className="text-sm font-semibold text-terminal-fg">
-            Continue On 88CN
+            Continue On 123Charts
           </h2>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link

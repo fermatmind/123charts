@@ -10,7 +10,7 @@ TRAFFIC3Q verifies the TRAFFIC3B sector-density module as a module-only `/landsc
 
 - Task ID: TRAFFIC3Q
 - Role: Codex-QA
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Verification target: TRAFFIC3B merge `37622e60a72fff41d64ce002bf94a652821bd180`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Product code changes: none

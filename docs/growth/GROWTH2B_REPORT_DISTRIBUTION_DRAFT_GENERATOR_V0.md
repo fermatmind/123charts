@@ -41,7 +41,7 @@ A compliant local draft package contains only:
 - `manifest.json`, with source reports, channel list, generated timestamp, and
   safety flags;
 - `README.md`, explaining that all drafts require human review;
-- `links.json`, with local 88CN report paths and titles only;
+- `links.json`, with local 123Charts report paths and titles only;
 - channel draft markdown files;
 - `manual-posting-checklist.md`, with human-only execution steps;
 - `redaction-checklist.md`, with private-data and unsafe-claim review steps.
@@ -100,12 +100,12 @@ and execute any external use outside Codex.
 ```text
 Draft only - human review required.
 
-88CN published a public growth-signal report:
+123Charts published a public growth-signal report:
 {report_title}
 {report_path}
 
 Useful when reviewing how AI project pages present public, machine-readable
-signals. The report uses reviewed local 88CN materials and avoids private
+signals. The report uses reviewed local 123Charts materials and avoids private
 founder, customer, CRM, or analytics data.
 ```
 
@@ -114,7 +114,7 @@ founder, customer, CRM, or analytics data.
 ```text
 Draft only - human review required.
 
-We are using 88CN to track public AI project discovery signals. New report:
+We are using 123Charts to track public AI project discovery signals. New report:
 {report_title}
 {report_path}
 
@@ -127,8 +127,8 @@ traffic, ranking, funding, or commercial outcome.
 ```text
 Draft only - human review required.
 
-- Show HN: 88CN public AI project signal report
-- 88CN report on machine-readable AI project pages
+- Show HN: 123Charts public AI project signal report
+- 123Charts report on machine-readable AI project pages
 - Public growth-signal notes for early AI projects
 ```
 
@@ -137,7 +137,7 @@ Draft only - human review required.
 ```text
 Draft only - human review required.
 
-We prepared a short 88CN report based on public project-profile signals:
+We prepared a short 123Charts report based on public project-profile signals:
 {report_title}
 {report_path}
 
@@ -150,7 +150,7 @@ private contacts, account data, live analytics, or unreviewed external claims.
 ```text
 Draft only - human review required.
 
-New on 88CN: {report_title}. This public report summarizes reviewed AI project
+New on 123Charts: {report_title}. This public report summarizes reviewed AI project
 signals and links back to the canonical report path: {report_path}.
 ```
 
@@ -160,7 +160,7 @@ signals and links back to the canonical report path: {report_path}.
 Draft only - human review required.
 
 We are testing how to describe public AI project readiness without inventing
-metrics or using private data. This 88CN report is a local editorial artifact:
+metrics or using private data. This 123Charts report is a local editorial artifact:
 {report_title}
 {report_path}
 

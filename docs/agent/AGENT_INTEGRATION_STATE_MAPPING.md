@@ -1,8 +1,8 @@
 # AGENT-INTEGRATION0A State Mapping
 
-This document maps worker-side states to 88CN admin-review states. It preserves
+This document maps worker-side states to 123Charts admin-review states. It preserves
 the no-auto-publish boundary: worker states may request review, but only manual
-88CN admin review can create `published_projection`.
+123Charts admin review can create `published_projection`.
 
 ## Worker-Side States
 
@@ -16,17 +16,17 @@ the no-auto-publish boundary: worker states may request review, but only manual
 | `review_ready` | Worker packaged a sanitized admin-review candidate. |
 | `publish_recommended` | Worker recommendation engine suggests possible publish after admin review. |
 
-## 88CN-Side States
+## 123Charts-Side States
 
-| 88CN state | Meaning |
+| 123Charts state | Meaning |
 | --- | --- |
-| `import_received` | 88CN received an artifact set for validation. |
+| `import_received` | 123Charts received an artifact set for validation. |
 | `review_queue_pending` | A validated record is waiting for admin review. |
 | `review_blocked` | A record needs human unblock before admin review can proceed. |
 | `admin_reviewing` | Human admin is reviewing the record. |
 | `manual_approved` | Human admin approved creation of a public projection. |
 | `manual_rejected` | Human admin rejected the record. |
-| `published_projection_created` | 88CN created public projection after manual approval. |
+| `published_projection_created` | 123Charts created public projection after manual approval. |
 | `stale` | Record is stale and requires recheck before further action. |
 | `archived` | Record is retained for internal history only. |
 
@@ -72,7 +72,7 @@ boundary.
 ## Public Surface Boundary
 
 Only `published_projection_created` may feed public frontend, search index,
-sitemap, Public API, or MCP surfaces, and only when produced by the 88CN admin
+sitemap, Public API, or MCP surfaces, and only when produced by the 123Charts admin
 review process.
 
 Worker output cannot directly feed:

@@ -4,12 +4,12 @@ Result: PASS
 
 ## Purpose
 
-PR34 publishes the first public 88CN founder intent signal report page from the PR33 Seed 100 machine-readability audit dataset. The page turns committed aggregate data into a static public report without changing project publication rules, admin review, Supabase writes, or deployment state.
+PR34 publishes the first public 123Charts founder intent signal report page from the PR33 Seed 100 machine-readability audit dataset. The page turns committed aggregate data into a static public report without changing project publication rules, admin review, Supabase writes, or deployment state.
 
 ## Report Route
 
 - Route: `/reports/early-ai-project-machine-readability-2026`
-- Canonical URL: `https://88cn.com/reports/early-ai-project-machine-readability-2026`
+- Canonical URL: `https://123charts.com/reports/early-ai-project-machine-readability-2026`
 - Page type: static public report page
 
 ## Input Dataset
@@ -69,7 +69,7 @@ Only `/reports/early-ai-project-machine-readability-2026` is added to the sitema
 
 ## Structured Data Policy
 
-The page emits report-level `TechArticle` JSON-LD only. It includes 88CN as author and publisher, a report headline, description, publication date, and report topics. It does not include fake reviews, fake ratings, paid placement data, Signal Score values, Source Confidence values, or project-level item data.
+The page emits report-level `TechArticle` JSON-LD only. It includes 123Charts as author and publisher, a report headline, description, publication date, and report topics. It does not include fake reviews, fake ratings, paid placement data, Signal Score values, Source Confidence values, or project-level item data.
 
 ## Sidecar Findings
 

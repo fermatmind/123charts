@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Establish the Supabase Auth + Admin Guard for the 88CN admin panel. This PR creates the authentication layer, admin authorization check, and an empty admin shell. No review, approval, or publishing logic is implemented.
+Establish the Supabase Auth + Admin Guard for the 123Charts admin panel. This PR creates the authentication layer, admin authorization check, and an empty admin shell. No review, approval, or publishing logic is implemented.
 
-## Why Admin Is Built Into 88cn-web
+## Why Admin Is Built Into 123charts-web
 
-88CN is a single Next.js application. There is no separate admin service, no headless CMS, and no external dashboard. Reasons:
+123Charts is a single Next.js application. There is no separate admin service, no headless CMS, and no external dashboard. Reasons:
 
 1. **Single codebase** — Admin tools share the same Supabase client, types, and RLS policies as the public API. No synchronization layer needed.
 2. **RLS-native authorization** — Supabase Row-Level Security provides the authorization boundary. Admin access is just another RLS policy, not a separate application.
@@ -22,11 +22,11 @@ Establish the Supabase Auth + Admin Guard for the 88CN admin panel. This PR crea
 Common alternatives like Strapi, Directus, or Payload CMS would:
 
 - Require separate hosting, databases, and auth
-- Create a synchronization boundary between CMS data and 88CN project data
+- Create a synchronization boundary between CMS data and 123Charts project data
 - Add complexity for a Phase 1 product with a single table-based data model
 - Introduce licensing and maintenance overhead
 
-88CN's data model is simple enough that a custom admin panel within the Next.js app is the right trade-off for Phase 1. If the admin surface grows significantly, a separate CMS can be evaluated in a future phase.
+123Charts's data model is simple enough that a custom admin panel within the Next.js app is the right trade-off for Phase 1. If the admin surface grows significantly, a separate CMS can be evaluated in a future phase.
 
 ## Supabase Auth + RLS Boundary
 

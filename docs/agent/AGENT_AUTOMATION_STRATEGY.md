@@ -1,4 +1,4 @@
-# 88CN Agent Automation Strategy
+# 123Charts Agent Automation Strategy
 
 Result: `AGENT0R_READY_FOR_WORKER_AGENT_IMPLEMENTATION`
 
@@ -6,16 +6,16 @@ Slogan: `Automatic recommendation, human final gate.`
 
 ## Core Principle
 
-The 88CN Agent system is not an auto-publishing crawler.
+The 123Charts Agent system is not an auto-publishing crawler.
 
-The 88CN Agent system is an automatic data preparation and recommendation pipeline. It may prepare source-backed candidates, normalize evidence, classify risk, package review payloads, and recommend publish decisions. It must not bypass human review.
+The 123Charts Agent system is an automatic data preparation and recommendation pipeline. It may prepare source-backed candidates, normalize evidence, classify risk, package review payloads, and recommend publish decisions. It must not bypass human review.
 
 Final public release must always pass through:
 
 ```text
 worker output
   -> review-ready payload
-  -> 88CN admin review
+  -> 123Charts admin review
   -> manual publish gate
   -> published_projection
   -> frontend / search / sitemap
@@ -25,7 +25,7 @@ worker output
 
 ## Three Repo Roles
 
-### 88CN
+### 123Charts
 
 Role:
 
@@ -136,7 +136,7 @@ Rules:
 
 ### Phase 3: Staging Queue
 
-- Review-ready payload to 88CN admin.
+- Review-ready payload to 123Charts admin.
 - Dead-letter/quarantine policy.
 - Manual review gate.
 

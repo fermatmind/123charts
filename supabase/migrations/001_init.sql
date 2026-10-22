@@ -42,41 +42,6 @@ begin
 end;
 $$;
 
--- Claim batch of source_refresh_jobs using FOR UPDATE SKIP LOCKED
--- Never scans the full table — claims at most batch_size pending jobs
-create or replace function public.claim_source_refresh_jobs(
-  batch_size int default 20,
-  worker_id text default 'default'
-)
-returns setof public.source_refresh_jobs
-language plpgsql
-security definer
-set search_path = ''
-as $$
-begin
-  return query
-    with claimed as (
-      select id
-      from public.source_refresh_jobs
-      where status = 'pending'
-        and run_after <= now()
-      order by priority desc, created_at asc
-      limit batch_size
-      for update skip locked
-    )
-    update public.source_refresh_jobs j
-    set
-      status = 'in_progress',
-      locked_at = now(),
-      locked_by = worker_id,
-      started_at = now(),
-      attempts = attempts + 1
-    from claimed
-    where j.id = claimed.id
-    returning j.*;
-end;
-$$;
-
 -- =============================================================================
 -- Section 3: System Controls
 -- =============================================================================
@@ -506,6 +471,42 @@ create table public.source_refresh_jobs (
 create trigger trg_source_refresh_jobs_updated_at
   before update on public.source_refresh_jobs
   for each row execute function public.set_updated_at();
+
+-- Claim batch of source_refresh_jobs using FOR UPDATE SKIP LOCKED
+-- Never scans the full table — claims at most batch_size pending jobs
+create or replace function public.claim_source_refresh_jobs(
+  batch_size int default 20,
+  worker_id text default 'default'
+)
+returns setof public.source_refresh_jobs
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  return query
+    with claimed as (
+      select id
+      from public.source_refresh_jobs
+      where status = 'pending'
+        and run_after <= now()
+      order by priority desc, created_at asc
+      limit batch_size
+      for update skip locked
+    )
+    update public.source_refresh_jobs j
+    set
+      status = 'in_progress',
+      locked_at = now(),
+      locked_by = worker_id,
+      started_at = now(),
+      attempts = attempts + 1
+    from claimed
+    where j.id = claimed.id
+    returning j.*;
+end;
+$$;
+
 
 -- =============================================================================
 -- Section 13: Indexes

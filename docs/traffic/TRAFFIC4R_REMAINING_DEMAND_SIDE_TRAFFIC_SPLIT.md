@@ -12,7 +12,7 @@ This task does not implement TRAFFIC4, TRAFFIC5, TRAFFIC6, TRAFFIC7, `/tasks`, a
 
 - Task ID: TRAFFIC4R
 - Role: codex-build / codex-research
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Current source state: TRAFFIC3Q merged at `a6db25049ba293e1d0d304543fa0889f11284988`
 - Product code changes: none

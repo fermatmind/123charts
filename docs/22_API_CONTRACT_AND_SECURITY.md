@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Define the 88CN API contract, error format, security headers, and request tracing conventions that all API routes must follow. This v0 establishes the foundation — future PRs will add submit, claim, and admin routes that comply with this contract.
+Define the 123Charts API contract, error format, security headers, and request tracing conventions that all API routes must follow. This v0 establishes the foundation — future PRs will add submit, claim, and admin routes that comply with this contract.
 
 ## RFC 9457 Problem Details
 
-88CN uses [RFC 9457 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457) — NOT RFC 7807. RFC 9457 is the current IETF standard, obsoleting RFC 7807.
+123Charts uses [RFC 9457 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457) — NOT RFC 7807. RFC 9457 is the current IETF standard, obsoleting RFC 7807.
 
 ### Why RFC 9457
 
@@ -26,9 +26,9 @@ Content-Type: `application/problem+json`
 ```json
 {
   "ok": false,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "error": {
-    "type": "https://88cn.dev/docs/api-errors#not-found",
+    "type": "https://123charts.dev/docs/api-errors#not-found",
     "title": "Not Found",
     "status": 404,
     "detail": "No project found with slug \"unknown\".",
@@ -56,7 +56,7 @@ Content-Type: `application/problem+json`
 ```json
 {
   "ok": true,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "data": { ... },
   "request_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 }
@@ -115,7 +115,7 @@ Returns public project data from demo snapshots. No database connection.
 ```json
 {
   "ok": true,
-  "service": "88cn-web",
+  "service": "123charts-web",
   "data": {
     "slug": "aurora-code",
     "name": "Aurora Code",
@@ -148,7 +148,7 @@ Returns public project data from demo snapshots. No database connection.
 
 Webhook signature verification is NOT implemented in v0. When webhook endpoints are added in a future PR:
 
-- Incoming webhooks must verify a signature header (e.g., `x-88cn-signature` or platform-specific header).
+- Incoming webhooks must verify a signature header (e.g., `x-123charts-signature` or platform-specific header).
 - Signature verification must use constant-time comparison.
 - Unverified webhook requests must return 401 Unauthorized.
 - Webhook endpoints must not perform destructive operations without signature verification.

@@ -2,7 +2,7 @@
 
 ## Summary
 
-PR38 adds a machine-readable public copy guard for 88CN brand language. It complements the baseline forbidden-pattern scanner with a narrower brand-voice check that can distinguish outcome promises from compliant non-promise disclaimers.
+PR38 adds a machine-readable public copy guard for 123Charts brand language. It complements the baseline forbidden-pattern scanner with a narrower brand-voice check that can distinguish outcome promises from compliant non-promise disclaimers.
 
 The guard is local-only. It performs no network calls, stores no secrets, and does not modify public page copy.
 
@@ -39,7 +39,7 @@ Explicit negation remains allowed. Examples:
 - Blocked: "Claim your profile for guaranteed ranking"
 - Blocked: "Add the badge for a guaranteed AI citation"
 
-This matters because 88CN public pages must be able to state limitations clearly without turning those limitation statements into policy failures.
+This matters because 123Charts public pages must be able to state limitations clearly without turning those limitation statements into policy failures.
 
 ## Brand Voice
 

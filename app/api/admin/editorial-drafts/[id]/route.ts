@@ -30,10 +30,8 @@ async function requireAdmin(requestId: string, instance: string) {
   return { error: null, guard };
 }
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const requestId = getOrCreateRequestId();
   const instance = `/api/admin/editorial-drafts/${params.id}`;
   const { error, guard } = await requireAdmin(requestId, instance);

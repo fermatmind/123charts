@@ -8,7 +8,7 @@ export async function POST() {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (supabaseUrl && supabaseAnonKey) {
-    const store = cookies();
+    const store = await cookies();
 
     const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
       cookies: {

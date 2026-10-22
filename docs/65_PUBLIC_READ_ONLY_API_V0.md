@@ -41,7 +41,7 @@ Disabled routes return:
 
 ```json
 {
-  "type": "https://88cn.com/problems/public-api-disabled",
+  "type": "https://123charts.com/problems/public-api-disabled",
   "title": "Public API is disabled",
   "status": 503,
   "detail": "The public API is not enabled for this environment.",

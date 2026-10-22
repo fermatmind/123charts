@@ -3,8 +3,10 @@ node_modules/
 .env
 .env.*
 !.env.example
+!.env.*.example
 .vercel/
 .next/
+.next-production/
 dist/
 build/
 coverage/
@@ -27,3 +29,15 @@ secrets/
 deploy/scripts/deploy-rsync.sh
 .codex/config.toml
 .codex/*.local.toml
+
+# Local 123Charts runtime
+supabase/.temp/
+supabase/.branches/
+.local/
+output/
+playwright-report/
+test-results/
+public/ocr/*
+!public/ocr/.gitkeep
+
+.playwright-cli/

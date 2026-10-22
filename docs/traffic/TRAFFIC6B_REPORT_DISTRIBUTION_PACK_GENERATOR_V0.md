@@ -23,7 +23,7 @@ The generator reads local published report source files through the TypeScript c
 Default output:
 
 ```text
-/tmp/88cn-report-distribution-pack
+/tmp/123charts-report-distribution-pack
 ```
 
 Supported commands:
@@ -31,7 +31,7 @@ Supported commands:
 ```sh
 npm run report-distribution-pack:generate -- --dry-run
 npm run report-distribution-pack:generate
-npm run report-distribution-pack:generate -- --out /tmp/88cn-report-distribution-pack-pr129
+npm run report-distribution-pack:generate -- --out /tmp/123charts-report-distribution-pack-pr129
 ```
 
 ## Generated Local Draft Files
@@ -75,7 +75,7 @@ Required manifest flags:
 ## Validation Evidence
 
 - `npm run report-distribution-pack:generate -- --dry-run`
-- `npm run report-distribution-pack:generate -- --out /tmp/88cn-report-distribution-pack-pr129`
+- `npm run report-distribution-pack:generate -- --out /tmp/123charts-report-distribution-pack-pr129`
 - `npm run verify:day0`
 - `npm run policy:scan`
 - `npm run third-party:check`

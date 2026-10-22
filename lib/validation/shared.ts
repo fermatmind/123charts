@@ -34,7 +34,7 @@ export function checkForbiddenFields(
   }
 
   if (found.length > 0) {
-    return `Request contains disallowed fields for ${endpoint}: ${found.join(", ")}. 88CN does not accept monetization, payment, or commercial-tier fields.`;
+    return `Request contains disallowed fields for ${endpoint}: ${found.join(", ")}. 123Charts does not accept monetization, payment, or commercial-tier fields.`;
   }
 
   return null;

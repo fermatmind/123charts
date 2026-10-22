@@ -3,7 +3,7 @@
 Result: `AGENT_INTEGRATION0A_REVIEW_QUEUE_IMPORT_CONTRACT_READY`
 
 This contract defines how sanitized outputs from `88cn-scout-worker` may be
-accepted as candidates for the 88CN admin review queue.
+accepted as candidates for the 123Charts admin review queue.
 
 Strategic principle:
 
@@ -213,7 +213,7 @@ Hard rule:
 ```text
 recommend_publish is not published.
 publish_recommended is not published.
-Only 88CN admin can create published_projection.
+Only 123Charts admin can create published_projection.
 ```
 
 Each recommendation requires:

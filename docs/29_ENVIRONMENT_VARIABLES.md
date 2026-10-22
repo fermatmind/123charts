@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Document all environment variables required for 88CN local development, production deployment, and future services. This file is the single source of truth for environment configuration.
+Document all environment variables required for 123Charts local development, production deployment, and future services. This file is the single source of truth for environment configuration.
 
 ## Variable Reference
 
@@ -74,15 +74,15 @@ env: {
 
 Option B — via PM2 env command (for secrets):
 ```bash
-pm2 env 88cn-web set NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-pm2 env 88cn-web set NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-pm2 env 88cn-web set SUPABASE_SERVICE_ROLE_KEY=eyJ...
-pm2 restart 88cn-web --update-env
+pm2 env 123charts-web set NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+pm2 env 123charts-web set NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+pm2 env 123charts-web set SUPABASE_SERVICE_ROLE_KEY=eyJ...
+pm2 restart 123charts-web --update-env
 ```
 
 Option C — via `.env` file on server:
 ```bash
-# Create /var/www/88cn/.env.production with real values
+# Create /var/www/123charts/.env.production with real values
 echo 'NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co' >> .env.production
 # PM2 will load this automatically if present
 ```

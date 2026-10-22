@@ -29,7 +29,7 @@ The user said `继续执行`, so PR171 proceeds only as a local-only dry-run. Th
 
 Local input artifacts:
 
-- `/tmp/88cn-pr167-canonical-resolver-dry-run.jsonl`
+- `/tmp/123charts-pr167-canonical-resolver-dry-run.jsonl`
 - `docs/scout/SCOUT_STAGING1_STAGING_SANDBOX_STORAGE_MIGRATION_CHECKPOINT.md`
 
 The PR167 local canonical resolver output remains an uncommitted `/tmp` artifact. It is not an official Seed 100 dataset, not a staging database rowset, not reviewed public records, not audited records, and not report data.
@@ -39,7 +39,7 @@ The PR167 local canonical resolver output remains an uncommitted `/tmp` artifact
 Local dry-run manifest:
 
 ```text
-/tmp/88cn-pr171-staging-sandbox-local-write-dry-run.json
+/tmp/123charts-pr171-staging-sandbox-local-write-dry-run.json
 ```
 
 Dry-run summary:

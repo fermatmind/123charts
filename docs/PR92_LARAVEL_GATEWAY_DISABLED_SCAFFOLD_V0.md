@@ -11,7 +11,7 @@ auto-merge, deploy, or start PR93.
 ## Purpose
 
 PR92 establishes a non-executable gateway scaffold boundary for possible future
-88CN B2B Alpha Feed infrastructure. The scaffold is static documentation,
+123Charts B2B Alpha Feed infrastructure. The scaffold is static documentation,
 machine-readable contract, non-executable example, and a local checker.
 
 ## Relationship To PR91
@@ -109,7 +109,7 @@ The checker also supports `--root /tmp/...` fixture mode for negative probes.
 
 ## Negative Tests
 
-Negative probes were run under `/tmp/88cn-pr92-*` and did not leave temp files
+Negative probes were run under `/tmp/123charts-pr92-*` and did not leave temp files
 in the repository. These failing probes passed:
 
 | Probe | Result |

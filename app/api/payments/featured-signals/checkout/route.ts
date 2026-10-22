@@ -7,7 +7,7 @@ const INSTANCE = "/api/payments/featured-signals/checkout";
 
 function commercialFlowDisabledProblem(requestId: string): ProblemDetail {
   return {
-    type: "https://88cn.com/problems/commercial-flow-disabled",
+    type: "https://123charts.com/problems/commercial-flow-disabled",
     title: "Featured Signals checkout is disabled",
     status: 503,
     detail: "Commercial checkout is not enabled for this environment.",

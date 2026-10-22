@@ -247,7 +247,7 @@ function writeFixture(root, overrides = {}) {
 }
 
 function expectFixtureFailure(name, overrides, expectedText) {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "88cn-pr58-"));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "123charts-pr58-"));
   try {
     writeFixture(root, overrides);
     const errors = validate(root);

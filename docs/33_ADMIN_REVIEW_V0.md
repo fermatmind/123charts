@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Implement the 88CN built-in admin review backend for processing project submissions and founder claims. This PR adds the review UI, admin API routes, and review action logic. No email sending, editorial AI, Stripe, or crawler logic.
+Implement the 123Charts built-in admin review backend for processing project submissions and founder claims. This PR adds the review UI, admin API routes, and review action logic. No email sending, editorial AI, Stripe, or crawler logic.
 
-## Why Admin Is Built Into 88cn-web
+## Why Admin Is Built Into 123charts-web
 
-88CN Phase 1 runs as a single Next.js application. There is no separate admin service. Reasons:
+123Charts Phase 1 runs as a single Next.js application. There is no separate admin service. Reasons:
 
 1. **Single codebase** — Admin tools share the same Supabase client, auth, and types as the public app
 2. **RLS-native authorization** — Admin access uses Supabase RLS and the `is_admin()` function
@@ -49,7 +49,7 @@ Implement the 88CN built-in admin review backend for processing project submissi
 
 ## Two-Step Publishing
 
-88CN uses a two-step publishing process to prevent premature public exposure:
+123Charts uses a two-step publishing process to prevent premature public exposure:
 
 ### Step 1: Approve (creates project in preview state)
 

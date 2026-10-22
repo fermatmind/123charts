@@ -7,7 +7,7 @@ Date: 2026-06-21
 
 ## Result
 
-OPS11A converts the post-PR182A 88CN plan from a 50-project MVP path into a 20,000-50,000 project operating-system buildout plan.
+OPS11A converts the post-PR182A 123Charts plan from a 50-project MVP path into a 20,000-50,000 project operating-system buildout plan.
 
 Decision: `GO_SCALE_BUILDOUT_TRAINS_REGISTERED`.
 
@@ -51,7 +51,7 @@ Read:
 - `docs/infra/OPS_INFRA0X_CROSS_PROJECT_SHARED_INFRASTRUCTURE_INVENTORY.md`
 - `docs/infra/OPS_INFRA0Y_CLOUD_FERMATMIND_READONLY_INVENTORY_COMPLETION.md`
 - `docs/infra/OPS_INFRA1X_SHARED_SERVER_ISOLATION_POLICY_RUNBOOK.md`
-- `docs/infra/OPS_INFRA2X_88CN_STAGING_WORKER_PLACEMENT_DECISION.md`
+- `docs/infra/OPS_INFRA2X_123charts_STAGING_WORKER_PLACEMENT_DECISION.md`
 - `docs/TASK_STATUS.md`
 - `docs/SIDECAR_ISSUES.md`
 - `ops/tasks/current.json`
@@ -70,12 +70,12 @@ Confirmed state:
 - PR182A is merged and selects `READY_FOR_PR182B_WITH_HUMAN_CHECKPOINT`.
 - PR182A confirms existing migrations `001`-`012`, RLS conventions, `public.projects`, and admin-only review/import tables, but no dedicated PR182 project contract staging table family.
 - `main == origin/main` before OPS11A branch creation.
-- 88CN worktree and `/Users/rainie/Desktop/88cn-index-data` were clean before OPS11A edits.
+- 123Charts worktree and `/Users/rainie/Desktop/88cn-index-data` were clean before OPS11A edits.
 - No PR182B/PR182C/OPS-SERVER/PR183A/PR184/PR185/PR186/PR187/PR188 implementation had started.
 
 ## 20k-50k Scale Assumptions
 
-At 20,000-50,000 projects, 88CN needs an operating data plane, not a single small seed handoff.
+At 20,000-50,000 projects, 123Charts needs an operating data plane, not a single small seed handoff.
 
 Required assumptions:
 
@@ -274,7 +274,7 @@ OPS11A performs no fresh Aliyun/Tencent scan except reading existing redacted OP
 Carry-forward rules:
 
 - `HK-ALIYUN-01` remains public-web-only;
-- FermatMind production hosts remain do-not-touch for 88CN workers;
+- FermatMind production hosts remain do-not-touch for 123Charts workers;
 - Tencent resources are migration-source/sunsetting only;
 - Shanghai Aliyun candidates require owner/capacity confirmation before use.
 

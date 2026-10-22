@@ -10,7 +10,7 @@ TRAFFIC4A defines the finite `/tasks/[slug]` discovery boundary for PR123. The c
 
 - Task ID: PR122 / TRAFFIC4A
 - Role: codex-research
-- Repo: `/Users/rainie/Desktop/88CN`
+- Repo: `/Users/rainie/Desktop/123charts.com/123charts`
 - Data repo: `/Users/rainie/Desktop/88cn-index-data` cleanliness check only
 - Product code changes: none
 - Deployment: none
@@ -49,7 +49,7 @@ PR123 may add a finite `/tasks/[slug]` route only if it remains backed by review
 
 ## Task Route Definition
 
-A task page is a demand-side discovery page for a concrete user job. It answers: "Which reviewed 88CN projects can help me evaluate or perform this job?"
+A task page is a demand-side discovery page for a concrete user job. It answers: "Which reviewed 123Charts projects can help me evaluate or perform this job?"
 
 A task page is not:
 

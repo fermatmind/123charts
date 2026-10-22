@@ -36,7 +36,7 @@ function mcpAccessible(request: NextRequest): boolean {
 function serverMetadata() {
   return {
     server: {
-      name: "88cn-read-only-mcp",
+      name: "123charts-read-only-mcp",
       version: "0.1.0",
       status: "local_static_metadata_only",
       read_only: true,
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
           },
         },
         serverInfo: {
-          name: "88cn-read-only-mcp",
+          name: "123charts-read-only-mcp",
           version: "0.1.0",
         },
       },

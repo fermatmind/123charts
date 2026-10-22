@@ -49,8 +49,8 @@ Allowed artifact shapes:
 
 All draft copy must:
 
-- identify 88CN as a public growth-signal index or project-discovery surface;
-- cite only public report titles, slugs, dates, and 88CN public paths;
+- identify 123Charts as a public growth-signal index or project-discovery surface;
+- cite only public report titles, slugs, dates, and 123Charts public paths;
 - avoid invented metrics, founder claims, traffic claims, rankings, AI citation
   claims, backlink promises, or guaranteed outcomes;
 - avoid copied competitor descriptions;

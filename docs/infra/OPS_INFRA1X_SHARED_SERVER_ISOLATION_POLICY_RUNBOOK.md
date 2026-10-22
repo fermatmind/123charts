@@ -34,9 +34,9 @@ OPS-INFRA0Y is the immediate source of truth for cloud aliases and do-not-touch 
 
 Allowed:
 
-- 88CN public web.
+- 123Charts public web.
 - Nginx public vhost.
-- PM2 app `88cn-web`.
+- PM2 app `123charts-web`.
 - Sitemap / robots surface.
 - Live smoke and health checks.
 
@@ -59,17 +59,17 @@ Allowed:
 
 - FermatMind API/Ops/queue production only.
 
-Forbidden for 88CN:
+Forbidden for 123Charts:
 
-- 88CN scout worker.
-- 88CN audit worker.
-- 88CN queue.
-- 88CN Redis.
-- 88CN cron.
-- 88CN deploy path.
-- 88CN staging admin.
+- 123Charts scout worker.
+- 123Charts audit worker.
+- 123Charts queue.
+- 123Charts Redis.
+- 123Charts cron.
+- 123Charts deploy path.
+- 123Charts staging admin.
 
-Policy: `FAP-API-ALIYUN-01` is do-not-touch for 88CN worker placement unless OPS-INFRA2X and human approval explicitly override after isolation proof.
+Policy: `FAP-API-ALIYUN-01` is do-not-touch for 123Charts worker placement unless OPS-INFRA2X and human approval explicitly override after isolation proof.
 
 ### FAP-WEB-NODE1
 
@@ -79,16 +79,16 @@ Allowed:
 
 Forbidden:
 
-- 88CN worker.
-- 88CN queue.
-- 88CN crawler.
-- 88CN staging admin.
+- 123Charts worker.
+- 123Charts queue.
+- 123Charts crawler.
+- 123Charts staging admin.
 
-Policy: `FAP-WEB-NODE1` remains FermatMind production web infrastructure. It is not a candidate for 88CN workers in OPS-INFRA2X unless a later human checkpoint overrides with server-level proof.
+Policy: `FAP-WEB-NODE1` remains FermatMind production web infrastructure. It is not a candidate for 123Charts workers in OPS-INFRA2X unless a later human checkpoint overrides with server-level proof.
 
 ### Tencent Cloud
 
-Policy: Tencent resources are migration-source / sunsetting only. No new 88CN workload may be placed on Tencent Cloud.
+Policy: Tencent resources are migration-source / sunsetting only. No new 123Charts workload may be placed on Tencent Cloud.
 
 This restriction applies to:
 
@@ -113,18 +113,18 @@ OPS-INFRA2X may evaluate these candidate roles:
 
 Recommended future users:
 
-- `88cn-web`
-- `88cn-admin`
-- `88cn-worker`
+- `123charts-web`
+- `123charts-admin`
+- `123charts-worker`
 - `fap-web`
 - `fap-api`
 
 Rules:
 
-- 88CN and FermatMind must not share deploy/runtime users.
-- 88CN workers must not run as root.
-- 88CN workers must not read FermatMind env files.
-- FermatMind services must not read 88CN env files.
+- 123Charts and FermatMind must not share deploy/runtime users.
+- 123Charts workers must not run as root.
+- 123Charts workers must not read FermatMind env files.
+- FermatMind services must not read 123Charts env files.
 - Shared user is forbidden unless OPS-INFRA2X explicitly proves low risk and a human checkpoint approves it.
 - A user created for public web must not own scout/audit worker processes.
 - A worker user must not own Nginx vhost files, public web roots, or rollback symlinks for another project.
@@ -134,10 +134,10 @@ Rules:
 
 Recommended future roots:
 
-- `/opt/apps/88cn-web`
-- `/opt/apps/88cn-admin`
+- `/opt/apps/123charts-web`
+- `/opt/apps/123charts-admin`
 - `/opt/apps/88cn-scout-worker`
-- `/opt/apps/88cn-audit-worker`
+- `/opt/apps/123charts-audit-worker`
 - `/opt/apps/fap-web`
 - `/opt/apps/fap-api`
 
@@ -149,18 +149,18 @@ Rules:
 - No shared `.env` directory.
 - No shared logs directory.
 - No worker output under a public web root.
-- 88CN scout/audit temp output must not be under `public/` or any Nginx-served directory.
+- 123Charts scout/audit temp output must not be under `public/` or any Nginx-served directory.
 - Staging admin, scout worker, audit worker, and public web must each have separate cwd and release paths.
-- Rollback paths must be project-local and must not cross from 88CN to FermatMind or from FermatMind to 88CN.
+- Rollback paths must be project-local and must not cross from 123Charts to FermatMind or from FermatMind to 123Charts.
 
 ## PM2 / Process Isolation
 
 Recommended future PM2 app names:
 
-- `88cn-web`
-- `88cn-staging-admin`
+- `123charts-web`
+- `123charts-staging-admin`
 - `88cn-scout-worker`
-- `88cn-audit-worker`
+- `123charts-audit-worker`
 - `fap-web`
 - `fap-api-worker`
 
@@ -169,12 +169,12 @@ Rules:
 - App names must be unique.
 - `cwd` must be separate for each app.
 - Logs must be separate for each app.
-- `max_memory_restart` is required for 88CN worker apps.
+- `max_memory_restart` is required for 123Charts worker apps.
 - Worker process definitions must include an explicit concurrency cap.
-- 88CN workers must not be added to FermatMind PM2 ecosystem files.
-- FermatMind apps must not be controlled by 88CN deploy scripts.
+- 123Charts workers must not be added to FermatMind PM2 ecosystem files.
+- FermatMind apps must not be controlled by 123Charts deploy scripts.
 - PM2 reload/restart commands must target a single named app.
-- A 88CN rollback must never restart `fap-web`, `fap-api`, or FermatMind queue workers.
+- A 123Charts rollback must never restart `fap-web`, `fap-api`, or FermatMind queue workers.
 
 OPS-INFRA1X does not change PM2.
 
@@ -188,8 +188,8 @@ Rules:
 - Separate error logs.
 - Separate TLS/vhost ownership.
 - No wildcard vhost swallowing another project.
-- No 88CN route proxied to fap upstream.
-- No fap route proxied to 88CN upstream.
+- No 123Charts route proxied to fap upstream.
+- No fap route proxied to 123Charts upstream.
 - No worker endpoint exposed publicly unless explicitly approved later.
 - No staging admin public exposure without explicit admin access policy.
 - Nginx config changes are not performed in OPS-INFRA1X.
@@ -202,9 +202,9 @@ Default policy: do not share Redis unless OPS-INFRA2X explicitly approves it.
 
 If sharing is later approved, mandatory namespaces:
 
-- `88cn:scout:*`
-- `88cn:audit:*`
-- `88cn:report:*`
+- `123charts:scout:*`
+- `123charts:audit:*`
+- `123charts:report:*`
 - `fap:*`
 
 Rules:
@@ -213,8 +213,8 @@ Rules:
 - No shared retry queue.
 - No shared dead-letter queue.
 - No shared consumer group.
-- 88CN worker must never consume FermatMind queues.
-- FermatMind worker must never consume 88CN queues.
+- 123Charts worker must never consume FermatMind queues.
+- FermatMind worker must never consume 123Charts queues.
 - Queue prefixes must be visible in the OPS-INFRA2X runbook before any worker starts.
 - Redis credential values must never be committed.
 - Redis database numbers or prefixes must be treated as production-affecting facts.
@@ -224,7 +224,7 @@ Rules:
 
 Required naming:
 
-- `88CN_*`
+- `123Charts_*`
 - `FAP_*`
 
 Rules:
@@ -240,16 +240,16 @@ Rules:
 - No raw Redis URLs.
 - No cloud account secret material.
 - Do not print or commit private key contents.
-- Do not copy FermatMind env keys into 88CN docs, examples, scripts, or task files.
+- Do not copy FermatMind env keys into 123Charts docs, examples, scripts, or task files.
 
 ## Log Isolation
 
 Recommended future paths:
 
-- `/var/log/88cn/web/`
-- `/var/log/88cn/admin/`
-- `/var/log/88cn/scout-worker/`
-- `/var/log/88cn/audit-worker/`
+- `/var/log/123charts/web/`
+- `/var/log/123charts/admin/`
+- `/var/log/123charts/scout-worker/`
+- `/var/log/123charts/audit-worker/`
 - `/var/log/fap/web/`
 - `/var/log/fap/api/`
 
@@ -269,13 +269,13 @@ Rules:
 
 Recommended future paths:
 
-- `/backups/88cn/`
+- `/backups/123charts/`
 - `/backups/fap/`
 
 Rules:
 
-- 88CN backup must not include FermatMind secrets.
-- FermatMind backup must not include 88CN secrets.
+- 123Charts backup must not include FermatMind secrets.
+- FermatMind backup must not include 123Charts secrets.
 - Raw scout/audit backups must not be committed to `88cn-index-data`.
 - Raw scout/audit backups must not include PII.
 - Backup retention and restore owner must be documented before staging writes.
@@ -286,13 +286,13 @@ Rules:
 
 Rules:
 
-- 88CN deploy scripts may only deploy 88CN.
+- 123Charts deploy scripts may only deploy 123Charts.
 - FermatMind deploy scripts may only deploy FermatMind.
 - No shared deploy root.
 - No shared release symlink.
 - No shared post-deploy reload.
-- No 88CN deploy may reload fap services.
-- No fap deploy may reload 88CN services.
+- No 123Charts deploy may reload fap services.
+- No fap deploy may reload 123Charts services.
 - Rollback must target only the project being rolled back.
 - Deploy scripts must not modify other project PM2 apps, Nginx vhosts, queues, cron jobs, or env files.
 - OPS-INFRA1X does not modify deploy scripts.
@@ -302,15 +302,15 @@ Rules:
 Rules:
 
 - Rollback must be project-local.
-- A 88CN rollback must not modify FermatMind releases, symlinks, PM2 apps, Supervisor workers, Nginx vhosts, Redis keys, logs, backups, or cron entries.
-- A FermatMind rollback must not modify 88CN releases, symlinks, PM2 apps, Nginx vhosts, Redis keys, logs, backups, or cron entries.
+- A 123Charts rollback must not modify FermatMind releases, symlinks, PM2 apps, Supervisor workers, Nginx vhosts, Redis keys, logs, backups, or cron entries.
+- A FermatMind rollback must not modify 123Charts releases, symlinks, PM2 apps, Nginx vhosts, Redis keys, logs, backups, or cron entries.
 - Rollback verification must use project-local health checks only.
 - Rollback commands must name the app and release path explicitly.
-- A failed 88CN worker rollback must stop before touching public web or FermatMind services.
+- A failed 123Charts worker rollback must stop before touching public web or FermatMind services.
 
 ## Worker Resource Limits
 
-Any future 88CN worker must have:
+Any future 123Charts worker must have:
 
 - Concurrency cap.
 - Per-domain cooldown.
@@ -380,26 +380,26 @@ Forbidden during read-only inspection:
 ## Do-Not-Touch Rules
 
 - `HK-ALIYUN-01`: no worker.
-- `FAP-API-ALIYUN-01`: no 88CN worker.
-- `FAP-WEB-NODE1`: no 88CN worker.
-- Tencent resources: no new 88CN workload.
+- `FAP-API-ALIYUN-01`: no 123Charts worker.
+- `FAP-WEB-NODE1`: no 123Charts worker.
+- Tencent resources: no new 123Charts workload.
 - `88cn-index-data`: no raw scout/audit/queue/PII storage.
-- FermatMind production DB/Redis: no direct 88CN dependency and no OPS-INFRA1X action.
+- FermatMind production DB/Redis: no direct 123Charts dependency and no OPS-INFRA1X action.
 - Cloud billing, DNS, security groups, instance lifecycle, PM2, Nginx, Redis, Supervisor, cron, and `.env`: no OPS-INFRA1X mutation.
 
 ## Isolation Matrix
 
 | isolation_area | required_policy | forbidden_pattern | required_before_OPS_INFRA2X |
 | --- | --- | --- | --- |
-| Linux user | Separate users for 88CN public web, admin, workers, and FermatMind services. | Shared root/runtime/deploy user across 88CN and FermatMind. | Confirm current users or document human read-only SSH requirement. |
+| Linux user | Separate users for 123Charts public web, admin, workers, and FermatMind services. | Shared root/runtime/deploy user across 123Charts and FermatMind. | Confirm current users or document human read-only SSH requirement. |
 | Directory | Separate app roots, release roots, current symlinks, env dirs, temp dirs, logs, and backups. | Shared app root or worker output under public web root. | Map proposed roots per candidate server. |
-| PM2 | Unique app names, separate cwd/logs, memory restart, worker concurrency cap. | 88CN worker in FermatMind ecosystem or broad PM2 reload. | Define intended app names and app-scoped restart policy. |
+| PM2 | Unique app names, separate cwd/logs, memory restart, worker concurrency cap. | 123Charts worker in FermatMind ecosystem or broad PM2 reload. | Define intended app names and app-scoped restart policy. |
 | Nginx | Separate server_name, upstream port, logs, TLS/vhost ownership. | Wildcard vhost or cross-project proxying. | Decide if staging/admin needs a vhost and access policy. |
 | Redis / queue | Default no sharing; if approved, namespaced keys and queues. | Shared queue, retry, dead-letter, or consumer group. | Decide Redis isolation model and queue prefixes. |
-| env / secrets | `88CN_*` and `FAP_*` naming, no shared `.env`, no committed values. | Raw DB/Redis URLs, shared service roles, credential values in docs/logs. | Confirm env ownership and storage boundary. |
+| env / secrets | `123Charts_*` and `FAP_*` naming, no shared `.env`, no committed values. | Raw DB/Redis URLs, shared service roles, credential values in docs/logs. | Confirm env ownership and storage boundary. |
 | logs | Role-scoped paths, rotation, max size, retention, no PII/secrets. | Shared logs or unbounded append-only worker logs. | Define log paths and retention class. |
-| backup | Project-scoped backup roots and restore owners. | 88CN backup includes FermatMind secrets or raw audit data in data repo. | Define backup owner, retention, and restore boundary. |
-| deploy | Project-only deploy and rollback commands. | 88CN deploy reloads fap services or shares release symlink. | Confirm deploy roots and app-specific reload commands. |
+| backup | Project-scoped backup roots and restore owners. | 123Charts backup includes FermatMind secrets or raw audit data in data repo. | Define backup owner, retention, and restore boundary. |
+| deploy | Project-only deploy and rollback commands. | 123Charts deploy reloads fap services or shares release symlink. | Confirm deploy roots and app-specific reload commands. |
 | worker resources | Concurrency, cooldown, request cap, memory/runtime/log/disk guards. | Unbounded crawler, worker on public web, or worker on FermatMind production. | Define per-worker limits before implementation. |
 | read-only SSH | Explicit human authorization and summary-only output. | Restart/reload/edit, raw config commit, `.env` print, key read. | Decide whether private server facts are needed. |
 
@@ -407,14 +407,14 @@ Forbidden during read-only inspection:
 
 | server_alias | current_role | allowed_future_role | forbidden_role | required_before_change |
 | --- | --- | --- | --- | --- |
-| HK-ALIYUN-01 | 88CN public web | Public web only | Scout/audit worker, crawler, queue, staging admin, FermatMind colocation | Human checkpoint plus OPS-INFRA2X explicit override |
-| FAP-API-ALIYUN-01 | FermatMind API/Ops/queue production | FermatMind production only | 88CN scout/audit/queue/cron/deploy path/staging admin | Human approval, isolation proof, and OPS-INFRA2X override |
-| FAP-WEB-NODE1 | FermatMind production web | FermatMind production web only | 88CN worker/queue/crawler/staging admin | Human approval, isolation proof, and OPS-INFRA2X override |
-| TENCENT-LH-FAP-APP-01 | FermatMind Tencent app host | Migration source / sunsetting only | New 88CN workload | Sunset/migration plan confirmation |
-| TENCENT-LH-FAP-APP-02 | FermatMind Tencent app host | Migration source / sunsetting only | New 88CN workload | Sunset/migration plan confirmation |
-| TENCENT-LH-FAP-STAGING | FermatMind staging/API host | Migration source / sunsetting only | New 88CN workload | Sunset/migration plan confirmation |
-| TENCENT-MYSQL-PROD | FermatMind production DB | Migration source / do-not-touch | Direct 88CN dependency or DB write | Human-approved migration plan only |
-| TENCENT-REDIS-PROD | FermatMind production Redis | Migration source / do-not-touch | Direct 88CN dependency or Redis write | Human-approved migration plan only |
+| HK-ALIYUN-01 | 123Charts public web | Public web only | Scout/audit worker, crawler, queue, staging admin, FermatMind colocation | Human checkpoint plus OPS-INFRA2X explicit override |
+| FAP-API-ALIYUN-01 | FermatMind API/Ops/queue production | FermatMind production only | 123Charts scout/audit/queue/cron/deploy path/staging admin | Human approval, isolation proof, and OPS-INFRA2X override |
+| FAP-WEB-NODE1 | FermatMind production web | FermatMind production web only | 123Charts worker/queue/crawler/staging admin | Human approval, isolation proof, and OPS-INFRA2X override |
+| TENCENT-LH-FAP-APP-01 | FermatMind Tencent app host | Migration source / sunsetting only | New 123Charts workload | Sunset/migration plan confirmation |
+| TENCENT-LH-FAP-APP-02 | FermatMind Tencent app host | Migration source / sunsetting only | New 123Charts workload | Sunset/migration plan confirmation |
+| TENCENT-LH-FAP-STAGING | FermatMind staging/API host | Migration source / sunsetting only | New 123Charts workload | Sunset/migration plan confirmation |
+| TENCENT-MYSQL-PROD | FermatMind production DB | Migration source / do-not-touch | Direct 123Charts dependency or DB write | Human-approved migration plan only |
+| TENCENT-REDIS-PROD | FermatMind production Redis | Migration source / do-not-touch | Direct 123Charts dependency or Redis write | Human-approved migration plan only |
 | SH-ALIYUN-02 | Candidate Aliyun Shanghai instance | Candidate staging/admin after OPS-INFRA2X | Any live role before placement approval | Owner/capacity confirmation and isolation mapping |
 | SH-ALIYUN-03 | Candidate Aliyun Shanghai instance | Candidate scout/audit worker after OPS-INFRA2X | Any worker start before SCOUT/AUDIT approval | Owner/capacity confirmation and worker limits |
 | SH-ALIYUN-04 | Candidate Aliyun Shanghai instance | Candidate queue/monitoring/backup/spare after OPS-INFRA2X | Any queue/write role before placement approval | Owner/capacity confirmation and queue/log/backup policy |
@@ -423,12 +423,12 @@ Forbidden during read-only inspection:
 
 | server_or_service_alias | restriction | reason | override_requirement |
 | --- | --- | --- | --- |
-| HK-ALIYUN-01 | No worker, crawler, queue, heavy report generation, or staging admin. | Current 88CN public web must stay predictable. | Future human checkpoint plus OPS-INFRA2X explicit override. |
-| FAP-API-ALIYUN-01 | No 88CN worker, queue, Redis, cron, deploy path, or staging admin. | FermatMind API/Ops/queue production criticality. | Isolation proof plus human approval. |
-| FAP-WEB-NODE1 | No 88CN worker or queue. | FermatMind production web criticality. | Isolation proof plus human approval. |
-| Tencent Cloud resources | No new 88CN workload. | Migration-source / sunsetting only. | Human-approved migration exception, not OPS-INFRA1X. |
-| TENCENT-MYSQL-PROD | No 88CN direct use or writes. | FermatMind production DB. | Human-approved migration plan only. |
-| TENCENT-REDIS-PROD | No 88CN direct use or writes. | FermatMind production Redis/cache/queue dependency. | Human-approved migration plan only. |
+| HK-ALIYUN-01 | No worker, crawler, queue, heavy report generation, or staging admin. | Current 123Charts public web must stay predictable. | Future human checkpoint plus OPS-INFRA2X explicit override. |
+| FAP-API-ALIYUN-01 | No 123Charts worker, queue, Redis, cron, deploy path, or staging admin. | FermatMind API/Ops/queue production criticality. | Isolation proof plus human approval. |
+| FAP-WEB-NODE1 | No 123Charts worker or queue. | FermatMind production web criticality. | Isolation proof plus human approval. |
+| Tencent Cloud resources | No new 123Charts workload. | Migration-source / sunsetting only. | Human-approved migration exception, not OPS-INFRA1X. |
+| TENCENT-MYSQL-PROD | No 123Charts direct use or writes. | FermatMind production DB. | Human-approved migration plan only. |
+| TENCENT-REDIS-PROD | No 123Charts direct use or writes. | FermatMind production Redis/cache/queue dependency. | Human-approved migration plan only. |
 | 88cn-index-data | No raw scout/audit/queue/PII storage. | Public-safe reviewed data boundary. | Separate approved data architecture task. |
 | `.env` and server secrets | No read/print/commit. | Secret leakage risk. | Human-controlled secret handling outside repo. |
 
@@ -467,7 +467,7 @@ OPS-INFRA2X must not treat OPS-INFRA1X as placement approval. It must preserve:
 
 - `HK-ALIYUN-01` public-web-only by default.
 - FermatMind production do-not-touch by default.
-- Tencent no-new-88CN-workload by default.
+- Tencent no-new-123Charts-workload by default.
 - `88cn-index-data` public-safe reviewed data boundary.
 
 ## What This PR Does Not Do
@@ -496,7 +496,7 @@ OPS-INFRA2X must not treat OPS-INFRA1X as placement approval. It must preserve:
 
 | Check | Result |
 | --- | --- |
-| 88CN preflight sync | PASS |
+| 123Charts preflight sync | PASS |
 | data repo preflight sync | PASS |
 | `npm run verify:day0` | PASS |
 | `npm run policy:scan` | PASS |

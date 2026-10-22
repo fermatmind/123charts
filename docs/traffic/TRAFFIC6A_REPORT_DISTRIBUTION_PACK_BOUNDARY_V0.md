@@ -12,7 +12,7 @@ TRAFFIC6A defines the safe boundary for PR129. This task is docs/status metadata
 
 ## Existing Report Inputs
 
-PR129 may read only published local report metadata and existing public report routes from the 88CN repo:
+PR129 may read only published local report metadata and existing public report routes from the 123Charts repo:
 
 - `lib/reports/published-reports.ts`
 - `lib/demo-reports.ts`
@@ -27,7 +27,7 @@ PR129 may implement a local draft package generator only.
 
 Approved output destination:
 
-- default: `/tmp/88cn-report-distribution-pack`
+- default: `/tmp/123charts-report-distribution-pack`
 - optional CLI override: another local temp directory outside the repo
 
 Approved output files:

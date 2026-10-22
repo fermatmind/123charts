@@ -40,7 +40,7 @@ const taskDiscoveryEntries: TaskDiscoveryEntry[] = [
     slug: "evaluate-ai-builder-infrastructure",
     title: "Evaluate AI Builder Infrastructure",
     summary:
-      "Reviewed 88CN projects that help builders evaluate AI development, model workflow, and infrastructure options from public signals.",
+      "Reviewed 123Charts projects that help builders evaluate AI development, model workflow, and infrastructure options from public signals.",
     intent:
       "Find source-linked AI projects relevant to builder infrastructure evaluation.",
     status: "published",
@@ -49,7 +49,7 @@ const taskDiscoveryEntries: TaskDiscoveryEntry[] = [
     minimumReviewedProjects: TASK_DISCOVERY_MINIMUM_PROJECTS,
     projectSlugs: ["aurora-code", "nucleus-ml", "vectorbase"],
     inclusionCriteria:
-      "Projects must be manually selected from reviewed local 88CN records, use a public-safe lifecycle state, and include public source links relevant to builder infrastructure evaluation.",
+      "Projects must be manually selected from reviewed local 123Charts records, use a public-safe lifecycle state, and include public source links relevant to builder infrastructure evaluation.",
     whyIncluded:
       "Aurora Code, Nucleus ML, and VectorBase are reviewed local records with public source links and builder-facing infrastructure context.",
     methodologyNote:
@@ -57,7 +57,7 @@ const taskDiscoveryEntries: TaskDiscoveryEntry[] = [
     boundaryNote:
       "This page is a discovery surface for reviewed public signals. It does not provide professional, legal, financial, medical, compliance, security, or procurement advice.",
     sourceNotes:
-      "Project cards link to existing 88CN public profiles. Public source links remain on the project profile pages.",
+      "Project cards link to existing 123Charts public profiles. Public source links remain on the project profile pages.",
   },
   {
     slug: "review-model-search-infrastructure",

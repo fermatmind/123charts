@@ -24,7 +24,7 @@ function problem(
     title,
     status,
     detail,
-    instance: instance ?? "urn:88cn:api:v0",
+    instance: instance ?? "urn:123charts:api:v0",
     ...(request_id ? { request_id } : {}),
     ...(errors ? { errors } : {}),
   };

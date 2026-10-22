@@ -17,16 +17,15 @@ import {
 import type { Metadata } from "next";
 
 interface ReportPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
   return demoReports.map((r) => ({ slug: r.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ReportPageProps): Promise<Metadata> {
+export async function generateMetadata(props: ReportPageProps): Promise<Metadata> {
+  const params = await props.params;
   const report = getReportBySlug(params.slug);
   if (!report) return { title: "Not Found" };
 
@@ -37,7 +36,8 @@ export async function generateMetadata({
   };
 }
 
-export default function ReportPage({ params }: ReportPageProps) {
+export default async function ReportPage(props: ReportPageProps) {
+  const params = await props.params;
   const report = getReportBySlug(params.slug);
   if (!report) notFound();
 

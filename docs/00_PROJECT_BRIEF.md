@@ -1,6 +1,6 @@
 # 00 Project Brief
 
-88CN is the Free AI Project Growth Index.
+123Charts is the Free AI Project Growth Index.
 
 ## Phase 1 Definition
 

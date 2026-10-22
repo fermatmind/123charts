@@ -42,7 +42,7 @@ A future fixture dry-run must remain bounded:
 | Concurrency | 0 for fixture-only; 1 preferred for any later low-concurrency approved run |
 | Timeout | 8 seconds maximum if a later network run is approved |
 | Retries | 3 attempts maximum including initial attempt if a later network run is approved |
-| Output path | `/tmp/88cn-audit-dry-run-*` only unless a later fixture task approves committed fixtures |
+| Output path | `/tmp/123charts-audit-dry-run-*` only unless a later fixture task approves committed fixtures |
 | Production write | Forbidden |
 | Public exposure | Forbidden |
 

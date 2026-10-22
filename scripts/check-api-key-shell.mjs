@@ -65,7 +65,7 @@ function assertNoForbiddenRouteBehavior(file, content, list = failures) {
     if (content.includes(marker)) addFailure(list, `${file} contains forbidden marker ${marker}`);
   }
 
-  const keyLikePattern = new RegExp(`(?:sk_|ak_|88cn_live_|${'api' + '_key' + '_'})`);
+  const keyLikePattern = new RegExp(`(?:sk_|ak_|123charts_live_|${'api' + '_key' + '_'})`);
   if (keyLikePattern.test(content)) {
     addFailure(list, `${file} contains key-like fixture material`);
   }
@@ -102,7 +102,7 @@ function validateRoute(content, list = failures) {
 
 function validateProblem(content) {
   for (const marker of [
-    'https://88cn.com/problems/api-keys-disabled',
+    'https://123charts.com/problems/api-keys-disabled',
     'API key access is disabled',
     '503',
     'Alpha Data Feed API key access is not enabled for this environment.',
@@ -135,7 +135,7 @@ function validateChangedFileBoundaries() {
 }
 
 function validateFixture(name, files) {
-  const tmpRoot = path.join('/tmp', `88cn-pr88-${name}`);
+  const tmpRoot = path.join('/tmp', `123charts-pr88-${name}`);
   fs.rmSync(tmpRoot, { recursive: true, force: true });
   for (const [relative, content] of Object.entries(files)) {
     const full = path.join(tmpRoot, relative);

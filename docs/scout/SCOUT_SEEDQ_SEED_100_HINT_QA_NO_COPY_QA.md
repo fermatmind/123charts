@@ -31,9 +31,9 @@ Reviewed committed files:
 
 Reviewed local-only generated files:
 
-- `/tmp/88cn-pr164-seed-identity-hints-local-pack.jsonl`
-- `/tmp/88cn-pr164-seed-identity-hints-rejected-or-weak.jsonl`
-- `/tmp/88cn-pr164-seed-identity-hints-manifest.json`
+- `/tmp/123charts-pr164-seed-identity-hints-local-pack.jsonl`
+- `/tmp/123charts-pr164-seed-identity-hints-rejected-or-weak.jsonl`
+- `/tmp/123charts-pr164-seed-identity-hints-manifest.json`
 
 ## Local Pack QA
 
@@ -106,8 +106,8 @@ PR165 verifies:
 - no competitor descriptions were committed;
 - no directory category text was committed;
 - no directory ranking, score, review, recommendation, popularity label, or sponsored-order data was committed;
-- no README or marketing copy was copied into public 88CN copy;
-- `manual_note` remains short original 88CN reviewer wording for local identity context only;
+- no README or marketing copy was copied into public 123Charts copy;
+- `manual_note` remains short original 123Charts reviewer wording for local identity context only;
 - Product Hunt and directory inputs remain discovery/source hints, not copy sources.
 
 ## PII / Private Data QA

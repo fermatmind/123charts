@@ -1,4 +1,4 @@
-# 88CN Agent Boundary Policy
+# 123Charts Agent Boundary Policy
 
 ## Hard Rule
 
@@ -71,7 +71,7 @@ External HTTP audit runtime allowed: no
 Browser fallback allowed: no
 Redis/queue runtime allowed: no
 Supabase/staging/production write allowed: no
-88CN repo mutation allowed: no
+123Charts repo mutation allowed: no
 88cn-index-data mutation allowed: no
 published_projection mutation allowed: no
 sitemap mutation allowed: no

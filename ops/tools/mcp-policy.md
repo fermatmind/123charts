@@ -16,11 +16,11 @@ MCP tools must not:
 - write Supabase production data
 - run Stripe live operations
 - mutate cloud servers or DNS
-- bypass 88CN public API boundaries
+- bypass 123Charts public API boundaries
 
-## Future 88CN MCP Rule
+## Future 123Charts MCP Rule
 
-A future 88CN MCP server may read only from the Public API allowlist. It must not query Supabase directly. It must not expose submitted, pending, quarantined, founder email, admin metadata, payment data, or private import payloads.
+A future 123Charts MCP server may read only from the Public API allowlist. It must not query Supabase directly. It must not expose submitted, pending, quarantined, founder email, admin metadata, payment data, or private import payloads.
 
 ## Config Safety
 

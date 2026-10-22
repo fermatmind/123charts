@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const PROBLEM_JSON = "application/problem+json";
 
 const disabledProblem = {
-  type: "https://88cn.com/problems/data-buyer-interest-disabled",
+  type: "https://123charts.com/problems/data-buyer-interest-disabled",
   title: "Data buyer interest is disabled",
   status: 503,
   detail: "Alpha Feed buyer interest collection is not enabled for this environment.",

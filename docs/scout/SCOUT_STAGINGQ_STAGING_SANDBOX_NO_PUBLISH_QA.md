@@ -41,7 +41,7 @@ The reviewed range did not change `app/**`, `components/**`, `lib/**`, `scripts/
 Local PR171 manifest:
 
 ```text
-/tmp/88cn-pr171-staging-sandbox-local-write-dry-run.json
+/tmp/123charts-pr171-staging-sandbox-local-write-dry-run.json
 ```
 
 Manifest checks:

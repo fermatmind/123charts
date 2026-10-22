@@ -1,6 +1,6 @@
 # 11 Scalability Guards
 
-88CN must scale by staying static on the public path and asynchronous on the data path.
+123Charts must scale by staying static on the public path and asynchronous on the data path.
 
 ## Core Shape
 

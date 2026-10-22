@@ -3,7 +3,7 @@ import os from "node:os";
 import path from "node:path";
 
 const root = process.cwd();
-const defaultOutDir = path.join(os.tmpdir(), "88cn-github-profile-mirror");
+const defaultOutDir = path.join(os.tmpdir(), "123charts-github-profile-mirror");
 const localProjectSource = path.join(root, "lib/demo-projects.ts");
 const dataRepoPath = path.resolve(root, "../88cn-index-data");
 const allowedStatuses = new Set(["published", "claimed", "owner_verified"]);
@@ -200,14 +200,14 @@ function escapeMarkdown(value) {
 function renderProject(project) {
   assertSafeProject(project);
 
-  const profileUrl = `https://88cn.example/projects/${project.slug}`;
+  const profileUrl = `https://123charts.example/projects/${project.slug}`;
   const markdown = `# ${escapeMarkdown(project.name)}
 
 ${escapeMarkdown(project.tagline)}
 
 ## Public Profile
 
-- 88CN profile: ${profileUrl}
+- 123Charts profile: ${profileUrl}
 - Official site: ${safeUrl(project.website)}
 - Public GitHub: ${publicGitHubUrl(project)}
 - Docs: ${docsUrl(project)}
@@ -223,13 +223,13 @@ ${escapeMarkdown(project.tagline)}
 - SEO foundation: ${signalLabel}
 - Trust confidence: ${signalLabel}
 
-## 88CN Editorial Note
+## 123Charts Editorial Note
 
 ${escapeMarkdown(publicEditorialNote(project))}
 
 ## Boundaries
 
-- Generated from reviewed public 88CN data only.
+- Generated from reviewed public 123Charts data only.
 - Does not include private founder, payment, admin, analytics, or review metadata.
 - Does not promise ranking, traffic, citation, funding, revenue, or adoption outcomes.
 `;

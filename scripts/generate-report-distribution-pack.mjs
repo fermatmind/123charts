@@ -12,7 +12,7 @@ function parseArgs(argv) {
   const options = {
     dryRun: false,
     outputDirectory: DEFAULT_REPORT_DISTRIBUTION_OUT_DIR,
-    baseUrl: "https://88cn.com",
+    baseUrl: "https://123charts.com",
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -47,7 +47,7 @@ Options:
   --out <dir>           Output directory outside the repo.
                         Default: ${DEFAULT_REPORT_DISTRIBUTION_OUT_DIR}
   --base-url <url>      Public base URL for report links.
-                        Default: https://88cn.com
+                        Default: https://123charts.com
 `);
 }
 
