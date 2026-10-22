@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T11:41:24.340536+00:00",
+  "updated_at": "2026-10-22T11:48:31.501442+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 32,
+  "completed_count": 34,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -37,9 +37,11 @@
     "projects/api-management/stoplight-00629820.json",
     "projects/api-management/treblle-f7dbda02.json",
     "projects/api-management/tyk-api-management-platform-a2eb5232.json",
-    "projects/api-management/wso2-api-manager-aef076cc.json"
+    "projects/api-management/wso2-api-manager-aef076cc.json",
+    "projects/application-development/8base-6c4e6a63.json",
+    "projects/application-development/appwrite-dc893cb3.json"
   ],
-  "remaining_count": 167,
+  "remaining_count": 165,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -52,8 +54,6 @@
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
-    "projects/application-development/8base-6c4e6a63.json",
-    "projects/application-development/appwrite-dc893cb3.json",
     "projects/application-development/atoms-69978950.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
     "projects/application-development/five-94ffc3fa.json",
@@ -269,6 +269,14 @@
     {
       "project": "WSO2 API Manager",
       "detail": "4.7 API-bound key behavior differs from older key model; subscription token cache can delay blocking/unblocking, distinct from described immediate API-key revocation. Self-hosted enterprise quote separated from platform cloud Growth starting119."
+    },
+    {
+      "project": "8base",
+      "detail": "Function docs still name Node14; current runtime/provisioning not tested. Pricing mixes developer/project/workspace/capacity units; no normalized all-in price. Unrelated homepage token-sale banner not followed and no ownership/closure inference made."
+    },
+    {
+      "project": "Appwrite",
+      "detail": "No base subscription cards or full quota matrix in either public reader or rendered browser; only actual database compute pricing and billing conditions used. Table OR row grants, proper-scoped server bypass, conflict behavior and backup key dependency documented. Generic row-create wording conflicts with helper restriction."
     }
   ],
   "verification": [
@@ -278,7 +286,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 35 primary-source researched globally (3 baseline + 32 assigned), 1000 records checked"
+      "result": "passed: 37 primary-source researched globally (3 baseline + 34 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -330,15 +338,21 @@
       "commit": "6d9ab3e",
       "completed_count": 29,
       "scope": "Sparrow and Stoplight; RestCase access/availability gap; pushed"
+    },
+    {
+      "commit": "9e28a87",
+      "completed_count": 32,
+      "scope": "Treblle, Tyk, WSO2 API Manager; all API category entries investigated; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "application-development: first assigned records",
+    "next": "Atoms, Clustered Cloud, Five",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps"
+    "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
+    "application-development": "2 of 16 complete; 1 investigated but incomplete with official access/scope gap; 13 not yet processed"
   },
   "identity_changes": [
     {
@@ -425,6 +439,10 @@
     {
       "project_path": "projects/api-management/restcase-40145ac2.json",
       "reason": "Official homepage returned a title but zero readable content; /pricing returned 404. The docs.restcase.com page currently says the domain is unclaimed. Current product availability, documentation and pricing are therefore not established. No claim of closure or ownership change is inferred, and this record is not counted complete."
+    },
+    {
+      "project_path": "projects/application-development/3pillar-global-f439406e.json",
+      "reason": "Official homepage returned HTTP 403. No bypass was attempted, and search did not establish sufficient readable official service workflow, engagement/pricing or product-license evidence. The directory software labels are not upgraded to verified SaaS capabilities. Current delivery remains incomplete."
     }
   ],
   "availability_updates": [
