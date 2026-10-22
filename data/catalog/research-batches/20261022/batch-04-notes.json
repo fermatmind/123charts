@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T15:33:45.494177+00:00",
+  "updated_at": "2026-10-22T15:40:59.558810+00:00",
   "assigned": 132,
-  "completed_count": 71,
+  "completed_count": 72,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -77,9 +77,10 @@
     "projects/call-center/hoducc-b652208b.json",
     "projects/call-center/hyperdial-6cbb4b97.json",
     "projects/call-center/icallify-b203b120.json",
-    "projects/call-center/intalk-io-5f112943.json"
+    "projects/call-center/intalk-io-5f112943.json",
+    "projects/call-center/krispcall-358c5c55.json"
   ],
-  "incomplete_count": 61,
+  "incomplete_count": 60,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -102,7 +103,6 @@
     "projects/call-center/ameyo-engage-9ab35131.json",
     "projects/call-center/calltools-0d43ce02.json",
     "projects/call-center/knowlarity-0c719323.json",
-    "projects/call-center/krispcall-358c5c55.json",
     "projects/call-center/my-hotline-76f16d10.json",
     "projects/call-center/nextiva-5e531374.json",
     "projects/call-center/sanccs-fb1c2695.json",
@@ -678,6 +678,45 @@
           "action": "stop_no_bypass"
         }
       ]
+    },
+    {
+      "project": "projects/call-center/knowlarity-0c719323.json",
+      "status": "research_incomplete_tls_and_primary_page_access",
+      "observed": "Ordinary verified HTTPS assigned homepage and pricing/voice failed certificate verification (unable to get local issuer certificate); TLS was not bypassed. Web reader homepage/naked domain and product/pricing/small-business URLs were inaccessible or returned502. Official search discovery contains plans but snippets are not full-page evidence and third-party pricing includes conflicting units/currencies. No actual readable product/pricing contract sufficient for deep profile;candidate unchanged,not counted.",
+      "evidence": [
+        {
+          "requested_url": "https://www.knowlarity.com/",
+          "result": "CERTIFICATE_VERIFY_FAILED unable to get local issuer certificate",
+          "action": "no_tls_bypass"
+        },
+        {
+          "requested_url": "https://www.knowlarity.com/pricing/voice",
+          "result": "CERTIFICATE_VERIFY_FAILED ordinary HTTPS;web_reader502",
+          "action": "no_tls_bypass"
+        },
+        {
+          "requested_url": "https://www.knowlarity.com/small-business",
+          "result": "web_reader502;search discovery not full source",
+          "action": "not_promoted_to_verified"
+        }
+      ],
+      "checked_at": "2026-10-22T15:34:36.958728+00:00"
+    },
+    {
+      "project": "projects/call-center/my-hotline-76f16d10.json",
+      "status": "research_incomplete_assigned_page_content_contamination",
+      "observed": "Assignedmyhotline.cohomepageHTTP200actuallyread;bodydominatedbymultilingualcasino/promotionalunrelatedlinksandcopy,withlegacyMyHotlinecontact/footerandlogin/demoOTPformstillpresent.Thisobservationdoesnotestablishcause,ownershipchangeorcompromise.Noexternalpromotional/gamblinglinkfollowed,nologin/OTP/formaction.Noauthoritativereadablecallcenterworkflow/price/licenseestablishedfromthisbody,candidateunchangedandnotcounted.",
+      "evidence": [
+        {
+          "url": "https://myhotline.co/",
+          "requested_url": "https://myhotline.co/",
+          "title": "Home - My Hotline",
+          "read_at": "2026-10-22T15:34:19.468137+00:00",
+          "http_status": 200,
+          "body_sha256": "dea5b4cbf9ad2f52d61b33fd4bf36b6da86ee39b77d41622786287510a8adc42",
+          "excerpt_sha256": "e8815c877cb522fc8040a1596dee3314e3509fcc98742494389d3b80cd0e9f7a"
+        }
+      ]
     }
   ],
   "verification": [
@@ -1133,6 +1172,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch71 completed,61 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch72 completed,60 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1432,8 +1481,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "03de2a5",
       "completed": ["projects/call-center/intalk-io-5f112943.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/krispcall-358c5c55.json"],
       "status": "ready_to_commit"
     }
   ],
