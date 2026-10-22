@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T10:32:02.179485+00:00",
+  "updated_at": "2026-10-22T10:53:55.144093+00:00",
   "assigned": 204,
-  "completed_count": 9,
+  "completed_count": 14,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -15,23 +15,23 @@
     "projects/crm/highlevel-3172bdfa.json",
     "projects/crm/hubspot-crm-00675aa8.json",
     "projects/crm/mindcat-inbox-9e5a7124.json",
-    "projects/crm/nethunt-crm-412793ca.json"
+    "projects/crm/nethunt-crm-412793ca.json",
+    "projects/crm/bunch-crm-785fd2f8.json",
+    "projects/crm/bytepaper-cbf0d470.json",
+    "projects/crm/pipeliner-crm-6a48a383.json",
+    "projects/crm/salesforce-6268792d.json",
+    "projects/crm/vinsolutions-connect-crm-06bac125.json"
   ],
-  "incomplete_count": 195,
+  "incomplete_count": 190,
   "remaining_projects": [
     "projects/crm/archiz-crm-3b56403d.json",
     "projects/crm/aurea-crm-2db99d1d.json",
-    "projects/crm/bunch-crm-785fd2f8.json",
-    "projects/crm/bytepaper-cbf0d470.json",
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
     "projects/crm/mr-milkman-a1895a2a.json",
     "projects/crm/oncontact-crm-b4c091ba.json",
     "projects/crm/pipedrive-crm-4a41bd76.json",
-    "projects/crm/pipeliner-crm-6a48a383.json",
     "projects/crm/quickdesk-6b00414e.json",
-    "projects/crm/salesforce-6268792d.json",
-    "projects/crm/vinsolutions-connect-crm-06bac125.json",
     "projects/help-desk/bolddesk-b05f86ef.json",
     "projects/help-desk/bund-ai-cf2e0dd9.json",
     "projects/help-desk/commbox-2b5ea56a.json",
@@ -229,13 +229,13 @@
     },
     {
       "project": "projects/crm/bunch-crm-785fd2f8.json",
-      "status": "research_incomplete",
-      "observed": "Official homepage could not be read by public web reader, including canonical URL without trailing slash. No current product or pricing evidence established."
+      "status": "resolved_documentation_researched",
+      "observed": "Ordinary HTTPS HTTP 200: bunchcrm.com redirects to mybunch.ai. Current product, workflows, pricing and terms read. Projects card and trial billing conflicts retained. Canonical/domain updated in own record; shared indexes remain coordinator-owned."
     },
     {
       "project": "projects/crm/bytepaper-cbf0d470.json",
-      "status": "research_incomplete",
-      "observed": "www and apex homepages inaccessible in public reader. Search found official Bytepaper-for-Pharmacies.pdf; opening failed with content length too large (18,990,880 bytes). Search snippets are discovery only, not counted as actual product research."
+      "status": "resolved_documentation_researched",
+      "observed": "Ordinary HTTPS HTTP 200 from bytepaper.com and official workflow/pricing/terms pages. Conflicting old/new tables retained; normalized price unknown. No access restriction bypass."
     },
     {
       "project": "projects/crm/dokiocrm-a1c2366b.json",
@@ -251,6 +251,21 @@
       "project": "projects/crm/mr-milkman-a1895a2a.json",
       "status": "research_incomplete",
       "observed": "milkmanapps.com redirected to an unrelated domain; public reader rejected target as unsafe/non-retryable. Old URL not evidence for current product identity. No retry or navigation to unrelated destination."
+    },
+    {
+      "project": "projects/crm/oncontact-crm-b4c091ba.json",
+      "status": "research_incomplete",
+      "observed": "Web reader inaccessible; ordinary HTTPS failed SSL UNEXPECTED_EOF. No TLS bypass; current official identity requires more evidence."
+    },
+    {
+      "project": "projects/crm/pipedrive-crm-4a41bd76.json",
+      "status": "research_incomplete",
+      "observed": "Homepage read; pricing endpoint returned HTTP 403 in ordinary HTTPS. Stopped at endpoint; other product documentation remains to research."
+    },
+    {
+      "project": "projects/crm/quickdesk-6b00414e.json",
+      "status": "research_incomplete",
+      "observed": "quickdesk.io redirects to theqdacademy.com AI courses academy; original CRM availability not established."
     }
   ],
   "verification": [
@@ -270,6 +285,15 @@
         "git diff --check"
       ],
       "result": "Passed: 1000 projects, 50 categories, 12 total primary-source-researched including original 3; this batch contributes 9. No factual quality inferred from validator."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on five changed CRM JSONs and these notes",
+        "git diff --check"
+      ],
+      "result": "7 tests passed; records-only passed (1000 projects, 50 categories, 17 researched including original 3; batch contributes 14); formatting and diff check passed. Structural checks do not establish factual quality."
     }
   ],
   "checkpoints": [
@@ -298,11 +322,22 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "6d71ba1",
       "completed": [
         "projects/crm/hubspot-crm-00675aa8.json",
         "projects/crm/mindcat-inbox-9e5a7124.json",
         "projects/crm/nethunt-crm-412793ca.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/crm/bunch-crm-785fd2f8.json",
+        "projects/crm/bytepaper-cbf0d470.json",
+        "projects/crm/pipeliner-crm-6a48a383.json",
+        "projects/crm/salesforce-6268792d.json",
+        "projects/crm/vinsolutions-connect-crm-06bac125.json"
       ],
       "status": "ready_to_commit"
     }
