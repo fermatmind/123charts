@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T15:30:40.849966+00:00",
-  "status": "in_progress",
+  "updated_at": "2026-10-22T15:53:11.011796+00:00",
+  "status": "investigated_with_source_gaps",
   "assigned": 140,
-  "completed_count": 99,
+  "completed_count": 105,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
@@ -74,6 +74,12 @@
     "projects/monitoring/manageengine-oputils-072c08c2.json",
     "projects/monitoring/netify-3befc7dc.json",
     "projects/monitoring/pandora-fms-d5ecb72a.json",
+    "projects/monitoring/pingplotter-13108945.json",
+    "projects/monitoring/plixer-flowpro-75c97df2.json",
+    "projects/monitoring/site24x7-658464e8.json",
+    "projects/monitoring/solarwinds-engineer-s-toolset-345d19cf.json",
+    "projects/monitoring/sophos-central-e2e54d52.json",
+    "projects/monitoring/trisul-network-analytics-15123bc8.json",
     "projects/no-code/adalo-471bff37.json",
     "projects/no-code/airslate-workflow-5369295c.json",
     "projects/no-code/anything-09e116dc.json",
@@ -106,7 +112,7 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 41,
+  "remaining_count": 35,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -129,13 +135,7 @@
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
     "projects/monitoring/panopta-5788d04c.json",
-    "projects/monitoring/pingplotter-13108945.json",
-    "projects/monitoring/plixer-flowpro-75c97df2.json",
     "projects/monitoring/sinefa-16ac53d6.json",
-    "projects/monitoring/site24x7-658464e8.json",
-    "projects/monitoring/solarwinds-engineer-s-toolset-345d19cf.json",
-    "projects/monitoring/sophos-central-e2e54d52.json",
-    "projects/monitoring/trisul-network-analytics-15123bc8.json",
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
     "projects/no-code/checkbox-930acc8a.json",
@@ -402,16 +402,52 @@
     {
       "project": "Testsigma",
       "detail": "Pending locator versus primary approval/all linked cases, local Agent data flow, plan delete removes history and Upcoming Autonomous pricing distinction retained."
+    },
+    {
+      "project": "PingPlotter",
+      "detail": "Endpoint correlation, intermediate ICMP loss, selected autosave and stopped-process backup; limited Free vs paid Desktop/Cloud scope kept separate."
+    },
+    {
+      "project": "SolarWinds Engineer's Toolset",
+      "detail": "Desktop/Web docs distinguished; active WAN load and platform credential fallback explicit.14-day evaluation actual grant read; numeric quote absent, Workspace Studio originals timed out twice."
+    },
+    {
+      "project": "Plixer FlowPro",
+      "detail": "Actual20.2.0 deployment body read; earlier429 and later documented-link resolution recorded honestly. Detailed functionality429 not retried. Scrutinizer/PlixerOne bundle rates not sensor-only prices; old-appliance redeployment and basic-IPFIX-without-rules retained."
+    },
+    {
+      "project": "Sophos Central",
+      "detail": "Read-only settings do not hide sensitive logs; Help Desk can scan/update/clear. First applicable full policy, Base fallback,2-method MFA and protection loss on license expiry documented. Included console is not free protection."
+    },
+    {
+      "project": "Site24x7",
+      "detail": "Observability rename scope explicit. Poller failure is not target failure; HA restricted to Enterprise/MSP Enterprise and waits3polls; SuperAdmin report edits can expand group-admin access."
+    },
+    {
+      "project": "PingPlotter",
+      "detail": "Professional plan summary says unlimited targets but comparison row labels100s; exact effective cap left unverified."
+    },
+    {
+      "project": "Site24x7",
+      "detail": "Current website URL workflow also read: POST submits parameters; response/header storage sends content to AppLogs and consumes size-based capacity; higher frequency/dual-stack checks can consume more monitor credits."
     }
   ],
   "verification": [
     {
       "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed:7 tests"
+      "result": "passed:7 tests; catalog parser/utility tests unchanged during subsequent record-only edits"
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/102 global researched (3 baseline +99 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/108 global researched (3 baseline +105 assigned)/0 untranslated labels; structure/references only"
+    },
+    {
+      "command": "Local raw-excerpt SHA-256 and canonical URL comparison for final6 records",
+      "result": "passed: all referenced original capture hashes match; source URLs match actual fetch/redirect metadata"
+    },
+    {
+      "command": "Ownership and draft-state checks",
+      "result": "passed:105 completed +35 incomplete =140 retained;59 transferred excluded;0 uninvestigated; all remain draft without independent review or hands-on claims"
     }
   ],
   "checkpoints": [
@@ -574,13 +610,18 @@
       "commit": "5d6a5e5",
       "completed_count": 96,
       "scope": "Auvik, Azure Network Watcher, Mackerel; IntelliMagic/LiveNX gaps; pushed"
+    },
+    {
+      "commit": "28a0ef5",
+      "completed_count": 99,
+      "scope": "OpUtils, Netify, Pandora FMS; Panopta gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "16 retained monitoring records",
+    "next": "No uninvestigated retained projects.35 investigated candidates remain incomplete;59 transferred projects are excluded from this batch.",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
@@ -588,7 +629,7 @@
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
     "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
     "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps.",
-    "monitoring": "6 of16 retained complete; IntelliMagic, LiveNX and Panopta incomplete;7 remaining under investigation."
+    "monitoring": "12 of16 retained complete; all16 investigated. IntelliMagic, LiveNX, Panopta and Sinefa remain incomplete with original-access, pricing/authority or lifecycle gaps."
   },
   "identity_changes": [
     {
@@ -672,10 +713,23 @@
       "old_domain": "glideapps.com",
       "current_domain": "glideapps.com",
       "evidence": "Official Classic page and documentation retain original platform; main pricing FAQ explicitly separates GlideOS accounts, subscriptions and data. Slug retained, website narrowed to /classic."
+    },
+    {
+      "project": "Site24x7",
+      "old_domain": "site24x7.com",
+      "current_domain": "site24x7.com",
+      "evidence": "Actual vendor announcement retains Site24x7 for website/DEM and renames observability to OpManager Nexus. Existing deployment, agreements, APIs and docs remain; record is not blanket-renamed or silently merged."
+    },
+    {
+      "project": "Sophos Central",
+      "old_domain": "sophos.com",
+      "current_domain": "sophos.com",
+      "evidence": "Actual product FAQ says Fusion name rolls out gradually; current Admin docs already use Fusion. Central identity retained with explicit transition; tenant rollout not tested."
     }
   ],
   "content_corrections": [
-    "Cyclr versioning section narrowed to documented behavior for new installations; automatic updating of already installed Cycles is not claimed."
+    "Cyclr versioning section narrowed to documented behavior for new installations; automatic updating of already installed Cycles is not claimed.",
+    "Trisul canonical homepage hostname synchronized to trisul.org after actual redirect; identity_domain unchanged."
   ],
   "blocked_projects": [
     {
@@ -813,6 +867,10 @@
     {
       "project_path": "projects/monitoring/panopta-5788d04c.json",
       "reason": "The assigned Panopta homepage redirects to Fortinet FortiMonitor. Actual FortiMonitor product body was read, but its official FortiCloud purchase/licensing documentation returned403; no retry or bypass. Public demo marketing and search excerpts do not establish current fees, complete technical operation or a sustained-free entitlement. The legacy candidate remains incomplete; no shutdown inference or new-domain approval was fabricated."
+    },
+    {
+      "project_path": "projects/monitoring/sinefa-16ac53d6.json",
+      "reason": "The legacy Sinefa homepage was inaccessible. An actual Palo Alto Networks end-of-sale notice states all Sinefa products reached end of sale on24 November2020; assistance ended by31 December2021 or the applicable license end, whichever came first. No current independently purchasable Sinefa offer, supported technical workflow or license was established. A later Palo Alto product is not silently substituted. This historical candidate remains incomplete."
     }
   ],
   "availability_updates": [
@@ -828,6 +886,14 @@
     {
       "project": "Koding",
       "detail": "Official register page explicitly disables hosted signup and directs self-managed installation. Homepage software-free claim does not imply free hosted infrastructure."
+    },
+    {
+      "project": "Sinefa",
+      "detail": "Actual acquirer notice confirms all products EOS24 November2020 and assistance bounded by31 December2021/license end. Inaccessible legacy homepage and no current offer; candidate remains incomplete."
+    },
+    {
+      "project": "Trisul Network Analytics",
+      "detail": "Actual current free-license page withdraws old rolling3-day grant;7-day trial expires. Current docs8.0 versus pricing per-probe FAQ naming7.0 remains a quote gap."
     }
   ],
   "external_authority_reads": [
@@ -1291,10 +1357,45 @@
       "excerpt_sha256": "f66a98441642ac5cbb737e7166711f1b5bb52701ae382827cb6bad8f2288a8e2",
       "read_at": "2026-10-22T15:20:44.889220+00:00",
       "use": "Actual official destination body read for incomplete Panopta identity/fees/docs record; no product test."
+    },
+    {
+      "capture": "sinefa-entry-0",
+      "actual_url": "https://www.sinefa.com/",
+      "excerpt_sha256": "0798f5f934ba8f2b8961356dd9aebe0093bc3de292bdb620c3a7e24db7ad898e",
+      "read_at": "2026-10-22T15:25:33.757819+00:00",
+      "use": "Assigned legacy homepage unavailable; no live product offer inferred."
+    },
+    {
+      "capture": "sinefa-eos-body-0",
+      "actual_url": "https://origin-www.paloaltonetworks.com/services/support/end-of-life-announcements/end-of-sale",
+      "excerpt_sha256": "ed22787720126ee4d3ae8e8fb9a96c34efe4f2f331f2d797133e43b7087f9f7b",
+      "read_at": "2026-10-22T15:35:13.822368+00:00",
+      "use": "Actual original notice read at lines819-823: all Sinefa products EOS24 November2020 and bounded assistance. Acquirer historical evidence, not current Sinefa pricing/documentation."
+    },
+    {
+      "capture": "flowpro-deploy-0",
+      "actual_url": "https://docs.plixer.com/projects/flowpro/en/latest/flowProDeploymentGuides.html",
+      "excerpt_sha256": "a099aa2ca1c7512d8b096d6a09eca04186faebd0eb8a7561c17178bee1733cfc",
+      "read_at": "2026-10-22T15:35:39.196668+00:00",
+      "use": "Earlier request returned429. A later distinct initial-configuration navigation resolved to the same deployment-guide resource and returned readable body; no credentials or alternate transport used. This records the navigation outcome rather than claiming uninterrupted access."
+    },
+    {
+      "capture": "flowpro-config-1",
+      "actual_url": "https://docs.plixer.com/projects/flowpro/en/latest/flowProFeaturesAndFunctionality/flowpro_functionality.html",
+      "excerpt_sha256": "e677a925e0bacc0c334dcfb90b55b343e63963896e351c0f3050a072fe488ce6",
+      "read_at": "2026-10-22T15:37:59.112326+00:00",
+      "use": "Functionality/selective-capture link returned429; not retried and not used as body evidence."
+    },
+    {
+      "capture": "solarwinds-workspace-retry-0",
+      "actual_url": "https://documentation.solarwinds.com/en/success_center/ets-desk/content/workspace-studio.htm",
+      "excerpt_sha256": "3169bdacd780b8ac2f2a38e52e2f9b213b6257c1e2d30662b23274161fb1693d",
+      "read_at": "2026-10-22T15:38:57.306943+00:00",
+      "use": "Workspace Studio normal request and one retry timed out; search excerpts not adopted."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 41,
+  "retained_remaining_count": 35,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -1317,13 +1418,7 @@
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
     "projects/monitoring/livenx-0f555bbe.json",
     "projects/monitoring/panopta-5788d04c.json",
-    "projects/monitoring/pingplotter-13108945.json",
-    "projects/monitoring/plixer-flowpro-75c97df2.json",
     "projects/monitoring/sinefa-16ac53d6.json",
-    "projects/monitoring/site24x7-658464e8.json",
-    "projects/monitoring/solarwinds-engineer-s-toolset-345d19cf.json",
-    "projects/monitoring/sophos-central-e2e54d52.json",
-    "projects/monitoring/trisul-network-analytics-15123bc8.json",
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
     "projects/no-code/checkbox-930acc8a.json",
@@ -1412,5 +1507,7 @@
     "retained_remaining_count": 60,
     "completed_count": 80,
     "scope": "Original completed records remain maintained by batch-01; current remaining scope is retained paths only. Transfer is ownership change, not research completion."
-  }
+  },
+  "investigated_count": 140,
+  "uninvestigated_count": 0
 }
