@@ -100,7 +100,7 @@ export function DiscoveryDashboard({
           <div className="section-heading">
             <h2>{t("Applications & updates", "申请与后续更新")}</h2>
             <Link className="button primary" href={href("/submit")}>
-              {t("Submit website", "免费提交网站")}
+              {t("Submit a tool for free", "免费提交工具")}
             </Link>
           </div>
           {data.applications
@@ -216,8 +216,8 @@ export function DiscoveryDashboard({
         ) : (
           <p className="muted">
             {t(
-              "Save a website or follow a category to build your next visit.",
-              "收藏网站或关注分类，为下次选择留下入口。",
+              "Save a tool or follow a category to build your next visit.",
+              "收藏工具或关注分类，为下次选择留下入口。",
             )}
           </p>
         )}
@@ -247,8 +247,8 @@ export function DiscoveryFollowing({
         <h1>{t("Saved & following", "收藏与关注")}</h1>
         <p>
           {t(
-            "Your websites, task categories and alternatives. Follow updates only when you choose.",
-            "保存网站、任务分类和替代方案。由你选择是否订阅更新。",
+            "Your tools, task categories and alternatives. Follow updates only when you choose.",
+            "保存工具、任务分类和替代方案。由你选择是否订阅更新。",
           )}
         </p>
       </div>
@@ -323,7 +323,7 @@ export function DiscoveryFollowing({
       {!data.follows.length && (
         <p className="notice">
           {t(
-            "No saved websites yet. Explore a category and save useful choices.",
+            "No saved tools yet. Explore a category and save useful choices.",
             "还没有收藏，探索分类并保存有用的选择。",
           )}
         </p>

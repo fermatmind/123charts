@@ -3,7 +3,7 @@ import Link from "next/link";
 import { brand } from "@/lib/charts/brand";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useCharts, Empty } from "./context";
+import { useCharts, Empty, Status } from "./context";
 import { prices } from "@/lib/charts/discovery";
 import type { Application, Draft, Peer } from "@/lib/charts/types";
 const blank: Draft = {
@@ -183,7 +183,7 @@ export function DiscoverySubmit() {
   if (!data.user)
     return (
       <div className="discovery-page">
-        <Empty title={t("Submit your website for free", "免费提交你的网站")}>
+        <Empty title={t("Submit your tool for free", "免费提交你的工具")}>
           <p>
             {t(
               "Create a free account. Share the task, conditions and 3–5 relevant peers.",
@@ -201,15 +201,17 @@ export function DiscoverySubmit() {
       <div className="discovery-page">
         <h1>{t("Your profile preview is ready", "档案预览已准备好")}</h1>
         <h2>{draft.name}</h2>
+        <Status value={existing?.status || "submitted"} />
         <p>{locale === "zh" ? draft.description_zh : draft.description_en}</p>
         <p>
           {draft.task} · {draft.peers.length}{" "}
           {t("related peers submitted", "个相关同行已提交")}
         </p>
+        <p className="submission-benefits">{brand[locale].benefits}</p>
         <p className="notice">
           {t(
-            "Submitted for review. A nomination becomes a public alternative only after relationship review.",
-            "已提交审核。提名关系经核实后才成为公开替代入口。",
+            "See your application status here or in the workspace. Peer candidates become public alternatives only after separate relationship review.",
+            "处理状态以申请和工作台记录为准。同行是关系候选，单独审核确认后才成为公开替代入口。",
           )}
         </p>
         <Link className="button" href={href("/dashboard")}>
@@ -224,10 +226,13 @@ export function DiscoverySubmit() {
           FREE LISTING /{" "}
           {project ? t("UPDATE", "后续更新") : t("THREE STEPS", "三步提交")}
         </div>
-        <h1>{t("Put your website in context.", "让需要它的人发现它。")}</h1>
+        <h1>
+          {t("Help people discover your tool.", "让需要的人发现你的工具。")}
+        </h1>
         <p>{brand[locale].freeListing}</p>
       </div>
       <p className="platform-free-note">{brand[locale].platformFree}</p>
+      <p className="submission-benefits">{brand[locale].benefits}</p>
       <div className="discovery-steps">
         {[
           t("1 · Website", "1 · 官网"),
@@ -269,7 +274,7 @@ export function DiscoverySubmit() {
           >
             {job
               ? t("Extracting…", "正在提取…")
-              : t("Prefill website details", "提取网站资料")}
+              : t("Prefill tool details", "提取工具资料")}
           </button>
           {job && data.jobs.find((j) => j.id === job)?.state === "failed" && (
             <p className="notice">
@@ -283,9 +288,9 @@ export function DiscoverySubmit() {
             </p>
           )}
           <label>
-            {t("Website name", "网站名称")}
+            {t("Tool name", "工具名称")}
             <input
-              aria-label="Website name"
+              aria-label="Tool name"
               value={draft.name}
               onChange={(e) => update("name", e.target.value)}
             />
@@ -436,8 +441,8 @@ export function DiscoverySubmit() {
           )}
           <p className="muted">
             {t(
-              "Existing websites count. Explain the shared task, not a broad claim to replace the entire product.",
-              "可以选择已有网站，说明共同任务；不要把局部比较写成全面替代。",
+              "Existing tools count. Explain the shared task, not a broad claim to replace the entire product.",
+              "可以选择已有工具，说明共同任务；不要把局部比较写成全面替代。",
             )}
           </p>
           <label>
@@ -446,7 +451,7 @@ export function DiscoverySubmit() {
               aria-label="Find peer"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder={t("Website name or domain", "网站名或域名")}
+              placeholder={t("Tool name or domain", "工具名或域名")}
             />
           </label>
           {query && (

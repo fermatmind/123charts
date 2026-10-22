@@ -80,12 +80,8 @@ export function ZoneFrame({
             {locale === "zh" ? "EN" : "中"}
           </Link>
           <Link className="button primary" href={href("/submit")}>
-            <span className="submit-full">
-              {t("Submit a website — free", "免费提交网站")}
-            </span>
-            <span className="submit-short">
-              {t("Submit free", "免费提交网站")}
-            </span>
+            <span className="submit-full">{brand[locale].submit}</span>
+            <span className="submit-short">{brand[locale].submit}</span>
           </Link>
           <details className="account-menu">
             <summary aria-label={t("Account menu", "账户菜单")}>
@@ -161,7 +157,7 @@ export function ZoneFrame({
             {t("Local preview", "本地预览")} ·{" "}
             {dataset === "demo"
               ? t("Fictional demonstration", "虚构演示案例")
-              : t("Website research", "网站研究资料")}
+              : t("Tool research", "工具研究资料")}
             <Link
               href={
                 pathname +
@@ -194,7 +190,7 @@ export function ZoneFrame({
           <Dialog.Content className="search-dialog">
             <div className="row between">
               <Dialog.Title>
-                {t("Search websites & tasks", "搜索网站与用途")}
+                {t("Search tools & tasks", "搜索工具与任务")}
               </Dialog.Title>
               <Dialog.Close aria-label={t("Close search", "关闭搜索")}>
                 <X size={18} />

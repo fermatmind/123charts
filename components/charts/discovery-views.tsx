@@ -6,6 +6,7 @@ import {
   stableProjects,
   searchScore,
   orderAlternativeChoices,
+  languageNames,
 } from "@/lib/charts/navigation";
 import { OfficialLink } from "./official-link";
 import Link from "next/link";
@@ -107,7 +108,7 @@ export function CategoryLinks() {
                     (p) => p.category === c.slug && profileReady(p),
                   ).length
                 }{" "}
-                {t("websites", "个网站")} <ArrowRight size={12} />
+                {t("tools", "个工具")} <ArrowRight size={12} />
               </small>
             </div>
           </Link>
@@ -193,10 +194,10 @@ export function DiscoveryListing({
               : mode === "free"
                 ? t("Free to use", "免费可用")
                 : mode === "open-source"
-                  ? t("Open source websites", "开源发现")
+                  ? t("Open source tools", "开源工具")
                   : mode === "new"
                     ? t("New listings chart", "最新收录榜")
-                    : t("Website directory", "网站目录")}
+                    : t("Tool directory", "工具目录")}
         </h1>
         <p>
           {c
@@ -205,7 +206,7 @@ export function DiscoveryListing({
               : c.description_en
             : isSearch
               ? t(
-                  "Exact matches first. Choose a website or compare alternatives.",
+                  "Exact matches first. Choose a tool or compare alternatives.",
                   "精确匹配优先，选择官网或继续比较。",
                 )
               : mode === "new"
@@ -214,15 +215,15 @@ export function DiscoveryListing({
                     "按首次审核公开时间排序，不代表产品首发时间；编辑资料不重置收录日期。",
                   )
                 : t(
-                    "Compare purpose and conditions. Names open official websites.",
-                    "比较用途和使用条件，点击网站名称直达官网。",
+                    "Compare tasks and conditions. Tool names open their official websites.",
+                    "比较用途和使用条件，点击工具名称直达官网。",
                   )}
         </p>
       </header>
       {category && (
         <nav className="view-tabs" aria-label={t("Category views", "分类视图")}>
           {[
-            ["discover", t("Directory", "网站导航")],
+            ["discover", t("Directory", "工具导航")],
             ["new", t("Newly listed", "新收录")],
             ["free", t("Free to use", "免费可用")],
             ["alternatives", t("Alternatives", "找替代方案")],
@@ -250,10 +251,10 @@ export function DiscoveryListing({
         <label>
           <Search size={14} />
           <input
-            aria-label={t("Search websites", "搜索网站")}
+            aria-label={t("Search tools", "搜索工具")}
             value={q}
             onChange={(e) => set("q", e.target.value)}
-            placeholder={t("Website, domain, task", "网站、域名、用途")}
+            placeholder={t("Tool, domain, task", "工具、域名、任务")}
           />
         </label>
         {!category && (
@@ -320,7 +321,7 @@ export function DiscoveryListing({
       </div>
       <p className="result-count">
         {intent === "alternatives" ? targets.length : filtered.length}{" "}
-        {t("matching websites", "个匹配网站")}
+        {t("matching tools", "个匹配工具")}
         {mode === "free"
           ? t(
               " · sustained free use only; trials excluded",
@@ -361,7 +362,7 @@ export function DiscoveryListing({
               )}
             >
               <Link href={href("/projects?q=" + encodeURIComponent(q))}>
-                {t("Browse related websites", "查看相关网站")}
+                {t("Browse related tools", "查看相关工具")}
               </Link>
             </Empty>
           )}
@@ -372,6 +373,7 @@ export function DiscoveryListing({
             <div key={p.id}>
               <SiteUnit
                 p={p}
+                showConditions
                 surface={
                   category
                     ? "/categories/" + category
@@ -400,7 +402,7 @@ export function DiscoveryListing({
           ))}
         </div>
       ) : (
-        <Empty title={t("No matching websites", "暂无匹配网站")}>
+        <Empty title={t("No matching tools", "暂无匹配工具")}>
           <p>
             {t(
               "Try another term or clear your filters.",
@@ -449,8 +451,8 @@ export function DiscoveryCategories() {
         <h1>{t("All categories", "全部分类")}</h1>
         <p>
           {t(
-            "A global website directory, starting with AI and productivity tools and expanding as maintained categories become available.",
-            "面向全球的网站目录，当前从 AI 与效率工具开始，持续扩展更多分类。",
+            "Discover global tools, starting with AI coding, knowledge and retrieval development, and workflow automation.",
+            "发现全球工具，当前聚焦 AI 编程辅助、知识库与检索开发、工作流自动化。",
           )}
         </p>
       </header>
@@ -628,12 +630,23 @@ export function AlternativesPage({ slug }: { slug?: string }) {
             <div>
               <small>{t("Pricing & limits", "价格与限制")}</small>
               <p>
-                {x.project.price_verified
-                  ? localText(x.project.conditions, locale)
-                  : t(
-                      "Pricing and limits have not been confirmed. Check the official website.",
-                      "价格、额度与部署条件待确认，请以官网为准。",
-                    )}
+                {localText(x.project.conditions, locale) ||
+                  t(
+                    "Conditions not recorded. Check the official website.",
+                    "使用条件待补充，请查看官网。",
+                  )}
+              </p>
+              {!x.project.price_verified && (
+                <p className="muted">
+                  {t(
+                    "Pricing not yet confirmed. Check current official terms.",
+                    "价格尚未确认，请以官网当前说明为准。",
+                  )}
+                </p>
+              )}
+              <p>
+                {t("Supported languages", "支持语言")} ·{" "}
+                {languageNames(x.project.supported_languages, locale)}
               </p>
             </div>
           </div>
@@ -658,6 +671,9 @@ export function AlternativesPage({ slug }: { slug?: string }) {
               · {t("Updated", "资料更新于")}{" "}
               {x.project.updated_at?.slice(0, 10) ||
                 t("Not recorded", "尚未记录")}{" "}
+              · {t("Source checked", "来源核对日期")}{" "}
+              {x.project.source_checked_at?.slice(0, 10) ||
+                t("Not recorded", "尚未记录")}{" "}
               ·{" "}
               <Link href={href("/products/" + x.project.slug) + "#corrections"}>
                 {t("Report an error", "纠错")}
@@ -674,7 +690,7 @@ export function AlternativesPage({ slug }: { slug?: string }) {
           )}
         >
           <Link href={href("/categories/" + target.category)}>
-            {t("Browse this category", "查看同类网站")} →
+            {t("Browse this category", "查看同类工具")} →
           </Link>
         </Empty>
       )}
@@ -765,7 +781,7 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           </p>
           <p>
             {t("Languages", "支持语言")} ·{" "}
-            {p.supported_languages?.join(" / ") || t("Unconfirmed", "待确认")}
+            {languageNames(p.supported_languages, locale)}
           </p>
         </div>
       </div>
@@ -1080,6 +1096,7 @@ export function DiscoveryMethod() {
         </p>
       </div>
       <p className="brand-positioning">{brand[locale].positioning}</p>
+      <p>{brand[locale].vision}</p>
       <p>{brand[locale].platformFree}</p>
       <section id="data-and-order" className="transparent-rules">
         <h2>{t("Sources & sorting", "资料与排序说明")}</h2>
@@ -1097,8 +1114,14 @@ export function DiscoveryMethod() {
         </p>
         <p>
           {t(
-            "Website profiles show maintained sources and update dates when available; missing sources and dates remain unconfirmed. A recorded update is not an independent pricing verification. Use each profile's correction entry to report errors. New discovery and contribution slots rotate separately from the directory.",
+            "Tool profiles show maintained sources and update dates when available; missing sources and dates remain unconfirmed. A recorded update is not an independent pricing verification. Use each profile's correction entry to report errors. New discovery and contribution slots rotate separately from the directory.",
             "项目档案在有记录时显示资料来源与更新时间，缺失则标为待补充；资料更新不等于价格已独立核验。可通过各项目的纠错入口反馈错误。新发现与贡献推荐在独立区域轮换，不改变基础导航。",
+          )}
+        </p>
+        <p>
+          {t(
+            "Source links identify the recorded reference, not who supplied it. When contributor identity or a verification date is not recorded, neither is inferred. Profile update dates are separate from recorded source-check dates.",
+            "来源链接表示记录的资料出处，不代表已记录提供者身份。没有提供方或实际核验记录时，不推断为项目方提供、平台独立核验；资料更新时间与来源核对日期分别展示。",
           )}
         </p>
       </section>
@@ -1106,7 +1129,7 @@ export function DiscoveryMethod() {
         [
           "Free listing",
           "免费收录",
-          "Submit your website, explain its task and conditions, and suggest 3–5 relevant peers. Niche projects may explain their exception and related methods. Normal review is free.",
+          "Submit your tool, explain its task and conditions, and suggest 3–5 relevant peers. Niche projects may explain their exception and related methods. Normal review is free.",
           "提交官网、用途和使用条件，推荐 3–5 个相关同行。小众项目可以说明原因并提供相关替代方式。正常审核免费。",
         ],
         [

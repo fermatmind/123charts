@@ -60,7 +60,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.goto("/zh?dataset=real");
   await expect(
     page.getByRole("heading", {
-      name: "发现全球好网站，找到更合适的替代方案。",
+      name: "发现好工具，找到更合适的替代方案。",
     }),
   ).toBeVisible();
   await page.screenshot({
@@ -113,8 +113,8 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
     page.getByRole("heading", { name: "我的常用", exact: true }),
   ).toBeVisible();
   await page.goto("/zh?dataset=real");
-  await page.getByLabel("搜索网站或任务", { exact: true }).fill("n8n");
-  await page.getByLabel("搜索网站或任务", { exact: true }).press("Enter");
+  await page.getByLabel("搜索工具或任务", { exact: true }).fill("n8n");
+  await page.getByLabel("搜索工具或任务", { exact: true }).press("Enter");
   await expect(page).toHaveURL(/\/zh\/projects\?q=n8n/);
   await expect(
     page.getByRole("heading", { name: "“n8n”的搜索结果" }),
@@ -131,9 +131,9 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await expect(page).toHaveURL(/\/products\/n8n/);
   await page.goBack();
   await expect(page).toHaveURL(/q=n8n/);
-  await expect(page.getByLabel("搜索网站", { exact: true })).toHaveValue("n8n");
+  await expect(page.getByLabel("搜索工具", { exact: true })).toHaveValue("n8n");
   await page.keyboard.press("Meta+k");
-  await page.getByRole("dialog").getByLabel("搜索网站或任务").fill("Cursor");
+  await page.getByRole("dialog").getByLabel("搜索工具或任务").fill("Cursor");
   await expect(
     page.getByRole("dialog").locator(".suggestion-row"),
   ).toContainText("Cursor");
@@ -174,6 +174,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   ).toBeVisible();
   await expect(page.locator(".alternative-candidate")).toHaveCount(1);
   await expect(page.locator(".candidate-facts")).toContainText("自部署");
+  await expect(page.locator(".candidate-facts")).toContainText("支持语言");
   await expect(page.locator(".candidate-facts")).not.toContainText(
     "Detailed conditions",
   );
@@ -226,7 +227,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.getByRole("link", { name: "EN", exact: true }).click();
   await expect(
     page.getByRole("heading", {
-      name: "Discover websites worldwide. Find alternatives that fit.",
+      name: "Discover great tools. Find better alternatives.",
     }),
   ).toBeVisible();
   expect(
@@ -371,26 +372,36 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   page,
 }) => {
   const errors: string[] = [];
+  const consoleErrors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
+  page.on("console", (m) => {
+    if (m.type() === "error") consoleErrors.push(m.text());
+  });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/zh?dataset=real");
-  await expect(page).toHaveTitle(
-    "123Charts — 免费全球网站分类与对标排行榜平台。",
-  );
+  await expect(page).toHaveTitle("123Charts｜全球工具发现与替代榜单");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
     "content",
-    "123Charts — 免费全球网站分类与对标排行榜平台。",
+    "123Charts｜全球工具发现与替代榜单",
   );
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
     /审核通过后免费收录/,
   );
   await expect(page.locator(".brand-copy small")).toHaveText(
-    "全球网站分类与替代榜单",
+    "全球工具分类与替代榜单",
   );
   await expect(page.locator(".brand-promises")).toContainText("免费提交");
+  await expect(
+    page.getByRole("tab", { name: "找工具", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByPlaceholder("搜索工具名称、官网域名，或你想完成的任务", {
+      exact: true,
+    }),
+  ).toBeVisible();
   await expect(page.locator(".maker-line")).toContainText(
-    "让需要的人发现你的网站。免费提交，审核通过后免费收录。",
+    "让需要的人发现你的工具。免费提交，审核通过后免费收录。",
   );
   await page
     .locator(".brand-promises")
@@ -421,6 +432,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
     "当前排序：名称 A–Z",
   );
   await expect(page.locator(".candidate-facts")).toContainText("自部署");
+  await expect(page.locator(".candidate-facts")).toContainText("支持语言");
   await page.getByLabel("候选排序", { exact: true }).selectOption("new");
   await expect(page).toHaveURL(/sort=new/);
   await expect(page.locator(".alternative-order")).toContainText(
@@ -450,7 +462,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   expect(card.status()).toBe(200);
   expect(card.headers()["content-type"]).toContain("image/png");
   await fs.writeFile(
-    "output/playwright/brand-listing-card.png",
+    "output/playwright/tools-listing-card.png",
     await card.body(),
   );
   await page
@@ -464,6 +476,14 @@ test("brand: positioning, transparent chart order, new listings and free submiss
     "不代表产品首发时间",
   );
   await expect(page.getByLabel("排序", { exact: true })).toHaveValue("new");
+  const conditions = page
+    .locator(".directory-results .site-conditions")
+    .first();
+  await conditions.locator("summary").click();
+  await expect(conditions.locator("p")).toBeVisible();
+  await expect(
+    page.locator(".directory-results .site-access").first(),
+  ).toContainText("语言");
   const ids = await page
     .locator(".directory-results [data-product-id]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-product-id")));
@@ -478,7 +498,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   expect(dates).toEqual([...dates].sort().reverse());
   await page
     .locator(".top-actions")
-    .getByRole("link", { name: "免费提交网站", exact: true })
+    .getByRole("link", { name: "免费提交工具", exact: true })
     .click();
   await expect(page).toHaveURL(/login/);
   await expect(page).toHaveURL(/returnTo/);
@@ -488,19 +508,43 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await signIn(page, accounts.founder.email, accounts.founder.password);
   await page
     .locator(".top-actions")
-    .getByRole("link", { name: "免费提交网站", exact: true })
+    .getByRole("link", { name: "免费提交工具", exact: true })
     .click();
   await expect(page).toHaveURL(/\/zh\/submit\?dataset=real/);
   await expect(page.locator(".page-heading")).toContainText(
     "免费提交，审核通过后免费收录。",
   );
+  await expect(page.locator(".submission-benefits")).toContainText(
+    "同行关系单独审核",
+  );
   await expect(page.locator(".platform-free-note")).toContainText(
     "开源是独立属性",
   );
+  const appData = await (
+    await page.request.get("/api/charts/bootstrap?dataset=demo&zone=dashboard")
+  ).json();
+  const statusLabels: Record<string, string> = {
+    approved: "审核通过",
+    rejected: "不予通过",
+    submitted: "已提交",
+    verifying: "核验中",
+  };
+  const reviewed = appData.applications.find(
+    (a: any) => a.status === "approved",
+  );
+  expect(reviewed, "Existing local approved sample required").toBeTruthy();
+  await page.goto("/zh/submit?dataset=demo&id=" + reviewed.id);
+  await expect(
+    page
+      .locator(".discovery-page .tag")
+      .filter({ hasText: statusLabels[reviewed.status] }),
+  ).toBeVisible();
+  await expect(page.locator(".notice")).not.toContainText("已提交审核");
+  console.log("Existing local application state verified:", reviewed.status);
   await signOut(page);
   await page.goto("/zh?dataset=real");
   await page.screenshot({
-    path: "output/playwright/brand-home-desktop.png",
+    path: "output/playwright/tools-home-desktop-zh.png",
     fullPage: false,
   });
   await page.setViewportSize({ width: 390, height: 844 });
@@ -509,13 +553,19 @@ test("brand: positioning, transparent chart order, new listings and free submiss
       .locator(".topnav")
       .getByRole("link", { name: "最新收录", exact: true }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "搜索项目", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "搜索项目", exact: true }).click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.getByRole("button", { name: "关闭搜索", exact: true }).click();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
   await page.screenshot({
-    path: "output/playwright/brand-home-mobile.png",
+    path: "output/playwright/tools-home-mobile-zh.png",
     fullPage: false,
   });
   console.log("Brand mobile entries:", await visibleSites(page));
@@ -524,19 +574,19 @@ test("brand: positioning, transparent chart order, new listings and free submiss
     .getByRole("link", { name: "分类导航", exact: true })
     .click();
   await expect(page.locator(".discovery-page")).toContainText(
-    "当前从 AI 与效率工具开始",
+    "当前聚焦 AI 编程辅助",
   );
   await page.goto("/en?dataset=real");
   await expect(page).toHaveTitle(
-    "123Charts — Free Global Website Directory & Alternative Charts.",
+    "123Charts | Global Tool Discovery & Alternative Charts",
   );
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
     "content",
-    "123Charts — Free Global Website Directory & Alternative Charts.",
+    "123Charts | Global Tool Discovery & Alternative Charts",
   );
   await expect(
     page.getByRole("heading", {
-      name: "Discover websites worldwide. Find alternatives that fit.",
+      name: "Discover great tools. Find better alternatives.",
       exact: true,
     }),
   ).toBeVisible();
@@ -549,8 +599,27 @@ test("brand: positioning, transparent chart order, new listings and free submiss
     ),
   ).toBe(true);
   await page.screenshot({
-    path: "output/playwright/brand-home-mobile-en.png",
+    path: "output/playwright/tools-home-mobile-en.png",
+    fullPage: false,
+  });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await expect(page.locator(".brand-promises")).toHaveText(
+    /Free submissions.*Free listings.*Clear categories.*Transparent data/,
+  );
+  await expect(
+    page
+      .locator(".top-actions")
+      .getByRole("link", { name: "Submit a tool for free", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "output/playwright/tools-home-desktop-en.png",
     fullPage: false,
   });
   expect(errors).toEqual([]);
+  expect(consoleErrors).toEqual([]);
 });

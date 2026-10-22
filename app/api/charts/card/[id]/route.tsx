@@ -100,7 +100,7 @@ export async function GET(
         <span style={{ color: "#9badca", fontSize: 19 }}>
           {demo
             ? label("FICTIONAL DEMONSTRATION", "虚构演示样本")
-            : label("PUBLIC WEBSITE LISTING", "公开网站收录")}
+            : label("PUBLIC TOOL LISTING", "公开工具收录")}
         </span>
       </div>
       <div

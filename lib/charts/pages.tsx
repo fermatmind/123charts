@@ -18,13 +18,13 @@ type Props = {
   searchParams: Promise<Record<string, string | undefined>>;
 };
 const labels: Record<string, [string, string]> = {
-  projects: ["Discover websites", "发现网站"],
-  products: ["Website profile", "网站档案"],
+  projects: ["Discover tools", "发现工具"],
+  products: ["Tool profile", "工具档案"],
   categories: ["Category discovery charts", "分类发现榜"],
   alternatives: ["Alternative charts", "替代榜单"],
   free: ["Free to use", "免费可用榜"],
   new: ["New listings chart", "最新收录榜"],
-  submit: ["Submit a website — free", "免费提交网站"],
+  submit: ["Submit a tool for free", "免费提交工具"],
   dashboard: ["Your workspace", "你的工作台"],
   following: ["Saved & following", "收藏与关注"],
   login: ["Sign in", "登录"],
@@ -33,8 +33,8 @@ const labels: Record<string, [string, string]> = {
   shared: ["Shared comparison", "分享的对照清单"],
   methodology: ["How discovery works", "收录与发现规则"],
   "how-it-works": ["How discovery works", "收录与发现规则"],
-  "open-source": ["Open source websites", "开源发现"],
-  search: ["Search websites", "站内搜索"],
+  "open-source": ["Open source tools", "开源工具"],
+  search: ["Search tools", "工具搜索"],
   charts: ["Historical traffic charts", "历史流量榜"],
 };
 async function generateMetadata({

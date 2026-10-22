@@ -40,7 +40,7 @@ test("browser draft recovery, three peers, review, shared comparison and factual
     await page
       .getByLabel("Official website URL", { exact: true })
       .fill("https://browser-" + randomUUID().slice(0, 8) + ".example");
-    await page.getByLabel("Website name", { exact: true }).fill(name);
+    await page.getByLabel("Tool name", { exact: true }).fill(name);
     await page
       .getByLabel("English description")
       .fill("A fictional document search project for browser acceptance.");
@@ -55,7 +55,7 @@ test("browser draft recovery, three peers, review, shared comparison and factual
     appId = new URL(resume!, "http://localhost").searchParams.get("id")!;
     await page.goto("/en/dashboard?dataset=demo");
     await page.goto(resume!);
-    await expect(page.getByLabel("Website name")).toHaveValue(name);
+    await expect(page.getByLabel("Tool name")).toHaveValue(name);
     await page.getByRole("button", { name: "Continue", exact: true }).click();
     await page.getByLabel("Primary category").selectOption("knowledge-search");
     await page

@@ -21,6 +21,7 @@ import {
 } from "@/lib/charts/discovery";
 import {
   localText,
+  languageNames,
   stableProjects,
   searchScore,
 } from "@/lib/charts/navigation";
@@ -63,12 +64,14 @@ export function SiteUnit({
   surface = "/directory",
   task,
   reason,
+  showConditions = false,
 }: {
   p: Project;
   compact?: boolean;
   surface?: string;
   task?: string;
   reason?: string;
+  showConditions?: boolean;
 }) {
   const { data, locale, href, t } = useCharts(),
     ref = useEvent(p.id, "impression", surface);
@@ -107,6 +110,10 @@ export function SiteUnit({
             {priceLabel(p, locale === "zh")}
             {p.is_open_source ? " · " + t("Open source", "开源") : ""}
           </span>
+          <small>
+            {t("Languages", "语言")} ·{" "}
+            {languageNames(p.supported_languages, locale)}
+          </small>
           <small>{p.domain}</small>
         </div>
       )}
@@ -133,6 +140,21 @@ export function SiteUnit({
           </small>
         )}
       </div>
+      {showConditions && !compact && (
+        <details className="site-conditions">
+          <summary>{t("Usage conditions & limits", "使用条件与限制")}</summary>
+          <p>
+            {localText(p.conditions, locale) ||
+              t(
+                "Conditions not recorded. Check the official website.",
+                "使用条件待补充，请查看官网。",
+              )}
+          </p>
+          {!p.price_verified && (
+            <small>{t("Pricing not yet confirmed", "价格尚未确认")}</small>
+          )}
+        </details>
+      )}
     </div>
   );
 }
@@ -173,7 +195,7 @@ export function UnifiedSearch({
           aria-selected={intent === "website"}
           onClick={() => setIntent("website")}
         >
-          {t("Websites", "找网站")}
+          {t("Tools", "找工具")}
         </button>
         <button
           type="button"
@@ -192,17 +214,20 @@ export function UnifiedSearch({
         <Search size={18} />
         <input
           ref={input}
-          aria-label={t("Find a website or task", "搜索网站或任务")}
+          aria-label={t("Find a tool or task", "搜索工具或任务")}
           name="q"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           onFocus={() => setFocused(true)}
           placeholder={
             intent === "website"
-              ? t("Website, domain or task", "网站名称、域名，或你要做的事")
+              ? t(
+                  "Search tool names, official domains, or a task",
+                  "搜索工具名称、官网域名，或你想完成的任务",
+                )
               : t(
-                  "Which website would you like to replace?",
-                  "你想找哪个网站的替代方案？",
+                  "Which tool would you like an alternative to?",
+                  "你想找哪个工具的替代方案？",
                 )
           }
           autoComplete="off"
@@ -281,8 +306,8 @@ export function UnifiedSearch({
             <p>
               {intent === "alternatives"
                 ? t(
-                    "No confirmed alternative target. Search the directory for related websites.",
-                    "暂无匹配的有效替代入口，可回车查找相关网站。",
+                    "No confirmed alternative target. Search the directory for related tools.",
+                    "暂无匹配的有效替代入口，可回车查找相关工具。",
                   )
                 : t(
                     "No exact suggestion. Search all results or explore categories.",
@@ -440,8 +465,8 @@ export function FavoritesArea({ manage = false }: { manage?: boolean }) {
       {manage && !rows.length && (
         <p>
           {t(
-            "No favorites yet. Add websites from any list.",
-            "还没有常用，从任意网站列表点击星标即可添加。",
+            "No favorites yet. Add tools from any list.",
+            "还没有常用，从任意工具列表点击星标即可添加。",
           )}
         </p>
       )}
@@ -468,9 +493,9 @@ export function NavigationHome() {
         </nav>
       </div>
       <div className="brand-promises">
-        <span>{t("Free submission", "免费提交")}</span>
+        <span>{t("Free submissions", "免费提交")}</span>
         <i>·</i>
-        <span>{t("Free listing", "免费收录")}</span>
+        <span>{t("Free listings", "免费收录")}</span>
         <i>·</i>
         <span>{t("Clear categories", "分类清晰")}</span>
         <i>·</i>
@@ -543,7 +568,7 @@ export function NavigationHome() {
         <p className="brand-section-note">
           {t(
             "Compare purpose, pricing and conditions. Confirmed relationships only.",
-            "按用途、价格与使用条件比较同类网站，仅展示已确认关系。",
+            "按用途、价格与使用条件比较同类工具，仅展示已确认关系。",
           )}
         </p>
         <div className="alternative-shortcuts">
@@ -561,14 +586,12 @@ export function NavigationHome() {
       <aside className="maker-line">
         <p>
           {t(
-            "Help the right people find your website. ",
-            "让需要的人发现你的网站。",
+            "Help the right people find your tool. ",
+            "让需要的人发现你的工具。",
           )}
           {brand[locale].freeListing}
         </p>
-        <Link href={href("/submit")}>
-          {t("Submit a website — free", "免费提交网站")} →
-        </Link>
+        <Link href={href("/submit")}>{brand[locale].submit} →</Link>
       </aside>
     </div>
   );

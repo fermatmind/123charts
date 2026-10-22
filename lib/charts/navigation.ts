@@ -74,3 +74,27 @@ export function orderAlternativeChoices<
         a.task.localeCompare(b.task),
     );
 }
+
+/** Translate language labels only; never infer supported languages. */
+export function languageNames(languages: string[] | undefined, locale: Locale) {
+  const names: Record<string, [string, string]> = {
+    english: ["English", "英语"],
+    chinese: ["Chinese", "中文"],
+    spanish: ["Spanish", "西班牙语"],
+    japanese: ["Japanese", "日语"],
+    german: ["German", "德语"],
+    french: ["French", "法语"],
+    korean: ["Korean", "韩语"],
+    portuguese: ["Portuguese", "葡萄牙语"],
+  };
+  return (
+    languages
+      ?.filter(
+        (x) =>
+          x.trim() &&
+          !/^(unconfirmed|unknown|待确认|待补充)(?:\s|$)/i.test(x.trim()),
+      )
+      .map((x) => names[x.toLowerCase()]?.[locale === "zh" ? 1 : 0] || x)
+      .join(" / ") || (locale === "zh" ? "待补充" : "Not recorded")
+  );
+}
