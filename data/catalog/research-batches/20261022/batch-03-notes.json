@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T14:58:57.866917+00:00",
+  "updated_at": "2026-10-22T15:04:13.669662+00:00",
   "status": "in_progress",
-  "completed_count": 68,
+  "completed_count": 69,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -72,9 +72,10 @@
     "projects/seo/agencyanalytics-95ba4d16.json",
     "projects/seo/ahrefs-c8511afd.json",
     "projects/seo/botify-f89164fc.json",
-    "projects/seo/brightlocal-aa96ef1c.json"
+    "projects/seo/brightlocal-aa96ef1c.json",
+    "projects/seo/clearscope-3c8a2c50.json"
   ],
-  "remaining_count": 65,
+  "remaining_count": 64,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -92,7 +93,6 @@
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
-    "projects/seo/clearscope-3c8a2c50.json",
     "projects/seo/dragon-metrics-b551c9d0.json",
     "projects/seo/keyword-com-0a1cb131.json",
     "projects/seo/linkbox-f7ec2179.json",
@@ -143,7 +143,7 @@
     "projects/surveys/pollfish-8dbd67ee.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/clearscope-3c8a2c50.json",
+  "next_project": "projects/seo/dragon-metrics-b551c9d0.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -887,6 +887,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-07",
+      "completed_projects": 69,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 69 completed drafts; scope/status/source types/hashes/references/bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark Help Scout domain mismatch at scripts/catalog/validate.mjs:166"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -1009,6 +1027,11 @@
       "commit": "4ee8912",
       "completed_count": 67,
       "scope": "Botify source evidence, AI campaign budgets and reversible activation workflow"
+    },
+    {
+      "commit": "39fd0a1",
+      "completed_count": 68,
+      "scope": "BrightLocal local measurement, listing synchronization and review/citation delivery"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -1039,7 +1062,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 6,
+      "completed": 7,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 0
     }
@@ -1382,6 +1405,10 @@
     {
       "project": "brightlocal-aa96ef1c",
       "note": "Actual current new/legacy-cohort docs, explicit USD location-tier table, ranking/Grid/AI/sync/citation/review/role/Anywhere/exit originals read. Name identifier != search postcode; Grid sections independent; Sync connect/activate/save and first-validation boundary; citation submission != publication; both negative and positive feedback ask public reviews; read-only account sees all locations; AI export/white-label roadmap; Grow Anywhere detailed entitlement. No account operations."
+    },
+    {
+      "project": "clearscope-3c8a2c50",
+      "note": "Actual current workflow and detailed grade/credit/add-on/GSC/shared-doc/CMS/role/exit originals read. Daily grade uses old SERP until thirty-day refresh; new Draft uses creation snapshot. Add-on guide legacy $189/100-page example differs current $129/50; pack select quantities unknown, no inferred per-unit quote. Expand Claude versus price two platforms, help twelve-month reactivation versus terms thirty-day retrieval/notice preserved. No account operations."
     }
   ],
   "ownership_handoff": {
