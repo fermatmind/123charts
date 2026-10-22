@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T14:17:10.767272+00:00",
+  "updated_at": "2026-10-22T14:24:43.856233+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 75,
+  "completed_count": 77,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -80,9 +80,11 @@
     "projects/software-testing/cypress-io-8ab7255e.json",
     "projects/software-testing/katalon-studio-936c5275.json",
     "projects/software-testing/mabl-862d84c3.json",
-    "projects/software-testing/maxim-fc490bdd.json"
+    "projects/software-testing/maxim-fc490bdd.json",
+    "projects/software-testing/ranorex-2d42ee7a.json",
+    "projects/software-testing/sauce-labs-3c05b615.json"
   ],
-  "remaining_count": 124,
+  "remaining_count": 122,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -108,8 +110,6 @@
     "projects/software-testing/pcloudy-6e6266d2.json",
     "projects/software-testing/perfecto-8aeabe24.json",
     "projects/software-testing/rainforest-qa-369dc230.json",
-    "projects/software-testing/ranorex-2d42ee7a.json",
-    "projects/software-testing/sauce-labs-3c05b615.json",
     "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/testmu-ai-formerly-lambdatest-a4cc807d.json",
     "projects/software-testing/testomat-io-6272fe63.json",
@@ -441,6 +441,14 @@
     {
       "project": "Maxim",
       "detail": "Specific /evals product pages/pricing used instead of root Bifrost. Legacy model names in quickstart not adopted as current support; evaluator thresholds are not independently validated correctness."
+    },
+    {
+      "project": "Ranorex",
+      "detail": "Execution-only Runtime versus Enterprise leasing, Windows interactive CI and legacy IE browser example kept qualified. Numeric fee requires quote; full license text not read."
+    },
+    {
+      "project": "Sauce Labs",
+      "detail": "Assertion result reporting and quit are explicit; data-center availability differs, unlimited minutes not unlimited concurrency, named AI agents enterprise-only."
     }
   ],
   "verification": [
@@ -450,7 +458,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/78 global researched (3 baseline +75 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/80 global researched (3 baseline +77 assigned)/0 untranslated labels; structure/references only"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -572,19 +580,24 @@
       "commit": "ee54569",
       "completed_count": 72,
       "scope": "BlazeMeter, CloudQA and Cypress; BrowserStack access/KaneAI identity gaps; pushed assigned branch"
+    },
+    {
+      "commit": "3f10c24",
+      "completed_count": 75,
+      "scope": "Katalon, mabl and Maxim detailed research; Opkey/pCloudy gaps; pushed assigned branch"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Perfecto, Rainforest QA, Ranorex, Sauce Labs, Testim; then TestMu AI, Testomat.io, Testsigma, ZAPTEST",
+    "next": "TestMu AI, Testomat.io, Testsigma, ZAPTEST",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
-    "software-testing": "6 of19 complete;10 investigated; BrowserStack pricing access, KaneAI identity duplicate, Opkey docs/fees access and pCloudy page availability remain incomplete"
+    "software-testing": "8 of19 complete;15 investigated;7 incomplete with actual access/fee/identity/authority gaps"
   },
   "identity_changes": [
     {
@@ -743,6 +756,18 @@
     {
       "project_path": "projects/software-testing/pcloudy-6e6266d2.json",
       "reason": "Official homepage, pricing and documentation routes returned 502 or timed out; each ordinary failing entry was retried once without success. A separate official iOS product page also returned 502. Search snippets were used only to discover pages, not as read original feature, fee, license or closure evidence. Current deep operating and pricing profile remains incomplete; no account, device, application upload or test was operated."
+    },
+    {
+      "project_path": "projects/software-testing/perfecto-8aeabe24.json",
+      "reason": "Official perfecto.io home and pricing routes explicitly redirect to perforce.com product and quote pages, while current overview/release/operating documentation remains on help.perfecto.io. Those originals were read, but the shared same-registered-domain source rule cannot represent the current authority chain without false URLs or a shared schema change. The record remains incomplete; no domain rewrite or validator edit was performed."
+    },
+    {
+      "project_path": "projects/software-testing/rainforest-qa-369dc230.json",
+      "reason": "Official pricing redirects to a sales landing page. That actual page has no readable fee table, free-use grant or concrete commercial entitlement. Official Visual Editor, quickstart, generation/results/environment and self-heal guides were read, but the current full fee/profile authority remains incomplete. A sales landing page was not relabeled as a pricing grant and no sales contact/account was submitted."
+    },
+    {
+      "project_path": "projects/software-testing/testim-5d3d2647.json",
+      "reason": "Current help.testim.io explicitly redirects to docs.tricentis.com/testim while home/pricing remain on testim.io. Pricing and the actual cross-domain run guide were read; the shared same-domain official-source model cannot encode this authority chain. No false legacy doc URLs or shared validator changes were used; the record remains incomplete."
     }
   ],
   "availability_updates": [
@@ -997,6 +1022,118 @@
       "excerpt_sha256": "9acd9b619c414544fd1fab50e6bf55a3474eec8e7d48fcd8c74df27045b98f2c",
       "read_at": "2026-10-22T14:00:41.148845+00:00",
       "use": "Actual public original read for incomplete KaneAI record; not a completed feature/price profile or independent test."
+    },
+    {
+      "capture": "perfecto-entry-0",
+      "actual_url": "https://www.perforce.com/products/perfecto",
+      "excerpt_sha256": "233ce6bf13c33da6bf3ea9bd3d98b94e453ddf3c5e0a2b5866eac3f5de8d94c3",
+      "read_at": "2026-10-22T14:17:47.825614+00:00",
+      "use": "Actual official original read for incomplete Perfecto authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "perfecto-entry-1",
+      "actual_url": "https://www.perforce.com/products/perfecto/build-a-quote",
+      "excerpt_sha256": "0964f641a1d2f6168b445caa91b9c12915c0d9b1dbd497f7674158d38afb59c8",
+      "read_at": "2026-10-22T14:17:47.828386+00:00",
+      "use": "Actual official original read for incomplete Perfecto authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "perfecto-entry-2",
+      "actual_url": "https://help.perfecto.io/",
+      "excerpt_sha256": "5ae27289c2e371c03e5f8039b837f8983da8594d4bd3b9eb0ebe0ae98235a67a",
+      "read_at": "2026-10-22T14:17:47.828695+00:00",
+      "use": "Actual official original read for incomplete Perfecto authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "perfecto-testim-deep-0",
+      "actual_url": "https://help.perfecto.io/perfecto-help/content/perfecto/get-started/get_started.htm",
+      "excerpt_sha256": "714660ed16b2ec50f26e5b75365168c59387b50e5326a6e062238ac233175d03",
+      "read_at": "2026-10-22T14:18:32.569110+00:00",
+      "use": "Actual official original read for incomplete Perfecto authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-entry-0",
+      "actual_url": "https://www.rainforestqa.com/",
+      "excerpt_sha256": "61454e348f9aa71d12f4e9c61dd4a695f433c40631e7e0e16bf7a57451451340",
+      "read_at": "2026-10-22T14:17:47.324354+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-entry-1",
+      "actual_url": "https://www.rainforestqa.com/talk-to-sales",
+      "excerpt_sha256": "2b9e90b5175bb69ea0d07662b8046d881f0e3d177644f06b0f35fad8eaf81c97",
+      "read_at": "2026-10-22T14:17:47.324658+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-start-0",
+      "actual_url": "https://help.rainforestqa.com/docs/quick-start-guide",
+      "excerpt_sha256": "3b77daee519b1d5d599c088dfd6fd0932533154aeb55844cfd4d049da0e66255",
+      "read_at": "2026-10-22T14:18:35.801424+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-start-1",
+      "actual_url": "https://help.rainforestqa.com/docs/creating-a-test-with-the-visual-editor",
+      "excerpt_sha256": "3562dd0027d8a652ddcf2810a263ddce27b75d2172e4ddec58073908075a5f28",
+      "read_at": "2026-10-22T14:18:35.801808+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-start-2",
+      "actual_url": "https://help.rainforestqa.com/docs/how-to-generate-self-healing-tests",
+      "excerpt_sha256": "a5bcbb3fc8d47106434db87a8c4889175551e3c56e379da194dfd787e62d1a18",
+      "read_at": "2026-10-22T14:18:35.802611+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-specific-0",
+      "actual_url": "https://help.rainforestqa.com/docs/working-with-automation-service-results",
+      "excerpt_sha256": "1853a8ead0accb68e005033dfc5f67d3940bd7b088fd64f8bdcf7c77bda76688",
+      "read_at": "2026-10-22T14:20:00.148030+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-specific-1",
+      "actual_url": "https://help.rainforestqa.com/docs/accessing-test-environments",
+      "excerpt_sha256": "f377e8dbcc582d842dbb913672e2a06f3013dfc7e538ad877b11693cccf8bf3e",
+      "read_at": "2026-10-22T14:20:00.148148+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "rainforest-specific-2",
+      "actual_url": "https://help.rainforestqa.com/docs/self-heal-best-practices",
+      "excerpt_sha256": "27393cc506b92060c6547a0215d53845944c25031d5850a36a30e2fbe08c55df",
+      "read_at": "2026-10-22T14:20:00.148618+00:00",
+      "use": "Actual official original read for incomplete Rainforest QA authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "testim-entry-0",
+      "actual_url": "https://www.testim.io/",
+      "excerpt_sha256": "813ecdfd17b518572545966fdf588edb98dbdfc693f9c5458494de3a2a6ad377",
+      "read_at": "2026-10-22T14:17:47.480801+00:00",
+      "use": "Actual official original read for incomplete Testim authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "testim-entry-1",
+      "actual_url": "https://www.testim.io/pricing/",
+      "excerpt_sha256": "25237458239c4851ca6f7403fab8876334f35c0f70b278f3dfacab2184c6bf99",
+      "read_at": "2026-10-22T14:17:47.482911+00:00",
+      "use": "Actual official original read for incomplete Testim authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "testim-entry-2",
+      "actual_url": "https://docs.tricentis.com/testim/content/home.htm",
+      "excerpt_sha256": "d95d63ea284abba6632a69df741f545ba5392f77990c68a8af0035b5312ca6ce",
+      "read_at": "2026-10-22T14:17:47.483646+00:00",
+      "use": "Actual official original read for incomplete Testim authority/pricing; not independent testing or completion."
+    },
+    {
+      "capture": "perfecto-testim-deep-1",
+      "actual_url": "https://docs.tricentis.com/testim/content/running-tests/running-tests-overview.htm",
+      "excerpt_sha256": "5ada0666e4c2d18bcf9ab18f108eac9be38a2573f352511d3602437461ca7bd6",
+      "read_at": "2026-10-22T14:18:32.569572+00:00",
+      "use": "Actual official original read for incomplete Testim authority/pricing; not independent testing or completion."
     }
   ]
 }
