@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T11:06:07.387793+00:00",
+  "updated_at": "2026-10-22T11:17:14.834557+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 22,
+  "completed_count": 25,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -27,9 +27,12 @@
     "projects/data-integration/synatic-1c0bb592.json",
     "projects/data-integration/zoho-dataprep-14e0dae7.json",
     "projects/api-management/bandwidth-b6f12f0f.json",
-    "projects/api-management/dell-boomi-api-management-73e49bde.json"
+    "projects/api-management/dell-boomi-api-management-73e49bde.json",
+    "projects/api-management/ibm-api-connect-706d1c65.json",
+    "projects/api-management/kong-545842db.json",
+    "projects/api-management/krakend-424ce5fb.json"
   ],
-  "remaining_count": 177,
+  "remaining_count": 174,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -39,9 +42,6 @@
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
     "projects/api-management/dreamfactory-6a420d79.json",
-    "projects/api-management/ibm-api-connect-706d1c65.json",
-    "projects/api-management/kong-545842db.json",
-    "projects/api-management/krakend-424ce5fb.json",
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/postman-668fe961.json",
     "projects/api-management/readme-4e02e656.json",
@@ -254,7 +254,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 25 primary-source researched globally (3 baseline + 22 assigned), 1000 records checked"
+      "result": "passed: 28 primary-source researched globally (3 baseline + 25 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -286,15 +286,20 @@
       "commit": "945fb28",
       "completed_count": 20,
       "scope": "Remaining available data-integration profiles and explicit authority gaps; pushed"
+    },
+    {
+      "commit": "3b89021",
+      "completed_count": 22,
+      "scope": "Bandwidth and Boomi API Management; Apigee Edge, Blobr and DreamFactory access/authority gaps; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "IBM API Connect, Kong, KrakenD",
+    "next": "Nevatech Sentinet, Postman, ReadMe",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "2 of 17 complete; 3 investigated but incomplete with explicit gaps; 12 not yet processed"
+    "api-management": "5 of 17 complete; 3 investigated but incomplete with explicit gaps; 9 not yet processed"
   },
   "identity_changes": [
     {
@@ -322,6 +327,13 @@
       "project": "Boomi API Management",
       "slug_preserved": "dell-boomi-api-management-73e49bde",
       "change": "Current official product name omits Dell; domain unchanged, wider platform products not merged."
+    },
+    {
+      "project": "IBM API Connect",
+      "slug_preserved": "ibm-api-connect-706d1c65",
+      "old_url": "https://www.ibm.com/cloud/api-connect",
+      "current_url": "https://www.ibm.com/products/api-connect",
+      "evidence": "Old URL explicitly redirected to IBM generic solutions page; current official API Connect product and linked guides independently read."
     }
   ],
   "content_corrections": [
