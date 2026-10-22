@@ -3,7 +3,7 @@
   "batch_id": "batch-09",
   "branch": "data/catalog-deep-batch-09",
   "baseline": "bd42969277b018e67c2acff09376a79745904e69",
-  "updated_at": "2026-10-22T15:38:11.696761+00:00",
+  "updated_at": "2026-10-22T15:48:35.105278+00:00",
   "assigned": 72,
   "assigned_project_paths": [
     "projects/contracts/contract-insight-f736ebe9.json",
@@ -85,7 +85,7 @@
     "overlapping_in_progress_paths": [],
     "ack": "/Users/rainie/Desktop/123charts.com/123charts-research-04/.scratch/handoff-to-batch-09-ack.json"
   },
-  "completed_count": 48,
+  "completed_count": 59,
   "completed_projects": [
     "projects/contracts/contract-insight-f736ebe9.json",
     "projects/contracts/contract-logix-c22d6003.json",
@@ -134,7 +134,18 @@
     "projects/inventory/dear-inventory-287c6092.json",
     "projects/inventory/easyecom-41eec0e7.json",
     "projects/inventory/eazystock-32e79a8b.json",
-    "projects/inventory/eturns-a7209989.json"
+    "projects/inventory/eturns-a7209989.json",
+    "projects/inventory/ezatlas-5d7d7c74.json",
+    "projects/inventory/finale-inventory-41bc4764.json",
+    "projects/inventory/handifox-online-7938022d.json",
+    "projects/inventory/inflow-inventory-37b03d03.json",
+    "projects/inventory/linnworks-bf9bc97a.json",
+    "projects/inventory/megaventory-064e3487.json",
+    "projects/inventory/multiorders-88deff09.json",
+    "projects/inventory/pretture-2fd582a6.json",
+    "projects/inventory/salesbinder-2deeb317.json",
+    "projects/inventory/sellraze-d4ef211f.json",
+    "projects/inventory/shipmonk-e0f0f98d.json"
   ],
   "remaining_projects": [
     "projects/contracts/legitt-ai-93e548f7.json",
@@ -147,20 +158,9 @@
     "projects/ecommerce/purchase-commerce-87fc1c52.json",
     "projects/ecommerce/sellbery-39301e04.json",
     "projects/inventory/ecomdash-5f4e5812.json",
-    "projects/inventory/ezatlas-5d7d7c74.json",
-    "projects/inventory/finale-inventory-41bc4764.json",
-    "projects/inventory/handifox-online-7938022d.json",
-    "projects/inventory/inflow-inventory-37b03d03.json",
     "projects/inventory/inventory365-befc7735.json",
-    "projects/inventory/linnworks-bf9bc97a.json",
-    "projects/inventory/megaventory-064e3487.json",
-    "projects/inventory/multiorders-88deff09.json",
     "projects/inventory/o4s-f830b452.json",
-    "projects/inventory/orderhive-b134913d.json",
-    "projects/inventory/pretture-2fd582a6.json",
-    "projects/inventory/salesbinder-2deeb317.json",
-    "projects/inventory/sellraze-d4ef211f.json",
-    "projects/inventory/shipmonk-e0f0f98d.json"
+    "projects/inventory/orderhive-b134913d.json"
   ],
   "blocked_projects": [
     {
@@ -319,6 +319,26 @@
     {
       "scope": "inventory map, DEAR/Core, commerce operations, planning and point-of-use",
       "result": "7 catalog tests, Prettier, diff check passed; 48 source hashes and refs verified. Records-only same documented cross-domain constraint."
+    },
+    {
+      "scope": "final 72 assigned dispositions / 59 completed drafts",
+      "results": [
+        "Attached source hashes and section refs for all 59 completed drafts recomputed from actual saved source text.",
+        "72/72 attempted; 13 blocked files byte-identical to baseline; only assigned records and own notes changed.",
+        "22 inventory source types normalized to accepted official_documentation/official_integration enums.",
+        "7 catalog unit tests passed; Prettier and diff checks run on changed files.",
+        "English/Chinese numeric differences inspected: spelled-out numbers, million/万 conversions, dates and 24/7 localization match; clarified affiliate/B2B service translation."
+      ],
+      "records_only": "Official validator still fails at ContractZen migrated domain (validate.mjs:166). No shared validator or canonical identity changed.",
+      "diagnostic_only": "Ignored scratch copy continued all structural checks while collecting domain mismatches instead of asserting them: all other checks passed across 1000 records. This is not an official validator pass.",
+      "domain_migration_projects": [
+        "contractzen-0272f8be",
+        "buildabazaar-9804917a",
+        "futurism-dimensions-638eba08",
+        "dear-inventory-287c6092",
+        "handifox-online-7938022d"
+      ],
+      "quality_boundary": "AI-authored public-documentation drafts; no independent review, account execution or publication acceptance."
     }
   ],
   "commits": [
@@ -347,14 +367,32 @@
       "completed_count": 28
     },
     "b06a6f4",
-    "f6d7d45"
+    "f6d7d45",
+    "5267eef"
   ],
   "content_method": {
     "author": "Codex AI",
     "independent_review": false,
     "hands_on_test": false
   },
-  "status": "in_progress",
+  "status": "completed_with_documented_blockers",
   "inherited_completed_count_excluded": 60,
-  "deployment": "Not requested for this research-only branch."
+  "deployment": "Not requested for this research-only branch.",
+  "attempted_count": 72,
+  "blocked_count": 13,
+  "unattempted_projects": [],
+  "counts_by_category": {
+    "contracts": {
+      "completed": 18,
+      "blocked": 3
+    },
+    "ecommerce": {
+      "completed": 19,
+      "blocked": 6
+    },
+    "inventory": {
+      "completed": 22,
+      "blocked": 4
+    }
+  }
 }
