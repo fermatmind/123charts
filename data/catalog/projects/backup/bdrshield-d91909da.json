@@ -10,153 +10,82 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "BDRShield is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.\n\nAdditional listed capabilities include Backup Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $0.00.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "BDRShield 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密。\n\n资料还列出备份排程。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $0.00.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "BDRShield is Vembu’s backup and disaster-recovery product, presented on its current homepage as the successor name to BDRSuite. It offers cloud or on-premises management and local/cloud storage choices for virtual machines, physical systems, SaaS and application workloads.\n\nThe relevant question is which protection and restore path applies to your source, not whether the family lists many platforms. This profile uses VMware backup as a concrete example and separates workload licensing from optional storage. Documentation was read; software was not installed.",
+  "description_zh": "BDRShield 是 Vembu 的备份和灾难恢复产品，当前首页说明 BDRSuite 已改称 BDRShield。它提供云端或本地管理，以及本地／云存储选项，覆盖虚拟机、物理系统、SaaS 和应用工作负载。\n\n选型重点是来源适用哪种保护和恢复路径，不能只看家族的平台数量。本文以 VMware 备份为例，并区分工作负载许可与可选存储；已阅读文档，未安装软件。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "VM backup and recovery",
+      "name_zh": "VM 备份与恢复",
+      "explanation_en": "Protect VMware VMs and recover complete VMs or selected files.",
+      "explanation_zh": "保护 VMware VM，并恢复整台 VM 或所选文件。",
+      "source_ref": "vmware",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compression Tools",
-      "name_zh": "压缩工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Hybrid repositories",
+      "name_zh": "混合仓库",
+      "explanation_en": "Choose local, vendor cloud or supported customer cloud storage.",
+      "explanation_zh": "选择本地、厂商云或支持的客户云存储。",
+      "source_ref": "storage",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Choose the console and repository, connect one supported VMware source and define policy.",
+      "Restore a representative VM to an isolated destination and check application data."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "选择控制台和仓库，连接一个受支持 VMware 来源并定义策略。",
+      "将代表性 VM 恢复到隔离目标并核对应用数据。"
+    ],
+    "source_refs": ["product", "vmware", "storage"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $0.00.",
-      "zh": "提供免费试用 起价为 $0.00.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Backup administrator", "MSP operator"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the console and repository, connect one supported VMware source and define policy.",
+        "zh": "选择控制台和仓库，连接一个受支持 VMware 来源并定义策略。",
+        "source_refs": ["product", "vmware", "storage"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Restore a representative VM to an isolated destination and check application data.",
+        "zh": "将代表性 VM 恢复到隔离目标并核对应用数据。",
+        "source_refs": ["vmware"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Free console installation does not grant all workload licenses or included cloud storage.",
+        "zh": "控制台安装免费不代表所有工作负载许可和云存储均免费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -168,37 +97,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $0.00.",
-    "source_snapshot_zh": "提供免费试用 起价为 $0.00.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T14:59:26.061890+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "custom",
+    "billing_basis": "Workload-specific units and term; optional storage per GB.",
+    "source_snapshot_en": "Workload quote required; optional S3-backed vendor storage advertised from USD 0.03/GB-month. 30-day trial.",
+    "source_snapshot_zh": "工作负载需询价；可选 S3 支撑的厂商存储宣传起价每 GB 月 0.03 美元，试用 30 天。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does BDRShield do?",
-      "question_zh": "BDRShield 用来做什么？",
-      "answer_en": "BDRShield is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.",
-      "answer_zh": "BDRShield 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Web Access, Compression Tools, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、网页访问、压缩工具、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -208,25 +122,144 @@
       "read_at": "2026-10-22T08:41:21.181Z",
       "excerpt_sha256": "4ad1e37ab6367b979fa29d27f16b5edf6acfa245f5d74d8f49c88194235078aa",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "BDRShield",
+      "title": "BDRShield overview",
+      "url": "https://www.bdrshield.com/",
+      "read_at": "2026-10-22T14:55:42.500187+00:00",
+      "excerpt_sha256": "2991729a208249534e12767d1dcb734958c1c70e54e0ede8d503ea1da22b167c",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Vembu product naming, console choices and workload boundaries."
+    },
+    {
+      "id": "vmware",
+      "type": "official_documentation",
+      "site": "BDRShield",
+      "title": "BDRShield VMware Backup",
+      "url": "https://www.bdrshield.com/vmware-backup/",
+      "read_at": "2026-10-22T14:56:40.493364+00:00",
+      "excerpt_sha256": "908134f22635acb490ab74b97180c92cbb66035559ab55993858d64ac5408f91",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "VMware workflow, restore modes and screenshot-based backup verification."
+    },
+    {
+      "id": "storage",
+      "type": "official_documentation",
+      "site": "BDRShield",
+      "title": "Backup to Public Cloud",
+      "url": "https://www.bdrshield.com/backup-to-public-cloud/",
+      "read_at": "2026-10-22T14:56:41.468738+00:00",
+      "excerpt_sha256": "7dfc7f518e6f644e19aead58022f3c744098e0811ce5f2ffb9517d36571ea54f",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Destination repositories differ from management console deployment."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "BDRShield",
+      "title": "BDRShield Pricing and Licensing",
+      "url": "https://www.bdrshield.com/vembu-bdr-suite-pricing/",
+      "read_at": "2026-10-22T14:56:45.120456+00:00",
+      "excerpt_sha256": "ccff382bcf04f540cb6e22aead301dcf6758cbb81c66b531a49e9e8770fe5f46",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Quote-led workload units, separate storage, trial, perpetual and maintenance terms."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:59:26.061890+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "vmware",
+        "title_en": "Design one VM recovery before expanding",
+        "title_zh": "先设计一台 VM 的恢复",
+        "en": "The VMware page describes agentless image backup, changed-block tracking, scheduled jobs, whole-VM and file recovery, plus replication. Its setup sequence is to install the Backup Server, add ESXi or vCenter, choose policies and storage, then configure recovery. Agentless backup still requires suitable source access and compatible infrastructure.\n\nFor an example application VM, restore to a spare target with deliberate network mapping so the test does not collide with the live instance. Check application startup and an actual data read. Automated verification that boots a VM and emails a screenshot is useful, but does not prove application-level correctness.",
+        "zh": "VMware 页面说明无代理镜像备份、变化块跟踪、调度、整台 VM 或文件恢复及复制。接入顺序为安装 Backup Server、添加 ESXi 或 vCenter、选择策略与存储，再配置恢复。无代理仍要求适当来源权限和兼容基础设施。\n\n例如，把应用 VM 恢复到备用目标，并明确网络映射，避免测试与线上实例冲突。还应检查应用启动和真实数据读取。自动验证启动 VM 并邮件发送截图有参考价值，但不能证明应用逻辑正确。",
+        "source_refs": ["vmware"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "storage",
+        "title_en": "Management location and backup destination are separate",
+        "title_zh": "管理位置与备份目标是两件事",
+        "en": "A cloud console does not mean every backup must live in the vendor cloud. Official storage pages describe local storage and customer cloud repositories including S3, Azure Blob, Google Cloud and S3-compatible providers. The on-premises console is also offered.\n\nDecide the repository, copy topology, retention and credentials independently of the management UI. For ransomware recovery, verify the actual destination’s immutability configuration and the account’s ability to change retention; the product’s “ransomware-proof” marketing is not an independently demonstrated guarantee. Customer storage and transfer costs remain part of the design.",
+        "zh": "使用云控制台不代表所有备份必须存放在厂商云。官方存储页说明本地存储及客户云仓库，包括 S3、Azure Blob、Google Cloud 和 S3 兼容服务，也提供本地控制台。\n\n仓库、复制拓扑、保留及凭据应独立于管理界面决定。为勒索软件恢复选型时，应核对真实目标的不可变配置和账户修改保留期的权限，不能把“ransomware-proof”宣传当作独立验证的保证。客户存储和传输费仍属于方案成本。",
+        "source_refs": ["product", "storage"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "License the source and price storage separately",
+        "title_zh": "来源许可与存储分别计价",
+        "en": "The current pricing page routes buyers to a quote and defines different units: endpoints, servers, users for SaaS, VMs, applications and 500-GB NAS/file-share blocks. Optional vendor cloud is charged per GB. The page advertises Amazon S3-backed storage from USD 0.03 per GB-month and labels its Wasabi option coming soon; it does not provide a complete workload quote.\n\nFor example, ten endpoints and twenty protected Microsoft 365 users need ten endpoint and twenty user entitlements, plus any applicable storage. Do not add those as thirty interchangeable licenses with one assumed rate. The advertised full-featured trial lasts 30 days; exact free-license allowances were not read.",
+        "zh": "当前定价页引导询价，并按端点、服务器、SaaS 用户、VM、应用及每 500 GB NAS／共享文件块等单位授权；可选厂商云按 GB 收费。页面列 Amazon S3 支撑存储起价每 GB 月 0.03 美元，Wasabi 选项为即将推出，但未给完整工作负载报价。\n\n例如，十个端点和二十个受保护 Microsoft 365 用户，需要十份端点和二十份用户权益，再加适用存储费，不能简单算成三十份相同单价的许可。宣传的完整功能试用为 30 天，本次未实读免费许可的具体额度。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_hypothetical_example"
+      },
+      {
+        "id": "term",
+        "title_en": "Perpetual use differs from ongoing maintenance",
+        "title_zh": "永久使用与持续维护不同",
+        "en": "The pricing FAQ describes annual and multiyear subscriptions and perpetual licensing. Perpetual purchases include one year of maintenance; further support and updates require the applicable maintenance arrangement. A free Backup Server installation is not a free license for every protected workload.\n\nShortlist BDRShield for an IT team or MSP able to maintain repositories, source permissions and recovery tests across mixed workloads. Before purchase, obtain exact version support, storage economics and failure-escalation details, and perform a representative restore. Recovery speed, malware detection effectiveness and service-provider margins were not measured.",
+        "zh": "定价 FAQ 说明年付、多年订阅及永久许可。永久购买附一年维护，后续支持及更新需要适用维护安排。Backup Server 安装免费不代表每个受保护工作负载都免费。\n\n能够为混合工作负载维护仓库、来源权限和恢复测试的 IT 团队或 MSP，可考虑 BDRShield。购买前需取得准确版本支持、存储成本及故障升级说明，并恢复代表性样例。本文未测量恢复速度、恶意软件检测效果或服务商利润。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Exact free-license allowances, legal EULA, source-version compatibility and complete workload quote were not verified.",
+      "zh": "未确认免费许可额度、法律 EULA、来源版本兼容性及完整工作负载报价。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No install, application restore, malware test or recovery benchmark was executed; storage immutability depends on real configuration.",
+      "zh": "未安装、恢复应用、测试恶意软件或恢复性能；存储不可变性取决于真实配置。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "BDRShield: Uses, Workflow, Pricing and Limits",
+    "title_zh": "BDRShield：用途、流程、价格与限制",
+    "description_en": "BDRShield is Vembu’s backup and disaster-recovery product, presented on its current homepage as the successor name to BDRSuite. It offers cloud or on-premises management and local/cloud storage choices for virtual machines, physical systems, SaaS and application workloads.",
+    "description_zh": "BDRShield 是 Vembu 的备份和灾难恢复产品，当前首页说明 BDRSuite 已改称 BDRShield。它提供云端或本地管理，以及本地／云存储选项，覆盖虚拟机、物理系统、SaaS 和应用工作负载。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }

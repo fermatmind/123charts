@@ -10,153 +10,94 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Clumio is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.\n\nAdditional listed capabilities include Backup Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: protect data using supported cryptographic mechanisms; run backups according to a defined schedule. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Clumio 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密。\n\n资料还列出备份排程。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过受支持的密码机制保护数据；按指定计划执行备份。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Clumio by Commvault is a managed cloud-data backup and recovery platform. The current website lists AWS workloads and Google Cloud Storage, while explicitly placing Azure workloads on the roadmap. Being part of Commvault does not make every Commvault product a Clumio capability.\n\nThis profile uses Amazon S3 to explain protection groups, retention tiers and recovery choices. Coverage and billing vary by workload; a headline recovery or RPO figure is not a guarantee for every protected service. No cloud account was connected for this research.",
+  "description_zh": "Clumio by Commvault 是托管式云数据备份与恢复平台。当前官网列出 AWS 工作负载及 Google Cloud Storage，并明确把 Azure 工作负载列为路线图。属于 Commvault 不代表该厂商所有产品能力都属于 Clumio。\n\n本文以 Amazon S3 说明保护组、保留层级和恢复选择。覆盖及计费随工作负载不同，首页恢复或 RPO 数字不能当作所有服务的保证。本次未连接云账户。",
   "core_features": [
     {
-      "name_en": "Incremental Backup",
-      "name_zh": "增量备份",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Policy-driven workload backup",
+      "name_zh": "策略驱动工作负载备份",
+      "explanation_en": "Apply policies to cloud resources and protection groups.",
+      "explanation_zh": "为云资源及保护组应用策略。",
+      "source_ref": "s3",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Web Access",
-      "name_zh": "网页访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Granular S3 restore",
+      "name_zh": "S3 细粒度恢复",
+      "explanation_en": "Select objects, prefixes or buckets and an authorized destination.",
+      "explanation_zh": "选择对象、前缀或 bucket 及授权目标。",
+      "source_ref": "s3",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Compression Option",
-      "name_zh": "压缩选项",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Storage",
-      "name_zh": "自动存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cloud Storage",
-      "name_zh": "云存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Remote Access",
-      "name_zh": "远程访问",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Secure Data Storage",
-      "name_zh": "安全数据存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Encryption",
-      "name_zh": "加密",
-      "explanation_en": "Protect data using supported cryptographic mechanisms.",
-      "explanation_zh": "通过受支持的密码机制保护数据。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup Scheduling",
-      "name_zh": "备份排程",
-      "explanation_en": "Run backups according to a defined schedule.",
-      "explanation_zh": "按指定计划执行备份。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Marketplace and IaC onboarding",
+      "name_zh": "Marketplace 与 IaC 接入",
+      "explanation_en": "Connect cloud accounts through supported procurement and bootstrap paths.",
+      "explanation_zh": "通过支持的采购及接入路径连接云账户。",
+      "source_ref": "setup",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Protect data using supported cryptographic mechanisms",
-      "Run backups according to a defined schedule"
+      "Connect a nonproduction account and verify the seed for one scoped protection group.",
+      "Recover representative objects to an authorized alternate destination and inspect results."
     ],
-    "zh": ["通过受支持的密码机制保护数据", "按指定计划执行备份"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "连接非生产账户，核对一个限定保护组的种子备份。",
+      "把代表性对象恢复到授权替代目标并检查结果。"
+    ],
+    "source_refs": ["setup", "s3"],
+    "basis": "Evaluation tasks based on documentation; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Cloud platform engineer",
+      "AWS data protection administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Connect a nonproduction account and verify the seed for one scoped protection group.",
+        "zh": "连接非生产账户，核对一个限定保护组的种子备份。",
+        "source_refs": ["setup", "s3"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Recover representative objects to an authorized alternate destination and inspect results.",
+        "zh": "把代表性对象恢复到授权替代目标并检查结果。",
+        "source_refs": ["s3"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Continuous capture requires protected membership and completed seed; Archive lacks Instant Access.",
+        "zh": "持续捕获要求加入保护范围并完成种子；Archive 不支持 Instant Access。",
+        "source_refs": ["s3"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -168,37 +109,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T14:58:01.661450+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "price_type": "usage_based",
+    "billing_basis": "Workload, protected GiB-month, object/item quantities, tier, retention and recovery usage.",
+    "source_snapshot_en": "S3 Standard USD 0.025/GiB-month + USD 1.50/million managed objects/month; recovery and other charges additional.",
+    "source_snapshot_zh": "S3 Standard 每 GiB 月 0.025 美元，加每百万托管对象每月 1.50 美元；恢复等另计。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Clumio do?",
-      "question_zh": "Clumio 用来做什么？",
-      "answer_en": "Clumio is a product in the Backup and recovery category. Its directory profile covers Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption.",
-      "answer_zh": "Clumio 属于备份与恢复软件。第三方资料列出的功能包括增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Incremental Backup, Web Access, Compression Option, Automated Storage, Cloud Storage, Remote Access, Secure Data Storage, Encryption, Backup Scheduling",
-      "answer_zh": "增量备份、网页访问、压缩选项、自动存储、云存储、远程访问、安全数据存储、加密、备份排程"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -208,25 +134,153 @@
       "read_at": "2026-10-22T08:46:16.022Z",
       "excerpt_sha256": "3fe9da011bcfeb339b79eb670c70d3bdf5215dbfa7a410ce624f323c39535a77",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Clumio",
+      "title": "Clumio by Commvault overview",
+      "url": "https://www.clumio.com/",
+      "read_at": "2026-10-22T14:55:23.223012+00:00",
+      "excerpt_sha256": "57b8afa5e61079d7f733622c3c8f0a0d342d2e94305afc95539aa8b68e6b6839",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "AWS/GCS support versus Azure roadmap; no benchmark claims adopted."
+    },
+    {
+      "id": "setup",
+      "type": "official_documentation",
+      "site": "Clumio",
+      "title": "Getting Started with Clumio",
+      "url": "https://www.clumio.com/platform/getting-started",
+      "read_at": "2026-10-22T14:55:39.937161+00:00",
+      "excerpt_sha256": "34d3aa511fa8059beb57ffb7e2f67d68aaa8b086b23d7edef36661b20f8aba51",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Account bootstrap, first backup, procurement and region distinctions."
+    },
+    {
+      "id": "s3",
+      "type": "official_documentation",
+      "site": "Clumio",
+      "title": "Amazon S3 Backup & Recovery",
+      "url": "https://www.clumio.com/workloads/aws/s3",
+      "read_at": "2026-10-22T14:55:39.333313+00:00",
+      "excerpt_sha256": "a5d449de100b1e1530b0609ed91c91c8e719e3988f404f0de22d7b15b095f7a1",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Protection groups, seed prerequisites, Backtrack versus SecureVault, and restore targets."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Clumio",
+      "title": "Clumio Pricing",
+      "url": "https://www.clumio.com/pricing",
+      "read_at": "2026-10-22T14:55:38.769571+00:00",
+      "excerpt_sha256": "831a6b7a1972f7581343428be8089f53563bb55e64672f413db83b1d3ad6853c",
+      "verification": "official_documentation_read",
+      "transport": "public_https_text_reader",
+      "research_notes_en": "Workload-specific GiB/object and restore charges; tier and early-deletion tradeoffs."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:58:01.661450+00:00",
+    "scope": "Public official documentation read; no account, purchase, execution, security audit or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_and_fact_checked_against_english",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Draft primary-source research, not an independent review or hands-on product test.",
+    "Chinese profile text does not establish a Chinese software interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "setup",
+        "title_en": "Connect the account before defining protection",
+        "title_zh": "先接入账户，再定义保护",
+        "en": "The setup page offers AWS Marketplace or direct evaluation signup, with the same tenant but different procurement paths. It marks GCP Marketplace signup as coming soon; that procurement status is distinct from GCS workload support. The operational sequence is account connection, a CloudFormation or Terraform bootstrap, discovery, policy creation and first-backup verification.\n\nPrepare authorization to create the connector role and confirm supported control/data-plane regions. “Agentless” means no endpoint backup agent, not an absence of IAM permissions or customer configuration. The public region list contains a count inconsistency, so consult the linked current region documentation for an actual deployment.",
+        "zh": "接入页提供 AWS Marketplace 或直接试用注册，两者进入相同租户，但采购方式不同；GCP Marketplace 注册列为即将推出，与已列出的 GCS 工作负载支持并非同一事项。操作顺序为连接账户、通过 CloudFormation 或 Terraform 建立接入、发现资源、创建策略并核对首次备份。\n\n需要具备创建连接角色的权限，确认受支持控制面和数据面区域。无代理指无需端点备份代理，不代表没有 IAM 权限或客户配置。公开区域列表的计数存在不一致，真实部署应核对其链接的最新区域文档。",
+        "source_refs": ["setup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "s3",
+        "title_en": "Define a protection group and prove a recovery point",
+        "title_zh": "定义保护组并验证恢复点",
+        "en": "For S3, policies attach to protection groups and specify retention, frequency, tier and destination. Prefix and storage-class filters scope the protected objects. Continuous backup requires a valid protected group and completed seed before it captures data.\n\nFor example, isolate an application’s documents/ prefix, complete the seed, then recover a disposable object from a chosen timestamp into a separate bucket. Check object contents and access separately. Backtrack operates in the source account using object versions; SecureVault keeps a separate backup copy. Those recovery models have different dependencies and should not be conflated.",
+        "zh": "S3 策略绑定保护组，指定保留期、频次、层级和目标；前缀及存储类别筛选决定保护哪些对象。持续备份必须先有有效保护组并完成种子备份，才开始捕获。\n\n例如，选定应用的 documents/ 前缀，完成种子备份后，把一个可丢弃对象从指定时间点恢复到另一 bucket，分别核对内容和访问。Backtrack 在来源账户内利用对象版本操作；SecureVault 则保留独立备份副本。两种恢复方式依赖不同，不能混为一谈。",
+        "source_refs": ["s3"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "tiers",
+        "title_en": "Archive changes the recovery tradeoff",
+        "title_zh": "归档层改变恢复取舍",
+        "en": "SecureVault Standard supports Instant Access, a read-only S3-compatible endpoint backed by backup data. Archive does not provide that option. The workload page quotes an Archive restore range of 12–48 hours, while the price table says restores begin after 24–48 hours. Do not collapse those different descriptions into a recovery-time guarantee.\n\nUse an actual recovery objective to select the tier. An inexpensive cold copy may suit long retention but not immediate application access. An application that writes cannot simply treat a read-only Instant Access endpoint as its normal writable store.",
+        "zh": "SecureVault Standard 支持 Instant Access，即由备份数据提供的只读 S3 兼容端点；Archive 不提供该能力。工作负载页列出归档恢复 12–48 小时，而定价表写 24–48 小时后开始，不能把不同描述合成恢复时限保证。\n\n应按实际恢复目标选择层级。低价冷副本可能适合长期保留，却不满足立即访问；需要写入的应用，也不能简单把只读 Instant Access 当成正常可写存储。",
+        "source_refs": ["s3", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Capacity, object counts and recovery all affect cost",
+        "title_zh": "容量、对象数和恢复都影响费用",
+        "en": "The retrieved S3 table lists Standard backup at USD 0.025 per GiB-month plus USD 1.50 per million managed objects per month; Archive starts at USD 0.010 per GiB-month with object charges and early-deletion conditions. Restored capacity, Instant Access, requests and data transfer can add charges. Minimum retention and early-deletion windows differ.\n\nFor a hypothetical 1,000 GiB-month Standard backup with one million managed objects, the stated backup components total USD 26.50 before restores, transfer, tax or other charges. This does not estimate the entire bill. EC2/EBS, database and other workload rates must be priced separately; GiB must not be relabeled GB.",
+        "zh": "本次 S3 表列 Standard 备份每 GiB 月 0.025 美元，另加每百万托管对象每月 1.50 美元；Archive 起价每 GiB 月 0.010 美元，并有对象费和提前删除条件。恢复容量、Instant Access、请求及数据传输可另计费，最低保留期和提前删除窗口不同。\n\n假设 Standard 备份为 1,000 GiB 月和一百万托管对象，上述备份部分合计 26.50 美元，未含恢复、传输、税费等，不是完整账单估算。EC2/EBS、数据库及其他工作负载应分别计算，GiB 不能改写成 GB。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_hypothetical_calculation"
+      },
+      {
+        "id": "fit",
+        "title_en": "Pilot with an authorized recovery destination",
+        "title_zh": "用已授权恢复目标试点",
+        "en": "Clumio is a candidate for cloud teams seeking managed workload recovery with policy and API control. A useful pilot connects a nonproduction account, protects one representative data set, checks seed completion, and restores to an authorized alternate destination. Review skipped or partial points rather than treating resource discovery as protection.\n\nConfirm the exact workload engine/version, region, retention economics and restore permissions. Azure roadmap items should not be included in an available-feature checklist. Vendor claims of immutability, security certifications or large-scale speed were not independently audited or benchmarked here.",
+        "zh": "需要策略和 API 控制的托管工作负载恢复时，云团队可考虑 Clumio。试点可接入非生产账户，保护一组代表性数据，核对种子完成，再恢复到已授权的替代目标。应检查跳过或部分完成的恢复点，不能把发现资源当成已保护。\n\n需确认具体工作负载引擎／版本、区域、保留成本及恢复权限。Azure 路线图条目不能列入已可用能力。本文未独立审计不可变、安全认证说明，也未测试大规模恢复速度。",
+        "source_refs": ["product", "setup", "s3"],
+        "evidence_type": "editorial_guidance_based_on_documentation"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Illustrative evaluation steps were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Exact contract and region-specific quote, source engine versions and IAM policy were not verified for a real account.",
+      "zh": "未为真实账户确认合同及区域报价、来源引擎版本和 IAM 策略。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No seed backup, restore, speed benchmark or security audit was performed; public Archive timing and region-count wording differ.",
+      "zh": "未执行种子备份、恢复、速度测试或安全审计；公开归档时序及区域计数措辞存在差异。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "seo": {
+    "title_en": "Clumio: Uses, Workflow, Pricing and Limits",
+    "title_zh": "Clumio：用途、流程、价格与限制",
+    "description_en": "Clumio by Commvault is a managed cloud-data backup and recovery platform. The current website lists AWS workloads and Google Cloud Storage, while explicitly placing Azure workloads on the roadmap. Being part of Commvault does not make every Commvault product a Clumio capability.",
+    "description_zh": "Clumio by Commvault 是托管式云数据备份与恢复平台。当前官网列出 AWS 工作负载及 Google Cloud Storage，并明确把 Azure 工作负载列为路线图。属于 Commvault 不代表该厂商所有产品能力都属于 Clumio。",
+    "primary_intent": "Understand the product and assess a concrete use case.",
+    "query_basis": "Editorial judgment; search volume, ranking and AI citation effects not measured.",
+    "canonical_url": null
+  }
 }
