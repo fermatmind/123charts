@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T15:41:48.588357+00:00",
+  "updated_at": "2026-10-22T15:47:42.453573+00:00",
   "status": "in_progress",
-  "completed_count": 74,
+  "completed_count": 75,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -78,9 +78,10 @@
     "projects/seo/keyword-com-0a1cb131.json",
     "projects/seo/linkbox-f7ec2179.json",
     "projects/seo/linkody-4faf8b47.json",
-    "projects/seo/mangools-1ea0269e.json"
+    "projects/seo/mangools-1ea0269e.json",
+    "projects/seo/meta-tags-ef1635d3.json"
   ],
-  "remaining_count": 59,
+  "remaining_count": 58,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -98,7 +99,6 @@
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
-    "projects/seo/meta-tags-ef1635d3.json",
     "projects/seo/morningscore-32e49955.json",
     "projects/seo/moz-pro-03167342.json",
     "projects/seo/rankwatch-8c1ed4a2.json",
@@ -143,7 +143,7 @@
     "projects/surveys/pollfish-8dbd67ee.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/meta-tags-ef1635d3.json",
+  "next_project": "projects/seo/morningscore-32e49955.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -375,6 +375,10 @@
     {
       "project": "swonkie-41671cfb",
       "reason": "Authentic vendor-linked developer docs use docs.swonkie.dev rather than swonkie.com. Actual URLs retained; shared validator unchanged."
+    },
+    {
+      "project": "meta-tags-ef1635d3",
+      "reason": "Google Search Central and OpenGraph are external primary platform/protocol authorities, explicitly labelled with their own sites; retained real URLs to qualify inaccurate vendor fixed-length claims. Same-domain validator cannot represent those sources and remains unchanged; no full PASS claimed."
     }
   ],
   "validation": [
@@ -995,6 +999,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-13",
+      "completed_projects": 75,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 75 completed drafts; scope/status/source types/hashes/references/bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "NOT RERUN: unchanged validator/Benchmark source; last actual execution at72 failed Help Scout domain mismatch at line166; MetaTags external primary authorities also recorded as compatibility gap; no full PASS claimed"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -1147,6 +1169,11 @@
       "commit": "292fd8f",
       "completed_count": 73,
       "scope": "Linkody current CSV routing/erasure, archive/backlog/discovery and client delivery semantics"
+    },
+    {
+      "commit": "aaa8bce",
+      "completed_count": 74,
+      "scope": "Mangools tool-chain, cadence, immutable AI configuration and API/MCP quota/error behavior"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -1177,7 +1204,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 12,
+      "completed": 13,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 0
     }
@@ -1544,6 +1571,10 @@
     {
       "project": "mangools-1ea0269e",
       "note": "Actual KWFinder/SERPChecker/SERPWatcher/LinkMiner/SiteProfiler, API/MCP/auth/errors/pools and AI create/update contracts read. Basic/Premium weekly Agency daily, two devices two slots, cached dates and loaded-only backlink export. Pricing cards absent reader and actual reused background browser, no amount inferred. AI locale/platform/language immutable, location0 unsupported despite example placeholders. Free API invocation versus paid monitor capacity separated; hosted/API-key burst limits and HTML429 distinct. Permanent Free vs old trial, New30/90day, legacy API entitlement and refund terms differences retained; no operations."
+    },
+    {
+      "project": "meta-tags-ef1635d3",
+      "note": "Actual public editor and unchanged default GetCode panel inspected in reused background browser; no customURL/input/upload/test/deployment. Generated group/image-host reminder observed; public-browser transport explicitly distinguished. Google title/snippet and OpenGraph primary authority read to avoid adopting homepage fixed60/105char claims; mock vs actual platform rendering separated. No price/free entitlement inferred from public access; generic policy account/API and at-least3year retention not treated as actual feature/processing guarantee."
     }
   ],
   "ownership_handoff": {
