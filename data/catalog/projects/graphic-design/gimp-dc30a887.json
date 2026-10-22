@@ -10,104 +10,63 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "GIMP is a product in the Graphic design category. Its directory profile covers Built-in Templates, Premium Icons, Image Editor, Transparency Tool.\n\nDeployment is listed as Mobile App (Android) Desktop App (Windows, Mac). The listed organization sizes are Medium Business Small Business Freelancers. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: modify image content using supported editing tools. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "GIMP 属于平面设计软件。第三方资料列出的功能包括内置模板、高级图标素材、图片编辑器、透明度工具。\n\n资料所列运行方式为移动应用 (Android) 桌面应用 (Windows, Mac)。资料所列适用组织规模为中型企业 小型企业 自由职业者。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：使用受支持的工具修改图片内容。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "GIMP is a free desktop image editor for photo retouching, compositing and image creation on GNU/Linux, macOS and Windows. It offers layers, editable effects, color-management tools and scripting/plugin extensibility. The official download page read lists stable version 3.2.6; the detailed workflow evidence here comes from the 3.2 manual.\n\nIts important handoff distinction is between an editable XCF project and an exported image. XCF preserves the native editing state, while a delivery format can lose layer/effect information. Free GPL software permits commercial creative work, but that does not clear the rights to every photograph, font, plugin or other asset used in a design.",
+  "description_zh": "GIMP是用于照片修饰、合成及图像创作的免费桌面编辑器，支持GNU/Linux、macOS和Windows，提供图层、可调效果、色彩管理及脚本/插件扩展。实读官方下载列稳定版3.2.6，详细流程依据3.2手册。\n\n交付时需区分可编辑XCF项目与导出图像：XCF保留原生编辑状态，交付格式可能损失图层/效果信息。GPL免费软件允许商业创作，但不自动解决所用照片、字体、插件或其他资产权利。",
   "core_features": [
     {
-      "name_en": "Built-in Templates",
-      "name_zh": "内置模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Layer-based image work",
+      "name_zh": "基于图层的图像工作",
+      "explanation_en": "Retouch and combine images while keeping an XCF project for later editing.",
+      "explanation_zh": "修饰及合成图像，并保留XCF项目供后续编辑。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Premium Icons",
-      "name_zh": "高级图标素材",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Editable layer effects",
+      "name_zh": "可调图层效果",
+      "explanation_en": "Eligible GEGL filters can remain adjustable in XCF; exporting merges those effects, including in PSD output.",
+      "explanation_zh": "符合条件的GEGL滤镜可在XCF保持可调，导出时会合并，包括PSD输出。",
+      "explanation_scope": "product_specific",
+      "source_ref": "effects",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Image Editor",
-      "name_zh": "图片编辑器",
-      "explanation_en": "Modify image content using supported editing tools.",
-      "explanation_zh": "使用受支持的工具修改图片内容。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Transparency Tool",
-      "name_zh": "透明度工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Save and export separation",
+      "name_zh": "保存与导出分开",
+      "explanation_en": "Save creates the native XCF project; Export produces another format with its own preservation limits.",
+      "explanation_zh": "Save保存原生XCF项目，Export生成其他格式，各有保留限制。",
+      "explanation_scope": "product_specific",
+      "source_ref": "files",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Modify image content using supported editing tools"],
-    "zh": ["使用受支持的工具修改图片内容"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["files", "home"],
+    "basis": "Illustrative uses, not customer results."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Free-forever plan.",
-      "zh": "未提供免费试用 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Mobile App (Android) Desktop App (Windows, Mac)",
-      "zh": "移动应用 (Android) 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Medium Business Small Business Freelancers",
-      "zh": "中型企业 小型企业 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Medium Business Small Business Freelancers",
-    "organization_sizes_zh": "中型企业 小型企业 自由职业者",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "roles_status": "editorial_inference"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "documented",
     "items": []
   },
   "supported_languages": {
@@ -115,42 +74,29 @@
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "classification": "copyleft_open_source",
+    "name": "GNU GPL version3 or later",
+    "url": "https://www.gimp.org/docs/userfaq.html",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Free-forever plan.",
-    "source_snapshot_zh": "未提供免费试用 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "free",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T13:27:14Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "Free GPL v 3-or-laterdesktopsoftware, commercialuseallowed.No mandatorysubscriptionestablished; hardware/training/optionalplugins/servicesandassetrightsseparate.",
+    "summary_zh": "GPLv3或后续版桌面软件免费，允许商用；未建立强制订阅，硬件/培训/可选插件或服务及资产权利另计。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does GIMP do?",
-      "question_zh": "GIMP 用来做什么？",
-      "answer_en": "GIMP is a product in the Graphic design category. Its directory profile covers Built-in Templates, Premium Icons, Image Editor, Transparency Tool.",
-      "answer_zh": "GIMP 属于平面设计软件。第三方资料列出的功能包括内置模板、高级图标素材、图片编辑器、透明度工具。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Built-in Templates, Premium Icons, Image Editor, Transparency Tool",
-      "answer_zh": "内置模板、高级图标素材、图片编辑器、透明度工具"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -160,25 +106,194 @@
       "read_at": "2026-10-22T08:47:24.667Z",
       "excerpt_sha256": "0b517fd170fdba4f58e9cd24b84652d2aeeddeca3c8273a13dccbb397df92f94",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "GIMP",
+      "title": "GIMP - GNU Image Manipulation Program",
+      "url": "https://www.gimp.org/",
+      "read_at": "2026-10-22T13:26:16Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "99664e47ed722ee615be6cf66de003faa1a8e2a1d3fc4a9f6485ff6c4a02dabb",
+      "research_notes_en": "Readimageediting/compositing/scriptpositioningandcurrentdownloadentry;nocreativeoutcometest."
+    },
+    {
+      "id": "download",
+      "type": "official_documentation",
+      "site": "GIMP",
+      "title": "GIMP - Downloads",
+      "url": "https://www.gimp.org/downloads/",
+      "read_at": "2026-10-22T13:27:09Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "abcc7fd38dbea893754664d1ebd78b565d2f6a398cc10e3e49c374b6272a0666",
+      "research_notes_en": "Readstable3.2.6dateandpackage-specificOSminimums/officialdistributiondistinctions;notinstalled."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "GIMP",
+      "title": "GIMP - Frequently Asked Questions",
+      "url": "https://www.gimp.org/docs/userfaq.html",
+      "read_at": "2026-10-22T13:27:14Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "96d61022b86f2d562312c360f2da9ba8b074560e8a5d1c5e08219cb060a30800",
+      "research_notes_en": "Readfreecommercialuse,RAWexternalpluginsandCMYKconversionversusnativecoremode;notnumericpaidservicepricing."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "GIMP",
+      "title": "GIMP - Frequently Asked Questions",
+      "url": "https://www.gimp.org/docs/userfaq.html",
+      "read_at": "2026-10-22T13:27:14Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "96d61022b86f2d562312c360f2da9ba8b074560e8a5d1c5e08219cb060a30800",
+      "research_notes_en": "ReadGPLv3orlaterandcommercialoutputuse;softwarelicenseversusassetrightsseparated."
+    },
+    {
+      "id": "files",
+      "type": "official_documentation",
+      "site": "GIMP",
+      "title": "Chapter 6. Getting Images out of GIMP",
+      "url": "https://docs.gimp.org/3.2/en/gimp-images-out.html",
+      "read_at": "2026-10-22T13:32:51Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "38c17d620424f3286cca5ad8f57f60c836ff55ae5e5670ae7812192c60528ef5",
+      "research_notes_en": "Read3.2Save/XCF/Exportpreservationandno-undo-historyboundary."
+    },
+    {
+      "id": "effects",
+      "type": "official_documentation",
+      "site": "GIMP",
+      "title": "6. Layer Effects",
+      "url": "https://docs.gimp.org/3.2/en/gimp-using-layer-effects.html",
+      "read_at": "2026-10-22T13:33:01Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "cef2e7ab6b627d5684ee64a59b63db672b3bb696a8cb3bbc02770aee13c07c62",
+      "research_notes_en": "Read3.2eligibleGEGLNDE/stackorder/merge/persistenceandPSDexportmerging;notallpluginsassumedliveeffects."
+    },
+    {
+      "id": "manual",
+      "type": "official_documentation",
+      "site": "GIMP",
+      "title": "GIMP Documentation",
+      "url": "https://docs.gimp.org/",
+      "read_at": "2026-10-22T13:28:16Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "3e215cd1191f61120d3d3414e809a3af9c1b0a133b74035308c0d90628744760",
+      "research_notes_en": "Readcurrent3.2manualidentityandexplicitWIP/outdated-contentwarning;translationcoverageisnotUIlocaleproof."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:33:01Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
+  ],
+  "description_source_refs": ["files", "home"],
+  "profile": {
+    "sections": [
+      {
+        "id": "image-workflow",
+        "title_en": "Keep a reusable project and a separate delivery image",
+        "title_zh": "保留可复用项目，并另存交付图像",
+        "en": "For an illustrative campaign graphic, open the approved photograph, compose the image/text elements and refine the relevant layers. Save the working project as XCF, then export the required web or print delivery format. Reopen both separately: the project should retain the intended editable components, while the export should be checked for size, transparency, profiles and visual appearance. This exercise was not executed.\n\nThe 3.2 manual says opening JPEG/PNG imports it into a new native project. Save uses XCF; Export handles other formats and does not change the project itself. XCF preserves native image information but not undo history, and many ordinary image viewers cannot read it. An exported asset therefore complements rather than replaces the working file and backup.",
+        "zh": "例如活动图，可打开获准照片、组合图像/文字并调整相应图层。工作项目存为XCF，再导出所需网页或印刷格式；分别重新打开，检查项目可编辑组件，以及输出尺寸、透明度、配置文件及视觉效果。上述练习未执行。\n\n3.2手册称打开JPEG/PNG会导入为新原生项目，Save使用XCF，其他格式用Export，导出不改变项目本身。XCF保留原生图像信息但不含撤销历史，许多普通查看器也不能读；导出资产应与工作文件及备份配套。",
+        "source_refs": ["files", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "effects-handoff",
+        "title_en": "Understand what remains editable after an effect",
+        "title_zh": "理解效果处理后哪些仍可编辑",
+        "en": "A layer effect is rendered over a single layer without permanently changing its pixels. The manual says most GEGL filters can be used this way; other filter/plugin types cannot automatically become layer effects. Effects can be edited, reordered, hidden or removed, and the stack is rendered from bottom to top, so order can change the result. Eligible effects and their settings persist in XCF after reopening.\n\nUsing Merge Filter or merging effects into the layer removes that adjustable stack. Export also merges effects even when the target, such as PSD, supports its own effects. Do not promise a collaborator editable GIMP effects merely because the file extension is PSD. Many live effects can slow rendering; test the real document before merging as a performance tradeoff and keep a separate editable original.",
+        "zh": "图层效果叠加到单一图层，不永久改变其像素。手册称多数GEGL滤镜可这样使用，其他滤镜/插件不能自动成为图层效果。效果可编辑、排序、隐藏或删除，堆栈自下而上渲染，顺序可能改变结果；符合条件效果及设置在XCF重新打开后仍保留。\n\n启用Merge Filter或将效果合并到图层会移除可调堆栈；导出也会合并，即使PSD等目标支持其自身效果。不能仅因扩展名PSD就承诺协作者获得可编辑GIMP效果。大量实时效果可能拖慢渲染，应以实际文档测试合并取舍，并保留独立可编辑原件。",
+        "source_refs": ["effects"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "raw-print",
+        "title_en": "Check raw processing and color requirements explicitly",
+        "title_zh": "明确核对RAW处理及色彩要求",
+        "en": "The FAQ describes raw-camera processing through darktable or RawTherapee plugins, with a default raw-processing plugin preference. That is an external dependency path, not evidence that every camera RAWformat is handled natively or that a particular plugin/version works on the chosen machine. Test a representative camera file before adopting the workflow.\n\nFor CMYK, the FAQ distinguishes importing/exporting selected CMYK formats with conversion to/from RGB storage and soft-proof-related information from a native CMYK core image mode. It does not give a completion date for that native mode. Confirm the printer’s profile, separations, proofing and accepted output in a real prepress workflow; a CMYK picker or exporter alone does not establish full print-production parity.",
+        "zh": "FAQ描述通过darktable或RawTherapee插件处理相机RAW，并提供默认RAW处理插件设置。这是外部依赖路径，不证明所有相机RAW格式都原生处理，也不证明特定插件/版本在目标机器可用，采用前应测试代表文件。\n\nCMYK方面，FAQ区分部分格式导入/导出经RGB存储转换、软打样相关信息与原生CMYK核心图像模式，未给后者完成日期。应在实际印前流程确认印厂配置文件、分色、打样及接收格式；CMYK取色或导出本身不等于完整印刷生产能力。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "installation",
+        "title_en": "Choose the official package for the actual operating system",
+        "title_zh": "为实际系统选择官方安装包",
+        "en": "The read download page lists stable 3.2.6 dated September 10, 2026. Its macOS packages require macOS 11 Big Sur or newer and distinguish Intel/Apple Silicon; the Windows installer requires Windows 10 1903 or newer, while its Microsoft Store package has a different Windows 11/Server 2022 minimum. The AppImage lists Debian 13 or a newer distribution, and other Linux packaging options have their own environment requirements. These are package-specific source statements, not an installation test.\n\nThe project says it does not publish an Apple App Store package at this read. Use the official download information and integrity data rather than assume an identically named store listing is the project’s package. Match 3.x plugins/scripts and tutorials to the installed version; this research did not install software, run a script or establish compatibility with a specific third-party plugin.",
+        "zh": "实读下载页列稳定版3.2.6，日期2026年9月10日。macOS包要求macOS11 Big Sur或更新，并区分Intel/Apple Silicon；Windows安装器要求Windows10 1903或更新，Microsoft Store包则另有Windows11/Server2022最低要求。AppImage列Debian13或更新发行版，其他Linux打包也有自身环境要求。这些是具体包的来源说明，不是安装测试。\n\n项目在实读时称未发布Apple App Store包，应使用官方下载及完整性信息，不能假定同名商店条目就是官方包。3.x插件/脚本和教程需匹配安装版本，本次未安装、运行脚本或建立某第三方插件兼容性。",
+        "source_refs": ["download"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-fit",
+        "title_en": "Use free software commercially with separate asset rights",
+        "title_zh": "商业使用免费软件，同时核对资产权利",
+        "en": "The FAQ explicitly permits commercial use and identifies GPL v 3 or later for the program. Software redistribution/modification has GPL obligations; the license does not require an artist’s original output to become GPL merely because GIMP was used. Photographs, fonts, brushes and other inputs can still carry their own terms. The website’s Creative Commonsnotice is also separate from the application license. These are source summaries, not legal advice.\n\nThere is no mandatory application subscription established here. Training, hardware, storage, external raw tools, plugins or professional support can still cost money. GIMP fits local retouching/compositing and editable image work; teams needing a specific proprietary document round-trip or complete prepress workflow should test those requirements rather than assume full equivalence. The manual itself warns of outdated sections and omissions, so version-sensitive behavior remains subject to verification.",
+        "zh": "FAQ明确允许商用，并将程序标为GPLv3或后续版本。软件再分发/修改有GPL义务，但艺术家的原创输出不会仅因使用GIMP就必须GPL；照片、字体、笔刷及其他输入仍可有独立条款。网站Creative Commons声明也不同于应用许可。上述为来源概括，不是法律意见。\n\n本次未建立强制应用订阅，但培训、硬件、存储、外部RAW工具、插件或专业支持仍可能收费。GIMP适合本地修图/合成及可编辑图像工作；如需特定专有文档往返或完整印前流程，应实测而非假定等价。手册自身提醒可能有过时段落和遗漏，版本相关行为仍需核验。",
+        "source_refs": ["license", "manual"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Specificcamera/plugincompatibility, PSD round-trip, printerprofiles/native CMYK workflow, large-documentperformanceandbackuprecoverywerenottested.",
+      "zh": "未测试特定相机/插件兼容、PSD往返、印厂配置/原生CMYK流程、大文档性能或备份恢复。",
+      "source_refs": ["pricing", "effects", "files"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "No 3.2.6 installation, editing/export/print/scriptwasexecuted; manualwarnsofoutdatedcontentandversion-sensitivebehaviorsrequirechecks.",
+      "zh": "未执行3.2.6安装、编辑/导出/印刷/脚本；手册提醒可能过时，版本敏感行为需检查。",
+      "source_refs": ["download", "manual"],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "GIMP: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "GIMP：功能、流程、费用与限制",
+    "description_en": "GIMP is a free desktop image editor for photo retouching, compositing and image creation on GNU/Linux, macOS and Windows. It offers layers, editable effects, color-management tools and scripting/plugin extensibility. The official download page read lists stabl",
+    "description_zh": "GIMP是用于照片修饰、合成及图像创作的免费桌面编辑器，支持GNU/Linux、macOS和Windows，提供图层、可调效果、色彩管理及脚本/插件扩展。实读官方下载列稳定版3.2.6，详细流程依据3.2手册。",
+    "primary_intent": "Evaluate GIMP for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "Understand what remains editable after an effect",
+      "Check raw processing and color requirements explicitly",
+      "Choose the official package for the actual operating system"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
+  }
 }
