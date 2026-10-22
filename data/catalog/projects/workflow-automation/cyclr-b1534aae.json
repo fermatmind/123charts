@@ -10,138 +10,116 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Cyclr is a product in the Integrations and automation category. Its directory profile covers API Management, Error Logs, Pre-built Connectors, Workflow Builder, Security and Privacy Compliance, Data Mapping, Version Control.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $599.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: relate fields between different structures or systems; track changes to files and support revision workflows. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Cyclr 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、错误日志、预置连接器、工作流构建器、安全与隐私合规、数据映射、版本控制。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $599.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：建立不同数据结构或系统之间的字段对应关系；跟踪文件变更并支持版本修订流程。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Cyclr is an embedded integration platform for SaaS vendors and service providers. A team builds reusable integration templates, then deploys customer-specific workflows called Cycles inside separate Accounts. The emphasis is delivering integrations through your product or service rather than asking every customer to operate a separate general-purpose automation workspace.\n\nIts catalog now separates Native Embedded iPaaS, Service Embedded iPaaS and MCP PaaS. This profile concentrates on the template-and-Cycle integration model. Hosting, connector entitlements and API-call capacity must be matched to the selected commercial product.",
+  "description_zh": "Cyclr 是面向 SaaS 厂商与服务商的嵌入式集成平台。团队先建立可复用的集成模板，再把称为 Cycle 的客户专属流程部署到独立 Account。重点是通过自己的产品或服务交付集成，让客户无需各自操作一套通用自动化工作区。\n\n当前产品目录区分 Native Embedded iPaaS、Service Embedded iPaaS 与 MCP PaaS。本文以模板和 Cycle 集成模式为重点；托管方式、连接器权限及 API 调用容量均需对应所选商业产品。",
   "core_features": [
     {
-      "name_en": "API Management",
-      "name_zh": "API 管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Template-to-Cycle deployment",
+      "name_zh": "从模板部署 Cycle",
+      "explanation_en": "Install a reusable template into different customer Accounts.",
+      "explanation_zh": "将可复用模板安装到不同客户的 Account。",
+      "explanation_scope": "product_specific",
+      "source_ref": "templates",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Error Logs",
-      "name_zh": "错误日志",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Customer Accounts",
+      "name_zh": "客户 Account",
+      "explanation_en": "Keep a customer’s connector authentication and workflows in its Account.",
+      "explanation_zh": "在客户 Account 内保存其连接器认证及流程。",
+      "explanation_scope": "product_specific",
+      "source_ref": "accounts",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Pre-built Connectors",
-      "name_zh": "预置连接器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Field-level mapping",
+      "name_zh": "字段级映射",
+      "explanation_en": "Map destination inputs from prior steps, fixed values or supported lookup sources.",
+      "explanation_zh": "通过上游步骤、固定值或支持的查询来源映射目标输入。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mapping",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Workflow Builder",
-      "name_zh": "工作流构建器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Security and Privacy Compliance",
-      "name_zh": "安全与隐私合规",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Mapping",
-      "name_zh": "数据映射",
-      "explanation_en": "Relate fields between different structures or systems.",
-      "explanation_zh": "建立不同数据结构或系统之间的字段对应关系。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Transaction error webhooks",
+      "name_zh": "事务错误 webhook",
+      "explanation_en": "Send step error notifications to a configured HTTP endpoint.",
+      "explanation_zh": "把步骤错误通知发送到配置的 HTTP 端点。",
+      "explanation_scope": "product_specific",
+      "source_ref": "errors",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Relate fields between different structures or systems",
-      "Track changes to files and support revision workflows"
+      "Deliver the same contact integration to separately authenticated customers.",
+      "Provide a controlled self-service integration installation flow."
     ],
     "zh": [
-      "建立不同数据结构或系统之间的字段对应关系",
-      "跟踪文件变更并支持版本修订流程"
+      "向分别认证的客户交付同一联系人集成。",
+      "提供受控的自助集成安装流程。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["templates", "embed-guide"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $599.0.",
-      "zh": "提供免费试用 起价为 $599.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "SaaS integration engineer",
+      "Product team owning customer integrations",
+      "Managed integration service provider"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "intro"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Map one customer in your app to one Cyclr Account.",
+        "zh": "把自有应用中的一个客户映射到一个 Cyclr Account。",
+        "source_refs": ["accounts"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Build one template, configure required and user-supplied fields, and test its steps.",
+        "zh": "构建一个模板，配置必填及客户自填字段，并测试各步骤。",
+        "source_refs": ["mapping", "testing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Install for a test customer and verify error notification and release update behavior.",
+        "zh": "为测试客户安装，并核对错误通知及版本更新行为。",
+        "source_refs": ["errors", "versions"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Test Get steps may show only a first page and do not prove incremental behavior.",
+        "zh": "Get 步骤测试可能仅显示第一页，不能证明增量行为。",
+        "source_refs": ["testing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Template test values on User Configurable fields do not carry into customer installation.",
+        "zh": "User Configurable 字段的模板测试值不会带入客户安装实例。",
+        "source_refs": ["mapping"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -153,37 +131,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $599.0.",
-    "source_snapshot_zh": "提供免费试用 起价为 $599.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "commercial_platform_connector_and_api_call_plans",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:00:23.077380Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Product-specific subscription, active connectors and included/API-call overage; hosting scope varies."
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Cyclr do?",
-      "question_zh": "Cyclr 用来做什么？",
-      "answer_en": "Cyclr is a product in the Integrations and automation category. Its directory profile covers API Management, Error Logs, Pre-built Connectors, Workflow Builder, Security and Privacy Compliance, Data Mapping, Version Control.",
-      "answer_zh": "Cyclr 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、错误日志、预置连接器、工作流构建器、安全与隐私合规、数据映射、版本控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "API Management, Error Logs, Pre-built Connectors, Workflow Builder, Security and Privacy Compliance, Data Mapping, Version Control",
-      "answer_zh": "API 管理、错误日志、预置连接器、工作流构建器、安全与隐私合规、数据映射、版本控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -193,25 +155,260 @@
       "read_at": "2026-10-22T08:40:44.906Z",
       "excerpt_sha256": "e4aca584176bfd9aaea702d6862e3e4a2e0d5916d010c2947f3b03693c578855",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Cyclr",
+      "title": "Embedded iPaaS Pricing Options | Embedded iPaaS | Cyclr",
+      "url": "https://cyclr.com/pricing",
+      "read_at": "2026-10-22T10:00:23.077380Z",
+      "excerpt_sha256": "8d0b3f2f942be631672ef3820551c035543755bc258353978470f6dff419085b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current product-family prices, connector charging, API-call allowances and hosting responsibility read; legacy task terminology is not normalized into a current rate."
+    },
+    {
+      "id": "intro",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Introduction to Cyclr | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/about-cyclr/introduction-to-cyclr",
+      "read_at": "2026-10-22T10:01:21.000652Z",
+      "excerpt_sha256": "ee90826776208c23f8189481fb0bf793e581b1246749881269f3e283c7d74cf6",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Embedded iPaaS model, Cycles and console/account administrator scope reviewed."
+    },
+    {
+      "id": "templates",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Templates Archives | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/templates",
+      "read_at": "2026-10-22T10:01:23.743229Z",
+      "excerpt_sha256": "f320c89f78e9944ac51db7f4ce9b648b953dcf8d934e43287eedbd12f7a7cc11",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Reusable templates installed as customer-specific Cycles."
+    },
+    {
+      "id": "accounts",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Accounts Archives | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/accounts",
+      "read_at": "2026-10-22T10:01:27.925091Z",
+      "excerpt_sha256": "2d8a559ad7a319d422d6962c7f6cbc1ea02060c31c965d86ec9ab5f5592d55ce",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Accounts contain customer connectors, integrations and authentication."
+    },
+    {
+      "id": "connectors",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Connectors Archives | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/connectors",
+      "read_at": "2026-10-22T10:01:34.055127Z",
+      "excerpt_sha256": "e93e7806d9db52e6be5f9f4d265f6942a46e66c4c39a8035c5b75b546fe5bb23",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Application, utility and paid custom-connector scope reviewed."
+    },
+    {
+      "id": "mapping",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Field Mappings | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/templates/map-fields",
+      "read_at": "2026-10-22T10:01:49.116630Z",
+      "excerpt_sha256": "5218d21087d9e635541dfaab13b6449b690bc57643a0304041bfa0f9690c5a98",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Required destination fields, prior-step sources and user-configurable values reviewed."
+    },
+    {
+      "id": "testing",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Test a template | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/templates/test-a-template",
+      "read_at": "2026-10-22T10:01:54.869944Z",
+      "excerpt_sha256": "60229f297b25745c00c9eec43de616739963e35a303c85503e71de099d655c23",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Test steps may return only first page and return sample data for new/updated triggers."
+    },
+    {
+      "id": "versions",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Template versioning | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/templates/template-versioning",
+      "read_at": "2026-10-22T10:01:57.833663Z",
+      "excerpt_sha256": "a130ea3953a57e1ce5bb6f1ec2db7320666d9ac63b39e405d454c7b5dd721189",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Draft/live releases and independent installed-cycle update choice read."
+    },
+    {
+      "id": "errors",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Handling Transaction Errors | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/cyclr-console/handle-transaction-errors",
+      "read_at": "2026-10-22T10:01:51.926744Z",
+      "excerpt_sha256": "18275d3d14664e779cac9f0c6754741699324b9495b8f8e0a98096090261230a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Error webhook, account overrides and external error detail reviewed; notification is not automatic reconciliation."
+    },
+    {
+      "id": "embed-guide",
+      "type": "official_documentation",
+      "site": "Cyclr",
+      "title": "Introduction to Embedding | Cyclr Community",
+      "url": "https://community.cyclr.com/user-documentation/embedding/introduction-to-embedding",
+      "read_at": "2026-10-22T10:02:00.732637Z",
+      "excerpt_sha256": "cf6eb20b9a224a75fd5526c3e8c3f9d5323fa63d1c9a0be2fb15615d49dbcc60",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Platform API connection, template delivery, interface choices and hosted/private options read."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:02:00.732637Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["intro", "templates", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Separate the reusable design from the customer installation",
+        "title_zh": "区分可复用设计与客户安装实例",
+        "en": "A template describes an integration once; its installed Cycle runs in a customer Account. This distinction matters when the same business process serves several tenants with different credentials and field choices. For example, a vendor can design a contact handoff and install it for two customers, each with its own destination account. That is an illustrative architecture, not evidence that a particular CRM operation works without configuration.",
+        "zh": "模板定义一次集成逻辑，安装后的 Cycle 在客户 Account 中运行。同一业务流程服务多个租户、凭据与字段选择各不相同时，这一区别很重要。例如厂商可以设计联系人交接流程，为两个客户分别安装，并连接各自目标账户。这是架构示例，并不证明某个 CRM 操作无需配置即可运行。",
+        "source_refs": ["templates", "accounts"],
+        "evidence_type": "documented_model_with_hypothetical_example"
+      },
+      {
+        "id": "identity",
+        "title_en": "Account isolation still has administrator boundaries",
+        "title_zh": "Account 隔离仍有管理员边界",
+        "en": "Cyclr recommends one Account per customer account in your own application. Accounts hold connectors, integrations and authentication details. The introduction distinguishes restricted account users from console administrators who can see all accounts; a private-instance administrator can see the consoles in that instance. Plan tenant provisioning and support access around those documented boundaries rather than treating an Account as isolation from every administrator.",
+        "zh": "Cyclr 建议与自有应用中的客户账户建立一对一 Account，承载连接器、集成及认证信息。入门文档区分受限的 Account 用户与能查看全部 Account 的控制台管理员；私有实例管理员还能访问该实例中的控制台。租户开通及支持人员权限应围绕这些边界设计，不能把 Account 理解为对所有管理员都隔离。",
+        "source_refs": ["accounts", "intro"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "mapping",
+        "title_en": "Choose which values the customer must supply",
+        "title_zh": "明确哪些字段必须由客户填写",
+        "en": "In Step Setup, destination fields may be required. Their source can be a preceding step, a fixed value, a lookup or another supported mapping type. A User Configurable field is completed when a template is installed; a value supplied for template testing is not copied into the installation. For an illustrative contact flow, make the customer’s target list configurable and map email from the fetched record. Check the target’s required fields and the difference between its displayed name and internal ID.",
+        "zh": "在 Step Setup 中，目标字段可能是必填项，其来源可以是上游步骤、固定值、查询或其他受支持映射类型。标为 User Configurable 的字段在安装模板时填写，模板测试时提供的值不会复制到安装实例。以联系人流程为例，可把客户的目标列表设为可配置，将 email 映射自获取的记录，并检查必填字段以及显示名称和内部 ID 的区别。",
+        "source_refs": ["mapping"],
+        "evidence_type": "documented_rules_with_hypothetical_example"
+      },
+      {
+        "id": "delivery",
+        "title_en": "Embedding includes an authentication and UI decision",
+        "title_zh": "嵌入还包括认证与界面选择",
+        "en": "The embedding guide starts with connecting your application API and creating tested integration templates. It describes invisible delivery managed by your team, a simpler user-authentication experience, and API-driven self-service interfaces. A full marketplace is therefore one possible delivery model, not a prerequisite for every integration. Our suggested first release exposes one clear installation action and its status, with a defined support route when customer authentication fails.",
+        "zh": "嵌入指南从连接自有应用 API、创建并测试集成模板开始，描述由团队后台代为配置、较简单的用户认证体验，以及基于 API 的自助界面。因此完整市场只是其中一种交付模式，并非所有集成的前提。建议首个版本提供一个清晰的安装操作及其状态，并确定客户认证失败后的支持路径。",
+        "source_refs": ["embed-guide"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "testing",
+        "title_en": "A successful step test is a sample, not the live change feed",
+        "title_zh": "步骤测试成功只是样例，并非真实变更流",
+        "en": "An action test needs required mappings and test input. A Get-step test may return only the first page, and steps for new or updated records return data for inspection even during testing. Consequently, seeing a record in the editor does not establish incremental polling behavior, pagination coverage or first-run completeness. Evaluate multiple pages, an empty interval and a later update before promising a sync. Use test destinations for actions that write externally.",
+        "zh": "动作测试需要完成必填映射并提供测试输入。Get 步骤测试可能只返回第一页；用于获取新增或更新记录的步骤在测试时也会返回便于查看的数据。因此编辑器显示一条记录，不能证明增量轮询、分页覆盖或首次运行完整性。承诺同步能力前，应检查多页数据、无更新时间段及后续更新；外部写入动作应使用测试目标。",
+        "source_refs": ["testing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "releases",
+        "title_en": "Updating a template needs an installed-Cycle decision",
+        "title_zh": "模板更新还需决定已安装 Cycle 如何更新",
+        "en": "Versioning separates Draft releases from immutable Live releases. A new release can be based on a copy of the previous one. The publishing options distinguish changing the Live version from updating installed Cycles. Keep a record of which customer installations should receive a mapping change and test representative tenant configuration first. A changed template alone is not proof that every installed customer workflow now runs the change.",
+        "zh": "版本管理区分 Draft 与不可编辑的 Live release，新版本可从旧版本复制。发布选项还区分修改 Live 版本与更新已安装 Cycle。调整映射时，应明确哪些客户实例需要更新，并先测试有代表性的租户配置；模板变化本身不能证明所有客户运行实例都已使用新逻辑。",
+        "source_refs": ["versions"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Central error notifications need a receiving service",
+        "title_zh": "集中错误通知需要接收服务",
+        "en": "Transaction Error Webhook sends JSON to a configured URL when step errors occur; warnings are optional and Accounts can override the console setting. Payload identifiers connect the account, Cycle, step and transaction. The original external error detail varies with the target API and may be truncated, so an alert consumer should handle incomplete detail. An error can be routed into another Cyclr workflow, but notification does not itself repair a partially written customer record. Determine the safe retry or reconciliation action from the destination state.",
+        "zh": "Transaction Error Webhook 会在步骤错误时向配置 URL 发送 JSON；警告可选择启用，Account 也可覆盖控制台设置。负载中的标识关联 Account、Cycle、步骤与事务。外部错误详情随目标 API 而变，也可能截断，告警接收端应兼容不完整详情。错误可路由到另一个 Cyclr 流程，但通知本身不会修复写到一半的客户记录；安全重试或对账方式仍需根据目标状态决定。",
+        "source_refs": ["errors"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Price the connector portfolio and API workload together",
+        "title_zh": "同时估算连接器组合与 API 负载",
+        "en": "The pricing page lists Native PAYG from $1,595/month, with 100,000 API calls and $100 per active connector/month; Growth starts at $2,595/month with ten connectors and one million calls. Active-connector charging is shared across customers, while call allowances cover the combined workload. A two-request fetch-and-send design consumes two calls, not one business record. As a planning example, 500 such runs require 1,000 calls before additional requests. Service Embedded starts at $1,495/month and MCP PaaS at $999/month; those are separate scopes. Private hosting changes infrastructure charges and responsibility. Verify the complete quote, overage schedule and contract before purchasing.",
+        "zh": "定价页列出 Native PAYG 每月 $1,595 起，含 100,000 次 API 调用，活跃连接器另按每月每个 $100；Growth 每月 $2,595 起，含十个连接器与一百万次调用。活跃连接器费用跨客户共用，而调用额度覆盖合计负载。一个由两次请求组成的获取并发送流程消耗两次调用，不能按一条业务记录算一次。假设执行 500 次，在额外请求之前就需 1,000 次调用。Service Embedded 每月 $1,495 起，MCP PaaS 每月 $999 起，范围不同。私有托管会改变基础设施费用与责任，购买前应核对完整报价、超额费率及合同。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "fit",
+        "title_en": "Fit is strongest when integrations are part of your product",
+        "title_zh": "集成是产品组成部分时更值得评估",
+        "en": "Cyclr is worth investigating for a SaaS team or service provider maintaining repeatable integrations across customer accounts. A single internal handoff may not justify its embedding, tenancy and commercial setup. Evaluate the exact connector methods, credential lifecycle, support ownership and release process rather than the library’s app count. Application, utility and custom connectors serve different purposes, and custom creation depends on the purchased scope. Hosting in your own infrastructure is a documented option, but no permissive source-code license or free self-hosted entitlement was established in this research.",
+        "zh": "如果 SaaS 团队或服务商需要跨客户维护可重复交付的集成，Cyclr 值得评估。单个内部交接未必值得承担嵌入、租户管理及商业配置成本。应检查具体连接器方法、凭据生命周期、支持责任与版本流程，而非只看应用数量。应用、工具及自定义连接器职责不同，自定义开发能力取决于购买范围。官方支持部署到自有基础设施，但本次研究没有确认宽松源码许可或免费自托管权限。",
+        "source_refs": ["connectors", "embed-guide"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Cyclr: Embedded Integrations, Templates, Tenant Accounts and Costs",
+    "title_zh": "Cyclr：嵌入式集成、模板、租户 Account 与费用",
+    "description_en": "Evaluate Cyclr’s customer integration lifecycle, field mappings, template releases, error webhooks and commercial deployment choices.",
+    "description_zh": "评估 Cyclr 的客户集成生命周期、字段映射、模板版本、错误 webhook 及商业部署选择。",
+    "primary_intent": "Evaluate embedded integration delivery across customers.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact contract limits, overage rates, selected connector permissions, private deployment implementation, UI languages and operational behavior were not tested.",
+      "zh": "未实测具体合同限制、超额费率、所选连接器权限、私有部署实现、界面语言及运行表现。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Current pricing uses API-call allowances while some error documentation still mentions Task Allowance; no conversion or contract equivalence was verified.",
+      "zh": "当前定价使用 API 调用额度，部分错误文档仍提及 Task Allowance；未核实换算或合同等价关系。",
+      "source_refs": ["pricing", "errors"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
