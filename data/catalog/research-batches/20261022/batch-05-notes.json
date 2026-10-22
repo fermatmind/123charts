@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 32,
+  "completed_count": 39,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -37,28 +37,28 @@
     "projects/human-resources/bamboohr-3dda835b.json",
     "projects/human-resources/brighthr-bd59f7d4.json",
     "projects/human-resources/ceipal-workforce-93d9d9bf.json",
-    "projects/human-resources/ceridian-dayforce-fa330344.json"
+    "projects/human-resources/ceridian-dayforce-fa330344.json",
+    "projects/human-resources/collectivwork-a05b064e.json",
+    "projects/human-resources/epay-hcm-442cb6fd.json",
+    "projects/human-resources/greythr-0473d0e8.json",
+    "projects/human-resources/helion-erp-ed462236.json",
+    "projects/human-resources/hr-chronicle-a1fdbe3a.json",
+    "projects/human-resources/keka-27f6190a.json",
+    "projects/human-resources/rippling-f83ba09c.json"
   ],
-  "remaining_count": 165,
+  "remaining_count": 158,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
-    "projects/human-resources/collectivwork-a05b064e.json",
     "projects/human-resources/darwinbox-d5078c7f.json",
-    "projects/human-resources/epay-hcm-442cb6fd.json",
-    "projects/human-resources/greythr-0473d0e8.json",
     "projects/human-resources/hafinen-39625a69.json",
-    "projects/human-resources/helion-erp-ed462236.json",
-    "projects/human-resources/hr-chronicle-a1fdbe3a.json",
-    "projects/human-resources/keka-27f6190a.json",
     "projects/human-resources/mitrefinch-4f0bf2e0.json",
     "projects/human-resources/paylocity-070d82ac.json",
     "projects/human-resources/personio-91e7d61b.json",
     "projects/human-resources/resourceinn-c63fff91.json",
-    "projects/human-resources/rippling-f83ba09c.json",
     "projects/human-resources/valluva-409014c8.json",
     "projects/human-resources/workbright-6d1a053d.json",
     "projects/payroll/adp-payroll-services-d799e460.json",
@@ -295,6 +295,22 @@
     {
       "slug": "ceridian-dayforce-fa330344",
       "finding": "Old Ceridian product URL redirects to Dayforce; updated identity, conditional Wallet access and generic WFM market range separated from actual pricing."
+    },
+    {
+      "slug": "helion-erp-ed462236",
+      "finding": "Hiring, Payroll, Equity labeled live; Finance marked coming soon despite animated journal example. Roadmap excluded from live core features."
+    },
+    {
+      "slug": "greythr-0473d0e8",
+      "finding": "India base fee covers 50 employees; explicit Premium add-on exceptions and annual credit non-refund retained."
+    },
+    {
+      "slug": "keka-27f6190a",
+      "finding": "Visible feature matrix disclosed no subscription amount; setup fee explicit. Multi-entity pay groups and API/webhooks are add-ons."
+    },
+    {
+      "slug": "rippling-f83ba09c",
+      "finding": "Starting $8 per employee/month excludes unspecified base fee and selected modules; startup offer is conditional and time-limited."
     }
   ],
   "validation": [
@@ -356,6 +372,16 @@
       "diff_check": "passed",
       "source_text_hashes": "110 actual read-text hashes verified",
       "scope": "Structure/reference/provenance; no independent review or hands-on tests."
+    },
+    {
+      "at": "2026-10-22T11:03:41.717673+00:00",
+      "completed_count": 39,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 42 researched including 3 baseline",
+      "prettier": "seven HR profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "127 actual read-text hashes verified",
+      "scope": "Structure/reference/provenance; no independent review or hands-on tests."
     }
   ],
   "checkpoints": [
@@ -388,6 +414,12 @@
       "completed_count": 28,
       "branch_push": "succeeded",
       "scope": "Four final readable ERP profiles; Plex source access unresolved."
+    },
+    {
+      "commit": "9722cb6",
+      "completed_count": 32,
+      "branch_push": "succeeded",
+      "scope": "Four initial HR profiles and current Dayforce identity."
     }
   ],
   "independent_review": false,
@@ -418,9 +450,9 @@
     {
       "category": "human-resources",
       "assigned": 19,
-      "completed": 4,
+      "completed": 11,
       "status": "in_progress",
-      "note": "BambooHR, BrightHR, Ceipal Workforce and Dayforce researched. Other entries remain pending, not counted as completed."
+      "note": "11 HR profiles researched. Remaining HR entries pending or have primary-source access/identity gaps; none counted complete."
     }
   ]
 }
