@@ -1,5 +1,7 @@
 # 123Charts
 
+**新窗口接续先读：[当前现状、完整品牌战略与待办交接](123Charts_CURRENT_STATE_AND_STRATEGY.md)。** 2026-10-22 已按用户要求关闭本地预览，等待服务器准备后再继续上线；下方地址仅在主动恢复服务后可用。
+
 **Discover great tools. Find better alternatives.** 全球工具分类与替代榜单。当前产品权威：[全站架构规范](123Charts_Website_Framework_V1_20261021.md)。旧流量榜方案保留为历史；当前运行范围为本地开发与预览，尚未部署。
 
 GitHub：[fermatmind/123charts](https://github.com/fermatmind/123charts)。现有仓库直接更名，保留提交、分支、标签、Issue 和 PR 历史；SSH remote 为 `git@github.com:fermatmind/123charts.git`。
@@ -47,6 +49,29 @@ npm run dev:local
 默认 real 只显示真实研究条目，价格未复核则待确认。demo 只显示虚构案例，卡片与清单注明 DEMO。历史流量及截图留存，退出当前导航、投稿、审核和自动调度。初始化不重新制造流量数据。
 
 官网来源与逐项核对见 [DISCOVERY_MVP.md](docs/DISCOVERY_MVP.md)。历史收录日期未曾独立记录的条目明确标记为估计；新记录从首次公开时间开始保存，编辑不重置。
+
+## 软件目录研究资料（2026-10-23）
+
+PR #261 已合并至 `main`，资料交付基线为 `c902b15`。本轮覆盖通用软件与 SaaS，AI 工具只是其中一部分；英文为主稿，中文同步。
+
+- **50 类、1000 项，每类至少 5 项**；其中 **853 篇官方资料研究及原创双语草稿，147 项仍为结构化候选**。
+- 未完成项中，142 项有具体社区补充标注（含 3 项仅完成生命周期纠错），5 项因用户结束本轮研究而延期。Hippo 的两条商业条件来源另待复核，故社区标注合计 143 项。
+- 每个项目一个 `data/catalog/projects/<category>/<slug>.json`；完整正文位于 `profile.sections`，逐节附来源引用与未核事项。
+- 全部仍为 `draft`；本批未接入现有应用、数据库、公开页面或 sitemap，不是投稿/owner-profile 导入接口的直接输入。未做独立内容审稿、产品实测或 SEO/GEO 效果验收。
+- 13 个研究窗口均已归档，工作树、分支与忽略目录中的原始读取证据保留；本轮研究已停止，不自动续办，不部署。
+
+接续先读[本轮收尾清单](data/catalog/CLOSEOUT.md)与[目录字段说明](data/catalog/README.md)。[最终统计和分工](data/catalog/research-batches/20261022/closeout.json)、[采集统计](data/catalog/collection.json)、[项目位置索引](data/catalog/index.json)是逐项交接入口；不要把初始 1000 项采集量当成全部研究完成量。
+
+离线核对命令（需要已安装仓库 Node 依赖）：
+
+```bash
+python3 -m unittest discover -s scripts/catalog -p 'test_*.py'
+node --test scripts/catalog/record-validation.test.mjs
+node scripts/catalog/validate.mjs
+git diff --check
+```
+
+这些检查核对结构、引用和状态兼容性，不替代事实审稿或线上验收；完整校验会重建 `data/catalog/index.json`，只读档案检查可用 `--records-only`。
 
 ## 验证
 

@@ -2,6 +2,10 @@
 
 The sole product and architecture authority is `123Charts_Website_Framework_V1_20261021.md` in this repository root. Public navigation and interaction are updated by the user-authorized `docs/123Charts_Navigation_Interaction_Spec_20261022.md`; the root document remains the business-state authority. Other historical plans cannot override these.
 
+For resuming work, read `123Charts_CURRENT_STATE_AND_STRATEGY.md` for the latest user decisions, verified implementation, historical acceptance boundaries and remaining work. As of 2026-10-22 the user requested local previews closed and deployment postponed until servers are ready; the handoff is not authorization to restart services or deploy.
+
+Catalog research handoff (2026-10-23): PR #261 merged the offline catalog into main (`c902b15`): 1,000 candidates across 50 categories, including 853 English-first bilingual research drafts and 147 structured candidates. Read `data/catalog/CLOSEOUT.md` and `data/catalog/research-batches/20261022/closeout.json` for exact counts, source exceptions and deferred work. All records remain drafts; the 13 research chats are archived at the user’s request, with worktrees and raw evidence retained. Do not automatically resume research or treat these files as runtime imports, reviewed public listings or deployment authorization.
+
 - Repository: `fermatmind/123charts`; preserve the existing Git history. GitHub synchronization follows the user's explicit authorization. Runtime work remains local only: no DNS changes, deployment or production database access in this delivery.
 - Platform curation covers a short introduction and official website link. Extended fields are supplied by owners after a separate approved claim. AI prompts and JSON imports prepare drafts only; never grant verification or publication. Existing reviewed facts are retained as reference information.
 - Website facts, tasks, conditions and reviewed alternatives drive discovery. Use one canonical project record across pages, comparison lists and cards.
