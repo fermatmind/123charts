@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T13:07:14.055038+00:00",
+  "updated_at": "2026-10-22T13:18:00.215097+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 56,
+  "completed_count": 59,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -61,9 +61,12 @@
     "projects/ide/intellij-idea-9e9d6742.json",
     "projects/ide/jdoodle-2d99703c.json",
     "projects/ide/koding-f68c354d.json",
-    "projects/ide/repl-it-d6a66c85.json"
+    "projects/ide/repl-it-d6a66c85.json",
+    "projects/databases/amazon-aurora-b19511d5.json",
+    "projects/databases/artie-9c89f5bb.json",
+    "projects/databases/clickhouse-82bcf9f7.json"
   ],
-  "remaining_count": 143,
+  "remaining_count": 140,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -81,9 +84,6 @@
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
     "projects/ide/eclipse-che-06fa6676.json",
-    "projects/databases/amazon-aurora-b19511d5.json",
-    "projects/databases/artie-9c89f5bb.json",
-    "projects/databases/clickhouse-82bcf9f7.json",
     "projects/databases/faunadb-10fce5b0.json",
     "projects/databases/harperdb-cloud-7836805e.json",
     "projects/databases/intersystems-iris-53e555c3.json",
@@ -365,12 +365,33 @@
     {
       "project": "Replit",
       "detail": "Starter background-task1 homepage versus0 billing matrix conflict;30daypublished expiry and separateproductionDBrestore retained. Annual price/checkout currency and credits need verification."
+    },
+    {
+      "project": "Amazon Aurora",
+      "detail": "Officialbackupdocsrestoreinheritance and one-daydefault wordingconflict. Sharedstorage/readendpoint do notestablishpermissions or applicationHA. Noactualregionquote."
+    },
+    {
+      "project": "Artie",
+      "detail": "SpecificlicenseisTransferbyArtieELv2,notwholeplatform. Oracle destinationFAQwiderthanconnectortable; exactdirectionentitlement needsconfirmation. CDC/dataintegrationratherthanDBengine."
+    },
+    {
+      "project": "ClickHouse",
+      "detail": "Apache2statementin vendorSoftwaredefinition scopeonly; fulllicenseunread. Retrydeduplicationversion/logdependent, ReplacingMergeTree eventual; Cloudtrialnotforeverfree."
     }
   ],
   "verification": [
-    "python3 -m unittest discover -s scripts/catalog -p test_*.py:7 tests passed",
-    "node scripts/catalog/validate.mjs --records-only:1000 records,59 researched(3baseline+56assigned),0untranslated labels; structure/references only",
-    "Changed JSON Prettier and git diff --check passed; changed paths within batch ownership; temporary node_modules symlink removed"
+    {
+      "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+      "result": "passed:7tests"
+    },
+    {
+      "command": "node scripts/catalog/validate.mjs --records-only",
+      "result": "passed:1000records/62globalresearched(3baseline+59assigned)/0untranslatedlabels; structureonly"
+    },
+    {
+      "command": "Prettier changed JSON and git diff --check",
+      "result": "passed; changed-fileownershipchecked; no services/DB/deployment; temporarynode_modules symlinkremoved beforecommit"
+    }
   ],
   "checkpoints": [
     {
@@ -457,17 +478,23 @@
       "commit": "90ebfa2",
       "completed_count": 51,
       "detail": "CodePen, Cube and Deepnote operating boundaries;7unit tests,1000records/54researched validator, format anddiffcheck passed; pushed assigned branch."
+    },
+    {
+      "commit": "b4508e6",
+      "completed_count": 56,
+      "detail": "IDEcategoryall14investigated,11complete;7unittests/59globalresearched/format/diffscopechecks passed; pushed ownbranch."
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "databases: Amazon Aurora, Artie, ClickHouse, FaunaDB, HarperDB Cloud, InterSystems IRIS, MySQL, Oracle Database, pgDash, Pinecone, Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
+    "next": "InterSystems IRIS, MySQL, Oracle Database, pgDash, Pinecone, Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
-    "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete."
+    "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
+    "databases": "3 of15 complete; Fauna official originals inaccessible and Harper cross-domain authority incomplete;10notyetinvestigated."
   },
   "identity_changes": [
     {
@@ -594,6 +621,14 @@
     {
       "project_path": "projects/ide/eclipse-che-06fa6676.json",
       "reason": "Official Eclipse Che home redirects eclipse.org/che to eclipse.dev/che. Actual stable7.123.x installation, supported-platform and hosted-service docs were read: one Che instance per cluster, local single-node for testing only, and Red Hat Sandbox is separately packaged OpenShift Dev Spaces with30-day data deletion,12-hour maximum workspace and30-minute idle stop. No readable same-authority official fee/free-use grant or complete software license was established; hosted usage limits are not relabeled as pricing. Some introductory routes return self-referential redirect notices. The candidate remains incomplete, without claiming a sustained-free hosted plan or a tested Kubernetes installation."
+    },
+    {
+      "project_path": "projects/databases/faunadb-10fce5b0.json",
+      "reason": "Official homepage timed out; official end-of-life FAQ, announcement and status originals were inaccessible through the reader. Ordinary public HTTP requests to homepage/FAQ/announcement also failed with TLS timeout or closed connection; no TLS bypass. Official search snippets describe May30,2025 end-of-service, but snippets are discovery only and are not adopted as a completed primary-source read. Current availability, operational documentation, fees, data recovery and any actual open-source release/license remain unverified. Not complete."
+    },
+    {
+      "project_path": "projects/databases/harperdb-cloud-7836805e.json",
+      "reason": "Official harperdb.io homepage redirects to harper.fast, now Harper application/data runtime and Fabric. Current pricing on harper.fast and actual installation documentation on docs.harperdb.io were read. The current home/pricing and essential docs cross registered domains, which the same-domain source rule cannot encode without changing shared authority/schema. No false URLs or validator edits. The installation docs distinguish harper from Elastic2.0 pro/Fabric, and development samples/default credentials are not production acceptance. Current complete profile remains pending authority support."
     }
   ],
   "availability_updates": [
@@ -757,6 +792,27 @@
       "excerpt_sha256": "44f6fbc53dad2e568e074aae90889a242a85223accf5bf8cd4cde3cacd76ea94",
       "read_at": "2026-10-22T12:50:53.842282+00:00",
       "use": "Actual official read for an incomplete identity/pricing/license-authority record; not a pricing-source relabel or completed profile."
+    },
+    {
+      "capture": "harper-home",
+      "actual_url": "https://www.harper.fast/",
+      "excerpt_sha256": "d9f84a2394a482ad4dfe4aa87b0de1c74ea9edf5892b66a3c29a8df0b65c403e",
+      "read_at": "2026-10-22T13:07:59.962931+00:00",
+      "use": "Actual official read; current home/pricing and necessary documentation cross registered-domain authority boundary. Record incomplete, no URL rewriting."
+    },
+    {
+      "capture": "harper-pricing",
+      "actual_url": "https://www.harper.fast/pricing",
+      "excerpt_sha256": "05359836ea2307270e7dcf54a7f9f4e3b69e4b254840180e9b90623c7adb8e17",
+      "read_at": "2026-10-22T13:08:35.429754+00:00",
+      "use": "Actual official read; current home/pricing and necessary documentation cross registered-domain authority boundary. Record incomplete, no URL rewriting."
+    },
+    {
+      "capture": "harper-install",
+      "actual_url": "https://docs.harperdb.io/learn/getting-started/install-and-connect-harper",
+      "excerpt_sha256": "7ced4bc3e30ab0a8384828f65d5a35cbc15d397bb1c3bf040ad442e1ab062a6f",
+      "read_at": "2026-10-22T13:09:15.242729+00:00",
+      "use": "Actual official read; current home/pricing and necessary documentation cross registered-domain authority boundary. Record incomplete, no URL rewriting."
     }
   ]
 }

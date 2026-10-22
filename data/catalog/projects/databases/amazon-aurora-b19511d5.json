@@ -10,162 +10,133 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Amazon Aurora is a product in the Database management category. Its directory profile covers Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration.\n\nAdditional listed capabilities include Creation (Development), Backup. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: move supported records between systems; create additional copies of selected data. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Amazon Aurora 属于数据库管理软件。第三方资料列出的功能包括关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移。\n\n资料还列出创建与开发、数据备份。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在系统之间迁移受支持的记录；为选定数据创建额外副本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Amazon Aurora is an AWS-managed relational database service with MySQL-compatible and PostgreSQL-compatible engines, operated through Amazon RDS. Its cluster model separates database compute from distributed storage. This profile covers those Aurora engines; the pricing page treats Aurora DSQL separately, so its architecture and charges are not merged into this record.\n\nA practical evaluation connects an application to the appropriate writer/reader endpoints, checks engine compatibility and authorization, and exercises failure and restore paths with disposable data. AWS manages infrastructure, but schema design, query tuning, access configuration and application behavior remain the operator’s work. No AWS account, cluster, connection or billable action was operated.",
+  "description_zh": "Amazon Aurora 是由 Amazon RDS 管理的 AWS 关系数据库服务，提供 MySQL 及 PostgreSQL 兼容引擎，集群将数据库计算与分布式存储分开。本文覆盖这两类引擎；定价页单列 Aurora DSQL，因此不合并其架构及费用。\n\n建议将应用接到正确的写／读端点，检查引擎兼容性及授权，再用可丢弃数据验证故障及恢复路径。AWS 管理基础设施，模式设计、查询调优、访问配置及应用行为仍由使用方负责。本次未操作 AWS 账户、集群、连接或计费动作。",
   "core_features": [
     {
-      "name_en": "Relational Interface",
-      "name_zh": "关系型数据界面",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Managed compatible relational engines",
+      "name_zh": "托管兼容关系引擎",
+      "explanation_en": "Use Aurora MySQL or Aurora PostgreSQL through RDS management interfaces.",
+      "explanation_zh": "通过 RDS 管理接口使用 Aurora MySQL 或 Aurora PostgreSQL。",
+      "explanation_scope": "product_specific",
+      "source_ref": "overview",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Queries",
-      "name_zh": "查询",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Shared cluster storage",
+      "name_zh": "共享集群存储",
+      "explanation_en": "Writer and optional readers use a distributed cluster volume.",
+      "explanation_zh": "写实例及可选读实例使用分布式集群卷。",
+      "explanation_scope": "product_specific",
+      "source_ref": "cluster",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Performance Analysis",
-      "name_zh": "性能分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Reader connection balancing",
+      "name_zh": "读连接分流",
+      "explanation_en": "Distribute new reader connections among available replicas.",
+      "explanation_zh": "在可用副本间分配新的读取连接。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reader",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Monitoring",
-      "name_zh": "监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Conditional scale-to-zero",
+      "name_zh": "有条件缩容至零",
+      "explanation_en": "Supported serverless configurations can auto-pause at a0ACU minimum.",
+      "explanation_zh": "受支持的 serverless 配置可在最小0ACU 时自动暂停。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pause",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Database Conversion",
-      "name_zh": "数据库转换",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Search",
-      "name_zh": "数据搜索",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Replication",
-      "name_zh": "数据复制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Migration",
-      "name_zh": "数据迁移",
-      "explanation_en": "Move supported records between systems.",
-      "explanation_zh": "在系统之间迁移受支持的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Creation (Development)",
-      "name_zh": "创建与开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup",
-      "name_zh": "数据备份",
-      "explanation_en": "Create additional copies of selected data.",
-      "explanation_zh": "为选定数据创建额外副本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Point-in-time recovery",
+      "name_zh": "时间点恢复",
+      "explanation_en": "Restore retained backup data into a new cluster.",
+      "explanation_zh": "将保留的备份数据恢复到新集群。",
+      "explanation_scope": "product_specific",
+      "source_ref": "backup",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Move supported records between systems",
-      "Create additional copies of selected data"
+      "Evaluate a MySQL/PostgreSQL-compatible application with separate read routing",
+      "Test dormant-workload auto-pause and scheduled-job behavior",
+      "Rehearse a retained-data restore into a separate cluster"
     ],
-    "zh": ["在系统之间迁移受支持的记录", "为选定数据创建额外副本"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "评估具备独立读取路由的 MySQL／PostgreSQL 兼容应用",
+      "测试低活跃工作负载的自动暂停及定时任务",
+      "演练将保留数据恢复到独立集群"
+    ],
+    "source_refs": ["overview", "reader", "pause", "backup"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Application backend engineers",
+      "Database administrators",
+      "AWS platform teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose engine/version/region and test schema/client compatibility on disposable data.",
+        "zh": "选择引擎／版本／区域，以可丢弃数据测试模式及客户端兼容性。",
+        "source_refs": ["overview"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect SQL grants, network/TLS and writer/reader connection handling.",
+        "zh": "检查 SQL 授权、网络／TLS 及写／读连接处理。",
+        "source_refs": ["security", "reader"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Evaluate topology, restore points, pause behavior and all cost meters before production.",
+        "zh": "生产前评估拓扑、恢复点、暂停行为及全部计费项。",
+        "source_refs": ["ha", "backup", "pause", "pricing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A reader endpoint can reach a writable primary when no replicas exist.",
+        "zh": "无副本时读端点可能连接可写主实例。",
+        "source_refs": ["reader"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Auto-pause does not wake for or queue engine-scheduled jobs missed while paused.",
+        "zh": "自动暂停不会因引擎定时任务唤醒，也不排队补跑暂停期间错过任务。",
+        "source_refs": ["pause"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Point-in-time restoration creates a new cluster and does not establish zero data loss or automatic application cutover.",
+        "zh": "时间点恢复创建新集群，不证明零数据丢失或应用自动切换。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -177,37 +148,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "aws_compute_storage_io_optional_features",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:07:57.229165Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Usage-based instance or ACU compute plus storage/I/O and optional services; configuration/engine/region matter. New-customer credits are time-limited, not a forever-free deployment.",
+    "summary_zh": "实例或 ACU 计算加存储／I/O 及可选服务按量，受配置／引擎／区域影响；新客户抵扣有期限，非永久免费部署。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Amazon Aurora do?",
-      "question_zh": "Amazon Aurora 用来做什么？",
-      "answer_en": "Amazon Aurora is a product in the Database management category. Its directory profile covers Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration.",
-      "answer_zh": "Amazon Aurora 属于数据库管理软件。第三方资料列出的功能包括关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration, Creation (Development), Backup",
-      "answer_zh": "关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移、创建与开发、数据备份"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -217,25 +172,237 @@
       "read_at": "2026-10-22T08:35:54.745Z",
       "excerpt_sha256": "c7daaac866aededbcd33c9fef2054a6d93af1eeaba3233ffae6dbf6dff2efe6a",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Relational Database – Amazon Aurora MySQL PostgreSQL – AWS",
+      "url": "https://aws.amazon.com/rds/aurora/",
+      "read_at": "2026-10-22T13:07:57.229165Z",
+      "excerpt_sha256": "d0fe9ced3ee838054fc1c6c8c36f395e8d67e0f8d31a1ec2f4e1c94dae1dc23f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CurrentAuroraMySQL/PostgreSQL positioning; performance multipliers not independently benchmarked."
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "What is Amazon Aurora? - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+      "read_at": "2026-10-22T13:09:15.695139Z",
+      "excerpt_sha256": "346d72e368fcd63a92bcafee549fa36350a40690e44966e6f580f590e970eb6d",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "RDS-managedcompatibleengines/sharedresponsibility/querytuning and migration alternatives read; compatibility not universaltested."
+    },
+    {
+      "id": "cluster",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Amazon Aurora DB clusters - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html",
+      "read_at": "2026-10-22T13:10:17.240093Z",
+      "excerpt_sha256": "a8601c7bece56a29b66ea13d800493efbcef385cfcc42691a9242b922b7201ff",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Writer/readers/sharedAZstorage; singleDBinstancestillcluster read."
+    },
+    {
+      "id": "reader",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Reader endpoints for Amazon Aurora - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Endpoints.Reader.html",
+      "read_at": "2026-10-22T13:09:15.478879Z",
+      "excerpt_sha256": "85fedc1e3e0c62e8057eef65893eab785940fc61cb602022f4130caaeabad43b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Connectionnotquerybalancing, noReplica fallbackwritableprimary; notpermissionboundary."
+    },
+    {
+      "id": "ha",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "High availability for Amazon Aurora - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/en_en/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html",
+      "read_at": "2026-10-22T13:09:15.583758Z",
+      "excerpt_sha256": "8d4af6ef6b65c49f5cd1edd133696be400b4c8b0defd88f8e9b6ea613aab581c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Storage redundancy versus compute/AZreplica topology, exceptionsduringfailover, clusterendpoint and asynchronousglobalreplication read."
+    },
+    {
+      "id": "security",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Security in Amazon Aurora - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.html",
+      "read_at": "2026-10-22T13:10:48.220965Z",
+      "excerpt_sha256": "e0145db86ef362b2a7da794e05e2ba52074d32a9be97607d6e2b16ef34f67ae4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "IAMmanagement,securitygroups/network, TLS/encryption, databaseenginepermissions are separate user responsibilities read."
+    },
+    {
+      "id": "pause",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Scaling to Zero ACUs with automatic pause and resume for Aurora serverless - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2-auto-pause.html",
+      "read_at": "2026-10-22T13:10:19.346792Z",
+      "excerpt_sha256": "f1f19353de5ac142dd9a77f09fd61541cf0d096e1618d222d80813829225c0ea",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Version/featuresconditions min0ACU, invalidcredentialresume, enginejobsnotqueued/resumed and compute-onlysavings read; nooperationsrun."
+    },
+    {
+      "id": "backup",
+      "type": "official_documentation",
+      "site": "Amazon Aurora",
+      "title": "Overview of backing up and restoring an Aurora DB cluster - Amazon Aurora",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html",
+      "read_at": "2026-10-22T13:10:51.613066Z",
+      "excerpt_sha256": "3b977ef7b6493f630da49241a8317d047975ac381b841193af6e929246da7a03",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Continuous1-35dayretention/default1, restorecreatesnewcluster/latestrestorabletypically5minutes, snapshotcost afterdelete read."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Amazon Aurora",
+      "title": "Amazon Aurora Pricing",
+      "url": "https://aws.amazon.com/rds/aurora/pricing/",
+      "read_at": "2026-10-22T13:08:23.022973Z",
+      "excerpt_sha256": "c8feb21988b247cb1e610d4fe29250158b159699460939e6ede4f866da1749f8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "AuroraMySQL/PostgreSQLcompute/storage/StandardIOvsIOOptimized,replicafees,RIstorageexcluded,globalreplicatedIO,DataAPI32KBunits andtimelimitednewcustomercredits read;notDSQLpricing."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:10:51.613066Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["home", "overview", "cluster", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Storage redundancy and reader capacity solve different problems",
+        "title_zh": "存储冗余与读取容量处理不同问题",
+        "en": "An Aurora cluster has a writer and can add up to15 readers sharing the cluster volume. Even one database instance is a cluster because the storage spans multiple Availability Zones. Readers provide query capacity and failover targets; distributed storage alone does not place database compute in multiple AZs. For a proposed order service, inspect where the writer/readers run and which failure the topology actually tolerates before equating a cluster label with an available application.",
+        "zh": "Aurora 集群包含写实例，可增加最多15个共享集群卷的读实例。即便仅一个数据库实例，存储跨多个可用区仍构成集群。读实例提供查询容量及故障接管目标；仅存储分布不等于数据库计算跨区。建议订单服务检查写／读实例位置及拓扑可容忍的故障，不能将集群标签等同应用可用。",
+        "source_refs": ["cluster", "ha"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routes",
+        "title_en": "Reader endpoints are not a read-only permission policy",
+        "title_zh": "读端点不是只读权限策略",
+        "en": "The reader endpoint balances connections, not individual queries. A long-lived pooled connection stays with its selected instance. With replicas, those sessions are read-only, but with no replicas the same reader endpoint connects to the primary and permits writes. Apply database grants independently and check actual routing, read freshness and read-after-write requirements. A reporting connection named reader is not evidence that an application user cannot modify data.",
+        "zh": "读端点分配的是连接而非每条查询，长连接池会保持所选实例。有副本时对应会话只读，无副本时同一个读端点连接主实例且允许写入。应独立设置数据库授权，检查真实路由、读取新鲜度及写后读要求；报表连接名为 reader 不证明应用用户不能修改数据。",
+        "source_refs": ["reader"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "failure",
+        "title_en": "Failover still requires application recovery behavior",
+        "title_zh": "故障接管仍需应用恢复行为",
+        "en": "AWS describes replica promotion or writer recreation after a failure, with an interval in which operations can raise exceptions. The cluster endpoint follows the current writer, while instance-specific addresses and connection caches need care. Distribute compute across AZs according to the intended outage scenario. Test connection recovery and uncertain transaction outcomes using idempotent application operations; no failover timing, zero-downtime result or cross-region recovery objective was measured here.",
+        "zh": "AWS 说明故障后可提升副本或重建写实例，其间操作可能返回异常。集群端点跟随当前写实例，实例专属地址及连接缓存则需留意。应按预期故障配置跨区计算，以幂等应用操作测试重连和事务结果不确定情形；本次未测接管时间、零停机结果或跨区域恢复目标。",
+        "source_refs": ["ha"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Management permission, network reachability and SQL grants differ",
+        "title_zh": "管理权限、网络可达及 SQL 授权不同",
+        "en": "Aurora security documentation separates IAM permissions to manage resources, VPC/security-group connectivity, TLS/encryption and engine-level database access. A console permission does not itself establish the SQL privileges an application needs. Before a connection test, choose the exact engine/version and review required extensions, schema behavior, client credentials and network route. AWS’s compatibility statement does not replace testing the actual workload or tuning its queries.",
+        "zh": "Aurora 安全文档区分 IAM 资源管理、VPC／安全组连接、TLS／加密及引擎数据库权限。控制台权限本身不代表应用所需 SQL 权限。连接测试前应选定引擎／版本，并检查扩展、模式行为、客户端凭据及网络路径。AWS 的兼容声明不能替代真实工作负载测试或查询调优。",
+        "source_refs": ["security", "overview"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pause",
+        "title_en": "Zero ACUs does not mean every background task will run",
+        "title_zh": "零 ACU 不保证后台任务执行",
+        "en": "Auto-pause requires a supported engine version, compatible settings and minimum capacity0. Incompatible combinations may simply stay active without an error. Connecting resumes a paused instance—even an invalid-credential attempt can wake it. The guide explicitly says pg_cron/MySQL scheduled events do not wake it and missed jobs are skipped rather than queued. Evaluate connection latency and scheduled work separately. Pausing removes instance-capacity charges, not an assumed storage or backup bill.",
+        "zh": "自动暂停需支持的引擎版本、兼容设置及最小容量0；不兼容组合可能无报错地持续运行。连接会唤醒暂停实例，即便无效凭据尝试也能唤醒。指南明确 pg_cron／MySQL 定时事件不会唤醒，错过的任务跳过而非排队。需分别评估连接延迟和定时工作；暂停取消实例容量费，不代表存储或备份账单归零。",
+        "source_refs": ["pause", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "restore",
+        "title_en": "Restoring creates another cluster that needs verification",
+        "title_zh": "恢复创建另一个需验证的集群",
+        "en": "Automated backup retention is configurable from1 to35 days, with a documented one-day default. Point-in-time recovery creates a new cluster; the latest restorable moment is typically within five minutes of the active cluster’s current time. Check the actual earliest/latest restorable values, restored data, permissions and application endpoint before any cutover. Snapshots persist beyond normal retention and may cost money after the source is deleted. Backups do not reverse messages or other external writes.",
+        "zh": "自动备份可配置保留1至35天，文档默认一天。时间点恢复创建新集群，最新可恢复点通常在活跃集群当前时间前五分钟内。切换前需检查实际最早／最新恢复点、数据、权限及应用端点。快照可超出常规保留期，源集群删除后仍可能收费；备份不会撤销消息等外部写入。",
+        "source_refs": ["backup"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "bill",
+        "title_en": "Compute is only one part of an Aurora estimate",
+        "title_zh": "计算只是 Aurora 估价的一部分",
+        "en": "The price model meters writer and reader compute, storage and optional features. Standard adds read/write I/O; I/O-Optimized folds those operations into its different instance/storage prices, but global replicated writes still have charges. Serverless capacity uses ACU-seconds, while provisioned capacity uses instance time; reservations do not include all storage and transfer. Data API also meters32KB payload increments. New-customer credits are time-limited. No region-specific rate, total workload quote or sustained-free plan is asserted.",
+        "zh": "费用包含写／读计算、存储及可选功能。Standard 另计读写 I/O，I/O-Optimized 将其纳入不同实例／存储价格，但全球复制写仍收费。Serverless 按 ACU 秒，预置按实例时间；预留不包全部存储及传输。Data API 还按32KB 载荷增量计数。新客户抵扣有期限；不虚构地区费率、完整工作负载报价或持续免费计划。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Amazon Aurora: reader routing, auto-pause and cluster recovery",
+    "title_zh": "Amazon Aurora：读取路由、自动暂停及集群恢复",
+    "description_en": "Review managed engine compatibility, writer/readers, SQL access, backup retention and multi-part Aurora billing.",
+    "description_zh": "了解托管引擎兼容性、写／读实例、SQL 访问、备份保留及多项计费。",
+    "search_intent_en": "Evaluate Aurora application behavior and operating costs.",
+    "search_intent_zh": "评估 Aurora 应用行为及运行费用。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No AWS account/resource, SQL, failover, restore, network change or billable operation was executed.",
+      "zh": "未执行 AWS 账户／资源、SQL、故障接管、恢复、网络变更或计费操作。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual regional rates, selected engine feature/extension compatibility, contract/license terms, recovery objectives, isolation and language support remain unverified. Aurora DSQL is out of this profile scope.",
+      "zh": "实际地区费率、所选引擎功能／扩展兼容性、合同／许可、恢复目标、隔离及语言支持未核；Aurora DSQL 不在本文范围。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Backup documentation simultaneously describes restore retention inheritance and a one-day default regardless of creation path; inspect the actual restored-cluster setting.",
+      "zh": "备份文档同时描述恢复时继承保留期及不论创建路径均默认一天，需检查真实恢复集群配置。",
+      "source_refs": ["backup"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

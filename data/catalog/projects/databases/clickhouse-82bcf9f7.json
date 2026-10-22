@@ -10,213 +10,154 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "ClickHouse is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.\n\nAdditional listed capabilities include Data Migration, Creation (Development), Backup. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: move supported records between systems; create additional copies of selected data. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "ClickHouse 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。\n\n资料还列出数据迁移、创建与开发、数据备份。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在系统之间迁移受支持的记录；为选定数据创建额外副本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "ClickHouse is a column-oriented analytical database designed for scanning, filtering and aggregating large datasets with SQL. It is offered as database software and as ClickHouse Cloud, with separate ingestion and other product services. The analytical storage/processing model should not be treated as a drop-in guarantee for every transactional application.\n\nA useful evaluation ingests a representative event stream, chooses an ordering key around real filters and checks aggregates under updates and retries. The important questions include when writes become durable, which duplicate versions a query sees and how the cloud service scales. No service, database, SQL query, benchmark or account was executed here.",
+  "description_zh": "ClickHouse 是列式分析数据库，用 SQL 扫描、过滤及聚合大型数据集，提供数据库软件及 ClickHouse Cloud，另有数据摄取等服务。其分析存储／处理模型不能视为适配所有事务应用的即插即用保证。\n\n建议摄取代表事件流，围绕真实过滤选择排序键，并检查更新及重试下的聚合。关键问题包括写入何时持久、查询看到哪些重复版本，以及云服务如何伸缩。本次未执行服务、数据库、SQL、基准测试或账户。",
   "core_features": [
     {
-      "name_en": "Virtualization",
-      "name_zh": "虚拟化",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Column-oriented SQL analytics",
+      "name_zh": "列式 SQL 分析",
+      "explanation_en": "Scan required columns with compression, pruning and parallel processing.",
+      "explanation_zh": "结合压缩、数据裁剪及并行处理扫描所需列。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Relational Interface",
-      "name_zh": "关系型数据界面",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Sparse primary indexes",
+      "name_zh": "稀疏主索引",
+      "explanation_en": "Use key predicates to skip granules rather than index every row.",
+      "explanation_zh": "按键谓词跳过粒度块，而非逐行索引。",
+      "explanation_scope": "product_specific",
+      "source_ref": "index",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Queries",
-      "name_zh": "查询",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Server-side insert batching",
+      "name_zh": "服务端插入批处理",
+      "explanation_en": "Buffer asynchronous inserts with explicit acknowledgement behavior.",
+      "explanation_zh": "缓存异步插入，采用明确的确认行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "async",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Performance Analysis",
-      "name_zh": "性能分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Monitoring",
-      "name_zh": "监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Database Conversion",
-      "name_zh": "数据库转换",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Search",
-      "name_zh": "数据搜索",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Replication",
-      "name_zh": "数据复制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Migration",
-      "name_zh": "数据迁移",
-      "explanation_en": "Move supported records between systems.",
-      "explanation_zh": "在系统之间迁移受支持的记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Creation (Development)",
-      "name_zh": "创建与开发",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Backup",
-      "name_zh": "数据备份",
-      "explanation_en": "Create additional copies of selected data.",
-      "explanation_zh": "为选定数据创建额外副本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Version-aware replacement",
+      "name_zh": "版本感知替换",
+      "explanation_en": "ReplacingMergeTree reconciles matching ordering-key versions during merges or FINAL queries.",
+      "explanation_zh": "ReplacingMergeTree 在合并或 FINAL 查询时处理相同排序键版本。",
+      "explanation_scope": "product_specific",
+      "source_ref": "replacing",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Move supported records between systems",
-      "Create additional copies of selected data"
+      "Evaluate event aggregation with an ordering key matching real filters",
+      "Test asynchronous insert acknowledgement and latest-version query correctness",
+      "Compare cloud resource meters with a self-managed operating model"
     ],
-    "zh": ["在系统之间迁移受支持的记录", "为选定数据创建额外副本"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "以匹配真实过滤的排序键评估事件聚合",
+      "测试异步插入确认及最新版本查询正确性",
+      "比较云资源计量及自行部署运行模型"
+    ],
+    "source_refs": ["index", "async", "replacing", "billing", "license"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available",
-      "zh": "提供免费试用",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Analytics engineers",
+      "Data platform teams",
+      "Developers building event analytics"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Define the event schema, ordering key and expected aggregates before ingestion.",
+        "zh": "摄取前定义事件模式、排序键及预期聚合。",
+        "source_refs": ["index", "quickstart"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify flush errors, retries and update/delete reconciliation on disposable rows.",
+        "zh": "用可丢弃行检查刷写错误、重试及更新／删除合并。",
+        "source_refs": ["async", "replacing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Inspect selected service size, backup retention and all usage dimensions.",
+        "zh": "检查所选服务规格、备份保留及全部用量维度。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Fire-and-forget async inserts can acknowledge data that is later lost or rejected.",
+        "zh": "异步 fire-and-forget 可确认随后丢失或被拒的数据。",
+        "source_refs": ["async"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Background replacement does not guarantee immediate deduplicated query results.",
+        "zh": "后台替换不保证即时去重查询结果。",
+        "source_refs": ["replacing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Idle compute does not remove ongoing storage/backup/ingestion costs.",
+        "zh": "闲置计算不消除持续存储／备份／摄取费用。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_vendor_license_identification",
+    "is_open_source": true,
+    "name": "Apache License 2.0",
+    "scope_en": "ClickHouse database software as identified in official support agreement1.4; cloud and other products have separate terms. Full license text not read.",
+    "scope_zh": "官方支持协议1.4识别的 ClickHouse 数据库软件；云及其他产品另有条款，未读完整许可文本。",
+    "url": "https://clickhouse.com/legal/agreements/support",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available",
-    "source_snapshot_zh": "提供免费试用",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "free_database_software_paid_cloud_compute_storage_usage",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T13:07:56.766685Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Free database distribution; Cloud300credits/30daytrial then usage: compute-unit time, compressed storage/backups, egress and ClickPipes. Regional plan rates not an all-in price.",
+    "summary_zh": "数据库发行版免费；Cloud300额度／30天试用后按计算单位时间、压缩存储／备份、外发及 ClickPipes 用量收费；地区档位价非包干价。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does ClickHouse do?",
-      "question_zh": "ClickHouse 用来做什么？",
-      "answer_en": "ClickHouse is a product in the Database management category. Its directory profile covers Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication.",
-      "answer_zh": "ClickHouse 属于数据库管理软件。第三方资料列出的功能包括虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Virtualization, Relational Interface, Queries, Performance Analysis, Monitoring, Database Conversion, Data Search, Data Replication, Data Migration, Creation (Development), Backup",
-      "answer_zh": "虚拟化、关系型数据界面、查询、性能分析、监控、数据库转换、数据搜索、数据复制、数据迁移、创建与开发、数据备份"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,25 +167,243 @@
       "read_at": "2026-10-22T08:38:12.326Z",
       "excerpt_sha256": "0d91312dd58bcf1beb1205c9ac71712e78ce0f5f8f9a1876382b0a466f9ebf09",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "Fast Open-Source OLAP DBMS | ClickHouse",
+      "url": "https://clickhouse.com/",
+      "read_at": "2026-10-22T13:07:56.766685Z",
+      "excerpt_sha256": "a0ddb1fbd58a44f80699cceeefbfe8da5907851e47ddc6333501aa72d5e6128f",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Current OLAP/Cloud/self-managed/local product scope; universal100xfaster andcustomerlogosnotindependentproof."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "Why is ClickHouse so fast? - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/get-started/about/why-clickhouse-is-so-fast",
+      "read_at": "2026-10-22T13:08:32.453874Z",
+      "excerpt_sha256": "3c6a9ec0c96cb6f2e0449609f4941e6a3a9d7b14c827a716dad59d03034756da",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Columnoriented data/compression,pruning/vectorizedparallelprocessing read; notworkloadbenchmark."
+    },
+    {
+      "id": "quickstart",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "ClickHouse Cloud quick start - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/get-started/setup/cloud",
+      "read_at": "2026-10-22T13:10:55.271019Z",
+      "excerpt_sha256": "2908441ecd115927c56bf0a10fc26f3600e6c4c6914350d3af0b9967fbb18a7c",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualredirectcanonical; servicecreation/defaultScalethreereplicas/autoscaling,connect/MergeTree/batchinserts read,notexecuted."
+    },
+    {
+      "id": "index",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "Primary indexes - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/concepts/core-concepts/primary-indexes",
+      "read_at": "2026-10-22T13:10:18.066046Z",
+      "excerpt_sha256": "17fc11b90cc1c98d364f4bdf741bea1d3c5715c1d52e5d1d307128250b85004e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualcanonicalredirect;sparseperpartindex/granules/predicatepruning read; nottransactionaluniqueconstraint."
+    },
+    {
+      "id": "async",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "Asynchronous inserts (async_insert) - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/concepts/features/operations/insert/asyncinserts",
+      "read_at": "2026-10-22T13:10:17.269578Z",
+      "excerpt_sha256": "9f3b331d1269306b25a2edee9a10a991cc2a1171d2d7cf8c7147c2de79e44cb7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actualcanonicalredirect; ackafterflushvsfireforget/data-loss/errors,perqueryvalidation and26.2deduplogconditions read."
+    },
+    {
+      "id": "replacing",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "ReplacingMergeTree table engine - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/engines/table-engines/mergetree-family/replacingmergetree",
+      "read_at": "2026-10-22T13:10:16.162119Z",
+      "excerpt_sha256": "bfd13c1b3a86e83bfbea75716ae4b334e6df631f26b8eccba79db37a53107de8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "ORDERBYnotPRIMARYKEY dedupatunknownmergetime,versionanddeletion markersemantics,FINALquerytimecorrectness read."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ClickHouse",
+      "title": "Pricing | ClickHouse",
+      "url": "https://clickhouse.com/pricing",
+      "read_at": "2026-10-22T13:08:32.338929Z",
+      "excerpt_sha256": "8d9544ad57ec91e0ff885313c2b9dedc0b6f9485b11d6fd823bd43f1f86a9530",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "N.VirginiadisplayBasic0.2181/Scale0.2985/Enterprise0.3903perunit-hour,25.30/TB-month;300credits30days;unit8GiB2vCPU,idlecomputevsstorage;notall-inquote."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "ClickHouse",
+      "title": "Pricing - ClickHouse Documentation",
+      "url": "https://clickhouse.com/docs/products/cloud/reference/billing/billing-overview",
+      "read_at": "2026-10-22T13:14:45.915642Z",
+      "excerpt_sha256": "2ff5954de8be2906f54e9ba304b510dfcd6cb21aae8a46f91f9dcdbb9518fbb7",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Per-minute8GiBincrements,compressedtables/backupschargedseparately,USDselfservice,autoscalecapvsmultiplemeters;creditinvoiceunitdifference read."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "ClickHouse",
+      "title": "ClickHouse, Inc. Subscription Agreement | ClickHouse",
+      "url": "https://clickhouse.com/legal/agreements/support",
+      "read_at": "2026-10-22T13:15:10.025745Z",
+      "excerpt_sha256": "f63596e011f741dccab5e35fb7ea32b1e550e45a4a18fe0e72772d603f9330f1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Officialsupportsubscriptionagreement1.4definesdatabaseSoftwareasApache2.0; supportsubscriptionnotcloudserviceorblanketlicenseforallproducts. FullApachetextnotread."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:15:10.025745Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": [
+    "home",
+    "architecture",
+    "index",
+    "async",
+    "replacing"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "model",
+        "title_en": "Design around the analytical query",
+        "title_zh": "围绕分析查询设计",
+        "en": "Column storage reads the required fields rather than entire rows; compression and vectorized parallel execution support analytical scans. Sparse primary indexes use predicates to skip granules, and each data part has its own index. For a proposed event dashboard, compare real filters and grouping patterns before choosing key order. A database label or vendor speed multiplier does not establish performance, memory use or suitability for a small-row transactional workload.",
+        "zh": "列式存储读取所需字段而非完整行，压缩及向量化并行执行支持分析扫描。稀疏主索引按谓词跳过粒度块，每个数据分片有独立索引。建议事件看板先比较真实过滤及分组模式，再选键顺序；数据库标签或厂商速度倍数不证明性能、内存或适合小行事务负载。",
+        "source_refs": ["architecture", "index"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "setup",
+        "title_en": "The cloud quickstart creates a sized service, not just a SQL tab",
+        "title_zh": "云入门创建有规格的服务，不只是 SQL 标签页",
+        "en": "The Cloud guide creates a named regional service and says new organizations default to Scale with three replicas, each4vCPU and16GiB RAM, with vertical autoscaling enabled. Review the selected tier and resource minimum/maximum before creation. Then obtain connection details, create a MergeTree table and insert rows in batches. Many tiny synchronous inserts create many parts and can impair ingestion. Tutorial defaults are documentation, not an account-specific quote or a measured optimum.",
+        "zh": "Cloud 指南创建具名区域服务，说明新组织默认 Scale、三个副本，每个4vCPU／16GiB，启用纵向自动伸缩。创建前需核所选档位及资源上下限，再获取连接、建 MergeTree 表并批量插入。大量微小同步插入产生许多分片，可损害摄取；教程默认配置不是账户报价或实测最优值。",
+        "source_refs": ["quickstart", "async"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "write",
+        "title_en": "An acknowledgement may precede durable storage",
+        "title_zh": "确认响应可能早于持久化",
+        "en": "Asynchronous inserts batch incoming rows in memory until a threshold triggers flush. With wait_for_async_insert=1, the client receives acknowledgement after successful flush and sees flush errors. With0, acknowledgement only means buffered: later errors can be missed and a crash can lose data; there is no dead-letter queue for failed inserts. Evaluate malformed rows, connection loss and retry behavior with the selected engine/version. The current docs qualify automatic retry deduplication by a retained deduplication log; it is not a universal unique-key constraint.",
+        "zh": "异步插入先将行缓存于内存，满足阈值后刷写。wait_for_async_insert=1 在成功刷写后确认并返回刷写错误；设0仅代表进入缓存，后续错误可能漏看，崩溃可丢数据，也没有失败插入死信队列。需按所选引擎／版本测试错误行、断连及重试。当前文档将自动重试去重限定于保留去重日志，不是通用唯一键约束。",
+        "source_refs": ["async"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "versions",
+        "title_en": "ReplacingMergeTree is eventual reconciliation",
+        "title_zh": "ReplacingMergeTree 是最终合并处理",
+        "en": "ReplacingMergeTree matches rows by ORDER BY values, not the PRIMARY KEY clause. Background merge timing is unspecified, so duplicate versions can remain visible and ordinary queries may produce incorrect totals. The guide uses query-time FINAL to reconcile versions and deletion markers. For an updated-order stream, compare expected latest-state totals against queries before and after reconciliation. A version column and correct query semantics matter; forcing heavy OPTIMIZE operations is not a substitute for designing the read path.",
+        "zh": "ReplacingMergeTree 按 ORDER BY 值匹配行，不按 PRIMARY KEY 子句。后台合并时间不确定，重复版本可能可见，普通查询会产生错误总额；指南用查询时 FINAL 处理版本及删除标记。建议更新订单流对比合并前后的查询和预期最新总额。版本列及正确查询语义很重要，强制重型 OPTIMIZE 不能替代读取路径设计。",
+        "source_refs": ["replacing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "products",
+        "title_en": "Database software and managed cloud have separate terms",
+        "title_zh": "数据库软件与托管云条款不同",
+        "en": "The official support agreement identifies ClickHouse database Software as Apache2.0 licensed, while separately selling time-limited support subscriptions. That statement does not grant cloud infrastructure, a support contract or every adjacent product. Self-managed operation leaves deployment, upgrades, access, backups and monitoring to its operator; a cloud tutorial describes a different operational route. Full license text and a self-managed installation were not reviewed or run here, so deployment-specific obligations still need inspection.",
+        "zh": "官方支持协议将 ClickHouse 数据库 Software 定义为采用 Apache2.0，同时另售限期支持订阅；这不授予云设施、支持合同或全部相邻产品。自行部署需承担部署、升级、访问、备份及监控，云教程是不同运行路线。本次未审完整许可文本或运行自部署，具体部署义务仍需检查。",
+        "source_refs": ["license", "home", "quickstart"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "price",
+        "title_en": "A compute unit is a resource size, not a query",
+        "title_zh": "计算单位是资源规格，不是一条查询",
+        "en": "One cloud unit is8GiB RAM and2vCPU, metered per minute at the displayed hourly rate. The N.Virginia display lists Basic$0.2181, Scale$0.2985 and Enterprise$0.3903/unit-hour, plus$25.30/TB-month storage. Rates depend on provider, region and tier. The published trial grants$300 for up to30 days, ending earlier if depleted. Compute can idle to zero, but retained storage remains billed; no continuous-free Cloud plan is inferred from a free software download.",
+        "zh": "一个云计算单位是8GiB 内存及2vCPU，按分钟计量、采用展示时价。N.Virginia 展示 Basic 每单位小时$0.2181、Scale$0.2985、Enterprise$0.3903，存储每 TB 月$25.30；费率受提供商、区域及档位影响。公布试用赠$300、最多30天，耗尽提前结束。计算可闲置归零，但保留存储仍收费；免费下载软件不代表 Cloud 持续免费。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "budget",
+        "title_en": "Compute limits do not cap every billable dimension",
+        "title_zh": "计算限额不覆盖全部计费维度",
+        "en": "Billing separately counts compressed table storage and backups, along with data transfer and ClickPipes. The default backup is retained for a day, and additional backups alter costs. A maximum autoscaling setting constrains a major compute driver but does not cap retained bytes or all ingestion/egress. Review the per-service usage view and trial-credit expiry before leaving a test service active. The billing guide specifies USD self-service billing, but actual taxes, selected regional rates and a complete workload estimate were not checked.",
+        "zh": "账单分别计算压缩表存储及备份，另有传输和 ClickPipes。默认备份保留一天，额外备份改变费用。最大自动伸缩约束主要计算支出，但不限制保留字节或全部摄取／外发。测试服务持续运行前需查服务用量及试用到期；指南说明自助账单为美元，但实际税、所选区域费率及完整负载估价未核。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "ClickHouse: analytical keys, asynchronous writes and cloud costs",
+    "title_zh": "ClickHouse：分析键、异步写入及云费用",
+    "description_en": "Review sparse indexes, write acknowledgement, ReplacingMergeTree FINAL and compute/storage billing boundaries.",
+    "description_zh": "了解稀疏索引、写入确认、ReplacingMergeTree FINAL 及计算／存储计费边界。",
+    "search_intent_en": "Evaluate ClickHouse ingestion and analytical correctness.",
+    "search_intent_zh": "评估 ClickHouse 摄取及分析正确性。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, cloud service, installation, SQL, dataset, retry, FINAL query or backup recovery was executed.",
+      "zh": "未执行账户、云服务、安装、SQL、数据集、重试、FINAL 查询或备份恢复。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Actual query benchmarks, engine/version-specific retry guarantees, workload limits, recovery, security and UI languages not independently verified.",
+      "zh": "实际查询基准、各引擎／版本重试保证、负载限制、恢复、安全及界面语言未独立核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Apache2.0 identification covers database software only; full license text, cloud contract, actual regional checkout/taxes and complete cost estimate remain unverified.",
+      "zh": "Apache2.0 识别仅覆盖数据库软件，完整许可、云合同、真实区域结账／税及完整费用估计未核。",
+      "source_refs": ["license", "pricing", "billing"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
