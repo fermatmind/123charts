@@ -6,6 +6,11 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useCharts, Empty, Status } from "./context";
 import { prices } from "@/lib/charts/discovery";
+import {
+  MetadataPrefill,
+  metadataTarget,
+  type PrefillRequest,
+} from "@/lib/charts/metadata-prefill";
 import type { Application, Draft, Peer } from "@/lib/charts/types";
 const blank: Draft = {
   name: "",
@@ -78,18 +83,26 @@ export function DiscoverySubmit() {
     [query, setQuery] = useState(""),
     [saved, setSaved] = useState(""),
     [job, setJob] = useState(""),
+    [metadataRequestFailed, setMetadataRequestFailed] = useState(false),
+    [websiteChanged, setWebsiteChanged] = useState(false),
     [submitted, setSubmitted] = useState(false);
   const metadataJob = data.jobs.find((item) => item.id === job);
   const metadataPending =
     !!job &&
     (!metadataJob || ["pending", "running"].includes(metadataJob.state));
-  const metadataFailed = metadataJob?.state === "failed";
+  const metadataFailed =
+    metadataRequestFailed || metadataJob?.state === "failed";
   const savedJSON = useRef(existing ? JSON.stringify(existing.draft) : "");
   const [languageInput, setLanguageInput] = useState(
     (draft.supported_languages || []).join(", "),
   );
   const current = useRef(draft);
   current.current = draft;
+  const [prefill] = useState(
+    () => new MetadataPrefill(draft.website_url, !!existing || !!project),
+  );
+  const metadataURL = useRef("");
+  const activeMetadata = useRef<PrefillRequest | null>(null);
   const saveLock = useRef<Promise<Application> | null>(null);
   const idRef = useRef(id);
   const dirty = JSON.stringify(draft) !== savedJSON.current;
@@ -160,13 +173,17 @@ export function DiscoverySubmit() {
   }, []);
   useEffect(() => {
     const j = data.jobs.find((j) => j.id === job);
-    if (j?.state === "done" && j.result) {
-      setDraft((d) => ({
-        ...d,
-        name: d.name || String(j.result!.name || ""),
-        description_en: d.description_en || String(j.result!.description || ""),
-        category: String(j.result!.suggested_category || d.category),
-      }));
+    const request = activeMetadata.current;
+    if (
+      j?.state === "done" &&
+      j.result &&
+      request &&
+      prefill.accepts(request, current.current.website_url)
+    ) {
+      const patch = prefill.apply(request, j.result, current.current);
+      current.current = { ...current.current, ...patch };
+      setDraft(current.current);
+      activeMetadata.current = null;
       setJob("");
       notify(
         t(
@@ -176,28 +193,58 @@ export function DiscoverySubmit() {
       );
     }
   }, [data.jobs, job]);
-  const metadataURL = useRef("");
+  async function extractMetadata(value: string) {
+    const request = prefill.begin();
+    activeMetadata.current = request;
+    metadataURL.current = metadataTarget(value);
+    setMetadataRequestFailed(false);
+    setJob("");
+    try {
+      const result = await api<{ id: string }>("metadata", { url: value });
+      if (prefill.accepts(request, current.current.website_url))
+        setJob(result.id);
+    } catch {
+      if (prefill.accepts(request, current.current.website_url))
+        setMetadataRequestFailed(true);
+    }
+  }
   useEffect(() => {
     const value = draft.website_url.trim();
+    const target = metadataTarget(value);
     if (
       !data.user ||
       !canEditProject ||
       !/^(?:https?:\/\/)?[^/\s]+\.[^/\s]+/.test(value) ||
-      metadataURL.current === value ||
+      metadataURL.current === target ||
       /\.example(?:\/|$)/.test(value)
     )
       return;
     const timer = setTimeout(() => {
-      if (metadataURL.current === value) return;
-      metadataURL.current = value;
-      void api<{ id: string }>("metadata", { url: value })
-        .then((j) => setJob(j.id))
-        .catch(() => {});
+      if (
+        metadataURL.current === target ||
+        metadataTarget(current.current.website_url) !== target
+      )
+        return;
+      void extractMetadata(value);
     }, 900);
     return () => clearTimeout(timer);
   }, [draft.website_url, data.user, canEditProject]);
-  const update = (key: keyof Draft, value: any) =>
-    setDraft((d) => ({ ...d, [key]: value }));
+  const update = (key: keyof Draft, value: any) => {
+    let patch = {};
+    if (key === "website_url") {
+      const cleared = prefill.changeURL(value, current.current);
+      if (cleared) {
+        patch = cleared;
+        activeMetadata.current = null;
+        metadataURL.current = "";
+        setJob("");
+        setMetadataRequestFailed(false);
+        if (current.current.website_url) setWebsiteChanged(true);
+      }
+    } else prefill.edit(key);
+    current.current = { ...current.current, ...patch, [key]: value };
+    setDraft(current.current);
+  };
   const add = (peer: Peer) => {
     try {
       const u = new URL(
@@ -346,7 +393,10 @@ export function DiscoverySubmit() {
           name={draft.name}
           websiteURL={draft.website_url}
           onImport={(patch) => {
-            setDraft((d) => ({ ...d, ...patch }));
+            for (const key of Object.keys(patch))
+              prefill.edit(key as keyof Draft);
+            current.current = { ...current.current, ...patch };
+            setDraft(current.current);
             if (patch.supported_languages)
               setLanguageInput(patch.supported_languages.join(", "));
             setStep(2);
@@ -419,15 +469,7 @@ export function DiscoverySubmit() {
           <button
             className="button"
             disabled={busy || metadataPending}
-            onClick={async () => {
-              try {
-                metadataURL.current = draft.website_url.trim();
-                const j = await api<{ id: string }>("metadata", {
-                  url: draft.website_url,
-                });
-                setJob(j.id);
-              } catch {}
-            }}
+            onClick={() => void extractMetadata(draft.website_url)}
           >
             {metadataPending
               ? t("Extracting…", "正在提取…")
@@ -435,13 +477,29 @@ export function DiscoverySubmit() {
                 ? t("Retry extraction", "重新提取资料")
                 : t("Prefill tool details", "提取工具资料")}
           </button>
+          {websiteChanged && (
+            <p className="notice" role="status">
+              {t(
+                "Website changed. Previous automatic details were cleared; your own entries are kept. Check that they match the new website.",
+                "官网已切换：旧的自动资料已清除，手填或导入内容保留，请核对是否适用于新官网。",
+              )}
+            </p>
+          )}
           {metadataFailed && (
             <p className="notice" role="status">
               {t(
                 "Could not extract website details. Check the URL and retry, or continue manually. Your existing entries are kept.",
                 "暂时无法提取官网资料。请检查网址后重试，或继续手动填写；已填内容会保留。",
               )}
-              <button className="button ghost" onClick={() => setJob("")}>
+              <button
+                className="button ghost"
+                onClick={() => {
+                  activeMetadata.current = null;
+                  prefill.begin();
+                  setJob("");
+                  setMetadataRequestFailed(false);
+                }}
+              >
                 {t("Continue manually", "继续手填")}
               </button>
             </p>
