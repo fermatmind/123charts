@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T11:21:41.846826+00:00",
+  "updated_at": "2026-10-22T11:29:56.067834+00:00",
   "assigned": 204,
-  "completed_count": 22,
+  "completed_count": 24,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -28,9 +28,11 @@
     "projects/help-desk/bund-ai-cf2e0dd9.json",
     "projects/help-desk/commbox-2b5ea56a.json",
     "projects/help-desk/desku-018b8949.json",
-    "projects/help-desk/dixa-69beb280.json"
+    "projects/help-desk/dixa-69beb280.json",
+    "projects/help-desk/fci-ccm-11e040bf.json",
+    "projects/help-desk/gorgias-3f323e4a.json"
   ],
-  "incomplete_count": 182,
+  "incomplete_count": 180,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -39,9 +41,7 @@
     "projects/crm/quickdesk-6b00414e.json",
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/due-work-6947a910.json",
-    "projects/help-desk/fci-ccm-11e040bf.json",
     "projects/help-desk/freshdesk-2ae83506.json",
-    "projects/help-desk/gorgias-3f323e4a.json",
     "projects/help-desk/happyfox-e2c9254e.json",
     "projects/help-desk/helpdesk-74f8a6b9.json",
     "projects/help-desk/hesk-c56a70fb.json",
@@ -388,6 +388,97 @@
       "project": "projects/help-desk/due-work-6947a910.json",
       "status": "research_incomplete",
       "observed": "Ordinary HTTPS to assigned www.due.work closed the connection without a response. Public web reader reports inaccessible and official-domain search returned no results. No current product/licensing/pricing claims adopted; no bypass attempted."
+    },
+    {
+      "project": "projects/help-desk/freshdesk-2ae83506.json",
+      "status": "research_incomplete",
+      "observed": "Current Freshdesk product/pricing on freshworks.com and operational docs on support.freshdesk.com actually read. Shared validator requires all official source registrable domains to match canonical identity (freshworks.com), disallowing genuine support.freshdesk.com sources. No URL falsification or shared-script change. Record remains unchanged/not counted while evidence is retained for coordinator-approved source-domain handling and final profile authorship. Freshdesk email AI72hour session must not be replaced by broader24hour Freshdesk Omni/chat session article; latter has different scope.",
+      "sources_read": [
+        {
+          "id": "product",
+          "type": "official_documentation",
+          "site": "AI-Powered Customer Service Software | Freshdesk | Freshworks",
+          "title": "AI-Powered Customer Service Software | Freshdesk | Freshworks",
+          "url": "https://www.freshworks.com/freshdesk/",
+          "read_at": "2026-10-22T11:24:46.743818+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "80c4d9517373b1c631c7a8d269a54482376539c3ec4b28bf92e813ff36101f0c",
+          "research_notes_en": "Current email AI/customer-service product; broader Freshdesk Omni is separately linked."
+        },
+        {
+          "id": "pricing",
+          "type": "official_pricing",
+          "site": "Freshdesk Customer Support Software Pricing & Plans | Freshworks",
+          "title": "Freshdesk Customer Support Software Pricing & Plans | Freshworks",
+          "url": "https://www.freshworks.com/freshdesk/pricing/",
+          "read_at": "2026-10-22T11:25:19.075204+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "d7f669361021304daae616c831bd129abf822680e901980a52828c2d8d25ef2e",
+          "research_notes_en": "Annual USD-looking cards19/55/89 displayed, first500sessions one-time per account,49per100additional,Email AI72hours,14dayEnterprise trial with suspension if notcontinued; Copilot, MCP and connector costs separate. Exact currency selected quote needed."
+        },
+        {
+          "id": "creation",
+          "type": "official_documentation",
+          "site": "Automation rules that run on ticket creation : Freshdesk Support",
+          "title": "Automation rules that run on ticket creation : Freshdesk Support",
+          "url": "https://support.freshdesk.com/support/solutions/articles/37614-managing-tickets-using-the-dispatch-r",
+          "read_at": "2026-10-22T11:26:29.866639+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "66a453f81f43353ffb519c6347295c5f9d1bccfe04403fe08365df50627fb469",
+          "research_notes_en": "August5 2026 default first-match versus all-match creation rules; ordered, no retroactive/manual existing-ticket execution, immediate only, endpoint and threading exceptions, activity-log diagnosis."
+        },
+        {
+          "id": "hourly",
+          "type": "official_documentation",
+          "site": "Creating automation rules that run on hourly triggers : Freshdesk Support",
+          "title": "Creating automation rules that run on hourly triggers : Freshdesk Support",
+          "url": "https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers",
+          "read_at": "2026-10-22T11:26:29.801569+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "8cd0c1e93c153b680424a7ec886ce14a65e4b5f8ce2686ecb5b7902554b8d5a3",
+          "research_notes_en": "Hourly calendar-hour sequential evaluation only recentlyupdatedtickets30days; can runalmosthourlate; no contact/company fields, limitedactions, narrow greater24less25hour window prevents repeatedhourlyemail."
+        },
+        {
+          "id": "overview",
+          "type": "official_documentation",
+          "site": "Overview of Automation Rules in Freshdesk : Freshdesk Support",
+          "title": "Overview of Automation Rules in Freshdesk : Freshdesk Support",
+          "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+          "read_at": "2026-10-22T11:26:29.806111+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1",
+          "research_notes_en": "Actual full overview fetched; trigger/action matrix preserved for later final reading/reconciliation. Not counted as complete profile."
+        },
+        {
+          "id": "cross-product-ai",
+          "type": "official_documentation",
+          "site": "Understanding Freddy AI features and pricing : Freshsales",
+          "title": "Understanding Freddy AI features and pricing : Freshsales",
+          "url": "https://crmsupport.freshworks.com/support/solutions/articles/50000009124",
+          "read_at": "2026-10-22T11:25:19.663460+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "49ae20e08bee4126f9f94c7198f5791c281f356e0ba9889bc7b81f9d38cbb802",
+          "research_notes_en": "July2025 product-specific Copilot feature matrix; olderfeatureavailability differsfromcurrentpricing. Not all Freshchat/Omni features applytoFreshdesk."
+        },
+        {
+          "id": "cross-product-sessions",
+          "type": "official_documentation",
+          "site": "Freddy AI Agent session FAQs : Freshsales",
+          "title": "Freddy AI Agent session FAQs : Freshsales",
+          "url": "https://crmsupport.freshworks.com/support/solutions/articles/50000004664-ai-agent-and-chatbot-sessions-faqs",
+          "read_at": "2026-10-22T11:25:19.551865+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "c8d33a8757510054926e5821110336b752c55891be75aa5f2ef48359d90cac2a",
+          "research_notes_en": "August2026 broaderFreddyForConversations article appliesOmni/chat/sales;24hour sessions,previewcharges,auto-recharge andself-service nohandoff conditions cannot be blindlyappliedto72hour Freshdesk EmailAI."
+        }
+      ]
     }
   ],
   "verification": [
@@ -443,6 +534,16 @@
         "git diff --check"
       ],
       "result": "7 tests passed; records-only passed for1000 projects/50 categories,25 total researched including original3; batch contributes22,182 remain. Changed JSON formatted and diff check passed. No account execution or independent content review."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Source SHA256 comparison against actual saved retrievals",
+        "Prettier on FCI/Gorgias and notes",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch24 completed,180 remaining. Structural checks are not factual/independent review."
     }
   ],
   "checkpoints": [
@@ -509,10 +610,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "756c383",
       "completed": [
         "projects/help-desk/desku-018b8949.json",
         "projects/help-desk/dixa-69beb280.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/fci-ccm-11e040bf.json",
+        "projects/help-desk/gorgias-3f323e4a.json"
       ],
       "status": "ready_to_commit"
     }
