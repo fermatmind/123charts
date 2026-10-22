@@ -3,18 +3,21 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T10:19:45.037555+00:00",
+  "updated_at": "2026-10-22T10:32:02.179485+00:00",
   "assigned": 204,
-  "completed_count": 6,
+  "completed_count": 9,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
     "projects/crm/capsule-8673a884.json",
     "projects/crm/clientjoy-a3e1f6b6.json",
     "projects/crm/crmtravel-26932e3d.json",
-    "projects/crm/highlevel-3172bdfa.json"
+    "projects/crm/highlevel-3172bdfa.json",
+    "projects/crm/hubspot-crm-00675aa8.json",
+    "projects/crm/mindcat-inbox-9e5a7124.json",
+    "projects/crm/nethunt-crm-412793ca.json"
   ],
-  "incomplete_count": 198,
+  "incomplete_count": 195,
   "remaining_projects": [
     "projects/crm/archiz-crm-3b56403d.json",
     "projects/crm/aurea-crm-2db99d1d.json",
@@ -22,10 +25,7 @@
     "projects/crm/bytepaper-cbf0d470.json",
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
-    "projects/crm/hubspot-crm-00675aa8.json",
-    "projects/crm/mindcat-inbox-9e5a7124.json",
     "projects/crm/mr-milkman-a1895a2a.json",
-    "projects/crm/nethunt-crm-412793ca.json",
     "projects/crm/oncontact-crm-b4c091ba.json",
     "projects/crm/pipedrive-crm-4a41bd76.json",
     "projects/crm/pipeliner-crm-6a48a383.json",
@@ -262,6 +262,14 @@
         "git diff --check"
       ],
       "result": "7 unit tests passed; records-only passed for 1000 projects/50 categories; changed JSON formatted; diff check passed. These checks do not establish content accuracy."
+    },
+    {
+      "commands": [
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on HubSpot/Mindcat/NetHunt JSONs",
+        "git diff --check"
+      ],
+      "result": "Passed: 1000 projects, 50 categories, 12 total primary-source-researched including original 3; this batch contributes 9. No factual quality inferred from validator."
     }
   ],
   "checkpoints": [
@@ -282,10 +290,19 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; actual SHA added in next checkpoint.",
+      "commit": "4c16009",
       "completed": [
         "projects/crm/crmtravel-26932e3d.json",
         "projects/crm/highlevel-3172bdfa.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/crm/hubspot-crm-00675aa8.json",
+        "projects/crm/mindcat-inbox-9e5a7124.json",
+        "projects/crm/nethunt-crm-412793ca.json"
       ],
       "status": "ready_to_commit"
     }
