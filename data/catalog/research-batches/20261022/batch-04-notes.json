@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T16:05:09.790229+00:00",
+  "updated_at": "2026-10-22T16:21:37.078475+00:00",
   "assigned": 101,
-  "completed_count": 77,
+  "completed_count": 80,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -83,18 +83,19 @@
     "projects/call-center/sanccs-fb1c2695.json",
     "projects/call-center/talkdesk-1183b903.json",
     "projects/call-center/tcn-operator-76910f6f.json",
-    "projects/call-center/tryvium-desk-664aaf8e.json"
+    "projects/call-center/tryvium-desk-664aaf8e.json",
+    "projects/call-center/ucontact-a323f2ce.json",
+    "projects/help-desk/freshdesk-2ae83506.json",
+    "projects/crm/oncontact-crm-b4c091ba.json"
   ],
-  "incomplete_count": 24,
+  "incomplete_count": 21,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
     "projects/crm/mr-milkman-a1895a2a.json",
-    "projects/crm/oncontact-crm-b4c091ba.json",
     "projects/crm/quickdesk-6b00414e.json",
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/due-work-6947a910.json",
-    "projects/help-desk/freshdesk-2ae83506.json",
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
     "projects/live-chat/bold360-d1b9e7c2.json",
@@ -109,10 +110,9 @@
     "projects/call-center/calltools-0d43ce02.json",
     "projects/call-center/knowlarity-0c719323.json",
     "projects/call-center/my-hotline-76f16d10.json",
-    "projects/call-center/truly-56a8895a.json",
-    "projects/call-center/ucontact-a323f2ce.json"
+    "projects/call-center/truly-56a8895a.json"
   ],
-  "status": "in_progress",
+  "status": "assigned_scope_processed_with_documented_gaps",
   "research_issues": [
     {
       "project": "projects/crm/archiz-crm-3b56403d.json",
@@ -703,6 +703,16 @@
         }
       ],
       "checked_at": "2026-10-22T16:02:32.319333+00:00"
+    },
+    {
+      "project": "projects/help-desk/freshdesk-2ae83506.json",
+      "status": "research_completed_after_validator_policy_update",
+      "observed": "Previously held for cross-domain official documentation. Authored from five saved primary pages; exact authority snapshots proposed in these notes. Legacy local validator remains incompatible; coordinator-compatible validation recorded separately."
+    },
+    {
+      "project": "projects/crm/oncontact-crm-b4c091ba.json",
+      "status": "research_completed_price_still_unknown",
+      "observed": "Previously held for cross-domain documentation and mandatory-price check. Authored from six saved primary pages; pricing remains not_verified/unknown/officially_checked=false. Exact authority snapshots proposed in these notes."
     }
   ],
   "verification": [
@@ -1218,6 +1228,41 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch77 completed,24 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch78 completed,23 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "node .scratch/deep-research/batch-04/compat/validate.mjs --records-only",
+        "SHA256 comparison against saved sources for the two added records",
+        "Prettier on changed JSONs",
+        "git diff --check"
+      ],
+      "result": "7 tests passed. Legacy validator fails at its mandatory officially_checked=true assertion, incompatible with coordinator-approved unknown-pricing policy. Read-only scratch copy of coordinator validator plus record-validation.mjs passed: 1000 projects,50 categories,83 total researched (80 this batch plus3 baseline),0 untranslated feature labels. Scratch runner uses this batch notes exact source_authority_proposals in place of shared registry, pending coordinator integration; shared scripts/registry unchanged. Source hashes for these two records reproduced; this is not a claim all historical hashes reproduced."
+    },
+    {
+      "commands": [
+        "node .scratch/deep-research/batch-04/compat/validate.mjs --records-only",
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "Focused preservation/accounting/source-hash assertions",
+        "Prettier on changed project JSONs and notes",
+        "git diff --check"
+      ],
+      "result": "Coordinator-compatible scratch validator passed:1000 projects/50 categories/83 researched including3 baseline/0 untranslated labels. 7 tests passed. All21 community candidates preserve original fields except community_follow_up and Bold360 lifecycle_correction; unknowns, draft and alternatives retained. 12 newly used source snapshots reproduced. Counts80+21=101 and no unprocessed items. Lifecycle correction1 is a subset of community21, not deep completion. Legacy mandatory-price validator limitation remains documented; exact cross-domain authority proposals await shared-registry integration. Historical Hippo2-source reproduction gap remains open.",
+      "validator_snapshot_sha256": {
+        "validate.mjs": "970c59178d599cb9ef6232c7dc481d356e1a9fee620ef25bda1b5787c141e0e5",
+        "record-validation.mjs": "ec66316cacc8b94d626e45d06636ad457893df2e331078267b7e2a6dd1673ce5"
+      }
     }
   ],
   "checkpoints": [
@@ -1547,33 +1592,77 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "4c79024",
       "completed": ["projects/call-center/tryvium-desk-664aaf8e.json"],
-      "status": "ready_to_commit"
+      "status": "pushed"
+    },
+    {
+      "commit": "070b119",
+      "completed": ["projects/call-center/ucontact-a323f2ce.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "cf80def",
+      "completed": [
+        "projects/help-desk/freshdesk-2ae83506.json",
+        "projects/crm/oncontact-crm-b4c091ba.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this final classification.",
+      "completed": [],
+      "community_follow_up_projects": [
+        "projects/crm/dokiocrm-a1c2366b.json",
+        "projects/crm/dongocrm-e7cbc262.json",
+        "projects/crm/mr-milkman-a1895a2a.json",
+        "projects/crm/quickdesk-6b00414e.json",
+        "projects/help-desk/converso-ac9b325c.json",
+        "projects/help-desk/due-work-6947a910.json",
+        "projects/help-desk/lemtalk-c64ca909.json",
+        "projects/help-desk/max-helpdesk-a5eba455.json",
+        "projects/live-chat/bold360-d1b9e7c2.json",
+        "projects/live-chat/coffee-chats-64c0b6c7.json",
+        "projects/live-chat/contact-at-once-e618062d.json",
+        "projects/live-chat/handlr-a71bc7cc.json",
+        "projects/live-chat/natterly-b6f365e1.json",
+        "projects/live-chat/snapengage-943eb811.json",
+        "projects/live-chat/syndeo-cx-30bafb7a.json",
+        "projects/live-chat/theliveforce-d65e765e.json",
+        "projects/call-center/ameyo-engage-9ab35131.json",
+        "projects/call-center/calltools-0d43ce02.json",
+        "projects/call-center/knowlarity-0c719323.json",
+        "projects/call-center/my-hotline-76f16d10.json",
+        "projects/call-center/truly-56a8895a.json"
+      ],
+      "status": "ready_to_commit",
+      "scope": "Adds community markers and one lifecycle correction only; retains candidate research status, unknown pricing/license and unreviewed alternatives."
     }
   ],
   "scope": "Only original completed project maintenance, retained_remaining_paths under assignments-v2, and own notes. 72 transferred projects belong exclusively to batch-09. No main push, deployment, application or shared catalog writes.",
   "category_progress": {
     "crm": {
-      "assigned": 22,
-      "deep_researched": 17,
-      "documented_incomplete": 5,
-      "all_assigned_attempted": true
+      "completed_count": 18,
+      "needs_community_input_count": 4,
+      "unprocessed_count": 0
     },
     "help-desk": {
-      "assigned": 26,
-      "deep_researched": 21,
-      "documented_incomplete": 5,
-      "all_assigned_attempted": true
+      "completed_count": 22,
+      "needs_community_input_count": 4,
+      "unprocessed_count": 0
     },
     "live-chat": {
-      "assigned": 26,
-      "deep_researched": 18,
-      "documented_incomplete": 8,
-      "all_assigned_attempted": true
+      "completed_count": 18,
+      "needs_community_input_count": 8,
+      "unprocessed_count": 0
     },
     "next": "call-center",
-    "batch_not_complete": true
+    "batch_not_complete": true,
+    "call-center": {
+      "completed_count": 22,
+      "needs_community_input_count": 5,
+      "unprocessed_count": 0
+    }
   },
   "original_assigned": 204,
   "ownership_handoff": {
@@ -1791,5 +1880,210 @@
       "retained_remaining_count": 28,
       "transferred_not_counted_completed": true
     }
-  ]
+  ],
+  "source_authority_proposals": {
+    "schema_version": "123charts-source-authorities-v1",
+    "status": "pending_coordinator_integration",
+    "projects": {
+      "projects/help-desk/freshdesk-2ae83506.json": {
+        "identity_domain": "freshworks.com",
+        "source_domain": "freshdesk.com",
+        "checked_at": "2026-10-22T11:26:29.866639+00:00",
+        "scope_en": "The support.freshdesk.com guide explicitly names Freshdesk and its automation rules; current product and pricing are on Freshworks. Scope only the exact saved Freshdesk support snapshots.",
+        "scope_zh": "support.freshdesk.com 指南明确标识 Freshdesk 自动化规则，当前产品及定价位于 Freshworks；仅登记已保存的确切支持文档快照。",
+        "sources": [
+          {
+            "id": "creation",
+            "url": "https://support.freshdesk.com/support/solutions/articles/37614-managing-tickets-using-the-dispatch-r",
+            "excerpt_sha256": "66a453f81f43353ffb519c6347295c5f9d1bccfe04403fe08365df50627fb469"
+          },
+          {
+            "id": "hourly",
+            "url": "https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers",
+            "excerpt_sha256": "8cd0c1e93c153b680424a7ec886ce14a65e4b5f8ce2686ecb5b7902554b8d5a3"
+          },
+          {
+            "id": "rule-model",
+            "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+            "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1"
+          }
+        ],
+        "basis": {
+          "kind": "named_product_on_vendor_domain",
+          "source_ref": "rule-model",
+          "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+          "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1",
+          "summary_en": "The support.freshdesk.com guide explicitly names Freshdesk and its automation rules; current product and pricing are on Freshworks. Scope only the exact saved Freshdesk support snapshots.",
+          "summary_zh": "support.freshdesk.com 指南明确标识 Freshdesk 自动化规则，当前产品及定价位于 Freshworks；仅登记已保存的确切支持文档快照。"
+        }
+      },
+      "projects/crm/oncontact-crm-b4c091ba.json": {
+        "identity_domain": "aptean.com",
+        "source_domain": "apteancloud.dev",
+        "checked_at": "2026-10-22T11:03:06.315518+00:00",
+        "scope_en": "Aptean CRM10 documentation identifies the product and explicitly retains OnContact-tagged Outlook synchronization; the Aptean acquisition announcement names WorkWise OnContact. Scope only these exact CRM/AppCentral snapshots, not all Aptean products.",
+        "scope_zh": "Aptean CRM 10 文档具名产品并保留 OnContact 标签同步；Aptean 收购公告具名 WorkWise OnContact。仅适用这些确切 CRM／AppCentral 快照，不覆盖全部 Aptean 产品。",
+        "sources": [
+          {
+            "id": "opportunity",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/main-entities/opportunity/",
+            "excerpt_sha256": "eafbe7483f5be047aaaa79cf3520839702adb9ccd168dd5f0c181278600cc332"
+          },
+          {
+            "id": "process",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/setup/business-processes/create-a-new-business-process/",
+            "excerpt_sha256": "e430c86a2f8516b084f4f0fba473dbc225b4535cb851c287def8f5a6eaa17f36"
+          },
+          {
+            "id": "outlook-sync",
+            "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/outlook-addin/synchronization/automatic-sync/",
+            "excerpt_sha256": "19818628f0c53245b8f9651192a329e6893f7daf61d61febd0f58be76579be69"
+          },
+          {
+            "id": "activation",
+            "url": "https://appcentral-docs.apteancloud.dev/AppCentral/aptean-crm-setup/",
+            "excerpt_sha256": "5d1be8ecbbde3370fd6923ff1f473c711d3f49626e6821889a97a7c9ae45c32b"
+          }
+        ],
+        "basis": {
+          "kind": "named_product_on_vendor_domain",
+          "source_ref": "outlook-sync",
+          "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/outlook-addin/synchronization/automatic-sync/",
+          "excerpt_sha256": "19818628f0c53245b8f9651192a329e6893f7daf61d61febd0f58be76579be69",
+          "summary_en": "Aptean CRM10 documentation identifies the product and explicitly retains OnContact-tagged Outlook synchronization; the Aptean acquisition announcement names WorkWise OnContact. Scope only these exact CRM/AppCentral snapshots, not all Aptean products.",
+          "summary_zh": "Aptean CRM 10 文档具名产品并保留 OnContact 标签同步；Aptean 收购公告具名 WorkWise OnContact。仅适用这些确切 CRM／AppCentral 快照，不覆盖全部 Aptean 产品。"
+        }
+      }
+    }
+  },
+  "source_hash_reproduction_follow_up": {
+    "project": "projects/live-chat/hippo-b19ae80d.json",
+    "source_ids": ["pricing", "terms"],
+    "status": "not_reproduced",
+    "handoff_file": "/Users/rainie/Desktop/123charts.com/123charts-research-04/.scratch/source-hash-handoff.json",
+    "effect": "Historical source snapshots unavailable; do not report full provenance verification. Coordinator to mark missing evidence. No original hash changed, no external retry."
+  },
+  "completion_classification": {
+    "deep_research_completed": {
+      "count": 80,
+      "projects": [
+        "projects/crm/bigin-by-zoho-crm-b49871ef.json",
+        "projects/crm/buddycrm-7672edc4.json",
+        "projects/crm/capsule-8673a884.json",
+        "projects/crm/clientjoy-a3e1f6b6.json",
+        "projects/crm/crmtravel-26932e3d.json",
+        "projects/crm/highlevel-3172bdfa.json",
+        "projects/crm/hubspot-crm-00675aa8.json",
+        "projects/crm/mindcat-inbox-9e5a7124.json",
+        "projects/crm/nethunt-crm-412793ca.json",
+        "projects/crm/bunch-crm-785fd2f8.json",
+        "projects/crm/bytepaper-cbf0d470.json",
+        "projects/crm/pipeliner-crm-6a48a383.json",
+        "projects/crm/salesforce-6268792d.json",
+        "projects/crm/vinsolutions-connect-crm-06bac125.json",
+        "projects/crm/archiz-crm-3b56403d.json",
+        "projects/crm/aurea-crm-2db99d1d.json",
+        "projects/crm/pipedrive-crm-4a41bd76.json",
+        "projects/help-desk/bolddesk-b05f86ef.json",
+        "projects/help-desk/bund-ai-cf2e0dd9.json",
+        "projects/help-desk/commbox-2b5ea56a.json",
+        "projects/help-desk/desku-018b8949.json",
+        "projects/help-desk/dixa-69beb280.json",
+        "projects/help-desk/fci-ccm-11e040bf.json",
+        "projects/help-desk/gorgias-3f323e4a.json",
+        "projects/help-desk/happyfox-e2c9254e.json",
+        "projects/help-desk/helpdesk-74f8a6b9.json",
+        "projects/help-desk/hesk-c56a70fb.json",
+        "projects/help-desk/jitbit-helpdesk-a221531f.json",
+        "projects/help-desk/kayako-4565eb5f.json",
+        "projects/help-desk/kustomer-1a7d26c7.json",
+        "projects/help-desk/nateq-08764ba5.json",
+        "projects/help-desk/otrs-aea4c09a.json",
+        "projects/help-desk/pylon-d7251920.json",
+        "projects/help-desk/reamaze-31855c4f.json",
+        "projects/help-desk/replium-693b7537.json",
+        "projects/help-desk/siit-f4ed3053.json",
+        "projects/help-desk/sugester-52e4a6d2.json",
+        "projects/help-desk/supportbee-aecb6054.json",
+        "projects/live-chat/apexchat-9bd3eff7.json",
+        "projects/live-chat/arena-live-chat-34ccee42.json",
+        "projects/live-chat/chatango-18c4f792.json",
+        "projects/live-chat/chatblazer-6045ee86.json",
+        "projects/live-chat/chatra-8550215c.json",
+        "projects/live-chat/deskmoz-a73bad6d.json",
+        "projects/live-chat/focalscope-00c73b70.json",
+        "projects/live-chat/helpshift-e6683d88.json",
+        "projects/live-chat/hippo-b19ae80d.json",
+        "projects/live-chat/iadvize-86e8146b.json",
+        "projects/live-chat/jivochat-4ca767bd.json",
+        "projects/live-chat/livechat-3865780d.json",
+        "projects/live-chat/livehelpnow-826bb7ca.json",
+        "projects/live-chat/olark-36188fbb.json",
+        "projects/live-chat/provide-support-df100aca.json",
+        "projects/live-chat/reve-chat-404e815f.json",
+        "projects/live-chat/smartsupp-b1532cf5.json",
+        "projects/live-chat/talkative-55649f5e.json",
+        "projects/call-center/3clogic-5145826b.json",
+        "projects/call-center/bright-pattern-9fd0f825.json",
+        "projects/call-center/call-center-studio-65406041.json",
+        "projects/call-center/callhippo-daec5e77.json",
+        "projects/call-center/chasedata-3ff9021b.json",
+        "projects/call-center/circleloop-11da2f8e.json",
+        "projects/call-center/cloudtalk-fd8a030b.json",
+        "projects/call-center/contactspace-4ba2955d.json",
+        "projects/call-center/convox-8b437e87.json",
+        "projects/call-center/evoice-0d22010e.json",
+        "projects/call-center/exotel-7fbfe1a1.json",
+        "projects/call-center/hoducc-b652208b.json",
+        "projects/call-center/hyperdial-6cbb4b97.json",
+        "projects/call-center/icallify-b203b120.json",
+        "projects/call-center/intalk-io-5f112943.json",
+        "projects/call-center/krispcall-358c5c55.json",
+        "projects/call-center/nextiva-5e531374.json",
+        "projects/call-center/sanccs-fb1c2695.json",
+        "projects/call-center/talkdesk-1183b903.json",
+        "projects/call-center/tcn-operator-76910f6f.json",
+        "projects/call-center/tryvium-desk-664aaf8e.json",
+        "projects/call-center/ucontact-a323f2ce.json",
+        "projects/help-desk/freshdesk-2ae83506.json",
+        "projects/crm/oncontact-crm-b4c091ba.json"
+      ]
+    },
+    "lifecycle_corrections": {
+      "count": 1,
+      "projects": ["projects/live-chat/bold360-d1b9e7c2.json"],
+      "relationship": "Subset of community follow-up; not added to deep-completed count."
+    },
+    "needs_community_input": {
+      "count": 21,
+      "projects": [
+        "projects/crm/dokiocrm-a1c2366b.json",
+        "projects/crm/dongocrm-e7cbc262.json",
+        "projects/crm/mr-milkman-a1895a2a.json",
+        "projects/crm/quickdesk-6b00414e.json",
+        "projects/help-desk/converso-ac9b325c.json",
+        "projects/help-desk/due-work-6947a910.json",
+        "projects/help-desk/lemtalk-c64ca909.json",
+        "projects/help-desk/max-helpdesk-a5eba455.json",
+        "projects/live-chat/bold360-d1b9e7c2.json",
+        "projects/live-chat/coffee-chats-64c0b6c7.json",
+        "projects/live-chat/contact-at-once-e618062d.json",
+        "projects/live-chat/handlr-a71bc7cc.json",
+        "projects/live-chat/natterly-b6f365e1.json",
+        "projects/live-chat/snapengage-943eb811.json",
+        "projects/live-chat/syndeo-cx-30bafb7a.json",
+        "projects/live-chat/theliveforce-d65e765e.json",
+        "projects/call-center/ameyo-engage-9ab35131.json",
+        "projects/call-center/calltools-0d43ce02.json",
+        "projects/call-center/knowlarity-0c719323.json",
+        "projects/call-center/my-hotline-76f16d10.json",
+        "projects/call-center/truly-56a8895a.json"
+      ]
+    },
+    "unprocessed": {
+      "count": 0,
+      "projects": []
+    },
+    "scope_accounting": "80 deep-researched +21 community follow-up =101 retained assignments; 103 transferred records excluded. Deep research includes one historical Hippo provenance follow-up for two unreproduced snapshots; no all-source reproducibility claim."
+  }
 }

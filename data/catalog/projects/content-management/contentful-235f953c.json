@@ -245,19 +245,32 @@
   ],
   "community_follow_up": {
     "status": "needs_community_input",
-    "reason_code": "official_source_access_restricted",
-    "reason_en": "The attempted official source was access restricted. Current product facts remain unverified; please provide accessible official documentation.",
-    "reason_zh": "所尝试的官方来源存在访问限制，当前产品事实仍未核实，请补充可访问的官方文档。",
+    "reason_en": "The marketing origin previously returned 429. The support entry redirected to login; contentful.github.io unexpectedly redirected in the normal browser back to the previously restricted documentation origin. No further traversal occurred. This overview is insufficient to complete plan, quota and commercial research.",
+    "reason_zh": "营销站此前返回 429；帮助入口跳转登录页，contentful.github.io 在正常浏览器中意外跳回此前受限的文档站，随后未继续浏览。该概览不足以完成方案、配额及商业条款研究。",
     "missing_information_en": [
-      "Current attributable official product and documentation sources; do not infer unknown prices, availability or capabilities."
+      "Normally readable official current plans, quotas, pricing and operative terms.",
+      "Product-specific workflow and API constraints with full official text."
     ],
     "missing_information_zh": [
-      "当前可归属于该产品的官方入口及文档；价格、可用性和能力未知时不补造。"
+      "正常可读的当前官方方案、配额、定价及有效条款。",
+      "含官方全文的产品流程及 API 限制。"
     ],
-    "attempted_urls": ["https://www.contentful.com/"],
-    "observed_at": "2026-10-23T00:05:49+08:00",
+    "attempted_urls": [
+      "https://www.contentful.com/",
+      "https://support.contentful.com/",
+      "https://contentful.github.io/"
+    ],
+    "observed_at": "2026-10-22T16:18:17.532942+00:00",
     "source_refs": [],
-    "evidence_record": "research-batches/20261022/batch-05-notes.json",
+    "observed_evidence": [
+      {
+        "url": "https://www.contentful.com/developers/docs/",
+        "title": "Contentful developer documentation — unexpected redirect",
+        "read_at": "2026-10-22T16:04:09.409Z",
+        "excerpt_sha256": "f878b9e521ee2d1e1e03684c7ae710e952a6ea208f148438baabbf067e45ef87"
+      }
+    ],
+    "access_policy_en": "No proxy, user-agent rotation, disabled TLS checks or continued traversal of a 403/429 origin. Domain content does not establish why it changed or that the product shut down.",
     "publication_eligibility": "not_granted"
   }
 }

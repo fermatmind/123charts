@@ -10,198 +10,97 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "BrowserStack is a product in the Software testing category. Its directory profile covers Geo Location Testing, Live Web Testing, Bug Tracking, Continuous Integration, Seamless Integration, Test Recorder, Cross Device Testing, Reporting and Analysis.\n\nAdditional listed capabilities include Parallel Testing, Scheduling, Cross Browser Support, Debugging, Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $25.00. Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: record software defects and follow their progress; allocate times for appointments, resources or tasks; work with supported browsers in a common workflow; inspect program execution to investigate faults; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "BrowserStack 属于软件测试软件。第三方资料列出的功能包括地理位置测试、在线网站测试、缺陷跟踪、持续集成、集成能力、测试录制工具、跨设备测试、报表与分析。\n\n资料还列出并行测试、排程管理、跨浏览器支持、代码调试、访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $25.00. 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：记录软件缺陷并跟踪处理进展；为预约、资源或任务安排时间；在同一流程中使用受支持的不同浏览器；检查程序执行过程以定位故障；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "BrowserStack provides cloud browser/device testing through distinct manual and automated products. Its Local Testing feature lets those remote sessions reach an authorized private or staging application through an outbound connection from a local agent. A remote test session and the Local connection have separate lifecycles.\n\nFor automated Selenium-oriented evaluation, the SDK can move platform and Local settings into browserstack.yml. Those settings can override the test suite’s capabilities. Check the effective configuration, tunnel scope and product-specific quota rather than assuming a local test script executes with unchanged settings or one family-wide allowance.",
+  "description_zh": "BrowserStack 通过不同的手动与自动化产品提供云端浏览器／设备测试。Local Testing 从本地代理建立出站连接，使远端会话访问获准私网或 staging 应用；远端测试会话与 Local 连接有独立生命周期。\n\n自动化 Selenium 方向的评估可用 SDK 将平台及 Local 设置放入 browserstack.yml，但该文件会覆盖测试套件的能力设置。应核对最终配置、隧道范围及具体产品额度，不能假定本地脚本设置不变或整个家族共用一种额度。",
   "core_features": [
     {
-      "name_en": "Geo Location Testing",
-      "name_zh": "地理位置测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Private-environment testing",
+      "name_zh": "私有环境测试",
+      "explanation_en": "A local agent supplies an outbound path from cloud test sessions to permitted internal targets.",
+      "explanation_zh": "本地代理为云端会话提供访问获准内部目标的出站路径。",
+      "explanation_scope": "product_specific",
+      "source_ref": "tunnel",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Live Web Testing",
-      "name_zh": "在线网站测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Capability override",
+      "name_zh": "能力设置覆盖",
+      "explanation_en": "Duplicate capabilities in browserstack.yml take precedence over values in test scripts.",
+      "explanation_zh": "重复能力设置以 browserstack.yml 为准，覆盖脚本值。",
+      "explanation_scope": "product_specific",
+      "source_ref": "sdk",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Bug Tracking",
-      "name_zh": "缺陷跟踪",
-      "explanation_en": "Record software defects and follow their progress.",
-      "explanation_zh": "记录软件缺陷并跟踪处理进展。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Continuous Integration",
-      "name_zh": "持续集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Seamless Integration",
-      "name_zh": "集成能力",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Test Recorder",
-      "name_zh": "测试录制工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cross Device Testing",
-      "name_zh": "跨设备测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Reporting and Analysis",
-      "name_zh": "报表与分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Parallel Testing",
-      "name_zh": "并行测试",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Scheduling",
-      "name_zh": "排程管理",
-      "explanation_en": "Allocate times for appointments, resources or tasks.",
-      "explanation_zh": "为预约、资源或任务安排时间。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cross Browser Support",
-      "name_zh": "跨浏览器支持",
-      "explanation_en": "Work with supported browsers in a common workflow.",
-      "explanation_zh": "在同一流程中使用受支持的不同浏览器。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Debugging",
-      "name_zh": "代码调试",
-      "explanation_en": "Inspect program execution to investigate faults.",
-      "explanation_zh": "检查程序执行过程以定位故障。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Product-specific trials",
+      "name_zh": "按产品区分试用",
+      "explanation_en": "The official FAQ assigns different minute allowances to Live, AppLive, Automate and AppAutomate.",
+      "explanation_zh": "官方 FAQ 为 Live、AppLive、Automate、AppAutomate 分配不同分钟额度。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Record software defects and follow their progress",
-      "Allocate times for appointments, resources or tasks",
-      "Work with supported browsers in a common workflow",
-      "Inspect program execution to investigate faults",
-      "Restrict information and actions according to permissions"
+      "Verify one cloud browser against an authorized staging assertion.",
+      "Compare SDK overrides and both session/tunnel teardown paths."
     ],
     "zh": [
-      "记录软件缺陷并跟踪处理进展",
-      "为预约、资源或任务安排时间",
-      "在同一流程中使用受支持的不同浏览器",
-      "检查程序执行过程以定位故障",
-      "根据权限限制信息访问和操作"
+      "用一个云浏览器验证获准 staging 断言。",
+      "比较 SDK 覆盖以及会话／隧道两种结束路径。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["home", "sdk", "tunnel"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $25.00. Offers Free-forever and Custom plan.",
-      "zh": "提供免费试用 起价为 $25.00. 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Test automation engineers", "Cross-browser QA teams"],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the product and account allowance, then define a small browser/platform matrix.",
+        "zh": "选择产品及账户额度，再定义小型浏览器／平台矩阵。",
+        "source_refs": ["pricing", "commercial", "sdk"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review effective SDK capabilities, authorized Local targets and complete teardown before expansion.",
+        "zh": "扩大前检查最终 SDK 能力、获准 Local 目标及完整结束流程。",
+        "source_refs": ["sdk", "tunnel"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "An SDK configuration can override capabilities already present in a test script.",
+        "zh": "SDK 配置可覆盖测试脚本已有能力设置。",
+        "source_refs": ["sdk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The FAQ and vendor article disagree on the Automate trial allowance.",
+        "zh": "FAQ 与官方文章对 Automate 试用额度描述不同。",
+        "source_refs": ["pricing", "commercial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -213,37 +112,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $25.00. Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $25.00. 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T15:57:38.035065Z",
+    "normalized_monthly_price": null,
+    "summary_en": "Official support documents temporary product-specific trials, not one unlimited platform plan. A vendor Automate article quotes from $99/month without a verified final cycle/offer and conflicts with the support FAQ on trial minutes. No pricing-root body, checkout, enterprise quote or family-wide entitlement was established.",
+    "summary_zh": "官方支持记录按产品划分的临时试用，并非平台无限量方案。官方 Automate 文章列月价 $99 起，但最终周期／方案未确认，试用分钟数也与 FAQ 冲突。未确认价格根页正文、结算、企业报价或整个家族权益。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does BrowserStack do?",
-      "question_zh": "BrowserStack 用来做什么？",
-      "answer_en": "BrowserStack is a product in the Software testing category. Its directory profile covers Geo Location Testing, Live Web Testing, Bug Tracking, Continuous Integration, Seamless Integration, Test Recorder, Cross Device Testing, Reporting and Analysis.",
-      "answer_zh": "BrowserStack 属于软件测试软件。第三方资料列出的功能包括地理位置测试、在线网站测试、缺陷跟踪、持续集成、集成能力、测试录制工具、跨设备测试、报表与分析。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Geo Location Testing, Live Web Testing, Bug Tracking, Continuous Integration, Seamless Integration, Test Recorder, Cross Device Testing, Reporting and Analysis, Parallel Testing, Scheduling, Cross Browser Support, Debugging, Access Control",
-      "answer_zh": "地理位置测试、在线网站测试、缺陷跟踪、持续集成、集成能力、测试录制工具、跨设备测试、报表与分析、并行测试、排程管理、跨浏览器支持、代码调试、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -253,62 +136,177 @@
       "read_at": "2026-10-22T08:37:24.748Z",
       "excerpt_sha256": "f334b9388b4bb7fb38ef5f66bffdc270cd6bb20ee898f6de196b0cc08b0e1cd3",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "BrowserStack",
+      "title": "Test on local, private, and internal networks | BrowserStack Docs",
+      "url": "https://www.browserstack.com/docs/local-testing/overview",
+      "read_at": "2026-10-22T13:59:27.195787Z",
+      "excerpt_sha256": "9b8dd68d65c624d71e9db6f1c7923b04deba787f8969faf331af889c987388ce",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read public Local Testing overview and separate manual/automated web/mobile workflows."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "BrowserStack",
+      "title": "What do I get with a Free Trial? | BrowserStack",
+      "url": "https://www.browserstack.com/support/faq/plans-pricing/plans/what-do-i-get-with-a-free-trial",
+      "read_at": "2026-10-22T15:57:38.035065Z",
+      "excerpt_sha256": "94aa6952bd0c723d67520d92b7a0193bdafd0f67fe435dde83636d819b27e741",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual official FAQ quotas: Live/AppLive30min, Automate60min, AppAutomate100min and Percy screenshot allowance. Not a paid rate card."
+    },
+    {
+      "id": "commercial",
+      "type": "official_documentation",
+      "site": "BrowserStack",
+      "title": "Top Commercial Web Testing Tools with AI Features | BrowserStack",
+      "url": "https://www.browserstack.com/guide/commercial-web-testing-tools-ai",
+      "read_at": "2026-10-22T15:59:03.003556Z",
+      "excerpt_sha256": "33a9bcc005b373ebe91b26c330576fd540491119aeb49c6c31d0a3071c2a2d78",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read vendor article’s Automate $99/month starting claim and conflicting100-minute automation trial; not generalized to whole platform."
+    },
+    {
+      "id": "tunnel",
+      "type": "official_documentation",
+      "site": "BrowserStack",
+      "title": "How Local Testing works | BrowserStack Docs",
+      "url": "https://www.browserstack.com/docs/local-testing/how-local-testing-works",
+      "read_at": "2026-10-22T14:00:42.268561Z",
+      "excerpt_sha256": "a316833dd00812165fa2a66bcc8de547853f0c23055d99bff441559478f3ab50",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual outbound authentication/relay connection and separate session/tunnel teardown."
+    },
+    {
+      "id": "sdk",
+      "type": "official_documentation",
+      "site": "BrowserStack",
+      "title": "How BrowserStack SDK works | BrowserStack Docs",
+      "url": "https://www.browserstack.com/docs/automate/selenium/how-sdk-works",
+      "read_at": "2026-10-22T16:03:01.365477Z",
+      "excerpt_sha256": "67790809388a1f7ed2be7683deafbb8650abc2ed8755845d4f4e7e899d280120",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual runtime capability override and browserstack.yml precedence."
+    },
+    {
+      "id": "sdk-scope",
+      "type": "official_documentation",
+      "site": "BrowserStack",
+      "title": "BrowserStack SDK - Overview and Benefits | BrowserStack Docs",
+      "url": "https://www.browserstack.com/docs/automate/selenium/sdk-benefits",
+      "read_at": "2026-10-22T15:59:01.759415Z",
+      "excerpt_sha256": "bbfe9da91afbd37965ab6aadd918383af3d3b33d158584961fb450cda989c7a2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read SDK/config functions; unsupported performance percentages not adopted."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:03:01.365477Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
   ],
   "research_gaps": [
     {
-      "en": "Official home, documentation index and the Local Testing architecture page were read. The pricing root timed out twice; a discovered official product/annual pricing URL exceeded the web reader size limit, and a normal public HTTP read also timed out. No usable actual pricing body or free-use grant was established; snippets are discovery only, and no price is adopted.",
-      "zh": "已读官方首页、文档索引及 Local Testing 架构页。总定价入口两次超时，发现的官方产品／年付价格地址超出网页工具大小限制，普通公共 HTTP 读取也超时。未建立可用真实价格正文或免费授权，搜索摘要仅供发现，不采用金额。",
+      "en": "Alternative official support and SDK originals resolve the earlier absence of any readable fee/entitlement evidence; the failed pricing-root routes were not treated as read.",
+      "zh": "其他官方支持及 SDK 原页补上此前无可读费用／权益依据的缺口，失败价格根路由未标记已读。",
       "source_refs": [],
-      "evidence_type": "official_access_or_identity_authority_gap"
+      "evidence_type": "not_verified_or_not_tested"
     },
     {
-      "en": "Local Testing routes remote cloud browsers to allowed private servers through an outbound encrypted agent/repeater tunnel. Ending a browser session and shutting down the tunnel are separate operations. This documentation was read; no binary, access key, session or network route was operated. Exact SDK setup, concurrency, retention, fee and license coverage remain incomplete.",
-      "zh": "Local Testing 经出站加密 Agent／转发器隧道，让远端云浏览器访问获准私有服务。结束浏览器会话与关闭隧道是不同操作。本次仅读文档，未操作程序、访问密钥、会话或网络路由；具体 SDK 设置、并发、保留、费用及许可覆盖仍不完整。",
+      "en": "No cloud session, agent, private target, API key, test, account or purchase was operated. Full contract, current offer, retention, enforced access and compatibility remain unverified.",
+      "zh": "未操作云会话、代理、私网目标、API key、测试、账户或购买。完整合同、当前方案、保留、实际访问控制及兼容性待核。",
       "source_refs": [],
-      "evidence_type": "official_access_or_identity_authority_gap"
+      "evidence_type": "not_verified_or_not_tested"
     }
   ],
   "content_method": {
     "author": "Codex (AI assistant)",
-    "method": "Actual public originals investigated; incomplete access/identity authority, not counted primary-source complete. Official observations are limited to research gaps and batch evidence ledger.",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
     "independent_review": false,
     "hands_on_test": false
   },
-  "community_follow_up": {
-    "status": "needs_community_input",
-    "reason_code": "insufficient_official_documentation",
-    "reason_en": "Available official material is insufficient for a current, comprehensive profile. Please provide the current official product, usage and commercial documentation.",
-    "reason_zh": "现有官方资料不足以形成当前完整档案，请补充产品官网、使用文档及商业条件说明。",
-    "missing_information_en": [
-      "Current attributable official product and documentation sources; do not infer unknown prices, availability or capabilities."
-    ],
-    "missing_information_zh": [
-      "当前可归属于该产品的官方入口及文档；价格、可用性和能力未知时不补造。"
-    ],
-    "attempted_urls": ["https://www.browserstack.com/"],
-    "observed_at": "2026-10-23T00:05:49+08:00",
-    "source_refs": [],
-    "evidence_record": "research-batches/20261022/batch-01-notes.json",
-    "publication_eligibility": "not_granted"
+  "description_source_refs": ["home", "sdk"],
+  "profile": {
+    "sections": [
+      {
+        "id": "selection",
+        "title_en": "Choose a product and a representative assertion",
+        "title_zh": "选择产品及代表性断言",
+        "en": "The documentation separates manual, automated and low-code workflows across web and mobile. Start with the required test type, a known environment and one observable assertion. Shared infrastructure or an SDK link to another BrowserStack product does not demonstrate that the other product’s subscription, screenshot capacity or device entitlement is included.",
+        "zh": "文档区分 Web／移动端的手动、自动化及低代码流程。应从测试类型、已知环境及一个可观察断言开始。共用基础设施或 SDK 链接到另一产品，不证明其订阅、截图额度或设备权益包含。",
+        "source_refs": ["home", "sdk-scope"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing",
+        "title_en": "Separate tunnel setup from browser routing",
+        "title_zh": "区分隧道建立与浏览器路由",
+        "en": "The Local agent authenticates with an access key, receives a repeater assignment and opens an outbound encrypted connection. The guide says only allowed local servers are reachable through that agent. A firewall blocking WebSockets can cause a slower legacy-protocol fallback. Verify the intended host and denied destinations with synthetic content before exposing a broader internal range.",
+        "zh": "Local 代理以 access key 认证、取得 repeater 分配并建立出站加密连接。指南说明仅可通过代理访问允许的本地服务器；防火墙阻断 WebSocket 可能回退较慢旧协议。扩大内部地址范围前，应以模拟内容验证目标主机及被拒目标。",
+        "source_refs": ["tunnel"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "configuration",
+        "title_en": "Inspect the merged SDK configuration",
+        "title_zh": "检查合并后的 SDK 配置",
+        "en": "The SDK intercepts test execution and merges capabilities. A duplicate value in browserstack.yml wins over the script; root settings and per-platform objects have different scope. For example, inspect the effective browser/platform and certificate-validation options instead of only reviewing the original script. The documented configuration example is not a current device-availability or framework-compatibility test.",
+        "zh": "SDK 拦截执行并合并能力，重复值以 browserstack.yml 为准；根设置与逐平台对象范围不同。例如应检查最终浏览器／平台及证书验证选项，不能只看原脚本。文档配置例不构成当前设备可用性或框架兼容测试。",
+        "source_refs": ["sdk"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "teardown",
+        "title_en": "End the Local connection as well as the session",
+        "title_zh": "同时结束 Local 连接与会话",
+        "en": "The architecture guide describes ending a remote browsing session separately from stopping the Local connection. Stopping the local agent severs its secure repeater connection; the cloud side also removes connection information. Include both teardown paths in a pilot and inspect remaining processes/connections. That documented connection cleanup is not proof of every test artifact’s retention or deletion policy.",
+        "zh": "架构指南分别说明结束远端浏览会话与停止 Local 连接。停止本地代理会切断 repeater 安全连接，云端也移除连接信息。试点需覆盖两种结束路径并检查残余进程／连接；连接清理说明不证明所有测试产物的保留或删除政策。",
+        "source_refs": ["tunnel"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "entitlement",
+        "title_en": "Do not merge inconsistent trial allowances",
+        "title_zh": "不要合并不一致的试用额度",
+        "en": "The support FAQ lists Live/AppLive30 minutes each, Automate60 minutes and AppAutomate100 minutes. A vendor Automate article instead advertises a100-minute automation trial and pricing from $99/month. The mismatch remains unresolved; the article is not a full quote or billing-cycle specification. Confirm the selected product’s actual offer and account allowance before budgeting a test matrix.",
+        "zh": "支持 FAQ 列 Live／AppLive 各三十分钟、Automate 六十分钟、AppAutomate 一百分钟；另一官方 Automate 文章却称自动化试用一百分钟、月价 $99 起。差异未解决，文章不是完整报价或周期说明。预算测试矩阵前应确认具体产品实际方案及账户额度。",
+        "source_refs": ["pricing", "commercial"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "BrowserStack: workflows, operating limits and cost",
+    "title_zh": "BrowserStack：流程、运行限制与费用",
+    "description_en": "BrowserStack provides cloud browser/device testing through distinct manual and automated products. Its Local Testing feature lets those remote sessions reach an authorize",
+    "description_zh": "BrowserStack 通过不同的手动与自动化产品提供云端浏览器／设备测试。Local Testing 从本地代理建立出站连接，使远端会话访问获准私网或 staging 应用；远",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of BrowserStack.",
+    "search_intent_zh": "评估 BrowserStack 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
   }
 }

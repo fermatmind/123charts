@@ -10,208 +10,63 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Patriot Accounting is a product in the Accounting category. Its directory profile covers Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, General Ledger, Expense Tracking, CPA Firms.\n\nAdditional listed capabilities include Collections, Cash Management, Billing and Invoicing, Bank Reconciliation, Accounts Receivable, Accounts Payable. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are Medium Business Small Business Freelancers. API support is listed as NA. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $20.00.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: prepare payroll records and payment calculations; organize tax-related records and calculations; organize accounting entries in a central ledger; record expenses and organize supporting information; track cash positions and related transactions; prepare invoices and track billing records. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Patriot Accounting 属于会计与记账软件。第三方资料列出的功能包括薪资管理、税务管理、支出管理、收入确认、采购、总账、费用跟踪、会计师事务所适用。\n\n资料还列出款项催收、现金管理、账单与开票、银行对账、应收账款、应付账款。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为中型企业 小型企业 自由职业者。API 支持情况为未注明。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $20.00.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：整理薪资记录并计算工资支付；整理税务相关记录与计算；在总账中组织会计分录；记录费用并整理相关凭证；跟踪现金状况和相关交易；制作发票并跟踪账单记录。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Patriot Accounting documents bookkeeping workflows for importing bank activity, reviewing journal entries and collecting customer invoice payments. Its readable help center distinguishes Accounting Basic and Premium from the separate payroll products.\n\nAn evaluation should start with a small, reconciled import rather than automatic posting of every bank line. Payroll, contractor payments and Stripe invoices can already have accounting entries; importing their bank counterparts again can duplicate the books. The public marketing site remained inaccessible during this research, so current subscription prices are not verified.",
+  "description_zh": "Patriot Accounting 的帮助中心说明了导入银行流水、审核日记账及收取客户发票款的记账流程，并区分 Accounting Basic、Premium 与另行提供的工资产品。\n\n评估时可先用一小批已对账流水核对结果。工资、承包商付款及 Stripe 发票可能已经生成账务记录，再次导入对应银行流水可能造成重复记账。本轮营销官网仍不可访问，当前订阅价格未核实。",
   "core_features": [
     {
-      "name_en": "Payroll Management",
-      "name_zh": "薪资管理",
-      "explanation_en": "Prepare payroll records and payment calculations.",
-      "explanation_zh": "整理薪资记录并计算工资支付。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Bank connection and file import",
+      "name_zh": "银行连接与文件导入",
+      "explanation_en": "Connect supported institutions through Plaid or map CSV/XLS/XLSX bank exports into accounting entries.",
+      "explanation_zh": "通过 Plaid 连接支持的机构，或将 CSV/XLS/XLSX 银行导出文件映射为账务分录。",
+      "explanation_scope": "product_specific",
+      "source_ref": "imports",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Tax Management",
-      "name_zh": "税务管理",
-      "explanation_en": "Organize tax-related records and calculations.",
-      "explanation_zh": "整理税务相关记录与计算。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Invoice payment links",
+      "name_zh": "发票付款链接",
+      "explanation_en": "A connected Stripe account can collect card or ACH invoice payments and record linked payments in accounting.",
+      "explanation_zh": "连接 Stripe 后，可通过发票链接收取银行卡或 ACH 付款，并记录链接产生的付款。",
+      "explanation_scope": "product_specific",
+      "source_ref": "payments",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Spend Management",
-      "name_zh": "支出管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Revenue Recognition",
-      "name_zh": "收入确认",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Purchasing",
-      "name_zh": "采购",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "General Ledger",
-      "name_zh": "总账",
-      "explanation_en": "Organize accounting entries in a central ledger.",
-      "explanation_zh": "在总账中组织会计分录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Expense Tracking",
-      "name_zh": "费用跟踪",
-      "explanation_en": "Record expenses and organize supporting information.",
-      "explanation_zh": "记录费用并整理相关凭证。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "CPA Firms",
-      "name_zh": "会计师事务所适用",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Collections",
-      "name_zh": "款项催收",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cash Management",
-      "name_zh": "现金管理",
-      "explanation_en": "Track cash positions and related transactions.",
-      "explanation_zh": "跟踪现金状况和相关交易。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Billing and Invoicing",
-      "name_zh": "账单与开票",
-      "explanation_en": "Prepare invoices and track billing records.",
-      "explanation_zh": "制作发票并跟踪账单记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Bank Reconciliation",
-      "name_zh": "银行对账",
-      "explanation_en": "Compare accounting records with bank transactions.",
-      "explanation_zh": "将会计记录与银行交易进行核对。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Accounts Receivable",
-      "name_zh": "应收账款",
-      "explanation_en": "Track amounts owed by customers.",
-      "explanation_zh": "跟踪客户尚未支付的款项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Accounts Payable",
-      "name_zh": "应付账款",
-      "explanation_en": "Track amounts owed to suppliers and other payees.",
-      "explanation_zh": "跟踪应向供应商等收款方支付的款项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Separate company accounts under one login",
+      "name_zh": "单一登录管理独立公司账户",
+      "explanation_en": "Switch among invited companies while retaining a separate subscription for each business or FEIN.",
+      "explanation_zh": "可切换受邀公司，但每个企业或 FEIN 仍需独立订阅。",
+      "explanation_scope": "product_specific",
+      "source_ref": "companies",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Prepare payroll records and payment calculations",
-      "Organize tax-related records and calculations",
-      "Organize accounting entries in a central ledger",
-      "Record expenses and organize supporting information",
-      "Track cash positions and related transactions",
-      "Prepare invoices and track billing records"
-    ],
-    "zh": [
-      "整理薪资记录并计算工资支付",
-      "整理税务相关记录与计算",
-      "在总账中组织会计分录",
-      "记录费用并整理相关凭证",
-      "跟踪现金状况和相关交易",
-      "制作发票并跟踪账单记录"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["imports", "connection"],
+    "basis": "Illustrative uses, not customer results."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $20.00.",
-      "zh": "提供免费试用 起价为 $20.00.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Medium Business Small Business Freelancers",
-      "zh": "中型企业 小型企业 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Medium Business Small Business Freelancers",
-    "organization_sizes_zh": "中型企业 小型企业 自由职业者",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "roles_status": "editorial_inference"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "documented",
     "items": []
   },
   "supported_languages": {
@@ -224,37 +79,18 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
+    "status": "not_verified",
     "price_type": "unknown",
     "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $20.00.",
-    "source_snapshot_zh": "提供免费试用 起价为 $20.00.",
-    "source_ref": "directory-detail"
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Patriot Accounting do?",
-      "question_zh": "Patriot Accounting 用来做什么？",
-      "answer_en": "Patriot Accounting is a product in the Accounting category. Its directory profile covers Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, General Ledger, Expense Tracking, CPA Firms.",
-      "answer_zh": "Patriot Accounting 属于会计与记账软件。第三方资料列出的功能包括薪资管理、税务管理、支出管理、收入确认、采购、总账、费用跟踪、会计师事务所适用。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Payroll Management, Tax Management, Spend Management, Revenue Recognition, Purchasing, General Ledger, Expense Tracking, CPA Firms, Collections, Cash Management, Billing and Invoicing, Bank Reconciliation, Accounts Receivable, Accounts Payable",
-      "answer_zh": "薪资管理、税务管理、支出管理、收入确认、采购、总账、费用跟踪、会计师事务所适用、款项催收、现金管理、账单与开票、银行对账、应收账款、应付账款"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -264,42 +100,179 @@
       "read_at": "2026-10-22T08:56:43.877Z",
       "excerpt_sha256": "f1cb384c09e7d6825c0692786e0d9f0bee0fcc008038671dbb5fd6f3c37da442",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "imports",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "Manually Import Bank Transactions into Accounting for Journal Entries | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15567081-manually-import-bank-transactions-into-accounting-for-journal-entries",
+      "read_at": "2026-10-22T15:54:58Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "e6e3b34cec563d4417a419038125146c94afa5b1cd43aa24c5347577184d2fb2",
+      "research_notes_en": "Read the manual bank import workflow and file limits."
+    },
+    {
+      "id": "connection",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "How to Connect Your Bank Account or Credit Card for Accounting Journal Entries | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15383534-how-to-connect-your-bank-account-or-credit-card-for-accounting-journal-entries",
+      "read_at": "2026-10-22T15:58:36Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "7e8cd3160c72191bd124649ec7d06491001a1518ebdd7d00c48f4eb61fe4c2db",
+      "research_notes_en": "Read Plaid institution limits, historical lookback and pause/disconnect conditions."
+    },
+    {
+      "id": "review",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "Manage Imported Bank Transactions | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15436793-manage-imported-bank-transactions",
+      "read_at": "2026-10-22T15:58:32Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "260487b59aabac065fc77a1be1bc997b870d78c4a399883107e141bcf4f79b5d",
+      "research_notes_en": "Read duplicate handling and the conflicting inactivity interval."
+    },
+    {
+      "id": "payments",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "How to Accept Credit Card or ACH Payments on Customer Invoices | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15383471-how-to-accept-credit-card-or-ach-payments-on-customer-invoices",
+      "read_at": "2026-10-22T15:58:41Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "0afe568e1f05f2f0cbb176f9928bfd48cbd407af59eeff619a7708610c6e6b95",
+      "research_notes_en": "Read invoice-link payment recording, processing fees and first payout conditions."
+    },
+    {
+      "id": "companies",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "Multiple Company Account Access | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15383486-multiple-company-account-access",
+      "read_at": "2026-10-22T15:58:45Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "cdbaefbb012dfe0678b0dde6904a9518ebbbc2a5c5f73dbc06ff83238677e2d4",
+      "research_notes_en": "Read one-login/separate-subscription distinction."
+    },
+    {
+      "id": "cancellation",
+      "type": "official_documentation",
+      "site": "Patriot Accounting",
+      "title": "How to Cancel an Account or Product | Patriot Software Help Center",
+      "url": "https://help.patriotsoftware.com/en/articles/15330032-how-to-cancel-an-account-or-product",
+      "read_at": "2026-10-22T15:58:28Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "a40dfef852e249f1f36fe30df6b079d32b314b284c8a516c0952c00b643d8eee",
+      "research_notes_en": "Read arrears billing and ordinary cancellation conditions."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:58:45Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
   ],
-  "community_follow_up": {
-    "status": "needs_community_input",
-    "reason_code": "official_source_access_restricted",
-    "reason_en": "The attempted official source was access restricted. Current product facts remain unverified; please provide accessible official documentation.",
-    "reason_zh": "所尝试的官方来源存在访问限制，当前产品事实仍未核实，请补充可访问的官方文档。",
-    "missing_information_en": [
-      "Current attributable official product and documentation sources; do not infer unknown prices, availability or capabilities."
+  "description_source_refs": ["imports", "connection"],
+  "profile": {
+    "sections": [
+      {
+        "id": "imports",
+        "title_en": "Set up a controlled bank import",
+        "title_zh": "建立可核对的银行导入流程",
+        "en": "For manual imports, select the accounting account, upload a CSV/XLS/XLSX file, map posting date, description and amount, and review the result. The documented ceiling is 300 transactions per file, with 200 or fewer recommended. Remove blank rows, footers and formatting that prevents parsing. For a connection, the help page allows four institutions on Basic and ten on Premium; account history can reach two years depending on the institution. An unlisted bank cannot be connected through that workflow.",
+        "zh": "手工导入需选择记账账户，上传 CSV/XLS/XLSX，映射入账日期、说明及金额，再审核结果。文档上限为每文件 300 笔，建议不超过 200 笔；应移除空行、页脚及影响解析的格式。连接文档列出 Basic 可连接 4 家机构、Premium 可连接 10 家，历史数据最多可追溯两年，取决于银行；未列出的银行无法按该流程连接。",
+        "source_refs": ["imports", "connection"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "review",
+        "title_en": "Review duplicates before posting",
+        "title_zh": "入账前审核重复流水",
+        "en": "Only fully posted bank transactions should be imported. Keep the original software-recorded payroll or contractor payment when the bank feed represents the same event, and dismiss the duplicate import. Smart Suggestions assist categorization but still require review. Pausing a connection can leave gaps: the connection article describes a seven-day lookback when resuming. Its 45-day inactivity disconnect statement conflicts with the review article’s 120 days; the reliable operating decision is to monitor the connection and reconcile missing periods, not promise either interval.",
+        "zh": "应导入已正式入账的银行交易。若银行流水与软件内工资或承包商付款重复，应保留原有记录并忽略重复导入。Smart Suggestions 可辅助分类，但仍需审核。暂停连接可能留下缺口：连接文档称恢复时回拉此前 7 天；该文的闲置 45 天断连说法与审核文档的 120 天不一致，应监控连接、核对缺失期间，不能保证任一时限。",
+        "source_refs": ["connection", "review"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "collections",
+        "title_en": "Collect and reconcile invoice payments",
+        "title_zh": "收款与发票对账",
+        "en": "Connect Stripe, email the invoice with its payment link and select accepted payment types. The documentation describes automatic invoice/payment recording only for payments through that link. Bank-imported Stripe deposits should not create a second sale. The article lists card fees of 2.9% plus $0.30 and ACH fees of 0.8% capped at $5, with $1.50 for instant bank verification; these are the provider’s documented integration terms, not an independently confirmed universal Stripe tariff. It also describes a 7–14 day first-payout wait.",
+        "zh": "连接 Stripe 后，通过邮件发送带付款链接的发票并选择付款方式。文档仅对经该链接付款说明自动更新发票及付款记录；银行导入的 Stripe 到账不应再次记作销售。文章列出银行卡费率 2.9% 加 $0.30、ACH 0.8% 且最高 $5，即时银行验证另收 $1.50；这是该集成文档的说明，并非独立确认的 Stripe 通用费率。文档还说明首次出款等待 7–14 天。",
+        "source_refs": ["payments"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Subscriptions and cancellation",
+        "title_zh": "订阅与取消",
+        "en": "Each business or FEIN needs its own subscription, even when one login switches between companies; accountant-partner billing is a documented exception. The cancellation article describes billing in arrears, prorating ordinary mid-month cancellation and a possible final invoice on the first of the next month. Current Accounting Basic/Premium monthly prices, checkout taxes and any special offer were not read. A team needing consolidated multi-entity accounting should test whether separate company records fit its reporting process rather than assuming one combined ledger.",
+        "zh": "即使同一登录切换多个公司，每个企业或 FEIN 仍需独立订阅；会计合作伙伴计费另有例外。取消文档说明费用后付、普通月中取消按有效天数计算，次月 1 日仍可能收到最后账单。当前 Basic/Premium 月费、结账税费和优惠均未实读。需要多实体合并会计的团队应核对独立公司账簿是否适合报表流程，不能假定自带统一总账。",
+        "source_refs": ["companies", "cancellation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Current subscription amounts and checkout conditions remain unread because the marketing origin returned 403.",
+      "zh": "营销站点返回 403，当前订阅金额及结账条件未实读。",
+      "source_refs": ["cancellation"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "Bank inactivity timeout conflicts across two help articles; confirm the applicable rule with support.",
+      "zh": "两篇帮助文档的银行闲置断连时限冲突，需向支持确认适用规则。",
+      "source_refs": ["connection", "review"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "No account, bank connection, import, payment, export or cancellation was executed; licensing and regional eligibility remain unverified.",
+      "zh": "未执行账户、银行连接、导入、付款、导出或取消；许可与地区资格仍未核实。",
+      "source_refs": ["imports", "payments"],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "Patriot Accounting: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "Patriot Accounting：功能、流程、费用与限制",
+    "description_en": "Patriot Accounting documents bookkeeping workflows for importing bank activity, reviewing journal entries and collecting customer invoice payments. Its readable help center distinguishes Accounting Basic and Premium from the separate payroll products.",
+    "description_zh": "Patriot Accounting 的帮助中心说明了导入银行流水、审核日记账及收取客户发票款的记账流程，并区分 Accounting Basic、Premium 与另行提供的工资产品。",
+    "primary_intent": "Evaluate Patriot Accounting for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "Review duplicates before posting",
+      "Collect and reconcile invoice payments",
+      "Subscriptions and cancellation"
     ],
-    "missing_information_zh": [
-      "当前可归属于该产品的官方入口及文档；价格、可用性和能力未知时不补造。"
-    ],
-    "attempted_urls": ["https://www.patriotsoftware.com/accounting/"],
-    "observed_at": "2026-10-23T00:05:49+08:00",
-    "source_refs": [],
-    "evidence_record": "research-batches/20261022/batch-05-notes.json",
-    "publication_eligibility": "not_granted"
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
   }
 }

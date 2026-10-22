@@ -122,6 +122,19 @@
       "verification": "official_documentation_read",
       "transport": "python_urllib_public_html",
       "research_notes_en": "The pricing section of the same retrieved official page offers Enterprise Get Quote; same text snapshot reused transparently, no numeric amount."
+    },
+    {
+      "id": "migration-redirect",
+      "type": "official_documentation",
+      "site": "BuildaBazaar",
+      "requested_url": "https://www.buildabazaar.ooo/",
+      "url": "https://one.rediff.com:443/ecommerce",
+      "title": "Rediff Ecommerce - Build Your Online Store",
+      "read_at": "2026-10-22T15:53:29.774072+00:00",
+      "excerpt_sha256": "fe995614c6624489252ab446053f2cf4361e4a70c378e1082b224de0d8c0ccb7",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "The original BuildaBazaar URL redirects to Rediff Ecommerce, whose page explicitly says formerly BuildaBazaar. Preserve the original catalog identity and the actual Rediff source URL."
     }
   ],
   "official_check": {
@@ -209,6 +222,16 @@
       "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
       "source_refs": [],
       "evidence_type": "not_tested"
+    }
+  ],
+  "official_domain_migrations": [
+    {
+      "from_domain": "buildabazaar.ooo",
+      "to_domain": "rediff.com",
+      "observed_at": "2026-10-22T15:53:29.774072+00:00",
+      "evidence_source_refs": ["migration-redirect"],
+      "explanation_en": "The original BuildaBazaar URL redirects to Rediff Ecommerce, whose page explicitly says formerly BuildaBazaar. Preserve the original catalog identity and the actual Rediff source URL.",
+      "explanation_zh": "原 BuildaBazaar 网址跳转至 Rediff Ecommerce，页面明确写有 formerly BuildaBazaar。保留原目录身份及真实 Rediff 来源网址。"
     }
   ]
 }

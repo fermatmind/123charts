@@ -10,245 +10,153 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Freshdesk is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.\n\nAdditional listed capabilities include Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation), Self Service Portal. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large) Freelancers. API support is listed as Available. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $15.0. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; coordinate conversations across supported channels; create, assign and track service requests; organize reusable answers and documentation; use supported language options in relevant workflows; exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Freshdesk 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。\n\n资料还列出问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒、自助服务门户。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织 自由职业者。API 支持情况为提供。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $15.0. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；协调受支持渠道中的沟通记录；创建、分配并跟踪服务请求；整理可复用的答案与说明文档；在相关流程中使用受支持的语言选项；与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Freshdesk is Freshworks’ customer-support helpdesk for turning incoming requests into tickets, sharing an inbox, routing work and publishing self-service knowledge. Its current product and pricing pages emphasize email service and Freddy AI; Freshdesk Omni is a separately named offering. A Freshdesk seat does not establish access to every Freshchat, contact-centre or Omni channel.\n\nA practical evaluation starts with one email-to-ticket path: route a refund request to a defined group, save a tag for later tracing, let an agent respond, and follow up only while the ticket remains unresolved. Creation, update and hourly rules behave differently, so a workflow needs tests at each transition. The discussion below is based on public documentation; no account, ticket, AI response, integration, payment or export was executed.",
+  "description_zh": "Freshdesk 是 Freshworks 的客户支持服务台，将请求整理成工单，通过共享收件箱、工作分派和自助知识库协作处理。当前产品及价格页侧重邮件服务和 Freddy AI；Freshdesk Omni 是另一个具名产品。购买 Freshdesk 座席不能证明同时取得所有 Freshchat、联络中心或 Omni 渠道。\n\n可从一条邮件转工单流程开始评估：把退款请求分到指定团队、保存便于追踪的标签、由客服回复，并仅在工单仍未解决时跟进。创建、更新和每小时规则的行为不同，需逐个状态转换测试。下文依据公开文档，未执行账户、工单、AI 回复、集成、付款或导出。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Shared ticket workspace",
+      "name_zh": "共享工单工作区",
+      "explanation_en": "Ticketing, shared inbox, portal, knowledge base, threads and tasks are listed across the current paid tiers.",
+      "explanation_zh": "当前付费档列有工单、共享收件箱、门户、知识库、讨论串及任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Incident Management",
-      "name_zh": "事件管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Creation and update rules",
+      "name_zh": "创建及更新规则",
+      "explanation_en": "Match conditions and perform ordered assignments, field changes, messages or supported webhooks; execution mode and event family matter.",
+      "explanation_zh": "按条件执行有序分派、字段修改、消息或支持的 webhook；须区分执行模式与事件类型。",
+      "explanation_scope": "product_specific",
+      "source_ref": "rule-model",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Social Media Integration",
-      "name_zh": "社交媒体集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Hourly follow-up",
+      "name_zh": "每小时跟进",
+      "explanation_en": "Scan eligible tickets on calendar-hour schedules, with restricted conditions/actions and no exact-minute trigger guarantee.",
+      "explanation_zh": "按自然小时扫描符合范围的工单，条件及动作受限，不保证精确到分钟触发。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hourly",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Channel Communication",
-      "name_zh": "多渠道沟通",
-      "explanation_en": "Coordinate conversations across supported channels.",
-      "explanation_zh": "协调受支持渠道中的沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Macros (Templated Responses)",
-      "name_zh": "快捷回复模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Storage",
-      "name_zh": "文档存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customizable Branding",
-      "name_zh": "品牌自定义",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Ticket Management",
-      "name_zh": "工单管理",
-      "explanation_en": "Create, assign and track service requests.",
-      "explanation_zh": "创建、分配并跟踪服务请求。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Surveys and Feedback",
-      "name_zh": "问卷与反馈",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Known Issue Management",
-      "name_zh": "已知问题管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Knowledge Base",
-      "name_zh": "知识库",
-      "explanation_en": "Organize reusable answers and documentation.",
-      "explanation_zh": "整理可复用的答案与说明文档。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contract (SLA Management)",
-      "name_zh": "服务水平协议管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Community Forums",
-      "name_zh": "社区论坛",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Routing",
-      "name_zh": "自动分流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts (Escalation)",
-      "name_zh": "升级处理提醒",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Self Service Portal",
-      "name_zh": "自助服务门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-language Support",
-      "name_zh": "多语言支持",
-      "explanation_en": "Use supported language options in relevant workflows.",
-      "explanation_zh": "在相关流程中使用受支持的语言选项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Metered email AI and agent assistance",
+      "name_zh": "按量邮件 AI 及客服辅助",
+      "explanation_en": "Email AI uses 72-hour sessions; Copilot is an agent add-on that can be assigned to a subset.",
+      "explanation_zh": "邮件 AI 按 72 小时会话计量；Copilot 为座席附加项，可只分配部分客服。",
+      "explanation_scope": "product_specific",
+      "source_ref": "pricing",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Coordinate conversations across supported channels",
-      "Create, assign and track service requests",
-      "Organize reusable answers and documentation",
-      "Use supported language options in relevant workflows",
-      "Exchange messages with visitors or customers in real time"
+      "An email support team needing accountable routing, agent replies and bounded reminders.",
+      "An administrator comparing seat costs with separate AI-session and integration-task consumption."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "协调受支持渠道中的沟通记录",
-      "创建、分配并跟踪服务请求",
-      "整理可复用的答案与说明文档",
-      "在相关流程中使用受支持的语言选项",
-      "与访客或客户实时交换消息"
+      "需要明确分派、人工回复及有边界提醒的邮件支持团队。",
+      "比较座席费与独立 AI 会话、集成任务消耗的管理员。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["pricing", "creation", "hourly"],
+    "basis": "Editorial fit inferred from documented workflows; no measured customer outcome."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $15.0. Offers Free-forever plan.",
-      "zh": "提供免费试用 起价为 $15.0. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers",
-      "zh": "小型、中型与大型组织 自由职业者",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Rule execution": {
+      "en": "Creation defaults to the first matching rule, optionally all matching rules; update and hourly families execute all matching rules in order. Hourly conditions/actions are a smaller set.",
+      "zh": "创建规则默认首次匹配，可改全部匹配；更新及每小时规则按顺序执行全部匹配项，每小时可用条件和动作更少。",
+      "source_ref": "rule-model",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support operations administrator",
+      "Email support agent",
+      "Knowledge-base editor"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select the exact Freshdesk tier and billing term; confirm email intake, administrator access, groups, agents, fields and notification addresses before creating a rule.",
+        "zh": "确定 Freshdesk 档位和期限；创建规则前准备邮件入口、管理员权限、团队、客服、字段及通知地址。",
+        "source_refs": ["pricing", "creation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Create one new test ticket for each routing branch; inspect Show Activities, rule order and a tracing tag rather than testing creation rules against an old ticket.",
+        "zh": "为每个分派分支新建测试工单，检查 Show Activities、规则顺序及追踪标签，不用旧工单测试创建规则。",
+        "source_refs": ["creation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Test reminders around hour boundaries, a requester reply and a resolved ticket; separately validate webhook failure and AI-to-human escalation in the chosen configuration.",
+        "zh": "在小时边界、客户回复及工单已解决时测试提醒，另行验证所选配置的 webhook 失败及 AI 转人工。",
+        "source_refs": ["hourly", "rule-model", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Webhooks and ticket API",
+        "source_ref": "creation",
+        "scope": "Creation rules support webhooks; /api/v2/tickets triggers creation rules, while outbound-email API tickets do not. External authentication/retries are not tested."
+      },
+      {
+        "name": "Connector apps and MCP actions",
+        "source_ref": "pricing",
+        "scope": "Connector tasks and MCP actions have separate allowances/packs; the seat rate is not an unlimited integration budget."
+      }
+    ],
+    "source_ref": "pricing"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Creation rules cannot be delayed, manually replayed on existing tickets or retriggered by a reply in the same thread. Changing first/all-match mode is not retroactive.",
+        "zh": "创建规则不能延迟、手工重跑旧工单，或由同邮件串回复再次触发；修改首次／全部匹配模式不追溯旧工单。",
+        "source_refs": ["creation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Hourly processing is scheduled rather than exact elapsed-time execution. Use a bounded interval to avoid repeating a reminder every hour.",
+        "zh": "每小时处理是定时扫描，不是经过指定时长即刻执行；应设有上限的时间窗口，避免每小时重复提醒。",
+        "source_refs": ["hourly"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Hourly rules cannot use contact/company fields or actions such as adding notes and triggering webhooks. Do not assume all three rule families share an action palette.",
+        "zh": "每小时规则不能用联系人／公司字段，也不能添加备注或触发 webhook，不能假设三类规则动作相同。",
+        "source_refs": ["hourly", "rule-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The 500 AI sessions are once per account, not a recurring monthly allowance. Packs expire with the payment cycle.",
+        "zh": "500 次 AI 会话每账户仅送一次，不是每月额度；购买包随付款周期到期。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "The trial ends in suspension without a paid continuation. No cancellation fee does not establish a refund or immediate end to the committed term.",
+        "zh": "试用后不付费续用会暂停账户；无取消费不代表退款或承诺期限立即结束。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -260,12 +168,16 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $15.0. Offers Free-forever plan.",
-    "source_snapshot_zh": "提供免费试用 起价为 $15.0. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Per agent/month, billed annually in the observed cards; dollar symbol alone does not establish the selected online ISO currency.",
+    "source_snapshot_en": "Growth 19, Pro 55, Enterprise 89 per agent/month billed annually. Pro/Enterprise Copilot 29 per assigned agent/month annually; it need not cover all agents and has no day passes. AI 49/100 sessions after the first 500 once/account; Email AI session is 72 hours from first customer email. Packs expire with payment cycle. Day passes 2/7/12 by tier; connector tasks 80/5000; MCP 1200/6000/12000 actions/year prorated, extra 15/1000. 14-day Enterprise trial; upgrade immediate, downgrade/cancel term-end. Tax, regional currency, full contract and actual usage bill not verified.",
+    "source_snapshot_zh": "年付展示 Growth 19、Pro 55、Enterprise 89／客服／月。Pro／Enterprise Copilot 年付 29／获分配客服／月，可只购部分客服，不提供日通行证。每账户首次 500 次后 AI 49／100 次；邮件 AI 从首封客户邮件起 72 小时为一会话。包随付款周期到期。日通行证各档 2／7／12；连接器 80／5000 任务；MCP 年额度各为 1200／6000／12000 并按周期折算，额外 15／1000 动作。Enterprise 试用 14 天；升级即时，降级／取消期末生效。税、地区币种、完整合同及实际用量账单未核实。",
+    "checked_at": "2026-10-22T11:26:29.866639+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -273,22 +185,18 @@
   },
   "faq": [
     {
-      "question_en": "What does Freshdesk do?",
-      "question_zh": "Freshdesk 用来做什么？",
-      "answer_en": "Freshdesk is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.",
-      "answer_zh": "Freshdesk 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。"
+      "question_en": "Will a 24-hour reminder run exactly 24 hours later?",
+      "question_zh": "24 小时提醒会精确在 24 小时后发出吗？",
+      "answer_en": "No. Hourly rules scan on a schedule using calendar hours and may run almost an hour after the threshold. A >24 and <25 hour condition narrows repeated matches.",
+      "answer_zh": "不会保证。规则按自然小时定时扫描，可能比阈值晚近一小时；大于 24 且小于 25 小时可限制重复匹配。",
+      "source_refs": ["hourly"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management, Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Community Forums, Automated Routing, Alerts (Escalation), Self Service Portal, Multi-language Support, Live Chat",
-      "answer_zh": "AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理、问卷与反馈、已知问题管理、知识库、服务水平协议管理、社区论坛、自动分流、升级处理提醒、自助服务门户、多语言支持、在线聊天"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Are the first 500 AI sessions replenished each month?",
+      "question_zh": "最初 500 次 AI 会话每月补充吗？",
+      "answer_en": "The current pricing FAQ limits them to once per account. Additional packs are paid and their validity follows the payment cycle.",
+      "answer_zh": "当前价格 FAQ 明确每账户仅一次，后续购买包收费，有效期随付款周期。",
+      "source_refs": ["pricing"]
     }
   ],
   "sources": [
@@ -300,42 +208,155 @@
       "read_at": "2026-10-22T08:47:59.467Z",
       "excerpt_sha256": "df725751aad7e5aed542157ec2d77b0e8d7f8394a491d0db0c0f235799c740df",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "AI-Powered Customer Service Software | Freshdesk | Freshworks",
+      "title": "AI-Powered Customer Service Software | Freshdesk | Freshworks",
+      "url": "https://www.freshworks.com/freshdesk/",
+      "read_at": "2026-10-22T11:24:46.743818+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "80c4d9517373b1c631c7a8d269a54482376539c3ec4b28bf92e813ff36101f0c",
+      "research_notes_en": "Current Freshdesk email/ticketing product; Freshdesk Omni is separately named. Vendor outcomes are not independent measurements."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Freshdesk Customer Support Software Pricing & Plans | Freshworks",
+      "title": "Freshdesk Customer Support Software Pricing & Plans | Freshworks",
+      "url": "https://www.freshworks.com/freshdesk/pricing/",
+      "read_at": "2026-10-22T11:25:19.075204+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d7f669361021304daae616c831bd129abf822680e901980a52828c2d8d25ef2e",
+      "research_notes_en": "Annual 19/55/89 agent cards; 14-day Enterprise trial then suspension without continuation; cancellation effective term-end; Email AI 72-hour sessions, 500 once/account, 49/100 packs expiring by billing cycle; Copilot 29 assigned subset, no day passes."
+    },
+    {
+      "id": "creation",
+      "type": "official_documentation",
+      "site": "Automation rules that run on ticket creation : Freshdesk Support",
+      "title": "Automation rules that run on ticket creation : Freshdesk Support",
+      "url": "https://support.freshdesk.com/support/solutions/articles/37614-managing-tickets-using-the-dispatch-r",
+      "read_at": "2026-10-22T11:26:29.866639+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "66a453f81f43353ffb519c6347295c5f9d1bccfe04403fe08365df50627fb469",
+      "research_notes_en": "Administrator prerequisites; first-match default/all-match option; creation only, not retroactive; API endpoint and threaded-reply exceptions; Show Activities for testing."
+    },
+    {
+      "id": "hourly",
+      "type": "official_documentation",
+      "site": "Creating automation rules that run on hourly triggers : Freshdesk Support",
+      "title": "Creating automation rules that run on hourly triggers : Freshdesk Support",
+      "url": "https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers",
+      "read_at": "2026-10-22T11:26:29.801569+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8cd0c1e93c153b680424a7ec886ce14a65e4b5f8ce2686ecb5b7902554b8d5a3",
+      "research_notes_en": "Hourly calendar-hour scan, recently updated tickets, possible almost-hour delay; no contact/company conditions or webhook/note actions; narrow >24/<25 window prevents repeated hourly matching."
+    },
+    {
+      "id": "rule-model",
+      "type": "official_documentation",
+      "site": "Overview of Automation Rules in Freshdesk : Freshdesk Support",
+      "title": "Overview of Automation Rules in Freshdesk : Freshdesk Support",
+      "url": "https://support.freshdesk.com/support/solutions/articles/207276-overview-of-automation-rules",
+      "read_at": "2026-10-22T11:26:29.806111+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1",
+      "research_notes_en": "Three rule families, ordered execution, event/condition/action support differs. No direct rule-list export; attachments unsupported according to FAQ; current/legacy Omni boundaries."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:26:29.866639+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
   ],
-  "community_follow_up": {
-    "status": "needs_community_input",
-    "reason_code": "product_identity_unresolved",
-    "reason_en": "The previously listed website or discovered material does not establish this product’s current identity. Please provide an attributable official product page and documentation.",
-    "reason_zh": "既有网站或已发现资料不足以确认该产品当前身份，请补充能明确归属于本产品的官网及文档。",
-    "missing_information_en": [
-      "Current attributable official product and documentation sources; do not infer unknown prices, availability or capabilities."
-    ],
-    "missing_information_zh": [
-      "当前可归属于该产品的官方入口及文档；价格、可用性和能力未知时不补造。"
-    ],
-    "attempted_urls": ["https://www.freshworks.com/freshdesk/"],
-    "observed_at": "2026-10-23T00:05:49+08:00",
-    "source_refs": [],
-    "evidence_record": "research-batches/20261022/batch-04-notes.json",
-    "publication_eligibility": "not_granted"
+  "description_source_refs": ["product", "pricing", "creation", "hourly"],
+  "profile": {
+    "sections": [
+      {
+        "id": "scope",
+        "title_en": "Choose Freshdesk before borrowing Omni capabilities",
+        "title_zh": "先确定 Freshdesk 范围，再评估 Omni 能力",
+        "en": "Freshdesk combines a ticket workspace, shared inbox, portal, knowledge base and team collaboration. The current positioning emphasizes email and AI-supported service. Freshdesk Omni, Freshchat, Freshservice and contact-centre products remain separately named in the same vendor navigation. Their channel coverage, AI-session definitions and subscriptions cannot be merged into a single Freshdesk feature list.\n\nThe current paid comparison places multiple SLA policies and intelligent routing in Pro, while Enterprise adds skill-based assignment, sandbox and audit controls. An administrator needing these controls should compare the exact tier, not rely on an old directory price or a broad all-in-one description. The reviewed website is a hosted-service offer; current self-hosted licensing, complete contract rights, regional data residency and export completeness were not established.",
+        "zh": "Freshdesk 将工单工作区、共享收件箱、门户、知识库及团队协作结合，当前定位突出邮件和 AI 辅助服务。同一供应商导航中的 Freshdesk Omni、Freshchat、Freshservice 和联络中心仍是不同具名产品，不能把渠道覆盖、AI 会话定义和订阅并成一张 Freshdesk 功能表。\n\n当前付费比较将多套 SLA 和智能路由放在 Pro，将技能分派、沙箱和审计控制放在 Enterprise。需要这些控制的管理员应按确切档位比较，不能沿用旧目录价格或泛一体化描述。已读网站提供托管服务；当前自托管许可、完整合同权利、地区数据驻留和完整导出能力未核实。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "route",
+        "title_en": "A refund rule needs a new ticket and an observable result",
+        "title_zh": "退款规则需要新工单及可观察结果",
+        "en": "The creation-rule guide requires administrator access plus existing groups, agents, fields, tags and addresses. Its refund/return example assigns matching requests to a returns group. In an illustrative deployment, add a tracing tag, create a new matching ticket, inspect Show Activities and confirm both the final group and notification. Rule statistics show affected counts for seven days but not corresponding ticket IDs; the tag makes later filtering possible.\n\nFirst matching rule is the default. Place specific rules above generic ones, or deliberately select all matching rules and review later actions that may change earlier assignments. Existing tickets cannot be manually replayed through creation rules. Replies in the same email thread do not create a new creation event, and outbound-email API tickets are an explicit exception to the normal ticket API path. Failure analysis starts with enabled state, actual conditions, rule order, endpoint and email threading.",
+        "zh": "创建规则指南要求管理员权限，并先备好团队、客服、字段、标签和地址。退款／退货示例将符合条件请求分到退款团队。假设部署可加追踪标签，新建符合条件工单，检查 Show Activities，确认最终团队和通知。规则统计展示七天内影响数量但不列工单 ID，标签便于后续过滤。\n\n默认首次匹配，应将具体规则置于通用规则之前；也可明确选择全部匹配，并检查后续动作是否改掉前面的分派。旧工单不能手工重跑创建规则，同邮件串回复也不产生新创建事件；外发邮件 API 工单是普通工单 API 路径的明确例外。排错应先看启用状态、实际条件、顺序、端点及邮件串归并。",
+        "source_refs": ["creation"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "follow-up",
+        "title_en": "Bound reminders to the hourly execution model",
+        "title_zh": "按每小时执行模型限制提醒",
+        "en": "Update rules react to defined events; hourly rules scan tickets on a schedule. Hourly triggers use calendar hours rather than business hours, evaluate in order and process the documented recently updated ticket scope. A five-hour pending threshold can run at five hours and 58 minutes rather than exactly at five hours. Contact/company conditions, notes, CC and webhooks are not available in this rule family.\n\nThe documented one-time reminder pattern combines resolved status with hours-since-resolved greater than 24 and less than 25. A lower bound alone keeps matching on subsequent hourly runs. For a real follow-up, also define what a requester reply or status change should do, and test boundary times and duplicate notifications. A missing webhook option is a rule-family limitation, not evidence that a connector failed. Creation rules also cannot simply delay their own execution; the guide describes separate later update logic.",
+        "zh": "更新规则响应指定事件；每小时规则按计划扫描。后者使用自然小时而非工作小时，按顺序判断，并只处理文档限定的近期更新工单；等待五小时的阈值可能到五小时五十八分才执行，而不是精确五小时。此类规则不提供联系人／公司条件、备注、抄送或 webhook。\n\n文档的一次性提醒模式同时要求已解决状态，以及解决后大于 24、小于 25 小时。只有下限会在以后每小时继续匹配。真实跟进还需定义客户回复或状态改变时如何处理，并测试边界时间及重复通知。没有 webhook 选项是规则类型限制，不是连接器故障证据；创建规则也不能简单延迟自身，指南描述应使用另一个后续更新逻辑。",
+        "source_refs": ["hourly", "creation", "rule-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "ai-cost",
+        "title_en": "Count email sessions separately from seats and integration work",
+        "title_zh": "分别计算邮件会话、座席及集成用量",
+        "en": "The observed annual cards show Growth 19, Pro 55 and Enterprise 89 per agent/month. The dollar display is preserved without assuming the selected online ISO currency. AI Agent includes the first 500 sessions once per account; subsequent packs cost 49 per 100. For this Freshdesk Email AI offer, a session spans 72 hours from the customer’s first email and includes all AI replies in that window. Do not substitute a 24-hour definition taken from another Freshworks channel. Packs expire with the billing cycle rather than forming a permanent balance.\n\nCopilot is a separate 29 per assigned agent/month annual add-on on the displayed Pro/Enterprise cards. It may cover only selected agents and has no day passes. Connector apps consume tasks, while MCP has tier-specific action allowances and paid overage packs. A budget therefore needs seat count, term, AI sessions, assigned Copilot users and integration usage. A successful draft reply does not verify an external refund or an AI-to-human recovery path; those remain configuration tests.",
+        "zh": "已读年付卡片为 Growth 19、Pro 55、Enterprise 89／客服／月，保留美元符号展示，不假设线上所选 ISO 币种。AI Agent 每账户首次送 500 次，后续 49／100 次。这里 Freshdesk 邮件 AI 从客户首封邮件起 72 小时算一次，其间所有 AI 回复均在同一次内；不能套用其他 Freshworks 渠道的 24 小时定义。包随账期到期，不是永久余额。\n\n展示的 Pro／Enterprise 卡片另列 Copilot 年付 29／获分配客服／月，可仅给部分客服，不提供日通行证。连接器消耗任务，MCP 有按档位区分的动作额度及付费超额包。预算需分别计算座席、期限、AI 会话、Copilot 人数和集成用量。生成回复成功不证明外部退款成功或 AI 转人工恢复正常，这些仍需配置测试。",
+        "source_refs": ["pricing", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "adoption",
+        "title_en": "Trial access, operating fit and unanswered contractual questions",
+        "title_zh": "试用访问、运营适配及合同缺口",
+        "en": "The pricing FAQ grants Enterprise access for 14 days, then requires a paid continuation; otherwise the account is suspended. Upgrades are immediate, while downgrades and cancellations take effect at term-end. The absence of a cancellation fee is not a verified right to an unused-term refund. Export and continuity should be tested before a trial or contract ends.\n\nFreshdesk is a plausible fit for email service with repeatable routing and a knowledge base, especially when an administrator can own rules and trace changes. A team requiring exact-minute timers, identical actions in every rule family, unlimited AI or an assumed permanent free production plan should resolve those requirements first. This research does not verify API throughput, integration retry guarantees, retention, local hosting, a complete language list or contractual security/data-location terms. Documentation review is not a hands-on reliability or compliance certification.",
+        "zh": "价格 FAQ 提供 14 天 Enterprise 访问，之后需付费续用，否则暂停账户。升级即时，降级和取消期末生效。没有取消费不能证明未用期限可退款；试用或合同结束前应测试导出与连续运营。\n\n对于有重复分派和知识库需求、且管理员能维护规则及追踪变更的邮件服务团队，Freshdesk 具有合理适配性。若必须精确到分钟、所有规则动作一致、AI 无限，或假设永久免费生产方案，应先解决这些要求。本研究未核实 API 吞吐、集成重试保证、留存、本地托管、完整语言表，以及合同安全／数据地区条款。文档研究不是实测可靠性或合规认证。",
+        "source_refs": ["pricing", "hourly", "rule-model"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "research_gaps": [
+    "Full service agreement, data residency, retention and complete export/recovery were not reviewed.",
+    "Online ISO currency, regional taxes and actual customer usage charges remain unknown.",
+    "AI-to-human escalation, API limits, webhook retry/idempotency and connectors were not executed.",
+    "Current pricing does not establish a sustained free production plan; historical directory free-plan claims are not adopted."
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "Freshdesk: ticket routing, hourly rules and email AI costs",
+    "title_zh": "Freshdesk：工单分派、每小时规则及邮件 AI 费用",
+    "description_en": "Freshdesk is Freshworks’ customer-support helpdesk for turning incoming requests into tickets, sharing an inbox, routing work and publishing self-service knowledge. Its current product and pricing pag",
+    "description_zh": "Freshdesk 是 Freshworks 的客户支持服务台，将请求整理成工单，通过共享收件箱、工作分派和自助知识库协作处理。当前产品及价格页侧重邮件服务和 Freddy AI；Freshdesk Omni 是另一个具名产品。购买 Freshdesk 座席不能证明同时取得所有 Freshchat、联络中心或 Omni"
   }
 }

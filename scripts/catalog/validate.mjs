@@ -190,7 +190,10 @@ for (const category of taxonomy) {
     assert.ok(row.sources.length >= 1 && sourceIds.size === row.sources.length);
     for (const source of row.sources) {
       if (officialTypes.has(source.type)) {
-        assert.ok(researched);
+        assert.ok(
+          researched ||
+            row.community_follow_up?.status === "needs_community_input",
+        );
         assert.ok(
           !source.additional_types ||
             (Array.isArray(source.additional_types) &&
