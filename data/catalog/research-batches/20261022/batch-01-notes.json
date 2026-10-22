@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T10:58:22.850250+00:00",
+  "updated_at": "2026-10-22T11:06:07.387793+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 20,
+  "completed_count": 22,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -25,9 +25,11 @@
     "projects/data-integration/peliqan-a94e721f.json",
     "projects/data-integration/skyvia-9d4f0c26.json",
     "projects/data-integration/synatic-1c0bb592.json",
-    "projects/data-integration/zoho-dataprep-14e0dae7.json"
+    "projects/data-integration/zoho-dataprep-14e0dae7.json",
+    "projects/api-management/bandwidth-b6f12f0f.json",
+    "projects/api-management/dell-boomi-api-management-73e49bde.json"
   ],
-  "remaining_count": 179,
+  "remaining_count": 177,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -35,9 +37,7 @@
     "projects/data-integration/panoply-452887ff.json",
     "projects/data-integration/rivery-2d3c66b2.json",
     "projects/api-management/apigee-edge-d4c9d902.json",
-    "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/blobr-e9fe1f36.json",
-    "projects/api-management/dell-boomi-api-management-73e49bde.json",
     "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/ibm-api-connect-706d1c65.json",
     "projects/api-management/kong-545842db.json",
@@ -241,6 +241,10 @@
     {
       "project": "Synatic",
       "detail": "Published EULA dated 2023; Order Form determines actual quote and limits. Homepage template filler excluded."
+    },
+    {
+      "project": "Bandwidth",
+      "detail": "Bearer request samples vs older basic-auth prose and carrier-handoff vs handset receipt wording remain explicit; accepted submission is not delivery."
     }
   ],
   "verification": [
@@ -250,7 +254,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 23 primary-source researched globally (3 baseline + 20 assigned), 1000 records checked"
+      "result": "passed: 25 primary-source researched globally (3 baseline + 22 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -277,14 +281,20 @@
       "commit": "0b69a8e",
       "completed_count": 15,
       "scope": "Etlworks, Flatly, Hevo, hotglue official research and Foghub gap; pushed"
+    },
+    {
+      "commit": "945fb28",
+      "completed_count": 20,
+      "scope": "Remaining available data-integration profiles and explicit authority gaps; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "API management: Apigee Edge",
-    "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps"
+    "next": "IBM API Connect, Kong, KrakenD",
+    "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
+    "api-management": "2 of 17 complete; 3 investigated but incomplete with explicit gaps; 12 not yet processed"
   },
   "identity_changes": [
     {
@@ -307,6 +317,11 @@
       "old_domain": "hotglue.xyz",
       "current_domain": "hotglue.com",
       "evidence": "Explicit official homepage redirect observed; docs and product identity agree."
+    },
+    {
+      "project": "Boomi API Management",
+      "slug_preserved": "dell-boomi-api-management-73e49bde",
+      "change": "Current official product name omits Dell; domain unchanged, wider platform products not merged."
     }
   ],
   "content_corrections": [
@@ -332,6 +347,18 @@
     {
       "project_path": "projects/data-integration/rivery-2d3c66b2.json",
       "reason": "Official documentation migrated rivery.io -> help.boomi.com. Same-registered-domain validator cannot encode actual sources without a shared authority schema change. No false URL, identity merger or validator bypass; not counted complete."
+    },
+    {
+      "project_path": "projects/api-management/apigee-edge-d4c9d902.json",
+      "reason": "Apigee Edge documentation on docs.apigee.com was read and distinguishes Public/Private Cloud from current Apigee/hybrid. Current Google Cloud pay-as-you-go pricing must not be applied to Edge without migration. The record identity is google.com, while necessary Edge documentation is on apigee.com; the same-registered-domain source rule cannot encode both. Candidate remains incomplete pending coordinator authority handling, not renamed to the broader product."
+    },
+    {
+      "project_path": "projects/api-management/blobr-e9fe1f36.json",
+      "reason": "Official homepage, pricing and an official comparison article discovered through search all returned HTTP 404. Search snippets suggest advertising AI rather than the original API-product positioning, but unreadable pages are not adopted as current evidence. Current identity, availability and pricing remain unverified; not complete."
+    },
+    {
+      "project_path": "projects/api-management/dreamfactory-6a420d79.json",
+      "reason": "Official home/pricing read; current marketing emphasizes an AI data gateway. The documentation reader rejected text/markdown as unsupported; a normal direct public HTTP request then returned 403 and no bypass was attempted. Documentation, role/connector behavior and actual license remain insufficiently established for a deep profile. Pricing claims alone do not count complete."
     }
   ],
   "availability_updates": [
