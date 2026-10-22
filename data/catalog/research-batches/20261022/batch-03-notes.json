@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T10:20:04.985902+00:00",
+  "updated_at": "2026-10-22T10:35:10.477786+00:00",
   "status": "in_progress",
-  "completed_count": 9,
+  "completed_count": 14,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -13,19 +13,19 @@
     "projects/email-marketing/campayn-pricing-reviews-and-c588def9.json",
     "projects/email-marketing/cleverreach-ecfe69aa.json",
     "projects/email-marketing/constant-contact-192dd0f7.json",
-    "projects/email-marketing/emailoctopus-db8173ed.json"
+    "projects/email-marketing/emailoctopus-db8173ed.json",
+    "projects/email-marketing/getresponse-f25d3a2f.json",
+    "projects/email-marketing/kit-formerly-convertkit-c4dc561a.json",
+    "projects/email-marketing/mailchimp-5f993e33.json",
+    "projects/email-marketing/mailercloud-5f378d21.json",
+    "projects/email-marketing/mailerlite-664ee20d.json"
   ],
-  "remaining_count": 192,
+  "remaining_count": 187,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
     "projects/email-marketing/emma-0245b375.json",
-    "projects/email-marketing/getresponse-f25d3a2f.json",
     "projects/email-marketing/icontact-546f315f.json",
-    "projects/email-marketing/kit-formerly-convertkit-c4dc561a.json",
-    "projects/email-marketing/mailchimp-5f993e33.json",
-    "projects/email-marketing/mailercloud-5f378d21.json",
-    "projects/email-marketing/mailerlite-664ee20d.json",
     "projects/email-marketing/mailify-7607e263.json",
     "projects/email-marketing/mailjet-29eb0a97.json",
     "projects/email-marketing/mailmodo-1d8ef731.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "email-marketing",
-  "next_project": "projects/email-marketing/getresponse-f25d3a2f.json",
+  "next_project": "projects/email-marketing/mailify-7607e263.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -274,6 +274,16 @@
         "https://help.myemma.com/s/article/What-will-happen-to-my-legacy-templates"
       ],
       "scratch_files": ["emma-flow.json", "emma-docs.json"]
+    },
+    {
+      "path": "projects/email-marketing/icontact-546f315f.json",
+      "status": "not_completed",
+      "reason": "Official root and pricing returned InternalError in web reader. No successful HTTP response was observed; third-party claims of HTTP 403 are not treated as this session evidence. Conflicting third-party plan figures were not adopted.",
+      "attempted_urls": [
+        "https://www.icontact.com/",
+        "https://www.icontact.com/pricing/"
+      ],
+      "scratch_files": ["getresponse-icontact-kit.json", "gr-free-kit.json"]
     }
   ],
   "compatibility_issues": [
@@ -332,6 +342,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "email-marketing-03",
+      "completed_projects": 14,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: existing official Help Scout cross-domain incompatibility at line 166 after correcting a temporary dependency symlink; initial attempt could not resolve tldts"
+        },
+        {
+          "command": "Prettier on changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -339,6 +367,11 @@
       "commit": "8e140ac",
       "completed_count": 5,
       "scope": "AWeber, Benchmark Email, Brevo, Cakemail, Campaign Monitor"
+    },
+    {
+      "commit": "fbca739",
+      "completed_count": 9,
+      "scope": "Campayn, CleverReach, Constant Contact, EmailOctopus; source integrity gaps"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
