@@ -2,175 +2,183 @@
   "schema_version": "123charts-software-research-v1",
   "slug": "livehelpnow-826bb7ca",
   "name": "LiveHelpNow",
-  "website_url": "https://www.livehelpnow.net/",
-  "domain": "www.livehelpnow.net",
+  "website_url": "https://livehelpnow.net/",
+  "domain": "livehelpnow.net",
   "identity_domain": "livehelpnow.net",
   "category": "live-chat",
   "secondary_categories": [],
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "LiveHelpNow is a product in the Live chat category. Its directory profile covers Visitor Targeting, Video Chat, Transfers, Shortcut Messages, Offline Form, Knowledge Database, Co-Browsing, Call Me Option.\n\nAdditional listed capabilities include Agent Scheduling. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac). The listed organization sizes are Medium Business Small Business. API support is listed as Available. Support channels are listed as 24/7 (Live rep), Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $9.00.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: communicate through live video. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "LiveHelpNow 属于在线客服软件。第三方资料列出的功能包括访客定向、视频通话、传输、快捷消息、离线表单、知识资料库、协同浏览、电话回拨选项。\n\n资料还列出客服排班。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)。资料所列适用组织规模为中型企业 小型企业。API 支持情况为提供。资料所列支持方式为全天候人工支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $9.00.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：通过实时视频进行沟通。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "LiveHelpNow combines website chat, tickets, a knowledge base, routing and reporting in a hosted support workspace. Hue adds several different AI roles: internal agent assistance, customer-facing knowledge answers and autonomous conversations. Current Essential, Professional and Premium packages have different channel and automation scope; the word AI does not establish that every customer-facing bot is included.\n\nA useful pilot follows one request through a department queue, a skilled agent or configured Hue step, a human fallback and a retained transcript. Queueing is a prerequisite for skill overflow, and the supervisor role is deliberately not an automatic chat destination. Public documents also mix current tier pricing with an older component-priced EULA and older retention instructions. This is documentation research without an account, bot, routing, API, payment, export or cancellation test.",
+  "description_zh": "LiveHelpNow 将网站聊天、工单、知识库、路由及报告结合为托管支持工作区。Hue 包含不同 AI 角色：内部客服辅助、面向客户的知识回答，以及自主对话。当前 Essential、Professional 与 Premium 套餐在渠道及自动化范围上不同，出现 AI 字样不代表所有客户机器人均已包含。\n\n有效试点可跟踪一个请求经过部门队列、技能客服或已配置 Hue 步骤、真人回退及留存聊天记录。技能溢出以前置启用队列为条件，主管角色特意不作自动聊天目的地。公开资料还混合当前分层价格、旧按组件收费 EULA 及旧留存说明。本稿为文档研究，未测试账号、机器人、路由、API、支付、导出或取消。",
   "core_features": [
     {
-      "name_en": "Visitor Targeting",
-      "name_zh": "访客定向",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Department skill overflow",
+      "name_zh": "部门技能溢出",
+      "explanation_en": "With queueing enabled,assign higher skills first and use backup agents only when higher skills are unavailable or full.",
+      "explanation_zh": "启用队列后先分给高技能人员，仅在其不可用或满载时使用后备。",
+      "explanation_scope": "product_specific",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Video Chat",
-      "name_zh": "视频通话",
-      "explanation_en": "Communicate through live video.",
-      "explanation_zh": "通过实时视频进行沟通。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Knowledge and agent assistance",
+      "name_zh": "知识与客服辅助",
+      "explanation_en": "Configure Hue sources per department and review answer sources,helpfulness and no-answer reports before customer use.",
+      "explanation_zh": "按部门配置 Hue 来源，面向客户使用前复核答案来源、有用度及未答报告。",
+      "explanation_scope": "product_specific",
+      "source_ref": "hue",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Transfers",
-      "name_zh": "传输",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Ticket and channel administration",
+      "name_zh": "工单与渠道管理",
+      "explanation_en": "Professional adds tickets; the panel separates chat,mail profiles,queue limits and ordered ticket automations.",
+      "explanation_zh": "Professional 增加工单，后台分列聊天、发信配置、队列限制及按序工单自动化。",
+      "explanation_scope": "product_specific",
+      "source_ref": "admin",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Shortcut Messages",
-      "name_zh": "快捷消息",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Offline Form",
-      "name_zh": "离线表单",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Knowledge Database",
-      "name_zh": "知识资料库",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Co-Browsing",
-      "name_zh": "协同浏览",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Call Me Option",
-      "name_zh": "电话回拨选项",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Agent Scheduling",
-      "name_zh": "客服排班",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Enterprise bot handoff",
+      "name_zh": "Enterprise 机器人交接",
+      "explanation_en": "A custom bot can relay to live agents through OAuth APIs and restricted webhooks under Enterprise conditions.",
+      "explanation_zh": "自定义机器人可在 Enterprise 条件下通过 OAuth API 与受限 webhook 交给真人。",
+      "explanation_scope": "product_specific",
+      "source_ref": "bot-handoff",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Communicate through live video"],
-    "zh": ["通过实时视频进行沟通"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Support teams needing department-specific queues,knowledge and a controlled AI rollout.",
+      "A custom-bot team prepared to license Enterprise and implement a real handoff relay."
+    ],
+    "zh": [
+      "需要部门队列、知识及可控 AI 推进的支持团队。",
+      "愿意购买 Enterprise 并实现真实交接中继的自定义机器人团队。"
+    ],
+    "source_refs": ["routing", "hue", "bot-handoff"],
+    "basis": "Editorial fit,not observed productivity or deflection."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $9.00.",
-      "zh": "提供免费试用 起价为 $9.00.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Medium Business Small Business",
-      "zh": "中型企业 小型企业",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Online",
-      "zh": "全天候人工支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Skill roles": {
+      "en": "Queueing departments rank10highest and0backup; Supervisors never receive queued chats. Transfer Rights allow transfer without department membership or visibility of other records.",
+      "zh": "队列部门以10为最高、0为后备，Supervisor 不接排队聊天。Transfer Rights 可不加入部门或查看其他记录而转接。",
+      "source_ref": "routing",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Medium Business Small Business",
-    "organization_sizes_zh": "中型企业 小型企业",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support administrator",
+      "Knowledge owner",
+      "Enterprise bot integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "admin"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Confirm tier,billing unit,domain count,AI units and applicable EULA before purchasing.",
+        "zh": "购买前确认层级、计费单位、域名数、AI 单位及适用 EULA。",
+        "source_refs": ["pricing", "pricing-detail", "terms"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Generate the widget,configure departments and enable queueing before skill overflow; set shifts,offline limits and email-domain validation as needed.",
+        "zh": "生成组件、配置部门，并先启用队列再设技能溢出，按需设置班次、离线上限及发信域验证。",
+        "source_refs": ["admin", "routing"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Test Hue as internal assistance using maintained department knowledge and inspect wrong,no-answer and handoff cases before exposing automation.",
+        "zh": "以维护中的部门知识先测试内部 Hue 辅助，面向客户自动化前检查错答、未答及交接。",
+        "source_refs": ["hue", "bot-handoff"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Custom bot API / webhooks",
+        "source_ref": "bot-handoff",
+        "scope": "Enterprise-only restricted create-chat and chat-message/action webhooks;OAuth and application relay required."
+      },
+      {
+        "name": "Hue-Plus external APIs",
+        "source_ref": "custom-api",
+        "scope": "Vendor-assisted connector configuration; historical product name is not a verified mapping to current AI packages."
+      },
+      {
+        "name": "Email and Meta channels",
+        "source_ref": "admin",
+        "scope": "Mail profiles need validated domains;Meta configuration requires web browser rather than app. Provider fees/permissions untested."
+      }
+    ],
+    "source_ref": "admin"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Skill overflow applies only to departments with chat queueing enabled; online supervisors are not a capacity fallback.",
+        "zh": "技能溢出仅适用已启用队列的部门，在线主管不作容量回退。",
+        "source_refs": ["routing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Internal assist is not the customer-facing Knowledge or Conversational AI entitlement. Answers and conversations are different allowance units.",
+        "zh": "内部辅助不等于客户知识／对话 AI 权益，答案与对话也是不同额度单位。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Public PDF component rates and traffic rules differ from current tier presentation; do not substitute historical21 pricing for the current offer.",
+        "zh": "公开 PDF 组件价及流量规则与当前分层展示不同，不能用旧21价格替代当前报价。",
+        "source_refs": ["terms", "pricing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Old transcript guide promises90-day viewing/Enterprise3years while current Premium advertises higher storage; actual account retention is unconfirmed.",
+        "zh": "旧聊天导出指南描述查看90天及 Enterprise 3年，当前 Premium 又宣传更高存储，实际账户留存未确认。",
+        "source_refs": ["export", "pricing"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://cdn.livehelpnow.net/assets/docs/2023_LHN_EULA.pdf",
+    "source_ref": "terms"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $9.00.",
-    "source_snapshot_zh": "提供免费试用 起价为 $9.00.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "pricing-detail", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Currentfrom-monthlytierswithunspecifiedbase-seat/commitmentbasis;AIanswersandconversationsseparateplusper-accountaddons.OldEULAcomponentpriceconflict,currencycodeandcheckoutunverified.",
+    "source_snapshot_en": "Essential/Professional/Premium from$39/$59/$79 monthly;Enterprise quote. Internal AI assist included unlimited. Knowledge AI from99/month on Professional/Premium with2000/5000answers;Conversational AI from499/month+premium with1000/3000conversations;Plus from799/month+premium,Premium7000+.Rules bot75/account/month,security pack49,SMS75/2500expiringmonthly+50numberfee;basic/advancedphone9/from19/account/month. Published+premium wording and exact base billing require clarification.",
+    "source_snapshot_zh": "Essential／Professional／Premium 月起价$39／59／79，Enterprise 询价。内部 AI 辅助包含无限使用。Knowledge AI 在 Professional／Premium 上月起价99，含2000／5000答案；Conversational AI 月起价499加 premium，含1000／3000对话；Plus 起价799加 premium，Premium 7000以上。规则机器人每账户每月75，安全包49，SMS 每2500条75且当月过期，号码一次费50；基础／高级电话每账户月费9／起19。加 premium 原文含义及基础计费需澄清。",
+    "checked_at": "2026-10-22T13:31:13.875945+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -178,22 +186,18 @@
   },
   "faq": [
     {
-      "question_en": "What does LiveHelpNow do?",
-      "question_zh": "LiveHelpNow 用来做什么？",
-      "answer_en": "LiveHelpNow is a product in the Live chat category. Its directory profile covers Visitor Targeting, Video Chat, Transfers, Shortcut Messages, Offline Form, Knowledge Database, Co-Browsing, Call Me Option.",
-      "answer_zh": "LiveHelpNow 属于在线客服软件。第三方资料列出的功能包括访客定向、视频通话、传输、快捷消息、离线表单、知识资料库、协同浏览、电话回拨选项。"
+      "question_en": "Does a supervisor receive overflow chats?",
+      "question_zh": "主管会接溢出聊天吗？",
+      "answer_en": "The skill-routing guide says Supervisors never receive queued chats,even online. Configure real eligible backup agents instead.",
+      "answer_zh": "技能路由指南称主管即使在线也不接排队聊天，需配置实际有资格的后备客服。",
+      "source_refs": ["routing"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Visitor Targeting, Video Chat, Transfers, Shortcut Messages, Offline Form, Knowledge Database, Co-Browsing, Call Me Option, Agent Scheduling",
-      "answer_zh": "访客定向、视频通话、传输、快捷消息、离线表单、知识资料库、协同浏览、电话回拨选项、客服排班"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Does70% helpful feedback prove safe autonomous support?",
+      "question_zh": "70% 有用反馈能证明自主支持安全吗？",
+      "answer_en": "No. It is a vendor rollout heuristic,not a calibrated accuracy result. The guide also describes agent use of suggested replies as a threshold;review wrong answers,authority and no-answer handling separately.",
+      "answer_zh": "不能。这是厂商推进参考，不是校准准确率。指南还将客服采用建议回复作为门槛，应另查错答、权限及未答处理。",
+      "source_refs": ["hue"]
     }
   ],
   "sources": [
@@ -205,25 +209,252 @@
       "read_at": "2026-10-22T09:04:39.593Z",
       "excerpt_sha256": "e50ca7c45c83e5b1c459784c42f999f1e69a7c6f34017a9bb765f9e36120d7b4",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Support Solutions for Better Business Communications | LiveHelpNow",
+      "title": "Support Solutions for Better Business Communications | LiveHelpNow",
+      "url": "https://livehelpnow.net/",
+      "read_at": "2026-10-22T13:29:24.049720+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "309e49f11ae7d61a0e86f6306f5c95ed5a6028be8b66ca6a9375d9a40c87a56c",
+      "research_notes_en": "Current support suite: chat, ticketing, knowledge, automations and separate AI packaging."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing | LiveHelpNow Customer Support Software",
+      "title": "Pricing | LiveHelpNow Customer Support Software",
+      "url": "https://livehelpnow.net/pricing",
+      "read_at": "2026-10-22T13:30:00.927116+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f71e2c095e1ff7de2a221d5d0a83431724f83399d122ce886e47dc1b4067d0fe",
+      "research_notes_en": "39/59/79 starting tiers; included internal assist versus99 Knowledge AI,499 Conversational AI and799 Plus; unit/billing basis partly unspecified."
+    },
+    {
+      "id": "pricing-detail",
+      "type": "official_pricing",
+      "site": "LiveHelpNow Pricing-LiveHelpNow-Knowledgebase",
+      "title": "LiveHelpNow Pricing-LiveHelpNow-Knowledgebase",
+      "url": "https://help.livehelpnow.net/1/kb/article/4916/livehelpnow-pricing-schedule?origin=1621",
+      "read_at": "2026-10-22T13:29:42.947488+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b4e052847baab00ab7df496b395ea6f3425875afde62c509f45ddf7dfd1cf132",
+      "research_notes_en": "May2026 pricing article repeats tiers and adds per-account rules bot75,security49,SMS75/2500 plus50number,phone9/19; hard IP cap and monthly SMS expiry."
+    },
+    {
+      "id": "admin",
+      "type": "official_documentation",
+      "site": "Admin panel overview-LiveHelpNow-Knowledgebase",
+      "title": "Admin panel overview-LiveHelpNow-Knowledgebase",
+      "url": "https://kb.livehelpnow.net/1/kb/article/140311/admin-panel-overview",
+      "read_at": "2026-10-22T13:29:42.631443+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "af1f0302230e5eb74d1ba8bf252fe72a1bace9809375c7cdb9cb55ae4b1d3d72",
+      "research_notes_en": "October2026 panel: generated widget, queue/limits, agent permissions, validated email domain, per-department Hue sources and ordered ticket automations."
+    },
+    {
+      "id": "routing",
+      "type": "official_documentation",
+      "site": "Live Chat Skill routing and overflow-LiveHelpNow-Knowledgebase",
+      "title": "Live Chat Skill routing and overflow-LiveHelpNow-Knowledgebase",
+      "url": "https://kb.livehelpnow.net/1/kb/article/101116/live-chat-skill-routing-and-overflow",
+      "read_at": "2026-10-22T13:29:42.725027+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "48442c0062e7243a0a5f74045385503eaad2ff0e659805915d82c4647c390efb",
+      "research_notes_en": "Queueing prerequisite,skill10highest/0backup,supervisorneverqueued and transfer-only rights without department record visibility."
+    },
+    {
+      "id": "hue",
+      "type": "official_documentation",
+      "site": "Hue AI: Enhancing Customer Support with Chatbot and Agent Assist-LiveHelpNow-Knowledgebase",
+      "title": "Hue AI: Enhancing Customer Support with Chatbot and Agent Assist-LiveHelpNow-Knowledgebase",
+      "url": "https://help.livehelpnow.net/1/kb/article/111317/hue-ai-chatbot-and-agent-assist?origin=111317",
+      "read_at": "2026-10-22T13:30:19.966982+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "fc5e39d3ee11e59425fc5440a119e8cc889eef912e0e8585ebee42a4c7dae027",
+      "research_notes_en": "June2026 sources per department, agent-assist first, combined multi-message prompts, helpful/no-answer/source reports and30day requested Hue trial;70% vendor adoption heuristic is not accuracy."
+    },
+    {
+      "id": "custom-api",
+      "type": "official_documentation",
+      "site": "Automating Complex Customer Support Interactions with LiveHelpNow Chatbot-LiveHelpNow-Knowledgebase",
+      "title": "Automating Complex Customer Support Interactions with LiveHelpNow Chatbot-LiveHelpNow-Knowledgebase",
+      "url": "https://kb.livehelpnow.net/1/kb/article/126783/automating-complex-customer-support-interactions-with-livehelpnow-chatbot",
+      "read_at": "2026-10-22T13:30:17.887728+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b27ca569c85419226795fd167c54525d80f42b393ca5f7467404368a75af1238",
+      "research_notes_en": "May2024 Hue-Plus external API connector requires vendor technical setup; account-specific lookup and conditional result branches, not preauthorized financial actions."
+    },
+    {
+      "id": "bot-handoff",
+      "type": "official_documentation",
+      "site": "LiveHelpNow Documentation",
+      "title": "LiveHelpNow Documentation",
+      "url": "https://developer.livehelpnow.net/docs/howto/bot-handoff",
+      "read_at": "2026-10-22T13:31:11.676895+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "da6224e115397960c14e8a4c54e1880235e24e078cf5c72a9e3e3d19f4d8232e",
+      "research_notes_en": "Third-party same-window bot handoff requires Enterprise/restricted endpoints and webhooks,OAuth and message relay; old developer roadmap is not current delivery evidence."
+    },
+    {
+      "id": "export",
+      "type": "official_documentation",
+      "site": "How to export chat transcripts for your records-LiveHelpNow-Knowledgebase",
+      "title": "How to export chat transcripts for your records-LiveHelpNow-Knowledgebase",
+      "url": "https://help.livehelpnow.net/1/kb/article/22135/how-to-export-chat-transcripts-for-your-records",
+      "read_at": "2026-10-22T13:31:12.564214+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b9e7beb840c6dc366ad98efe998a33a81f0914e97472993e7c224f321820bd5b",
+      "research_notes_en": "October2021 guide describes90day transcripts, email/XML/export/API,Enterprise3year; current Premium also changes storage so do not universalize old retention."
+    },
+    {
+      "id": "cancellation",
+      "type": "official_documentation",
+      "site": "Cancellation policy-LiveHelpNow-Knowledgebase",
+      "title": "Cancellation policy-LiveHelpNow-Knowledgebase",
+      "url": "https://help.livehelpnow.net/1/kb/article/1621/cancellation-policy",
+      "read_at": "2026-10-22T13:31:13.875945+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5ddb92f5c1dfe6831aaf004fe96d514b75d94a2a221afdb15bc25d2b4670a13b",
+      "research_notes_en": "June2021 guide: Admin/Account/Subscriptions cancellation immediate,chat/ticket requests not honored; distinguish from PDF written-notice route."
+    },
+    {
+      "id": "terms",
+      "type": "official_license",
+      "site": "LiveHelpNow End User License Agreement — current footer-linked PDF",
+      "title": "LiveHelpNow End User License Agreement — current footer-linked PDF",
+      "url": "https://cdn.livehelpnow.net/assets/docs/2023_LHN_EULA.pdf",
+      "read_at": "2026-10-22T13:30:39.159330+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_pdf_pypdf_text",
+      "excerpt_sha256": "2340b5f3dd0524c8f715f28d1cf4f87f3382121683d2ac33ea5f260a60932303",
+      "research_notes_en": "Current footer-linked2023 PDF: proprietary service/no software license,old21/componentprice,1000dailyvisitor/seat-or-disable tracking,renewal,no refund,30day postcancel data-request and service-bureau restriction. Current applicability needs clarification."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T13:31:13.875945+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "product",
+    "pricing",
+    "routing",
+    "terms",
+    "export"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "suite-scope",
+        "title_en": "A support suite with several different AI products",
+        "title_zh": "支持套件中有多种不同 AI 产品",
+        "en": "LiveHelpNow supplies chat,knowledge,automations and connected support channels;Professional adds ticketing and Premium expands service and capacity. Essential currently lists one chat domain and one knowledge base with unlimited articles. Multi-brand positioning does not establish unlimited domains or unlimited traffic on that tier. The software is for a staffed support operation,not evidence that the subscription supplies outsourced agents.\n\nAI Level0 is internal-only assistance,not customer-facing. Knowledge AI provides knowledge-grounded answers;Conversational AI and Plus sell autonomous conversations. An AI Answer and an AI Conversation are different published units,whose exact metering and overage definitions were not established. Compare the actual role needed rather than treating every Hue reference as the same included feature.",
+        "zh": "LiveHelpNow 提供聊天、知识、自动化及连接支持渠道；Professional 增加工单，Premium 扩展服务及容量。Essential 当前列1个聊天域名、1个知识库及无限文章。多品牌定位不代表该层域名或流量无限。软件面向有值守人员的支持运营，订阅资料不证明供应外包客服。\n\nAI Level0 仅内部辅助，不面向客户。Knowledge AI 提供知识回答，Conversational AI 及 Plus 销售自主对话。AI Answer 与 AI Conversation 是不同公布单位，准确计量及超额定义尚未建立。应比较真实所需角色，而不能把所有 Hue 字样视为同一包含功能。",
+        "source_refs": ["product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "routing-example",
+        "title_en": "Enable queueing before skill-based overflow",
+        "title_zh": "技能溢出前先启用队列",
+        "en": "For an illustrative billing inquiry,create a billing department and enable chat queueing. The skill guide ranks agents from10 down to0,where0 means Backup. Higher-skilled agents receive chats first;backups receive them only when all higher-skilled colleagues are offline or at capacity. This mechanism only applies to departments with queueing enabled. An online Supervisor never receives queued chats.\n\nTransfer Rights are distinct from membership: a sales agent can transfer to support without seeing that department’s other records. Test that a transfer reaches an eligible recipient while unauthorized records remain hidden. Also test every skilled agent busy,no backup online,and a queue limit that makes the channel show offline. The administrator overview exposes availability,routing,permissions and account/department limits;these settings must work together. An arbitrary skill number is configured priority,not an independent measure of agent competence.",
+        "zh": "以假设账单咨询为例，创建账单部门并启用聊天队列。技能指南将客服从10排到0，0代表 Backup。先由高技能人员接待，只有全部更高技能同事离线或满载时才给后备。该机制仅适用已启用队列的部门，在线 Supervisor 也不会接排队聊天。\n\nTransfer Rights 与部门成员身份不同：销售可转接支持部门而不看到其余记录。需测试转接抵达有资格接收者，同时未授权记录保持隐藏；还要测试高技能全忙、无后备在线及队列上限触发离线。后台暴露可用性、路由、权限及账户／部门限制，这些设置需配合。人为技能数字是配置优先级，不是独立能力评估。",
+        "source_refs": ["routing", "admin"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "knowledge-rollout",
+        "title_en": "Inspect source-grounded assistance before customer exposure",
+        "title_zh": "先检查来源辅助，再面向客户",
+        "en": "Hue sources are configured per department and can include a knowledge base,website,canned responses and prior interactions. The June2026 guide recommends starting with internal agent assistance and controlled knowledge-base content. Agents can ask against a single message or combine a multi-message request through conversation tools;using only the final fragment can change the answer’s meaning.\n\nInteractions reporting shows questions,answers and contributing sources,with Helpful,Unhelpful and No Answer filters. Use these to find gaps and correct source content. The guide suggests moving toward a customer bot after70% helpful outcomes or agent use of answers;these descriptions are rollout heuristics,not equivalent measures and not proven accuracy. The Ask Hue bot step can branch on answer availability. Test a missing policy,conflicting department source and an unauthorized account lookup. Instant learning and80% handling claims remain vendor claims. A requested30-day Hue trial is not proof of a permanent free customer bot.",
+        "zh": "Hue 按部门配置来源，可含知识库、网站、快捷回复及旧交互。2026年6月指南建议从内部客服辅助及可控知识库开始。客服可针对单条消息提问，也能通过会话工具合并多消息请求；只取最后片段可能改变答案含义。\n\n交互报告展示问题、答案及参与来源，可按 Helpful、Unhelpful、No Answer 筛选，用于发现缺口及改正原资料。指南建议有用结果或客服采用达到70%后逐步用于客户机器人；这两种描述是推进参考，并非等价指标，也不是已证准确率。Ask Hue 机器人步骤可按能否回答分支。需测试缺失政策、部门来源冲突及未授权账户查询。即时学习与处理80%主张仍属厂商陈述。需申请的30天 Hue 试用不证明永久免费客户机器人。",
+        "source_refs": ["hue"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "integration-authority",
+        "title_en": "Separate a knowledge answer from an authorized backend action",
+        "title_zh": "区分知识回答与获授权后台操作",
+        "en": "The older Hue-Plus guide describes a vendor-configured external API connector for account-specific queries and conditional paths based on returned values. Its order-status example retrieves data and formats a response. Basic/OAuth support claims do not establish tenant isolation,customer authentication or permission to issue a refund. Confirm how this historical product name maps to current Conversational AI packages.\n\nA third-party bot handoff is another integration path. Developer documentation requires Enterprise and restricted create-chat/message/action interfaces. OAuth authenticates API use;the application still relays visitor messages and operator responses and handles typing,history and termination. Keeping the same chat window does not eliminate server work or establish end-user authorization. Test an unavailable agent,duplicate message,expired token and resume after navigation before relying on this flow. The old developer roadmap is not evidence of current feature delivery.",
+        "zh": "较旧 Hue-Plus 指南描述由厂商配置外部 API 连接器，用于账户查询及按返回值分支；订单状态示例取回资料并组织答案。支持 Basic／OAuth 的主张不建立租户隔离、客户认证或退款权限。需确认历史产品名如何对应当前 Conversational AI 套餐。\n\n第三方机器人交接是另一路径。开发文档要求 Enterprise 及受限的建聊天／消息／动作接口。OAuth 认证 API，应用仍需中继访客消息及客服回复，并处理输入状态、历史及终止。同窗聊天不消除服务端工作，也不证明终端用户授权。依赖前应测试无人接待、重复消息、令牌过期及跳页恢复。旧开发路线图不是当前功能已交付证据。",
+        "source_refs": ["custom-api", "bot-handoff"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "cost-model",
+        "title_en": "Do not combine incompatible pricing generations",
+        "title_zh": "不能混合不同代际的价格",
+        "en": "Current tier starting prices are$39/$59/$79 monthly for Essential/Professional/Premium,with Enterprise quoted. The pages do not clearly identify the base seat count,billing commitment or currency code,so a per-seat normalized starting price would be misleading. Knowledge AI starts at99/month on Professional/Premium with2,000/5,000 answers;Conversational AI starts499/month with1,000/3,000 conversations;Plus starts799 and lists Premium7,000+. The latter cards append “+premium” while also naming Professional or Premium,an ambiguity requiring a written quote.\n\nThe pricing article adds rules-based Decision Chatbot75/account/month with up to5 actions per step;Security Pack49/account/month includes SSO,IP/domain restrictions and HIPAA features requiring a BAA. It lists10,000 chats/month and a hard2,500 IP/month cap for that pack. SMS costs75 per2,500 messages,expires monthly and adds a one-time50 local-number fee. Phone starts9 or19/account/month;provider costs remain unverified.\n\nThe current footer’s2023-named EULA still prints21 per component/user/month and older discounts. It also requires one seat per1,000 unique daily visitors or disabling visitor tracking. These are material conflicts/conditions,not a basis to replace the current tier offer with an attractive old amount. Obtain the applicable agreement and confirm traffic,seat,AI and channel charges together.",
+        "zh": "当前 Essential／Professional／Premium 月起价$39／59／79，Enterprise 报价。页面未清楚标明基础座席数、承诺周期或币种代码，不能强行归一为每座席起价。Knowledge AI 在 Professional／Premium 月起99，含2,000／5,000答案；Conversational AI 起499，含1,000／3,000对话；Plus 起799，列 Premium 7,000以上。后两卡同时写“+premium”及 Professional 或 Premium，含义需书面报价澄清。\n\n价格文章另列规则型 Decision Chatbot 每账户每月75、每步最多5动作；Security Pack 每账户每月49，包含 SSO、IP／域限制及需 BAA 的 HIPAA 功能，列每月10,000聊天及2,500 IP 硬上限。SMS 每2,500条75，当月过期，另有本地号码一次费50。电话每账户月起9或19，提供商费未核实。\n\n当前页脚所链2023命名 EULA 仍写每组件每用户每月21及旧折扣，还要求每1,000日独立访客购买1座席或关闭访客追踪。这是重要冲突／条件，不能用较低旧金额替代当前套餐。需取得适用协议，同时核对流量、座席、AI 及渠道费。",
+        "source_refs": ["pricing", "pricing-detail", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "retention-and-fit",
+        "title_en": "Agree on retention and exit before depending on the service",
+        "title_zh": "依赖服务前约定留存与退出",
+        "en": "The EULA calls this a services agreement without a software license,retains ownership and restricts internal-business use,including a service-bureau prohibition. Multi-brand marketing does not automatically authorize a reseller/BPO model. This is hosted proprietary software;no self-hosted open-source distribution was established.\n\nA2021 export guide describes90-day transcript viewing,XML transcript reports,email copies,CRM sync and Enterprise three-year storage. Current Premium advertises higher data storage without exact values. Treat old90-day wording as a dated guide,not every current plan’s final retention. The EULA promises30days after cancellation to request data before purge,whereas the cancellation guide says the account subscription stops immediately and chat/ticket cancellation requests are not honored. Immediate service loss and a possible data-request period are different. Export before cancellation and confirm the applicable process;no complete backup or restore was tested.\n\nThe product suits a team maintaining departments,knowledge and actual staffing. A basic free widget buyer or an organization needing unassisted API onboarding,guaranteed autonomous financial actions or a proven complete archive needs further evidence. Chinese content here is editorial translation,not confirmation of Chinese agent UI.",
+        "zh": "EULA 将其称为不授软件许可的服务协议，保留所有权并限制内部业务用途，含禁止 service-bureau 用途。多品牌营销不自动授权转售／BPO 模式。这是专有托管软件，未建立可自托管开源分发。\n\n2021导出指南描述90天聊天查看、XML 聊天报告、邮件副本、CRM 同步及 Enterprise 3年存储。当前 Premium 宣传更高资料存储但无具体值。旧90天是有日期的说明，不是所有当前套餐最终留存。EULA 规定取消后30天内可请求资料，随后清除；取消指南则称账户订阅立即停止，聊天／工单取消请求不受理。立即失去服务与可能的资料请求期不同。应在取消前导出并确认适用流程，未测试完整备份或恢复。\n\n产品适合愿意维护部门、知识及真实值守的团队。仅找简单免费组件、无需协助的 API 上线、保证自主财务操作或已证完整档案的组织仍需更多证据。本文中文为编辑翻译，不证明中文客服界面。",
+        "source_refs": ["terms", "export", "cancellation", "pricing", "hue"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "LiveHelpNow: Skill Overflow, Hue AI Levels, Pricing and Retention",
+    "title_zh": "LiveHelpNow：技能溢出、Hue AI 层级、价格及留存",
+    "description_en": "Evaluate LiveHelpNow queues and backup roles, department AI knowledge, Enterprise handoff, current tiers, EULA conflicts and transcript export.",
+    "description_zh": "评估 LiveHelpNow 队列与后备角色、部门 AI 知识、Enterprise 交接、当前套餐、EULA 冲突及聊天导出。",
+    "primary_intent": "Evaluate department support workflows and distinct AI costs.",
+    "secondary_questions": [
+      "When does backup routing apply?",
+      "Is customer AI included?",
+      "Which retention terms apply?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account,widget,queue,AI,API,payment,export,restore or cancellation tested. Base seat/commitment and currency,AI metering/overage,+premium meaning,current EULA applicability,visitor rule,retention,service-bureau permission,provider fees,data location and UI languages unresolved. No independent80% result or security certification verified.",
+      "zh": "未测试账号、组件、队列、AI、API、支付、导出、恢复或取消。基础座席／周期及币种、AI 计量／超额、加 premium 含义、当前 EULA 适用性、访客规则、留存、服务转售许可、提供商费、资料位置及界面语言未解决，未独立核验80%效果或安全认证。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
