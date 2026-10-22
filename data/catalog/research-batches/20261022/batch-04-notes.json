@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T10:53:55.144093+00:00",
+  "updated_at": "2026-10-22T11:04:34.531038+00:00",
   "assigned": 204,
-  "completed_count": 14,
+  "completed_count": 17,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -20,17 +20,17 @@
     "projects/crm/bytepaper-cbf0d470.json",
     "projects/crm/pipeliner-crm-6a48a383.json",
     "projects/crm/salesforce-6268792d.json",
-    "projects/crm/vinsolutions-connect-crm-06bac125.json"
-  ],
-  "incomplete_count": 190,
-  "remaining_projects": [
+    "projects/crm/vinsolutions-connect-crm-06bac125.json",
     "projects/crm/archiz-crm-3b56403d.json",
     "projects/crm/aurea-crm-2db99d1d.json",
+    "projects/crm/pipedrive-crm-4a41bd76.json"
+  ],
+  "incomplete_count": 187,
+  "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
     "projects/crm/mr-milkman-a1895a2a.json",
     "projects/crm/oncontact-crm-b4c091ba.json",
-    "projects/crm/pipedrive-crm-4a41bd76.json",
     "projects/crm/quickdesk-6b00414e.json",
     "projects/help-desk/bolddesk-b05f86ef.json",
     "projects/help-desk/bund-ai-cf2e0dd9.json",
@@ -219,13 +219,13 @@
   "research_issues": [
     {
       "project": "projects/crm/archiz-crm-3b56403d.json",
-      "status": "research_incomplete",
-      "observed": "Official CRM page retrieved from an old cache; cloud CRM link https://archizsolutions.com/cloud-crm-software/ redirected to https://archizsolutions.com/cgi-sys/suspendedpage.cgi. Contact page is newer and offers trial/demo contact, no numerical price. Need reconcile current product availability and implementation before counting complete."
+      "status": "resolved_documentation_researched",
+      "observed": "Ordinary HTTPS current CRM path redirects to /crm-software/; custom/routing/cleanup/form/contact pages read. Vendor case inconsistencies retained; prices, implementation and trial conditions unknown."
     },
     {
       "project": "projects/crm/aurea-crm-2db99d1d.json",
-      "status": "research_incomplete",
-      "observed": "Old official product page contains future-tense NextGen promises. Demo route redirects to aurea.cloudfix.com and web reader reports unsafe/non-retryable fetch. Current CRM release, support and commercial package not yet established; not marked complete."
+      "status": "resolved_documentation_researched",
+      "observed": "Current 2026 Graph/Kanban/AI announcements and Unlimited page read. Specific version/client conditions distinguish released read-only connector from broad roadmap/NextGen language."
     },
     {
       "project": "projects/crm/bunch-crm-785fd2f8.json",
@@ -255,17 +255,129 @@
     {
       "project": "projects/crm/oncontact-crm-b4c091ba.json",
       "status": "research_incomplete",
-      "observed": "Web reader inaccessible; ordinary HTTPS failed SSL UNEXPECTED_EOF. No TLS bypass; current official identity requires more evidence."
+      "observed": "Aptean 2020 acquisition identifies WorkWise OnContact. Current Aptean CRM product and AppCentral documentation read; automatic-sync documentation still uses OnContact tags. Product and docs are on different registrable domains (aptean.com / apteancloud.dev), while shared validator lines 164-169 require every official source to match canonical identity. No source URL altered or shared validator modified; record remains incomplete pending proper coordinator handling and explicit identity linkage.",
+      "sources_read": [
+        {
+          "id": "product",
+          "type": "official_documentation",
+          "site": "CRM Software That Strengthens Customer Relationships",
+          "title": "CRM Software That Strengthens Customer Relationships",
+          "url": "https://www.aptean.com/en-US/solutions/business-solutions/products/crm-software",
+          "read_at": "2026-10-22T11:03:06.313880+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "2f8ca7218fe6421154929bcf39382570dfacb50bb9c4d1a3dbbf406b0852dbde",
+          "research_notes_en": "Current Aptean CRM sales/marketing/service product and demo contact, no numeric price."
+        },
+        {
+          "id": "acquisition",
+          "type": "official_documentation",
+          "site": "Aptean Expands ERP Leadership with Acquisition of WorkWise, LLC | Aptean.com",
+          "title": "Aptean Expands ERP Leadership with Acquisition of WorkWise, LLC | Aptean.com",
+          "url": "https://www.aptean.com/en-US/resources/pressroom/press-release/aptean-expands-erp-leadership-with-acquisition-of-workwise-llc",
+          "read_at": "2026-10-22T11:03:06.315518+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "fd5dda73ebbe28a343963832189bc1590b7ce50b3fc7bf4f8abf2e10efc3f9f5",
+          "research_notes_en": "2020 WorkWise acquisition specifically names OnContact CRM; historical ownership evidence."
+        },
+        {
+          "id": "opportunity",
+          "type": "official_documentation",
+          "site": "CRM - Opportunity",
+          "title": "CRM - Opportunity",
+          "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/main-entities/opportunity/",
+          "read_at": "2026-10-22T11:03:05.928695+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "eafbe7483f5be047aaaa79cf3520839702adb9ccd168dd5f0c181278600cc332",
+          "research_notes_en": "September 17 2026 opportunity entities and record-linked history/milestones."
+        },
+        {
+          "id": "process",
+          "type": "official_documentation",
+          "site": "CRM - Create a New Business Process",
+          "title": "CRM - Create a New Business Process",
+          "url": "https://appcentral-docs.apteancloud.dev/CRM/setup/business-processes/create-a-new-business-process/",
+          "read_at": "2026-10-22T11:03:05.948668+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "e430c86a2f8516b084f4f0fba473dbc225b4535cb851c287def8f5a6eaa17f36",
+          "research_notes_en": "Three-stage qualifying/demo workflow with conditions and activity/email actions."
+        },
+        {
+          "id": "sync",
+          "type": "official_documentation",
+          "site": "CRM - Automatic Sync",
+          "title": "CRM - Automatic Sync",
+          "url": "https://appcentral-docs.apteancloud.dev/CRM/getting-started/outlook-addin/synchronization/automatic-sync/",
+          "read_at": "2026-10-22T11:03:05.645024+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "19818628f0c53245b8f9651192a329e6893f7daf61d61febd0f58be76579be69",
+          "research_notes_en": "Selected records and Outlook OnContact tags synchronize; most recent change wins, manual Sync for network delay."
+        },
+        {
+          "id": "setup",
+          "type": "official_documentation",
+          "site": "AppCentral - Aptean CRM",
+          "title": "AppCentral - Aptean CRM",
+          "url": "https://appcentral-docs.apteancloud.dev/AppCentral/aptean-crm-setup/",
+          "read_at": "2026-10-22T11:03:05.638184+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "5d1be8ecbbde3370fd6923ff1f473c711d3f49626e6821889a97a7c9ae45c32b",
+          "research_notes_en": "AppCentral activation/deployment/onboarding stages under licensed subscription."
+        }
+      ]
     },
     {
       "project": "projects/crm/pipedrive-crm-4a41bd76.json",
-      "status": "research_incomplete",
-      "observed": "Homepage read; pricing endpoint returned HTTP 403 in ordinary HTTPS. Stopped at endpoint; other product documentation remains to research."
+      "status": "resolved_documentation_researched",
+      "observed": "Official help billing, lead conversion, import, usage limits, automation and terms read. Main pricing HTTP403 was not retried; amounts unknown. Mechanism documented through help center."
     },
     {
       "project": "projects/crm/quickdesk-6b00414e.json",
       "status": "research_incomplete",
-      "observed": "quickdesk.io redirects to theqdacademy.com AI courses academy; original CRM availability not established."
+      "observed": "Official September 20 2025 rebrand says QuickDesk became QD Academy and existing contracts/services continue; current site emphasizes training, AI solutions and HR consulting. CRM subscription terms still exist (trial deletion warning, order-form rights, weekday paid support), but new CRM sales, current feature set and pricing are not established. Old digital-sales blog mixes QuickDesk with Sell/Scoro wording, so not reliable for current product capabilities.",
+      "sources_read": [
+        {
+          "id": "rebrand",
+          "type": "official_documentation",
+          "site": "Announcing Our Evolution: From QuickDesk to QD Academy - QD Academy",
+          "title": "Announcing Our Evolution: From QuickDesk to QD Academy - QD Academy",
+          "url": "https://theqdacademy.com/2025/09/20/announcing-our-evolution-from-quickdesk-to-qd-academy/",
+          "read_at": "2026-10-22T11:03:33.162257+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "629f9fa42a69a16b32719cd13a90d3a7424646fb544b8215939d0261a4b5fbd4",
+          "research_notes_en": "Trading-name rebrand and existing service continuity; not proof of current standalone CRM signup."
+        },
+        {
+          "id": "about",
+          "type": "official_documentation",
+          "site": "About QD Academy | #1 AI Training for Sales Growth",
+          "title": "About QD Academy | #1 AI Training for Sales Growth",
+          "url": "https://theqdacademy.com/about-qd-academy/",
+          "read_at": "2026-10-22T11:03:33.062052+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "52d72f0980d080d94a23c93d9c51a11ba3dd46457ecc013a14948fd43871bffe",
+          "research_notes_en": "Current academy focus and CRM history."
+        },
+        {
+          "id": "terms",
+          "type": "official_documentation",
+          "site": "Terms and Conditions - QD Academy",
+          "title": "Terms and Conditions - QD Academy",
+          "url": "https://theqdacademy.com/terms-and-conditions/",
+          "read_at": "2026-10-22T11:03:33.072154+00:00",
+          "verification": "official_documentation_read",
+          "transport": "public_https_html_text",
+          "excerpt_sha256": "3d978de398a54a7454d9ffcdc41c80ffb7c03ea9e63a1fed1c44ef2aa6ef8c34",
+          "research_notes_en": "Separate CRM subscription section; no numeric CRM price or published feature set."
+        }
+      ]
     }
   ],
   "verification": [
@@ -294,6 +406,15 @@
         "git diff --check"
       ],
       "result": "7 tests passed; records-only passed (1000 projects, 50 categories, 17 researched including original 3; batch contributes 14); formatting and diff check passed. Structural checks do not establish factual quality."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on three changed CRM JSONs and notes",
+        "git diff --check"
+      ],
+      "result": "Run at checkpoint before commit; 17 batch records completed, 187 remaining including 5 CRM issues and 182 other-category records not yet researched. Structure checks do not establish factual quality."
     }
   ],
   "checkpoints": [
@@ -331,13 +452,22 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "b651a52",
       "completed": [
         "projects/crm/bunch-crm-785fd2f8.json",
         "projects/crm/bytepaper-cbf0d470.json",
         "projects/crm/pipeliner-crm-6a48a383.json",
         "projects/crm/salesforce-6268792d.json",
         "projects/crm/vinsolutions-connect-crm-06bac125.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/crm/archiz-crm-3b56403d.json",
+        "projects/crm/aurea-crm-2db99d1d.json",
+        "projects/crm/pipedrive-crm-4a41bd76.json"
       ],
       "status": "ready_to_commit"
     }
