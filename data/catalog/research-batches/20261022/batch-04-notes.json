@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T11:54:19.511897+00:00",
+  "updated_at": "2026-10-22T12:02:44.408937+00:00",
   "assigned": 204,
-  "completed_count": 30,
+  "completed_count": 32,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -36,9 +36,11 @@
     "projects/help-desk/hesk-c56a70fb.json",
     "projects/help-desk/jitbit-helpdesk-a221531f.json",
     "projects/help-desk/kayako-4565eb5f.json",
-    "projects/help-desk/kustomer-1a7d26c7.json"
+    "projects/help-desk/kustomer-1a7d26c7.json",
+    "projects/help-desk/nateq-08764ba5.json",
+    "projects/help-desk/otrs-aea4c09a.json"
   ],
-  "incomplete_count": 174,
+  "incomplete_count": 172,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -50,8 +52,6 @@
     "projects/help-desk/freshdesk-2ae83506.json",
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
-    "projects/help-desk/nateq-08764ba5.json",
-    "projects/help-desk/otrs-aea4c09a.json",
     "projects/help-desk/pylon-d7251920.json",
     "projects/help-desk/reamaze-31855c4f.json",
     "projects/help-desk/replium-693b7537.json",
@@ -479,6 +479,16 @@
           "research_notes_en": "August2026 broaderFreddyForConversations article appliesOmni/chat/sales;24hour sessions,previewcharges,auto-recharge andself-service nohandoff conditions cannot be blindlyappliedto72hour Freshdesk EmailAI."
         }
       ]
+    },
+    {
+      "project": "projects/help-desk/lemtalk-c64ca909.json",
+      "status": "research_incomplete",
+      "observed": "Official lemtalk.com home/pricing unavailable in public reader; ordinary HTTPS homepage fails SSL UNEXPECTED_EOF. Official-domain search returned no usable current pages. Third-party old feature/price lists not adopted; no TLS bypass. Record unchanged and not counted complete."
+    },
+    {
+      "project": "projects/help-desk/max-helpdesk-a5eba455.json",
+      "status": "research_incomplete",
+      "observed": "Assigned desk.maxhelpchat.com returned HTTP200 with empty title/newline text; public reader inaccessible. Apex maxhelpchat.com is a Max HelpChat live-chat product, not evidence of current Max HelpDesk feature/price identity. Old homepage has unrelated language link/template text. Record unchanged and not counted complete; no domain/product substitution."
     }
   ],
   "verification": [
@@ -574,6 +584,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch30 completed,174 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch32 completed,172 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -672,10 +692,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "790c3dd",
       "completed": [
         "projects/help-desk/kayako-4565eb5f.json",
         "projects/help-desk/kustomer-1a7d26c7.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/nateq-08764ba5.json",
+        "projects/help-desk/otrs-aea4c09a.json"
       ],
       "status": "ready_to_commit"
     }
