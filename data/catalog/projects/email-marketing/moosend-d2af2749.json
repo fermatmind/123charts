@@ -331,6 +331,18 @@
       "excerpt_sha256": "07ef473f8609ea733a04745e9c18f604efc68491355fbdd169ea38b9a3ef5af6",
       "verification": "directory_reported",
       "transport": "public_web_reader"
+    },
+    {
+      "id": "community-partial-official",
+      "type": "official_documentation",
+      "site": "Moosend",
+      "title": "Moosend Pricing",
+      "url": "https://moosend.com/pricing/",
+      "read_at": "2026-10-22T16:07:43.386736Z",
+      "excerpt_sha256": "fbc930c0e19a55e66e343d0c102de90a898fc9f2e0437352d786e338f85b14bc",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Previously read partial official evidence only. Does not establish complete operational research; community gap and unknown fields retained."
     }
   ],
   "official_check": {
@@ -350,5 +362,21 @@
     "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
     "General feature explanations describe terms, not product-specific plan limits or implementation.",
     "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+  ],
+  "community_follow_up": {
+    "status": "needs_community_input",
+    "reason_en": "Pricing readable, but required official workflow documentation repeatedly returned 502/timeouts in web reader. Normal HTTPS curl returned 200 with a generic Moosend help shell, without the requested article text; not treated as a successful article read. Python urllib separately failed local CA verification and no TLS verification was bypassed. Search extracts were discovery only.",
+    "reason_zh": "价格可读，操作文档超时或502；普通HTTPS仅读到帮助壳，另一次请求证书校验失败，未绕过TLS。",
+    "missing_information_en": [
+      "Current official operational documentation and a reproducible core workflow.",
+      "Current service identity, plan conditions, failure handling and data-retention details sufficient to resolve the recorded gaps."
+    ],
+    "missing_information_zh": [
+      "当前官方操作文档及可复核的核心工作流。",
+      "足以解决已记录缺口的当前服务身份、套餐条件、失败处理及数据保留说明。"
+    ],
+    "attempted_urls": ["https://moosend.com/", "https://moosend.com/pricing/"],
+    "observed_at": "2026-10-22T16:07:43.386736Z",
+    "source_refs": ["community-partial-official"]
+  }
 }
