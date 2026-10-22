@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T12:18:04.351861+00:00",
+  "updated_at": "2026-10-22T12:41:15.380100+00:00",
   "status": "in_progress",
-  "completed_count": 42,
+  "completed_count": 46,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -46,9 +46,13 @@
     "projects/marketing-automation/moengage-503b6470.json",
     "projects/marketing-automation/netcore-8723c7ab.json",
     "projects/marketing-automation/omnisend-c5c1ed4f.json",
-    "projects/marketing-automation/ontraport-f023b750.json"
+    "projects/marketing-automation/ontraport-f023b750.json",
+    "projects/marketing-automation/ortto-4c06a567.json",
+    "projects/marketing-automation/outboundengine-24d98884.json",
+    "projects/marketing-automation/salesforce-marketing-cloud-account-engagement-formerly--386e3a8c.json",
+    "projects/marketing-automation/salesmanago-75557c66.json"
   ],
-  "remaining_count": 159,
+  "remaining_count": 155,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -58,10 +62,6 @@
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
-    "projects/marketing-automation/ortto-4c06a567.json",
-    "projects/marketing-automation/outboundengine-24d98884.json",
-    "projects/marketing-automation/salesforce-marketing-cloud-account-engagement-formerly--386e3a8c.json",
-    "projects/marketing-automation/salesmanago-75557c66.json",
     "projects/social-media/blacktwist-13757d5a.json",
     "projects/social-media/contentstudio-164d0918.json",
     "projects/social-media/curatebase-7cc6bd94.json",
@@ -210,8 +210,8 @@
     "projects/ai-images/thumbmagic-7fe20222.json",
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
-  "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/ortto-4c06a567.json",
+  "current_category": "social-media",
+  "next_project": "projects/social-media/blacktwist-13757d5a.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -352,6 +352,24 @@
         "https://cedocs.netcorecloud.com/"
       ],
       "resolution": "Original website and documentation redirect to netcore.ai; genuine official URLs preserved. Full validator still stops at the earlier Benchmark mismatch. No broader PASS claim."
+    },
+    {
+      "project": "salesforce-marketing-cloud-account-engagement-formerly--386e3a8c",
+      "actual_official_documentation_domain": "salesforce.com",
+      "vendor_links_read": [
+        "https://www.pardot.com/",
+        "https://www.salesforce.com/marketing/b2b-automation/pricing/"
+      ],
+      "resolution": "Verified vendor redirect/rebrand; genuine current official URLs retained, legacy record identity preserved. Shared validator unchanged; no full PASS claim."
+    },
+    {
+      "project": "salesmanago-75557c66",
+      "actual_official_documentation_domain": "manago.ai",
+      "vendor_links_read": [
+        "https://www.salesmanago.com/",
+        "https://manago.ai/brand-story"
+      ],
+      "resolution": "Verified vendor redirect/rebrand; genuine current official URLs retained, legacy record identity preserved. Shared validator unchanged; no full PASS claim."
     }
   ],
   "validation": [
@@ -580,6 +598,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-08",
+      "completed_projects": 46,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 46 drafts; scope, draft states, source/pricing types, actual excerpt hashes, recursive references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark official helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; authentic URLs retained, shared validator unchanged"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -632,6 +672,11 @@
       "commit": "9484f8d",
       "completed_count": 39,
       "scope": "Marketing 360, MoEngage; current migrated documentation and prospective/version constraints"
+    },
+    {
+      "commit": "bcfe8bf",
+      "completed_count": 42,
+      "scope": "Netcore, Omnisend, Ontraport; migrated documentation and current-package constraints"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -650,8 +695,13 @@
     },
     "marketing-automation": {
       "assigned": 27,
-      "completed": 21,
+      "completed": 25,
       "uncompleted_with_source_gaps": 2,
+      "status": "source_gaps_remain"
+    },
+    "social-media": {
+      "assigned": 24,
+      "completed": 0,
       "status": "in_progress"
     }
   },
@@ -741,6 +791,22 @@
     {
       "project": "ontraport-f023b750",
       "note": "Actual trigger/goal scopes, multi-position contacts, End/Exit and occupied-node edit effects read. Public pricing body gives trial/term rules but no numerical amounts; ordinary verified HTTPS returned 200 and extracted body also lacks amounts. No search-snippet plan prices adopted. Page Last updated dates varied across reads; no author/date/cause inference based on those labels."
+    },
+    {
+      "project": "ortto-4c06a567",
+      "note": "Current pricing target 404; actual billing/trial originals read. Retry table includes initial attempt while prose says retries; explicit conflict retained. Pause clocks continue. No actions executed."
+    },
+    {
+      "project": "outboundengine-24d98884",
+      "note": "Web pricing timed out; ordinary HTTPS 200 actual pricing text read and hashed. Current initial 12-month term retained. Contact activation, industry duplicate and managed-draft behavior read in official help."
+    },
+    {
+      "project": "salesforce-marketing-cloud-account-engagement-formerly--386e3a8c",
+      "note": "Actual English Help/Trailhead bodies read after long navigation; timezone/date-specific pause FAQ unavailable and ordinary HTTPS returned generic shell. No claims sourced solely to shell or search snippets. Account Engagement separated from Marketing Cloud Next and other journey engines."
+    },
+    {
+      "project": "salesmanago-75557c66",
+      "note": "Current Manago AI brand story, pricing and migrated operational docs read. Old workflow index inaccessible but current specific articles readable through ordinary public reader; no 403/429 bypass. Pricing active-contact consent versus purchase/cart criteria conflict retained. Existing-participant dialog image options unverified; test requires activation."
     }
   ]
 }
