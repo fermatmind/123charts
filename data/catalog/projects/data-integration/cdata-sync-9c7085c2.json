@@ -10,186 +10,136 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "CData Sync is a product in the Data integration category. Its directory profile covers Data Transformation, Data Extraction, API Integration, Master Data Management, Metadata Management, Compliance Tracking, Data Integration, Data Analysis.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $7999.0. Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: convert data into a required format or structure; combine information from connected sources. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "CData Sync 属于数据集成软件。第三方资料列出的功能包括数据转换、数据提取、API 集成、主数据管理、元数据管理、合规事项跟踪、数据集成、数据分析。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $7999.0. 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：将数据转换为所需格式或结构；整合来自已连接数据源的信息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "CData Sync replicates data from configured sources into databases, warehouses and other supported destinations. Its execution model is a job containing source and destination connections plus table-level tasks. After an initial load, supported sources can use incremental checks or change-data capture rather than repeat the entire source read.\n\nSync can run in customer infrastructure, cloud infrastructure or the vendor’s Sync Cloud offering. Those deployment choices and commercial entitlements are separate. This profile focuses on Sync, not the wider CData catalog of drivers, API products or other integration services.",
+  "description_zh": "CData Sync 将配置好的源数据复制到数据库、仓库及其他受支持目标。执行模型是包含源和目标连接、以及表级 task 的 job。初次加载后，支持的源可采用增量检查或变更数据捕获，避免每次读取全部源数据。\n\nSync 可运行在客户基础设施、云基础设施或厂商 Sync Cloud 中，部署位置与商业权限分别决定。本文聚焦 Sync，不把 CData 更广的驱动、API 产品及其他集成服务混入同一档案。",
   "core_features": [
     {
-      "name_en": "Data Transformation",
-      "name_zh": "数据转换",
-      "explanation_en": "Convert data into a required format or structure.",
-      "explanation_zh": "将数据转换为所需格式或结构。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Job and table-task replication",
+      "name_zh": "Job 与表任务复制",
+      "explanation_en": "Configure source/destination connections and tasks within a scheduled job.",
+      "explanation_zh": "在计划 job 中配置源、目标连接与任务。",
+      "explanation_scope": "product_specific",
+      "source_ref": "jobs",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Data Extraction",
-      "name_zh": "数据提取",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Incremental replication",
+      "name_zh": "增量复制",
+      "explanation_en": "Use a supported increasing check column or log-based CDC after initial loading.",
+      "explanation_zh": "初次加载后，使用受支持递增检查列或基于日志的 CDC。",
+      "explanation_scope": "product_specific",
+      "source_ref": "features",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "API Integration",
-      "name_zh": "API 集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Master Data Management",
-      "name_zh": "主数据管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Metadata Management",
-      "name_zh": "元数据管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Compliance Tracking",
-      "name_zh": "合规事项跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Integration",
-      "name_zh": "数据集成",
-      "explanation_en": "Combine information from connected sources.",
-      "explanation_zh": "整合来自已连接数据源的信息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Data Analysis",
-      "name_zh": "数据分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Task-level retry and run history",
+      "name_zh": "任务重试与运行历史",
+      "explanation_en": "Inspect per-run results and optionally retry failed tasks once.",
+      "explanation_zh": "检查逐次结果，并可选对失败任务重试一次。",
+      "explanation_scope": "product_specific",
+      "source_ref": "logs",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Convert data into a required format or structure",
-      "Combine information from connected sources"
+      "Replicate a customer table into a test warehouse with an explicit incremental check.",
+      "Inspect failed table tasks and reconcile destination state after a rerun."
     ],
-    "zh": ["将数据转换为所需格式或结构", "整合来自已连接数据源的信息"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": [
+      "用明确增量检查将客户表复制到测试仓库。",
+      "检查失败表任务，并在重跑后对照目标状态。"
+    ],
+    "source_refs": ["features", "logs"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $7999.0. Offers Custom plan.",
-      "zh": "未提供免费试用 起价为 $7999.0. 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Data integration engineer",
+      "Analytics pipeline maintainer",
+      "Self-hosted Sync administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "docs"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose installed or managed deployment and obtain the matching license.",
+        "zh": "选择安装或托管部署，取得对应许可。",
+        "source_refs": ["docs", "license"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Configure a source and destination, then one table task in a job.",
+        "zh": "配置源和目标，再在 job 中加入一个表任务。",
+        "source_refs": ["docs", "jobs"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Verify initial/incremental results, schema handling and failed-task history.",
+        "zh": "核对初次与增量结果、schema 处理及失败任务历史。",
+        "source_refs": ["features", "logs"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Standard pricing has a processed-row band; unlimited rows require a separately specified configuration.",
+        "zh": "Standard 有处理行档位，无限行需另外明确配置。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "One automatic retry does not replace a permanent-error repair process.",
+        "zh": "一次自动重试不能代替永久错误修复。",
+        "source_refs": ["logs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "classification": "proprietary_self_hosted_EULA_separate_Cloud_agreement",
+    "name": "CData Sync End User Agreement",
+    "url": "https://docs.sync.cdata.com/26.3/en/legal/software-license",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $7999.0. Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $7999.0. 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "annual_connection_and_processed_row_band_or_custom",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing"],
+    "checked_at": "2026-10-22T10:24:01.836787Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Standard annual license with connections and monthly processed-row band; custom and cloud purchase paths differ."
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does CData Sync do?",
-      "question_zh": "CData Sync 用来做什么？",
-      "answer_en": "CData Sync is a product in the Data integration category. Its directory profile covers Data Transformation, Data Extraction, API Integration, Master Data Management, Metadata Management, Compliance Tracking, Data Integration, Data Analysis.",
-      "answer_zh": "CData Sync 属于数据集成软件。第三方资料列出的功能包括数据转换、数据提取、API 集成、主数据管理、元数据管理、合规事项跟踪、数据集成、数据分析。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Data Transformation, Data Extraction, API Integration, Master Data Management, Metadata Management, Compliance Tracking, Data Integration, Data Analysis",
-      "answer_zh": "数据转换、数据提取、API 集成、主数据管理、元数据管理、合规事项跟踪、数据集成、数据分析"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -199,25 +149,215 @@
       "read_at": "2026-10-22T08:40:20.781Z",
       "excerpt_sha256": "8dba63cfe79000a7ad69fb5e4d779e06453ebd7090ea3882894edae99985f108",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "CData Sync",
+      "title": "Continuous, Flexible Data Replication at Scale | CData Sync",
+      "url": "https://www.cdata.com/sync/",
+      "read_at": "2026-10-22T10:24:01.836787Z",
+      "excerpt_sha256": "7a98651f5fdb91c6356828a8c74f7653962c848b2af42b4f06ed347f6d9a4b14",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "CData Sync replication, reverse-ETL and deployment positioning distinguished from the wider CData product family."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CData Sync",
+      "title": "Automated Continuous Data Replication | CData Software",
+      "url": "https://www.cdata.com/sync/pricing/",
+      "read_at": "2026-10-22T10:24:04.738358Z",
+      "excerpt_sha256": "c61580b873cb63e8365ce788f7dbd56aff9c863ecd0cb7f4a8e678623412ee70",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Standard $7,999/year includes five standard connections and 100M processed rows/month; unlimited/custom options are separate."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "CData Sync",
+      "title": "Getting Started - CData Sync Documentation",
+      "url": "https://docs.sync.cdata.com/26.3/en/getting-started/getting-started",
+      "read_at": "2026-10-22T10:24:45.151160Z",
+      "excerpt_sha256": "dadf3c20d9a911b635bb143869a852266389476534a2005d906e501a75615602",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Installed Sync setup, license activation, connections, jobs and table tasks read."
+    },
+    {
+      "id": "features",
+      "type": "official_documentation",
+      "site": "CData Sync",
+      "title": "Features - CData Sync Documentation",
+      "url": "https://docs.sync.cdata.com/26.3/en/getting-started/features",
+      "read_at": "2026-10-22T10:24:48.834788Z",
+      "excerpt_sha256": "b0f48ea195f1d6dc32f90038b801f81f2b4e63f14192447b73e8cb64f54c0924",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Incremental check column/CDC, batch behavior and retry feature descriptions read."
+    },
+    {
+      "id": "jobs",
+      "type": "official_documentation",
+      "site": "CData Sync",
+      "title": "Jobs - CData Sync Documentation",
+      "url": "https://docs.sync.cdata.com/26.3/en/jobs/jobs",
+      "read_at": "2026-10-22T10:26:02.425425Z",
+      "excerpt_sha256": "2a2e9fffe611d7c47a79462bf7e8b208a9950113fe2fd88b1ef37be0e4531c8e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Job settings, per-table tasks, schedules, history and before/after events reviewed."
+    },
+    {
+      "id": "logs",
+      "type": "official_documentation",
+      "site": "CData Sync",
+      "title": "Logs and History - CData Sync Documentation",
+      "url": "https://docs.sync.cdata.com/26.3/en/jobs/logging-history",
+      "read_at": "2026-10-22T10:26:08.473488Z",
+      "excerpt_sha256": "5d57b0ade7148592aea3e5dd6ba785df633a72bcc2f0d786348d3479d816f3ab",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "One retry of failed tasks, source/destination/engine logs and raw-data verbosity caveat reviewed."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "CData Sync",
+      "title": "CData Sync End User Agreement - CData Sync Documentation",
+      "url": "https://docs.sync.cdata.com/26.3/en/legal/software-license",
+      "read_at": "2026-10-22T10:26:05.571851Z",
+      "excerpt_sha256": "cc7a794d756280a39d3016277c2cd9e519363c9c38f1e4f378a8f0d5792bc950",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "June 2026 proprietary self-hosted EULA distinguishes Cloud agreement and disallows production use under evaluation license."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:26:08.473488Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
+  ],
+  "description_source_refs": ["docs", "features", "home"],
+  "profile": {
+    "sections": [
+      {
+        "id": "job",
+        "title_en": "A job groups a specific replication workload",
+        "title_zh": "Job 组织具体复制负载",
+        "en": "The getting-started guide defines connections for source and destination and tasks for table data flows. Job settings add scheduling, incremental behavior, notifications and optional events. For a proposed evaluation, start with a single source customer table and a test destination schema; avoid mixing several unrelated tables before understanding one result. Record the source identifier and expected update rule. A valid connection test only checks an access path, not that the selected table task has the desired business semantics.",
+        "zh": "入门指南区分源与目标连接，以及控制表数据流的 task。Job 设置再加入调度、增量行为、通知及可选事件。建议先用一张源客户表和测试目标 schema，理解一项结果后再组合多张无关表。应记录源标识与预期更新规则。连接测试通过只能说明一条访问路径可用，不能证明所选表任务符合业务语义。",
+        "source_refs": ["docs", "jobs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "changes",
+        "title_en": "Check-column and CDC strategies require different source setup",
+        "title_zh": "检查列与 CDC 需要不同的源配置",
+        "en": "An incremental check column must increase when a record is inserted or updated; a timestamp or numeric revision can serve that purpose when correctly maintained. CDC instead consumes supported source logs and remembers log position. For an illustrative customer record, change its name and check value, then confirm the destination update. Separately test an update where the check value does not change, and a delete if the chosen strategy supports it. The presence of “incremental” in a feature list does not establish equivalent deletion handling for every source.",
+        "zh": "增量检查列需在记录插入或更新时递增，正确维护的时间戳或数字版本可承担此职责。CDC 则消费受支持的源日志并保存日志位置。以客户记录为例，可修改姓名及检查值，再核对目标更新；还应单独测试检查值不变的更新，以及所选策略支持时的删除。功能表出现“增量”，不代表每种源都以相同方式处理删除。",
+        "source_refs": ["features"],
+        "evidence_type": "documented_model_with_hypothetical_evaluation"
+      },
+      {
+        "id": "schema",
+        "title_en": "Metadata caching and schema evolution are operational choices",
+        "title_zh": "元数据缓存与结构演变是运营选择",
+        "en": "The features guide describes metadata caching per supported connector, with refresh intervals. Cached metadata may need explicit refresh after a structural change. A pipeline owner should evaluate adding a column, changing a type and modifying a destination mapping on a test schema before relying on automatic behavior. Keep the difference between schema discovery and successful data loading visible in acceptance. No schema migration was executed here, and the platform feature description is not a guarantee for every connector/database combination.",
+        "zh": "功能指南描述受支持连接器的元数据缓存及刷新间隔，结构变化后可能需要明确刷新。流程负责人应在测试 schema 中评估新增列、类型变化及目标映射修改，再依赖自动行为。验收中应区分成功发现 schema 与成功加载数据。本文未执行结构迁移，平台功能描述也不能保证所有连接器和数据库组合行为相同。",
+        "source_refs": ["features"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "recovery",
+        "title_en": "Retry is limited and job success needs a record check",
+        "title_zh": "重试有范围，任务成功还需核对记录",
+        "en": "Automatic Job Retry reruns only failed tasks and makes one retry attempt, excluding cancelled jobs. Job History shows status, affected records and runtime. Source, destination and replication-engine logs help locate a failure. A partial run may already have committed work, so a retry policy should be checked alongside destination identifiers and data consistency rather than treated as an all-or-nothing transaction. Our suggested acceptance compares one normal load, an interrupted load and a subsequent resumed result; none was performed here.",
+        "zh": "Automatic Job Retry 只重新运行失败 task，尝试一次，取消的 job 不在范围内。Job History 提供状态、影响记录及运行时间；源、目标和复制引擎日志有助定位问题。部分运行可能已经提交工作，因此应结合目标标识及数据一致性核对重试，不能把整个 job 当全有或全无事务。建议比较正常加载、中断加载及之后恢复结果，本文未实际执行。",
+        "source_refs": ["logs", "features"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "logging",
+        "title_en": "Detailed transfer logs can include the data itself",
+        "title_zh": "详细传输日志可能包含业务数据",
+        "en": "Info is the documented default logging level. Transfer and Verbose include increasingly detailed communication, and the guide warns that raw transferred data can be exposed even when connection passwords are masked. Choose a temporary diagnostic level appropriate for the incident, restrict access and review a log before sharing it. Logs are evidence for investigating the job, not proof that the analytical model is complete or the business application accepted every intended change.",
+        "zh": "文档默认日志级别为 Info；Transfer、Verbose 包含更多通信细节，指南警告，即使连接密码被掩码，原始传输数据仍可能暴露。排障时应选择适当临时级别、限制访问，并在分享前检查日志。日志可用于调查 job，但不能证明分析模型完整或业务应用接受了每项预期变化。",
+        "source_refs": ["logs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "pricing",
+        "title_en": "Read row bands alongside connection pricing",
+        "title_zh": "连接价格也要配合行数档位理解",
+        "en": "The pricing table lists Standard at $7,999/year, up to five standard connections and 100 million processed rows/month. Unlimited rows, premium connectors, CDC, transformations and some access/API controls are listed in custom configurations. This is more specific than the homepage’s broad connection-based/unlimited-movement language, so the Standard row band must remain visible. Cloud-marketplace hourly options and BYOL are distinct purchase paths, not a direct monthly equivalent. Confirm how processed rows, repeat loads, destinations and connectors count in the quote; no universal overage rate was established.",
+        "zh": "定价表列出 Standard 每年 $7,999，最多五个标准连接、每月一亿处理行；无限行、高级连接器、CDC、转换及部分访问／API 控制列入定制配置。这比首页概括的连接计价及无限移动更具体，因此不能隐去 Standard 行数档位。云市场按小时方案与 BYOL 是不同购买路径，不能直接当作统一月费。应在报价中确认处理行、重复加载、目标和连接器如何计数，本次未确认统一超额费率。",
+        "source_refs": ["pricing", "home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Installed software and managed Cloud use different agreements",
+        "title_zh": "安装软件与托管 Cloud 适用不同协议",
+        "en": "The official EULA describes Sync Self-Hosted as proprietary licensed software and points Sync Cloud to a separate service agreement. It states that evaluation licenses must not be used in production and that quote-specific terms and limitations matter. Installing on your own server is therefore not a free production or source-redistribution entitlement. Establish the exact deployment, license term and customer-facing use case before purchasing. This profile records the documented boundary, not approval of a particular contract interpretation.",
+        "zh": "官方 EULA 将 Sync Self-Hosted 描述为专有许可软件，Sync Cloud 另适用服务协议；评估许可不得用于生产，具体报价条款及限制也很重要。因此安装到自己的服务器，不等于获得免费生产或源码分发权限。购买前应明确部署、许可期限及面向客户的用途。本文记录文档边界，不替具体合同解释作批准。",
+        "source_refs": ["license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Select Sync for a maintained replication pipeline",
+        "title_zh": "选择 Sync 时也要安排复制维护",
+        "en": "CData Sync merits evaluation for teams replicating SaaS or database data into a controlled destination with explicit incremental behavior. It is a weaker fit if an unverified generic connector label is the only basis for a required endpoint, CDC mode or reverse-ETL operation. Assign someone to check source quotas, job history, schema changes and destination records. No throughput, cluster failover, backup restoration, interface localization or cost advantage was measured for this profile.",
+        "zh": "当团队希望把 SaaS 或数据库数据复制到可控目标，并明确增量行为时，CData Sync 值得评估。若所需端点、CDC 模式或反向 ETL 操作仅有未经核对的通用连接器标签支撑，则适用性较弱。应安排人员检查源额度、运行历史、结构变化与目标记录。本文未测吞吐、集群故障转移、备份恢复、界面本地化或费用优势。",
+        "source_refs": ["home", "features", "jobs"],
+        "evidence_type": "editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CData Sync: Replication Jobs, Incremental Loads, Limits and Pricing",
+    "title_zh": "CData Sync：复制 Job、增量加载、限制与定价",
+    "description_en": "Understand CData Sync jobs, check-column versus CDC replication, task retry, raw-data logs and Standard connection/row limits.",
+    "description_zh": "理解 CData Sync Job、检查列与 CDC 复制、任务重试、原始数据日志及 Standard 连接与行数限制。",
+    "primary_intent": "Evaluate CData Sync replication and the exact licensed configuration.",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Exact connector/CDC versions, processed-row counting contract, cloud hosting price, production recovery, UI languages and regional purchasing remain unverified or untested.",
+      "zh": "连接器／CDC 具体版本、合同处理行计数、云托管价格、生产恢复、界面语言及地区购买条件仍未核实或实测。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "Homepage connection/unlimited language must not override the explicit Standard processed-row limit.",
+      "zh": "首页连接计价／无限概括不能覆盖 Standard 明确处理行限制。",
+      "source_refs": ["home", "pricing"],
+      "evidence_type": "not_verified_or_not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

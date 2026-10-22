@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T10:19:00.073082+00:00",
+  "updated_at": "2026-10-22T10:30:23.114621+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 7,
+  "completed_count": 11,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -12,15 +12,15 @@
     "projects/workflow-automation/jitterbit-9362d1e4.json",
     "projects/workflow-automation/prismatic-f4807c51.json",
     "projects/workflow-automation/snaplogic-dbbf47df.json",
-    "projects/workflow-automation/tray-io-f7fac30c.json"
-  ],
-  "remaining_count": 192,
-  "remaining_projects": [
-    "projects/data-integration/ainsys-7195d835.json",
+    "projects/workflow-automation/tray-io-f7fac30c.json",
     "projects/data-integration/airbyte-46abe2cb.json",
     "projects/data-integration/ascend-c6d6e3a0.json",
     "projects/data-integration/cdata-sync-9c7085c2.json",
-    "projects/data-integration/cloverdx-4fdf339d.json",
+    "projects/data-integration/cloverdx-4fdf339d.json"
+  ],
+  "remaining_count": 188,
+  "remaining_projects": [
+    "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/etlworks-integrator-4f213c68.json",
     "projects/data-integration/flatly-67ad9bbe.json",
@@ -221,6 +221,10 @@
     {
       "project": "Integrately",
       "detail": "Rounded retry timing versus detailed 10.5-hour schedule; no behavior measured."
+    },
+    {
+      "project": "CData Sync",
+      "detail": "Homepage broad connection/unlimited copy narrowed by explicit Standard 100M processed rows/month pricing band."
     }
   ],
   "verification": [
@@ -230,7 +234,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 10 researched globally including 3 baseline; shared summaries deferred to coordinator"
+      "result": "passed: 14 primary-source researched globally (3 baseline + 11 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -242,13 +246,19 @@
       "commit": "9b42dc6",
       "completed_count": 3,
       "scope": "Activepieces, Cyclr, Integrately; pushed to assigned branch"
+    },
+    {
+      "commit": "fa93925",
+      "completed_count": 7,
+      "scope": "All assigned workflow-automation records; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "data-integration (18 assigned records)"
+    "next": "Etlworks Integrator",
+    "data-integration": "4 of 18 complete, 2 incomplete with evidence gaps, 12 not yet processed"
   },
   "identity_changes": [
     {
@@ -257,9 +267,33 @@
       "old_domain": "tray.io",
       "current_domain": "tray.ai",
       "evidence": "Public reader requested https://tray.io/ and explicitly redirected to https://tray.ai/; no other tray.ai identity in baseline catalog."
+    },
+    {
+      "project": "Airbyte",
+      "slug_preserved": "airbyte-46abe2cb",
+      "old_domain": "airbyte.io",
+      "current_domain": "airbyte.com",
+      "evidence": "Explicit public-reader homepage redirect; source links and current docs on airbyte.com."
     }
   ],
   "content_corrections": [
     "Cyclr versioning section narrowed to documented behavior for new installations; automatic updating of already installed Cycles is not claimed."
+  ],
+  "blocked_projects": [
+    {
+      "project_path": "projects/data-integration/ainsys-7195d835.json",
+      "reason": "Official homepage and pricing both returned HTTP 403. No bypass attempted. Not counted complete."
+    },
+    {
+      "project_path": "projects/data-integration/dexi-io-da3a3a46.json",
+      "reason": "Dexi-to-Mozenda notice, cross-domain pricing redirect and anomalous gambling links on official homepage. Current product identity/operations require corroboration. Not counted complete."
+    }
+  ],
+  "availability_updates": [
+    {
+      "project": "Ascend",
+      "status": "official_wind_down_notice",
+      "scope": "Homepage and former pricing page announce winding down. Historical capabilities only; no new-current-product claim or final cessation date."
+    }
   ]
 }
