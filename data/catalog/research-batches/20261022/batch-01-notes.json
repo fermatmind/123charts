@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T13:39:31.983953+00:00",
+  "updated_at": "2026-10-22T13:57:16.487077+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 64,
+  "completed_count": 69,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -69,9 +69,14 @@
     "projects/databases/mysql-e6032962.json",
     "projects/databases/oracle-database-2e28444d.json",
     "projects/databases/pgdash-8025223b.json",
-    "projects/databases/pinecone-7ac816b5.json"
+    "projects/databases/pinecone-7ac816b5.json",
+    "projects/databases/prisma-a31a52f0.json",
+    "projects/databases/quintadb-97c5a126.json",
+    "projects/databases/scalegrid-ad20379c.json",
+    "projects/databases/tadabase-a072eead.json",
+    "projects/databases/teable-bc129efc.json"
   ],
-  "remaining_count": 135,
+  "remaining_count": 130,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -91,11 +96,6 @@
     "projects/ide/eclipse-che-06fa6676.json",
     "projects/databases/faunadb-10fce5b0.json",
     "projects/databases/harperdb-cloud-7836805e.json",
-    "projects/databases/prisma-a31a52f0.json",
-    "projects/databases/quintadb-97c5a126.json",
-    "projects/databases/scalegrid-ad20379c.json",
-    "projects/databases/tadabase-a072eead.json",
-    "projects/databases/teable-bc129efc.json",
     "projects/software-testing/blazemeter-68e03014.json",
     "projects/software-testing/browserstack-1cef6efc.json",
     "projects/software-testing/cloudqa-813805b6.json",
@@ -397,20 +397,40 @@
     {
       "project": "Oracle AI Database",
       "detail": "26aiFreecappedandFreeUseTermsread;Enterprisefree downloadfornonproductiondistinct.Actualpaidpricingunknown.Linuxinstall/Windowsconnectionguidesnotgeneralized;DataPumplogicalexportsnotphysicalrecovery."
+    },
+    {
+      "project": "Prisma",
+      "detail": "ORM 8 is release candidate; engine coverage differs from ORM 7. Homepage roadmap and detailed background-work limits qualified. Actual license not read."
+    },
+    {
+      "project": "QuintaDB",
+      "detail": "Own-record access requires configuration/ownership; linked field-access article410, portal guide itself read. Legacy default-password wording not onboarding advice."
+    },
+    {
+      "project": "ScaleGrid",
+      "detail": "Cluster configurator amounts unavailable, exact quote not invented; older team-account destructive prerequisite needs current provider clarification."
+    },
+    {
+      "project": "Tadabase",
+      "detail": "Classic trial/pricing kept distinct from newer cross-domain AI banner. Standard and staged recovery behavior/permissions differ."
+    },
+    {
+      "project": "Teable",
+      "detail": "Viewer export/invite rights and Manager exemption preserved; Cloud annual display separate from self-host instance seats. Actual open-source license not read."
     }
   ],
   "verification": [
     {
       "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed:7tests"
+      "result": "passed:7 tests"
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000records/67globalresearched(3baseline+64assigned)/0untranslatedlabels;structure/referencesonly"
+      "result": "passed:1000 records/72 global researched (3 baseline +69 assigned)/0 untranslated labels; structure/references only"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
-      "result": "passed;ownershipchecked;node_modulessymlinkremovedbeforecommit;noservices/database/deployment"
+      "result": "passed; ownership checked; temporary node_modules symlink removed before commit; no services/database/deployment"
     }
   ],
   "checkpoints": [
@@ -513,18 +533,23 @@
       "commit": "c526a17",
       "completed_count": 61,
       "detail": "pgDash/Pineconecomplete;7tests/64globalresearched/format/ownershipdiffpassed; pushedownbranch."
+    },
+    {
+      "commit": "225eb90",
+      "completed_count": 64,
+      "scope": "IRIS, MySQL and Oracle edition, migration and recovery boundaries; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
+    "next": "software-testing assigned records",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
-    "databases": "8of15complete;Fauna/Harperinvestigatedincomplete;5notyetinvestigated."
+    "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved"
   },
   "identity_changes": [
     {
