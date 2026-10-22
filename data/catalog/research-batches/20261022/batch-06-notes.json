@@ -67,13 +67,15 @@
     "excluded_from_ownership": true,
     "overlapping_in_progress_paths": []
   },
-  "completed_paths": ["projects/monitoring/xitoring-eeeca77f.json"],
-  "remaining_paths": [
+  "completed_paths": [
     "projects/monitoring/vrealize-network-insight-4b4b8c8a.json",
+    "projects/monitoring/xitoring-eeeca77f.json",
     "projects/backup/aomei-backupper-dd0b49d6.json",
     "projects/backup/asigra-cloud-backup-0cd2bb27.json",
     "projects/backup/backblaze-405245a2.json",
-    "projects/backup/backupvault-cloud-backup-fed31e63.json",
+    "projects/backup/backupvault-cloud-backup-fed31e63.json"
+  ],
+  "remaining_paths": [
     "projects/backup/bdrshield-d91909da.json",
     "projects/backup/carbonite-cb00102e.json",
     "projects/backup/cloudback-3c2d3032.json",
@@ -136,8 +138,24 @@
       "python_unittest": "7 passed",
       "records_only": "passed; 1000 records, 84 researched including inherited baseline",
       "content_check": "Bilingual facts and source references checked; no hands-on test"
+    },
+    {
+      "scope": "First 6 batch-06 records",
+      "python_unittest": "7 passed",
+      "records_only": "Fails at validate.mjs:166: broadcom.com != vmware.com on VCF official sources",
+      "diagnostic": "Temporary uncommitted diagnostic reports only the two expected Broadcom source URLs; all remaining checks passed. Shared validator unchanged.",
+      "content_check": "English/Chinese facts, conditionals, numeric amounts and source references checked individually.",
+      "diff_check": "passed"
     }
   ],
-  "commits": [],
-  "scope": "Only new batch-06 research; inherited 80 records are excluded from our completion count."
+  "commits": ["6e5db08"],
+  "scope": "Only new batch-06 research; inherited 80 records are excluded from our completion count.",
+  "compatibility_issues": [
+    {
+      "path": "projects/monitoring/vrealize-network-insight-4b4b8c8a.json",
+      "official_cross_domain_sources": ["knowledge.broadcom.com"],
+      "ownership_basis": "Broadcom KB names VMware VCF Operations for Networks and records the vRealize/Aria/VCF naming sequence. Current VMware datasheet carries Broadcom copyright.",
+      "expected_validator_error": "broadcom.com versus vmware.com same-register-domain assertion; real source kept unchanged."
+    }
+  ]
 }
