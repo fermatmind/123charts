@@ -72,7 +72,7 @@
     "projects/time-tracking/trackabi-40d34712.json",
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
-  "completed_count": 11,
+  "completed_count": 19,
   "completed_project_paths": [
     "projects/scheduling/bookinglive-pricing-reviews-and-25f745d4.json",
     "projects/scheduling/bookitlive-e9302186.json",
@@ -84,11 +84,7 @@
     "projects/scheduling/deskflex-d42be1ab.json",
     "projects/scheduling/doodle-e20f5097.json",
     "projects/scheduling/flexbooker-b73dd516.json",
-    "projects/scheduling/jezzam-7962422f.json"
-  ],
-  "remaining_project_paths": [
-    "projects/scheduling/leadmonk-5542fa07.json",
-    "projects/scheduling/meetfox-c4bb6e56.json",
+    "projects/scheduling/jezzam-7962422f.json",
     "projects/scheduling/mytime-40ac91fd.json",
     "projects/scheduling/oncehub-cbb49b2e.json",
     "projects/scheduling/picktime-3db8a2fe.json",
@@ -96,7 +92,11 @@
     "projects/scheduling/setster-a8a476b4.json",
     "projects/scheduling/shore-247a2b62.json",
     "projects/scheduling/sign-in-scheduling-formerly-10to8-655371aa.json",
-    "projects/scheduling/simplybook-me-f651c241.json",
+    "projects/scheduling/simplybook-me-f651c241.json"
+  ],
+  "remaining_project_paths": [
+    "projects/scheduling/leadmonk-5542fa07.json",
+    "projects/scheduling/meetfox-c4bb6e56.json",
     "projects/scheduling/timely-0dc94833.json",
     "projects/video-conferencing/100ms-video-sdk-5d657d38.json",
     "projects/video-conferencing/11sight-519e1abd.json",
@@ -154,21 +154,39 @@
   "validation": {
     "python_unittest": "7 passed",
     "records_only": "Inherited failure before any batch-07 edits: basecamp-help.com != basecamp.com at scripts/catalog/validate.mjs:166. Shared validator and original projects not modified.",
-    "changed_records": "Passed: assigned-only enumeration with unchanged per-record assertions; inherited full-catalog domain issues remain outside ownership.",
+    "changed_records": "Per-record assertions run over assigned paths; migrated Sign In Scheduling expected domain mismatch remains. Prior 68-path pass before that record.",
     "prettier": "Changed JSON formatted",
     "diff_check": "Passed"
   },
   "blockers": [
     {
       "path": "projects/scheduling/leadmonk-5542fa07.json",
-      "reason": "Official homepage returned HTTP 403 through direct public fetch and public web reader; no bypass or further retries; pricing inaccessible. Remains structured_candidate."
+      "reason": "HTTP 403 official homepage; no bypass or additional retries. Pricing inaccessible."
+    },
+    {
+      "path": "projects/scheduling/meetfox-c4bb6e56.json",
+      "reason": "Official root and /en/ return 404; current product/pricing status unresolved. Old indexed blog is not sufficient current authority."
+    },
+    {
+      "path": "projects/scheduling/timely-0dc94833.json",
+      "reason": "Official home/pricing return only iframe shell through direct and public web readers. Search result exposes cached text, but primary-page read remains insufficient; not marked researched."
     }
   ],
   "commits": [
+    "6be495a03c3a36960e77079e675f9ddd0ea86927 data: research DeskFlex Doodle FlexBooker and Jezzam",
     "c06f1ba4aae6f9c460c063ab0272d8a12ccb67ae data: research Bookwhen Booxi Calendar and Calendly",
     "751214bfd17d0035329b06997cd4ab855676aae9 data: record scoped batch validation and inherited catalog issues",
     "3808d509f0d72fc903c9203b313ea55a26f4bb98 data: research BookingLive bookitLive and BookSteam from official sources"
   ],
-  "updated_at": "2026-10-22T14:58:45.237888+00:00",
-  "scope_note": "Original batch-02 baseline completed records are not counted. Draft research only; no main push, publication or deployment."
+  "updated_at": "2026-10-22T15:08:57.280141+00:00",
+  "scope_note": "Original batch-02 baseline completed records are not counted. Draft research only; no main push, publication or deployment.",
+  "source_ownership_exceptions": [
+    {
+      "path": "projects/scheduling/sign-in-scheduling-formerly-10to8-655371aa.json",
+      "original_identity": "10to8.com",
+      "actual_official_domain": "signinapp.com",
+      "basis": "10to8.com redirects to signinapp.com/signinscheduling; official migration page explicitly identifies former 10to8 and legacy login continuity.",
+      "validator_error": "Same-registered-domain assertion rejects official migrated sources. No source URL fabricated and shared validator unchanged."
+    }
+  ]
 }
