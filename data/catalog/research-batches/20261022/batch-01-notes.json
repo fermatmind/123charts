@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T14:58:32.723069+00:00",
+  "updated_at": "2026-10-22T15:05:12.225114+00:00",
   "status": "in_progress",
   "assigned": 140,
-  "completed_count": 87,
+  "completed_count": 90,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
@@ -75,6 +75,9 @@
     "projects/no-code/appy-pie-acc435e9.json",
     "projects/no-code/bubble-a31377aa.json",
     "projects/no-code/glide-1eb7981a.json",
+    "projects/no-code/jestor-37bbc340.json",
+    "projects/no-code/onspace-ai-480bdafc.json",
+    "projects/no-code/quick-base-3e2793fa.json",
     "projects/software-testing/blazemeter-68e03014.json",
     "projects/software-testing/cloudqa-813805b6.json",
     "projects/software-testing/cypress-io-8ab7255e.json",
@@ -94,7 +97,7 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 53,
+  "remaining_count": 50,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -133,10 +136,7 @@
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
     "projects/no-code/checkbox-930acc8a.json",
-    "projects/no-code/jestor-37bbc340.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
-    "projects/no-code/onspace-ai-480bdafc.json",
-    "projects/no-code/quick-base-3e2793fa.json",
     "projects/no-code/skuid-27f544e2.json",
     "projects/no-code/softr-bab26420.json",
     "projects/no-code/thunkable-f8dd9a5a.json",
@@ -411,7 +411,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/90 global researched (3 baseline +87 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/93 global researched (3 baseline +90 assigned)/0 untranslated labels; structure/references only"
     }
   ],
   "checkpoints": [
@@ -554,6 +554,11 @@
       "commit": "92cc8f5",
       "completed_count": 83,
       "scope": "Adalo, altaFlow, Anything; App2.dev/Appenate gaps; pushed"
+    },
+    {
+      "commit": "cce399e",
+      "completed_count": 87,
+      "scope": "AppMySite, Appy Pie, Bubble, Glide Classic; Checkbox gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
@@ -567,7 +572,7 @@
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
     "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
-    "no-code": "7 of18 retained complete; App2.dev, Appenate, Checkbox incomplete;8 not yet investigated."
+    "no-code": "10 of18 retained complete; five incomplete investigated; Softr, Thunkable and Twixl in research."
   },
   "identity_changes": [
     {
@@ -772,6 +777,14 @@
     {
       "project_path": "projects/no-code/checkbox-930acc8a.json",
       "reason": "Official Checkbox.ai homepage now describes an AI legal front door. Its pricing route was inaccessible and no readable deep operational documentation was established by official-domain discovery. Checkbox.com survey pricing is a different product and was excluded. Current fees, workflow permissions, export/recovery and technical limits remain unverified; incomplete, not counted complete."
+    },
+    {
+      "project_path": "projects/no-code/obviously-ai-6c7ff423.json",
+      "reason": "Obviously AI official homepage and pricing were read. Pricing lists a bounded Free offer but has ambiguous training-row versus processing-row limits; icons do not establish every included capability. Both linked help and API documentation were inaccessible, including one normal retry, and official-domain searches produced no readable operational articles. Model evaluation, target leakage, deployment/authentication, monitoring and recovery remain unverified. Not counted complete."
+    },
+    {
+      "project_path": "projects/no-code/skuid-27f544e2.json",
+      "reason": "The legacy Skuid homepage redirects to a Nintex app-development URL that is inaccessible through the public reader; legacy pricing is also inaccessible. Acquisition discovery is not a current product/plan migration contract. Current identity, deep operating documentation, fees and license remain unresolved. No Nintex family entitlement or duplicate identity was inferred; not counted complete."
     }
   ],
   "availability_updates": [
@@ -1194,10 +1207,24 @@
       "excerpt_sha256": "5e2e3ea615e478891740b580f53c873a5faedf21df56750a025cab4ae3cfdbf6",
       "read_at": "2026-10-22T14:51:34.624975+00:00",
       "use": "Official current positioning read; incomplete pricing/technical record, unrelated survey product excluded."
+    },
+    {
+      "capture": "obviously-entry-0",
+      "actual_url": "https://obviously.ai/",
+      "excerpt_sha256": "c6ddd47ac6a94f2173a52a87dc0153db5bd9ff45efb8973e3d9a865c788910c2",
+      "read_at": "2026-10-22T14:59:13.406725+00:00",
+      "use": "Actual official original read; operational documentation inaccessible, incomplete record."
+    },
+    {
+      "capture": "obviously-entry-1",
+      "actual_url": "https://obviously.ai/pricing",
+      "excerpt_sha256": "d21efce7c42f655b3fb1c930619e57bde43e223efc9231f0101ff44aefda4b28",
+      "read_at": "2026-10-22T14:59:13.407974+00:00",
+      "use": "Actual official original read; operational documentation inaccessible, incomplete record."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 53,
+  "retained_remaining_count": 50,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -1236,10 +1263,7 @@
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
     "projects/no-code/checkbox-930acc8a.json",
-    "projects/no-code/jestor-37bbc340.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
-    "projects/no-code/onspace-ai-480bdafc.json",
-    "projects/no-code/quick-base-3e2793fa.json",
     "projects/no-code/skuid-27f544e2.json",
     "projects/no-code/softr-bab26420.json",
     "projects/no-code/thunkable-f8dd9a5a.json",
