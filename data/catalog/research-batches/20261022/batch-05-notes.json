@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 46,
+  "completed_count": 50,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -51,9 +51,13 @@
     "projects/human-resources/resourceinn-c63fff91.json",
     "projects/human-resources/rippling-f83ba09c.json",
     "projects/human-resources/valluva-409014c8.json",
-    "projects/human-resources/workbright-6d1a053d.json"
+    "projects/human-resources/workbright-6d1a053d.json",
+    "projects/payroll/adp-payroll-services-d799e460.json",
+    "projects/payroll/check-stub-generator-2bf2c8ec.json",
+    "projects/payroll/easystaff-payroll-ff1d7b0c.json",
+    "projects/payroll/fingercheck-f53cabaf.json"
   ],
-  "remaining_count": 151,
+  "remaining_count": 147,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
@@ -61,10 +65,6 @@
     "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
     "projects/human-resources/personio-91e7d61b.json",
-    "projects/payroll/adp-payroll-services-d799e460.json",
-    "projects/payroll/check-stub-generator-2bf2c8ec.json",
-    "projects/payroll/easystaff-payroll-ff1d7b0c.json",
-    "projects/payroll/fingercheck-f53cabaf.json",
     "projects/payroll/gusto-1f8d2cf2.json",
     "projects/payroll/justworks-fb09a484.json",
     "projects/payroll/multiplier-85433577.json",
@@ -251,6 +251,18 @@
       "status": "not_counted_complete",
       "url": "https://www.personio.com/",
       "finding_en": "Direct official homepage read returned HTTP429. Stopped that origin; did not bypass or substitute search snippets for a researched profile."
+    },
+    {
+      "slug": "gusto-1f8d2cf2",
+      "status": "not_counted_complete",
+      "url": "https://gusto.com/",
+      "finding_en": "Official homepage direct read returned HTTP403; stopped origin and did not bypass."
+    },
+    {
+      "slug": "onpay-f1f2e940",
+      "status": "not_counted_complete",
+      "url": "https://onpay.com/",
+      "finding_en": "Official homepage direct read returned HTTP403; stopped origin and did not bypass."
     }
   ],
   "notable_findings": [
@@ -337,6 +349,22 @@
     {
       "slug": "workbright-6d1a053d",
       "finding": "Ordinary plans from $192/month distinct from $25 per I-9 WorkBright+ with table annual minimum $25k. Indemnification excludes historical migration and escalated cases and leaves employment decisions with employer."
+    },
+    {
+      "slug": "check-stub-generator-2bf2c8ec",
+      "finding": "Document only, no worker payment or filing. Homepage $6.99 and real-income use conflict with novelty-only terms at $3.99 effective 2020; 24/48-hour correction windows differ."
+    },
+    {
+      "slug": "easystaff-payroll-ff1d7b0c",
+      "finding": "Accepted credits platform balance, Accepted (Paid) only inside task reflects payout. FIX splits above 7000 with fee per task; gross/net, Cover Fee and non-cancellation conditions documented."
+    },
+    {
+      "slug": "fingercheck-f53cabaf",
+      "finding": "Five-employee minimum; year-end fees despite unlimited payroll. Fall discount is months 4–6 with credit cap and first-run deadline; customer retains compliance decisions. Certified-report manual fields documented."
+    },
+    {
+      "slug": "adp-payroll-services-d799e460",
+      "finding": "RUN small-business matrix separate from mid/large/global. Quote varies with frequency; off-cycle fees and contractor year-end fees. Up-to-six-month promotion credits months 4–6,13–15 with Essential exception."
     }
   ],
   "validation": [
@@ -418,6 +446,16 @@
       "diff_check": "passed",
       "source_text_hashes": "147 actual read-text hashes verified, including rendered browser snapshots and expanded FAQs",
       "scope": "Structure/reference/provenance; no independent review or hands-on product tests."
+    },
+    {
+      "at": "2026-10-22T11:23:57.277186+00:00",
+      "completed_count": 50,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 53 researched including 3 baseline",
+      "prettier": "four payroll profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "163 actual read-text hashes verified",
+      "scope": "Structure/reference/provenance; no independent review or hands-on product tests."
     }
   ],
   "checkpoints": [
@@ -462,6 +500,12 @@
       "completed_count": 39,
       "branch_push": "succeeded",
       "scope": "Seven more HR profiles, including roadmap and module-cost boundaries."
+    },
+    {
+      "commit": "135e30a",
+      "completed_count": 46,
+      "branch_push": "succeeded",
+      "scope": "Completed 18 readable HR records, retained Personio HTTP429 gap."
     }
   ],
   "independent_review": false,
@@ -497,6 +541,13 @@
       "note": "Personio returned HTTP429 and origin access stopped. Rendered browser reading resolved empty text responses for Darwinbox, Hafinen and Paylocity; Mitrefinch identity resolved via official OneAdvanced transition page.",
       "unresolved": 1,
       "unresolved_slugs": ["personio-91e7d61b"]
+    },
+    {
+      "category": "payroll",
+      "assigned": 17,
+      "completed": 4,
+      "status": "in_progress",
+      "note": "ADP, Check Stub Generator, EasyStaff and Fingercheck researched. Gusto and OnPay origins stopped after HTTP403; other payroll profiles still pending."
     }
   ]
 }
