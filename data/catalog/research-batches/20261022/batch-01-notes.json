@@ -1,21 +1,21 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T10:07:04.820751+00:00",
+  "updated_at": "2026-10-22T10:19:00.073082+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 3,
+  "completed_count": 7,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
-    "projects/workflow-automation/integrately-d0659226.json"
-  ],
-  "remaining_count": 196,
-  "remaining_projects": [
+    "projects/workflow-automation/integrately-d0659226.json",
     "projects/workflow-automation/jitterbit-9362d1e4.json",
     "projects/workflow-automation/prismatic-f4807c51.json",
     "projects/workflow-automation/snaplogic-dbbf47df.json",
-    "projects/workflow-automation/tray-io-f7fac30c.json",
+    "projects/workflow-automation/tray-io-f7fac30c.json"
+  ],
+  "remaining_count": 192,
+  "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/airbyte-46abe2cb.json",
     "projects/data-integration/ascend-c6d6e3a0.json",
@@ -226,18 +226,40 @@
   "verification": [
     {
       "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed"
+      "result": "passed: 7 tests"
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed; 6 researched including 3 baseline"
+      "result": "passed: 10 researched globally including 3 baseline; shared summaries deferred to coordinator"
     },
     {
-      "command": "Prettier on changed project JSON; git diff --check",
+      "command": "Prettier changed JSON and git diff --check",
       "result": "passed"
     }
   ],
-  "checkpoints": [],
+  "checkpoints": [
+    {
+      "commit": "9b42dc6",
+      "completed_count": 3,
+      "scope": "Activepieces, Cyclr, Integrately; pushed to assigned branch"
+    }
+  ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
-  "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted."
+  "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
+  "category_status": {
+    "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
+    "next": "data-integration (18 assigned records)"
+  },
+  "identity_changes": [
+    {
+      "project": "Tray.ai",
+      "slug_preserved": "tray-io-f7fac30c",
+      "old_domain": "tray.io",
+      "current_domain": "tray.ai",
+      "evidence": "Public reader requested https://tray.io/ and explicitly redirected to https://tray.ai/; no other tray.ai identity in baseline catalog."
+    }
+  ],
+  "content_corrections": [
+    "Cyclr versioning section narrowed to documented behavior for new installations; automatic updating of already installed Cycles is not claimed."
+  ]
 }
