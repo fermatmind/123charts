@@ -83,15 +83,15 @@
     "projects/surveys/quicktapsurvey-485f1c45.json",
     "projects/surveys/respondent-fd79fa50.json",
     "projects/surveys/simplesat-acbe0fc8.json",
-    "projects/surveys/smartsurvey-e6618377.json"
-  ],
-  "remaining_paths": [
+    "projects/surveys/smartsurvey-e6618377.json",
     "projects/surveys/sogolytics-fac2a5da.json",
     "projects/surveys/surveycto-546176d2.json",
     "projects/surveys/surveymonkey-730b9c13.json",
     "projects/surveys/surveyplanet-8150c0a9.json",
     "projects/surveys/surveysensum-e43f8a45.json",
-    "projects/surveys/surveysparrow-1352d998.json",
+    "projects/surveys/surveysparrow-1352d998.json"
+  ],
+  "remaining_paths": [
     "projects/events/aevent-487ad658.json",
     "projects/events/bizzabo-7df2f9e9.json",
     "projects/events/converia-18c411c7.json",
@@ -149,7 +149,16 @@
     "projects/ai-images/thumbmagic-7fe20222.json",
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
-  "blockers": [],
+  "blockers": [
+    {
+      "path": "projects/events/bizzabo-7df2f9e9.json",
+      "reason": "Official homepage and pricing returned HTTP 403; not retried or bypassed. Entry remains structured_candidate."
+    },
+    {
+      "path": "projects/ai-writing/quillbot-cb6857d9.json",
+      "reason": "Official homepage and pricing returned HTTP 403; not retried or bypassed. Entry remains structured_candidate."
+    }
+  ],
   "evidence_directory": ".scratch/deep-research/",
   "validations": [
     {
@@ -167,6 +176,10 @@
     {
       "check": "Prettier on changed JSON and git diff --check",
       "result": "passed"
+    },
+    {
+      "check": "Python catalog tests + scratch-restricted unchanged record checks + changed JSON Prettier + git diff --check",
+      "result": "7 tests passed; 68 owned records passed including 12 researched. Shared records-only validator remains blocked by inherited Benchmark Email external help domain."
     }
   ],
   "commits": [
@@ -174,8 +187,13 @@
       "sha": "5895468",
       "completed_count": 3,
       "pushed": true
+    },
+    {
+      "sha": "8e110bc",
+      "completed_count": 6,
+      "pushed": true
     }
   ],
-  "completed_count": 6,
-  "remaining_count": 62
+  "completed_count": 12,
+  "remaining_count": 56
 }
