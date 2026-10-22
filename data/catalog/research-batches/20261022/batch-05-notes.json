@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 24,
+  "completed_count": 28,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -29,19 +29,19 @@
     "projects/erp/odoo-erp-c4a6a7fc.json",
     "projects/erp/rootstock-erp-1702fbc4.json",
     "projects/erp/sage-business-cloud-x3-62b94b98.json",
-    "projects/erp/striven-erp-c0d1fa57.json"
+    "projects/erp/striven-erp-c0d1fa57.json",
+    "projects/erp/synergix-erp-software-d56131cd.json",
+    "projects/erp/syspro-23a939b4.json",
+    "projects/erp/tech-cloud-erp-a9f105ce.json",
+    "projects/erp/uneecops-ae54d954.json"
   ],
-  "remaining_count": 173,
+  "remaining_count": 169,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
-    "projects/erp/synergix-erp-software-d56131cd.json",
-    "projects/erp/syspro-23a939b4.json",
-    "projects/erp/tech-cloud-erp-a9f105ce.json",
-    "projects/erp/uneecops-ae54d954.json",
     "projects/human-resources/bamboohr-3dda835b.json",
     "projects/human-resources/brighthr-bd59f7d4.json",
     "projects/human-resources/ceipal-workforce-93d9d9bf.json",
@@ -239,6 +239,12 @@
       "status": "not_counted_complete",
       "url": "https://www.patriotsoftware.com/accounting/",
       "finding_en": "Official homepage direct read returned HTTP 403. Stopped that origin; did not bypass or treat third-party snippets as a full profile."
+    },
+    {
+      "slug": "plex-manufacturing-cloud-c05cc280",
+      "status": "not_counted_complete",
+      "url": "https://www.plex.com/",
+      "finding_en": "Direct read failed certificate verification; separate ordinary public web read timed out. TLS verification was not disabled; no current ERP profile fabricated."
     }
   ],
   "notable_findings": [
@@ -263,12 +269,16 @@
       "finding": "Official current site is frappe.io/erpnext; GPLv3 software versus paid hosting/partner implementation and version-specific help boundaries documented."
     },
     {
-      "slug": "uneecops-ae54d954",
-      "finding": "Identity discovery: vendor site presents ERP implementation/licensing services across SAP products; full rewrite pending, do not treat provider as one standalone ERP."
-    },
-    {
       "slug": "striven-erp-c0d1fa57",
       "finding": "Under-five user surcharge changes cost; portal free tier is separate from internal ERP users."
+    },
+    {
+      "slug": "uneecops-ae54d954",
+      "finding": "Rewritten as ERP services provider. SAP Business One partner-specific licensing/implementation presentation separated from underlying SAP software and authority."
+    },
+    {
+      "slug": "tech-cloud-erp-a9f105ce",
+      "finding": "Pro+ custom/contact card conflicts with Premium INR 0 in table; customization rows also differ. Explicitly not marked as a free enterprise tier."
     }
   ],
   "validation": [
@@ -310,6 +320,16 @@
       "diff_check": "passed",
       "source_text_hashes": "87 official entries matched actual read text SHA-256",
       "scope": "Structure/reference/provenance only; no hands-on or independent review."
+    },
+    {
+      "at": "2026-10-22T10:44:01+00:00",
+      "completed_count": 28,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 31 researched including 3 baseline",
+      "prettier": "four ERP profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "97 actual read-text hashes verified",
+      "scope": "Structure/reference/provenance; no independent review or hands-on tests."
     }
   ],
   "checkpoints": [
@@ -330,6 +350,12 @@
       "completed_count": 14,
       "branch_push": "succeeded",
       "scope": "Four ERP products with deployment, workflow and pricing conditions."
+    },
+    {
+      "commit": "57cb8fb",
+      "completed_count": 24,
+      "branch_push": "succeeded",
+      "scope": "Ten additional ERP profiles, including provider and subscription boundaries."
     }
   ],
   "independent_review": false,
@@ -351,9 +377,11 @@
     {
       "category": "erp",
       "assigned": 19,
-      "completed": 14,
-      "status": "in_progress",
-      "note": "Acumatica, BizAutomation, Deskera, ERPNext complete; remaining homepages fetched for identity discovery, not treated as finished profiles."
+      "completed": 18,
+      "status": "all_19_attempted_1_not_counted_complete",
+      "note": "Acumatica, BizAutomation, Deskera, ERPNext complete; remaining homepages fetched for identity discovery, not treated as finished profiles.",
+      "unresolved": 1,
+      "unresolved_slugs": ["plex-manufacturing-cloud-c05cc280"]
     }
   ]
 }
