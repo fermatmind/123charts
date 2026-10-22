@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T14:41:00.582495+00:00",
+  "updated_at": "2026-10-22T14:46:39.848044+00:00",
   "status": "in_progress",
-  "completed_count": 65,
+  "completed_count": 66,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -69,9 +69,10 @@
     "projects/social-media/swonkie-41671cfb.json",
     "projects/seo/accuranker-cbb9ac38.json",
     "projects/seo/advanced-web-ranking-843701d3.json",
-    "projects/seo/agencyanalytics-95ba4d16.json"
+    "projects/seo/agencyanalytics-95ba4d16.json",
+    "projects/seo/ahrefs-c8511afd.json"
   ],
-  "remaining_count": 68,
+  "remaining_count": 67,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -89,7 +90,6 @@
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
-    "projects/seo/ahrefs-c8511afd.json",
     "projects/seo/botify-f89164fc.json",
     "projects/seo/brightlocal-aa96ef1c.json",
     "projects/seo/clearscope-3c8a2c50.json",
@@ -143,7 +143,7 @@
     "projects/surveys/pollfish-8dbd67ee.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/ahrefs-c8511afd.json",
+  "next_project": "projects/seo/botify-f89164fc.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -829,6 +829,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-04",
+      "completed_projects": 66,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 66 completed drafts; scope/status/source types/hashes/references/bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark Help Scout domain mismatch at scripts/catalog/validate.mjs:166"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -936,6 +958,11 @@
       "commit": "0336e80",
       "completed_count": 64,
       "scope": "Advanced Web Ranking units, update states, reports and permissions"
+    },
+    {
+      "commit": "8b68daa",
+      "completed_count": 65,
+      "scope": "AgencyAnalytics and ownership transfer of 68 unfinished paths to batch-08"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -966,7 +993,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 3,
+      "completed": 4,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 0
     }
@@ -1297,6 +1324,10 @@
     {
       "project": "agencyanalytics-95ba4d16",
       "note": "Actual current client/source/role/formula/approval/reconnect/warehouse/ranking/AI/MCP/billing originals read. Client clones carry access; formula Admin/client visibility differs. Approval begins at send-time; web reports may backfill later. Core no-card versus add-on auto-billed trial separated; annual cards not normalized. No account operations."
+    },
+    {
+      "project": "ahrefs-c8511afd",
+      "note": "Current Free, SEO metrics, separate crawlers, imported country/desktop history, frozen keywords, credit plan generations, MCP key/units and live patch lifecycle originals read. Pricing now Lite+ API/MCP; no old Enterprise-only assumption. Report Builder guide versus current price/radar coverage conflict, Claude custom-only versus setup omission, paused Grok preserved. No operations performed."
     }
   ],
   "ownership_handoff": {
