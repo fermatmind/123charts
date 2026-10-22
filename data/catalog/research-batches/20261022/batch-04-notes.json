@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T13:54:29.049878+00:00",
+  "updated_at": "2026-10-22T14:01:44.377969+00:00",
   "assigned": 204,
-  "completed_count": 54,
+  "completed_count": 55,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -60,9 +60,10 @@
     "projects/live-chat/livehelpnow-826bb7ca.json",
     "projects/live-chat/olark-36188fbb.json",
     "projects/live-chat/provide-support-df100aca.json",
-    "projects/live-chat/reve-chat-404e815f.json"
+    "projects/live-chat/reve-chat-404e815f.json",
+    "projects/live-chat/smartsupp-b1532cf5.json"
   ],
-  "incomplete_count": 150,
+  "incomplete_count": 149,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -79,7 +80,6 @@
     "projects/live-chat/contact-at-once-e618062d.json",
     "projects/live-chat/handlr-a71bc7cc.json",
     "projects/live-chat/natterly-b6f365e1.json",
-    "projects/live-chat/smartsupp-b1532cf5.json",
     "projects/live-chat/snapengage-943eb811.json",
     "projects/live-chat/syndeo-cx-30bafb7a.json",
     "projects/live-chat/talkative-55649f5e.json",
@@ -556,6 +556,31 @@
       "project": "projects/live-chat/natterly-b6f365e1.json",
       "status": "research_incomplete_source_access",
       "observed": "Assigned https://www.natterly.com/ failed ordinary HTTPS with SSL UNEXPECTED_EOF_WHILE_READING; public web reader also reports inaccessible. Official-domain search returned no results. No TLS bypass or account testing. Current identity, functionality, availability and pricing not established; candidate unchanged and not counted."
+    },
+    {
+      "project": "projects/live-chat/smartsupp-b1532cf5.json",
+      "status": "vendor_claim_conflicts_platform_authority",
+      "observed": "Smartsupp WhatsApp help says Meta charges service replies from2026-10-01. Current official WhatsApp Business pricing page says service messages in24hwindow arefree,whether humanorAI. Do not adopt vendor billing warning as verified Meta policy;account fees/delivery still not tested. Official source-domain validator cannot store external Meta official_source in Smartsupp row,so original cross-check evidence kept here.",
+      "evidence": [
+        {
+          "url": "https://help.smartsupp.com/en/articles/12647876-whatsapp-integration",
+          "requested_url": "https://help.smartsupp.com/en/articles/12647876-whatsapp-integration",
+          "title": "WhatsApp integration | Smartsupp Help Center",
+          "read_at": "2026-10-22T13:55:22.638955+00:00",
+          "http_status": 200,
+          "body_sha256": "03f8ebbb1e600473e200d1613a5a95b687aec1ba58521c592fd2d627b7028b78",
+          "excerpt_sha256": "7379ce71e1fb70d5393e77771350504b1eed5edcbd790f91dc3307c293e5b740"
+        },
+        {
+          "url": "https://whatsappbusiness.com/products/platform-pricing/",
+          "requested_url": "https://business.whatsapp.com/products/platform-pricing",
+          "title": "WhatsApp Business Platform Pricing | WhatsApp API Pricing",
+          "read_at": "2026-10-22T13:57:32.721439+00:00",
+          "http_status": 200,
+          "body_sha256": "ec3825e58111b8dc450b7eea3d73f8efbc6573f8bcce2889198824fe9dab632c",
+          "excerpt_sha256": "b47325c0583e0ab52ab18aeb0f7bb9d7ffaa05975eb10145c01877e4cf5ccc8d"
+        }
+      ]
     }
   ],
   "verification": [
@@ -831,6 +856,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch54 completed,150 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch55 completed,149 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1040,8 +1075,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "ad8e629",
       "completed": ["projects/live-chat/reve-chat-404e815f.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/live-chat/smartsupp-b1532cf5.json"],
       "status": "ready_to_commit"
     }
   ],
