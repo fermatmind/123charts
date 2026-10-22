@@ -10,186 +10,55 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "ChannelMAX is a product in the Inventory management category. Its directory profile covers Supplier Management, Shipping Management, Serialized Inventory Tracking, Purchase Order Management, Order Entry, Inventory Overview, Inventory Optimization, Inventory Forecasting.\n\nAdditional listed capabilities include Custom Pricing Models, Cost Tracking, Search (Filter), Warehouse Management. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $34.99.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: maintain supplier information and operational records; organize shipment preparation and related records; prepare and track purchase orders; coordinate stock locations and warehouse tasks. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "ChannelMAX 属于库存管理软件。第三方资料列出的功能包括供应商管理、发货管理、序列号库存跟踪、采购订单管理、订单录入、库存概览、库存优化、库存预测。\n\n资料还列出自定义定价模式、成本跟踪、搜索与筛选、仓库管理。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $34.99.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：维护供应商资料与业务记录；组织发货准备和相关记录；创建并跟踪采购订单；协调库存位置与仓库作业。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "ChannelMAX is primarily an Amazon repricing and seller-operations service. Its inventory synchronization module distributes stock quantities across marketplaces; related offerings include FBA refund management and conversion of non-Amazon orders to Amazon multi-channel fulfillment.\n\nFor inventory selection, evaluate the synchronization module on its own terms. The documentation describes periodic updates and explicitly acknowledges delay, so it should not be treated as instantaneous stock reservation or a complete warehouse system.",
+  "description_zh": "ChannelMAX 主要提供 Amazon 调价和卖家运营服务。库存同步模块将数量分发到多个市场，相关服务还包括 FBA 赔偿管理及将非 Amazon 订单转入 Amazon 多渠道履约。\n\n库存选型应单独评估同步模块。文档说明周期更新并明确承认延迟，因此不能将其视为即时库存预留或完整仓库系统。",
   "core_features": [
     {
-      "name_en": "Supplier Management",
-      "name_zh": "供应商管理",
-      "explanation_en": "Maintain supplier information and operational records.",
-      "explanation_zh": "维护供应商资料与业务记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "SKU quantity synchronization",
+      "name_zh": "SKU 数量同步",
+      "explanation_en": "Central quantities are propagated to marketplaces; parent/child mappings can represent the same physical item under multiple ASINs.",
+      "explanation_zh": "中心数量分发至市场；父子映射可表示同一实物对应多个 ASIN。",
+      "source_ref": "stock",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Shipping Management",
-      "name_zh": "发货管理",
-      "explanation_en": "Organize shipment preparation and related records.",
-      "explanation_zh": "组织发货准备和相关记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Serialized Inventory Tracking",
-      "name_zh": "序列号库存跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Purchase Order Management",
-      "name_zh": "采购订单管理",
-      "explanation_en": "Prepare and track purchase orders.",
-      "explanation_zh": "创建并跟踪采购订单。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Order Entry",
-      "name_zh": "订单录入",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Inventory Overview",
-      "name_zh": "库存概览",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Inventory Optimization",
-      "name_zh": "库存优化",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Inventory Forecasting",
-      "name_zh": "库存预测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Custom Pricing Models",
-      "name_zh": "自定义定价模式",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Cost Tracking",
-      "name_zh": "成本跟踪",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Search (Filter)",
-      "name_zh": "搜索与筛选",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Warehouse Management",
-      "name_zh": "仓库管理",
-      "explanation_en": "Coordinate stock locations and warehouse tasks.",
-      "explanation_zh": "协调库存位置与仓库作业。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Allocation and adjustment history",
+      "name_zh": "分配与调整历史",
+      "explanation_en": "The inventory page describes allocation profiles and adjustment reports with time, channel, listing and transaction information.",
+      "explanation_zh": "库存页描述渠道分配配置及包含时间、渠道、刊登和交易信息的调整报表。",
+      "source_ref": "stock",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Maintain supplier information and operational records",
-      "Organize shipment preparation and related records",
-      "Prepare and track purchase orders",
-      "Coordinate stock locations and warehouse tasks"
-    ],
-    "zh": [
-      "维护供应商资料与业务记录",
-      "组织发货准备和相关记录",
-      "创建并跟踪采购订单",
-      "协调库存位置与仓库作业"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": ["Map shared physical stock before publishing quantities"],
+    "zh": ["发布数量前映射共享实物库存"],
+    "source_refs": ["stock"],
+    "basis": "Proposed evaluation scenario, not observed customer adoption."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $34.99.",
-      "zh": "未提供免费试用 起价为 $34.99.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": ["Marketplace operations manager", "Amazon seller"],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "see_profile_and_research_gaps",
     "items": []
   },
   "supported_languages": {
@@ -202,37 +71,22 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $34.99.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $34.99.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T15:32:49.797018+00:00",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Inventory Sync additional $24.99/month for 2,500 SKUs; repricer from $34.99/month, MCF/eBay additional $24.99/month; refund service 15% recovered.",
+    "source_snapshot_en": "Inventory Sync additional $24.99/month for 2,500 SKUs; repricer from $34.99/month, MCF/eBay additional $24.99/month; refund service 15% recovered.",
+    "source_snapshot_zh": "库存同步额外 $24.99/月、2,500 SKU；调价从 $34.99/月起，MCF/eBay 另 $24.99/月，赔偿服务按追回金额 15%。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does ChannelMAX do?",
-      "question_zh": "ChannelMAX 用来做什么？",
-      "answer_en": "ChannelMAX is a product in the Inventory management category. Its directory profile covers Supplier Management, Shipping Management, Serialized Inventory Tracking, Purchase Order Management, Order Entry, Inventory Overview, Inventory Optimization, Inventory Forecasting.",
-      "answer_zh": "ChannelMAX 属于库存管理软件。第三方资料列出的功能包括供应商管理、发货管理、序列号库存跟踪、采购订单管理、订单录入、库存概览、库存优化、库存预测。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Supplier Management, Shipping Management, Serialized Inventory Tracking, Purchase Order Management, Order Entry, Inventory Overview, Inventory Optimization, Inventory Forecasting, Custom Pricing Models, Cost Tracking, Search (Filter), Warehouse Management",
-      "answer_zh": "供应商管理、发货管理、序列号库存跟踪、采购订单管理、订单录入、库存概览、库存优化、库存预测、自定义定价模式、成本跟踪、搜索与筛选、仓库管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -242,25 +96,131 @@
       "read_at": "2026-10-22T08:41:57.912Z",
       "excerpt_sha256": "6f2e205eaf0cd0265e889a6236b42d80f4f15c5e8ba4f2845e9762affe6ebf7f",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_product",
+      "site": "ChannelMAX",
+      "url": "https://www.channelmax.net/",
+      "title": "ChannelMAX Amazon Repricer & FBA Refunds Manager",
+      "read_at": "2026-10-22T15:19:25.439910+00:00",
+      "excerpt_sha256": "429bc17ea1e31a89b77af277986c1877ab2229ace55220ca3b498b6604310501",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read repricing-led service positioning and separate operations modules."
+    },
+    {
+      "id": "stock",
+      "type": "official_features",
+      "site": "ChannelMAX",
+      "url": "https://www.channelmax.net/inventory-sync",
+      "title": "ChannelMAX Inventory Quantity Management including Parent Child and Bundle",
+      "read_at": "2026-10-22T15:26:00.891158+00:00",
+      "excerpt_sha256": "7bcb831ab78a9d7f95e269b23ed5d66dcdcf65321caed8ff60a310ef8988c960",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read mapping, buffers, supplier feeds and explicit synchronization-delay warning."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ChannelMAX",
+      "url": "https://www.channelmax.net/pricing",
+      "title": "ChannelMAX Pricing Detail",
+      "read_at": "2026-10-22T15:25:59.397451+00:00",
+      "excerpt_sha256": "d9530ae880b39a5aa4ead2b633b82eb30f324de0f2a0f47e4562116222d3e3a3",
+      "verification": "official_documentation_read",
+      "transport": "python_urllib_public_html",
+      "research_notes_en": "Read module-specific prices, SKU limits, MCF listing charges and cancellation notice."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T15:32:49.797018+00:00",
+    "scope": "Public official pages read and bilingual draft cross-checked; no account, purchase, execution, identity or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Vendor descriptions are documentation evidence, not independent validation.",
+    "Examples and suitability judgments are editorial guidance. Chinese copy does not establish a Chinese product interface."
+  ],
+  "description_source_refs": ["product"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow",
+        "title_en": "Map shared physical stock before publishing quantities",
+        "title_zh": "发布数量前映射共享实物库存",
+        "en": "A merchant listing the same item under several marketplace identifiers should first map those listings to a central SKU. Test a sale on one channel and inspect the quantity adjustment on the others. Bundles need component mapping; the official example combines a camera and battery. Supplier feed inputs require usable quantity and cost files rather than merely a supplier name.",
+        "zh": "同一商品具有多个市场标识时，应先将刊登映射到中心 SKU，再测试一个渠道售出后其他渠道的数量调整。套装需要组件映射，官方示例为相机和电池组合。供应商数据输入需要可用的数量与成本文件，不能仅填写供应商名称。",
+        "source_refs": ["stock"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "latency",
+        "title_en": "Keep a buffer for synchronization delay",
+        "title_zh": "为同步延迟保留缓冲",
+        "en": "The stock page says real-time synchronization is impossible and warns about cancellation risk. The pricing page describes sales tracking every 30 minutes; other public wording mentions 15–30 minutes. Allocation profiles can publish less than total stock on a channel. Test concurrent last-unit orders and confirm the effective interval rather than relying on the repricer’s faster update claims.",
+        "zh": "库存页说明无法做到真正实时同步，并提示取消订单风险。价格页描述每 30 分钟跟踪销售，其他公开文字提及 15–30 分钟。分配配置可向渠道发布低于总库存的数量。应测试并发购买最后一件商品并确认实际周期，不能套用调价器更快的更新宣传。",
+        "source_refs": ["stock", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Separate repricing, stock sync and refund fees",
+        "title_zh": "区分调价、库存同步与赔偿收费",
+        "en": "Inventory Sync is listed as an additional $24.99 monthly for 2,500 SKUs. Repricing starts at $34.99 monthly for 500 SKUs, with larger plans and different speeds. Amazon MCF/eBay service is another $24.99 monthly; listings beyond 100 incur a stated one-time $50 per 100. RefundMAX charges 15% of recovered amounts. These separate charges must not be combined into a single universal entry price. Cancellation wording requests 30 days’ notice.",
+        "zh": "Inventory Sync 标价为额外每月 $24.99、2,500 SKU；调价服务从每月 $34.99、500 SKU 起，较大方案与更新速度不同。Amazon MCF/eBay 服务另收每月 $24.99，超过 100 个刊登时每增加 100 个注明一次性 $50。RefundMAX 按追回金额收 15%。不能将这些独立收费混为统一起价；取消条款要求提前 30 天通知。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "Use it for marketplace coordination",
+        "title_zh": "用于市场渠道协调",
+        "en": "The relevant buyer is a marketplace seller with stable SKU mapping and a willingness to manage delayed quantity updates. It is a weaker documented fit for bin-level picking, manufacturing or lot-traceability requirements. Confirm channel authorization, feed failures and the stock-sync prerequisite subscription commercially. None of the marketplace connections or refund submissions were exercised.",
+        "zh": "适合对象是 SKU 映射稳定、能够管理延迟数量更新的市场卖家。对于仓位拣货、制造或批次追溯需求，已读资料支持较弱。应向销售确认渠道授权、数据源失败处理及库存同步所需基础订阅。未实际连接市场或提交赔偿申请。",
+        "source_refs": ["product", "stock", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Project-specific public primary-source research, original English synthesis and corresponding Chinese translation.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "seo": {
+    "title_en": "ChannelMAX: Map shared physical stock before publishing quantities",
+    "title_zh": "ChannelMAX：发布数量前映射共享实物库存",
+    "description_en": "ChannelMAX is primarily an Amazon repricing and seller-operations service. Its inventory synchronization module distributes stock quantities across marketplaces; related offerings include FBA refund management and conversion of non-Amazon orders to Amazon multi-channel fulfillment.",
+    "description_zh": "ChannelMAX 主要提供 Amazon 调价和卖家运营服务。库存同步模块将数量分发到多个市场，相关服务还包括 FBA 赔偿管理及将非 Amazon 订单转入 Amazon 多渠道履约。",
+    "query_basis": "Editorial selection questions, not measured search volume, ranking or AI citations.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Current channel coverage, synchronization interval, base-plan prerequisites and failed-feed recovery require confirmation.",
+      "zh": "当前渠道覆盖、同步周期、基础方案前提及失败数据源恢复需进一步确认。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No hands-on account, contract signing, integration, recovery or performance test was conducted; procurement terms and interface languages remain unverified.",
+      "zh": "未实际登录账户、签署合同、运行集成、测试恢复或性能；采购条款和界面语言仍未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
   ]
 }
