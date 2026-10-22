@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T11:29:56.067834+00:00",
+  "updated_at": "2026-10-22T11:39:49.618571+00:00",
   "assigned": 204,
-  "completed_count": 24,
+  "completed_count": 26,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -30,9 +30,11 @@
     "projects/help-desk/desku-018b8949.json",
     "projects/help-desk/dixa-69beb280.json",
     "projects/help-desk/fci-ccm-11e040bf.json",
-    "projects/help-desk/gorgias-3f323e4a.json"
+    "projects/help-desk/gorgias-3f323e4a.json",
+    "projects/help-desk/happyfox-e2c9254e.json",
+    "projects/help-desk/helpdesk-74f8a6b9.json"
   ],
-  "incomplete_count": 180,
+  "incomplete_count": 178,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -42,8 +44,6 @@
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/due-work-6947a910.json",
     "projects/help-desk/freshdesk-2ae83506.json",
-    "projects/help-desk/happyfox-e2c9254e.json",
-    "projects/help-desk/helpdesk-74f8a6b9.json",
     "projects/help-desk/hesk-c56a70fb.json",
     "projects/help-desk/jitbit-helpdesk-a221531f.json",
     "projects/help-desk/kayako-4565eb5f.json",
@@ -452,7 +452,7 @@
           "verification": "official_documentation_read",
           "transport": "public_https_html_text",
           "excerpt_sha256": "cf0b0389d3024b1eb5ea83407e1ab4219493c8f8c1d95031abf4333330d45fa1",
-          "research_notes_en": "Actual full overview fetched; trigger/action matrix preserved for later final reading/reconciliation. Not counted as complete profile."
+          "research_notes_en": "Full overview read: creation first/all match; update/hourly all ordered; action constraints, no attachment automation, no direct rule-list export. Not a completed profile due genuine source-domain validator gap."
         },
         {
           "id": "cross-product-ai",
@@ -544,6 +544,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch24 completed,180 remaining. Structural checks are not factual/independent review."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on HappyFox/HelpDesk and notes",
+        "Source SHA256 comparison against saved retrievals",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch26 completed,178 remaining. No account execution or independent factual acceptance."
     }
   ],
   "checkpoints": [
@@ -618,10 +628,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "78ec869",
       "completed": [
         "projects/help-desk/fci-ccm-11e040bf.json",
         "projects/help-desk/gorgias-3f323e4a.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/happyfox-e2c9254e.json",
+        "projects/help-desk/helpdesk-74f8a6b9.json"
       ],
       "status": "ready_to_commit"
     }
