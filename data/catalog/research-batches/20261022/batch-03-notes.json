@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T13:22:45.487322+00:00",
+  "updated_at": "2026-10-22T13:36:24.360905+00:00",
   "status": "in_progress",
-  "completed_count": 54,
+  "completed_count": 57,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -58,9 +58,12 @@
     "projects/social-media/hookle-5f78b2fa.json",
     "projects/social-media/influence-0d1b3acb.json",
     "projects/social-media/later-f96e5f04.json",
-    "projects/social-media/meetedgar-e5212894.json"
+    "projects/social-media/meetedgar-e5212894.json",
+    "projects/social-media/outfame-16f4a266.json",
+    "projects/social-media/penguin-epulse-2262a37a.json",
+    "projects/social-media/pinops-8a2a575d.json"
   ],
-  "remaining_count": 147,
+  "remaining_count": 144,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -74,9 +77,6 @@
     "projects/social-media/funneldash-eec0f94e.json",
     "projects/social-media/lifast-eca10eb6.json",
     "projects/social-media/metigy-7b57b733.json",
-    "projects/social-media/outfame-16f4a266.json",
-    "projects/social-media/penguin-epulse-2262a37a.json",
-    "projects/social-media/pinops-8a2a575d.json",
     "projects/social-media/post-bridge-89f7a06c.json",
     "projects/social-media/postiz-0b4fe948.json",
     "projects/social-media/quuu-9fd2a3e5.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/metigy-7b57b733.json",
+  "next_project": "projects/social-media/post-bridge-89f7a06c.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -347,6 +347,17 @@
       "status": "not_completed",
       "reason": "Actual homepage, product workflow landing, terms and privacy read. Current homepage shows $99/$49 USD monthly while product landing says $99 monthly; trial/free conditions, connected profile eligibility, actual scheduling state and recovery documentation not established after targeted official search. Marketing and testimonials alone not counted as completed operational research.",
       "evidence_local": ".scratch/deep-research/batch-03/lifast-product.json"
+    },
+    {
+      "path": "projects/social-media/metigy-7b57b733.json",
+      "status": "not_completed",
+      "reason": "Assigned root returned public-reader 502 and ordinary curl could not resolve host (HTTP 000). Pricing 404. A 2023 support article remains readable via public reader, but cannot establish current product availability, signup or pricing. Similar Metrigy/Metigi sites not substituted.",
+      "attempted_urls": [
+        "https://metigy.com/",
+        "https://metigy.com/pricing/",
+        "https://metigy.com/support/google-advertising-quick-and-easy-getting-start-guide/"
+      ],
+      "evidence_local": ".scratch/deep-research/batch-03/metigy-outfame.json"
     }
   ],
   "compatibility_issues": [
@@ -711,6 +722,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-04",
+      "completed_projects": 57,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 57 drafts; scope, states, source/pricing types, hashes, references, bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; genuine URLs retained"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -783,6 +816,11 @@
       "commit": "211dc21",
       "completed_count": 52,
       "scope": "Facelift, Hookle, Influence; FunnelDash identity/category gap"
+    },
+    {
+      "commit": "aaa0ae2",
+      "completed_count": 54,
+      "scope": "Later, MeetEdgar; Lifast operational evidence gap"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -807,9 +845,9 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 8,
+      "completed": 11,
       "status": "in_progress",
-      "uncompleted_with_source_gaps": 3
+      "uncompleted_with_source_gaps": 4
     }
   },
   "source_access_notes": [
@@ -1014,6 +1052,29 @@
     {
       "project": "meetedgar-e5212894",
       "note": "Actual help articles returned ordinary HTTPS 200 after public-reader inaccessible response; no 403/429 bypass. June Use Once says only last variation, January Variations says each variation once; conflict preserved. Current help LIFO differs from 2025 tutorial FIFO. Refresh preserves schedules; deletion irreversibly removes associations. No actions executed."
+    },
+    {
+      "project": "metigy-7b57b733",
+      "note": "Current root 502, ordinary DNS failure, pricing 404. Only older support body available. No shutdown/operator/cause attribution; current availability not established.",
+      "evidence": [
+        {
+          "source": "Google Ads & Metigy: How to create your accounts (https://metigy.com/support/google-advertising-quick-and-easy-getting-start-guide/)",
+          "excerpt_sha256": "14817814d2e8b62258f1112ee60bfa61a46ffe488a6c72c2f2afa7d31b80a966",
+          "read_at": "2026-10-22T13:25:12.963024+00:00"
+        }
+      ]
+    },
+    {
+      "project": "outfame-16f4a266",
+      "note": "Current Instagram growth service identity established; operational no-posting statement preserved instead of generic directory scheduler claim. Actual sources conflict on 1/3-day trial, card requirement, 7/30-day net-growth refund, immediate/end-of-cycle growth stop and automated follows/organic exposure. All retained; no API approval, follower authenticity or outcome validation claimed. Monthly prices explicitly first-month; regular renewal unknown."
+    },
+    {
+      "project": "penguin-epulse-2262a37a",
+      "note": "Actual official About/terms/privacy establish CleoUrban application is same product, not Pulse Penguin. Source-linked research explicitly excludes publishing and saved view lacks connected channels. No numerical pricing verified; terms only advance agreement, so price_type unknown. Retrieved terms body/title differed across reads; final full October 16 terms snapshot used without attributing author/date/cause. Public charts explicitly illustrative; no outcome claims."
+    },
+    {
+      "project": "pinops-8a2a575d",
+      "note": "Verified assigned pinops.app, not unrelated pinops.com. Actual October 11 workflow guides read. AI Designer uses original images, not synthetic generation. CSV upload and PNG export do not publish; Scheduler changes same job; unknown outcomes native-check before existing-job retry. Credit operations separate from monthly scheduled-Pin capacity. Welcome offer first monthly cycle only; no year-price inference."
     }
   ]
 }
