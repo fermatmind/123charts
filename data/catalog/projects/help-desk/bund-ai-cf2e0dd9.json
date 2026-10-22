@@ -2,181 +2,153 @@
   "schema_version": "123charts-software-research-v1",
   "slug": "bund-ai-cf2e0dd9",
   "name": "Bund AI",
-  "website_url": "https://www.usebund.com/",
-  "domain": "www.usebund.com",
+  "website_url": "https://usebund.com/",
+  "domain": "usebund.com",
   "identity_domain": "usebund.com",
   "category": "help-desk",
   "secondary_categories": [],
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Bund AI is a product in the Help desk category. Its directory profile covers AI Assistant, Multi-Channel Communication, Ticket Management, Knowledge Base, Contract (SLA Management), Automated Routing, Alerts (Escalation), Self Service Portal.\n\nAdditional listed capabilities include Multi-language Support, Live Chat. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are Medium Business Small Business. API support is listed as Not available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $49.0.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; coordinate conversations across supported channels; create, assign and track service requests; organize reusable answers and documentation; use supported language options in relevant workflows; exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Bund AI 属于客户服务台软件。第三方资料列出的功能包括AI 助手、多渠道沟通、工单管理、知识库、服务水平协议管理、自动分流、升级处理提醒、自助服务门户。\n\n资料还列出多语言支持、在线聊天。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为中型企业 小型企业。API 支持情况为未提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $49.0.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；协调受支持渠道中的沟通记录；创建、分配并跟踪服务请求；整理可复用的答案与说明文档；在相关流程中使用受支持的语言选项；与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Bund AI is a hosted sales and support agent that combines a website widget and forwarded support email with knowledge retrieval, lead capture, booking, tickets and connected-system actions. It is designed to complete selected tasks and hand the conversation to a person when needed, rather than only display an FAQ answer. Actions available depend on the selected industry, enabled tools and connected systems.\n\nPublic documentation describes simulated side effects in the Playground, explicit approval for sensitive actions, and human handoff after tool errors or low confidence. These are vendor-described behaviors, not tested controls. The public terms page identifies itself as a placeholder, and actual contract, recovery and usage-exhaustion behavior remain unresolved. No workspace, customer communication, booking, refund or purchase was run.",
+  "description_zh": "Bund AI 是托管销售及支持 agent，将网站组件和转发支持邮件与知识检索、线索捕获、预约、工单及连接系统动作结合。其目标是完成选定任务，并在需要时转交人工，而非只显示 FAQ 答案。可用动作取决于所选行业、启用工具及已连接系统。\n\n公开文档描述 Playground 中模拟副作用、敏感动作明确审批，以及工具错误或低置信度后的人工交接。这些是厂商文档行为，不是已测试控制。公开条款页自称占位摘要，实际合同、恢复及额度耗尽行为仍待明确。本文未运行工作空间、客户沟通、预约、退款或购买。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Shared web and email agent",
+      "name_zh": "共用 Web 与邮件 agent",
+      "explanation_en": "Use one knowledge/tool flow for the widget and forwarded email; email must be enabled for the deployment.",
+      "explanation_zh": "网站组件及转发邮件共用知识／工具流程，邮件需在具体部署启用。",
+      "explanation_scope": "product_specific",
+      "source_ref": "docs",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Channel Communication",
-      "name_zh": "多渠道沟通",
-      "explanation_en": "Coordinate conversations across supported channels.",
-      "explanation_zh": "协调受支持渠道中的沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Knowledge-grounded replies and gaps",
+      "name_zh": "知识来源回答及缺口",
+      "explanation_en": "Ingest text, pages, files and authored articles; unanswered questions can become knowledge gaps.",
+      "explanation_zh": "接收文字、网页、文件及自编文章，未回答问题可成为知识缺口。",
+      "explanation_scope": "product_specific",
+      "source_ref": "docs",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Ticket Management",
-      "name_zh": "工单管理",
-      "explanation_en": "Create, assign and track service requests.",
-      "explanation_zh": "创建、分配并跟踪服务请求。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Approved HTTP actions",
+      "name_zh": "经审批 HTTP 动作",
+      "explanation_en": "Define GET/POST calls with parameters and authentication headers; mark writing actions for approval.",
+      "explanation_zh": "定义带参数及认证请求头的 GET／POST 调用，为写入动作配置审批。",
+      "explanation_scope": "product_specific",
+      "source_ref": "docs",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Knowledge Base",
-      "name_zh": "知识库",
-      "explanation_en": "Organize reusable answers and documentation.",
-      "explanation_zh": "整理可复用的答案与说明文档。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contract (SLA Management)",
-      "name_zh": "服务水平协议管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Routing",
-      "name_zh": "自动分流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts (Escalation)",
-      "name_zh": "升级处理提醒",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Self Service Portal",
-      "name_zh": "自助服务门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-language Support",
-      "name_zh": "多语言支持",
-      "explanation_en": "Use supported language options in relevant workflows.",
-      "explanation_zh": "在相关流程中使用受支持的语言选项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Contextual human handoff",
+      "name_zh": "携带背景的人工交接",
+      "explanation_en": "Escalate on defined triggers and route open work to a pinned teammate or the least-loaded owner.",
+      "explanation_zh": "按明确触发条件升级，并将待办分配给指定人员或当前工作最少的负责人。",
+      "explanation_scope": "product_specific",
+      "source_ref": "handoff",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Coordinate conversations across supported channels",
-      "Create, assign and track service requests",
-      "Organize reusable answers and documentation",
-      "Use supported language options in relevant workflows",
-      "Exchange messages with visitors or customers in real time"
+      "Answer routine policy questions and capture a qualified sales lead for a connected booking flow.",
+      "Evaluate an approved order-change action with a tool-error handoff to a human."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "协调受支持渠道中的沟通记录",
-      "创建、分配并跟踪服务请求",
-      "整理可复用的答案与说明文档",
-      "在相关流程中使用受支持的语言选项",
-      "与访客或客户实时交换消息"
+      "回答常见政策问题，并为连接预约流程捕获已判断资格的销售线索。",
+      "评估经审批的订单改动及工具出错后人工交接。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["docs", "actions"],
+    "basis": "Editorial evaluation tasks; no customer outcome or tested integration."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $49.0.",
-      "zh": "未提供免费试用 起价为 $49.0.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "Medium Business Small Business",
-      "zh": "中型企业 小型企业",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Not available",
-      "zh": "未提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Deployment and extension": {
+      "en": "Hosted workspace, embedded widget script, inbox forwarding and HTTP custom actions. Playground side effects are simulated; URL knowledge recrawls nightly, while sitemap bulk crawl is marked coming soon.",
+      "zh": "托管工作空间、嵌入组件脚本、邮箱转发及 HTTP 自定义动作。Playground 副作用模拟；URL 知识夜间重抓，sitemap 批量抓取标为后续能力。",
+      "source_ref": "docs",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "Medium Business Small Business",
-    "organization_sizes_zh": "中型企业 小型企业",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Support operations owner",
+      "Sales qualification manager",
+      "Integration developer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose the industry and allowed actions, add representative policies, then inspect unanswered cases.",
+        "zh": "选择行业及允许动作，加入代表性政策，再检查无法回答情形。",
+        "source_refs": ["docs"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure a test widget/inbox and a calendar or HTTP test system with explicit approval and owner routing.",
+        "zh": "配置测试组件／邮箱，以及带明确审批和负责人路由的日历或 HTTP 测试系统。",
+        "source_refs": ["docs", "actions", "handoff"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Use Playground for conversation checks, then separately verify real provider effects and failure reconciliation in an authorized test environment.",
+        "zh": "用 Playground 检查对话，再在获授权测试环境单独验证服务商真实副作用及失败对账。",
+        "source_refs": ["docs"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Google Calendar",
+        "source_ref": "docs",
+        "scope": "OAuth, free/busy slots and direct booking/rescheduling described."
+      },
+      {
+        "name": "Cal.com",
+        "source_ref": "docs",
+        "scope": "API key, provider-computed slots and direct booking described."
+      },
+      {
+        "name": "Calendly",
+        "source_ref": "docs",
+        "scope": "Personal access token; booking link with webhook confirmation, not the same path as direct calendar booking."
+      },
+      {
+        "name": "Slack Incoming Webhook",
+        "source_ref": "docs",
+        "scope": "Optional notifications; best-effort delivery does not block customer replies."
+      }
+    ],
+    "source_ref": "docs"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Playground simulates side-effecting tools, so a successful conversation there does not prove a real refund, booking or provider write.",
+        "zh": "Playground 模拟有副作用工具，因此对话成功不能证明真实退款、预约或服务商写入。",
+        "source_refs": ["docs"],
+        "evidence_type": "documented_with_editorial_interpretation"
+      },
+      {
+        "en": "Email channel is enabled per deployment; the public terms page is explicitly a placeholder, not established reviewed contractual terms.",
+        "zh": "邮件渠道按部署启用；公开条款页明确为占位内容，不能当作已审定合同。",
+        "source_refs": ["docs", "terms"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -188,12 +160,17 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $49.0.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $49.0.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "docs", "terms"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Flat monthly subscription with AI reply quota, team seats and knowledge-source quota; dollar symbol displayed but actual billing currency not explicitly verified.",
+    "source_snapshot_en": "Monthly cards: Basic $0.99/50 replies/1 seat/10 sources; Starter $49/1,000/3/50; Growth $99/5,000/10/100; Scale $199/10,000/25/100; Enterprise custom. Each customer-facing AI message counts once; human replies do not. Model costs included. Over-quota behavior and final contract unverified.",
+    "source_snapshot_zh": "月付卡：Basic $0.99／50回复／1席位／10来源；Starter $49／1,000／3／50；Growth $99／5,000／10／100；Scale $199／10,000／25／100；Enterprise 定制。每条面向客户的 AI 消息计一次，人工回复不计；包含模型成本。超额行为和最终合同未核实。",
+    "checked_at": "2026-10-22T11:07:38.554456+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -201,22 +178,18 @@
   },
   "faq": [
     {
-      "question_en": "What does Bund AI do?",
-      "question_zh": "Bund AI 用来做什么？",
-      "answer_en": "Bund AI is a product in the Help desk category. Its directory profile covers AI Assistant, Multi-Channel Communication, Ticket Management, Knowledge Base, Contract (SLA Management), Automated Routing, Alerts (Escalation), Self Service Portal.",
-      "answer_zh": "Bund AI 属于客户服务台软件。第三方资料列出的功能包括AI 助手、多渠道沟通、工单管理、知识库、服务水平协议管理、自动分流、升级处理提醒、自助服务门户。"
+      "question_en": "Does a Playground booking create a real appointment?",
+      "question_zh": "Playground 预约会创建真实约会吗？",
+      "answer_en": "Documentation says side-effecting actions are simulated in the Playground. A separate authorized integration test is needed to verify provider-side changes.",
+      "answer_zh": "文档说明 Playground 模拟有副作用动作，需另行在获授权集成测试中验证服务商侧改动。",
+      "source_refs": ["docs"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Multi-Channel Communication, Ticket Management, Knowledge Base, Contract (SLA Management), Automated Routing, Alerts (Escalation), Self Service Portal, Multi-language Support, Live Chat",
-      "answer_zh": "AI 助手、多渠道沟通、工单管理、知识库、服务水平协议管理、自动分流、升级处理提醒、自助服务门户、多语言支持、在线聊天"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Is the Basic plan sustained free use?",
+      "question_zh": "Basic 是持续免费使用吗？",
+      "answer_en": "The current monthly card lists $0.99 with 50 AI replies, one seat and ten sources. It is a paid entry plan; no sustained-free entitlement was established.",
+      "answer_zh": "当前月付卡列出 $0.99，包含50 AI 回复、1席位及10来源，属于付费入门档，未确定持续免费权限。",
+      "source_refs": ["pricing"]
     }
   ],
   "sources": [
@@ -228,25 +201,183 @@
       "read_at": "2026-10-22T08:37:44.027Z",
       "excerpt_sha256": "f1c745780eb29e7e520ba449c52cdde40fd49bc149dc857613939005ee0b7a7e",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Bund AI · Sales & support AI that takes action",
+      "title": "Bund AI · Sales & support AI that takes action",
+      "url": "https://usebund.com/",
+      "read_at": "2026-10-22T11:07:26.027120+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "b0d5c6447c2a1636a7a9bab82668ec73a20aa9fc6592a18d25ad56b9658ce461",
+      "research_notes_en": "www redirects to apex usebund.com; AI sales/support actions and web/email product read. Outcome/speed and broad automatic resync claims not tested."
+    },
+    {
+      "id": "docs",
+      "type": "official_documentation",
+      "site": "Docs · Bund AI",
+      "title": "Docs · Bund AI",
+      "url": "https://usebund.com/docs",
+      "read_at": "2026-10-22T11:07:35.374128+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e18c3e532cc48c9bfe77621f07023722173a29e7421327b7550c3ed9659b0787",
+      "research_notes_en": "Full public documentation: simulated Playground writes, action approval, email deployment enablement, nightly URL crawl, calendar differences, handoff, automation once-per-subject and roles."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Pricing · Bund AI",
+      "title": "Pricing · Bund AI",
+      "url": "https://usebund.com/pricing",
+      "read_at": "2026-10-22T11:07:38.479007+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "acb250816d67e9c2affb714d8b75c739c8195ac9394c70740b61cce326188729",
+      "research_notes_en": "Basic 0.99, Starter49, Growth99, Scale199 monthly displayed dollar prices; replies not resolutions; seat/source quotas and model costs included. Billing currency not explicitly established."
+    },
+    {
+      "id": "actions",
+      "type": "official_documentation",
+      "site": "AI Self-Service Actions for Support · Bund AI",
+      "title": "AI Self-Service Actions for Support · Bund AI",
+      "url": "https://usebund.com/solutions/self-service-actions",
+      "read_at": "2026-10-22T11:07:35.496899+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8edf7df5d01dda9e672733b0263a6bcf4966644b36c5d7d5bb72edba62b74555",
+      "research_notes_en": "HTTP custom actions and customer/team approval; connected-system dependent. Vendor early-rollout action timing is not independently measured."
+    },
+    {
+      "id": "handoff",
+      "type": "official_documentation",
+      "site": "AI to Human Handoff & Escalation · Bund AI",
+      "title": "AI to Human Handoff & Escalation · Bund AI",
+      "url": "https://usebund.com/solutions/escalation-handoff",
+      "read_at": "2026-10-22T11:07:38.554456+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "33d5bef968b4744a14c1d1bf57f61ceaa0b9715923b9fe33e2320355cef3c3da",
+      "research_notes_en": "Explicit triggers, context transfer and escalation ownership/status. Claimed 100 percent context coverage not tested."
+    },
+    {
+      "id": "terms",
+      "type": "official_documentation",
+      "site": "Terms of Service · Bund AI",
+      "title": "Terms of Service · Bund AI",
+      "url": "https://usebund.com/terms",
+      "read_at": "2026-10-22T11:07:37.597265+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "a9546f68c526247e222156982fd26a513a1c8be5f9ab8acf9d2230df86db0b9a",
+      "research_notes_en": "Page explicitly identifies itself as a placeholder summary needing reviewed legal terms. Do not treat it as a verified contractual license, cancellation/refund guarantee or production-readiness proof."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:07:38.554456+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "docs", "actions", "handoff", "terms"],
+  "profile": {
+    "sections": [
+      {
+        "id": "content-channel",
+        "title_en": "Start with authoritative policies and a controlled inbound channel",
+        "title_zh": "先准备权威政策及可控接收渠道",
+        "en": "Bund AI ingests pasted text, URLs, uploads and authored help articles. Documentation says URL sources are recrawled nightly, uploads accept PDF/DOCX/Markdown/TXT up to 10 MB, and bulk sitemap crawling is coming soon. The homepage’s broader automatic-resync wording should not become a promise that every policy change is available immediately.\n\nA useful trial uses a current cancellation policy, an obsolete page and an unanswered question. Check what the agent used and whether it logs a knowledge gap. Add the widget or forward a test support inbox only after reviewing allowed actions. The docs note that the email channel is enabled per deployment, even though pricing lists it in Basic. No live inbox was connected here.",
+        "zh": "Bund AI 接收粘贴文字、URL、上传及自编帮助文章。文档称 URL 来源夜间重抓，上传接受 PDF／DOCX／Markdown／TXT、每份最多10 MB，sitemap 批量抓取仍为后续能力。首页较宽泛自动重同步措辞不能当作每次政策改动都立即可用的承诺。\n\n可用当前取消政策、过时网页和无答案问题试点，检查 agent 采用的资料及是否记录知识缺口。复核允许动作后再加入组件或转发测试邮箱。即使定价将邮件列在 Basic，文档仍说明按部署启用。本文未连接真实邮箱。",
+        "source_refs": ["docs", "product", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "real-action",
+        "title_en": "A declared action needs a connected system and an approval boundary",
+        "title_zh": "已声明动作需要连接系统及审批边界",
+        "en": "The docs distinguish lookups, business changes, lead/ticket capture and calendar tools. Custom actions are parameterized HTTP GET/POST calls with authentication headers; documentation says writing actions should require approval. On the web a customer or teammate confirms; email can use YES/NO replies. The action solution page makes clear availability depends on the connected systems and chosen approval rules.\n\nFor an illustrative address change, inspect the order identity, eligibility window, proposed address, approving person and returned provider result before claiming completion. Playground writes are simulated, so they validate conversation behavior rather than a real external change. A separate authorized test should cover provider rejection, a timeout after a possible write and repeated confirmation. Idempotency and safety claims remain untested, and no complete replay/recovery contract was established.",
+        "zh": "文档区分查询、业务改动、线索／工单捕获及日历工具。自定义动作是带认证请求头和参数的 HTTP GET／POST 调用；文档要求写入动作配置审批。Web 可由客户或团队成员确认，邮件可用 YES／NO 回复。动作方案页明确可用性取决于连接系统及所选审批规则。\n\n以假设地址变更为例，应检查订单身份、可修改窗口、拟改地址、审批人员及服务商返回结果，再宣称完成。Playground 写入是模拟，只能检查对话行为，不能验证真实外部改动。应另做获授权测试，覆盖服务商拒绝、可能已写入后的超时及重复确认。幂等和安全主张未经测试，也未确定完整重放／恢复契约。",
+        "source_refs": ["docs", "actions"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "calendar",
+        "title_en": "Calendar providers do not use one identical booking path",
+        "title_zh": "日历服务商并非采用同一预约路径",
+        "en": "Google Calendar is documented with OAuth free/busy lookup and direct booking; Cal.com uses an API key and provider-computed slots. Calendly instead shares a scheduling link and confirms through a webhook. A booking-link click is not the same evidence as a completed provider booking. Revoking access is documented to disable calendar tools automatically.\n\nEvaluate a busy slot, timezone boundary, cancellation window and revoked credential. Check the provider event and customer confirmation rather than only the agent’s final sentence. A captured sales lead is also a separate object: documentation describes one lead per conversation with new, contacted, qualified and closed stages. Booking, qualification and ticket resolution should each have their own acceptance condition.",
+        "zh": "Google Calendar 文档采用 OAuth 空闲查询及直接预约，Cal.com 使用 API key 和服务商计算时段。Calendly 则分享预约链接并通过 webhook 确认。点击链接与服务商预约完成不是同一种证据；文档称撤销访问会自动停用日历工具。\n\n应评估忙碌时段、时区边界、取消窗口及凭据撤销，检查服务商事件和客户确认，而非只看 agent 最后一句话。捕获销售线索也是独立对象：文档说明每次对话一条线索，阶段为 new、contacted、qualified、closed。预约、资格判断及工单解决应各自有验收条件。",
+        "source_refs": ["docs"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "handoff",
+        "title_en": "Make the human queue work when the agent stops",
+        "title_zh": "让 agent 停下后的人工队列真正运转",
+        "en": "Low confidence, an explicit request for a person, sensitive review, supervisor blocks and tool errors are documented handoff triggers. The conversation switches to handoff with transcript/contact context and an escalation moves through open, in progress and resolved. Rules can assign a pinned teammate or the person with the fewest open escalations.\n\nSlack notifications are optional and best-effort; the docs say an outage does not block customer replies. Therefore an absent Slack message is not evidence that no escalation exists. Inspect the dashboard queue and actual owner. Automations are described as firing at most once per subject, which matters when evaluating repeated stale-lead or SLA events. Resume semantics, failed-notification retry and unstaffed queue handling were not established or tested.",
+        "zh": "低置信度、明确要求人工、敏感复核、监督器阻断及工具错误，是文档交接触发条件。对话转为 handoff 并携带记录／联系背景，升级事项经过 open、in progress、resolved。规则可分配指定人员或待办升级最少的人员。\n\nSlack 通知可选且尽力交付，文档称故障不阻止客户回复。因此没收到 Slack 不能证明没有升级事项，应检查面板队列及实际负责人。自动化被描述为每个对象最多触发一次，评估重复陈旧线索或 SLA 事件时需考虑。恢复自动处理语义、通知失败重试及无人值守队列行为未确定或测试。",
+        "source_refs": ["docs", "handoff"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Count AI messages and resolve the incomplete contract",
+        "title_zh": "按 AI 消息计量，并解决不完整合同",
+        "en": "Monthly cards list Basic $0.99 with 50 AI replies, one seat and ten sources; Starter $49 with 1,000/three/50; Growth $99 with 5,000/ten/100; Scale $199 with 10,000/25/100. Enterprise is custom. The site uses a dollar symbol without an explicitly established billing currency in the read pages. Model costs are included. Each customer-facing agent message counts once on widget or email; human messages do not, so one conversation can consume several replies.\n\nStarter adds automations and custom actions; Growth adds account intelligence and white labeling. Exact over-quota handling, overage, refund and trial terms were not established. The June 2026 terms page explicitly calls itself a placeholder summary, so its billing/change text is not treated as reviewed contract evidence. Hosted operation is documented; open-source license, self-hosting, data region, export completeness and restore guarantees remain unverified. Adoption should be evaluated against actual connected tasks and the final service agreement.",
+        "zh": "月付卡列出 Basic $0.99，50 AI 回复、1席位及10来源；Starter $49，1,000／3／50；Growth $99，5,000／10／100；Scale $199，10,000／25／100；Enterprise 定制。所读页面使用美元符号，但未明确实际计费币种。包含模型成本，每条组件或邮件中面向客户的 agent 消息计一次，人工消息不计，因此一次对话可消耗多次回复。\n\nStarter 增加自动化和自定义动作，Growth 增加账户情报及白标。准确超额处理、超额费、退款和试用条款未确定。2026年6月条款页明确自称占位摘要，因此不把其中账单／变更文字当作已审定合同证据。已说明托管运行，但开源许可、自行托管、数据地区、导出完整性和恢复保证未核实。采用评估应结合实际连接任务和最终服务协议。",
+        "source_refs": ["pricing", "docs", "terms"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Bund AI: Knowledge, Approved Actions, Booking and Human Handoff",
+    "title_zh": "Bund AI：知识、审批动作、预约及人工交接",
+    "description_en": "Evaluate Bund AI web/email support and sales workflows, simulated Playground actions, calendar differences, reply quotas and unresolved contract and recovery conditions.",
+    "description_zh": "评估 Bund AI Web／邮件支持和销售流程、Playground 模拟动作、日历差异、回复额度，以及待明确的合同和恢复条件。",
+    "primary_intent": "Evaluate Bund AI agent workflows and action boundaries.",
+    "secondary_questions": [
+      "Does Playground change real systems?",
+      "How do calendars differ?",
+      "What counts as an AI reply?"
+    ],
+    "query_basis": "Editorial questions; no measured search demand, ranking or AI visibility.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No account, ingestion, channel, action, approval, calendar, notification, quota or purchase tested. Final contract is missing from the placeholder terms page; license, billing currency, over-quota behavior, export/restore, data region, full UI languages and regional access unverified.",
+      "zh": "未测试账户、资料接收、渠道、动作、审批、日历、通知、额度或购买。占位条款页缺正式合同；许可、计费币种、超额行为、导出／恢复、数据地区、完整界面语言及地区访问未核实。",
+      "source_refs": ["terms"],
+      "evidence_type": "not_tested_and_documentation_gap"
+    },
+    {
+      "en": "Homepage implies automatic content resync on changes, while detailed docs specify nightly URL recrawls and forthcoming sitemap crawling. Email is listed in Basic but enabled per deployment.",
+      "zh": "首页暗示内容变化即自动重同步，详细文档则说明夜间 URL 重抓及后续 sitemap 抓取。Basic 列有邮件，但按部署启用。",
+      "source_refs": ["product", "docs", "pricing"],
+      "evidence_type": "observed_documentation_conditions"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

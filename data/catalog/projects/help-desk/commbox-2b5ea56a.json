@@ -10,253 +10,159 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "CommBox is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.\n\nAdditional listed capabilities include Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Automated Routing, Alerts (Escalation), Self Service Portal, Multi-language Support. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: use model-assisted interactions within the product workflow; coordinate conversations across supported channels; create, assign and track service requests; organize reusable answers and documentation; use supported language options in relevant workflows; exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "CommBox 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。\n\n资料还列出问卷与反馈、已知问题管理、知识库、服务水平协议管理、自动分流、升级处理提醒、自助服务门户、多语言支持。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持。\n\n第三方定价快照显示：未提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：在产品工作流中使用模型辅助交互；协调受支持渠道中的沟通记录；创建、分配并跟踪服务请求；整理可复用的答案与说明文档；在相关流程中使用受支持的语言选项；与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "CommBox is an enterprise customer-engagement platform that puts digital messaging, AI agents and human service work around a shared conversation workspace. It is designed to orchestrate processes across existing CRM, ERP and telephony systems rather than replace each system of record. Sales qualification, service actions and outbound engagement are different workflows within the wider platform.\n\nIts Flow Builder can call APIs, route to people or other AI agents, and expose per-conversation diagnostic information. Correct handoff context and explicit failure paths matter as much as the generated answer. Public pricing meters digital conversations and AI-handled voice minutes separately. No deployment, flow, AI answer, external transaction or invoice was tested.",
+  "description_zh": "CommBox 是企业客户互动平台，围绕共享对话工作空间组织数字消息、AI agent 及人工服务。它设计为跨现有 CRM、ERP 和电话系统编排流程，而非替换每套记录系统。销售资格判断、服务动作及主动触达是更大平台内的不同流程。\n\nFlow Builder 可调用 API、转交人工或其他 AI agent，并提供逐对话诊断信息。正确交接背景及明确失败路径，与生成答案同样重要。公开定价分别计量数字对话及 AI 处理语音分钟。本文未测试部署、流程、AI 回答、外部交易或账单。",
   "core_features": [
     {
-      "name_en": "AI Assistant",
-      "name_zh": "AI 助手",
-      "explanation_en": "Use model-assisted interactions within the product workflow.",
-      "explanation_zh": "在产品工作流中使用模型辅助交互。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Unified AI and human conversations",
+      "name_zh": "统一 AI 与人工对话",
+      "explanation_en": "Coordinate digital channels and existing CRM/ERP/telephony context from one customer-engagement platform.",
+      "explanation_zh": "在客户互动平台中协调数字渠道和现有 CRM／ERP／电话系统背景。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Incident Management",
-      "name_zh": "事件管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Flow Builder API and error paths",
+      "name_zh": "Flow Builder API 及错误路径",
+      "explanation_en": "Call configured APIs and route failures to the nearest applicable higher-level Error step.",
+      "explanation_zh": "调用已配置 API，并将失败路由至最近适用上层 Error 步骤。",
+      "explanation_scope": "product_specific",
+      "source_ref": "api",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Social Media Integration",
-      "name_zh": "社交媒体集成",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Configured human/AI handoff",
+      "name_zh": "可配置人工／AI 交接",
+      "explanation_en": "End a flow branch by forwarding, with channel selection and explicitly limited AI-to-AI history.",
+      "explanation_zh": "通过转交结束流程分支，并选择渠道和明确限制的 AI 间历史。",
+      "explanation_scope": "product_specific",
+      "source_ref": "forward",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Channel Communication",
-      "name_zh": "多渠道沟通",
-      "explanation_en": "Coordinate conversations across supported channels.",
-      "explanation_zh": "协调受支持渠道中的沟通记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Macros (Templated Responses)",
-      "name_zh": "快捷回复模板",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Storage",
-      "name_zh": "文档存储",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Customizable Branding",
-      "name_zh": "品牌自定义",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Ticket Management",
-      "name_zh": "工单管理",
-      "explanation_en": "Create, assign and track service requests.",
-      "explanation_zh": "创建、分配并跟踪服务请求。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Surveys and Feedback",
-      "name_zh": "问卷与反馈",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Known Issue Management",
-      "name_zh": "已知问题管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Knowledge Base",
-      "name_zh": "知识库",
-      "explanation_en": "Organize reusable answers and documentation.",
-      "explanation_zh": "整理可复用的答案与说明文档。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Contract (SLA Management)",
-      "name_zh": "服务水平协议管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Automated Routing",
-      "name_zh": "自动分流",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Alerts (Escalation)",
-      "name_zh": "升级处理提醒",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Self Service Portal",
-      "name_zh": "自助服务门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Multi-language Support",
-      "name_zh": "多语言支持",
-      "explanation_en": "Use supported language options in relevant workflows.",
-      "explanation_zh": "在相关流程中使用受支持的语言选项。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Conversation diagnostics and quality issues",
+      "name_zh": "对话诊断及质量问题",
+      "explanation_en": "Inspect read-only tool context and separately track reported AI message issues after enabling reporting.",
+      "explanation_zh": "检查只读工具背景，并在启用报告后单独跟踪 AI 消息质量问题。",
+      "explanation_scope": "product_specific",
+      "source_ref": "debug",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Use model-assisted interactions within the product workflow",
-      "Coordinate conversations across supported channels",
-      "Create, assign and track service requests",
-      "Organize reusable answers and documentation",
-      "Use supported language options in relevant workflows",
-      "Exchange messages with visitors or customers in real time"
+      "Connect an order-status API to a service conversation with a designed error and human fallback.",
+      "Route a qualified sales request to a specialist agent with structured identifiers and selected history."
     ],
     "zh": [
-      "在产品工作流中使用模型辅助交互",
-      "协调受支持渠道中的沟通记录",
-      "创建、分配并跟踪服务请求",
-      "整理可复用的答案与说明文档",
-      "在相关流程中使用受支持的语言选项",
-      "与访客或客户实时交换消息"
+      "为服务对话连接订单状态 API，并设计错误和人工兜底。",
+      "携带结构化标识及选定历史，把已判断资格的销售请求转给专门 agent。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["api", "forward"],
+    "basis": "Editorial scenarios based on documentation, not executed workflows or customer results."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Custom plan.",
-      "zh": "未提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours",
-      "zh": "全天候人工支持, 工作时间支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Flow execution": {
+      "en": "API response fields can feed downstream steps. Forward ends a branch; dynamic destinations use ForwardStreamId/ForwardSubStreamId. Diagnostic context has a documented 48-hour retention window and is not a replay engine.",
+      "zh": "API 响应字段可供后续步骤使用。Forward 结束分支；动态目标采用 ForwardStreamId／ForwardSubStreamId。诊断背景文档保留48小时，不是重放引擎。",
+      "source_ref": "debug",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Enterprise CX manager",
+      "Contact-center operations owner",
+      "CRM/ERP integration owner",
+      "AI flow designer"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select one customer intent and identify the authoritative backend, required identity and permitted action.",
+        "zh": "选择一个客户意图，确定权威后端、所需身份及允许动作。",
+        "source_refs": ["product", "api"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Configure API success/error branches and staffed, busy and out-of-hours transfer routes.",
+        "zh": "配置 API 成功／错误分支，以及有人员、忙碌和非工作时间的转交路径。",
+        "source_refs": ["api", "forward"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Inspect representative conversations within diagnostic retention and enable message issue reporting before rollout.",
+        "zh": "在诊断保留期内检查代表性对话，上线前启用消息问题报告。",
+        "source_refs": ["debug", "issues"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Existing CRM, ERP and telephony systems",
+        "source_ref": "product",
+        "scope": "Vendor orchestration offer; actual connector edition, mapping and rights require scoping."
+      },
+      {
+        "name": "Flow Builder external REST/SOAP APIs",
+        "source_ref": "api",
+        "scope": "Methods, parameters and stored response fields configured per integration; error branch placement matters."
+      }
+    ],
+    "source_ref": "api"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "AI-to-AI forwarding is limited to eight customer and eight AI segments; the default setting of one forwards only the latest customer message.",
+        "zh": "AI 间转交最多8个客户及8个 AI 段；默认值1只转交最新客户消息。",
+        "source_refs": ["forward"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Debugger cannot edit or replay conversations. Context expires after 48 hours and some fields exist only when an Ability was invoked.",
+        "zh": "Debugger 不能编辑或重放对话，背景48小时后过期，部分字段只在调用 Ability 后存在。",
+        "source_refs": ["debug"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.commbox.io/end-user-license-agreement-eula/",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "paid",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "license"],
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "Digital conversation usage by annual volume band; voice AI handled minutes separate. Dollar symbol shown; final currency, commitment, implementation and exact billing boundaries require the order.",
+    "source_snapshot_en": "Displayed digital bands: 0–250K annual conversations $0.70 each; 250K–500K $0.65; 500K–1M+ $0.47. Voice AI $0.30 per AI-handled minute; human time not metered. No per-seat license fee. Discount application and conversation boundary details need contract confirmation.",
+    "source_snapshot_zh": "显示数字对话档：年量0–250K每次$0.70，250K–500K为$0.65，500K–1M+为$0.47。Voice AI 每 AI 处理分钟$0.30，人工时间不计量；无每席位许可费。折扣适用方式及对话边界细节需合同确认。",
+    "checked_at": "2026-10-22T11:10:39.124086+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -264,22 +170,18 @@
   },
   "faq": [
     {
-      "question_en": "What does CommBox do?",
-      "question_zh": "CommBox 用来做什么？",
-      "answer_en": "CommBox is a product in the Help desk category. Its directory profile covers AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management.",
-      "answer_zh": "CommBox 属于客户服务台软件。第三方资料列出的功能包括AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理。"
+      "question_en": "Does a human transfer always continue the same conversation object?",
+      "question_zh": "转人工总会继续同一个对话对象吗？",
+      "answer_en": "The Forward guide says a new same-channel conversation object is opened by default. Other channels or dynamic destinations can be configured.",
+      "answer_zh": "Forward 指南称默认创建同渠道新对话对象，可配置其他渠道或动态目标。",
+      "source_refs": ["forward"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "AI Assistant, Incident Management, Social Media Integration, Multi-Channel Communication, Macros (Templated Responses), Document Storage, Customizable Branding, Ticket Management, Surveys and Feedback, Known Issue Management, Knowledge Base, Contract (SLA Management), Automated Routing, Alerts (Escalation), Self Service Portal, Multi-language Support, Live Chat",
-      "answer_zh": "AI 助手、事件管理、社交媒体集成、多渠道沟通、快捷回复模板、文档存储、品牌自定义、工单管理、问卷与反馈、已知问题管理、知识库、服务水平协议管理、自动分流、升级处理提醒、自助服务门户、多语言支持、在线聊天"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Can the debugger retry an unsuccessful API action?",
+      "question_zh": "Debugger 能重试失败 API 动作吗？",
+      "answer_en": "No. It is a read-only viewing tool with no edit/replay. Failure branches belong in the flow, and any retry must respect the external system’s actual result.",
+      "answer_zh": "不能。它是无编辑／重放的只读查看工具。失败分支应在流程中设计，任何重试都需考虑外部系统实际结果。",
+      "source_refs": ["debug", "api"]
     }
   ],
   "sources": [
@@ -291,25 +193,195 @@
       "read_at": "2026-10-22T08:39:55.715Z",
       "excerpt_sha256": "8a8d135f0bbe579711c87d970083119a25b880c367fd263185fc21030988cd08",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "CommBox - AI Omnichannel Customer Experience Platform",
+      "title": "CommBox - AI Omnichannel Customer Experience Platform",
+      "url": "https://www.commbox.io/",
+      "read_at": "2026-10-22T11:09:55.615309+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "37f163769c33b8e76bf59fdb4975e7eead987c65d2e2ad32efb46edfc361c517",
+      "research_notes_en": "Enterprise omnichannel AI/human workspace, orchestration across existing systems. Zero hallucinations, ROI, automation rate and six-week outcomes are vendor claims, not research results."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "CommBox - Pricing - CommBox",
+      "title": "CommBox - Pricing - CommBox",
+      "url": "https://www.commbox.io/pricing/",
+      "read_at": "2026-10-22T11:10:05.355020+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "60ee02188a61a19a94828d32bfae04dddea40a4e58ede9bf922de2eebed5b44b",
+      "research_notes_en": "Usage-based digital conversations with automatic annual volume bands, voice AI minutes separately, no seat license fee. ROI calculator assumptions not customer evidence; exact billing implementation unknown."
+    },
+    {
+      "id": "forward",
+      "type": "official_documentation",
+      "site": "Forward to Agent Step",
+      "title": "Forward to Agent Step",
+      "url": "https://help.commbox.io/docs/forward-to-agent-step-1",
+      "read_at": "2026-10-22T11:10:38.812629+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d6cab0a6c72a0635f7003675d3f8667a94345f27d49627f550a737067962822f",
+      "research_notes_en": "July 2026 guide: terminal handoff step, new same-channel conversation by default, dynamic channel variables, availability fallbacks, AI-to-AI segment limits."
+    },
+    {
+      "id": "api",
+      "type": "official_documentation",
+      "site": "The API Step",
+      "title": "The API Step",
+      "url": "https://help.commbox.io/docs/the-api-step",
+      "read_at": "2026-10-22T11:10:39.124086+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8256400c0241a4e0bd421f55aabb456dcdcac028407a2e05305920fec99bb02b",
+      "research_notes_en": "REST/SOAP/Raw/Workflow/table APIs, saved response and nearest higher-hierarchy Error step. No documented universal automatic retry."
+    },
+    {
+      "id": "debug",
+      "type": "official_documentation",
+      "site": "AI Agent Debugger",
+      "title": "AI Agent Debugger",
+      "url": "https://help.commbox.io/docs/ai-agent-debugger",
+      "read_at": "2026-10-22T11:10:38.898345+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "95ab31389f581c043d923ac92397c8ac69bf4eaadec8f181392feb4aa24b099e",
+      "research_notes_en": "July 2026 debugger read-only, no replay, context retained 48 hours. Missing/expired context and error states distinct from successful execution."
+    },
+    {
+      "id": "issues",
+      "type": "official_documentation",
+      "site": "AI Agents Issues",
+      "title": "AI Agents Issues",
+      "url": "https://help.commbox.io/docs/issues-with-ai-agents",
+      "read_at": "2026-10-22T11:10:38.981464+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "723f3c31039f74c523d2e191fd49982f7a860763e093fcad973d51803ae39881",
+      "research_notes_en": "August 2026 issue reporting must be enabled for each AI agent/chatbot; reports linked to child messages and conversation, with subjective severity and tracked status."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "End User License Agreement - CommBox",
+      "title": "End User License Agreement - CommBox",
+      "url": "https://www.commbox.io/end-user-license-agreement-eula/",
+      "read_at": "2026-10-22T11:10:19.535288+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "8e6c370265500a1caf2aa915852195848b5eeef9894c1d167e47b7784a1de3fc",
+      "research_notes_en": "October 13 2024 EULA: proprietary object-code software/hosted-service rights under order, no reverse engineering; export responsibility before termination."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:10:39.124086+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": ["product", "forward", "api", "debug", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "orchestration",
+        "title_en": "Name the system that owns the customer fact",
+        "title_zh": "明确谁持有权威客户事实",
+        "en": "CommBox connects customer interactions with CRM, ERP and telephony processes. In a hypothetical order-status workflow, a conversation identifies the customer and order, an API retrieves the authoritative status, and the agent presents the result or forwards the case. The conversation platform does not itself prove an order shipped, a payment settled or an appointment was booked.\n\nDefine the required identity and permission checks, the source fields and the success condition before enabling a write. Homepage automation rates, lower costs, zero-hallucination language and a six-week launch are vendor claims, not results verified here. The fit judgment is strongest for teams that can own cross-system configuration and operational handoff.",
+        "zh": "CommBox 将客户互动连接到 CRM、ERP 和电话流程。以假设订单状态流程为例，对话识别客户及订单，API 获取权威状态，agent 展示结果或转交事项。对话平台本身不能证明订单已发货、付款已结算或预约已完成。\n\n启用写入前应定义身份及权限检查、来源字段和成功条件。首页自动化比例、成本降低、零幻觉措辞及六周上线属于厂商声明，不是本文验证结果。能负责跨系统配置和运营交接的团队，有更明确的评估基础。",
+        "source_refs": ["product", "api"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "error-step",
+        "title_en": "API failure needs an intentional branch",
+        "title_zh": "API 失败需要明确分支",
+        "en": "The API step supports REST, SOAP, raw/workflow actions and static table lookup. The guide lets designers test parameters, save responses into named data fields and reuse them later. An Error step must sit higher in the hierarchy; failure goes to the nearest applicable Error step above the API. Placing an unrelated message after the call does not establish an error handler.\n\nEvaluate an unauthorized request, malformed response, unavailable system and timeout. Reconcile the backend before retrying a potentially completed write. The read guide does not establish universal retries, idempotency or rollback. Debug mode is described for use with support, and no API request was sent for this catalog.",
+        "zh": "API 步骤支持 REST、SOAP、原始／工作流动作及静态表查询。指南允许设计者测试参数、把响应保存为命名字段并供后续复用。Error 步骤必须位于更高层级，失败时前往 API 上方最近适用 Error 步骤；仅在调用后放一条消息不能确定错误处理。\n\n评估应包含未授权请求、格式错误响应、系统不可用及超时。对可能已完成的写入，重试前应与后端对账。所读指南未确定统一重试、幂等或回滚。Debug mode 被描述为配合支持使用；本文未发送 API 请求。",
+        "source_refs": ["api"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "handoff-context",
+        "title_en": "Choose destination, availability and transmitted context",
+        "title_zh": "选择目标、可用性及传输背景",
+        "en": "Forward to Agent ends the current flow branch. For a human transfer it normally creates a new object on the same channel; designers can change channel or set dynamic destination variables. The guide recommends separate staffed, busy and out-of-hours paths. Voice transfer additionally needs a destination phone variable and a spoken message before forwarding.\n\nAI-to-AI forwarding can carry up to eight customer and eight AI segments, not an unlimited full transcript. Consecutive messages from one participant become one segment; the default selection of one sends only the latest customer message. Pass structured customer/case identifiers explicitly and test the receiving agent’s view. A homepage promise of seamless context does not replace these configuration limits.",
+        "zh": "Forward to Agent 结束当前流程分支。人工转交通常在同渠道新建对象，设计者可改渠道或设置动态目标变量。指南建议分别设计有人、忙碌及非工作时间路径。语音转交另需目标电话号码变量及转交前播放消息。\n\nAI 间最多传递8个客户及8个 AI 段，并非无限完整记录。同一参与者连续消息组成一段；默认选择1只发送最新客户消息。应明确传递结构化客户／事项标识，并测试接收 agent 的视图。首页无缝背景承诺不能代替这些配置限制。",
+        "source_refs": ["forward", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "diagnostics",
+        "title_en": "Inspect the tool result while diagnostic context still exists",
+        "title_zh": "在诊断背景仍存在时检查工具结果",
+        "en": "The July 2026 Debugger assembles root flow context, Ability executions and agent state for one conversation. It is read-only, cannot edit or replay, and retains context for 48 hours. A missing Ability context or unavailable agent state is an explicit empty/error condition, not proof the external operation failed or succeeded. Hosted MCP calls also appear in a different part of the diagnostic result from ordinary Ability results.\n\nUse the conversation and tool-call identifiers to compare requested arguments, returned data and the customer-facing claim. Enable Issues separately on each AI agent/chatbot to report a problematic child message and track it through review. Reporting severity is an administrator judgment, not an objective product accuracy score. No diagnostic session or quality issue was created here.",
+        "zh": "2026年7月 Debugger 为单次对话组合根流程背景、Ability 执行及 agent 状态。它只读、不能编辑或重放，背景保留48小时。Ability 背景缺失或 agent 状态不可用是明确空值／错误情形，不能证明外部操作失败或成功。托管 MCP 调用也显示在与普通 Ability 结果不同的位置。\n\n应使用对话及工具调用标识对照请求参数、返回数据和面向客户的完成声明。每个 AI agent／chatbot 需单独启用 Issues，才能报告有问题的子消息并跟踪复核。严重性是管理员判断，不是客观产品准确度分数。本文未创建诊断会话或质量问题。",
+        "source_refs": ["debug", "issues"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "commercial",
+        "title_en": "Separate digital conversations, voice minutes and the order",
+        "title_zh": "区分数字对话、语音分钟及订单合同",
+        "en": "Pricing displays a digital-conversation rate of $0.70 for annual volume up to 250K, $0.65 for 250K–500K and $0.47 for 500K–1M+. Voice AI is separate at $0.30 per AI-handled minute, excluding human-agent time. The page says no per-seat license fees and automatic volume discounts. A digital conversation is described as a complete customer interaction regardless of message count.\n\nThe page does not settle time windows, reopened or cross-channel billing identity, minimum commitment, marginal versus retroactive band calculation, provider fees or final currency. Its ROI calculator explicitly uses assumptions, so estimated savings are not evidence of realized returns. The EULA makes the signed order authoritative for scope/fees and grants proprietary object-code rights; customers must export before termination. Export completeness, restoration, data region, UI languages and regional purchase were not verified.",
+        "zh": "定价显示数字对话年量至250K每次$0.70，250K–500K为$0.65，500K–1M+为$0.47。Voice AI 另按每 AI 处理分钟$0.30，排除人工时间。页面称无每席位许可费并自动应用量折扣，数字对话被描述为完整客户互动，不依消息条数计费。\n\n页面未确定时间窗口、重新打开或跨渠道计费身份、最低承诺、分档按边际或追溯计算、服务商费及最终币种。ROI 计算器明确采用假设，预计节省不能当实际回报证据。EULA 将范围／费用交由签署订单约定，提供专有目标码权限，并要求客户终止前导出。导出完整性、恢复、数据地区、界面语言及地区购买未核实。",
+        "source_refs": ["pricing", "license"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CommBox: Omnichannel AI Flows, Handoff, Debugging and Usage Pricing",
+    "title_zh": "CommBox：多渠道 AI 流程、交接、诊断与用量定价",
+    "description_en": "Evaluate CommBox API error branches, human and AI handoff context, 48-hour diagnostic limits, quality reporting and separate digital-conversation/voice-minute charges.",
+    "description_zh": "评估 CommBox API 错误分支、人工和 AI 交接背景、48小时诊断限制、质量报告及数字对话／语音分钟独立计费。",
+    "primary_intent": "Evaluate CommBox enterprise conversation workflows and usage costs.",
+    "secondary_questions": [
+      "What context reaches the next AI agent?",
+      "Can the debugger replay an action?",
+      "How are voice and digital billed?"
+    ],
+    "query_basis": "Editorial questions; no measured demand, ranking or AI citation effect.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant, flow, API, handoff, diagnostic, AI quality or billing test. Conversation billing boundary, band application, commitment, currency, implementation/provider fees, region, exports/restore and UI languages remain unverified.",
+      "zh": "未测试租户、流程、API、交接、诊断、AI 质量或账单；对话计费边界、分档适用、承诺、币种、实施／服务商费、地区、导出／恢复及界面语言未核实。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "No independent support for zero hallucinations, automation rates, cost savings or six-week launch. The pricing ROI calculator is explicitly indicative.",
+      "zh": "零幻觉、自动化比例、节省成本及六周上线无独立证据；定价 ROI 计算器明确为指示性估计。",
+      "source_refs": ["product", "pricing"],
+      "evidence_type": "vendor_claims_not_independently_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }

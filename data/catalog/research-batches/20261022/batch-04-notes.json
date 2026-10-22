@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T11:04:34.531038+00:00",
+  "updated_at": "2026-10-22T11:12:51.852272+00:00",
   "assigned": 204,
-  "completed_count": 17,
+  "completed_count": 20,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -23,18 +23,18 @@
     "projects/crm/vinsolutions-connect-crm-06bac125.json",
     "projects/crm/archiz-crm-3b56403d.json",
     "projects/crm/aurea-crm-2db99d1d.json",
-    "projects/crm/pipedrive-crm-4a41bd76.json"
+    "projects/crm/pipedrive-crm-4a41bd76.json",
+    "projects/help-desk/bolddesk-b05f86ef.json",
+    "projects/help-desk/bund-ai-cf2e0dd9.json",
+    "projects/help-desk/commbox-2b5ea56a.json"
   ],
-  "incomplete_count": 187,
+  "incomplete_count": 184,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
     "projects/crm/mr-milkman-a1895a2a.json",
     "projects/crm/oncontact-crm-b4c091ba.json",
     "projects/crm/quickdesk-6b00414e.json",
-    "projects/help-desk/bolddesk-b05f86ef.json",
-    "projects/help-desk/bund-ai-cf2e0dd9.json",
-    "projects/help-desk/commbox-2b5ea56a.json",
     "projects/help-desk/converso-ac9b325c.json",
     "projects/help-desk/desku-018b8949.json",
     "projects/help-desk/dixa-69beb280.json",
@@ -415,6 +415,15 @@
         "git diff --check"
       ],
       "result": "Run at checkpoint before commit; 17 batch records completed, 187 remaining including 5 CRM issues and 182 other-category records not yet researched. Structure checks do not establish factual quality."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p test_*.py",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on three changed Help Desk records and notes",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit. Batch contributes 20 completed records, 184 remaining. Source hashes checked against saved actual fetch content; structures do not establish independent factual acceptance."
     }
   ],
   "checkpoints": [
@@ -463,11 +472,20 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "8010e2d",
       "completed": [
         "projects/crm/archiz-crm-3b56403d.json",
         "projects/crm/aurea-crm-2db99d1d.json",
         "projects/crm/pipedrive-crm-4a41bd76.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/help-desk/bolddesk-b05f86ef.json",
+        "projects/help-desk/bund-ai-cf2e0dd9.json",
+        "projects/help-desk/commbox-2b5ea56a.json"
       ],
       "status": "ready_to_commit"
     }
