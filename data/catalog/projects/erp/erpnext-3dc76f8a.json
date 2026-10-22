@@ -2,192 +2,71 @@
   "schema_version": "123charts-software-research-v1",
   "slug": "erpnext-3dc76f8a",
   "name": "ERPNext",
-  "website_url": "https://erpnext.com/",
-  "domain": "erpnext.com",
-  "identity_domain": "erpnext.com",
+  "website_url": "https://frappe.io/erpnext",
+  "domain": "frappe.io",
+  "identity_domain": "frappe.io",
   "category": "erp",
   "secondary_categories": [],
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "ERPNext is a product in the ERP category. Its directory profile covers Warehouse Management, Supply Chain Management, Sales, Stock Management, HR Management, Financial Management, Asset Management, CRM.\n\nAdditional listed capabilities include Accounting Management, Dashboard, Project Management, Purchasing. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: coordinate stock locations and warehouse tasks; bring selected indicators and records into one view; coordinate project tasks, responsibilities and progress. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "ERPNext 属于企业资源管理软件。第三方资料列出的功能包括仓库管理、供应链管理、销售、库存管理、人力资源管理、财务管理、资产管理、客户关系管理。\n\n资料还列出会计管理、仪表盘、项目管理、采购。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：协调库存位置与仓库作业；在同一视图中汇集选定指标和记录；协调项目任务、负责人和进度。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "ERPNext is an open-source ERP maintained by Frappe, connecting accounting, buying/selling, stock, manufacturing and other business records. The former erpnext.com homepage redirects to the current Frappe product site. Its software license and its operating costs are separate: users can self-host under GPLv3, while managed hosting and implementation are commercial services.\n\nA useful evaluation follows a confirmed order through delivery, invoicing and payment, checking when stock and the ledger actually change. This profile did not install ERPNext, import data or submit a document, and current documentation may describe a newer version than a deployed site.",
+  "description_zh": "ERPNext 是 Frappe 维护的开源 ERP，连接会计、采购销售、库存、制造及其他业务记录。原 erpnext.com 首页已跳转至 Frappe 当前产品站。软件许可与运营费用需要分开：可按 GPLv3 自托管，托管及实施则属于商业服务。\n\n评估时可以从确认订单追踪至交付、开票和收付款，检查库存及总账究竟何时变化。本文未安装 ERPNext、导入数据或提交单据；当前文档也可能描述比已部署站点更新的版本。",
   "core_features": [
     {
-      "name_en": "Warehouse Management",
-      "name_zh": "仓库管理",
-      "explanation_en": "Coordinate stock locations and warehouse tasks.",
-      "explanation_zh": "协调库存位置与仓库作业。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Order-to-cash documents",
+      "name_zh": "订单到收款单据",
+      "explanation_en": "The documented flow links quotation, sales order, delivery note, sales invoice and payment entry, with optional paths.",
+      "explanation_zh": "文档连接报价、销售订单、发货单、销售发票及付款分录，并提供可选路径。",
+      "explanation_scope": "product_specific",
+      "source_ref": "order",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Supply Chain Management",
-      "name_zh": "供应链管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Explicit invoice stock behavior",
+      "name_zh": "明确的发票库存行为",
+      "explanation_en": "A sales invoice can update stock when that option is enabled; it should not repeat stock already moved by a delivery note.",
+      "explanation_zh": "销售发票可按选项更新库存，但不应重复发货单已经记录的库存移动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "invoice",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Sales",
-      "name_zh": "销售",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Stock Management",
-      "name_zh": "库存管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "HR Management",
-      "name_zh": "人力资源管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Financial Management",
-      "name_zh": "财务管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Asset Management",
-      "name_zh": "资产管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "CRM",
-      "name_zh": "客户关系管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Accounting Management",
-      "name_zh": "会计管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Management",
-      "name_zh": "项目管理",
-      "explanation_en": "Coordinate project tasks, responsibilities and progress.",
-      "explanation_zh": "协调项目任务、负责人和进度。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Purchasing",
-      "name_zh": "采购",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "GPLv3 self-hosting",
+      "name_zh": "GPLv3 自托管",
+      "explanation_en": "Official licensing material identifies GPLv3 and supports operating the software on your own server.",
+      "explanation_zh": "官方许可资料明确 GPLv3，并支持在自己的服务器运行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "license",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": [
-      "Coordinate stock locations and warehouse tasks",
-      "Bring selected indicators and records into one view",
-      "Coordinate project tasks, responsibilities and progress"
-    ],
-    "zh": [
-      "协调库存位置与仓库作业",
-      "在同一视图中汇集选定指标和记录",
-      "协调项目任务、负责人和进度"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [],
+    "zh": [],
+    "source_refs": ["overview", "pricing"],
+    "basis": "Illustrative uses, not customer results."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available",
-      "zh": "提供免费试用",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
     "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "roles_status": "editorial_inference"
   },
   "getting_started": {
-    "status": "not_verified",
+    "status": "documentation_based_not_executed",
     "steps": []
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "not_verified",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
+    "status": "documented",
     "items": []
   },
   "supported_languages": {
@@ -195,42 +74,30 @@
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": true,
+    "classification": "copyleft_open_source",
+    "name": "GNU General Public License v3",
+    "url": "https://docs.frappe.io/erpnext/open-source",
+    "source_ref": "license"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available",
-    "source_snapshot_zh": "提供免费试用",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "free_self_hosted_and_paid_cloud",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "checked_at": "2026-10-22T10:18:27Z",
+    "normalized_monthly_price": null,
+    "currency": null,
+    "billing_basis": "GPLv3 software; paid managed hosting/resources and partner implementation, not per-user software subscription.",
+    "source_snapshot_en": "Self-host software without a Frappe subscription; managed Sites from $5/month and server options from $20/$125 shown, with plan conditions to confirm.",
+    "source_snapshot_zh": "软件可无需 Frappe 订阅自托管；页面列 Sites 每月 $5 起、服务器 $20/$125 起，需核对各套餐条件。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does ERPNext do?",
-      "question_zh": "ERPNext 用来做什么？",
-      "answer_en": "ERPNext is a product in the ERP category. Its directory profile covers Warehouse Management, Supply Chain Management, Sales, Stock Management, HR Management, Financial Management, Asset Management, CRM.",
-      "answer_zh": "ERPNext 属于企业资源管理软件。第三方资料列出的功能包括仓库管理、供应链管理、销售、库存管理、人力资源管理、财务管理、资产管理、客户关系管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Warehouse Management, Supply Chain Management, Sales, Stock Management, HR Management, Financial Management, Asset Management, CRM, Accounting Management, Dashboard, Project Management, Purchasing",
-      "answer_zh": "仓库管理、供应链管理、销售、库存管理、人力资源管理、财务管理、资产管理、客户关系管理、会计管理、仪表盘、项目管理、采购"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -240,25 +107,194 @@
       "read_at": "2026-10-22T08:41:25.058Z",
       "excerpt_sha256": "5573185e26edde40db31f6bca593efd68ae1a1909f5b96d571633d34271aac42",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "overview",
+      "type": "official_documentation",
+      "site": "ERPNext",
+      "title": "Open Source Cloud ERP Software | ERPNext",
+      "url": "https://frappe.io/erpnext",
+      "read_at": "2026-10-22T10:17:43Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "1a9297f79ec1babc35e35e8abd3c25e7248530307d79dc5ad55267586d9848b2",
+      "research_notes_en": "Old domain redirects to Frappe current ERPNext site; application-family boundaries and hosting described."
+    },
+    {
+      "id": "order",
+      "type": "official_documentation",
+      "site": "ERPNext",
+      "title": "\n        \n    Sales Order | ERPNext Documentation\n\n    ",
+      "url": "https://docs.frappe.io/erpnext/sales-order",
+      "read_at": "2026-10-22T10:19:05Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "8c75ea39ab147936ca6a10231484d1c14c563f592679720bfd16e95d4a8085d9",
+      "research_notes_en": "Read draft/submit, prerequisites, optional downstream paths, partial quantities, version-specific actions and troubleshooting."
+    },
+    {
+      "id": "invoice",
+      "type": "official_documentation",
+      "site": "ERPNext",
+      "title": "\n        \n    Sales Invoice | ERPNext Documentation\n\n    ",
+      "url": "https://docs.frappe.io/erpnext/sales-invoice",
+      "read_at": "2026-10-22T10:19:08Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "5bf111c4b0b254c836f31ec50a40c7c460b39b4de1cde1fa51d0b0dc4cafb034",
+      "research_notes_en": "Read ledger effects, Update Stock versus prior Delivery Note, payment allocation and correction prerequisites."
+    },
+    {
+      "id": "license",
+      "type": "official_license",
+      "site": "ERPNext",
+      "title": "\n        \n    Open Source\n\n    ",
+      "url": "https://docs.frappe.io/erpnext/open-source",
+      "read_at": "2026-10-22T10:19:13Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "f71af524562d00894aba18330d8d65be7d515ac4508b6bc312bb2e4ef18aca7c",
+      "research_notes_en": "Official page explicitly identifies GNU GPLv3; broad security claims not used as deployment evidence."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "ERPNext",
+      "title": "Pricing - ERPNext",
+      "url": "https://frappe.io/erpnext/pricing",
+      "read_at": "2026-10-22T10:18:27Z",
+      "verification": "official_documentation_read",
+      "transport": "public_html_reader",
+      "excerpt_sha256": "2421b212381074935b5ce5861e503633a7fe2a4011ee0304438557377fdeb9e0",
+      "research_notes_en": "Software versus hosting/implementation costs, displayed hosting starts, fourteen-day trial and warranty/functional-support distinction."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T10:19:13Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English synthesis and corresponding Chinese translation from the attached primary sources. Vendor documentation does not establish independent testing or customer outcomes.",
+    "Original directory feature labels were replaced with product-specific documented capabilities. Unknowns and unreviewed alternatives remain unknown."
+  ],
+  "description_source_refs": ["overview", "pricing"],
+  "profile": {
+    "sections": [
+      {
+        "id": "architecture",
+        "title_en": "Keep ERPNext, Frappe Framework and hosting distinct",
+        "title_zh": "区分 ERPNext、框架与托管",
+        "en": "ERPNext is the business application in the Frappe family. The product site separately promotes Frappe Framework, HR, CRM, Helpdesk, Learning and other apps. Those separate app identities matter when comparing a particular installed site with the broad marketing navigation.\n\nThe current product/pricing pages offer managed Frappe Cloud hosting or self-hosting. Self-hosting gives the operator installation, upgrade, monitoring and backup responsibilities; managed hosting changes that operating arrangement, not the underlying need for business configuration. Verify the installed ERPNext and related-app versions before treating a current documentation menu as a guaranteed feature set. No server or package version was installed for this research.",
+        "zh": "ERPNext 是 Frappe 家族中的业务应用。产品站另外介绍 Frappe Framework、HR、CRM、Helpdesk、Learning 等应用。比较某个已安装站点和宽泛营销导航时，需要保留这些应用身份区别。\n\n当前产品定价页提供 Frappe Cloud 托管或自托管选择。自托管意味着运营者负责安装、升级、监控和备份；托管改变责任安排，但仍需要业务配置。应先确认 ERPNext 及相关应用版本，再把当前文档菜单作为功能依据。本文未安装服务器或软件包版本。",
+        "source_refs": ["overview", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "order",
+        "title_en": "A saved order and a submitted commitment are different",
+        "title_zh": "保存订单与提交业务承诺不同",
+        "en": "The sales-order guide requires company/customer, item and rate records, plus a warehouse for stock delivery and applicable taxes/terms. Saving creates a draft. Submitting confirms the order and enables downstream actions according to permissions, modules, settings and quantities already processed. Normal order submission records a commitment rather than delivering stock or posting the invoice.\n\nFor a hypothetical five-unit order with three ready for delivery, follow the partial-delivery and partial-billing references instead of creating unrelated documents manually. Inspect the remaining quantities and both delivered and billed progress. This is an illustrative test case; the research did not execute it. The current guide mentions version 17 actions, which must be checked against an actual deployment.",
+        "zh": "销售订单指南要求准备公司客户、物品及费率，库存交付还需仓库，以及适用税项条款。保存形成草稿；提交确认订单，并按权限、模块、设置及已处理数量开放后续操作。普通订单提交记录承诺，不等于发货或发票过账。\n\n以假设的五件订单、其中三件可交付为例，应沿部分交付和开票引用跟踪，不手工建立互不相关的单据，并检查剩余数量及交付、开票进度。这是说明性测试，未实际执行。当前指南提及版本 17 操作，需与实际部署核对。",
+        "source_refs": ["order"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "invoice",
+        "title_en": "Choose one stock movement path",
+        "title_zh": "选择一条库存移动路径",
+        "en": "The sales-invoice guide distinguishes an invoice created from a Delivery Note from a direct invoice with Update Stock enabled. If a Delivery Note already recorded the goods leaving, the invoice should not repeat the same stock movement. For a service, the guide uses non-stock items without that stock-update option.\n\nA submitted invoice records receivables, income and applicable taxes; payment is a later step that reduces the outstanding balance. Where perpetual inventory applies, stock-updating invoices also have related cost accounting. In evaluation, compare the stock ledger and general ledger and retain the upstream references so billed percentages update. A saved draft, delivered stock and a paid invoice are different states.",
+        "zh": "销售发票指南区分从发货单创建发票，与直接开票并启用 Update Stock。如果发货单已经记录出库，发票不应重复同一库存移动；服务则使用非库存物品，不启用库存更新。\n\n已提交发票记录应收、收入及适用税项；付款是后续减少未清余额的步骤。在使用永续盘存时，更新库存的发票还影响相关成本会计。评估时应对照库存与总账，并保留上游引用，让开票比例正确更新。草稿、已交付库存和已付款发票是不同状态。",
+        "source_refs": ["invoice"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "exceptions",
+        "title_en": "Troubleshoot references and status before repeating a transaction",
+        "title_zh": "重复交易前先查引用和状态",
+        "en": "The invoice guide explains that an order’s billed percentage may not update if the invoice lacks its order reference, and that an invoice can remain outstanding if a payment is not submitted or allocated to it. It also directs users to check warehouse/stock settings when stock is insufficient, and account defaults when an invoice posts to an unintended account.\n\nUse these distinctions in a disposable test: unallocated payment, wrong warehouse, a missing source reference and a cancelled/amended order with downstream records. Do not interpret a retry as a safe duplicate-prevention strategy. Cancellation and amendment depend on linked state and permissions. No correction, payment reconciliation or cancellation was performed here.",
+        "zh": "发票指南解释，缺少销售订单引用可能导致订单开票比例不更新；付款若未提交或未分配到发票，发票仍可能显示未清。库存不足时应检查仓库与库存设置，过账科目不对时检查科目默认值。\n\n可在临时测试中检查未分配付款、错误仓库、缺失来源引用，以及带下游记录的取消修订订单，不能把重试本身当成安全去重策略。取消和修订取决于关联状态及权限。本文未执行更正、付款核销或取消。",
+        "source_refs": ["invoice", "order"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Free software does not mean cost-free operations",
+        "title_zh": "免费软件不等于无运营成本",
+        "en": "The official open-source page identifies ERPNext as GPLv3, and the pricing page explicitly offers self-hosting without paying Frappe to run/manage it yourself. This record therefore classifies the software as open source; that is separate from the terms of a hosting or support contract. It does not label the license permissive or approve a particular redistribution architecture.\n\nThe licensing page also contains broad security statements. Those were not used as proof of encryption in a specific deployment or as a security audit. Choose the operating model around who can maintain versions, investigate failed jobs and recover data, not merely around the absence of a per-user software fee.",
+        "zh": "官方开源页明确 ERPNext 采用 GPLv3，定价页也提供自托管选择，自行运行管理时无需为此向 Frappe 付费。因此本档案把软件归为开源，但这与托管和支持合同条款不同；不会将 GPLv3 称为宽松许可，也不批准特定再分发架构。\n\n许可页面同时包含宽泛安全表述，本文没有用它证明某次部署的加密或安全审计。选择运营模式时，应看谁维护版本、调查失败任务和恢复数据，不能只看没有按用户软件费。",
+        "source_refs": ["license", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost",
+        "title_en": "Separate hosting, implementation and functional support",
+        "title_zh": "分开计算托管、实施与业务支持",
+        "en": "The pricing page read on 22 October 2026 displays shared Sites starting at $5 monthly and server options from $20 and $125, alongside INR amounts. Those starting amounts are not a quote for a specific production workload or a statement that all hosting capabilities are included. ERPNext licensing is not per user, but compute, storage, isolation and services affect the operating cost.\n\nThe page describes a fourteen-day Cloud trial, then a hosting-plan subscription. It says implementation is handled by partners, and Product Warranty covers bug fixing rather than functional support. Prepare entity count, workload, apps/customizations, migration, training and recovery requirements for the actual hosting/partner proposal. The software’s free license is not a permanent free managed-cloud account.",
+        "zh": "2026 年 10 月 22 日读取的定价页显示共享 Sites 起价每月 $5，服务器选项起价 $20 和 $125，并另列印度卢比金额。这些起价不是特定生产负载报价，也不能证明所有托管能力均已包含。ERPNext 软件许可不按用户收费，但算力、存储、隔离及服务影响运营成本。\n\n页面介绍十四天 Cloud 试用，之后需订阅托管套餐；实施由伙伴处理，Product Warranty 针对错误修复，不包含业务功能支持。实际方案需准备实体数、负载、应用定制、迁移、培训和恢复要求。软件免费许可不等于永久免费托管云账户。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "adoption",
+        "title_en": "Adopt with a process owner and reconciled starting data",
+        "title_zh": "采用需要流程负责人及对清的初始数据",
+        "en": "ERPNext is worth investigating when a team wants modifiable ERP software and can own implementation or engage a suitable partner. Prepare company/currency, chart, taxes, customer/vendor and item masters, warehouses, opening balances and role responsibilities before moving live transactions.\n\nCompare one complete sales/stock/payment cycle with the prior records and ask for export and restoration evidence on the chosen host. Validate a specific connector operation rather than relying on the product site’s broad integration list, which includes versioned links. The research did not test manufacturing, payroll, local filings, upgrades, performance or recovery. Unknown UI languages and country conditions remain unknown.",
+        "zh": "希望采用可修改 ERP 软件，并能负责实施或找到合适伙伴的团队，可以调查 ERPNext。迁移真实交易前，应准备公司币种、科目税项、客户供应商和物品、仓库、期初余额及角色责任。\n\n将一轮完整销售库存付款流程与原记录对照，并在所选托管中取得导出恢复证据。应验证具体连接器操作，不依赖产品站广泛集成列表，其中还包含带版本链接。本文未测试制造、薪资、当地申报、升级、性能或恢复，界面语言及国家条件未知项仍保持未知。",
+        "source_refs": ["order", "invoice", "pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  },
+  "research_gaps": [
+    {
+      "en": "Current order guide mentions v17 actions; installed versions and related-app entitlements were not checked.",
+      "zh": "当前订单指南提及 v17 操作，未检查实际安装版本及相关应用权限。",
+      "source_refs": ["order"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "Hosting-plan capability marks, resource sizing, ISO currency/checkout, partner scope, local filings and UI localization require confirmation.",
+      "zh": "托管能力标记、资源规模、ISO 币种结账、伙伴范围、当地申报和界面本地化需确认。",
+      "source_refs": ["pricing"],
+      "evidence_type": "unverified_or_not_tested"
+    },
+    {
+      "en": "No installation, document submission, manufacturing, integration, migration, upgrade or restore was tested.",
+      "zh": "未测试安装、单据提交、制造、集成、迁移、升级或恢复。",
+      "source_refs": [],
+      "evidence_type": "unverified_or_not_tested"
+    }
+  ],
+  "seo": {
+    "title_en": "ERPNext: Capabilities, Workflow, Pricing and Limits",
+    "title_zh": "ERPNext：功能、流程、费用与限制",
+    "description_en": "ERPNext is an open-source ERP maintained by Frappe, connecting accounting, buying/selling, stock, manufacturing and other business records. The former erpnext.com homepage redirects to the current Frappe product site. Its software license and its operating cos",
+    "description_zh": "ERPNext 是 Frappe 维护的开源 ERP，连接会计、采购销售、库存、制造及其他业务记录。原 erpnext.com 首页已跳转至 Frappe 当前产品站。软件许可与运营费用需要分开：可按 GPLv3 自托管，托管及实施则属于商业服务。",
+    "primary_intent": "Evaluate ERPNext for the tasks and conditions described in this documentation-based draft.",
+    "secondary_questions": [
+      "A saved order and a submitted commitment are different",
+      "Choose one stock movement path",
+      "Troubleshoot references and status before repeating a transaction"
+    ],
+    "query_basis": "Editorial intent hypotheses; no search volume, ranking or AI citation performance measured.",
+    "canonical_url": null
+  }
 }

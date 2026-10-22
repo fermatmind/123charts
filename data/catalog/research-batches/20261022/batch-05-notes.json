@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 10,
+  "completed_count": 14,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -15,18 +15,18 @@
     "projects/accounting/onefinops-38fa25ba.json",
     "projects/accounting/pharmatrader-4cba949c.json",
     "projects/accounting/quickbooks-2be5e15d.json",
-    "projects/accounting/workday-financial-management-1d67bbc9.json"
+    "projects/accounting/workday-financial-management-1d67bbc9.json",
+    "projects/erp/acumatica-5008e175.json",
+    "projects/erp/bizautomation-cloud-erp-01026293.json",
+    "projects/erp/deskera-461bb8db.json",
+    "projects/erp/erpnext-3dc76f8a.json"
   ],
-  "remaining_count": 187,
+  "remaining_count": 183,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/patriot-accounting-ab21270e.json",
-    "projects/erp/acumatica-5008e175.json",
-    "projects/erp/bizautomation-cloud-erp-01026293.json",
-    "projects/erp/deskera-461bb8db.json",
-    "projects/erp/erpnext-3dc76f8a.json",
     "projects/erp/expand-erp-8736b85a.json",
     "projects/erp/genius-erp-6a89692c.json",
     "projects/erp/global-shop-solutions-erp-842abb80.json",
@@ -257,6 +257,10 @@
     {
       "slug": "quickbooks-2be5e15d",
       "finding": "Global live pricing did not load, so numeric price/currency stay unknown. Current plan matrix and Finance AI/multicurrency exclusion documented."
+    },
+    {
+      "slug": "erpnext-3dc76f8a",
+      "finding": "Official current site is frappe.io/erpnext; GPLv3 software versus paid hosting/partner implementation and version-specific help boundaries documented."
     }
   ],
   "validation": [
@@ -278,6 +282,16 @@
       "diff_check": "passed",
       "source_text_hashes": "40 official source entries matched actual local text SHA-256",
       "scope": "Structure, references and provenance; no independent review or execution test."
+    },
+    {
+      "at": "2026-10-22T10:25:29+00:00",
+      "completed_count": 14,
+      "python_unittest": "7 passed",
+      "records_only": "passed: 1000 records, 17 researched including 3 baseline",
+      "prettier": "four new ERP JSONs and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "57 official entries matched actual locally saved read text SHA-256",
+      "scope": "Structure/reference/provenance only; no hands-on or independent review."
     }
   ],
   "checkpoints": [
@@ -286,6 +300,12 @@
       "completed_count": 4,
       "branch_push": "succeeded",
       "scope": "Accoru, Accounting Seed, AccountingSuite/CustomBooks, ActivityHD and batch notes"
+    },
+    {
+      "commit": "79cb0b4",
+      "completed_count": 10,
+      "branch_push": "succeeded",
+      "scope": "Accounting 14 attempted: 10 rewritten, four primary-evidence blockers not counted complete."
     }
   ],
   "independent_review": false,
@@ -303,6 +323,13 @@
         "merrchant-216509ee",
         "patriot-accounting-ab21270e"
       ]
+    },
+    {
+      "category": "erp",
+      "assigned": 19,
+      "completed": 4,
+      "status": "in_progress",
+      "note": "Acumatica, BizAutomation, Deskera, ERPNext complete; remaining homepages fetched for identity discovery, not treated as finished profiles."
     }
   ]
 }
