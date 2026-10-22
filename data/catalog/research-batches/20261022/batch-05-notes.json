@@ -4,7 +4,7 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 39,
+  "completed_count": 46,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
@@ -39,28 +39,28 @@
     "projects/human-resources/ceipal-workforce-93d9d9bf.json",
     "projects/human-resources/ceridian-dayforce-fa330344.json",
     "projects/human-resources/collectivwork-a05b064e.json",
+    "projects/human-resources/darwinbox-d5078c7f.json",
     "projects/human-resources/epay-hcm-442cb6fd.json",
     "projects/human-resources/greythr-0473d0e8.json",
+    "projects/human-resources/hafinen-39625a69.json",
     "projects/human-resources/helion-erp-ed462236.json",
     "projects/human-resources/hr-chronicle-a1fdbe3a.json",
     "projects/human-resources/keka-27f6190a.json",
-    "projects/human-resources/rippling-f83ba09c.json"
+    "projects/human-resources/mitrefinch-4f0bf2e0.json",
+    "projects/human-resources/paylocity-070d82ac.json",
+    "projects/human-resources/resourceinn-c63fff91.json",
+    "projects/human-resources/rippling-f83ba09c.json",
+    "projects/human-resources/valluva-409014c8.json",
+    "projects/human-resources/workbright-6d1a053d.json"
   ],
-  "remaining_count": 158,
+  "remaining_count": 151,
   "remaining_project_paths": [
     "projects/accounting/agenterbooks-a81dd04d.json",
     "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/plex-manufacturing-cloud-c05cc280.json",
-    "projects/human-resources/darwinbox-d5078c7f.json",
-    "projects/human-resources/hafinen-39625a69.json",
-    "projects/human-resources/mitrefinch-4f0bf2e0.json",
-    "projects/human-resources/paylocity-070d82ac.json",
     "projects/human-resources/personio-91e7d61b.json",
-    "projects/human-resources/resourceinn-c63fff91.json",
-    "projects/human-resources/valluva-409014c8.json",
-    "projects/human-resources/workbright-6d1a053d.json",
     "projects/payroll/adp-payroll-services-d799e460.json",
     "projects/payroll/check-stub-generator-2bf2c8ec.json",
     "projects/payroll/easystaff-payroll-ff1d7b0c.json",
@@ -245,6 +245,12 @@
       "status": "not_counted_complete",
       "url": "https://www.plex.com/",
       "finding_en": "Direct read failed certificate verification; separate ordinary public web read timed out. TLS verification was not disabled; no current ERP profile fabricated."
+    },
+    {
+      "slug": "personio-91e7d61b",
+      "status": "not_counted_complete",
+      "url": "https://www.personio.com/",
+      "finding_en": "Direct official homepage read returned HTTP429. Stopped that origin; did not bypass or substitute search snippets for a researched profile."
     }
   ],
   "notable_findings": [
@@ -311,6 +317,26 @@
     {
       "slug": "rippling-f83ba09c",
       "finding": "Starting $8 per employee/month excludes unspecified base fee and selected modules; startup offer is conditional and time-limited."
+    },
+    {
+      "slug": "hafinen-39625a69",
+      "finding": "Used actual rendered workforce and pricing pages because direct public text responses empty and web reader older. Separate users/employees/storage; 14-day trial auto-converts, paid cancellation non-refund, API/storage add-ons. Dollar currency code unresolved; initial and settled displayed amounts differed."
+    },
+    {
+      "slug": "darwinbox-d5078c7f",
+      "finding": "Used loaded browser Core HR and modular quote pages. Cortex early access separated from Core HR/Sapien; Analytics-specific PEPM FAQ not generalized to all Core HR pricing."
+    },
+    {
+      "slug": "mitrefinch-4f0bf2e0",
+      "finding": "Official OneAdvanced transition page resolves identity after legacy-domain TLS failure. Current cloud attendance/payroll described without assuming legacy feature parity or automatic migration."
+    },
+    {
+      "slug": "resourceinn-c63fff91",
+      "finding": "Official free-forever up-to-10-users offer retained as advertised; three-/fourteen-day trial and free-setup/implementation-fee statements conflict."
+    },
+    {
+      "slug": "workbright-6d1a053d",
+      "finding": "Ordinary plans from $192/month distinct from $25 per I-9 WorkBright+ with table annual minimum $25k. Indemnification excludes historical migration and escalated cases and leaves employment decisions with employer."
     }
   ],
   "validation": [
@@ -382,6 +408,16 @@
       "diff_check": "passed",
       "source_text_hashes": "127 actual read-text hashes verified",
       "scope": "Structure/reference/provenance; no independent review or hands-on tests."
+    },
+    {
+      "at": "2026-10-22T11:16:25.609791+00:00",
+      "completed_count": 46,
+      "python_unittest": "7 passed",
+      "records_only": "passed after correcting empty Valluva source title with actual visible heading: 1000 records, 49 researched including 3 baseline",
+      "prettier": "seven HR profiles and notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "147 actual read-text hashes verified, including rendered browser snapshots and expanded FAQs",
+      "scope": "Structure/reference/provenance; no independent review or hands-on product tests."
     }
   ],
   "checkpoints": [
@@ -420,6 +456,12 @@
       "completed_count": 32,
       "branch_push": "succeeded",
       "scope": "Four initial HR profiles and current Dayforce identity."
+    },
+    {
+      "commit": "936e368",
+      "completed_count": 39,
+      "branch_push": "succeeded",
+      "scope": "Seven more HR profiles, including roadmap and module-cost boundaries."
     }
   ],
   "independent_review": false,
@@ -450,9 +492,11 @@
     {
       "category": "human-resources",
       "assigned": 19,
-      "completed": 11,
-      "status": "in_progress",
-      "note": "11 HR profiles researched. Remaining HR entries pending or have primary-source access/identity gaps; none counted complete."
+      "completed": 18,
+      "status": "all_19_attempted_1_not_counted_complete",
+      "note": "Personio returned HTTP429 and origin access stopped. Rendered browser reading resolved empty text responses for Darwinbox, Hafinen and Paylocity; Mitrefinch identity resolved via official OneAdvanced transition page.",
+      "unresolved": 1,
+      "unresolved_slugs": ["personio-91e7d61b"]
     }
   ]
 }
