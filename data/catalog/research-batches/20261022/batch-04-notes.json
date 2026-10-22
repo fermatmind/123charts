@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T12:29:45.758773+00:00",
+  "updated_at": "2026-10-22T12:37:09.144028+00:00",
   "assigned": 204,
-  "completed_count": 38,
+  "completed_count": 40,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -44,9 +44,11 @@
     "projects/help-desk/replium-693b7537.json",
     "projects/help-desk/siit-f4ed3053.json",
     "projects/help-desk/sugester-52e4a6d2.json",
-    "projects/help-desk/supportbee-aecb6054.json"
+    "projects/help-desk/supportbee-aecb6054.json",
+    "projects/live-chat/apexchat-9bd3eff7.json",
+    "projects/live-chat/arena-live-chat-34ccee42.json"
   ],
-  "incomplete_count": 166,
+  "incomplete_count": 164,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -58,8 +60,6 @@
     "projects/help-desk/freshdesk-2ae83506.json",
     "projects/help-desk/lemtalk-c64ca909.json",
     "projects/help-desk/max-helpdesk-a5eba455.json",
-    "projects/live-chat/apexchat-9bd3eff7.json",
-    "projects/live-chat/arena-live-chat-34ccee42.json",
     "projects/live-chat/bold360-d1b9e7c2.json",
     "projects/live-chat/chatango-18c4f792.json",
     "projects/live-chat/chatblazer-6045ee86.json",
@@ -489,6 +489,37 @@
       "project": "projects/help-desk/max-helpdesk-a5eba455.json",
       "status": "research_incomplete",
       "observed": "Assigned desk.maxhelpchat.com returned HTTP200 with empty title/newline text; public reader inaccessible. Apex maxhelpchat.com is a Max HelpChat live-chat product, not evidence of current Max HelpDesk feature/price identity. Old homepage has unrelated language link/template text. Record unchanged and not counted complete; no domain/product substitution."
+    },
+    {
+      "project": "projects/live-chat/bold360-d1b9e7c2.json",
+      "status": "research_incomplete_schema_cannot_represent_retired_offer",
+      "observed": "Assigned bold360.com unavailable via public reader and ordinary HTTPS. Genesys employee EOL/EOS announcement establishes Genesys DX (formerly Bold360) service ended Jan31 2024, platform shutdown Mar1-5 2024; data retrieval required before Mar1 with no extensions. July2024 community closure confirms EOL; code removal notice describes legacy snippets/tag managers. Current legal service descriptions are historical scope, not proof current sale or Genesys Cloud CX equivalence. No current official pricing page for retired product established. Validator requires every researched record pricing.source_ref=official_pricing even for retired/no-current-offer cases. Do not relabel an EOL announcement as pricing or merge Genesys Cloud CX. Candidate unchanged/not counted complete.",
+      "evidence": [
+        {
+          "url": "https://community.genesys.com/discussion/genesys-dx-bold360-eol-and-eos-announcement",
+          "title": "Genesys DX (Bold360) EOL and EOS Announcement | Genesys DX (formerly Bold360)",
+          "read_at": "2026-10-22T12:30:52.716621+00:00",
+          "excerpt_sha256": "bf84120bbc9afcf6221936b5a1d0fb374f529df44c9b53a415505287d3a6c9eb"
+        },
+        {
+          "url": "https://community.genesys.com/discussion/genesys-dx-community-closure",
+          "title": "Genesys DX Community Closure | Genesys DX (formerly Bold360)",
+          "read_at": "2026-10-22T12:30:50.088866+00:00",
+          "excerpt_sha256": "4a09596222bf689d5f920b9141d77b4821de6a0967bdbcd78de0d9725d8e7937"
+        },
+        {
+          "url": "https://community.genesys.com/discussion/bold360nanorep-code-removals-coming-soon?hlmlt=VT",
+          "title": "Bold360/Nanorep Code Removals | Genesys DX (formerly Bold360)",
+          "read_at": "2026-10-22T12:30:53.565155+00:00",
+          "excerpt_sha256": "6951e7fb4734669dbdef644e62861cb4c2b7ca6ead1ea8d26001ee10d285cb7d"
+        },
+        {
+          "url": "https://www.genesys.com/company/legal/service-descriptions",
+          "title": "Service Descriptions | Genesys",
+          "read_at": "2026-10-22T12:30:49.852116+00:00",
+          "excerpt_sha256": "3df6983098283a6319f30b025265a59289215e553f0744c4ad4e2e164f4e17a6"
+        }
+      ]
     }
   ],
   "verification": [
@@ -624,6 +655,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch38 completed,166 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch40 completed,164 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -754,10 +795,18 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "78b732a",
       "completed": [
         "projects/help-desk/sugester-52e4a6d2.json",
         "projects/help-desk/supportbee-aecb6054.json"
+      ],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [
+        "projects/live-chat/apexchat-9bd3eff7.json",
+        "projects/live-chat/arena-live-chat-34ccee42.json"
       ],
       "status": "ready_to_commit"
     }
