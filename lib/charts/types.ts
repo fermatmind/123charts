@@ -94,6 +94,7 @@ export interface Peer {
   rationale: string;
 }
 export interface Draft {
+  owner_sources?: import("./owner-profile").OwnerSource[];
   replace_peer_group?: boolean;
   task?: string;
   supported_languages?: string[];

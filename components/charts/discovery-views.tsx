@@ -1,4 +1,5 @@
 "use client";
+import { OwnerProfileAssist } from "./owner-profile-assist";
 import { brand } from "@/lib/charts/brand";
 import { FavoriteButton, SiteUnit, NavigationHome } from "./navigation-ui";
 import {
@@ -705,7 +706,9 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
     query = useSearchParams();
   const ref = useEvent(p?.id);
   const [message, setMessage] = useState("");
-  const [action, setAction] = useState<"claim" | "correction">("correction");
+  const [action, setAction] = useState<"claim" | "correction">(
+    query.get("claim") === "1" ? "claim" : "correction",
+  );
   if (!p) return <Empty title={t("Project unavailable", "项目不可用")} />;
   const related = alternatives(p, data.projects, data.relations);
   return (
@@ -728,7 +731,9 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
         </div>
         <p>{locale === "zh" ? p.description_zh : p.description_en}</p>
         <div className="row">
-          <span className="tag">{priceLabel(p, locale === "zh")}</span>
+          {p.price_verified && (
+            <span className="tag">{priceLabel(p, locale === "zh")}</span>
+          )}
           {p.is_open_source && (
             <a className="tag" href={p.open_source_url} rel="nofollow noopener">
               {t("Open source", "开源")}
@@ -761,30 +766,65 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           </Link>
         )}
       </div>
-      <div className="discovery-facts">
-        <div>
-          <small>{t("PRIMARY TASK", "主要用途")}</small>
-          <h2>{localText(p.task, locale) || t("To be confirmed", "待补充")}</h2>
-          <p>
-            {localText(p.differentiator, locale) ||
-              t("Details are being maintained.", "详细资料待完善。")}
-          </p>
+      <section className="owner-listing-note" id="owner-claim">
+        <h2>{t("Is this your project?", "这是你的项目吗？")}</h2>
+        <p>
+          {t(
+            "123Charts maintains a short introduction and official website link. Claim your project to add pricing, languages, features, conditions and updates. Identity and submitted facts are reviewed separately.",
+            "123Charts 整理项目简介并提供官网入口。项目方认领后，可补充价格、语言、功能、使用条件和更新；管理身份与提交资料分别审核。",
+          )}
+        </p>
+        <div className="row">
+          <a
+            className="button primary"
+            href="#corrections"
+            onClick={() => setAction("claim")}
+          >
+            {t("Claim and complete this profile", "认领并补充项目资料")}
+          </a>
+          <Link className="button" href={href("/submit?project=" + p.id)}>
+            {t("Already claimed? Update details", "已认领？更新资料")}
+          </Link>
         </div>
-        <div>
-          <small>{t("CONDITIONS & LIMITS", "使用条件与限制")}</small>
-          <p>
-            {localText(p.conditions, locale) ||
-              t(
-                "Pricing conditions have not yet been confirmed. Check the official website.",
-                "价格与使用条件尚未确认，请查看官网。",
-              )}
-          </p>
-          <p>
-            {t("Languages", "支持语言")} ·{" "}
-            {languageNames(p.supported_languages, locale)}
-          </p>
+        <OwnerProfileAssist name={p.name} websiteURL={p.website_url} />
+      </section>
+      <details className="supplemental-profile">
+        <summary>
+          {t("Existing supplementary information", "查看已有补充资料")}
+        </summary>
+        <p className="muted">
+          {t(
+            "Preserved reference information. A claimed identity does not establish who supplied each field or independently verify it. Owners can submit corrections and updates.",
+            "保留已有参考资料；已认领不代表每个字段均由项目方提供或已经独立核实。项目方可提交修正与更新。",
+          )}
+        </p>
+        <div className="discovery-facts">
+          <div>
+            <small>{t("PRIMARY TASK", "主要用途")}</small>
+            <h2>
+              {localText(p.task, locale) || t("To be confirmed", "待补充")}
+            </h2>
+            <p>
+              {localText(p.differentiator, locale) ||
+                t("Details are being maintained.", "详细资料待完善。")}
+            </p>
+          </div>
+          <div>
+            <small>{t("CONDITIONS & LIMITS", "使用条件与限制")}</small>
+            <p>
+              {localText(p.conditions, locale) ||
+                t(
+                  "Pricing conditions have not yet been confirmed. Check the official website.",
+                  "价格与使用条件尚未确认，请查看官网。",
+                )}
+            </p>
+            <p>
+              {t("Languages", "支持语言")} ·{" "}
+              {languageNames(p.supported_languages, locale)}
+            </p>
+          </div>
         </div>
-      </div>
+      </details>
       <div className="row">
         <small className="muted">
           {t("First public listing", "首次公开收录")} ·{" "}
@@ -832,8 +872,8 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
         <h2>{t("A factual card, ready to share", "可分享的收录卡")}</h2>
         <p className="muted">
           {t(
-            "Shows listing, purpose and current pricing conditions. Sharing is optional.",
-            "展示真实收录状态、用途与当前价格条件，分享完全自愿。",
+            "The listing card shows the project introduction and official profile link. Sharing is optional.",
+            "收录卡展示项目简介和档案链接，分享完全自愿。",
           )}
         </p>
         <div className="row">
@@ -915,7 +955,16 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           <Link
             className="button"
             href={href(
-              "/login?returnTo=" + encodeURIComponent(pathname + "?" + query),
+              "/login?returnTo=" +
+                encodeURIComponent(
+                  pathname +
+                    "?" +
+                    new URLSearchParams({
+                      ...Object.fromEntries(query),
+                      ...(action === "claim" ? { claim: "1" } : {}),
+                    }) +
+                    "#corrections",
+                ),
             )}
           >
             {t("Sign in to correct or claim", "登录后纠错或认领")}
@@ -1098,6 +1147,12 @@ export function DiscoveryMethod() {
       <p className="brand-positioning">{brand[locale].positioning}</p>
       <p>{brand[locale].vision}</p>
       <p>{brand[locale].platformFree}</p>
+      <p>
+        {t(
+          "Platform curation covers a project introduction and official website link. Owners claim management access and supply extended details, optionally using the on-page AI prompt. AI drafts do not grant identity, verification or publication.",
+          "平台整理项目简介与官网链接；扩展资料由项目方认领后补充，可使用页面提供的 AI 核实提示词。AI 草稿不授予身份、核验状态或公开权限。",
+        )}
+      </p>
       <section id="data-and-order" className="transparent-rules">
         <h2>{t("Sources & sorting", "资料与排序说明")}</h2>
         <p>

@@ -17,9 +17,9 @@ export function profileReady(p: Project) {
     p.publication === "published" &&
     p.review_state !== "pending" &&
     p.review_state !== "reference" &&
-    !!p.task?.trim() &&
-    !!p.differentiator?.trim() &&
-    !!p.supported_languages?.length &&
+    !!p.name?.trim() &&
+    /^https?:\/\//i.test(p.website_url || "") &&
+    !!p.category &&
     !!p.description_en &&
     !!p.description_zh
   );

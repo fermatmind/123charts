@@ -212,7 +212,14 @@ test("filter first, stable low-exposure rotation, six positions, special-slot fa
   );
   assert.equal(only[0].project.id, "p8");
   assert.equal(only[0].reason, "rotation");
-  assert.equal(profileReady(p("bad", { task: "" })), false);
+  assert.equal(
+    profileReady(
+      p("basic", { task: "", differentiator: "", supported_languages: [] }),
+    ),
+    true,
+  );
+  assert.equal(profileReady(p("pending", { review_state: "pending" })), false);
+  assert.equal(profileReady(p("hidden", { publication: "draft" })), false);
 });
 
 test("empty and incomplete search landing pages are ineligible for production indexing", () => {
@@ -226,7 +233,11 @@ test("empty and incomplete search landing pages are ineligible for production in
     false,
   );
   assert.equal(
-    discoveryPageEligible(["projects", "a"], [p("a", { task: "" })], []),
+    discoveryPageEligible(
+      ["projects", "a"],
+      [p("a", { description_en: "", description_zh: "" })],
+      [],
+    ),
     false,
   );
   assert.equal(discoveryPageEligible(["dashboard"], [p("a")], []), false);

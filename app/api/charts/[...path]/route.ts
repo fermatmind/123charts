@@ -632,6 +632,7 @@ async function handle(
           throw new HttpError(400, "Invalid publication state.");
         const info = draftSchema
           .omit({
+            owner_sources: true,
             peers: true,
             slug: true,
             domain: true,
@@ -642,10 +643,7 @@ async function handle(
           .parse(b.project);
         if (
           b.publication === "published" &&
-          (!info.task?.trim() ||
-            !info.differentiator?.trim() ||
-            !info.supported_languages?.length ||
-            (info.is_open_source && !info.open_source_url) ||
+          ((info.is_open_source && !info.open_source_url) ||
             !info.name.trim() ||
             info.description_en.trim().length < 20 ||
             info.description_zh.trim().length < 10 ||

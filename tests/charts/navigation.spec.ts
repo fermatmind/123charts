@@ -66,6 +66,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.screenshot({
     path: "output/playwright/nav-after-desktop.png",
     fullPage: false,
+    caret: "initial",
   });
   const desktop = await visibleSites(page);
   console.log("Desktop visible unique entries:", desktop);
@@ -181,6 +182,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.screenshot({
     path: "output/playwright/nav-alternatives.png",
     fullPage: true,
+    caret: "initial",
   });
   // Resolve the actual local 302; do not send test traffic to a remote product's production analytics.
   await context.route("https://n8n.io/**", (r) =>
@@ -223,6 +225,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.screenshot({
     path: "output/playwright/nav-after-mobile.png",
     fullPage: false,
+    caret: "initial",
   });
   await page.getByRole("link", { name: "EN", exact: true }).click();
   await expect(
@@ -238,6 +241,7 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.screenshot({
     path: "output/playwright/nav-mobile-english.png",
     fullPage: false,
+    caret: "initial",
   });
   expect(errors).toEqual([]);
 });
@@ -546,6 +550,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await page.screenshot({
     path: "output/playwright/tools-home-desktop-zh.png",
     fullPage: false,
+    caret: "initial",
   });
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(
@@ -567,6 +572,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await page.screenshot({
     path: "output/playwright/tools-home-mobile-zh.png",
     fullPage: false,
+    caret: "initial",
   });
   console.log("Brand mobile entries:", await visibleSites(page));
   await page
@@ -601,6 +607,7 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await page.screenshot({
     path: "output/playwright/tools-home-mobile-en.png",
     fullPage: false,
+    caret: "initial",
   });
   await page.setViewportSize({ width: 1440, height: 900 });
   await expect(page.locator(".brand-promises")).toHaveText(
@@ -619,7 +626,251 @@ test("brand: positioning, transparent chart order, new listings and free submiss
   await page.screenshot({
     path: "output/playwright/tools-home-desktop-en.png",
     fullPage: false,
+    caret: "initial",
   });
   expect(errors).toEqual([]);
   expect(consoleErrors).toEqual([]);
+});
+
+test("owner: basic listing, claim gate, AI JSON import persists in revision and stays private before approval", async ({
+  page,
+}) => {
+  test.setTimeout(120000);
+  const accounts = JSON.parse(
+    await fs.readFile(".local/accounts.json", "utf8"),
+  );
+  const id = randomUUID(),
+    suffix = id.slice(0, 8),
+    domain = `owner-${suffix}.example`,
+    slug = `owner-${suffix}`;
+  const fixture = {
+    id,
+    slug,
+    name: "Owner AI " + suffix,
+    website_url: "https://" + domain,
+    domain,
+    measurement_domain: domain,
+    category: "ai-coding",
+    description_en:
+      "A fictional code helper for local owner profile acceptance.",
+    description_zh: "本地认领资料验收中的虚构代码辅助工具。",
+    price_type: "unknown",
+    publication: "draft",
+    demo: true,
+    task: "",
+    differentiator: "",
+    supported_languages: [],
+  };
+  const ck = (r: any) => {
+    if (r.error) throw Error(r.error.message);
+    return r.data;
+  };
+  try {
+    ck(await db.from("charts_projects").insert(fixture));
+    await signIn(page, accounts.admin.email, accounts.admin.password);
+    const publish = await page.request.post("/api/charts/admin/project", {
+      data: {
+        id,
+        publication: "published",
+        project: fixture,
+        reference: "LOCAL DEMO: " + fixture.website_url,
+        price_verified: false,
+      },
+    });
+    expect(publish.status(), await publish.text()).toBe(200);
+    await signOut(page);
+    await page.goto(`/zh/products/${slug}?dataset=demo`);
+    await expect(
+      page.getByRole("heading", { name: fixture.name, exact: true }),
+    ).toBeVisible();
+    await expect(page.locator(".owner-listing-note")).toContainText(
+      "整理项目简介并提供官网入口",
+    );
+    await expect(page.locator(".supplemental-profile")).not.toHaveAttribute(
+      "open",
+      "",
+    );
+    await page.locator(".owner-assist summary").first().click();
+    await expect(
+      page.getByLabel("项目资料核实提示词", { exact: true }),
+    ).toHaveValue(new RegExp(domain));
+    await page
+      .context()
+      .grantPermissions(["clipboard-read", "clipboard-write"]);
+    await page
+      .getByRole("button", { name: "复制核实提示词", exact: true })
+      .click();
+    await expect(
+      page.getByRole("status").filter({ hasText: "提示词已复制" }),
+    ).toBeVisible();
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
+      "price_verified",
+    );
+    await expect(
+      page.getByLabel("上传项目资料 JSON", { exact: true }),
+    ).toHaveCount(0);
+    await page.screenshot({
+      path: "output/playwright/owner-basic-profile.png",
+      fullPage: false,
+      caret: "initial",
+    });
+    await signIn(page, accounts.founder.email, accounts.founder.password);
+    await page.goto(`/zh/submit?dataset=demo&project=${id}`);
+    await expect(
+      page.getByText("认领通过后才能补充资料", { exact: true }),
+    ).toBeVisible();
+    const user = (
+      await (
+        await page.request.get("/api/charts/bootstrap?dataset=demo")
+      ).json()
+    ).user;
+    ck(
+      await db.from("charts_claims").insert({
+        project_id: id,
+        owner_id: user.id,
+        state: "approved",
+        evidence: "LOCAL DEMO claim fixture for owner import acceptance",
+        method: "manual",
+      }),
+    );
+    await page.reload();
+    await page.locator(".owner-assist summary").first().click();
+    const packet = {
+      schema_version: "123charts-owner-profile-v1",
+      website_url: fixture.website_url,
+      profile: {
+        description_en:
+          "An owner-supplied fictional introduction for the local test.",
+        description_zh: "项目方补充的虚构验收简介，尚未公开。",
+        conditions: "Usage limits remain unknown / 使用条件仍待补充",
+        supported_languages: [],
+        price_type: "unknown",
+      },
+      sources: [
+        {
+          field: "description_en",
+          url: fixture.website_url + "/docs",
+          checked_at: "",
+          note: "LOCAL DEMO source placeholder, not externally verified",
+        },
+      ],
+    };
+    await page.getByLabel("上传项目资料 JSON", { exact: true }).setInputFiles({
+      name: "owner-profile.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(JSON.stringify(packet)),
+    });
+    await page
+      .getByRole("checkbox", {
+        name: "我已逐项核对事实与来源，仅导入草稿",
+        exact: true,
+      })
+      .check();
+    await page
+      .getByRole("button", { name: "导入资料草稿", exact: true })
+      .click();
+    await expect(
+      page.getByLabel("Conditions and limits", { exact: true }),
+    ).toHaveValue(packet.profile.conditions);
+    await expect
+      .poll(async () => {
+        const r = ck(
+          await db
+            .from("charts_applications")
+            .select("draft")
+            .eq("project_id", id)
+            .eq("owner_id", user.id),
+        );
+        return r.length === 1
+          ? r[0]?.draft?.owner_sources?.[0]?.note
+          : `records:${r.length}`;
+      })
+      .toBe(packet.sources[0].note);
+    const saved = ck(
+      await db
+        .from("charts_applications")
+        .select("id,draft")
+        .eq("project_id", id)
+        .eq("owner_id", user.id),
+    )[0];
+    expect(saved.draft.supported_languages).toEqual([]);
+    expect(
+      ck(
+        await db
+          .from("charts_projects")
+          .select("description_en,first_published_at")
+          .eq("id", id)
+          .single(),
+      ).description_en,
+    ).toBe(fixture.description_en);
+    await page.screenshot({
+      path: "output/playwright/owner-ai-import.png",
+      fullPage: false,
+      caret: "initial",
+    });
+    const submitted = await page.request.post("/api/charts/submit", {
+      data: { id: saved.id },
+    });
+    expect(submitted.status(), await submitted.text()).toBe(200);
+    await signOut(page);
+    await signIn(page, accounts.admin.email, accounts.admin.password);
+    const a = ck(
+      await db
+        .from("charts_applications")
+        .select("updated_at")
+        .eq("id", saved.id)
+        .single(),
+    );
+    const approval = await page.request.post(
+      `/api/v1/reviews/${saved.id}/decision`,
+      {
+        data: {
+          action: "approve",
+          reference:
+            "LOCAL DEMO: reviewed owner source references without claiming external verification",
+          pricing_confirmed: false,
+          expected_updated_at: a.updated_at,
+        },
+      },
+    );
+    expect(approval.status(), await approval.text()).toBe(200);
+    expect(
+      ck(
+        await db
+          .from("charts_projects")
+          .select("description_en,price_verified")
+          .eq("id", id)
+          .single(),
+      ),
+    ).toMatchObject({
+      description_en: packet.profile.description_en,
+      price_verified: false,
+    });
+    console.log(
+      "Owner import: public basic profile, approved-claim gate, persisted sources, review-before-publication; empty optional languages accepted",
+    );
+  } finally {
+    const apps = ck(
+      await db.from("charts_applications").select("id").eq("project_id", id),
+    );
+    for (const a of apps) {
+      for (const table of ["charts_reports", "charts_relations"])
+        ck(await db.from(table).delete().eq("application_id", a.id));
+      ck(
+        await db
+          .from("charts_notifications")
+          .delete()
+          .eq("dedupe_key", "approved:" + a.id),
+      );
+    }
+    ck(await db.from("charts_applications").delete().eq("project_id", id));
+    for (const table of [
+      "charts_claims",
+      "charts_events",
+      "charts_contributions",
+      "charts_memberships",
+    ])
+      ck(await db.from(table).delete().eq("project_id", id));
+    ck(await db.from("charts_projects").delete().eq("id", id));
+  }
 });

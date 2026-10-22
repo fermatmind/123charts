@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { isIP } from "node:net";
 import { getDomain } from "tldts";
 import { z } from "zod";
+import { ownerSourceSchema } from "./owner-profile";
 import type { Draft, Peer, TrafficFields } from "./types";
 export const SCOPE = "worldwide-all-devices-domain";
 export const categories = [
@@ -71,6 +72,7 @@ export const peerSchema = z.object({
   rationale: z.string().max(1000),
 });
 export const draftSchema = z.object({
+  owner_sources: z.array(ownerSourceSchema).max(30).optional(),
   name: z.string().max(200),
   slug: z.string().max(80),
   website_url: z.string().max(500),

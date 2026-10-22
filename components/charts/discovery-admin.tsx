@@ -43,6 +43,27 @@ function ApplicationReview({ a }: { a: Application }) {
           {t("Open source evidence", "开源依据")}: {a.draft.open_source_url}
         </p>
       )}
+      {!!a.draft.owner_sources?.length && (
+        <details className="owner-assist">
+          <summary>
+            {t(
+              "Owner-submitted sources — review required",
+              "项目方来源依据 · 待审核",
+            )}
+          </summary>
+          {a.draft.owner_sources.map((source, i) => (
+            <p key={i}>
+              {source.field} ·{" "}
+              <a href={source.url} target="_blank" rel="noopener nofollow">
+                {source.url}
+              </a>{" "}
+              · {source.checked_at || t("Date not recorded", "未记录日期")}
+              <br />
+              {source.note}
+            </p>
+          ))}
+        </details>
+      )}
       {a.draft.peer_exception_reason && (
         <div className="notice">
           <strong>

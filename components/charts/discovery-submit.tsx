@@ -1,4 +1,5 @@
 "use client";
+import { OwnerProfileAssist } from "./owner-profile-assist";
 import Link from "next/link";
 import { brand } from "@/lib/charts/brand";
 import { useEffect, useRef, useState } from "react";
@@ -30,8 +31,19 @@ export function DiscoverySubmit() {
   const params = useSearchParams();
   const existing = data.applications.find((a) => a.id === params.get("id"));
   const project = [...data.projects, ...data.managedProjects].find(
-    (p) => p.id === params.get("project"),
+    (p) =>
+      p.id ===
+      (params.get("project") ||
+        (existing?.kind === "update" ? existing.project_id : null)),
   );
+  const canEditProject =
+    !project ||
+    data.claims.some(
+      (c) =>
+        c.project_id === project.id &&
+        c.owner_id === data.user?.id &&
+        c.state === "approved",
+    );
   const activeRelations = [
     ...new Map(
       data.relations
@@ -79,7 +91,13 @@ export function DiscoverySubmit() {
   const editable =
     !existing || ["draft", "needs_info"].includes(existing.status);
   async function save() {
-    if (saveLock.current) return saveLock.current;
+    if (!canEditProject)
+      throw Error(t("Approved owner claim required", "请先通过管理身份认领"));
+    if (saveLock.current) {
+      const saved = await saveLock.current;
+      if (JSON.stringify(current.current) !== savedJSON.current) return save();
+      return saved;
+    }
     const value = current.current;
     const promise = api<Application>("draft", {
       id: idRef.current,
@@ -101,11 +119,18 @@ export function DiscoverySubmit() {
     }
   }
   useEffect(() => {
-    if (!data.user || !dirty || !editable || !draft.website_url || !draft.name)
+    if (
+      !data.user ||
+      !canEditProject ||
+      !dirty ||
+      !editable ||
+      !draft.website_url ||
+      !draft.name
+    )
       return;
     const timer = setTimeout(() => void save().catch(() => {}), 1300);
     return () => clearTimeout(timer);
-  }, [draft, dirty, editable, data.user]);
+  }, [draft, dirty, editable, data.user, canEditProject]);
   useEffect(() => {
     const fn = (e: BeforeUnloadEvent) => {
       if (JSON.stringify(current.current) !== savedJSON.current) {
@@ -138,6 +163,7 @@ export function DiscoverySubmit() {
     const value = draft.website_url.trim();
     if (
       !data.user ||
+      !canEditProject ||
       !/^(?:https?:\/\/)?[^/\s]+\.[^/\s]+/.test(value) ||
       metadataURL.current === value ||
       /\.example(?:\/|$)/.test(value)
@@ -150,7 +176,7 @@ export function DiscoverySubmit() {
         .catch(() => {});
     }, 900);
     return () => clearTimeout(timer);
-  }, [draft.website_url, data.user]);
+  }, [draft.website_url, data.user, canEditProject]);
   const update = (key: keyof Draft, value: any) =>
     setDraft((d) => ({ ...d, [key]: value }));
   const add = (peer: Peer) => {
@@ -196,6 +222,30 @@ export function DiscoverySubmit() {
         </Empty>
       </div>
     );
+  if (!canEditProject)
+    return (
+      <div className="discovery-page">
+        <Empty
+          title={t(
+            "Claim this project before updating",
+            "认领通过后才能补充资料",
+          )}
+        >
+          <p>
+            {t(
+              "AI output cannot replace management verification. Return to the profile to submit a claim; free corrections remain available.",
+              "AI 资料不能替代管理身份核实。请先到项目页提交认领；免费纠错仍独立开放。",
+            )}
+          </p>
+          <Link
+            className="button"
+            href={href("/products/" + project.slug) + "#owner-claim"}
+          >
+            {t("Go to project claim", "前往项目认领")}
+          </Link>
+        </Empty>
+      </div>
+    );
   if (submitted || (!editable && existing))
     return (
       <div className="discovery-page">
@@ -233,6 +283,48 @@ export function DiscoverySubmit() {
       </div>
       <p className="platform-free-note">{brand[locale].platformFree}</p>
       <p className="submission-benefits">{brand[locale].benefits}</p>
+      <p className="muted">
+        {t(
+          "The platform maintains the introduction and official link. These extended details are supplied by the project owner and remain subject to review.",
+          "平台维护简介与官网入口；下列扩展资料由项目方补充，提交后仍需审核。",
+        )}
+      </p>
+      {!!draft.website_url && !!draft.name && (
+        <OwnerProfileAssist
+          name={draft.name}
+          websiteURL={draft.website_url}
+          onImport={(patch) => {
+            setDraft((d) => ({ ...d, ...patch }));
+            if (patch.supported_languages)
+              setLanguageInput(patch.supported_languages.join(", "));
+            setStep(2);
+          }}
+        />
+      )}
+      {!!draft.owner_sources?.length && (
+        <details className="owner-assist">
+          <summary>
+            {t("Owner-supplied source references", "项目方提交的来源依据")}
+          </summary>
+          <p>
+            {t(
+              "These references are submitted evidence, not independent platform verification.",
+              "以下为提交的资料依据，不代表平台已独立核验。",
+            )}
+          </p>
+          {draft.owner_sources.map((source, i) => (
+            <p key={i}>
+              {source.field} ·{" "}
+              <a href={source.url} target="_blank" rel="noopener nofollow">
+                {source.url}
+              </a>{" "}
+              · {source.checked_at || t("Date not recorded", "未记录日期")}
+              <br />
+              {source.note}
+            </p>
+          ))}
+        </details>
+      )}
       <div className="discovery-steps">
         {[
           t("1 · Website", "1 · 官网"),

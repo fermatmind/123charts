@@ -48,7 +48,13 @@ export async function GET(
       { error: "Confirmed sustained free conditions required" },
       { status: 409 },
     );
-  let task = localText(p.task, zh ? "zh" : "en");
+  let task =
+    kind === "listing"
+      ? zh
+        ? p.description_zh
+        : p.description_en
+      : localText(p.task, zh ? "zh" : "en");
+  if (task.length > 160) task = task.slice(0, 159) + "…";
   if (kind === "alternative") {
     const edges = checked(
       await db
@@ -145,7 +151,7 @@ export async function GET(
       </div>
       <div style={{ display: "flex", fontSize: 21, marginTop: 26, gap: 25 }}>
         <span>{zh ? c.name_zh : c.name_en}</span>
-        <span>{priceLabel(p, zh)}</span>
+        {kind !== "listing" && <span>{priceLabel(p, zh)}</span>}
       </div>
       <div
         style={{
@@ -156,7 +162,12 @@ export async function GET(
         }}
       >
         {(
-          localText(p.conditions, zh ? "zh" : "en") ||
+          (kind === "listing"
+            ? label(
+                "Visit the official website for current product details.",
+                "当前产品信息请访问官网；扩展资料由项目方认领后补充。",
+              )
+            : localText(p.conditions, zh ? "zh" : "en")) ||
           label(
             "Check current conditions on the official website.",
             "请前往官网确认当前使用条件。",

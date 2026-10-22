@@ -3,6 +3,7 @@
 The sole product and architecture authority is `123Charts_Website_Framework_V1_20261021.md` in this repository root. Public navigation and interaction are updated by the user-authorized `docs/123Charts_Navigation_Interaction_Spec_20261022.md`; the root document remains the business-state authority. Other historical plans cannot override these.
 
 - Local only: preserve this repository and Git history. No GitHub writes, push, DNS, deployment or production database access in this delivery.
+- Platform curation covers a short introduction and official website link. Extended fields are supplied by owners after a separate approved claim. AI prompts and JSON imports prepare drafts only; never grant verification or publication. Existing reviewed facts are retained as reference information.
 - Website facts, tasks, conditions and reviewed alternatives drive discovery. Use one canonical project record across pages, comparison lists and cards.
 - Submit 3–5 distinct relevant peer websites. A documented niche exception with supplementary methods can be reviewed. Screenshot/OCR/third-party traffic tasks are outside this MVP.
 - Separate publication, identity claims, price confirmation and recommendation eligibility. Contribution does not grant management permissions or quality certification. Free corrections are independent.
