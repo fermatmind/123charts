@@ -10,164 +10,128 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Starlify is a product in the Team collaboration category. Its directory profile covers Synchronous Editing, Cooperative Writing, Task Management, Project Management, Document Management.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as NA. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Offers Free-forever and Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: create, assign and track units of work; coordinate project tasks, responsibilities and progress; organize documents and control their access and revisions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Starlify 属于团队协作软件。第三方资料列出的功能包括同步编辑、协同写作、任务管理、项目管理、文档管理。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为未注明。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 另有持续免费方案和定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：创建、分配并跟踪具体工作任务；协调项目任务、负责人和进度；整理文档并管理访问权限与版本。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Starlify maintains a shared model of systems, services, contracts, references, data flows and ownership across an integration landscape. Teams use that context for visual exploration and change planning, with AI-assisted discovery and validation. Modeling an integration is distinct from executing or monitoring its live transactions.",
+  "description_zh": "Starlify 在集成版图中维护系统、服务、契约、引用、数据流及负责人共享模型。团队用这些上下文进行可视化探索和变更规划，并使用 AI 辅助发现及验证。建立集成模型不同于执行或监控真实事务。",
   "core_features": [
     {
-      "name_en": "Synchronous Editing",
-      "name_zh": "同步编辑",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Shared integration context",
+      "name_zh": "共享集成上下文",
+      "explanation_en": "Represent dependencies and ownership for human and agent queries.",
+      "explanation_zh": "表示依赖及负责人，供人员和 agent 查询。",
+      "explanation_scope": "product_specific",
+      "source_ref": "product",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Cooperative Writing",
-      "name_zh": "协同写作",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Contract mapping documentation",
+      "name_zh": "契约映射文档",
+      "explanation_en": "Describe row-level transformations between source and target contracts.",
+      "explanation_zh": "描述源契约与目标契约的行级转换。",
+      "explanation_scope": "product_specific",
+      "source_ref": "mapping-march",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Task Management",
-      "name_zh": "任务管理",
-      "explanation_en": "Create, assign and track units of work.",
-      "explanation_zh": "创建、分配并跟踪具体工作任务。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Project Management",
-      "name_zh": "项目管理",
-      "explanation_en": "Coordinate project tasks, responsibilities and progress.",
-      "explanation_zh": "协调项目任务、负责人和进度。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Document Management",
-      "name_zh": "文档管理",
-      "explanation_en": "Organize documents and control their access and revisions.",
-      "explanation_zh": "整理文档并管理访问权限与版本。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Best-effort import reversion",
+      "name_zh": "尽力回退导入",
+      "explanation_en": "Inspect a separate asynchronous revert job and its success, failure and skipped-item report.",
+      "explanation_zh": "检查独立异步回退作业及其成功、失败和跳过报告。",
+      "explanation_scope": "product_specific",
+      "source_ref": "revert-may",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Create, assign and track units of work",
-      "Coordinate project tasks, responsibilities and progress",
-      "Organize documents and control their access and revisions"
+      "Evaluate an order-system change by documenting dependencies, checking a transformation and reviewing a synthetic import/revert report."
     ],
     "zh": [
-      "创建、分配并跟踪具体工作任务",
-      "协调项目任务、负责人和进度",
-      "整理文档并管理访问权限与版本"
+      "通过记录依赖、核对转换及检查虚构导入／回退报告来评估订单系统变更。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["mapping-march", "revert-may"],
+    "basis": "Proposed evaluation only; not actual systems discovery or measured engineering outcome."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Offers Free-forever and Custom plan.",
-      "zh": "未提供免费试用 另有持续免费方案和定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "NA",
-      "zh": "未注明",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Scope": {
+      "en": "Structured context graph; public EU cloud and advertised private/air-gapped project options. No live runtime or private installation verified.",
+      "zh": "结构化上下文图；公共欧盟云及宣传的私有／隔离项目选项。未核实真实运行时或私有安装。",
+      "source_ref": "product",
+      "status": "documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Integration architect",
+      "Integration owner coordinating a system change"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Select a synthetic interface and its owner; compare the proposed context with a source artifact before submission.",
+        "zh": "选定虚构接口及负责人，提交前把提议上下文与来源产物对照。",
+        "source_refs": ["discovery-may", "mapping-march"],
+        "evidence_type": "editorial_evaluation_guidance"
+      },
+      {
+        "en": "Evaluate permissions, import reporting and the exit artifact before expanding the model.",
+        "zh": "扩大模型前，评估权限、导入报告及退出产物。",
+        "source_refs": ["pricing", "revert-may", "exit-terms"],
+        "evidence_type": "editorial_evaluation_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
+    "status": "documented_not_connected",
     "items": [],
-    "source_ref": "directory-detail"
+    "source_ref": "mcp-february",
+    "scope": "Read docs/schema validation release; no MCP/API connection, SDK or Discovery CLI installed."
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_and_unverified",
+    "items": [
+      {
+        "en": "AI output requires checking; import revert can skip entities whose newer dependencies prevent deletion.",
+        "zh": "AI 输出需核对；新依赖阻止删除时，导入回退可跳过实体。",
+        "source_refs": ["discovery-may", "revert-may"],
+        "evidence_type": "documented_scope_limit"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
-    "items": []
+    "items": [],
+    "scope": "English source reading is not a UI locale list."
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "proprietary_network_service_terms_read",
+    "is_open_source": false,
+    "url": "https://entiros.se/legal-and-privacy-policy",
+    "source_ref": "customer-license",
+    "scope": "Masterterms access/use only, no softwarelicense; private deployment and thirdpartyGPLcomponents require distinct arrangements."
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Offers Free-forever and Custom plan.",
-    "source_snapshot_zh": "未提供免费试用 另有持续免费方案和定制方案。",
-    "source_ref": "directory-detail"
+    "status": "official_package_display_checked",
+    "price_type": "freemium_and_editor_package_subscription_with_addons",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "normalized_price": null,
+    "source_snapshot_en": "Package display and currency toggle actually checked; commercial steps, agent access, taxes and order conditions not purchased or verified.",
+    "source_snapshot_zh": "已实际核对基础包显示及币种切换，商业步数、agent 访问、税及订单条件未购买或核实。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Starlify do?",
-      "question_zh": "Starlify 用来做什么？",
-      "answer_en": "Starlify is a product in the Team collaboration category. Its directory profile covers Synchronous Editing, Cooperative Writing, Task Management, Project Management, Document Management.",
-      "answer_zh": "Starlify 属于团队协作软件。第三方资料列出的功能包括同步编辑、协同写作、任务管理、项目管理、文档管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Synchronous Editing, Cooperative Writing, Task Management, Project Management, Document Management",
-      "answer_zh": "同步编辑、协同写作、任务管理、项目管理、文档管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -177,25 +141,271 @@
       "read_at": "2026-10-22T09:08:54.598Z",
       "excerpt_sha256": "218bf2c422aed3f67a0e68b691b8ca39a7f704e8c806c5c70ccae1c11b530384",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Collaborative integration platform for a digital business | Starlify",
+      "url": "https://www.starlify.com/",
+      "read_at": "2026-10-22T14:30:08.024554Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "e6357f77e41ead141dcb0e38037d4687adbd75fa150d72ee012eead0c72339a5",
+      "research_notes_en": "Actual homepage read: structured integration context systems/flows/ownership, Ingo and agent/API/MCP, metadata-only scope and EU/onprem/airgap claims. No speed, AI correctness or certification assurance adopted."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "www.starlify.com",
+      "title": "Give your team the features they need to succeed | Starlify",
+      "url": "https://www.starlify.com/pricing",
+      "read_at": "2026-10-22T14:30:08.025151Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "77381a33d367c9662c4a8a4910e59fe03401f618038b0023cc9e51766804305b",
+      "research_notes_en": "Actual plan page read Freemium andCollaboration 15000 KR/mo up to 10 editors, Enterprisecustom, API/Kafka addons andworkspace/networkreadwriteadmin. Readonly is permission not distinctfreeuser. Blank reader matrixcells not assumed yes."
+    },
+    {
+      "id": "account-policy",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Legal and Privacy policy for Starlify and Entiros | Starlify",
+      "url": "https://www.starlify.com/legal-and-policy",
+      "read_at": "2026-10-22T14:30:08.025221Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "3dde2438444e69567195f489cff4c6fa55dcb3776e4d77529ec0c1c7adfef9f7",
+      "research_notes_en": "Actual product website terms and Googleaccountprivacy supplement read. Website terms distinct from customer service grant. HubSpot records not marketing consent,30 dayactive/backupdeletion exceptions andGoogle-specifictrainingban notallmetadata."
+    },
+    {
+      "id": "browser-pricing",
+      "type": "official_pricing",
+      "site": "www.starlify.com",
+      "title": "Starlify current price browser comparison",
+      "url": "https://www.starlify.com/pricing",
+      "read_at": "2026-10-22T14:30:08.025524Z",
+      "verification": "official_documentation_read",
+      "transport": "public_browser_accessibility_selected_excerpt",
+      "excerpt_sha256": "7769ca37e9eb0a715d33896681df4627db91f6e7616fcd2a94ed008a16be53be",
+      "research_notes_en": "Actual browser screenshot confirmed SEKselected 15000 KR; switchedEUR 1500; up to 10 editorlicenses. Actual opened LevelsOfUsers FAQ read. Selected observation, no signup or quote."
+    },
+    {
+      "id": "discovery-may",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Release notes - May 2026: AI-Powered Context Discovery",
+      "url": "https://www.starlify.com/blog/release-notes-may-2026-ai-powered-context-discovery",
+      "read_at": "2026-10-22T14:30:08.026034Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d8f8f3a44097d619b327950f0dafd58f7ec25b916cd0ba6f50d68d582d40b883",
+      "research_notes_en": "Actual May 2026 discovery release read prerequisites AIassistant/CLI/workspace/key; iterative plan/discover/validate/submit; errors/semantic review not automatic correctness. No CLI/skills installed."
+    },
+    {
+      "id": "mapping-march",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Release notes - March 2026: Mapping tables finally in Starlify!",
+      "url": "https://www.starlify.com/blog/release-notes-march-2026-mapping-tables-finally-in-starlify",
+      "read_at": "2026-10-22T14:30:08.026096Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ec3cd119172588fd252489566e06a1e1b55383088f80638f8efb7db002627a42",
+      "research_notes_en": "Actual March 2026 mapping release read source/targetcontracts, row transformation description/SIR, importexport, cascade deletion warnings. Mapping documents meaning; not runtime execution proof."
+    },
+    {
+      "id": "revert-may",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Release notes - May 2026: Revert for import jobs",
+      "url": "https://www.starlify.com/blog/release-notes-may-2026-revert-for-import-jobs",
+      "read_at": "2026-10-22T14:30:08.026133Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "8419802cb03fe2696d422dff5cc7dea346e5caea1728915762bc49128e572efa",
+      "research_notes_en": "Actual May 2026 revert body read exactprocessedentities/history, asyncnewjob, best effort andskipnewdependencies, finalreport mandatory. Notfullrestore guarantee."
+    },
+    {
+      "id": "mcp-february",
+      "type": "official_documentation",
+      "site": "www.starlify.com",
+      "title": "Release notes - February 2026: SIR tables on references, easier search, and the Starlify MCP server",
+      "url": "https://www.starlify.com/blog/release-notes-february-2026-sir-tables-on-references-easier-search-and-the-starlify-mcp-server",
+      "read_at": "2026-10-22T14:30:08.026845Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "fb9c58c89e07cc264de18ab449ddbae2ca1467b9c48a55623d7017c8bbdb776d",
+      "research_notes_en": "Actual February 2026 MCP feature body read docs/schema/JSON andMermaid validation; no livebusinesscontext read/writeauthority assumed fromthisrelease. Publicendpoint notconnected."
+    },
+    {
+      "id": "customer-license",
+      "type": "official_license",
+      "site": "entiros.se",
+      "title": "Legal and Privacy Policy | Entiros",
+      "url": "https://entiros.se/legal-and-privacy-policy",
+      "read_at": "2026-10-22T14:30:08.026889Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "78c6f654090d21aa04aa4b2860bccccbd73ef2d3bcf763e0be675119c75ce89c",
+      "research_notes_en": "Actual operator masterIP clause read: servicesaccess notsoftwarelicense, writtenexceptions andthirdpartyGPLcomponents separate. Actual producttermsexit/renewal read separately samepolicyURL."
+    },
+    {
+      "id": "exit-terms",
+      "type": "official_documentation",
+      "site": "entiros.se",
+      "title": "Legal and Privacy Policy | Entiros",
+      "url": "https://entiros.se/legal-and-privacy-policy",
+      "read_at": "2026-10-22T14:30:08.027359Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4f8cf254851115da01418ff5bcf6cd12381908edff31717a65e43169ac77edda",
+      "research_notes_en": "Actual operatorproductterms read: noafterterm dataaccess Community/Free/Collaboration; Pro/Ent writtenrequestwithin 30 days maycharge/reactivate. Oldeditionnames/orderscoped. Notblanket 30 daygrace."
+    },
+    {
+      "id": "renewal-terms",
+      "type": "official_documentation",
+      "site": "entiros.se",
+      "title": "Legal and Privacy Policy | Entiros",
+      "url": "https://entiros.se/legal-and-privacy-policy",
+      "read_at": "2026-10-22T14:30:08.027440Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "cd95aae820013ea039a3704338c1923a9101e2220c5747ba3f9e7e6575cdf8e3",
+      "research_notes_en": "Actual master/productrenewal sections read default autorenew,10 daywrittennotice unlessOrderdiffers, feesexclusiveoftaxes/earlycancelnoordinaryrefund. Orderprevails; notexecuted."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:30:08.027440Z",
+    "scope": "Public primary-source documentation; no account operation, purchase, benchmark, owner verification or publishing approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "English and Chinese were checked against the sources attached to each section. Editorial examples and selection judgments are not customer evidence.",
+    "Read_at is retrieval time; public-reader text may be cached and does not establish vendor update time.",
+    "Draft documentation research only. Independent review, hands-on testing, owner verification and publishing approval remain separate."
+  ],
+  "description_source_refs": ["product", "mapping-march", "discovery-may"],
+  "profile": {
+    "sections": [
+      {
+        "id": "integration-context",
+        "title_en": "Map the landscape you need to change",
+        "title_zh": "建立目标变更所需版图",
+        "en": "For a proposed order-system replacement, identify the storefront, order service, warehouse and billing system, then connect their contracts, references, flows and owners. Starlify stores structured integration metadata so people and AI tools can reason about that landscape. A missing warehouse connection in the model is still missing context, even if the diagram is visually convincing.\n\nUse the map to ask who owns the outgoing order contract and which consumers need review before a change. Do not treat the answer as proof that no undocumented consumer exists, or that an integration ran successfully. The homepage’s metadata-only storage statement distinguishes the context graph from application source, payloads and business data. It is not a reason to include secrets in descriptions or to assume that an external AI assistant has the same processing boundary. No enterprise system or code was submitted.",
+        "zh": "假设替换订单系统，应识别商店前端、订单服务、仓库和计费系统，关联其契约、引用、流程及负责人。Starlify 保存结构化集成元数据，供人员和 AI 工具推理。模型遗漏仓库连接时，即使图画得有说服力，仍然缺少上下文。\n\n可用版图询问谁负责出站订单契约、变更前需审查哪些消费方。答案不证明不存在未记录消费方，也不证明集成运行成功。首页“仅存元数据”区分上下文图与应用源代码、载荷及业务数据，但不意味着可把秘密写入描述，也不证明外部 AI 助手具有相同处理边界。本研究未提交企业系统或代码。",
+        "source_refs": ["product"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "mapping-row",
+        "title_en": "A mapping row records meaning before it changes code",
+        "title_zh": "映射行先记录含义，不直接改变代码",
+        "en": "The March 2026 release requires a mapping’s source and target to be contracts. Rows describe transformations between SIR entries belonging to contracts or references, with operation text and visibility in the relevant flow. Import/export jobs include mappings.\n\nFor an editorial example, document how an integer amount in minor currency units should become a decimal value for a downstream contract, including currency and rounding requirements. That row records intended semantics; it does not prove Starlify executes the conversion in production or that existing code follows it. Compare the definition with the actual integration artifact and a representative test case. The same release introduces cascading deletion of a system’s related objects and a warning listing affected entities. Removing a diagram node therefore needs a dependency review, not an assumption that only its visual marker disappears. No mapping or deletion was executed.",
+        "zh": "2026年3月发布要求映射的源和目标都是契约。行记录契约或引用所属 SIR 条目之间的转换，含操作文本，并可在相应流程查看。导入／导出作业包含映射。\n\n编辑示例可记录：以最小货币单位表示的整数金额，如何变为下游契约的十进制值，含币种及舍入要求。这一行记录目标语义，不证明 Starlify 在生产中执行转换，也不证明既有代码符合定义。应与实际集成产物及代表性测试案例比较。同一发布还增加系统关联对象级联删除，并列出受影响实体。删除图节点需审查依赖，不能假定只移除视觉标记。本研究未执行映射或删除。",
+        "source_refs": ["mapping-march"],
+        "evidence_type": "documented_with_editorial_example"
+      },
+      {
+        "id": "ai-discovery",
+        "title_en": "Discovery needs selected input, validation and a separate submission",
+        "title_zh": "发现需选定输入、验证，再单独提交",
+        "en": "The May 2026 method requires an AI model or coding assistant capable of skills/CLI use, the Discovery CLI and workspace access. Initialization supplies a workspace ID and API key. The documented cycle plans work, discovers a stage, validates the generated representation, submits it and continues with the next stage. Deterministic checks can find malformed JSON or a service without a parent; the release still warns that AI can make mistakes and recommends checking against source information.\n\nFor the order-system example, scope a discovery stage to a known interface and its consumer, then compare the proposed systems, contracts and transformations with the selected artifacts. Passing syntax checks cannot establish completeness, correct business meaning or current ownership. Confirm the input material’s permitted processing environment before using an AI tool. No Discovery CLI, supplied skill, agent connection or API key was installed or created in this research.",
+        "zh": "2026年5月的方法要求能使用 skills／CLI 的 AI 模型或编码助手、Discovery CLI 及工作区访问。初始化需提供工作区 ID 和 API key；文档周期为规划、发现一个阶段、验证生成表示、提交，再继续下阶段。确定性检查可发现无效 JSON、服务缺少父系统等问题，但发布仍提醒 AI 会出错，并建议对照来源检查。\n\n在订单系统示例中，可把一个发现阶段限于已知接口及消费方，再把提议的系统、契约、转换与选定产物比较。通过语法检查不确立完整性、正确业务含义或当前负责人。使用 AI 工具前应确认输入材料允许的处理环境。本研究未安装 Discovery CLI、提供的 skill 或 agent 连接，也未创建 API key。",
+        "source_refs": ["discovery-may"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "mcp-authority",
+        "title_en": "Schema assistance is different from authority over a live workspace",
+        "title_zh": "模式辅助不同于真实工作区操作权限",
+        "en": "The February 2026 MCP release documents tools for retrieving concepts and schemas, validating import files and checking Mermaid syntax. Those capabilities help an assistant prepare an artifact. The homepage now also describes API/MCP access to integration context. Keep the documented stages distinct: a schema/documentation tool is not by itself evidence that a connected assistant can read or change every live workspace.\n\nBefore a proposed agent workflow, inspect the actual available tools, permitted workspace/network scope and whether the operation prepares a file or submits a change. A valid import is still a proposal until the intended job runs and its results are checked. Exact tool authorization, key rotation, rate limits, error/retry behavior and model processing terms were not established. No MCP server was connected and no tool was invoked against the service.",
+        "zh": "2026年2月 MCP 发布描述获取概念及模式、验证导入文件和检查 Mermaid 语法的工具，帮助助手准备产物。首页现也描述通过 API／MCP 获取集成上下文。应区分文档所述阶段：模式／文档工具本身不证明已连接助手可读取或修改所有真实工作区。\n\n假设设计 agent 流程，应检查实际可用工具、许可的工作区／网络范围，以及操作是准备文件还是提交更改。有效导入文件在目标作业执行、结果检查前仍是提议。精确工具授权、密钥轮换、速率限制、错误／重试及模型处理条款未确立。本研究未连接 MCP 服务器，也未调用服务工具。",
+        "source_refs": ["mcp-february", "product"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "revert-report",
+        "title_en": "Reverting an import is a job to inspect, not a guaranteed reset",
+        "title_zh": "导入回退需检查作业，不是保证重置",
+        "en": "The May 2026 revert release operates on the entities actually processed and their prior history, rather than only replaying the original file. It creates a separate asynchronous job while preserving the import record. The stated coverage includes systems, services, contracts, flows, attributes, requirement tables and mappings.\n\nIt is explicitly best effort. Later user/job changes can produce partial or unintended effects; new dependencies can block deletion of an imported entity. For the proposed replacement model, identify the relevant import, request reversion and then inspect its final report for restored, failed and skipped items before importing again. That is a suggested evaluation, not an executed rollback. A finished background job does not imply every item returned to its former state. This feature is also not evidence of full workspace disaster recovery or restoration of the source business systems.",
+        "zh": "2026年5月回退发布根据实际处理实体及其先前历史操作，不只是重放原文件；创建独立异步作业，并保留原导入记录。声明范围包括系统、服务、契约、流程、属性、需求表及映射。\n\n它明确是尽力恢复。之后的人员／作业更改可能造成部分或意外效果，新依赖可能阻止删除导入实体。在假设替换模型中，应确定相关导入、请求回退，再检查最终报告中恢复、失败及跳过项，之后才再次导入。这是建议的评估，未实际执行回退。后台作业结束不表示每项都恢复原状，也不证明具有完整工作区灾难恢复，或可恢复源业务系统。",
+        "source_refs": ["revert-may"],
+        "evidence_type": "documented_with_editorial_failure_guidance"
+      },
+      {
+        "id": "licenses-cost",
+        "title_en": "A read-only role is still a workspace user",
+        "title_zh": "只读角色仍是工作区用户",
+        "en": "The browser-confirmed Collaboration display is 15000 SEK/month or 1500 EUR/month for up to 10 editor licenses. Freemium is advertised without a card; Enterprise is custom. The FAQ says read-only is an access permission rather than a separate lite user class. Workspace/network rights distinguish admin, write and read, but exact agent entitlement and commercial counting still require the order.\n\nFor a team evaluating two networks, budget the package and any extra users, API volume, Kafka option, onboarding or private deployment separately. The page lists an API-volume add-on at 995 EUR/month per step without defining the step volume here. Do not calculate an overage from that incomplete unit. No checkout, quote or current negotiated contract was verified; display currency switching is not an exchange-rate conversion.",
+        "zh": "浏览器核到 Collaboration 为每月15000瑞典克朗或1500欧元，最多十个编辑许可；Freemium 宣传无须信用卡，Enterprise 定制。FAQ 称只读是访问权限，不是独立轻量用户类别。工作区／网络权限区分管理员、写和读，但精确 agent 资格及商业计数仍需订单。\n\n假设团队评估两个网络，应分别预算基础包、额外用户、API 用量、Kafka 选项、入门或私有部署。页面列 API 用量附加包每步每月995欧元，本次未确定每步包含的量，不能据不完整单位计算超额费用。本研究未核实结账、询价或当前议价合同；切换显示币种不代表汇率换算。",
+        "source_refs": ["pricing", "browser-pricing"],
+        "evidence_type": "documented_with_editorial_cost_guidance"
+      },
+      {
+        "id": "contract-exit-privacy",
+        "title_en": "Prepare the exit before the subscription ends",
+        "title_zh": "订阅结束前准备退出",
+        "en": "The operator’s published product terms give Community/Free and Collaboration no post-termination data access. Professional/Enterprise can request retrieval in writing within 30 days, possibly with a reactivation fee. Default non-renewal notice is at least 10 days, unless the order differs; ordinary early cancellation does not erase the remaining payment obligation. These terms retain older edition names, so confirm the actual order before relying on a grace period. The service agreement grants access rather than a software license; third-party GPL components do not license the whole platform.\n\nThe product account notice separately says Google identity may populate HubSpot customer records even without marketing consent. It promises active personal-record deletion/anonymization within 30 days after closure or a verified request, with backup expiry and stated exceptions. Removing a Google connection or clearing browser storage is not that request. Its Google-data restriction on general-purpose model training must not be generalized to all integration metadata or external assistants. Full export, restore, private-deployment obligations and contract-specific retention remain untested.",
+        "zh": "运营商公开产品条款不给 Community／Free 及 Collaboration 终止后数据访问；Professional／Enterprise 可在30天内书面请求取回，可能收重新激活费。默认不续订通知至少提前十天，订单另定除外；普通提前取消不免除剩余付款义务。条款仍使用较旧版本名称，依赖宽限期前应确认实际订单。服务协议授予访问而非软件许可，第三方 GPL 组件不授权整个平台。\n\n产品账户通知另称，即使未同意营销，Google 身份也可能用于 HubSpot 客户记录；账户关闭或经验证请求后30天内删除／匿名化活跃系统个人记录，并规定备份到期及例外。移除 Google 连接或清除浏览器存储不等于提出删除请求。Google 数据不得用于通用模型训练的限制，不能泛化到所有集成元数据或外部助手。完整导出、恢复、私有部署义务及合同专属保留仍未测试。",
+        "source_refs": [
+          "exit-terms",
+          "renewal-terms",
+          "customer-license",
+          "account-policy"
+        ],
+        "evidence_type": "documented_with_editorial_selection_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Starlify: Integration Context, AI Discovery and Best-Effort Import Revert",
+    "title_zh": "Starlify：集成上下文、AI 发现及尽力导入回退",
+    "description_en": "Evaluate Starlify through contract mappings, discovery validation, MCP scope, import revert reports, workspace users and edition-specific exit conditions.",
+    "description_zh": "结合契约映射、发现验证、MCP 范围、导入回退报告、工作区用户及版本专属退出条件评估 Starlify。",
+    "primary_intent": "Evaluate Starlify for integration landscape collaboration and change planning.",
+    "secondary_questions": [
+      "Does Starlify execute documented transformations?",
+      "What happens when an import cannot fully revert?"
+    ],
+    "query_basis": "Editorial intent only; no measured search demand, ranking or AI citation.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No signup/workspace, enterprise source input, AI/CLI/skill install, API key, MCP connection, import, mapping, revert, deletion, quote, subscription or export/restore executed.",
+      "zh": "未执行注册／工作区、企业来源输入、AI／CLI／skill 安装、API key、MCP 连接、导入、映射、回退、删除、询价、订阅或导出恢复。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    },
+    {
+      "en": "Exact runtime monitoring/execution scope, supported artifact completeness, current agent tools/scopes, quotas/API step units, error/retry, all model providers/data processing, private operations and full backup/exit fidelity unverified. Public legacy-edition terms need matching to actual order.",
+      "zh": "精确运行时监控／执行范围、支持产物完整性、当前 agent 工具／范围、配额／API 步数单位、错误重试、全部模型提供方／处理、私有运营及完整备份／退出保真未核实。公开旧版本条款需与实际订单对应。",
+      "source_refs": ["mcp-february", "pricing", "exit-terms"],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Metadata-only storage marketing does not exempt identity/log/CRM processing or prove the selected local coding assistant is offline. Google-specific notice restrictions not generalized to all metadata. ISO certification and claimed productivity not independently checked.",
+      "zh": "仅存元数据宣传不排除身份／日志／CRM 处理，也不证明选定本地编码助手离线。Google 专属通知限制不泛化到所有元数据。未独立核查 ISO 认证及宣传生产力。",
+      "source_refs": ["product", "account-policy"],
+      "evidence_type": "scope_limit"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation; proposed examples were not executed.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
