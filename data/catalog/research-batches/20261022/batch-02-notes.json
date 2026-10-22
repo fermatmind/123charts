@@ -2,19 +2,19 @@
   "batch_id": "batch-02",
   "branch": "data/catalog-deep-batch-02",
   "assigned_count": 196,
-  "completed_count": 5,
-  "remaining_count": 191,
+  "completed_count": 7,
+  "remaining_count": 189,
   "completed_project_paths": [
     "projects/project-management/adobe-workfront-fc4d9f64.json",
     "projects/project-management/aha-3a86a6eb.json",
     "projects/project-management/asana-6cdd16e9.json",
     "projects/project-management/axosoft-a491b5fd.json",
-    "projects/project-management/basecamp-67313466.json"
+    "projects/project-management/basecamp-67313466.json",
+    "projects/project-management/clickup-9bd7bad2.json",
+    "projects/project-management/desklog-0b84b0c7.json"
   ],
   "remaining_project_paths": [
     "projects/project-management/campr-96e6cd3e.json",
-    "projects/project-management/clickup-9bd7bad2.json",
-    "projects/project-management/desklog-0b84b0c7.json",
     "projects/project-management/favro-9b3eaef9.json",
     "projects/project-management/flat-94cbd062.json",
     "projects/project-management/ganttpro-3108e1ab.json",
@@ -205,8 +205,8 @@
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
   "status": "in_progress",
-  "updated_at": "2026-10-22T10:11:21.735431+00:00",
-  "last_content_commit": "90575aa50c2be6a258bee24ef400779cfc00773b",
+  "updated_at": "2026-10-22T10:18:23.837209+00:00",
+  "last_content_commit": "d7909cce9d88e925724a77ad107fc9557d8ec309",
   "checkpoints": [
     {
       "projects": ["projects/project-management/adobe-workfront-fc4d9f64.json"],
@@ -251,6 +251,24 @@
         "Axosoft requires current stack/integration confirmation because public documents include legacy versions; dynamic pricing returned placeholders.",
         "Basecamp 5 help read through legacy-help redirect, current canonical URLs retained. Current pricing differs from historical sources; time-tracking plan naming conflict retained."
       ]
+    },
+    {
+      "projects": [
+        "projects/project-management/clickup-9bd7bad2.json",
+        "projects/project-management/desklog-0b84b0c7.json"
+      ],
+      "validations": {
+        "python_catalog_tests": "7 passed",
+        "owned_excerpt_hash_and_reference_check": "7 records passed; actual saved reader excerpts reproduced SHA-256",
+        "records_only": "Known unresolved Basecamp official-help domain assertion at line 166; shared script unchanged",
+        "prettier": "passed",
+        "git_diff_check": "passed"
+      },
+      "notes": [
+        "CAMPR not counted: official site offline; current pricing and operating status unverified.",
+        "ClickUp current reader text exposes conflicting old/new packaging, rates and automation quotas; normalized price unset.",
+        "Desklog is time/activity measurement with projects and invoices. Distinguishes activity from output quality and disconnected network from logged-out status."
+      ]
     }
   ],
   "open_issues": [
@@ -270,5 +288,17 @@
     }
   ],
   "evidence_directory": ".scratch/deep-research/",
-  "scope": "Draft bilingual documentation research only; no independent review, hands-on test, publication or deployment."
+  "scope": "Draft bilingual documentation research only; no independent review, hands-on test, publication or deployment.",
+  "blocked_projects": [
+    {
+      "path": "projects/project-management/campr-96e6cd3e.json",
+      "status": "not_counted_as_complete",
+      "reason": "Official campr.biz homepage returns an offline PHP/Kirby notice. Features and pricing paths returned retrieval errors. Current cloud availability, pricing and product conditions cannot be verified; retain structured candidate.",
+      "read_url": "https://campr.biz/",
+      "evidence_file": ".scratch/deep-research/campr-discovery.txt",
+      "discovered_repository": "https://github.com/Campr-Project-Management/campr",
+      "repository_scope": "Repository README is accessible and references historical cloud/on-premise options, but does not establish current cloud operation or pricing.",
+      "followup": "Recheck official site if external state changes; do not infer discontinuation from third-party labels."
+    }
+  ]
 }
