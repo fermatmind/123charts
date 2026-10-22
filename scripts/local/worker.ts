@@ -219,7 +219,7 @@ async function processJob(job: any) {
           .eq("id", job.payload.project_id)
           .eq("publication", "draft"),
       );
-    const metadata = extractMetadata(fetched.html);
+    const metadata = extractMetadata(fetched.html, fetched.url);
     return {
       ...metadata,
       suggested_category: suggestCategory(

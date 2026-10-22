@@ -79,6 +79,11 @@ export function DiscoverySubmit() {
     [saved, setSaved] = useState(""),
     [job, setJob] = useState(""),
     [submitted, setSubmitted] = useState(false);
+  const metadataJob = data.jobs.find((item) => item.id === job);
+  const metadataPending =
+    !!job &&
+    (!metadataJob || ["pending", "running"].includes(metadataJob.state));
+  const metadataFailed = metadataJob?.state === "failed";
   const savedJSON = useRef(existing ? JSON.stringify(existing.draft) : "");
   const [languageInput, setLanguageInput] = useState(
     (draft.supported_languages || []).join(", "),
@@ -183,6 +188,7 @@ export function DiscoverySubmit() {
     )
       return;
     const timer = setTimeout(() => {
+      if (metadataURL.current === value) return;
       metadataURL.current = value;
       void api<{ id: string }>("metadata", { url: value })
         .then((j) => setJob(j.id))
@@ -412,9 +418,10 @@ export function DiscoverySubmit() {
           </label>
           <button
             className="button"
-            disabled={busy || !!job}
+            disabled={busy || metadataPending}
             onClick={async () => {
               try {
+                metadataURL.current = draft.website_url.trim();
                 const j = await api<{ id: string }>("metadata", {
                   url: draft.website_url,
                 });
@@ -422,17 +429,19 @@ export function DiscoverySubmit() {
               } catch {}
             }}
           >
-            {job
+            {metadataPending
               ? t("Extracting…", "正在提取…")
-              : t("Prefill tool details", "提取工具资料")}
+              : metadataFailed
+                ? t("Retry extraction", "重新提取资料")
+                : t("Prefill tool details", "提取工具资料")}
           </button>
-          {job && data.jobs.find((j) => j.id === job)?.state === "failed" && (
-            <p className="notice">
+          {metadataFailed && (
+            <p className="notice" role="status">
               {t(
-                "Extraction failed. Continue manually or retry.",
-                "提取失败，可以继续手填或重试。",
+                "Could not extract website details. Check the URL and retry, or continue manually. Your existing entries are kept.",
+                "暂时无法提取官网资料。请检查网址后重试，或继续手动填写；已填内容会保留。",
               )}
-              <button onClick={() => setJob("")}>
+              <button className="button ghost" onClick={() => setJob("")}>
                 {t("Continue manually", "继续手填")}
               </button>
             </p>

@@ -2,6 +2,7 @@ import dns from "node:dns/promises";
 import http from "node:http";
 import https from "node:https";
 import { BlockList, isIP } from "node:net";
+import { getDomain } from "tldts";
 const blocked = new BlockList();
 for (const [ip, bits] of [
   ["0.0.0.0", 8],
@@ -226,13 +227,34 @@ export async function safeHtml(
     req.on("error", reject);
   });
 }
-export function extractMetadata(html: string) {
+export function extractMetadata(html: string, websiteURL?: string) {
   const clean = (s: string) =>
     s
       .replace(/<[^>]*>/g, " ")
-      .replace(/&amp;/g, "&")
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
+      .replace(
+        /&(?:amp|quot|apos|nbsp|lt|gt);|&#(?:x[\da-f]+|\d+);/gi,
+        (entity) => {
+          const named: Record<string, string> = {
+            "&amp;": "&",
+            "&quot;": '"',
+            "&apos;": "'",
+            "&nbsp;": " ",
+            "&lt;": "<",
+            "&gt;": ">",
+          };
+          if (named[entity.toLowerCase()]) return named[entity.toLowerCase()];
+          const hex = /^&#x/i.test(entity);
+          const code = Number.parseInt(
+            entity.slice(hex ? 3 : 2, -1),
+            hex ? 16 : 10,
+          );
+          return code > 0 &&
+            code <= 0x10ffff &&
+            !(code >= 0xd800 && code <= 0xdfff)
+            ? String.fromCodePoint(code)
+            : "";
+        },
+      )
       .replace(/\s+/g, " ")
       .trim();
   const readable = html.replace(
@@ -243,18 +265,36 @@ export function extractMetadata(html: string) {
     readable.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "",
   ).slice(0, 200);
   const tags = readable.match(/<meta\b[^>]*>/gi) ?? [];
-  let description = "";
-  for (const tag of tags)
-    if (
-      /(?:name|property)\s*=\s*["'](?:description|og:description)["']/i.test(
-        tag,
-      )
-    ) {
-      description = clean(
-        tag.match(/content\s*=\s*["']([^"']*)["']/i)?.[1] ?? "",
-      );
-      if (description) break;
+  const attribute = (tag: string, key: string) =>
+    tag.match(
+      new RegExp(`\\s${key}\\s*=\\s*(["'])([\\s\\S]*?)\\1`, "i"),
+    )?.[2] || "";
+  let description = "",
+    siteName = "";
+  for (const tag of tags) {
+    const key = (
+      attribute(tag, "name") || attribute(tag, "property")
+    ).toLowerCase();
+    const content = clean(attribute(tag, "content"));
+    if (!description && ["description", "og:description"].includes(key))
+      description = content;
+    if (!siteName && ["og:site_name", "application-name"].includes(key))
+      siteName = content;
+  }
+  const titleParts = title.split(/\s[|—–-]\s/);
+  if (!siteName && websiteURL) {
+    try {
+      const brand = getDomain(new URL(websiteURL).hostname)?.split(".")[0];
+      const folded = (value: string) =>
+        value.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+      // Some sites put the brand at the end of the title (e.g. "... - n8n").
+      if (brand)
+        siteName =
+          titleParts.find((part) => folded(part) === folded(brand)) || "";
+    } catch {
+      /* An unavailable URL leaves the title as an editable suggestion. */
     }
+  }
   const fromMeta = !!description;
   if (!description) {
     // Some sites (including Aider) omit description meta tags. Use only an
@@ -265,7 +305,7 @@ export function extractMetadata(html: string) {
     description = clean(intro?.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || "");
   }
   return {
-    name: title.split(/\s[|—–-]\s/)[0],
+    name: (siteName || titleParts[0]).slice(0, 200),
     description: description.slice(0, 1000),
     description_source: fromMeta
       ? "meta"

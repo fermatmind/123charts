@@ -267,3 +267,47 @@ test("missing meta description uses an actual H1 intro, excludes scripts and doe
     "meta",
   );
 });
+
+test("website names prefer declared site names and match brands at either end of a title", () => {
+  assert.equal(
+    extractMetadata(
+      "<title>AI Workflow Automation Platform - n8n</title>",
+      "https://n8n.io/",
+    ).name,
+    "n8n",
+  );
+  assert.equal(
+    extractMetadata(
+      '<title>Activepieces: unify your team&#x27;s AI</title><meta content="Activepieces" property="og:site_name">',
+      "https://www.activepieces.com/",
+    ).name,
+    "Activepieces",
+  );
+  assert.equal(
+    extractMetadata(
+      '<title>Fallback</title><meta name="application-name" content="Example App">',
+    ).name,
+    "Example App",
+  );
+  assert.equal(
+    extractMetadata(
+      "<title>Editor - Tagline</title>",
+      "https://unknown.example",
+    ).name,
+    "Editor",
+  );
+});
+test("meta values retain apostrophes inside double quotes and decode numeric entities", () => {
+  assert.equal(
+    extractMetadata(
+      `<title>Tool</title><meta name="description" content="It's a team's workflow tool.">`,
+    ).description,
+    "It's a team's workflow tool.",
+  );
+  assert.equal(
+    extractMetadata(
+      '<title>Tool</title><meta content="Your team&#x27;s work &#38; data&#160;tools" name="description">',
+    ).description,
+    "Your team's work & data tools",
+  );
+});
