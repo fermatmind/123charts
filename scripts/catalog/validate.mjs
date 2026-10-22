@@ -3,6 +3,10 @@ import path from "node:path";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { getDomain } from "tldts";
+import {
+  validateOfficialSourceDomain,
+  validateResearchedPricing,
+} from "./record-validation.mjs";
 
 const root = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -12,6 +16,7 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
 // Parallel researchers validate records without rewriting coordinator-owned summaries.
 const recordsOnly = process.argv.includes("--records-only");
 const collection = read("collection.json");
+const sourceAuthorities = read("source-authorities.json");
 const taxonomy = read("categories.json").categories;
 assert.equal(taxonomy.length, 50);
 assert.equal(new Set(taxonomy.map((c) => c.slug)).size, 50);
@@ -99,11 +104,7 @@ for (const category of taxonomy) {
       researchedProjects.push(relative);
       assert.equal(row.official_check.status, "documentation_reviewed");
       assert.ok(Number.isFinite(Date.parse(row.official_check.checked_at)));
-      assert.equal(row.pricing.officially_checked, true);
-      assert.equal(
-        documentedSource(row.pricing.source_ref)?.type,
-        "official_pricing",
-      );
+      validateResearchedPricing(row);
       if (row.license.is_open_source !== null) {
         assert.equal(
           documentedSource(row.license.source_ref)?.type,
@@ -163,10 +164,7 @@ for (const category of taxonomy) {
         assert.ok(researched);
         const sourceUrl = new URL(source.url);
         assert.equal(sourceUrl.protocol, "https:");
-        assert.equal(
-          getDomain(sourceUrl.hostname, { allowPrivateDomains: true }),
-          identity,
-        );
+        validateOfficialSourceDomain(row, relative, source, sourceAuthorities);
         assert.equal(source.verification, "official_documentation_read");
         assert.ok(source.research_notes_en && source.title);
       } else {

@@ -1,10 +1,12 @@
 # 123Charts software research catalog
 
-已采集 50 类、1000 个候选项目，每类至少 5 个。**1000 是采集数量，不是深度研究完成数量。当前只有 3 个完成了官方资料实读与原创双语档案重写，997 个仍是质量不足的结构化草稿。** 功能标签、段落数、字数和 JSON 校验通过均不能证明内容准确、项目完整或具备 SEO/GEO 竞争力。
+已采集 50 类、1000 个候选项目，每类至少 5 个。**1000 是采集数量，不是深度研究完成数量。本研究分支当前已整合 44 篇官方资料研究及原创双语草稿（最初 3 篇与 batch-10 的 41 篇），956 篇仍是结构化候选。** 其他并行窗口的产出在接收前不计入本分支汇总。功能标签、段落数、字数和 JSON 校验通过均不能证明内容准确、项目完整或具备 SEO/GEO 竞争力。
 
 英文为主稿，中文根据同一篇主稿翻译。定位仍是面向国际开发者与用户的通用软件与 SaaS 目录，AI 工具只是其中一部分。
 
-用户已授权将剩余 997 项拆为 5 个独立工作树任务；[逐篇研究分工](research-batches/20261022/README.md)列出各组路径与责任。第一组优先做完自动化类，协调窗口在实际接收并核对成果后更新本页完成数。
+用户已授权将剩余 997 项分批拆为 13 个独立工作树任务；[逐篇研究分工](research-batches/20261022/README.md)列出各组路径与责任。协调窗口在实际接收并核对成果后更新本页完成数；分工移交和来源阅读本身不计为完成。
+
+本次整合的 [batch-10 交付与核查记录](research-batches/20261022/batch-10-integration.json)包含 UX 10 篇、学习管理 18 篇、会议相关 7 篇、脑图及制图 6 篇。只接收该组明确分配的 41 篇，未把其分支继承的 114 篇计入本次成果。94 条官方来源的文本哈希已与实际保存的读取文本核对；这不是独立内容审核或实测。
 
 ## 当前逐篇重写
 
@@ -15,6 +17,10 @@
 | [Make](projects/workflow-automation/make-021a1507.json)     | bundles/operations/credits、迭代聚合、顺序路由、费用算例、调度、未完成执行、跳过与回滚、HTTP 条件   | 官方资料实读；待独立内容审核与实测 |
 
 `research_status: primary_source_researched` 表示已实读主要官方资料并逐篇编写，不表示独立审稿通过或实际使用测评。`official_check: documentation_reviewed` 只表示文档核对。所有项目仍为 `draft`。没有给未知的定价、许可证、地区、界面语言或替代关系补造答案。
+
+文档研究与价格核对相互独立。UserExperior、UserZoom、Meeedly 的 `pricing.status` 仍为 `not_verified`，`officially_checked` 为 `false`，`price_type` 为 `unknown`，金额与币种为 `null`。有可读官方功能文档不代表当前价格或免费权益已确认；已读取定价页但无法归一化金额的其他项目也可以保留金额未知。
+
+真实官方跨域来源记录在 [source-authorities.json](source-authorities.json)：按单个项目、原身份域名、具体来源 ID、完整 URL 和已读取文本哈希匹配，附官方命名或 HTTPS 跳转依据。当前包含 UserExperior、UserZoom、Schoology、Granola、iMind 的 12 条来源；不放行任意域名或同一厂商的全部页面，也不修改旧项目身份以合并不同产品。该记录只解决来源沿革，不授予价格确认、账号/合同延续、认领或公开资格。UserExperior 档案尤其限定为旧 Web SDK 的官方迁移说明。
 
 每篇的 `description_en/zh` 是产品概述；**完整长文在同一 JSON 的 `profile.sections`**，按问题组织英文及对应中文正文。`source_refs` 连接到同文件的 `sources`，每项含实际 URL、读取时间、读取片段摘要哈希及原创研究笔记。`evidence_type` 区分文档事实、建议、假设算例；`research_gaps` 明列未核项。旧的竞品来源只作为发现记录保留，已被官方正文替代。没有另建一份正文权威。
 
@@ -30,7 +36,7 @@ data/catalog/
   evidence/                        # 实际读取记录与缺口
 ```
 
-未重写的 997 个档案主要依赖第三方标签和模板化解释，其中文也未逐篇编辑。一般功能定义不能证明产品实际实现、套餐范围或可用条件。3 个会议工具虽曾额外读取竞品概述，仍不计入官方深研数量。客户采用、节时、可靠性、评分和收益没有实测依据，不能包装成评测结论。
+本分支未整合重写的 956 个档案主要依赖第三方标签和模板化解释，其中文也未逐篇编辑。一般功能定义不能证明产品实际实现、套餐范围或可用条件。客户采用、节时、可靠性、评分和收益没有实测依据，不能包装成评测结论。
 
 初始候选来自实际读取的 SaaSworthy 页面；SaaSHub 用来研究详情页的职责和信息缺口。深研正文以产品官网、帮助文档、定价及许可说明为依据，原创组织事实、实例和选型判断。没有复制竞品文章、代码、图片、Logo、评论、评分、排名或数据库结构。`read_at` 是本次研究读取时间，公共网页工具可能使用缓存，不表示厂商更新时间或购买时的即时条件。读取到的原始工具片段留在忽略目录 `.scratch/deep-research/`；提交中的研究笔记和来源链接可用于重新核查，片段哈希本身不证明主张正确。
 
@@ -48,6 +54,7 @@ Google 的[以用户为先内容指导](https://developers.google.com/search/doc
 
 ```bash
 python3 -m unittest discover -s scripts/catalog -p 'test_*.py'
+node --test scripts/catalog/record-validation.test.mjs
 node scripts/catalog/validate.mjs
 git diff --check
 ```
