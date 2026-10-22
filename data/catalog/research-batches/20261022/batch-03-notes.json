@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T13:36:24.360905+00:00",
+  "updated_at": "2026-10-22T13:50:42.345588+00:00",
   "status": "in_progress",
-  "completed_count": 57,
+  "completed_count": 59,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -61,9 +61,11 @@
     "projects/social-media/meetedgar-e5212894.json",
     "projects/social-media/outfame-16f4a266.json",
     "projects/social-media/penguin-epulse-2262a37a.json",
-    "projects/social-media/pinops-8a2a575d.json"
+    "projects/social-media/pinops-8a2a575d.json",
+    "projects/social-media/post-bridge-89f7a06c.json",
+    "projects/social-media/postiz-0b4fe948.json"
   ],
-  "remaining_count": 144,
+  "remaining_count": 142,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -77,8 +79,6 @@
     "projects/social-media/funneldash-eec0f94e.json",
     "projects/social-media/lifast-eca10eb6.json",
     "projects/social-media/metigy-7b57b733.json",
-    "projects/social-media/post-bridge-89f7a06c.json",
-    "projects/social-media/postiz-0b4fe948.json",
     "projects/social-media/quuu-9fd2a3e5.json",
     "projects/social-media/socialpilot-226b757a.json",
     "projects/social-media/socioh-53be70e8.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/post-bridge-89f7a06c.json",
+  "next_project": "projects/social-media/quuu-9fd2a3e5.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -406,6 +406,14 @@
         "https://help.facelift-cloud.com/en/articles/8212226-post-creation"
       ],
       "resolution": "Official Facelift product documentation uses the service domain; retained actual URLs despite shared same-registrable-domain rule. Full validator still stops at earlier Benchmark mismatch."
+    },
+    {
+      "project": "post-bridge-89f7a06c",
+      "reason": "Authentic linked vendor agent-mode GitHub README/LICENSE are cross-domain official sources; shared validator may reject. Hosted app licence remains unknown."
+    },
+    {
+      "project": "postiz-0b4fe948",
+      "reason": "Authentic linked repository LICENSE is github.com rather than postiz.com; retained actual official licence URL."
     }
   ],
   "validation": [
@@ -744,6 +752,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-05",
+      "completed_projects": 59,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 59 drafts; own scope, draft states, source/pricing types, actual excerpt hashes, references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; no full PASS"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -821,6 +851,11 @@
       "commit": "aaa0ae2",
       "completed_count": 54,
       "scope": "Later, MeetEdgar; Lifast operational evidence gap"
+    },
+    {
+      "commit": "dabd4ab",
+      "completed_count": 57,
+      "scope": "Outfame, Penguin ePulse, PinOps; Metigy availability/source gap"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -845,7 +880,7 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 11,
+      "completed": 13,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 4
     }
@@ -1075,6 +1110,14 @@
     {
       "project": "pinops-8a2a575d",
       "note": "Verified assigned pinops.app, not unrelated pinops.com. Actual October 11 workflow guides read. AI Designer uses original images, not synthetic generation. CSV upload and PNG export do not publish; Scheduler changes same job; unknown outcomes native-check before existing-job retry. Credit operations separate from monthly scheduled-Pin capacity. Welcome offer first monthly cycle only; no year-price inference."
+    },
+    {
+      "project": "post-bridge-89f7a06c",
+      "note": "Actual hosted MCP, README and MIT LICENSE read; MIT applies only agent-mode, not backend. Scalar reference public reader empty; ordinary HTTPS 200 embedded OpenAPI parsed and selected operations actually read. PATCH scheduled_at omission processes immediately; Meta needs_reconnect and TikTok moderation ID boundaries preserved. Analytics 4 networks versus all-platform marketing, Facebook sync enum gap, API inclusion/$5 add-on, Free/trial and 7d/24h refunds conflict. No authenticated request or install."
+    },
+    {
+      "project": "postiz-0b4fe948",
+      "note": "Actual current product/Cloud/self-host workflow docs and repository AGPL v3-or-later notice/section 13 read. Preview links unpassworded and approval has no blocking state. Browser timezone, existing-channel update versus Post Now, rejected-no-silent-retry, finite plugs, separate credit/clipping/API meters and downgrade no-retro publishing retained. Standard 20 image-credit/no generator row and broad Standard RSS labels versus specific Team+ docs unresolved. No operations performed."
     }
   ]
 }
