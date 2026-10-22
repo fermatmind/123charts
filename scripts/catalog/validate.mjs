@@ -9,6 +9,8 @@ const root = path.resolve(
   "../../data/catalog",
 );
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
+// Parallel researchers validate records without rewriting coordinator-owned summaries.
+const recordsOnly = process.argv.includes("--records-only");
 const collection = read("collection.json");
 const taxonomy = read("categories.json").categories;
 assert.equal(taxonomy.length, 50);
@@ -197,25 +199,29 @@ assert.equal(collection.target_count, 1000);
 assert.equal(collection.collection_complete, true);
 assert.deepEqual(counts, collection.counts_by_category);
 assert.equal(untranslated, 0, `${untranslated} untranslated feature labels`);
-assert.equal(collection.feature_entries, featureCount);
-assert.equal(
-  collection.research_progress.primary_source_researched,
-  researchedProjects.length,
-);
-assert.equal(
-  collection.research_progress.remaining_structured_candidates,
-  index.length - researchedProjects.length,
-);
-assert.deepEqual(
-  collection.research_progress.projects,
-  researchedProjects.sort(),
-);
+if (!recordsOnly) {
+  assert.equal(collection.feature_entries, featureCount);
+  assert.equal(
+    collection.research_progress.primary_source_researched,
+    researchedProjects.length,
+  );
+  assert.equal(
+    collection.research_progress.remaining_structured_candidates,
+    index.length - researchedProjects.length,
+  );
+  assert.deepEqual(
+    collection.research_progress.projects,
+    researchedProjects.sort(),
+  );
+}
 assert.equal(collection.content_review_status, "in_progress");
 index.sort((a, b) => a.slug.localeCompare(b.slug));
-fs.writeFileSync(
-  path.join(root, "index.json"),
-  `${JSON.stringify({ schema_version: "123charts-catalog-index-v1", projects: index }, null, 2)}\n`,
-);
+if (!recordsOnly) {
+  fs.writeFileSync(
+    path.join(root, "index.json"),
+    `${JSON.stringify({ schema_version: "123charts-catalog-index-v1", projects: index }, null, 2)}\n`,
+  );
+}
 console.log(
   JSON.stringify({
     projects: index.length,
@@ -227,6 +233,7 @@ console.log(
     primary_source_researched: researchedProjects.length,
     remaining_structured_candidates: index.length - researchedProjects.length,
     untranslated_feature_labels: untranslated,
+    summary_validation: recordsOnly ? "deferred_to_coordinator" : "included",
     validation_scope:
       "Structure and references only; not factual, editorial, SEO or GEO acceptance.",
   }),
