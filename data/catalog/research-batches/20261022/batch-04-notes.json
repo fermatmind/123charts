@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T14:44:37.325997+00:00",
+  "updated_at": "2026-10-22T14:50:20.832838+00:00",
   "assigned": 132,
-  "completed_count": 62,
+  "completed_count": 63,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -68,9 +68,10 @@
     "projects/call-center/call-center-studio-65406041.json",
     "projects/call-center/callhippo-daec5e77.json",
     "projects/call-center/chasedata-3ff9021b.json",
-    "projects/call-center/circleloop-11da2f8e.json"
+    "projects/call-center/circleloop-11da2f8e.json",
+    "projects/call-center/cloudtalk-fd8a030b.json"
   ],
-  "incomplete_count": 70,
+  "incomplete_count": 69,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -92,7 +93,6 @@
     "projects/live-chat/theliveforce-d65e765e.json",
     "projects/call-center/ameyo-engage-9ab35131.json",
     "projects/call-center/calltools-0d43ce02.json",
-    "projects/call-center/cloudtalk-fd8a030b.json",
     "projects/call-center/contactspace-4ba2955d.json",
     "projects/call-center/convox-8b437e87.json",
     "projects/call-center/evoice-0d22010e.json",
@@ -1043,6 +1043,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch62 completed,70 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch63 completed,69 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1297,8 +1307,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "3f52220",
       "completed": ["projects/call-center/circleloop-11da2f8e.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/cloudtalk-fd8a030b.json"],
       "status": "ready_to_commit"
     }
   ],

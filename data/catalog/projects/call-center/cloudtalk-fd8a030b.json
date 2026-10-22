@@ -10,176 +10,179 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "CloudTalk is a product in the Call center category. Its directory profile covers Outbound Call Center, Inbound Call Center, Concurrency Support, Live Chat, Progressive Dialer, Predictive Dialer, Queue Management (Calls), IVR Support.\n\nAdditional listed capabilities include Auto Call Recording, Call Monitoring. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Starts at $25.00.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: exchange messages with visitors or customers in real time. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "CloudTalk 属于呼叫中心软件。第三方资料列出的功能包括外呼中心、呼入中心、并发支持、在线聊天、渐进式拨号器、预测式拨号器、通话队列管理、交互式语音应答支持。\n\n资料还列出自动通话录音、通话监控。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 起价为 $25.00.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：与访客或客户实时交换消息。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "CloudTalk is a cloud business-phone and contact-centre platform with inbound call flows, outbound sales dialers, CRM integrations, conversation intelligence and AI Voice Agents. These components have separate configuration and billing boundaries. A phone subscription alone does not establish entitlement to every dialer, AI analysis or automated voice workflow.\n\nOne useful evaluation follows a missed caller through callback scheduling, an agent conversation, a selected disposition and the CRM activity. Each stage can succeed while the next fails: a group can override callback defaults, the dialer can wait for a required outcome, and an exported call can arrive without its mapped disposition. Public EUR pricing and commercial terms were reviewed, with regional use and fee qualifications retained. No tenant,call,AI agent,CRM,billing change or export was executed.",
+  "description_zh": "CloudTalk 是云企业电话及联络中心平台，含呼入电话流程、外呼销售拨号器、CRM集成、对话智能及AI Voice Agents。这些组件有独立配置和计费边界，仅购买电话订阅不证明具有所有拨号器、AI分析或自动语音流程权益。\n\n可沿一位未接来电者评估：回电安排、客服通话、选择处置、CRM活动。每一步成功后下一步仍可能失败：组设置可覆盖回电默认值，拨号器可等待必填结果，导出的电话也可能缺映射处置。此次核对公开EUR价格及商业条款，并保留地区用量和费用限定。未执行租户、电话、AI客服、CRM、计费修改或导出。",
   "core_features": [
     {
-      "name_en": "Outbound Call Center",
-      "name_zh": "外呼中心",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Configurable callback attempts",
+      "name_zh": "可配置回电尝试",
+      "explanation_en": "Set deadline/attempt limits and inspect group overrides and stop-on-reached behavior.",
+      "explanation_zh": "设期限／尝试上限，并检查组覆盖及联系成功后停止行为。",
+      "explanation_scope": "product_specific",
+      "source_ref": "callback",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Inbound Call Center",
-      "name_zh": "呼入中心",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Several distinct dialer modes",
+      "name_zh": "多种不同拨号模式",
+      "explanation_en": "Distinguish manual sequential/Smart Dialer work from Power or Parallel campaigns.",
+      "explanation_zh": "区分手动顺序／Smart Dialer与Power或Parallel活动。",
+      "explanation_scope": "product_specific",
+      "source_ref": "dialer-progress",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Concurrency Support",
-      "name_zh": "并发支持",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Campaign outcome mapping",
+      "name_zh": "活动结果映射",
+      "explanation_en": "Map dispositions within a campaign,then verify integration export and authenticated CRM permissions.",
+      "explanation_zh": "在活动内映射处置，再核对集成导出及CRM认证权限。",
+      "explanation_scope": "product_specific",
+      "source_ref": "crm-outcomes",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Live Chat",
-      "name_zh": "在线聊天",
-      "explanation_en": "Exchange messages with visitors or customers in real time.",
-      "explanation_zh": "与访客或客户实时交换消息。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Progressive Dialer",
-      "name_zh": "渐进式拨号器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Predictive Dialer",
-      "name_zh": "预测式拨号器",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Queue Management (Calls)",
-      "name_zh": "通话队列管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "IVR Support",
-      "name_zh": "交互式语音应答支持",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Auto Call Recording",
-      "name_zh": "自动通话录音",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Call Monitoring",
-      "name_zh": "通话监控",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Input-driven call flows",
+      "name_zh": "输入驱动电话流程",
+      "explanation_en": "Collect keypad input for HTTP requests or dynamic routing with saved same-flow step references.",
+      "explanation_zh": "采集按键输入供HTTP请求或动态路由，引用已保存同流程步骤。",
+      "explanation_scope": "product_specific",
+      "source_ref": "input",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Exchange messages with visitors or customers in real time"],
-    "zh": ["与访客或客户实时交换消息"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "A service team recovering missed calls with defined timing,staff availability and CRM follow-through.",
+      "An outbound team diagnosing contact-list,disposition and integration failures before scaling call volume."
+    ],
+    "zh": [
+      "按明确时机、人员可用及CRM后续处理追回未接电话的服务团队。",
+      "扩量前诊断联系人名单、处置及集成失败的外呼团队。"
+    ],
+    "source_refs": ["callback", "dialer-progress", "crm-outcomes"],
+    "basis": "Editorial fit;not independent proof of more answered calls,AI accuracy or sales conversion."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Starts at $25.00.",
-      "zh": "提供免费试用 起价为 $25.00.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Mobile App (Android, iOS) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 移动应用 (Android, iOS) 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Input to HTTP response": {
+      "en": "If Parse response is unchecked,the flow continues after sending an HTTP request whether a response was received or not. Do not treat continuation as confirmed CRM success.",
+      "zh": "Parse response未选时，HTTP请求发送后无论有无响应流程都继续，不能将继续执行当CRM成功确认。",
+      "source_ref": "input",
+      "status": "documented_with_editorial_guidance"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Call operations administrator",
+      "Sales dialer supervisor",
+      "CRM integration owner",
+      "Billing administrator"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "billing"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose plan,min seats,calling region and distinct dialer/AI add-ons;confirm actual order form and credit behavior.",
+        "zh": "选套餐、最低座席、通话地区及独立拨号／AI附加项，确认真实订单及余额行为。",
+        "source_refs": ["pricing", "billing", "contract"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "For missed calls,configure callback deadline and attempts,then inspect each group override and business hours.",
+        "zh": "未接电话先配置回电期限及尝试，再检查各组覆盖及营业时间。",
+        "source_refs": ["callback"],
+        "evidence_type": "editorial_guidance"
+      },
+      {
+        "en": "Validate phone numbers,required outcomes and CRM mapping with a new call;test timeout,no response,missing data and a successful end-to-end record.",
+        "zh": "以新电话验证号码、必填结果及CRM映射，测试超时、无响应、缺资料及完整成功记录。",
+        "source_refs": ["dialer-progress", "crm-outcomes", "input"],
+        "evidence_type": "editorial_guidance"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "items": [
+      {
+        "name": "Salesforce / HubSpot / Pipedrive / Zendesk",
+        "source_ref": "crm-outcomes",
+        "scope": "Call export,dispositionType/mapping and CRM permissions mustalign. Salesforce has documented NoMapping exception;not generic parity."
+      },
+      {
+        "name": "HTTP Request / dynamic Ring to",
+        "source_ref": "input",
+        "scope": "CollectInputfeedsconfiguredrequests/routing;response parsing and savedstepIDmatter,noauthorityfromcallerinputalone."
+      }
+    ],
+    "source_ref": "crm-outcomes"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "A callback attempt is not a guaranteed answer;local group settings can override global timing and successful contact stops retries until another missed call.",
+        "zh": "回电尝试不保证接听，组设置可覆盖全局时机，联系成功后停止重试，除非又有未接。",
+        "source_refs": ["callback"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Smart Dialer collects a queue and requires manual call start;AI Sequential also requires manual start,while other dialers differ.",
+        "zh": "Smart Dialer收集队列并需手动发起，AI Sequential同样需手动，其他拨号器不同。",
+        "source_refs": ["dialer-progress"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Disposition mapping is not retroactive,and a logged CRM call may still have no mapped outcome.",
+        "zh": "处置映射不追溯，CRM已记录电话仍可能没有映射结果。",
+        "source_refs": ["crm-outcomes"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Positive credit is required for outbound calling;paid dialer add-on removal requires Account Manager/support rather than a dashboard toggle.",
+        "zh": "外呼需要正余额，移除付费拨号附加项需账户经理／支持处理，不是控制台开关。",
+        "source_refs": ["billing"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Unlimited calling remains subject to region,number-type,FUP and order-form conditions.",
+        "zh": "无限通话仍受地区、号码类型、FUP及订单条件限制。",
+        "source_refs": ["pricing", "contract"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
     "items": []
   },
   "license": {
-    "status": "not_verified",
-    "is_open_source": null,
-    "url": null
+    "status": "official_documentation_read",
+    "is_open_source": false,
+    "url": "https://www.cloudtalk.io/terms-and-conditions/",
+    "source_ref": "contract",
+    "notes_en": "Limited,revocable,nontransferable internal-business service license;vendor ownership. Embedded open-source components do not make the hosted service open source.",
+    "notes_zh": "有限、可撤销、不可转移内部企业服务许可，厂商保有权利；内含开源组件不使托管服务成为开源。"
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Starts at $25.00.",
-    "source_snapshot_zh": "提供免费试用 起价为 $25.00.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "subscription",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "billing", "contract"],
+    "normalized_monthly_price": null,
+    "currency": "EUR",
+    "billing_basis": "Public EUR page observation;peruser/month withannual/monthlyterm,minseats,usage/number/AI/dialercharges andregionconditions. Nooneall-inminimum.",
+    "source_snapshot_en": "Starter25annual/34monthly,Essential29/39(min1each),Expert49/69(min3),EURperuser/month. Annual-priced add-onsPower15(includedExpert),Parallel39,ConversationIntelligence9. VoiceAgentoffer99from200minutes plus distinct Receptionist firstmonth50free/Specialist3491000minute offers;finalscope/overageunverified. 14daynocardtrialadvertised,50AIminutes. Taxexcluded;11%softwarecompliance/adminfeeUS,CanadafromDec2 2026. Callingbundlesregional/exemptions/FUP;positivecreditforoutbound,paidadd-onremovalviaAM/support.",
+    "source_snapshot_zh": "公开EUR每用户每月：Starter年付25／月付34，Essential29／39（各最低1人），Expert49／69（最低3人）。按年标价附加项Power15（Expert已含）、Parallel39、Conversation Intelligence9。Voice Agent有99起200分钟及独立Receptionist首月50分钟免费／Specialist349含1000分钟方案，最终范围／超额未核。宣传14天免卡试用含50AI分钟。未含税，美国有软件11%合规／管理费，加拿大自2026年12月2日起。通话包有地区／例外／FUP；外呼需正余额，付费附加项移除需经理／支持。",
+    "checked_at": "2026-10-22T14:45:36.679938+00:00"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -187,22 +190,18 @@
   },
   "faq": [
     {
-      "question_en": "What does CloudTalk do?",
-      "question_zh": "CloudTalk 用来做什么？",
-      "answer_en": "CloudTalk is a product in the Call center category. Its directory profile covers Outbound Call Center, Inbound Call Center, Concurrency Support, Live Chat, Progressive Dialer, Predictive Dialer, Queue Management (Calls), IVR Support.",
-      "answer_zh": "CloudTalk 属于呼叫中心软件。第三方资料列出的功能包括外呼中心、呼入中心、并发支持、在线聊天、渐进式拨号器、预测式拨号器、通话队列管理、交互式语音应答支持。"
+      "question_en": "Will updating disposition mapping repair older CRM calls?",
+      "question_zh": "更新处置映射会修复旧CRM电话吗？",
+      "answer_en": "The guide says mapping is not retroactive. Test a new call after saving it. Also confirm the call itself is exported;Salesforce has a separate unmapped-name exception.",
+      "answer_zh": "指南称不追溯，保存后应用新电话测试；另确认电话本身已导出，Salesforce对未映射名称有单独例外。",
+      "source_refs": ["crm-outcomes"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Outbound Call Center, Inbound Call Center, Concurrency Support, Live Chat, Progressive Dialer, Predictive Dialer, Queue Management (Calls), IVR Support, Auto Call Recording, Call Monitoring",
-      "answer_zh": "外呼中心、呼入中心、并发支持、在线聊天、渐进式拨号器、预测式拨号器、通话队列管理、交互式语音应答支持、自动通话录音、通话监控"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Does a continuing HTTP call flow confirm the request succeeded?",
+      "question_zh": "HTTP电话流程继续能确认请求成功吗？",
+      "answer_en": "Not when Parse response is off. The guide says it continues after sending without requiring a response.",
+      "answer_zh": "Parse response关闭时不能，指南称发送后无需收到响应也会继续。",
+      "source_refs": ["input"]
     }
   ],
   "sources": [
@@ -214,25 +213,212 @@
       "read_at": "2026-10-22T08:47:55.841Z",
       "excerpt_sha256": "675f61d3ec24592da1009abf2b4d61a1fcf77568124553be6d666b160ddaad24",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Call Center Software Pricing - CloudTalk",
+      "title": "Call Center Software Pricing - CloudTalk",
+      "url": "https://www.cloudtalk.io/pricing/",
+      "read_at": "2026-10-22T14:45:00.953465+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "dc40b8fd2f1c006a16f12c11feca8581810329e42a1f9e3b75533ce7a940b897",
+      "research_notes_en": "Public EUR page Starter25/34,Essential29/39,Expert49/69 yearly/monthly peruser,minimum1/1/3;Power15annualincludedExpert,Parallel39annual,CI9annual separate. VoiceAgents200minute99vsfirstmonthReceptionist50free/Specialist3491000offersdifferent,noaccountquote. US11%fee,CanadafromDec2 2026."
+    },
+    {
+      "id": "callback",
+      "type": "official_documentation",
+      "site": "Configure Callback - CloudTalk Help Center",
+      "title": "Configure Callback - CloudTalk Help Center",
+      "url": "https://help.cloudtalk.io/en/articles/2144889-configure-callback",
+      "read_at": "2026-10-22T14:45:34.467290+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "5630a41b13011e60294c1701b32a8d0a83bc3f70bc4aa96b08411d191e5c9679",
+      "research_notes_en": "Callbackdeadlineendday/24/48hours,1–10attempts,businesshours;firstwhenagentavailable,secondatleast1hlater;stopwhenreachedexceptnewmissedcall;grouplocaloverridesglobal."
+    },
+    {
+      "id": "dialer-progress",
+      "type": "official_documentation",
+      "site": "Dialer Not Moving to the Next Call - CloudTalk Help Center",
+      "title": "Dialer Not Moving to the Next Call - CloudTalk Help Center",
+      "url": "https://help.cloudtalk.io/en/articles/13128134-dialer-not-moving-to-the-next-call",
+      "read_at": "2026-10-22T14:45:35.235596+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "e87314b073ad1ab255dfcc078eed1a0c51b59d982fba6a7a2f8c728390c884dd",
+      "research_notes_en": "Current AISequentialmanualnext/SmartDialerlistnotautocall,CloudTalkrequiredoutcomevsPowerconfigured,outcome/numbermissing/session/retrywindowcanstall;QueueControlatcreationcaveat."
+    },
+    {
+      "id": "crm-outcomes",
+      "type": "official_documentation",
+      "site": "Call Dispositions or Outcomes Not Syncing to CRM - CloudTalk Help Center",
+      "title": "Call Dispositions or Outcomes Not Syncing to CRM - CloudTalk Help Center",
+      "url": "https://help.cloudtalk.io/en/articles/13192280-call-dispositions-or-outcomes-not-syncing-to-crm",
+      "read_at": "2026-10-22T14:45:36.324966+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "f1fe2a76ae92b81621a0934381f161a0f1f5b117a3258cb27f999b4e393202ce",
+      "research_notes_en": "Campaign-specificdispositionmappingseparatefromintegrationexport;NoMappingnotexportoutcomeexceptSalesforceexportsCloudTalkname. Notretroactive;callresultType,exportfiltersandCRMuserpermissionmatter."
+    },
+    {
+      "id": "billing",
+      "type": "official_documentation",
+      "site": "Billing page overview - CloudTalk Help Center",
+      "title": "Billing page overview - CloudTalk Help Center",
+      "url": "https://help.cloudtalk.io/en/articles/5591834-billing-page-overview",
+      "read_at": "2026-10-22T14:45:33.618344+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "dacc97857356c4b76eca8e6b572e127eeb87988ac7d90906a5984902c59ab4f4",
+      "research_notes_en": "Adminbillingseats/credit/numbers/usage/addons;positivecreditrequiredoutbound;autotopupthresholdamountCSV,add-onremovalviaAM/supportnotdashboard;assignedseatcannotbereduced/min1/1/3."
+    },
+    {
+      "id": "input",
+      "type": "official_documentation",
+      "site": "Collect Input from Caller Step - CloudTalk Help Center",
+      "title": "Collect Input from Caller Step - CloudTalk Help Center",
+      "url": "https://help.cloudtalk.io/en/articles/5878950-collect-input-from-caller-step",
+      "read_at": "2026-10-22T14:45:36.679938+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "d237e32e7c6899c2a08993060a218c9a8eef88d53ccaa731389dbbbc37da4b09",
+      "research_notes_en": "CollectInputkeypadpattern#endsstep,timeoutlongerthanprompt,retriesmax10;HTTPParseResponsefalsecontinueswithoutresponse;dynamicRingTosavedpositiveStepID,sameflow/branchonly."
+    },
+    {
+      "id": "contract",
+      "type": "official_license",
+      "site": "Terms and Conditions - CloudTalk",
+      "title": "Terms and Conditions - CloudTalk",
+      "url": "https://www.cloudtalk.io/terms-and-conditions/",
+      "read_at": "2026-10-22T14:45:33.964266+00:00",
+      "verification": "official_documentation_read",
+      "transport": "public_https_html_text",
+      "excerpt_sha256": "eefde667cdc71ace31e153313e2547c341796316411446be7deb33d61f11b5d8",
+      "research_notes_en": "Serviceproprietarylimitedinternallicense;usagefullminrounding,FUP3000user/moandconditional50completed-plus-qualitythresholdsnotflat50cap;nonrefundexceptions14.2,sametermrenew30dnotice,earlyremainingfees;EU-onlyexportannexnotallcustomers."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T14:45:36.679938+00:00",
+    "scope": "Public vendor documentation reviewed; no account execution, purchase, owner identity, independent review or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Vendor descriptions are documentation evidence, not independent reliability, usability or customer-outcome verification.",
+    "English and Chinese are paired drafts. Chinese text does not establish Chinese UI support.",
+    "All alternative relationships remain unreviewed. Public-web retrieval may use cached content; prices are dated observations."
+  ],
+  "description_source_refs": [
+    "pricing",
+    "callback",
+    "dialer-progress",
+    "crm-outcomes"
+  ],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow-boundary",
+        "title_en": "Evaluate the call and its data handoff as one workflow",
+        "title_zh": "将电话及资料交接作为一个流程评估",
+        "en": "CloudTalk combines business calling with configurable routing,outbound tools,CRM connections,conversation analysis and AI Voice Agents. The public commercial page prices several of those as add-ons. A menu listing a capability is not evidence that a particular tenant has it enabled or paid for.\n\nFor an illustrative service workflow,a missed caller enters callback handling,an available agent returns the call,records the outcome and expects a CRM activity. Follow each transition separately. Successful dialing does not prove successful contact;successful contact does not prove a correctly mapped CRM result. This profile concentrates on these documented dependencies rather than adopting vendor promises that every call will be answered.",
+        "zh": "CloudTalk将企业通话与可配置路由、外呼工具、CRM连接、对话分析及AI Voice Agents结合，公开商业页将其中多项单独计价。菜单列能力不证明某租户已启用或购买。\n\n以假设服务流程为例，未接来电进入回电处理，可用客服回拨、记录结果并预期生成CRM活动。应分别跟踪每个转换。拨打成功不证明联系成功，联系成功不证明CRM结果映射正确。本档案聚焦这些文档依赖，不采用每通电话都会接听的厂商保证。",
+        "source_refs": ["pricing", "callback", "crm-outcomes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "callback",
+        "title_en": "Callback has a deadline,attempt count and override hierarchy",
+        "title_zh": "回电有期限、次数及覆盖层级",
+        "en": "An administrator can set callback to end-of-day,24hours or48hours,with1–10attempts and business-hour handling. The documented first attempt is made when an agent becomes available;the second is at least an hour later. Remaining distribution follows the configured window. Reaching the client stops further attempts unless another missed call creates a new reason to call.\n\nGroup-specific callback settings override company defaults. Investigate the group used by the missed call before changing a global value that may have no effect. For an acceptance test,compare a missed call during open hours,a call near closing time and a caller reached before the attempt limit. These are proposed checks,not executed calls or evidence of an answer-rate improvement.",
+        "zh": "管理员可设当天结束、24小时或48小时期限，1–10次尝试，并按营业时间处理。文档第一次尝试在客服可用时进行，第二次至少一小时后，其余按配置窗口分配。联系到客户后停止，除非新的未接再次产生回电原因。\n\n组专属设置覆盖公司默认值，因此改全局值前需查未接电话所用组，否则可能无效。验收可比较营业时间未接、临近关门未接及次数耗尽前已联系到的情形。这些是建议检查，不是已执行电话或接听率提升证据。",
+        "source_refs": ["callback"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "dialer-modes",
+        "title_en": "A stopped queue can be expected behavior or bad contact data",
+        "title_zh": "队列停住可能是预期行为，也可能是坏资料",
+        "en": "The troubleshooting guide distinguishes CloudTalk Dialer Sequential/Parallel,Power Dialer and Smart Dialer. AI Sequential expects the agent to review and manually start the next call. Smart Dialer gathers webpage numbers into a queue but also needs manual starts. CloudTalk Dialer requires a disposition after calls;Power Dialer requirements depend on campaign configuration. Do not diagnose all of them with one assumption about automatic progression.\n\nIf the mode should progress,inspect an unfinished wrap-up,missing required fields,a paused session,attempt limits or a future retry window. The guide also documents a recurring stall when a scheduled contact has no phone number:correct or remove the bad record rather than repeatedly restarting. Its Queue Control workaround is intended at campaign creation and may not work correctly when enabled later. Validate the list and chosen mode before increasing call volume.",
+        "zh": "故障指南区分CloudTalk Dialer Sequential／Parallel、Power Dialer及Smart Dialer。AI Sequential要求客服复核并手动开始下一通，Smart Dialer将网页号码组成队列，也需手动发起。CloudTalk Dialer通话后必选处置，Power Dialer是否必填取决活动配置，不能用一个自动推进假设诊断全部模式。\n\n若该模式应推进，需查未完成收尾、缺必填字段、会话暂停、尝试上限或尚未来到重试窗口。指南还记录安排联系人无电话号码时反复停住，应修正或移除坏记录，不能不断重启。其Queue Control变通面向活动创建时配置，之后启用可能不正常。提高呼叫量前先核对名单及模式。",
+        "source_refs": ["dialer-progress"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "crm",
+        "title_en": "Exporting the call and mapping the outcome are separate",
+        "title_zh": "导出电话与映射结果是两件事",
+        "en": "Dispositions are mapped inside each Dialer campaign,while integration export rules decide which calls reach the CRM. An unmapped outcome generally does not sync even if the call does;the documented Salesforce exception exports the CloudTalk disposition name. Result Type,CRM-user permissions and authentication also affect logging. Avoid treating that exception as a rule for all CRMs.\n\nMapping changes apply to future calls,not old records. After saving a mapping,test a new call and compare its CloudTalk Call ID,CRM activity and outcome. If the activity is absent,review export filters first. If the activity is present but the result is missing,inspect campaign mapping and type. This is a documentation-derived diagnostic sequence;no CRM was connected or modified.",
+        "zh": "处置在各Dialer活动内映射，集成导出规则则决定哪些电话进入CRM。即使电话已导出，未映射结果通常不同步；文档的Salesforce例外会导出CloudTalk处置名称。结果Type、CRM用户权限及认证也影响记录，不能将该例外推广全部CRM。\n\n映射只影响未来电话，不追溯旧记录。保存后应以新电话比较CloudTalk Call ID、CRM活动及结果。活动缺失先看导出过滤，活动存在但结果缺失则查活动映射及类型。这是文档推导的诊断顺序，未连接或修改CRM。",
+        "source_refs": ["crm-outcomes"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "input-response",
+        "title_en": "Caller input needs saved references and response handling",
+        "title_zh": "来电输入需要已保存引用及响应处理",
+        "en": "Collect Input accepts keypad data for later HTTP requests or dynamic Ring to routing. The # key ends collection and is not part of a matching pattern. The timeout must allow time for the prompt and response;invalid input can retry up to ten times. A malformed regex can yield null or an execution error. Treat a number entered by a caller as data,not proof of authorization to read or change a record.\n\nHTTP Request can reference the collected value,but when Parse response is unchecked,the flow continues after sending whether or not a response arrived. That is not confirmed CRM success. Dynamic routing must reference the saved positive Step ID from the same number’s supported flow branch;temporary negative IDs or cross-branch references are not supported. Test silence,bad format,missing response and a valid result explicitly.",
+        "zh": "Collect Input接收按键资料，供后续HTTP请求或动态Ring to路由。#会结束采集，不属于匹配内容。超时需留出提示及响应时间，无效输入最多可重试十次，错误regex可返回null或执行错误。来电者输入号码只是资料，不证明有权读取或修改记录。\n\nHTTP Request可引用所采值，但Parse response未选时，发送后无论是否收到响应都继续，不证明CRM成功。动态路由需引用同号码所支持流程分支中已保存的正Step ID，不支持临时负ID或跨分支引用。应明确测试静默、错格式、无响应及有效结果。",
+        "source_refs": ["input"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "billing",
+        "title_en": "Plan seats are only one part of the bill",
+        "title_zh": "套餐座席只是账单一部分",
+        "en": "The reviewed EUR page lists Starter25annually/34monthly,Essential29/39and Expert49/69peruser/month. Minimums are1,1and3respectively. Annual-priced Power Dialer is15and listed as included in Expert;Parallel Dialer is39and Conversation Intelligence9as add-ons. These are dated public observations,not an account quote. Number charges,calling regions,special destinations and AI usage need their own scope.\n\nThe page has several Voice Agent offers:99from200minutes,an AI Receptionist first-month50-minute free offer and Specialist349with1000minutes. They must not be combined into one unlimited base entitlement. It advertises a14-day no-card trial with50AI minutes. Taxes are excluded;it states an11%software compliance/administrative recovery fee for US billing,with Canada starting2December2026,which is future-dated relative to this research.\n\nThe Billing guide separates numbers,calls/messages and add-ons. Outbound calling requires positive credit;automatic top-up can have a threshold and amount. Removing an assigned seat is different from removing a paid dialer add-on:the latter requires an account manager/support request. Review the actual invoice and order form before assuming a dashboard action has ended a recurring add-on.",
+        "zh": "已读EUR页列每用户每月Starter年付25／月付34、Essential29／39及Expert49／69，最低人数分别1、1及3。按年标价Power Dialer15并列Expert已含，Parallel Dialer39及Conversation Intelligence9为附加项。这是带日期公开观察，不是账户报价。号码费用、通话地区、特殊目的地及AI用量需另定范围。\n\n页面有多种Voice Agent方案：99起200分钟、AI Receptionist首月50分钟免费及Specialist349含1000分钟，不能组合成基础订阅无限权益。宣传14天免卡试用含50AI分钟。未含税；称美国计费有软件11%合规／管理回收费，加拿大从2026年12月2日起，晚于本次研究日期。\n\nBilling指南分列号码、电话／消息及附加项。外呼需正余额，自动充值可设阈值及金额。删除已分配座席与移除付费拨号附加项不同，后者需账户经理／支持请求。不能假设控制台动作已结束循环附加项，应核对真实发票及订单。",
+        "source_refs": ["pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "contract-limits",
+        "title_en": "Unlimited and cancel-anytime labels need their contract context",
+        "title_zh": "无限及随时取消标签需结合合同",
+        "en": "The actual service terms grant a limited internal-business license and retain vendor ownership. Included calling remains subject to number/region exclusions and fair use. The contract describes a3,000minute-peruser/month general summary limit that can be individually adjusted. Its daily quality thresholds combine more than50completed calls with specified invalid,short-duration or abandoned-call ratios;they are not a simple universal50-call ceiling. Excess usage can be charged under the agreement.\n\nTerms distinguish plan duration from payment frequency,round chargeable usage in full minutes and generally deny unused-period refunds. Auto-renewal has a30-day nonrenewal notice,while early termination can leave remaining fees payable;specified contractual termination remedies have exceptions. EU-customer switching/export clauses are scoped to EU customers and are not proof of identical worldwide exit rights.\n\nCloudTalk fits teams prepared to manage call data,dispositions,group overrides and subscriptions. Complete recording/CRM export and restoration,regional AI processing,real carrier quality and installed UI languages remain unverified. No production account was used.",
+        "zh": "真实服务条款授予有限内部企业许可，厂商保有权利。已含通话仍受号码／地区例外及公平使用限制。合同描述每用户每月3000分钟总量限制，可个别调整。每日质量阈值将超过50通已完成电话与规定无效、短时或放弃比例结合，并非通用每天50通上限；超用可按协议计费。\n\n条款区分套餐时长与付款频率，按整分钟进位计量，通常不退未用期间费用。自动续期有提前30天不续通知，提前终止可能仍需付剩余费用，规定合同终止救济另有例外。EU客户切换／导出条款仅限EU，不证明全球相同退出权。\n\nCloudTalk适合愿管理电话资料、处置、组覆盖及订阅的团队。完整录音／CRM导出及恢复、AI地区处理、真实运营商质量及已安装界面语言仍未核实，未使用生产账户。",
+        "source_refs": ["contract", "pricing", "billing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "CloudTalk: Callback Rules, Dialer Modes, CRM Outcomes and Billing",
+    "title_zh": "CloudTalk：回电规则、拨号模式、CRM结果及计费",
+    "description_en": "Review CloudTalk callback overrides,dialer stalls,nonretroactive CRM mapping,caller-input response handling,EUR pricing and add-on/renewal boundaries.",
+    "description_zh": "核对CloudTalk回电覆盖、拨号停顿、不追溯CRM映射、来电输入响应处理、EUR价格及附加项／续期边界。",
+    "primary_intent": "Evaluate cloud calling workflows and integration/billing failure points.",
+    "secondary_questions": [
+      "Why does the dialer stop?",
+      "Why is a CRM outcome missing?",
+      "Which add-ons require support to remove?"
+    ],
+    "query_basis": "Editorial questions without measured demand.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "No tenant,call,dialer,callback,inputflow,HTTP/CRM,AI,payment,export or restore tested. Actualregional/accountquote,AIbundle/overage,callingeligibility,specificFUPadjustment,carrier/numberfees,EUexitimplementation,completeaudio/dataexport,UIlanguages,DPA/AIprocessingregionsandretentionunknown. PublicEURHTMLoffersnotvalidatedinapurchasedaccount;trialandfirstmonthAIoffersnotongoingfreeentitlement.",
+      "zh": "未测试租户、电话、拨号器、回电、输入流程、HTTP／CRM、AI、付款、导出或恢复。真实地区／账户报价、AI包／超额、通话资格、具体FUP调整、运营商／号码费、EU退出执行、完整音频／资料导出、界面语言、DPA／AI处理地区及留存未知。公开EUR HTML方案未在购买账户验证；试用及首月AI不算长期免费权益。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Codex AI primary-source research, original English synthesis and corresponding Chinese translation; examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
