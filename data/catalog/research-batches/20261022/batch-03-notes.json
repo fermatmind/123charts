@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T14:25:25.837679+00:00",
+  "updated_at": "2026-10-22T14:31:32.884230+00:00",
   "status": "in_progress",
-  "completed_count": 63,
+  "completed_count": 64,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -67,9 +67,10 @@
     "projects/social-media/socialpilot-226b757a.json",
     "projects/social-media/socioh-53be70e8.json",
     "projects/social-media/swonkie-41671cfb.json",
-    "projects/seo/accuranker-cbb9ac38.json"
+    "projects/seo/accuranker-cbb9ac38.json",
+    "projects/seo/advanced-web-ranking-843701d3.json"
   ],
-  "remaining_count": 138,
+  "remaining_count": 137,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -87,7 +88,6 @@
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
-    "projects/seo/advanced-web-ranking-843701d3.json",
     "projects/seo/agencyanalytics-95ba4d16.json",
     "projects/seo/ahrefs-c8511afd.json",
     "projects/seo/botify-f89164fc.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/advanced-web-ranking-843701d3.json",
+  "next_project": "projects/seo/agencyanalytics-95ba4d16.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -861,6 +861,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-02",
+      "completed_projects": 64,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 64 completed drafts including assigned scope, statuses, reference types, hashes and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark Help Scout cross-domain compatibility at scripts/catalog/validate.mjs:166"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -958,6 +976,11 @@
       "commit": "9bf495d",
       "completed_count": 62,
       "scope": "Socioh/goodAds.ai and Swonkie; current service/pricing and stateful workflows"
+    },
+    {
+      "commit": "61ee6dd",
+      "completed_count": 63,
+      "scope": "AccuRanker October measurement release; social-media source/availability gaps"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -988,7 +1011,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 1,
+      "completed": 2,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 0
     }
@@ -1311,6 +1334,10 @@
     {
       "project": "accuranker-cbb9ac38",
       "note": "Current October 21 changelog and unified SoV help read, superseding old AI SoV/percentage labels. Model cutover 09:00 UTC retains older CTR; settings recalculate displayed historical configuration. Query/engine/device/location quota, per-day overage, explicit prompt/brand match and report access documented. Public browser selected 2K/10K capacities read; Yearly click no price change, no annual total invented. No account operations."
+    },
+    {
+      "project": "advanced-web-ranking-843701d3",
+      "note": "Actual current config/unit/update-state/cluster/AI/share/custom-role/language/billing originals read. Initial vs partial vs on-demand/scheduled-on-demand separated, reserved versus consumed units and reset distinguished. New Custom permissions directly conflict with old Team Member create/delete and Admin branding. Public reports Interactive remains project read-only; independent report scheduler and monthly-only one-time billed subscription pause retained. No account operations."
     }
   ]
 }
