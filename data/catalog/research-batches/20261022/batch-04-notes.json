@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T16:05:09.790229+00:00",
+  "updated_at": "2026-10-22T16:08:42.561434+00:00",
   "assigned": 101,
-  "completed_count": 77,
+  "completed_count": 78,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -83,9 +83,10 @@
     "projects/call-center/sanccs-fb1c2695.json",
     "projects/call-center/talkdesk-1183b903.json",
     "projects/call-center/tcn-operator-76910f6f.json",
-    "projects/call-center/tryvium-desk-664aaf8e.json"
+    "projects/call-center/tryvium-desk-664aaf8e.json",
+    "projects/call-center/ucontact-a323f2ce.json"
   ],
-  "incomplete_count": 24,
+  "incomplete_count": 23,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -109,8 +110,7 @@
     "projects/call-center/calltools-0d43ce02.json",
     "projects/call-center/knowlarity-0c719323.json",
     "projects/call-center/my-hotline-76f16d10.json",
-    "projects/call-center/truly-56a8895a.json",
-    "projects/call-center/ucontact-a323f2ce.json"
+    "projects/call-center/truly-56a8895a.json"
   ],
   "status": "in_progress",
   "research_issues": [
@@ -1218,6 +1218,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch77 completed,24 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch78 completed,23 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1547,8 +1557,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "4c79024",
       "completed": ["projects/call-center/tryvium-desk-664aaf8e.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/ucontact-a323f2ce.json"],
       "status": "ready_to_commit"
     }
   ],
