@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T12:41:15.380100+00:00",
+  "updated_at": "2026-10-22T12:55:23.878606+00:00",
   "status": "in_progress",
-  "completed_count": 46,
+  "completed_count": 49,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -50,9 +50,12 @@
     "projects/marketing-automation/ortto-4c06a567.json",
     "projects/marketing-automation/outboundengine-24d98884.json",
     "projects/marketing-automation/salesforce-marketing-cloud-account-engagement-formerly--386e3a8c.json",
-    "projects/marketing-automation/salesmanago-75557c66.json"
+    "projects/marketing-automation/salesmanago-75557c66.json",
+    "projects/social-media/blacktwist-13757d5a.json",
+    "projects/social-media/contentstudio-164d0918.json",
+    "projects/social-media/emplifi-social-marketing-cloud-6b0d5978.json"
   ],
-  "remaining_count": 155,
+  "remaining_count": 152,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -62,10 +65,7 @@
     "projects/email-marketing/moosend-d2af2749.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
-    "projects/social-media/blacktwist-13757d5a.json",
-    "projects/social-media/contentstudio-164d0918.json",
     "projects/social-media/curatebase-7cc6bd94.json",
-    "projects/social-media/emplifi-social-marketing-cloud-6b0d5978.json",
     "projects/social-media/facelift-cloud-32ac5c61.json",
     "projects/social-media/funneldash-eec0f94e.json",
     "projects/social-media/hookle-5f78b2fa.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/blacktwist-13757d5a.json",
+  "next_project": "projects/social-media/facelift-cloud-32ac5c61.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -331,6 +331,11 @@
       "path": "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
       "status": "not_completed",
       "reason": "Current product and pricing originals read, but no official operational workflow documentation discovered; source-access evidence and hashes recorded in source_access_notes. Not counted complete."
+    },
+    {
+      "path": "projects/social-media/curatebase-7cc6bd94.json",
+      "status": "not_completed",
+      "reason": "Current employee-advocacy homepage and May 2026 terms/privacy originals read, but pricing amount and official operational workflow/recovery documentation not discoverable. /pricing and /help inaccessible through reader, app root inaccessible; no sign-up or access bypass. Not counted complete."
     }
   ],
   "compatibility_issues": [
@@ -620,6 +625,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-01",
+      "completed_projects": 49,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 49 drafts; scope, unapproved states, source/pricing types, hashes, references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark helpscoutdocs.com versus benchmarkemail.com rule at line 166; no shared edits or full PASS claim"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -677,6 +704,11 @@
       "commit": "bcfe8bf",
       "completed_count": 42,
       "scope": "Netcore, Omnisend, Ontraport; migrated documentation and current-package constraints"
+    },
+    {
+      "commit": "17144f1",
+      "completed_count": 46,
+      "scope": "Ortto, OutboundEngine, Salesforce Account Engagement, Manago AI; marketing automation 25/27 with two source gaps"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -701,8 +733,9 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 0,
-      "status": "in_progress"
+      "completed": 3,
+      "status": "in_progress",
+      "uncompleted_with_source_gaps": 1
     }
   },
   "source_access_notes": [
@@ -807,6 +840,39 @@
     {
       "project": "salesmanago-75557c66",
       "note": "Current Manago AI brand story, pricing and migrated operational docs read. Old workflow index inaccessible but current specific articles readable through ordinary public reader; no 403/429 bypass. Pricing active-contact consent versus purchase/cart criteria conflict retained. Existing-participant dialog image options unverified; test requires activation."
+    },
+    {
+      "project": "curatebase-7cc6bd94",
+      "note": "Only current marketing, blog, terms/privacy available, no operational docs. Current terms: active-user monthly subscription, 14-day no-card trial, advance USD billing and prorated seats; amount unknown. Homepage EMV phrase impressions × $0.01 CPM is dimensionally ambiguous. No third-party $1.99/$7.99 pricing or Twitter behavior adopted. Current LinkedIn emphasis broader than old listings; no complete-record claim.",
+      "evidence": [
+        {
+          "source": "Curatebase | Employee Advocacy and Team Social Posting (https://curatebase.com/)",
+          "excerpt_sha256": "7209464fd9021926f4f37a2d1c3eb2e0ab0c8a5989641dc51f3f97e87fd5b8e4",
+          "read_at": "2026-10-22T12:55:23.878606+00:00"
+        },
+        {
+          "source": "Curatebase | Employee Advocacy & Team Social Posting (https://curatebase.com/privacy/)",
+          "excerpt_sha256": "4f16795e55abb9164bfb9c89a18efb5986a9ccb5abbf345e3e246826b22abc2f",
+          "read_at": "2026-10-22T12:55:23.878606+00:00"
+        },
+        {
+          "source": "Curatebase | Employee Advocacy & Team Social Posting (https://curatebase.com/terms/)",
+          "excerpt_sha256": "3412ea19427b0906ddf76401ee5087ae066c0d9e1c415186b06232b204e1076e",
+          "read_at": "2026-10-22T12:55:23.878606+00:00"
+        }
+      ]
+    },
+    {
+      "project": "blacktwist-13757d5a",
+      "note": "Current annual-selected pricing differs from homepage Team/Agency quotas and REST $9 entry wording; current Starter packaging conflicts with free MCP help. Actual crosspost article permits partial success and overlength Bluesky scheduling despite eventual failure. Thread-delay original repeatedly timed out. No actions performed."
+    },
+    {
+      "project": "contentstudio-164d0918",
+      "note": "Actual current pricing cards/FAQ and operational docs read. Instagram combined article empty; older requirements include IGTV and restrictive Stories/account claims, not adopted as current provider-wide truth. Machine-readable price link unavailable. Reconnection no auto retry, mobile self-confirmation and webhook/API shared quota retained."
+    },
+    {
+      "project": "emplifi-social-marketing-cloud-6b0d5978",
+      "note": "Assigned product URL redirects to current homepage. Current Teams separated from legacy profile roles; advanced approvals toggle conditional. Actual emergency doc excludes approval-in-progress, delegated Facebook, imminent YouTube and subsequent schedules, contrary broad marketing kill-switch wording. Source-derived body and excerpt hashes from actual originals."
     }
   ]
 }

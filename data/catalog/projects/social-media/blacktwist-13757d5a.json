@@ -10,114 +10,151 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "BlackTwist is a product in the Social media management category. Its directory profile covers Posts Scheduling, Multi-Account Management, Auto Publishing, Analytics (Social Media), Content Management.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $12.5.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: organize content through creation, revision and publication. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "BlackTwist 属于社交媒体管理软件。第三方资料列出的功能包括帖子排程、多账户管理、自动发布、社交媒体分析、内容管理。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $12.5.。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：组织内容的创建、修订和发布。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "BlackTwist is a hosted publishing and engagement workspace focused on Threads and Bluesky. It combines drafts, weekly scheduling, account switching, a reply inbox and performance views. Its current crossposting workflow groups accounts into social sets, while account-specific versions accommodate platform differences. This scope is narrower than a verified all-network marketing suite.\n\nIt also exposes REST and MCP interfaces for programmatic or assistant-driven work. Those interfaces can cause real publication and deletion; the documentation is not evidence of a separate safe simulation mode. A useful evaluation follows one piece of content from draft to queue, each destination’s result, optional follow-up and subsequent metrics. Faster audience growth and vendor testimonials are not independently tested outcomes in this profile.",
+  "description_zh": "BlackTwist 是聚焦 Threads、Bluesky 的托管发布及互动工作区，结合草稿、每周排程、账户切换、回复收件箱及效果视图。当前跨发通过 social set 分组账户，并用单账户版本适应平台差异。已核实范围不能扩展为覆盖所有社交网络的营销套件。\n\n它也提供用于程序或助手操作的 REST、MCP 接口。这些接口可能真实发布及删除，文档不能证明存在独立安全模拟模式。有效评估可跟踪一份内容从草稿进入队列、各目的地结果、可选后续回复及之后指标。本文未独立验证增长速度或供应商推荐语中的效果。",
   "core_features": [
     {
-      "name_en": "Posts Scheduling",
-      "name_zh": "帖子排程",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Weekly slot queue",
+      "name_zh": "每周时段队列",
+      "explanation_en": "Add content to the next available predefined time slot.",
+      "explanation_zh": "把内容加入下一个可用预设时段。",
+      "source_ref": "queue",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Multi-Account Management",
-      "name_zh": "多账户管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Account-specific crossposts",
+      "name_zh": "分账户跨发版本",
+      "explanation_en": "Detach one account’s content from the main version.",
+      "explanation_zh": "让某账户内容脱离主版本独立编辑。",
+      "source_ref": "crosspost",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Auto Publishing",
-      "name_zh": "自动发布",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Conditional follow-up replies",
+      "name_zh": "条件式后续回复",
+      "explanation_en": "A time or engagement condition can publish a prepared reply.",
+      "explanation_zh": "时间或互动条件可发布预先准备的回复。",
+      "source_ref": "follow-up",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Analytics (Social Media)",
-      "name_zh": "社交媒体分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Content Management",
-      "name_zh": "内容管理",
-      "explanation_en": "Organize content through creation, revision and publication.",
-      "explanation_zh": "组织内容的创建、修订和发布。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "CSV bulk drafts and schedules",
+      "name_zh": "CSV 批量草稿及排程",
+      "explanation_en": "Import up to 100 posts, with undated rows becoming drafts.",
+      "explanation_zh": "最多导入 100 帖，无日期行保存为草稿。",
+      "source_ref": "csv",
+      "explanation_scope": "product_specific",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
-    "en": ["Organize content through creation, revision and publication"],
-    "zh": ["组织内容的创建、修订和发布"],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "status": "editorial_guidance",
+    "en": [
+      "Prepare a weekly Threads/Bluesky editorial cadence with platform-specific revisions.",
+      "Import a spreadsheet of approved drafts and grouped threads.",
+      "Evaluate a client publishing workspace with explicit account context."
+    ],
+    "zh": [
+      "准备每周 Threads／Bluesky 内容节奏并做平台专属修订。",
+      "导入已审草稿及分组帖子串表格。",
+      "评估明确账户上下文的客户发布工作区。"
+    ],
+    "source_refs": ["product", "crosspost", "rest"],
+    "basis": "Editorial workflow examples; not observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $12.5.",
-      "zh": "未提供免费试用 起价为 $12.5.",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      {
+        "en": "Independent creator",
+        "zh": "独立创作者"
+      },
+      {
+        "en": "Social media editor",
+        "zh": "社交媒体编辑"
+      },
+      {
+        "en": "Small-agency account manager",
+        "zh": "小型代理机构客户经理"
+      }
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Connect an authorized account and inspect its destination context.",
+        "zh": "连接已授权账户并检查目的地上下文。",
+        "source_refs": ["client-connect", "api-errors"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Prepare a draft and choose weekly slots or an explicit date.",
+        "zh": "准备草稿并选择每周时段或明确日期。",
+        "source_refs": ["queue"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review crosspost length, media and detached versions.",
+        "zh": "检查跨发长度、媒体及脱离主稿的版本。",
+        "source_refs": ["crosspost"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Review follow-up and auto-repost defaults before scheduling.",
+        "zh": "排程前检查后续回复及自动转发默认。",
+        "source_refs": ["follow-up", "repost"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Check each publication result and then review relevant metrics.",
+        "zh": "逐项核对发布结果，再查看相关指标。",
+        "source_refs": ["crosspost", "analytics"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
-  },
-  "limitations": {
     "status": "not_verified",
     "items": []
+  },
+  "limitations": {
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Crossposting is not an all-destination success guarantee.",
+        "zh": "跨发不能保证所有目的地成功。",
+        "source_refs": ["crosspost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "An overlength Bluesky warning does not block scheduling.",
+        "zh": "Bluesky 超长警告不阻止排程。",
+        "source_refs": ["crosspost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Follow-up thresholds are OR conditions.",
+        "zh": "后续回复阈值为 OR 条件。",
+        "source_refs": ["follow-up"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Current pricing and legacy plan/help wording conflict; account entitlement needs confirmation.",
+        "zh": "当前定价与旧套餐／帮助文案冲突，需确认账户资格。",
+        "source_refs": ["pricing", "mcp", "teams", "rest"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -129,37 +166,19 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $12.5.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $12.5.",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_snapshot_en": "Annual-selected cards: Free $0 with 15 posts/month and one account/platform; Starter $6/month billed $72/year, two accounts; Creator $12.50/month billed $150/year, five accounts and 80 AI credits/month; Agency $69/month billed $828/year, unlimited accounts, 20 teams and 500 credits/month. Paid tiers list unlimited posts. Post generation costs 2 credits, a thread 6. Cancellation retains access through the paid period. These are annual equivalents; monthly prices were not extracted. Legacy REST $9 entry wording and free MCP help conflict with current Starter packaging; confirm access before purchase.",
+    "source_snapshot_zh": "年付选中卡片：Free $0，每月 15 帖、每平台一个账户；Starter 每月折合 $6、每年扣 $72，两个账户；Creator 每月折合 $12.50、每年扣 $150，五账户、每月 80 AI 点；Agency 每月折合 $69、每年扣 $828，不限账户、20 团队、每月 500 点。付费档列不限帖子。生成单帖 2 点、串 6 点。取消后访问保留至已付周期结束。这是年付折合价，未取得月付价格。旧 REST $9 起及 MCP 免费帮助与当前 Starter 组合冲突，购买前需确认访问资格。",
+    "normalized_price": null
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does BlackTwist do?",
-      "question_zh": "BlackTwist 用来做什么？",
-      "answer_en": "BlackTwist is a product in the Social media management category. Its directory profile covers Posts Scheduling, Multi-Account Management, Auto Publishing, Analytics (Social Media), Content Management.",
-      "answer_zh": "BlackTwist 属于社交媒体管理软件。第三方资料列出的功能包括帖子排程、多账户管理、自动发布、社交媒体分析、内容管理。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Posts Scheduling, Multi-Account Management, Auto Publishing, Analytics (Social Media), Content Management",
-      "answer_zh": "帖子排程、多账户管理、自动发布、社交媒体分析、内容管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -169,25 +188,312 @@
       "read_at": "2026-10-22T08:36:20.995Z",
       "excerpt_sha256": "291137876e911c2c9b1f2a7da36d73c5e959fb46cc36d7a011c2b029af4ffde1",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "BlackTwist — The Threads System for Creators Who Show Up Daily",
+      "url": "https://blacktwist.app/",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "c4f95909b7d50a741c6e2c2e7aa4f3e0b2c9e59744bbb014d2c4437d75dba863",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual homepage body; account quotas conflict with current pricing and are not adopted."
+    },
+    {
+      "id": "queue",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Time Slots and Queue | BlackTwist Help",
+      "url": "https://blacktwist.app/help/time-slots-and-queue",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "8a5768cf953030650619e4a455806bf26d7b5cc7914e7f168760dd662989e6fe",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual weekly slots and scheduling modes."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "BlackTwist",
+      "title": "Pricing — Start Free, Grow on Threads & Bluesky | BlackTwist",
+      "url": "https://blacktwist.app/pricing",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "d312635312c1522f482fc853ca29f2132f7684df155096c66b7ddf379ec18107",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual annual-selected cards, explicit yearly totals and current free limits; checkbox-only rows not interpreted."
+    },
+    {
+      "id": "rest",
+      "type": "official_integration",
+      "site": "BlackTwist",
+      "title": "BlackTwist REST API — Build Integrations for Threads & Bluesky",
+      "url": "https://blacktwist.app/rest-api",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "ec4d9fce8b358c08addb36cea90a99b19ab9c34d211897c45387481bb9069654",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual REST overview, paid entitlement and throttles; $9 wording not equated to annual $6 card."
+    },
+    {
+      "id": "repost",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Auto-Repost | BlackTwist Help",
+      "url": "https://blacktwist.app/help/auto-repost",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "c0c62ee9d5c1d799c4240fe48d1ef1bfc86cd5b59a4fe3ba3c61e5b338d663c8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual delay and new-draft default behavior."
+    },
+    {
+      "id": "follow-up",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Follow-up (Auto-Plug)",
+      "url": "https://blacktwist.app/help/follow-up-auto-plug",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "743cd2bf08bfb3a69b934b8ffe27fb971a6bd0f17e08fd75e67d37dc56b26904",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual OR trigger semantics and per-account defaults."
+    },
+    {
+      "id": "crosspost",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Crossposting to Threads and Bluesky | BlackTwist Help",
+      "url": "https://blacktwist.app/help/crossposting-to-threads-and-bluesky",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "0c09ec99012053aba48051f700f58bea1e6d0742a262f093a25f13b1c21c10a8",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual full body: independent scheduling failures, detached edits, platform limits and published-version behavior."
+    },
+    {
+      "id": "mcp",
+      "type": "official_integration",
+      "site": "BlackTwist",
+      "title": "Connect BlackTwist to AI Assistants (MCP Server)",
+      "url": "https://blacktwist.app/help/connect-blacktwist-to-ai-assistants-mcp-server",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "6baf282e42f3711ad01e466d2d32f26806d0f270be6b63f0bb7ae12cf3e27d42",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual OAuth/key setup and context; free entitlement conflicts with current paid Starter packaging."
+    },
+    {
+      "id": "client-connect",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Allow anyone to Add Social Accounts | BlackTwist Help",
+      "url": "https://blacktwist.app/help/allow-anyone-to-add-social-accounts",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "2773918394c4195d2aefbcc890b188a948344c7fe8cf917a337580aa60a172b1",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual connection links and account owner unlink options."
+    },
+    {
+      "id": "csv",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "How to import posts in bulk to BlackTwist | BlackTwist Help",
+      "url": "https://blacktwist.app/help/import-posts-in-bulk",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "9ac1923d0674d57c8b5a013df7d9f277c115fd7aa2b58a9d22523cbeafc9dbba",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual CSV import body and required/optional fields."
+    },
+    {
+      "id": "api-errors",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Introduction | BlackTwist API Docs",
+      "url": "https://blacktwist.app/api/docs/introduction",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "4e9926eaca50989329e0ab47da391b574d4d1eadd6c335f8bc18cde97b4bbd21",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual API introduction and documented status/context/date semantics; no requests executed."
+    },
+    {
+      "id": "analytics",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "Threads Analytics — Track Growth, Engagement & Best Times | BlackTwist",
+      "url": "https://blacktwist.app/threads-analytics",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "fba60635bfc3bc99fd625250c5a96aa2112e139382fdd8615ef43d3306987ec2",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual analytics page; broad free wording not taken as every advanced feature free."
+    },
+    {
+      "id": "teams",
+      "type": "official_documentation",
+      "site": "BlackTwist",
+      "title": "How to create and manage a team in BlackTwist",
+      "url": "https://blacktwist.app/help/create-and-manage-team",
+      "read_at": "2026-10-22T12:44:59.474358Z",
+      "excerpt_sha256": "2190a365b67597e2b10b3265651a5ae6a0274b125e9d571d5bebfacc009097bf",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Actual role and deletion descriptions; legacy Team plan wording distinguished from current cards."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T12:44:59.474358Z",
+    "scope": "Official public documentation only; no purchase, account operation, sending test, identity or publication approval."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "Original English and corresponding Chinese research draft. Vendor statements describe documented behavior, not independently measured quality.",
+    "Existing third-party source is discovery-only and superseded. Unknown UI languages, regional availability and licensing remain unknown.",
+    "All publication and alternative-relationship states remain unapproved."
+  ],
+  "description_source_refs": ["product", "crosspost", "rest"],
+  "profile": {
+    "status": "original_bilingual_research_draft",
+    "sections": [
+      {
+        "id": "planning",
+        "title_en": "Plan a cadence without confusing a slot with a guarantee",
+        "title_zh": "规划节奏，不能把时段当发布保证",
+        "en": "Settings → Scheduling defines recurring weekly times. The composer can use the next free slot, a selected slot, natural-language timing or an explicit date/time picker. For an editorial weekly release plan, draft evergreen posts first, reserve a specific launch time separately and inspect the final queue. These documented controls organize intended timing; no exact publication latency or missed-slot recovery guarantee was verified.",
+        "zh": "Settings → Scheduling 定义每周重复时段。编辑器可选择下个空闲时段、指定时段、自然语言时间或明确日期时间。编辑周发布示例：先准备常青内容，单独保留发布时刻，再检查最终队列。这些控件组织预期时间，未核实准确发布延迟或错过时段后的恢复保证。",
+        "source_refs": ["queue"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "crosspost",
+        "title_en": "Crossposting can partially succeed",
+        "title_zh": "跨发可能部分成功",
+        "en": "A social set holds one account per platform, and each account belongs to one set. Scheduling creates separate destination posts; a failure for one does not stop the others. Calendar moves/deletes affect associated unpublished versions, while already published versions remain. A detached account’s whole thread no longer follows main edits; attaching it replaces its custom content. Editorial acceptance: check each account’s result rather than treating one calendar entry as an atomic all-platform transaction.",
+        "zh": "每个 social set 每个平台容纳一个账户，一个账户仅属一个集合。排程生成独立目的地帖子，一个失败不阻止其他成功。日历移动／删除影响关联未发布版本，已发布版本保留。脱离主版本的账户整条串不再接收主编辑，重新 Attach 会覆盖定制内容。编辑验收建议：逐账户核对结果，不能把单个日历项视作跨平台原子事务。",
+        "source_refs": ["crosspost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "format",
+        "title_en": "A warning can still become a publication failure",
+        "title_zh": "警告仍可能演变为发布失败",
+        "en": "The crossposting guide says Bluesky has a 300-character limit versus Threads’ 500. Overlength warnings do not prevent scheduling, and the Bluesky version fails at publication. That version receives only the first four images and omits GIFs. Editorial workflow: customize the destination before scheduling, then review media and text for that destination instead of assuming a preview of the main post validates both.",
+        "zh": "跨发指南给出 Bluesky 300 字符、Threads 500 字符限制。超长警告不阻止排程，Bluesky 版本在发布时失败。该版本只接收前四张图片并省略 GIF。编辑流程建议：排程前定制目的地版本，并检查其媒体及文字，不能假设主帖预览验证了两个平台。",
+        "source_refs": ["crosspost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "follow-up",
+        "title_en": "Follow-up conditions are alternatives, not a combined gate",
+        "title_zh": "后续回复条件是替代关系，并非组合门槛",
+        "en": "Auto-Plug publishes a prepared reply when one active condition is met: elapsed minutes or likes, reposts or comments greater than a threshold. A timer plus a like threshold therefore does not establish “wait at least this long AND reach this many likes.” Account defaults apply to new drafts and remain adjustable per post. Editorial launch example: inspect inherited promotional replies before queueing a sensitive update; disabling a default is not documented as retroactively clearing every existing post.",
+        "zh": "Auto-Plug 在任一已启用条件满足时发布预备回复：经过分钟数，或点赞／转发／评论大于阈值。因此时间加点赞不能解释为“至少等待该时间且达到该点赞数”。账户默认适用于新草稿，可逐帖调整。编辑发布示例：排入敏感更新前检查继承的推广回复；关闭默认未被证明会追溯清空已有每帖配置。",
+        "source_refs": ["follow-up"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "repost",
+        "title_en": "Auto-repost is a delayed reshare",
+        "title_zh": "自动转发是延后再次分享",
+        "en": "Auto-Repost uses an hours-after-publication delay and the same text and media, for a single post or thread. Defaults affect new drafts; individual settings can be changed. The help article documents disabling before original publication. Editorial use: separate a deliberate second exposure from a new, revised announcement. Rewriting an outdated offer, cancelling an already queued reshare and recovery after a platform error need account-level confirmation; this research does not infer those behaviors.",
+        "zh": "Auto-Repost 使用原发布后若干小时的延迟，以相同文字媒体再次分享，适用于单帖及串。默认影响新草稿，可逐项调整。帮助文档说明原帖发布前可关闭。编辑使用建议：区分有意二次曝光与修改后的新公告。过期优惠改写、取消已排队转发及平台错误恢复需账户确认；本研究不推断这些行为。",
+        "source_refs": ["repost"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "import",
+        "title_en": "Use the CSV schema to separate drafts from scheduled content",
+        "title_zh": "用 CSV 结构区分草稿与计划内容",
+        "en": "Bulk Upload accepts up to 100 posts in a CSV. Text is required; Thread Group, Date, Image URL and Topic are available fields. Matching group values form a thread, absent dates create drafts, and images require publicly reachable direct image URLs. UTF-8 is recommended for broken accents or emojis. An editorial spreadsheet could group three launch paragraphs while leaving review-needed rows undated. Validate that grouping and destination before enabling the plan; no all-or-nothing import or duplicate-detection behavior was verified.",
+        "zh": "Bulk Upload 接受最多 100 帖的 CSV。Text 必填，其他字段包括 Thread Group、Date、Image URL、Topic。相同组值组成串，无日期行成为草稿，图片要求公开可访问的直接图片 URL。重音或 emoji 乱码时建议 UTF-8。编辑表格示例：三个发布段落同组，待审行不填日期。启用前验证分组及目的地；未核实导入原子性或去重行为。",
+        "source_refs": ["csv"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "access",
+        "title_en": "Separate client connection, team roles and integration context",
+        "title_zh": "区分客户连接、团队角色与集成上下文",
+        "en": "A generated connection link lets a client connect their account without sharing the workspace login; providing email enables autonomous disconnection, and platform unlinking is also documented. In teams, Members publish/schedule, Admins add accounts and manage membership, and Owners also control billing. Removing a member retains history; deleting a team is documented as irreversible and removes associated accounts and engagement lists. REST defaults to personal context without teamId, whereas MCP follows the active team. Editorial check: make destination and context explicit before a write action.",
+        "zh": "生成连接链接可让客户不共享工作区登录而连接账户；提供邮箱后可自主断开，也可在平台解除连接。团队中 Member 发布／排程，Admin 添加账户及管理成员，Owner 另管账单。移除成员保留历史，删除团队不可撤销且移除关联账户及互动列表。REST 缺少 teamId 时默认个人上下文，MCP 跟随当前团队。编辑检查：写操作前明确目的地及上下文。",
+        "source_refs": ["client-connect", "teams", "api-errors", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "integration",
+        "title_en": "Handle REST failure classes before retrying a write",
+        "title_zh": "重试写操作前区分 REST 失败类型",
+        "en": "REST uses JSON and bearer or X-Api-Key authentication. Datetimes without offsets follow the configured timezone; explicit ISO offsets are supported. Limits are 60 requests/minute/account and 300/minute/IP, unaffected by adding keys. The guide distinguishes invalid input, insufficient permissions/plan, conflict and downstream-platform failure; 429 instructs a short delay before retry. Editorial integration example: read providers and subscription first, save a draft, then inspect its identifier before scheduling. Exactly-once publication, idempotency and automatic replay were not verified. MCP setup supports OAuth or keys, but grants real operational access.",
+        "zh": "REST 使用 JSON、Bearer 或 X-Api-Key 认证。无偏移日期按配置时区解释，也支持明确 ISO 偏移。限额为每账户每分钟 60 次、每 IP 300 次，增加密钥不提高额度。指南区分无效输入、权限／套餐不足、状态冲突及下游平台失败，429 要求短暂等待再试。编辑集成示例：先读取 provider 及订阅，保存草稿，检查 ID 后再排程。未核实仅发布一次、幂等或自动重放。MCP 支持 OAuth 或密钥，授予真实操作访问。",
+        "source_refs": ["api-errors", "mcp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "measurement",
+        "title_en": "Use analytics as feedback, then verify entitlement",
+        "title_zh": "用分析反馈，再核对套餐资格",
+        "en": "The analytics page describes views, replies, reposts, follower history and posting-time analysis. Those measures support an editorial review of topic and cadence, not proof that the scheduler caused growth or that engagement became sales. Broad free-analytics marketing coexists with paid advanced-analytics descriptions. The homepage’s older Team/Agency account counts also differ from current pricing. Check the current subscription for the specific view instead of importing old quotas into a purchase comparison.",
+        "zh": "分析页描述浏览、回复、转发、粉丝历史及发布时间分析。这些指标支持编辑复盘主题与节奏，不证明排程器导致增长或互动转为销售。宽泛免费分析宣传与付费高级分析描述并存。首页旧 Team／Agency 账户数也不同于当前定价。应按真实订阅核对特定视图，不能把旧额度带入购买比较。",
+        "source_refs": ["analytics", "pricing", "product"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "BlackTwist: Threads and Bluesky scheduling, crossposts and pricing",
+    "title_zh": "BlackTwist：Threads、Bluesky 排程、跨发及价格",
+    "description_en": "Review BlackTwist queueing, crosspost failures, follow-up conditions, CSV import, API context and current plan limits.",
+    "description_zh": "核对 BlackTwist 队列、跨发失败、后续回复条件、CSV 导入、API 上下文及当前套餐限制。",
+    "primary_intent": "Evaluate BlackTwist publishing workflow for Threads and Bluesky",
+    "secondary_questions": [],
+    "query_basis": "Editorial intent; no search volume, ranking or AI visibility measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "Monthly-selected prices, taxes, refund terms, full free media/API/MCP entitlements and legacy Team migration were not resolved.",
+      "zh": "未确定月付选中价格、税费、退款条款、完整免费媒体／API／MCP 权限及旧 Team 迁移。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Detailed thread-delay article repeatedly timed out; exact latency, token expiry for platform connections, retry/replay, idempotency and import deduplication remain unverified.",
+      "zh": "帖子串延迟文章反复超时，准确延迟、平台连接令牌过期、重试／重放、幂等及导入去重未核实。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No publication, assistant setup, social connection, purchase or outcome measurement was executed.",
+      "zh": "未执行发布、助手配置、社交连接、购买或效果测量。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "Hosted platform source licence, self-hosting, complete UI languages, data retention and regional availability were not verified; public MCP materials do not establish a licence for the whole service.",
+      "zh": "未核实托管平台源码许可、自托管、完整界面语言、数据保留及地区可用性；公开 MCP 材料不能确定整个服务许可。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Examples and fit judgments are editorial, not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
