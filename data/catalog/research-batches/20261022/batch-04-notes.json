@@ -3,7 +3,7 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T14:07:28.687910+00:00",
+  "updated_at": "2026-10-22T14:09:56.999752+00:00",
   "assigned": 204,
   "completed_count": 56,
   "completed_projects": [
@@ -629,6 +629,49 @@
       "project": "projects/live-chat/syndeo-cx-30bafb7a.json",
       "status": "research_incomplete_source_access",
       "observed": "Assignedhttp://syndeo.cx/checkedusingnormalHTTPShttps://syndeo.cx/andreceived403. Stopwithoutretry/bypass. OfficialsearchfindsConversationalAgenticAIplatformandterms,butsearchsnippetsnotoriginal-pageevidence;thirdparty78/monthnotadopted. Currentfeatures,price,limitsandlicenseunestablished;candidateunchangednotcounted."
+    },
+    {
+      "project": "projects/live-chat/theliveforce-d65e765e.json",
+      "status": "research_incomplete_identity_and_terms",
+      "observed": "Assignedhttps://theliveforce.com/returned500andwebreaderinaccessible. Thirdpartycurrentlistingspointtoliveforce.ai;ordinaryHTTPScurrenthome,pricing.html,privacy.htmlandall-features.htmlactuallyreadandsaved. CurrentbrandLiveforceandmanagedhuman+AIleadqualificationconsistentwithdirectorybutnofirst-partyold-domainredirect/rebrandbridgefound;exactidentityunverified,notdeclareofficialmigration. CurrenthomepayperleadcontrastspricingHTMLmultiple369/499/799vs299/399/699tiers,FAQ19.99perlead/no monthlyfeeand49–699flatplansplus300setup. Finalcontractandpricingnotestablished. Noform/account/purchaseorunrelatedresourceblogbrowsing. Candidateunchangednotcounted.",
+      "evidence": [
+        {
+          "url": "https://liveforce.ai/",
+          "requested_url": "https://liveforce.ai/",
+          "title": "Liveforce - 24/7 Lead Generation & Conversion Platform",
+          "read_at": "2026-10-22T14:08:24.146432+00:00",
+          "http_status": 200,
+          "body_sha256": "bd85d2338620524f3d657e1677067e556a6f2a7827c9aadcb8bf0225f21d7bc6",
+          "excerpt_sha256": "bd215f912030b0666ea1d607b7e8c8fd54fc71419500de41eae46d417dccd33e"
+        },
+        {
+          "url": "https://liveforce.ai/pricing.html",
+          "requested_url": "https://liveforce.ai/pricing.html",
+          "title": "Pricing & Plans",
+          "read_at": "2026-10-22T14:09:02.714785+00:00",
+          "http_status": 200,
+          "body_sha256": "eabbf7d0e28b590f6a5b36631609e0123ac6e9c5c8525be882ea676dab382ef8",
+          "excerpt_sha256": "5a60223b51e910de9629ac4fa1b3ab66e2a6dcc3c58d60b20b2646c51b589c97"
+        },
+        {
+          "url": "https://liveforce.ai/privacy.html",
+          "requested_url": "https://liveforce.ai/privacy.html",
+          "title": "Liveforce Privacy Policy",
+          "read_at": "2026-10-22T14:09:00.533884+00:00",
+          "http_status": 200,
+          "body_sha256": "28d6d6ff32cc37c23196723f6a052fc63f853d721dc26113c48e63881c503d30",
+          "excerpt_sha256": "6a16a00f8df1c3df79bd066e7677fed8559a689f3f7d3f4d4237bd3a2a07bad1"
+        },
+        {
+          "url": "https://liveforce.ai/all-features.html",
+          "requested_url": "https://liveforce.ai/all-features.html",
+          "title": "Product Features & What We Do at Liveforce",
+          "read_at": "2026-10-22T14:09:01.815014+00:00",
+          "http_status": 200,
+          "body_sha256": "50c10bc18d1a9653c92295ca1fd7077fbc4c6301da388797c5e9bbc6103d7f1a",
+          "excerpt_sha256": "7d6153a897052c7397098a07bac18740517823b7a2f734298983cd020e7dfc36"
+        }
+      ]
     }
   ],
   "verification": [
@@ -924,6 +967,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch56 completed,148 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch56 completed,148 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1143,10 +1196,37 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "1801122",
       "completed": ["projects/live-chat/talkative-55649f5e.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": [],
       "status": "ready_to_commit"
     }
   ],
-  "scope": "Only assigned project records and these notes; no main push, deployment, application or shared catalog writes."
+  "scope": "Only assigned project records and these notes; no main push, deployment, application or shared catalog writes.",
+  "category_progress": {
+    "crm": {
+      "assigned": 22,
+      "deep_researched": 17,
+      "documented_incomplete": 5,
+      "all_assigned_attempted": true
+    },
+    "help-desk": {
+      "assigned": 26,
+      "deep_researched": 21,
+      "documented_incomplete": 5,
+      "all_assigned_attempted": true
+    },
+    "live-chat": {
+      "assigned": 26,
+      "deep_researched": 18,
+      "documented_incomplete": 8,
+      "all_assigned_attempted": true
+    },
+    "next": "call-center",
+    "batch_not_complete": true
+  }
 }
