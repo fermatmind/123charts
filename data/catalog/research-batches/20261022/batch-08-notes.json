@@ -108,6 +108,7 @@
     "projects/ai-writing/trinka-06ce9391.json",
     "projects/ai-writing/wordhero-2594dcf3.json",
     "projects/events/aevent-487ad658.json",
+    "projects/events/bizzabo-7df2f9e9.json",
     "projects/events/converia-18c411c7.json",
     "projects/events/cvent-80ca629b.json",
     "projects/events/dryfta-f093cf82.json",
@@ -146,13 +147,8 @@
     "projects/surveys/surveysensum-e43f8a45.json",
     "projects/surveys/surveysparrow-1352d998.json"
   ],
-  "remaining_paths": ["projects/events/bizzabo-7df2f9e9.json"],
-  "blockers": [
-    {
-      "path": "projects/events/bizzabo-7df2f9e9.json",
-      "reason": "Official homepage, pricing and distinct registration product page returned HTTP 403. Blocked URLs not retried/bypassed. Search snippets and old/third-party documents not substituted as current official profile. Remains structured_candidate."
-    }
-  ],
+  "remaining_paths": [],
+  "blockers": [],
   "evidence_directory": ".scratch/deep-research/",
   "validations": [
     {
@@ -206,6 +202,26 @@
     {
       "check": "Final 67-record source audit, 68-record scratch validation with exact domain exceptions, Python catalog unit tests",
       "result": "passed: 168 source URL/read-time/SHA256 matches, 68 owned record structures/references including 67 researched, 7 tests. Shared strict validator remains failed as documented; no shared script changed."
+    },
+    {
+      "check": "Final Bizzabo follow-up: python3 -m unittest discover -s scripts/catalog -p test_*.py",
+      "result": "passed: 7 tests"
+    },
+    {
+      "check": "Final Bizzabo follow-up: python3 .scratch/check_final.py",
+      "result": "passed: 68 researched drafts, 172 actual source URL/read_at/SHA256 text matches; only Bizzabo JSON and batch-08 notes changed"
+    },
+    {
+      "check": "Final Bizzabo follow-up: strict owned records validator",
+      "result": "failed: Bizzabo pricing.officially_checked=false while validator demands true. Deliberately preserve unknown price; previous real cross-domain source mismatches also remain."
+    },
+    {
+      "check": "Final Bizzabo follow-up: shared node scripts/catalog/validate.mjs --records-only",
+      "result": "failed first on inherited Benchmark Email helpscoutdocs.com versus benchmarkemail.com. Shared script unchanged."
+    },
+    {
+      "check": "Final Bizzabo follow-up: scratch-only validate-owned-documented-gaps.mjs",
+      "result": "passed: 68 records with original structure/reference checks, exact existing cross-domain exceptions and one explicit Bizzabo unknown-pricing case that asserts false/unknown/null and absence of an invented pricing source. This is not a shared strict-validator pass."
     }
   ],
   "commits": [
@@ -238,10 +254,15 @@
       "sha": "9135825",
       "completed_count": 37,
       "pushed": true
+    },
+    {
+      "sha": "7969169",
+      "completed_count": 67,
+      "pushed": true
     }
   ],
-  "completed_count": 67,
-  "remaining_count": 1,
+  "completed_count": 68,
+  "remaining_count": 0,
   "cross_domain_sources": [
     {
       "path": "projects/events/groupize-611bf69b.json",
@@ -287,14 +308,14 @@
     }
   ],
   "attempted_count": 68,
-  "delivery_status": "67 researched drafts; 1 access-blocked candidate; no independent review or hands-on testing",
-  "blocked_count": 1,
+  "delivery_status": "68 primary-source researched bilingual drafts; no independent review or hands-on testing. Bizzabo software pricing and current commercial terms remain unverified.",
+  "blocked_count": 0,
   "research_scope_notes": [
     "Only assigned project JSON and this notes file changed; no global index/taxonomy/README/validator/runtime/database/publication changes.",
     "Ideogram homepage 403 was not retried; successfully read pricing and its linked official Ad Resizer page support a narrower documented profile.",
     "All prices are dated public-document snapshots; incomplete or conflicting values remain explicit and normalized_monthly_price/currency are null.",
     "Original English synthesis and corresponding Chinese drafts; no output, reliability, certification, adoption, ranking or commercial result independently verified.",
-    "Remaining access blocker is Bizzabo only. Earlier 65/3 counts and validation snapshots are historical; final count is 67/1 after accessible official help/product documents resolved QuillBot and Meetingbox."
+    "Final follow-up resolves Bizzabo product-research access gap using actual accessible official documents; all 68 profiles now researched. It does not resolve inaccessible pricing or make all fields verified."
   ],
   "resolved_access_gaps": [
     {
@@ -311,6 +332,29 @@
       "project": "Ideogram",
       "original": "Homepage 403, not retried",
       "resolution": "Accessible pricing and linked /tools/ad-resizer/ document read; generic/API versus app credit valuation discrepancy retained."
+    },
+    {
+      "project": "Bizzabo",
+      "original": "Main marketing/pricing/registration routes returned HTTP 403; additional developer/organizer contract routes also 403; knowledge center redirects to login.",
+      "resolution": "Read actual official onboarding FAQ, attendee help HTML and public mobile-app/DPA PDFs on events.bizzabo.com and welcome.bizzabo.com. No denied URL retried/bypassed, no login, no search-summary/third-party pricing substitution. Product profile completed; pricing remains not_verified/officially_checked=false.",
+      "official_documents": [
+        "https://events.bizzabo.com/Bizzabo-Onboarding-Workshop/page/4915332/custom-tab",
+        "https://welcome.bizzabo.com/en/bizzabos-virtual-experience-attendee-troubleshooting-guide-1",
+        "https://welcome.bizzabo.com/hubfs/The%20Event%20App%20-%20User%20Guide.pdf",
+        "https://welcome.bizzabo.com/hubfs/Bizzabo-DPA-Customer-New.pdf"
+      ],
+      "remaining_gaps": [
+        "Current software amount/commitment/trial/renewal/refund unknown",
+        "DPA and attendee help contain legacy wording; applicability not confirmed",
+        "Shared validator assumes researched status implies checked pricing; candidate deliberately preserves unknown instead"
+      ]
+    }
+  ],
+  "schema_compatibility_gaps": [
+    {
+      "path": "projects/events/bizzabo-7df2f9e9.json",
+      "issue": "Shared validator requires pricing.officially_checked=true and official_pricing source for every primary_source_researched record. Real product research is complete but software pricing is not verified.",
+      "decision": "Preserve truthful pricing.not_verified/false/unknown, do not misclassify DPA as pricing or modify shared validator."
     }
   ]
 }
