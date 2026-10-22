@@ -1,17 +1,19 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T16:11:18.811692+00:00",
-  "status": "gap_followup_in_progress",
+  "updated_at": "2026-10-22T16:39:51.132702+00:00",
+  "status": "investigated_with_community_follow_up",
   "assigned": 140,
-  "completed_count": 109,
+  "completed_count": 117,
   "completed_projects": [
+    "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
     "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/ibm-api-connect-706d1c65.json",
     "projects/api-management/kong-545842db.json",
     "projects/api-management/krakend-424ce5fb.json",
+    "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/postman-668fe961.json",
     "projects/api-management/readme-4e02e656.json",
     "projects/api-management/sparrow-e52d1a04.json",
@@ -43,12 +45,14 @@
     "projects/data-integration/hotglue-dbe658b7.json",
     "projects/data-integration/matillion-etl-51db8aff.json",
     "projects/data-integration/peliqan-a94e721f.json",
+    "projects/data-integration/rivery-2d3c66b2.json",
     "projects/data-integration/skyvia-9d4f0c26.json",
     "projects/data-integration/synatic-1c0bb592.json",
     "projects/data-integration/zoho-dataprep-14e0dae7.json",
     "projects/databases/amazon-aurora-b19511d5.json",
     "projects/databases/artie-9c89f5bb.json",
     "projects/databases/clickhouse-82bcf9f7.json",
+    "projects/databases/harperdb-cloud-7836805e.json",
     "projects/databases/intersystems-iris-53e555c3.json",
     "projects/databases/mysql-e6032962.json",
     "projects/databases/oracle-database-2e28444d.json",
@@ -65,6 +69,7 @@
     "projects/ide/codepen-b3d2d02e.json",
     "projects/ide/cube-js-141aab25.json",
     "projects/ide/deepnote-bf9bd461.json",
+    "projects/ide/eclipse-che-06fa6676.json",
     "projects/ide/fathym-b0e6e8c7.json",
     "projects/ide/intellij-idea-9e9d6742.json",
     "projects/ide/jdoodle-2d99703c.json",
@@ -72,6 +77,7 @@
     "projects/ide/repl-it-d6a66c85.json",
     "projects/monitoring/auvik-b64b0099.json",
     "projects/monitoring/azure-network-watcher-24299f39.json",
+    "projects/monitoring/livenx-0f555bbe.json",
     "projects/monitoring/mackerel-c90a8e8c.json",
     "projects/monitoring/manageengine-oputils-072c08c2.json",
     "projects/monitoring/netify-3befc7dc.json",
@@ -102,9 +108,11 @@
     "projects/software-testing/katalon-studio-936c5275.json",
     "projects/software-testing/mabl-862d84c3.json",
     "projects/software-testing/maxim-fc490bdd.json",
+    "projects/software-testing/perfecto-8aeabe24.json",
     "projects/software-testing/rainforest-qa-369dc230.json",
     "projects/software-testing/ranorex-2d42ee7a.json",
     "projects/software-testing/sauce-labs-3c05b615.json",
+    "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/testmu-ai-formerly-lambdatest-a4cc807d.json",
     "projects/software-testing/testomat-io-6272fe63.json",
     "projects/software-testing/testsigma-2ad21eef.json",
@@ -116,11 +124,9 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 31,
+  "remaining_count": 23,
   "remaining_projects": [
-    "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
-    "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
@@ -128,14 +134,10 @@
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/foghub-ed0b9582.json",
     "projects/data-integration/panoply-452887ff.json",
-    "projects/data-integration/rivery-2d3c66b2.json",
     "projects/databases/faunadb-10fce5b0.json",
-    "projects/databases/harperdb-cloud-7836805e.json",
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
-    "projects/ide/eclipse-che-06fa6676.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
-    "projects/monitoring/livenx-0f555bbe.json",
     "projects/monitoring/panopta-5788d04c.json",
     "projects/monitoring/sinefa-16ac53d6.json",
     "projects/no-code/app2-dev-e78be706.json",
@@ -146,8 +148,6 @@
     "projects/software-testing/kaneai-9a395c49.json",
     "projects/software-testing/opkey-1686a4e2.json",
     "projects/software-testing/pcloudy-6e6266d2.json",
-    "projects/software-testing/perfecto-8aeabe24.json",
-    "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/zaptest-4360971f.json"
   ],
   "source_gaps": [
@@ -434,16 +434,16 @@
   ],
   "verification": [
     {
-      "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed:7 tests"
+      "command": "python3 scripts/catalog/test_catalog.py",
+      "result": "passed:7 tests; unittest module invocation lacked scripts/catalog on import path; corrected direct script invocation passed."
     },
     {
-      "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/112 global researched (3 baseline +109 assigned)/0 untranslated labels; structure/references only"
+      "command": "node .scratch/coordinator-contract-check/scripts/catalog/validate.mjs --records-only",
+      "result": "passed:1000 records/120 global researched (3 baseline+117batch)/23community/2lifecycle-only/0untranslated labels. Unchanged coordinator validator snapshot plus5candidate authority entries; shared scripts and registry unchanged. Summary validation deferred to coordinator."
     },
     {
-      "command": "Community annotations and ownership",
-      "result": "31 still-incomplete retained records labeled needs_community_input; statuses/prices unchanged.140 retained and59 transferred excluded. Gap follow-up remains in progress."
+      "command": "Changed-file ownership, Prettier and git diff --check",
+      "result": "passed:32owned files;59transferred paths excluded;23incomplete community markers; no unprocessed retained projects."
     }
   ],
   "checkpoints": [
@@ -616,21 +616,26 @@
       "commit": "1a54a2b",
       "completed_count": 105,
       "scope": "Retained140 investigated;35 source gaps; pushed"
+    },
+    {
+      "commit": "4990bbd",
+      "completed_count": 109,
+      "scope": "DreamFactory/Five/BrowserStack/Rainforest and31 community markers; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
-    "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "No uninvestigated retained projects.35 investigated candidates remain incomplete;59 transferred projects are excluded from this batch.",
-    "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "13 of17 complete; Sentinet unknown-price documentation and other official alternatives under follow-up.",
-    "application-development": "14 of16 complete; Five manual vendor tutorials read with historical/current-version limits explicit.",
-    "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
-    "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
-    "software-testing": "13 of19 complete; BrowserStack support entitlements and Rainforest actual billing/terms added.",
-    "no-code": "13 of18 retained complete; all18 investigated; App2.dev, Appenate, Checkbox, Obviously AI and Skuid incomplete with explicit original-access/authority gaps.",
-    "monitoring": "12 of16 retained complete; all16 investigated. IntelliMagic, LiveNX, Panopta and Sinefa remain incomplete with original-access, pricing/authority or lifecycle gaps."
+    "workflow-automation": "7 of 7 retained complete; all investigated; 0 remain incomplete.",
+    "data-integration": "14 of 18 retained complete; all investigated; 4 remain incomplete.",
+    "api-management": "15 of 17 retained complete; all investigated; 2 remain incomplete.",
+    "application-development": "14 of 16 retained complete; all investigated; 2 remain incomplete.",
+    "ide": "12 of 14 retained complete; all investigated; 2 remain incomplete.",
+    "databases": "14 of 15 retained complete; all investigated; 1 remain incomplete.",
+    "software-testing": "15 of 19 retained complete; all investigated; 4 remain incomplete.",
+    "no-code": "13 of 18 retained complete; all investigated; 5 remain incomplete.",
+    "monitoring": "13 of 16 retained complete; all investigated; 3 remain incomplete.",
+    "next": "23 incomplete candidates need community evidence; no unprocessed retained projects.59 transferred projects excluded."
   },
   "identity_changes": [
     {
@@ -739,7 +744,7 @@
     },
     {
       "project_path": "projects/data-integration/dexi-io-da3a3a46.json",
-      "reason": "Dexi-to-Mozenda notice, cross-domain pricing redirect and anomalous gambling links on official homepage. Current product identity/operations require corroboration. Not counted complete."
+      "reason": "A vendor help article published in 2025 was read, but current operator, service availability and contract continuity remain unresolved."
     },
     {
       "project_path": "projects/data-integration/foghub-ed0b9582.json",
@@ -750,24 +755,12 @@
       "reason": "Former domain explicitly an unaffiliated publication; historical SQream pages do not resolve current operator/availability. Not counted complete."
     },
     {
-      "project_path": "projects/data-integration/rivery-2d3c66b2.json",
-      "reason": "Official documentation migrated rivery.io -> help.boomi.com. Same-registered-domain validator cannot encode actual sources without a shared authority schema change. No false URL, identity merger or validator bypass; not counted complete."
-    },
-    {
-      "project_path": "projects/api-management/apigee-edge-d4c9d902.json",
-      "reason": "Apigee Edge documentation on docs.apigee.com was read and distinguishes Public/Private Cloud from current Apigee/hybrid. Current Google Cloud pay-as-you-go pricing must not be applied to Edge without migration. The record identity is google.com, while necessary Edge documentation is on apigee.com; the same-registered-domain source rule cannot encode both. Candidate remains incomplete pending coordinator authority handling, not renamed to the broader product."
-    },
-    {
       "project_path": "projects/api-management/blobr-e9fe1f36.json",
       "reason": "Official homepage, pricing and an official comparison article discovered through search all returned HTTP 404. Search snippets suggest advertising AI rather than the original API-product positioning, but unreadable pages are not adopted as current evidence. Current identity, availability and pricing remain unverified; not complete."
     },
     {
-      "project_path": "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
-      "reason": "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation."
-    },
-    {
       "project_path": "projects/api-management/restcase-40145ac2.json",
-      "reason": "Official homepage returned a title but zero readable content; /pricing returned 404. The docs.restcase.com page currently says the domain is unclaimed. Current product availability, documentation and pricing are therefore not established. No claim of closure or ownership change is inferred, and this record is not counted complete."
+      "reason": "An official API-design article was read; it does not establish current product operation. The product homepage has no readable body, pricing is unavailable and the documentation domain is unclaimed."
     },
     {
       "project_path": "projects/application-development/3pillar-global-f439406e.json",
@@ -779,23 +772,15 @@
     },
     {
       "project_path": "projects/ide/codeanywhere-7879974b.json",
-      "reason": "Official home, pricing and docs now redirect to a vendor sunset announcement dated June7,2026: new signups closed, July1,2026 service shutdown, export deadline and cessation of recurring charges. The announced closure date has passed; live account/data recoverability was not probed. Current operational docs and purchasable plan are unavailable, so old directory features/prices are not adopted as current and the record is not counted as a completed operating-service profile. Actual announcement URLs/hashes retained in batch notes."
+      "reason": "The vendor announced a July 1, 2026 shutdown. Actual service shutdown and account/data recoverability were not tested."
     },
     {
       "project_path": "projects/ide/codesandbox-90aac520.json",
       "reason": "Official homepage was read and now emphasizes programmatic isolated sandboxes/CodeSandboxSDK; it announces being part of TogetherAI. Actual official pricing and docs returned403. No bypass or retry of blocked endpoints. Current runtime, billing/limits, access policy and license cannot be deeply established from the marketing page alone, so the record remains incomplete and old directory IDE features/prices are not adopted as current."
     },
     {
-      "project_path": "projects/ide/eclipse-che-06fa6676.json",
-      "reason": "Official Eclipse Che home redirects eclipse.org/che to eclipse.dev/che. Actual stable7.123.x installation, supported-platform and hosted-service docs were read: one Che instance per cluster, local single-node for testing only, and Red Hat Sandbox is separately packaged OpenShift Dev Spaces with30-day data deletion,12-hour maximum workspace and30-minute idle stop. No readable same-authority official fee/free-use grant or complete software license was established; hosted usage limits are not relabeled as pricing. Some introductory routes return self-referential redirect notices. The candidate remains incomplete, without claiming a sustained-free hosted plan or a tested Kubernetes installation."
-    },
-    {
       "project_path": "projects/databases/faunadb-10fce5b0.json",
       "reason": "Official homepage timed out; official end-of-life FAQ, announcement and status originals were inaccessible through the reader. Ordinary public HTTP requests to homepage/FAQ/announcement also failed with TLS timeout or closed connection; no TLS bypass. Official search snippets describe May30,2025 end-of-service, but snippets are discovery only and are not adopted as a completed primary-source read. Current availability, operational documentation, fees, data recovery and any actual open-source release/license remain unverified. Not complete."
-    },
-    {
-      "project_path": "projects/databases/harperdb-cloud-7836805e.json",
-      "reason": "Official harperdb.io homepage redirects to harper.fast, now Harper application/data runtime and Fabric. Current pricing on harper.fast and actual installation documentation on docs.harperdb.io were read. The current home/pricing and essential docs cross registered domains, which the same-domain source rule cannot encode without changing shared authority/schema. No false URLs or validator edits. The installation docs distinguish harper from Elastic2.0 pro/Fabric, and development samples/default credentials are not production acceptance. Current complete profile remains pending authority support."
     },
     {
       "project_path": "projects/software-testing/kaneai-9a395c49.json",
@@ -810,14 +795,6 @@
       "reason": "Official homepage, pricing and documentation routes returned 502 or timed out; each ordinary failing entry was retried once without success. A separate official iOS product page also returned 502. Search snippets were used only to discover pages, not as read original feature, fee, license or closure evidence. Current deep operating and pricing profile remains incomplete; no account, device, application upload or test was operated."
     },
     {
-      "project_path": "projects/software-testing/perfecto-8aeabe24.json",
-      "reason": "Official perfecto.io home and pricing routes explicitly redirect to perforce.com product and quote pages, while current overview/release/operating documentation remains on help.perfecto.io. Those originals were read, but the shared same-registered-domain source rule cannot represent the current authority chain without false URLs or a shared schema change. The record remains incomplete; no domain rewrite or validator edit was performed."
-    },
-    {
-      "project_path": "projects/software-testing/testim-5d3d2647.json",
-      "reason": "Current help.testim.io explicitly redirects to docs.tricentis.com/testim while home/pricing remain on testim.io. Pricing and the actual cross-domain run guide were read; the shared same-domain official-source model cannot encode this authority chain. No false legacy doc URLs or shared validator changes were used; the record remains incomplete."
-    },
-    {
       "project_path": "projects/software-testing/zaptest-4360971f.json",
       "reason": "The official zaptest.com homepage explicitly redirects to zaptest.ai, now a Human-AI orchestration/ZADS corporate presentation. The old-domain pricing page was actually read and describes three/six-month POC programs embedded in a twelve-month paid subscription, explicitly not a free trial. Official /docs/ returned403; no retry or bypass. The current deep technical/fee/identity chain cannot be completed from marketing and cross-domain presentation alone. No old Free-edition claim, unlimited capability or current live test result is adopted."
     },
@@ -827,27 +804,23 @@
     },
     {
       "project_path": "projects/no-code/appenate-1052b9a0.json",
-      "reason": "Official pricing was read: annual USD rates are $20/$28/$36 per user/month with a five-user minimum; monthly rates differ. The official Help Hub migration notice points to help.appenate.com, which requires sign-in. Deep current documentation for offline synchronization conflicts, permissions, export and recovery was not accessible. Marketing and pricing alone do not establish a completed operating profile."
+      "reason": "Official features, pricing and DPA were read. Detailed operating evidence for permissions, synchronization conflicts, export and recovery remains insufficient."
     },
     {
       "project_path": "projects/no-code/checkbox-930acc8a.json",
-      "reason": "Official Checkbox.ai homepage now describes an AI legal front door. Its pricing route was inaccessible and no readable deep operational documentation was established by official-domain discovery. Checkbox.com survey pricing is a different product and was excluded. Current fees, workflow permissions, export/recovery and technical limits remain unverified; incomplete, not counted complete."
+      "reason": "The current official MSA was read. It assigns fees to an Order or SOW; it does not disclose the applicable customer price or establish detailed product behavior."
     },
     {
       "project_path": "projects/no-code/obviously-ai-6c7ff423.json",
-      "reason": "Obviously AI official homepage and pricing were read. Pricing lists a bounded Free offer but has ambiguous training-row versus processing-row limits; icons do not establish every included capability. Both linked help and API documentation were inaccessible, including one normal retry, and official-domain searches produced no readable operational articles. Model evaluation, target leakage, deployment/authentication, monitoring and recovery remain unverified. Not counted complete."
+      "reason": "An official API article dated May 14, 2020 was read; current API contract and operating behavior remain unverified."
     },
     {
       "project_path": "projects/no-code/skuid-27f544e2.json",
-      "reason": "The legacy Skuid homepage redirects to a Nintex app-development URL that is inaccessible through the public reader; legacy pricing is also inaccessible. Acquisition discovery is not a current product/plan migration contract. Current identity, deep operating documentation, fees and license remain unresolved. No Nintex family entitlement or duplicate identity was inferred; not counted complete."
+      "reason": "Official Nintex Apps release notes were read. Mapping the legacy Skuid deployment and contract to current operating documentation remains unresolved."
     },
     {
       "project_path": "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
       "reason": "The assigned IntelliMagic SAN product page is inaccessible and the old root timed out including one normal retry. IBM migration/support material appeared in discovery, but the original migration notice remained inaccessible after a normal retry. Current SAN-specific product identity, complete technical authority, license and fees were not established; search snippets are not adopted facts. Not counted complete."
-    },
-    {
-      "project_path": "projects/monitoring/livenx-0f555bbe.json",
-      "reason": "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete."
     },
     {
       "project_path": "projects/monitoring/panopta-5788d04c.json",
@@ -855,7 +828,7 @@
     },
     {
       "project_path": "projects/monitoring/sinefa-16ac53d6.json",
-      "reason": "The legacy Sinefa homepage was inaccessible. An actual Palo Alto Networks end-of-sale notice states all Sinefa products reached end of sale on24 November2020; assistance ended by31 December2021 or the applicable license end, whichever came first. No current independently purchasable Sinefa offer, supported technical workflow or license was established. A later Palo Alto product is not silently substituted. This historical candidate remains incomplete."
+      "reason": "The official notice states November 24, 2020 end of sale for all Sinefa products, with technical assistance until December 31, 2021 or license expiry, whichever came first. Current operation and data recovery were not verified."
     }
   ],
   "availability_updates": [
@@ -888,7 +861,7 @@
       "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/Data_Integration_Overview",
       "excerpt_sha256": "837bb0c60f1474c5b9c5460b602ec2c5d557636e27ee3a7eb716502afd79d35c",
       "read_at": "2026-10-22T10:50:03.122153+00:00",
-      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "rivery-start-current",
@@ -896,7 +869,7 @@
       "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/GettingStarted/start-here",
       "excerpt_sha256": "765c00f2460482e8a3c11711c36d007505fce6ced96bcb2a0713d945f3c4a54a",
       "read_at": "2026-10-22T10:51:56.335056+00:00",
-      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "rivery-logic-current",
@@ -904,7 +877,7 @@
       "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/DataFlows/LogicFlow/LogicFlowOverview/logic-overview",
       "excerpt_sha256": "926b78ec695135752216486f1255c9ec1ec164ec166d68749103fbe2aa60cdb9",
       "read_at": "2026-10-22T10:51:59.798476+00:00",
-      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "panoply-home",
@@ -935,28 +908,28 @@
       "actual_url": "https://nevatech.com/docs/Sentinet/6.7/articles/User-Guide/Sentinet-Overview.html",
       "excerpt_sha256": "7dd92147988f871470fa5d6ed96b8f066a76575ee4622aa73a4d4286b02295f4",
       "read_at": "2026-10-22T11:19:58.845681+00:00",
-      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "sentinet-requirements",
       "actual_url": "https://nevatech.com/docs/Sentinet/6.7/articles/Installation-Guide/System-Requirements.html",
       "excerpt_sha256": "61a7cce4447be7fc73c565df1c8f2f3834c11f4a254bc0cd4795a7e1a55a0168",
       "read_at": "2026-10-22T11:20:02.060896+00:00",
-      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "sentinet-licenseinfo",
       "actual_url": "https://nevatech.com/docs/Sentinet/6.7/api/Nevatech.Vsb.Repository.Security.Licensing.LicenseInfo.html",
       "excerpt_sha256": "b62abc1c20094c941d03727f7945fb715ef3825f9d3ce78eb456c5b2e32cbe1e",
       "read_at": "2026-10-22T11:20:09.560338+00:00",
-      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "sentinet-trial",
       "actual_url": "https://nevatech.com/download",
       "excerpt_sha256": "ab8596eda7ac5b74153628efbaca030b0ca458efe89425f6de0cde0d8599c921",
       "read_at": "2026-10-22T11:18:59.435363+00:00",
-      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+      "use": "Read official evidence retained in history. Current completion and unknown-price state are recorded in the project and this follow-up checkpoint."
     },
     {
       "capture": "five-docs",
@@ -1377,14 +1350,100 @@
       "excerpt_sha256": "3169bdacd780b8ac2f2a38e52e2f9b213b6257c1e2d30662b23274161fb1693d",
       "read_at": "2026-10-22T15:38:57.306943+00:00",
       "use": "Workspace Studio normal request and one retry timed out; search excerpts not adopted."
+    },
+    {
+      "capture": "gap2-restcase-blog-0",
+      "actual_url": "https://blog.restcase.com/documentation-driven-api-design/",
+      "title": "Documentation Driven API Design (https://blog.restcase.com/documentation-driven-api-design/)",
+      "excerpt_sha256": "da2fbd77b683b6e6ba96a329964c596f53a01b942af56838c394e87854f2d6df",
+      "read_at": "2026-10-22T16:03:02.369865+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "gap2-dexi-official-original-0",
+      "actual_url": "https://help.mozenda.com/dexi/docs/what-is-dexiio-1",
+      "title": "What is dexi.io? (https://help.mozenda.com/dexi/docs/what-is-dexiio-1)",
+      "excerpt_sha256": "f133e4185c7318d20df7509423e80c499947279fbe8e2f80b68769587d554078",
+      "read_at": "2026-10-22T16:30:53.013420+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "codeanywhere-home",
+      "actual_url": "https://codeanywhere.com/blog/codeanywhere-is-sunsetting",
+      "title": "Codeanywhere is sunsetting (https://codeanywhere.com/)",
+      "excerpt_sha256": "233ce8252a4d94b56c2e33a340d6d2032639c01f94b20fd0f01b34532d729ebd",
+      "read_at": "2026-10-22T12:31:14.443451+00:00",
+      "use": "Official lifecycle notice only; no live account, shutdown or data recovery test."
+    },
+    {
+      "capture": "sinefa-eos-body-0",
+      "actual_url": "https://origin-www.paloaltonetworks.com/services/support/end-of-life-announcements/end-of-sale",
+      "title": "End-of-Sale Announcement - Palo Alto Networks (https://origin-www.paloaltonetworks.com/services/support/end-of-life-announcements/end-of-sale)",
+      "excerpt_sha256": "ed22787720126ee4d3ae8e8fb9a96c34efe4f2f331f2d797133e43b7087f9f7b",
+      "read_at": "2026-10-22T15:35:13.822368+00:00",
+      "use": "Official lifecycle notice only; no live account, shutdown or data recovery test."
+    },
+    {
+      "capture": "gap2-appenate-dpa-0",
+      "actual_url": "https://www.appenate.com/dpa/",
+      "title": "Appenate Data Processing Addendum - Appenate (https://www.appenate.com/dpa/)",
+      "excerpt_sha256": "2bfb1184241001767e58291746efde00f1a6b693745a43b30988b7889bd65671",
+      "read_at": "2026-10-22T16:00:16.203490+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "gap2-checkbox-contract-0",
+      "actual_url": "https://www.checkbox.ai/legal/master-services-agreement",
+      "title": "Checkbox Master Services Agreement (https://checkbox.ai/legal/master-services-agreement)",
+      "excerpt_sha256": "534927a8c6c4dbec927567edb05bfc055676062409576f97df6d27d62644ac92",
+      "read_at": "2026-10-22T16:00:17.501849+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "gap2-obviously-api-blog-0",
+      "actual_url": "https://obviously.ai/post/add-machine-learning-to-your-app-with-our-low-code-api",
+      "title": "Add Machine Learning to Your App With Our Low-Code API | Obviously AI Blog (https://obviously.ai/post/add-machine-learning-to-your-app-with-our-low-code-api)",
+      "excerpt_sha256": "f03482a0534c8c9f44872d4f0b31cea5e97555f2bbdad32d7d9f1215ba715493",
+      "read_at": "2026-10-22T16:00:18.077002+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "gap2-skuid-release-original-0",
+      "actual_url": "https://help.nintex.com/en-US/platform/ReleaseNotes/SkuidNLX.htm",
+      "title": "Nintex Apps release notes (https://help.nintex.com/en-US/platform/ReleaseNotes/SkuidNLX.htm)",
+      "excerpt_sha256": "6624f55bce86429c2b37e425e7b25a2cfd29ec52670ff1754cfe1ade7efb9807",
+      "read_at": "2026-10-22T16:30:53.695117+00:00",
+      "use": "Partial official evidence only; does not complete this product profile."
+    },
+    {
+      "capture": "gap2-appenate-features-0",
+      "actual_url": "https://www.appenate.com/features/",
+      "title": "Features - Appenate (https://www.appenate.com/features/)",
+      "excerpt_sha256": "87da9e59c9b765aec95d5e93b2f2f1a01db85aa1c8237c0cc85fb8d2b3660f71",
+      "read_at": "2026-10-22T16:00:46.993526+00:00",
+      "use": "Partial official feature evidence only; conflict, permission and recovery semantics remain unverified."
+    },
+    {
+      "capture": "gap2-3pillar-service-original-0",
+      "actual_url": "https://www.3pillarglobal.com/industries/financial-services/",
+      "title": "Internal Error ()",
+      "excerpt_sha256": "6d072d167a4a5e7f5e5d7052a0543441af14b75a5f452100d31d39fbc91ee32d",
+      "read_at": "2026-10-22T16:36:09.895890+00:00",
+      "use": "HTTP 403 access failure only; no body adopted and no retry or bypass."
+    },
+    {
+      "capture": "gap2-pcloudy-farm-original-0",
+      "actual_url": "https://www.pcloudy.com/online-device-farm/",
+      "title": "Internal Error ()",
+      "excerpt_sha256": "2a22dfddfb474b4e8578ef1c03233923ede3e040ad3e4d903cd5fab6ecfce922",
+      "read_at": "2026-10-22T16:30:52.299549+00:00",
+      "use": "HTTP 502 access failure only; no body adopted and no further retry."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 31,
+  "retained_remaining_count": 23,
   "retained_remaining_paths": [
-    "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
-    "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/application-development/3pillar-global-f439406e.json",
     "projects/application-development/clustered-cloud-06d4f73a.json",
@@ -1392,14 +1451,10 @@
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/foghub-ed0b9582.json",
     "projects/data-integration/panoply-452887ff.json",
-    "projects/data-integration/rivery-2d3c66b2.json",
     "projects/databases/faunadb-10fce5b0.json",
-    "projects/databases/harperdb-cloud-7836805e.json",
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
-    "projects/ide/eclipse-che-06fa6676.json",
     "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
-    "projects/monitoring/livenx-0f555bbe.json",
     "projects/monitoring/panopta-5788d04c.json",
     "projects/monitoring/sinefa-16ac53d6.json",
     "projects/no-code/app2-dev-e78be706.json",
@@ -1410,8 +1465,6 @@
     "projects/software-testing/kaneai-9a395c49.json",
     "projects/software-testing/opkey-1686a4e2.json",
     "projects/software-testing/pcloudy-6e6266d2.json",
-    "projects/software-testing/perfecto-8aeabe24.json",
-    "projects/software-testing/testim-5d3d2647.json",
     "projects/software-testing/zaptest-4360971f.json"
   ],
   "transferred_count": 59,
@@ -1532,19 +1585,25 @@
       "projects/software-testing/zaptest-4360971f.json"
     ],
     "document_research_completed": [
+      "projects/api-management/apigee-edge-d4c9d902.json",
       "projects/api-management/dreamfactory-6a420d79.json",
+      "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
       "projects/application-development/five-94ffc3fa.json",
+      "projects/data-integration/rivery-2d3c66b2.json",
+      "projects/databases/harperdb-cloud-7836805e.json",
+      "projects/ide/eclipse-che-06fa6676.json",
+      "projects/monitoring/livenx-0f555bbe.json",
       "projects/software-testing/browserstack-1cef6efc.json",
-      "projects/software-testing/rainforest-qa-369dc230.json"
+      "projects/software-testing/perfecto-8aeabe24.json",
+      "projects/software-testing/rainforest-qa-369dc230.json",
+      "projects/software-testing/testim-5d3d2647.json"
     ],
     "lifecycle_corrections": [
       "projects/ide/codeanywhere-7879974b.json",
       "projects/monitoring/sinefa-16ac53d6.json"
     ],
     "pending_community_input": [
-      "projects/api-management/apigee-edge-d4c9d902.json",
       "projects/api-management/blobr-e9fe1f36.json",
-      "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
       "projects/api-management/restcase-40145ac2.json",
       "projects/application-development/3pillar-global-f439406e.json",
       "projects/application-development/clustered-cloud-06d4f73a.json",
@@ -1552,14 +1611,10 @@
       "projects/data-integration/dexi-io-da3a3a46.json",
       "projects/data-integration/foghub-ed0b9582.json",
       "projects/data-integration/panoply-452887ff.json",
-      "projects/data-integration/rivery-2d3c66b2.json",
       "projects/databases/faunadb-10fce5b0.json",
-      "projects/databases/harperdb-cloud-7836805e.json",
       "projects/ide/codeanywhere-7879974b.json",
       "projects/ide/codesandbox-90aac520.json",
-      "projects/ide/eclipse-che-06fa6676.json",
       "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
-      "projects/monitoring/livenx-0f555bbe.json",
       "projects/monitoring/panopta-5788d04c.json",
       "projects/monitoring/sinefa-16ac53d6.json",
       "projects/no-code/app2-dev-e78be706.json",
@@ -1570,43 +1625,432 @@
       "projects/software-testing/kaneai-9a395c49.json",
       "projects/software-testing/opkey-1686a4e2.json",
       "projects/software-testing/pcloudy-6e6266d2.json",
-      "projects/software-testing/perfecto-8aeabe24.json",
-      "projects/software-testing/testim-5d3d2647.json",
       "projects/software-testing/zaptest-4360971f.json"
     ],
-    "unprocessed": [
+    "unprocessed": [],
+    "scope": "Retained batch-01 paths only. No transferred work, main, PR, runtime or deployment.",
+    "unknown_price_document_research": [
       "projects/api-management/apigee-edge-d4c9d902.json",
-      "projects/api-management/blobr-e9fe1f36.json",
       "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
-      "projects/api-management/restcase-40145ac2.json",
-      "projects/application-development/3pillar-global-f439406e.json",
-      "projects/application-development/clustered-cloud-06d4f73a.json",
-      "projects/data-integration/ainsys-7195d835.json",
-      "projects/data-integration/dexi-io-da3a3a46.json",
-      "projects/data-integration/foghub-ed0b9582.json",
-      "projects/data-integration/panoply-452887ff.json",
-      "projects/data-integration/rivery-2d3c66b2.json",
-      "projects/databases/faunadb-10fce5b0.json",
-      "projects/databases/harperdb-cloud-7836805e.json",
-      "projects/ide/codeanywhere-7879974b.json",
-      "projects/ide/codesandbox-90aac520.json",
       "projects/ide/eclipse-che-06fa6676.json",
-      "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
       "projects/monitoring/livenx-0f555bbe.json",
-      "projects/monitoring/panopta-5788d04c.json",
-      "projects/monitoring/sinefa-16ac53d6.json",
-      "projects/no-code/app2-dev-e78be706.json",
-      "projects/no-code/appenate-1052b9a0.json",
-      "projects/no-code/checkbox-930acc8a.json",
-      "projects/no-code/obviously-ai-6c7ff423.json",
-      "projects/no-code/skuid-27f544e2.json",
-      "projects/software-testing/kaneai-9a395c49.json",
-      "projects/software-testing/opkey-1686a4e2.json",
-      "projects/software-testing/pcloudy-6e6266d2.json",
       "projects/software-testing/perfecto-8aeabe24.json",
-      "projects/software-testing/testim-5d3d2647.json",
-      "projects/software-testing/zaptest-4360971f.json"
+      "projects/software-testing/testim-5d3d2647.json"
     ],
-    "scope": "Retained batch-01 paths only. No transferred work, main, PR, runtime or deployment."
+    "finished_at": "2026-10-22T16:39:51.132702+00:00",
+    "followup_outcomes": [
+      {
+        "project_path": "projects/api-management/apigee-edge-d4c9d902.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/api-management/apigee-edge-d4c9d902.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/api-management/blobr-e9fe1f36.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/api-management/blobr-e9fe1f36.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/api-management/dreamfactory-6a420d79.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/api-management/dreamfactory-6a420d79.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/api-management/restcase-40145ac2.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/api-management/restcase-40145ac2.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/application-development/3pillar-global-f439406e.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/application-development/3pillar-global-f439406e.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/application-development/clustered-cloud-06d4f73a.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/application-development/clustered-cloud-06d4f73a.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/application-development/five-94ffc3fa.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/application-development/five-94ffc3fa.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/data-integration/ainsys-7195d835.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/data-integration/ainsys-7195d835.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/data-integration/dexi-io-da3a3a46.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/data-integration/dexi-io-da3a3a46.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/data-integration/foghub-ed0b9582.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/data-integration/foghub-ed0b9582.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/data-integration/panoply-452887ff.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/data-integration/panoply-452887ff.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/data-integration/rivery-2d3c66b2.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/data-integration/rivery-2d3c66b2.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/databases/faunadb-10fce5b0.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/databases/faunadb-10fce5b0.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/databases/harperdb-cloud-7836805e.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/databases/harperdb-cloud-7836805e.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/ide/codeanywhere-7879974b.json",
+        "outcome": "lifecycle_only_needs_community_input",
+        "evidence_location": "projects/ide/codeanywhere-7879974b.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/ide/codesandbox-90aac520.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/ide/codesandbox-90aac520.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/ide/eclipse-che-06fa6676.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/ide/eclipse-che-06fa6676.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/monitoring/intellimagic-vision-for-san-881b9d43.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/monitoring/intellimagic-vision-for-san-881b9d43.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/monitoring/livenx-0f555bbe.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/monitoring/livenx-0f555bbe.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/monitoring/panopta-5788d04c.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/monitoring/panopta-5788d04c.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/monitoring/sinefa-16ac53d6.json",
+        "outcome": "lifecycle_only_needs_community_input",
+        "evidence_location": "projects/monitoring/sinefa-16ac53d6.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/no-code/app2-dev-e78be706.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/no-code/app2-dev-e78be706.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/no-code/appenate-1052b9a0.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/no-code/appenate-1052b9a0.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/no-code/checkbox-930acc8a.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/no-code/checkbox-930acc8a.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/no-code/obviously-ai-6c7ff423.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/no-code/obviously-ai-6c7ff423.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/no-code/skuid-27f544e2.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/no-code/skuid-27f544e2.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/browserstack-1cef6efc.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/software-testing/browserstack-1cef6efc.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/kaneai-9a395c49.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/software-testing/kaneai-9a395c49.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/opkey-1686a4e2.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/software-testing/opkey-1686a4e2.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/pcloudy-6e6266d2.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/software-testing/pcloudy-6e6266d2.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/perfecto-8aeabe24.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/software-testing/perfecto-8aeabe24.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/rainforest-qa-369dc230.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/software-testing/rainforest-qa-369dc230.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/testim-5d3d2647.json",
+        "outcome": "documentation_complete",
+        "evidence_location": "projects/software-testing/testim-5d3d2647.json",
+        "limitation": "Draft only; no publication or real product testing."
+      },
+      {
+        "project_path": "projects/software-testing/zaptest-4360971f.json",
+        "outcome": "needs_community_input",
+        "evidence_location": "projects/software-testing/zaptest-4360971f.json#community_follow_up",
+        "limitation": "Draft only; no publication or real product testing."
+      }
+    ],
+    "validation_contract": {
+      "scope": "Unchanged coordinator validator snapshot; candidate cross-domain authority registry included only in ignored fixture. Shared registry remains untouched.",
+      "script_sha256": {
+        "validate.mjs": "2e84e77c9d8cacd1bad265ccbee82f292f7a5c4391dbb99c5d1863decf83a15d",
+        "record-validation.mjs": "4b2a1c938db22e9a255f1c80598265d7242c56a9db89e8bb085e473f32a2d59e"
+      },
+      "authority_candidate_count": 5
+    },
+    "verification_results": {
+      "records_only": "passed:1000records;120globally researched including117batch;23community;2lifecycle-only;0untranslated feature labels",
+      "contract": "Frozen unchanged coordinator scripts with5candidate authority entries; summary validation deferred to coordinator",
+      "limits": "Structure and references only; no factual approval, product execution, publication or deployment."
+    }
+  },
+  "source_authority_candidates": {
+    "schema_version": "123charts-source-authorities-v1",
+    "scope": "Exact original snapshots for coordinator-owned registry integration; no shared authority file edited.",
+    "projects": {
+      "projects/api-management/apigee-edge-d4c9d902.json": {
+        "identity_domain": "google.com",
+        "source_domain": "apigee.com",
+        "checked_at": "2026-10-22T16:33:29.284367+00:00",
+        "scope_en": "Exact Apigee Edge documentation, explicitly named Edge and identifying Google affiliation. Not current Apigee X/hybrid pricing or migration rights.",
+        "scope_zh": "限定明确命名 Edge 并说明 Google 关系的文档，不包含当前 X／hybrid 价格或迁移权益。",
+        "basis": {
+          "kind": "named_product_on_vendor_domain",
+          "source_ref": "home",
+          "url": "https://docs.apigee.com/api-platform/get-started/what-apigee-edge",
+          "excerpt_sha256": "bca613f746ada74f0c716255feed8f84a65401565ed83cb1a866c758fc1aa3b7",
+          "summary_en": "Exact Apigee Edge documentation, explicitly named Edge and identifying Google affiliation. Not current Apigee X/hybrid pricing or migration rights.",
+          "summary_zh": "限定明确命名 Edge 并说明 Google 关系的文档，不包含当前 X／hybrid 价格或迁移权益。"
+        },
+        "sources": [
+          {
+            "id": "home",
+            "url": "https://docs.apigee.com/api-platform/get-started/what-apigee-edge",
+            "excerpt_sha256": "bca613f746ada74f0c716255feed8f84a65401565ed83cb1a866c758fc1aa3b7"
+          },
+          {
+            "id": "proxy",
+            "url": "https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies",
+            "excerpt_sha256": "b85a985966fe91d570db461759f48d6448177d1f5f89fe9b5c76a389b0ba4ae0"
+          },
+          {
+            "id": "deployment",
+            "url": "https://docs.apigee.com/api-platform/deploy/deploy-api-proxies-using-management-api",
+            "excerpt_sha256": "2cdd0ce92c4e46ae85bb28a1450c16beee20f70b55cb45b293ae7b4fc72a884e"
+          }
+        ]
+      },
+      "projects/data-integration/rivery-2d3c66b2.json": {
+        "identity_domain": "rivery.io",
+        "source_domain": "boomi.com",
+        "checked_at": "2026-10-22T16:33:29.284874+00:00",
+        "scope_en": "The legacy documentation root redirects to Boomi Data Integration; the current guides name the Rivery console. Exact documentation scope only, not all Boomi entitlements.",
+        "scope_zh": "旧文档根跳到 Boomi Data Integration，当前指南引用 Rivery 控制台；仅精确文档范围，不授予全部 Boomi 权益。",
+        "basis": {
+          "kind": "https_redirect",
+          "source_ref": "documentation-location",
+          "url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/Data_Integration_Overview",
+          "excerpt_sha256": "837bb0c60f1474c5b9c5460b602ec2c5d557636e27ee3a7eb716502afd79d35c",
+          "summary_en": "The legacy documentation root redirects to Boomi Data Integration; the current guides name the Rivery console. Exact documentation scope only, not all Boomi entitlements.",
+          "summary_zh": "旧文档根跳到 Boomi Data Integration，当前指南引用 Rivery 控制台；仅精确文档范围，不授予全部 Boomi 权益。",
+          "requested_url": "https://docs.rivery.io/",
+          "final_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/Data_Integration_Overview"
+        },
+        "sources": [
+          {
+            "id": "documentation-location",
+            "url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/Data_Integration_Overview",
+            "excerpt_sha256": "837bb0c60f1474c5b9c5460b602ec2c5d557636e27ee3a7eb716502afd79d35c"
+          },
+          {
+            "id": "start",
+            "url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/GettingStarted/start-here",
+            "excerpt_sha256": "765c00f2460482e8a3c11711c36d007505fce6ced96bcb2a0713d945f3c4a54a"
+          },
+          {
+            "id": "logic",
+            "url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/DataFlows/LogicFlow/LogicFlowOverview/logic-overview",
+            "excerpt_sha256": "926b78ec695135752216486f1255c9ec1ec164ec166d68749103fbe2aa60cdb9"
+          },
+          {
+            "id": "environments",
+            "url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/GettingStarted/MonitoryourIntegrations/environments-deployments",
+            "excerpt_sha256": "81a5b61b4416a1eecfe65041956fd5753fb63cef4146b278f79bd133de23319f"
+          }
+        ]
+      },
+      "projects/software-testing/perfecto-8aeabe24.json": {
+        "identity_domain": "perfecto.io",
+        "source_domain": "perforce.com",
+        "checked_at": "2026-10-22T16:33:29.285080+00:00",
+        "scope_en": "The legacy product homepage redirects to the specifically named Perforce Perfecto product. Other Perforce products are excluded.",
+        "scope_zh": "旧首页跳到 Perforce 明确命名 Perfecto 的产品页，排除其他 Perforce 产品。",
+        "basis": {
+          "kind": "https_redirect",
+          "source_ref": "product-location",
+          "url": "https://www.perforce.com/products/perfecto",
+          "excerpt_sha256": "233ce6bf13c33da6bf3ea9bd3d98b94e453ddf3c5e0a2b5866eac3f5de8d94c3",
+          "summary_en": "The legacy product homepage redirects to the specifically named Perforce Perfecto product. Other Perforce products are excluded.",
+          "summary_zh": "旧首页跳到 Perforce 明确命名 Perfecto 的产品页，排除其他 Perforce 产品。",
+          "requested_url": "https://www.perfecto.io/",
+          "final_url": "https://www.perforce.com/products/perfecto"
+        },
+        "sources": [
+          {
+            "id": "product-location",
+            "url": "https://www.perforce.com/products/perfecto",
+            "excerpt_sha256": "233ce6bf13c33da6bf3ea9bd3d98b94e453ddf3c5e0a2b5866eac3f5de8d94c3"
+          }
+        ]
+      },
+      "projects/software-testing/testim-5d3d2647.json": {
+        "identity_domain": "testim.io",
+        "source_domain": "tricentis.com",
+        "checked_at": "2026-10-22T16:33:29.285290+00:00",
+        "scope_en": "The legacy help root redirects into the named Tricentis Testim documentation. This does not establish a universal current free plan or all Tricentis product rights.",
+        "scope_zh": "旧帮助根跳到 Tricentis 的 Testim 文档，不证明统一当前免费方案或全部 Tricentis 产品权益。",
+        "basis": {
+          "kind": "https_redirect",
+          "source_ref": "documentation-location",
+          "url": "https://docs.tricentis.com/testim/content/home.htm",
+          "excerpt_sha256": "d95d63ea284abba6632a69df741f545ba5392f77990c68a8af0035b5312ca6ce",
+          "summary_en": "The legacy help root redirects into the named Tricentis Testim documentation. This does not establish a universal current free plan or all Tricentis product rights.",
+          "summary_zh": "旧帮助根跳到 Tricentis 的 Testim 文档，不证明统一当前免费方案或全部 Tricentis 产品权益。",
+          "requested_url": "https://help.testim.io/",
+          "final_url": "https://docs.tricentis.com/testim/content/home.htm"
+        },
+        "sources": [
+          {
+            "id": "documentation-location",
+            "url": "https://docs.tricentis.com/testim/content/home.htm",
+            "excerpt_sha256": "d95d63ea284abba6632a69df741f545ba5392f77990c68a8af0035b5312ca6ce"
+          },
+          {
+            "id": "execution",
+            "url": "https://docs.tricentis.com/testim/content/running-tests/running-tests-overview.htm",
+            "excerpt_sha256": "5ada0666e4c2d18bcf9ab18f108eac9be38a2573f352511d3602437461ca7bd6"
+          },
+          {
+            "id": "plans",
+            "url": "https://docs.tricentis.com/testim/content/administration/subscription-plans/index.htm",
+            "excerpt_sha256": "14e771b45f4c92cf904f9dbe0c320c71ad8e32ddc6a8123bdd5ed93ac9a24d1b"
+          },
+          {
+            "id": "account",
+            "url": "https://docs.tricentis.com/testim/content/getting-started/setting-up-your-account.htm",
+            "excerpt_sha256": "23361de2b7168deb559ba5cc76b9c7f4d0c1406d279b782ea7fd8fc5e46f2c11"
+          }
+        ]
+      },
+      "projects/monitoring/livenx-0f555bbe.json": {
+        "identity_domain": "liveaction.com",
+        "source_domain": "bluecatnetworks.com",
+        "checked_at": "2026-10-22T16:33:29.285629+00:00",
+        "scope_en": "The legacy documentation root redirects to a portal explicitly listing LiveNX; adopted operating pages are LiveNX25.3.0. No acquisition timing or LiveAssurance entitlement inferred.",
+        "scope_zh": "旧文档根跳到明确列 LiveNX 的门户，采用操作页限 25.3.0；不推断收购时间或 LiveAssurance 权益。",
+        "basis": {
+          "kind": "https_redirect",
+          "source_ref": "documentation-location",
+          "url": "https://docs.bluecatnetworks.com/",
+          "excerpt_sha256": "6b6165c68cf66aee36ee3c97d5a2d34ee8f245316fef3b5e79113801437cb112",
+          "summary_en": "The legacy documentation root redirects to a portal explicitly listing LiveNX; adopted operating pages are LiveNX25.3.0. No acquisition timing or LiveAssurance entitlement inferred.",
+          "summary_zh": "旧文档根跳到明确列 LiveNX 的门户，采用操作页限 25.3.0；不推断收购时间或 LiveAssurance 权益。",
+          "requested_url": "https://docs.liveaction.com/",
+          "final_url": "https://docs.bluecatnetworks.com/"
+        },
+        "sources": [
+          {
+            "id": "documentation-location",
+            "url": "https://docs.bluecatnetworks.com/",
+            "excerpt_sha256": "6b6165c68cf66aee36ee3c97d5a2d34ee8f245316fef3b5e79113801437cb112"
+          },
+          {
+            "id": "architecture",
+            "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Deployment-architecture/25.3.0?contentId=phKv8wIO4AIecs~YB7JlnQ",
+            "excerpt_sha256": "d9a181a06d689a427f9c9cc82439a19b22b128eeeb3a6b5f24eac147d0560226"
+          },
+          {
+            "id": "license-access",
+            "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Get-LiveNX-license/25.3.0?contentId=LIsfKcmvzEcr4T8E8wlmcQ",
+            "excerpt_sha256": "cef26e9baafefa8f49d044637369ab4b2fd057c0c55bf41d71d79dc1b3ec2429"
+          },
+          {
+            "id": "discovery",
+            "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Adding-devices-to-LiveNX/25.3.0?contentId=a~zGIULc8J9DsJhjwwc80w",
+            "excerpt_sha256": "0bcde85f2beddbaf778a9be3156067580c5a549bdfa3364a6e2a3e37dd9ac97b"
+          },
+          {
+            "id": "snmp",
+            "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Get-SNMP-community-and-credentials/25.3.0?contentId=HkE~s4~Vx3RSzYuuPx9xnQ",
+            "excerpt_sha256": "6797e1bf7e1451cac680574b8ffe01447b0e1542645a9587a2eb7a584632c689"
+          },
+          {
+            "id": "reports",
+            "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/What-applications-are-running-in-my-environment/25.3.0?contentId=bc8uodKLJqV3AaBuU~h2Sw",
+            "excerpt_sha256": "1fbcf915d7aba793dae8f40789d557adcc9ee3bb362c408eb35662ecd53af6ba"
+          }
+        ]
+      }
+    }
   }
 }

@@ -10,171 +10,100 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Nevatech Sentinet is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.\n\nAdditional listed capabilities include Testing Management, Access Control. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large) Freelancers Individuals. API support is listed as Available. Support channels are listed as Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: define interface structure and request-response contracts; bring selected indicators and records into one view; track changes to files and support revision workflows; organize test cases, execution and results; restrict information and actions according to permissions. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Nevatech Sentinet 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。\n\n资料还列出测试管理、访问控制。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织 自由职业者 个人用户。API 支持情况为提供。资料所列支持方式为在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：定义接口结构和请求响应约定；在同一视图中汇集选定指标和记录；跟踪文件变更并支持版本修订流程；组织测试用例、执行过程与结果；根据权限限制信息访问和操作。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Nevatech Sentinet manages REST APIs and SOAP services through virtual facades hosted on gateway nodes. Administrators register APIs in a central catalog, design the consumer-facing facade and distribute configuration to nodes. Consumers call that facade while the gateway routes to the actual business API and reports usage back to the catalog.\n\nThe reviewed 6.7 documentation separates runtime nodes, the management application, repository storage and an optional developer portal. This is deployed API-management infrastructure, not a promise that signing up creates a fully managed public cloud. Price and actual commercial entitlement remain independently unverified.",
+  "description_zh": "Nevatech Sentinet 通过网关节点上的虚拟门面管理 REST API 和 SOAP 服务。管理员在中央目录登记 API，设计面向调用方的门面并分发节点配置；调用方访问门面，网关路由到真实业务 API，再将用量送回目录。\n\n实读 6.7 文档区分运行节点、管理应用、仓库存储及可选开发者门户。这是需部署的 API 管理基础设施，不代表注册即得到完整托管公有云；价格和实际商业权益保持独立未核实。",
   "core_features": [
     {
-      "name_en": "Analytics",
-      "name_zh": "数据分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Virtual API facades",
+      "name_zh": "虚拟 API 门面",
+      "explanation_en": "Gateways host dynamically configured facade endpoints in front of business APIs.",
+      "explanation_zh": "网关在业务 API 前提供动态配置的门面端点。",
+      "explanation_scope": "product_specific",
+      "source_ref": "home",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Traffic Control",
-      "name_zh": "流量控制",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Central repository",
+      "name_zh": "中央仓库",
+      "explanation_en": "The SQL-backed repository stores API assets, configuration and monitoring information.",
+      "explanation_zh": "SQL 仓库存储 API 资产、配置及监控信息。",
+      "explanation_scope": "product_specific",
+      "source_ref": "components",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Threat Protection",
-      "name_zh": "威胁防护",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Developer Portal",
-      "name_zh": "开发者门户",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Lifecycle Management",
-      "name_zh": "API 生命周期管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "API Design",
-      "name_zh": "API 设计",
-      "explanation_en": "Define interface structure and request-response contracts.",
-      "explanation_zh": "定义接口结构和请求响应约定。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Dashboard",
-      "name_zh": "仪表盘",
-      "explanation_en": "Bring selected indicators and records into one view.",
-      "explanation_zh": "在同一视图中汇集选定指标和记录。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Testing Management",
-      "name_zh": "测试管理",
-      "explanation_en": "Organize test cases, execution and results.",
-      "explanation_zh": "组织测试用例、执行过程与结果。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Access Control",
-      "name_zh": "访问控制",
-      "explanation_en": "Restrict information and actions according to permissions.",
-      "explanation_zh": "根据权限限制信息访问和操作。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "License metadata",
+      "name_zh": "许可元数据",
+      "explanation_en": "The API exposes license type, enabled premium features and optional expiration.",
+      "explanation_zh": "API 描述许可类型、启用的高级功能及可选到期时间。",
+      "explanation_scope": "product_specific",
+      "source_ref": "license-info",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Define interface structure and request-response contracts",
-      "Bring selected indicators and records into one view",
-      "Track changes to files and support revision workflows",
-      "Organize test cases, execution and results",
-      "Restrict information and actions according to permissions"
+      "Map a consumer request through a test facade to a harmless backend.",
+      "Plan runtime/management/repository dependencies and verify the purchased license scope separately."
     ],
     "zh": [
-      "定义接口结构和请求响应约定",
-      "在同一视图中汇集选定指标和记录",
-      "跟踪文件变更并支持版本修订流程",
-      "组织测试用例、执行过程与结果",
-      "根据权限限制信息访问和操作"
+      "将调用请求通过测试门面映射至无害后端。",
+      "规划运行／管理／仓库依赖，并另核购买许可范围。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["home", "components", "license-info"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large) Freelancers Individuals",
-      "zh": "小型、中型与大型组织 自由职业者 个人用户",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Online",
-      "zh": "在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large) Freelancers Individuals",
-    "organization_sizes_zh": "小型、中型与大型组织 自由职业者 个人用户",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "API platform administrators",
+      "Microsoft integration engineers"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Review the 6.7 platform matrix and required gateway, repository and portal components.",
+        "zh": "检查 6.7 平台矩阵及所需网关、仓库、门户组件。",
+        "source_refs": ["requirements", "components"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Use a nonproduction API to check routing and denied requests before obtaining the actual commercial scope.",
+        "zh": "以非生产 API 检查路由及拒绝请求，并取得实际商业范围。",
+        "source_refs": ["home", "license-info"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "SQL Express is documented for nonproduction only.",
+        "zh": "SQL Express 文档仅限非生产。",
+        "source_refs": ["requirements"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "Technical license metadata cannot establish a price or a trial grant.",
+        "zh": "技术许可元数据不能证明价格或试用权益。",
+        "source_refs": ["license-info"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -186,37 +115,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
+    "status": "not_verified",
     "price_type": "unknown",
     "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "No readable current price schedule or actual commercial grant was established. Download/contact routes and LicenseInfo metadata are not pricing evidence. Documentation research is complete within the cited6.7 scope; pricing remains not_verified/unknown and no normalized amount is assigned.",
+    "summary_zh": "未确认可读当前价格表或实际商业授权。下载／联系入口与 LicenseInfo 元数据不是定价证据。所引 6.7 范围内的文档研究完成，价格保持 not_verified／unknown，不赋标准化金额。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does Nevatech Sentinet do?",
-      "question_zh": "Nevatech Sentinet 用来做什么？",
-      "answer_en": "Nevatech Sentinet is a product in the API management category. Its directory profile covers Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control.",
-      "answer_zh": "Nevatech Sentinet 属于API 管理软件。第三方资料列出的功能包括数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Analytics, Traffic Control, Threat Protection, Developer Portal, API Lifecycle Management, API Design, Dashboard, Version Control, Testing Management, Access Control",
-      "answer_zh": "数据分析、流量控制、威胁防护、开发者门户、API 生命周期管理、API 设计、仪表盘、版本控制、测试管理、访问控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -226,53 +139,144 @@
       "read_at": "2026-10-22T08:48:20.790Z",
       "excerpt_sha256": "fd51e399c314657347dc4db1d76e88ebd9ace4888029b98fdb2f713865409dd3",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "Nevatech Sentinet",
+      "title": "API Management - How it works",
+      "url": "https://nevatech.com/how-it-works/sentinet",
+      "read_at": "2026-10-22T11:18:56.656865Z",
+      "excerpt_sha256": "50215cf546e67a3132771d65daebf23297001d00cb319c44bbfc432735982deb",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual publication, facade creation, gateway routing and usage reporting sequence."
+    },
+    {
+      "id": "components",
+      "type": "official_documentation",
+      "site": "Nevatech Sentinet",
+      "title": "Sentinet Overview | Sentinet6.7",
+      "url": "https://nevatech.com/docs/Sentinet/6.7/articles/User-Guide/Sentinet-Overview.html",
+      "read_at": "2026-10-22T11:19:58.845681Z",
+      "excerpt_sha256": "7dd92147988f871470fa5d6ed96b8f066a76575ee4622aa73a4d4286b02295f4",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read Sentinet6.7 .NET/IIS nodes, central SQL repository and optional Umbraco developer portal."
+    },
+    {
+      "id": "requirements",
+      "type": "official_documentation",
+      "site": "Nevatech Sentinet",
+      "title": "System Requirements | Sentinet 6.7",
+      "url": "https://nevatech.com/docs/Sentinet/6.7/articles/Installation-Guide/System-Requirements.html",
+      "read_at": "2026-10-22T11:20:02.060896Z",
+      "excerpt_sha256": "61a7cce4447be7fc73c565df1c8f2f3834c11f4a254bc0cd4795a7e1a55a0168",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual6.7 Windows/SQL requirements and Express nonproduction restriction."
+    },
+    {
+      "id": "license-info",
+      "type": "official_documentation",
+      "site": "Nevatech Sentinet",
+      "title": "Class LicenseInfo | Sentinet 6.7",
+      "url": "https://nevatech.com/docs/Sentinet/6.7/api/Nevatech.Vsb.Repository.Security.Licensing.LicenseInfo.html",
+      "read_at": "2026-10-22T11:20:09.560338Z",
+      "excerpt_sha256": "b62abc1c20094c941d03727f7945fb715ef3825f9d3ce78eb456c5b2e32cbe1e",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual6.7 technical license metadata; this is not a commercial quote or license grant."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T11:20:09.560338Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
   ],
   "research_gaps": [
     {
-      "en": "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation.",
-      "zh": "已读官方 Sentinet 6.7 架构及要求：.NET／IIS 网关节点、SQL Server／Azure SQL 仓库、可选 Umbraco 开发者门户及虚拟服务门面。官方下载要求公司邮箱。未找到可读官方计价／费用表及商业授权条款；尝试的购买路径不可访问，LicenseInfo 只描述技术许可类型，不是实际采购权限。完成规则要求真实官方定价来源，因此保持未完成，不将其他来源改标为定价以通过校验。",
+      "en": "Detailed quick-start/subscription routes were inaccessible in this follow-up; no missing body was inferred.",
+      "zh": "本轮详细快速入门／订阅路由无法读取，未推断缺失正文。",
       "source_refs": [],
-      "evidence_type": "official_pricing_authority_gap"
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No installation, catalog write, gateway request, policy, license, backup/restore or purchase was executed. Commercial terms, exact access enforcement, capacity and recovery remain unverified.",
+      "zh": "未执行安装、目录写入、网关请求、策略、许可、备份／恢复或购买。商业条款、实际访问执行、容量及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
     }
   ],
   "content_method": {
     "author": "Codex (AI assistant)",
-    "method": "Official product and architecture research attempted; pricing/license authority remains incomplete and this record is not counted complete.",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
     "independent_review": false,
     "hands_on_test": false
   },
-  "community_follow_up": {
-    "status": "needs_community_input",
-    "reason_en": "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation.",
-    "reason_zh": "已读官方 Sentinet 6.7 架构及要求：.NET／IIS 网关节点、SQL Server／Azure SQL 仓库、可选 Umbraco 开发者门户及虚拟服务门面。官方下载要求公司邮箱。未找到可读官方计价／费用表及商业授权条款；尝试的购买路径不可访问，LicenseInfo 只描述技术许可类型，不是实际采购权限。完成规则要求真实官方定价来源，因此保持未完成，不将其他来源改标为定价以通过校验。",
-    "missing_information_en": [
-      "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation."
-    ],
-    "missing_information_zh": [
-      "已读官方 Sentinet 6.7 架构及要求：.NET／IIS 网关节点、SQL Server／Azure SQL 仓库、可选 Umbraco 开发者门户及虚拟服务门面。官方下载要求公司邮箱。未找到可读官方计价／费用表及商业授权条款；尝试的购买路径不可访问，LicenseInfo 只描述技术许可类型，不是实际采购权限。完成规则要求真实官方定价来源，因此保持未完成，不将其他来源改标为定价以通过校验。"
-    ],
-    "attempted_urls": ["https://nevatech.com/"],
-    "observed_at": "2026-10-22T16:11:18.775669+00:00",
-    "source_refs": []
+  "description_source_refs": ["home", "components"],
+  "profile": {
+    "sections": [
+      {
+        "id": "request-path",
+        "title_en": "Trace the consumer and backend legs separately",
+        "title_zh": "分别跟踪调用方与后端两段",
+        "en": "The documented sequence is catalog publication, facade design, node configuration, consumer request, backend forwarding and usage reporting. A facade can apply routing, security mediation and transformations. Evaluate a harmless backend with one allowed and one rejected request, and distinguish gateway rejection from a backend failure. No request or policy was executed here.",
+        "zh": "文档流程为目录发布、门面设计、节点配置、调用方请求、后端转发及用量上报。门面可施加路由、安全介入与转换。应使用无害后端比较允许和拒绝请求，区分网关拒绝与后端失败；本次未执行请求或策略。",
+        "source_refs": ["home"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "components",
+        "title_en": "Runtime nodes and the portal are different components",
+        "title_zh": "运行节点与门户是不同组件",
+        "en": "Sentinet nodes are .NET proxy applications hosted in IIS. The management application connects to an on-premises/cloud SQL Server or Azure SQL repository. The optional developer portal adds API discovery, subscription requests and key-management experiences through Umbraco. Confirm each required component and its network/storage dependencies; the portal is not a substitute for a runtime gateway.",
+        "zh": "Sentinet 节点是 IIS 中的 .NET 代理应用；管理应用连接本地／云 SQL Server 或 Azure SQL 仓库。可选开发者门户通过 Umbraco 提供 API 发现、订阅请求及 key 管理体验。应逐一确认组件和网络／存储依赖，门户不能替代运行网关。",
+        "source_refs": ["components"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "prerequisites",
+        "title_en": "Use the 6.7 compatibility matrix deliberately",
+        "title_zh": "有意识地使用 6.7 兼容矩阵",
+        "en": "The 6.7 matrix lists Windows clients/servers and SQL Server editions/versions, explicitly limiting SQL Express to nonproduction. It gives2 GB minimum and4 GB recommended memory. These are vendor prerequisites rather than a capacity plan or an endorsement of old operating-system security support. Match the actual supported stack and expected traffic before a production design.",
+        "zh": "6.7 矩阵列 Windows 客户端／服务器及 SQL Server 版本，明确 SQL Express 仅非生产；内存最低 2GB、推荐 4GB。这些是厂商前提，不是容量规划，也不证明旧系统仍受安全支持。生产设计前应核对实际支持栈及流量。",
+        "source_refs": ["requirements"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license-boundary",
+        "title_en": "A license-information object is not a purchase offer",
+        "title_zh": "许可信息对象不等于购买权益",
+        "en": "The 6.7 LicenseInfo API describes evaluation/development/nonproduction/production types, enabled premium features and an expiration property; a missing expiration denotes perpetual licensing in that object. This explains metadata only. It does not establish a particular customer’s grant, a trial duration, pricing, support coverage or the right to deploy another node.",
+        "zh": "6.7 LicenseInfo API 描述评估／开发／非生产／生产类型、高级功能和到期属性，该对象无到期值表示永久许可。这仅解释元数据，不证明具体客户的权益、试用时长、价格、支持范围或增加节点的许可。",
+        "source_refs": ["license-info"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Nevatech Sentinet: workflows, operating limits and cost",
+    "title_zh": "Nevatech Sentinet：流程、运行限制与费用",
+    "description_en": "Nevatech Sentinet manages REST APIs and SOAP services through virtual facades hosted on gateway nodes. Administrators register APIs in a central catalog, design the consu",
+    "description_zh": "Nevatech Sentinet 通过网关节点上的虚拟门面管理 REST API 和 SOAP 服务。管理员在中央目录登记 API，设计面向调用方的门面并分发节点配置；调用方访问",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of Nevatech Sentinet.",
+    "search_intent_zh": "评估 Nevatech Sentinet 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
   }
 }

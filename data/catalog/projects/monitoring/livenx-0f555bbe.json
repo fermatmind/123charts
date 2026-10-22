@@ -10,176 +10,100 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "LiveNX is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, Uptime Monitoring, SLA Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools.\n\nAdditional listed capabilities include Baseline Manager, Bandwidth Monitoring, Resource Management. These areas should be evaluated against the tasks, permissions and data involved in the intended workflow.\n\nDeployment is listed as Browser Based (Cloud) Desktop App (Windows, Mac). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as 24/7 (Live rep), Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Available Offers Custom plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: check whether selected services respond as expected; track selected server status and resource signals; allocate people, time and other project resources. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "LiveNX 属于网络监控软件。第三方资料列出的功能包括网站流量报表、可用性监测、服务水平协议监测、服务器监控、实时分析、IP 地址监测、互联网使用监测、诊断工具。\n\n资料还列出基线管理、带宽监测、资源管理。选择时应结合实际任务、使用权限和数据处理需求逐项评估。\n\n资料所列运行方式为浏览器访问（云服务） 桌面应用 (Windows, Mac)。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为全天候人工支持, 工作时间支持, 在线支持。\n\n第三方定价快照显示：提供免费试用 另有定制方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：检查指定服务是否按预期响应；跟踪服务器状态及资源使用信号；分配人员、时间和其他项目资源。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "LiveNX monitors network devices and analyzes traffic through a server with optional distributed collectors. The reviewed 25.3.0 guide separates deployment architecture, license acquisition, SNMP discovery, interface admission and report queries. The legacy documentation root redirects to a BlueCat portal containing specifically named LiveNX guides.\n\nA license obtained from a cloud portal is not the same as hosted monitoring infrastructure. Likewise, discovering a device and selecting its interfaces do not prove every desired flow source or application classification is present. Validate a small authorized network segment and expected report scope before broad deployment.",
+  "description_zh": "LiveNX 通过服务器及可选分布采集器监控网络设备、分析流量。实读 25.3.0 指南区分部署架构、许可取得、SNMP 发现、接口纳管和报告查询。旧文档根站跳到 BlueCat 门户，其中明确列 LiveNX 指南。\n\n从云门户取得许可不等于托管监控基础设施。发现设备并选择接口，也不证明所需流来源或应用分类全部存在。扩大部署前，应验证小型获准网段和预期报告范围。",
   "core_features": [
     {
-      "name_en": "Web Traffic Reporting",
-      "name_zh": "网站流量报表",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Distributed collectors",
+      "name_zh": "分布采集器",
+      "explanation_en": "Larger deployments use LiveNX Nodes that aggregate to a server.",
+      "explanation_zh": "较大部署使用汇聚至服务器的 LiveNX Node。",
+      "explanation_scope": "product_specific",
+      "source_ref": "architecture",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Uptime Monitoring",
-      "name_zh": "可用性监测",
-      "explanation_en": "Check whether selected services respond as expected.",
-      "explanation_zh": "检查指定服务是否按预期响应。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Selected device interfaces",
+      "name_zh": "选择设备接口",
+      "explanation_en": "Discover devices, then explicitly choose interfaces to add.",
+      "explanation_zh": "发现设备后，明确选择需纳入的接口。",
+      "explanation_scope": "product_specific",
+      "source_ref": "discovery",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "SLA Monitoring",
-      "name_zh": "服务水平协议监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Server Monitoring",
-      "name_zh": "服务器监控",
-      "explanation_en": "Track selected server status and resource signals.",
-      "explanation_zh": "跟踪服务器状态及资源使用信号。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Real Time Analytics",
-      "name_zh": "实时分析",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "IP Address Monitoring",
-      "name_zh": "IP 地址监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Internet Usage Monitoring",
-      "name_zh": "互联网使用监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Diagnostic Tools",
-      "name_zh": "诊断工具",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Baseline Manager",
-      "name_zh": "基线管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Bandwidth Monitoring",
-      "name_zh": "带宽监测",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    {
-      "name_en": "Resource Management",
-      "name_zh": "资源管理",
-      "explanation_en": "Allocate people, time and other project resources.",
-      "explanation_zh": "分配人员、时间和其他项目资源。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Scoped application reports",
+      "name_zh": "限定范围的应用报告",
+      "explanation_en": "Query application flow by device, site, interface and time period.",
+      "explanation_zh": "按设备、站点、接口及时间查询应用流。",
+      "explanation_scope": "product_specific",
+      "source_ref": "reports",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Check whether selected services respond as expected",
-      "Track selected server status and resource signals",
-      "Allocate people, time and other project resources"
+      "Discover one authorized device and verify only its selected interfaces.",
+      "Compare a known traffic interval with a scoped application-flow report."
     ],
     "zh": [
-      "检查指定服务是否按预期响应",
-      "跟踪服务器状态及资源使用信号",
-      "分配人员、时间和其他项目资源"
+      "发现一台获准设备并验证所选接口。",
+      "将已知流量时段与限定范围的应用流报告比较。"
     ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "source_refs": ["discovery", "reports"],
+    "basis": "Proposed evaluation tasks derived from documentation; no observed customer outcomes."
   },
-  "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Available Offers Custom plan.",
-      "zh": "提供免费试用 另有定制方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud) Desktop App (Windows, Mac)",
-      "zh": "浏览器访问（云服务） 桌面应用 (Windows, Mac)",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "24/7 (Live rep), Business Hours, Online",
-      "zh": "全天候人工支持, 工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    }
-  },
+  "technical_details": {},
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Network performance engineers",
+      "Multi-site network operations teams"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "home"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Plan observation topology, a licensed test installation and read-only SNMP access.",
+        "zh": "规划观察拓扑、有许可测试安装及只读 SNMP 访问。",
+        "source_refs": ["architecture", "license-access", "snmp"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      },
+      {
+        "en": "Select one device/interfaces, inspect report scope and confirm the actual commercial offer before expansion.",
+        "zh": "选择单设备／接口、检查报告范围，扩大前确认实际商业方案。",
+        "source_refs": ["discovery", "reports", "license-access"],
+        "evidence_type": "editorial_evaluation_suggestion"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "connector_scope_requires_evaluation",
+    "items": []
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented_with_editorial_guidance",
+    "items": [
+      {
+        "en": "Discovered inventory does not prove all interfaces or flow sources were admitted.",
+        "zh": "发现清单不证明全部接口或流来源已纳入。",
+        "source_refs": ["discovery", "snmp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "en": "License-portal access is not evidence of hosted infrastructure or a sustained-free LiveNX plan.",
+        "zh": "许可门户访问不证明托管基础设施或长期免费 LiveNX 方案。",
+        "source_refs": ["license-access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -191,37 +115,21 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
+    "status": "not_verified",
     "price_type": "unknown",
     "officially_checked": false,
-    "source_snapshot_en": "Free Trial Available Offers Custom plan.",
-    "source_snapshot_zh": "提供免费试用 另有定制方案。",
-    "source_ref": "directory-detail"
+    "source_refs": [],
+    "checked_at": null,
+    "normalized_monthly_price": null,
+    "currency": null,
+    "summary_en": "No current complete LiveNX fee/free-license offer was established. The quote form and trial-license portal instructions are not price confirmation; LiveAssurance is a different product. Pricing remains not_verified/unknown, with actual devices/interfaces, collectors, license term, trial scope, support and quote still to verify.",
+    "summary_zh": "未确认当前完整 LiveNX 费用／免费许可方案。询价表及试用许可门户说明不是价格确认，LiveAssurance 属不同产品。价格保持 not_verified／unknown，真实设备／接口、采集器、许可期限、试用、支持及报价待核。"
   },
   "alternatives": {
     "status": "not_reviewed",
     "items": []
   },
-  "faq": [
-    {
-      "question_en": "What does LiveNX do?",
-      "question_zh": "LiveNX 用来做什么？",
-      "answer_en": "LiveNX is a product in the Network monitoring category. Its directory profile covers Web Traffic Reporting, Uptime Monitoring, SLA Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools.",
-      "answer_zh": "LiveNX 属于网络监控软件。第三方资料列出的功能包括网站流量报表、可用性监测、服务水平协议监测、服务器监控、实时分析、IP 地址监测、互联网使用监测、诊断工具。"
-    },
-    {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "Web Traffic Reporting, Uptime Monitoring, SLA Monitoring, Server Monitoring, Real Time Analytics, IP Address Monitoring, Internet Usage Monitoring, Diagnostic Tools, Baseline Manager, Bandwidth Monitoring, Resource Management",
-      "answer_zh": "网站流量报表、可用性监测、服务水平协议监测、服务器监控、实时分析、IP 地址监测、互联网使用监测、诊断工具、基线管理、带宽监测、资源管理"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
-    }
-  ],
+  "faq": [],
   "sources": [
     {
       "id": "directory-detail",
@@ -231,55 +139,189 @@
       "read_at": "2026-10-22T08:40:31.777Z",
       "excerpt_sha256": "fe70814ce489d53ff64c953ca83157e49f2c4fc527134173056e93a7e32e8316",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "home",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "LiveNX | Enterprise Network Monitoring Software - LiveAction",
+      "url": "https://www.liveaction.com/products/livenx/",
+      "read_at": "2026-10-22T15:13:02.259885Z",
+      "excerpt_sha256": "cb18c0970e0d7c99496ca444f4e4b77adb52ba6b968a78f2cca29dc12e73ba6a",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read current named LiveNX network monitoring page."
+    },
+    {
+      "id": "documentation-location",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "Homepage",
+      "url": "https://docs.bluecatnetworks.com/",
+      "read_at": "2026-10-22T15:14:35.075739Z",
+      "excerpt_sha256": "6b6165c68cf66aee36ee3c97d5a2d34ee8f245316fef3b5e79113801437cb112",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual docs.liveaction.com redirect to BlueCat documentation containing named LiveNX guides."
+    },
+    {
+      "id": "architecture",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "Deployment architecture - Quick Start Guide - LiveNX - 25.3.0",
+      "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Deployment-architecture/25.3.0?contentId=phKv8wIO4AIecs~YB7JlnQ",
+      "read_at": "2026-10-22T15:19:09.138599Z",
+      "excerpt_sha256": "d9a181a06d689a427f9c9cc82439a19b22b128eeeb3a6b5f24eac147d0560226",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual25.3.0 single-server versus distributed collectors."
+    },
+    {
+      "id": "license-access",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "Get LiveNX license - Quick Start Guide - LiveNX - 25.3.0",
+      "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Get-LiveNX-license/25.3.0?contentId=LIsfKcmvzEcr4T8E8wlmcQ",
+      "read_at": "2026-10-22T15:19:09.138238Z",
+      "excerpt_sha256": "cef26e9baafefa8f49d044637369ab4b2fd057c0c55bf41d71d79dc1b3ec2429",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual25.3.0 license portal/account prerequisites; cloud licensing is not a hosted-data entitlement."
+    },
+    {
+      "id": "discovery",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "Adding devices to LiveNX - Quick Start Guide - LiveNX - 25.3.0",
+      "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Adding-devices-to-LiveNX/25.3.0?contentId=a~zGIULc8J9DsJhjwwc80w",
+      "read_at": "2026-10-22T16:19:45.126242Z",
+      "excerpt_sha256": "0bcde85f2beddbaf778a9be3156067580c5a549bdfa3364a6e2a3e37dd9ac97b",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual25.3.0 IP-range discovery, device selection and interface admission."
+    },
+    {
+      "id": "snmp",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "Get SNMP community and credentials - Quick Start Guide - LiveNX - 25.3.0",
+      "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/Get-SNMP-community-and-credentials/25.3.0?contentId=HkE~s4~Vx3RSzYuuPx9xnQ",
+      "read_at": "2026-10-22T16:19:45.126768Z",
+      "excerpt_sha256": "6797e1bf7e1451cac680574b8ffe01447b0e1542645a9587a2eb7a584632c689",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual25.3.0 SNMP read-only prerequisite and polled metric scope."
+    },
+    {
+      "id": "reports",
+      "type": "official_documentation",
+      "site": "LiveNX",
+      "title": "What applications are running in my environment? - Quick Start Guide - LiveNX - 25.3.0",
+      "url": "https://docs.bluecatnetworks.com/r/LiveNX-Quick-Start-Guide/What-applications-are-running-in-my-environment/25.3.0?contentId=bc8uodKLJqV3AaBuU~h2Sw",
+      "read_at": "2026-10-22T16:19:45.126898Z",
+      "excerpt_sha256": "1fbcf915d7aba793dae8f40789d557adcc9ee3bb362c408eb35662ecd53af6ba",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "research_notes_en": "Read actual25.3.0 application-flow report and device/site/interface/time scope."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T16:19:45.126898Z"
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "original_primary_source_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
+    "Original AI research draft based on the cited public official pages; no publication, price approval, independent review or product test is implied.",
+    "Earlier third-party feature and price claims are retained only in discovery provenance, not as current product evidence."
   ],
   "research_gaps": [
     {
-      "en": "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete.",
-      "zh": "LiveNX 官方产品页跳到 /products/livenx，价格打开报价表单。链接文档根站从 docs.liveaction.com 跳到 docs.bluecatnetworks.com，已实读该站 25.3.0 快速入门架构／许可页。当前记录跨注册域权威，也缺少完整产品费用／免费许可权益，未将其他组件 LiveAssurance 的 freemium 泛化为 LiveNX。未修改共享身份／来源规则，仍未完成。",
+      "en": "Exact BlueCat documentation provenance is recorded for LiveNX25.3.0 only; no acquisition timing or family-wide entitlement is inferred.",
+      "zh": "精确 BlueCat 文档证据限定 LiveNX 25.3.0，不推断收购时间或家族全部权益。",
       "source_refs": [],
-      "evidence_type": "official_access_or_cross_domain_authority_gap"
+      "evidence_type": "not_verified_or_not_tested"
+    },
+    {
+      "en": "No server, device, scan, credential, flow export, report, license or purchase was operated. Access enforcement, classification accuracy, capacity, backup and recovery remain unverified.",
+      "zh": "未操作服务器、设备、扫描、凭据、流导出、报告、许可或购买。实际访问执行、分类准确率、容量、备份及恢复待核。",
+      "source_refs": [],
+      "evidence_type": "not_verified_or_not_tested"
     }
   ],
   "content_method": {
     "author": "Codex (AI assistant)",
-    "method": "Investigated official availability and authority; incomplete, not counted complete.",
+    "method": "Public primary-source research, original English synthesis and corresponding Chinese translation. Proposed examples were not executed.",
     "independent_review": false,
     "hands_on_test": false
   },
-  "community_follow_up": {
-    "status": "needs_community_input",
-    "reason_en": "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete.",
-    "reason_zh": "LiveNX 官方产品页跳到 /products/livenx，价格打开报价表单。链接文档根站从 docs.liveaction.com 跳到 docs.bluecatnetworks.com，已实读该站 25.3.0 快速入门架构／许可页。当前记录跨注册域权威，也缺少完整产品费用／免费许可权益，未将其他组件 LiveAssurance 的 freemium 泛化为 LiveNX。未修改共享身份／来源规则，仍未完成。",
-    "missing_information_en": [
-      "LiveNX official product page redirects to /products/livenx and pricing opens a quote form. Its linked documentation root redirects from docs.liveaction.com to docs.bluecatnetworks.com; actual25.3.0 quick-start architecture/license pages were read there. The current record crosses registered-domain authority and lacks an actual complete product fee/free-license offer; LiveAssurance freemium is a different component and was not generalized to LiveNX. No shared identity/source-rule changes; incomplete."
-    ],
-    "missing_information_zh": [
-      "LiveNX 官方产品页跳到 /products/livenx，价格打开报价表单。链接文档根站从 docs.liveaction.com 跳到 docs.bluecatnetworks.com，已实读该站 25.3.0 快速入门架构／许可页。当前记录跨注册域权威，也缺少完整产品费用／免费许可权益，未将其他组件 LiveAssurance 的 freemium 泛化为 LiveNX。未修改共享身份／来源规则，仍未完成。"
-    ],
-    "attempted_urls": [
-      "https://www.liveaction.com/products/livenx-network-monitoring-software/"
-    ],
-    "observed_at": "2026-10-22T16:11:18.794235+00:00",
-    "source_refs": []
+  "description_source_refs": ["home", "architecture"],
+  "profile": {
+    "sections": [
+      {
+        "id": "topology",
+        "title_en": "Choose single-server or distributed collection",
+        "title_zh": "选择单服务器或分布采集",
+        "en": "The 25.3.0 architecture guide uses a single server for small deployments/proofs of concept and distributed LiveNX Nodes for larger multi-site environments. Nodes aggregate to the server, with the Operations Dashboard for day-to-day visibility. Map the intended observation sites and server connectivity before selecting topology; this guide does not prove an automatic HA or disaster-recovery guarantee.",
+        "zh": "25.3.0 架构指南将单服务器用于小部署／概念验证，多站点较大环境使用分布 LiveNX Node 汇聚至服务器，日常通过 Operations Dashboard 查看。选拓扑前应绘制观察站点和服务器连接，指南不证明自动 HA 或灾备保证。",
+        "source_refs": ["architecture"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "credentials",
+        "title_en": "Prepare read-only SNMP access deliberately",
+        "title_zh": "有意识地准备只读 SNMP 访问",
+        "en": "The SNMP guide uses read-only community strings or SNMPv3 credentials to discover devices and poll hostname, CPU, memory and interface statistics. Confirm device configuration and network reachability before discovery. A successful ping alone does not demonstrate that the SNMP data or intended flow records are available. No credential or network scan was used here.",
+        "zh": "SNMP 指南使用只读 community string 或 SNMPv3 凭据发现设备并轮询主机名、CPU、内存、接口统计。发现前应确认设备配置和可达性，ping 成功不证明 SNMP 或所需流记录可用。本次未使用凭据或扫描网络。",
+        "source_refs": ["snmp"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "inventory",
+        "title_en": "Discovery and interface admission are separate",
+        "title_zh": "发现与接口纳管分开",
+        "en": "The guide enters an IP/range and SNMP settings for discovery, selects a discovered device, then chooses interfaces and applies the selection. Inspect those selections when a device appears in inventory but expected interface data is absent. Use one known test device rather than assuming an entire discovered range has been admitted or completely configured.",
+        "zh": "指南先输入 IP／范围及 SNMP 设置发现，选择设备后再选接口并 Apply。设备已在清单却缺预期接口数据时，应检查这些选择。应先用一台已知测试设备，不能假定整个发现范围都已纳管或完整配置。",
+        "source_refs": ["discovery"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "reporting",
+        "title_en": "Compare classified applications with known traffic",
+        "title_zh": "用已知流量比较应用分类",
+        "en": "Application Flow reports classify traffic by application/protocol and support device, site, interface and time scopes. The guide uses them to identify top inbound/outbound applications and investigate unusual usage. Compare the chosen scope and observed traffic with a known fixture; no classification-accuracy, full-packet capture or every-device coverage guarantee was independently established.",
+        "zh": "Application Flow 报告按应用／协议分类，并可选设备、站点、接口及时间，指南用于查看进出主要应用和异常用量。应将范围及观察流量与已知样本比较；未独立证明分类准确率、完整抓包或全部设备覆盖。",
+        "source_refs": ["reports"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "license",
+        "title_en": "Portal licensing and commercial terms are different",
+        "title_zh": "门户许可与商业条款分开",
+        "en": "The 25.3.0 license guide requires a registered portal account to retrieve LiveNX licenses and mentions credentials issued for a trial cloud license. It does not establish the current trial allocation or price. The current quote route likewise has no verified fee schedule. Do not apply the separate LiveAssurance freemium offer to LiveNX or infer hosted infrastructure from the word cloud.",
+        "zh": "25.3.0 许可指南要求已注册门户账户取得 LiveNX 许可，并提及试用云许可凭据，但未证明当前试用额度或价格。当前询价入口也无已核费用表。不能将独立 LiveAssurance freemium 套到 LiveNX，也不能因 cloud 一词推断托管基础设施。",
+        "source_refs": ["license-access"],
+        "evidence_type": "documented_with_editorial_guidance"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "LiveNX: workflows, operating limits and cost",
+    "title_zh": "LiveNX：流程、运行限制与费用",
+    "description_en": "LiveNX monitors network devices and analyzes traffic through a server with optional distributed collectors. The reviewed 25.3.0 guide separates deployment architecture, li",
+    "description_zh": "LiveNX 通过服务器及可选分布采集器监控网络设备、分析流量。实读 25.3.0 指南区分部署架构、许可取得、SNMP 发现、接口纳管和报告查询。旧文档根站跳到 BlueCat ",
+    "search_intent_en": "Evaluate the documented workflow, access boundaries and commercial conditions of LiveNX.",
+    "search_intent_zh": "评估 LiveNX 有文档依据的流程、访问边界及商业条件。",
+    "query_basis": "Editorial questions from primary-source research; search demand, rankings and AI citations not measured.",
+    "canonical_url": null
   }
 }
