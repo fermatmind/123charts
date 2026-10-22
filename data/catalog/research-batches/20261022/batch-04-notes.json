@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T15:46:53.874569+00:00",
-  "assigned": 132,
-  "completed_count": 73,
+  "updated_at": "2026-10-22T15:54:25.932470+00:00",
+  "assigned": 101,
+  "completed_count": 74,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -79,9 +79,10 @@
     "projects/call-center/icallify-b203b120.json",
     "projects/call-center/intalk-io-5f112943.json",
     "projects/call-center/krispcall-358c5c55.json",
-    "projects/call-center/nextiva-5e531374.json"
+    "projects/call-center/nextiva-5e531374.json",
+    "projects/call-center/sanccs-fb1c2695.json"
   ],
-  "incomplete_count": 59,
+  "incomplete_count": 27,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -105,43 +106,11 @@
     "projects/call-center/calltools-0d43ce02.json",
     "projects/call-center/knowlarity-0c719323.json",
     "projects/call-center/my-hotline-76f16d10.json",
-    "projects/call-center/sanccs-fb1c2695.json",
     "projects/call-center/talkdesk-1183b903.json",
     "projects/call-center/tcn-operator-76910f6f.json",
     "projects/call-center/truly-56a8895a.json",
     "projects/call-center/tryvium-desk-664aaf8e.json",
-    "projects/call-center/ucontact-a323f2ce.json",
-    "projects/sales-engagement/amplemarket-d3c8ad48.json",
-    "projects/sales-engagement/apollo-io-f8692631.json",
-    "projects/sales-engagement/autobound-e8dd830c.json",
-    "projects/sales-engagement/autoklose-9c6f84bd.json",
-    "projects/sales-engagement/bloobirds-ef9c4211.json",
-    "projects/sales-engagement/cirrus-insight-a53721aa.json",
-    "projects/sales-engagement/ditlead-9a972f9d.json",
-    "projects/sales-engagement/frontspin-39b00dad.json",
-    "projects/sales-engagement/funnelfly-31fa559f.json",
-    "projects/sales-engagement/getsales-c6bb4539.json",
-    "projects/sales-engagement/groove-db406e12.json",
-    "projects/sales-engagement/imaginesales-41d00dfe.json",
-    "projects/sales-engagement/jason-ai-6bcef24a.json",
-    "projects/sales-engagement/klenty-5ff30597.json",
-    "projects/sales-engagement/lagrowthmachine-56dce02c.json",
-    "projects/sales-engagement/leaddesk-52c34c38.json",
-    "projects/sales-engagement/mailshake-360fc8f2.json",
-    "projects/sales-engagement/mixmax-233efa84.json",
-    "projects/sales-engagement/outplay-de1996b2.json",
-    "projects/sales-engagement/outreach-e5d7919b.json",
-    "projects/sales-engagement/persistiq-46089a75.json",
-    "projects/sales-engagement/prospect-io-6b26aac1.json",
-    "projects/sales-engagement/reply-f1a685df.json",
-    "projects/sales-engagement/revenue-grid-e3ec80b1.json",
-    "projects/sales-engagement/salesblink-f4b13752.json",
-    "projects/sales-engagement/saleshandy-33186048.json",
-    "projects/contracts/apptus-contract-management-ecec221e.json",
-    "projects/contracts/asc-contracts-2259b353.json",
-    "projects/contracts/avokaado-9fa1d586.json",
-    "projects/contracts/bigle-76c9d57d.json",
-    "projects/contracts/conga-contracts-3b93daca.json"
+    "projects/call-center/ucontact-a323f2ce.json"
   ],
   "status": "in_progress",
   "research_issues": [
@@ -1192,6 +1161,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch73 completed,59 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch74 completed,27 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1501,8 +1480,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "65acdb6",
       "completed": ["projects/call-center/nextiva-5e531374.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/sanccs-fb1c2695.json"],
       "status": "ready_to_commit"
     }
   ],
@@ -1689,5 +1673,61 @@
     ],
     "transferred_not_researched_or_counted_complete": true,
     "overlapping_in_progress_paths": []
-  }
+  },
+  "ownership_handoffs_v3": [
+    {
+      "source_batch_id": "batch-04",
+      "new_batch_id": "batch-13",
+      "manifest_path": "/Users/rainie/Desktop/123charts.com/123charts-catalog-1000/.scratch/assignments-v3-proposal.json",
+      "manifest_sha256": "6585ac3b55d6994d7180eb869bdf577954dd757b78cdf384e35bd8dc702972ea",
+      "overlapping_in_progress_paths": [],
+      "excluded_from_ownership": true,
+      "transferred_count": 31,
+      "transferred_project_paths": [
+        "projects/sales-engagement/amplemarket-d3c8ad48.json",
+        "projects/sales-engagement/apollo-io-f8692631.json",
+        "projects/sales-engagement/autobound-e8dd830c.json",
+        "projects/sales-engagement/autoklose-9c6f84bd.json",
+        "projects/sales-engagement/bloobirds-ef9c4211.json",
+        "projects/sales-engagement/cirrus-insight-a53721aa.json",
+        "projects/sales-engagement/ditlead-9a972f9d.json",
+        "projects/sales-engagement/frontspin-39b00dad.json",
+        "projects/sales-engagement/funnelfly-31fa559f.json",
+        "projects/sales-engagement/getsales-c6bb4539.json",
+        "projects/sales-engagement/groove-db406e12.json",
+        "projects/sales-engagement/imaginesales-41d00dfe.json",
+        "projects/sales-engagement/jason-ai-6bcef24a.json",
+        "projects/sales-engagement/klenty-5ff30597.json",
+        "projects/sales-engagement/lagrowthmachine-56dce02c.json",
+        "projects/sales-engagement/leaddesk-52c34c38.json",
+        "projects/sales-engagement/mailshake-360fc8f2.json",
+        "projects/sales-engagement/mixmax-233efa84.json",
+        "projects/sales-engagement/outplay-de1996b2.json",
+        "projects/sales-engagement/outreach-e5d7919b.json",
+        "projects/sales-engagement/persistiq-46089a75.json",
+        "projects/sales-engagement/prospect-io-6b26aac1.json",
+        "projects/sales-engagement/reply-f1a685df.json",
+        "projects/sales-engagement/revenue-grid-e3ec80b1.json",
+        "projects/sales-engagement/salesblink-f4b13752.json",
+        "projects/sales-engagement/saleshandy-33186048.json",
+        "projects/contracts/apptus-contract-management-ecec221e.json",
+        "projects/contracts/asc-contracts-2259b353.json",
+        "projects/contracts/avokaado-9fa1d586.json",
+        "projects/contracts/bigle-76c9d57d.json",
+        "projects/contracts/conga-contracts-3b93daca.json"
+      ],
+      "current_in_progress_paths": [
+        "projects/call-center/sanccs-fb1c2695.json",
+        "projects/call-center/talkdesk-1183b903.json",
+        "projects/call-center/tcn-operator-76910f6f.json"
+      ],
+      "checked_at": "2026-10-22T15:48:15.136918+00:00",
+      "notes": "No transferred project was started,authored or completed. Keep six remaining call-center candidates and22 documented gaps. Transfer is not completion.",
+      "original_owned_before_split": 132,
+      "retained_owned_count": 101,
+      "completed_at_split": 73,
+      "retained_remaining_count": 28,
+      "transferred_not_counted_completed": true
+    }
+  ]
 }
