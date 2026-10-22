@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T11:17:14.834557+00:00",
+  "updated_at": "2026-10-22T11:23:41.878968+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 25,
+  "completed_count": 27,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -30,9 +30,11 @@
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
     "projects/api-management/ibm-api-connect-706d1c65.json",
     "projects/api-management/kong-545842db.json",
-    "projects/api-management/krakend-424ce5fb.json"
+    "projects/api-management/krakend-424ce5fb.json",
+    "projects/api-management/postman-668fe961.json",
+    "projects/api-management/readme-4e02e656.json"
   ],
-  "remaining_count": 174,
+  "remaining_count": 172,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -43,8 +45,6 @@
     "projects/api-management/blobr-e9fe1f36.json",
     "projects/api-management/dreamfactory-6a420d79.json",
     "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
-    "projects/api-management/postman-668fe961.json",
-    "projects/api-management/readme-4e02e656.json",
     "projects/api-management/restcase-40145ac2.json",
     "projects/api-management/sparrow-e52d1a04.json",
     "projects/api-management/stoplight-00629820.json",
@@ -245,6 +245,10 @@
     {
       "project": "Bandwidth",
       "detail": "Bearer request samples vs older basic-auth prose and carrier-handoff vs handset receipt wording remain explicit; accepted submission is not delivery."
+    },
+    {
+      "project": "ReadMe",
+      "detail": "Stable operationId required for reference page identity; omitted/changed identifiers can remove pages and edits. Git sync requires initially empty repository and direct-push-compatible branch policy."
     }
   ],
   "verification": [
@@ -254,7 +258,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 28 primary-source researched globally (3 baseline + 25 assigned), 1000 records checked"
+      "result": "passed: 30 primary-source researched globally (3 baseline + 27 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -291,15 +295,20 @@
       "commit": "3b89021",
       "completed_count": 22,
       "scope": "Bandwidth and Boomi API Management; Apigee Edge, Blobr and DreamFactory access/authority gaps; pushed"
+    },
+    {
+      "commit": "1e67018",
+      "completed_count": 25,
+      "scope": "IBM API Connect, Kong, KrakenD; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Nevatech Sentinet, Postman, ReadMe",
+    "next": "RestCase, Sparrow, Stoplight, Treblle, Tyk, WSO2 API Manager",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
-    "api-management": "5 of 17 complete; 3 investigated but incomplete with explicit gaps; 9 not yet processed"
+    "api-management": "7 of 17 complete; 4 investigated but incomplete with explicit gaps; 6 not yet processed"
   },
   "identity_changes": [
     {
@@ -371,6 +380,10 @@
     {
       "project_path": "projects/api-management/dreamfactory-6a420d79.json",
       "reason": "Official home/pricing read; current marketing emphasizes an AI data gateway. The documentation reader rejected text/markdown as unsupported; a normal direct public HTTP request then returned 403 and no bypass was attempted. Documentation, role/connector behavior and actual license remain insufficiently established for a deep profile. Pricing claims alone do not count complete."
+    },
+    {
+      "project_path": "projects/api-management/nevatech-sentinet-e8c8e8e0.json",
+      "reason": "Official Sentinet 6.7 overview and requirements were read: .NET/IIS gateway nodes, SQL Server/Azure SQL repository, optional Umbraco developer portal, and virtual-service facades. The official download flow requires a company email. No readable official pricing/fee schedule or commercial license grant was found; a guessed purchase path was inaccessible, and LicenseInfo describes technical license types rather than an actual purchase entitlement. Current completion rules require an actual official pricing source, so this record stays incomplete; no source is relabeled as pricing merely to pass validation."
     }
   ],
   "availability_updates": [
@@ -428,6 +441,34 @@
       "excerpt_sha256": "d2616c2b6ca93e21dda107a6109e915314d8528130dd8d210d4fe40417088d7a",
       "read_at": "2026-10-22T10:44:52.314112+00:00",
       "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "sentinet-components",
+      "actual_url": "https://nevatech.com/docs/Sentinet/6.7/articles/User-Guide/Sentinet-Overview.html",
+      "excerpt_sha256": "7dd92147988f871470fa5d6ed96b8f066a76575ee4622aa73a4d4286b02295f4",
+      "read_at": "2026-10-22T11:19:58.845681+00:00",
+      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+    },
+    {
+      "capture": "sentinet-requirements",
+      "actual_url": "https://nevatech.com/docs/Sentinet/6.7/articles/Installation-Guide/System-Requirements.html",
+      "excerpt_sha256": "61a7cce4447be7fc73c565df1c8f2f3834c11f4a254bc0cd4795a7e1a55a0168",
+      "read_at": "2026-10-22T11:20:02.060896+00:00",
+      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+    },
+    {
+      "capture": "sentinet-licenseinfo",
+      "actual_url": "https://nevatech.com/docs/Sentinet/6.7/api/Nevatech.Vsb.Repository.Security.Licensing.LicenseInfo.html",
+      "excerpt_sha256": "b62abc1c20094c941d03727f7945fb715ef3825f9d3ce78eb456c5b2e32cbe1e",
+      "read_at": "2026-10-22T11:20:09.560338+00:00",
+      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
+    },
+    {
+      "capture": "sentinet-trial",
+      "actual_url": "https://nevatech.com/download",
+      "excerpt_sha256": "ab8596eda7ac5b74153628efbaca030b0ca458efe89425f6de0cde0d8599c921",
+      "read_at": "2026-10-22T11:18:59.435363+00:00",
+      "use": "Actual official documentation read for an incomplete record; not sufficient pricing authority and not counted complete."
     }
   ]
 }
