@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T13:08:35.146024+00:00",
+  "updated_at": "2026-10-22T13:22:45.487322+00:00",
   "status": "in_progress",
-  "completed_count": 52,
+  "completed_count": 54,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -56,9 +56,11 @@
     "projects/social-media/emplifi-social-marketing-cloud-6b0d5978.json",
     "projects/social-media/facelift-cloud-32ac5c61.json",
     "projects/social-media/hookle-5f78b2fa.json",
-    "projects/social-media/influence-0d1b3acb.json"
+    "projects/social-media/influence-0d1b3acb.json",
+    "projects/social-media/later-f96e5f04.json",
+    "projects/social-media/meetedgar-e5212894.json"
   ],
-  "remaining_count": 149,
+  "remaining_count": 147,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -70,9 +72,7 @@
     "projects/marketing-automation/marketing-optimizer-31b4a5a3.json",
     "projects/social-media/curatebase-7cc6bd94.json",
     "projects/social-media/funneldash-eec0f94e.json",
-    "projects/social-media/later-f96e5f04.json",
     "projects/social-media/lifast-eca10eb6.json",
-    "projects/social-media/meetedgar-e5212894.json",
     "projects/social-media/metigy-7b57b733.json",
     "projects/social-media/outfame-16f4a266.json",
     "projects/social-media/penguin-epulse-2262a37a.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/later-f96e5f04.json",
+  "next_project": "projects/social-media/metigy-7b57b733.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -341,6 +341,12 @@
       "path": "projects/social-media/funneldash-eec0f94e.json",
       "status": "not_completed",
       "reason": "Original FunnelDash website redirects to Dash.fi corporate-card/finance platform; old official Messenger funnel/agency pricing remains on blog but current service continuity not established. Old Help Center redirects to Dash.fi with reader error. Identity/category mismatch requires coordinator handling; not replaced by unrelated current financial product and not counted complete."
+    },
+    {
+      "path": "projects/social-media/lifast-eca10eb6.json",
+      "status": "not_completed",
+      "reason": "Actual homepage, product workflow landing, terms and privacy read. Current homepage shows $99/$49 USD monthly while product landing says $99 monthly; trial/free conditions, connected profile eligibility, actual scheduling state and recovery documentation not established after targeted official search. Marketing and testimonials alone not counted as completed operational research.",
+      "evidence_local": ".scratch/deep-research/batch-03/lifast-product.json"
     }
   ],
   "compatibility_issues": [
@@ -683,6 +689,28 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-03",
+      "completed_projects": 54,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "Targeted completed-record validation",
+          "result": "PASS: 54 drafts; assigned scope, unapproved states, source/pricing types, actual excerpt hashes, references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark helpscoutdocs.com versus benchmarkemail.com mismatch at line 166; shared validator unchanged"
+        },
+        {
+          "command": "Prettier changed JSON; git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -750,6 +778,11 @@
       "commit": "547955c",
       "completed_count": 49,
       "scope": "BlackTwist, ContentStudio, Emplifi; Curatebase operational source gap"
+    },
+    {
+      "commit": "211dc21",
+      "completed_count": 52,
+      "scope": "Facelift, Hookle, Influence; FunnelDash identity/category gap"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -774,9 +807,9 @@
     },
     "social-media": {
       "assigned": 24,
-      "completed": 6,
+      "completed": 8,
       "status": "in_progress",
-      "uncompleted_with_source_gaps": 2
+      "uncompleted_with_source_gaps": 3
     }
   },
   "source_access_notes": [
@@ -947,6 +980,40 @@
     {
       "project": "influence-0d1b3acb",
       "note": "Verified assigned influence.so identity, distinct from similarly named website social-proof and Brandwatch products. Public-reader root/docs unavailable; ordinary HTTPS 200 actual root and help bodies read/hashes saved. Localized root rendered SGD with repeated tier amounts; no normalized fee. No 403/429 bypass. AI rolling destination cap distinguished from UTC publication month and subscription-month IQ expiry."
+    },
+    {
+      "project": "later-f96e5f04",
+      "note": "Actual current approval product FAQ reveals scheduled Member posts publish regardless of approval and Reviewer bypass cannot be disabled. Detailed help link 404. October analytics differs from September reference; preserved. January 2024 failure API cap not adopted as current."
+    },
+    {
+      "project": "lifast-eca10eb6",
+      "note": "Marketing and policy originals read, no current operational docs established; price conflict retained, not completed.",
+      "evidence": [
+        {
+          "source": "Done-For-You LinkedIn Content: Consistent Posts, Zero Effort | Lifast | Lifa.st (https://www.lifa.st/done-for-you-linkedin-content)",
+          "excerpt_sha256": "d5df70da4484b50556a6355dff49fbbfe2f300446a0277a806d69b94ea6995fb",
+          "read_at": "2026-10-22T13:18:00.222419+00:00"
+        },
+        {
+          "source": "Lifa.st - Autopilot Your LinkedIn B2B Marketing (https://www.lifa.st/)",
+          "excerpt_sha256": "ff5a64e6017e76639f244afd69510ea0c1029373f67b224fc5a6d467b3a32ccb",
+          "read_at": "2026-10-22T13:18:00.222419+00:00"
+        },
+        {
+          "source": "Terms of Use | Lifa.st (https://www.lifa.st/terms)",
+          "excerpt_sha256": "b224d118a837eb22ca3422042820f0f64c61242dcdddce88876dda600a95c210",
+          "read_at": "2026-10-22T13:18:00.222419+00:00"
+        },
+        {
+          "source": "Privacy Policy | Lifa.st (https://www.lifa.st/privacy)",
+          "excerpt_sha256": "d58a8b1ed2bd0aa987e1968fe4749b114e1db0fa679e2a491e3fb471097364b3",
+          "read_at": "2026-10-22T13:18:00.222419+00:00"
+        }
+      ]
+    },
+    {
+      "project": "meetedgar-e5212894",
+      "note": "Actual help articles returned ordinary HTTPS 200 after public-reader inaccessible response; no 403/429 bypass. June Use Once says only last variation, January Variations says each variation once; conflict preserved. Current help LIFO differs from 2025 tutorial FIFO. Refresh preserves schedules; deletion irreversibly removes associations. No actions executed."
     }
   ]
 }
