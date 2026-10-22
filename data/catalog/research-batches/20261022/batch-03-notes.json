@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T13:50:42.345588+00:00",
+  "updated_at": "2026-10-22T14:04:10.652593+00:00",
   "status": "in_progress",
-  "completed_count": 59,
+  "completed_count": 60,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -63,9 +63,10 @@
     "projects/social-media/penguin-epulse-2262a37a.json",
     "projects/social-media/pinops-8a2a575d.json",
     "projects/social-media/post-bridge-89f7a06c.json",
-    "projects/social-media/postiz-0b4fe948.json"
+    "projects/social-media/postiz-0b4fe948.json",
+    "projects/social-media/socialpilot-226b757a.json"
   ],
-  "remaining_count": 142,
+  "remaining_count": 141,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -80,7 +81,6 @@
     "projects/social-media/lifast-eca10eb6.json",
     "projects/social-media/metigy-7b57b733.json",
     "projects/social-media/quuu-9fd2a3e5.json",
-    "projects/social-media/socialpilot-226b757a.json",
     "projects/social-media/socioh-53be70e8.json",
     "projects/social-media/swonkie-41671cfb.json",
     "projects/social-media/thread-creator-191779ac.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "social-media",
-  "next_project": "projects/social-media/quuu-9fd2a3e5.json",
+  "next_project": "projects/social-media/socioh-53be70e8.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -358,6 +358,12 @@
         "https://metigy.com/support/google-advertising-quick-and-easy-getting-start-guide/"
       ],
       "evidence_local": ".scratch/deep-research/batch-03/metigy-outfame.json"
+    },
+    {
+      "path": "projects/social-media/quuu-9fd2a3e5.json",
+      "status": "not_completed",
+      "reason": "Current root, pricing, documentation overview, features and policy originals read. Operational documentation is only a feature/billing summary: no concrete queue/retry/reconnect or approval-state guide established. Features says Advanced Analytics Coming Soon while cards/homepage include analytics. Both terms/privacy retain a starting-template-before-publication statement. Current workflow depth/policy authority not established; no complete deep profile counted. Ordinary HTTPS to help.quuu.co failed certificate verification (self-signed chain, HTTP 000); TLS verification was not bypassed.",
+      "evidence_local": ".scratch/deep-research/batch-03/quuu-docs-pricing.json"
     }
   ],
   "compatibility_issues": [
@@ -774,6 +780,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "social-media-07",
+      "completed_projects": 60,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 60 drafts; assigned scope, unapproved status, source hashes/types, references and bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: same Benchmark Help Scout cross-domain mismatch at scripts/catalog/validate.mjs:166; genuine official URLs retained"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -856,6 +880,11 @@
       "commit": "dabd4ab",
       "completed_count": 57,
       "scope": "Outfame, Penguin ePulse, PinOps; Metigy availability/source gap"
+    },
+    {
+      "commit": "4c098c0",
+      "completed_count": 59,
+      "scope": "Post Bridge, Postiz; publishing and hosting semantics"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -882,7 +911,7 @@
       "assigned": 24,
       "completed": 13,
       "status": "in_progress",
-      "uncompleted_with_source_gaps": 4
+      "uncompleted_with_source_gaps": 5
     }
   },
   "source_access_notes": [
@@ -1118,6 +1147,41 @@
     {
       "project": "postiz-0b4fe948",
       "note": "Actual current product/Cloud/self-host workflow docs and repository AGPL v3-or-later notice/section 13 read. Preview links unpassworded and approval has no blocking state. Browser timezone, existing-channel update versus Post Now, rejected-no-silent-retry, finite plugs, separate credit/clipping/API meters and downgrade no-retro publishing retained. Standard 20 image-credit/no generator row and broad Standard RSS labels versus specific Team+ docs unresolved. No operations performed."
+    },
+    {
+      "project": "quuu-9fd2a3e5",
+      "note": "Current AI-agent identity, four networks and per-profile pricing originals read; no legacy Buffer/Quuu Promote feature bundle assumed. Price FAQ $19.79 monthly/$16.49 annual equivalent. Advanced Analytics Coming Soon versus included analytics unresolved. Terms/privacy both visibly label themselves starting templates; no inferred author/date/cause or legal validity judgment. Not completed pending operational evidence.",
+      "evidence": [
+        {
+          "source": "Quuu.co Documentation | Comprehensive Guide (https://quuu.co/documentation)",
+          "excerpt_sha256": "3c1d94cc4eb6106143b8187e5a31a95302a75780af5951f3b3df1381a0735257",
+          "read_at": "2026-10-22T13:52:19.566458+00:00"
+        },
+        {
+          "source": "Pricing | Simple, per-profile pricing | Quuu (https://quuu.co/pricing)",
+          "excerpt_sha256": "dd44abcd1c8d277b51d42f1874ff7b69569501ded79f8208aec6023a3030efe7",
+          "read_at": "2026-10-22T13:52:19.566458+00:00"
+        },
+        {
+          "source": "Terms of Service | Quuu (https://quuu.co/terms)",
+          "excerpt_sha256": "854d9533f614a2810a663b974c2d3bae755fbf0b2304ab5196c11bc8f553f655",
+          "read_at": "2026-10-22T13:52:19.566458+00:00"
+        },
+        {
+          "source": "Benefits of Using Quuu | Features That Grow Your Socials (https://quuu.co/features)",
+          "excerpt_sha256": "4c602716a65f89180ae093eb4e31166c882df0f26232e0e3aa584ed95409c147",
+          "read_at": "2026-10-22T13:52:19.566458+00:00"
+        },
+        {
+          "source": "Privacy Policy | Quuu (https://quuu.co/privacy)",
+          "excerpt_sha256": "5956fe16d6d4dfc88053e81cf314e201e026e4fb5dde03b4f69d0e3232634b0c",
+          "read_at": "2026-10-22T13:52:19.566458+00:00"
+        }
+      ]
+    },
+    {
+      "project": "socialpilot-226b757a",
+      "note": "Actual new help articles read after obsolete help URLs returned 404. Client approval optional at manager discretion; composer autosave not saved draft; distinct bulk/library CSV; report editor dummy data. Current HTML mixed price numerals versus July regional Markdown retained without normalized quote. No account operations performed."
     }
   ]
 }
