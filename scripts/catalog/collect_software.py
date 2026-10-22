@@ -270,6 +270,11 @@ def discover(categories, pages):
 
 
 def materialize(results, categories, target, partial=False):
+    # This collector generates initial candidates, not replacements for authored research.
+    researched = [p for p in (c.DATA / "projects").glob("*/*.json")
+                  if json.loads(p.read_text()).get("research_status") == "primary_source_researched"]
+    if researched:
+        raise ValueError("Bulk materialization would overwrite or remove authored research; edit canonical project JSONs individually.")
     identities = c.domain_identities([r["website_url"] for r in results])
     candidates = {cat["slug"]: [] for cat in categories}
     for row, identity in zip(results, identities):

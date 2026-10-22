@@ -1,7 +1,10 @@
 import json
 import unittest
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
 import common
-from collect_software import detail, listings
+from collect_software import detail, listings, materialize
 from import_browser_research import parse_browser
 
 
@@ -13,6 +16,20 @@ def excerpt(pattern, lines):
 
 
 class CatalogTests(unittest.TestCase):
+    def test_bulk_rebuild_preserves_authored_research_before_any_write(self):
+        with tempfile.TemporaryDirectory() as folder:
+            data = Path(folder)
+            record = data / "projects/automation/tool.json"
+            record.parent.mkdir(parents=True)
+            original = '{"research_status":"primary_source_researched","description_en":"Authored content"}'
+            record.write_text(original)
+            with patch.object(common, "DATA", data), patch.object(common, "domain_identities") as identities:
+                with self.assertRaisesRegex(ValueError, "overwrite or remove authored research"):
+                    materialize([], [], 0, partial=True)
+                identities.assert_not_called()
+            self.assertEqual(record.read_text(), original)
+            self.assertEqual(list(data.rglob("*.json")), [record])
+
     def test_tracker_and_private_urls_are_not_project_websites(self):
         for url in ["https://aixploria.com/out/Test", "https://127.0.0.1/", "https://example.internal/", "https://user:pass@public.org/", "https://bit.ly/test"]:
             with self.subTest(url=url), self.assertRaises(ValueError):

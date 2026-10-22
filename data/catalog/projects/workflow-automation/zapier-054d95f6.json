@@ -10,111 +10,127 @@
   "status": "draft",
   "primary_language": "en",
   "available_locales": ["en", "zh"],
-  "research_status": "structured_candidate",
-  "description_en": "Zapier is a product in the Integrations and automation category. Its directory profile covers API Management, Error Logs, Data Mapping, Version Control.\n\nDeployment is listed as Browser Based (Cloud). The listed organization sizes are All (Small, Medium, Large). API support is listed as Available. Support channels are listed as Business Hours, Online.\n\nThe directory's pricing snapshot states: Free Trial Not Available Starts at $19.99. Offers Free-forever plan.. This is a dated third-party reference; current amounts, billing periods, trial conditions and regional availability require an official pricing check.\n\nTypical evaluation tasks associated with these feature labels include: relate fields between different structures or systems; track changes to files and support revision workflows. These are workflow suggestions based on the reported capabilities, rather than evidence of actual customer adoption.",
-  "description_zh": "Zapier 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、错误日志、数据映射、版本控制。\n\n资料所列运行方式为浏览器访问（云服务）。资料所列适用组织规模为小型、中型与大型组织。API 支持情况为提供。资料所列支持方式为工作时间支持, 在线支持。\n\n第三方定价快照显示：未提供免费试用 起价为 $19.99. 另有持续免费方案。。这属于采集时的第三方参考，实际金额、计费周期、试用条件及地区可用性仍需核对官网。\n\n根据这些功能，可重点评估以下任务：建立不同数据结构或系统之间的字段对应关系；跟踪文件变更并支持版本修订流程。这些是基于功能的使用场景建议，不能当作实际客户采用的证据。",
+  "research_status": "primary_source_researched",
+  "description_en": "Zapier connects business applications so an event in one system can start work in another. Its main workflow builder, Zaps, uses a trigger followed by actions: a new spreadsheet entry could prompt a message to a team, for example. Users connect app accounts, select supported events, and pass data between steps. This makes Zapier relevant to recurring operational handoffs where information otherwise has to be copied manually.\n\nThe important selection question is whether Zapier exposes the exact event, action, and fields your process needs. A connector bearing an app’s name does not establish that every feature in that app is available. A useful evaluation therefore begins with one real handoff and representative records, rather than a long list of integrations.\n\nThis profile focuses on Zap workflows. Zapier also offers Tables for automation data and MCP for actions initiated by AI clients; those are separate interaction models, not prerequisites for a conventional workflow. Whether Zapier is a good fit depends on connector coverage, acceptable delay, the number of billable actions, and who will maintain failures. The sections below explain those decisions using public documentation, without claiming a hands-on product test.",
+  "description_zh": "Zapier 把业务应用连接起来，让一个系统中的事件自动启动另一个系统中的操作。它的主要工作流工具称为 Zap：先指定触发条件，再安排后续动作。例如，电子表格新增一条记录后，自动向团队发送消息。使用者连接应用账户、选择产品提供的事件，再把前一步的数据传给下一步，适合处理原本需要反复手工复制信息的业务交接。\n\n选型时最关键的是：它是否支持你需要的具体事件、操作和字段。目录中出现某个应用的名称，并不表示该应用的所有功能都能调用。因此，评估应从一条真实业务流程和具有代表性的数据开始。\n\n本文重点介绍 Zap 工作流。Zapier 也提供保存自动化数据的 Tables，以及供 AI 客户端发起操作的 MCP；它们有各自的使用方式，常规自动化并不要求同时使用。是否适合采用 Zapier，要结合连接器能力、可接受的延迟、计费动作数量，以及后续由谁维护失败任务来判断。下面依据公开文档逐项说明这些问题，未将文档研究描述为实际试用。",
   "core_features": [
     {
-      "name_en": "API Management",
-      "name_zh": "API 管理",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Trigger and action workflows",
+      "name_zh": "触发器与动作工作流",
+      "explanation_en": "Choose an event that starts a Zap and the downstream app operation to perform.",
+      "explanation_zh": "指定启动 Zap 的事件，以及随后在目标应用中执行的操作。",
+      "explanation_scope": "product_specific",
+      "source_ref": "trigger-setup",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Error Logs",
-      "name_zh": "错误日志",
-      "explanation_en": "",
-      "explanation_zh": "",
-      "explanation_scope": "label_only",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Dynamic field mapping",
+      "name_zh": "动态字段映射",
+      "explanation_en": "Use earlier step outputs as later inputs instead of typing the same fixed value into every run.",
+      "explanation_zh": "把前面步骤的输出映射为后续输入，使每次执行使用对应记录的数据。",
+      "explanation_scope": "product_specific",
+      "source_ref": "field-mapping",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Data Mapping",
-      "name_zh": "数据映射",
-      "explanation_en": "Relate fields between different structures or systems.",
-      "explanation_zh": "建立不同数据结构或系统之间的字段对应关系。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Filters and conditional paths",
+      "name_zh": "筛选与条件分支",
+      "explanation_en": "Route work according to conditions; check the paid-plan requirements before building the production flow.",
+      "explanation_zh": "按条件决定后续流程；正式搭建前需确认付费套餐要求。",
+      "explanation_scope": "product_specific",
+      "source_ref": "action-setup",
+      "status": "official_documentation_read"
     },
     {
-      "name_en": "Version Control",
-      "name_zh": "版本控制",
-      "explanation_en": "Track changes to files and support revision workflows.",
-      "explanation_zh": "跟踪文件变更并支持版本修订流程。",
-      "explanation_scope": "general_feature_definition",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+      "name_en": "Run inspection and replay",
+      "name_zh": "执行检查与重放",
+      "explanation_en": "Inspect failures in Zap history and distinguish failed-step replay from a full rerun.",
+      "explanation_zh": "在执行历史中检查失败，区分失败步骤重试与整条流程重新运行。",
+      "explanation_scope": "product_specific",
+      "source_ref": "replay",
+      "status": "official_documentation_read"
     }
   ],
   "use_cases": {
-    "status": "editorial_inference",
+    "status": "editorial_guidance",
     "en": [
-      "Relate fields between different structures or systems",
-      "Track changes to files and support revision workflows"
+      "Notify a team when a tracked request arrives.",
+      "Pass a supported business event into a downstream app action."
     ],
-    "zh": [
-      "建立不同数据结构或系统之间的字段对应关系",
-      "跟踪文件变更并支持版本修订流程"
-    ],
-    "basis": "Typical tasks inferred from the reported feature labels; not observed customer adoption."
+    "zh": ["跟踪到新请求时通知团队。", "把受支持的业务事件交给后续应用处理。"],
+    "source_refs": ["sheets-slack", "product"],
+    "basis": "Illustrative tasks; no customer adoption or savings measured."
   },
   "technical_details": {
-    "Pricing": {
-      "en": "Free Trial Not Available Starts at $19.99. Offers Free-forever plan.",
-      "zh": "未提供免费试用 起价为 $19.99. 另有持续免费方案。",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Platforms Supported": {
-      "en": "Browser Based (Cloud)",
-      "zh": "浏览器访问（云服务）",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Organization Types Supported": {
-      "en": "All (Small, Medium, Large)",
-      "zh": "小型、中型与大型组织",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "API Support": {
-      "en": "Available",
-      "zh": "提供",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
-    },
-    "Modes of Support": {
-      "en": "Business Hours, Online",
-      "zh": "工作时间支持, 在线支持",
-      "source_ref": "directory-detail",
-      "status": "directory_reported"
+    "Execution model": {
+      "en": "Managed app automation configured in the web editor; app accounts must be connected.",
+      "zh": "在网页编辑器中配置托管自动化；需要连接应用账户。",
+      "source_ref": "action-setup",
+      "status": "official_documentation_read"
     }
   },
   "target_audience": {
-    "status": "directory_reported",
-    "organization_sizes_en": "All (Small, Medium, Large)",
-    "organization_sizes_zh": "小型、中型与大型组织",
-    "specific_roles": [],
-    "roles_status": "not_verified",
-    "source_ref": "directory-detail"
+    "status": "editorial_guidance",
+    "organization_sizes_en": null,
+    "organization_sizes_zh": null,
+    "specific_roles": [
+      "Operations workflow owner",
+      "Sales operations",
+      "Developer evaluating a specific connector"
+    ],
+    "roles_status": "editorial_inference",
+    "source_ref": "product"
   },
   "getting_started": {
-    "status": "not_verified",
-    "steps": []
+    "status": "documentation_based_not_executed",
+    "steps": [
+      {
+        "en": "Choose one trigger app and event; connect the account and inspect a recent test record.",
+        "zh": "选择触发应用和事件，连接账户，检查一条近期测试记录。",
+        "source_refs": ["trigger-setup"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Select the destination action, fill required fields, and test with disposable records: action tests can change the live app.",
+        "zh": "选择目标动作并填写必填字段；使用可丢弃记录测试，因为动作测试可能真实修改应用数据。",
+        "source_refs": ["action-setup"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Publish, generate a new source event, then inspect the destination and Zap history.",
+        "zh": "发布后创建一个新的来源事件，再核对目标应用与执行历史。",
+        "source_refs": ["action-setup"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "integrations": {
-    "status": "unknown",
-    "items": [],
-    "source_ref": "directory-detail"
+    "status": "specific_connector_documentation_read",
+    "items": [
+      {
+        "name": "Google Sheets ↔ Slack",
+        "source_ref": "sheets-slack",
+        "scope": "App-pair page checked; each Zap has a configured direction. Not a two-way-sync claim."
+      }
+    ],
+    "source_ref": "sheets-slack"
   },
   "limitations": {
-    "status": "not_verified",
-    "items": []
+    "status": "documented",
+    "items": [
+      {
+        "en": "One-way workflows do not provide native two-way sync or conflict resolution.",
+        "zh": "单向工作流不能直接提供原生双向同步与冲突解决。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented"
+      },
+      {
+        "en": "Trigger timing and replay eligibility are conditional; no end-to-end latency or recovery benchmark was performed.",
+        "zh": "触发时机和重放资格均有条件；本文未测试端到端延迟或恢复能力。",
+        "source_refs": ["trigger-behavior", "replay"],
+        "evidence_type": "documented"
+      }
+    ]
   },
   "supported_languages": {
     "status": "not_verified",
@@ -126,12 +142,17 @@
     "url": null
   },
   "pricing": {
-    "status": "directory_reported",
-    "price_type": "unknown",
-    "officially_checked": false,
-    "source_snapshot_en": "Free Trial Not Available Starts at $19.99. Offers Free-forever plan.",
-    "source_snapshot_zh": "未提供免费试用 起价为 $19.99. 另有持续免费方案。",
-    "source_ref": "directory-detail"
+    "status": "official_documentation_read",
+    "price_type": "freemium",
+    "officially_checked": true,
+    "source_ref": "pricing",
+    "source_refs": ["pricing", "free-plan", "task-metering"],
+    "checked_at": "2026-10-22T09:37:35Z",
+    "normalized_monthly_price": null,
+    "currency": "USD",
+    "billing_basis": "Successful actions with exemptions and product-specific rates; see cost-example.",
+    "source_snapshot_en": "Free, Professional, Team, Enterprise; dated plan conditions are explained in the profile.",
+    "source_snapshot_zh": "提供 Free、Professional、Team、Enterprise；具体条件与核对日期见正文。"
   },
   "alternatives": {
     "status": "not_reviewed",
@@ -139,22 +160,18 @@
   },
   "faq": [
     {
-      "question_en": "What does Zapier do?",
-      "question_zh": "Zapier 用来做什么？",
-      "answer_en": "Zapier is a product in the Integrations and automation category. Its directory profile covers API Management, Error Logs, Data Mapping, Version Control.",
-      "answer_zh": "Zapier 属于应用集成与自动化软件。第三方资料列出的功能包括API 管理、错误日志、数据映射、版本控制。"
+      "question_en": "Is Zapier an AI-only tool?",
+      "question_zh": "Zapier 只能用于 AI 吗？",
+      "answer_en": "No. Conventional Zap workflows connect app events and actions; using an AI model is optional.",
+      "answer_zh": "不是。常规 Zap 连接应用事件与动作，不要求使用 AI 模型。",
+      "source_refs": ["product"]
     },
     {
-      "question_en": "Which features are listed?",
-      "question_zh": "资料列出了哪些功能？",
-      "answer_en": "API Management, Error Logs, Data Mapping, Version Control",
-      "answer_zh": "API 管理、错误日志、数据映射、版本控制"
-    },
-    {
-      "question_en": "Has pricing been officially verified?",
-      "question_zh": "价格是否经过官网核实？",
-      "answer_en": "No. Pricing is a directory-reported snapshot or unknown. Check the official pricing and terms.",
-      "answer_zh": "尚未核实。价格属于第三方快照或未知，应核对官网定价及条款。"
+      "question_en": "Will a test send a real message?",
+      "question_zh": "测试会发送真实消息吗？",
+      "answer_en": "It can. Zapier says action testing can change the connected app. Use an appropriate test destination.",
+      "answer_zh": "可能会。Zapier 说明动作测试可能真实修改所连接的应用，应选择合适的测试目标。",
+      "source_refs": ["action-setup"]
     }
   ],
   "sources": [
@@ -166,25 +183,281 @@
       "read_at": "2026-10-22T09:04:36.140Z",
       "excerpt_sha256": "8f3e36b6f3604b3a64a0cf26cbb85eecdd1e184d4d3ac430adea00d082d4e04b",
       "verification": "directory_reported",
-      "transport": "public_web_reader"
+      "transport": "public_web_reader",
+      "use": "discovery_only_superseded"
+    },
+    {
+      "id": "product",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "What is Zapier?",
+      "url": "https://help.zapier.com/hc/en-us/articles/37518970271245-What-is-Zapier",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4a3ae4cee606d72b06504d290c60f28b6e22fb60085ad5606f80fe42cc267851",
+      "research_notes_en": "Workflow, Tables and MCP are distinct products. The current introduction describes no-, low- and full-code tools."
+    },
+    {
+      "id": "trigger-setup",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "Set up your Zap trigger",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496288188429-Set-up-your-Zap-trigger",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4ef7d0ca805ef41b489b5940a469d9a323ead82e2ca3cd10338f708c6425b46b",
+      "research_notes_en": "Select app, event and account; new-only and new-or-updated events differ."
+    },
+    {
+      "id": "action-setup",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "Set up your Zap action",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496257774221-Set-up-your-Zap-action",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "d53664cf6cdcad3d23431c0dae8a3e4ae3e0fa19d428c4efbe2b7f7848f366a2",
+      "research_notes_en": "Required fields, live action testing, publishing, and run history; conditions apply to extra steps."
+    },
+    {
+      "id": "field-mapping",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "Enter data in Zap fields",
+      "url": "https://help.zapier.com/hc/en-us/articles/31709122224653-Enter-data-in-Zap-fields",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "62e3d37131b229942fdc48f058cc301d80d63363d6847c6960748341f1d09036",
+      "research_notes_en": "Static values remain fixed; mapped outputs provide dynamic inputs and field types constrain accepted data."
+    },
+    {
+      "id": "trigger-behavior",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "How Zap triggers work",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496244568589-How-Zap-triggers-work",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4ac79937b7f8ffe1d9ac42054c738e7ddecff544844cec560926c48d8f6364de",
+      "research_notes_en": "Polling and instant triggers depend on the app implementation; activation does not backfill old events."
+    },
+    {
+      "id": "free-plan",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "What is included in the Free plan?",
+      "url": "https://help.zapier.com/hc/en-us/articles/32337438839565-What-s-included-in-Zapier-s-Free-plan",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4c8467eb961e8cbfdb6cfda45ff9a315202ecc4394c57cf8f93a4ef9fc1d9cb6",
+      "research_notes_en": "Single user, 100 monthly tasks, one trigger and one action; new-account paid-feature trial is separate."
+    },
+    {
+      "id": "pricing",
+      "type": "official_pricing",
+      "site": "Zapier",
+      "title": "Plans and pricing",
+      "url": "https://zapier.com/pricing",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "ef3266cdc888896e97d4384d7fe2582d1336f7ef45543bb65671a63a1ff66649",
+      "research_notes_en": "USD view shows Professional 19.99 and Team 69 starting amounts; cadence and usage selectors prevent a universal payable-price interpretation."
+    },
+    {
+      "id": "task-metering",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "How is task usage measured?",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "4adfa86adde12d32cc00df77eb946679acb6bebad9bb23063e2f4dc9aa0eae18",
+      "research_notes_en": "Successful actions generally count, with exemptions; AI, code and MCP have differing rates."
+    },
+    {
+      "id": "replay",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "What is replay?",
+      "url": "https://help.zapier.com/hc/en-us/articles/19220226086797-What-is-replay",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "b7771736558dca790005c07961394c07200266bbea6b882185f9ef267b314af2",
+      "research_notes_en": "Errored-step recovery differs from full-run replay; restrictions and no guarantee of recovery apply."
+    },
+    {
+      "id": "limits",
+      "type": "official_documentation",
+      "site": "Zapier",
+      "title": "Zap limits",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496181445261-Zap-limits",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "52bb387519bc59a1b05fdfa5647a499f8313f25679e6648a625994409e07a87b",
+      "research_notes_en": "One-way flows are not native two-way sync; opposing flows can loop; connected-app API limits still apply."
+    },
+    {
+      "id": "sheets-slack",
+      "type": "official_integration",
+      "site": "Zapier",
+      "title": "Google Sheets and Slack integrations",
+      "url": "https://zapier.com/apps/google-sheets/integrations/slack",
+      "read_at": "2026-10-22T09:37:35Z",
+      "verification": "official_documentation_read",
+      "transport": "public_web_reader",
+      "excerpt_sha256": "62d712d52e0943d39ea99b530c05cac1120fe0e64510609988b1c69ec55c85dc",
+      "research_notes_en": "The official app-pair page supports investigating a row-to-message workflow; exact events must be checked."
     }
   ],
   "official_check": {
-    "status": "not_checked",
-    "checked_at": null
+    "status": "documentation_reviewed",
+    "checked_at": "2026-10-22T09:37:35Z",
+    "scope": "Public primary sources read; no account, purchase, integration execution, performance benchmark, owner identity, or publication approval tested."
   },
   "localization": {
     "en": {
-      "status": "structured_draft"
+      "status": "editorial_draft"
     },
     "zh": {
-      "status": "structured_draft",
+      "status": "translated_from_english_editorial_draft",
       "untranslated_feature_labels": []
     }
   },
   "review_notes": [
-    "Original bilingual descriptions summarize structured third-party facts; not owner or platform verification.",
-    "General feature explanations describe terms, not product-specific plan limits or implementation.",
-    "Unknown prices, licenses, languages, limitations and alternatives remain explicitly unknown."
-  ]
+    "English original and Chinese translation were rewritten project by project from the sources attached to each substantive section.",
+    "Documented means the vendor describes the behavior. It is not evidence of independent testing, reliability, ease of use, or customer outcomes.",
+    "Examples, fit judgments, and evaluation steps are editorial guidance, not observed customer deployments.",
+    "Source retrieval can use cached public-web text. Prices and product limits are a dated documentation snapshot, not a purchase quote.",
+    "This remains a private research draft. Identity, publishing approval, and directional alternative relationships are separate."
+  ],
+  "description_source_refs": ["product", "trigger-setup", "action-setup"],
+  "profile": {
+    "sections": [
+      {
+        "id": "workflow-example",
+        "title_en": "An example: spreadsheet row to team notification",
+        "title_zh": "示例：从表格新增记录到团队通知",
+        "en": "Suppose an operations team tracks new requests in Google Sheets and wants them announced in Slack. Zapier publishes a connector page for this app pair. An illustrative workflow watches for the relevant row event, maps request fields into a message, and sends it to a chosen channel. Decide whether only new rows should count or whether subsequent edits should also create work; those are different event semantics.\n\nDefine the expected destination record before building: which fields must appear, which rows should be excluded, and how you will identify a duplicate notification. The example describes a possible workflow, not one executed for this review. For another app pair, verify the corresponding events and permissions first.",
+        "zh": "假设运营团队用 Google Sheets 记录新请求，希望有新记录时在 Slack 中通知。Zapier 为这两个应用提供专门的集成页面。可以据此设计一条流程：监听需要的表格事件，把请求字段填入消息，再发送到指定频道。应先区分“新增行”与“新增或修改行”：两者会在不同条件下启动流程。\n\n搭建前先明确预期结果，包括必须出现哪些字段、哪些记录应排除，以及怎样识别重复通知。这是基于连接器能力设计的示例，本文没有实际运行。更换应用组合时，需要重新确认事件和权限。",
+        "source_refs": ["sheets-slack", "trigger-setup"],
+        "evidence_type": "editorial_example_based_on_documentation"
+      },
+      {
+        "id": "ai-and-platform",
+        "title_en": "Where AI, MCP and Tables fit",
+        "title_zh": "AI、MCP 与 Tables 分别适合什么用途",
+        "en": "AI by Zapier can add model-based classification, summarization or drafting to a Zap. Tables stores data used by automations. MCP instead lets an AI client invoke connected app actions on demand; it is not the same as an event-triggered Zap. These options broaden the platform, but a straightforward row-to-message workflow does not need a model.\n\nChoose the interaction model first. For an AI step, define the expected output and how uncertain results will be handled; then check that product’s usage rate. The ability to call a model or app does not demonstrate that its decisions are correct.",
+        "zh": "AI by Zapier 可在 Zap 中加入分类、摘要或起草等模型步骤；Tables 保存自动化所用数据；MCP 则让 AI 客户端按需调用连接应用的动作，与事件触发的 Zap 不同。这些能力扩展了平台，但简单的表格通知无需接入模型。\n\n应先选择交互方式。使用 AI 步骤时，明确预期输出以及如何处理不确定结果，再核对该产品的费率。能够调用模型或应用，并不证明自动决策正确。",
+        "source_refs": ["product", "task-metering"],
+        "evidence_type": "documented_with_editorial_evaluation_guidance"
+      },
+      {
+        "id": "data-model",
+        "title_en": "What mapping does, and what it does not fix",
+        "title_zh": "字段映射的作用与边界",
+        "en": "A mapped value is a reference to data from a preceding step. A static value, such as a fixed channel or label, stays the same across runs. Mixing these up can produce a workflow that passes a sample test but repeatedly sends the sample name or address. Field types still matter: a date, identifier, or list must match what the destination accepts.\n\nOur evaluation advice is to test an empty optional field, an edited record, and a non-ASCII name as well as the easiest sample. Inspect the result in the destination app. Mapping transfers a value; it does not establish that the value is correct or that the business process has succeeded.",
+        "zh": "映射值引用前面步骤的数据；静态值则在每次运行时保持不变，例如固定频道或标签。混淆两者，可能造成样例测试看似通过，实际每次却发送相同的姓名或地址。目标字段的类型仍然有效，日期、标识符和列表都要符合接收方的格式。\n\n建议除了最简单的样例，还检查可选字段为空、记录被编辑、姓名含非 ASCII 字符等情况，并到目标应用中核对结果。映射解决的是取值与传递问题，不能自动证明数据正确或业务已经完成。",
+        "source_refs": ["field-mapping"],
+        "evidence_type": "documented_with_editorial_test_suggestions"
+      },
+      {
+        "id": "latency",
+        "title_en": "How quickly does a Zap start?",
+        "title_zh": "工作流多久会启动？",
+        "en": "Some triggers poll an app periodically; others receive a webhook when an event occurs. The trigger implementation determines the type, so paying for a faster plan does not turn every polling event into an instant one. Check the exact event used by your workflow, not a generic claim of “real-time integration.”\n\nZapier documents a 15-minute polling interval on Free and shorter intervals on paid plans. This describes checking frequency, not an end-to-end delivery guarantee. The documented trigger behavior also excludes historical records created before activation. Treat a historical migration as a separate requirement from handling future events.",
+        "zh": "有些触发器定期轮询应用，有些则接收事件发生时发送的 webhook。触发器的实现决定了它属于哪一种；购买更高套餐，并不会把所有轮询事件变为即时事件。应核对工作流实际使用的事件，而不是笼统接受“实时集成”的宣传。\n\n文档列出的免费版轮询间隔为 15 分钟，付费版可有更短间隔。这是检查频率，并非整条流程的交付时限保证。文档也说明，启动前已有的历史记录不会按普通新事件自动触发。历史迁移与处理未来事件应分别评估。",
+        "source_refs": ["trigger-behavior"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "free-vs-trial",
+        "title_en": "Free use and the trial are different",
+        "title_zh": "持续免费与试用的区别",
+        "en": "As checked on 22 October 2026, the Free plan documents one user, 100 monthly tasks, and two-step Zaps: one trigger plus one action. A new account also receives a 14-day trial of paid features. A workflow that uses a premium app or multiple actions during that trial may need a paid plan afterwards. Test the plan you intend to keep, not just what happens to be enabled during onboarding.",
+        "zh": "截至 2026 年 10 月 22 日核对的文档，免费套餐为单用户，每月含 100 个任务，支持一个触发器加一个动作的两步 Zap。新账户另有 14 天付费功能试用。在试用期使用高级应用或多个动作的流程，试用结束后可能需要付费。应按长期准备使用的套餐验证，而不是只看注册时临时开放的功能。",
+        "source_refs": ["free-plan"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "paid-pricing",
+        "title_en": "How to read the paid price",
+        "title_zh": "如何理解付费价格",
+        "en": "The public USD pricing view advertises Professional from $19.99 per month and Team from $69 per month, with monthly/yearly billing and task-tier controls. These are advertised starting amounts, not a quote for your expected volume; the retrieved view does not bind each amount to an unambiguous selected tier and billing interval. Enterprise requires a quote. Record currency, billing cadence, included usage, overage settings, and any connected-service charges before comparing totals. We leave a normalized payable price unset rather than presenting the starting amount as a universal monthly bill.",
+        "zh": "公开美元定价页展示 Professional 起价每月 19.99 美元、Team 起价每月 69 美元，同时提供按月／按年和任务量选择。这些是宣传起价，不是按你的实际用量计算的报价；本次读取结果没有把金额与明确选中的任务档位、账单周期一一绑定。Enterprise 需要询价。比较总成本前，应记录币种、付款周期、包含的用量、超额设置及其他服务费用。因此本文保留起价快照，但不把它填写成人人适用的实际月账单。",
+        "source_refs": ["pricing"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "cost-example",
+        "title_en": "Estimate actions, not just incoming records",
+        "title_zh": "按动作估算费用，而非只数输入记录",
+        "en": "A successful ordinary app action generally consumes one task. In a hypothetical workflow that creates one CRM record and sends one Slack message for every incoming lead, 300 leads would use about 600 tasks if each action succeeds once. This is arithmetic for that two-action design, not a measured workload or a promise about all Zapier products.\n\nTriggers, filters, and certain built-in tools are exempt; AI, extended code runtime, and MCP can have different rates. Full reruns may count successful actions again. Budget from the actual step mix and retry behavior rather than multiplying every diagram box by one.",
+        "zh": "普通应用动作每成功执行一次，通常消耗一个任务。假设每条线索都创建一条 CRM 记录并发送一条 Slack 消息，300 条线索在这两个动作各成功一次时，约需 600 个任务。这只是该流程设计的计算示例，不是实测用量，也不是对所有 Zapier 产品的通用计价承诺。\n\n触发器、筛选及部分内置工具不计任务；AI、延长代码运行时间、MCP 等可有不同费率。整条流程重跑也可能重复计入成功动作。预算应按实际步骤及重试方式计算，不能把流程图中的每个方块一律算作一个任务。",
+        "source_refs": ["task-metering"],
+        "evidence_type": "documented_rules_with_hypothetical_calculation"
+      },
+      {
+        "id": "failure-recovery",
+        "title_en": "A successful first step does not make the run atomic",
+        "title_zh": "前一步成功，不代表整条流程具备事务性",
+        "en": "Zapier distinguishes retrying errored steps from replaying a whole run. Its replay documentation describes leaving an already successful earlier action alone when recovering a failed later action. Whole-run replay is a different operation and can repeat successful work. Autoreplay has plan and eligibility conditions, and recovery is not guaranteed.\n\nFor workflows that create invoices, contacts, or messages, decide how to recognize work already completed before replaying. That is an implementation recommendation: use an appropriate stable business identifier and check destination state. It should not be read as a claim that Zapier makes arbitrary external systems transactional.",
+        "zh": "Zapier 区分失败步骤重试与整条执行记录重放。重放文档举例说明：恢复后续失败步骤时，不会重新执行前面已经成功的动作。整条重放则是另一种操作，可能再次完成已经做过的工作。自动重试有套餐与适用条件，文档也没有保证一定恢复成功。\n\n对于创建发票、联系人或消息的流程，重放前应有办法识别哪些工作已经完成。建议使用合适的稳定业务标识，并核对目标系统状态。这是实现建议，不能理解为 Zapier 能让任意外部系统之间的操作成为数据库事务。",
+        "source_refs": ["replay"],
+        "evidence_type": "documented_with_editorial_guidance"
+      },
+      {
+        "id": "fit",
+        "title_en": "When to shortlist Zapier, and when to investigate further",
+        "title_zh": "适合列入候选的情况与需要进一步验证的情况",
+        "en": "Shortlist Zapier when the required app events exist, the process is an explicit sequence of handoffs, and someone can own exceptions. A narrower native integration may be sufficient for a single fixed connection; custom code may merit investigation when execution control matters more than setup convenience. These are selection criteria, not tested rankings.\n\nZapier explicitly describes Zaps as one-way automations, not native two-way synchronization. Opposing workflows can introduce loops. Connected apps impose their own API limits as well. Processes needing conflict resolution, guaranteed low latency, or large bursts therefore need a more specific proof of fit than a connector count. No alternative has been approved as a directional relationship in this catalog.",
+        "zh": "当所需应用事件已经提供、流程可以明确拆成顺序交接，而且有人负责处理异常时，可以把 Zapier 列入候选。单一固定连接也可能由应用自带集成满足；如果更看重执行控制，则值得进一步评估自写代码。这些是选型判断，不是经过测试的排名。\n\nZapier 明确把 Zap 定义为单向自动化，不提供原生双向同步。用相反方向的两条流程模拟同步，可能产生循环。连接的应用也各有 API 限制。因此，需要冲突解决、保证低延迟或处理大批量突发事件的业务，必须进行针对性验证，不能仅凭连接器数量决策。目录尚未批准任何有方向的替代关系。",
+        "source_refs": ["limits"],
+        "evidence_type": "documented_limitations_with_editorial_fit_judgment"
+      }
+    ]
+  },
+  "seo": {
+    "title_en": "Zapier: Workflows, Task Costs, Free Plan and Limits",
+    "title_zh": "Zapier：工作流、任务费用、免费版与使用限制",
+    "description_en": "Understand Zapier triggers, actions, task billing, free-plan limits and replay behavior, with a worked example and dated official sources.",
+    "description_zh": "通过具体流程理解 Zapier 的触发器、动作、任务计费、免费版限制与重放机制，附核对日期及官方来源。",
+    "primary_intent": "Understand the product and decide whether a specific app handoff fits.",
+    "secondary_questions": [
+      "How does Zapier count tasks?",
+      "What changes after the trial?",
+      "Does Zapier do two-way synchronization?"
+    ],
+    "query_basis": "Editorial intent hypotheses informed by current product documentation and competitor page review; no keyword volume or ranking measured.",
+    "canonical_url": null
+  },
+  "research_gaps": [
+    {
+      "en": "UI languages, regional account/payment availability, data location and contractual security requirements were not confirmed.",
+      "zh": "尚未确认界面语言、各地区账户／付款可用性、数据位置及具体合同安全要求。",
+      "source_refs": [],
+      "evidence_type": "not_verified"
+    },
+    {
+      "en": "No connector was executed. Validate permissions, required fields, duplicate handling and real task use with your own representative records.",
+      "zh": "未实际运行连接器；应使用自己的代表性记录验证权限、必填字段、重复处理及真实任务消耗。",
+      "source_refs": [],
+      "evidence_type": "not_tested"
+    }
+  ],
+  "content_method": {
+    "author": "Codex (AI assistant)",
+    "method": "Public primary-source research, original English editorial synthesis and Chinese translation. Hypothetical examples are not executed tests.",
+    "independent_review": false,
+    "hands_on_test": false
+  }
 }
