@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T10:54:06.090380+00:00",
+  "updated_at": "2026-10-22T11:11:07.900327+00:00",
   "status": "in_progress",
-  "completed_count": 21,
+  "completed_count": 25,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -25,9 +25,13 @@
     "projects/email-marketing/rasa-io-1eca419c.json",
     "projects/email-marketing/robly-bac58e59.json",
     "projects/email-marketing/sender-06a01b02.json",
-    "projects/email-marketing/sendpulse-312766d1.json"
+    "projects/email-marketing/sendpulse-312766d1.json",
+    "projects/marketing-automation/act-on-40100b41.json",
+    "projects/marketing-automation/activecampaign-73fed8ee.json",
+    "projects/marketing-automation/activedemand-4c37f034.json",
+    "projects/marketing-automation/customer-io-fa47b32e.json"
   ],
-  "remaining_count": 180,
+  "remaining_count": 176,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -35,11 +39,7 @@
     "projects/email-marketing/icontact-546f315f.json",
     "projects/email-marketing/mailify-7607e263.json",
     "projects/email-marketing/moosend-d2af2749.json",
-    "projects/marketing-automation/act-on-40100b41.json",
-    "projects/marketing-automation/activecampaign-73fed8ee.json",
-    "projects/marketing-automation/activedemand-4c37f034.json",
     "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
-    "projects/marketing-automation/customer-io-fa47b32e.json",
     "projects/marketing-automation/delivra-69b8acb6.json",
     "projects/marketing-automation/drip-a44a121f.json",
     "projects/marketing-automation/encharge-38434e71.json",
@@ -211,7 +211,7 @@
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
   "current_category": "marketing-automation",
-  "next_project": "projects/marketing-automation/act-on-40100b41.json",
+  "next_project": "projects/marketing-automation/delivra-69b8acb6.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -307,6 +307,25 @@
         "moosend-curl.html"
       ],
       "generic_html_sha256": "2e5d521ae7a1e455ff0ab364d8304de0541e5435d48fe1446096fa85d76b93e7"
+    },
+    {
+      "path": "projects/marketing-automation/aritic-pinpoint-6c68d98f.json",
+      "status": "not_completed",
+      "reason": "Official product and pricing pages are readable, but the official PinPoint documentation entry currently contains an unrelated COVID-19 article instead of operational documentation. No cause, operator or incident attribution is inferred. Detailed automation behavior and current documentation integrity remain unresolved.",
+      "evidence": [
+        {
+          "title_and_url": "docs.aritic.com (https://docs.aritic.com/aritic-pinpoint/)",
+          "read_at": "2026-10-22T11:11:07.901238+00:00",
+          "excerpt_sha256": "96a962675dc8add6b920857260ecbf0332a0c898563984c1240520c63f054063",
+          "scratch_file": "/Users/rainie/Desktop/123charts.com/123charts-research-03/.scratch/deep-research/batch-03/aritic-price-doc.json",
+          "chunk_index": 1
+        }
+      ],
+      "scratch_files": [
+        "aritic-cio-start.json",
+        "aritic-cio-docs.json",
+        "aritic-price-doc.json"
+      ]
     }
   ],
   "compatibility_issues": [
@@ -401,6 +420,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "marketing-automation-01",
+      "completed_projects": 25,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark official Help Scout cross-domain incompatibility at scripts/catalog/validate.mjs:166; genuine URLs preserved"
+        },
+        {
+          "command": "Prettier changed JSON, scope/draft/reference checks and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -418,6 +455,11 @@
       "commit": "dad0450",
       "completed_count": 14,
       "scope": "GetResponse, Kit, Mailchimp, Mailercloud, MailerLite"
+    },
+    {
+      "commit": "7409c3f",
+      "completed_count": 21,
+      "scope": "Mailjet, Mailmodo, Mailrelay, rasa.io, Robly, Sender, SendPulse"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -433,6 +475,12 @@
       "completed": 21,
       "uncompleted_with_source_gaps": 6,
       "status": "source_gaps_remain"
+    },
+    "marketing-automation": {
+      "assigned": 27,
+      "completed": 4,
+      "uncompleted_with_source_gaps": 1,
+      "status": "in_progress"
     }
   }
 }
