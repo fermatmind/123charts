@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T14:50:48.946803+00:00",
+  "updated_at": "2026-10-22T14:58:32.723069+00:00",
   "status": "in_progress",
   "assigned": 140,
-  "completed_count": 83,
+  "completed_count": 87,
   "completed_projects": [
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/dell-boomi-api-management-73e49bde.json",
@@ -71,6 +71,10 @@
     "projects/no-code/adalo-471bff37.json",
     "projects/no-code/airslate-workflow-5369295c.json",
     "projects/no-code/anything-09e116dc.json",
+    "projects/no-code/appmysite-943f66b7.json",
+    "projects/no-code/appy-pie-acc435e9.json",
+    "projects/no-code/bubble-a31377aa.json",
+    "projects/no-code/glide-1eb7981a.json",
     "projects/software-testing/blazemeter-68e03014.json",
     "projects/software-testing/cloudqa-813805b6.json",
     "projects/software-testing/cypress-io-8ab7255e.json",
@@ -90,7 +94,7 @@
     "projects/workflow-automation/snaplogic-dbbf47df.json",
     "projects/workflow-automation/tray-io-f7fac30c.json"
   ],
-  "remaining_count": 57,
+  "remaining_count": 53,
   "remaining_projects": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -128,11 +132,7 @@
     "projects/monitoring/trisul-network-analytics-15123bc8.json",
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
-    "projects/no-code/appmysite-943f66b7.json",
-    "projects/no-code/appy-pie-acc435e9.json",
-    "projects/no-code/bubble-a31377aa.json",
     "projects/no-code/checkbox-930acc8a.json",
-    "projects/no-code/glide-1eb7981a.json",
     "projects/no-code/jestor-37bbc340.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
     "projects/no-code/onspace-ai-480bdafc.json",
@@ -411,7 +411,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed:1000 records/86 global researched (3 baseline +83 assigned)/0 untranslated labels; structure/references only"
+      "result": "passed:1000 records/90 global researched (3 baseline +87 assigned)/0 untranslated labels; structure/references only"
     }
   ],
   "checkpoints": [
@@ -549,6 +549,11 @@
       "commit": "d0eb176",
       "completed_count": 80,
       "scope": "Ownership handoff to batch-06; completion unchanged"
+    },
+    {
+      "commit": "92cc8f5",
+      "completed_count": 83,
+      "scope": "Adalo, altaFlow, Anything; App2.dev/Appenate gaps; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
@@ -562,7 +567,7 @@
     "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete.",
     "databases": "13 of 15 complete; all 15 investigated; Fauna originals inaccessible and Harper cross-domain authority unresolved",
     "software-testing": "11 of19 complete; all19 investigated;8 incomplete with actual access/fee/identity/authority gaps",
-    "no-code": "3 of18 retained records complete; App2.dev originals unavailable and Appenate Help Hub gated;13 not yet investigated."
+    "no-code": "7 of18 retained complete; App2.dev, Appenate, Checkbox incomplete;8 not yet investigated."
   },
   "identity_changes": [
     {
@@ -640,6 +645,12 @@
       "old_domain": "createanything.com",
       "current_domain": "anything.com",
       "evidence": "Actual official migration notice read; no duplicate current identity in local catalog; original slug retained."
+    },
+    {
+      "project": "Glide Classic",
+      "old_domain": "glideapps.com",
+      "current_domain": "glideapps.com",
+      "evidence": "Official Classic page and documentation retain original platform; main pricing FAQ explicitly separates GlideOS accounts, subscriptions and data. Slug retained, website narrowed to /classic."
     }
   ],
   "content_corrections": [
@@ -757,6 +768,10 @@
     {
       "project_path": "projects/no-code/appenate-1052b9a0.json",
       "reason": "Official pricing was read: annual USD rates are $20/$28/$36 per user/month with a five-user minimum; monthly rates differ. The official Help Hub migration notice points to help.appenate.com, which requires sign-in. Deep current documentation for offline synchronization conflicts, permissions, export and recovery was not accessible. Marketing and pricing alone do not establish a completed operating profile."
+    },
+    {
+      "project_path": "projects/no-code/checkbox-930acc8a.json",
+      "reason": "Official Checkbox.ai homepage now describes an AI legal front door. Its pricing route was inaccessible and no readable deep operational documentation was established by official-domain discovery. Checkbox.com survey pricing is a different product and was excluded. Current fees, workflow permissions, export/recovery and technical limits remain unverified; incomplete, not counted complete."
     }
   ],
   "availability_updates": [
@@ -1172,10 +1187,17 @@
       "excerpt_sha256": "95c506f9739b1a821aec6666d001613c584160557f0fd3af5f0e02d7d7d9c06c",
       "read_at": "2026-10-22T14:37:15.586834+00:00",
       "use": "Actual sign-in barrier read, no authentication attempted."
+    },
+    {
+      "capture": "checkbox-entry-0",
+      "actual_url": "https://www.checkbox.ai/",
+      "excerpt_sha256": "5e2e3ea615e478891740b580f53c873a5faedf21df56750a025cab4ae3cfdbf6",
+      "read_at": "2026-10-22T14:51:34.624975+00:00",
+      "use": "Official current positioning read; incomplete pricing/technical record, unrelated survey product excluded."
     }
   ],
   "original_assigned": 199,
-  "retained_remaining_count": 57,
+  "retained_remaining_count": 53,
   "retained_remaining_paths": [
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -1213,11 +1235,7 @@
     "projects/monitoring/trisul-network-analytics-15123bc8.json",
     "projects/no-code/app2-dev-e78be706.json",
     "projects/no-code/appenate-1052b9a0.json",
-    "projects/no-code/appmysite-943f66b7.json",
-    "projects/no-code/appy-pie-acc435e9.json",
-    "projects/no-code/bubble-a31377aa.json",
     "projects/no-code/checkbox-930acc8a.json",
-    "projects/no-code/glide-1eb7981a.json",
     "projects/no-code/jestor-37bbc340.json",
     "projects/no-code/obviously-ai-6c7ff423.json",
     "projects/no-code/onspace-ai-480bdafc.json",
