@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T10:35:10.477786+00:00",
+  "updated_at": "2026-10-22T10:54:06.090380+00:00",
   "status": "in_progress",
-  "completed_count": 14,
+  "completed_count": 21,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -18,23 +18,23 @@
     "projects/email-marketing/kit-formerly-convertkit-c4dc561a.json",
     "projects/email-marketing/mailchimp-5f993e33.json",
     "projects/email-marketing/mailercloud-5f378d21.json",
-    "projects/email-marketing/mailerlite-664ee20d.json"
+    "projects/email-marketing/mailerlite-664ee20d.json",
+    "projects/email-marketing/mailjet-29eb0a97.json",
+    "projects/email-marketing/mailmodo-1d8ef731.json",
+    "projects/email-marketing/mailrelay-a6822f3c.json",
+    "projects/email-marketing/rasa-io-1eca419c.json",
+    "projects/email-marketing/robly-bac58e59.json",
+    "projects/email-marketing/sender-06a01b02.json",
+    "projects/email-marketing/sendpulse-312766d1.json"
   ],
-  "remaining_count": 187,
+  "remaining_count": 180,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
     "projects/email-marketing/emma-0245b375.json",
     "projects/email-marketing/icontact-546f315f.json",
     "projects/email-marketing/mailify-7607e263.json",
-    "projects/email-marketing/mailjet-29eb0a97.json",
-    "projects/email-marketing/mailmodo-1d8ef731.json",
-    "projects/email-marketing/mailrelay-a6822f3c.json",
     "projects/email-marketing/moosend-d2af2749.json",
-    "projects/email-marketing/rasa-io-1eca419c.json",
-    "projects/email-marketing/robly-bac58e59.json",
-    "projects/email-marketing/sender-06a01b02.json",
-    "projects/email-marketing/sendpulse-312766d1.json",
     "projects/marketing-automation/act-on-40100b41.json",
     "projects/marketing-automation/activecampaign-73fed8ee.json",
     "projects/marketing-automation/activedemand-4c37f034.json",
@@ -210,8 +210,8 @@
     "projects/ai-images/thumbmagic-7fe20222.json",
     "projects/ai-images/zyng-ai-2b5bed43.json"
   ],
-  "current_category": "email-marketing",
-  "next_project": "projects/email-marketing/mailify-7607e263.json",
+  "current_category": "marketing-automation",
+  "next_project": "projects/marketing-automation/act-on-40100b41.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -284,6 +284,29 @@
         "https://www.icontact.com/pricing/"
       ],
       "scratch_files": ["getresponse-icontact-kit.json", "gr-free-kit.json"]
+    },
+    {
+      "path": "projects/email-marketing/mailify-7607e263.json",
+      "status": "not_completed",
+      "reason": "Official root returned HTTP 403 in web reader. No alternate transport or endpoint used to circumvent that restriction.",
+      "attempted_urls": ["https://www.mailify.com/"],
+      "evidence_local": ".scratch/deep-research/batch-03/next-email-start.json"
+    },
+    {
+      "path": "projects/email-marketing/moosend-d2af2749.json",
+      "status": "not_completed",
+      "reason": "Pricing readable, but required official workflow documentation repeatedly returned 502/timeouts in web reader. Normal HTTPS curl returned 200 with a generic Moosend help shell, without the requested article text; not treated as a successful article read. Python urllib separately failed local CA verification and no TLS verification was bypassed. Search extracts were discovery only.",
+      "attempted_urls": [
+        "https://docs.moosend.com/user-guide/articles/KnowledgeBase/54374-create-a-custom-automation?lang=en_US",
+        "https://docs.moosend.com/user-guide/articles/KnowledgeBase/54444-pause-or-restart-an-automation?lang=en_US",
+        "https://docs.moosend.com/user-guide/articles/KnowledgeBase/54348-add-an-action-to-an-automation-workflow?lang=en_US"
+      ],
+      "scratch_files": [
+        "moosend-workflows.json",
+        "moosend-retry.json",
+        "moosend-curl.html"
+      ],
+      "generic_html_sha256": "2e5d521ae7a1e455ff0ab364d8304de0541e5435d48fe1446096fa85d76b93e7"
     }
   ],
   "compatibility_issues": [
@@ -360,6 +383,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "email-marketing-04",
+      "completed_projects": 21,
+      "commands": [
+        {
+          "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+          "result": "PASS: 7 tests"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged official Help Scout cross-domain incompatibility at scripts/catalog/validate.mjs:166; original official URLs retained"
+        },
+        {
+          "command": "Prettier changed JSON, scope/draft/reference checks and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -372,6 +413,11 @@
       "commit": "fbca739",
       "completed_count": 9,
       "scope": "Campayn, CleverReach, Constant Contact, EmailOctopus; source integrity gaps"
+    },
+    {
+      "commit": "dad0450",
+      "completed_count": 14,
+      "scope": "GetResponse, Kit, Mailchimp, Mailercloud, MailerLite"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -380,5 +426,13 @@
     "independent_review": false,
     "hands_on_test": false
   },
-  "evidence_storage": ".scratch/deep-research/batch-03/ contains actual web outputs and per-source text used for SHA-256; ignored and not committed."
+  "evidence_storage": ".scratch/deep-research/batch-03/ contains actual web outputs and per-source text used for SHA-256; ignored and not committed.",
+  "category_progress": {
+    "email-marketing": {
+      "assigned": 27,
+      "completed": 21,
+      "uncompleted_with_source_gaps": 6,
+      "status": "source_gaps_remain"
+    }
+  }
 }
