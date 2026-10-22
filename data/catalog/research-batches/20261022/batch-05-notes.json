@@ -4,25 +4,25 @@
   "status": "in_progress",
   "branch": "data/catalog-deep-batch-05",
   "assigned_count": 197,
-  "completed_count": 4,
+  "completed_count": 10,
   "completed_project_paths": [
     "projects/accounting/accoru-8ac6a3c8.json",
     "projects/accounting/accounting-seed-17e62f86.json",
     "projects/accounting/accountingsuite-f506f4a6.json",
-    "projects/accounting/activityhd-99b17871.json"
-  ],
-  "remaining_count": 193,
-  "remaining_project_paths": [
-    "projects/accounting/agenterbooks-a81dd04d.json",
+    "projects/accounting/activityhd-99b17871.json",
     "projects/accounting/freshbooks-a5cc4e1c.json",
-    "projects/accounting/halon-tax-351c6ed1.json",
     "projects/accounting/lumatax-7211474f.json",
-    "projects/accounting/merrchant-216509ee.json",
     "projects/accounting/onefinops-38fa25ba.json",
-    "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/accounting/pharmatrader-4cba949c.json",
     "projects/accounting/quickbooks-2be5e15d.json",
-    "projects/accounting/workday-financial-management-1d67bbc9.json",
+    "projects/accounting/workday-financial-management-1d67bbc9.json"
+  ],
+  "remaining_count": 187,
+  "remaining_project_paths": [
+    "projects/accounting/agenterbooks-a81dd04d.json",
+    "projects/accounting/halon-tax-351c6ed1.json",
+    "projects/accounting/merrchant-216509ee.json",
+    "projects/accounting/patriot-accounting-ab21270e.json",
     "projects/erp/acumatica-5008e175.json",
     "projects/erp/bizautomation-cloud-erp-01026293.json",
     "projects/erp/deskera-461bb8db.json",
@@ -233,6 +233,12 @@
       "status": "pending_primary_sources",
       "url": "https://www.halontax.com/",
       "finding_en": "Direct official homepage read failed with HTTP 525. No current product or price established."
+    },
+    {
+      "slug": "patriot-accounting-ab21270e",
+      "status": "not_counted_complete",
+      "url": "https://www.patriotsoftware.com/accounting/",
+      "finding_en": "Official homepage direct read returned HTTP 403. Stopped that origin; did not bypass or treat third-party snippets as a full profile."
     }
   ],
   "notable_findings": [
@@ -243,6 +249,14 @@
     {
       "slug": "accoru-8ac6a3c8",
       "finding": "Removed unsupported payroll and time tracking; pricing lifetime offer is not explained by subscription terms."
+    },
+    {
+      "slug": "lumatax-7211474f",
+      "finding": "Old website redirects to Taxually; current vendor article explicitly limits LumaTax to enterprise/service providers, unlike broad ecommerce product examples. Current domain updated."
+    },
+    {
+      "slug": "quickbooks-2be5e15d",
+      "finding": "Global live pricing did not load, so numeric price/currency stay unknown. Current plan matrix and Finance AI/multicurrency exclusion documented."
     }
   ],
   "validation": [
@@ -254,9 +268,41 @@
       "prettier": "changed JSON formatted",
       "diff_check": "passed",
       "scope": "Structure/reference validation only, not independent editorial review."
+    },
+    {
+      "at": "2026-10-22T10:17:12+00:00",
+      "completed_count": 10,
+      "python_unittest": "7 tests passed",
+      "records_only": "passed: 1000 records, 13 researched including 3 baseline",
+      "prettier": "all 10 completed project JSONs and batch notes formatted",
+      "diff_check": "passed",
+      "source_text_hashes": "40 official source entries matched actual local text SHA-256",
+      "scope": "Structure, references and provenance; no independent review or execution test."
     }
   ],
-  "checkpoints": [],
+  "checkpoints": [
+    {
+      "commit": "d5e0f4b",
+      "completed_count": 4,
+      "branch_push": "succeeded",
+      "scope": "Accoru, Accounting Seed, AccountingSuite/CustomBooks, ActivityHD and batch notes"
+    }
+  ],
   "independent_review": false,
-  "hands_on_test": false
+  "hands_on_test": false,
+  "category_progress": [
+    {
+      "category": "accounting",
+      "assigned": 14,
+      "completed": 10,
+      "unresolved": 4,
+      "status": "all_14_attempted_4_not_counted_complete",
+      "unresolved_slugs": [
+        "agenterbooks-a81dd04d",
+        "halon-tax-351c6ed1",
+        "merrchant-216509ee",
+        "patriot-accounting-ab21270e"
+      ]
+    }
+  ]
 }
