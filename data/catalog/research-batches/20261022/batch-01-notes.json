@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T10:43:05.486371+00:00",
+  "updated_at": "2026-10-22T10:58:22.850250+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 15,
+  "completed_count": 20,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -20,20 +20,20 @@
     "projects/data-integration/etlworks-integrator-4f213c68.json",
     "projects/data-integration/flatly-67ad9bbe.json",
     "projects/data-integration/hevo-edfce79b.json",
-    "projects/data-integration/hotglue-dbe658b7.json"
+    "projects/data-integration/hotglue-dbe658b7.json",
+    "projects/data-integration/matillion-etl-51db8aff.json",
+    "projects/data-integration/peliqan-a94e721f.json",
+    "projects/data-integration/skyvia-9d4f0c26.json",
+    "projects/data-integration/synatic-1c0bb592.json",
+    "projects/data-integration/zoho-dataprep-14e0dae7.json"
   ],
-  "remaining_count": 184,
+  "remaining_count": 179,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
     "projects/data-integration/foghub-ed0b9582.json",
-    "projects/data-integration/matillion-etl-51db8aff.json",
     "projects/data-integration/panoply-452887ff.json",
-    "projects/data-integration/peliqan-a94e721f.json",
     "projects/data-integration/rivery-2d3c66b2.json",
-    "projects/data-integration/skyvia-9d4f0c26.json",
-    "projects/data-integration/synatic-1c0bb592.json",
-    "projects/data-integration/zoho-dataprep-14e0dae7.json",
     "projects/api-management/apigee-edge-d4c9d902.json",
     "projects/api-management/bandwidth-b6f12f0f.json",
     "projects/api-management/blobr-e9fe1f36.json",
@@ -233,6 +233,14 @@
     {
       "project": "hotglue",
       "detail": "Homepage never-stores-data statement conflicts with persistent snapshots and default platform cache/snapshot storage; no absolute non-storage promise adopted."
+    },
+    {
+      "project": "Zoho DataPrep",
+      "detail": "Technical limits and general FAQ disagree on column count and schedules. Paid amount not reliably rendered; processing stages count toward billing."
+    },
+    {
+      "project": "Synatic",
+      "detail": "Published EULA dated 2023; Order Form determines actual quote and limits. Homepage template filler excluded."
     }
   ],
   "verification": [
@@ -242,7 +250,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 18 primary-source researched globally (3 baseline + 15 assigned), 1000 records checked"
+      "result": "passed: 23 primary-source researched globally (3 baseline + 20 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -264,14 +272,19 @@
       "commit": "a46cced",
       "completed_count": 11,
       "scope": "Airbyte, Ascend, CData Sync, CloverDX; AINSYS and Dexi gaps; pushed"
+    },
+    {
+      "commit": "0b69a8e",
+      "completed_count": 15,
+      "scope": "Etlworks, Flatly, Hevo, hotglue official research and Foghub gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Matillion ETL",
-    "data-integration": "8 of 18 complete, 3 incomplete with evidence gaps, 7 not yet processed"
+    "next": "API management: Apigee Edge",
+    "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps"
   },
   "identity_changes": [
     {
@@ -311,6 +324,14 @@
     {
       "project_path": "projects/data-integration/foghub-ed0b9582.json",
       "reason": "Official homepage and pricing inaccessible; no authoritative readable documentation found. Not counted complete."
+    },
+    {
+      "project_path": "projects/data-integration/panoply-452887ff.json",
+      "reason": "Former domain explicitly an unaffiliated publication; historical SQream pages do not resolve current operator/availability. Not counted complete."
+    },
+    {
+      "project_path": "projects/data-integration/rivery-2d3c66b2.json",
+      "reason": "Official documentation migrated rivery.io -> help.boomi.com. Same-registered-domain validator cannot encode actual sources without a shared authority schema change. No false URL, identity merger or validator bypass; not counted complete."
     }
   ],
   "availability_updates": [
@@ -318,6 +339,56 @@
       "project": "Ascend",
       "status": "official_wind_down_notice",
       "scope": "Homepage and former pricing page announce winding down. Historical capabilities only; no new-current-product claim or final cessation date."
+    }
+  ],
+  "external_authority_reads": [
+    {
+      "capture": "rivery-docs",
+      "requested_title": "Data Integration Overview | Boomi Documentation (https://docs.rivery.io/)",
+      "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/Data_Integration_Overview",
+      "excerpt_sha256": "837bb0c60f1474c5b9c5460b602ec2c5d557636e27ee3a7eb716502afd79d35c",
+      "read_at": "2026-10-22T10:50:03.122153+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "rivery-start-current",
+      "requested_title": "Getting started with Data Integration | Boomi Documentation (https://help.boomi.com/docs/Atomsphere/Data_Integration/GettingStarted/start-here)",
+      "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/GettingStarted/start-here",
+      "excerpt_sha256": "765c00f2460482e8a3c11711c36d007505fce6ced96bcb2a0713d945f3c4a54a",
+      "read_at": "2026-10-22T10:51:56.335056+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "rivery-logic-current",
+      "requested_title": "Logic Flow overview | Boomi Documentation (https://help.boomi.com/docs/Atomsphere/Data_Integration/Rivers/LogicRiver/LogicRiverOverview/logic-overview)",
+      "actual_url": "https://help.boomi.com/docs/Atomsphere/Data_Integration/DataFlows/LogicFlow/LogicFlowOverview/logic-overview",
+      "excerpt_sha256": "926b78ec695135752216486f1255c9ec1ec164ec166d68749103fbe2aa60cdb9",
+      "read_at": "2026-10-22T10:51:59.798476+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "panoply-home",
+      "requested_title": "Panoply: data warehouse, ETL and BI tools, compared honestly (https://panoply.io/)",
+      "actual_url": "https://panoply.io/",
+      "excerpt_sha256": "ce8e98981299894fcf986386dd59db7b88ab5e9c28a3e889f346c1be29524aeb",
+      "read_at": "2026-10-22T10:43:33.556188+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "panoply-pricing",
+      "requested_title": "Data warehouse pricing, explained - Panoply (https://panoply.io/pricing/)",
+      "actual_url": "https://panoply.io/pricing/",
+      "excerpt_sha256": "1515753eb2b47dcb95141938ae74b150be4fba89a59b6bbe3850d7e05032db61",
+      "read_at": "2026-10-22T10:43:36.551436+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
+    },
+    {
+      "capture": "panoply-sqream",
+      "requested_title": "Panoply by SQream Unveils Enhanced All-in-One Data Platform (https://sqream.com/media-room/panoply-by-sqream-unveils-enhanced-all-in-one-data-platform-redefining-efficiency-for-smbs-2/)",
+      "actual_url": "https://sqream.com/media-room/panoply-by-sqream-unveils-enhanced-all-in-one-data-platform-redefining-efficiency-for-smbs-2/",
+      "excerpt_sha256": "d2616c2b6ca93e21dda107a6109e915314d8528130dd8d210d4fe40417088d7a",
+      "read_at": "2026-10-22T10:44:52.314112+00:00",
+      "use": "Evidence for unresolved identity/authority gap only; not a completed official product profile."
     }
   ]
 }
