@@ -154,12 +154,14 @@
   "validation": {
     "python_unittest": "7 passed",
     "records_only": "Inherited failure before any batch-07 edits: basecamp-help.com != basecamp.com at scripts/catalog/validate.mjs:166. Shared validator and original projects not modified.",
-    "changed_records": "Full records validator executed in a scratch copy: only inherited non-owned cross-domain equality checks skipped; all owned paths retain the original assertion. Passed.",
+    "changed_records": "Passed: scratch copy restricted enumeration to the 68 assigned paths, preserving original per-record assertions; global counts not checked. Earlier broader scratch attempt also exposed inherited ZeroGPT www hostname mismatch.",
     "prettier": "Changed JSON formatted",
     "diff_check": "Passed"
   },
   "blockers": [],
-  "commits": [],
+  "commits": [
+    "3808d50 data: research BookingLive bookitLive and BookSteam from official sources"
+  ],
   "updated_at": "2026-10-22T14:46:23.436962+00:00",
   "scope_note": "Original batch-02 baseline completed records are not counted. Draft research only; no main push, publication or deployment."
 }
