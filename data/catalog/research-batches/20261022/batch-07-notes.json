@@ -72,7 +72,7 @@
     "projects/time-tracking/trackabi-40d34712.json",
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
-  "completed_count": 7,
+  "completed_count": 11,
   "completed_project_paths": [
     "projects/scheduling/bookinglive-pricing-reviews-and-25f745d4.json",
     "projects/scheduling/bookitlive-e9302186.json",
@@ -80,13 +80,13 @@
     "projects/scheduling/bookwhen-2bbf84d3.json",
     "projects/scheduling/booxi-4552361a.json",
     "projects/scheduling/calendar-288aec57.json",
-    "projects/scheduling/calendly-89cab4eb.json"
-  ],
-  "remaining_project_paths": [
+    "projects/scheduling/calendly-89cab4eb.json",
     "projects/scheduling/deskflex-d42be1ab.json",
     "projects/scheduling/doodle-e20f5097.json",
     "projects/scheduling/flexbooker-b73dd516.json",
-    "projects/scheduling/jezzam-7962422f.json",
+    "projects/scheduling/jezzam-7962422f.json"
+  ],
+  "remaining_project_paths": [
     "projects/scheduling/leadmonk-5542fa07.json",
     "projects/scheduling/meetfox-c4bb6e56.json",
     "projects/scheduling/mytime-40ac91fd.json",
@@ -154,15 +154,21 @@
   "validation": {
     "python_unittest": "7 passed",
     "records_only": "Inherited failure before any batch-07 edits: basecamp-help.com != basecamp.com at scripts/catalog/validate.mjs:166. Shared validator and original projects not modified.",
-    "changed_records": "Passed: all 68 assigned paths validated with original per-record assertions in scratch copy; only enumeration/global counts adjusted. Inherited ZeroGPT hostname mismatch also seen outside scope.",
-    "prettier": "All changed JSON formatted",
+    "changed_records": "Passed: assigned-only enumeration with unchanged per-record assertions; inherited full-catalog domain issues remain outside ownership.",
+    "prettier": "Changed JSON formatted",
     "diff_check": "Passed"
   },
-  "blockers": [],
+  "blockers": [
+    {
+      "path": "projects/scheduling/leadmonk-5542fa07.json",
+      "reason": "Official homepage returned HTTP 403 through direct public fetch and public web reader; no bypass or further retries; pricing inaccessible. Remains structured_candidate."
+    }
+  ],
   "commits": [
+    "c06f1ba4aae6f9c460c063ab0272d8a12ccb67ae data: research Bookwhen Booxi Calendar and Calendly",
     "751214bfd17d0035329b06997cd4ab855676aae9 data: record scoped batch validation and inherited catalog issues",
     "3808d509f0d72fc903c9203b313ea55a26f4bb98 data: research BookingLive bookitLive and BookSteam from official sources"
   ],
-  "updated_at": "2026-10-22T14:52:47.482085+00:00",
+  "updated_at": "2026-10-22T14:58:45.237888+00:00",
   "scope_note": "Original batch-02 baseline completed records are not counted. Draft research only; no main push, publication or deployment."
 }
