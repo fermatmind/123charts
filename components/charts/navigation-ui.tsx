@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { brand } from "@/lib/charts/brand";
 import { useEffect, useRef, useState } from "react";
 import {
   Search,
@@ -457,7 +458,7 @@ export function NavigationHome() {
   return (
     <div className="navigation-home">
       <div className="home-search-heading">
-        <h1>{t("Good websites. One click away.", "好网站，一点直达。")}</h1>
+        <h1>{brand[locale].headline}</h1>
         <nav>
           {data.categories.map((c) => (
             <a href={"#map-" + c.slug} key={c.slug}>
@@ -465,6 +466,17 @@ export function NavigationHome() {
             </a>
           ))}
         </nav>
+      </div>
+      <div className="brand-promises">
+        <span>{t("Free submission", "免费提交")}</span>
+        <i>·</i>
+        <span>{t("Free listing", "免费收录")}</span>
+        <i>·</i>
+        <span>{t("Clear categories", "分类清晰")}</span>
+        <i>·</i>
+        <Link href={href("/how-it-works") + "#data-and-order"}>
+          {t("Transparent data", "数据透明")}
+        </Link>
       </div>
       <UnifiedSearch />
       <FavoritesArea />
@@ -523,11 +535,17 @@ export function NavigationHome() {
       </div>
       <section className="home-alternatives">
         <div className="nav-section-heading">
-          <h2>{t("Another way to get it done", "找熟悉网站的替代")}</h2>
+          <h2>{t("Find alternatives that fit", "找到更合适的替代方案")}</h2>
           <Link href={href("/alternatives")}>
-            {t("All targets", "全部目标")} →
+            {t("Alternative charts", "替代榜单")} →
           </Link>
         </div>
+        <p className="brand-section-note">
+          {t(
+            "Compare purpose, pricing and conditions. Confirmed relationships only.",
+            "按用途、价格与使用条件比较同类网站，仅展示已确认关系。",
+          )}
+        </p>
         <div className="alternative-shortcuts">
           {targets.map((p) => (
             <Link key={p.id} href={href("/alternatives/" + p.slug)}>
@@ -540,6 +558,18 @@ export function NavigationHome() {
           ))}
         </div>
       </section>
+      <aside className="maker-line">
+        <p>
+          {t(
+            "Help the right people find your website. ",
+            "让需要的人发现你的网站。",
+          )}
+          {brand[locale].freeListing}
+        </p>
+        <Link href={href("/submit")}>
+          {t("Submit a website — free", "免费提交网站")} →
+        </Link>
+      </aside>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { brand } from "@/lib/charts/brand";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -49,13 +50,18 @@ export function ZoneFrame({
     <>
       <header className="topbar framework-header">
         <Link className="brand" href={href("/")}>
-          <span className="brand-mark">123</span>123Charts
+          <span className="brand-mark">123</span>
+          <span className="brand-copy">
+            <strong>123Charts</strong>
+            <small>{brand[locale].short}</small>
+          </span>
         </Link>
         <nav className="topnav">
-          <Link href={href("/categories")}>{t("Categories", "全部分类")}</Link>
+          <Link href={href("/categories")}>{t("Directory", "分类导航")}</Link>
           <Link href={href("/alternatives")}>
-            {t("Alternatives", "找替代")}
+            {t("Alternative charts", "替代榜单")}
           </Link>
+          <Link href={href("/new")}>{t("New listings", "最新收录")}</Link>
           <Link href={href(data.user ? "/dashboard/bookmarks" : "/following")}>
             {t("My favorites", "我的常用")}
           </Link>
@@ -74,7 +80,12 @@ export function ZoneFrame({
             {locale === "zh" ? "EN" : "中"}
           </Link>
           <Link className="button primary" href={href("/submit")}>
-            {t("Submit free", "免费提交")}
+            <span className="submit-full">
+              {t("Submit a website — free", "免费提交网站")}
+            </span>
+            <span className="submit-short">
+              {t("Submit free", "免费提交网站")}
+            </span>
           </Link>
           <details className="account-menu">
             <summary aria-label={t("Account menu", "账户菜单")}>
@@ -166,15 +177,12 @@ export function ZoneFrame({
           </div>
           {children}
           <footer className="footer">
-            <span>
-              123Charts ·{" "}
-              {t(
-                "Discover Websites, Explore Alternatives.",
-                "发现好网站，探索替代方案。",
-              )}
-            </span>
+            <span>123Charts · {brand[locale].positioning}</span>
             <Link href={href("/how-it-works")}>
               {t("How it works", "平台规则")}
+            </Link>
+            <Link href={href("/how-it-works") + "#data-and-order"}>
+              {t("Sources & sorting", "资料与排序说明")}
             </Link>
             <span>123charts.com</span>
           </footer>

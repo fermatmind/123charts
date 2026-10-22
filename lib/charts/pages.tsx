@@ -1,3 +1,5 @@
+import { brand } from "./brand";
+import { orderAlternativeChoices } from "./navigation";
 import { redirect, notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { bootstrap } from "@/lib/charts/server";
@@ -19,10 +21,10 @@ const labels: Record<string, [string, string]> = {
   projects: ["Discover websites", "发现网站"],
   products: ["Website profile", "网站档案"],
   categories: ["Category discovery charts", "分类发现榜"],
-  alternatives: ["Find alternatives", "找替代方案"],
+  alternatives: ["Alternative charts", "替代榜单"],
   free: ["Free to use", "免费可用榜"],
-  new: ["Newly listed", "新收录榜"],
-  submit: ["Submit for free", "免费提交"],
+  new: ["New listings chart", "最新收录榜"],
+  submit: ["Submit a website — free", "免费提交网站"],
   dashboard: ["Your workspace", "你的工作台"],
   following: ["Saved & following", "收藏与关注"],
   login: ["Sign in", "登录"],
@@ -48,14 +50,8 @@ async function generateMetadata({
   );
   const project = data.projects.find((p) => p.slug === path[1]),
     category = data.categories.find((c) => c.slug === path[1]);
-  let title =
-    labels[path[0]]?.[zh ? 1 : 0] ||
-    (zh
-      ? "发现好网站，找到更合适的替代方案。"
-      : "Discover Websites, Explore Alternatives.");
-  let description = zh
-    ? "按用途、价格、语言和实际条件比较网站。免费浏览，免费提交。"
-    : "Compare websites by purpose, pricing, language and conditions. Free to explore. Free to submit.";
+  let title = labels[path[0]]?.[zh ? 1 : 0] || brand[zh ? "zh" : "en"].title;
+  let description = brand[zh ? "zh" : "en"].description as string;
   if (project && ["projects", "products", "alternatives"].includes(path[0])) {
     title =
       path[0] === "alternatives"
@@ -103,7 +99,7 @@ async function generateMetadata({
     );
   const filtered = Object.keys(query).some((k) => !["dataset"].includes(k));
   return {
-    title,
+    title: !path.length ? { absolute: brand[zh ? "zh" : "en"].title } : title,
     description,
     alternates: {
       canonical,
@@ -114,7 +110,9 @@ async function generateMetadata({
     },
     robots: { index: !local && eligible && !filtered, follow: publicPath },
     openGraph: {
-      title: title + " | 123Charts",
+      title: !path.length
+        ? brand[zh ? "zh" : "en"].title
+        : title + " | 123Charts",
       description,
       url: canonical,
       siteName: "123Charts",
@@ -175,10 +173,10 @@ async function Page({ params, searchParams }: Props) {
             "@type": "ItemList",
             name: "Alternatives to " + project.name,
             url,
-            itemListElement: alternatives(
-              project,
-              initial.projects,
-              initial.relations,
+            itemListElement: orderAlternativeChoices(
+              alternatives(project, initial.projects, initial.relations),
+              query.task || "",
+              query.sort === "new" ? "new" : "name",
             ).map((x, i) => ({
               "@type": "ListItem",
               position: i + 1,

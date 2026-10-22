@@ -1,9 +1,11 @@
 "use client";
+import { brand } from "@/lib/charts/brand";
 import { FavoriteButton, SiteUnit, NavigationHome } from "./navigation-ui";
 import {
   localText,
   stableProjects,
   searchScore,
+  orderAlternativeChoices,
 } from "@/lib/charts/navigation";
 import { OfficialLink } from "./official-link";
 import Link from "next/link";
@@ -193,7 +195,7 @@ export function DiscoveryListing({
                 : mode === "open-source"
                   ? t("Open source websites", "开源发现")
                   : mode === "new"
-                    ? t("Newly listed", "新收录")
+                    ? t("New listings chart", "最新收录榜")
                     : t("Website directory", "网站目录")}
         </h1>
         <p>
@@ -206,10 +208,15 @@ export function DiscoveryListing({
                   "Exact matches first. Choose a website or compare alternatives.",
                   "精确匹配优先，选择官网或继续比较。",
                 )
-              : t(
-                  "Compare purpose and conditions. Names open official websites.",
-                  "比较用途和使用条件，点击网站名称直达官网。",
-                )}
+              : mode === "new"
+                ? t(
+                    "Ordered by first public listing date, not product launch date. Editing a profile never resets it.",
+                    "按首次审核公开时间排序，不代表产品首发时间；编辑资料不重置收录日期。",
+                  )
+                : t(
+                    "Compare purpose and conditions. Names open official websites.",
+                    "比较用途和使用条件，点击网站名称直达官网。",
+                  )}
         </p>
       </header>
       {category && (
@@ -321,6 +328,20 @@ export function DiscoveryListing({
             )
           : ""}
       </p>
+      <p className="ordering-note">
+        {isSearch
+          ? t("Order: exact matches first", "当前排序：精确匹配优先")
+          : sort === "new"
+            ? t(
+                "Order: first public listing, newest first",
+                "当前排序：首次公开收录时间倒序",
+              )
+            : t("Order: name A–Z, stable", "当前排序：名称 A–Z，稳定顺序")}{" "}
+        ·{" "}
+        <Link href={href("/how-it-works") + "#data-and-order"}>
+          {t("Sorting explained", "排序说明")}
+        </Link>
+      </p>
       {view === "alternatives" || intent === "alternatives" ? (
         <div className="alternative-shortcuts">
           {targets.map((p) => (
@@ -368,7 +389,8 @@ export function DiscoveryListing({
               {sort === "new" && (
                 <small className="muted">
                   {t("First listed", "首次收录")}{" "}
-                  {p.first_published_at?.slice(0, 10)}
+                  {p.first_published_at?.slice(0, 10) ||
+                    t("Not recorded", "尚未记录")}
                   {p.first_publication_inferred
                     ? t(" · estimated historical date", " · 历史日期为估计")
                     : ""}
@@ -427,8 +449,8 @@ export function DiscoveryCategories() {
         <h1>{t("All categories", "全部分类")}</h1>
         <p>
           {t(
-            "Choose a task, then go straight to a website.",
-            "按任务浏览，直接选择网站。",
+            "A global website directory, starting with AI and productivity tools and expanding as maintained categories become available.",
+            "面向全球的网站目录，当前从 AI 与效率工具开始，持续扩展更多分类。",
           )}
         </p>
       </header>
@@ -456,11 +478,11 @@ export function AlternativesPage({ slug }: { slug?: string }) {
     return (
       <div className="discovery-page navigation-listing">
         <header className="directory-heading">
-          <h1>{t("Find alternatives", "找替代方案")}</h1>
+          <h1>{t("Alternative charts", "替代榜单")}</h1>
           <p>
             {t(
-              "Choose a website with confirmed task-specific alternatives.",
-              "选择一个网站，比较已确认的用途相关方案。",
+              "Choose a target and task, then compare differences and conditions. Candidate order is by name or first public listing date.",
+              "选择目标与任务，比较差异和条件；候选可按名称或首次公开收录时间排列。",
             )}
           </p>
         </header>
@@ -484,7 +506,8 @@ export function AlternativesPage({ slug }: { slug?: string }) {
   const choices = alternatives(target, data.projects, data.relations),
     tasks = [...new Set(choices.map((c) => c.task))],
     task = params.get("task") || "",
-    matched = choices.filter((c) => !task || c.task === task);
+    order = params.get("sort") === "new" ? "new" : "name",
+    matched = orderAlternativeChoices(choices, task, order);
   return (
     <div className="discovery-page navigation-alternatives">
       <header className="directory-heading">
@@ -499,7 +522,13 @@ export function AlternativesPage({ slug }: { slug?: string }) {
         </h1>
         <p>
           {t("Other ways to complete: ", "换一种方式完成：")}
-          {localText(task || tasks[0] || target.task, locale)}
+          {task
+            ? localText(task, locale)
+            : tasks.length === 1
+              ? localText(tasks[0], locale)
+              : tasks.length > 1
+                ? t("all confirmed tasks", "全部已确认用途")
+                : localText(target.task, locale)}
         </p>
         <div className="row">
           <OfficialLink
@@ -550,6 +579,37 @@ export function AlternativesPage({ slug }: { slug?: string }) {
           "个已确认选择 · 用途相关，不代表全部功能等同",
         )}
       </p>
+      <div className="alternative-order">
+        <label>
+          {t("Sort candidates", "候选排序")}
+          <select
+            aria-label={t("Candidate order", "候选排序")}
+            value={order}
+            onChange={(e) => {
+              const next = new URLSearchParams(params.toString());
+              next.set("sort", e.target.value);
+              router.replace("?" + next, { scroll: false });
+            }}
+          >
+            <option value="name">{t("Name A–Z", "名称 A–Z")}</option>
+            <option value="new">
+              {t("First public listing — newest", "首次公开收录时间倒序")}
+            </option>
+          </select>
+        </label>
+        <span>
+          {order === "new"
+            ? t(
+                "Current order: first public listing date",
+                "当前排序：首次公开收录时间倒序",
+              )
+            : t("Current order: name A–Z", "当前排序：名称 A–Z")}{" "}
+          ·{" "}
+          <Link href={href("/how-it-works") + "#data-and-order"}>
+            {t("Sorting explained", "排序说明")}
+          </Link>
+        </span>
+      </div>
       {matched.map((x) => (
         <article key={x.project.id + x.task} className="alternative-candidate">
           <SiteUnit
@@ -577,14 +637,31 @@ export function AlternativesPage({ slug }: { slug?: string }) {
               </p>
             </div>
           </div>
+          {order === "new" && (
+            <p className="ordering-note">
+              {t("First public listing", "首次公开收录")}：{" "}
+              {x.project.first_published_at?.slice(0, 10) ||
+                t("Not recorded", "尚未记录")}
+              {x.project.first_publication_inferred
+                ? t(" · estimated historical date", " · 历史日期为估计")
+                : ""}
+            </p>
+          )}
           <details className="comparison-source">
             <summary>
               {t("Relationship basis & sources", "关系依据与资料来源")}
             </summary>
             <p>{localText(x.rationale, locale)}</p>
             <p>
-              {x.project.official_source} · {t("Updated", "更新于")}{" "}
-              {x.project.updated_at.slice(0, 10)}
+              {x.project.official_source ||
+                t("Source to be supplemented", "来源待补充")}{" "}
+              · {t("Updated", "资料更新于")}{" "}
+              {x.project.updated_at?.slice(0, 10) ||
+                t("Not recorded", "尚未记录")}{" "}
+              ·{" "}
+              <Link href={href("/products/" + x.project.slug) + "#corrections"}>
+                {t("Report an error", "纠错")}
+              </Link>
             </p>
           </details>
         </article>
@@ -641,6 +718,9 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
               {t("Open source", "开源")}
             </a>
           )}
+          {profileReady(p) && (
+            <span className="tag">{brand[locale].listed}</span>
+          )}
           <span className="tag">
             {p.owner_verified
               ? t("Owner claimed", "管理者已认领")
@@ -696,7 +776,8 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           {p.first_publication_inferred &&
             t(" (estimated historical date)", "（历史日期为估计）")}
           <br />
-          {t("Profile updated", "资料更新")} · {p.updated_at.slice(0, 10)}
+          {t("Profile updated", "资料更新")} ·{" "}
+          {p.updated_at?.slice(0, 10) || t("Not recorded", "尚未记录")}
         </small>
         <Link href={href("/categories/" + p.category)}>
           {
@@ -769,7 +850,7 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
           ))}
         </div>
       </section>
-      <section>
+      <section id="corrections">
         <h2>{t("Keep this profile accurate", "维护正确的项目资料")}</h2>
         <p className="muted">
           {t(
@@ -834,7 +915,9 @@ export function DiscoveryDetail({ slug }: { slug: string }) {
         ) : (
           p.official_source || t("To be supplemented", "待补充")
         )}{" "}
-        · {p.source_checked_at?.slice(0, 10)}
+        ·{" "}
+        {p.source_checked_at?.slice(0, 10) ||
+          t("Check date not recorded", "核对日期尚未记录")}
       </p>
     </div>
   );
@@ -984,7 +1067,7 @@ export function DiscoveryShared({ token }: { token: string }) {
   );
 }
 export function DiscoveryMethod() {
-  const { t } = useCharts();
+  const { t, locale } = useCharts();
   return (
     <div className="discovery-page method-copy">
       <div className="page-heading">
@@ -996,6 +1079,29 @@ export function DiscoveryMethod() {
           )}
         </p>
       </div>
+      <p className="brand-positioning">{brand[locale].positioning}</p>
+      <p>{brand[locale].platformFree}</p>
+      <section id="data-and-order" className="transparent-rules">
+        <h2>{t("Sources & sorting", "资料与排序说明")}</h2>
+        <p>
+          {t(
+            "Category navigation uses a stable name order. Alternative charts include confirmed task relationships only, sorted by name A–Z by default; you can switch to first public listing date. Neither is an external traffic or quality ranking.",
+            "分类基础导航按名称保持稳定。替代榜单仅纳入已确认的任务关系，默认按名称 A–Z 排列，可切换首次公开收录时间；这些顺序不代表外部访问量或产品质量。",
+          )}
+        </p>
+        <p>
+          {t(
+            "New listings are ordered by first public listing date, not the product's launch date. Edits do not reset it. Estimated historical dates and missing dates are identified; unknown values are not invented.",
+            "最新收录榜按首次审核公开时间倒序，不代表产品首发时间；编辑不重置该时间。历史日期为估计或尚未记录时如实标明，不补造日期。",
+          )}
+        </p>
+        <p>
+          {t(
+            "Website profiles show maintained sources and update dates when available; missing sources and dates remain unconfirmed. A recorded update is not an independent pricing verification. Use each profile's correction entry to report errors. New discovery and contribution slots rotate separately from the directory.",
+            "项目档案在有记录时显示资料来源与更新时间，缺失则标为待补充；资料更新不等于价格已独立核验。可通过各项目的纠错入口反馈错误。新发现与贡献推荐在独立区域轮换，不改变基础导航。",
+          )}
+        </p>
+      </section>
       {[
         [
           "Free listing",

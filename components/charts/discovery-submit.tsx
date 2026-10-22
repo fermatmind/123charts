@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { brand } from "@/lib/charts/brand";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useCharts, Empty } from "./context";
@@ -224,13 +225,9 @@ export function DiscoverySubmit() {
           {project ? t("UPDATE", "后续更新") : t("THREE STEPS", "三步提交")}
         </div>
         <h1>{t("Put your website in context.", "让需要它的人发现它。")}</h1>
-        <p>
-          {t(
-            "A useful profile, relevant alternatives and a factual card. Normal review is free.",
-            "公开档案、相关替代入口和真实收录卡，正常审核免费。",
-          )}
-        </p>
+        <p>{brand[locale].freeListing}</p>
       </div>
+      <p className="platform-free-note">{brand[locale].platformFree}</p>
       <div className="discovery-steps">
         {[
           t("1 · Website", "1 · 官网"),

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import { brand } from "@/lib/charts/brand";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.APP_URL ?? "http://127.0.0.1:3100"),
   title: {
-    default: "123Charts — Discover Websites, Explore Alternatives.",
+    default: brand.en.title,
     template: "%s | 123Charts",
   },
-  description:
-    "Discover websites by task, compare alternatives and conditions. Free to explore. Free to submit.",
+  description: brand.en.description,
   robots: { index: false, follow: true },
 };
 export default async function RootLayout({

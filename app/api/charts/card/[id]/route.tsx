@@ -1,4 +1,6 @@
 import fs from "node:fs/promises";
+import { brand } from "@/lib/charts/brand";
+import { localText } from "@/lib/charts/navigation";
 import path from "node:path";
 import { ImageResponse } from "next/og";
 import { NextRequest, NextResponse } from "next/server";
@@ -46,7 +48,7 @@ export async function GET(
       { error: "Confirmed sustained free conditions required" },
       { status: 409 },
     );
-  let task = p.task;
+  let task = localText(p.task, zh ? "zh" : "en");
   if (kind === "alternative") {
     const edges = checked(
       await db
@@ -57,7 +59,7 @@ export async function GET(
         .limit(1),
     );
     const found = edges.length > 0;
-    if (found) task = edges[0].task;
+    if (found) task = localText(edges[0].task, zh ? "zh" : "en");
     if (!found)
       return NextResponse.json(
         { error: "A confirmed public alternative relationship is required" },
@@ -104,7 +106,17 @@ export async function GET(
       <div
         style={{
           display: "flex",
-          marginTop: 66,
+          fontSize: 16,
+          color: "#9badca",
+          marginTop: 12,
+        }}
+      >
+        {brand[zh ? "zh" : "en"].positioning}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          marginTop: 40,
           color: "#86aaf2",
           fontSize: 22,
         }}
@@ -116,10 +128,7 @@ export async function GET(
                 "A choice with confirmed free conditions",
                 "具备已确认免费条件的选择",
               )
-            : label(
-                "We’re on 123Charts. See where we fit.",
-                "已加入 123Charts，看看适合哪些用途。",
-              )}
+            : brand[zh ? "zh" : "en"].listed}
       </div>
       <div style={{ display: "flex", fontSize: 68, marginTop: 22 }}>
         {p.name}
@@ -147,7 +156,7 @@ export async function GET(
         }}
       >
         {(
-          p.conditions ||
+          localText(p.conditions, zh ? "zh" : "en") ||
           label(
             "Check current conditions on the official website.",
             "请前往官网确认当前使用条件。",

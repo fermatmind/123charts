@@ -53,3 +53,24 @@ export function orderedIds(saved: string[], current: string[]) {
     ...new Set([...saved.filter((id) => current.includes(id)), ...current]),
   ];
 }
+
+/** Shared visible/JSON-LD order; no quality, popularity or traffic score. */
+export function orderAlternativeChoices<
+  T extends { project: Project; task: string },
+>(choices: T[], task = "", order: "name" | "new" = "name"): T[] {
+  return choices
+    .filter((c) => !task || c.task === task)
+    .sort(
+      (a, b) =>
+        (order === "new"
+          ? (b.project.first_published_at || "").localeCompare(
+              a.project.first_published_at || "",
+            )
+          : 0) ||
+        a.project.name
+          .toLowerCase()
+          .localeCompare(b.project.name.toLowerCase(), "en") ||
+        a.project.id.localeCompare(b.project.id) ||
+        a.task.localeCompare(b.task),
+    );
+}

@@ -59,7 +59,9 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/zh?dataset=real");
   await expect(
-    page.getByRole("heading", { name: "好网站，一点直达。" }),
+    page.getByRole("heading", {
+      name: "发现全球好网站，找到更合适的替代方案。",
+    }),
   ).toBeVisible();
   await page.screenshot({
     path: "output/playwright/nav-after-desktop.png",
@@ -223,7 +225,9 @@ test("navigation: direct actions, persistent guest favorites, exact search, stab
   });
   await page.getByRole("link", { name: "EN", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Good websites. One click away." }),
+    page.getByRole("heading", {
+      name: "Discover websites worldwide. Find alternatives that fit.",
+    }),
   ).toBeVisible();
   expect(
     await page.evaluate(
@@ -361,4 +365,192 @@ test("favorites: one-time account merge, persisted removals, reorder and account
       await db.auth.admin.deleteUser(u.id);
     }
   }
+});
+
+test("brand: positioning, transparent chart order, new listings and free submission entries", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/zh?dataset=real");
+  await expect(page).toHaveTitle(
+    "123Charts — 免费全球网站分类与对标排行榜平台。",
+  );
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+    "content",
+    "123Charts — 免费全球网站分类与对标排行榜平台。",
+  );
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+    "content",
+    /审核通过后免费收录/,
+  );
+  await expect(page.locator(".brand-copy small")).toHaveText(
+    "全球网站分类与替代榜单",
+  );
+  await expect(page.locator(".brand-promises")).toContainText("免费提交");
+  await expect(page.locator(".maker-line")).toContainText(
+    "让需要的人发现你的网站。免费提交，审核通过后免费收录。",
+  );
+  await page
+    .locator(".brand-promises")
+    .getByRole("link", { name: "数据透明", exact: true })
+    .click();
+  await expect(page).toHaveURL(/how-it-works\?dataset=real#data-and-order$/);
+  await expect(page.locator("#data-and-order")).toBeVisible();
+  await expect(page.locator("#data-and-order")).toContainText(
+    "不代表外部访问量或产品质量",
+  );
+  await expect(page.locator(".method-copy")).toContainText("开源是独立属性");
+  await page
+    .locator(".topnav")
+    .getByRole("link", { name: "替代榜单", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "替代榜单", exact: true }),
+  ).toBeVisible();
+  await page
+    .locator(".alternative-shortcuts")
+    .getByRole("link", { name: /^Activepieces/ })
+    .click();
+  await expect(page.locator(".alternative-candidate")).toHaveCount(1);
+  await expect(page.getByLabel("候选排序", { exact: true })).toHaveValue(
+    "name",
+  );
+  await expect(page.locator(".alternative-order")).toContainText(
+    "当前排序：名称 A–Z",
+  );
+  await expect(page.locator(".candidate-facts")).toContainText("自部署");
+  await page.getByLabel("候选排序", { exact: true }).selectOption("new");
+  await expect(page).toHaveURL(/sort=new/);
+  await expect(page.locator(".alternative-order")).toContainText(
+    "当前排序：首次公开收录时间倒序",
+  );
+  await expect(
+    page.locator(".alternative-candidate .ordering-note"),
+  ).toContainText("首次公开收录");
+  await page.locator(".comparison-source summary").click();
+  await expect(page.locator(".comparison-source")).toContainText("资料更新于");
+  await page
+    .locator(".comparison-source")
+    .getByRole("link", { name: "纠错", exact: true })
+    .click();
+  await expect(page).toHaveURL(/products\/n8n\?dataset=real#corrections/);
+  await expect(page.locator(".discovery-page")).toContainText(
+    "已收录于 123Charts",
+  );
+  const productId = await page
+    .locator(".discovery-page a[href*='events/outbound']")
+    .first()
+    .getAttribute("href");
+  const id = new URL(productId!, base).searchParams.get("product_id");
+  const card = await page.request.get(
+    `/api/charts/card/${id}?lang=zh&kind=listing&dataset=real`,
+  );
+  expect(card.status()).toBe(200);
+  expect(card.headers()["content-type"]).toContain("image/png");
+  await fs.writeFile(
+    "output/playwright/brand-listing-card.png",
+    await card.body(),
+  );
+  await page
+    .locator(".topnav")
+    .getByRole("link", { name: "最新收录", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "最新收录榜", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".directory-heading")).toContainText(
+    "不代表产品首发时间",
+  );
+  await expect(page.getByLabel("排序", { exact: true })).toHaveValue("new");
+  const ids = await page
+    .locator(".directory-results [data-product-id]")
+    .evaluateAll((els) => els.map((e) => e.getAttribute("data-product-id")));
+  const records = await db
+    .from("products")
+    .select("id,first_published_at")
+    .in("id", ids);
+  expect(records.error).toBeNull();
+  const dates = ids.map(
+    (id) => records.data!.find((p) => p.id === id)!.first_published_at || "",
+  );
+  expect(dates).toEqual([...dates].sort().reverse());
+  await page
+    .locator(".top-actions")
+    .getByRole("link", { name: "免费提交网站", exact: true })
+    .click();
+  await expect(page).toHaveURL(/login/);
+  await expect(page).toHaveURL(/returnTo/);
+  const accounts = JSON.parse(
+    await fs.readFile(".local/accounts.json", "utf8"),
+  );
+  await signIn(page, accounts.founder.email, accounts.founder.password);
+  await page
+    .locator(".top-actions")
+    .getByRole("link", { name: "免费提交网站", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/zh\/submit\?dataset=real/);
+  await expect(page.locator(".page-heading")).toContainText(
+    "免费提交，审核通过后免费收录。",
+  );
+  await expect(page.locator(".platform-free-note")).toContainText(
+    "开源是独立属性",
+  );
+  await signOut(page);
+  await page.goto("/zh?dataset=real");
+  await page.screenshot({
+    path: "output/playwright/brand-home-desktop.png",
+    fullPage: false,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(
+    page
+      .locator(".topnav")
+      .getByRole("link", { name: "最新收录", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "output/playwright/brand-home-mobile.png",
+    fullPage: false,
+  });
+  console.log("Brand mobile entries:", await visibleSites(page));
+  await page
+    .locator(".topnav")
+    .getByRole("link", { name: "分类导航", exact: true })
+    .click();
+  await expect(page.locator(".discovery-page")).toContainText(
+    "当前从 AI 与效率工具开始",
+  );
+  await page.goto("/en?dataset=real");
+  await expect(page).toHaveTitle(
+    "123Charts — Free Global Website Directory & Alternative Charts.",
+  );
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+    "content",
+    "123Charts — Free Global Website Directory & Alternative Charts.",
+  );
+  await expect(
+    page.getByRole("heading", {
+      name: "Discover websites worldwide. Find alternatives that fit.",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(page.locator(".brand-promises")).toContainText(
+    "Transparent data",
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "output/playwright/brand-home-mobile-en.png",
+    fullPage: false,
+  });
+  expect(errors).toEqual([]);
 });
