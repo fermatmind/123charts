@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T12:48:52.451209+00:00",
+  "updated_at": "2026-10-22T13:07:14.055038+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 51,
+  "completed_count": 56,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -56,9 +56,14 @@
     "projects/ide/codemate-b814cdbd.json",
     "projects/ide/codepen-b3d2d02e.json",
     "projects/ide/cube-js-141aab25.json",
-    "projects/ide/deepnote-bf9bd461.json"
+    "projects/ide/deepnote-bf9bd461.json",
+    "projects/ide/fathym-b0e6e8c7.json",
+    "projects/ide/intellij-idea-9e9d6742.json",
+    "projects/ide/jdoodle-2d99703c.json",
+    "projects/ide/koding-f68c354d.json",
+    "projects/ide/repl-it-d6a66c85.json"
   ],
-  "remaining_count": 148,
+  "remaining_count": 143,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -76,11 +81,6 @@
     "projects/ide/codeanywhere-7879974b.json",
     "projects/ide/codesandbox-90aac520.json",
     "projects/ide/eclipse-che-06fa6676.json",
-    "projects/ide/fathym-b0e6e8c7.json",
-    "projects/ide/intellij-idea-9e9d6742.json",
-    "projects/ide/jdoodle-2d99703c.json",
-    "projects/ide/koding-f68c354d.json",
-    "projects/ide/repl-it-d6a66c85.json",
     "projects/databases/amazon-aurora-b19511d5.json",
     "projects/databases/artie-9c89f5bb.json",
     "projects/databases/clickhouse-82bcf9f7.json",
@@ -345,21 +345,32 @@
     {
       "project": "Deepnote",
       "detail": "SQL100rowpreview notfullresult; collaborators share runtime. Failed schedule pauses/revokedOAuth, notebook-onlyhistory, paidadminseats/machine+AIusage,30minute machine-alertlag. Scheduling legacyPro wording and SQLDataFrameFAQ scope ambiguous."
+    },
+    {
+      "project": "Fathym",
+      "detail": "Save/draft/commit wording overlaps in official docs; current family scope and OpenX pricing separated; fAI default telemetry and status limitation retained."
+    },
+    {
+      "project": "IntelliJ IDEA",
+      "detail": "Continuing free core versus paid Ultimate explicitly sourced from unified/registration docs. Buy page numeric amount unavailable; full unified binary license unknown."
+    },
+    {
+      "project": "JDoodle",
+      "detail": "Free AI daily/monthly and student allowance rows unresolved; entitlement scope taken from explicit limits matrix, API separately purchased."
+    },
+    {
+      "project": "Koding",
+      "detail": "Hosted marketing superseded by explicit registration closure. Legacy client/OS/provider examples do not establish current installation compatibility; full license unread."
+    },
+    {
+      "project": "Replit",
+      "detail": "Starter background-task1 homepage versus0 billing matrix conflict;30daypublished expiry and separateproductionDBrestore retained. Annual price/checkout currency and credits need verification."
     }
   ],
   "verification": [
-    {
-      "command": "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
-      "result": "passed: 7 tests"
-    },
-    {
-      "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 54 primary-source researched globally (3 baseline + 51 assigned), 1000 records checked"
-    },
-    {
-      "command": "Prettier changed JSON and git diff --check",
-      "result": "passed"
-    }
+    "python3 -m unittest discover -s scripts/catalog -p test_*.py:7 tests passed",
+    "node scripts/catalog/validate.mjs --records-only:1000 records,59 researched(3baseline+56assigned),0untranslated labels; structure/references only",
+    "Changed JSON Prettier and git diff --check passed; changed paths within batch ownership; temporary node_modules symlink removed"
   ],
   "checkpoints": [
     {
@@ -441,17 +452,22 @@
       "commit": "91a247b",
       "completed_count": 48,
       "scope": "AirCode, CodeMate, Codefile plus Codeanywhere official sunset gap; pushed"
+    },
+    {
+      "commit": "90ebfa2",
+      "completed_count": 51,
+      "detail": "CodePen, Cube and Deepnote operating boundaries;7unit tests,1000records/54researched validator, format anddiffcheck passed; pushed assigned branch."
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "Eclipse Che, Fathym, IntelliJ IDEA, JDoodle, Koding, Repl.it",
+    "next": "databases: Amazon Aurora, Artie, ClickHouse, FaunaDB, HarperDB Cloud, InterSystems IRIS, MySQL, Oracle Database, pgDash, Pinecone, Prisma, QuintaDB, ScaleGrid, Tadabase, Teable",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
-    "ide": "6 of14 complete; Codeanywhere sunset/current-operations gap and CodeSandbox403gap investigated;6 unprocessed"
+    "ide": "11 of14 complete; all14 investigated; Codeanywhere sunset, CodeSandbox403 and EclipseChe pricing/license authority gaps remain incomplete."
   },
   "identity_changes": [
     {
@@ -501,6 +517,14 @@
     {
       "project": "Deepnote",
       "change": "Official www.deepnote.com redirects to deepnote.com; website/domain updated to actual canonical host with same registered identity."
+    },
+    {
+      "project": "Fathym",
+      "detail": "Use readable https://www.fathym.com/ as official website, same identity_domain fathym.com; no redirect asserted."
+    },
+    {
+      "project": "Replit",
+      "detail": "Legacy Repl.it display name changed to current Replit official name, same record and replit.com identity."
     }
   ],
   "content_corrections": [
@@ -566,6 +590,10 @@
     {
       "project_path": "projects/ide/codesandbox-90aac520.json",
       "reason": "Official homepage was read and now emphasizes programmatic isolated sandboxes/CodeSandboxSDK; it announces being part of TogetherAI. Actual official pricing and docs returned403. No bypass or retry of blocked endpoints. Current runtime, billing/limits, access policy and license cannot be deeply established from the marketing page alone, so the record remains incomplete and old directory IDE features/prices are not adopted as current."
+    },
+    {
+      "project_path": "projects/ide/eclipse-che-06fa6676.json",
+      "reason": "Official Eclipse Che home redirects eclipse.org/che to eclipse.dev/che. Actual stable7.123.x installation, supported-platform and hosted-service docs were read: one Che instance per cluster, local single-node for testing only, and Red Hat Sandbox is separately packaged OpenShift Dev Spaces with30-day data deletion,12-hour maximum workspace and30-minute idle stop. No readable same-authority official fee/free-use grant or complete software license was established; hosted usage limits are not relabeled as pricing. Some introductory routes return self-referential redirect notices. The candidate remains incomplete, without claiming a sustained-free hosted plan or a tested Kubernetes installation."
     }
   ],
   "availability_updates": [
@@ -577,6 +605,10 @@
     {
       "project": "Codeanywhere",
       "detail": "Official June7,2026sunset announcement specifies closed signups and July1,2026shutdown. Home/pricing/docs currently redirect to it. Current live account/data state not tested; no current subscription/operational guide inferred."
+    },
+    {
+      "project": "Koding",
+      "detail": "Official register page explicitly disables hosted signup and directs self-managed installation. Homepage software-free claim does not imply free hosted infrastructure."
     }
   ],
   "external_authority_reads": [
@@ -697,6 +729,34 @@
       "excerpt_sha256": "4ad6dbd15b3badb8df191d5343d99ac8c2ebae402d72e00a1bfe90098d1ea07f",
       "read_at": "2026-10-22T12:39:25.791405Z",
       "use": "Actual official marketing page; pricing/docs403 prevent complete runtime/fee profile. No bypass."
+    },
+    {
+      "capture": "che-home",
+      "actual_url": "https://eclipse.dev/che/",
+      "excerpt_sha256": "950487d49d52f437a72c3ab09b08f878a091fbde8aa591f1b3b2499d06cdce6d",
+      "read_at": "2026-10-22T12:49:40.548622+00:00",
+      "use": "Actual official read for an incomplete identity/pricing/license-authority record; not a pricing-source relabel or completed profile."
+    },
+    {
+      "capture": "che-installing",
+      "actual_url": "https://eclipse.dev/che/docs/stable/install/installing-che/",
+      "excerpt_sha256": "20d571594d9feef35e8430ac6ec615e93e1dc23b9da52a492831e88ae1ffb413",
+      "read_at": "2026-10-22T12:58:09.302477+00:00",
+      "use": "Actual official read for an incomplete identity/pricing/license-authority record; not a pricing-source relabel or completed profile."
+    },
+    {
+      "capture": "che-platforms",
+      "actual_url": "https://eclipse.dev/che/docs/stable/discover/supported-platforms/",
+      "excerpt_sha256": "86589b839c0c84c2a59b52e254ae1ddbd02595c136e64ebc885c1689c4bb9463",
+      "read_at": "2026-10-22T12:58:05.674490+00:00",
+      "use": "Actual official read for an incomplete identity/pricing/license-authority record; not a pricing-source relabel or completed profile."
+    },
+    {
+      "capture": "che-hosted",
+      "actual_url": "https://eclipse.dev/che/docs/stable/hosted-che/hosted-che/",
+      "excerpt_sha256": "44f6fbc53dad2e568e074aae90889a242a85223accf5bf8cd4cde3cacd76ea94",
+      "read_at": "2026-10-22T12:50:53.842282+00:00",
+      "use": "Actual official read for an incomplete identity/pricing/license-authority record; not a pricing-source relabel or completed profile."
     }
   ]
 }
