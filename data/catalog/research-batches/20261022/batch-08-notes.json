@@ -78,14 +78,14 @@
     "overlapping_in_progress_paths": []
   },
   "completed_paths": [
-    "projects/surveys/quicktapsurvey-485f1c45.json",
-    "projects/surveys/respondent-fd79fa50.json",
-    "projects/surveys/simplesat-acbe0fc8.json"
-  ],
-  "remaining_paths": [
     "projects/surveys/qualaroo-b1ee0fc3.json",
     "projects/surveys/questionpro-3ba12d3d.json",
-    "projects/surveys/smartsurvey-e6618377.json",
+    "projects/surveys/quicktapsurvey-485f1c45.json",
+    "projects/surveys/respondent-fd79fa50.json",
+    "projects/surveys/simplesat-acbe0fc8.json",
+    "projects/surveys/smartsurvey-e6618377.json"
+  ],
+  "remaining_paths": [
     "projects/surveys/sogolytics-fac2a5da.json",
     "projects/surveys/surveycto-546176d2.json",
     "projects/surveys/surveymonkey-730b9c13.json",
@@ -162,14 +162,20 @@
     },
     {
       "check": "node .scratch/validate-owned.mjs --records-only",
-      "result": "passed; existing record validator logic restricted locally to assigned project paths; shared validator unchanged"
+      "result": "Passed after local scratch-only adjustment to omit global 1000-record aggregate assertions; 68 assigned records checked, 3 researched at first batch."
     },
     {
       "check": "Prettier on changed JSON and git diff --check",
       "result": "passed"
     }
   ],
-  "commits": [],
-  "completed_count": 3,
-  "remaining_count": 65
+  "commits": [
+    {
+      "sha": "5895468",
+      "completed_count": 3,
+      "pushed": true
+    }
+  ],
+  "completed_count": 6,
+  "remaining_count": 62
 }
