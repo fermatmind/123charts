@@ -77,17 +77,17 @@
     "projects/backup/bdrshield-d91909da.json",
     "projects/backup/carbonite-cb00102e.json",
     "projects/backup/cloudback-3c2d3032.json",
-    "projects/backup/clumio-528f0c5d.json"
-  ],
-  "remaining_paths": [
+    "projects/backup/clumio-528f0c5d.json",
     "projects/backup/data-deposit-box-e8b799ab.json",
     "projects/backup/datto-backupify-f07535cf.json",
     "projects/backup/elephantdrive-6166f73f.json",
     "projects/backup/goodsync-e5492fae.json",
-    "projects/backup/handy-backup-0d57049c.json",
     "projects/backup/idrive-online-1895e72f.json",
+    "projects/backup/opendrive-c4a0c29b.json"
+  ],
+  "remaining_paths": [
+    "projects/backup/handy-backup-0d57049c.json",
     "projects/backup/netapp-fe6f4345.json",
-    "projects/backup/opendrive-c4a0c29b.json",
     "projects/backup/rubrik-8da9315b.json",
     "projects/backup/updraftplus-5f729fa4.json",
     "projects/backup/vinchin-backup-recovery-f951d1c9.json",
@@ -130,7 +130,18 @@
     "projects/ai-video/magic-hour-b1c57717.json",
     "projects/ai-video/spikes-studio-76de64a3.json"
   ],
-  "blocked": [],
+  "blocked": [
+    {
+      "path": "projects/backup/handy-backup-0d57049c.json",
+      "reason": "Initial homepage text and public Standard overview accessible, but follow-up official navigation request returned HTTP 403. Operational help, current full pricing and license evidence incomplete; no further retry/bypass. Record remains structured_candidate.",
+      "evidence": ".scratch/deep-research/handy/ and tool read history"
+    },
+    {
+      "path": "projects/backup/netapp-fe6f4345.json",
+      "reason": "NetApp backup product and sales pages return HTTP 403 in direct reader; brand-versus-specific backup scope needs operational documentation. No bypass/retry; record remains structured_candidate.",
+      "evidence": ".scratch/deep-research/netapp/"
+    }
+  ],
   "evidence_directory": ".scratch/deep-research/",
   "validation": [
     {
@@ -146,9 +157,16 @@
       "diagnostic": "Temporary uncommitted diagnostic reports only the two expected Broadcom source URLs; all remaining checks passed. Shared validator unchanged.",
       "content_check": "English/Chinese facts, conditionals, numeric amounts and source references checked individually.",
       "diff_check": "passed"
+    },
+    {
+      "scope": "16 completed batch-06 records",
+      "python_unittest": "7 passed",
+      "records_only": "Known Broadcom domain assertion; temporary uncommitted diagnostic reports exactly the two known URLs, all other checks passed.",
+      "content_check": "Each completed English/Chinese record reviewed against saved official reading; not hands-on or independent review.",
+      "diff_check": "passed"
     }
   ],
-  "commits": ["6e5db08", "5fb7b21"],
+  "commits": ["6e5db08", "5fb7b21", "8ae280f"],
   "scope": "Only new batch-06 research; inherited 80 records are excluded from our completion count.",
   "compatibility_issues": [
     {
