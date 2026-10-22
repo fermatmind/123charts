@@ -191,7 +191,7 @@
     },
     {
       "check": "Python catalog tests; scratch-restricted original record logic; changed JSON Prettier; diff check",
-      "result": "7 tests passed; 68 owned records passed including 37 researched. Full records-only remains inherited Benchmark Email cross-domain blocker."
+      "result": "7 Python tests passed; strict owned-record validator failed on genuine Groupize cross-domain source. Previous passed text was written before exit inspection and is corrected here. Global validator independently blocked by inherited Benchmark Email cross-domain source. Prettier and diff check passed."
     }
   ],
   "commits": [
@@ -214,16 +214,23 @@
       "sha": "bf595e9",
       "completed_count": 20,
       "pushed": true
+    },
+    {
+      "sha": "f8ed5a7",
+      "completed_count": 37,
+      "pushed": true
     }
   ],
   "completed_count": 37,
   "remaining_count": 31,
-  "identity_updates": [
+  "cross_domain_sources": [
     {
       "path": "projects/events/groupize-611bf69b.json",
-      "from": "groupize.com",
-      "to": "groupize.ai",
-      "basis": "Observed official homepage redirect; current product and terms served at groupize.ai."
+      "website": "https://www.groupize.com/",
+      "source": "https://groupize.ai/terms-of-service/",
+      "ownership_basis": "Homepage links commercial/product routes to groupize.ai; terms identify Groupize, Inc.",
+      "validator_error": "groupize.ai != groupize.com",
+      "correction": "Earlier migration/redirect inference was incorrect. Actual product response final_url was https://groupize.com/; original identity restored."
     }
   ]
 }
