@@ -1,9 +1,9 @@
 {
   "batch_id": "batch-03",
   "assigned_count": 201,
-  "updated_at": "2026-10-22T15:23:25.552389+00:00",
+  "updated_at": "2026-10-22T15:28:01.080227+00:00",
   "status": "in_progress",
-  "completed_count": 71,
+  "completed_count": 72,
   "completed_project_paths": [
     "projects/email-marketing/aweber-45387f93.json",
     "projects/email-marketing/benchmark-email-925b3320.json",
@@ -75,9 +75,10 @@
     "projects/seo/brightlocal-aa96ef1c.json",
     "projects/seo/clearscope-3c8a2c50.json",
     "projects/seo/dragon-metrics-b551c9d0.json",
-    "projects/seo/keyword-com-0a1cb131.json"
+    "projects/seo/keyword-com-0a1cb131.json",
+    "projects/seo/linkbox-f7ec2179.json"
   ],
-  "remaining_count": 62,
+  "remaining_count": 61,
   "remaining_project_paths": [
     "projects/email-marketing/campaigner-0f5623c4.json",
     "projects/email-marketing/easysendy-fde60466.json",
@@ -95,7 +96,6 @@
     "projects/social-media/thread-creator-191779ac.json",
     "projects/social-media/ubercircle-0598d662.json",
     "projects/social-media/yala-cc4b4397.json",
-    "projects/seo/linkbox-f7ec2179.json",
     "projects/seo/linkody-4faf8b47.json",
     "projects/seo/mangools-1ea0269e.json",
     "projects/seo/meta-tags-ef1635d3.json",
@@ -143,7 +143,7 @@
     "projects/surveys/pollfish-8dbd67ee.json"
   ],
   "current_category": "seo",
-  "next_project": "projects/seo/linkbox-f7ec2179.json",
+  "next_project": "projects/seo/linkody-4faf8b47.json",
   "blocked_projects": [
     {
       "path": "projects/email-marketing/campaigner-0f5623c4.json",
@@ -941,6 +941,24 @@
           "result": "PASS"
         }
       ]
+    },
+    {
+      "checkpoint": "seo-10",
+      "completed_projects": 72,
+      "commands": [
+        {
+          "command": "python3 .scratch/deep-research/batch-03/check_drafts.py",
+          "result": "PASS: 72 completed drafts; scope/status/source types/hashes/references/bilingual sections"
+        },
+        {
+          "command": "node scripts/catalog/validate.mjs --records-only",
+          "result": "FAIL: unchanged Benchmark Help Scout domain mismatch at scripts/catalog/validate.mjs:166"
+        },
+        {
+          "command": "Prettier changed JSON and git diff --check",
+          "result": "PASS"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -1078,6 +1096,11 @@
       "commit": "cc3d9c9",
       "completed_count": 70,
       "scope": "Dragon Metrics search-panel units, crawl scope, editable report lifecycle and metered API"
+    },
+    {
+      "commit": "d143c00",
+      "completed_count": 71,
+      "scope": "Keyword.com configured Google/AI panels, migration, reporting, mutation scopes and product-specific cancellation"
     }
   ],
   "scope": "Only assigned project JSON and this notes file. Drafts only; no deployment, runtime or main push.",
@@ -1108,7 +1131,7 @@
     },
     "seo": {
       "assigned": 26,
-      "completed": 9,
+      "completed": 10,
       "status": "in_progress",
       "uncompleted_with_source_gaps": 0
     }
@@ -1463,6 +1486,10 @@
     {
       "project": "keyword-com-0a1cb131",
       "note": "Current September multi-account GSC/shared-access, June fixed-depth migration and detailed AI configurations/metrics/exit originals read. Default desktop+mobile and capital-city location, per-keyword latest timestamp, combined change counters, immediate card-charged refresh reset, engine-specific executions, detection denominators and account/project token scopes retained. Old Top20 guide, monthly versus cycle refresh FAQ, model-price labels, unlimited versus per-token limits, and downgrade timing conflicts preserved. AI cancellation immediate deletion differs SERP six-month retention; no account operations."
+    },
+    {
+      "project": "linkbox-f7ec2179",
+      "note": "Actual root, bulk checker, monitor, API, terms, tutorial index and index-check steps read. Imported New/Live/Historical separated from actual link/page/index checks. API asynchronous UUID/paging, duplicated index endpoint, independent web/API tariffs and conditional48h refund documented. Tutorial index ordinary HTTPS returned403 after successful public-reader read; no retry/transport bypass or unread tutorial-body claims. Exact roles/renewal/retention/rendering/retry and success claims remain unknown; no operations."
     }
   ],
   "ownership_handoff": {
