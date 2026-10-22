@@ -3,9 +3,9 @@
   "batch_id": "batch-04",
   "branch": "data/catalog-deep-batch-04",
   "baseline": "3d2f621488b883d924015b751ae0851fcd32bc01",
-  "updated_at": "2026-10-22T14:14:26.063864+00:00",
+  "updated_at": "2026-10-22T14:24:03.158190+00:00",
   "assigned": 204,
-  "completed_count": 57,
+  "completed_count": 58,
   "completed_projects": [
     "projects/crm/bigin-by-zoho-crm-b49871ef.json",
     "projects/crm/buddycrm-7672edc4.json",
@@ -63,9 +63,10 @@
     "projects/live-chat/reve-chat-404e815f.json",
     "projects/live-chat/smartsupp-b1532cf5.json",
     "projects/live-chat/talkative-55649f5e.json",
-    "projects/call-center/3clogic-5145826b.json"
+    "projects/call-center/3clogic-5145826b.json",
+    "projects/call-center/bright-pattern-9fd0f825.json"
   ],
-  "incomplete_count": 147,
+  "incomplete_count": 146,
   "remaining_projects": [
     "projects/crm/dokiocrm-a1c2366b.json",
     "projects/crm/dongocrm-e7cbc262.json",
@@ -86,7 +87,6 @@
     "projects/live-chat/syndeo-cx-30bafb7a.json",
     "projects/live-chat/theliveforce-d65e765e.json",
     "projects/call-center/ameyo-engage-9ab35131.json",
-    "projects/call-center/bright-pattern-9fd0f825.json",
     "projects/call-center/call-center-studio-65406041.json",
     "projects/call-center/callhippo-daec5e77.json",
     "projects/call-center/calltools-0d43ce02.json",
@@ -672,6 +672,67 @@
           "excerpt_sha256": "7d6153a897052c7397098a07bac18740517823b7a2f734298983cd020e7dfc36"
         }
       ]
+    },
+    {
+      "project": "projects/call-center/ameyo-engage-9ab35131.json",
+      "status": "research_incomplete_identity_and_cross_domain_commercial_sources",
+      "observed": "Assigned ameyo.com/engage redirects to ameyo.com/product/engage/; this and Engage-specific features were actually read. Public pricing and request-demo links redirect to Exotel; publicdocs.ameyo.com redirects to docs.exotel.com. Current docs label Engage (ExoCampaigns), an outbound campaign workspace, not proof that old inbound/outbound Engage CCaaS is the same present offer. No legacy-to-current entitlement/contract mapping established; no parent Exotel/XTRM/FusionCX feature aggregation or generic price substitution. Validator requires same identity domain for all official evidence, so actual Exotel commercial/docs redirects cannot be represented as Ameyo-domain sources. Candidate unchanged; not counted. No demo form submitted.",
+      "evidence": [
+        {
+          "url": "https://www.ameyo.com/product/engage/",
+          "requested_url": "https://www.ameyo.com/engage",
+          "title": "Cloud Based Contact Center Software Provider | Ameyo Engage",
+          "read_at": "2026-10-22T14:15:26.041611+00:00",
+          "http_status": 200,
+          "body_sha256": "b6c81f5628dd7604e8265957002294a2a37a593937f710d66901adfdf1ec4f6e",
+          "excerpt_sha256": "a4dabeb978514a13b62563161f79e63cd83ee513c23cb13177442ba1c3d05295"
+        },
+        {
+          "url": "https://www.ameyo.com/product/engage/features",
+          "requested_url": "https://www.ameyo.com/product/engage/features",
+          "title": "Cloud Based Contact Center Features | Ameyo Engage",
+          "read_at": "2026-10-22T14:16:15.906016+00:00",
+          "http_status": 200,
+          "body_sha256": "f6bb7305c159561d9f1995bb1d832e93550f64c4ff9f602fec2ecee259f11b1a",
+          "excerpt_sha256": "317376e22435c3a023a0e6b13efa9f3a965a6474f934b96639ba43ab0b411dc5"
+        },
+        {
+          "url": "https://exotel.com/pricing/",
+          "requested_url": "https://www.ameyo.com/pricing",
+          "title": "Exotel Plans & Pricing",
+          "read_at": "2026-10-22T14:16:07.659355+00:00",
+          "http_status": 200,
+          "body_sha256": "c71efce9ce24bad9467c4fdf5a92e02fac3d38a28dff5504a2c78e4d95d938ea",
+          "excerpt_sha256": "76f876b52782cc612d2d9f78251372f73c025284ad49fcb1b06620c852c11dd7"
+        },
+        {
+          "url": "https://docs.exotel.com/",
+          "requested_url": "https://publicdocs.ameyo.com/",
+          "title": "Exotel Docs",
+          "read_at": "2026-10-22T14:16:00.462416+00:00",
+          "http_status": 200,
+          "body_sha256": "45b92455690f54020fdeb4f6002f369c169cf973d6bd8c6f18678bbdd1c1d72e",
+          "excerpt_sha256": "4320b452cd5249647d53ed0d09bca2ac1db2b3b1931abbb1a287b43ebd010e46"
+        },
+        {
+          "url": "https://docs.exotel.com/engage/engage-exocampaigns",
+          "requested_url": "https://docs.exotel.com/engage/engage-exocampaigns",
+          "title": "Exotel Docs",
+          "read_at": "2026-10-22T14:20:20.479138+00:00",
+          "http_status": 200,
+          "body_sha256": "0cbcc96fecf943346dd54896747c23372e35d871125145fd93608964822a7799",
+          "excerpt_sha256": "5ceb457269361bd93fce3587f45e87da1a52da94566d50323621a4a5ed2f4791"
+        },
+        {
+          "url": "https://exotel.com/request-a-demo/",
+          "requested_url": "https://www.ameyo.com/request-demo",
+          "title": "Request Demo",
+          "read_at": "2026-10-22T14:20:42.897122+00:00",
+          "http_status": 200,
+          "body_sha256": "5b4d9bbb05a629c575e13ff336c4acd962b6042fc2cb47310a04fe15e27f51b3",
+          "excerpt_sha256": "7101f81565c8fa9b4acc948a6671d3996d0a33bcb5ddf3aeb0017ea565414a48"
+        }
+      ]
     }
   ],
   "verification": [
@@ -987,6 +1048,16 @@
         "git diff --check"
       ],
       "result": "Run before checkpoint commit; batch57 completed,147 remaining. Structural checks are not factual or independent acceptance."
+    },
+    {
+      "commands": [
+        "python3 -m unittest discover -s scripts/catalog -p 'test_*.py'",
+        "node scripts/catalog/validate.mjs --records-only",
+        "Prettier on changed project JSONs and notes",
+        "SHA256 comparison against actual saved sources",
+        "git diff --check"
+      ],
+      "result": "Run before checkpoint commit; batch58 completed,146 remaining. Structural checks are not factual or independent acceptance."
     }
   ],
   "checkpoints": [
@@ -1216,8 +1287,13 @@
       "status": "pushed"
     },
     {
-      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "commit": "f5b93be",
       "completed": ["projects/call-center/3clogic-5145826b.json"],
+      "status": "pushed"
+    },
+    {
+      "commit": "See commit containing this checkpoint; exact SHA added at next checkpoint.",
+      "completed": ["projects/call-center/bright-pattern-9fd0f825.json"],
       "status": "ready_to_commit"
     }
   ],
