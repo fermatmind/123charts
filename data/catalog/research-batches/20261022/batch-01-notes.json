@@ -1,10 +1,10 @@
 {
   "batch_id": "batch-01",
   "branch": "data/catalog-deep-batch-01",
-  "updated_at": "2026-10-22T12:38:48.650408+00:00",
+  "updated_at": "2026-10-22T12:48:52.451209+00:00",
   "status": "in_progress",
   "assigned": 199,
-  "completed_count": 48,
+  "completed_count": 51,
   "completed_projects": [
     "projects/workflow-automation/activepieces-04caf877.json",
     "projects/workflow-automation/cyclr-b1534aae.json",
@@ -53,9 +53,12 @@
     "projects/application-development/xojo-6a28cfc4.json",
     "projects/ide/aircode-e2c9f557.json",
     "projects/ide/codefile-a5457aac.json",
-    "projects/ide/codemate-b814cdbd.json"
+    "projects/ide/codemate-b814cdbd.json",
+    "projects/ide/codepen-b3d2d02e.json",
+    "projects/ide/cube-js-141aab25.json",
+    "projects/ide/deepnote-bf9bd461.json"
   ],
-  "remaining_count": 151,
+  "remaining_count": 148,
   "remaining_projects": [
     "projects/data-integration/ainsys-7195d835.json",
     "projects/data-integration/dexi-io-da3a3a46.json",
@@ -71,10 +74,7 @@
     "projects/application-development/clustered-cloud-06d4f73a.json",
     "projects/application-development/five-94ffc3fa.json",
     "projects/ide/codeanywhere-7879974b.json",
-    "projects/ide/codepen-b3d2d02e.json",
     "projects/ide/codesandbox-90aac520.json",
-    "projects/ide/cube-js-141aab25.json",
-    "projects/ide/deepnote-bf9bd461.json",
     "projects/ide/eclipse-che-06fa6676.json",
     "projects/ide/fathym-b0e6e8c7.json",
     "projects/ide/intellij-idea-9e9d6742.json",
@@ -333,6 +333,18 @@
     {
       "project": "Codefile",
       "detail": "Small-product profile follows actual feature/FAQ page, not uniform long-form filler. No execution; link holders can read; signed-in creation required for owner protection/deletion. Free/donation statement same page, not independent evidence."
+    },
+    {
+      "project": "CodePen",
+      "detail": "Current2.0 docs, not onlyClassic3panels. Private-link readership, password editor-only/deployment exclusion, last-good preview on build error, history rollup, source+last-successdist export and hosted continuity retained. PublicPenMIT not wholeplatformlicense."
+    },
+    {
+      "project": "Cube.js",
+      "detail": "CurrentCube is semantic analytics with a modelIDE; legacy category/name retained for coordinator, unsupported genericIDE claims replaced. Policy union semantics, JWTmissingclaim example, refreshkey freshness and nofallback dedicatedaggregation connection documented. Coreopensource not wholecloud entitlement."
+    },
+    {
+      "project": "Deepnote",
+      "detail": "SQL100rowpreview notfullresult; collaborators share runtime. Failed schedule pauses/revokedOAuth, notebook-onlyhistory, paidadminseats/machine+AIusage,30minute machine-alertlag. Scheduling legacyPro wording and SQLDataFrameFAQ scope ambiguous."
     }
   ],
   "verification": [
@@ -342,7 +354,7 @@
     },
     {
       "command": "node scripts/catalog/validate.mjs --records-only",
-      "result": "passed: 51 primary-source researched globally (3 baseline + 48 assigned), 1000 records checked"
+      "result": "passed: 54 primary-source researched globally (3 baseline + 51 assigned), 1000 records checked"
     },
     {
       "command": "Prettier changed JSON and git diff --check",
@@ -424,17 +436,22 @@
       "commit": "4adcd36",
       "completed_count": 45,
       "scope": "Remaining available application-development profiles; all category16 investigated; pushed"
+    },
+    {
+      "commit": "91a247b",
+      "completed_count": 48,
+      "scope": "AirCode, CodeMate, Codefile plus Codeanywhere official sunset gap; pushed"
     }
   ],
   "runtime": "No services, databases or deployment operated. All records remain draft; independent_review=false and hands_on_test=false.",
   "evidence_storage": ".scratch/deep-research (ignored): raw public-reader excerpts and local authoring aids; not submitted.",
   "category_status": {
     "workflow-automation": "7 of 7 assigned records complete; 3 baseline records unchanged",
-    "next": "CodePen, CodeSandbox, Cube.js, Deepnote",
+    "next": "Eclipse Che, Fathym, IntelliJ IDEA, JDoodle, Koding, Repl.it",
     "data-integration": "13 of 18 complete; all 18 investigated; 5 incomplete with explicit access/identity/source-authority gaps",
     "api-management": "12 of 17 complete; all 17 investigated; 5 incomplete with explicit access/source authority gaps",
     "application-development": "13 of 16 complete; all16 investigated; 3 incomplete with explicit access/authority gaps",
-    "ide": "3 of14 complete; Codeanywhere investigated but incomplete current operational profile with official sunset evidence;10 unprocessed"
+    "ide": "6 of14 complete; Codeanywhere sunset/current-operations gap and CodeSandbox403gap investigated;6 unprocessed"
   },
   "identity_changes": [
     {
@@ -480,6 +497,10 @@
     {
       "project": "CodeMate",
       "change": "Official www.codemate.ai redirects to codemate.ai; website/domain updated to actual canonical host, same registered identity."
+    },
+    {
+      "project": "Deepnote",
+      "change": "Official www.deepnote.com redirects to deepnote.com; website/domain updated to actual canonical host with same registered identity."
     }
   ],
   "content_corrections": [
@@ -541,6 +562,10 @@
     {
       "project_path": "projects/ide/codeanywhere-7879974b.json",
       "reason": "Official home, pricing and docs now redirect to a vendor sunset announcement dated June7,2026: new signups closed, July1,2026 service shutdown, export deadline and cessation of recurring charges. The announced closure date has passed; live account/data recoverability was not probed. Current operational docs and purchasable plan are unavailable, so old directory features/prices are not adopted as current and the record is not counted as a completed operating-service profile. Actual announcement URLs/hashes retained in batch notes."
+    },
+    {
+      "project_path": "projects/ide/codesandbox-90aac520.json",
+      "reason": "Official homepage was read and now emphasizes programmatic isolated sandboxes/CodeSandboxSDK; it announces being part of TogetherAI. Actual official pricing and docs returned403. No bypass or retry of blocked endpoints. Current runtime, billing/limits, access policy and license cannot be deeply established from the marketing page alone, so the record remains incomplete and old directory IDE features/prices are not adopted as current."
     }
   ],
   "availability_updates": [
@@ -665,6 +690,13 @@
       "excerpt_sha256": "75c4bb06e937e36b095a156846da47bd54a3fa4069d124294c39ef398a4b9be5",
       "read_at": "2026-10-22T12:31:38.035696Z",
       "use": "Actual official closure notice; current operational record incomplete, not a pricing-source relabel or complete feature profile."
+    },
+    {
+      "capture": "codesandbox-home",
+      "actual_url": "https://codesandbox.io/",
+      "excerpt_sha256": "4ad6dbd15b3badb8df191d5343d99ac8c2ebae402d72e00a1bfe90098d1ea07f",
+      "read_at": "2026-10-22T12:39:25.791405Z",
+      "use": "Actual official marketing page; pricing/docs403 prevent complete runtime/fee profile. No bypass."
     }
   ]
 }
