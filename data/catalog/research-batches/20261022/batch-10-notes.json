@@ -1,6 +1,6 @@
 {
   "batch_id": "batch-10",
-  "updated_at": "2026-10-22T15:16:48.693468+00:00",
+  "updated_at": "2026-10-22T15:51:48.353553+00:00",
   "assignment_authority": "/Users/rainie/Desktop/123charts.com/123charts-catalog-1000/data/catalog/research-batches/20261022/assignments-v2.json",
   "baseline_commit": "244559f47bb30bf49878753150c4b10e8c260586",
   "assigned_count": 41,
@@ -52,12 +52,14 @@
     "overlapping_in_progress_paths": [],
     "ack_file": "/Users/rainie/Desktop/123charts.com/123charts-research-05/.scratch/handoff-to-batch-10-ack.json"
   },
-  "completed_count": 37,
+  "completed_count": 41,
   "completed_paths": [
     "projects/ux-design/userbob-747c9119.json",
+    "projects/ux-design/userexperior-438cef80.json",
     "projects/ux-design/userlytics-06e7f8eb.json",
     "projects/ux-design/userology-0686a6e1.json",
     "projects/ux-design/usertesting-d9cb6ac8.json",
+    "projects/ux-design/userzoom-2b8e3317.json",
     "projects/ux-design/uxarmy-2d536cee.json",
     "projects/ux-design/uxpin-7db8e0b0.json",
     "projects/ux-design/uxtweak-a0814cf0.json",
@@ -86,30 +88,15 @@
     "projects/ai-meetings/flowspark-c9d9f0aa.json",
     "projects/ai-meetings/granola-5f3c7d11.json",
     "projects/ai-meetings/imind-c0e34109.json",
+    "projects/ai-meetings/meeedly-3f73efff.json",
     "projects/mind-mapping/conceptviz-840d0ebb.json",
     "projects/mind-mapping/mind-map-maker-for-excel-eb430b76.json",
+    "projects/mind-mapping/mindmeister-fbcf91ef.json",
     "projects/mind-mapping/mindomo-2b826d41.json",
     "projects/mind-mapping/simplemind-6d9793d2.json",
     "projects/mind-mapping/xmind-a367a3a4.json"
   ],
-  "blocked": [
-    {
-      "path": "projects/ux-design/userexperior-438cef80.json",
-      "reason": "Official domain redirected to unrelated gambling content at advocate-ie.com; identity and current product sources unresolved. No current claims adopted."
-    },
-    {
-      "path": "projects/ux-design/userzoom-2b8e3317.json",
-      "reason": "Legacy official home redirects to UserTesting /platform/userzoom. Dedicated UserZoom pricing timed out; current /platform/userzoom/plans returned 403, no bypass/retry. Cannot substitute UserTesting main-edition pricing."
-    },
-    {
-      "path": "projects/ai-meetings/meeedly-3f73efff.json",
-      "reason": "Official homepage yielded only 52 characters; no usable product/pricing evidence."
-    },
-    {
-      "path": "projects/mind-mapping/mindmeister-fbcf91ef.json",
-      "reason": "Official homepage returned HTTP 403. No bypass or retry; primary sources unavailable."
-    }
-  ],
+  "blocked": [],
   "remaining_paths": [],
   "evidence_directory": "/Users/rainie/Desktop/123charts.com/123charts-research-10/.scratch/deep-research",
   "inherited_completed_not_counted": 114,
@@ -128,9 +115,21 @@
       "evidence_file": "/Users/rainie/Desktop/123charts.com/123charts-research-10/.scratch/owned-validation.json"
     },
     "format": "Prettier applied to all 41 owned JSON plus notes; git diff --check passed.",
-    "scope": "42 changed paths versus baseline: 41 assigned project JSON plus own notes; no shared index/README/category/validator/application changes."
+    "scope": "42 changed paths versus baseline: 41 assigned project JSON plus own notes; no shared index/README/category/validator/application changes.",
+    "followup_python": "7 catalog unit tests passed.",
+    "followup_repository_validator": "node scripts/catalog/validate.mjs --records-only fails at scripts/catalog/validate.mjs:102: false !== true for researched-but-price-unknown record. Cross-domain rule at line 166 remains a separate known incompatibility. No shared script modified.",
+    "followup_owned_record_diagnostic": {
+      "assigned": 41,
+      "documentation_researched": 41,
+      "remaining": 0,
+      "official_source_text_hashes_verified": 94,
+      "result": "Read-only reference/metadata/AI/draft/bilingual/evidence-hash diagnostic passed, not a substitute for repository validator or editorial/hands-on review."
+    },
+    "followup_format": "Changed four JSON plus notes formatted with Prettier; git diff --check passed.",
+    "followup_scope": "Only four formerly incomplete assigned JSON files and own notes changed since 831cc587aefaa1f6a07a87d35557874788c53d98."
   },
   "commits": [
+    "831cc587aefaa1f6a07a87d35557874788c53d98 docs: record batch ten delivery commits and final source exceptions",
     "4618e1bf0620cc4fe912e46e675d8850d6f5c829 data: finish batch ten primary research and record four source blockers",
     "653533d1cc09454459aad492d75af589b92bdc8b data: research seventeen learning platforms with licensing and pricing conditions",
     "57295177345d4776196cc35cfdde2063da0d246c data: research seven UX products with billing and evidence boundaries"
@@ -141,12 +140,12 @@
     "independent_review": false,
     "hands_on_test": false
   },
-  "batch_status": "all_41_investigated_37_researched_4_incomplete",
+  "batch_status": "41_documentation_researched_including_one_legacy_web_sdk_profile",
   "counts_by_category": {
     "ux-design": {
       "assigned": 10,
-      "researched": 8,
-      "incomplete": 2
+      "researched": 10,
+      "incomplete": 0
     },
     "learning-management": {
       "assigned": 18,
@@ -155,16 +154,51 @@
     },
     "ai-meetings": {
       "assigned": 7,
-      "researched": 6,
-      "incomplete": 1
+      "researched": 7,
+      "incomplete": 0
     },
     "mind-mapping": {
       "assigned": 6,
-      "researched": 5,
-      "incomplete": 1
+      "researched": 6,
+      "incomplete": 0
     }
   },
   "cross_domain_source_exceptions": [
+    {
+      "path": "projects/ux-design/userexperior-438cef80.json",
+      "source_id": "product",
+      "url": "https://developer.devrev.ai/sdks/web/migration",
+      "legacy_domain": "userexperior.com",
+      "current_official_domain": "devrev.ai"
+    },
+    {
+      "path": "projects/ux-design/userexperior-438cef80.json",
+      "source_id": "troubleshooting-followup",
+      "url": "https://developer.devrev.ai/sdks/web/troubleshooting",
+      "legacy_domain": "userexperior.com",
+      "current_official_domain": "devrev.ai"
+    },
+    {
+      "path": "projects/ux-design/userzoom-2b8e3317.json",
+      "source_id": "product",
+      "url": "https://www.usertesting.com/platform/userzoom",
+      "legacy_domain": "userzoom.com",
+      "current_official_domain": "usertesting.com"
+    },
+    {
+      "path": "projects/ux-design/userzoom-2b8e3317.json",
+      "source_id": "moderated-followup",
+      "url": "https://help.usertesting.com/hc/en-us/articles/360000660578-Moderated-Usability-Testing",
+      "legacy_domain": "userzoom.com",
+      "current_official_domain": "usertesting.com"
+    },
+    {
+      "path": "projects/ux-design/userzoom-2b8e3317.json",
+      "source_id": "tech-followup",
+      "url": "https://help.usertesting.com/hc/en-us/articles/360010750597-Moderated-Tech-Check-issues",
+      "legacy_domain": "userzoom.com",
+      "current_official_domain": "usertesting.com"
+    },
     {
       "path": "projects/learning-management/schoology-eb80cd47.json",
       "source_id": "product",
@@ -218,7 +252,9 @@
   "cross_domain_ownership_basis": {
     "schoology": "Current PowerSchool product page explicitly names PowerSchool Learning Management (Schoology); old schoology.com yields no readable text.",
     "granola": "HTTP redirect from www.granola.so to www.granola.ai recorded in product.json evidence.",
-    "imind": "HTTP redirect from imind.com to intermind.com recorded in product.json evidence; service/account continuity not independently established."
+    "imind": "HTTP redirect from imind.com to intermind.com recorded in product.json evidence; service/account continuity not independently established.",
+    "userzoom": "Legacy homepage redirects to the explicitly named UserZoom product page. New UserTesting help pages explicitly mark themselves as UserZoom, with UserZoom-specific plan/method conditions.",
+    "userexperior": "DevRev developer documentation explicitly names legacy UserExperior Web SDK, identifies Plug as its replacement and maps SDK methods/configuration. This establishes technical lineage only, not an acquisition date, corporate ownership, native-product closure or account/contract transfer."
   },
   "resolved_initial_gap": {
     "project": "projects/ux-design/userology-0686a6e1.json",
@@ -239,11 +275,41 @@
   "coordinator_follow_up": [
     "Resolve shared validator official-source domain lineage handling for Schoology, Granola and iMind without changing authentic source URLs.",
     "Review legacy category fit for AskVerdict AI (decision support), FlowSpark (broad platform with meeting subtool) and ConceptViz (general visual generation).",
-    "Do not count four explicitly incomplete records as primary-source researched.",
-    "Independent review, hands-on tests and publication remain unperformed and unauthorized in this research branch."
+    "Independent review, hands-on tests and publication remain unperformed and unauthorized in this research branch.",
+    "Support documentation-researched records with unverified pricing without forcing false price confirmation, and authentic legacy-to-current official domain lineage. UserExperior is specifically a legacy Web SDK migration profile; current standalone availability is unknown."
   ],
   "delivery_branch": "data/catalog-deep-batch-10",
   "profile_delivery_head": "4618e1bf0620cc4fe912e46e675d8850d6f5c829",
-  "incomplete_count": 4,
-  "delivery_scope": "All 41 assigned candidates investigated; 37 original bilingual primary-source profiles and 4 explicitly incomplete records. No claim that the entire 41 is researched."
+  "incomplete_count": 0,
+  "delivery_scope": "All 41 assigned candidates now have original bilingual official-documentation profiles. This includes a scoped legacy UserExperior Web SDK migration profile; current purchase/service availability is not assumed. All remain draft, without hands-on testing or independent review.",
+  "remaining_count": 0,
+  "followup_20261022": {
+    "initial_correction": "The original remaining_paths=[] was incorrect while four records were incomplete. It was first restored to all four paths with remaining_count=4 before further research; the final empty list now follows completed documentation profiles, not merely attempted investigation.",
+    "resolved_records": [
+      {
+        "path": "projects/mind-mapping/mindmeister-fbcf91ef.json",
+        "evidence": "Readable official editor, October 14 2026 map-limit change and export guides; homepage and separate price URL 403 not retried. Paid amounts unknown."
+      },
+      {
+        "path": "projects/ux-design/userzoom-2b8e3317.json",
+        "evidence": "Existing explicit UserZoom product page plus readable UserZoom-only moderated-method and Tech Check docs. No other UserTesting product price or entitlement substituted."
+      },
+      {
+        "path": "projects/ux-design/userexperior-438cef80.json",
+        "evidence": "DevRev official UserExperior Web SDK migration and Plug troubleshooting docs; old Android/Flutter URLs also redirected to unrelated content. Historical SDK migration scope only; current sale, contract/native continuity and redirect cause unknown."
+      },
+      {
+        "path": "projects/ai-meetings/meeedly-3f73efff.json",
+        "evidence": "Vendor-authored 2026 calendar-coordination and dated 2024 workflow articles read by public web reader after direct blog transport failures. Main homepage only title and Microsoft Marketplace 403 remain recorded. No current free tier or price inferred from signup copy."
+      }
+    ],
+    "pricing_not_verified_records": [
+      "projects/ux-design/userexperior-438cef80.json",
+      "projects/ux-design/userzoom-2b8e3317.json",
+      "projects/ai-meetings/meeedly-3f73efff.json"
+    ],
+    "unknown_pricing_representation": "pricing.status=not_verified, price_type=unknown, officially_checked=false, normalized_monthly_price=null. Official documentation research does not imply official price confirmation.",
+    "validation_compatibility": "Unchanged repository validator requires every primary_source_researched record to have officially_checked=true and an official_pricing source. That cannot honestly represent these documentation-researched/price-unknown records. Preserve true flags and sources; coordinator owns schema/validator compatibility.",
+    "no_bypass": "Previously failed 403 URLs were not retried. Newly discovered distinct official paths were requested once. Public web reader cached text was used for Meeedly after direct transport closure; inaccessible marketplace was not bypassed."
+  }
 }
