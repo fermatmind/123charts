@@ -2,16 +2,16 @@
   "batch_id": "batch-02",
   "branch": "data/catalog-deep-batch-02",
   "assigned_count": 196,
-  "completed_count": 3,
-  "remaining_count": 193,
+  "completed_count": 5,
+  "remaining_count": 191,
   "completed_project_paths": [
     "projects/project-management/adobe-workfront-fc4d9f64.json",
     "projects/project-management/aha-3a86a6eb.json",
-    "projects/project-management/asana-6cdd16e9.json"
+    "projects/project-management/asana-6cdd16e9.json",
+    "projects/project-management/axosoft-a491b5fd.json",
+    "projects/project-management/basecamp-67313466.json"
   ],
   "remaining_project_paths": [
-    "projects/project-management/axosoft-a491b5fd.json",
-    "projects/project-management/basecamp-67313466.json",
     "projects/project-management/campr-96e6cd3e.json",
     "projects/project-management/clickup-9bd7bad2.json",
     "projects/project-management/desklog-0b84b0c7.json",
@@ -205,8 +205,8 @@
     "projects/time-tracking/webwork-time-tracker-25cc10bd.json"
   ],
   "status": "in_progress",
-  "updated_at": "2026-10-22T10:06:01.741152+00:00",
-  "last_content_commit": "70c2a73c0cf14b68e1f3ad308dfc84c34fc8fdcc",
+  "updated_at": "2026-10-22T10:11:21.735431+00:00",
+  "last_content_commit": "90575aa50c2be6a258bee24ef400779cfc00773b",
   "checkpoints": [
     {
       "projects": ["projects/project-management/adobe-workfront-fc4d9f64.json"],
@@ -235,9 +235,40 @@
         "Aha record scopes Roadmaps separately from suite products. Some linked detailed integrations required login or failed; exact mappings remain unverified.",
         "Asana current body labels rules as Automations. Personal allows two users; multi-homing permission and separate AI request limits checked."
       ]
+    },
+    {
+      "projects": [
+        "projects/project-management/axosoft-a491b5fd.json",
+        "projects/project-management/basecamp-67313466.json"
+      ],
+      "validations": {
+        "python_catalog_tests": "7 passed earlier; no code changes",
+        "records_only": "Axosoft checkpoint passed (7 researched total). With Basecamp: fails scripts/catalog/validate.mjs:166, actual basecamp-help.com vs expected basecamp.com. Official help uses a separate registered domain; shared validator unchanged.",
+        "prettier": "passed",
+        "git_diff_check": "passed"
+      },
+      "notes": [
+        "Axosoft requires current stack/integration confirmation because public documents include legacy versions; dynamic pricing returned placeholders.",
+        "Basecamp 5 help read through legacy-help redirect, current canonical URLs retained. Current pricing differs from historical sources; time-tracking plan naming conflict retained."
+      ]
     }
   ],
-  "open_issues": [],
+  "open_issues": [
+    {
+      "project": "projects/project-management/basecamp-67313466.json",
+      "kind": "official_source_domain_validator",
+      "error": "scripts/catalog/validate.mjs:166 actual basecamp-help.com expected basecamp.com",
+      "official_sources": [
+        "https://5.basecamp-help.com/article/1176-creating-and-setting-up-a-project",
+        "https://5.basecamp-help.com/article/1051-automatic-check-ins",
+        "https://5.basecamp-help.com/article/1082-what-clients-can-see-and-do",
+        "https://5.basecamp-help.com/article/1063-card-tables",
+        "https://5.basecamp-help.com/article/1078-hill-charts"
+      ],
+      "resolution_owner": "coordinator",
+      "action": "Keep real official help URLs; do not change shared validator or fabricate same-domain sources."
+    }
+  ],
   "evidence_directory": ".scratch/deep-research/",
   "scope": "Draft bilingual documentation research only; no independent review, hands-on test, publication or deployment."
 }
